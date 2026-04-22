@@ -1,0 +1,134 @@
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * components.starred.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * All styles related to the starred-questions feature.
+ *
+ * NOTE — related rules that live elsewhere by convention:
+ *   • .star-btn               → components.cards.responses.css
+ *     (it is a button inside the question card ref bar)
+ *   • .question-card.starred-card → components.cards.responses.css
+ *     (it is a modifier on .question-card)
+ *   • .prog-star-*            → pages.css
+ *     (the starred list rendered inside the Progress Overview page)
+ *
+ * 01. Starred summary panel   – Collapsible panel listing starred questions,
+ *                               rendered inline above the chapter content
+ *
+ * ── DARK MODE ───────────────────────────────────────────────────────────
+ * 02. Dark mode               – body.dark-mode overrides for all rules above
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ── 01. STARRED SUMMARY PANEL ──────────────────────────────────────────── */
+/* Collapsible panel that appears when one or more questions are starred.
+   Sits inline in the chapter content flow, above the first question card.
+   Clicking the header toggles the list via the .open class (JS-managed).
+   Visually matches the intro-block style — left accent border, card-bg fill. */
+
+.starred-summary {
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent);
+  margin: 0 var(--content-margin) 4px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 4px var(--shadow);
+  overflow: hidden;
+}
+
+/* Clickable header row — title, count badge, and chevron */
+.starred-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+  user-select: none;
+}
+.starred-summary-title {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.starred-summary-count {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  color: var(--text-faint);
+}
+.starred-summary-chevron {
+  font-size: 10px;         /* UI chrome — stays px */
+  color: var(--text-faint);
+  transition: transform 0.2s;
+}
+.starred-summary-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Expandable list of starred question previews */
+.starred-summary-list {
+  display: none;
+  border-top: 1px solid var(--surface-mid);
+}
+.starred-summary-list.open {
+  display: block;
+}
+
+/* Individual starred question row — tapping scrolls to that question */
+.starred-summary-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--surface-mid);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.starred-summary-item:last-child { border-bottom: none; }
+.starred-summary-item:hover { background: var(--surface); }
+
+/* Scripture reference label above the question preview */
+.starred-summary-ref {
+  font-family: var(--font-stack-mono);
+  font-size: 9px;          /* UI chrome — stays px */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--emphasis);
+  margin-bottom: 2px;
+}
+
+/* Truncated question text preview */
+.starred-summary-text {
+  font-family: var(--main-font-family);
+  font-size: 0.844rem;     /* was ~13.5px — scales */
+  color: var(--text-secondary);
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   02. DARK MODE
+   body.dark-mode overrides for all rules in this file, gathered here.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.dark-mode .starred-summary {
+  background: var(--dm-raised);
+}
+body.dark-mode .starred-summary-list {
+  border-top-color: var(--dm-border);
+}
+body.dark-mode .starred-summary-item {
+  border-bottom-color: var(--dm-border);
+}
+body.dark-mode .starred-summary-item:hover {
+  background: var(--dm-sunken);
+}
+body.dark-mode .starred-summary-text {
+  color: var(--dm-text-mid);
+}

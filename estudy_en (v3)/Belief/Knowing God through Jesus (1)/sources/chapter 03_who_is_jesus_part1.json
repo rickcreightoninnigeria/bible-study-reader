@@ -1,0 +1,380 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 3,
+      "chapterTitle": "Who is Jesus? (Part 1)",
+      "elements": [
+        {
+          "elementId": "ch03-el01",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Bible Readings for This Chapter",
+          "term": "Mark 1:1–11 · Mark 2:1–12 · Colossians 1:15–20",
+          "question": "It's worth having these passages open as you work through this chapter.",
+          "answer": "<p><b>Mark 1:1–11</b><br><sup>1</sup>The beginning of the gospel of Jesus Christ, the Son of God. <sup>2</sup>As it is written in Isaiah the prophet, 'Look, I am sending my messenger ahead of you, who will prepare your way, <sup>3</sup>the voice of one shouting in the wilderness, \"Prepare the way for the Lord, make his paths straight!\"' <sup>4</sup>In the same way John the Baptist appeared in the wilderness, preaching a baptism of repentance for the forgiveness of sins. <sup>5</sup>And the whole Judean region and all the people of Jerusalem were going out to him and were being baptized by him in the Jordan River, confessing their sins. <sup>6</sup>John was dressed in camel's hair with a leather belt around his waist, and he ate locusts and wild honey. <sup>7</sup>He proclaimed, 'One more powerful than I am is coming after me; I am not worthy to bend down and untie the strap of his sandals. <sup>8</sup>I baptize you with water, but he will baptize you with the Holy Spirit.' <sup>9</sup>Now in those days Jesus came from Nazareth in Galilee and was baptized by John in the Jordan River. <sup>10</sup>And just as Jesus was coming up out of the water, he saw the heavens splitting apart and the Spirit descending on him like a dove. <sup>11</sup>And a voice came from heaven: 'You are my one dear Son; in you I take great delight.'</p><br><p><b>Mark 2:1–12</b><br><sup>1</sup>Now after some days, when he returned to Capernaum, the news spread that he was at home. <sup>2</sup>So many gathered that there was no longer any room, not even by the door, and he was preaching the word to them. <sup>3</sup>Some people came bringing to him a paralytic, carried by four of them. <sup>4</sup>When they were not able to bring him in because of the crowd, they removed the roof above Jesus. Then, after tearing it out, they lowered the stretcher the paralytic was lying on. <sup>5</sup>When Jesus saw their faith, he said to the paralytic, 'Son, your sins are forgiven.' <sup>6</sup>Now some of the experts in the law were sitting there, turning these things over in their minds: <sup>7</sup>'Why does this man speak this way? He is blaspheming! Who can forgive sins but God alone?' <sup>8</sup>Now immediately, when Jesus realized in his spirit that they were contemplating such thoughts, he said to them, 'Why are you thinking such things in your hearts? <sup>9</sup>Which is easier, to say to the paralytic, \"Your sins are forgiven,\" or to say, \"Get up, take your stretcher, and walk\"? <sup>10</sup>But so that you may know that the Son of Man has authority on earth to forgive sins'—he said to the paralytic— <sup>11</sup>'I tell you, get up, take your stretcher, and go home.' <sup>12</sup>And he got up and immediately took the stretcher and went out in front of them all, so that they were all amazed and glorified God, saying, 'We have never seen anything like this!'</p><br><p><b>Colossians 1:15–20</b><br><sup>15</sup>He is the image of the invisible God, the firstborn over all creation, <sup>16</sup>for all things in heaven and on earth were created by him—all things, whether visible or invisible, whether thrones or dominions, whether principalities or powers—all things were created through him and for him. <sup>17</sup>He himself is before all things and all things are held together in him. <sup>18</sup>He is the head of the body, the church, as well as the beginning, the firstborn from among the dead, so that he himself may become first in all things. <sup>19</sup>For God was pleased to have all his fullness dwell in the Son <sup>20</sup>and through him to reconcile all things to himself by making peace through the blood of his cross—through him, whether things on earth or things in heaven.</p><br><p style='text-align: right; font-size: 0.8em;'><a href='https://www.biblegateway.com/passage/?search=Mark+1&version=NET'>(NET — see context ↗)</a></p>",
+          "buttonText": "Read passages ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el02",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>In every generation, people have had to answer the same question about Jesus: <i>Who is he, exactly?</i></p><p>Some say he was a great moral teacher. Others say he was a prophet — one of the greatest. Some say he was a revolutionary, a healer, a wise man. Islam honours him as the Messiah, born of a virgin, a worker of miracles, and one of the greatest prophets who ever lived.</p><p>But the New Testament won't let us settle for any of these answers. Not because they are entirely wrong — but because they don't go far enough. The Gospels press us, again and again, toward a more unsettling and more wonderful conclusion.</p><p>It is worth knowing, before we go further, that following Jesus is not adopting a foreign religion. The faith you have entered has been alive in the lands of the Middle East since the first century — long before Islam existed. You are not leaving your world for someone else's. You are returning to something ancient.</p><p>In this chapter, we are going to let the Gospel of Mark show us who Jesus is — not through abstract argument, but through what he <i>does</i> and what he <i>says</i>. Then we will read Colossians 1, where Paul draws together the theological meaning of it all.</p><p>By the end, we will be face to face with the question Jesus himself put to his disciples: <i>&quot;But who do you say that I am?&quot;</i> (Mark 8:29)</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el03",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Before we read the passages, what words or images come to mind when you think of Jesus? Where did those impressions come from?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el04",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 1 — Introduced by God: Mark 1:1–11",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el05",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "plainText",
+          "text": "Mark's Gospel is the shortest and fastest-moving of the four Gospels. There is no nativity story, no genealogy. Mark starts at full speed — and in the opening eleven verses, before Jesus has said a single word in public, three remarkable things are said about him.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el06",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Mark 1:1–11",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>The beginning of the gospel of Jesus Christ, the Son of God. <sup>2</sup>As it is written in Isaiah the prophet, 'Look, I am sending my messenger ahead of you, who will prepare your way, <sup>3</sup>the voice of one shouting in the wilderness, \"Prepare the way for the Lord, make his paths straight!\"' <sup>4</sup>In the same way John the Baptist appeared in the wilderness, preaching a baptism of repentance for the forgiveness of sins. <sup>5</sup>And the whole Judean region and all the people of Jerusalem were going out to him and were being baptized by him in the Jordan River, confessing their sins. <sup>6</sup>John was dressed in camel's hair with a leather belt around his waist, and he ate locusts and wild honey. <sup>7</sup>He proclaimed, 'One more powerful than I am is coming after me; I am not worthy to bend down and untie the strap of his sandals. <sup>8</sup>I baptize you with water, but he will baptize you with the Holy Spirit.' <sup>9</sup>Now in those days Jesus came from Nazareth in Galilee and was baptized by John in the Jordan River. <sup>10</sup>And just as Jesus was coming up out of the water, he saw the heavens splitting apart and the Spirit descending on him like a dove. <sup>11</sup>And a voice came from heaven: 'You are my one dear Son; in you I take great delight.'",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Mark+1&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el07",
+          "type": "question",
+          "subtype": "header",
+          "format": "plainText",
+          "header": "Three claims before Jesus speaks (vv1–11)",
+          "question": "Mark 1:1 opens with a bold claim: \"The beginning of the gospel of Jesus Christ, the Son of God.\" Before you read any further — what do you think Mark means by calling Jesus \"the Son of God\"? What does that phrase suggest to you?",
+          "linkedPassage": "Mark 1:1–11",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el08",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "In verse 11, a voice from heaven speaks directly to Jesus: \"You are my one dear Son; in you I take great delight.\" This is a remarkable moment — God himself identifying Jesus. What does this tell us about the relationship between Jesus and God, even before Jesus begins his ministry?",
+          "linkedPassage": "Mark 1:1–11",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el09",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "John the Baptist says he is not worthy to untie Jesus' sandals — a task considered beneath even a slave's dignity in the ancient world. What is John communicating about how he sees Jesus relative to himself? Why is this significant, given that John is himself a major prophet?",
+          "linkedPassage": "Mark 1:1–11",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el10",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 2 — Doing What Only God Can Do: Mark 2:1–12",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el11",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "plainText",
+          "text": "By the time we reach Mark 2, Jesus has already been teaching with startling authority, casting out an evil spirit, and healing large numbers of sick people. But what happens next pushes the question of his identity to a sharp point.\n\nA paralysed man is brought to Jesus by four friends — so desperate to reach him that they break through the roof. What Jesus says next stops everyone in the room.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el12",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Mark 2:1–12",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>Now after some days, when he returned to Capernaum, the news spread that he was at home. <sup>2</sup>So many gathered that there was no longer any room, not even by the door, and he was preaching the word to them. <sup>3</sup>Some people came bringing to him a paralytic, carried by four of them. <sup>4</sup>When they were not able to bring him in because of the crowd, they removed the roof above Jesus. Then, after tearing it out, they lowered the stretcher the paralytic was lying on. <sup>5</sup>When Jesus saw their faith, he said to the paralytic, 'Son, your sins are forgiven.' <sup>6</sup>Now some of the experts in the law were sitting there, turning these things over in their minds: <sup>7</sup>'Why does this man speak this way? He is blaspheming! Who can forgive sins but God alone?' <sup>8</sup>Now immediately, when Jesus realized in his spirit that they were contemplating such thoughts, he said to them, 'Why are you thinking such things in your hearts? <sup>9</sup>Which is easier, to say to the paralytic, \"Your sins are forgiven,\" or to say, \"Get up, take your stretcher, and walk\"? <sup>10</sup>But so that you may know that the Son of Man has authority on earth to forgive sins'—he said to the paralytic— <sup>11</sup>'I tell you, get up, take your stretcher, and go home.' <sup>12</sup>And he got up and immediately took the stretcher and went out in front of them all, so that they were all amazed and glorified God, saying, 'We have never seen anything like this!'",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Mark+2&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el13",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "\"Your sins are forgiven\" (v5)",
+          "question": "The teachers of the law react with outrage when Jesus forgives the man's sins, saying: \"Who can forgive sins but God alone?\" (v7). They are not wrong about the logic — only God can forgive sins committed against God. So what is Jesus implying by saying what he said? What are the only two possible conclusions?",
+          "linkedPassage": "Mark 2:1–12",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el14",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Jesus then heals the man physically, saying it is to demonstrate that \"the Son of Man has authority on earth to forgive sins\" (v10). He uses the title \"Son of Man\" — a figure from Daniel 7 to whom God gives eternal dominion over all nations. Why does he choose this title at this moment? What is he claiming?",
+          "linkedPassage": "Mark 2:1–12",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "The crowd is amazed and glorifies God (v12). The religious leaders are alarmed. Why do you think the same event produces such different responses? Which response do you find yourself more drawn to, and why?",
+          "linkedPassage": "Mark 2:1–12",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el16",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "\"The Bible never says 'I am God, worship me.'\"",
+          "question": "You may have heard the argument that Jesus never directly claimed to be God — and that the idea was added later by his followers. What do you make of that argument before reading a response?",
+          "answer": "<p>This is one of the most common and important objections, and it deserves a careful answer rather than a dismissal.</p><p>It is true that Jesus rarely makes direct, explicit statements of the form \"I am God.\" But the argument misunderstands how he actually communicated. Throughout the Gospels, Jesus makes claims and performs actions that, in the Jewish context of his day, could only mean one thing — and his listeners understood exactly what he was saying. That is precisely why they tried to stone him (John 10:33) and why the charge at his trial was blasphemy.</p><p>Consider what Jesus does in the Gospels:</p><ul><li>He forgives sins — which, as the teachers of the law correctly understood, only God can do (Mark 2:7)</li><li>He accepts worship without correcting those who offer it (Matthew 14:33)</li><li>He speaks with his own authority, not as a prophet relaying God's words: <i>\"You have heard it said... but I say to you\"</i> (Matthew 5)</li><li>He claims to be the Lord of the Sabbath — a day that belonged to God alone (Mark 2:28)</li><li>He says: <i>\"Before Abraham was, I am\"</i> — using the divine name (John 8:58)</li></ul><p>The claim is made through actions, titles, and patterns of speech — not a single formula. The question is not whether the exact words appear, but whether the meaning is clear. And for his first-century Jewish audience, it was unmistakeable.</p>",
+          "buttonText": "See a response ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el17",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 3 — The Theological Summary: Colossians 1:15–20",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el18",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>Mark shows us <i>who Jesus is</i> through what he does. Paul, writing to the church in Colossae around AD 60, steps back and gives us the theological framework — who Jesus is in relation to God, creation, and the universe itself.</p><p>What follows is one of the most elevated passages in the entire New Testament. It may originally have been an early Christian hymn — which means these words were being sung by believers within thirty years of the resurrection.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el19",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Colossians 1:15–20",
+          "translation": "NET",
+          "passageText": "<sup>15</sup>He is the image of the invisible God, the firstborn over all creation, <sup>16</sup>for all things in heaven and on earth were created by him—all things, whether visible or invisible, whether thrones or dominions, whether principalities or powers—all things were created through him and for him. <sup>17</sup>He himself is before all things and all things are held together in him. <sup>18</sup>He is the head of the body, the church, as well as the beginning, the firstborn from among the dead, so that he himself may become first in all things. <sup>19</sup>For God was pleased to have all his fullness dwell in the Son <sup>20</sup>and through him to reconcile all things to himself by making peace through the blood of his cross—through him, whether things on earth or things in heaven.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Colossians+1&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el20",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "\"The image of the invisible God\" (v15)",
+          "question": "Paul calls Jesus \"the image of the invisible God.\" In the ancient world, an image was not a copy or a symbol — it <i>embodied</i> what it represented. A king's image on a coin <i>was</i> the king's presence and authority in that place. What does it mean for Jesus to be the image of the invisible God in this full sense?",
+          "linkedPassage": "Colossians 1:15–20",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el21",
+          "type": "question",
+          "subtype": "standard",
+          "format": "HTML",
+          "question": "Verses 16–17 say that <i>all things</i> were created through Jesus and for him — things visible and invisible, in heaven and on earth — and that he holds all things together. How does this description of Jesus compare to the picture of Jesus you had before this chapter? What expands or challenges your view?",
+          "linkedPassage": "Colossians 1:15–20",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el22",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul says Jesus is \"the firstborn from among the dead\" (v18) — meaning the first to be resurrected to an indestructible life, the beginning of the new creation. He is \"first in everything.\" What does it mean for your life — practically, not just theologically — that Jesus holds this kind of total supremacy?",
+          "linkedPassage": "Colossians 1:15–20",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el23",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>Notice the movement across this chapter's three passages:</p><p>In <b>Mark 1</b>, God himself identifies Jesus as his Son before Jesus begins his ministry.<br>In <b>Mark 2</b>, Jesus demonstrates the authority to do what only God can do — forgive sin.<br>In <b>Colossians 1</b>, Paul draws the full conclusion: Jesus is not merely a great man whom God used, but the one through whom and for whom everything was made — God himself, made visible in a human life.</p><p>This is why the question of Jesus' identity cannot be left open as a polite uncertainty. Everything else in the Christian faith depends on the answer.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el24",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 4 — The Question Jesus Asks",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el25",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>Halfway through the Gospel of Mark, Jesus turns to his disciples and asks two questions. The first is easy: <i>\"Who do people say I am?\"</i> The second is the one that matters: <i>\"But who do you say that I am?\"</i> (Mark 8:27–29).</p><p>That second question is not a historical curiosity. It is a live question — and it is being asked of you.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el26",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Many people honour Jesus as a great teacher, healer, or prophet — and stop there. But the passages we have read don't seem to leave that as a comfortable resting place. He forgives sins. He accepts worship. He claims to share glory with the Father before creation. How do you account for these things? What options does that leave you with?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el27",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What do you find most difficult about accepting the full New Testament claim about Jesus — that he is the Son of God, Lord of all creation? Is the difficulty more intellectual, or more personal?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el28",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Big Picture Truths",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el29",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>Here are the three key truths from this chapter to hold on to:</p><p><b>1. Jesus' identity is revealed through what he does, not only what he says.</b> He forgives sins. He commands demons and storms. He speaks with his own authority. His actions are the claims — and they add up to one conclusion.</p><p><b>2. Jesus is the image of the invisible God.</b> Paul's language in Colossians 1 is as high as language can go: Jesus is before all things, the agent of creation, the one who holds everything together. To know Jesus is to know what God is like.</p><p><b>3. The question is personal, not just theological.</b> \"Who do you say that I am?\" is Jesus' own question, addressed to every person who encounters him. It cannot be answered by proxy. It requires a response from you.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el30",
+          "type": "likertScale",
+          "scaleNumber": 5,
+          "popupTitle": "About this scale",
+          "instruction": "Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale": [
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+          "statements": [
+            "I am becoming clearer about who Jesus is as I read the New Testament.",
+            "I find the evidence for Jesus' divine identity in Mark's Gospel persuasive.",
+            "I am willing to sit with the hard questions this chapter raises, rather than avoid them."
+          ],
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el31",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el32",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Having worked through this chapter, how would you now answer Jesus' question: \"But who do you say that I am?\" You don't need a perfectly formed theological answer — just an honest one.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el33",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Is there one claim about Jesus in this chapter — from Mark or from Colossians — that you want to think about more, or that you found yourself resisting? Name it honestly. What makes it difficult?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el34",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>The Jesus of the New Testament is not a safe, manageable figure. He forgives sins that only God can forgive. He is described as the one through whom the universe was made. He asks questions that demand a personal answer.</p><p>But this same Jesus is also the one who stops for a paralysed man lowered through a roof. Who reaches out to those who are overlooked. Who, as we will see in later chapters, goes to a cross for the sake of people who have turned away from God.</p><p>His greatness and his tenderness belong together — just as we saw in Chapter 2 with God the Father. And that is no coincidence: <i>\"Anyone who has seen me has seen the Father.\"</i> (John 14:9)</p><p>In Chapter 4, we will go deeper into the question of the Trinity — how Jesus relates to the Father and to the Spirit, and what it means that God is one.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch03-el35",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Application Challenge",
+          "term": "Before Chapter 4",
+          "question": "What is your challenge for this week?",
+          "answer": "<p>Read Mark 4–8 this week — continuing from where Chapter 1's challenge left off.</p><p>As you read, keep a simple mental note of two things:</p><ol><li><b>What Jesus does</b> — miracles, confrontations, encounters with people</li><li><b>What people say about him</b> — disciples, crowds, religious leaders, even demons</li></ol><p>By the time you reach Mark 8:27–29, you will have seen enough to understand why the disciples' answer to \"Who do you say I am?\" carries the weight it does.</p><p>Bring one observation — something that surprised or struck you — to share at the start of Chapter 4.</p>",
+          "buttonText": "See the challenge ➡",
+          "bottomPadding": "normal"
+        }
+      ]
+    }
+  ]
+}

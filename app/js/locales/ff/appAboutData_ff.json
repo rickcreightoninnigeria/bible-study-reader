@@ -1,0 +1,28 @@
+{
+  "appTitle": "Janngirde Jannguɗo Linjiila",
+  "appDescription": "Kuugal kuutinirgal hannu ngam janngugo kourseji jannguɗo Linjiila — janngugo, numugo, e binndugo jaabi mada nyannde fuu.",
+  "sampleTitle": "Waylitugo",
+  "sampleSubtitle": "Keso, naa (tan) Boɗɗum",
+  "sampleShortTitle": "Waylitugo",
+  "sampleDescription": "Janngirde Linjiila sappo e joweenayi ngam anndugo ko woni waylitugo goonga – e ko saabi ɗum waɗi nafa.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        "Saakugo: jaba, nann’da, kade saaka kuugal ngal dow no wa’i fuu",
+        "Mawningo: waylugo, feftugo, e mahugo dow kuugal ngal ngam huune fuu, koo ngam njulaaku"
+      ],
+      "conditions": [
+        "Innde: sey a limta innde mo mari kuugal ngal, a hokki linki licence man, kade a holli to a wayli kuugal ngal",
+        "ShareAlike: to a wayli, a fefti, koo a mahi dow kuugal ngal, sey a saaka kuugal mada dow licence gooto e ngal arandewal"
+      ],
+      "notices": [
+        "A jabaama to a huutiniri kuune de walaa ley licence koo to sariya hokki ma laawol.",
+        "Walaa alkawal gootowal ngal hokkataa. Licence man hokkataa ma kowuuji fuu ko njiɗ-ɗa waɗugo.",
+        "Nde kuugal ngal mahata, binndoowo huutiniri Claude, ChatGPT, e Gemini ngam ‘vibe coding’. Kuune fuu e binndol ngol laari, binndoowo man woni hakkilo dow maaji."
+      ]
+    }
+  }
+}

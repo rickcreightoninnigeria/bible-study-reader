@@ -1,0 +1,206 @@
+{
+  "chapters":[
+    {
+      "chapterNumber":1,
+      "chapterTitle" :"Chapter One Title",
+      "elements"     :[
+        {
+          "_comment"     :"--- TEXT ELEMENTS ---",
+          "elementId"    :"ch01-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This is the chapter introduction. It sets the scene before the first Bible question. It should be engaging and draw the reader into the chapter theme. It can contain <b>bold</b> or <em>italic</em> text.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"This is a bridge paragraph. It connects two sections of questions, provides context, or develops a theme. It can span multiple sentences and contains <b>bold</b> or <em>italic</em> text as needed.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el13",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"This is the chapter closing summary. It draws together the key themes of the chapter and points forward. It should be encouraging and leave the reader with something clear to hold on to.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "_comment"     :"--- HEADING ELEMENTS ---",
+          "elementId"    :"ch01-el07",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A New Section Heading",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el11",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Personal Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "_comment"     :"--- BIBLE PASSAGE ---",
+          "elementId"    :"ch01-el02",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 3:16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>16</sup>For this is the way God loved the world: he gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "_comment"     :"--- REPEAT ELEMENT (reference to a previously defined elementId) ---",
+          "elementId"    :"ch01-el05",
+          "repeatElement":"ch01-el02"
+        },
+
+        {
+          "_comment"         :"--- QUESTION ELEMENTS ---",
+          "_comment2"        :"Subtype omitted: plain question with no header or reflection label",
+          "elementId"        :"ch01-el03",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does this verse tell us about God's motivation in sending his Son?",
+          "linkedPassage"    :"John 3:16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "_comment"         :"Subtype 'standard': explicit standard question — functionally identical to no-subtype but named",
+          "elementId"        :"ch01-el15",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What does Paul mean by 'righteousness'?",
+          "linkedPassage"    :"Romans 1:17",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "deeper"           :{
+            "label"            :"Go deeper …",
+            "question"         :"How does Paul's understanding of righteousness differ from the way the word is used in everyday speech today?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection…",
+            "bottomPadding"    :"normal"
+          },
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "_comment"         :"Subtype 'header': question with a visible section header above it",
+          "elementId"        :"ch01-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "format"           :"HTML",
+          "header"           :"Header text goes here",
+          "question"         :"What does this verse tell us about God's motivation in sending his Son?",
+          "linkedPassage"    :"John 3:16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "_comment"         :"Subtype 'reflection': personal reflection question, typically at end of chapter",
+          "elementId"        :"ch01-el12",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What is one thing from this chapter you want to take away and act on this week?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "_comment"     :"--- CALLOUT ELEMENTS ---",
+          "_comment2"    :"Subtype 'misunderstanding': question shown first, answer revealed on tap. Answer stored separately in top-level qaCallouts array (keyed by elementId).",
+          "elementId"    :"ch01-el08",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"Grace",
+          "question"     :"What do you understand by the word <b>grace</b>? Think about it before tapping 'Find out'.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "_comment"     :"Subtype 'general': expandable callout with answer inline (not in qaCallouts). Used for long Bible readings, definitions, or supplementary content.",
+          "elementId"    :"ch01-el14",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Genesis 1:1-2:3",
+          "question"     :"It's worth reading the whole passage before you begin...",
+          "answer"       :"<p><sup>1</sup>In the beginning God created the heavens and the earth.</p><p><sup>2</sup>Now the earth was without shape and empty, and darkness was over the surface of the watery deep, but the Spirit of God was moving over the surface of the water.</p><br><br><p style='text-align: right; font-size: 0.8em;'><a href='https://www.biblegateway.com/passage/?search=Genesis+1&version=NET'>(NET - see context ↗)</a></p>",
+          "buttonText"   :"Read passage ➡",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "_comment"     :"--- IMAGE ---",
+          "elementId"    :"ch01-el09",
+          "type"         :"image",
+          "src"          :"",
+          "alt"          :"A descriptive caption for accessibility",
+          "fallback"     :"🖼️",
+          "align"        :"full",
+          "width"        :"100",
+          "caption"      :"An optional caption shown below the image.",
+          "format"       :"plainText",
+          "base64"       :"",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "_comment"   :"--- LIKERT SCALE ---",
+          "elementId"  :"ch01-el10",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I have a clear understanding of what I believe.",
+            "I am currently growing in my faith.",
+            "I regularly spend time with God in prayer and Bible reading."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ]
+}

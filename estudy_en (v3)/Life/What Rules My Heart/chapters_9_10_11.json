@@ -1,0 +1,1172 @@
+{
+  "chapters":[
+    {
+      "chapterNumber":9,
+      "chapterTitle" :"Career, Work & Success",
+      "elements"     :[
+        {
+          "elementId"    :"ch09-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>When first things are put first, second things are not suppressed but increased. But when career becomes first, all else suffers, including our relationship with God.<cite>— C.S. Lewis</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch09-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotation? (Do you like it or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Hard work, career, and success are some of the most seductive idols because they can masquerade as virtues.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 12:15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>Then he said to them, “Watch out and guard yourself from all types of greed, because one’s life does not consist in the abundance of his possessions.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch09-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Success is good; but why must we be careful about what we aim for?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 12:15"
+        },
+
+        {
+          "elementId"    :"ch09-el06",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Career & Work Gone Wrong",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ecclesiastes 2:11 and 4:4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>11</sup>Yet when I reflected on everything I had accomplished and on all the effort that I had expended to accomplish it, I concluded: “Everything is futile – like chasing the wind! There is nothing of lasting value on earth.” … <sup>4</sup>Then I considered all the skillful work that is done: Surely it is nothing but competition between one person and another. This also is futile – like chasing the wind!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ecclesiastes+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch09-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Isaiah 55:2",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>Why pay money for something that will not nourish you? Why spend your hard-earned money on something that will not satisfy? Listen carefully to me and eat what is nourishing! Enjoy fine food!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Isaiah+55&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch09-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 12:20-21",
+          "translation"  :"NET",
+          "passageText"  :"<sup>20</sup>But God said to him, ‘You fool! This very night your life will be demanded back from you, but who will get what you have prepared for yourself?’ <sup>21</sup>So it is with the one who stores up riches for himself, but is not rich toward God.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch09-el10",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some of the ways career and work can go wrong?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Ecclesiastes 2:11 and 4:4, Isaiah 55:2, Luke 12:20-21"
+        },
+
+        {
+          "elementId"    :"ch09-el11",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Work is a blessing, but when it becomes your all-consuming passion it has become your god. A job or career can be a calling, but when it becomes your identity, it has become your idol. You place your trust in your own efforts, instead of in God. Your career should never be the ultimate focus of your life. If that happens, even a good career can become a cruel tyrant that consumes all your time and energy without leaving space for God — or those God would have you serve.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el12",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Success Gone Astray",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 9:25",
+          "translation"  :"NET",
+          "passageText"  :"<sup>25</sup>For what does it benefit a person if he gains the whole world but loses or forfeits himself?",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+9&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch09-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Psalm 49:16-17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>16</sup>Do not be afraid when a man becomes rich, when the splendor of his house increases. <sup>17</sup>For he will take nothing with him when he dies; his splendor will not go down with him.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+49&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch09-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Revelation 3:17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>Because you say, “I am rich and have acquired great wealth, and need nothing,” but do not realize that you are wretched, pitiful, poor, blind, and naked,",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Revelation+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch09-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some of the ways success can go wrong?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 9:25, Psalm 49:16-17, Revelation 3:17"
+        },
+
+        {
+          "elementId"    :"ch09-el17",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The idol of success promises much but delivers little compared to the eternal riches of knowing Christ. We need to remember that what God counts as success is quite different from what the world values. Success in the world’s terms can blind you, by making false promises of meaning, significance, and self-worth, which takes your eyes off Christ, and can lead you to compromise your faith and values.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el18",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"A Better Way",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 8:17-18",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>Be careful not to say, ‘My own ability and skill have gotten me this wealth.’ <sup>18</sup>You must remember the Lord your God, for he is the one who gives the ability to get wealth; if you do this he will confirm his covenant that he made by oath to your ancestors, even as he has to this day.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+8&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch09-el20",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Proverbs 23:4-5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>Do not wear yourself out to get rich; be wise enough to restrain yourself. <sup>5</sup>When you gaze upon riches, they are gone, for they surely make wings for themselves and fly off into the sky like an eagle!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Proverbs+23&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch09-el21",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jeremiah 9:23-24",
+          "translation"  :"NET",
+          "passageText"  :"<sup>23</sup>The Lord says, “Let not the wise man boast of his wisdom. Let not the mighty man boast of his might. Let not the rich man boast of his riches. <sup>24</sup>Instead, let the one who boasts boast about this: that he understands and knows me. For I, the Lord, act with faithful love, justice, and righteousness on the earth. This kind of behavior pleases me,” says the Lord.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jeremiah+9&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch09-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What should we do instead?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Deuteronomy 8:17-18, Proverbs 23:4-5, Jeremiah 9:23-24"
+        },
+
+        {
+          "elementId"    :"ch09-el23",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"The pursuit of career, work, or success can become a form of self-worship, stealing us away from worship of God.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el24",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el25",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Complete the idol awareness scale first, then answer these questions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch09-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Overall, how much do you think you are at risk of your career, work, or success becoming a serious idol for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch09-el27",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Does your valuing of your career, work, or success give you any further insight into what your deepest idols are?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"    :"ch09-el28h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch09-el28",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about my career, work, or successes and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on my career, work, or successes.",
+            "When my prayers for my career, work, or success are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with my career, work, or successes.",
+            "My career, work, or success is the thing I’m most afraid of losing.",
+            "When life gets out of hand, I turn to my career, work, or success for comfort.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of my career, work, or success.",
+            "If my career, work, or success was taken away, my life would feel unbearable or meaningless.",
+            "I’m really proud of what I have accomplished in my career, work, or other successes.",
+            "Others have told me I sometimes seem obsessed with my career, work, or successes."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch09-el30h",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Deep Idol’ Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch09-el30",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I value my career, work, or success because I can use it to gain power over others.",
+            "I value my career, work, or success because I can use it to gain the approval of others.",
+            "I value my career, work, or success because I can use it to gain comfort and pleasure.",
+            "I value my career, work, or success because it brings me security and control over my life."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":10,
+      "chapterTitle" :"Status",
+      "elements"     :[
+        {
+          "elementId"    :"ch10-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>The pursuit of status in the church can be as dangerous as the pursuit of status in the world. Both can draw us away from Christ.<cite>— Dietrich Bonhoeffer</cite></blockquote><blockquote>If we seek status among men, we will miss the far greater privilege of finding our identity in Christ alone.<cite>— Anon</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch10-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Status becomes an idol when we value our reputation more than the righteousness of Christ and when we want to boost our importance.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Galatians 6:3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>For if anyone thinks he is something when he is nothing, he deceives himself.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Galatians+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch10-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does the Bible say about valuing ourselves the wrong way?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Galatians 6:3"
+        },
+
+        {
+          "elementId"    :"ch10-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Status idolatry creates an illusion. It promises satisfaction but leaves us empty, as true fulfilment is found only in surrender to Christ.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 20:26-28",
+          "translation"  :"NET",
+          "passageText"  :"<sup>26</sup>It must not be this way among you! Instead whoever wants to be great among you must be your servant, <sup>27</sup>and whoever wants to be first among you must be your slave – <sup>28</sup>just as the Son of Man did not come to be served but to serve, and to give his life as a ransom for many.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+20&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch10-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 18:14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>I tell you that this man – not the other – went down to his home justified. For everyone who exalts himself will be humbled, but the one who humbles himself will be exalted.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+18&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch10-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Corinthians 1:28-29",
+          "translation"  :"NET",
+          "passageText"  :"<sup>28</sup>God chose what is low and despised in the world, what is regarded as nothing, to set aside what is regarded as something, <sup>29</sup>so that no one can boast in his presence.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Corinthians+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch10-el10",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What reversal of status does Jesus promise in his kingdom?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 20:26-28, Luke 18:14, 1 Corinthians 1:28-29"
+        },
+
+        {
+          "elementId"    :"ch10-el11",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The gospel calls us to turn our values upside-down, so that pursuit of status is replaced by the pursuit of humility and service.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Isaiah 66:2",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>I made all these things; that is how they came to be,” says the Lord. I will show special favor to the humble and contrite, who respect what I say.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Isaiah+66&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch10-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Philippians 2:3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>Instead of being motivated by selfish ambition or vanity, each of you should, in humility, be moved to treat one another as more important than yourself.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Philippians+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch10-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Peter 5:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>In the same way, you who are younger, be subject to the elders. And all of you, clothe yourselves with humility toward one another, because God opposes the proud but gives grace to the humble.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Peter+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch10-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is the place of humility, rather than status, in discipleship?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Isaiah 66:2, Philippians 2:3, 1 Peter 5:5"
+        },
+
+        {
+          "elementId"    :"ch10-el16",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The love of status is a real threat to humility. It shifts our focus from God’s glory to our own. We forget that God does not measure us by our achievements, but by our faithfulness to Him.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 23:5-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>They do all their deeds to be seen by people, for they make their phylacteries wide and their tassels long. <sup>6</sup>They love the place of honor at banquets and the best seats in the synagogues <sup>7</sup>and elaborate greetings in the marketplaces, and to have people call them ‘Rabbi.’ <sup>8</sup>But you are not to be called ‘Rabbi,’ for you have one Teacher and you are all brothers. <sup>9</sup>And call no one your ‘father’ on earth, for you have one Father, who is in heaven. <sup>10</sup>Nor are you to be called ‘teacher,’ for you have one teacher, the Christ. <sup>11</sup>The greatest among you will be your servant. <sup>12</sup>And whoever exalts himself will be humbled, and whoever humbles himself will be exalted.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+23&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch10-el18",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"If we listen to Jesus, why should we be reluctant to accept titles?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 23:5-12"
+        },
+
+        {
+          "elementId"    :"ch10-el19",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Titles often inflate egos. Seeking titles can distract us from what God values most. They are conferred by other people, and speak of what our world values. A love for titles does not speak clearly of a humble heart that has learned the lesson of Jesus’ teaching.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el20",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"2 Corinthians 10:18",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>For it is not the person who commends himself who is approved, but the person the Lord commends.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch10-el21",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Psalm 75:6-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>For victory does not come from the east or west, or from the wilderness. <sup>7</sup>For God is the judge; he brings one down and exalts another.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+75&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch10-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What really matters in terms of status?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Corinthians 10:18, Psalm 75:6-7"
+        },
+
+        {
+          "elementId"    :"ch10-el23",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Romans 12:3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>For by the grace given to me I say to every one of you not to think more highly of yourself than you ought to think, but to think with sober discernment, as God has distributed to each of you a measure of faith.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Romans+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch10-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How should we think of ourselves?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Romans 12:3"
+        },
+
+        {
+          "elementId"    :"ch10-el25",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"The idol of status blinds us to the truth that our value comes from being made in the image of God, not from our worldly achievements.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el26",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el27",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Complete the idol awareness scale first, then answer these questions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch10-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Overall, how much do you think you are at risk of your status becoming a serious idol for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch10-el29",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Does your valuing of your status give you any further insight into what your deepest idols are?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"    :"ch10-el30h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch10-el30",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about my status and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on my status.",
+            "When my prayers for status are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with my status.",
+            "My status is the thing I’m most afraid of losing.",
+            "When life gets out of hand, I turn to my status for comfort.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of status.",
+            "If my status was taken away, my life would feel unbearable or meaningless.",
+            "I’m really proud of the status I have attained.",
+            "Others have told me I sometimes seem obsessed with my status."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch10-el32h",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Deep Idol’ Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch10-el32",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I value status because I can use it to gain power over others.",
+            "I value status because I can use it to gain the approval of others.",
+            "I value status because I can use it to gain comfort and pleasure.",
+            "I value status because it brings me security and control over my life."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":11,
+      "chapterTitle" :"Ministry",
+      "elements"     :[
+        {
+          "elementId"    :"ch11-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>It is possible to become so consumed with Christian ministry that we lose sight of the One we are meant to serve.<cite>— Jonathan Edwards</cite></blockquote><blockquote>The subtle temptation in Christian ministry is to focus on the work of the kingdom rather than the King Himself.<cite>— Dallas Willard</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch11-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Christian ministry is a gift, but like any gift it becomes an idol when we pursue it for our own glory rather than God’s.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 7:22-23",
+          "translation"  :"NET",
+          "passageText"  :"<sup>22</sup>On that day, many will say to me, ‘Lord, Lord, didn’t we prophesy in your name, and in your name cast out demons and do many powerful deeds?’ <sup>23</sup>Then I will declare to them, ‘I never knew you. Go away from me, you lawbreakers!’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+7&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el05",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Acts 8:18-20",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>When Simon saw that the Spirit was given when the apostles laid their hands on people, he offered them money, <sup>19</sup>saying, “Give me this power too, so that everyone I place my hands on may receive the Holy Spirit.” <sup>20</sup>But Peter said to him, “May your silver perish with you, because you thought you could acquire God’s gift with money!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Acts+8&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Galatians 6:12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>12</sup>Those who want to make a good showing in external matters are trying to force you to be circumcised. They do so only to avoid being persecuted for the cross of Christ.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Galatians+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Philippians 1:15-17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>Some, to be sure, are preaching Christ from envy and rivalry, but others from goodwill. <sup>16</sup>The latter do so from love, because they know that I am placed here for the defense of the gospel. <sup>17</sup>The former proclaim Christ from selfish ambition, not sincerely, because they think they can cause trouble for me in my imprisonment.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Philippians+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch11-el08",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some of the ways ministry can go badly wrong?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 7:22-23, Acts 8:18-20, Galatians 6:12, Philippians 1:15-17"
+        },
+
+        {
+          "elementId"    :"ch11-el09",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Even the most selfless acts of ministry can arise from idolatry if we are doing them for human praise rather than God’s glory.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 10:41-42",
+          "translation"  :"NET",
+          "passageText"  :"<sup>41</sup>But the Lord answered her, “Martha, Martha, you are worried and troubled about many things, <sup>42</sup>but one thing is needed. Mary has chosen the best part; it will not be taken away from her.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Corinthians 3:12-13",
+          "translation"  :"NET",
+          "passageText"  :"<sup>12</sup>If anyone builds on the foundation with gold, silver, precious stones, wood, hay, or straw, <sup>13</sup>each builder’s work will be plainly seen, for the Day will make it clear, because it will be revealed by fire. And the fire will test what kind of work each has done.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Corinthians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"2 Corinthians 13:1-3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>This is the third time I am coming to visit you. By the testimony of two or three witnesses every matter will be established. <sup>2</sup>I said before when I was present the second time and now I say in advance when absent to those who sinned previously and to all the rest: if I come again, I will not spare anyone, <sup>3</sup>since you are demanding proof that Christ is speaking through me. He is not weak toward you but is powerful among you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+13&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Revelation 2:4-5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>But I have this against you: You have departed from your first love! <sup>5</sup>Therefore, remember from what high state you have fallen and repent! Do the deeds you did at the first; if not, I will come to you and remove your lampstand from its place – that is, if you do not repent.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Revelation+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch11-el14",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some more subtle ways ministry can go wrong?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 10:41-42, 1 Corinthians 3:12-13, 2 Corinthians 13:1-3, Revelation 2:4-5"
+        },
+
+        {
+          "elementId"    :"ch11-el15",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Danger comes when we find our worth, security or identity in the ministry itself rather than in God. Burnout lies along that path.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el16",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Proverbs 16:2",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>All a person’s ways seem right in his own opinion, but the Lord evaluates the motives.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Proverbs+16&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 6:1 and 23:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>“Be careful not to display your righteousness merely to be seen by people. Otherwise you have no reward with your Father in heaven. … <sup>5</sup>They do all their deeds to be seen by people, for they make their phylacteries wide and their tassels long.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 12:43",
+          "translation"  :"NET",
+          "passageText"  :"<sup>43</sup>For they loved praise from men more than praise from God.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"2 Corinthians 5:11-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>11</sup>Therefore, because we know the fear of the Lord, we try to persuade people, and we are well known to God, and I hope we are well known to your consciences too. <sup>12</sup>We are not trying to commend ourselves to you again, but are giving you an opportunity to be proud of us, so that you may be able to answer those who are proud about outward appearance and not about what is in the heart.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch11-el20",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why is it dangerous to focus only on what can be seen in ministry?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Proverbs 16:2, Matthew 6:1 and 23:5, John 12:43, 2 Corinthians 5:11-12"
+        },
+
+        {
+          "elementId"    :"ch11-el21",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Ministry is a result of intimacy with God, not a substitute for it.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el22",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Mark 10:42-45",
+          "translation"  :"NET",
+          "passageText"  :"<sup>42</sup>Jesus called them and said to them, “You know that those who are recognized as rulers of the Gentiles lord it over them, and those in high positions use their authority over them. <sup>43</sup>But it is not this way among you. Instead whoever wants to be great among you must be your servant, <sup>44</sup>and whoever wants to be first among you must be the slave of all. <sup>45</sup>For even the Son of Man did not come to be served but to serve, and to give his life as a ransom for many.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Mark+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el23",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 3:27-30",
+          "translation"  :"NET",
+          "passageText"  :"<sup>27</sup>John replied, “No one can receive anything unless it has been given to him from heaven. <sup>28</sup>You yourselves can testify that I said, ‘I am not the Christ,’ but rather, ‘I have been sent before him.’ <sup>29</sup>The one who has the bride is the bridegroom. The friend of the bridegroom, who stands by and listens for him, rejoices greatly when he hears the bridegroom’s voice. This then is my joy, and it is complete. <sup>30</sup>He must become more important while I become less important.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el24",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Acts 20:17-35",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>From Miletus he sent a message to Ephesus, asking the elders of the church to come to him. <sup>18</sup>When they arrived, he said to them, “You yourselves know how I lived the whole time I was with you, from the first day I set foot in the province of Asia, <sup>19</sup>serving the Lord with all humility and with tears, and with the trials that came upon me through the plots of the Jews. <sup>20</sup>You know that I did not hold back from proclaiming to you anything that would be helpful, and from teaching you publicly and from house to house, <sup>21</sup>testifying to both Jews and Greeks about repentance toward God and faith in our Lord Jesus. <sup>22</sup>And now, compelled by the Spirit, I am going to Jerusalem without knowing what will happen to me there, <sup>23</sup>except that the Holy Spirit warns me in town after town that imprisonment and persecutions are waiting for me. <sup>24</sup>But I do not consider my life worth anything to myself, so that I can finish my task and the ministry that I received from the Lord Jesus, to testify to the good news of God’s grace. <sup>25</sup>And now I know that none of you among whom I went around proclaiming the kingdom will see me again. <sup>26</sup>Therefore I declare to you today that I am innocent of the blood of you all. <sup>27</sup>For I did not hold back from announcing to you the whole purpose of God. <sup>28</sup>Watch out for yourselves and for all the flock of which the Holy Spirit has made you overseers, to shepherd the church of God that he obtained with the blood of his own Son. <sup>29</sup>I know that after I am gone fierce wolves will come in among you, not sparing the flock. <sup>30</sup>Even from among your own group men will arise, teaching perversions of the truth to draw the disciples away after them. <sup>31</sup>Therefore be alert, remembering that night and day for three years I did not stop warning each one of you with tears. <sup>32</sup>And now I entrust you to God and to the message of his grace. This message is able to build you up and give you an inheritance among all those who are sanctified. <sup>33</sup>I have not desired anyone’s silver or gold or clothing. <sup>34</sup>You yourselves know that these hands of mine provided for my needs and the needs of those who were with me. <sup>35</sup>By all these things, I have shown you that by working in this way we must help the weak, and remember the words of the Lord Jesus that he himself said, ‘It is more blessed to give than to receive.’”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Acts+20&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch11-el25",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Colossians 3:23",
+          "translation"  :"NET",
+          "passageText"  :"<sup>23</sup>Whatever you are doing, work at it with enthusiasm, as to the Lord and not for people,",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Colossians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch11-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What should ministry be like?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Mark 10:42-45, John 3:27-30, Acts 20:17-35, Colossians 3:23"
+        },
+
+        {
+          "elementId"    :"ch11-el27",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"Genuine ministry flows out of love for Christ and love for others.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el28",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el29",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Complete the idol awareness scale first, then answer these questions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch11-el30",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Overall, how much do you think you are at risk of your ministry becoming a serious idol for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch11-el31",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Does your valuing of your ministry give you any further insight into what your deepest idols are?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"    :"ch11-el32h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch11-el32",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about my ministry and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on my ministry.",
+            "When my prayers for my ministry are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with my ministry.",
+            "My ministry is the thing I’m most afraid of losing.",
+            "When life gets out of hand, I turn to my ministry, and what I am doing there, for comfort.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of my ministry.",
+            "If my ministry was taken away, my life would feel unbearable or meaningless.",
+            "I’m really proud of my accomplishments in my ministry.",
+            "Others have told me I sometimes seem obsessed with my ministry."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch11-el34h",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Deep Idol’ Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch11-el34",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I value my ministry because I can use it to gain power over others.",
+            "I value my ministry because I can use it to gain the approval of others.",
+            "I value my ministry because I can use it to gain comfort and pleasure.",
+            "I value my ministry because it brings me security and control over my life."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ]
+}

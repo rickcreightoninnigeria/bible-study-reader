@@ -1,0 +1,396 @@
+{
+  "chapters":[
+    {
+      "chapterNumber":15,
+      "chapterTitle" :"Set your heart on things above",
+      "elements"     :[
+        {
+          "elementId"    :"ch15-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>Put first things first and we get second things thrown in: put second things first and we lose both first and second things.<cite>— C.S. Lewis</cite></blockquote><blockquote>God is most glorified in us when we are most satisfied in Him.<cite>— John Piper</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch15-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"The point of your life is to point to Jesus. Get that right and a thousand problems are solved all at once.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 6:33",
+          "translation"  :"NET",
+          "passageText"  :"<sup>33</sup>But above all pursue his kingdom and righteousness, and all these things will be given to you as well.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch15-el05",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 23:37-40",
+          "translation"  :"NET",
+          "passageText"  :"<sup>37</sup>“O Jerusalem, Jerusalem, you who kill the prophets and stone those who are sent to you! How often I have longed to gather your children together as a hen gathers her chicks under her wings, but you would have none of it! <sup>38</sup>Look, your house is left to you desolate! <sup>39</sup>For I tell you, you will not see me from now until you say, ‘Blessed is the one who comes in the name of the Lord!’”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+23&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch15-el06",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is the right way to order our priorities and loves?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 6:33, Matthew 23:37-40"
+        },
+
+        {
+          "elementId"    :"ch15-el07",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"We are to love God alone as God, and we are to love other created goods as good gifts to us from our Creator. He does not call us to renounce created good — not unless our hearts are enslaved to idolatry of them — He calls us to put first things first.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Psalm 37:4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>Then you will take delight in the Lord, and he will answer your prayers.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+37&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch15-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What follows from delighting in the Lord?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Psalm 37:4"
+        },
+
+        {
+          "elementId"    :"ch15-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Mark 10:21-22",
+          "translation"  :"NET",
+          "passageText"  :"<sup>21</sup>As Jesus looked at him, he felt love for him and said, “You lack one thing. Go, sell whatever you have and give the money to the poor, and you will have treasure in heaven. Then come, follow me.” <sup>22</sup>But at this statement, the man looked sad and went away sorrowful, for he was very rich.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Mark+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch15-el11",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What might Jesus call us to, if we do not repent of our idols?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Mark 10:21-22"
+        },
+
+        {
+          "elementId"    :"ch15-el12",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"When we make God our greatest delight, our desires will align with His will for our lives, and we can enjoy his good gifts. If we insist on making his good gifts into idols, the kindest thing God can do is to take them away from us.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Colossians 3:1-2",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Therefore, if you have been raised with Christ, keep seeking the things above, where Christ is, seated at the right hand of God. <sup>2</sup>Keep thinking about things above, not things on the earth,",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Colossians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch15-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 16:24-25",
+          "translation"  :"NET",
+          "passageText"  :"<sup>24</sup>Then Jesus said to his disciples, “If anyone wants to become my follower, he must deny himself, take up his cross, and follow me. <sup>25</sup>For whoever wants to save his life will lose it, but whoever loses his life for my sake will find it.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+16&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch15-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does putting God and Jesus first in life look like?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Colossians 3:1-2, Matthew 16:24-25"
+        },
+
+        {
+          "elementId"    :"ch15-el16",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have Jesus, you have everything you need. If you don’t have Jesus, then no matter what you have, it’s not enough.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Isaiah 26:3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>You keep completely safe the people who maintain their faith, for they trust in you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Isaiah+26&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch15-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jeremiah 17:7-8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>7</sup>My blessing is on those who trust in me, who put their confidence in me. <sup>8</sup>They will be like a tree planted near a stream whose roots spread out toward the water. It has nothing to fear when the heat comes. Its leaves are always green. It has no need to be concerned in a year of drought. It does not stop producing fruit.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jeremiah+17&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch15-el19",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does God promise to those who seek first his kingdom?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Isaiah 26:3, Jeremiah 17:7-8"
+        },
+
+        {
+          "elementId"    :"ch15-el20",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Aim at heaven and you will get earthly blessings too; aim at the earth and you will get neither. If we seek our joy in Christ, then our joy can never be taken away. If we seek our joy in lesser things, we will always fear the loss of those things. It is in dying to self that we find the true riches of the kingdom. God always gives His best to those who leave the choice with Him.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el21",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 15:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>I am the vine; you are the branches. The one who remains in me – and I in him – bears much fruit, because apart from me you can accomplish nothing.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+15&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch15-el22",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 6:35",
+          "translation"  :"NET",
+          "passageText"  :"<sup>35</sup>Jesus said to them, “I am the bread of life. The one who comes to me will never go hungry, and the one who believes in me will never be thirsty.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch15-el23",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What can help us get this right?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"John 15:5, John 6:35"
+        },
+
+        {
+          "elementId"    :"ch15-el24",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Hebrews 12:2",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>keeping our eyes fixed on Jesus, the pioneer and perfecter of our faith. For the joy set out for him he endured the cross, disregarding its shame, and has taken his seat at the right hand of the throne of God.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Hebrews+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch15-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How should we go forward in life, to keep away from idols?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Hebrews 12:2"
+        },
+
+        {
+          "elementId"    :"ch15-el26",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el27",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Complete the idol awareness scale first, then answer these questions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch15-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What ambitions, desires or idols compete with your love for God?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch15-el29",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How can you set your heart on God, instead of these things?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"    :"ch15-el30h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Worship-of-God Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch15-el30",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about God (Father, Son and Spirit) and those thoughts bring me great joy.",
+            "I spend my best efforts (and/or money, time and energy) on God and his purposes.",
+            "When my prayers for things I care about are unanswered I feel sad, but still confident in God.",
+            "Some of my strongest emotions are connected with God, and worshipping Him.",
+            "Knowing God is the thing I’m most afraid of losing.",
+            "When life gets out of hand, I turn to God for comfort.",
+            "I am not willing to sacrifice faithfulness to God or integrity even in pursuit of my most important dreams.",
+            "If my relationship with God was taken away, my life would feel unbearable or meaningless.",
+            "I genuinely see my accomplishments as gifts from God, for which I am thankful not proud.",
+            "Others have told me I sometimes seem obsessed with God."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch15-el32h",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Deep Idol’ Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch15-el32",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I value my faith in God because I can use it to gain power over others.",
+            "I value my faith in God because I can use it to gain the approval of others.",
+            "I value my faith in God because I can use it to gain comfort and pleasure.",
+            "I value my faith in God because it brings me security and control over my life."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ]
+}

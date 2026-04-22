@@ -1,0 +1,325 @@
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * chrome.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * All persistent "App Shell" elements that form the interface frame.
+ * These elements are present across chapters and pages.
+ *
+ * 01. Top nav         – Sticky header bar, nav buttons, progress bar
+ * 02. Chapter menu    – Full-screen chapter selector drawer
+ * 03. Save bar        – Fixed bottom Save / Share button bar
+ * 04. Chapter nav     – Prev / Next chapter buttons at foot of chapter
+ * 05. Page close btn  – Shared ✕ Close button used on non-chapter pages
+ * 06. Close animations – Rotation and squish feedback on all close buttons
+ *
+ * ── DARK MODE ───────────────────────────────────────────────────────────
+ * 07. Dark mode       – body.dark-mode overrides for all rules above
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ── 01. TOP NAV ────────────────────────────────────────────────────────── */
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--text);
+  color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  padding-top: env(safe-area-inset-top);
+  height: calc(52px + env(safe-area-inset-top));
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.nav-title {
+  display: flex;
+  flex: 1;
+  font-family: var(--font-stack-heading);
+  font-size: 15px;         /* UI chrome — stays px */
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-align: center;
+  opacity: 0.9;
+}
+.nav-btn {
+  background: none;
+  border: 1px solid rgba(245,240,232,0.25);
+  color: var(--surface);
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.2s;
+}
+.nav-btn:hover { background: rgba(245,240,232,0.12); }
+
+.progress-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px;
+  background: var(--accent-light);
+  /* Width is set dynamically by updateProgress() as the user fills answers */
+  transition: width 0.5s ease;
+}
+
+
+/* ── 02. CHAPTER MENU ───────────────────────────────────────────────────── */
+/* Full-screen overlay that drops down when the user taps "Contents ☰".
+   Toggled via the 'open' class added/removed by toggleMenu(). */
+
+.chapter-menu {
+  display: none;
+  position: fixed;
+  top: calc(52px + env(safe-area-inset-top)) !important;         /* forces below nav */
+  height: calc(100vh - (52px + env(safe-area-inset-top))) !important;
+  left: 0; right: 0; bottom: 0;
+  background: var(--text);
+  z-index: 95;
+  overflow-y: auto;
+  padding: 24px 20px;
+  animation: slideDown 0.25s ease;
+}
+.chapter-menu.open { display: block; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.menu-heading {
+  font-family: var(--font-stack-heading);
+  font-size: 11px;         /* UI chrome — stays px */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 16px;
+  padding-top: 8px;
+}
+.chapter-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(245,240,232,0.08);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.chapter-item:hover { opacity: 0.8; }
+.chapter-num {
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  color: var(--accent);
+  min-width: 24px;
+}
+.chapter-name {
+  font-family: var(--main-font-family);
+  font-size: 15px;         /* UI chrome — stays px */
+  color: var(--surface);
+  flex: 1;
+}
+.chapter-check {
+  font-size: 12px;         /* UI chrome — stays px */
+  color: var(--success);
+}
+
+
+/* ── 03. SAVE BAR ───────────────────────────────────────────────────────── */
+/* Fixed bar pinned to the bottom of the viewport.
+   Fades into the parchment background via the gradient so it looks
+   like it floats above the content rather than cutting it off.
+   max-width keeps buttons centred on wider screens. */
+
+.save-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  padding: 10px 12px 5px 12px;
+  /* Uses safe-area-inset-bottom plus extra padding for home-indicator devices */
+  padding-bottom: calc(env(safe-area-inset-bottom) + 5px);
+  background: linear-gradient(to top, var(--surface-mid) 70%, transparent);
+  display: flex;
+  gap: 8px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.save-btn {
+  flex: 1;
+  background: var(--text);
+  color: var(--surface);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 6px;
+  font-family: var(--main-font-family);
+  font-size: 12px;         /* UI chrome — stays px */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.save-btn:active { transform: scale(0.98); }
+.save-btn.saved  { background: var(--success); }
+.save-btn span   { font-size: 14px; }   /* emoji — stays px */
+
+
+/* ── 04. CHAPTER NAV ────────────────────────────────────────────────────── */
+/* Prev / Next buttons at the foot of each chapter. */
+
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px var(--content-margin) 0;
+  padding-bottom: 8px;
+  gap: 10px;
+}
+.chapter-nav-btn {
+  flex: 1;
+  background: var(--text);
+  color: var(--surface);
+  border: none;
+  border-radius: 10px;
+  padding: 14px 10px;
+  font-family: var(--font-stack-heading);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-align: center;
+}
+.chapter-nav-btn:active { transform: scale(0.98); }
+.chapter-nav-btn:hover  { background: var(--text-secondary); }
+.chapter-nav-btn.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+.chapter-nav-btn.secondary:hover { background: var(--surface-mid); }
+
+
+/* ── 05. PAGE CLOSE BUTTON ──────────────────────────────────────────────── */
+/* Shared ✕ Close button used on non-chapter full-screen pages. */
+
+.page-close-bar {
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px 24px;
+}
+.page-close-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.page-close-btn:hover {
+  background: var(--surface-mid);
+  color: var(--text);
+}
+
+
+/* ── 06. CLOSE BUTTON ANIMATIONS ────────────────────────────────────────── */
+/* Rotation and squish feedback shared across all close buttons:
+   page-close-btn, verse-modal-close, modal-close-footer-btn, qa-modal-close. */
+
+/* Base: the ✕ icon span needs inline-block for rotation to work */
+.page-close-btn span,
+.verse-modal-close span,
+.modal-close-footer-btn span,
+.qa-modal-close span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* 1. Rotation — triggered by hover (desktop) or tap (Android) */
+.page-close-btn:hover span,
+.page-close-btn:active span,
+.verse-modal-close:hover span,
+.verse-modal-close:active span,
+.modal-close-footer-btn:hover span,
+.modal-close-footer-btn:active span,
+.qa-modal-close:hover span,
+.qa-modal-close:active span {
+  transform: rotate(90deg);
+}
+
+/* 2. Squish — visual feedback for finger taps on Android */
+.page-close-btn:active,
+.verse-modal-close:active,
+.modal-close-footer-btn:active,
+.qa-modal-close:active {
+  transform: scale(0.95);
+  background-color: var(--surface-mid);
+  transition: transform 0.1s ease;
+}
+
+/* 3. Minimum touch target size — Android accessibility standard (44px) */
+.verse-modal-close,
+.qa-modal-close {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ── 07. DARK MODE ──────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════
+   07. DARK MODE
+   body.dark-mode overrides for all rules in this file, gathered here.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Top nav ──
+   .top-nav, .nav-btn, .nav-title: no overrides needed — they already use
+   --text and --surface tokens which remain legible on dark backgrounds. */
+
+/* ── Chapter menu ── */
+body.dark-mode .chapter-menu {
+  background: var(--dm-base);
+}
+body.dark-mode .chapter-item {
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+
+/* ── Toast / celebration toast ──
+   No overrides needed — success green and accent gold both read well
+   on dark backgrounds without adjustment. */
+
+/* ── Save bar ──
+   No overrides needed — gradient uses --surface-mid token; dark mode
+   override for that token is handled in base.css (body.dark-mode). */
+
+/* ── Chapter nav ── */
+body.dark-mode .chapter-nav-btn.secondary {
+  border-color: var(--dm-border);
+  color: var(--text-faint);
+}
+body.dark-mode .chapter-nav-btn.secondary:hover {
+  background: var(--dm-raised);
+}
+
+/* ── Page close button ── */
+body.dark-mode .page-close-btn {
+  border-color: var(--dm-border);
+  color: var(--dm-text-faint);
+}
+body.dark-mode .page-close-btn:hover {
+  background: var(--dm-raised);
+  color: var(--dm-text-mid);
+}

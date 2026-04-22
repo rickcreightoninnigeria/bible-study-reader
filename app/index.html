@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  ${meta.title}
+  A ten-session Bible study app
+  Author: Rick Creighton, 2026. Licensed CC BY-SA 4.0.
+
+  FILE OVERVIEW
+  ─────────────
+  This is a single-file mobile-first web app (HTML + CSS + JS in one file).
+  It is designed to be delivered as a web page or wrapped in a WebView for
+  Android/iOS. All state (answers, settings, progress) is persisted to
+  localStorage under the 'nnj_' key prefix.
+
+  MAJOR SECTIONS (in order)
+  ──────────────────────────
+  1. <head>   – Fonts, CSS custom properties (design tokens), all CSS rules
+  2. <body>   – Static HTML shell: top nav, chapter menu drawer, toast, main
+               content container, verse modal, QA modal, search overlay
+  3. <script> – All JavaScript:
+       a. Global constants – Font sizes, user-changeable settings
+       e. Modal functions  – openVerseModal, openQaModal, openQaModalFromElement, openNotesInfo, etc.
+       f. Star system      – toggleStar, getStarredQuestions, etc.
+       g. Settings         – SETTINGS_DEFAULTS, initSettings, saveSetting, etc.
+       i. Search           – Full-text search with scoring, synonyms, fuzzy
+                             matching, debouncing, and localStorage caching
+       k. State vars       – currentChapter, menuOpen, isNonChapterPage
+       l. Render funcs     – renderMenu, renderTitlePage, renderChapter, etc.
+       m. Navigation       – goToChapter, closeMenu, closeNonChapterPage, etc.
+       n. Save / Share     – saveAnswers, shareAnswers, exportAllAnswers
+       o. Progress         – updateProgress, getChapterProgress, progress ring
+       p. Init block       – initSettings(), renderTitlePage(), event listeners
+       q. Swipe nav        – touchstart/touchend gesture handler
+       r. Scroll / vis     – saveLastPosition, visibilitychange handler
+       s. Clipboard        – Long-press-to-copy on answer fields
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">  <!-- viewport-fit=cover ensures the nav bar fills the iPhone notch area -->
+  <title>Bible Study Reader</title>
+  
+  <!-- ───── Fonts ─────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/01-fonts.css">
+
+  <!-- ───── CSS ───────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/02-variables.css">
+  <link rel="stylesheet" href="css/03-base.css">
+  <link rel="stylesheet" href="css/04-chrome.css">
+  <link rel="stylesheet" href="css/05a-components.cards.display.css">
+  <link rel="stylesheet" href="css/05b-components.cards.responses.css">
+  <link rel="stylesheet" href="css/05c-components.nav.css">
+  <link rel="stylesheet" href="css/05d-components.starred.css">
+  <link rel="stylesheet" href="css/06-overlays.css">
+  <link rel="stylesheet" href="css/07-pages.css">
+  <link rel="stylesheet" href="css/08-themes.css">
+  <!-- ───── FAVICON ───────────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" href="images/favicon.svg">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <div class="nav-btn-group">
+    <button class="nav-btn" id="navLibBtn"      onclick="navLibClick()"      title="Library">📚</button>
+    <button class="nav-btn" id="navSearchBtn"   onclick="navSearchClick()"   title="Search">🔍</button>
+    <button class="nav-btn" id="navProgressBtn" onclick="navProgressClick()" title="My Progress" style="display:none">📈</button>
+  </div>
+  <div class="nav-btn-group">
+    <div class="nav-title"><span id="header-title"> </span></div>
+  </div>
+  <div class="nav-btn-group">
+    <button class="nav-btn" id="navHowtoBtn"    onclick="navHowtoClick()"    title="How to Use" style="display:none">❓</button>
+    <button class="nav-btn" id="navSettingsBtn" onclick="renderSettings()">⚙</button>
+    <button class="nav-btn" onclick="toggleMenu()" id="menuBtn">☰</button>
+  </div>
+  <div class="progress-bar" id="progressBar"></div>
+</nav>
+
+<!-- CHAPTER MENU -->
+<div class="chapter-menu" id="chapterMenu">
+  <div class="menu-heading" id="menuHeading">Chapters</div>
+  <div id="menuList"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Answers saved</div>
+<div class="toast" id="validate-toast"></div>
+<div class="celebration-toast" id="celebrationToast"></div>
+
+<!-- MAIN -->
+<div class="content" id="mainContent"></div>
+
+<!-- LIKERT POPUP -->
+<div class="likert-popup-overlay" id="likertPopupOverlay" onclick="closeLikertPopup(event)">
+  <div class="likert-popup" id="likertPopup">
+    <div class="likert-popup-titlebar">
+      <span id="likertPopupTitle"></span>
+      <button class="likert-popup-close" onclick="closeLikertPopup()"><span>✕</span></button>
+    </div>
+    <div class="likert-popup-instruction" id="likertPopupInstruction"></div>
+    <div class="likert-popup-key" id="likertPopupKey"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeLikertPopup()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE MODAL -->
+<div class="verse-modal-overlay" id="verseModalOverlay" onclick="closeVerseModal(event)">
+  <div class="verse-modal" id="verseModal">
+    <div class="verse-modal-ref">
+      <span id="verseModalRef"></span>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="speak-btn" id="verseModalSpeakBtn" onclick="ttsSpeak(document.getElementById('verseModalText').innerText, this)" title="Read aloud"></button>
+        <button class="verse-modal-close" onclick="closeVerseModal()"><span>✕</span></button>
+      </div>
+    </div>
+    <div class="verse-modal-text" id="verseModalText"></div>
+    <div class="verse-modal-footer" id="verseModalFooter"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeVerseModal()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- QA CALLOUT MODAL -->
+<div class="qa-modal-overlay" id="qaModalOverlay" onclick="closeQaModal(event)">
+  <div class="qa-modal" id="qaModal">
+    <div class="qa-modal-eyebrow" id="qaModalEyebrow"></div>
+    <div class="qa-modal-term">
+      <span id="qaModalTerm"></span>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="speak-btn" id="qaModalSpeakBtn" onclick="ttsSpeak(document.getElementById('qaModalText').innerText, this)" title="Read aloud"></button>
+        <button class="qa-modal-close" onclick="closeQaModal()"><span>✕</span></button>
+      </div>
+    </div>
+    <div class="qa-modal-text" id="qaModalText"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeQaModal()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- DEEPER QUESTION MODAL -->
+<div class="deeper-modal-overlay" id="deeperModalOverlay" onclick="closeDeeperModal(event)">
+  <div class="deeper-modal" id="deeperModal">
+    <div class="deeper-modal-eyebrow">Going deeper</div>
+    <div class="deeper-modal-body" id="deeperModalBody"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeDeeperModal()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Info trigger modal (first-time help popups) -->
+<div id="info-modal-overlay" onclick="closeInfoModal(event)">
+  <div class="info-modal">
+    <div id="info-modal-title" class="modal-title"></div>
+    <div id="info-modal-body" class="modal-body"></div>
+    <div class="info-modal-footer">
+      <label class="info-modal-show-again">
+        <input type="checkbox" id="infoModalShowAgain" checked>
+        Show this again
+      </label>
+      <button class="modal-close-footer-btn" onclick="closeInfoModal()">Got it</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-header">
+    <input
+      class="search-input"
+      id="searchInput"
+      type="search"
+      placeholder="Search questions and answers…"
+      oninput="debouncedRunSearch(this.value)"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+    />
+    <button class="search-cancel-btn" onclick="closeSearch()">Cancel</button>
+  </div>
+  <div class="search-results" id="searchResults">
+    <div class="search-empty">Start typing to search questions,<br>passages, and your own saved answers.</div>
+  </div>
+</div>
+
+<script src="js/sweetalert2.all.min.js"></script>
+<script src="js/jszip.min.js"></script>
+<script src="js/state.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/idb.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/tts.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/starred.js"></script>
+<script src="js/search.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/save.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/share-print.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/render-progress.js"></script>
+<script src="js/render-library.js"></script>
+<script src="js/study-loader.js"></script>
+<script src="js/app-init.js"></script>
+<script src="js/render-pages.js"></script>
+<script src="js/render-chapter.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

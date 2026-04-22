@@ -1,0 +1,190 @@
+===================== CLAUDE PROMPTS ====================== 
+
+================== Examine Intro passages =================
+Attached are two markdown documents:
+1. A topical Bible study called "Grow_in_Christ_Workbook.md"
+2. A more expository-focused Bible study on a specific Bible book.
+Examine both studies.
+Then do the following:
+* Make improvements to the introductory text of each chapter of the expository-focused study, making the introduction be more in line with the style and approach used in  "Grow_in_Christ_Workbook.md"
+* Examine the rest of the text of the expository-focused Bible study, and make any minor corrections, simplifications, or improvements of style that you can see would be beneficial. Do not change the content of what is covered, and do not make expansive changes. Make small improvements only.
+* Output an updated markdown file of the expository-focused Bible study to download.
+* Present a summary of the changes you have made.
+
+================== Create Bible Ref List ==================
+
+Create a comprehensive list of all the Bible references used across all the chapters of this attached markdown Bible study. Use hyphens, not n-dashes, to describe verse ranges (e.g. Genesis 1:1-2) Use full Bible book names (e.g. Genesis 1:1 not Gen 1:1)
+Note that references could be: 
+- a single verse (e.g. Genesis 1:1) 
+- a verse range (e.g. Genesis 1:1-2)
+- a verse range across a chapter (e.g. Genesis 1:1-2:2) 
+- a pairing of verses (e.g. Proverbs 1:1 and James 1:1) 
+- a pairing of ranges of verses (e.g. Ecclesiastes 2:4–11, 2:17–23)  
+Output the comprehensive list of all references used in the Bible study.
+Use single smart quotes, not straight quotes if need (including in contractions).
+
+================== Create Bible Ref JSON ==================
+
+Below is a list of bible references.
+Create a JSON file for this Bible reference list, where each element should include:
+* The reference (this might be used as the defining key)
+* The full text of the passage in the NET translation. 
+If the passage begins (or ends) part-way through a sentence, then missing remainder of the sentence should also be included (prepended or appended, as appropriate), but the missing element should be enclosed in HTML italics tags (i.e. <i>...</i>). 
+All NET translation footnotes should be removed. 
+All verse numbers should be enclosed in HTML superscript tags (i.e. <sup>...</sup>) with any trailing space between the verse number and the next word removed.
+* a URL link to the biblegateway page that shows the content -the whole chapter from which the passage is take. (If the passage involves two chapters, just give the biblegateway link to the first one.) Use single smart quotes, not straight quotes if need (including in contractions).
+
+================== Create Mapping Doc =====================
+
+Attached is: 
+1. the markdown of one chapter of my Bible study; and 
+2. chapterTemplateV3.json which contains examples of the range of element-types available, as a reference guide. 
+I want you to produce a mapping document — a plain-English decision table that says things like:
+* "Read: [Bible passage]" → type callout / subtype general
+* Case study box → text / subtype intro (HTML)
+* Introduction → text / subtype intro (HTML)
+* Header level 2 → "type": "heading" / "subtype": "section"
+* Header level 3 → "type": "heading" / "subtype": "subsection"
+* Opening discussion bullets → question (no subtype, freeText)
+* Narrative bridge paragraph → text / subtype bridge
+* "BR: [Bible passage]" → biblePassage element
+* Bible reference row → biblePassage element
+* Question paired with Bible ref → question element following biblePassage
+* "GD: [question text]" → will be handled in the "deeper" option withing "type": "question" / "subtype": "standard"
+* Application → "type": "heading" / "subtype": "section"
+* Application questions  → "type": "question" / "subtype": "reflection"
+* Heart Check → type heading (subtype:section) plus type: likertScale element.
+* Closing prayer → type heading (subtype:subsection) plus type: text (subtype: bridge)
+
+
+================== Create Chapter JSON ====================
+
+Attached are:
+* a chapter of a bible study in markdown format
+* a JSON file that gives bible passages relevant for this study, and associated NET text and URLs.
+* a JSON template (chapterTemplateV2.json) that shows a sample of what the target output might look 
+* some mapping rules to help convert the markdown to JSON.
+Use this JSON, and the mapping rules, to convert the markdown of the chapter of the Bible study into the JSON needed for this chapter.
+Output the result for download
+
+================= Create Chapter JSON v2 ==================
+
+Attached are:
+* a chapter of a bible study in markdown format that includes mapping tags to help convert the markdown to JSON
+* a JSON file that gives bible passages relevant for this study, and associated NET text and URLs.
+* a JSON template (chapterTemplateV2.json) that shows a sample of what the target output might look 
+Use this JSON, and the mapping tags, to convert the markdown of the chapter of the Bible study into the JSON needed for this chapter.
+Output the result for download
+
+========== House-keeping & HowTo & Leaders Notes ==========
+
+Attached is a bible study json.
+I would like you to do a few things to the file and then output the results:
+1. Replace any problematic " or ' with smart quotes (either ‘ or ’ as appropriate)
+2. Rewrite the   "howToUseData":{  "audiences":[    section to better fit this content. (The current version of "audiences" was written for a different study.)
+3. Rewrite the   "leadersNotesData":{ ...  "chapters":[     section to better fit this content. (The current version of "chapters" was written for a different study.) There should be an entry for each of the seven chapters in the bible study. Use the existing / obsolete data as a template.
+4. If you see any minor typos, also correct those.
+5. If you see any other more substantive changes that you think should be made, explain them to me in this chat, but let me review them before we decide whether to implement anything.
+
+Output an updated version of the JSON for download.
+
+==================== howToUseData =========================
+
+Attached is a JSON that contains data for one of my bible studies.
+Output a new   "howToUseData": {...} section that is better tailored to the rest of contents of the JSON.
+Retain the same structure, i.e.:
+    "sections": [
+      {
+        "heading": "",
+        "blocks": [
+          {
+            "title": "",
+            "body": ""
+
+Show a mild preference towards retaining at least some of the same headings, i.e.:
+
+* Who Is This Study For?
+* Individual or Group Study?
+* Group Leaders & Mentors
+* A Note on the Questions
+
+Output a new   "howToUseData": {...} section
+
+===========================================================
+===========================================================
+
+======= Direct creation of study with elementId tags ======
+
+Attached is the chapter template for my bible study app, and also a DOCX bible study outline. 
+Read the DOCX outline carefully, and then draft the full text for Sesson 1. 
+
+I hope later to convert the text into my JSON (estudy) format.  So prefix each section of the study with a tag in square brackets that indicates what chapter elementId type and/or subtype you think should be used. (e.g. [type: question; subtype: header] or equivalent.) 
+Write the study in a way that will make it easy to convert to JSON at a later time.
+
+Output the full text for this Session in markdown (.md), for download.
+
+============ Suggestions based on book/article ============
+
+Suggest changes that could be made to the .md bible study based on the PDF article/book.
+Bear in mind that the PDF is written for an academic audience and the bible study for a popular audience. I do not want you to make the bible study sound academic.
+The question is what (if any) insights from the PDF could strengthen the bible study.
+Make suggestions for me to review, before we go further.
+
+====== Incorporate Suggestions based on book/article ======
+
+Attached is the latest version of my bible study as an .md file. Also pasted are a range of possible suggestions for inclusion based on other sources. Do not bother to attribute the sources - I will do that elsewhere. Evaluate each suggestion, and if you think it is a genuine improvement then incorporate it. Try to keep the writing style consistent with what is in the .md file. Output the updated .md file for download, and then give a summary of the updates you have made.
+
+===========================================================
+
+Attached are: 
+* a chapter of a bible study in markdown format that includes mapping tags to help convert the markdown to JSON. (When dealing with text from the markdown document, try to replace markdown *italics* with HTML <i>italics</i> tags, try to replace markdown **bold** with HTML <b>bold</b> tags
+* a JSON of bible passages you might need, including URLs.  
+* a JSON template (chapterTemplateV2.json) that shows a sample of what the target output might look
+Use these two JSON files, and the mapping tags, to convert the markdown of the chapter of the Bible study into the JSON needed for this chapter. Output the result for download
+
+-----------------------------------------------------------
+
+Attached is: 
+* another chapter of a bible study in markdown format that includes mapping tags to help convert the markdown to JSON. (When dealing with text from the markdown document, try to replace markdown *italics* with HTML <i>italics</i> tags, try to replace markdown **bold** with HTML <b>bold</b> tags
+Use these two earlier attached JSON files, and the mapping tags, to convert the markdown of the chapter of the Bible study into the JSON needed for this chapter. Output the result for download
+
+================= Create sampleAnswer =====================
+
+Attached is validation.js
+localValidation does extra checks if a sample answer is available.
+
+Attached is the json data section for a chapter of a bible study.
+Please do the following:
+
+Identify the elements that ask the user to look up a bible passage and answer a question (so "type" :"question", and also "linkedPassage" : is defined).
+Locate the linked passage (which should be given in closely previous elementId)
+Create a sample answer for the question, based on the linked passage
+Create a sample answer field, to store your sample answer
+Once finished, output the updated json data for this chapter.
+
+================= Create questionHint =====================
+
+Attached is the json data section for a chapter of a bible study.
+Please do the following:
+Identify the elements that ask the user to look up a bible passage and answer a question (so "type" :"question", and also "linkedPassage" : is defined).
+These elements should have a sampleAnswer field that gives a sample answer to the question, based on the content of the linked passage.
+Locate the linked passage (which should be given in closely previous elementId)
+Create a question hint - i.e. a comment and/or question that the user could be asked if they are struggling to find the right answer.  The question hint should normally only be one  sentences long. (Maximum two sentences). The question hint should NOT give the user the answer. It should use the Socratic method to point the user towards the answer.
+Create a questionHint field, to store your question hint.
+Once finished, output the updated json data for this chapter.
+
+========== Create sampleAnswer & questionHint =============
+
+Attached is the json data section for some chapter(s) of a bible study.
+Please do the following:
+
+Identify the elements that ask the user to look up a bible passage and answer a question (so "type" :"question", and also "linkedPassage" : is defined).
+Locate the linked passage (which should be given in a closely previous elementId)
+Create a sample answer for the question, based on the linked passage
+Create a sampleAnswer field, to store your sample answer
+Also create a question hint - i.e. a comment and/or question that the user could be asked if they are struggling to find the right answer.  The question hint should normally only be one sentences long. (Maximum two sentences).  The question hint should NOT give the user the answer. It should use the Socratic method to point the user towards the answer.
+Create a questionHint field, to store your question hint.
+Once finished, output the updated json data for this/these chapter(s).
+NB Do not allow smart/curly quotes to be changed for straight quotes. If you are adding text make sure you use smart/curly quotes, including around quotations and in contractions.
+
+===========================================================

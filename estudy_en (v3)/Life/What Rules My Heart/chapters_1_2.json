@@ -1,0 +1,858 @@
+{
+  "chapters":[
+    {
+      "chapterNumber":1,
+      "chapterTitle" :"Anything can be an Idol",
+      "elements"     :[
+        {
+          "elementId"    :"ch01-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>An idol is anything more important to you than God, anything that absorbs your heart and imagination more than God, anything you seek to give you what only God can give.<cite>— Tim Keller</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch01-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotation? (Do you like it or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el03",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"Idolatry",
+          "question"     :"Isn’t <b>idolatry</b> just a primitive thing — people bowing down to statues? What does it have to do with my modern life?",
+          "answer"       :"Most people today picture idolatry as something ancient and obviously silly — golden calves, temple shrines, and stone carvings. But the Bible uses ‘idolatry’ to describe any pattern of the heart where something other than God becomes our ultimate source of meaning, security, or identity. An idol is not necessarily something we literally bow down to. It is whatever we most deeply trust, fear losing, or believe will finally make us happy. By this definition, a career, a relationship, a bank balance, or even our reputation can function as an idol — and often does. The study uses this broader, heart-level definition throughout.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el04",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Idolatry is fundamentally the rejection of God’s claim on our lives. If you don’t worship God, you’ll find a substitute, and it won’t satisfy.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el05",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 John 5:21",
+          "translation"  :"NET",
+          "passageText"  :"<sup>21</sup>Little children, guard yourselves from idols.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+John+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el06",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How does John conclude and summarise his letter?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 John 5:21"
+        },
+
+        {
+          "elementId"    :"ch01-el07",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Whatever you depend upon, whatever rules your mind, whatever it is you set your heart on — that is your god.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Exodus 20:3-5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>“You shall have no other gods before me. <sup>4</sup>“You shall not make for yourself a carved image or any likeness of anything that is in heaven above or that is on the earth beneath or that is in the water below. <sup>5</sup>You shall not bow down to them or serve them, for I, the Lord, your God, am a jealous God, responding to the transgression of fathers by dealing with children to the third and fourth generations of those who reject me, <i>and showing covenant faithfulness to a thousand generations of those who love me and keep my commandments.</i>",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Exodus+20&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 4:10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>10</sup>Then Jesus said to him, “Go away, Satan! For it is written: ‘You are to worship the Lord your God and serve only him.’”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Romans 1:25",
+          "translation"  :"NET",
+          "passageText"  :"<sup>25</sup>They exchanged the truth of God for a lie and worshiped and served the creation rather than the Creator, who is blessed forever! Amen.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Romans+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el11",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is the Bible’s basic teaching about idolatry?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Exodus 20:3-5, Matthew 4:10, Romans 1:25"
+        },
+
+        {
+          "elementId"    :"ch01-el12",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Idolatry is found in every culture. It is not limited to making statues. It is about replacing the Creator with a creature.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ezekiel 14:3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>“Son of man, these men have set up idols in their hearts and have placed the obstacle of their iniquity in front of their faces. Should I really allow them to seek me?",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ezekiel+14&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Samuel 15:23",
+          "translation"  :"NET",
+          "passageText"  :"<sup>23</sup>For rebellion is like the sin of divination, and presumption is like the evil of idolatry. Because you have rejected the word of the Lord, he has rejected you as king!”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Samuel+15&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Colossians 3:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>So put to death whatever in your nature belongs to the earth: sexual immorality, impurity, shameful passion, evil desire, and greed which is idolatry.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Colossians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some ways that idols can be things other than statues?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Ezekiel 14:3, 1 Samuel 15:23, Colossians 3:5"
+        },
+
+        {
+          "elementId"    :"ch01-el17",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Idols are usually good things. Few people want to worship something that is obviously useless or bad. But when we turn good things into ‘god things’ they stop being good for us. They lead us on a dark path.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 6:14-15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>You must not go after other gods, the gods of the peoples who are around you <sup>15</sup>(for the Lord your God, who is present among you, is a jealous God and his anger will erupt against you and remove you from the land).",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Isaiah 42:8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>I am the Lord! That is my name! I will not share my glory with anyone else, or the praise due me with idols.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Isaiah+42&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el20",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is God’s attitude to idolatry?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Deuteronomy 6:14-15, Isaiah 42:8"
+        },
+
+        {
+          "elementId"    :"ch01-el21",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"God’s jealousy is not because he is insecure or weak, but because he is holy, and will not and cannot share His glory with another.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el22",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"God’s Jealousy",
+          "question"     :"The Bible says God is ‘<b>jealous</b>.’ Isn’t jealousy a character flaw? How can a perfect God be jealous?",
+          "answer"       :"When we think of jealousy today, we usually think of petty, insecure resentment — the kind that poisons relationships. But the Bible uses the word differently when applied to God. His jealousy is not born of insecurity or wounded pride; it is a righteous, protective zeal — like a parent who insists their child not run into traffic. God knows that our hearts were made for Him, and that anything we substitute for Him will ultimately damage or destroy us. When He refuses to share our worship with idols, it is not because He needs our admiration; it is because He loves us too much to watch us ruin ourselves chasing things that cannot satisfy. His jealousy is an expression of his faithfulness, not his weakness.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el23",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jeremiah 10:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>Such idols are like scarecrows in a cucumber field. They cannot talk. They must be carried because they cannot walk. Do not be afraid of them because they cannot hurt you. And they do not have any power to help you.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jeremiah+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el24",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Habakkuk 2:18-19",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>“Of what benefit is an idol? Why would a craftsman make it? Of what benefit is a metal image that gives misleading oracles? Why would its maker trust in it, when he makes only mute idols? <sup>19</sup>The one who says to wood, ‘Wake up!’ is in trouble. He says to a speechless stone, ‘Awaken!’ Can it give reliable guidance? It is overlaid with gold and silver; it has no life’s breath inside it.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Habakkuk+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What power do idols have, to achieve what we want from them?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Jeremiah 10:5, Habakkuk 2:18-19"
+        },
+
+        {
+          "elementId"    :"ch01-el26",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Our idols reveal our misplaced trust. They seem valuable, but they have no real power, and cannot truly satisfy us.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el27",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Psalm 115:4-8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>Their idols are made of silver and gold – they are man-made. <sup>5</sup>They have mouths, but cannot speak, eyes, but cannot see, <sup>6</sup>ears, but cannot hear, noses, but cannot smell, <sup>7</sup>hands, but cannot touch, feet, but cannot walk. They cannot even clear their throats. <sup>8</sup>Those who make them will end up like them, as will everyone who trusts in them.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+115&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el28",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Galatians 5:19-21",
+          "translation"  :"NET",
+          "passageText"  :"<sup>19</sup>Now the works of the flesh are obvious: sexual immorality, impurity, depravity, <sup>20</sup>idolatry, sorcery, hostilities, strife, jealousy, outbursts of anger, selfish rivalries, dissensions, factions, <sup>21</sup>envy, murder, drunkenness, carousing, and similar things. I am warning you, as I had warned you before: Those who practice such things will not inherit the kingdom of God!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Galatians+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch01-el29",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jeremiah 2:13",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>“Indeed, my people have committed a double wrong: they have rejected me, the fountain of life-giving water, and they have dug cisterns for themselves, cracked cisterns which cannot even hold water.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jeremiah+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el30",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why is worshipping idols ultimately a foolish thing to do?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Psalm 115:4-8, Galatians 5:19-21, Jeremiah 2:13"
+        },
+
+        {
+          "elementId"    :"ch01-el31",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Corinthians 10:14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>So then, my dear friends, flee from idolatry.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Corinthians+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el32",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What should be our basic attitude to idols?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Corinthians 10:14"
+        },
+
+        {
+          "elementId"    :"ch01-el33",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"God’s command to flee from idols is a command of mercy. Anything we put in His place will fail us in the end.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el34",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch01-el35",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are the things or people in your life are you sometimes tempted to look to when you should be looking to God?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch01-el36",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Are there any strategies you have found useful in your own life, that help you prevent good things becoming ‘god things’ for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch01-el37",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Do you find it easy or difficult to recognise potential idols in your life? Can you think of any ways to become more aware of them?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch01-el38",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you hope to gain from the rest of these studies?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":2,
+      "chapterTitle" :"Blessings can bring you Disaster",
+      "elements"     :[
+        {
+          "elementId"    :"ch02-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>When the gifts of God become more important than God Himself, they turn from blessings into idols.<cite>— Tim Keller</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotation? (Do you like it or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Solomon’s story shows how sneakily idolatry can turn good things into god-things. His story starts well. In 1 Kings 3 God appears, and asks him to choose a blessing.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 3:7-9",
+          "translation"  :"NET",
+          "passageText"  :"<sup>7</sup>Now, O Lord my God, you have made your servant king in my father David’s place, even though I am only a young man and am inexperienced. <sup>8</sup>Your servant stands among your chosen people; they are a great nation that is too numerous to count or tally. <sup>9</sup>So give your servant a discerning mind so he can make judicial decisions for your people and distinguish right from wrong. Otherwise no one is able to make judicial decisions for this great nation of yours.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What blessings does Solomon choose?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 3:7-9"
+        },
+
+        {
+          "elementId"    :"ch02-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 3:11-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>11</sup>God said to him, “Because you asked for the ability to make wise judicial decisions, and not for long life, or riches, or vengeance on your enemies, <sup>12</sup>I will grant your request. I am giving you a wise and discerning mind superior to that of anyone who has preceded or will succeed you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch02-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 3:13",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>Furthermore, I am giving you what you did not request – riches and honor – so that you will be the greatest king of your generation.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch02-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 3:14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>If you follow my instructions by obeying my rules and regulations, just as your father David did, I will also give you long life.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"God is pleased, and promises further blessings. What are they? List each one (there are six).",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"1.\n2.\n3.\n4.\n5.\n6.",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 3:11-12, 1 Kings 3:13, 1 Kings 3:14"
+        },
+
+        {
+          "elementId"    :"ch02-el10",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Soon the blessings are fulfilled. Solomon rules wisely, he has peace, wealth, and fame — even the Queen of Sheba comes to see his court.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 10:6-9",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>She said to the king, “The report I heard in my own country about your wise sayings and insight was true! <sup>7</sup>I didn’t believe it until I came and saw it with my own eyes. Indeed I wasn’t even told half of it! Your wisdom and wealth surpass what was reported to me. <sup>8</sup>How fortunate are your men! How fortunate are these servants of yours who stand before you at all times and hear your wise sayings! <sup>9</sup>May the Lord your God be praised because he favored you by placing you on the throne of Israel! Because of the Lord’s eternal love for Israel, he made you king so you could make just and right decisions.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el12",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some of the things that impress the Queen of Sheba?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 10:6-9"
+        },
+
+        {
+          "elementId"    :"ch02-el13",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The picture we are given of Solomon’s court is bright and beautiful and glorious and good. And yet, we know that it all falls apart so quickly.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 11:9-10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>9</sup>The Lord was angry with Solomon because he had shifted his allegiance away from the Lord, the God of Israel, who had appeared to him twice <sup>10</sup>and had warned him about this very thing, that he should not follow other gods. But he did not obey the Lord’s command.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+11&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What goes wrong?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 11:9-10"
+        },
+
+        {
+          "elementId"    :"ch02-el16",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"How did it all fall apart so quickly? It turns out the cracks were there much earlier.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 17:16-17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>16</sup>Moreover, he must not accumulate horses for himself or allow the people to return to Egypt to do so, for the Lord has said you must never again return that way. <sup>17</sup>Furthermore, he must not marry many wives lest his heart turn aside, and he must not accumulate much silver and gold.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+17&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el18",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are the four things the king must avoid doing?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"1.\n2.\n3.\n4.",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Deuteronomy 17:16-17"
+        },
+
+        {
+          "elementId"    :"ch02-el19",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Solomon does <em>not</em> do well on these four counts. Even in 1 Kings 10, where things are going so well, they are at the same time going very badly.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el20",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Let’s consider those four requirements from Deuteronomy",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el21",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 10:26",
+          "translation"  :"NET",
+          "passageText"  :"<sup>26</sup>Solomon accumulated chariots and horses. He had 1,400 chariots and 12,000 horses. He kept them in assigned cities and in Jerusalem.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"No stock-piling of horses. How does Solomon do?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 10:26"
+        },
+
+        {
+          "elementId"    :"ch02-el23",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 10:28-29",
+          "translation"  :"NET",
+          "passageText"  :"<sup>28</sup>Solomon’s horses were imported from Egypt and Que; the king’s traders purchased them from Que. <sup>29</sup>A chariot was imported from Egypt for 600 silver pieces, and a horse for 150 silver pieces. They were exported to all the kings of the Hittites and to the kings of Syria.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"No returning to Egypt to get horses. How does Solomon do?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 10:28-29"
+        },
+
+        {
+          "elementId"    :"ch02-el25",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 10:14-15, 10:23, 10:27",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>Solomon received 666 talents of gold per year, <sup>15</sup>besides what he collected from the merchants, traders, Arabian kings, and governors of the land. … <sup>23</sup>King Solomon was wealthier and wiser than any of the kings of the earth. … <sup>27</sup>The king made silver as common in Jerusalem as stones, and cedar as plentiful as the sycamore-fig trees that grow in the foothills.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"No accumulating of gold and silver. How does Solomon do?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 10:14-15, 10:23, 10:27"
+        },
+
+        {
+          "elementId"    :"ch02-el27",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Kings 11:1, 11:3-6",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>King Solomon fell in love with many foreign women (besides Pharaoh’s daughter), including Moabite, Ammonite, Edomite, Sidonian, and Hittite women. … <sup>3</sup>He had 700 royal wives and 300 concubines; his wives had a powerful influence over him. <sup>4</sup>When Solomon grew old, his wives shifted his allegiance to other gods; he was not wholeheartedly devoted to the Lord his God, as his father David had been. <sup>5</sup>Solomon worshiped the Sidonian goddess Astarte and the detestable Ammonite god Milcom. <sup>6</sup>Solomon did evil in the Lord’s sight; he did not remain loyal to the Lord, as his father David had.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Kings+11&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch02-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"No taking of many wives. How does Solomon do?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Kings 11:1, 11:3-6"
+        },
+
+        {
+          "elementId"    :"ch02-el29",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"<p>Despite all these blessings, Solomon goes astray. Sin twists the blessings into idols. Solomon delights in wealth, power, and status so much that he puts them ahead of God. He should have used his blessings in service to God, even when that meant putting God ahead of the blessings. Our hopes and dreams give clues about our idols. We think our idols will bring us satisfaction: ‘If only I was wealthy (or married; or successful), everything would be alright!’ It is not wrong to hope for blessings — they are good! The problem is when we stop looking at them as blessings, and treat them as our salvation.</p><p>Our fears and worries also give clues to our idols. We look to them for security. That makes us vulnerable, because idols are creatures, and can be destroyed. If we lose something good, we naturally mourn the loss. But if we lose an idol, our mourning can break all normal bounds: we have lost our purpose, security, and reason for living. Look to God for those, and you will never lose them!</p>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el30",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idolatry Detection Quiz",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch02-el31",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Answer each question as honestly as you can. (Don’t ‘cheat’ by answering ‘God’. Choose the created things that could become idols for you.)",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el32",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What thing(s) do I feel I must have, to be happy?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el33",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do I most fear losing?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el34",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What thing am I most worried about never gaining/attaining in life?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el35",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What has made me the most bitter in life? (Or: What can I not forgive?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el36",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What things do I spend the most time and/or money on?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el37",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do I feel self-pity about?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el38",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What am I willing to lie for?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el39",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Where do I turn for comfort?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch02-el40",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Whose approval do I seek?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    }
+  ]
+}

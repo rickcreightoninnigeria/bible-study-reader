@@ -1,0 +1,118 @@
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * base.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * 01. Reset           – Universal box-sizing, margin and padding zero-out
+ * 02. Body            – Global font, background, colour and paper texture
+ * 03. Content wrapper – .content max-width and padding
+ * 04. Blockquote      – Default blockquote indent reset
+ * 05. Section divider – Horizontal rule with centred label
+ *
+ * ── DARK MODE ───────────────────────────────────────────────────────────
+ * 06. Dark mode       – body.dark-mode overrides for all rules above
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ── 01. RESET ──────────────────────────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ── 02. BODY ───────────────────────────────────────────────────────────── */
+
+body {
+  font-family: var(--main-font-family);
+  background: var(--surface-mid);
+  color: var(--text);
+  font-size: 1rem;       /* rem — scales with html font-size set in variables.css */
+  line-height: 1.7;
+  min-height: 100vh;
+  background-image:
+    /* Subtle paper-grain texture rendered as an inline SVG data URI.
+       feTurbulence generates fractalNoise; opacity 0.035 keeps it barely visible.
+       Removed in dark mode (see below) as it reads as noise on dark backgrounds. */
+    url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+
+/* ── 03. CONTENT WRAPPER ────────────────────────────────────────────────── */
+/* Centres and constrains the readable column width on wide screens.
+   Bottom padding clears the fixed save bar. */
+
+.content {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+}
+
+/* ── 03b. LANDSCAPE LAYOUT ──────────────────────────────────────────────── */
+/* In landscape orientation the 480px column wastes significant screen space.
+   On a typical phone in landscape (~667–915px wide) this rule lets the
+   content expand to use the available width, with slightly wider side
+   padding so text doesn't press against the edges.
+   The save bar has its own max-width (340px) and is intentionally left
+   narrow — stretching two buttons across a landscape phone looks odd.
+   The top nav already spans full width (no max-width set). */
+ 
+@media (orientation: landscape) {
+  .content {
+    max-width: 100%;
+    padding: 0 28px 80px;
+  }
+}
+ 
+
+/* ── 04. BLOCKQUOTE ─────────────────────────────────────────────────────── */
+
+blockquote {
+  margin-left: 0;
+  padding-left: 10px;
+}
+
+
+/* ── 05. SECTION DIVIDER ────────────────────────────────────────────────── */
+/* Horizontal rule with a centred text label, used to separate question
+   groups within a chapter. */
+
+.section-break {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px var(--content-margin) 8px;
+}
+.section-break-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-break-text {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;       /* UI chrome — stays px */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   06. DARK MODE
+   body.dark-mode overrides for all rules in this file, gathered here.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.dark-mode {
+  background: var(--dm-surface);
+  color: var(--dm-text);
+  background-image: none; /* paper-grain texture removed — reads as noise on dark bg */
+}
+
+body.dark-mode .section-break-line {
+  background: var(--dm-border);
+}

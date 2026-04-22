@@ -1,0 +1,87 @@
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * variables.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * 01. Design tokens   – CSS custom properties: colour palette, shadows,
+ *                       and typography stacks defined on :root
+ * 02. Font-size base  – html font-size: the single rem scale lever
+ *
+ * NOTE: No dark-mode overrides live here. The --dm-* tokens are defined
+ * in :root (they are just custom properties, not overrides), so they
+ * belong here. Actual body.dark-mode rule overrides live at the bottom
+ * of each relevant sub-file.
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ── 01. DESIGN TOKENS ──────────────────────────────────────────────────
+   All colours and the shadow value are defined here. Use these
+   variables everywhere; avoid hardcoding colour values in rules below.
+   The parchment/ink palette gives the 'aged document' aesthetic.
+   Rust = danger / highlight; sage = success / save; gold = accent.
+   --card-bg is used wherever a component surface was previously 'white',
+   so dark-mode overrides can target a single token rather than hunting
+   every background: white declaration individually.
+   ─────────────────────────────────────────────────────────────────────── */
+
+:root {
+
+  /* ── Light-mode colour palette ── */
+  --surface:        #f0ece4;      /* lightest background / input fill  */
+  --surface-mid:    #e4ddd2;      /* page background and dividers      */
+  --text:           #1c1710;      /* near-black — warm, almost sepia   */
+  --text-secondary: #4a3f30;      /* body text, secondary headings     */
+  --text-faint:     #8c7d68;      /* placeholders, captions, meta      */
+  --emphasis:       #6b3e1a;      /* labels, warnings, emphasis        */
+  --emphasis-light: #9c5c2a;      /* dark-mode emphasis alternative    */
+  --success:        #3d5c2a;      /* success states, Save button       */
+  --accent:         #8c6420;      /* primary accent (stars, borders)   */
+  --accent-light:   #b8882e;      /* hover / lighter accent            */
+  --border:         #c8bca8;      /* card borders, dividers            */
+  --shadow: rgba(28,23,16,0.13);  /* unified shadow tint               */
+  --card-bg:        #ffffff;      /* card / block surface colour       */
+  --validate:       #2a6b7c;      /* local validate: answer check */
+
+  /* ── Dark-mode colour tokens ──
+     These are plain custom properties, not overrides — they live here
+     so every file can reference them. Actual body.dark-mode rules that
+     apply these tokens are collected at the bottom of each sub-file. */
+  --dm-base:        #0f0c09;      /* deepest background: headers, overlays, QA card  */
+  --dm-surface:     #1a1510;      /* page / body background                          */
+  --dm-raised:      #2a2218;      /* card / block surface (raised one level)         */
+  --dm-sunken:      #1f1a14;      /* answer fields, starred bg, inset surfaces       */
+  --dm-border:      #3a3028;      /* all borders, dividers, separators               */
+  --dm-text:        #e8e0d0;      /* primary text on dark backgrounds                */
+  --dm-text-mid:    #c8bfaf;      /* secondary / body text, paragraph copy           */
+  --dm-text-faint:  #6a5f50;      /* placeholders, disabled, faint labels            */
+
+  /* ── Typography stacks ── */
+  --font-stack-serif:   'Source Serif 4', Georgia, 'Times New Roman', serif;        /* body text — serif mode  */
+  --font-stack-sans:    'Inter', 'Helvetica Neue', Arial, sans-serif;               /* body text — sans mode   */
+
+  /* --main-font-family is the active body font.
+     It defaults to sans here but is switched at runtime by applyAllSettings()
+     in response to the user's font preference stored in localStorage.
+     Do not hardcode a font-family on body — always use this token. */
+  --main-font-family:   var(--font-stack-sans);
+
+  --font-stack-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;      /* display headings        */
+  --font-stack-mono:    'DM Mono', 'Courier New', Courier, monospace;               /* labels, UI chrome       */
+
+  /* ── Setting the margins for content panels ── */
+  --content-margin: 4px; /* tweak this one value to adjust all panels */
+}
+
+
+/* ── 02. FONT-SIZE BASE ─────────────────────────────────────────────────
+   html font-size is the single lever the Settings page adjusts via JS.
+   All reading text uses rem so it scales automatically with it.
+   UI chrome (nav, labels, eyebrows, monospace elements) stays in px
+   so it remains stable regardless of the user's reading-size preference.
+   ─────────────────────────────────────────────────────────────────────── */
+
+html {
+  font-size: 16px;
+}

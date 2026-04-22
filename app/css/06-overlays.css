@@ -1,0 +1,837 @@
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * overlays.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * Floating elements, bottom-sheets, and context-specific modal content.
+ * These are fixed-position layers that sit above the main content flow.
+ *
+ * NOTE — related rules that live elsewhere by convention:
+ *   • .verse-btn          → components.cards.responses.css
+ *     (it is a button inside the question card ref bar)
+ *   • .likert-popup-overlay / .likert-popup
+ *                         → components.cards.responses.css
+ *     (the Likert scale and its popup are self-contained there)
+ *   • Close button animations (.verse-modal-close span etc.)
+ *                         → components.nav.css
+ *     (shared animation rules for all close buttons live there)
+ *
+ * 01. Shared keyframes    – fadeIn and slideUp used by all bottom-sheets
+ * 02. Verse modal         – Bottom-sheet for NET Bible passage text
+ * 03. QA / Gen callout    – Inline "Common Misunderstanding" card
+ * 04. QA modal            – Bottom-sheet for misunderstanding explanation
+ * 05. Go Deeper question  – additional question when the user taps button
+ * 06. Modal close footer  – Shared ✕ footer button inside bottom-sheets
+ * 07. Onboarding overlay  – Full-screen first-run intro slides
+ * 08. Search overlay      – Full-screen search input and results
+ * 09. GPU compositing     – will-change hints for overlay elements
+ * 10. Info Trigger Popups – First time documentation & hints 
+ *
+ * ── DARK MODE ───────────────────────────────────────────────────────────
+ * 11. Dark mode           – body.dark-mode overrides for all rules above
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ── 01. SHARED KEYFRAMES ───────────────────────────────────────────────── */
+/* fadeIn and slideUp are used by every bottom-sheet modal in this file,
+   and also referenced by .likert-popup-overlay in components.cards.responses.css.
+   Defining them here (in the first file that needs them) ensures they are
+   always available — provided overlays.css is linked before components files. */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+
+/* ── 02. VERSE MODAL ────────────────────────────────────────────────────── */
+/* Bottom-sheet modal that displays a NET Bible passage when the user taps
+   a .verse-btn inside a question card ref bar. */
+
+.verse-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44,36,22,0.55);
+  z-index: 300;
+  align-items: flex-end;
+  justify-content: center;
+}
+.verse-modal-overlay.open {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+}
+.verse-modal {
+  background: var(--surface);
+  border-radius: 16px 16px 0 0;
+  padding: 20px 20px 36px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 75vh;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease;
+}
+
+/* Title bar: scripture reference label left, close button right */
+.verse-modal-ref {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--emphasis);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.verse-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 18px;         /* UI chrome — stays px */
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+/* ── Speak buttons inside modal title bars ──────────────────────────────── */
+/* Override the absolute positioning from components.cards.display.css
+   so the button sits inline within the flex title row instead. */
+#verseModalSpeakBtn,
+#qaModalSpeakBtn {
+  position: static;
+  flex-shrink: 0;
+  margin-left: auto;   /* pushes it to the right, before the close button */
+  margin-right: 8px;
+  opacity: 0.6;
+}
+
+/* Passage body text */
+.verse-modal-text {
+  font-family: var(--main-font-family);
+  font-size: 0.906rem;     /* was 14.5px — scales */
+  color: var(--text);
+  line-height: 1.8;
+}
+/* Footnote superscript links in NET Bible text */
+.verse-modal-text sup a {
+  color: var(--emphasis);
+  text-decoration: none;
+  font-family: var(--font-stack-mono);
+  font-size: 9px;          /* footnote superscript — stays px */
+}
+
+/* Attribution footer with link to full passage */
+.verse-modal-footer {
+  margin-top: 16px;
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  color: var(--text-faint);
+  text-align: right;
+}
+.verse-modal-footer a {
+  color: var(--emphasis);
+  text-decoration: underline;
+}
+
+
+/* ── 03. QA / GEN CALLOUT ───────────────────────────────────────────────── */
+/* Inline card rendered within chapter content to flag a common
+   misunderstanding (.qa-callout-card) or general note (.gen-callout-card).
+   Uses the dark nav palette (--text background) so it reads as an
+   authoritative aside distinct from the parchment card surfaces. */
+
+.qa-callout-card,
+.gen-callout-card {
+  background: var(--text);
+  margin: 16px var(--content-margin) 4px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+.qa-callout-eyebrow,
+.gen-callout-eyebrow {
+  background: var(--emphasis);
+  padding: 6px 14px;
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  font-weight: bold;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--surface);
+}
+.qa-callout-body,
+.gen-callout-body {
+  padding: 14px 16px 16px;
+}
+.qa-callout-term,
+.gen-callout-term {
+  font-family: var(--font-stack-heading);
+  font-size: 20px;         /* display heading — stays px */
+  font-style: italic;
+  color: var(--accent-light);
+  margin-bottom: 8px;
+}
+.qa-callout-question,
+.gen-callout-question {
+  font-family: var(--main-font-family);
+  font-size: 0.875rem;     /* was 14px — scales */
+  color: rgba(245,240,232,0.75);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.qa-callout-question ul, .qa-callout-question ol,
+.gen-callout-question ul, .gen-callout-question ol {
+  padding-left: 1.0rem;
+  margin: 4px 0;
+}
+/* "Read explanation →" button that opens the QA modal */
+.qa-callout-btn,
+.gen-callout-btn {
+  background: none;
+  border: 1px solid rgba(184,146,42,0.5);
+  color: var(--accent-light);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.qa-callout-btn:hover,
+.gen-callout-btn:hover {
+  background: rgba(184,146,42,0.12);
+  border-color: var(--accent-light);
+}
+/* ── List indentation inside callout cards ──────────────────────────────── */
+.gen-callout-question ul,
+.gen-callout-question ol,
+.gen-callout-answer ul,
+.gen-callout-answer ol,
+.qa-callout-question ul,
+.qa-callout-question ol,
+.qa-callout-answer ul,
+.qa-callout-answer ol {
+  padding-left: 1.4em;
+  margin: 8px 0;
+}
+.gen-callout-question li,
+.gen-callout-answer li,
+.qa-callout-question li,
+.qa-callout-answer li {
+  margin-bottom: 4px;
+  line-height: 1.65;
+}
+
+/* ── 04. QA MODAL ───────────────────────────────────────────────────────── */
+/* Bottom-sheet that expands the full misunderstanding explanation when
+   the user taps the callout button. */
+
+.qa-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44,36,22,0.6);
+  z-index: 300;
+  align-items: flex-end;
+  justify-content: center;
+}
+.qa-modal-overlay.open {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+}
+.qa-modal {
+  background: var(--surface);
+  border-radius: 16px 16px 0 0;
+  padding: 24px 20px 40px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease;
+}
+.qa-modal-eyebrow {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--emphasis);
+  margin-bottom: 6px;
+}
+/* Term heading row — title left, close button right */
+.qa-modal-term {
+  font-family: var(--font-stack-heading);
+  font-size: 22px;         /* display heading — stays px */
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.qa-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 18px;         /* UI chrome — stays px */
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.qa-modal-text {
+  font-family: var(--main-font-family);
+  font-size: 0.9375rem;    /* was 15px — scales */
+  color: var(--text);
+  line-height: 1.8;
+}
+.qa-modal-text p + p {
+  margin-top: 12px;
+}
+.qa-modal-text ul,
+.qa-modal-text ol {
+  padding-left: 1.0rem;
+  margin: 4px 0;
+}
+
+/* ── 05. DEEPER QUESTION MODAL ─────────────────────────────────────────── */
+/* Bottom-sheet that shows an additional reflective question when the user
+   taps "(go deeper ↗)" within a question card. Read-only — no answer field. */
+
+.deeper-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44,36,22,0.6);
+  z-index: 300;
+  align-items: flex-end;
+  justify-content: center;
+}
+.deeper-modal-overlay.open {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+}
+.deeper-modal {
+  background: var(--surface);
+  border-radius: 16px 16px 0 0;
+  padding: 24px 20px 40px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 75vh;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease;
+}
+.deeper-modal-eyebrow {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--emphasis);
+  margin-bottom: 14px;
+}
+.deeper-modal-body {
+  font-family: var(--main-font-family);
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.75;
+}
+.deeper-modal-body p + p { margin-top: 12px; }
+
+/* ── 06. MODAL CLOSE FOOTER ─────────────────────────────────────────────── */
+/* A centred ✕ Close button rendered at the foot of bottom-sheet modals
+   as an alternative to the top-right close button, for thumb reachability. */
+
+.modal-close-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+.modal-close-footer-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.modal-close-footer-btn:hover {
+  background: var(--surface-mid);
+  color: var(--text);
+}
+
+
+/* ── 07. ONBOARDING OVERLAY ─────────────────────────────────────────────── */
+/* Full-screen first-run intro slide deck. Shown once on first launch,
+   controlled by JS via the .onboarding-overlay element's display state.
+   Uses the dark nav palette (--text background) for a focused experience. */
+
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: var(--text);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.1s ease;
+  overflow: hidden;
+}
+
+/* Sliding panel that holds all slides side-by-side;
+   JS translates it horizontally to advance between slides */
+.onboarding-slides {
+  flex: 1;
+  display: flex;
+  position: relative;
+  width: 100%;
+  transition: transform 0.35s ease;
+  min-height: 0;
+}
+.onboarding-slide {
+  min-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 48px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+.onboarding-icon {
+  font-size: 52px;         /* emoji — stays px */
+  margin-bottom: 24px;
+  line-height: 1;
+}
+.onboarding-eyebrow {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.onboarding-heading {
+  font-family: var(--font-stack-heading);
+  font-size: 28px;         /* display heading — stays px */
+  line-height: 1.2;
+  color: var(--surface);
+  margin-bottom: 16px;
+}
+.onboarding-body {
+  font-family: var(--main-font-family);
+  font-size: 0.9375rem;    /* was 15px — scales */
+  color: rgba(245,240,232,0.75);
+  line-height: 1.75;
+}
+.onboarding-body em {
+  color: var(--accent-light);
+  font-style: normal;      /* em used for accent colour, not italics */
+}
+
+/* Footer: progress dots + Next / Skip buttons */
+.onboarding-footer {
+  padding: 16px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.onboarding-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.onboarding-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(245,240,232,0.25);
+  transition: background 0.25s, transform 0.25s;
+}
+.onboarding-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+.onboarding-next-btn {
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  border-radius: 10px;
+  padding: 16px 24px;
+  font-family: var(--font-stack-heading);
+  font-size: 17px;         /* UI chrome — stays px */
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s, transform 0.1s;
+}
+.onboarding-next-btn:active { transform: scale(0.98); }
+.onboarding-next-btn:hover  { background: var(--accent-light); }
+
+.onboarding-skip-btn {
+  background: none;
+  border: none;
+  color: rgba(245,240,232,0.35);
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  text-align: center;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.onboarding-skip-btn:hover { color: rgba(245,240,232,0.6); }
+
+/* Compact layout for short screens (e.g. landscape phone) */
+@media (max-height: 600px) {
+  .onboarding-slide {
+    padding: 24px 28px 16px;
+  }
+  .onboarding-icon {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+  .onboarding-heading {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .onboarding-footer {
+    padding: 10px 24px 20px;
+  }
+}
+.onboarding-body ol,
+.onboarding-body ul {
+  padding-left: 1.5em;
+}
+
+/* ── 08. SEARCH OVERLAY ─────────────────────────────────────────────────── */
+/* Full-screen search panel that slides down from below the top nav.
+   z-index 95 keeps it below modals (z-index 300+) but above page content. */
+
+/* Base hidden state — no animation here to prevent initial flash */
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  top: calc(52px + env(safe-area-inset-top)) !important;
+  height: calc(100vh - (52px + env(safe-area-inset-top))) !important;
+  background: var(--text);
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+/* Opening state — slide down animation */
+.search-overlay.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideDownSearch 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* slideDownSearch is distinct from chrome.css's slideDown (chapter menu).
+   This version uses a springier cubic-bezier curve for the search panel.
+   Renamed to avoid the cascade conflict that would occur if both keyframe
+   definitions loaded in the same stylesheet context. */
+@keyframes slideDownSearch {
+  from { transform: translateY(-50%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  padding-top: calc(12px + env(safe-area-inset-top));
+  border-bottom: 1px solid rgba(245,240,232,0.08);
+}
+.search-input {
+  flex: 1;
+  background: rgba(245,240,232,0.08);
+  border: 1px solid rgba(245,240,232,0.15);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: var(--main-font-family);
+  font-size: 0.9375rem;    /* was 15px — scales */
+  color: var(--surface);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input::placeholder {
+  color: rgba(245,240,232,0.3);
+}
+.search-input:focus {
+  border-color: var(--accent);
+}
+.search-cancel-btn {
+  background: none;
+  border: none;
+  color: rgba(245,240,232,0.5);
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.search-cancel-btn:hover { color: var(--surface); }
+
+.search-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+/* Empty state and "Did you mean" container */
+.search-empty {
+  text-align: center;
+  padding: 48px 24px;
+  font-family: var(--main-font-family);
+  font-size: 0.9375rem;    /* was 15px — scales */
+  color: rgba(245,240,232,0.35);
+  line-height: 1.7;
+}
+.search-empty b {
+  color: var(--card-bg);   /* highlights the "Did you mean X?" suggestion */
+}
+
+/* Section labels e.g. "Questions", "Did you mean…" */
+.search-section-label {
+  font-family: var(--font-stack-mono);
+  font-size: 9px;          /* UI chrome — stays px */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 16px 16px 6px;
+}
+.search-result-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(245,240,232,0.06);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.search-result-item:hover {
+  background: rgba(245,240,232,0.06);
+}
+.search-result-meta {
+  font-family: var(--font-stack-mono);
+  font-size: 9px;          /* UI chrome — stays px */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.search-result-text {
+  font-family: var(--main-font-family);
+  font-size: 0.875rem;     /* was 14px — scales */
+  color: rgba(245,240,232,0.75);
+  line-height: 1.6;
+}
+/* Highlighted match within result text */
+.search-result-text mark {
+  background: rgba(184,146,42,0.35);
+  color: var(--accent-light);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+/* Snippet of the user's saved answer, shown below the question text */
+.search-result-answer {
+  margin-top: 6px;
+  font-family: var(--main-font-family);
+  font-size: 0.8125rem;    /* was 13px — scales */
+  color: rgba(245,240,232,0.45);
+  line-height: 1.55;
+  font-style: italic;
+}
+
+
+/* ── 09. GPU COMPOSITING ────────────────────────────────────────────────── */
+/* will-change hints for overlay elements that animate or are fixed-position.
+   Nav elements (.save-bar, .toast) carry their own hints in components.nav.css. */
+
+.verse-modal-overlay,
+.qa-modal-overlay,
+.search-overlay,
+.onboarding-overlay {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ── 10. INFO TRIGGER POPUPS ────────────────────────────────────────────── */
+/* Trigger icon button — no chrome, just the icon */
+.info-trigger-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 6px;
+  cursor: pointer;
+  color: var(--color-accent);
+  opacity: 0.7;
+  vertical-align: middle;
+  line-height: 1;
+}
+.info-trigger-btn:hover {
+  opacity: 1;
+}
+
+/* Footer row inside the info modal */
+.info-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2em;
+  gap: 1em;
+}
+.info-modal-show-again {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+#info-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44,36,22,0.6);
+  z-index: 300;
+  align-items: flex-end;
+  justify-content: center;
+}
+#info-modal-overlay.open {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Card — matches the bottom-sheet pattern used by verse/QA/deeper modals */
+.info-modal {
+  background: var(--surface);
+  border-radius: 16px 16px 0 0;
+  padding: 24px 20px 40px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease;
+}
+
+/* Title row: heading left, close button right */
+.info-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.info-modal-title {
+  font-family: var(--font-stack-heading);
+  font-size: 20px;
+  color: var(--text);
+  line-height: 1.2;
+}
+.info-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Body text */
+.info-modal-body {
+  font-family: var(--main-font-family);
+  font-size: 0.9375rem;
+  color: var(--text);
+  line-height: 1.8;
+}
+.info-modal-body p + p { margin-top: 10px; }
+
+.info-modal-body ul,
+.info-modal-body ol,
+.info-modal ul,
+.info-modal ol {
+  padding-left: 1.2rem;
+  margin: 4px 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11. DARK MODE
+   body.dark-mode overrides for all rules in this file, gathered here.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Verse modal ── */
+body.dark-mode .verse-modal {
+  background: var(--dm-raised);
+}
+body.dark-mode .verse-modal-text {
+  color: var(--dm-text);
+}
+body.dark-mode .verse-modal-ref {
+  color: var(--emphasis-light);
+}
+
+/* ── QA / Gen callout ── */
+body.dark-mode .qa-callout-card,
+body.dark-mode .gen-callout-card {
+  background: var(--dm-base);
+}
+
+/* ── QA modal ── */
+body.dark-mode .qa-modal {
+  background: var(--dm-raised);
+}
+body.dark-mode .qa-modal-text {
+  color: var(--dm-text);
+}
+body.dark-mode .qa-modal-term {
+  color: var(--dm-text);
+  border-bottom-color: var(--dm-border);
+}
+body.dark-mode .qa-modal-eyebrow {
+  color: var(--emphasis-light);
+}
+
+/* ── Onboarding overlay ──
+   No overrides needed — uses --text background palette by design,
+   which is already dark regardless of colour mode. */
+
+/* ── Search overlay ── */
+body.dark-mode .search-overlay {
+  background: var(--dm-base);
+}
+body.dark-mode .search-input {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--dm-text);
+}
+body.dark-mode .search-result-item:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+/* ── Go Deeper modal ── */
+body.dark-mode .deeper-modal       { background: var(--dm-raised); }
+body.dark-mode .deeper-modal-body  { color: var(--dm-text); }
+body.dark-mode .deeper-modal-eyebrow { color: var(--emphasis-light); }
+
+/* ── Info modal ── */
+body.dark-mode .info-modal        { background: var(--dm-raised); }
+body.dark-mode .info-modal-title  { color: var(--dm-text); }
+body.dark-mode .info-modal-body   { color: var(--dm-text); }
+body.dark-mode .info-modal-header { border-bottom-color: var(--dm-border); }

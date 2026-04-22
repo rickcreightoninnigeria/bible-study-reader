@@ -1,0 +1,214 @@
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * themes.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * All overrides that change the appearance based on media type or user
+ * preference. Dark mode overrides are distributed to the bottom of each
+ * relevant sub-file (variables.css, base.css, chrome.css, etc.) rather
+ * than collected here, because co-locating dark mode rules with the
+ * components they override makes maintenance easier.
+ *
+ * This file therefore contains only print / PDF export styles.
+ *
+ * 01. Print button    – Trigger button rendered on the Progress page
+ * 02. Print styles    – @media print: hides chrome, resets page,
+ *                       renders answer fields as static text for PDF
+ *
+ * ── DARK MODE ───────────────────────────────────────────────────────────
+ * Dark mode overrides for .print-btn live in pages.css (Section 13),
+ * alongside the other Progress page dark mode rules.
+ * All other dark mode rules are in their respective sub-files.
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ── 01. PRINT BUTTON ───────────────────────────────────────────────────── */
+/* Trigger button rendered on the Progress page that initiates window.print().
+   Light-mode styles here; dark-mode overrides in pages.css. */
+
+.print-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;         /* UI chrome — stays px */
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.print-btn:hover {
+  background: var(--surface-mid);
+  color: var(--text);
+}
+
+
+/* ── 02. PRINT STYLES ───────────────────────────────────────────────────── */
+/*
+ * Activated when the user triggers window.print() or uses the browser's
+ * print dialog. Designed to produce a clean PDF of the chapter content
+ * with answers rendered as readable text — stripping all app chrome.
+ *
+ * Design decisions:
+ *   - All screen-only UI is hidden with display:none !important
+ *   - Colour backgrounds that should survive into print use
+ *     print-color-adjust: exact (and its -webkit- prefix)
+ *   - Font sizes switch to pt units for reliable print rendering
+ *   - Page margins set via @page for consistent PDF output
+ */
+
+@media print {
+
+  /* ── Hide all app chrome ── */
+  .top-nav,
+  .chapter-menu,
+  .save-bar,
+  .toast,
+  .celebration-toast,
+  .verse-modal-overlay,
+  .qa-modal-overlay,
+  .search-overlay,
+  .onboarding-overlay,
+  .chapter-nav,
+  .print-btn,
+  .page-close-bar,
+  .starred-summary,
+  .section-break,
+  .qa-callout-card,
+  .gen-callout-card {
+    display: none !important;
+  }
+
+  /* ── Reset page ── */
+  html, body {
+    font-size: 11pt;
+    background: white !important;
+    color: black !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Full-width content — remove the max-width reading column constraint */
+  .content {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ── Chapter header ── */
+  .chapter-header {
+    padding: 0 0 16pt 0;
+    border-bottom: 1.5pt solid #999;
+    margin-bottom: 16pt;
+    page-break-after: avoid;
+  }
+  .chapter-label {
+    font-size: 8pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #666;
+  }
+  .chapter-title {
+    font-size: 20pt;
+    color: black;
+  }
+
+  /* ── Question cards ── */
+  .question-card {
+    border: 0.75pt solid #ccc;
+    border-radius: 0;
+    margin: 0 0 12pt 0;
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+  /* Reference bar — preserve dark background and gold text in print */
+  .question-ref {
+    background: #2c2416 !important;
+    color: #d4a843 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 5pt 10pt;
+    font-size: 8pt;
+  }
+  /* Star and verse buttons serve no purpose in print */
+  .star-btn,
+  .verse-btn {
+    display: none !important;
+  }
+  .question-body {
+    padding: 8pt 10pt 4pt;
+  }
+  .question-text {
+    font-size: 10pt;
+    color: black;
+  }
+
+  /* ── Answer fields ──
+     Rendered as static text boxes rather than interactive textareas.
+     Serif body font chosen for readability in print. */
+  .answer-field {
+    display: block;
+    width: 100%;
+    min-height: 48pt;
+    border: none;
+    border-top: 0.5pt solid #ddd;
+    background: #f9f9f9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 6pt 10pt;
+    font-size: 10pt;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: black;
+    white-space: pre-wrap;
+    word-break: break-word;
+    resize: none;
+  }
+
+  /* ── Intro and bridge blocks ──
+     Preserve the left accent border and warm cream background in print. */
+  .intro-block,
+  .bridge-text {
+    border-left: 3pt solid #b8922a;
+    background: #faf8f3 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 8pt 12pt;
+    margin: 0 0 12pt 0;
+    font-size: 10pt;
+    color: #333;
+    box-shadow: none;
+  }
+
+  /* ── Reflection header ──
+     Preserve the rust background so the section header is visually distinct. */
+  .reflection-header {
+    background: #8b3a2a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border-radius: 0;
+    padding: 6pt 12pt;
+    margin: 16pt 0 0 0;
+    page-break-after: avoid;
+  }
+  .reflection-header h3 {
+    color: white !important;
+    font-size: 11pt;
+  }
+
+  /* ── Notes field ──
+     Extra top margin to visually separate the notes card from question cards. */
+  .question-card:has([data-type="notes"]) {
+    margin-top: 16pt;
+  }
+
+  /* ── Page margins ── */
+  @page {
+    margin: 1.5cm 1.8cm;
+  }
+  @page :first {
+    margin-top: 1cm;  /* tighter top margin on first page — no running header */
+  }
+
+}

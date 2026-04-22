@@ -1,0 +1,1110 @@
+{
+  "sections":[
+    {
+      "sectionNumber":3,
+      "sectionTitle" :"Surface Idols",
+      "interlude"    :[
+        {
+          "elementId"    :"s03-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<p>If deep idols are the underlying motivations that drive our hearts — the ‘why’ of what we seek — the surface idols are the ‘what’.</p><p>Surface idols are more tangible, concrete things in life. They are things that we can easily see people pursuing, such as money, career, success, family, romantic love, or community.</p><p>Surface idols are the ‘vehicles’ through which we seek to satisfy our deeper desires. Surface idols are not usually inherently bad — they are often good things. They become idols when they take the place of God in our hearts and become ultimate sources of meaning or identity. In fact, the best things make for the most dangerous idols.</p>",
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ],
+
+  "chapters":[
+    {
+      "chapterNumber":6,
+      "chapterTitle" :"Control",
+      "elements"     :[
+        {
+          "elementId"    :"ch06-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>If our primary goal is to control our own outcomes, we are worshipping our abilities rather than trusting in God’s sovereignty.<cite>— Anon</cite></blockquote><blockquote>Control is an illusion. We are called to faithfulness, not to controlling outcomes or ensuring success.<cite>— Dallas Willard</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch06-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch06-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"When control is an idol it will show up as a (disordered) desire for self-discipline, hard work, and productivity. If you are in its grip, then you want to perform well, and you tend to be a perfectionist.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch06-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 18:9-23",
+          "translation"  :"NET",
+          "passageText"  :"<sup>9</sup>Jesus also told this parable to some who were confident that they were righteous and looked down on everyone else. <sup>10</sup>“Two men went up to the temple to pray, one a Pharisee and the other a tax collector. <sup>11</sup>The Pharisee stood and prayed about himself like this: ‘God, I thank you that I am not like other people: extortionists, unrighteous people, adulterers – or even like this tax collector. <sup>12</sup>I fast twice a week; I give a tenth of everything I get.’ <sup>13</sup>The tax collector, however, stood far off and would not even look up toward heaven, but beat his breast and said, ‘God, be merciful to me, sinner that I am!’ <sup>14</sup>I tell you that this man – not the other – went down to his home justified. For everyone who exalts himself will be humbled, but the one who humbles himself will be exalted.” <sup>15</sup>Now people were even bringing their babies to him for him to touch. But when the disciples saw it, they began to rebuke those people. <sup>16</sup>But Jesus called for the children, saying, “Let the little children come to me and do not try to stop them, for the kingdom of God belongs to such as these. <sup>17</sup>I tell you the truth, whoever does not receive the kingdom of God like a child will never enter it.” <sup>18</sup>Now a certain ruler asked him, “Good teacher, what must I do to inherit eternal life?” <sup>19</sup>Jesus said to him, “Why do you call me good? No one is good except God alone. <sup>20</sup>You know the commandments: ‘Do not commit adultery, do not murder, do not steal, do not give false testimony, honor your father and mother.’” <sup>21</sup>The man replied, “I have wholeheartedly obeyed all these laws since my youth.” <sup>22</sup>When Jesus heard this, he said to him, “One thing you still lack. Sell all that you have and give the money to the poor, and you will have treasure in heaven. Then come, follow me.” <sup>23</sup>But when the ruler heard this he became very sad, for he was extremely wealthy.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+18&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch06-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How can a focus on performance lead us astray?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 18:9-23"
+        },
+
+        {
+          "elementId"    :"ch06-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have this idol, you probably fear uncertainty, and falling short, and this can come through as anxiety and worry.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch06-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Exodus 2:11-15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>11</sup>In those days, when Moses had grown up, he went out to his people and observed their hard labor, and he saw an Egyptian man attacking a Hebrew man, one of his own people. <sup>12</sup>He looked this way and that and saw that no one was there, and then he attacked the Egyptian and concealed the body in the sand. <sup>13</sup>When he went out the next day, there were two Hebrew men fighting. So he said to the one who was in the wrong, “Why are you attacking your fellow Hebrew?” <sup>14</sup>The man replied, “Who made you a ruler and a judge over us? Are you planning to kill me like you killed that Egyptian?” Then Moses was afraid, thinking, “Surely what I did has become known.” <sup>15</sup>When Pharaoh heard about this event, he sought to kill Moses. So Moses fled from Pharaoh and settled in the land of Midian, and he settled by a certain well.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Exodus+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch06-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Exodus 3:10-15; 4:1-17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>10</sup>So now go, and I will send you to Pharaoh to bring my people, the Israelites, out of Egypt.” <sup>11</sup>Moses said to God, “Who am I, that I should go to Pharaoh, or that I should bring the Israelites out of Egypt?” <sup>12</sup>He replied, “Surely I will be with you, and this will be the sign to you that I have sent you: When you bring the people out of Egypt, you and they will serve God on this mountain.” <sup>13</sup>Moses said to God, “If I go to the Israelites and tell them, ‘The God of your fathers has sent me to you,’ and they ask me, ‘What is his name?’ – what should I say to them?” <sup>14</sup>God said to Moses, “I am that I am.” And he said, “You must say this to the Israelites, ‘I am has sent me to you.’” <sup>15</sup>God also said to Moses, “You must say this to the Israelites, ‘The Lord – the God of your fathers, the God of Abraham, the God of Isaac, and the God of Jacob – has sent me to you. This is my name forever, and this is my memorial from generation to generation.’ <sup>1</sup>Moses answered again, “And if they do not believe me or pay attention to me, but say, ‘The Lord has not appeared to you’?” <sup>2</sup>The Lord said to him, “What is that in your hand?” He said, “A staff.” <sup>3</sup>The Lord said, “Throw it to the ground.” So he threw it to the ground, and it became a snake, and Moses ran from it. <sup>4</sup>But the Lord said to Moses, “Put out your hand and grab it by the tail” – so he put out his hand and caught it, and it became a staff in his hand – <sup>5</sup>“that they may believe that the Lord, the God of their fathers, the God of Abraham, the God of Isaac, and the God of Jacob, has appeared to you.” <sup>6</sup>The Lord also said to him, “Put your hand into your robe.” So he put his hand into his robe, and when he brought it out – there was his hand, leprous like snow! <sup>7</sup>He said, “Put your hand back into your robe.” So he put his hand back into his robe, and when he brought it out from his robe – there it was, restored like the rest of his skin! <sup>8</sup>“If they do not believe you or pay attention to the former sign, then they may believe the latter sign. <sup>9</sup>And if they do not believe even these two signs or listen to you, then take some water from the Nile and pour it out on the dry ground. The water you take out of the Nile will become blood on the dry ground.” <sup>10</sup>Then Moses said to the Lord, “O my Lord, I am not an eloquent man, neither in the past nor since you have spoken to your servant, for I am slow of speech and slow of tongue.” <sup>11</sup>The Lord said to him, “Who gave a mouth to man, or who makes a person mute or deaf or seeing or blind? Is it not I, the Lord? <sup>12</sup>So now go, and I will be with your mouth and will teach you what you must say.” <sup>13</sup>But Moses said, “O my Lord, please send anyone else whom you wish to send!” <sup>14</sup>Then the Lord became angry with Moses, and he said, “What about your brother Aaron the Levite? I know that he can speak very well. Moreover, he is coming to meet you, and when he sees you he will be glad in his heart. <sup>15</sup>So you are to speak to him and put the words in his mouth. And as for me, I will be with your mouth and with his mouth, and I will teach you both what you must do. <sup>16</sup>He will speak for you to the people, and it will be as if he were your mouth and as if you were his God. <sup>17</sup>You will also take in your hand this staff, with which you will do the signs.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Exodus+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch06-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How does Moses flip between confidence and anxiety about his control of life?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Exodus 2:11-15, Exodus 3:10-15; 4:1-17"
+        },
+
+        {
+          "elementId"    :"ch06-el10",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have a control idol you will seek mastery over yourself. You might end up controlling others along the way, as you drive towards perfectionism, but that is not your primary aim. You want to prove your worth by being competent. You push yourself out of insecurity, worrying your performance isn’t good enough. You can end up over-worked, stressed, or burned out. You may see yourself as lazy, even though you achieve many things, and you may have a demanding internal ‘voice’ that judges your efforts unforgivingly. Sometimes it is hard to relax, as you are not sure if you have done all you could. Sometimes feelings can boil over into frustration if you feel your efforts are not properly appreciated.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch06-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 15:25-30",
+          "translation"  :"NET",
+          "passageText"  :"<sup>25</sup>Now his older son was in the field. As he came and approached the house, he heard music and dancing. <sup>26</sup>So he called one of the slaves and asked what was happening. <sup>27</sup>The slave replied, ‘Your brother has returned and your father has killed the fattened calf because he got his son back safe and sound.’ <sup>28</sup>But the older son became angry and refused to go in. His father came out and appealed to him, <sup>29</sup>but he answered his father, ‘Look! These many years I have worked like a slave for you, and I never disobeyed your commands. Yet you never gave me even a goat so that I could celebrate with my friends! <sup>30</sup>But when this son of yours came back, who has devoured your assets with prostitutes, you killed the fattened calf for him!’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+15&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch06-el12",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What clues are there that the ‘older son’ may have a control idol?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 15:25-30"
+        },
+
+        {
+          "elementId"    :"ch06-el13",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Control idols trap us in a cycle of anxiety, for we are not sovereign. No amount of control will ever be enough to secure our future.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch06-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Philippians 4:4-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>Rejoice in the Lord always. Again I say, rejoice! <sup>5</sup>Let everyone see your gentleness. The Lord is near! <sup>6</sup>Do not be anxious about anything. Instead, in every situation, through prayer and petition with thanksgiving, tell your requests to God. <sup>7</sup>And the peace of God that surpasses all understanding will guard your hearts and minds in Christ Jesus.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Philippians+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch06-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Peter 5:6-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>And humble yourselves under the mighty hand of God so that he may exalt you at the proper time, <sup>7</sup>casting all your cares on him because he cares for you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Peter+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch06-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Instead of looking to control, how should we respond to anxiety?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Philippians 4:4-7, 1 Peter 5:6-7"
+        },
+
+        {
+          "elementId"    :"ch06-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Job 38:1-11",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Then the Lord answered Job from the whirlwind. He said: <sup>2</sup>“Who is this who darkens counsel with words without knowledge? <sup>3</sup>Get ready for a difficult task like a man; I will question you and you will inform me! <sup>4</sup>Where were you when I laid the foundation of the earth? Tell me, if you possess understanding! <sup>5</sup>Who set its measurements – if you know – or who stretched a measuring line across it? <sup>6</sup>On what were its bases set, or who laid its cornerstone – <sup>7</sup>when the morning stars sang in chorus, and all the sons of God shouted for joy? <sup>8</sup>Who shut up the sea with doors when it burst forth, coming out of the womb, <sup>9</sup>when I made the storm clouds its garment, and thick darkness its swaddling band, <sup>10</sup>when I prescribed its limits, and set in place its bolts and doors, <sup>11</sup>when I said, ‘To here you may come and no farther, here your proud waves will be confined’?",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Job+38&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch06-el18",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why is it a mistake to think we can control everything?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Job 38:1-11"
+        },
+
+        {
+          "elementId"    :"ch06-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 6:25-34",
+          "translation"  :"NET",
+          "passageText"  :"<sup>25</sup>“Therefore I tell you, do not worry about your life, what you will eat or drink, or about your body, what you will wear. Isn’t there more to life than food and more to the body than clothing? <sup>26</sup>Look at the birds in the sky: They do not sow, or reap, or gather into barns, yet your heavenly Father feeds them. Aren’t you more valuable than they are? <sup>27</sup>And which of you by worrying can add even one hour to his life? <sup>28</sup>Why do you worry about clothing? Think about how the flowers of the field grow; they do not work or spin. <sup>29</sup>Yet I tell you that not even Solomon in all his glory was clothed like one of these! <sup>30</sup>And if this is how God clothes the wild grass, which is here today and tomorrow is tossed into the fire to heat the oven, won’t he clothe you even more, you people of little faith? <sup>31</sup>So then, don’t worry saying, ‘What will we eat?’ or ‘What will we drink?’ or ‘What will we wear?’ <sup>32</sup>For the unconverted pursue these things, and your heavenly Father knows that you need them. <sup>33</sup>But above all pursue his kingdom and righteousness, and all these things will be given to you as well. <sup>34</sup>So then, do not worry about tomorrow, for tomorrow will worry about itself. Today has enough trouble of its own.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch06-el20",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 15:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>I am the vine; you are the branches. The one who remains in me – and I in him – bears much fruit, because apart from me you can accomplish nothing.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+15&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch06-el21",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What can help us avoid making control into an idol?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 6:25-34, John 15:5"
+        },
+
+        {
+          "elementId"    :"ch06-el22h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch06-el22",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about how to control things in my life, and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on trying to keep everything under control.",
+            "When my prayers for things to turn out as I want are unanswered I feel anger, anxiety or despair.",
+            "Some of my strongest emotions are connected with things not turning out as I planned.",
+            "Uncertainty about the future, and/or falling short in what I do, are the things I’m most afraid of.",
+            "When life gets out of hand, I seek comfort by trying to reassert control over what is going on in my life.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of control.",
+            "If my control over my life was taken away, my life would feel unbearable or meaningless."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch06-el23",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch06-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Think of a recent time when you felt worried or anxious. Where did that feeling come from? (Was an idol of control threatened?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch06-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Think of a time you did everything right but didn’t receive the outcome you thought was right? How did you feel and respond? (Was that because an idol of control was being undermined?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch06-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Is there one (or more) aspect of the idol of control that you can see at work in your own life?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch06-el27",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Are there biblical truths you need to meditate on, to help you put the idol of control to death?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch06-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some ways you can seek first God’s kingdom? For you, in your life situation, what would it look like to serve God faithfully, and trust him to take care of the results?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":7,
+      "chapterTitle" :"Comfort",
+      "elements"     :[
+        {
+          "elementId"    :"ch07-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>The idol of comfort keeps us from growth because true spiritual maturity often comes through hardship and pain.<cite>— A.W. Tozer</cite></blockquote><blockquote>We are half-hearted creatures, fooling about with comfort, when infinite joy is offered to us through obedience and sacrifice.<cite>— C.S. Lewis</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch07-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch07-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"When comfort is an idol it will show up as a (disordered) desire for freedom from pain, stress, and unpleasantness of any kind. If you are in its grip, then you tend to avoid stress, and indulge in self-soothing behaviours, especially those where gratification is immediate.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch07-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Genesis 13:8-13; 19:1-38",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>Abram said to Lot, “Please let there be no quarreling between me and you, and between my herdsmen and your herdsmen, for we are relatives. <sup>9</sup>Is not the whole land before you? Separate yourself from me. If you go to the left, then I will go to the right, but if you go to the right, then I will go to the left.” <sup>10</sup>Lot looked up and saw the whole region of the Jordan. He noticed that all of it was well-watered (before the Lord obliterated Sodom and Gomorrah) like the garden of the Lord, like the land of Egypt, all the way to Zoar. <sup>11</sup>Lot chose for himself the whole region of the Jordan and traveled to the east. So the relatives separated from each other. <sup>12</sup>Abram settled in the land of Canaan, but Lot settled among the cities of the plain and pitched his tents next to Sodom. <sup>13</sup>Now the people of Sodom were extremely wicked rebels against the Lord. … <sup>1</sup>The two angels came to Sodom in the evening while Lot was sitting in the city’s gateway. When Lot saw them, he got up to meet them and bowed down with his face toward the ground. <sup>2</sup>He said, “My lords, please turn aside to your servant’s house. Wash your feet and spend the night. Then you can be on your way early in the morning.” “No,” they replied, “we’ll spend the night in the town square.” <sup>3</sup>But he strongly urged them, so they did turn aside with him and entered his house. He prepared a feast for them, including bread baked without yeast, and they ate. <sup>4</sup>Before they could lie down to sleep, all the men – both young and old, from every part of the city of Sodom – surrounded the house. <sup>5</sup>They shouted to Lot, “Where are the men who came to you tonight? Bring them out to us so we can have sex with them!” <sup>6</sup>Lot went outside to them, shutting the door behind him. <sup>7</sup>He said, “Please, my brothers, don’t act so wickedly! <sup>8</sup>Look, I have two daughters who have never had sexual relations with a man. Let me bring them out to you, and you can do to them whatever you please. Only don’t do anything to these men, for they have come under the protection of my roof.” <sup>9</sup>But they replied, “Out of our way! This man came to live here as a foreigner, and now he dares to judge us! We’ll treat you worse than them!” They kept pressuring Lot until they were close enough to break down the door. <sup>10</sup>So the men inside reached out and pulled Lot back into the house and shut the door. <sup>11</sup>Then they struck the men who were at the door of the house, from the youngest to the oldest, with blindness. The men outside wore themselves out trying to find the door. <sup>12</sup>Then the two men said to Lot, “Who else do you have here? Do you have any sons-in-law, sons, daughters, or other relatives in the city? Get them out of this place <sup>13</sup>because we are about to destroy it. The outcry against this place is so great before the Lord that he has sent us to destroy it.” <sup>14</sup>Then Lot went out and spoke to his sons-in-law who were going to marry his daughters. He said, “Get up! Get out of this place because the Lord is about to destroy the city!” But his sons-in-law thought he was joking. <sup>15</sup>At dawn the angels rushed Lot along, saying, “Get up! Take your wife and your two daughters who are here, or else you will be destroyed when the city is judged!” <sup>16</sup>When Lot hesitated, the men grabbed his hand and the hands of his wife and his two daughters because the Lord had compassion on them. They led them away and placed them outside the city. <sup>17</sup>When they had brought them outside, one of them said, “Run for your lives! Don’t look back and don’t stop anywhere on the plain. Run to the mountains or you will be destroyed!” <sup>18</sup>But Lot said to them, “No, please, Lord! <sup>19</sup>Your servant has found favor with you, and you have shown me great kindness by sparing my life. But I am not able to escape to the mountains because this disaster will overtake me and I’ll die. <sup>20</sup>Look, this town over here is close enough to escape to and it’s a small place. Please let me escape there – it’s just a small place, isn’t it? – and my life will be spared.” <sup>21</sup>He said to him, “All right, I’ll grant this request too and will not overthrow the town you mentioned. <sup>22</sup>Run there quickly, for I cannot do anything until you arrive there.” (This is why the town was called Zoar.) <sup>23</sup>The sun had just risen over the land when Lot reached Zoar. <sup>24</sup>Then the Lord rained down sulfur and fire on Sodom and Gomorrah. It was sent down from the sky by the Lord. <sup>25</sup>So he overthrew those cities and all that region, including all the inhabitants of the cities and the vegetation that grew from the ground. <sup>26</sup>But Lot’s wife looked back longingly and was turned into a pillar of salt. <sup>27</sup>Abraham got up early in the morning and went to the place where he had stood before the Lord. <sup>28</sup>He looked out toward Sodom and Gomorrah and all the land of that region. As he looked, he saw the smoke rising up from the land like smoke from a furnace. <sup>29</sup>So when God destroyed the cities of the region, God honored Abraham by delivering Lot from the midst of the destruction when he overthrew the cities Lot had lived in. <sup>30</sup>Lot went up from Zoar with his two daughters and settled in the mountains, because he was afraid to live in Zoar. So he lived in a cave with his two daughters. <sup>31</sup>Later the older daughter said to the younger, “Our father is old, and there is no man anywhere nearby to have sexual relations with us, as is the custom throughout the land. <sup>32</sup>Come, let’s make our father drunk with wine so we can have sexual relations with him and preserve our family line through our father.” <sup>33</sup>That night they made their father drunk with wine, and the older daughter went in and had sexual relations with her father. He was unaware that she had sexual relations with him and that she got up. <sup>34</sup>The next morning the older daughter said to the younger, “See, I had sexual relations with my father last night. Let’s make him drunk again tonight, and you go in and have sexual relations with him so we can preserve our family line through our father.” <sup>35</sup>So that night they made their father drunk with wine again, and the younger one went in and had sexual relations with him. He was unaware that she had sexual relations with him and that she got up. <sup>36</sup>Both of Lot’s daughters became pregnant by their father. <sup>37</sup>The older daughter gave birth to a son and named him Moab. He is the ancestor of the Moabites of today. <sup>38</sup>The younger daughter also gave birth to a son and named him Ben-Ammi. He is the ancestor of the Ammonites of today.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Genesis+13&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch07-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How did Lot’s choice of immediate gratification lead to trouble?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Genesis 13:8-13; 19:1-38"
+        },
+
+        {
+          "elementId"    :"ch07-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have this idol, you probably fear boredom, stress, pain and discomfort, and you can easily turn to escapism in such situations.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch07-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Genesis 25:29-34",
+          "translation"  :"NET",
+          "passageText"  :"<sup>29</sup>Now Jacob cooked some stew, and Esau came in from the open fields; he was famished. <sup>30</sup>Esau said to Jacob, “Please feed me some of that red stuff – yes, that red stuff – because I’m starving!” (That is why he was also called Edom.) <sup>31</sup>But Jacob replied, “First sell me your birthright.” <sup>32</sup>Esau said, “Look, I’m about to die! What good is the birthright to me?” <sup>33</sup>But Jacob said, “Swear an oath to me now.” So Esau swore an oath to him and sold his birthright to Jacob. <sup>34</sup>Then Jacob gave Esau some bread and some of the red lentil stew; Esau ate and drank, then got up and went on his way. So Esau despised his birthright.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Genesis+25&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch07-el08",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How did Esau’s choice of instant gratification lead him astray?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Genesis 25:29-34"
+        },
+
+        {
+          "elementId"    :"ch07-el09",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have a comfort idol you will seek to avoid discomfort to yourself. Examples of self-soothing activities include all the classic addictive behaviours that produce instant gratification, such as drinking alcohol, recreational drug use, oversleeping, comfort eating, gambling, pornography, binge-watching TV, binge-scrolling social media, binge-playing of video games and escapism of any kind. It is not that self-soothing behaviour is wrong; far from it. The problem is <em>idolatrous</em>, compulsive, impulsive self-soothing behaviour. You are willing to give up productive, God-given, God-honouring tasks to gain fleeting pleasures and distractions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch07-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Corinthians 10:23-24",
+          "translation"  :"NET",
+          "passageText"  :"<sup>23</sup>“Everything is lawful,” but not everything is beneficial. “Everything is lawful,” but not everything builds others up. <sup>24</sup>Do not seek your own good, but the good of the other person.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Corinthians+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch07-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 16:24-25",
+          "translation"  :"NET",
+          "passageText"  :"<sup>24</sup>Then Jesus said to his disciples, “If anyone wants to become my follower, he must deny himself, take up his cross, and follow me. <sup>25</sup>For whoever wants to save his life will lose it, but whoever loses his life for my sake will find it.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+16&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch07-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Romans 5:1-5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Therefore, since we have been declared righteous by faith, we have peace with God through our Lord Jesus Christ, <sup>2</sup>through whom we have also obtained access by faith into this grace in which we stand, and we rejoice in the hope of God’s glory. <sup>3</sup>Not only this, but we also rejoice in sufferings, knowing that suffering produces endurance, <sup>4</sup>and endurance, character, and character, hope. <sup>5</sup>And hope does not disappoint, because the love of God has been poured out in our hearts through the Holy Spirit who was given to us.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Romans+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch07-el13",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are we called to instead of the idol of comfort?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Corinthians 10:23-24, Matthew 16:24-25, Romans 5:1-5"
+        },
+
+        {
+          "elementId"    :"ch07-el14",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"When we are serving the idol of comfort we tend to neglect other people, as well as our responsibilities.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch07-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"James 4:17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>So whoever knows what is good to do and does not do it is guilty of sin.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=James+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch07-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does God call it when we avoid what we should do?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"James 4:17"
+        },
+
+        {
+          "elementId"    :"ch07-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Corinthians 9:24-27",
+          "translation"  :"NET",
+          "passageText"  :"<sup>24</sup>Do you not know that all the runners in a stadium compete, but only one receives the prize? So run to win. <sup>25</sup>Each competitor must exercise self-control in everything. They do it to receive a perishable crown, but we an imperishable one. <sup>26</sup>So I do not run uncertainly or box like one who hits only air. <sup>27</sup>Instead I subdue my body and make it my slave, so that after preaching to others I myself will not be disqualified.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Corinthians+9&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch07-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"2 Corinthians 1:3-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>Blessed is the God and Father of our Lord Jesus Christ, the Father of mercies and God of all comfort, <sup>4</sup>who comforts us in all our troubles so that we may be able to comfort those experiencing any trouble with the comfort with which we ourselves are comforted by God. <sup>5</sup>For just as the sufferings of Christ overflow toward us, so also our comfort through Christ overflows to you. <sup>6</sup>But if we are afflicted, it is for your comfort and salvation; if we are comforted, it is for your comfort that you experience in your patient endurance of the same sufferings that we also suffer. <sup>7</sup>And our hope for you is steadfast because we know that as you share in our sufferings, so also you will share in our comfort.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch07-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Revelation 21:3-4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>And I heard a loud voice from the throne saying: “Look! The residence of God is among human beings. He will live among them, and they will be his people, and God himself will be with them. <sup>4</sup>He will wipe away every tear from their eyes, and death will not exist any more – or mourning, or crying, or pain, for the former things have ceased to exist.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Revelation+21&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch07-el20",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What can help us put the idol of comfort to death?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"1 Corinthians 9:24-27, 2 Corinthians 1:3-7, Revelation 21:3-4"
+        },
+
+        {
+          "elementId"    :"ch07-el21",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"We need to learn that Christ is the source of all comfort and we need to get used to finding our joy in Him.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch07-el22h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch07-el22",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about finding escape and comfort and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on escaping stress and seeking comfort.",
+            "When my prayers for comfort are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with pain or discomfort.",
+            "Pain, boredom, and distress are the things I’m most afraid of.",
+            "When life gets out of hand, I turn for comfort to things that will quickly gratify me.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of comfort.",
+            "If my comfort in life was taken away, my life would feel unbearable or meaningless."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch07-el23",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch07-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Think of a recent time when you felt so uncomfortable that you needed to escape. (Was an idol of comfort threatened?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch07-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some of the things you use as a crutch, instead of finding comfort in Jesus? How can you get rid of those things?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch07-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Is there one (or more) aspect of the idol of comfort that you can see at work in your own life?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch07-el27",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Are there biblical truths you need to meditate on, to help you put the idol of comfort to death?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch07-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some ways you can serve God even when it brings you discomfort?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":8,
+      "chapterTitle" :"Money",
+      "elements"     :[
+        {
+          "elementId"    :"ch08-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>Prosperity knits a man to the world. He feels that he is ‘finding his place in it,’ while really it is finding its place in him.<cite>— C.S. Lewis</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch08-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotation? (Do you like it or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Money becomes an idol by promising us what only God can give — security, comfort, identity, and power.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 6:24",
+          "translation"  :"NET",
+          "passageText"  :"<sup>24</sup>“No one can serve two masters, for either he will hate the one and love the other, or he will be devoted to the one and despise the other. You cannot serve God and money.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch08-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is the basic issue with love of money?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 6:24"
+        },
+
+        {
+          "elementId"    :"ch08-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Love of money traps us. It gives us a false sense of control but leads us away from God. Money is not evil, but the worship of it is.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Proverbs 11:28",
+          "translation"  :"NET",
+          "passageText"  :"<sup>28</sup>The one who trusts in his riches will fall, but the righteous will flourish like a green leaf.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Proverbs+11&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Proverbs 23:4-5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>Do not wear yourself out to get rich; be wise enough to restrain yourself. <sup>5</sup>When you gaze upon riches, they are gone, for they surely make wings for themselves and fly off into the sky like an eagle!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Proverbs+23&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ezekiel 7:19",
+          "translation"  :"NET",
+          "passageText"  :"<sup>19</sup>‘They will throw their silver into the streets, and their gold will be treated as something unclean. Their silver and gold will not be able to deliver them in the day of the Lord’s wrath. They will not satisfy their hunger or fill their stomachs with it, for it has become the obstacle that leads to iniquity.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ezekiel+7&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 6:19-21",
+          "translation"  :"NET",
+          "passageText"  :"<sup>19</sup>“Do not accumulate for yourselves treasures on earth, where moth and rust destroy and where thieves break in and steal. <sup>20</sup>But accumulate for yourselves treasures in heaven, where moth and rust do not destroy, and thieves do not break in and steal. <sup>21</sup>For where your treasure is, there your heart will be also.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch08-el11",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do we learn about the unreliability of money?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Proverbs 11:28, Proverbs 23:4-5, Ezekiel 7:19, Matthew 6:19-21"
+        },
+
+        {
+          "elementId"    :"ch08-el12",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Money is a cruel idol, promising much but delivering little. It pretends to offer us protection, while in reality it needs us to protect it. It promises happiness, but delivers discontent.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Mark 4:19",
+          "translation"  :"NET",
+          "passageText"  :"<sup>19</sup>but the worries of this age, the seductiveness of wealth, and the desires for other things come in and choke the word, and it produces nothing.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Mark+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Timothy 6:10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>10</sup>For the love of money is a root of all kinds of evil. Some people in reaching for it have strayed from the faith and stabbed themselves with many pains.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Timothy+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch08-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What sort of trouble can the love of money cause?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Mark 4:19, 1 Timothy 6:10"
+        },
+
+        {
+          "elementId"    :"ch08-el16",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Money can be a tool for God’s kingdom, but when we give our trust to it, it controls us, it leads us astray, distorts our values, and destroys our souls. Money is a great tool but a horrendous master.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Colossians 3:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>So put to death whatever in your nature belongs to the earth: sexual immorality, impurity, shameful passion, evil desire, and greed which is idolatry.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Colossians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 19:21-22",
+          "translation"  :"NET",
+          "passageText"  :"<sup>21</sup>Jesus said to him, “If you wish to be perfect, go sell your possessions and give the money to the poor, and you will have treasure in heaven. Then come, follow me.” <sup>22</sup>But when the young man heard this he went away sorrowful, for he was very rich.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+19&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch08-el19",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does the Bible think about money, greed and idolatry?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Colossians 3:5, Matthew 19:21-22"
+        },
+
+        {
+          "elementId"    :"ch08-el20",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Jesus places a special demand on the rich young ruler <em>because</em> money is his idol, and <em>to show him</em> money is his idol. When forced to choose between money and Jesus, he chooses money — sadly, but decisively.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el21",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 12:15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>Then he said to them, “Watch out and guard yourself from all types of greed, because one’s life does not consist in the abundance of his possessions.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el22",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Hebrews 13:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>Your conduct must be free from the love of money and you must be content with what you have, for he has said, “I will never leave you and I will never abandon you.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Hebrews+13&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el23",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 8:17-18",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>Be careful not to say, ‘My own ability and skill have gotten me this wealth.’ <sup>18</sup>You must remember the Lord your God, for he is the one who gives the ability to get wealth; if you do this he will confirm his covenant that he made by oath to your ancestors, even as he has to this day.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+8&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el24",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ecclesiastes 5:10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>10</sup>The one who loves money will never be satisfied with money, and the one who loves wealth will never be satisfied with income – this is also futile.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ecclesiastes+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch08-el25",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Proverbs 30:8-9",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>Remove falsehood and lies far from me; do not give me poverty or riches, feed me with my allotted portion of food, <sup>9</sup>lest I become satisfied and act deceptively and say, ‘Who is the Lord?’ Or lest I become poor and steal and profane the name of my God.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Proverbs+30&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch08-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What other warnings does the Bible give us about money?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 12:15, Hebrews 13:5, Deuteronomy 8:17-18, Ecclesiastes 5:10, Proverbs 30:8-9"
+        },
+
+        {
+          "elementId"    :"ch08-el27",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"Can you pray Proverbs 30:8-9 for yourself? If not, then the love of money may well be an idol that has burrowed deep into you. If we let money become the measure of all things, it will replace God as the foundation of our life, and it will pierce us with many griefs.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el28",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el29",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Complete the idol awareness scale first, then answer these questions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch08-el30",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Overall, how much do you think you are at risk of money becoming a serious idol for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch08-el31",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Does your valuing of money give you any further insight into what your deepest idols are?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"    :"ch08-el32h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch08-el32",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about making money and those thoughts bring me great joy.",
+            "I spend too much time or energy on trying to make money.",
+            "When my prayers for more money are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with money, and gaining or losing it.",
+            "Money is the thing I’m most afraid of losing.",
+            "When life gets out of hand, I turn to consider the money I have for comfort.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of making money.",
+            "If my money was taken away from me, my life would feel unbearable or meaningless.",
+            "I’m really proud of how well I have done at making money.",
+            "Others have told me I sometimes seem obsessed with money."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch08-el34h",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Deep Idol’ Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch08-el34",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I value money because I can use it to gain power over others.",
+            "I value money because I can use it to gain the approval of others.",
+            "I value money because I can use it to gain comfort and pleasure.",
+            "I value money because it brings me security and control over my life."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ]
+}

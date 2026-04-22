@@ -1,0 +1,352 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 2,
+      "chapterTitle": "Who is God? — The Personal God",
+      "elements": [
+        {
+          "elementId": "ch02-el01",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Bible Readings for This Session",
+          "term": "Psalm 103 · John 1:1–18 · Matthew 6:9–13",
+          "question": "It’s worth having these passages open as you work through this session.",
+          "answer": "<p><b>Psalm 103</b><br><sup>1</sup>Praise the Lord, O my soul! With all that is within me, praise his holy name! <sup>2</sup>Praise the Lord, O my soul! Do not forget all his kind deeds! <sup>3</sup>He is the one who forgives all your sins, who heals all your diseases, <sup>4</sup>who delivers your life from the Pit, who crowns you with faithfulness and compassion, <sup>5</sup>who satisfies your life with good things, so your youth is renewed like an eagle’s. <sup>6</sup>The Lord does what is fair, and executes justice for all the oppressed. <sup>7</sup>He revealed his faithful acts to Moses, his deeds to the Israelites. <sup>8</sup>The Lord is compassionate and merciful, patient and replenishing in lookup. <sup>9</sup>He does not always accuse, and does not stay angry forever. <sup>10</sup>He does not deal with us as our sins deserve; he does not repay us as our misdeeds deserve. <sup>11</sup>For as the skies are high above the earth, so his loyal love towers over those who fear him. <sup>12</sup>As far as the eastern horizon is from the west, so far he removes our transgressions from us. <sup>13</sup>As a father has compassion on his children, so the Lord has compassion on those who fear him. <sup>14</sup>For he knows how we are formed; he remembers that we are dust. <sup>15</sup>As for people, their days are like grass; they flourish like a flower of the field. <sup>16</sup>When the wind blows over it, it is gone, and its place remembers it no more. <sup>17</sup>But the Lord’s loyal love from eternity to eternity belongs to those who fear him, and his faithfulness to their grandchildren, <sup>18</sup>to those who keep his covenant and remember to obey his precepts. <sup>19</sup>The Lord has established his throne in heaven; his kingdom extends over everything. <sup>20</sup>Praise the Lord, you his angels, you mighty warriors who carry out his promises and obey his words! <sup>21</sup>Praise the Lord, all his heavenly armies, his ministers who carry out his desire! <sup>22</sup>Praise the Lord, all that he has made, in all the regions of his kingdom! Praise the Lord, O my soul!<br><br><a href='https://www.biblegateway.com/passage/?search=Psalm+103&version=NET'>(NET — see context ↗)</a></p><p><b>John 1:1–18</b><br><sup>1</sup>In the beginning was the Word, and the Word was with God, and the Word was God. <sup>2</sup>The Word was with God in the beginning. <sup>3</sup>All things were created through him, and apart from him not one thing was created that has been created. <sup>4</sup>In him was life, and the life was the light of mankind. <sup>5</sup>And the light shines on in the darkness, and the darkness has not mastered it. <sup>6</sup>A man came, sent from God, whose name was John. <sup>7</sup>He came as a witness to testify about the light, so that everyone might believe through him. <sup>8</sup>He himself was not the light, but he came to testify about the light. <sup>9</sup>The true light, who gives light to everyone, was coming into the world. <sup>10</sup>He was in the world, and the world was created through him, yet the world did not recognize him. <sup>11</sup>He came to what was his own, yet his own people did not receive him. <sup>12</sup>But to all who have received him—those who believe in his name—he has given the right to become God’s children <sup>13</sup>—children not born by human parents or by human desire or a husband’s decision, but by God. <sup>14</sup>Now the Word became flesh and took up residence among us. We saw his glory—the glory of the one and only, full of grace and truth, who came from the Father. <sup>15</sup>John testified about him and shouted out, ‘This one was the one about whom I said, “He who comes after me is greater than I am, because he existed before me.”’ <sup>16</sup>For from his fullness we have all received, and grace after grace. <sup>17</sup>For the law was given through Moses; grace and truth came through Jesus Christ. <sup>18</sup>No one has ever seen God. The only one, himself God, who is in closest fellowship with the Father, has made God known.<br><br><a href='https://www.biblegateway.com/passage/?search=John+1%3A1-18&version=NET'>(NET — see context ↗)</a></p><p><b>Matthew 6:9–13</b><br><sup>9</sup>So pray this way: ‘Our Father in heaven, may your name be honored, <sup>10</sup>may your kingdom come, may your will be done on earth as it is in heaven. <sup>11</sup>Give us today our daily bread, <sup>12</sup>and forgive us our debts, as we ourselves have forgiven our debtors. <sup>13</sup>And do not lead us into temptation, but deliver us from the evil one.’<br><br><a href='https://www.biblegateway.com/passage/?search=Matthew+6%3A9-13&version=NET'>(NET — see context ↗)</a></p>",
+          "buttonText": "Read passages ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el02",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "Every person has a picture of God — even those who say they do not. That picture shapes everything: how we pray, how we feel when we fail, whether we draw near or keep our distance, whether we expect love or only judgement.<br><br>For many people, that picture is of a God who is vast, sovereign, and powerful — a King, a Judge, a Creator. Those things are absolutely true. But the Bible claims something more: that this same God, the maker of heaven and earth, is also <em>personal</em>. He can be known, not just feared. He draws near — he doesn’t only command from a distance.<br><br>This session isn’t about replacing what you already know of God’s greatness. It is about expanding it — because the God revealed in Jesus is greater <em>and</em> closer than any picture we could have formed on our own.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el03",
+          "type": "question",
+          "format": "plainText",
+          "question": "How would you describe your picture of God before you came to faith in Jesus? Was he close or distant? Knowable or hidden? What shaped that picture?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el04",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 1 — The God Who Is Merciful and Near",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el05",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Psalm 103 is one of the most beloved poems in all of Scripture. It was written by David — a man who had known both the heights of God’s blessing and the depths of his own failure — and it is a sustained meditation on the character of God. What does God actually <em>like</em>? What are his instincts toward human beings?<br><br>The answer, from beginning to end, is: compassion.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el06",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Psalm 103:1–18",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>Praise the Lord, O my soul! With all that is within me, praise his holy name! <sup>2</sup>Praise the Lord, O my soul! Do not forget all his kind deeds! <sup>3</sup>He is the one who forgives all your sins, who heals all your diseases, <sup>4</sup>who delivers your life from the Pit, who crowns you with faithfulness and compassion, <sup>5</sup>who satisfies your life with good things, so your youth is renewed like an eagle’s. <sup>6</sup>The Lord does what is fair, and executes justice for all the oppressed. <sup>7</sup>He revealed his faithful acts to Moses, his deeds to the Israelites. <sup>8</sup>The Lord is compassionate and merciful, patient and replenishing in lookup. <sup>9</sup>He does not always accuse, and does not stay angry forever. <sup>10</sup>He does not deal with us as our sins deserve; he does not repay us as our misdeeds deserve. <sup>11</sup>For as the skies are high above the earth, so his loyal love towers over those who fear him. <sup>12</sup>As far as the eastern horizon is from the west, so far he removes our transgressions from us. <sup>13</sup>As a father has compassion on his children, so the Lord has compassion on those who fear him. <sup>14</sup>For he knows how we are formed; he remembers that we are dust. <sup>15</sup>As for people, their days are like grass; they flourish like a flower of the field. <sup>16</sup>When the wind blows over it, it is gone, and its place remembers it no more. <sup>17</sup>But the Lord’s loyal love from eternity to eternity belongs to those who fear him, and his faithfulness to their grandchildren, <sup>18</sup>to those who keep his covenant and remember to obey his precepts. <sup>19</sup>The Lord has established his throne in heaven; his kingdom extends over everything. <sup>20</sup>Praise the Lord, you his angels, you mighty warriors who carry out his promises and obey his words! <sup>21</sup>Praise the Lord, all his heavenly armies, his ministers who carry out his desire! <sup>22</sup>Praise the Lord, all that he has made, in all the regions of his kingdom! Praise the Lord, O my soul!",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Psalm+103&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch02-el07",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "What God is like (vv. 1–5, 8–14)",
+          "question": "Make a list of the words and phrases in this psalm that describe God’s character. Which of these surprises you most, and why?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el08",
+          "type": "question",
+          "format": "plainText",
+          "question": "Verse 14 says: “He knows what we are made of; he realises we are made of clay.” What does it mean that God’s compassion is shaped by his knowledge of our weakness? How does that affect how you think about approaching him?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el09",
+          "type": "question",
+          "format": "plainText",
+          "question": "Verses 11–12 use two images of distance — the height of the sky above the earth, and the distance of east from west — to describe how far God removes our sins from us. Why do you think the psalmist reaches for images of <em>distance</em> to describe forgiveness? What is he trying to say?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el10",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "“Is the God of the Bible the same as Allah?”",
+          "question": "You may have wondered: are Christians and Muslims talking about the same God? Think about it before tapping to read a response.",
+          "answer": "This is a question worth taking seriously rather than brushing aside. There is one Creator God — the God of Abraham, who made the heavens and the earth. In that sense, yes: Christians and Muslims are not worshipping different beings.<br><br>But the Bible makes claims about this God that go further than other traditions. It claims that God is not only Creator and King, but that he is personally relational by nature — that within the one God there is a relationship of Father, Son, and Spirit (we will explore this more in Sessions 3 and 4). And it claims that this God has acted decisively in history by coming in the person of Jesus.<br><br>The honest answer, then, is: <em>same God</em> — but a much fuller and more surprising revelation of who that God is. Both traditions agree on what we might call God’s substance: he is eternal, all-powerful, the Creator, without beginning or end. Where the Bible goes further is in revealing his personal character — not just that he is powerful, but that he is love at his very core, and that this love was not something he needed creation to express. It was already flowing, from eternity, within the relationship of Father, Son, and Spirit. This series exists to help you explore that revelation.",
+          "buttonText": "See a response ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el11",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 2 — The Word Who Became Flesh",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el12",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Psalm 103 tells us a great deal about what God is <em>like</em>. But John’s Gospel goes even further: it tells us that God has made himself known in a person.<br><br>The opening of John’s Gospel — sometimes called the Prologue — is one of the most theologically dense passages in all of Scripture. It describes Jesus as the <em>Logos</em> — the Word — and makes a staggering claim: that this Word is not a created being, but is God himself, and has entered the world in human form.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el13",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "John 1:1–18",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>In the beginning was the Word, and the Word was with God, and the Word was God. <sup>2</sup>The Word was with God in the beginning. <sup>3</sup>All things were created through him, and apart from him not one thing was created that has been created. <sup>4</sup>In him was life, and the life was the light of mankind. <sup>5</sup>And the light shines on in the darkness, and the darkness has not mastered it. <sup>6</sup>A man came, sent from God, whose name was John. <sup>7</sup>He came as a witness to testify about the light, so that everyone might believe through him. <sup>8</sup>He himself was not the light, but he came to testify about the light. <sup>9</sup>The true light, who gives light to everyone, was coming into the world. <sup>10</sup>He was in the world, and the world was created through him, yet the world did not recognize him. <sup>11</sup>He came to what was his own, yet his own people did not receive him. <sup>12</sup>But to all who have received him—those who believe in his name—he has given the right to become God’s children <sup>13</sup>—children not born by human parents or by human desire or a husband’s decision, but by God. <sup>14</sup>Now the Word became flesh and took up residence among us. We saw his glory—the glory of the one and only, full of grace and truth, who came from the Father. <sup>15</sup>John testified about him and shouted out, ‘This one was the one about whom I said, “He who comes after me is greater than I am, because he existed before me.”’ <sup>16</sup>For from his fullness we have all received, and grace after grace. <sup>17</sup>For the law was given through Moses; grace and truth came through Jesus Christ. <sup>18</sup>No one has ever seen God. The only one, himself God, who is in closest fellowship with the Father, has made God known.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=John+1%3A1-18&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch02-el14",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "“The Word became flesh” (v. 14)",
+          "question": "John says that the Word “became flesh and dwelt among us.” The word translated “dwelt” literally means <em>tabernacled</em> — a reference to the tent in the wilderness where God’s presence rested among his people. What is John saying about Jesus with this language?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el15",
+          "type": "question",
+          "format": "plainText",
+          "question": "Verse 18 says: “No one has ever seen God. The only one, himself God, who is in closest fellowship with the Father, has made God known.” What does it mean that Jesus <em>makes God known</em>? Before Jesus, what were people left with?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el16",
+          "type": "question",
+          "format": "plainText",
+          "question": "John says that Jesus came to “his own” — the people of Israel — and they did not receive him (v. 11). But to those who did receive him, he gave the right to become “children of God” (v. 12). What does it mean to receive Jesus? And what does it mean to be called a child of God?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el17",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "John 1 introduces us to something we will return to in Session 4 — the mystery of the Trinity. But even before we try to understand the <em>structure</em> of that mystery, we can notice what it means for us: God is not a distant, unknowable sovereign. He is the kind of God who enters the world, who “tabernacles” among his people, who can be seen and touched and heard.<br><br>The question “Can we know God personally?” is answered in Jesus: yes — because Jesus is God making himself personally known.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el18",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 3 — Calling God “Father”",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el19",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Of all the things Jesus taught his disciples, one of the most unexpected was how to address God in prayer. He did not say: begin with God’s sovereignty. He did not say: establish your unworthiness first. He said: begin with <em>Father</em>.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el20",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Matthew 6:9–13",
+          "translation": "NET",
+          "passageText": "<sup>9</sup>So pray this way: ‘Our Father in heaven, may your name be honored, <sup>10</sup>may your kingdom come, may your will be done on earth as it is in heaven. <sup>11</sup>Give us today our daily bread, <sup>12</sup>and forgive us our debts, as we ourselves have forgiven our debtors. <sup>13</sup>And do not lead us into temptation, but deliver us from the evil one.’",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Matthew+6%3A9-13&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch02-el21",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "Calling God “Father” — isn’t that disrespectful?",
+          "question": "To some, addressing God as “Father” feels presumptuous, or even disrespectful. What is your instinct when you hear this language? Think about it before tapping to read a response.",
+          "answer": "This reaction is understandable, and worth taking seriously. In some cultures, calling God “Father” sounds like a reduction of his greatness — as if we are making him too ordinary, too familiar.<br><br>But Jesus’ intention is the opposite. The Aramaic word he would have used — <em>Abba</em> — is a word of deep trust and intimacy, used by a child who knows they are loved and safe. It is not casual disrespect; it is the language of secure belonging.<br><br>Crucially, this is not a title we invented for God — it is the title <em>Jesus himself</em> uses, and it is the title he invites <em>us</em> to use. To call God Father is to accept the relationship he has offered, not to claim an equality we have earned.<br><br>In saying “Our Father,” Jesus is not making a biological claim. He is revealing something about God’s character: that the God who made the universe <em>wants</em> his people near. He is not a distant king who tolerates subjects — he is a Father who welcomes children.",
+          "buttonText": "See a response ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el22",
+          "type": "question",
+          "format": "plainText",
+          "question": "Look at the pattern of the Lord’s Prayer. It begins with God — his name, his kingdom, his will — and only then moves to our needs. What does this structure teach us about how Jesus wants us to think about God, and about ourselves in relation to him?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el23",
+          "type": "question",
+          "format": "plainText",
+          "question": "Jesus teaches his disciples to pray together — “Our Father,” not “My Father.” What might it mean that belonging to God is not just a private, individual relationship, but a shared one?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el24",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 4 — God’s Greatness and God’s Nearness Together",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el25",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "It is worth pausing to hold two things together that might feel in tension: God is infinitely great — Creator, King, Judge — <em>and</em> he is intimately personal, near, and knowable. The Bible does not ask us to choose between these. In fact, it insists on both.<br><br>Psalm 103 celebrates both. John 1 holds both. The Lord’s Prayer begins with the hallowing of God’s name — his holiness and greatness — and in the very same breath calls him <em>Father</em>.<br><br>The most remarkable claim in this session is not that God is powerful. It is that the powerful God <em>wants to be known by you</em>.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el26",
+          "type": "question",
+          "format": "plainText",
+          "question": "Has anything in this session shifted or expanded your picture of God? If so, what, and how?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el27",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Big Picture Truths",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el28",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Here are the three key truths from this session to hold on to:<br><br><b>1. God is both great and near.</b> His sovereignty, power, and holiness are never in question. But the Bible adds something: this same God draws near to those he loves. Greatness and intimacy are not in conflict — in God, they are inseparable.<br><br><b>2. Jesus is the fullest revelation of God.</b> All that God is — his character, his love, his purposes — is made visible in Jesus. To look at Jesus is to see what God is like. John puts it plainly: “The only one, himself God… has made God known.”<br><br><b>3. God invites us to call him Father.</b> This is not a human invention. It is the invitation of Jesus himself. To accept it is not presumption — it is faith.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el29",
+          "type": "likertScale",
+          "scaleNumber": 5,
+          "popupTitle": "About this scale",
+          "instruction": "Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale": [
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+          "statements": [
+            "I find it natural to think of God as personally close to me.",
+            "I feel comfortable addressing God as “Father” in prayer.",
+            "I am beginning to see God’s character more clearly through what I read in the Bible."
+          ],
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el30",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el31",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "What is one image, phrase, or idea from this session — from Psalm 103, John 1, or the Lord’s Prayer — that you want to carry with you this week?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el32",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "If God is truly the Father that Jesus describes — compassionate, near, and welcoming — what might that change about how you pray this week?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el33",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "The God you have come to through Jesus is not a distant, unknowable force. He is not a God you must constantly appease, wondering if you have done enough. He is the God who, according to Psalm 103, knows you are made of clay — and loves you anyway. He is the God who, according to John 1, entered the world in person so that you might know him. He is the God who, according to Jesus, wants you to call him Father.<br><br>That is not a small thing. It is true — and we will keep returning to it throughout this series.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el34",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Application Challenge",
+          "term": "Before Session 3",
+          "question": "What is your challenge for this week?",
+          "answer": "Choose one of the following — or do both:<br><br><b>Option 1:</b> Read Psalm 103 slowly, once each day this week. Each time, pick one phrase that strikes you and sit with it for a few minutes. What is it telling you about God?<br><br><b>Option 2:</b> Use the Lord’s Prayer as a pattern for your own prayer each morning this week. Don’t just repeat the words — use each line as a prompt. “Our Father…” — speak to God as Father. “Your kingdom come…” — pray for one specific situation.<br><br>Bring something from this — a question, an observation, or a moment — to share at the start of Session 3.",
+          "buttonText": "See the challenge ➡",
+          "bottomPadding": "normal"
+        }
+      ]
+    }
+  ]
+}

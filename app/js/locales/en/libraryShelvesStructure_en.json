@@ -1,0 +1,241 @@
+[
+  {
+    "shelf"      :"Old Testament",
+    "description":"Studies that explore the books written before the coming of Christ — from the Law and the Prophets to the Writings. The Old Testament tells the story of God's covenant with Israel and points forward to the Messiah.",
+    "sections"   :[
+      {
+        "section"          :"Law",
+        "description"      :"The first five books of the Bible (the Pentateuch), covering creation, the fall, the exodus, and the giving of the Law — the foundation on which the rest of Scripture builds.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Genesis", "description": "The book of beginnings: creation, the fall, and the patriarchs — Abraham, Isaac, Jacob, and Joseph." }, { "name": "Exodus", "description": "God rescues his people from slavery in Egypt, reveals his name, and gives his Law at Sinai." }, { "name": "Leviticus", "description": "Instructions for worship and holiness, showing how a sinful people can draw near to a holy God." }, { "name": "Numbers", "description": "Israel's wilderness journey — its failures, its discipline, and God's continued faithfulness." }, { "name": "Deuteronomy", "description": "Moses' farewell sermons, renewing the covenant and preparing Israel to enter the Promised Land." }]
+      },
+
+      {
+        "section"          :"History",
+        "description"      :"The historical books trace Israel's story from the conquest of Canaan through the monarchy, exile, and return — showing God's faithfulness and his people's repeated unfaithfulness.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Joshua", "description": "The conquest and division of the Promised Land under Joshua's leadership." }, { "name": "Judges", "description": "A cycle of rebellion, oppression, and rescue as Israel repeatedly turns from God." }, { "name": "Ruth", "description": "A story of loyalty, providence, and redemption set in the time of the judges." }, { "name": "1 Samuel", "description": "The transition from judges to kings: Samuel, Saul, and the rise of David." }, { "name": "2 Samuel", "description": "David's reign — his triumphs, failures, and God's covenant with his house." }, { "name": "1 Kings", "description": "Solomon's glory and the kingdom's division; Elijah and the contest on Mount Carmel." }, { "name": "2 Kings", "description": "The decline and fall of both kingdoms, ending in exile." }, { "name": "1 Chronicles", "description": "A retelling of Israel's history from Adam to David, focused on worship and the temple." }, { "name": "2 Chronicles", "description": "Solomon and the temple, the divided kingdom, and the hope of restoration." }, { "name": "Ezra", "description": "The return from exile and the rebuilding of the temple under Ezra's leadership." }, { "name": "Nehemiah", "description": "The rebuilding of Jerusalem's walls and the renewal of the covenant community." }, { "name": "Esther", "description": "God's hidden providence protecting his people in the Persian court." }]
+      },
+
+      {
+        "section"          :"Poetry & Wisdom",
+        "description"      :"Job, Psalms, Proverbs, Ecclesiastes, and Song of Songs — books that explore the depths of human experience: suffering, praise, wisdom, and love.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Job", "description": "A profound exploration of suffering, justice, and the mystery of God's ways." }, { "name": "Psalms", "description": "Israel's songbook and prayer book — the full range of human emotion brought before God." }, { "name": "Proverbs", "description": "Practical wisdom for everyday life, rooted in the fear of the Lord." }, { "name": "Ecclesiastes", "description": "A searching examination of meaning, work, and mortality 'under the sun'." }, { "name": "Song of Songs", "description": "A celebration of love and marriage, rich with imagery of delight and longing." }]
+      },
+
+      {
+        "section"          :"Prophets",
+        "description"      :"The prophetic books call Israel to repentance, warn of judgement, and point forward to God's ultimate redemption. They are essential for understanding the New Testament's fulfilment of those promises.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Isaiah", "description": "Judgement and breathtaking hope — including the Servant Songs that point to Christ." }, { "name": "Jeremiah", "description": "A prophet's anguish as Jerusalem falls, and the promise of a new covenant." }, { "name": "Lamentations", "description": "Raw grief over the destruction of Jerusalem, held together by hope in God's faithfulness." }, { "name": "Ezekiel", "description": "Visions of God's glory departing and returning, and the promise of spiritual renewal." }, { "name": "Daniel", "description": "Faithful presence in exile, and visions of God's sovereign kingdom over all nations." }, { "name": "Hosea", "description": "God's unfailing love for an unfaithful people, pictured through Hosea's own marriage." }, { "name": "Joel", "description": "A locust plague as a call to repentance, and the promise of the Spirit." }, { "name": "Amos", "description": "A sharp prophetic call for justice and the warning that empty religion will not stand." }, { "name": "Obadiah", "description": "A brief oracle against Edom and the coming day of the Lord." }, { "name": "Jonah", "description": "God's compassion for the nations — and a reluctant prophet's resistance to it." }, { "name": "Micah", "description": "Justice, mercy, and humility — and the promise of a ruler from Bethlehem." }, { "name": "Nahum", "description": "The fall of Nineveh and the comfort of God's justice for his oppressed people." }, { "name": "Habakkuk", "description": "Wrestling honestly with God over injustice, and learning to trust in his timing." }, { "name": "Zephaniah", "description": "The day of the Lord and the joy of restoration for a purified remnant." }, { "name": "Haggai", "description": "A call to rebuild the temple and prioritise God's house over personal comfort." }, { "name": "Zechariah", "description": "Visions of restoration and a Messiah who comes humbly on a donkey." }, { "name": "Malachi", "description": "A final call to faithfulness before the long silence before John the Baptist." }]
+      }
+    ]
+  },
+
+  {
+    "shelf"      :"New Testament",
+    "description":"Studies in the books written after the coming of Christ — the Gospels, the letters of the apostles, and Revelation. The New Testament reveals the fulfilment of God's promises in Jesus and the life of the early church.",
+    "sections"   :[
+      {
+        "section"          :"Gospels & Acts",
+        "description"      :"The four accounts of Jesus's life, death, and resurrection, and the story of the early church's expansion across the Roman world.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Matthew", "description": "Jesus as the fulfilment of the Old Testament, the new Moses, and the King of God's kingdom." }, { "name": "Mark", "description": "A fast-paced account of Jesus as the suffering Servant and Son of God." }, { "name": "Luke", "description": "Jesus as Saviour of the world — with special attention to the poor, women, and outsiders." }, { "name": "John", "description": "The deepest theological portrait of Jesus — the Word made flesh, the I AM, the Son of God." }, { "name": "Acts", "description": "The Holy Spirit empowers the church to take the gospel from Jerusalem to the ends of the earth." }]
+      },
+
+      {
+        "section"          :"Paul's Letters",
+        "description"      :"Paul's letters to churches and individuals — exploring the logic of the gospel, Christian conduct, and the nature of the church.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Romans", "description": "Paul's most systematic exposition of the gospel: sin, justification, sanctification, and hope." }, { "name": "1 Corinthians", "description": "Addressing divisions and disorders in Corinth, with teaching on love, gifts, and the resurrection." }, { "name": "2 Corinthians", "description": "Paul's defence of his ministry and the paradox of strength through weakness." }, { "name": "Galatians", "description": "A passionate defence of justification by faith alone against those adding the law." }, { "name": "Ephesians", "description": "The riches of the believer's identity in Christ, and the church as God's new humanity." }, { "name": "Philippians", "description": "Joy in all circumstances and the example of Christ's humility." }, { "name": "Colossians", "description": "Christ as supreme over all things, and the implications for everyday life." }, { "name": "1 Thessalonians", "description": "Encouragement for a young church, with teaching on the return of Christ." }, { "name": "2 Thessalonians", "description": "Correction of misunderstandings about the end times, and a call to faithful work." }, { "name": "1 Timothy", "description": "Instructions for church life, leadership, and sound doctrine." }, { "name": "2 Timothy", "description": "Paul's final letter — a charge to Timothy to guard the gospel and finish well." }, { "name": "Titus", "description": "Appointing leaders and teaching that sound doctrine leads to godly living." }, { "name": "Philemon", "description": "A personal appeal for reconciliation and the social implications of the gospel." }]
+      },
+
+      {
+        "section"          :"General Letters & Revelation",
+        "description"      :"Letters from James, Peter, John, Jude, and others — covering faith in trials, genuine belief, false teaching, and the ultimate hope of Revelation.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Hebrews", "description": "Jesus as the fulfilment of all the Old Testament's priesthood, sacrifice, and covenant — superior in every way." }, { "name": "James", "description": "Faith that works — practical wisdom for living as God's people in the world." }, { "name": "1 Peter", "description": "Hope and holy living for exiles in a hostile world." }, { "name": "2 Peter", "description": "Warnings against false teachers and confidence in God's promises." }, { "name": "1 John", "description": "Assurance of salvation and the marks of genuine faith: love, obedience, and truth." }, { "name": "2 John", "description": "A brief letter on love, truth, and not welcoming those who deny Christ." }, { "name": "3 John", "description": "Commending faithful hospitality and warning against self-seeking leadership." }, { "name": "Jude", "description": "A strong call to contend for the faith against false teaching that has crept into the church." }, { "name": "Revelation", "description": "Visions of God's ultimate victory over evil, the judgement of the wicked, and the renewal of all things." }]
+      }
+    ]
+  },
+
+  {
+    "shelf"      :"Beliefs",
+    "description":"Studies focused on Christian doctrine — what the Bible teaches about God, humanity, salvation, and the future. Grounding ourselves in right belief is the foundation for right living.",
+    "sections"   :[
+      {
+        "section"          :"Overview",
+        "description"      :"Introductory studies surveying the whole of Christian teaching — the gospel, the core doctrines, and the historic confessions of the church.",
+        "downloadLocation" :"https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Foundations", "description": "The essential building blocks of Christian belief — what every believer needs to know." }, { "name": "The Gospel", "description": "Studies focused on the heart of the Christian message: sin, grace, and salvation through Christ." }, { "name": "Creeds & Confessions", "description": "The historic statements of faith that have defined orthodox Christianity across the centuries." }]
+      },
+
+      {
+        "section"          :"God",
+        "description"      :"Who is God? Studies exploring the Trinity, God's attributes, and what it means to know him personally.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Attributes of God", "description": "God's holiness, love, sovereignty, justice, and the other characteristics Scripture reveals." }, { "name": "The Trinity", "description": "One God in three persons — Father, Son, and Holy Spirit — and why this matters." }, { "name": "God the Father", "description": "God as Creator, King, and Father — and what it means to be his child." }]
+      },
+
+      {
+        "section"          :"Scripture",
+        "description"      :"Studies on the Bible itself — how it came to be, what it claims about itself, and how to read it well.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Authority", "description": "Why the Bible has the right to speak into every area of life." }, { "name": "Inspiration", "description": "How God worked through human authors to give us his Word." }, { "name": "Canon", "description": "How the books of the Bible were recognised and gathered together." }, { "name": "Interpretation", "description": "Principles for reading the Bible faithfully and accurately." }]
+      },
+
+      {
+        "section"          :"Creation & Humanity",
+        "description"      :"Studies on what it means to be human — made in God's image, embodied, and created for a purpose.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Creation", "description": "God as Creator of all things — and what that means for how we view the world." }, { "name": "Image of God", "description": "What it means to be made in God's likeness, and the dignity that gives every person." }, { "name": "Embodiment", "description": "The goodness of having a body, and what Scripture says about physical existence." }, { "name": "Purpose", "description": "Why we are here — the human calling to love God, serve others, and steward creation." }]
+      },
+
+      {
+        "section"          :"Evil and the Fall",
+        "description"      :"Studies on sin — its origin, its nature, and its devastating effects on human beings and the world.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Nature of Sin", "description": "What sin actually is — not just rule-breaking, but a fundamental turning away from God." }, { "name": "The Fall", "description": "What happened in Genesis 3, and how it affects every human being." }, { "name": "Temptation", "description": "How temptation works, and how believers can stand firm against it." }]
+      },
+
+      {
+        "section"          :"Christ",
+        "description"      :"Studies on the person of Jesus Christ — fully God and fully human — and what his coming means.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Person of Christ", "description": "The doctrine of the two natures — how Jesus is both fully divine and fully human." }, { "name": "Incarnation", "description": "Why the Son of God became flesh, and what his humanity means for us." }]
+      },
+
+      {
+        "section"          :"Salvation",
+        "description"      :"How does God rescue sinners? Studies covering atonement, justification, adoption, and the whole sweep of what God does to save us.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Atonement", "description": "How Christ's death deals with sin — substitution, redemption, reconciliation, and more." }, { "name": "Conversion", "description": "What it means to turn from sin and trust in Christ — repentance and faith." }, { "name": "Justification", "description": "Being declared righteous before God — by grace alone, through faith alone, in Christ alone." }, { "name": "Adoption", "description": "The extraordinary gift of being brought into God's family as his sons and daughters." }]
+      },
+
+      {
+        "section"          :"The Spirit",
+        "description"      :"Studies on the Holy Spirit — who he is, what he does, and how he works in believers and the church.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Person of the Spirit", "description": "The Holy Spirit as the third person of the Trinity — not a force, but a person." }, { "name": "Fruit of the Spirit", "description": "The character qualities the Spirit produces in those who walk with him." }, { "name": "Spiritual Gifts", "description": "The gifts the Spirit gives to equip believers for service in the body of Christ." }]
+      },
+
+      {
+        "section"          :"Church",
+        "description"      :"What is the church, and why does it matter? Studies on the nature, mission, and structure of the body of Christ.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Nature of Church", "description": "What the church is — the people of God, the body of Christ, the temple of the Spirit." }, { "name": "Sacraments", "description": "Baptism and the Lord's Supper — what they are, what they mean, and how to observe them." }, { "name": "Leadership", "description": "Biblical patterns of church leadership: elders, deacons, and servant-hearted authority." }, { "name": "Worship", "description": "What Christian worship is, why it matters, and how it shapes the life of the community." }]
+      },
+
+      {
+        "section"          :"Last Things",
+        "description"      :"Studies on death, resurrection, judgement, and the new creation — the hope that shapes how Christians live in the present.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Return of Christ", "description": "The certain hope that Jesus will return in glory to judge the living and the dead." }, { "name": "Judgment", "description": "God's final verdict on all people — and the good news that Christ has borne judgment for his own." }, { "name": "Heaven & Hell", "description": "The eternal destinies Scripture describes — and why they matter for how we live now." }]
+      }
+    ]
+  },
+
+  {
+    "shelf"      :"Life",
+    "description":"Studies that connect biblical truth to the everyday experience of following Christ — in relationships, work, identity, and the ongoing struggle against sin.",
+    "sections"   :[
+      {
+        "section"          :"Spiritual Disciplines",
+        "description"      :"Practices that train us to stay close to God and grow in godliness — not ways to earn favour, but habits that keep us open to his grace.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Prayer", "description": "Talking with God — its foundations, its forms, and how to develop a richer prayer life." }, { "name": "Bible Reading", "description": "How to read Scripture well — with understanding, consistency, and an expectation of being changed." }, { "name": "Worship", "description": "Worship as a whole-life posture, not just a Sunday activity." }]
+      },
+
+      {
+        "section"          :"Character & Sanctification",
+        "description"      :"The ongoing process of becoming more like Christ — fighting sin, growing in virtue, and understanding who we are in him.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Fruit of the Spirit", "description": "Love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control." }, { "name": "Overcoming Sin", "description": "Practical and theological help for dealing with persistent patterns of sin." }, { "name": "Growth in Grace", "description": "What it looks like to grow as a Christian — and what gets in the way." }, { "name": "Identity in Christ", "description": "Who we are because of what Christ has done — and why that changes everything." }]
+      },
+
+      {
+        "section"          :"Relationships & Family",
+        "description"      :"Studies on the relationships God has placed us in — marriage, family, friendship, and community.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Marriage", "description": "The covenant of marriage — its purpose, its challenges, and its picture of Christ and the church." }, { "name": "Singleness", "description": "Singleness as a full and meaningful calling, not a waiting room for marriage." }, { "name": "Parenting", "description": "Raising children in the faith — with grace, truth, and a long-term perspective." }, { "name": "Friendship", "description": "The gift of Christian friendship — and how to cultivate relationships that go deep." }, { "name": "Communication", "description": "Speaking truthfully and kindly — and listening well." }, { "name": "Community", "description": "What it means to live as the body of Christ — bearing one another's burdens." }]
+      },
+
+      {
+        "section"          :"Work & Vocation",
+        "description"      :"Studies applying the gospel to work, money, time, and ambition — seeing everyday labour as part of God's purposes.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Work Life", "description": "What the Bible says about work — its goodness, its frustrations, and its redemption in Christ." }, { "name": "Money & Possessions", "description": "Generosity, contentment, and a biblical view of wealth." }, { "name": "Stewardship of Time", "description": "How we use our time — and how the gospel reshapes our priorities." }, { "name": "Ambition", "description": "Holy ambition vs. selfish ambition — and how to tell the difference." }, { "name": "Retirement", "description": "What faithful living looks like in the later seasons of life." }]
+      },
+
+      {
+        "section"          :"Christian Ethics & Culture",
+        "description"      :"How believers think and act on the pressing ethical questions of our time — from social justice to bioethics to technology.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Social Justice", "description": "God's heart for the vulnerable and the oppressed, and what that means for us." }, { "name": "Bioethics", "description": "Beginning and end of life issues — approached with theological care and compassion." }, { "name": "Engaging Technology", "description": "How to use technology faithfully in a world that is shaped by it." }]
+      },
+
+      {
+        "section"          :"Suffering & Guidance",
+        "description"      :"Studies that help believers walk through pain, uncertainty, and difficulty with honesty and hope.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Trials and Affliction", "description": "Why God allows suffering, and how Scripture equips us to endure it with hope." }, { "name": "Discerning God's Will", "description": "How to make wise decisions — and what Scripture actually promises about guidance." }, { "name": "Mental Health", "description": "Depression, anxiety, and other struggles — approached with compassion and biblical care." }, { "name": "Grief", "description": "How to grieve as those who have hope — honestly, and not alone." }]
+      }
+    ]
+  },
+
+  {
+    "shelf"      :"Ministry",
+    "description":"Studies for those involved in serving others — in evangelism, pastoral care, teaching, and leadership. Rooted in Scripture, these studies equip believers to serve effectively and sustainably.",
+    "sections"   :[
+      {
+        "section"          :"Theology of Ministry",
+        "description"      :"The biblical foundations for all Christian ministry — what it means to serve, and what kind of person the servant must be.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Servant Leadership", "description": "Leading as Jesus led — with humility, sacrifice, and care for those being served." }, { "name": "Calling", "description": "Understanding your calling to ministry — how it is discerned and what it involves." }]
+      },
+
+      {
+        "section"          :"Preaching & Teaching (Homiletics)",
+        "description"      :"Studies for those called to explain the Bible publicly — covering method, character, and the weight of handling God's Word.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Expository Preaching", "description": "How to preach faithfully from the text — letting the Bible set the agenda." }, { "name": "Leading Bible Studies", "description": "How to lead a group well — asking good questions and helping people meet God in the text." }]
+      },
+
+      {
+        "section"          :"Leadership & Administration",
+        "description"      :"The practical and theological dimensions of leading a church or ministry — vision, teams, conflict, and governance.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Vision & Strategy", "description": "How to think clearly about where God is leading and how to get there together." }, { "name": "Team Building", "description": "Gathering, developing, and sustaining a healthy ministry team." }, { "name": "Conflict Resolution", "description": "How to handle disagreement and division in a way that honours God and preserves unity." }, { "name": "Church Governance", "description": "The structures and processes that help a church be accountable and well-ordered." }]
+      },
+
+      {
+        "section"          :"Pastoral Care",
+        "description"      :"Studies equipping believers to walk alongside one another in difficulty, loss, crisis, and need.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Pastoral Conversations", "description": "The skills and posture needed for helpful one-to-one ministry conversations." }, { "name": "Crisis Intervention", "description": "How to respond wisely and compassionately when someone is in acute distress." }, { "name": "Visitation", "description": "The ministry of presence — visiting the sick, the elderly, and the housebound." }, { "name": "Marriage Prep", "description": "Helping couples prepare for a marriage built on Christ." }, { "name": "Bereavement Care", "description": "Walking with those who are grieving — what to say, what not to say, and how to stay." }]
+      },
+
+      {
+        "section"          :"Evangelism & Missions",
+        "description"      :"Studies on taking the gospel to those who haven't heard it — personally, locally, and across cultures.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Personal Witnessing", "description": "How to share your faith naturally and clearly in everyday conversation." }, { "name": "Apologetics", "description": "Answering the questions that keep people from taking Christianity seriously." }, { "name": "Cross-Cultural Ministry", "description": "Serving and sharing across cultural boundaries with sensitivity and respect." }, { "name": "Church Planting", "description": "The theology and practice of establishing new gospel communities." }]
+      },
+
+      {
+        "section"          :"Discipleship & Mentoring",
+        "description"      :"Studies on the ministry of helping others grow — one to one, in small groups, and by training the next generation.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "One-to-One Ministry", "description": "The power of intentional, personal discipleship — meeting regularly to open the Bible together." }, { "name": "Small Group Leading", "description": "How to lead a small group that is genuine, growing, and grounded in Scripture." }, { "name": "Training Others", "description": "Equipping others to do the work of ministry — multiplying not just converts but leaders." }]
+      }
+    ]
+  },
+
+  {
+    "shelf"      :"Other",
+    "description":"Studies that don't fit neatly into another category — or whose shelf information hasn't been set yet.",
+    "sections"   :[]
+  }
+]

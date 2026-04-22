@@ -1,0 +1,366 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 10,
+      "chapterTitle": "Living with Confidence",
+      "chapterSubtitle": "Witness and Perseverance",
+      "elements": [
+        {
+          "elementId": "ch10-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "You have come a long way.<br><br>When this series began, you were perhaps still finding your footing — still piecing together who Jesus is, what he did, and what it means for you. Chapter by chapter, a picture has been building: a God who is personal and near; a Saviour who gave everything; a salvation that is gift, not achievement; an identity as a child of God that nothing can take away.<br><br>This final chapter is about living <i>from</i> that place — not striving toward it, but going out from it.<br><br>The world you return to every day may not be easy. Some of you face pressure, questions, or opposition that others in this room cannot fully imagine. This chapter does not pretend otherwise. It asks instead: <i>How do we live faithfully — and even joyfully — in a world that does not yet know Jesus, and may push back when it meets him in us?</i><br><br>The answer is not a strategy. It is a confidence grounded not in our own strength, but in a love that cannot be shaken.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el02",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Before We Begin",
+          "term": "Read the Whole Passage First",
+          "question": "Before working through the questions, read the three key passages for this chapter together:<br><br><b>Matthew 5:14–16</b> — You are the light of the world<br><b>1 Peter 3:13–16</b> — Always be ready to give an answer<br><b>Romans 8:31–39</b> — Nothing can separate us from God’s love<br><br>Take your time with Romans 8:31–39 in particular. Read it slowly. Let it land.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el03",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 1 — Who You Already Are",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el04",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Before Jesus gives any instructions about witness, he makes a declaration about identity. He does not say “try to become a light.” He says “you <i>are</i> the light of the world.” The doing flows from the being. It always does in the Christian life.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el05",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Matthew 5:14-16",
+          "translation": "NET",
+          "passageText": "<sup>14</sup>You are the light of the world. A city located on a hill cannot be hidden. <sup>15</sup>People do not light a lamp and put it under a basket but on a lampstand, and it gives light to all in the house. <sup>16</sup>In the same way, let your light shine before people, so that they can see your good deeds and give honor to your Father in heaven.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Matthew+5&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch10-el06",
+          "type": "question",
+          "format": "HTML",
+          "question": "Jesus says “you <i>are</i> the light” — not “you should try to be” or “you will become the light one day if you work hard enough.” What difference does it make that this is a statement of identity rather than a command to achieve something?",
+          "linkedPassage": "Matthew 5:14-16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el07",
+          "type": "question",
+          "format": "HTML",
+          "question": "A city on a hill cannot be hidden — not because it is trying to be seen, but simply because of where it is. In your daily context — your home, your neighbourhood, your workplace — what does it look like for the life of Jesus in you to be naturally visible, without performance or pressure?",
+          "linkedPassage": "Matthew 5:14-16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el08",
+          "type": "question",
+          "format": "HTML",
+          "question": "Verse 16 says people will see your good works and “glorify your Father in heaven.” The goal of witness is not that people admire <i>you</i> — it is that they encounter <i>God</i> through you. How does keeping this goal in mind change how you think about living in front of others?",
+          "linkedPassage": "Matthew 5:14-16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el09",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 2 — Speaking with Gentleness and Respect",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el10",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Living as light is primarily about who you are and how you live — but there will be moments when people ask questions. When someone notices something different about you. When a conversation turns toward faith. Peter gives us a picture of how to handle those moments.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el11",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Peter 3:13-16",
+          "translation": "NET",
+          "passageText": "<sup>13</sup>For who is there to harm you if you are devoted to what is good? <sup>14</sup>But in fact, if you happen to suffer for doing what is right, you are blessed. But do not be terrified of them or be shaken. <sup>15</sup>But set Christ apart as Lord in your hearts and always be ready to give a defense to anyone who asks you for a reason for the hope that is in you <sup>16</sup>—but do it with gentleness and respect, keeping a good conscience, so that those who slander your good conduct in Christ may be put to shame when they accuse you.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Peter+3&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch10-el12",
+          "type": "question",
+          "format": "HTML",
+          "question": "Peter says to be ready to give an answer to anyone who asks about “the hope you possess.” Notice — he assumes people will <i>ask</i>. What kind of life produces questions like that in the people around you? What would someone need to see in you to become genuinely curious?",
+          "linkedPassage": "1 Peter 3:13-16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el13",
+          "type": "question",
+          "format": "HTML",
+          "question": "Peter says to answer “with courtesy and respect.” He does not say: argue, defend, debate, or win. In your context — where conversations about faith can be deeply personal and sometimes charged — what does a respectful, unhurried response to questions about your faith actually look like?",
+          "linkedPassage": "1 Peter 3:13-16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el14",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "Your Own Story",
+          "question": "One of the most natural and powerful forms of witness is simply telling your own story — what your life was like, what changed, and why. You do not need to win a theological argument. You just need to tell what happened to you.<br><br>In one or two paragraphs, try writing a brief, honest account of your journey to faith — not polished, just true. What would you want someone close to you to understand?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your story…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el15",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Misunderstanding",
+          "term": "Witness Means Arguing",
+          "question": "Many people assume that bearing witness to Jesus means winning arguments — having the right answers to every objection, debating theology, or persuading people through logic alone. Is that what Peter has in mind?",
+          "answer": "Peter’s picture is different. The witness that tends to open hearts is a <i>life</i> — marked by genuine goodness, unusual peace, and a hope that is hard to explain. The purpose of having a ready answer is not to win an argument. It is to show that you have thought carefully about your faith — and to keep the door of relationship open. Changing someone’s heart is God’s work, not yours. You are responsible for living in a way that makes him visible — and for being ready to speak simply and honestly when the door opens.<br><br><i>Is there a pressure you have been placing on yourself about witness that this picture might release?</i>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el16",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 3 — Handling Pressure and Opposition",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el17",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Peter wrote his letter to people facing real opposition — not hypothetical discomfort, but genuine suffering for their faith. He does not tell them to avoid it, minimise it, or pretend it isn’t happening. He tells them something stranger and more powerful: that suffering for doing right is not evidence that God has abandoned you. It may be evidence of exactly the opposite.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el18",
+          "type": "question",
+          "format": "HTML",
+          "question": "Peter says: “if you happen to suffer for doing what is right, you are blessed.” This is hard to hear — and even harder to believe in the middle of real pressure. What do you think Peter means? How does knowing that Jesus himself suffered for doing right help you hold this?",
+          "linkedPassage": "1 Peter 3:13-16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el19",
+          "type": "question",
+          "format": "HTML",
+          "question": "Think about the specific pressures you currently face — from family, from community, from your own fears. Without asking you to share more than you are comfortable with: what is the hardest thing about living as a follower of Jesus in your particular situation right now?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el20",
+          "type": "question",
+          "format": "HTML",
+          "question": "Peter says: “do not be terrified of them or be shaken. But set Christ apart as Lord in your hearts.” The alternative to fear is not courage generated by willpower — it is the settled conviction that Christ is Lord, not the pressure around you. What does it look like to “set Christ apart as Lord” in a moment of real fear?",
+          "linkedPassage": "1 Peter 3:13-16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el21",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 4 — The Foundation That Cannot Be Moved",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el22",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Everything in this chapter — witness, gentleness, endurance under pressure — rests on a foundation. And Paul, in Romans 8, gives us that foundation in its most unshakeable form. This is not a passage to study. It is a passage to inhabit.<br><br>Read it slowly. Read it as if every line is addressed to you personally. Because it is.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el23",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Romans 8:31-39",
+          "translation": "NET",
+          "passageText": "<sup>31</sup>What then shall we say about these things? If God is for us, who can be against us? <sup>32</sup>Indeed, he who did not spare his own Son, but gave him up for us all—how will he not also, along with him, freely give us all things? <sup>33</sup>Who will bring any charge against God’s elect? It is God who justifies. <sup>34</sup>Who is the one who will condemn? It is Christ who died, and more than that, who was raised, who is at the right hand of God, and who also is interceding for us. <sup>35</sup>Who will separate us from the love of Christ? Will trouble, or distress, or persecution, or famine, or nakedness, or danger, or sword? <sup>36</sup>As it is written, ‘For your sake we are being killed all day long; we were considered as sheep to be slaughtered.’ <sup>37</sup>No, in all these things we have complete victory through him who loved us! <sup>38</sup>For I am convinced that neither death, nor life, nor angels, nor heavenly rulers, nor things that are present, nor things to come, nor powers, <sup>39</sup>nor height, nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Romans+8&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch10-el24",
+          "type": "question",
+          "format": "HTML",
+          "question": "Paul asks four questions in this passage — “Who can be against us?”, “Who will bring any charge?”, “Who will condemn?”, “Who will separate us?” — and then answers each one. Work through the passage and find Paul’s answer to each question. What is he doing by asking them in this way?",
+          "linkedPassage": "Romans 8:31-39",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el25",
+          "type": "question",
+          "format": "HTML",
+          "question": "Paul lists a sequence of things that might seem capable of separating us from God’s love: trouble, distress, persecution, danger, sword. He does not say none of these things will happen to you. He says none of them <i>can separate you</i> from God’s love. What is the difference? Why does that distinction matter so much?",
+          "linkedPassage": "Romans 8:31-39",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el26",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "“I Am Convinced”",
+          "question": "Paul does not say “I hope” or “I believe it is probably true.” He says “I am <i>convinced</i>.” This is not arrogance — it is confidence built on evidence. The evidence is the cross: “he who did not spare his own Son… how will he not also… freely give us all things?”<br><br>On what basis is Paul so confident? And on what basis can <i>you</i> be?",
+          "linkedPassage": "Romans 8:31-39",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el27",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "For Reflection",
+          "term": "The Love That Goes First",
+          "question": "Throughout this series, one truth has appeared again and again from different angles: God’s love is not a reward for the right behaviour. It goes <i>first</i>. It went first at the cross — “while we were still sinners, Christ died for us.” It goes first now — “the love of God in Christ Jesus our Lord” is already yours, already surrounding you, already holding you.<br><br>You did not begin to love God because you were strong or certain or free from doubt. You began to love him because he first loved you.<br><br>That love does not fluctuate with your performance. It does not cool when you fail. It cannot be stripped from you by pressure, opposition, or fear.<br><br>This is the ground beneath your feet. It will not shift.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el28",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el29",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "As you come to the end of this series — what is the most significant thing that has changed in how you understand God, Jesus, or yourself?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el30",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "What is the one truth from this entire series that you most want to hold onto — the thing you would not want to forget, no matter what?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el31",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Romans 8:38–39 is one of the great declarations of the Christian faith. Consider memorising it. Write it out here in your own words — not a paraphrase, but a personal declaration, as if you are saying it to yourself about your own life:",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "I am convinced that…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el32",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "This is where the series ends — but it is not where your story ends. It is barely where it begins.<br><br>You have heard who God is. You have understood what Jesus did. You know that you are saved by grace, that you are a child of God, that you belong to a family that death cannot dissolve. You go now not as someone trying to earn a place at the table, but as someone who already has one.<br><br>The road ahead will have hard stretches. There will be questions you cannot answer, pressures you did not expect, and moments when the love of God feels far away. In those moments, return to what you know. Return to the cross. Return to the empty tomb. Return to Romans 8.<br><br>And remember: the same God who did not spare his own Son for you will not abandon you now.<br><br>Go in confidence. Go in gentleness. Go as light.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el33",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Application Challenge",
+          "term": "Carrying This Forward",
+          "question": "As this series closes, consider three things to carry with you:",
+          "answer": "<p><b>One truth to anchor you:</b> Choose a verse from this series — perhaps Romans 8:38–39, or John 15:9, or Romans 5:8 — and commit it to memory. Let it be the thing you return to when pressure comes.</p><p><b>One relationship to nurture:</b> Identify one person — a fellow believer, a leader, a trusted friend in faith — with whom you will stay in regular contact. You were not made to walk this road alone.</p><p><b>One step of witness:</b> Think of one person in your life who does not yet know Jesus. You do not have to argue with them or convert them. When the moment comes to share your faith with family or friends, resist the urge to begin by explaining what is wrong with what you have left behind. Lead with what you have found — the love, the forgiveness, the certainty of belonging. Let them ask the harder questions in their own time. For now, simply pray for that person by name, daily, and be ready to answer if they ever ask about the hope you carry.</p>",
+          "buttonText": "See the challenge ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el34",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Common Questions — Leader Notes",
+          "term": "Anticipated Questions This Chapter",
+          "question": "Notes for group leaders on questions likely to arise in this final session.",
+          "answer": "<p><b>“What if my family finds out and things get much worse?”</b><br>Do not minimise this fear — it is real and the consequences can be severe. Walk through 1 Peter 3:13–16 together and affirm that Jesus does not ask for recklessness. Wisdom about timing and context is not cowardice. At the same time, gently affirm that living in sustained secrecy has its own cost — spiritually and emotionally. Pray together specifically for wisdom about how and when to speak. If practical safety needs exist, address them concretely.</p><p><b>“I don’t feel confident enough to tell anyone about my faith — I still have too many doubts.”</b><br>This is worth addressing warmly. Peter does not say to be ready to give a <i>complete theological account</i> — he says to be ready to explain “the hope you possess.” You do not need to have resolved every question to speak about what has changed in you. Doubt and witness can coexist. In fact, honest witness from a place of wrestling is often more compelling than polished certainty.</p><p><b>“What about my Muslim family and friends — are they condemned?”</b><br>Handle this with great care and tenderness. Avoid giving a cold doctrinal answer to what is a deeply personal question. Acknowledge that this is one of the hardest parts of the Christian journey for people in this group. Affirm what is true: God is the judge, not us. Our calling is to love, to pray, and to live in a way that makes Jesus visible. Direct participants toward Romans 9–11 for Paul’s own wrestling with this for his own people.</p><p><b>“Is this the end — what happens now?”</b><br>This is an important pastoral moment. Be clear about what ongoing support, community, and discipleship looks like beyond this series. If there is a church community, small group, or one-to-one mentoring available, name it concretely. The transition out of a structured series can feel destabilising. Make sure no one leaves without a clear next step and a known person to contact.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch10-el35",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "For Leaders — Closing This Series",
+          "term": "How to End Well",
+          "question": "This final chapter deserves more than a normal ending.",
+          "answer": "<p>Consider the following:</p><ul><li><b>Reading Romans 8:31–39 aloud together</b> as an act of declaration and worship — slowly, with weight. Let it be the last thing the group hears as a group.</li><li><b>Praying for each person by name</b> — specifically, with reference to what you know of their situation and journey. This is a powerful act of pastoral love.</li><li><b>Exchanging contact details</b> so that no one is isolated after the series ends.</li><li><b>Affirming what you have witnessed</b> in each person — their courage, their questions, their growth. Name it. It matters.</li></ul><p>The last word of this series belongs to Paul. Use it:</p><p><i>“For I am convinced that neither death, nor life, nor angels, nor heavenly rulers, nor things that are present, nor things to come, nor powers, nor height, nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.”</i></p><p style='text-align: right; font-size: 0.9em;'>Romans 8:38–39</p>",
+          "bottomPadding": "normal"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "_template_notes":[
+    "This is the canonical template for .estudy files.",
+    "It contains exactly one example of every valid chapter element type and subtype.",
+    "Subtype names use the current vocabulary (post-April-2026 rename).",
+    "Delete the '_comment' fields before use — they are documentation only.",
+    "Delete or replace the '_template_notes' and all '_comment' keys before publishing."
+  ],
+
+  "metadata":{
+    "studyId"           :"my-study-001",
+    "title"             :"Study Title",
+    "subtitle"          :"A subtitle for the study",
+    "shortTitle"        :"Short Title",
+    "studyVersion"      :1,
+    "estudyVersion"     :2,
+    "description"       :"A one-paragraph description of the study shown on the title page.",
+    "language"          :"en",
+    "defaultTranslation":"NET",
+    "createdAt"         :"2026-01-01T00:00:00Z",
+    "updatedAt"         :"2026-01-01T00:00:00Z",
+    "author"            :"Author Name",
+    "publisher"         :"Publisher Name",
+    "tags"              :["faith", "gospel"],
+    "shareMessage"      :"I've been working through a Bible study called \"Study Title\" — I think you'd find it really helpful.\n\nYou can get it here: https://example.com"
+  },
+
+  "theme":{
+    "surface"       :"#f0ece4",
+    "surface-mid"   :"#e4ddd2",
+    "text"          :"#1c1710",
+    "text-secondary":"#4a3f30",
+    "text-faint"    :"#8c7d68",
+    "emphasis"      :"#6b3e1a",
+    "emphasis-light":"#9c5c2a",
+    "success"       :"#3d5c2a",
+    "accent"        :"#8c6420",
+    "accent-light"  :"#b8882e",
+    "border"        :"#c8bca8",
+    "shadow"        :"rgba(28,23,16,0.13)",
+    "card-bg"       :"#ffffff",
+    "dm-base"       :"#0f0c09",
+    "dm-surface"    :"#1a1510",
+    "dm-raised"     :"#2a2218",
+    "dm-sunken"     :"#1f1a14",
+    "dm-border"     :"#3a3028",
+    "dm-text"       :"#e8e0d0",
+    "dm-text-mid"   :"#c8bfaf",
+    "dm-text-faint" :"#6a5f50"
+  },
+
+  "titlePageData":{
+    "title"       :"Study Title",
+    "subtitle"    :"A subtitle for the study",
+    "description" :"A one-paragraph description shown on the title page.",
+    "headerTitle" :"Short Title",
+    "authorLabel" :"Author",
+    "authorName"  :"Author Name",
+    "version"     :"Version 1.0",
+    "shareMessage":"I've been working through a Bible study called \"Study Title\" — I think you'd find it really helpful.\n\nYou can get it here: https://example.com",
+    "image"       :{
+      "src"          :"",
+      "alt"          :"Cover image description",
+      "fallbackEmoji":"📖"
+    }
+  },
+
+  "chapters":[
+    {
+      "chapterNumber":1,
+      "chapterTitle" :"Chapter One Title",
+      "elements"     :[
+        {
+          "elementId"    :"ch01-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This is the chapter introduction. It sets the scene before the first Bible question. It should be engaging and draw the reader into the chapter theme. It can contain <b>bold</b> or <em>italic</em> text.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el02",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 3:16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>16</sup>For this is the way God loved the world: he gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el03",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does this verse tell us about God's motivation in sending his Son?",
+          "linkedPassage"    :"John 3:16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el04",
+          "repeatElement":"ch01-el03"
+        },
+
+        {
+          "elementId"    :"ch01-el05",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"This is a bridge paragraph. It connects two sections of questions, provides context, or develops a theme. It can span multiple sentences and contains <b>bold</b> or <em>italic</em> text as needed.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el06",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A New Section Heading",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el07",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"Grace",
+          "question"     :"What do you understand by the word <b>grace</b>? Think about it before tapping 'Find out'.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el08",
+          "type"         :"image",
+          "src"          :"",
+          "alt"          :"A descriptive caption for accessibility",
+          "fallback"     :"🖼️",
+          "align"        :"full",
+          "width"        :"100",
+          "caption"      :"An optional caption shown below the image.",
+          "format"       :"plainText",
+          "base64"       :"",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch01-el09",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I have a clear understanding of what I believe.",
+            "I am currently growing in my faith.",
+            "I regularly spend time with God in prayer and Bible reading."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el10",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Personal Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch01-el11",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What is one thing from this chapter you want to take away and act on this week?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el12",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"This is the chapter closing summary. It draws together the key themes of the chapter and points forward. It should be encouraging and leave the reader with something clear to hold on to.",
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ],
+
+  "qaCallouts":[
+    {
+      "calloutId":"ch01-el07",
+      "eyebrow"  :"Common Misunderstanding",
+      "term"     :"Grace",
+      "question" :"What do you understand by the word <b>grace</b>? Think about it before tapping 'Find out'.",
+      "answer"   :"<p>Grace is often understood as God being lenient or overlooking our faults — a kind of divine tolerance. But the Bible means something more specific and more costly.</p>\n<p>Grace is God giving us what we do not deserve, at great cost to himself. It is not God lowering his standards; it is God meeting his own standards on our behalf, through Christ.</p>"
+    }
+  ],
+
+  "studyOnboardingSlides":[
+    {
+      "icon"   :"📖",
+      "eyebrow":"Welcome",
+      "heading":"Study Title",
+      "body"   :"A short description of the study — what it covers and who it is for.\n\nWork through each chapter at your own pace, or use it with a group."
+    },
+
+    {
+      "icon"   :"✍️",
+      "eyebrow":"How it works",
+      "heading":"Read, reflect, write",
+      "body"   :"Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>↗</b> beside any Bible reference to read the passage without leaving the app."
+    },
+
+    {
+      "icon"   :"💾",
+      "eyebrow":"Your answers",
+      "heading":"Saved on your device",
+      "body"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor."
+    },
+
+    {
+      "icon"   :"⚙️",
+      "eyebrow":"Make it yours",
+      "heading":"Adjust to your preference",
+      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">If you need bigger text, go straight to Settings now.</div>",
+      "action" :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+
+      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>Contents ☰</b> to jump to any chapter."
+    },
+
+    {
+      "icon"   :"👋",
+      "eyebrow":"Before you begin",
+      "heading":"How to use this study",
+      "body"   :"If you want a full guide to getting the most from this study — whether on your own or in a group — tap the button below.",
+      "action" :{
+        "label":"How to use this study →",
+        "fn"   :null
+      },
+
+      "bodyAfter":"You can also find it any time via the <b>Contents ☰</b> menu."
+    }
+  ],
+
+  "howToUseData":{
+    "audiences":[
+      {
+        "title":"People new to the topic",
+        "body" :"Describe who this study is designed for and what they will get from it."
+      },
+
+      {
+        "title":"People with some background",
+        "body" :"Describe a second audience type and how the study serves them."
+      },
+
+      {
+        "title":"Group leaders and mentors",
+        "body" :"Describe how the study works in a discipleship or small group setting."
+      }
+    ]
+  },
+
+  "leadersNotesData":{
+    "subtitle":"Study Title",
+    "intro"   :[
+      "Introductory guidance for group leaders. Can include plain text or <b>HTML</b>.",
+      "A second paragraph of introductory guidance."
+    ],
+
+    "chapters":[
+      {
+        "chapterNumber":1,
+        "title"        :"Chapter One Title",
+        "keyPoints"    :"<p>Key theological and teaching points for the leader to draw out in this chapter.</p>",
+        "pastorals"    :"<p>Pastoral notes — what to watch for, how to handle sensitive areas, who might struggle.</p>",
+        "watch"        :"👁️ A specific thing to watch for in group discussion."
+      }
+    ]
+  },
+
+  "studyAboutData":{
+    "author":{
+      "image"        :"",
+      "imageAlt"     :"Author Name",
+      "fallbackEmoji":"👤",
+      "paras"        :[
+        "A short biography of the author.",
+        "A second paragraph if needed."
+      ]
+    },
+
+    "publisher":{
+      "name"    :"Publisher Name",
+      "image"   :"",
+      "imageAlt":"Publisher Name",
+      "url"     :"https://example.com",
+      "paras"   :[
+        "A short description of the publisher.",
+        "A second paragraph if needed."
+      ]
+    }
+  },
+
+  "copyrightData":{
+    "licence":{
+      "spdxId"  :"CC-BY-SA-4.0",
+      "name"    :"Creative Commons Attribution-ShareAlike 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format",
+        "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+      ],
+
+      "conditions":[
+        "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made",
+        "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+      ]
+    },
+
+    "copyright":{
+      "holder"   :"Author Name",
+      "year"     :2026,
+      "statement":"Author Name, 2026. Licensed under CC BY-SA 4.0."
+    },
+
+    "bibleTranslation":{
+      "name"     :"NET Bible",
+      "version"  :"NET Bible® (New English Translation)",
+      "copyright":"©1996, 2019 Biblical Studies Press, L.L.C.",
+      "url"      :"https://netbible.com",
+      "usedWith" :"permission"
+    },
+
+    "notices":[
+      "The Scriptures quoted are from the NET Bible® http://netbible.com copyright ©1996, 2019 used with permission from Biblical Studies Press, L.L.C. All rights reserved."
+    ]
+  },
+
+  "imageData":{
+    "cover":{
+      "source"  :"",
+      "alt"     :"Cover image description",
+      "fallback":"📖",
+      "base64"  :""
+    },
+
+    "publisher":{
+      "source"  :"",
+      "alt"     :"Publisher logo",
+      "fallback":"🔆",
+      "base64"  :""
+    },
+
+    "author":{
+      "source"  :"",
+      "alt"     :"Author photo",
+      "fallback":"👤",
+      "base64"  :""
+    }
+  }
+}

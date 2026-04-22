@@ -1,0 +1,30 @@
+{
+  "appTitle"         :"Bible Study Reader",
+  "appDescription"   :"A mobile-first app for working through Bible study courses — reading, reflecting, and recording answers as you go.",
+  "sampleTitle"      :"Conversion",
+  "sampleSubtitle"   :"New not (just) Nice",
+  "sampleShortTitle" :"Conversion",
+  "sampleDescription":"A nine-session Bible study exploring what genuine conversion means – and why it matters.",
+  "appCopyright"     :{
+    "licence":{
+      "spdxId"  :"CC-BY-SA-4.0",
+      "name"    :"Creative Commons Attribution-ShareAlike 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format",
+        "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+      ],
+
+      "conditions":[
+        "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made",
+        "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+      ],
+
+      "notices":[
+        "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
+        "No warranties are given. The licence may not give you all of the permissions necessary for your intended use.",
+        "In creating this app, the author made use of Claude, ChatGPT, and Gemini for extensive ‘vibe coding’. All content decisions, and final wording are the author's responsibility."
+      ]
+    }
+  }
+}

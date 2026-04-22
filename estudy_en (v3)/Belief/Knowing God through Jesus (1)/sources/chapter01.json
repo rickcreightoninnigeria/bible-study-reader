@@ -1,0 +1,318 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "chapterTitle": "How Can We Know God?",
+      "elements": [
+        {
+          "elementId": "ch01-el01",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Bible Readings for This Chapter",
+          "term": "2 Timothy 3:14–17 · Hebrews 1:1–4 · Luke 24:44–47",
+          "question": "It’s worth having these passages open as you work through this chapter.",
+          "answer": "<p><b>Hebrews 1:1-4</b></p><p><sup>1</sup>After God spoke long ago in various portions and in various ways to our ancestors through the prophets, <sup>2</sup>in these last days he has spoken to us in a son, whom he appointed heir of all things, and through whom he created the world. <sup>3</sup>The Son is the radiance of his glory and the representation of his essence, and he sustains all things by his powerful word, and so when he had accomplished cleansing for sins, he sat down at the right hand of the Majesty on high. <sup>4</sup>Thus he became so much better than the angels as he has inherited a name superior to theirs.</p><br><p style=\"text-align:right;font-size:0.8em;\"><a href=\"https://www.biblegateway.com/passage/?search=Hebrews+1&version=NET\">(NET — see context ↗)</a></p><p><b>2 Timothy 3:14-17</b></p><p><sup>14</sup>You, however, must continue in the things you have learned and are confident about, knowing from whom you learned them, <sup>15</sup>and that from childhood you have known the holy writings, which are able to give you wisdom for salvation through faith in Christ Jesus. <sup>16</sup>Every scripture is inspired by God and useful for teaching, for reproof, for correction, and for training in righteousness, <sup>17</sup>that the person dedicated to God may be capable and equipped for every good work.</p><br><p style=\"text-align:right;font-size:0.8em;\"><a href=\"https://www.biblegateway.com/passage/?search=2+Timothy+3&version=NET\">(NET — see context ↗)</a></p><p><b>Luke 24:44-47</b></p><p><i>Then</i><sup>44</sup>he said to them, ‘These are my words that I spoke to you while I was still with you, that everything written about me in the law of Moses and the prophets and the psalms must be fulfilled.’ <sup>45</sup>Then he opened their minds so they could understand the scriptures, <sup>46</sup>and said to them, ‘Thus it stands written, that the Christ would suffer and would rise from the dead on the third day, <sup>47</sup>and repentance for the forgiveness of sins would be proclaimed in his name to all nations, beginning from Jerusalem.’</p><br><p style=\"text-align:right;font-size:0.8em;\"><a href=\"https://www.biblegateway.com/passage/?search=Luke+24&version=NET\">(NET — see context ↗)</a></p>",
+          "buttonText": "Read passages ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el02",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>Every person who comes to faith in Jesus carries questions. One of the first — and most important — is this: <em>How do I know this is true?</em></p><p>How do I know the Bible is reliable? Can I really trust it?</p><p>If you have come from a Muslim background, you may have grown up hearing that the Bible — the Tawrat, the Zabur, and the Injeel — was at some point corrupted and can no longer be trusted. That is a serious claim. It deserves a serious answer.</p><p>But before we get to the question of corruption, let’s start somewhere more fundamental: <em>If God wanted to speak to humanity, what would we expect that communication to look like?</em></p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el03",
+          "type": "question",
+          "format": "plainText",
+          "question": "If God wanted to speak to people across every generation and culture, what kind of book would you expect him to produce? What qualities would you look for?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal",
+          "subtype": "standard"
+        },
+        {
+          "elementId": "ch01-el04",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 1 — A God Who Speaks",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el05",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>The Bible begins with a God who speaks. In Genesis 1, God speaks and creation comes into being. In Exodus, God speaks to Moses. Through the prophets, God speaks to a nation. And then — as the New Testament opens — God speaks in an entirely new and final way.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el06",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Hebrews 1:1–4",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>After God spoke long ago in various portions and in various ways to our ancestors through the prophets, <sup>2</sup>in these last days he has spoken to us in a son, whom he appointed heir of all things, and through whom he created the world. <sup>3</sup>The Son is the radiance of his glory and the representation of his essence, and he sustains all things by his powerful word, and so when he had accomplished cleansing for sins, he sat down at the right hand of the Majesty on high. <sup>4</sup>Thus he became so much better than the angels as he has inherited a name superior to theirs.<br><p style=\"text-align:right;font-size:0.8em;\"><a href=\"https://www.biblegateway.com/passage/?search=Hebrews+1&version=NET\">(NET — see context ↗)</a></p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Hebrews+1&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el07",
+          "type": "question",
+          "format": "plainText",
+          "question": "How has God spoken across history? What is different and final about the way he has now spoken?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal",
+          "subtype": "standard"
+        },
+        {
+          "elementId": "ch01-el08",
+          "type": "question",
+          "format": "HTML",
+          "question": "The writer says the Son is “the radiance of God’s glory and the exact representation of his nature” (v3).<br>What does it mean for Jesus to be the clearest, fullest word that God has ever spoken?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal",
+          "subtype": "standard"
+        },
+        {
+          "elementId": "ch01-el09",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 2 — What Kind of Book Is This?",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el10",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>The Bible is not a single book in the way a novel is. It is a library — 66 books written by around 40 different authors, across roughly 1,500 years, in three languages, from wildly different cultures and backgrounds. Farmers and kings, scholars and fishermen all contributed.</p><p>And yet it tells one story. It has one centre. That, by itself, is remarkable.</p><p>The apostle Paul, writing to his young colleague Timothy, gives us the clearest statement in all of Scripture about what the Bible actually <em>is</em>:</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el11",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 3:14–17",
+          "translation": "NET",
+          "passageText": "<sup>14</sup>You, however, must continue in the things you have learned and are confident about, knowing from whom you learned them, <sup>15</sup>and that from childhood you have known the holy writings, which are able to give you wisdom for salvation through faith in Christ Jesus. <sup>16</sup>Every scripture is inspired by God and useful for teaching, for reproof, for correction, and for training in righteousness, <sup>17</sup>that the person dedicated to God may be capable and equipped for every good work.<br><p style=\"text-align:right;font-size:0.8em;\"><a href=\"https://www.biblegateway.com/passage/?search=2+Timothy+3&version=NET\">(NET — see context ↗)</a></p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+3&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el12",
+          "type": "question",
+          "format": "plainText",
+          "question": "The Greek word behind “God-breathed” (*theopneustos*) is unique — Paul coined it to describe something for which no word already existed. What do you think he means by it? What does it tell us about the *origin* of Scripture?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal",
+          "subtype": "header",
+          "header": "“God-breathed” (v16)"
+        },
+        {
+          "elementId": "ch01-el13",
+          "type": "question",
+          "format": "plainText",
+          "question": "Paul says Scripture is useful for “teaching, for reproof, for correction, and for training in righteousness” (v16). That is quite a practical list. What does this suggest about the *purpose* of the Bible? Is it meant primarily to be studied, or to be lived?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal",
+          "subtype": "standard"
+        },
+        {
+          "elementId": "ch01-el14",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "“Hasn’t the Bible been corrupted?”",
+          "question": "You may have heard — or believe yourself — that the Bible has been corrupted and can no longer be trusted. What do you already know or think about this claim?",
+          "answer": "<p>The manuscript evidence for the New Testament alone is extraordinary: over 5,800 Greek manuscripts survive, with thousands more in Latin and other languages. No other ancient document comes close to this level of attestation. When scholars compare these manuscripts, they find a text that is remarkably consistent. The variations that do exist are minor — spelling differences, word order — and no central Christian doctrine rests on a disputed reading.</p><p>But here is the more important question: <em>when</em> was the supposed corruption supposed to have happened? Jesus himself — whom the Quran also honours — quoted the Old Testament constantly as reliable Scripture. If the text was corrupted, it must have happened after Jesus. But many of the Old Testament manuscripts we have <em>predate</em> or are <em>contemporary with</em> Jesus’ time. The math simply doesn’t work.</p><p>Christians hold that God, who inspired the Scriptures, also preserved them. Not in a mechanical way that removes human involvement — but in a real way that ensures the message is trustworthy.</p><p>There is also a difficulty within the Islamic tradition itself: the Quran presents God as the guardian of the scriptures he has given. If the Bible was corrupted, a quiet but serious question arises — did God allow what he said he would protect to be altered? That question is worth pondering.</p>",
+          "buttonText": "See a response ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el15",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 3 — How the Old and New Testaments Fit Together",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el16",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>One of the most striking things about the Bible is that it is not a collection of unrelated religious texts. It is a single unfolding story — and Jesus himself claimed to be its centre. After his resurrection, walking with two confused disciples on the road to Emmaus, he opened their understanding in a remarkable way.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el17",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Luke 24:44–47",
+          "translation": "NET",
+          "passageText": "<i>Then</i><sup>44</sup>he said to them, ‘These are my words that I spoke to you while I was still with you, that everything written about me in the law of Moses and the prophets and the psalms must be fulfilled.’ <sup>45</sup>Then he opened their minds so they could understand the scriptures, <sup>46</sup>and said to them, ‘Thus it stands written, that the Christ would suffer and would rise from the dead on the third day, <sup>47</sup>and repentance for the forgiveness of sins would be proclaimed in his name to all nations, beginning from Jerusalem.’<br><p style=\"text-align:right;font-size:0.8em;\"><a href=\"https://www.biblegateway.com/passage/?search=Luke+24&version=NET\">(NET — see context ↗)</a></p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Luke+24&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el18",
+          "type": "question",
+          "format": "plainText",
+          "question": "Jesus says that the Law of Moses, the Prophets, and the Psalms — the three main divisions of the Hebrew Bible — were all written *about* him. Does this surprise you? What would it mean if this claim is true?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal",
+          "subtype": "standard"
+        },
+        {
+          "elementId": "ch01-el19",
+          "type": "question",
+          "format": "plainText",
+          "question": "Many people read the Old and New Testaments as separate or even contradictory books — one about a God of judgement, one about a God of grace. How does Jesus’ claim in Luke 24 challenge that reading?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal",
+          "subtype": "standard"
+        },
+        {
+          "elementId": "ch01-el20",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "A Note on How to Read the Bible",
+          "term": "Read it like a story, not a rulebook",
+          "question": "How should a new believer begin reading the Bible?",
+          "answer": "<p>The Bible is best understood as a grand story — Creation, Fall, Redemption, New Creation — with Jesus at the centre. It is not a legal code to be applied literally across all time, nor a series of isolated commands. Each part — a psalm, a prophecy, a letter — makes most sense when you understand its place in the whole story.</p><p>One thing worth knowing from the start: the Bible is a different kind of book from the Qur’an — not because it is less holy, but because God chose to speak through story, history, poetry, and letter, written by many different people across many centuries. Getting used to that is part of reading it well. Each book has its own voice, its own context, and its own place in the larger story. That is not a weakness — it is part of how God has chosen to speak.</p><p>The best place to start? There are many ways to start, but one good one is to start with <b>Mark’s Gospel.</b> It is short, urgent, and powerful. It moves fast — within a few chapters, Jesus has cast out demons, healed the sick, forgiven sin, and calmed a storm. Mark forces you to ask the same question the disciples asked: <em>Who is this man?</em></p><p>Read Mark in one or two sittings if you can. Then come back to it again, and read it slowly.</p>",
+          "buttonText": "Find out ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el21",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 4 — The Bible in Your Hands",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el22",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>Knowing <em>about</em> the Bible is not the same as reading it. One of the most important habits a new believer can form is regular, unhurried engagement with Scripture — not as a duty to perform, but as a conversation to enter.</p><p>The following questions are designed to help you think about where you currently are in your relationship with the Bible, and where you would like to be.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el23",
+          "type": "likertScale",
+          "scaleNumber": 5,
+          "popupTitle": "About this scale",
+          "instruction": "Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale": [
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+          "statements": [
+            "I feel confident opening the Bible and reading it on my own.",
+            "I believe the Bible is a book I can trust.",
+            "I am beginning to see how the Old and New Testaments connect."
+          ],
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el24",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Big Picture Truths",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el25",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "<p>Before we move to personal reflection, here are the three key truths from this chapter to hold on to:</p><p><b>1. God is a God who speaks.</b> He has not left us to guess at who he is or what he is like. He has spoken through the prophets, and finally and fully through his Son, Jesus. The Bible is the written record of that communication.</p><p><b>2. The Bible is God-breathed.</b> That is Paul’s word — <em>theopneustos</em>. It means the Scriptures come from God himself, through real human writers, and carry his authority. It is not a human book about God; it is God’s word through humanity.</p><p><b>3. Jesus is the centre.</b> The whole Bible — from Genesis to Revelation — is ultimately about him. He is not just a figure who appears in the Gospels; he is the one to whom the whole story has always been pointing. When you read the Bible, you are reading a book whose greatest character is Jesus.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el26",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el27",
+          "type": "question",
+          "format": "plainText",
+          "question": "What is one question about the Bible — its reliability, its meaning, or how to read it — that you would most like to explore further?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal",
+          "subtype": "reflection"
+        },
+        {
+          "elementId": "ch01-el28",
+          "type": "question",
+          "format": "plainText",
+          "question": "Jesus trusted the Scriptures completely — he quoted them, fulfilled them, and said they were about him. What difference would it make to your daily life if you began to read the Bible with that same confidence?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal",
+          "subtype": "reflection"
+        },
+        {
+          "elementId": "ch01-el29",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>The Bible is not a closed or inaccessible book. It is a living word, written for ordinary people, preserved through centuries, and centred on a person you have come to know — Jesus. As you read it, you are not just learning information. You are hearing the voice of the one who loves you and has called you to himself.</p><p>In the chapters ahead, we will use the Scriptures as our guide. Each time we open this book together, we are trusting that God still speaks through it — and that what he says is true, good, and meant for you.</p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el30",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Application Challenge",
+          "term": "Before Chapter 2",
+          "question": "What is your challenge for this week?",
+          "answer": "<p>Read all of Mark this week — or at the very least, Read Mark 1–4 — ideally in one sitting, as if it were a short story. As you read, notice: What does Jesus do? What do people say about him? What questions does Mark leave you asking?</p><p>If you can, find a translation of the Bible in your heart language — the language you think and pray in most naturally. Reading Scripture in the language closest to you is not a small thing. It is a reminder that this book was not written for a foreign culture; it was written for you.</p><p>Bring one observation from your reading to share at the start of the next chapter.</p>",
+          "buttonText": "See the challenge ➡",
+          "bottomPadding": "normal"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "appTitle": "Mai Karatun Nazarin Littafi Mai Tsarki",
+  "appDescription": "Manhajja ce ta tafi-da-gidanka don gudanar da darussan nazarin Littafi Mai Tsarki — karantawa, yin tunani, da kuma rikodin amsoshi yayin da kake ci gaba.",
+  "sampleTitle": "Tuba",
+  "sampleSubtitle": "Sabuwa ba (kawai) Kyau ba",
+  "sampleShortTitle": "Tuba",
+  "sampleDescription": "Nazarin Littafi Mai Tsarki na zama tara wanda ke bincika abin da tuba na gaskiya yake nufi – da kuma dalilin da ya sa yake da muhimmanci.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        "Raba: kwafi da sake rarraba kayan a kowace hanya ko tsari",
+        "Daidaitawa: sake hadawa, canzawa, da ginawa akan kayan don kowane dalili, har ma na kasuwanci"
+      ],
+      "conditions": [
+        "Jinjina: dole ne ku ba da daraja da ta dace, samar da hanyar haɗi zuwa lasisi, kuma ku nuna idan an yi canje-canje",
+        "ShareAlike: idan kun sake haɗawa, canzawa, ko ginawa akan kayan, dole ne ku rarraba gudummawarku a ƙarƙashin lasisi ɗaya da na asali"
+      ],
+      "notices": [
+        "Ba lallai ne ku bi lasisin abubuwan da ke cikin yankin jama'a ba ko kuma inda aka ba ku izinin amfani da su ta hanyar keɓancewa ko iyakancewa.",
+        "Ba a ba da garantin kowane iri ba. Lasisin ba zai ba ku duk izinin da ya dace don amfanin da kuke nufi ba.",
+        "Yayin ƙirƙirar wannan manhajja, marubucin ya yi amfani da Claude, ChatGPT, da Gemini don gudanar da ‘vibe coding’ mai zurfi. Duk shawarwarin abun ciki, da kalmomin ƙarshe alhakin marubucin ne."
+      ]
+    }
+  }
+}

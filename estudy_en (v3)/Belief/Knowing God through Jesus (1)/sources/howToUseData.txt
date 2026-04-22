@@ -1,0 +1,56 @@
+"howToUseData": {
+  "sections": [
+    {
+      "heading": "Who Is This Study For?",
+      "blocks": [
+        {
+          "title": "New believers from a Muslim background",
+          "body": "This series is written specifically for people who have recently come to Christ from a Muslim background. It assumes you are not starting from scratch — you already know much about God, Scripture, and how to live a devout life. But it also recognises that coming to faith in Jesus involves rebuilding a framework, not just adding new information. These ten sessions are designed to help you do that carefully, at a pace that gives you room to think and to ask hard questions."
+        },
+        {
+          "title": "People carrying real costs",
+          "body": "Many who work through this study will have paid — or will be paying — a significant personal cost for following Jesus: in family relationships, community standing, or personal safety. This series does not minimise that. From Session 0 onwards, it is built around a simple conviction: you belong here, and the God who has drawn you to himself will hold you."
+        },
+        {
+          "title": "Leaders and mentors walking alongside",
+          "body": "If you are leading someone through this study — as a pastor, a small group leader, or a trusted friend — the material is designed to be unhurried and relational. The goal is not to win arguments or cover content quickly. It is to help participants encounter Jesus through Scripture, in a space where deep questions are expected and genuinely welcomed."
+        }
+      ]
+    },
+    {
+      "heading": "Individual or Group Study?",
+      "blocks": [
+        {
+          "title": "On your own",
+          "body": "This study can be worked through individually. Read the Bible passages, work through the Explore questions, and spend time with the Reflection Questions at the end of each session. There is no right speed. Some sessions — particularly those on the Trinity, the cross, and new identity — may take longer than others. That is expected and good."
+        },
+        {
+          "title": "In a group",
+          "body": "The study is designed to work especially well in a small, trusted group of people on a similar journey. Session 0 is a gathering session with no teaching content at all — its only purpose is to establish safety and belonging before anything else begins. In a group setting, the Common Questions sections can open up real conversation. The goal is not right answers given quickly, but honest thinking done together."
+        }
+      ]
+    },
+    {
+      "heading": "Group Leaders & Mentors",
+      "blocks": [
+        {
+          "title": "Working with a leader or mentor",
+          "body": "<p>Having a trusted guide through this series makes a significant difference — someone who can sit with hard questions, make space for honest doubt, and offer both theological grounding and pastoral care. The best leaders are those who have worked through the material themselves before leading others through it.</p><p>At the end of each session, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "A Note on the Questions",
+      "blocks": [
+        {
+          "title": "Two kinds of questions",
+          "body": "Each session has two kinds of questions. The <b>Explore questions</b> are tied to specific Bible passages — asking you to look carefully at what the text actually says. The <b>Reflection Questions</b> at the end are more personal — asking what the session means for you specifically, and what you want to carry into the week ahead."
+        },
+        {
+          "title": "Common Questions",
+          "body": "Each session includes a <b>Common Questions</b> section addressing the specific objections and struggles that often arise — about the reliability of the Bible, the Trinity, the crucifixion, grace versus works, and more. These are not there to shut down conversation but to open it up. If a question in that section connects with something you are wrestling with, bring it to your group or mentor."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * components.cards.display.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * Read-only display cards and content blocks — elements the user reads
+ * but does not interact with directly. For interactive response cards
+ * (question cards, answer fields, Likert scale) see:
+ * components.cards.responses.css
+ *
+ * 01. Chapter header    – Chapter number label, title, decorative gradient
+ * 02. Section header    – Mid-chapter divider heading (h2-level)
+ * 03. Subsection header – Mid-chapter divider heading (h3-level)
+ * 04. Intro block       – Opening narrative paragraph card
+ * 05. Bridge text       – Explanatory paragraphs between question groups
+ * 06. Reflection        – Further reflection header and card container
+ * 07. Chapter image     – Inline images with caption and fallback
+ * 08. Speak button      – Inline read-aloud button.
+ *
+ * ── DARK MODE ───────────────────────────────────────────────────────────
+ * 08. Dark mode         – body.dark-mode overrides for all rules above
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ── 01. CHAPTER HEADER ─────────────────────────────────────────────────── */
+/* The title block at the top of each chapter.
+   ::before adds a decorative radial gold glow in the top-right corner. */
+
+.chapter-header {
+  padding: 32px var(--content-margin) 28px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.chapter-header::before {
+  content: '';
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,146,42,0.08) 0%, transparent 70%);
+}
+.chapter-label {
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--emphasis);
+  margin-bottom: 10px;
+}
+.chapter-title {
+  font-family: var(--font-stack-heading);
+  font-size: 26px;         /* display heading — stays px */
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+
+/* ── 02. SECTION HEADER ─────────────────────────────────────────────────── */
+/* A mid-chapter divider heading, e.g. "Spiritual Health Check-up".
+   Larger of the two heading levels. */
+
+.section-header {
+  font-family: var(--font-stack-heading);
+  font-size: 20px;         /* display heading — stays px */
+  font-style: italic;
+  color: var(--text);
+  margin: 28px var(--content-margin) 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.3;
+}
+
+
+/* ── 03. SUBSECTION HEADER ──────────────────────────────────────────────── */
+/* A secondary mid-chapter divider heading, one level below .section-header. */
+
+.subsection-header {
+  font-family: var(--font-stack-heading);
+  font-size: 18px;         /* display heading — stays px */
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 28px var(--content-margin) 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.3;
+}
+
+
+/* ── 04. INTRO BLOCK ────────────────────────────────────────────────────── */
+/* Opening narrative paragraph card at the top of a chapter's content.
+   Left accent border signals "read this first" to the user. */
+
+.intro-block {
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent);
+  margin: 20px var(--content-margin);
+  padding: 18px 20px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 4px var(--shadow);
+}
+.intro-block p {
+  font-size: 0.9375rem;    /* was 15px — scales */
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.intro-block p + p { margin-top: 12px; }
+
+
+/* ── 05. BRIDGE TEXT ────────────────────────────────────────────────────── */
+/* Explanatory paragraphs placed between question groups.
+   Visually matches the intro block but uses tighter top margin
+   to sit snugly between cards. */
+
+.bridge-text {
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent);
+  margin: 12px var(--content-margin);
+  padding: 18px 20px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 4px var(--shadow);
+  font-size: 0.9375rem;    /* was 15px — scales */
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.bridge-text p + p { margin-top: 12px; }
+
+/* ── List indentation inside text cards ─────────────────────────────────── */
+/* ul/ol inside intro-block and bridge-text need explicit padding so that
+   bullet/number markers sit clearly inside the card rather than at the
+   content-box edge. 1.4em gives the marker room; nested lists step in
+   further. */
+.intro-block ul,
+.intro-block ol,
+.bridge-text ul,
+.bridge-text ol {
+  padding-left: 1.4em;
+  margin: 8px 0;
+}
+.intro-block ul ul,
+.intro-block ol ol,
+.intro-block ul ol,
+.intro-block ol ul,
+.bridge-text ul ul,
+.bridge-text ol ol,
+.bridge-text ul ol,
+.bridge-text ol ul {
+  margin: 4px 0;
+}
+.intro-block li,
+.bridge-text li {
+  margin-bottom: 4px;
+  line-height: 1.65;
+}
+
+/* ── 06. REFLECTION ─────────────────────────────────────────────────────── */
+/* "Further Reflection" section at the foot of a chapter.
+   Header and card are visually joined — header uses border-radius on top
+   only, card on bottom only, creating a single rounded block. */
+
+.reflection-header {
+  background: var(--emphasis);
+  margin: 24px var(--content-margin) 0;
+  border-radius: 10px 10px 0 0;
+  padding: 14px 18px;
+}
+.reflection-header h3 {
+  font-family: var(--font-stack-heading);
+  font-size: 16px;         /* display heading — stays px */
+  color: var(--surface);
+  font-style: italic;
+  font-weight: 400;
+}
+.reflection-card {
+  background: var(--card-bg);
+  margin: 0 var(--content-margin);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.reflection-q {
+  padding: 16px 18px 4px;
+  font-size: 0.906rem;     /* was 14.5px — scales */
+  color: var(--text);
+  line-height: 1.65;
+  border-top: 1px solid var(--surface-mid);
+}
+.reflection-q:first-child { border-top: none; }
+
+
+/* ── 07. CHAPTER IMAGE ──────────────────────────────────────────────────── */
+/* Inline images within chapter content, with caption and emoji fallback.
+   float (left/right/none) is applied inline by the content author. */
+
+.chapter-image-wrapper {
+  display: block;
+  margin: 16px var(--content-margin);
+  border-radius: 10px;
+  overflow: hidden;        /* clips image to border-radius */
+  box-shadow: 0 2px 8px var(--shadow);
+}
+/* Clearfix so floated images don't bleed into the next card */
+.chapter-image-wrapper + * { clear: both; }
+
+.chapter-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.chapter-image-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 80px;
+  background: var(--surface-mid);
+  font-size: 32px;         /* emoji — stays px */
+}
+.chapter-image-caption {
+  font-family: var(--font-stack-mono);
+  font-size: 11px;         /* UI chrome — stays px */
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  text-align: center;
+  padding: 8px 12px;
+  background: var(--card-bg);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── 08. SPEAK BUTTON ───────────────────────────────────────────────────── */
+/* Inline read-aloud button. Float right within bridge-text cards;
+   positioned inline within modal title bars. */
+
+.intro-block,
+.bridge-text {
+  position: relative;
+  isolation: isolate;   /* guarantees button anchors here, not to chapter-header */
+}
+.speak-btn {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: var(--surface-mid);
+  border: none;
+  border-radius: 50%;
+  color: var(--text);
+  opacity: 0.6;
+  cursor: pointer;
+  padding: 2px;
+  line-height: 1;
+  transition: opacity 0.15s, color 0.15s;
+}
+.speak-btn:hover  { opacity: 1; }
+.speak-btn-active { opacity: 1; color: var(--accent); } 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   09. DARK MODE
+   body.dark-mode overrides for all rules in this file, gathered here.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Chapter header ── */
+body.dark-mode .chapter-label {
+  color: var(--emphasis-light);
+}
+body.dark-mode .chapter-title {
+  color: var(--surface);
+}
+
+/* ── Section header / subsection header ── */
+body.dark-mode .section-header {
+  color: var(--dm-text);
+  border-color: var(--dm-border);
+}
+body.dark-mode .subsection-header {
+  color: var(--dm-text-mid);
+  border-color: var(--dm-border);
+}
+
+/* ── Intro block ── */
+body.dark-mode .intro-block {
+  background: var(--dm-raised);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+body.dark-mode .intro-block p {
+  color: var(--dm-text-mid);
+}
+
+/* ── Bridge text ── */
+body.dark-mode .bridge-text {
+  background: var(--dm-raised);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  color: var(--dm-text-mid);
+}
+
+/* ── Reflection ── */
+body.dark-mode .reflection-card {
+  background: var(--dm-raised);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+
+/* ── Chapter image ── */
+body.dark-mode .chapter-image-wrapper {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+body.dark-mode .chapter-image-fallback {
+  background: var(--dm-raised);
+}
+body.dark-mode .chapter-image-caption {
+  background: var(--dm-raised);
+  color: var(--dm-text-faint);
+}
+
+/* ── Speak button ── */
+body.dark-mode .speak-btn { color: var(--emphasis-light); }

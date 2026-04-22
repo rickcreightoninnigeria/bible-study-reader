@@ -1,0 +1,1025 @@
+{
+  "sections":[
+    {
+      "sectionNumber":2,
+      "sectionTitle" :"Deep Idols",
+      "interlude"    :[
+        {
+          "elementId"    :"s02-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>Sin in our hearts affects our basic motivational drives so they become idolatrous, “deep idols.” Some people are strongly motivated by a desire for influence and power, while others are more excited by approval and appreciation. Some want emotional and physical comfort more than anything else, while still others want security, the control of their environment. People with the deep idol of power do not mind being unpopular in order to gain influence. People who are most motivated by approval are the opposite — they will gladly lose power and control as long as everyone thinks well of them. Each deep idol — power, approval, comfort, or control — generates a different set of fears and a different set of hopes.<cite>— Tim Keller, <em>Counterfeit Gods</em>, ch. 3</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"s02-el02",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Active’ versions of Deep Idols",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"s02-el03",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"<p>Some deep idols are active. You go out and grab what you want. <b>Power</b> is about mastery over the actions of others and <b>Control</b> is about mastery over the actions of self. <b>Approval</b> is about controlling the feelings of others (towards self), and <b>Comfort</b> is about controlling the feelings that the self experiences.</p><p>The next studies will look at each one of these deep idols in turn:</p><ul><li><b>Power.</b> You love to have power over others.</li><li><b>Approval.</b> You love to be accepted by others.</li><li><b>Control.</b> You love to have control over your environment.</li><li><b>Comfort.</b> You love to feel pleasure and comfort.</li></ul>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"s02-el04",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Avoidant’ versions of Deep Idols",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"s02-el05",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"<p>These four ‘active’ deep idols also have ‘avoidant’ versions, where instead of grabbing something you are avoiding its opposite.</p><p><b>Power/Autonomy.</b> Is it more that you love having power <em>over</em> others, or that you fear being over-powered <em>by</em> others? (Or is it a bit of both)? Do you want power <em>over</em> others or autonomy <em>from</em> others?</p><p><b>Approval/Rejection.</b> Is it more that you love the approval of others, or that you fear being rejected by them? (Or is it a bit of both)?</p><p><b>Control/Risk.</b> Is it more that you love having control over yourself, or that you fear taking a risk and being overwhelmed by chaos? (Or is it a bit of both)?</p><p><b>Comfort/Pain.</b> Is it more that you love pursuing comfort and pleasure, or that you fear pain? (Or is it a bit of both)?</p><p>We will also look at each of these ‘avoidant’ deep idols:</p><ul><li><b>Freedom from Power.</b> You just don’t like others (or perhaps even God?!) having power over you. You want autonomy.</li><li><b>Freedom from Rejection.</b> You hate it when people explicitly reject or criticise you or disapprove of what you are doing.</li><li><b>Freedom from Risk.</b> You would rather do nothing than risk doing the wrong thing. Who knows what chaos might result!</li><li><b>Freedom from Pain.</b> You want to avoid pain or discomfort.</li></ul>",
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ],
+
+  "chapters":[
+    {
+      "chapterNumber":3,
+      "chapterTitle" :"Surface Idols & Deep Idols",
+      "elements"     :[
+        {
+          "elementId"    :"ch03-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>Each deep idol — power, approval, comfort, or control — generates a different set of fears and a different set of hopes.<cite>— Tim Keller</cite></blockquote><blockquote>We cannot uproot surface idols without first addressing the deep idols that give them life.<cite>— Anon</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch03-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el03",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The rest of these Bible studies will distinguish between ‘surface idols’ and ‘deep idols.’ Surface idols are the outward expressions of idolatry — our visible behaviours, and the things we can be seen to worship and value. Deep idols are the deeper, underlying motivations and desires of the heart that drive those behaviours. Surface idols take us to <em>what</em> we worship. Deep idols take us to <em>why</em> we worship those things.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jeremiah 10:6-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>There is no one like you, Lord. You are great, and you are renowned for your power. <sup>7</sup>Everyone should revere you, O King of all nations, because you deserve to be revered. For there is no one like you among any of the wise men of the nations nor among any of their kings.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jeremiah+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch03-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How does God’s glory reveal the emptiness of idols?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Jeremiah 10:6-7"
+        },
+
+        {
+          "elementId"    :"ch03-el06",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Surface Idols",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el07",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Surface idols are tangible, concrete things in life that we can easily see people pursuing. This includes things like money, career, success, family, romantic love, or community. Surface idols are the ‘vehicles’ through which we try to satisfy our deeper desires. As always, these things we focus on are not (normally) inherently bad — if they were obviously bad, we would be much less tempted to worship them! But they become idols when they take the place of God in our lives. They become our gods when they become our ultimate sources of meaning or identity. For example:",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 16:13",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>No servant can serve two masters, for either he will hate the one and love the other, or he will be devoted to the one and despise the other. You cannot serve God and money.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+16&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch03-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Colossians 3:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>So put to death whatever in your nature belongs to the earth: sexual immorality, impurity, shameful passion, evil desire, and greed which is idolatry.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Colossians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch03-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 10:37",
+          "translation"  :"NET",
+          "passageText"  :"<sup>37</sup>“Whoever loves father or mother more than me is not worthy of me, and whoever loves son or daughter more than me is not worthy of me.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch03-el11",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some things that can become surface idols?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 16:13, Colossians 3:5, Matthew 10:37"
+        },
+
+        {
+          "elementId"    :"ch03-el12",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Deep Idols",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el13",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Deep idols are the heart-level motivations that we seek to fulfil through surface idols. Deep idols represent the root issues behind our outward actions. The four deep idols that we will focus on in these studies are: <b>power, approval, comfort, and control/safety.</b>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Proverbs 20:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>Counsel in the heart of a man is like deep water, but a discerning person draws it out.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Proverbs+20&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch03-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why can deep idols be difficult to spot, and why is there hope?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Proverbs 20:5"
+        },
+
+        {
+          "elementId"    :"ch03-el16",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"<p>Our next four studies will look at these four deep idols one by one, and then we will turn to see how these deep idols are expressed through surface idols.</p><p>Remember: Surface idols are ‘what’ we chase, and deep idols are ‘why’ we chase them. The deep idols operate at a heart level, shaping how we value our surface idols. Deep idols reflect where we seek our identity, purpose, and security outside of God.</p>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ecclesiastes 2:10-11",
+          "translation"  :"NET",
+          "passageText"  :"<sup>10</sup>I did not restrain myself from getting whatever I wanted; I did not deny myself anything that would bring me pleasure. So all my accomplishments gave me joy; this was my reward for all my effort. <sup>11</sup>Yet when I reflected on everything I had accomplished and on all the effort that I had expended to accomplish it, I concluded: “Everything is futile – like chasing the wind! There is nothing of lasting value on earth.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ecclesiastes+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch03-el18",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why is it futile to search for meaning outside of God?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Ecclesiastes 2:10-11"
+        },
+
+        {
+          "elementId"    :"ch03-el19h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A Deep-Idol Overview",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch03-el19",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "Life only has meaning & I only have worth if I have power over others.",
+            "I love to have influence over other people.",
+            "Life only has meaning & I only have worth if I am respected by the right people.",
+            "I really want to be loved by the people important to me.",
+            "Life only has meaning & I only have worth if I have the right experiences.",
+            "I really want to be comfortable, and have a good quality of life.",
+            "Life only has meaning & I only have worth if I am able to get mastery over my life in the right areas.",
+            "I really want to be secure and safe in life."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch03-el20",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch03-el21",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"If power was becoming a serious idol for you, who would you be most tempted to seek power over? (What sort of people?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch03-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"If approval was becoming a serious idol for you, who would you be most tempted to seek approval from? (What sort of people?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch03-el23",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"If comfort was becoming a serious idol for you, what experiences would you be most tempted to seek?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch03-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"If control/security was becoming a serious idol for you, what areas of life would you most want to be able to control?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch03-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Of those four deep idols (power, approval, comfort, and control) which one (or two) do you think you are most tempted towards?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":4,
+      "chapterTitle" :"Power",
+      "elements"     :[
+        {
+          "elementId"    :"ch04-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>The pursuit of power is a lust that can never be satisfied because power promises more than it can deliver.<cite>— C.S. Lewis</cite></blockquote><blockquote>The desire for power often stems from a deeper desire to replace God’s rule with our own.<cite>— Francis Schaeffer</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch04-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch04-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"When power is an idol it will show up as a (disordered) desire for success and influence. If you are in its grip, then you need to be right, you need to be the best, you need to win.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch04-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Daniel 3:1-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>King Nebuchadnezzar had a golden statue made. It was ninety feet tall and nine feet wide. He erected it on the plain of Dura in the province of Babylon. <sup>2</sup>Then King Nebuchadnezzar sent out a summons to assemble the satraps, prefects, governors, counselors, treasurers, judges, magistrates, and all the other authorities of the province to attend the dedication of the statue that King Nebuchadnezzar had erected. <sup>3</sup>So the satraps, prefects, governors, counselors, treasurers, judges, magistrates, and all the other provincial authorities assembled for the dedication of the statue that King Nebuchadnezzar had erected. They were standing in front of the statue that Nebuchadnezzar had erected. <sup>4</sup>Then the herald announced loudly: “O peoples, nations, and language groups, you are commanded: <sup>5</sup>When you hear the sound of the horn, flute, zither, trigon, harp, pipes, and all kinds of music, you must bow down and pay homage to the golden statue that King Nebuchadnezzar has erected. <sup>6</sup>Whoever does not bow down and pay homage will immediately be thrown into the midst of a furnace of blazing fire!” <sup>7</sup>Therefore when they all heard the sound of the horn, flute, zither, trigon, harp, pipes, and all kinds of music, all the peoples, nations, and language groups bowed down and paid homage to the golden statue that King Nebuchadnezzar had erected.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Daniel+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch04-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How did the idol of power show up in Nebuchadnezzar’s life?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Daniel 3:1-7"
+        },
+
+        {
+          "elementId"    :"ch04-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have this idol, you probably fear humiliation or loss of meaning, and you can easily express anger if your power is thwarted.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch04-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Daniel 2:1-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>In the second year of his reign, Nebuchadnezzar had a dream. His mind was troubled and he could not sleep. <sup>2</sup>The king issued an order to summon the magicians, astrologers, sorcerers, and wise men in order to tell the king his dreams. So they came and waited before the king. <sup>3</sup>The king said to them, “I have had a dream, and I am anxious to understand the dream.” <sup>4</sup>The wise men said to the king in Aramaic, “O king, live forever! Tell your servants the dream, and we will disclose its interpretation.” <sup>5</sup>The king replied to the wise men, “My decision is firm. If you do not inform me of both the dream and its interpretation, you will be dismembered and your homes reduced to rubble. <sup>6</sup>But if you can disclose the dream and its interpretation, you will receive from me gifts, a reward, and considerable honor. So disclose to me the dream and its interpretation.” <sup>7</sup>They again replied, “Let the king inform us of the dream; then we will disclose its interpretation.” <sup>8</sup>The king replied, “I know for certain that you are attempting to gain time, because you see that my decision is firm. <sup>9</sup>If you don’t inform me of the dream, there is only one thing that will happen to you. For you have agreed among yourselves to report something false and deceitful to me until such time as things might change. So tell me the dream, and I will have confidence that you can disclose its interpretation.” <sup>10</sup>The wise men replied to the king, “There is no man on earth who is able to do what the king is asking! No king, however great and powerful, has ever requested such a thing from any magician, astrologer, or wise man. <sup>11</sup>What the king is asking is too difficult, and no one exists who can disclose it to the king, except the gods – but they don’t live among humans!” <sup>12</sup>Because of this the king got very angry and gave orders to destroy all the wise men of Babylon.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Daniel+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch04-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Daniel 3:8-23",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>Now at that time certain Babylonian men came forward and brought accusations against the Jews. <sup>9</sup>They said to King Nebuchadnezzar, “O king, live forever! <sup>10</sup>You have issued an edict, O king, that everyone must bow down and pay homage to the golden statue when they hear the sound of the horn, flute, zither, trigon, harp, pipes, and all kinds of music. <sup>11</sup>And whoever does not bow down and pay homage must be thrown into the midst of a furnace of blazing fire. <sup>12</sup>But there are Jewish men whom you appointed over the administration of the province of Babylon – Shadrach, Meshach, and Abednego – and these men have not shown proper respect to you, O king. They don’t serve your gods and they don’t pay homage to the golden statue that you have erected.” <sup>13</sup>Then Nebuchadnezzar in a rage and fury gave orders to bring Shadrach, Meshach, and Abednego. So they brought these men before the king. <sup>14</sup>Nebuchadnezzar said to them, “Is it true, Shadrach, Meshach, and Abednego, that you don’t serve my gods and that you don’t pay homage to the golden statue that I erected? <sup>15</sup>Now if you are ready, when you hear the sound of the horn, flute, zither, trigon, harp, pipes, and all kinds of music, bow down and pay homage to the statue that I had made. If you don’t pay homage to it, you will immediately be thrown into the midst of a furnace of blazing fire. Now, who is that god who can rescue you from my power?” <sup>16</sup>Shadrach, Meshach, and Abednego replied to King Nebuchadnezzar, “We don’t need to give you a reply concerning this. <sup>17</sup>If our God whom we are serving exists, he is able to rescue us from the furnace of blazing fire, and he will rescue us, O king, from your power as well. <sup>18</sup>But if he doesn’t, let it be known to you, O king, that we don’t serve your gods, and we will not pay homage to the golden statue that you erected.” <sup>19</sup>Then Nebuchadnezzar was filled with rage, and his attitude toward Shadrach, Meshach, and Abednego was altered. He gave orders to heat the furnace seven times hotter than it was normally heated. <sup>20</sup>He ordered strong soldiers in his army to tie up Shadrach, Meshach, and Abednego and to throw them into the furnace of blazing fire. <sup>21</sup>So those men were tied up while wearing their cloaks, trousers, turbans, and other clothes, and were thrown into the furnace of blazing fire. <sup>22</sup>But since the king’s command was urgent and the furnace was extremely hot, the men who escorted Shadrach, Meshach, and Abednego were killed by the leaping flames. <sup>23</sup>But those three men, Shadrach, Meshach, and Abednego, fell into the furnace of blazing fire while still securely bound.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Daniel+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch04-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How did Nebuchadnezzar respond when he didn’t get his way?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Daniel 2:1-12, Daniel 3:8-23"
+        },
+
+        {
+          "elementId"    :"ch04-el10",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have a power idol you will seek mastery over others. You will not mind comparing yourself to others because (if you are honest!) you see yourself as better. You want to succeed, and you like status since it brings power. You like people who acknowledge your power. But you don’t <em>depend</em> on praise from others, as you are confident in yourself that you are right. Others can sometimes feel used by you. Those in positions of power (whether in business, politics, church or some other sphere) can become susceptible to turning power into an idol, but anyone can have this idol. If you have power as an idol, and if you worship it ‘faithfully’, it may make you successful by the standards of the world.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch04-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Daniel 2:37-38",
+          "translation"  :"NET",
+          "passageText"  :"<sup>37</sup>You, O king, are the king of kings. The God of heaven has granted you sovereignty, power, strength, and honor. <sup>38</sup>Wherever human beings, wild animals, and birds of the sky live – he has given them into your hand and has made you ruler over them all. You are the head of gold.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Daniel+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch04-el12",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How successful was Nebuchadnezzar, as the world measures it?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Daniel 2:37-38"
+        },
+
+        {
+          "elementId"    :"ch04-el13",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"This success can make it hard for you to see the idol as an idol, and can make it hard to see the dangers and limitations of serving it.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch04-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Daniel 4:20-26",
+          "translation"  :"NET",
+          "passageText"  :"<sup>20</sup>The tree that you saw that grew large and strong, whose top reached to the sky, and which could be seen in all the earth, <sup>21</sup>whose foliage was attractive and whose fruit was plentiful, and from which there was food for all, under whose branches wild animals used to live, and in whose branches birds of the sky used to nest – <sup>22</sup>it is you, O king! For you have become great and strong. Your greatness is such that it reaches to heaven, and your authority extends to the ends of the earth. <sup>23</sup>As for the king seeing a holy sentinel coming down from heaven and saying, ‘Chop down the tree and destroy it, but leave its taproot in the ground, with a band of iron and bronze around it, surrounded by the grass of the field. Let it become damp with the dew of the sky, and let it live with the wild animals, until seven periods of time go by for him’ – <sup>24</sup>this is the interpretation, O king! It is the decision of the Most High that this has happened to my lord the king. <sup>25</sup>You will be driven from human society and will live with the wild animals. You will be fed grass like oxen and will become damp with the dew of the sky. Seven periods of time will pass by for you, before you understand that the Most High is ruler over human kingdoms and gives them to whomever he wishes. <sup>26</sup>They said to leave the taproot of the tree, for your kingdom will be restored to you when you come to understand that Heaven rules.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Daniel+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch04-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What did Nebuchadnezzar need to learn about his idol of power?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Daniel 4:20-26"
+        },
+
+        {
+          "elementId"    :"ch04-el16",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Mark 10:45",
+          "translation"  :"NET",
+          "passageText"  :"<sup>45</sup>For even the Son of Man did not come to be served but to serve, and to give his life as a ransom for many.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Mark+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch04-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"2 Corinthians 12:9",
+          "translation"  :"NET",
+          "passageText"  :"<sup>9</sup>But he said to me, “My grace is enough for you, for my power is made perfect in weakness.” So then, I will boast most gladly about my weaknesses, so that the power of Christ may reside in me.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch04-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Zechariah 4:6",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>So he said to me, “This is the word of the Lord to Zerubbabel: ‘Not by strength and not by power, but by my Spirit,’ says the Lord who rules over all.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Zechariah+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch04-el19",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How can we put the idol of power to death?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Mark 10:45, 2 Corinthians 12:9, Zechariah 4:6"
+        },
+
+        {
+          "elementId"    :"ch04-el20",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"God calls us not to trust our own power, but to serve, trusting in his.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch04-el21h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch04-el21",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about power and influence and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on gaining power and influence.",
+            "When my prayers for power or influence are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with being thwarted.",
+            "Humiliation is the thing I’m most afraid of.",
+            "When life gets out of hand, I turn to the influence I have over others for comfort.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of power.",
+            "If my power and influence were taken away, my life would feel unbearable or meaningless."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch04-el22",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch04-el23",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Think of a recent time when you felt anger. Where did that feeling come from? (Was an idol of power threatened?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch04-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are situations or things that you think are embarrassing? (Is that because an idol of power is being undermined?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch04-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Is there one (or more) aspect of the idol of power that you can see at work in your own life?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch04-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Are there biblical truths you need to meditate on, to help you put the idol of power to death?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch04-el27",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some ways you can serve God by serving others?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":5,
+      "chapterTitle" :"Approval",
+      "elements"     :[
+        {
+          "elementId"    :"ch05-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>If we seek the approval of men, we are never truly free, for we will be slaves to their opinions and expectations.<cite>— C.S. Lewis</cite></blockquote><blockquote>The desire for approval is often disguised as a longing for acceptance, but it is rooted in pride and leads to insecurity.<cite>— Dietrich Bonhoeffer</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch05-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"When approval is an idol it will show up as a (disordered) desire for affirmation and acceptance. If you are in its grip, then you may serve others <em>so that</em> they will give you the praise you seek.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 12:42-43",
+          "translation"  :"NET",
+          "passageText"  :"<sup>42</sup>Nevertheless, even among the rulers many believed in him, but because of the Pharisees they would not confess Jesus to be the Christ, so that they would not be put out of the synagogue. <sup>43</sup>For they loved praise from men more than praise from God.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch05-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why is the idol of approval so dangerous?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"John 12:42-43"
+        },
+
+        {
+          "elementId"    :"ch05-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have this idol, you probably fear the very people whose approval you seek. You can twist yourself out of shape, trying to meet others’ expectations. You can over-promise and under-deliver.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Proverbs 29:25",
+          "translation"  :"NET",
+          "passageText"  :"<sup>25</sup>The fear of people becomes a snare, but whoever trusts in the Lord will be set on high.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Proverbs+29&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch05-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 5:44",
+          "translation"  :"NET",
+          "passageText"  :"<sup>44</sup>How can you believe, if you accept praise from one another and don’t seek the praise that comes from the only God?",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch05-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How can the idol of approval lead you astray?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Proverbs 29:25, John 5:44"
+        },
+
+        {
+          "elementId"    :"ch05-el10",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"If you have an approval idol you will try to avoid rejection by others. You try to suppress feelings of worthlessness by keeping others happy, and gaining affirmation from them. You can come across as personable, friendly and considerate but you often struggle to feel known, since you are not truly being yourself in relationships. You are trying to be who others want you to be. Sometimes others can feel smothered by your need for approval.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 6:26",
+          "translation"  :"NET",
+          "passageText"  :"<sup>26</sup>Woe to you when all people speak well of you, for their ancestors did the same things to the false prophets.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+6&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch05-el12",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does Jesus think of trying to gain widespread approval?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 6:26"
+        },
+
+        {
+          "elementId"    :"ch05-el13",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Chasing approval often comes from feeling we are not good enough.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"2 Corinthians 3:4-6",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>Now we have such confidence in God through Christ. <sup>5</sup>Not that we are adequate in ourselves to consider anything as coming from ourselves, but our adequacy is from God, <sup>6</sup>who made us adequate as servants of a new covenant, not based on the letter but on the Spirit, for the letter kills, but the Spirit gives life.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch05-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is it that can really make us good enough?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Corinthians 3:4-6"
+        },
+
+        {
+          "elementId"    :"ch05-el16",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Living for God’s approval means living authentically, without the pressure to fit into others’ expectations. His approval is the only one that finally matters, as it is the only one that brings us peace.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Acts 5:29",
+          "translation"  :"NET",
+          "passageText"  :"<sup>29</sup>But Peter and the apostles replied, “We must obey God rather than people.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Acts+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch05-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Corinthians 4:3-4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>So for me, it is a minor matter that I am judged by you or by any human court. In fact, I do not even judge myself. <sup>4</sup>For I am not aware of anything against myself, but I am not acquitted because of this. The one who judges me is the Lord.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Corinthians+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch05-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Thessalonians 2:4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>Instead we have been approved by God to be entrusted with the gospel, so we speak not to please people but God, who examines our hearts.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Thessalonians+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch05-el20",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How can we put the idol of approval to death?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Acts 5:29, 1 Corinthians 4:3-4, 1 Thessalonians 2:4"
+        },
+
+        {
+          "elementId"    :"ch05-el21",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"There is tremendous freedom in knowing we are loved and accepted by God, even when we don’t have others’ approval. If we find our approval in Christ, we are no longer enslaved by the need for human adulation. And His approval is not something we earn; it is His gift.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el22h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch05-el22",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about gaining the approval of others and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on gaining the approval of others.",
+            "When my prayers for approval & affirmation are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with being rejected.",
+            "Rejection is the thing I’m most afraid of.",
+            "When life gets out of hand, I look for comfort in the approval of others.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of other people’s approval.",
+            "If I no longer had the approval of others, my life would feel unbearable or meaningless."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch05-el23",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch05-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Are there people you are always seeking approval from? Why do you think that is? What are you looking for?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch05-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Think of the activities you do regularly. Why do you do them? How much is it for praise and affirmation?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch05-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Is there one (or more) aspect of the idol of approval that you can see at work in your own life?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch05-el27",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Are there biblical truths you need to meditate on, to help you put the idol of approval to death?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch05-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some ways you can serve God and rejoice in pleasing <em>Him</em>?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        }
+      ]
+    }
+  ]
+}

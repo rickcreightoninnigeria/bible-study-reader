@@ -1,0 +1,492 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 9,
+      "chapterTitle": "New Identity, New Family — Belonging in Christ",
+      "elements": [
+
+        {
+          "elementId": "ch09-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "When someone comes to faith in Christ, there is often a cost that others do not see — paid not in dramatic moments, but in quiet, daily losses. A meal no longer shared with family. A gathering no longer attended. A name spoken with disappointment, or anger, or grief, by people you love.<br><br>For many who have come to Christ from a Muslim background, the question that cuts deepest is not theological. It is personal: <i>Where do I belong now?</i><br><br>You have not simply changed your beliefs. In the eyes of many who love you, you have left the ummah — the community that was your people, your identity, your world. That loss is not a small thing. This chapter does not minimise it. It honours it. And then it answers it — with some of the most remarkable words in the entire New Testament.<br><br>You are not displaced. You are not homeless. You have a Father. And you have a family. That is not a consolation prize for what you have lost. It is the truest and most permanent thing about you.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el02",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "HTML",
+          "question": "Before we open the Bible, take a moment to sit honestly with this question:<br><br><i>Since coming to faith in Christ, what has it cost you in terms of belonging — in your family, your community, or your sense of identity?</i><br><br>You do not have to share this out loud. But hold it in mind as we work through this chapter together.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "You might keep this as a private reflection...",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el03",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Born into a New Family",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el04",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "John's Gospel opens with one of the most sweeping descriptions of Jesus in all of Scripture — the Word who was in the beginning, through whom all things were made, who entered the world he had created. And then, in the middle of that cosmic story, John narrows the lens to something deeply personal: what happens to those who receive him.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el05",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "John 1:12–13",
+          "translation": "NET",
+          "passageText": "<sup>12</sup>But to all who have received him — those who believe in his name — he has given the right to become God's children. <sup>13</sup>They were born not of a family line or of the desire of a human father or of a husband's will, but of God.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=John+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch09-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "HTML",
+          "question": "John says believers are given 'the right to become God's children.' This is not something we are born with — it is something given. What does the word <i>right</i> suggest about the security and permanence of this status?",
+          "linkedPassage": "John 1:12–13",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el07",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verse 13 is striking: this new birth is 'not of a family line.' In a world — and in many cultures today — where identity is bound up almost entirely with bloodline and community, why is this significant? What does it free a person from, and what does it give them instead?",
+          "linkedPassage": "John 1:12–13",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "deeper": {
+            "label": "Go deeper…",
+            "question": "In many traditions, your family of birth determines your religious identity, your community standing, and your sense of self. John is saying that in Christ, there is a birth that transcends all of that. How does this truth speak to someone who has been told that leaving their previous faith means losing their identity entirely?",
+            "answerType": "freeText",
+            "required": false,
+            "answerPlaceholder": "Your reflection…"
+          },
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el08",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "The Spirit Who Says 'Father'",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el09",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Romans 8 is one of the great chapters of the New Testament — a sustained description of what life in the Spirit looks like for those who belong to Christ. Paul does not speak of the Christian life as merely a new set of obligations or a change of religious allegiance. He speaks of it as a family relationship, confirmed from the inside by the Spirit of God himself.<br><br>Before we read, it is worth naming something honestly. For many people who come to faith from a Muslim background, calling God \"Father\" is not simply a new theological idea — it is personally difficult. It can feel presumptuous. Disrespectful. Even ridiculous — like reaching for a word that belongs to a different kind of relationship than the one you have known. The distance between \"Lord and Master\" and \"Abba\" is not just doctrinal; it is emotional, and it can take time to cross.<br><br>This is not a sign that something is wrong with you. It is a sign that you are taking the word seriously. For some people, the moment they find they can actually address God that way — and mean it — is the moment something deep shifts. The Spirit does not demand that you feel it immediately. He is the one who makes it possible, over time. What Paul describes in Romans 8 is a gift being given — not an instruction to manufacture a feeling.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el10",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Bible Reading (NET translation)",
+          "term": "Read: Romans 8:14–17",
+          "question": "Read this passage carefully. Pay attention to the language of family — children, adoption, heirs, Abba...",
+          "answer": "<p><sup>14</sup>For all who are led by the Spirit of God are the sons of God. <sup>15</sup>For you did not receive the spirit of slavery leading again to fear, but you received the Spirit of adoption, by whom we cry, \"Abba, Father.\" <sup>16</sup>The Spirit himself bears witness to our spirit that we are God's children. <sup>17</sup>And if children, then heirs — heirs of God and fellow heirs with Christ — if indeed we suffer with him so we may also be glorified with him.</p><br><p style='text-align: right; font-size: 0.8em;'><a href='https://www.biblegateway.com/passage/?search=Romans+8&version=NET'>(NET — see context ↗)</a></p>",
+          "buttonText": "Read passage ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el11",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "\"Abba, Father\"",
+          "question": "Paul contrasts two spirits: one of slavery leading to fear, and one of adoption leading to intimacy. What is the difference between approaching God as a slave approaches a master, and a child approaching a father? Which has been more natural to you, and why?",
+          "linkedPassage": "Romans 8:14–17",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el12",
+          "type": "question",
+          "subtype": "standard",
+          "format": "HTML",
+          "question": "Paul says 'the Spirit himself bears witness to our spirit that we are God's children.' This is not just an intellectual conclusion — it is something the Spirit does <i>within</i> a person. Have you experienced anything like this? What does it mean for our sense of belonging to have God's own Spirit as the guarantee?",
+          "linkedPassage": "Romans 8:14–17",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el13",
+          "type": "question",
+          "subtype": "standard",
+          "format": "HTML",
+          "question": "The word <i>Abba</i> is an Aramaic term of tender, trusting address to a father — the word a young child would use. Jesus himself used it in Gethsemane (Mark 14:36), at the moment of his greatest anguish. Why do you think Paul highlights this particular word for God?",
+          "linkedPassage": "Romans 8:14–17",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "deeper": {
+            "label": "Go deeper…",
+            "question": "Verse 17 says that if we are children, we are also <i>heirs</i> — 'heirs of God and fellow heirs with Christ.' The inheritance is not something we will earn at the end; it is already ours, because our status as children is already settled. How does this reframe the way we think about our standing before God — not as a reward to be achieved, but as a birthright to be received?",
+            "answerType": "freeText",
+            "required": false,
+            "answerPlaceholder": "Your reflection…"
+          },
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el14",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Drawing Near: The Church as New Family",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el15",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "The letter to the Hebrews was written to people under pressure — people considering whether to turn back from Christ because the cost of following him had become too high. The writer does not minimise the cost. But he holds out something extraordinary: access to God himself, and a community to belong to, that no pressure from outside can take away.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el16",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Hebrews 10:19–25",
+          "translation": "NET",
+          "passageText": "<sup>19</sup>Therefore, brothers and sisters, since we have confidence to enter the sanctuary by the blood of Jesus, <sup>20</sup>by the fresh and living way that he inaugurated for us through the curtain — that is, through his flesh — <sup>21</sup>and since we have a great priest over the house of God, <sup>22</sup>let us draw near with a sincere heart in the assurance that faith brings, because we have had our hearts sprinkled clean from an evil conscience and our bodies washed in pure water. <sup>23</sup>And let us hold fast to the confession of our hope without wavering, for the one who made the promise is faithful. <sup>24</sup>And let us take thought of how to spur one another on to love and good works, <sup>25</sup>not abandoning our own meetings, as some are in the habit of doing, but encouraging each other, and even more so because you see the day drawing near.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Hebrews+10&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch09-el17",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "The writer speaks of 'confidence to enter the sanctuary.' In the Old Testament, only the high priest could enter the innermost place of God's presence — and only once a year. What has changed? What does it mean that every believer now has this access?",
+          "linkedPassage": "Hebrews 10:19–25",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el18",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verses 24–25 shift from the individual to the community: spur one another on, do not abandon your meetings, encourage each other. Why does the writer put these communal instructions alongside the call to 'draw near' to God? What is the connection?",
+          "linkedPassage": "Hebrews 10:19–25",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el19",
+          "type": "question",
+          "subtype": "standard",
+          "format": "HTML",
+          "question": "Verse 25 mentions those who have 'got into the habit of abandoning' the gathering of believers. For someone who has faced rejection or danger because of their faith, the temptation to withdraw and believe alone — quietly, invisibly — is real. What does this passage say to that temptation?",
+          "linkedPassage": "Hebrews 10:19–25",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "deeper": {
+            "label": "Go deeper…",
+            "question": "The word 'encourage' in verse 25 (Greek: <i>parakalountes</i>) is the same root as the word Jesus uses for the Holy Spirit — the Comforter, the one who comes alongside. The implication is that when believers encourage one another, they are doing something Spirit-shaped. What does a community that truly functions as family — not just as a meeting to attend — look like in practice?",
+            "answerType": "freeText",
+            "required": false,
+            "answerPlaceholder": "Your reflection…"
+          },
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el20",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "One Family, Every Nation",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el21",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "In the ancient world — and in many contexts today — your ethnic background, your social standing, your gender, and your religious heritage determined where you stood in relation to others. Paul, writing to the churches in Galatia, makes a declaration that was as radical in his day as it remains in ours.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el22",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Galatians 3:26–28",
+          "translation": "NET",
+          "passageText": "<sup>26</sup>For in Christ Jesus you are all sons of God through faith. <sup>27</sup>For all of you who were baptised into Christ have clothed yourselves with Christ. <sup>28</sup>There is neither Jew nor Greek, there is neither slave nor free, there is neither male nor female — for you are all one in Christ Jesus.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Galatians+3&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch09-el23",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul says the markers that normally divide people — ethnicity, social status, gender — no longer define our primary identity in Christ. Does this mean those differences disappear, or that something else now takes precedence? What is the difference?",
+          "linkedPassage": "Galatians 3:26–28",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el24",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "For someone who has left one religious community and community of belonging, Galatians 3:28 offers a remarkable promise: in Christ, you belong — fully, equally, permanently — alongside every other believer, regardless of background. How does it feel to hear that?",
+          "linkedPassage": "Galatians 3:26–28",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "deeper": {
+            "label": "Go deeper…",
+            "question": "The church Paul describes in Galatians was made up of Jewish and Gentile believers — people whose histories, cultures, and religious backgrounds had kept them separated for centuries. Yet in Christ, they were one. What does it take to make that kind of unity real and not just theoretical? What is the role of gathering together, sharing meals, and knowing one another's names?",
+            "answerType": "freeText",
+            "required": false,
+            "answerPlaceholder": "Your reflection…"
+          },
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el25",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "A Reflection on What Has Been Lost — and What Has Been Given",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el26",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "It would be dishonest to end this chapter without naming what many in this room may be feeling — a grief that sits alongside the joy.<br><br>The family of God is real. The access to the Father is real. The belonging among brothers and sisters in Christ is real.<br><br>And the losses are also real.<br><br>Parents who no longer speak to you. Siblings who feel you have betrayed them. A community that once was home. These are not small things, and this chapter does not ask you to pretend they are.<br><br>What the ummah provided was real: a sense of belonging, a shared identity, a community that knew you and held you. What the church offers is not less than that — it is the same deep needs met on different grounds. Not birth and blood and law, but grace and adoption and the Spirit. You have not exchanged belonging for isolation. You have exchanged one kind of family for another that will outlast it.<br><br>One specific loss worth naming is the rhythm of the year. Ramadan, Eid al-Fitr, Eid al-Adha — these were not just religious obligations. They were seasons that shaped time, brought people together, and marked the year with meaning. When you can no longer participate in them fully, the year can feel strangely empty.<br><br>It is worth knowing that the Christian faith has its own rhythm of the year — a pattern that shapes every season around the story of Jesus. Advent and Christmas, when we mark his coming. Lent, a season of reflection leading to Good Friday. Easter, the celebration of his resurrection. Pentecost, when the Spirit was given. These are not merely dates in a diary; they are an invitation to live the whole year inside the story of what God has done. That rhythm is yours now — a new sacred pattern to inhabit, and one shared by Christians across the world and across the centuries.<br><br>What Scripture says is this: you are not starting from nothing. You are not an orphan searching for a home. You have been born into the largest and most permanent family in existence — a family that spans every nation and every century, and will outlast every earthly relationship. And you have a Father who has never once turned away from you.<br><br>Jesus himself said: \"Truly I tell you, there is no one who has left home or brothers or sisters or mother or father or children or fields for my sake and for the gospel's sake who will not receive a hundred times as much now in the present age — homes, brothers, sisters, mothers, children and fields — and in the age to come, eternal life.\" <i>(Mark 10:29–30)</i><br><br>That is not a denial of the cost. It is a promise made by the one who himself was rejected, abandoned, and alone — and who knows exactly what it costs to follow him.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el27",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Is there a loss you are still carrying from your journey to faith — a relationship, a sense of home, a community? Take a moment to name it, if you are willing. And then hold it alongside what this chapter has said about where you now belong.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "This is a space for honest reflection...",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el28",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Big Picture Truths",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el29",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Three truths to hold clearly from this chapter:<br><br><b>You are a child of God</b> — not by effort, not by birth, not by religious performance, but by grace. John 1:12 says you have been <i>given the right</i> to be called God's child. That right cannot be revoked.<br><br><b>The Holy Spirit confirms your belonging</b> — from the inside. Romans 8:16 says the Spirit himself testifies that you are God's child. Your sense of belonging is not based only on what you have been told; it is sealed by the living presence of God within you.<br><br><b>You have a new family</b> — real, permanent, and global. The church is not a meeting to attend; it is a community to belong to. And it stretches back two thousand years and across every nation on earth — millions of people in every generation who have called the same God Father, trusted the same Saviour, and been shaped by the same Spirit. You have not joined a small or fragile thing. Belonging requires presence, investment, and the willingness to be known.<br><br>That family is made up of imperfect people still being shaped by grace — and it will sometimes disappoint you, as you will sometimes disappoint it. That is not a reason to withdraw. It is an invitation to stay, and to extend toward others the same grace that has been shown to you.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el30",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Common Questions",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el31",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "eyebrow": "Common Question",
+          "term": "\"Does becoming a Christian mean I have to abandon my family?\"",
+          "question": "Does faith in Christ require cutting ties with family?",
+          "answer": "No — and in fact, Jesus calls his followers to honour their parents and love those closest to them. Coming to faith may create conflict and distance; but that distance is not something believers choose or seek. Many find that over time, living with gentleness, love, and integrity before their families becomes one of the most powerful forms of witness. The new family of God supplements and sustains you; it does not ask you to stop loving those you were born to.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el32",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "eyebrow": "Common Question",
+          "term": "\"Am I now considered an apostate?\"",
+          "question": "Does Islam teach that I am an apostate — and what does that mean for me?",
+          "answer": "<p>This is a question many carry silently, and it deserves an honest answer. Leaving Islam is indeed described in some Islamic traditions as apostasy (ridda), and in certain contexts this carries serious social, legal, or even physical consequences. It is right to acknowledge that reality honestly, and leaders should be available to speak privately with anyone facing genuine danger.</p><p>It is worth knowing that the Quran itself does not prescribe a worldly punishment for leaving Islam — it speaks of divine judgment in the afterlife. The harsher rulings come from later legal tradition, and were historically tied to political defection as much as personal faith. This does not remove the very real pressure many face from family or community. But it means the picture is more complex than it is sometimes presented.</p><p>What matters most in this moment is not what a community has decided to call you — but what God calls you. And the answer to that question is the one this entire chapter has been about: <i>child</i>. Beloved. Belonging. Nothing that any court or community declares can undo what God has declared over you in Christ.</p>",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el33",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "eyebrow": "Common Question",
+          "term": "\"I feel alone. Is the church really a family?\"",
+          "question": "The idea of 'church as family' sounds good — but what if it doesn't feel that way in practice?",
+          "answer": "This is an honest and important challenge. The church is a community of imperfect people who are still being shaped by grace — and it does not always live up to the family it is called to be. If you feel unseen or alone within a church community, that is worth naming — both to a trusted leader and in prayer. The vision in Hebrews 10:24–25 is not a description of what every church always is; it is a description of what the church is called to <i>become</i>. You have a part to play in that — and so does every person around you.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el34",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "eyebrow": "Common Question",
+          "term": "\"Is 'Abba' the same as 'Allah'?\"",
+          "question": "Christians call God 'Father' or 'Abba' — is that the same as calling him 'Allah'?",
+          "answer": "'Allah' is simply the Arabic word for God — the same word Arab Christians use when they pray. 'Abba' is not a different God; it is a different <i>address</i> to the same God — one that reflects the intimacy of the relationship Jesus opened up. The Christian claim is not that a different God exists, but that the one God — Creator of all things — has revealed himself as Father through Jesus, and invites his people into that relationship. This is not a diminishing of God's greatness; it is an expansion of our understanding of his nature.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el35",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el36",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which of the four passages in this chapter has most spoken to where you are right now — John 1, Romans 8, Hebrews 10, or Galatians 3? What was it about that passage that landed differently?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el37",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "What is one practical step you could take this week to invest more deeply in your new family — the community of believers around you?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el38",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "If you fully believed — not just as a doctrine, but in your bones — that God is your Father and that you fully belong to him: what would change in the way you pray, or in the way you think about yourself?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el39",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "You began this chapter carrying a question that many carry alone: <i>Where do I belong now?</i><br><br>The answer Scripture gives is not a programme or a policy. It is a person — and a family.<br><br>You have a Father who chose you before you chose him. You have a Spirit living within you who, in your own language and voice, moves you to cry out <i>Abba</i> — and that cry is the sound of belonging. You have brothers and sisters scattered across every nation and culture on earth, held together not by blood or geography, but by the same grace that found each one of them.<br><br>Christians throughout history — in your land and in every land — were welcomed into this family using words that have been spoken at every baptism for two thousand years: <i>I believe in God the Father Almighty... and in Jesus Christ his only Son... I believe in the Holy Spirit, the holy catholic church, the communion of saints.</i> Those words are yours now too.<br><br>That family is imperfect. It will sometimes disappoint you. But it will never finally abandon you — because it is held together not by human loyalty but by the faithfulness of God.<br><br>You are not an orphan. You never will be again.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el40",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Before Next Chapter",
+          "term": "Something to carry with you this week",
+          "question": "Choose one person in your Christian community — someone you do not know well yet — and take one step toward knowing them better this week. It might be a conversation after a gathering, a shared meal, or simply exchanging contact details and checking in. The church becomes family not by declaration, but by practice.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch09-el41",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Close by praying together — and if possible, pray specifically for each person in the room by name. You might use this as a guide:<br><br><i>Father — Abba — thank you that we do not approach you as strangers, or as slaves who must earn their place. Thank you that your Spirit lives within us and calls us your children. For those in this room who have lost much to follow you — may they know today that they have found more. Draw us close to yourself, and to one another. Make us truly the family we are called to be. Amen.</i>",
+          "bottomPadding": "normal"
+        }
+
+      ]
+    }
+  ]
+}

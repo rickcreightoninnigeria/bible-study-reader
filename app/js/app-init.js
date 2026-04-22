@@ -1,0 +1,272 @@
+// ── APP-LEVEL STARTUP ─────────────────────────────────────────────────────────
+// DOMContentLoaded startup sequence. Decides which screen to show on launch
+// based on library state, saved position, and first-run status.
+//
+// All onboarding and slide overlay logic has moved to onboarding.js:
+//   showAppOnboardingIfNeeded() – guard wrapper, returns bool
+//   showAppOnboarding()         – unconditional, also called from HowTo page
+//   showOnboardingIfNeeded()    – study-level guard wrapper
+//
+// Dependencies (all available as globals before this file loads):
+//   StudyIDB                   – idb.js
+//   appSettings, initSettings  – settings.js
+//   initLongPressCopy          – utils.js
+//   openLibrary                – study-loader.js
+//   applyStudyData             – study-loader.js
+//   showAppOnboardingIfNeeded,
+//   showAppOnboarding,
+//   showOnboardingIfNeeded     – onboarding.js
+//   resolveLanguage,
+//   applyLanguageToDom,
+//   reloadLocaleAndRerender    – i18n.js
+//   window._appReady,
+//   window.appAboutData,
+//   window.appStrings,
+//   window.appLocale,
+//   window.pendingStudyData    – state.js
+
+// ── STARTUP ───────────────────────────────────────────────────────────────────
+// Startup sequence follows this decision tree:
+//   0. Android delivered a .estudy before DOMContentLoaded → apply it directly
+//   1. Last study is in the registry and loads OK → restore position or title page
+//   2. Library is non-empty but no active study → show the library
+//   3. Very first run (app onboarding not yet complete) → library + app onboarding
+//   4. Otherwise → show the Load Study picker (library)
+
+// ── JSON FETCH HELPER ─────────────────────────────────────────────────────────
+// Defined at module scope so it is available to both startApp() and
+// reloadLocaleAndRerender() without duplication.
+function _fetchJson(path) {
+  return new Promise((resolve) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', path, true);
+    xhr.onload = () => {
+      try {
+        resolve(JSON.parse(xhr.responseText));
+      } catch (err) {
+        console.warn(`Failed to parse ${path}:`, err);
+        resolve(null);
+      }
+    };
+    xhr.onerror = (err) => {
+      console.warn(`Failed to load ${path}:`, err);
+      resolve(null);
+    };
+    xhr.send();
+  });
+}
+
+// ── LOCALE LOADER ─────────────────────────────────────────────────────────────
+// Fetches all locale-specific JSON files for the given language code and
+// merges them into window.appAboutData and window.appStrings.
+// Uses file-level fallback for data files (appAboutData, shelvesStructure,
+// learningPathways) and key-level fallback for ui strings.
+// Called once on startup and again whenever the user changes language.
+async function loadLocale(langCode) {
+  const localePath   = `js/locales/${langCode}`;
+  const fallbackPath = `js/locales/en`;
+  const isEnglish    = langCode === 'en';
+
+  // Fetch locale files and English fallbacks in parallel.
+  // When the resolved language is already English, locale and fallback paths
+  // are identical — the files are fetched twice but load from the APK bundle
+  // near-instantly, so the minor redundancy is not worth complicating the code.
+  const [
+    untranslated,
+    aboutLocale,    aboutFallback,
+    shelvesLocale,  shelvesFallback,
+    pathwaysLocale, pathwaysFallback,
+    uiLocale,       uiFallback,
+  ] = await Promise.all([
+    _fetchJson('js/appAboutData_untranslated.json'),
+    _fetchJson(`${localePath}/appAboutData_${langCode}.json`),
+    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/appAboutData_en.json`),
+    _fetchJson(`${localePath}/libraryShelvesStructure_${langCode}.json`),
+    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/libraryShelvesStructure_en.json`),
+    _fetchJson(`${localePath}/learningPathways_${langCode}.json`),
+    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/learningPathways_en.json`),
+    _fetchJson(`${localePath}/ui_${langCode}.json`),
+    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/ui_en.json`),
+  ]);
+
+  // File-level fallback: use the locale version if it loaded, otherwise English.
+  const aboutData    = aboutLocale    || aboutFallback    || {};
+  const shelvesData  = shelvesLocale  || shelvesFallback  || [];
+  const pathwaysData = pathwaysLocale || pathwaysFallback || {};
+
+  // Key-level fallback: start with English strings, overlay locale on top.
+  // Any key present in both gets the locale value.
+  // Any key missing from the locale keeps the English value.
+  const uiStrings = { ...(uiFallback || {}), ...(uiLocale || {}) };
+
+  window.appAboutData = {
+    ...(untranslated  || {}),
+    ...(aboutData),
+    libraryShelvesStructure: shelvesData,
+    learningPathways:        pathwaysData,
+  };
+  window.appStrings = uiStrings;
+  window.appLocale  = langCode;
+}
+
+// ── LOCALE RELOAD + RE-RENDER ─────────────────────────────────────────────────
+// Called by setLanguage() in i18n.js when the user changes language in Settings.
+// Reloads all locale files for the new language and re-renders the current view.
+// Does NOT repeat one-time startup tasks (install default studies, onboarding…).
+async function reloadLocaleAndRerender(langCode) {
+  applyLanguageToDom(langCode);
+  await loadLocale(langCode);
+
+  // Patch the footer with the new locale's app title.
+  const footerEl = document.getElementById('libraryVersionFooter');
+  if (footerEl && window.appAboutData?.appTitle) {
+    footerEl.textContent = `${window.appAboutData.appTitle} · v${window.appAboutData.appVersion}`;
+  }
+
+  // Re-render whatever is currently on screen.
+  rerenderCurrentView();
+}
+
+function rerenderCurrentView() {
+  if (!isNonChapterPage) {
+    // User is on the title page or a chapter
+    if (typeof currentChapter === 'number' && currentChapter >= 0) {
+      renderChapter(currentChapter);
+    } else {
+      renderTitlePage();
+    }
+    return;
+  }
+
+  // User is on a non-chapter page — dispatch by activeTabPage
+  switch (window.activeTabPage) {
+    case 'library':  openLibrary();           break;
+    case 'settings': renderSettings(window.activeTabId); break;
+    case 'howto':    renderHowToUse(window.activeTabId); break;
+    case 'about':    renderAbout(window.activeTabId);    break;
+    case 'leaders':  renderLeadersNotes();    break;
+    case 'progress': renderProgressOverview(); break;
+    case 'notes':    renderNotesPage();        break;
+    default:
+      // Fallback — shouldn't happen, but safe
+      openLibrary();
+  }
+}
+
+// ── ORPHAN REGISTRY CLEANER ───────────────────────────────────────────────────
+// Validates every ID in study_registry against IDB and removes any that have
+// no corresponding data (e.g. from a partially-failed delete or stale state).
+async function cleanOrphanedRegistry() {
+  const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
+  const valid = [];
+  for (const id of registry) {
+    const exists = await StudyIDB.get(`study_content_${id}`);
+    if (exists) valid.push(id);
+  }
+  if (valid.length !== registry.length) {
+    console.warn('cleanOrphanedRegistry: removed', registry.length - valid.length, 'orphaned ID(s)');
+    const removed = registry.length - valid.length;
+    Swal.fire({
+      toast: true,
+      position: 'bottom',
+      icon: 'warning',
+      title: t('appinit_orphan_warning', { count: removed }),
+      showConfirmButton: false,
+      timer: 4000,
+      timerProgressBar: true,
+    });
+    localStorage.setItem('study_registry', JSON.stringify(valid));
+  }
+}
+
+// ── STARTUP ───────────────────────────────────────────────────────────────────
+// Named so that i18n.js / setLanguage() can reference it, but only the
+// DOMContentLoaded handler below actually calls it on first load.
+// setLanguage() calls reloadLocaleAndRerender() instead — which skips the
+// one-time tasks (install default studies, onboarding, registry clean).
+async function startApp() {
+  initSettings();
+  initLongPressCopy();
+
+  // ── RESOLVE LANGUAGE AND LOAD LOCALE DATA ──────────────────────────────────
+  const resolvedLang = resolveLanguage();
+  applyLanguageToDom(resolvedLang);
+  await loadLocale(resolvedLang);
+
+  // Patch the footer if the library was already rendered before data loaded.
+  const footerEl = document.getElementById('libraryVersionFooter');
+  if (footerEl && window.appAboutData?.appTitle) {
+    footerEl.textContent = `${window.appAboutData.appTitle} · v${window.appAboutData.appVersion}`;
+  }
+  // ── END LOAD APP DATA ───────────────────────────────────────────────────────
+
+  // Signal to loadStudyFromJson that the app is now initialised.
+  // Any call that arrived before this point will have set window.pendingStudyData.
+  window._appReady = true;
+
+  // Install bundled default studies on first run (silent — no navigation side-effects).
+  // Must run before the routing block below so studies are in the registry when
+  // openLibrary() renders for the first time.
+  await installDefaultStudiesIfNeeded();
+
+  // Case 0: Android delivered a .estudy file before DOMContentLoaded fired.
+  // pendingStudyData is already persisted to IDB by loadStudyFromJson,
+  // so we just need to apply it. Show app onboarding first if it hasn't been
+  // seen (so the user gets the intro before landing in the study).
+  if (window.pendingStudyData) {
+    showAppOnboardingIfNeeded();
+    applyStudyData(window.pendingStudyData);
+    window.pendingStudyData = null;
+    return;
+  }
+
+  await cleanOrphanedRegistry(); // remove stale IDs before any routing decision
+  const registry    = JSON.parse(localStorage.getItem('study_registry') || '[]');
+  const lastStudyId = localStorage.getItem('bsr_last_active_study');
+  const hasLibrary  = registry.length > 0;
+  const isFirstRun  = !localStorage.getItem('app_onboarding_complete');
+
+  // Case 3: very first run — show the library (now pre-populated with default
+  // studies) behind the app onboarding overlay. Checked before Case 1 and 2
+  // so the onboarding is never skipped just because the registry is non-empty.
+  if (isFirstRun) {
+    openLibrary();
+    showAppOnboarding();
+    return;
+  }
+
+  // Case 1: restore or activate the last active study.
+  if (lastStudyId && registry.includes(lastStudyId)) {
+    try {
+      const data = await StudyIDB.get(`study_content_${lastStudyId}`);
+      if (data) {
+        window.activeStudyId = lastStudyId;
+        applyStudyData(data);
+        // applyStudyData → initApp() handles position restore internally.
+        return;
+      }
+    } catch (e) {
+      console.warn('Failed to restore last study:', e);
+      Swal.fire({
+        toast: true,
+        position: 'bottom',
+        icon: 'error',
+        title: t('appinit_restore_study_error'),
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar: true,
+      });
+    }
+  }
+
+  // Case 2: library exists but no current study — show the library.
+  if (hasLibrary) {
+    openLibrary();
+    return;
+  }
+
+  // Case 4: no library, not first run — show the Load Study picker.
+  openLibrary();
+}
+
+document.addEventListener('DOMContentLoaded', startApp);

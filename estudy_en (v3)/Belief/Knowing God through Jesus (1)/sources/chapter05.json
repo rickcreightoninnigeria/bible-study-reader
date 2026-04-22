@@ -1,0 +1,455 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 5,
+      "chapterTitle": "What is the Problem? — Sin and the Human Heart",
+      "elements": [
+
+        {
+          "elementId": "ch05-el01",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Bible Reading (NET translation)",
+          "term": "Read: Mark 7:14–23, Romans 3:9–24, and Isaiah 59:1–2",
+          "question": "It is worth reading all three passages before you begin. Together they build a picture of what the Bible means by sin — and why it matters so much.",
+          "answer": "<p><b>Mark 7:14–23</b></p><p><sup>14</sup>Then he called the crowd again and said to them, 'Listen to me, everyone, and understand. <sup>15</sup>There is nothing outside of a person that can defile him by going into him. Rather, it is what comes out of a person that defiles him.' <sup>17</sup>Now when he had left the crowd and entered the house, his disciples asked him about the parable. <sup>18</sup>He said to them, 'Are you so foolish? Don't you understand that whatever goes into a person from outside cannot defile him? <sup>19</sup>For it does not enter his heart but his stomach, and then goes out into the sewer.' (This means all foods are clean.) <sup>20</sup>He said, 'What comes out of a person is what defiles him. <sup>21</sup>For from within, out of the human heart, come evil ideas, sexual immorality, theft, murder, <sup>22</sup>adultery, greed, evil, deceit, debauchery, envy, slander, pride, and folly. <sup>23</sup>All these evils come from within and defile a person.'</p><br><p><b>Romans 3:9–24</b></p><p><sup>9</sup>What then? Are we better off? Certainly not, for we have already charged that Jews and Greeks alike are all under sin, <sup>10</sup>just as it is written: 'There is no one righteous, not even one, <sup>11</sup>there is no one who understands, there is no one who seeks God. <sup>12</sup>All have turned away, together they have become worthless; there is no one who shows kindness, not even one.' <sup>13</sup>'Their throats are open graves, they deceive with their tongues, the poison of vipers is under their lips.' <sup>14</sup>'Their mouths are full of cursing and bitterness.' <sup>15</sup>'Their feet are swift to shed blood, <sup>16</sup>ruin and misery are in their paths, <sup>17</sup>and the way of peace they have not known.' <sup>18</sup>'There is no fear of God before their eyes.' <sup>19</sup>Now we know that whatever the law says, it says to those who are under the law, so that every mouth may be silenced and the whole world may be held accountable to God. <sup>20</sup>For no one is declared righteous before him by the works of the law, for through the law comes the knowledge of sin. <sup>21</sup>But now apart from the law the righteousness of God (which is attested by the law and the prophets) has been disclosed— <sup>22</sup>namely, the righteousness of God through the faithfulness of Jesus Christ for all who believe. For there is no distinction, <sup>23</sup>for all have sinned and fall short of the glory of God. <sup>24</sup>But they are justified freely by his grace through the redemption that is in Christ Jesus.'</p><br><p><b>Isaiah 59:1–2</b></p><p><sup>1</sup>Look, the Lord's hand is not too weak to deliver you, nor is his ear too deaf to hear you. <sup>2</sup>But your sinful deeds have built a barrier between you and your God. Your sins have made him hide his face from you so that he does not hear.'</p><br><p style='text-align: right; font-size: 0.8em;'><a href='https://www.biblegateway.com/passage/?search=Mark+7&version=NET'>Mark 7 (NET — see context ↗)</a> &nbsp;|&nbsp; <a href='https://www.biblegateway.com/passage/?search=Romans+3&version=NET'>Romans 3 (NET — see context ↗)</a> &nbsp;|&nbsp; <a href='https://www.biblegateway.com/passage/?search=Isaiah+59&version=NET'>Isaiah 59 (NET — see context ↗)</a></p>",
+          "buttonText": "Read passages ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el02",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "Imagine a doctor who tells you your symptoms are minor — that you simply need to rest more and try harder. You follow the advice. But the pain keeps returning, because the doctor missed the real diagnosis. The problem was never your behaviour. It was something deeper that no amount of effort could fix.<br><br>Many people who have taken their faith seriously describe exactly this kind of restlessness — a sense that something is unresolved even after sincere religious practice. They prayed faithfully, fasted carefully, tried to obey diligently — and still something felt wrong at a level that effort couldn't reach. If that is part of your experience, the Bible has a name for it. The problem is not a failure of devotion. It is that the diagnosis was incomplete.<br><br>That is what this chapter is for. Many of us arrive with a deeply ingrained instinct: the fundamental problem between us and God is what we <i>do</i> — specific sins, particular failures. And the solution, it follows, must be to <i>do better</i>: pray more, resist more, discipline ourselves more strictly.<br><br>But the Bible tells a different story. The problem is not simply what we do. It is what we <i>are</i> — what has gone wrong at the very centre of who we are. Before the gospel can be good news, we need to understand clearly what it is good news <i>about</i>.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el03",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 1: Where Does Evil Come From?",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el04",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Jesus was once asked about purity — specifically about whether eating certain foods with unwashed hands made a person spiritually unclean. It was a serious religious question, and the people asking it had devoted their lives to getting the answer right. Jesus' response surprised everyone in the room. He turned the entire question inside out.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el05",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Mark 7:14–23",
+          "translation": "NET",
+          "passageText": "<sup>14</sup>Then he called the crowd again and said to them, 'Listen to me, everyone, and understand. <sup>15</sup>There is nothing outside of a person that can defile him by going into him. Rather, it is what comes out of a person that defiles him.' <sup>17</sup>Now when he had left the crowd and entered the house, his disciples asked him about the parable. <sup>18</sup>He said to them, 'Are you so foolish? Don't you understand that whatever goes into a person from outside cannot defile him? <sup>19</sup>For it does not enter his heart but his stomach, and then goes out into the sewer.' (This means all foods are clean.) <sup>20</sup>He said, 'What comes out of a person is what defiles him. <sup>21</sup>For from within, out of the human heart, come evil ideas, sexual immorality, theft, murder, <sup>22</sup>adultery, greed, evil, deceit, debauchery, envy, slander, pride, and folly. <sup>23</sup>All these evils come from within and defile a person.'",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Mark+7&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch05-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Jesus says that what defiles a person comes not from outside but from within — from the human heart. Why is this diagnosis more serious than simply having a list of rules we need to follow more carefully?",
+          "linkedPassage": "Mark 7:14–23",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el07",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "The list in Mark 7:21–22",
+          "question": "Look at the things Jesus says come from the human heart: evil ideas, greed, deceit, envy, pride, and more. Some of these are actions — but many of them are <i>attitudes</i>. What does it mean that these internal attitudes are included in Jesus' definition of defilement?",
+          "linkedPassage": "Mark 7:14–23",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el08",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "eyebrow": "Common Misunderstanding",
+          "term": "Sin",
+          "question": "When you hear the word <i>sin</i>, what comes to mind? A list of forbidden actions? A scale of serious and minor offences? Think about your instinctive definition before reading on.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el09",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 2: No One is Exempt",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el10",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "If Jesus' teaching in Mark 7 identifies <i>where</i> the problem is — inside the human heart — then Paul's letter to the Romans identifies <i>how far</i> it extends. His argument is sustained and deeply uncomfortable: the problem is not limited to the obviously wicked. It reaches everyone. The religious and the irreligious. The devout and the careless. The well-intentioned and the openly rebellious.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el11",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Romans 3:9–24",
+          "translation": "NET",
+          "passageText": "<sup>9</sup>What then? Are we better off? Certainly not, for we have already charged that Jews and Greeks alike are all under sin, <sup>10</sup>just as it is written: 'There is no one righteous, not even one, <sup>11</sup>there is no one who understands, there is no one who seeks God. <sup>12</sup>All have turned away, together they have become worthless; there is no one who shows kindness, not even one.' <sup>13</sup>'Their throats are open graves, they deceive with their tongues, the poison of vipers is under their lips.' <sup>14</sup>'Their mouths are full of cursing and bitterness.' <sup>15</sup>'Their feet are swift to shed blood, <sup>16</sup>ruin and misery are in their paths, <sup>17</sup>and the way of peace they have not known.' <sup>18</sup>'There is no fear of God before their eyes.' <sup>19</sup>Now we know that whatever the law says, it says to those who are under the law, so that every mouth may be silenced and the whole world may be held accountable to God. <sup>20</sup>For no one is declared righteous before him by the works of the law, for through the law comes the knowledge of sin. <sup>21</sup>But now apart from the law the righteousness of God (which is attested by the law and the prophets) has been disclosed— <sup>22</sup>namely, the righteousness of God through the faithfulness of Jesus Christ for all who believe. For there is no distinction, <sup>23</sup>for all have sinned and fall short of the glory of God. <sup>24</sup>But they are justified freely by his grace through the redemption that is in Christ Jesus.'",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Romans+3&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch05-el12",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul quotes a string of Old Testament passages and applies them to everyone — not just the most obviously sinful. Why do you think Paul is so insistent that there is \"no distinction\" (verse 22)? What is he trying to close off?",
+          "linkedPassage": "Romans 3:9–24",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el13",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verse 20 says that the law — religious commands and rules — can diagnose sin, but cannot cure it. What does this suggest about the limits of religious observance on its own?",
+          "linkedPassage": "Romans 3:9–24",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el14",
+          "type": "question",
+          "subtype": "standard",
+          "format": "HTML",
+          "question": "Paul uses the phrase <i>\"fall short of the glory of God\"</i> (verse 23). Sin is not simply breaking rules — it is a <i>falling short</i> of something. What do you think humanity was created to be? And what does it mean to fall short of that?",
+          "linkedPassage": "Romans 3:9–24",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "deeper": {
+            "label": "Go deeper…",
+            "question": "Genesis 1:27 says that human beings were made in the image of God — to reflect his character, his love, his justice. If that is what we were made for, how does that change the way we understand sin? Is it primarily about rule-breaking, or about something more fundamental?",
+            "answerType": "freeText",
+            "required": false,
+            "answerPlaceholder": "Your reflection…"
+          },
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el15",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Notice that Paul does not end at verse 23. He continues immediately into verse 24: <i>\"But they are justified freely by his grace through the redemption that is in Christ Jesus.\"</i> The diagnosis of sin is not the last word. It is the necessary preparation for the gospel. A doctor must name the illness before the medicine makes sense. Paul names the illness clearly and unflinchingly — precisely because the cure is extraordinary, and it must be received, not earned.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el16",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 3: The Separation Sin Creates",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el17",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "So far we have seen that sin comes from inside the human heart, and that it extends to all people without exception. But what does sin actually <i>do</i>? Is it simply a moral accounting problem — a debt that accumulates and must eventually be settled? The prophet Isaiah goes deeper than that.<br><br>Many people describe a religious life in which prayer felt like it was going nowhere — as though God was not listening, as though they were speaking into silence. Isaiah names that experience directly and gives it a theological explanation.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el18",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Isaiah 59:1–2",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>Look, the Lord's hand is not too weak to deliver you, nor is his ear too deaf to hear you. <sup>2</sup>But your sinful deeds have built a barrier between you and your God. Your sins have made him hide his face from you so that he does not hear.'",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Isaiah+59&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch05-el19",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "\"Alienated from your God\"",
+          "question": "Isaiah makes something clear: the problem is not that God is <i>unable</i> to reach us, or <i>unwilling</i> to hear us. The problem is on our side. Sin has created a separation — an alienation. What does it feel like to be alienated from someone you were made to be close to?",
+          "linkedPassage": "Isaiah 59:1–2",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el20",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Isaiah says God's hand is \"not too short to deliver\" — he is fully capable of rescuing. So if God is capable and the problem lies with us, what kind of solution would actually be needed? What would have to happen for the separation to be bridged?",
+          "linkedPassage": "Isaiah 59:1–2",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el21",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "A Framework: Two Ways of Understanding the Problem",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el22",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "It may help to set two contrasting understandings of sin alongside each other — not to argue, but to see clearly what the Bible is actually saying.<br><br><b>A common instinct:</b><br>The human being is essentially capable — we know what is right; we simply lose sight of it and need to be reminded. Sin is forgetfulness, drifting, a failure to obey clearly enough. The fix, therefore, is to try harder, do more, discipline yourself more carefully. If the problem is forgetting, then the solution is reminding. A prophet who speaks God's words and calls us back to him makes perfect sense as the solution. With enough effort and the right guidance, the gap can be closed.<br><br><b>What the Bible teaches:</b><br>Sin is a condition of the heart — a disordering of who we are at our deepest level. It is not simply that we forget God from time to time; it is that something has gone wrong at the root. We are not just forgetful — we are, as Romans 3 puts it, unable to seek God at all on our own. Because the problem runs that deep, the solution must come from <i>outside</i> us entirely. A broken compass cannot be fixed by giving it better directions — it needs to be repaired from the inside. That is why what is needed is not a reminder but a rescue, not a messenger pointing the way, but a saviour who carries us there.<br><br>A life of careful obedience — where each act must be correct, where the outcome is never certain until the end — is an exhausting place to live. The Bible does not dismiss that effort. But it offers something different: not a higher standard to reach, but a gift to receive.<br><br>This is not meant to discourage. It is meant to liberate. When we see clearly that we cannot save ourselves, we are ready to receive the salvation that God offers as a gift.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el23",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Many people have lived deeply devout, disciplined, sincere religious lives. Does the Bible's teaching on sin denigrate that effort — or is it making a different kind of point? What is the difference between sincerity and sufficiency?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el24",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Common Questions",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el25",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "\"But surely God rewards those who try hard and are sincere?\"",
+          "question": "If God sees our effort and sincerity, doesn't that count for something?",
+          "answer": "<p>Yes — God sees effort, sincerity, and genuine devotion. The Bible never dismisses these things. But Romans 3 is making a different and more fundamental point: that no one, however sincere or devout, <i>fully meets the standard of God's perfect holiness</i>. That gap — between our best and God's perfection — is precisely the problem the gospel addresses. The issue is not that God fails to notice our sincerity. The issue is that sincerity alone cannot bridge a gap that runs to the very root of our nature. What is needed is not more effort but a new kind of righteousness — one that comes from God himself. That is what Paul introduces in verse 21: \"the righteousness of God... through the faithfulness of Jesus Christ.\"</p>",
+          "buttonText": "See response ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el26",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "\"I have prayed sincerely, fasted, and tried to live correctly. Why isn't that enough?\"",
+          "question": "Many people have performed all the required religious duties faithfully — and still found no lasting peace. Why isn't sincere religious practice sufficient?",
+          "answer": "<p>The Bible's answer here is not that those things don't matter — they reflect real devotion and a genuine desire to know God. But Romans 3 is pointing to something deeper: that the problem is not a shortfall in effort, but a condition of the heart that effort alone cannot fix. Think of it this way: washing the outside of a cup does not clean what is on the inside. No amount of external obedience can reach the internal disorder that Jesus describes in Mark 7.</p><p>This is not meant to discourage. It is meant to explain why, even after sincere effort, something still feels unresolved — and to point toward the only solution that actually reaches deep enough. The good news is that the solution is not something we achieve. It is something we receive.</p>",
+          "buttonText": "See response ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el27",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "\"Is sin really that serious? Isn't God merciful enough to overlook it?\"",
+          "question": "If God is merciful and compassionate, why can't he simply forgive and move on?",
+          "answer": "<p>God <i>is</i> merciful — extraordinarily, overwhelmingly so. But Isaiah 59:1–2 shows that the issue is not God's willingness to forgive; it is the reality of what sin <i>does</i>. It creates a separation — an alienation — that cannot simply be wished away without something real happening to deal with it. Think of it this way: a judge who overlooks every crime in the name of mercy is not a good judge — he is an unjust one. True mercy and true justice must both be satisfied. This is exactly what the cross achieves: it is the place where God's justice and his mercy meet. Sin is serious because the separation it causes is real. But the good news is that God himself is the one who bridges it — at great cost to himself.</p>",
+          "buttonText": "See response ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el28",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "\"Why does Jesus need to be a saviour? Couldn't a great prophet be enough?\"",
+          "question": "Many traditions honour Jesus as a great prophet. Why do Christians insist he must be more than that?",
+          "answer": "<p>The answer depends entirely on what you think the problem is. If the problem between us and God is mainly that people have forgotten him — that we drift and need to be called back — then a prophet makes perfect sense. The prophet speaks God's words, calls people back to God, and shows the way. And it is true that human beings do forget God, and that this matters.</p><p>But the Bible's diagnosis goes deeper. It is not just that we forget God — it is that something has gone wrong at the root of who we are. Romans 3 says we are unable to seek God at all on our own. A broken compass cannot be fixed by giving it better directions — it needs to be repaired from the inside. That is why the Bible says what is needed is not a reminder but a rescue; not a messenger pointing the way, but a saviour who carries us there.</p><p>This is the logic of the cross. Jesus did not come primarily to teach us better — he came to do for us what we could not do for ourselves.</p>",
+          "buttonText": "See response ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el29",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Common Question",
+          "term": "\"Does this mean all people are equally sinful? What about genuine evil-doers compared to ordinary people?\"",
+          "question": "Surely there are degrees of sin? Paul's \"no distinction\" seems too sweeping.",
+          "answer": "<p>Paul is not saying that all actions are equally harmful or that there are no moral distinctions between people. Clearly some acts are more destructive than others. His point is different: that <i>in terms of our standing before God's perfect holiness</i>, no one has achieved what they were made for. Every human being, however outwardly good, falls short of the glory of God. It is like the difference between someone who swims halfway across a wide ocean and someone who barely leaves the shore — they are genuinely different in ability, but both are unable to reach the other side. The solution for both is the same: they need to be rescued. Paul's universal diagnosis is not meant to flatten all moral difference; it is meant to close off the escape route that says, \"I am good enough not to need what Jesus offers.\"</p>",
+          "buttonText": "See response ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el30",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el31",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "This chapter has covered difficult ground — the kind of ground that requires honesty. The Bible's diagnosis of sin is not comfortable, but it is not meant to leave you in despair. Every great doctor who gives a hard diagnosis does so because there is a treatment. We have glimpsed that treatment in Paul's words — <i>\"justified freely by his grace\"</i> — and we will explore it fully in the chapters ahead. For now, take a moment to sit with what this chapter has surfaced.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el32",
+          "type": "likertScale",
+          "scaleNumber": 5,
+          "popupTitle": "About this scale",
+          "instruction": "Choose the option that best reflects where you are right now. There are no right or wrong answers.",
+          "scale": [
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+          "statements": [
+            "I have a clearer understanding of what the Bible means by sin after this chapter.",
+            "I find it challenging — but helpful — that the Bible says no one is exempt from the problem of sin.",
+            "Knowing that the problem is deeper than behaviour makes me more open to the idea that the solution must come from God."
+          ],
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el33",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Before this chapter, did you think of sin primarily as a list of actions — or as something deeper? Has anything shifted in how you see it?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el34",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "HTML",
+          "question": "Isaiah speaks of sin creating a <i>separation</i> between us and God. Have you ever experienced that sense of distance — a feeling that your prayers were going nowhere, that something remained unresolved despite your sincerity? What did that feel like?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el35",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "HTML",
+          "question": "Paul ends his diagnosis with a glimpse of the solution: <i>\"justified freely by his grace.\"</i> What questions does that raise for you as you look ahead?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el36",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "The Bible's teaching on sin is honest — even brutal in its thoroughness. But it is honest in the way that a good doctor is honest: not to wound, but to heal. The diagnosis of the human heart is not the last word. It is the first word of a story that ends in rescue, in forgiveness, in a righteousness that comes not from our effort but from God's grace. We have seen the problem clearly in this chapter. In the next, we will see the extraordinary lengths to which God went to solve it — in the life, death, and resurrection of Jesus.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el37",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Before Next Chapter",
+          "term": "Application Challenge",
+          "question": "This week, read Psalm 51 — the prayer of King David after a serious moral failure. Notice how he describes his condition: it is not merely about what he <i>did</i>, but about what he <i>is</i>. And notice what he asks for: he does not ask God to remind him more firmly or send him a better teacher. He asks God to <i>\"create in me a clean heart\"</i> — to do something that only God himself can do. What does this tell you about the kind of God we are dealing with?",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el38",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Prayer Focus",
+          "term": "Closing Prayer",
+          "question": "Use this prayer to close your time together, or let it guide your own words:<br><br><i>Lord God, we come honestly before you. We have seen today that the problem between us and you is not something we can fix by trying harder or doing more. The problem runs deeper than our actions — it runs to the heart. We cannot bridge the gap ourselves. But we trust that you have not left us on the other side. Thank you that your hand is not too short to reach us. We look to you — and we look ahead to seeing what you have done in Jesus. Amen.</i>",
+          "bottomPadding": "normal"
+        }
+
+      ]
+    }
+  ]
+}

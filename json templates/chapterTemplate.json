@@ -1,0 +1,151 @@
+{
+  "chapter_template_notes":[
+    "This is the canonical template for .estudy files.",
+    "It contains exactly one example of every valid chapter element type and subtype.",
+    "Subtype names use the current vocabulary (post-April-2026 rename).",
+    "Delete the '_comment' fields before use — they are documentation only.",
+    "Delete or replace the '_template_notes' and all '_comment' keys before publishing."
+  ],
+
+  "chapters":[
+    {
+      "chapterNumber":1,
+      "chapterTitle" :"Chapter One Title",
+      "elements"     :[
+        {
+          "elementId"    :"ch01-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This is the chapter introduction. It sets the scene before the first Bible question. It should be engaging and draw the reader into the chapter theme. It can contain <b>bold</b> or <em>italic</em> text.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el02",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 3:16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>16</sup>For this is the way God loved the world: he gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el03",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does this verse tell us about God's motivation in sending his Son?",
+          "linkedPassage"    :"John 3:16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el04",
+          "repeatElement":"ch01-el03"
+        },
+
+        {
+          "elementId"    :"ch01-el05",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"This is a bridge paragraph. It connects two sections of questions, provides context, or develops a theme. It can span multiple sentences and contains <b>bold</b> or <em>italic</em> text as needed.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el06",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A New Section Heading",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el07",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"Grace",
+          "question"     :"What do you understand by the word <b>grace</b>? Think about it before tapping 'Find out'.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el08",
+          "type"         :"image",
+          "src"          :"",
+          "alt"          :"A descriptive caption for accessibility",
+          "fallback"     :"🖼️",
+          "align"        :"full",
+          "width"        :"100",
+          "caption"      :"An optional caption shown below the image.",
+          "format"       :"plainText",
+          "base64"       :"",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch01-el09",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I have a clear understanding of what I believe.",
+            "I am currently growing in my faith.",
+            "I regularly spend time with God in prayer and Bible reading."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el10",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Personal Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch01-el11",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What is one thing from this chapter you want to take away and act on this week?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el12",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"This is the chapter closing summary. It draws together the key themes of the chapter and points forward. It should be encouraging and leave the reader with something clear to hold on to.",
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ]
+}

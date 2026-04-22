@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Editor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg:        #f5f3ef;
+    --surface:   #ffffff;
+    --border:    #e0d9d0;
+    --text:      #1a1714;
+    --text-mid:  #4a443c;
+    --text-faint:#8a8078;
+    --accent:    #7a4f2e;
+    --accent-lt: #b07a50;
+    --tag-q:     #eef2ff;
+    --tag-q-b:   #c7d2fe;
+    --tag-t:     #f0fdf4;
+    --tag-t-b:   #bbf7d0;
+    --tag-h:     #fff7ed;
+    --tag-h-b:   #fed7aa;
+    --tag-m:     #fdf4ff;
+    --tag-m-b:   #e9d5ff;
+    --danger:    #c0392b;
+    --success:   #2d6a4f;
+    --sidebar-w: 260px;
+    --toolbar-h: 48px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  #topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+    height: var(--toolbar-h);
+    background: var(--text);
+    color: #f0ebe4;
+    flex-shrink: 0;
+    z-index: 100;
+  }
+  #topbar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    flex: 1;
+  }
+  #topbar .study-name {
+    font-size: 0.8rem;
+    color: #9a9088;
+    font-weight: 300;
+    max-width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .topbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background 0.15s, opacity 0.15s;
+  }
+  .topbar-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-load   { background: #3a332c; color: #f0ebe4; }
+  .btn-load:hover:not(:disabled)   { background: #4a443c; }
+  .btn-save   { background: var(--accent); color: #fff; }
+  .btn-save:hover:not(:disabled)   { background: var(--accent-lt); }
+  .btn-copy   { background: #2c5f4a; color: #fff; }
+  .btn-copy:hover:not(:disabled)   { background: #3a7a60; }
+  .btn-dl     { background: #1a3a5c; color: #fff; }
+  .btn-dl:hover:not(:disabled)     { background: #264f7a; }
+
+  /* ── LAYOUT ── */
+  #workspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: var(--sidebar-w);
+    background: #1f1c18;
+    color: #c0b8ae;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #sidebar-header {
+    padding: 14px 16px 10px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6a6058;
+    border-bottom: 1px solid #2c2722;
+  }
+  #nav-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px 0;
+  }
+  #nav-list::-webkit-scrollbar { width: 4px; }
+  #nav-list::-webkit-scrollbar-thumb { background: #3a332c; border-radius: 2px; }
+
+  .nav-section {
+    padding: 10px 16px 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4a443c;
+  }
+  .nav-item {
+    display: block;
+    padding: 7px 16px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #9a9088;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background 0.1s, color 0.1s;
+    border-left: 3px solid transparent;
+  }
+  .nav-item:hover   { background: #2c2722; color: #d0c8be; }
+  .nav-item.active  { background: #2c2722; color: #e8dfd4; border-left-color: var(--accent-lt); }
+  .nav-item.chapter { font-weight: 600; color: #c0b8ae; font-size: 0.82rem; }
+  .nav-item.chapter.active { color: #f0e8e0; }
+
+  /* ── MAIN PANEL ── */
+  #main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  #panel-header {
+    padding: 18px 28px 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+  #panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  #panel-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  #content-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 28px 40px;
+  }
+  #content-area::-webkit-scrollbar { width: 6px; }
+  #content-area::-webkit-scrollbar-thumb { background: #d0c8be; border-radius: 3px; }
+
+  /* ── EMPTY STATE ── */
+  #empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 16px;
+    color: var(--text-faint);
+    text-align: center;
+    padding: 40px;
+  }
+  #empty-state .icon { font-size: 3rem; opacity: 0.4; }
+  #empty-state h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-mid); }
+  #empty-state p { font-size: 0.9rem; max-width: 360px; line-height: 1.6; }
+  #empty-state .load-big {
+    margin-top: 8px;
+    padding: 10px 24px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  #empty-state .load-big:hover { background: var(--accent-lt); }
+
+  /* ── ELEMENT CARDS ── */
+  .el-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    transition: box-shadow 0.15s;
+  }
+  .el-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+
+  .el-card-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .el-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag-question   { background: var(--tag-q); color: #4338ca; border: 1px solid var(--tag-q-b); }
+  .tag-text       { background: var(--tag-t); color: #166534; border: 1px solid var(--tag-t-b); }
+  .tag-heading    { background: var(--tag-h); color: #9a3412; border: 1px solid var(--tag-h-b); }
+  .tag-meta       { background: var(--tag-m); color: #6b21a8; border: 1px solid var(--tag-m-b); }
+  .tag-other      { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+  .el-id {
+    font-size: 0.68rem;
+    color: var(--text-faint);
+    font-family: monospace;
+    margin-left: auto;
+    background: #f5f3ef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    user-select: none;
+  }
+
+  /* ── FIELD GROUPS ── */
+  .field-group { margin-bottom: 12px; }
+  .field-group:last-child { margin-bottom: 0; }
+  .field-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 5px;
+  }
+  .field-label .html-badge {
+    font-size: 0.6rem;
+    padding: 1px 5px;
+    background: #fff3cd;
+    color: #7a5c00;
+    border-radius: 3px;
+    margin-left: 6px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    border: 1px solid #f0d060;
+  }
+
+  textarea.field-input, input.field-input {
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 11px;
+    resize: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    line-height: 1.55;
+  }
+  textarea.field-input:focus, input.field-input:focus {
+    outline: none;
+    border-color: var(--accent-lt);
+    box-shadow: 0 0 0 3px rgba(176,122,80,0.12);
+    background: #fff;
+  }
+  textarea.field-input { min-height: 64px; overflow-y: hidden; }
+
+  /* ── RICH TEXT TOOLBAR ── */
+  .rte-wrap { position: relative; }
+  .rte-toolbar {
+    display: flex;
+    gap: 2px;
+    padding: 5px 7px;
+    background: #f0ece6;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+  }
+  .rte-toolbar button {
+    padding: 3px 8px;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    font-family: serif;
+    line-height: 1;
+    transition: background 0.1s, color 0.1s;
+  }
+  .rte-toolbar button:hover { background: #e0d8ce; color: var(--text); }
+  .rte-toolbar .sep { width: 1px; background: var(--border); margin: 2px 4px; }
+  .rte-area {
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0 0 6px 6px;
+    padding: 10px 11px;
+    min-height: 90px;
+    line-height: 1.6;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .rte-area:focus {
+    outline: none;
+    border-color: var(--accent-lt);
+    box-shadow: 0 0 0 3px rgba(176,122,80,0.12);
+    background: #fff;
+  }
+  .rte-area b, .rte-area strong { font-weight: 600; }
+  .rte-area i, .rte-area em { font-style: italic; }
+  .rte-area blockquote {
+    border-left: 3px solid var(--accent-lt);
+    padding-left: 12px;
+    margin: 6px 0;
+    color: var(--text-mid);
+    font-style: italic;
+  }
+
+  /* ── METADATA SECTION ── */
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .meta-grid .span2 { grid-column: span 2; }
+
+  /* ── SECTION TITLE DIVIDERS ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0 14px;
+  }
+  .section-divider span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── ONBOARDING / HOW-TO LIST FIELDS ── */
+  .list-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .list-card-header {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-faint);
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── TOAST ── */
+  #toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #1f1c18;
+    color: #f0ebe4;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ── UNSAVED BADGE ── */
+  #unsaved-badge {
+    display: none;
+    background: #e67e22;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── SCROLLBAR GLOBAL ── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d0c8be; border-radius: 3px; }
+
+  /* ── CHAPTER TITLE INPUT ── */
+  .chapter-title-input {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  /* hide file input */
+  #file-input { display: none; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <h1>Study Editor</h1>
+  <span class="study-name" id="study-name-display">No file loaded</span>
+  <span id="unsaved-badge">Unsaved changes</span>
+  <button class="topbar-btn btn-load" onclick="document.getElementById('file-input').click()">📂 Load JSON</button>
+  <button class="topbar-btn btn-copy" id="btn-copy" disabled onclick="copyToClipboard()">📋 Copy JSON</button>
+  <button class="topbar-btn btn-dl"   id="btn-dl"   disabled onclick="downloadJson()">⬇ Download</button>
+  <button class="topbar-btn btn-save" id="btn-save"  disabled onclick="saveToLocalStorage()">💾 Save to Browser</button>
+</div>
+<input type="file" id="file-input" accept=".json" onchange="loadFile(event)">
+
+<!-- WORKSPACE -->
+<div id="workspace">
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+    <div id="sidebar-header">Sections</div>
+    <div id="nav-list">
+      <div style="padding:20px 16px; font-size:0.78rem; color:#4a443c; line-height:1.5;">
+        Load a JSON file to begin.
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div id="main">
+    <div id="panel-header">
+      <div id="panel-title" style="font-family:'Playfair Display',serif; color:var(--text-mid);">Study Editor</div>
+      <div id="panel-subtitle">Load a study JSON file to start editing</div>
+    </div>
+    <div id="content-area">
+      <div id="empty-state">
+        <div class="icon">✦</div>
+        <h2>No file loaded</h2>
+        <p>Open a study JSON file to edit all user-visible text — chapter content, questions, metadata, onboarding slides, and more.</p>
+        <button class="load-big" onclick="document.getElementById('file-input').click()">📂 Open JSON file…</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ─────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────
+let studyData = null;
+let currentSection = null;
+let unsaved = false;
+
+// ─────────────────────────────────────────────
+// FILE LOADING
+// ─────────────────────────────────────────────
+function loadFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      studyData = JSON.parse(e.target.result);
+      // Try restore from localStorage if same studyId
+      const sid = studyData?.studyMetadata?.studyId;
+      if (sid) {
+        const saved = localStorage.getItem('study_editor_' + sid);
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved);
+            studyData = parsed;
+            showToast('Restored saved version from browser storage');
+          } catch {}
+        }
+      }
+      initEditor();
+    } catch (err) {
+      alert('Invalid JSON file: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+function initEditor() {
+  const title = studyData?.studyMetadata?.title || 'Untitled Study';
+  document.getElementById('study-name-display').textContent = title;
+  document.getElementById('btn-copy').disabled = false;
+  document.getElementById('btn-dl').disabled = false;
+  document.getElementById('btn-save').disabled = false;
+  buildNav();
+  // Navigate to first chapter by default
+  if (studyData.chapters && studyData.chapters.length > 0) {
+    navigateTo('chapter', 0);
+  } else {
+    navigateTo('metadata');
+  }
+  markClean();
+}
+
+// ─────────────────────────────────────────────
+// NAV
+// ─────────────────────────────────────────────
+function buildNav() {
+  const list = document.getElementById('nav-list');
+  list.innerHTML = '';
+
+  const sections = [
+    { key: 'metadata', label: 'Study Metadata', section: 'Core' },
+    { key: 'onboarding', label: 'Onboarding Slides', section: 'Core' },
+    { key: 'howto', label: 'How to Use', section: 'Core' },
+    { key: 'leaders', label: "Leader's Notes", section: 'Core' },
+    { key: 'about', label: 'About', section: 'Core' },
+  ];
+
+  let lastSection = null;
+  for (const s of sections) {
+    if (s.section !== lastSection) {
+      const div = document.createElement('div');
+      div.className = 'nav-section';
+      div.textContent = s.section;
+      list.appendChild(div);
+      lastSection = s.section;
+    }
+    const btn = document.createElement('button');
+    btn.className = 'nav-item';
+    btn.textContent = s.label;
+    btn.dataset.key = s.key;
+    btn.onclick = () => navigateTo(s.key);
+    list.appendChild(btn);
+  }
+
+  // Chapters
+  if (studyData.chapters && studyData.chapters.length) {
+    const div = document.createElement('div');
+    div.className = 'nav-section';
+    div.textContent = 'Chapters';
+    list.appendChild(div);
+
+    studyData.chapters.forEach((ch, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'nav-item chapter';
+      btn.textContent = `Ch ${ch.chapterNumber} · ${ch.chapterTitle}`;
+      btn.dataset.key = `chapter_${i}`;
+      btn.onclick = () => navigateTo('chapter', i);
+      list.appendChild(btn);
+    });
+  }
+}
+
+function navigateTo(type, idx) {
+  // Update active state
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  const key = type === 'chapter' ? `chapter_${idx}` : type;
+  const btn = document.querySelector(`[data-key="${key}"]`);
+  if (btn) btn.classList.add('active');
+
+  currentSection = { type, idx };
+
+  switch (type) {
+    case 'metadata':   renderMetadata(); break;
+    case 'onboarding': renderOnboarding(); break;
+    case 'howto':      renderHowTo(); break;
+    case 'leaders':    renderLeaders(); break;
+    case 'about':      renderAbout(); break;
+    case 'chapter':    renderChapter(idx); break;
+  }
+}
+
+// ─────────────────────────────────────────────
+// RENDER HELPERS
+// ─────────────────────────────────────────────
+function setHeader(title, subtitle) {
+  document.getElementById('panel-title').textContent = title;
+  document.getElementById('panel-subtitle').textContent = subtitle;
+}
+
+function getContentArea() {
+  const a = document.getElementById('content-area');
+  a.innerHTML = '';
+  return a;
+}
+
+function makeSectionDivider(label) {
+  const d = document.createElement('div');
+  d.className = 'section-divider';
+  d.innerHTML = `<span>${label}</span>`;
+  return d;
+}
+
+// Plain text field
+function makeField(label, value, onchange, opts = {}) {
+  const wrap = document.createElement('div');
+  wrap.className = 'field-group';
+  const lbl = document.createElement('label');
+  lbl.className = 'field-label';
+  lbl.textContent = label;
+  wrap.appendChild(lbl);
+
+  if (opts.multiline) {
+    const ta = document.createElement('textarea');
+    ta.className = 'field-input';
+    ta.value = value || '';
+    ta.rows = opts.rows || 3;
+    ta.addEventListener('input', () => { autoResize(ta); onchange(ta.value); markDirty(); });
+    setTimeout(() => autoResize(ta), 0);
+    wrap.appendChild(ta);
+  } else {
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.className = 'field-input';
+    inp.value = value || '';
+    inp.addEventListener('input', () => { onchange(inp.value); markDirty(); });
+    wrap.appendChild(inp);
+  }
+  return wrap;
+}
+
+// Rich text field (HTML format)
+function makeRichField(label, value, onchange) {
+  const wrap = document.createElement('div');
+  wrap.className = 'field-group';
+  const lbl = document.createElement('label');
+  lbl.className = 'field-label';
+  lbl.innerHTML = `${label} <span class="html-badge">HTML</span>`;
+  wrap.appendChild(lbl);
+
+  const rteWrap = document.createElement('div');
+  rteWrap.className = 'rte-wrap';
+
+  const toolbar = document.createElement('div');
+  toolbar.className = 'rte-toolbar';
+  toolbar.innerHTML = `
+    <button title="Bold" onmousedown="event.preventDefault(); document.execCommand('bold')"><b>B</b></button>
+    <button title="Italic" onmousedown="event.preventDefault(); document.execCommand('italic')"><i>I</i></button>
+    <button title="Underline" onmousedown="event.preventDefault(); document.execCommand('underline')"><u>U</u></button>
+    <div class="sep"></div>
+    <button title="Insert &lt;br&gt;" onmousedown="event.preventDefault(); insertBr(this.closest('.rte-wrap').querySelector('.rte-area'))">↵br</button>
+    <button title="Blockquote" onmousedown="event.preventDefault(); document.execCommand('formatBlock', false, 'blockquote')">❝</button>
+    <div class="sep"></div>
+    <button title="Remove formatting" onmousedown="event.preventDefault(); document.execCommand('removeFormat')">✕</button>
+  `;
+
+  const area = document.createElement('div');
+  area.className = 'rte-area';
+  area.contentEditable = 'true';
+  area.innerHTML = value || '';
+  area.addEventListener('input', () => { onchange(area.innerHTML); markDirty(); });
+  area.addEventListener('paste', e => {
+    e.preventDefault();
+    const text = e.clipboardData.getData('text/html') || e.clipboardData.getData('text/plain');
+    document.execCommand('insertHTML', false, text);
+  });
+
+  rteWrap.appendChild(toolbar);
+  rteWrap.appendChild(area);
+  wrap.appendChild(rteWrap);
+  return wrap;
+}
+
+function insertBr(area) {
+  area.focus();
+  document.execCommand('insertHTML', false, '<br>');
+}
+
+function autoResize(ta) {
+  ta.style.height = 'auto';
+  ta.style.height = ta.scrollHeight + 'px';
+}
+
+function makeCard(cls = '') {
+  const c = document.createElement('div');
+  c.className = 'el-card' + (cls ? ' ' + cls : '');
+  return c;
+}
+
+function makeCardHead(typeLabel, tagClass, subtype, elId) {
+  const h = document.createElement('div');
+  h.className = 'el-card-head';
+  const tag = document.createElement('span');
+  tag.className = `el-tag ${tagClass}`;
+  tag.textContent = subtype ? `${typeLabel} · ${subtype}` : typeLabel;
+  h.appendChild(tag);
+  if (elId) {
+    const id = document.createElement('span');
+    id.className = 'el-id';
+    id.textContent = elId;
+    h.appendChild(id);
+  }
+  return h;
+}
+
+// ─────────────────────────────────────────────
+// METADATA
+// ─────────────────────────────────────────────
+function renderMetadata() {
+  setHeader('Study Metadata', 'Core information about the study');
+  const area = getContentArea();
+  const m = studyData.studyMetadata;
+
+  const fields = [
+    ['Title', 'title', false],
+    ['Subtitle', 'subtitle', false],
+    ['Short Title', 'shortTitle', false],
+    ['Author', 'author', false],
+    ['Description', 'description', true],
+    ['Share Message', 'shareMessage', true],
+  ];
+
+  for (const [label, key, multi] of fields) {
+    area.appendChild(makeField(label, m[key], v => m[key] = v, { multiline: multi, rows: multi ? 4 : 1 }));
+  }
+
+  // Tags
+  area.appendChild(makeSectionDivider('Tags'));
+  area.appendChild(makeField('Tags (comma-separated)', (m.tags || []).join(', '), v => {
+    m.tags = v.split(',').map(t => t.trim()).filter(Boolean);
+  }));
+}
+
+// ─────────────────────────────────────────────
+// ONBOARDING
+// ─────────────────────────────────────────────
+function renderOnboarding() {
+  setHeader('Onboarding Slides', 'Welcome carousel shown to new users');
+  const area = getContentArea();
+  const slides = studyData.studyOnboardingSlides || [];
+
+  slides.forEach((slide, i) => {
+    area.appendChild(makeSectionDivider(`Slide ${i + 1}`));
+    const card = makeCard();
+
+    const isHtml = slide.format === 'HTML';
+
+    card.appendChild(makeField('Icon', slide.icon, v => slide.icon = v));
+    card.appendChild(makeField('Eyebrow', slide.eyebrow, v => slide.eyebrow = v));
+    card.appendChild(makeField('Heading', slide.heading, v => slide.heading = v));
+
+    if (isHtml) {
+      card.appendChild(makeRichField('Body', slide.body, v => slide.body = v));
+      if (slide.bodyAfter !== undefined) {
+        card.appendChild(makeRichField('Body After', slide.bodyAfter, v => slide.bodyAfter = v));
+      }
+    } else {
+      card.appendChild(makeField('Body', slide.body, v => slide.body = v, { multiline: true }));
+      if (slide.bodyAfter !== undefined) {
+        card.appendChild(makeField('Body After', slide.bodyAfter, v => slide.bodyAfter = v, { multiline: true }));
+      }
+    }
+
+    if (slide.action) {
+      card.appendChild(makeField('Action Button Label', slide.action.label, v => slide.action.label = v));
+    }
+
+    area.appendChild(card);
+  });
+}
+
+// ─────────────────────────────────────────────
+// HOW TO USE
+// ─────────────────────────────────────────────
+function renderHowTo() {
+  setHeader('How to Use', 'Guide sections shown in the app\'s help page');
+  const area = getContentArea();
+  const sections = studyData.howToUseData?.sections || [];
+
+  sections.forEach((sec, si) => {
+    area.appendChild(makeSectionDivider(`Section ${si + 1}: ${sec.heading}`));
+
+    const secCard = makeCard();
+    secCard.appendChild(makeField('Section Heading', sec.heading, v => sec.heading = v));
+    area.appendChild(secCard);
+
+    (sec.blocks || []).forEach((block, bi) => {
+      const bCard = makeCard();
+      const bHead = document.createElement('div');
+      bHead.className = 'list-card-header';
+      bHead.textContent = `Block ${bi + 1}`;
+      bCard.appendChild(bHead);
+      bCard.appendChild(makeField('Title', block.title, v => block.title = v));
+      bCard.appendChild(makeRichField('Body', block.body, v => block.body = v));
+      area.appendChild(bCard);
+    });
+  });
+}
+
+// ─────────────────────────────────────────────
+// LEADER'S NOTES
+// ─────────────────────────────────────────────
+function renderLeaders() {
+  setHeader("Leader's Notes", 'Notes for group leaders and mentors');
+  const area = getContentArea();
+  const ld = studyData.leadersNotesData;
+  if (!ld) { area.innerHTML = '<p style="color:var(--text-faint); padding:20px">No leader\'s notes data found.</p>'; return; }
+
+  area.appendChild(makeSectionDivider('Header'));
+  const headerCard = makeCard();
+  headerCard.appendChild(makeField('Subtitle', ld.subtitle, v => ld.subtitle = v));
+  area.appendChild(headerCard);
+
+  area.appendChild(makeSectionDivider('Intro Paragraphs'));
+  (ld.intro || []).forEach((para, i) => {
+    const c = makeCard();
+    c.appendChild(makeRichField(`Paragraph ${i + 1}`, para, v => ld.intro[i] = v));
+    area.appendChild(c);
+  });
+
+  area.appendChild(makeSectionDivider('Chapter Notes'));
+  (ld.chapters || []).forEach((ch, i) => {
+    const c = makeCard();
+    const head = makeCardHead('Chapter Notes', 'tag-meta', `Ch ${ch.chapterNumber}`, null);
+    c.appendChild(head);
+    c.appendChild(makeField('Title', ch.title, v => ch.title = v));
+    c.appendChild(makeRichField('Key Points', ch.keyPoints, v => ch.keyPoints = v));
+    c.appendChild(makeRichField('Pastorals', ch.pastorals, v => ch.pastorals = v));
+    c.appendChild(makeField('Watch For', ch.watch, v => ch.watch = v));
+    area.appendChild(c);
+  });
+}
+
+// ─────────────────────────────────────────────
+// ABOUT
+// ─────────────────────────────────────────────
+function renderAbout() {
+  setHeader('About', 'Author and publisher information');
+  const area = getContentArea();
+  const ab = studyData.studyAboutData;
+  if (!ab) { area.innerHTML = '<p style="color:var(--text-faint); padding:20px">No about data found.</p>'; return; }
+
+  // Author
+  area.appendChild(makeSectionDivider('Author'));
+  (ab.author?.paras || []).forEach((para, i) => {
+    const c = makeCard();
+    c.appendChild(makeField(`Paragraph ${i + 1}`, para, v => ab.author.paras[i] = v, { multiline: true }));
+    area.appendChild(c);
+  });
+  if (ab.author?.url !== undefined) {
+    const c = makeCard();
+    c.appendChild(makeField('Author URL', ab.author.url, v => ab.author.url = v));
+    area.appendChild(c);
+  }
+
+  // Publisher
+  area.appendChild(makeSectionDivider('Publisher'));
+  (ab.publisher?.paras || []).forEach((para, i) => {
+    const c = makeCard();
+    c.appendChild(makeField(`Paragraph ${i + 1}`, para, v => ab.publisher.paras[i] = v, { multiline: true }));
+    area.appendChild(c);
+  });
+}
+
+// ─────────────────────────────────────────────
+// CHAPTER
+// ─────────────────────────────────────────────
+function renderChapter(idx) {
+  const ch = studyData.chapters[idx];
+  setHeader(`Chapter ${ch.chapterNumber}`, ch.chapterTitle);
+  const area = getContentArea();
+
+  // Chapter title
+  area.appendChild(makeSectionDivider('Chapter Title'));
+  const titleCard = makeCard();
+  const titleField = makeField('Chapter Title', ch.chapterTitle, v => {
+    ch.chapterTitle = v;
+    // Update nav
+    const navBtn = document.querySelector(`[data-key="chapter_${idx}"]`);
+    if (navBtn) navBtn.textContent = `Ch ${ch.chapterNumber} · ${v}`;
+    setHeader(`Chapter ${ch.chapterNumber}`, v);
+  });
+  titleField.querySelector('input').className += ' chapter-title-input';
+  titleCard.appendChild(titleField);
+  area.appendChild(titleCard);
+
+  // Elements
+  area.appendChild(makeSectionDivider('Elements'));
+
+  (ch.elements || []).forEach((el, ei) => {
+    const card = makeCard();
+    const elId = el.elementId || '';
+
+    switch (el.type) {
+      case 'heading': {
+        const head = makeCardHead('Heading', 'tag-heading', el.subtype, elId);
+        card.appendChild(head);
+        card.appendChild(makeField('Text', el.text, v => el.text = v));
+        break;
+      }
+
+      case 'text': {
+        const head = makeCardHead('Text', 'tag-text', el.subtype, elId);
+        card.appendChild(head);
+        if (el.format === 'HTML') {
+          card.appendChild(makeRichField('Content', el.text, v => el.text = v));
+        } else {
+          card.appendChild(makeField('Content', el.text, v => el.text = v, { multiline: true }));
+        }
+        break;
+      }
+
+      case 'question': {
+        const head = makeCardHead('Question', 'tag-question', el.subtype || null, elId);
+        card.appendChild(head);
+        if (el.header !== undefined) {
+          card.appendChild(makeField('Header', el.header, v => el.header = v));
+        }
+        card.appendChild(makeField('Question', el.question, v => el.question = v, { multiline: true, rows: 2 }));
+        card.appendChild(makeField('Answer Placeholder', el.answerPlaceholder, v => el.answerPlaceholder = v));
+        if (el.linkedPassage !== undefined) {
+          if (typeof el.linkedPassage === 'string') {
+            card.appendChild(makeField('Linked Passage Ref', el.linkedPassage, v => el.linkedPassage = v));
+          } else {
+            card.appendChild(makeField('Linked Passage Ref', el.linkedPassage.bibleRef, v => el.linkedPassage.bibleRef = v));
+            if (el.linkedPassage.passageUrl !== undefined) {
+              card.appendChild(makeField('Linked Passage URL', el.linkedPassage.passageUrl, v => el.linkedPassage.passageUrl = v));
+            }
+          }
+        }
+        if (el.questionHint !== undefined) {
+          card.appendChild(makeField('Question Hint', el.questionHint, v => el.questionHint = v, { multiline: true, rows: 2 }));
+        }
+        if (el.sampleAnswer !== undefined) {
+          card.appendChild(makeField('Sample Answer', el.sampleAnswer, v => el.sampleAnswer = v, { multiline: true, rows: 4 }));
+        }
+        break;
+      }
+
+      case 'callout': {
+        const head = makeCardHead('Callout', 'tag-other', el.subtype, elId);
+        card.appendChild(head);
+        if (el.eyebrow !== undefined)    card.appendChild(makeField('Eyebrow', el.eyebrow, v => el.eyebrow = v));
+        if (el.term !== undefined)       card.appendChild(makeField('Term', el.term, v => el.term = v));
+        if (el.question !== undefined)   card.appendChild(makeField('Question', el.question, v => el.question = v, { multiline: true }));
+        if (el.buttonText !== undefined) card.appendChild(makeField('Button Text', el.buttonText, v => el.buttonText = v));
+        if (el.answer !== undefined)     card.appendChild(makeRichField('Answer', el.answer, v => el.answer = v));
+        break;
+      }
+
+      case 'biblePassage': {
+        const head = makeCardHead('Bible Passage', 'tag-other', el.bibleRef, elId);
+        card.appendChild(head);
+        if (el.bibleRef !== undefined)    card.appendChild(makeField('Bible Reference', el.bibleRef, v => el.bibleRef = v));
+        if (el.passageUrl !== undefined)  card.appendChild(makeField('Passage URL', el.passageUrl, v => el.passageUrl = v));
+        if (el.passageText !== undefined) card.appendChild(makeField('Passage Text', el.passageText, v => el.passageText = v, { multiline: true, rows: 4 }));
+        break;
+      }
+
+      case 'likertScale': {
+        const head = makeCardHead('Likert Scale', 'tag-other', null, elId);
+        card.appendChild(head);
+        if (el.question !== undefined)   card.appendChild(makeField('Question', el.question, v => el.question = v, { multiline: true }));
+        if (el.lowLabel !== undefined)   card.appendChild(makeField('Low Label', el.lowLabel, v => el.lowLabel = v));
+        if (el.highLabel !== undefined)  card.appendChild(makeField('High Label', el.highLabel, v => el.highLabel = v));
+        break;
+      }
+
+      case 'image': {
+        const head = makeCardHead('Image', 'tag-other', null, elId);
+        card.appendChild(head);
+        if (el.caption !== undefined) card.appendChild(makeField('Caption', el.caption, v => el.caption = v));
+        if (el.alt !== undefined)     card.appendChild(makeField('Alt Text', el.alt, v => el.alt = v));
+        break;
+      }
+
+      case 'openingquote': {
+        const head = makeCardHead('Opening Quote', 'tag-meta', null, elId);
+        card.appendChild(head);
+        if (Array.isArray(el.quotes)) {
+          el.quotes.forEach((q, qi) => {
+            card.appendChild(makeField(`Quote ${qi + 1}`, q, v => el.quotes[qi] = v, { multiline: true }));
+          });
+        }
+        if (el.question !== undefined) card.appendChild(makeField('Question', el.question, v => el.question = v));
+        break;
+      }
+
+      default: {
+        const head = makeCardHead(el.type || 'Unknown', 'tag-other', null, elId);
+        card.appendChild(head);
+        const note = document.createElement('p');
+        note.style.cssText = 'font-size:0.8rem; color:var(--text-faint); padding:4px 0';
+        note.textContent = 'No editable text fields for this element type.';
+        card.appendChild(note);
+        break;
+      }
+    }
+
+    // repeatElement notice
+    if (el.repeatElement) {
+      card.innerHTML = '';
+      const head = makeCardHead('Repeat Element', 'tag-other', null, elId);
+      card.appendChild(head);
+      const note = document.createElement('p');
+      note.style.cssText = 'font-size:0.8rem; color:var(--text-faint); padding:4px 0';
+      note.textContent = `References element "${el.repeatElement}" — edit the source element instead.`;
+      card.appendChild(note);
+    }
+
+    area.appendChild(card);
+  });
+}
+
+// ─────────────────────────────────────────────
+// DIRTY / CLEAN STATE
+// ─────────────────────────────────────────────
+function markDirty() {
+  unsaved = true;
+  document.getElementById('unsaved-badge').style.display = 'inline';
+}
+function markClean() {
+  unsaved = false;
+  document.getElementById('unsaved-badge').style.display = 'none';
+}
+
+// ─────────────────────────────────────────────
+// OUTPUT FUNCTIONS
+// ─────────────────────────────────────────────
+function getCleanJson() {
+  // Deep clone and strip apiKey from studyAiData
+  const clone = JSON.parse(JSON.stringify(studyData));
+  if (clone.studyAiData) delete clone.studyAiData.apiKey;
+  return JSON.stringify(clone, null, 2);
+}
+
+function copyToClipboard() {
+  navigator.clipboard.writeText(getCleanJson()).then(() => {
+    showToast('JSON copied to clipboard ✓');
+  }).catch(() => {
+    showToast('Copy failed — try Download instead');
+  });
+}
+
+function downloadJson() {
+  const sid = studyData?.studyMetadata?.studyId || 'study';
+  const blob = new Blob([getCleanJson()], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${sid}_edited.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  markClean();
+  showToast('Downloaded ✓');
+}
+
+function saveToLocalStorage() {
+  const sid = studyData?.studyMetadata?.studyId;
+  if (!sid) { showToast('No studyId — cannot save to browser'); return; }
+  localStorage.setItem('study_editor_' + sid, JSON.stringify(studyData));
+  markClean();
+  showToast('Saved to browser storage ✓');
+}
+
+// ─────────────────────────────────────────────
+// TOAST
+// ─────────────────────────────────────────────
+let toastTimer = null;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ─────────────────────────────────────────────
+// WARN ON CLOSE IF UNSAVED
+// ─────────────────────────────────────────────
+window.addEventListener('beforeunload', e => {
+  if (unsaved) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+</script>
+</body>
+</html>

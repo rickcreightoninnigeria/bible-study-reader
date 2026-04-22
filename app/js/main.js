@@ -1,0 +1,237 @@
+// ── RENDER ───────────────────────────────────────────────────────────────────
+// This is where all the Render Functions live.
+
+// RENDER MENU
+// Rebuilds the chapter menu list with current progress checkmarks.
+// A ✓ checkmark is shown if the first question of a chapter has a saved answer.
+// NOTE: this check only tests question 0_0; a chapter where Q1 is unanswered
+// but others are answered will not show a checkmark. Consider using getChapterProgress().
+
+function renderMenu() {
+  const list = document.getElementById('menuList');
+  const currentStudyId = window.activeStudyId;
+
+  // 7. Dynamic heading: "Chapters of [shortTitle]"
+  const heading = document.getElementById('menuHeading');
+  if (heading) {
+    const shortTitle = window.titlePageData?.shortTitle || window.titlePageData?.title || '';
+    heading.textContent = shortTitle ? `Chapters of ${shortTitle}` : 'Chapters';
+  }
+
+  let html = `
+    <div class="chapter-item" onclick="goToTitlePage()">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">Title Page</span>
+    </div>`;
+
+  // 8. My Progress and How to Use removed from Contents — they live in the top bar
+
+  html += chapters.map((ch, i) => {
+    const hasAnswers = Object.keys(localStorage).some(key =>
+      key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_q`) || key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_r`)
+    );
+    return `
+      <div class="chapter-item" onclick="goToChapter(${i})">
+        <span class="chapter-num">${String(ch.chapterNumber).padStart(2,'0')}</span>
+        <span class="chapter-name">${ch.chapterTitle}</span>
+        ${hasAnswers ? '<span class="chapter-check">✓</span>' : ''}
+      </div>`;
+  }).join('');
+
+  if (appSettings.showPageNotes) {
+    const hasNotesContent = !!localStorage.getItem(`bsr_${currentStudyId}_global_notes`);
+    html += `
+    <div class="chapter-item" onclick="renderNotesPage()">
+      <span class="chapter-num">✎</span>
+      <span class="chapter-name">Notes &amp; Comments</span>
+      ${hasNotesContent ? '<span class="chapter-check">✓</span>' : ''}
+    </div>`;
+  }
+
+  if (appSettings.showPageLeaders) {
+    html += `
+    <div class="chapter-item" onclick="renderLeadersNotes()">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">Leaders’ Notes</span>
+    </div>`;
+  }
+
+  if (appSettings.showPageAbout) {
+    html += `
+    <div class="chapter-item" onclick="renderAbout()">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">About</span>
+    </div>`;
+  }
+
+  list.innerHTML = html;
+}
+
+// Renders the title/cover page into #mainContent. If a last position exists
+// in localStorage, shows a "Continue" button alongside "Begin the Course".
+// The cover image has an onerror fallback to a CSS gradient + emoji if the
+// image file is missing (useful during development or if assets fail to load).
+
+function renderTitlePage() {
+  isNonChapterPage = true;
+  restoreStudyTheme();
+  const content = document.getElementById('mainContent');
+  document.getElementById('progressBar').style.width = '0%';
+
+  // 1. Handle the "No Data" error state
+  const meta = window.titlePageData;
+  if (!meta) {
+    content.innerHTML = `
+      <div style="padding:40px 20px; text-align:center; font-family:var(--main-font-family);">
+        <div style="font-size:4rem; margin-bottom:20px;">${ICONS.library}</div>
+        <h2 style="color:var(--text); margin-bottom:10px;">No Study Loaded</h2>
+        <p style="color:var(--text-faint); margin-bottom:30px;">
+          It looks like you haven’t selected a Bible study yet.
+          Please visit your library to get started.
+        </p>
+        <button class="howto-share-btn" style="margin:0 auto; display:inline-flex;" onclick="openLibrary()"><span>${ICONS.library}</span> Go to the Library</button>
+      </div>`;
+    return;
+  }
+
+  // 2. Update nav bar title
+  const navTitle = document.getElementById('header-title');
+  if (navTitle) navTitle.innerText = meta.shortTitle || meta.title || 'Study';
+
+  // 3. Resolve last position for Continue button
+  const pos = appSettings.rememberPosition && getLastPosition();
+
+  // 4. Render the title page using the established CSS classes
+  content.innerHTML = `
+    <div class="title-page">
+      ${meta.image?.src ? `<img class="title-page-image" src="${meta.image.src}" alt="${meta.image?.alt || ''}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
+      <div class="title-page-image-fallback" style="${meta.image?.src ? 'display:none' : 'display:flex'}">${meta.image?.fallbackEmoji || '📖'}</div>
+      <div class="title-page-body">
+        <div class="title-page-main">${meta.title || 'Untitled Study'}</div>
+        <div class="title-page-sub">${meta.subtitle || ''}</div>
+        <div class="title-page-divider"></div>
+        <div class="title-page-desc">${meta.description || ''}</div>
+        <div class="title-page-author">${meta.authorLabel || 'Author'}</div>
+        <div class="title-page-author-name">${meta.authorName || meta.author || ''}</div>
+        <div class="title-page-version">${meta.version || ''}</div>
+        ${pos ? `
+          <button class="title-page-start-btn" onclick="returnToLastPosition()">
+            Continue → Ch. ${pos.chapterIdx + 1}
+          </button>
+          <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="goToChapter(0)">Start from the beginning</button>
+        ` : `
+          <button class="title-page-start-btn" onclick="goToChapter(0)">Begin the Course →</button>
+        `}
+        <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="renderHowToUse()">How to use this app →</button>
+        <div class="title-page-publisher">
+          <span class="title-page-publisher-label">Published by</span>
+          <button class="title-page-publisher-logo" onclick="renderAbout('publisher')">
+            <img src="${window.studyAboutData?.publisher?.image || ''}" alt="${window.studyAboutData?.publisher?.logoAlt || '[Publisher info]'}" class="publisher-logo-img" onerror="this.style.display='none'" />
+            <span style="color:rgba(245,240,232,0.45); margin-left:4px;">${ICONS.triggerInfo}</span>
+          </button>
+        </div>
+      </div>
+    </div>`;
+
+  window.scrollTo(0, 0);
+  
+  // Info trigger: title page — fires once globally across all studies
+  createInfoTrigger(
+    'title-page-intro',
+    {
+      title: '[Put infoTrigger title here]',
+      body:  '<p>[Put infoTrigger body text here]</p>'
+    },
+    {
+      placement:      'floating',
+      headingElement: document.getElementById('title-page-main')
+    }
+  );
+}
+
+// ── PROGRESS ─────────────────────────────────────────────────────────────────
+
+// Updates the thin gold progress bar in the top nav to reflect what percentage
+// of the current chapter's answer fields have non-empty content.
+// Called on every keystroke (via the document 'input' listener) and after saving.
+
+function updateProgress() {
+  if (isNonChapterPage) return;
+  const ch = chapters[currentChapter];
+  const allFields = document.querySelectorAll('.answer-field');
+  if (!allFields.length) return;
+
+  // Exclude the notes field from progress tracking
+  const fields = Array.from(allFields).filter(f => f.dataset.type !== 'notes');
+  if (!fields.length) return;
+
+  let filled = 0;
+  fields.forEach(f => { if (f.value.trim().length > 0) filled++; });
+  const pct = Math.round((filled / fields.length) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+
+  // Trigger celebration toast on first completion of this chapter
+  if (pct === 100) showCelebrationToast(ch);
+}
+
+async function initApp() {
+  // Called after study data is loaded into the engine.
+  // Decides whether to restore a saved position or show the title page,
+  // then shows study-specific onboarding on first open of this study.
+
+  // Safety guard: if no study has been loaded yet, do nothing.
+  if (!window.chapters || !window.chapters.length) return;
+
+  initSettings();
+
+  const _savedPos = appSettings.rememberPosition && getLastPosition();
+  // Guard: discard the saved position if its chapter index is out of range
+  // for the current study (e.g. switching from a longer study to a shorter one).
+  const _launchPos = _savedPos && _savedPos.chapterIdx < window.chapters.length
+    ? _savedPos
+    : null;
+  if (!_launchPos) clearLastPosition();
+
+  if (_launchPos) {
+    await goToChapter(_launchPos.chapterIdx);
+    setTimeout(() => window.scrollTo(0, _launchPos.scrollY), 100);
+  } else {
+    renderTitlePage();
+  }
+
+  renderMenu();
+  // Show app onboarding first; only show study onboarding if app onboarding
+  // did not fire (otherwise both overlays stack simultaneously in the DOM,
+  // with study onboarding on top, producing the wrong sequence).
+  const appOnboardingShown = showAppOnboardingIfNeeded();
+  if (!appOnboardingShown) {
+    showOnboardingIfNeeded();
+  }
+}
+
+// Track progress as user types
+document.addEventListener('input', e => {
+  if (e.target.classList.contains('answer-field')) updateProgress();
+});
+
+// Auto-save on blur (when the user taps away from an answer field).
+// Saves only the single field that lost focus, then optionally shows the
+// auto-save toast if that setting is enabled.
+document.addEventListener('blur', e => {
+  if (e.target.classList.contains('answer-field')) {
+    const ch = chapters[currentChapter];
+    const type = e.target.dataset.type;
+    const index = e.target.dataset.index;
+    if (type && index !== undefined) {
+      localStorage.setItem(storageKey(ch.chapterNumber, type, index), e.target.value);
+
+      // Vital: Clear the search cache so 'Auto-saved' text appears in searches.
+      if (typeof storageCache !== 'undefined') storageCache.clear();
+
+      if (appSettings.autoSaveToast) showToast({ isManual: false });
+      
+      // Note: We don't call updateProgress() or renderMenu() here 
+      // to keep auto-save lightweight on mobile.
+    }
+  }
+}, true);  // { capture: true } required so blur events bubble up from textareas

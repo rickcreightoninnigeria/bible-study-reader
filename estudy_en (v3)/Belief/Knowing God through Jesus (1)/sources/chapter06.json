@@ -1,0 +1,320 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 6,
+      "chapterTitle": "What Did Jesus Do? — The Cross and the Resurrection",
+      "elements": [
+        {
+          "elementId": "ch06-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "Something unexpected happens at the centre of the Christian story. After everything we have learned — about who God is, who Jesus is, the depth of what sin does — we arrive here: a cross. Not a throne. Not a victory parade. A crucifixion.<br><br>For many people, this is the hardest part of the gospel. Why would God allow this? Why would Jesus — Son of God, Lord of creation — die like a criminal? What could a death two thousand years ago possibly have to do with us today?<br><br>This chapter sits at the very heart of the Christian faith. Everything before it has been preparation. Everything after it flows from what happened here. We will look at two things: what Jesus did on the cross, and what God did three days later. Together, they change everything.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el02",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Before We Begin",
+          "term": "Read the Whole Passage First",
+          "question": "It is worth reading Isaiah 53 in full before you begin — slowly, and with an open mind. This passage was written by the prophet Isaiah roughly 700 years before the birth of Jesus.<br><br>As you read it, simply ask yourself: <i>Who is this describing?</i>",
+          "answer": "<sup>1</sup>Who would have believed what we just heard? When was the Lord’s power revealed through him? <sup>2</sup>He grew up before him like a young plant, and like a root out of dry ground. He had no stately form or majesty that might catch our attention, no special appearance that we should want to follow him. <sup>3</sup>He was despised and rejected by people, one who experienced pain and was acquainted with illness. People hid their faces from him; he was despised, and we considered him insignificant. <sup>4</sup>But he lifted up our illnesses, he carried our pain; even though we thought he was being punished, struck down by God, and afflicted. <sup>5</sup>He was wounded because of our rebellious deeds, crushed because of our sins; he endured punishment that brought us peace, and by his wounds we are healed. <sup>6</sup>All of us had wandered off like sheep; each of us had strayed off on his own path, but the Lord caused the sin of all of us to attack him. <sup>7</sup>He was treated harshly and afflicted, but he did not even open his mouth. Like a lamb led to the slaughtering block, like a sheep silent before her shearers, he did not even open his mouth. <sup>8</sup>He was led away after an unjust trial—but who even cared? Indeed, he was cut off from the land of the living; because of the rebellion of his own people he was struck down. <sup>9</sup>They intended to bury him with criminals, but he ended up in a rich man’s tomb, because he had committed no violent deeds, nor had he spoken deceitfully. <sup>10</sup>Though the Lord desired to crush him and make him ill, once restitution is made, he will see descendants and enjoy a long life, and the Lord’s purposes will be accomplished through him. <sup>11</sup>Having suffered, he will reflect on his work, he will be satisfied when he understands what he has done. ‘My righteous servant will acquit many, for he will carry their sins. <sup>12</sup>So I will assign him a portion with the multitudes, he will divide the spoils of victory with the powerful, because he willingly submitted to death and was numbered with the rebels, when he lifted up the sin of many and intervened on behalf of the rebels.’<br><br><p style='text-align: right; font-size: 0.8em;'><a href='https://www.biblegateway.com/passage/?search=Isaiah+53&version=NET'>(NET — see context ↗)</a></p>",
+          "buttonText": "Read passage ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el03",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 1 — The Cross",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el04",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Before we look at what the cross means, we need to look at what Jesus himself said about why he came. He did not stumble into his death. He walked toward it — deliberately, knowingly, and with a clear purpose in mind.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el05",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Mark 10:45",
+          "translation": "NET",
+          "passageText": "<sup>45</sup>For even the Son of Man did not come to be served but to serve, and to give his life as a ransom for many.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Mark+10&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el06",
+          "type": "question",
+          "format": "plainText",
+          "question": "Jesus describes his death as a “ransom.” In everyday life, a ransom is a price paid to free someone who is captive. What does this image suggest about our situation — and about what Jesus was doing?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el07",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Isaiah 53:4–6",
+          "translation": "NET",
+          "passageText": "<sup>4</sup>But he lifted up our illnesses, he carried our pain; even though we thought he was being punished, struck down by God, and afflicted. <sup>5</sup>He was wounded because of our rebellious deeds, crushed because of our sins; he endured punishment that brought us peace, and by his wounds we are healed. <sup>6</sup>All of us had wandered off like sheep; each of us had strayed off on his own path, but the Lord caused the sin of all of us to attack him.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Isaiah+53&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el08",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "Isaiah 53 — Written Centuries Before Jesus",
+          "question": "Isaiah wrote these words approximately 700 years before the crucifixion. Read verses 4–6 again carefully. Make a list of what Isaiah says this person would experience. How closely do these match what you know about Jesus’ death?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el09",
+          "type": "question",
+          "format": "plainText",
+          "question": "Verse 6 says “the Lord caused the sin of all of us to fall on him.” This is the idea of <i>substitution</i> — that Jesus bore what we deserved, in our place. Does this feel like good news, strange news, or both? Why?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el10",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Isaiah’s picture helps us understand the <i>purpose</i> of the cross. Paul helps us understand the <i>heart</i> behind it. The cross is not only a legal transaction — it is the greatest demonstration of love the world has ever seen.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el11",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Romans 5:6–8",
+          "translation": "NET",
+          "passageText": "<sup>6</sup>For while we were still helpless, at the right time Christ died for the ungodly. <sup>7</sup>(For rarely will anyone die for a righteous person, though for a good person perhaps someone might possibly dare to die.) <sup>8</sup>But God demonstrates his own love for us, in that while we were still sinners, Christ died for us.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Romans+5&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el12",
+          "type": "question",
+          "format": "plainText",
+          "question": "Paul says Christ died for us “while we were still sinners” — not after we had cleaned ourselves up or earned it. What does this tell us about the nature of God’s love? How does this compare to the way love is usually described as something that must be deserved?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el13",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Misunderstanding",
+          "term": "Did Jesus really die on the cross?",
+          "question": "The Quran (Surah 4:157) says that Jesus was not crucified — that it only appeared so to those who saw it. This is worth thinking carefully about.",
+          "answer": "The crucifixion of Jesus is one of the most historically well-documented events of the ancient world. It is recorded not only in the Gospels but in non-Christian sources — including the Roman historian Tacitus (writing c. AD 116) and the Jewish historian Josephus (c. AD 93). The disciples who proclaimed the resurrection did so at great personal cost — many were imprisoned or killed for this claim. People do not die for what they know to be false.<br><br>The Christian claim is not that something happened <i>to</i> Jesus against his will — but that he went to the cross <i>deliberately</i>, as an act of rescue. It was not defeat. It was the mission.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el14",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Part 2 — The Resurrection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el15",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "If the cross is the heart of what Jesus did, the resurrection is God’s verdict on it. Without the resurrection, the cross is just a tragedy. With it, everything changes — for Jesus, and for everyone who trusts in him.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el16",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Corinthians 15:3–8",
+          "translation": "NET",
+          "passageText": "<sup>3</sup>For I passed on to you as of first importance what I also received—that Christ died for our sins according to the scriptures, <sup>4</sup>and that he was buried, and that he was raised on the third day according to the scriptures, <sup>5</sup>and that he appeared to Cephas, then to the twelve. <sup>6</sup>Then he appeared to more than five hundred of the brothers and sisters at one time, most of whom are still alive, though some have fallen asleep. <sup>7</sup>Then he appeared to James, then to all the apostles. <sup>8</sup>Last of all, as though to one born at the wrong time, he appeared also to me.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Corinthians+15&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el17",
+          "type": "question",
+          "format": "plainText",
+          "question": "Paul is writing this letter within about twenty-five years of the resurrection — and he lists named eyewitnesses, many of whom were still alive when he wrote. Why does it matter that the resurrection is described as a <i>historical event</i>, with real witnesses, rather than a spiritual symbol or a story?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el18",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Corinthians 15:17–20",
+          "translation": "NET",
+          "passageText": "<sup>17</sup>And if Christ has not been raised, your faith is useless; you are still in your sins. <sup>18</sup>Furthermore, those who have fallen asleep in Christ have also perished. <sup>19</sup>For if only in this life we have hope in Christ, we should be pitied more than anyone. <sup>20</sup>But now Christ has been raised from the dead, the firstfruits of those who have fallen asleep.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Corinthians+15&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el19",
+          "type": "question",
+          "format": "plainText",
+          "question": "Paul says that <i>if</i> the resurrection did not happen, everything collapses. He does not soften this. Why does the resurrection have to be real for the rest of the gospel to hold together?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el20",
+          "type": "question",
+          "format": "plainText",
+          "question": "The word “firstfruits” (verse 20) is an agricultural image — the first part of the harvest that guarantees the rest is coming. What does it mean that Jesus is the “firstfruits of those who have fallen asleep”? What does this promise for those who are in Christ?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el21",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "The resurrection is not just proof that Jesus is alive. It is God’s declaration that his death <i>worked</i> — that the debt was paid, the separation healed, the rescue complete. It is the Father’s “yes” to everything the Son did and said.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el22",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Putting It Together — The Cross and the Resurrection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el23",
+          "type": "question",
+          "subtype": "header",
+          "format": "HTML",
+          "header": "Two Events, One Rescue",
+          "question": "Look back over the four passages in this chapter (Mark 10:45; Isaiah 53:4–6; Romans 5:6–8; 1 Corinthians 15:17–20). In your own words, how would you now answer the chapter’s key question:<br><br><i>“How can a holy God forgive sinners — and what does the resurrection prove?”</i>",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el24",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "For Reflection",
+          "term": "What the Cross Says About God",
+          "question": "Before you move to the reflection questions, sit quietly for a moment with this:",
+          "answer": "The cross does not reveal a God who is reluctantly persuaded to forgive. It reveals a God who <i>initiates</i> forgiveness at enormous personal cost. The Father sends the Son. The Son gives his life willingly. The Spirit raised him from the dead.<br><br>This is not religion as effort — this is grace as gift.<br><br>Before you move to the reflection questions, sit quietly for a moment with this: <i>God did this for you, while you were still far from him.</i>",
+          "buttonText": "Read ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el25",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el26",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which part of this chapter has affected you most — the cross, or the resurrection? Why?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el27",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Is there anything about the cross or the resurrection that you find difficult to believe, or that raises questions for you? Write it down honestly — this is a safe space.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el28",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "What would it mean for your daily life to live as someone for whom Christ has already died and risen — someone already forgiven, already accepted, already held?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el29",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "The cross and the resurrection are not just the centre of Christian theology — they are the centre of Christian life. Everything we do, every day, is lived in the light of this: Jesus gave his life for us, God raised him from the dead, and nothing we face is outside the reach of that love.<br><br>You did not earn this. You could not. That is the point. It is a gift — the gift that makes every other gift possible.<br><br>Next chapter we will ask: <i>How do we receive it?</i> What does it mean to be saved by grace, through faith, and not by works?",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el30",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Application Challenge",
+          "term": "Before Next Chapter",
+          "question": "What is your challenge for this week?",
+          "answer": "This week, read Isaiah 53 again — slowly — and as you read it, try to picture the events of the cross. Then read 1 Corinthians 15:1–20 and let Paul’s confidence in the resurrection speak to you.<br><br>Ask yourself: <i>If this is really true — what does it change for me?</i>",
+          "buttonText": "See the challenge ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch06-el31",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Common Questions — Leader Notes",
+          "term": "Anticipated Questions This Chapter",
+          "question": "Guidance for leaders on questions likely to arise in this chapter.",
+          "answer": "<p><b>“The Quran says Jesus was not crucified — someone else was made to look like him.”</b><br>Acknowledge this with respect. Then note: the crucifixion is one of the most historically attested events of the ancient world, referenced in Roman and Jewish sources outside the Bible. The disciples — many of whom died for this claim — insisted they had seen the risen Jesus. People do not willingly die for what they know to be a lie.</p><p><b>“Why would God allow his prophet to die like that?”</b><br>The Christian answer is that this was not something that <i>happened to</i> Jesus against his will — it was the very purpose for which he came (Mark 10:45). His death was not defeat; it was the means of rescue. He chose it.</p><p><b>“How do we know the resurrection really happened?”</b><br>1 Corinthians 15:3–8 records an early creed — scholars date the tradition it preserves to within a few years of the events themselves. Paul lists named witnesses who were still alive. The tomb was empty — a fact his opponents never disputed, only tried to explain away. The disciples were transformed from terrified fugitives into fearless proclaimers who turned the world upside down. Something happened.</p>",
+          "buttonText": "Read notes ➡",
+          "bottomPadding": "normal"
+        }
+      ]
+    }
+  ]
+}

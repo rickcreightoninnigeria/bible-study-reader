@@ -1,0 +1,1180 @@
+{
+  "sections":[
+    {
+      "sectionNumber":4,
+      "sectionTitle" :"Growth & Transformation",
+      "interlude"    :[
+        {
+          "elementId"    :"s04-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>Repentance is a discovery of the evil of sin, a mourning that we have committed it, a resolution to forsake it. It is, in fact, a change of mind of a very deep and practical character, which makes the man love what once he hated and hate what once he loved.<cite>— Charles Spurgeon</cite></blockquote><blockquote>We all want progress, but if you’re on the wrong road, progress means doing an about-turn and walking back to the right road; in that case, the man who turns back soonest is the most progressive.<cite>— C.S. Lewis</cite></blockquote><blockquote>Repentance means you fight sin because you have a new love, a new delight. God is now your treasure, and you turn away from anything that would diminish that treasure.<cite>— John Piper</cite></blockquote><blockquote>Repentance means turning from as much as you know of your sin to give as much as you know of yourself to as much as you know of God.<cite>— J.I. Packer</cite></blockquote><blockquote>Cheap grace is the preaching of forgiveness without requiring repentance, baptism without church discipline, communion without confession.<cite>— Dietrich Bonhoeffer</cite></blockquote>",
+          "bottomPadding":"normal"
+        }
+      ]
+    }
+  ],
+
+  "chapters":[
+    {
+      "chapterNumber":12,
+      "chapterTitle" :"Family",
+      "elements"     :[
+        {
+          "elementId"    :"ch12-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>We must hold our families with open hands. When we grasp them too tightly, we make them idols, expecting them to provide what only God can.<cite>— Dallas Willard</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch12-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotation? (Do you like it or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Families are good and powerful gifts from God, so they can bring much good, or much harm into the world. They can be sources of great blessing, or temptations towards great idolatry.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 10:37",
+          "translation"  :"NET",
+          "passageText"  :"<sup>37</sup>“Whoever loves father or mother more than me is not worthy of me, and whoever loves son or daughter more than me is not worthy of me.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch12-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Can you love your family ‘too much’? How/why?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 10:37"
+        },
+
+        {
+          "elementId"    :"ch12-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Mark 3:33-35",
+          "translation"  :"NET",
+          "passageText"  :"<sup>33</sup>He answered them, “Who are my mother and my brothers?” <sup>34</sup>And looking at those who were sitting around him in a circle, he said, “Here are my mother and my brothers! <sup>35</sup>For whoever does the will of God is my brother and sister and mother.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Mark+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch12-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Romans 9:7-8",
+          "translation"  :"NET",
+          "passageText"  :"<i>For not all those who are descended from Israel are truly Israel, </i><sup>7</sup>nor are all the children Abraham’s true descendants; rather, “through Isaac will your descendants be reckoned.” <sup>8</sup>This means it is not the children of the flesh who are the children of God; rather, the children of promise are counted as descendants.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Romans+9&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch12-el08",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How does being in God’s family supersede our families of origin?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Mark 3:33-35, Romans 9:7-8"
+        },
+
+        {
+          "elementId"    :"ch12-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 22:30",
+          "translation"  :"NET",
+          "passageText"  :"<sup>30</sup>For in the resurrection they neither marry nor are given in marriage, but are like angels in heaven.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+22&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch12-el10",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How should we think of families in the light of eternity?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 22:30"
+        },
+
+        {
+          "elementId"    :"ch12-el11",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The moment family becomes more important than God’s will for your life, it becomes an idol that hinders your walk with Him.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Joshua 24:15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>If you have no desire to worship the Lord, choose today whom you will worship, whether it be the gods whom your ancestors worshiped beyond the Euphrates, or the gods of the Amorites in whose land you are living. But I and my family will worship the Lord!”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Joshua+24&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch12-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jeremiah 7:18",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>The children gather wood, the fathers light the fire, and the women knead the dough to make cakes to offer to the goddess they call the Queen of Heaven. And they pour out drink offerings to other gods so that they can spite me.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jeremiah+7&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch12-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 9:57-62; 14:15-23",
+          "translation"  :"NET",
+          "passageText"  :"<sup>57</sup>As they were walking along the road, someone said to him, “I will follow you wherever you go.” <sup>58</sup>Jesus said to him, “Foxes have dens and the birds in the sky have nests, but the Son of Man has no place to lay his head.” <sup>59</sup>Jesus said to another, “Follow me.” But he replied, “Lord, first let me go and bury my father.” <sup>60</sup>But Jesus said to him, “Let the dead bury their own dead, but as for you, go and proclaim the kingdom of God.” <sup>61</sup>Yet another said, “I will follow you, Lord, but first let me say goodbye to my family.” <sup>62</sup>Jesus said to him, “No one who puts his hand to the plow and looks back is fit for the kingdom of God.” … <sup>15</sup>When one of those at the meal with Jesus heard this, he said to him, “Blessed is everyone who will feast in the kingdom of God!” <sup>16</sup>But Jesus said to him, “A man once gave a great banquet and invited many guests. <sup>17</sup>At the time of the banquet he sent his slave to tell those who had been invited, ‘Come, because everything is now ready.’ <sup>18</sup>But one after another they all began to make excuses. The first said to him, ‘I have bought a field, and I must go out and see it. Please excuse me.’ <sup>19</sup>Another said, ‘I have bought five yoke of oxen, and I am going out to examine them. Please excuse me.’ <sup>20</sup>Another said, ‘I just got married and therefore I cannot come.’ <sup>21</sup>So the slave came back and reported this to his master. Then the master of the household was furious and said to his slave, ‘Go out quickly to the streets and lanes of the city, and bring in the poor, the crippled, the blind, and the lame.’ <sup>22</sup>Then the slave said, ‘Sir, what you instructed has been done, and there is still room.’ <sup>23</sup>So the master said to his slave, ‘Go out to the highways and country roads and urge people to come in, so that my house will be full.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+9&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch12-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Acts 5:1-11",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Now a man named Ananias, together with Sapphira his wife, sold a piece of property. <sup>2</sup>He kept back for himself part of the proceeds with his wife’s full knowledge; he brought only part of it and placed it at the apostles’ feet. <sup>3</sup>But Peter said, “Ananias, why has Satan filled your heart to lie to the Holy Spirit and keep back for yourself part of the proceeds from the sale of the land? <sup>4</sup>Before it was sold, did it not belong to you? And when it was sold, was the money not at your disposal? How have you thought up this deed in your heart? You have not lied to people but to God!” <sup>5</sup>When Ananias heard these words he collapsed and died, and great fear gripped all who heard about it. <sup>6</sup>So the young men came, wrapped him up, carried him out, and buried him. <sup>7</sup>After an interval of about three hours, his wife came in, but she did not know what had happened. <sup>8</sup>Peter said to her, “Tell me, were the two of you paid this amount for the land?” Sapphira said, “Yes, that much.” <sup>9</sup>Peter then told her, “Why have you agreed together to test the Spirit of the Lord? Look! The feet of those who buried your husband are at the door, and they will carry you out too!” <sup>10</sup>At once she collapsed at his feet and died. So when the young men came in, they found her dead, and they carried her out and buried her beside her husband. <sup>11</sup>Great fear gripped the whole church and all who heard about these things.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Acts+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch12-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How might families lead us astray?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Joshua 24:15, Jeremiah 7:18, Luke 9:57-62; 14:15-23, Acts 5:1-11"
+        },
+
+        {
+          "elementId"    :"ch12-el17",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Christ’s call may lead us away from our family’s expectations, but we must follow Him anyway, even if our families are disappointed.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 2:48-49",
+          "translation"  :"NET",
+          "passageText"  :"<sup>48</sup>When his parents saw him, they were overwhelmed. His mother said to him, “Child, why have you treated us like this? Look, your father and I have been looking for you anxiously.” <sup>49</sup>But he said to them, “Why were you looking for me? Didn’t you know that I must be in my Father’s house?”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch12-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Luke 12:51-53",
+          "translation"  :"NET",
+          "passageText"  :"<sup>51</sup>Do you think I have come to bring peace on earth? No, I tell you, but rather division! <sup>52</sup>For from now on there will be five in one household divided, three against two and two against three. <sup>53</sup>They will be divided, father against son and son against father, mother against daughter and daughter against mother, mother-in-law against her daughter-in-law and daughter-in-law against mother-in-law.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Luke+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch12-el20",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why can putting God first challenge family expectations?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Luke 2:48-49, Luke 12:51-53"
+        },
+
+        {
+          "elementId"    :"ch12-el21",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Obedience to God may bring misunderstandings or opposition from our family. But we must always remember that His call is higher.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el22",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 19:29",
+          "translation"  :"NET",
+          "passageText"  :"<sup>29</sup>And whoever has left houses or brothers or sisters or father or mother or children or fields for my sake will receive a hundred times as much and will inherit eternal life.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+19&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch12-el23",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What encouragement does Jesus give those who face tough choices?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 19:29"
+        },
+
+        {
+          "elementId"    :"ch12-el24",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Exodus 20:12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>12</sup>“Honor your father and your mother, that you may live a long time in the land the Lord your God is giving to you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Exodus+20&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch12-el25",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Timothy 5:8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>But if someone does not provide for his own relatives, and especially for members of his own household, he has denied the faith and is worse than an unbeliever.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Timothy+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch12-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How important is proper, non-idolatrous care for our families?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Exodus 20:12, 1 Timothy 5:8"
+        },
+
+        {
+          "elementId"    :"ch12-el27",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"Caring for our families is not about making them the centre of our lives. It is about loving them as Christ loves us, with a heart that is first devoted to God, and then devoted to others under Him.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el28",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el29",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Complete the idol awareness scale first, then answer these questions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch12-el30",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Overall, how much do you think you are at risk of your family becoming a serious idol for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch12-el31",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Does your valuing of your family give you any further insight into what your deepest idols are?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"    :"ch12-el32h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch12-el32",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about my family and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on my family.",
+            "When my prayers for my family are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with my family.",
+            "My family is the thing I’m most afraid of losing.",
+            "When life gets out of hand, I turn to my family for comfort.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of my family.",
+            "If my family was taken away, my life would feel unbearable or meaningless.",
+            "I’m really proud of my family’s accomplishments.",
+            "Others have told me I sometimes seem obsessed with my family."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch12-el34h",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Deep Idol’ Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch12-el34",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I value my family because through it I gain power over others.",
+            "I value my family because through it I gain the approval of others.",
+            "I value my family because through it I gain comfort and pleasure.",
+            "I value my family because it brings me security and control over my life."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":13,
+      "chapterTitle" :"Culture & Tradition",
+      "elements"     :[
+        {
+          "elementId"    :"ch13-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>Tradition is a wonderful servant but a terrible master. When it becomes an idol, we risk losing the very essence of our faith.<cite>— C.S. Lewis</cite></blockquote><blockquote>Tradition has its place, but it should never become the lens through which we view God.<cite>— Anon</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch13-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotations? (Do you like them or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Cultures and traditions are good gifts from God to us, but like all good gifts they can go astray, and/or they can be made into idols.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el04",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Galatians 3:28",
+          "translation"  :"NET",
+          "passageText"  :"<sup>28</sup>There is neither Jew nor Greek, there is neither slave nor free, there is neither male nor female – for all of you are one in Christ Jesus.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Galatians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch13-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How do we know that traditions & cultures cannot be ultimate?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Galatians 3:28"
+        },
+
+        {
+          "elementId"    :"ch13-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"We must not let cultural norms dictate our understanding of God’s will, or pressure us into conformity.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el07",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 15:3-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>He answered them, “Why do you disobey the commandment of God because of your tradition? <sup>4</sup>For God said, ‘Honor your father and mother’ and ‘Whoever insults his father or mother must be put to death.’ <sup>5</sup>But you say, ‘If someone tells his father or mother, “Whatever help you would have received from me is given to God,” <sup>6</sup>he does not need to honor his father.’ You have nullified the word of God on account of your tradition. <sup>7</sup>Hypocrites! Isaiah prophesied correctly about you when he said, <i>“This people honors me with their lips, but their heart is far from me, and they worship me in vain, teaching as doctrines the commandments of men.”</i>",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+15&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch13-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Mark 7:7-8",
+          "translation"  :"NET",
+          "passageText"  :"<i><sup>7</sup>They worship me in vain, teaching as doctrine the commandments of men.’</i> <sup>8</sup>You have let go of the commandment of God and are holding on to human tradition.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Mark+7&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch13-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Colossians 2:8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>Be careful not to allow anyone to captivate you through an empty, deceitful philosophy that is according to human traditions and the elemental spirits of the world, and not according to Christ.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Colossians+2&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch13-el10",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are some ways tradition/culture can directly oppose God?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 15:3-7, Mark 7:7-8, Colossians 2:8"
+        },
+
+        {
+          "elementId"    :"ch13-el11",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Jewish religious culture had developed out of God’s Word, and yet even that could lead people astray.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Isaiah 1:13-17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>Do not bring any more meaningless offerings; I consider your incense detestable! You observe new moon festivals, Sabbaths, and convocations, but I cannot tolerate sin-stained celebrations! <sup>14</sup>I hate your new moon festivals and your appointed assemblies; they are a burden that I am tired of carrying. <sup>15</sup>When you spread out your hands in prayer, I look the other way; when you offer your many prayers, I do not listen, because your hands are covered with blood. <sup>16</sup>Wash! Cleanse yourselves! Remove your sinful deeds from my sight. Stop sinning! <sup>17</sup>Learn to do what is right! Promote justice! Give the oppressed reason to celebrate! Take up the cause of the orphan! Defend the rights of the widow!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Isaiah+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch13-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Isaiah 29:13",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>The sovereign master says, “These people say they are loyal to me; they say wonderful things about me, but they are not really loyal to me. Their worship consists of nothing but rules taught by men.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Isaiah+29&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch13-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Galatians 1:13-14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>For you have heard of my former way of life in Judaism, how I was savagely persecuting the church of God and trying to destroy it. <sup>14</sup>I was advancing in Judaism beyond many of my contemporaries in my nation, and was extremely zealous for the traditions of my ancestors.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Galatians+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch13-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Philippians 3:4-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>though I too have reasons for such confidence. If someone thinks he has good reasons to put confidence in human credentials, I have more: <sup>5</sup>I was circumcised on the eighth day, from the people of Israel and the tribe of Benjamin, a Hebrew of Hebrews. I lived according to the law as a Pharisee. <sup>6</sup>In my zeal for God I persecuted the church. According to the righteousness stipulated in the law I was blameless. <sup>7</sup>But these assets I have come to regard as liabilities because of Christ.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Philippians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch13-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What were some of the ways Jewish culture opposed the truth?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Isaiah 1:13-17, Isaiah 29:13, Galatians 1:13-14, Philippians 3:4-7"
+        },
+
+        {
+          "elementId"    :"ch13-el17",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Cultural norms can harm our faith, leading us to prioritize human traditions over the truth of the gospel. Non-Christianised traditions can have elements that are even more directly opposed to the gospel.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jeremiah 10:2-5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>The Lord says: “Do not start following pagan religious practices. Do not be in awe of signs that occur in the sky even though the nations hold them in awe. <sup>3</sup>For the religion of these people is worthless. They cut down a tree in the forest, and a craftsman makes it into an idol with his tools. <sup>4</sup>He decorates it with overlays of silver and gold. He uses hammer and nails to fasten it together so that it will not fall over. <sup>5</sup>Such idols are like scarecrows in a cucumber field. They cannot talk. They must be carried because they cannot walk. Do not be afraid of them because they cannot hurt you. And they do not have any power to help you.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jeremiah+10&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch13-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ephesians 4:17-18",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>So I say this, and insist in the Lord, that you no longer live as the Gentiles do, in the futility of their thinking. <sup>18</sup>They are darkened in their understanding, being alienated from the life of God because of the ignorance that is in them due to the hardness of their hearts.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ephesians+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch13-el20",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 Peter 1:18",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>You know that from your empty way of life inherited from your ancestors you were ransomed – not with perishable things like silver or gold,",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+Peter+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch13-el21",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why should we be careful about what traditions we follow?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Jeremiah 10:2-5, Ephesians 4:17-18, 1 Peter 1:18"
+        },
+
+        {
+          "elementId"    :"ch13-el22",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"We must be willing to challenge our cultural assumptions and practices, to make sure they serve the truth of God’s love and grace.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el23",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Romans 12:2",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>Do not be conformed to this present world, but be transformed by the renewing of your mind, so that you may test and approve what is the will of God – what is good and well-pleasing and perfect.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Romans+12&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch13-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How can we avoid being wrongly shaped by culture?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Romans 12:2"
+        },
+
+        {
+          "elementId"    :"ch13-el25",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el26",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"plainText",
+          "text"         :"Complete the idol awareness scale first, then answer these questions.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch13-el27",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Overall, how much do you think you are at risk of your culture or tradition becoming a serious idol for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch13-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Does your valuing of culture or tradition give you any further insight into what your deepest idols are?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"    :"ch13-el29h",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Idol-Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch13-el29",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I repeatedly think about my culture or tradition and those thoughts bring me great joy.",
+            "I spend too much money (or time or energy) on my culture or tradition.",
+            "When my prayers for my culture or tradition are unanswered I feel explosive anger or deep despair.",
+            "Some of my strongest emotions are connected with my culture or tradition.",
+            "My culture or tradition is the thing I’m most afraid of losing.",
+            "When life gets out of hand, I turn to my culture or tradition for comfort.",
+            "I am sometimes willing to sacrifice integrity & relationships in pursuit of my culture or tradition.",
+            "If my culture or tradition was taken away, my life would feel unbearable or meaningless.",
+            "I’m really proud of the accomplishments of my culture or tradition.",
+            "Others have told me I sometimes seem obsessed with my culture or tradition."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch13-el31h",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"‘Deep Idol’ Awareness Scale",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch13-el31",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Tick the box that shows how much you disagree/agree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I value my culture or tradition because I can use it to gain power over others.",
+            "I value my culture or tradition because I can use it to gain the approval of others.",
+            "I value my culture or tradition because I can use it to gain comfort and pleasure.",
+            "I value my culture or tradition because it brings me security and control over my life."
+          ],
+
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+
+    {
+      "chapterNumber":14,
+      "chapterTitle" :"Repent, Replace, Change",
+      "elements"     :[
+        {
+          "elementId"    :"ch14-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<blockquote>The first step to freedom is recognising the idols that hold us captive and turning away from them toward the God who redeems. They must be torn down if we are to follow Christ fully, for they will only hinder us from true discipleship.<cite>— Anon</cite></blockquote>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch14-el02",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What do you think of the above quotation? (Do you like it or not, and why?)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el03",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"We think our idols will help us. Sometimes they (sort of) do, in the short term, but in the long term they destroy us. We need to turn from their illusory salvation, and place our trust wholly in God.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch14-el04",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Rank order your deep idols in order of influence in your life.",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"1.\n2.\n3.\n4.",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el05",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Deep idols can almost become a part of us. They can get integrated into our personalities. Having insight into how they are at work in us is a good thing, but it is not enough on its own to effect change.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Romans 7:18-19",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>For I know that nothing good lives in me, that is, in my flesh. For I want to do the good, but I cannot do it. <sup>19</sup>For I do not do the good I want, but I do the very evil I do not want!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Romans+7&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch14-el07",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why is change not always easy, and insight not always enough?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Romans 7:18-19"
+        },
+
+        {
+          "elementId"    :"ch14-el08",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"In life, we try to protect ourselves from feelings of shame — feelings of being unimportant, insignificant, worthless, and/or useless — feeling that we are never enough. We have turned to our idol(s) to protect us from those feelings, whether through power, approval, control, comfort, or some combination of them. We will never let go of our idol(s) unless we find a better protection somewhere else — in Jesus Christ and his gospel.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el09",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"The Gospel",
+          "question"     :"What exactly is ‘<b>the gospel</b>’? It gets mentioned a lot — but what does it actually mean?",
+          "answer"       :"The word ‘gospel’ simply means ‘good news.’ In the New Testament it refers specifically to the announcement that Jesus Christ — God’s own Son — lived the perfect life we could not live, died in our place to take the punishment our sin deserved, and rose from the dead, defeating sin and death. This is not merely a religious story to believe; it is the foundation of a new identity. Because of what Christ has done, we are fully known by God and fully loved — not because we have earned it, but as a free gift. Throughout this study, ‘the gospel’ is invoked as the only thing powerful enough to displace our idols: because our idols promise us security, worth, and love, and the gospel is the place where we actually receive those things, completely and permanently.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Matthew 11:28-30",
+          "translation"  :"NET",
+          "passageText"  :"<sup>28</sup>“Come to me, all you who are weary and burdened, and I will give you rest. <sup>29</sup>Take my yoke on you and learn from me, because I am gentle and humble in heart, and you will find rest for your souls. <sup>30</sup>For my yoke is easy to bear, and my load is not hard to carry.”",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+11&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch14-el11",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does it make more sense to turn to Jesus than idols?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Matthew 11:28-30"
+        },
+
+        {
+          "elementId"    :"ch14-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Genesis 1:27",
+          "translation"  :"NET",
+          "passageText"  :"<sup>27</sup>God created humankind in his own image, in the image of God he created them, male and female he created them.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Genesis+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch14-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Romans 5:12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>12</sup>So then, just as sin entered the world through one man and death through sin, and so death spread to all people because all sinned –",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Romans+5&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch14-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Galatians 3:26-29",
+          "translation"  :"NET",
+          "passageText"  :"<sup>26</sup>For in Christ Jesus you are all sons of God through faith. <sup>27</sup>For all of you who were baptized into Christ have clothed yourselves with Christ. <sup>28</sup>There is neither Jew nor Greek, there is neither slave nor free, there is neither male nor female – for all of you are one in Christ Jesus. <sup>29</sup>And if you belong to Christ, then you are Abraham’s descendants, heirs according to the promise.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Galatians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch14-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why can we be confident we are valued by God?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Genesis 1:27, Romans 5:12, Galatians 3:26-29"
+        },
+
+        {
+          "elementId"    :"ch14-el16",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"<p>It is not enough to know these truths conceptually. We need to indwell them. They need to become part of who we are, so that they shape our very identity.</p><p>We may have been hurt in the past — perhaps rejected, overlooked, disapproved of, taken for granted, or overburdened. We hope our idol(s) will cover those hurts, and we will never let go of them unless we find a better healing elsewhere — in Jesus Christ and his gospel.</p>",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Psalm 34:18",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>The Lord is near the brokenhearted; he delivers those who are discouraged.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+34&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch14-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Hebrews 4:15-16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>For we do not have a high priest incapable of sympathizing with our weaknesses, but one who has been tempted in every way just as we are, yet without sin. <sup>16</sup>Therefore let us confidently approach the throne of grace to receive mercy and find grace whenever we need help.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Hebrews+4&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch14-el19",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Why can we be sure it is worth bringing our past hurts to Jesus?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Psalm 34:18, Hebrews 4:15-16"
+        },
+
+        {
+          "elementId"    :"ch14-el20",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The promises are there, but entering into them is not automatic. You may need someone (who is wise and skilled) to help you work through your past experiences, so that you can reinterpret them in the light of the gospel, and so that you can heal from pain, bitterness, rejection, and shame.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el21",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ruth 1:3-5; 1:20-21; 4:14-17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>Elimelek, Naomi’s husband, died, so Naomi and her two sons were left alone. <sup>4</sup>So her sons married Moabite women. (One was named Orpah and the other Ruth.) And they continued to live there about ten years. <sup>5</sup>Then Naomi’s two sons, Mahlon and Kilion, also died. So the woman was left all alone – without her two sons and without her husband. … <sup>20</sup>She said to them, “Don’t call me ‘Naomi.’ Call me ‘Mara’ because the Almighty has made me very bitter. <sup>21</sup>I left here full, but the Lord has caused me to return empty. Why do you call me ‘Naomi’ seeing that the Lord has opposed me and the Almighty has caused me misfortune?” … <sup>14</sup>Then the women said to Naomi, “The Lord is to be praised because he has not left you without a kinsman-redeemer today! May his name become famous in Israel! <sup>15</sup>He will encourage you and provide for you when you are old, for your daughter-in-law, who loves you, has given birth to him. She is better to you than seven sons!” <sup>16</sup>Naomi took the child and placed him on her lap; she became his caregiver. <sup>17</sup>The neighbor women said, “A son has been born to Naomi.” They named him Obed. He was the father of Jesse, the father of David.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ruth+1&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"    :"ch14-el22",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Genesis 16:6-14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>Abram said to Sarai, “Your servant is in your hands. Do to her whatever you think best.” Then Sarai treated Hagar harshly, and Hagar ran away from her. <sup>7</sup>The Lord’s angel found Hagar near a spring of water in the desert – the spring that is along the road to Shur. <sup>8</sup>He said, “Hagar, servant of Sarai, where have you come from, and where are you going?” She replied, “I’m running away from my mistress, Sarai.” <sup>9</sup>The Lord’s angel said to her, “Go back to your mistress and submit to her authority. <sup>10</sup>I will greatly multiply your descendants,” the Lord’s angel added, “so that they will be too numerous to count.” <sup>11</sup>Then the Lord’s angel said to her, “You are now pregnant and are about to give birth to a son. You are to name him Ishmael, for the Lord has heard your painful groaning. <sup>12</sup>He will be a wild donkey of a man. He will be hostile to everyone, and everyone will be hostile to him. He will live away from his brothers.” <sup>13</sup>So Hagar named the Lord who spoke to her, “You are the God who sees me,” for she said, “Have I really seen the one who sees me?” <sup>14</sup>That is why the well was called Beer Lahai Roi. (It is between Kadesh and Bered.)",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Genesis+16&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch14-el23",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What healing of past hurts did these people eventually find?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Ruth 1:3-5; 1:20-21; 4:14-17, Genesis 16:6-14"
+        },
+
+        {
+          "elementId"    :"ch14-el24",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Philippians 3:13-14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>Brothers and sisters, I do not consider myself to have attained this. Instead I am single-minded: Forgetting the things that are behind and reaching out for the things that are ahead, <sup>14</sup>with this goal in mind, I strive toward the prize of the upward call of God in Christ Jesus.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Philippians+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch14-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How does knowing Christ help us not get trapped in the past?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Philippians 3:13-14"
+        },
+
+        {
+          "elementId"    :"ch14-el26",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"Repentance",
+          "question"     :"Doesn’t ‘<b>repentance</b>’ just mean feeling sorry for what you’ve done? Is it really much more than that?",
+          "answer"       :"In everyday usage, repentance often sounds like little more than guilt or remorse — and guilt on its own can actually drive us deeper into shame and despair, which can reinforce our idols rather than break them. The biblical word (the Greek <em>metanoia</em>) means a genuine change of mind and direction — a turning around. As Spurgeon puts it, it involves a ‘change of mind of a very deep and practical character,’ reshaping not just our feelings but our loves and our loyalties. True repentance, in this study’s terms, is not just about feeling bad about your idols; it is about transferring your trust from them to God, finding in Him what you were wrongly looking for elsewhere. It is less about guilt and more about reorientation.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el27",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"The way to heal from past wounds is to set your heart on the love of God, who knows and loves you perfectly. He heals our broken hearts not by removing the pain but by filling us with His presence.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch14-el28",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Questions for Further Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch14-el29",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What idol(s) do you most need to turn away from?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch14-el30",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What ‘job’ are you trusting your idol(s) to do? (1) What feelings (of shame, etc.) do they protect you from? (2) What past hurts are they bandaging over?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch14-el31",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What gospel truths do you need to ‘indwell’ so that they become part of you, and replace the (false) protection your idols offer?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch14-el32",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What gospel truths need to speak into your past hurts, so they can be reinterpreted, in the light of the gospel?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        },
+
+        {
+          "elementId"        :"ch14-el33",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How can you fix your eyes on Jesus, so that you don’t get caught up in your own troubles, but you keep remembering his glory?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal",
+          "subtype"          :"reflection"
+        }
+      ]
+    }
+  ]
+}

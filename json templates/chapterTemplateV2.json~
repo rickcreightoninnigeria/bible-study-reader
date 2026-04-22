@@ -1,0 +1,184 @@
+{
+  "chapters":[
+    {
+      "chapterNumber":1,
+      "chapterTitle" :"Chapter One Title",
+      "elements"     :[
+        {
+          "elementId"    :"ch01-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This is the chapter introduction. It sets the scene before the first Bible question. It should be engaging and draw the reader into the chapter theme. It can contain <b>bold</b> or <em>italic</em> text.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el02",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"John 3:16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>16</sup>For this is the way God loved the world: he gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=John+3&version=NET",
+          "bottomPadding":"none"
+        },
+
+        {
+          "elementId"        :"ch01-el03",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does this verse tell us about God's motivation in sending his Son?",
+          "linkedPassage"    :"John 3:16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Remember to answer the question from the passage",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"        :"ch01-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"Header text goes here",
+          "format"           :"HTML",
+          "question"         :"What does this verse tell us about God's motivation in sending his Son?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Remember to answer the question from the passage",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el05",
+          "repeatElement":"ch01-el02"
+        },
+
+        {
+          "elementId"    :"ch01-el06",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"This is a bridge paragraph. It connects two sections of questions, provides context, or develops a theme. It can span multiple sentences and contains <b>bold</b> or <em>italic</em> text as needed.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el07",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A New Section Heading",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el08",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "eyebrow"      :"Common Misunderstanding",
+          "term"         :"Grace",
+          "question"     :"What do you understand by the word <b>grace</b>? Think about it before tapping 'Find out'.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el09",
+          "type"         :"image",
+          "src"          :"",
+          "alt"          :"A descriptive caption for accessibility",
+          "fallback"     :"🖼️",
+          "align"        :"full",
+          "width"        :"100",
+          "caption"      :"An optional caption shown below the image.",
+          "format"       :"plainText",
+          "base64"       :"",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"  :"ch01-el10",
+          "type"       :"likertScale",
+          "scaleNumber":5,
+          "popupTitle" :"About this scale",
+          "instruction":"Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale"      :[
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+
+          "statements":[
+            "I have a clear understanding of what I believe.",
+            "I am currently growing in my faith.",
+            "I regularly spend time with God in prayer and Bible reading."
+          ],
+
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el11",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Personal Reflection",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"        :"ch01-el12",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What is one thing from this chapter you want to take away and act on this week?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el13",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"plainText",
+          "text"         :"This is the chapter closing summary. It draws together the key themes of the chapter and points forward. It should be encouraging and leave the reader with something clear to hold on to.",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId"    :"ch01-el14",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Genesis 1:1-2:3",
+          "question"     :"It’s worth reading the whole passage before you begin...",
+          "answer"       :"<p><sup>1</sup>In the beginning God created the heavens and the earth.</p><p><sup>2</sup>Now the earth was without shape and empty, and darkness was over the surface of the watery deep, but the Spirit of God was moving over the surface of the water. <sup>3</sup>God said, “Let there be light.” And there was light! <sup>4</sup>God saw that the light was good, so God separated the light from the darkness. <sup>5</sup>God called the light “day” and the darkness “night.” There was evening, and there was morning, marking the first day.</p><p><sup>6</sup>God said, “Let there be an expanse in the midst of the waters and let it separate water from water.” <sup>7</sup>So God made the expanse and separated the water under the expanse from the water above it. It was so. <sup>8</sup>God called the expanse “sky.” There was evening, and there was morning, a second day.</p><p><sup>9</sup>God said, “Let the water under the sky be gathered to one place and let dry ground appear.” It was so. <sup>10</sup>God called the dry ground “land” and the gathered waters he called “seas.” God saw that it was good.</p><p><sup>11</sup>God said, “Let the land produce vegetation: plants yielding seeds and trees on the land bearing fruit with seed in it, according to their kinds.” It was so. <sup>12</sup>The land produced vegetation—plants yielding seeds according to their kinds, and trees bearing fruit with seed in it according to their kinds. God saw that it was good. <sup>13</sup>There was evening, and there was morning, a third day.</p><p><sup>14</sup>God said, “Let there be lights in the expanse of the sky to separate the day from the night, and let them be signs to indicate seasons and days and years, <sup>15</sup>and let them serve as lights in the expanse of the sky to give light on the earth.” It was so. <sup>16</sup>God made two great lights—the greater light to rule over the day and the lesser light to rule over the night. He made the stars also. <sup>17</sup>God placed the lights in the expanse of the sky to shine on the earth, <sup>18</sup>to preside over the day and the night, and to separate the light from the darkness. God saw that it was good. <sup>19</sup>There was evening, and there was morning, a fourth day.</p><p><sup>20</sup>God said, “Let the water swarm with swarms of living creatures and let birds fly above the earth across the expanse of the sky.” <sup>21</sup>God created the great sea creatures and every living and moving thing with which the water swarmed, according to their kinds, and every winged bird according to its kind. God saw that it was good. <sup>22</sup>God blessed them and said, “Be fruitful and multiply and fill the water in the seas, and let the birds multiply on the earth.” <sup>23</sup>There was evening, and there was morning, a fifth day.</p><p><sup>24</sup>God said, “Let the land produce living creatures according to their kinds: cattle, creeping things, and wild animals, each according to its kind.” It was so. <sup>25</sup>God made the wild animals according to their kinds, the cattle according to their kinds, and all the creatures that creep along the ground according to their kinds. God saw that it was good.</p><p><sup>26</sup>Then God said, “Let us make humankind in our image, after our likeness, so they may rule over the fish of the sea and the birds of the air, over the cattle, and over all the earth, and over all the creatures that move on the earth.”</p><p><sup>27</sup>God created humankind in his own image,<br>in the image of God he created them,<br>male and female he created them.</p><p><sup>28</sup>God blessed them and said to them, “Be fruitful and multiply! Fill the earth and subdue it! Rule over the fish of the sea and the birds of the air and every creature that moves on the ground.” <sup>29</sup>Then God said, “I now give you every seed-bearing plant on the face of the entire earth and every tree that has fruit with seed in it. They will be yours for food. <sup>30</sup>And to all the animals of the earth, and to every bird of the air, and to all the creatures that move on the ground—everything that has living breath in it—I give every green plant for food.” It was so.</p><p><sup>31</sup>God saw all that he had made—and it was very good! There was evening, and there was morning, the sixth day.</p><p><sup>2:1</sup>The heavens and the earth were completed with everything that was in them. <sup>2</sup>By the seventh day God finished the work that he had been doing, and he ceased on the seventh day all the work that he had been doing. <sup>3</sup>God blessed the seventh day and made it holy because on it he ceased all the work that he had been doing in creation.</p><br><br><p style='text-align: right; font-size: 0.8em;'><a href='https://www.biblegateway.com/passage/?search=Genesis+1&version=NET'>(NET - see context ↗)</a></p>",
+          "buttonText"   :"Read passage ➡",
+          "bottomPadding":"normal"
+        },
+
+        {
+          "elementId":"ch01-el15",
+          "type"     :"question",
+          "subtype"  :"standard",
+          "question" :"What does Paul mean by 'righteousness'?",
+          "deeper"   :{
+            "label"            :"Go deeper …",
+            "question"         :"How does Paul's understanding of righteousness differ from the way the word is used in everyday speech today?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection…",
+            "bottomPadding"    :"normal"
+          }
+        }
+      ]
+    }
+  ]
+}

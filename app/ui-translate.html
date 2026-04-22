@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI String Translation Editor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg:           #f4f2ee;
+    --surface:      #ffffff;
+    --border:       #e0d9d0;
+    --text:         #1a1714;
+    --text-mid:     #4a443c;
+    --text-faint:   #8a8078;
+    --accent:       #7a4f2e;
+    --accent-lt:    #b07a50;
+    --toolbar-h:    46px;
+    --pane-bar-h:   38px;
+    --sidebar-w:    200px;
+    --divider-w:    5px;
+    --left-bg:      #f0ede8;
+    --right-bg:     #eef3f0;
+    --section-bg:   #2c2520;
+    --subsect-bg:   #3a312a;
+    --comment-bg:   #3d3830;
+    --row-stripe:   rgba(0,0,0,0.022);
+    --missing-bg:   #fff8e6;
+    --missing-bdr:  #f0c060;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ══ TOP BAR ══════════════════════════════════════════════ */
+  #topbar {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 14px;
+    height: var(--toolbar-h);
+    background: #1a1714;
+    color: #f0ebe4;
+    flex-shrink: 0;
+    z-index: 200;
+  }
+  #topbar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+  .tb-sep { width: 1px; height: 18px; background: #3a332c; flex-shrink: 0; }
+  .tb-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #6a6058; white-space: nowrap;
+  }
+  .tb-file {
+    font-size: 0.72rem; color: #9a9088; max-width: 160px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .tbtn {
+    display: flex; align-items: center; gap: 5px;
+    padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer;
+    font-family: 'Source Sans 3', sans-serif; font-size: 0.74rem; font-weight: 500;
+    transition: background 0.15s, opacity 0.15s; white-space: nowrap;
+  }
+  .tbtn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .tbtn-load { background: #3a332c; color: #f0ebe4; }
+  .tbtn-load:hover:not(:disabled) { background: #4a443c; }
+  .tbtn-save { background: var(--accent); color: #fff; }
+  .tbtn-save:hover:not(:disabled) { background: var(--accent-lt); }
+  .tbtn-copy { background: #2c5f4a; color: #fff; }
+  .tbtn-copy:hover:not(:disabled) { background: #3a7a60; }
+  .tbtn-dl   { background: #1a3a5c; color: #fff; }
+  .tbtn-dl:hover:not(:disabled)   { background: #264f7a; }
+  .spacer { flex: 1; }
+  #unsaved-badge {
+    display: none; background: #e67e22; color: #fff;
+    font-size: 0.62rem; font-weight: 600; padding: 2px 8px;
+    border-radius: 10px; letter-spacing: 0.04em; white-space: nowrap;
+  }
+  /* stats pill */
+  #stats-pill {
+    font-size: 0.68rem; color: #9a9088; white-space: nowrap;
+    background: #2a2520; padding: 3px 10px; border-radius: 10px;
+  }
+  #stats-pill b { color: #c0b8ae; }
+
+  /* ══ LAYOUT ════════════════════════════════════════════════ */
+  #workspace { display: flex; flex: 1; overflow: hidden; }
+
+  /* ══ SIDEBAR ═══════════════════════════════════════════════ */
+  #sidebar {
+    width: var(--sidebar-w); background: #1f1c18; color: #c0b8ae;
+    flex-shrink: 0; display: flex; flex-direction: column; overflow: hidden;
+  }
+  #sidebar-head {
+    padding: 10px 12px 8px; font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #5a544c;
+    border-bottom: 1px solid #2c2722; flex-shrink: 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  #filter-input {
+    flex: 1; background: #2c2722; border: 1px solid #3a332c; border-radius: 4px;
+    color: #c0b8ae; font-family: 'Source Sans 3', sans-serif; font-size: 0.72rem;
+    padding: 3px 7px; outline: none;
+  }
+  #filter-input::placeholder { color: #5a544c; }
+  #filter-input:focus { border-color: var(--accent-lt); }
+  #nav-list { flex: 1; overflow-y: auto; padding: 4px 0; }
+  #nav-list::-webkit-scrollbar { width: 3px; }
+  #nav-list::-webkit-scrollbar-thumb { background: #3a332c; border-radius: 2px; }
+  .nav-section-btn {
+    display: block; width: 100%; padding: 6px 12px;
+    font-size: 0.74rem; cursor: pointer; border: none; background: none;
+    color: #9a9088; text-align: left; white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; transition: background 0.1s, color 0.1s;
+    border-left: 3px solid transparent;
+  }
+  .nav-section-btn:hover { background: #2c2722; color: #d0c8be; }
+  .nav-section-btn.active { background: #2c2722; color: #e8dfd4; border-left-color: var(--accent-lt); }
+  .nav-section-btn .nav-badge {
+    float: right; font-size: 0.58rem; background: #e67e22;
+    color: #fff; padding: 1px 5px; border-radius: 8px; font-weight: 600;
+  }
+
+  /* ══ SPLIT CONTAINER ══════════════════════════════════════ */
+  #split-container { flex: 1; display: flex; overflow: hidden; }
+
+  .pane { display: flex; flex-direction: column; overflow: hidden; flex: 1; min-width: 0; }
+
+  /* ══ PANE BARS ════════════════════════════════════════════ */
+  .pane-bar {
+    display: flex; align-items: center; gap: 8px;
+    height: var(--pane-bar-h); padding: 0 14px;
+    flex-shrink: 0; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .pane-label { flex: 1; }
+  .pane-file {
+    font-size: 0.68rem; font-weight: 400; letter-spacing: 0; text-transform: none;
+    opacity: 0.7; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  #left-bar  { background: #e8e0d6; color: #5a4a3a; border-bottom: 2px solid #c8b89a; }
+  #right-bar { background: #ddeee6; color: #2a4a38; border-bottom: 2px solid #8fc4a8; }
+  .ro-badge {
+    font-size: 0.58rem; padding: 2px 7px; background: #c8b89a;
+    color: #5a4a3a; border-radius: 10px; font-weight: 600; letter-spacing: 0.04em;
+  }
+
+  /* ══ PANE CONTENT ═════════════════════════════════════════ */
+  .pane-content { flex: 1; overflow-y: auto; }
+  #left-content  { background: var(--left-bg); }
+  #right-content { background: var(--right-bg); }
+  .pane-content::-webkit-scrollbar { width: 5px; }
+  .pane-content::-webkit-scrollbar-thumb { background: #d0c8be; border-radius: 3px; }
+
+  /* ══ DIVIDER ══════════════════════════════════════════════ */
+  #divider {
+    width: var(--divider-w); background: #ccc5bb; flex-shrink: 0;
+    cursor: col-resize; transition: background 0.15s;
+  }
+  #divider:hover, #divider.dragging { background: var(--accent-lt); }
+
+  /* ══ EMPTY STATE ══════════════════════════════════════════ */
+  .empty-pane {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; height: 100%; gap: 12px;
+    color: var(--text-faint); text-align: center; padding: 32px;
+  }
+  .empty-pane .ep-icon { font-size: 2.2rem; opacity: 0.35; }
+  .empty-pane h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--text-mid); }
+  .empty-pane p  { font-size: 0.82rem; max-width: 260px; line-height: 1.55; }
+  .ep-btn {
+    margin-top: 6px; padding: 7px 18px; border: none; border-radius: 7px;
+    font-family: 'Source Sans 3', sans-serif; font-size: 0.84rem; font-weight: 500;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .ep-btn-l { background: var(--accent); color: #fff; }
+  .ep-btn-l:hover { background: var(--accent-lt); }
+  .ep-btn-r { background: #2c5f4a; color: #fff; }
+  .ep-btn-r:hover { background: #3a7a60; }
+
+  /* ══ SECTION / SUBSECTION HEADERS ═════════════════════════ */
+  .row-section {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--section-bg); color: #c0b8ae;
+    padding: 7px 14px; font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    position: sticky; top: 0; z-index: 10;
+    border-bottom: 1px solid #2c2722;
+  }
+  .row-subsection {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--subsect-bg); color: #8a8278;
+    padding: 5px 14px; font-size: 0.62rem; font-weight: 500;
+    letter-spacing: 0.06em; font-style: italic;
+    border-bottom: 1px solid #2c2722;
+    position: sticky; top: 30px; z-index: 9;
+  }
+  .row-comment {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--comment-bg); color: #6a6460;
+    padding: 4px 14px; font-size: 0.6rem; font-style: italic;
+    border-bottom: 1px solid #2c2722;
+  }
+
+  /* ══ STRING ROWS ══════════════════════════════════════════ */
+  .str-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+    min-height: 38px;
+    transition: background 0.1s;
+  }
+  .str-row:nth-child(even) { background: var(--row-stripe); }
+  .str-row:hover { background: rgba(0,0,0,0.04); }
+  .str-row.missing-right { background: var(--missing-bg); border-left: 3px solid var(--missing-bdr); }
+
+  .str-cell {
+    padding: 7px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-right: 1px solid var(--border);
+  }
+  .str-cell:last-child { border-right: none; }
+
+  .str-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-faint);
+    line-height: 1.3;
+    user-select: all;
+  }
+
+  /* READ-ONLY value */
+  .str-ro-value {
+    font-size: 0.84rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .str-ro-value.html-val { white-space: normal; }
+  .str-ro-value b, .str-ro-value strong { font-weight: 600; }
+  .str-ro-value i, .str-ro-value em { font-style: italic; }
+
+  /* EDITABLE value */
+  .str-textarea {
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.84rem;
+    color: var(--text);
+    background: #fff;
+    border: 1px solid #c8ddd4;
+    border-radius: 5px;
+    padding: 5px 8px;
+    resize: none;
+    line-height: 1.5;
+    overflow-y: hidden;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    min-height: 30px;
+  }
+  .str-textarea:focus {
+    outline: none; border-color: #8fc4a8;
+    box-shadow: 0 0 0 2px rgba(143,196,168,0.2);
+  }
+  .str-textarea.missing {
+    background: #fffbf0; border-color: var(--missing-bdr);
+  }
+
+  /* placeholder hints */
+  .placeholder-hint {
+    font-size: 0.62rem; color: #b07050; font-style: italic; margin-top: 1px;
+  }
+
+  /* missing key notice */
+  .missing-notice {
+    font-size: 0.68rem; color: #b07030; font-style: italic; padding: 2px 0;
+  }
+
+  /* ══ TOAST ════════════════════════════════════════════════ */
+  #toast {
+    position: fixed; bottom: 18px; right: 18px;
+    background: #1f1c18; color: #f0ebe4;
+    padding: 8px 15px; border-radius: 7px; font-size: 0.8rem; font-weight: 500;
+    opacity: 0; transform: translateY(5px);
+    transition: opacity 0.2s, transform 0.2s; pointer-events: none; z-index: 9999;
+  }
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  .file-input { display: none; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d0c8be; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<input type="file" id="file-left"  class="file-input" accept=".json" onchange="loadFile('left', event)">
+<input type="file" id="file-right" class="file-input" accept=".json" onchange="loadFile('right', event)">
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <h1>UI Translator</h1>
+  <div class="tb-sep"></div>
+  <span class="tb-label">Source</span>
+  <span class="tb-file" id="left-filename">No file</span>
+  <button class="tbtn tbtn-load" onclick="document.getElementById('file-left').click()">📂 Open</button>
+  <div class="tb-sep"></div>
+  <span class="tb-label">Translation</span>
+  <span class="tb-file" id="right-filename">No file</span>
+  <button class="tbtn tbtn-load"  onclick="document.getElementById('file-right').click()">📂 Open</button>
+  <button class="tbtn tbtn-copy" id="btn-copy" disabled onclick="copyJson()">📋 Copy</button>
+  <button class="tbtn tbtn-dl"   id="btn-dl"   disabled onclick="downloadJson()">⬇ Download</button>
+  <button class="tbtn tbtn-save" id="btn-save"  disabled onclick="saveBrowser()">💾 Save</button>
+  <div class="spacer"></div>
+  <span id="stats-pill" style="display:none">
+    <b id="stat-done">0</b> / <b id="stat-total">0</b> translated
+    &nbsp;·&nbsp; <b id="stat-missing">0</b> missing
+  </span>
+  <span id="unsaved-badge">Unsaved changes</span>
+</div>
+
+<!-- WORKSPACE -->
+<div id="workspace">
+
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+    <div id="sidebar-head">
+      <input id="filter-input" placeholder="Filter keys…" oninput="applyFilter(this.value)">
+    </div>
+    <div id="nav-list">
+      <div style="padding:14px 12px; font-size:0.74rem; color:#4a443c; line-height:1.5;">
+        Load files to begin.
+      </div>
+    </div>
+  </nav>
+
+  <!-- SPLIT -->
+  <div id="split-container">
+
+    <!-- LEFT PANE -->
+    <div class="pane" id="left-pane">
+      <div class="pane-bar" id="left-bar">
+        <span class="pane-label">Source</span>
+        <span class="ro-badge">Read-only</span>
+        <span class="pane-file" id="left-bar-file"></span>
+      </div>
+      <div class="pane-content" id="left-content">
+        <div class="empty-pane">
+          <div class="ep-icon">📖</div>
+          <h3>Source file</h3>
+          <p>Open the original language JSON here — it will display read-only for reference.</p>
+          <button class="ep-btn ep-btn-l" onclick="document.getElementById('file-left').click()">📂 Open source…</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="divider"></div>
+
+    <!-- RIGHT PANE -->
+    <div class="pane" id="right-pane">
+      <div class="pane-bar" id="right-bar">
+        <span class="pane-label">Translation</span>
+        <span class="pane-file" id="right-bar-file"></span>
+      </div>
+      <div class="pane-content" id="right-content">
+        <div class="empty-pane">
+          <div class="ep-icon">✍️</div>
+          <h3>Translation file</h3>
+          <p>Open your in-progress translation here, or the same file to start a new one.</p>
+          <button class="ep-btn ep-btn-r" onclick="document.getElementById('file-right').click()">📂 Open translation…</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+const state = {
+  left:  { raw: null, filename: '' },
+  right: { raw: null, filename: '' }
+};
+
+// Parsed structure: array of { kind, key, leftVal, rightVal }
+// kind: 'section' | 'subsection' | 'comment' | 'string'
+let rows = [];
+let filteredRows = [];
+let currentFilter = '';
+let unsaved = false;
+
+// ═══════════════════════════════════════════════════════════
+// FILE LOADING
+// ═══════════════════════════════════════════════════════════
+function loadFile(side, event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      let data = JSON.parse(e.target.result);
+      // Try localStorage restore for right side
+      if (side === 'right') {
+        const lsKey = lsKeyFor(data);
+        if (lsKey) {
+          const saved = localStorage.getItem(lsKey);
+          if (saved) {
+            try { data = JSON.parse(saved); showToast('Restored saved translation ✓'); }
+            catch {}
+          }
+        }
+        document.getElementById('btn-copy').disabled = false;
+        document.getElementById('btn-dl').disabled   = false;
+        document.getElementById('btn-save').disabled = false;
+        markClean();
+      }
+      state[side].raw      = data;
+      state[side].filename = file.name;
+      document.getElementById(`${side}-filename`).textContent   = file.name;
+      document.getElementById(`${side}-bar-file`).textContent   = file.name;
+    } catch (err) {
+      alert('Invalid JSON: ' + err.message);
+      event.target.value = '';
+      return;
+    }
+    event.target.value = '';
+    buildRows();
+    render();
+    buildNav();
+  };
+  reader.readAsText(file);
+}
+
+function lsKeyFor(data) {
+  // Use the ___comment value or a hash of the first few keys as identifier
+  const comment = data['___comment'];
+  if (comment) return 'ui_transl_' + btoa(encodeURIComponent(comment.slice(0, 60))).replace(/[^a-z0-9]/gi, '');
+  return null;
+}
+
+// ═══════════════════════════════════════════════════════════
+// BUILD ROWS from the two flat key-value JSONs
+// ═══════════════════════════════════════════════════════════
+function buildRows() {
+  rows = [];
+  // Use left as master key order; if only right loaded, use right
+  const master = state.left.raw || state.right.raw;
+  if (!master) return;
+
+  for (const key of Object.keys(master)) {
+    const leftVal  = state.left.raw  ? state.left.raw[key]  : undefined;
+    const rightVal = state.right.raw ? state.right.raw[key] : undefined;
+
+    if (key.startsWith('___section')) {
+      rows.push({ kind: 'section', key, leftVal, rightVal });
+    } else if (key.startsWith('___subsection')) {
+      rows.push({ kind: 'subsection', key, leftVal, rightVal });
+    } else if (key.startsWith('___comment')) {
+      rows.push({ kind: 'comment', key, leftVal, rightVal });
+    } else {
+      rows.push({ kind: 'string', key, leftVal, rightVal });
+    }
+  }
+
+  // Flag any keys in right that don't exist in left (extra translations)
+  if (state.right.raw && state.left.raw) {
+    for (const key of Object.keys(state.right.raw)) {
+      if (!(key in state.left.raw)) {
+        rows.push({ kind: 'string', key, leftVal: undefined, rightVal: state.right.raw[key], extraRight: true });
+      }
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// SECTION INDEX for sidebar
+// ═══════════════════════════════════════════════════════════
+function buildNav() {
+  const list = document.getElementById('nav-list');
+  list.innerHTML = '';
+  if (!rows.length) return;
+
+  // Count missing per section
+  let sections = [];
+  let currentSection = null;
+  let sectionMissing = 0;
+  let sectionStart   = 0;
+
+  rows.forEach((row, i) => {
+    if (row.kind === 'section') {
+      if (currentSection !== null) {
+        sections.push({ label: currentSection, missing: sectionMissing, rowIndex: sectionStart });
+      }
+      currentSection  = sectionLabel(row.key);
+      sectionMissing  = 0;
+      sectionStart    = i;
+    } else if (row.kind === 'string') {
+      if (state.right.raw && (!row.rightVal && row.rightVal !== 0)) sectionMissing++;
+    }
+  });
+  if (currentSection !== null) sections.push({ label: currentSection, missing: sectionMissing, rowIndex: sectionStart });
+
+  sections.forEach((sec, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'nav-section-btn';
+    btn.dataset.rowIndex = sec.rowIndex;
+    btn.dataset.idx = i;
+    btn.innerHTML = `${sec.label}${sec.missing > 0 && state.right.raw ? ` <span class="nav-badge">${sec.missing}</span>` : ''}`;
+    btn.onclick = () => scrollToRow(sec.rowIndex, btn);
+    list.appendChild(btn);
+  });
+}
+
+function sectionLabel(key) {
+  // "___section: main.js" → "main.js"
+  return key.replace(/^___section:\s*/i, '').replace(/^___subsection:\s*/i, '').trim();
+}
+
+function scrollToRow(rowIndex, navBtn) {
+  scrollPanesToRow(rowIndex);
+  document.querySelectorAll('.nav-section-btn').forEach(b => b.classList.remove('active'));
+  if (navBtn) navBtn.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════════════════
+function render(filter) {
+  filteredRows = filter
+    ? rows.filter(r => r.kind !== 'string' || r.key.toLowerCase().includes(filter) || (r.leftVal || '').toLowerCase().includes(filter) || (r.rightVal || '').toLowerCase().includes(filter))
+    : rows;
+
+  renderPane('left');
+  renderPane('right');
+  updateStats();
+}
+
+function renderPane(side) {
+  const isRight = side === 'right';
+  const contentEl = document.getElementById(`${side}-content`);
+  const hasData = isRight ? !!state.right.raw : !!state.left.raw;
+
+  if (!hasData) {
+    // Restore the empty-state placeholder — do not render rows into an unloaded pane
+    contentEl.innerHTML = isRight
+      ? `<div class="empty-pane">
+           <div class="ep-icon">&#x270D;&#xFE0F;</div>
+           <h3>Translation file</h3>
+           <p>Open your in-progress translation here, or the same file to start a new one.</p>
+           <button class="ep-btn ep-btn-r" onclick="document.getElementById('file-right').click()">&#x1F4C2; Open translation&hellip;</button>
+         </div>`
+      : `<div class="empty-pane">
+           <div class="ep-icon">&#x1F4D6;</div>
+           <h3>Source file</h3>
+           <p>Open the original language JSON here &mdash; it will display read-only for reference.</p>
+           <button class="ep-btn ep-btn-l" onclick="document.getElementById('file-left').click()">&#x1F4C2; Open source&hellip;</button>
+         </div>`;
+    return;
+  }
+
+  contentEl.innerHTML = '';
+  filteredRows.forEach((row, ri) => {
+    const el = isRight ? makeRightRow(row, ri) : makeLeftRow(row, ri);
+    if (el) contentEl.appendChild(el);
+  });
+}
+
+// ── STRUCTURAL ROWS (sections/subsections/comments) ──
+function makeStructuralEl(row, ri, isRight, greyed) {
+  const div = document.createElement('div');
+  div.dataset.row = ri;
+
+  if (row.kind === 'section') {
+    div.className = 'row-section';
+    const label = sectionLabel(row.key);
+    div.innerHTML = `<span>${label}</span><span style="opacity:0.4">${label}</span>`;
+  } else if (row.kind === 'subsection') {
+    div.className = 'row-subsection';
+    const label = row.leftVal || row.key;
+    div.innerHTML = `<span>${label}</span><span style="opacity:0.4">${label}</span>`;
+  } else if (row.kind === 'comment') {
+    div.className = 'row-comment';
+    const label = row.leftVal || '';
+    div.innerHTML = `<span>${label}</span><span></span>`;
+  }
+  return div;
+}
+
+// ── LEFT (READ-ONLY) ROW ──
+function makeLeftRow(row, ri) {
+  if (row.kind !== 'string') return makeStructuralEl(row, ri, false, false);
+
+  const cell = document.createElement('div');
+  cell.className = 'str-cell';
+  cell.dataset.row = ri;
+  cell.style.gridColumn = '1';
+
+  // Wrap in a dummy full-width row div only for left pane
+  const roDiv = document.createElement('div');
+  roDiv.dataset.row = ri;
+  roDiv.style.cssText = 'border-bottom:1px solid var(--border); padding:7px 10px; display:flex; flex-direction:column; gap:3px;';
+  if (ri % 2 === 0) roDiv.style.background = 'var(--row-stripe)';
+
+  const keyEl = document.createElement('div');
+  keyEl.className = 'str-key';
+  keyEl.textContent = row.key;
+  roDiv.appendChild(keyEl);
+
+  const valEl = document.createElement('div');
+  const val = row.leftVal;
+  if (val === undefined) {
+    valEl.className = 'missing-notice';
+    valEl.textContent = '(key not in source)';
+  } else {
+    const looksHtml = /<[a-z][\s\S]*>/i.test(val);
+    valEl.className = 'str-ro-value' + (looksHtml ? ' html-val' : '');
+    if (looksHtml) valEl.innerHTML = val;
+    else valEl.textContent = val;
+  }
+  roDiv.appendChild(valEl);
+  return roDiv;
+}
+
+// ── RIGHT (EDITABLE) ROW ──
+function makeRightRow(row, ri) {
+  if (row.kind !== 'string') return makeStructuralEl(row, ri, true, false);
+
+  const div = document.createElement('div');
+  div.dataset.row = ri;
+
+  const isMissing = state.right.raw && (row.rightVal === undefined || row.rightVal === '');
+  div.style.cssText = `border-bottom:1px solid var(--border); padding:7px 10px; display:flex; flex-direction:column; gap:3px;${isMissing ? 'background:var(--missing-bg);' : (ri % 2 === 0 ? 'background:var(--row-stripe);' : '')}`;
+
+  const keyEl = document.createElement('div');
+  keyEl.className = 'str-key';
+  keyEl.textContent = row.key;
+  div.appendChild(keyEl);
+
+  if (!state.right.raw) {
+    // No right file loaded yet — show placeholder cells
+    div.style.opacity = '0.4';
+    return div;
+  }
+
+  // Extract {placeholder} hints from left value
+  const leftVal = row.leftVal || '';
+  const placeholders = [...leftVal.matchAll(/\{([^}]+)\}/g)].map(m => m[1]);
+
+  const ta = document.createElement('textarea');
+  ta.className = 'str-textarea' + (isMissing ? ' missing' : '');
+  ta.value = row.rightVal !== undefined ? row.rightVal : '';
+  ta.placeholder = isMissing ? '(not translated)' : '';
+  ta.rows = 1;
+  ta.addEventListener('input', () => {
+    autoResize(ta);
+    state.right.raw[row.key] = ta.value;
+    row.rightVal = ta.value;
+    // Remove missing styling
+    ta.classList.toggle('missing', !ta.value.trim());
+    div.style.background = ta.value.trim() ? '' : 'var(--missing-bg)';
+    markDirty();
+    updateStats();
+  });
+  setTimeout(() => autoResize(ta), 0);
+  div.appendChild(ta);
+
+  if (placeholders.length > 0) {
+    const hint = document.createElement('div');
+    hint.className = 'placeholder-hint';
+    hint.textContent = 'Placeholders: ' + placeholders.map(p => `{${p}}`).join('  ');
+    div.appendChild(hint);
+  }
+
+  return div;
+}
+
+function autoResize(ta) {
+  ta.style.height = 'auto';
+  ta.style.height = Math.max(ta.scrollHeight, 30) + 'px';
+}
+
+// ═══════════════════════════════════════════════════════════
+// FILTER
+// ═══════════════════════════════════════════════════════════
+let filterTimer = null;
+function applyFilter(val) {
+  clearTimeout(filterTimer);
+  filterTimer = setTimeout(() => {
+    currentFilter = val.toLowerCase().trim();
+    render(currentFilter || null);
+  }, 180);
+}
+
+// ═══════════════════════════════════════════════════════════
+// STATS
+// ═══════════════════════════════════════════════════════════
+function updateStats() {
+  if (!state.right.raw) return;
+  const pill = document.getElementById('stats-pill');
+  pill.style.display = 'inline';
+  const stringRows = rows.filter(r => r.kind === 'string');
+  const total   = stringRows.length;
+  const done    = stringRows.filter(r => r.rightVal && r.rightVal.toString().trim()).length;
+  const missing = total - done;
+  document.getElementById('stat-total').textContent   = total;
+  document.getElementById('stat-done').textContent    = done;
+  document.getElementById('stat-missing').textContent = missing;
+}
+
+// ═══════════════════════════════════════════════════════════
+// DIRTY / CLEAN
+// ═══════════════════════════════════════════════════════════
+function markDirty() { unsaved = true; document.getElementById('unsaved-badge').style.display = 'inline'; }
+function markClean() { unsaved = false; document.getElementById('unsaved-badge').style.display = 'none'; }
+
+// ═══════════════════════════════════════════════════════════
+// OUTPUT
+// ═══════════════════════════════════════════════════════════
+function getOutputJson() {
+  return JSON.stringify(state.right.raw, null, 2);
+}
+
+function copyJson() {
+  if (!state.right.raw) return;
+  navigator.clipboard.writeText(getOutputJson())
+    .then(() => showToast('Translation JSON copied ✓'))
+    .catch(() => showToast('Copy failed — use Download'));
+}
+
+function downloadJson() {
+  if (!state.right.raw) return;
+  const name = state.right.filename || 'ui_translated.json';
+  const blob = new Blob([getOutputJson()], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name; a.click();
+  URL.revokeObjectURL(url);
+  markClean();
+  showToast('Downloaded ✓');
+}
+
+function saveBrowser() {
+  if (!state.right.raw) return;
+  const lsKey = lsKeyFor(state.right.raw);
+  if (!lsKey) { showToast('Cannot identify file for browser save'); return; }
+  localStorage.setItem(lsKey, getOutputJson());
+  markClean();
+  showToast('Saved to browser storage ✓');
+}
+
+// ═══════════════════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════════════════
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+// ═══════════════════════════════════════════════════════════
+// DRAG DIVIDER
+// ═══════════════════════════════════════════════════════════
+const divider = document.getElementById('divider');
+let dragging = false, startX, startLeftW;
+divider.addEventListener('mousedown', e => {
+  dragging = true; startX = e.clientX;
+  startLeftW = document.getElementById('left-pane').getBoundingClientRect().width;
+  divider.classList.add('dragging');
+  document.body.style.cssText = 'cursor:col-resize;user-select:none';
+});
+document.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  const container = document.getElementById('split-container');
+  const totalW = container.getBoundingClientRect().width - 5;
+  const newLeft = Math.min(Math.max(startLeftW + e.clientX - startX, totalW * 0.2), totalW * 0.8);
+  document.getElementById('left-pane').style.cssText  = `flex:none;width:${newLeft}px`;
+  document.getElementById('right-pane').style.flex = '1';
+});
+document.addEventListener('mouseup', () => {
+  if (!dragging) return;
+  dragging = false; divider.classList.remove('dragging');
+  document.body.style.cssText = '';
+});
+
+// ═══════════════════════════════════════════════════════════
+// SCROLL HELPERS + SYNC
+// ═══════════════════════════════════════════════════════════
+
+// Scroll BOTH panes to a given row index — used by sidebar nav
+function scrollPanesToRow(rowIndex) {
+  scrollPaneToRow(document.getElementById('left-content'),  rowIndex);
+  scrollPaneToRow(document.getElementById('right-content'), rowIndex);
+}
+
+function scrollPaneToRow(contentEl, rowIndex) {
+  const el = contentEl.querySelector(`[data-row="${rowIndex}"]`);
+  if (!el) return;
+  contentEl.scrollTop = el.offsetTop;
+}
+
+// Panels scroll independently.
+// scrollPanesToRow() (called by sidebar nav) jumps both simultaneously.
+const leftContent  = document.getElementById('left-content');
+const rightContent = document.getElementById('right-content');
+
+// ═══════════════════════════════════════════════════════════
+// WARN ON CLOSE
+// ═══════════════════════════════════════════════════════════
+window.addEventListener('beforeunload', e => {
+  if (unsaved) { e.preventDefault(); e.returnValue = ''; }
+});
+</script>
+</body>
+</html>

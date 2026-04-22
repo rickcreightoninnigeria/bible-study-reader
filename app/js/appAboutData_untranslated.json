@@ -1,0 +1,11 @@
+{
+  "appVersion"       :"0.4.0",
+  "apkUpdateZipId"   :"1LKA8w-PzPVVt8HrXxSyr2r-sINL72uPE",
+  "apkUpdateFolder"  :"1q3JbsCXvxEVl4H9IsLIR9smAUPuX-q4o",
+  "estudyVersion"    :"3",
+  "sampleDownloadId" :"12GWu_cCP8XEyehOY0por--FYaBWloevT",
+  "appCreatedAt"     :"2026-03-28T00:00:00Z",
+  "appUpdatedAt"     :"2026-04-06T00:00:00Z",
+  "appAuthor"        :{ "name":"Rick Creighton" },
+  "appPublisher"     :{ "name":"Rick Creighton" }
+}
