@@ -1,0 +1,15 @@
+*.apk
+.apk_hash.txt
+*.zip
+*~
+*_original.json
+*_original(*).json
+Google Drive sync/
+credentials.json
+token.json
+client_secret*
+*.dropbox
+*.device.com
+__pycache__/
+.env
+node_modules/
