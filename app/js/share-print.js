@@ -32,10 +32,6 @@ function handleGesture() {
   );
   if (hasOpenClassOverlay) return;
 
-  // Block swipe while the user is touching a scrollable tab bar in the library
-  // (lib-tab-bar or lib-lang-bar). Flag is set/cleared by render-library.js.
-  if (window.libScrollingTabBar) return;
-
   const swipeThreshold = getSwipeThreshold();
   const delta = touchendX - touchstartX;
 
@@ -82,6 +78,12 @@ document.addEventListener('touchend', e => {
     || e.target.tagName === 'INPUT'
     || e.target.classList.contains('answer-field');
   if (isTyping) return;
+
+  // Ignore swipes that originate inside a scrollable tab bar (the library's
+  // main tab bar or language filter bar). Uses closest() so taps on child
+  // buttons are caught too. Checked here at touchend rather than via a shared
+  // flag so the test runs before handleGesture() regardless of listener order.
+  if (e.target.closest('.lib-tab-bar, .lib-lang-bar')) return;
 
   touchendX = e.changedTouches[0].screenX;
   handleGesture();

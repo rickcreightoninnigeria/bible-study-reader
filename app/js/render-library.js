@@ -1310,24 +1310,6 @@ async function renderLibrary() {
       <div class="lib-tab-content" id="libTabContent"></div>
     </div>`;
 
-  // ── Disable swipe navigation while a tab bar is being touched ───────────────
-  // Sets window.libScrollingTabBar = true on touchstart for any .lib-tab-bar
-  // or .lib-lang-bar element, and clears it on touchend/touchcancel on those
-  // same elements (NOT on the document). This keeps the flag scoped to the
-  // bar's own touch lifetime and avoids any race with the document-level
-  // touchend that fires handleGesture() in share-print.js.
-  {
-    const tabBars = overlay.querySelectorAll('.lib-tab-bar, .lib-lang-bar');
-    tabBars.forEach(bar => {
-      bar.addEventListener('touchstart', () => {
-        window.libScrollingTabBar = true;
-      }, { passive: true });
-
-      bar.addEventListener('touchend',    () => { window.libScrollingTabBar = false; }, { passive: true });
-      bar.addEventListener('touchcancel', () => { window.libScrollingTabBar = false; }, { passive: true });
-    });
-  }
-
   // ── Populate the active tab's content area ───────────────────────────────────
   const contentEl = document.getElementById('libTabContent');
 
