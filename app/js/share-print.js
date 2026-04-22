@@ -32,6 +32,10 @@ function handleGesture() {
   );
   if (hasOpenClassOverlay) return;
 
+  // Block swipe while the user is touching a scrollable tab bar in the library
+  // (lib-tab-bar or lib-lang-bar). Flag is set/cleared by render-library.js.
+  if (window.libScrollingTabBar) return;
+
   const swipeThreshold = getSwipeThreshold();
   const delta = touchendX - touchstartX;
 

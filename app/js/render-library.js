@@ -280,11 +280,11 @@ async function renderLibrary() {
   const showShelves = libShowShelvesTab === 'on' || (libShowShelvesTab === '>8' && studyCount > 8);
   const showPaths   = libShowPathsTab   === 'on' || (libShowPathsTab   === '>2' && studyCount > 2);
 
-  // If the stored tab is no longer visible, fall back to 'load'.
-  let activeTab = window._libActiveTab || 'load';
-  if (activeTab === 'recent'  && !showRecent)  activeTab = 'load';
-  if (activeTab === 'shelves' && !showShelves) activeTab = 'load';
-  if (activeTab === 'paths'   && !showPaths)   activeTab = 'load';
+  // If the stored tab is no longer visible, fall back to 'all'.
+  let activeTab = window._libActiveTab || 'all';
+  if (activeTab === 'recent'  && !showRecent)  activeTab = 'all';
+  if (activeTab === 'shelves' && !showShelves) activeTab = 'all';
+  if (activeTab === 'paths'   && !showPaths)   activeTab = 'all';
   window._libActiveTab = activeTab;
 
   // Expose libShowPathsAmount for the Paths tab renderer to read
@@ -1275,11 +1275,11 @@ async function renderLibrary() {
   const _extraTabs = (showRecent ? 1 : 0) + (showShelves ? 1 : 0) + (showPaths ? 1 : 0);
   const _longLabels = _extraTabs === 0;
   const tabs = [
-    { id: 'load',    label: _longLabels ? t('renderlib_tab_load_long') : t('renderlib_tab_load') },
-    ...(showRecent  ? [{ id: 'recent',  label: t('renderlib_tab_recent') }] : []),
     { id: 'all',     label: _longLabels ? t('renderlib_tab_all_long') : t('renderlib_tab_all')  },
+    ...(showRecent  ? [{ id: 'recent',  label: t('renderlib_tab_recent') }] : []),
     ...(showShelves ? [{ id: 'shelves', label: t('renderlib_tab_shelves') }] : []),
     ...(showPaths   ? [{ id: 'paths',   label: t('renderlib_tab_paths') }] : []),
+    { id: 'load',    label: _longLabels ? t('renderlib_tab_load_long') : t('renderlib_tab_load') },
   ];
 
   window._libTabs  = tabs;
@@ -1309,6 +1309,24 @@ async function renderLibrary() {
       </div>
       <div class="lib-tab-content" id="libTabContent"></div>
     </div>`;
+
+  // ── Disable swipe navigation while a tab bar is being touched ───────────────
+  // Sets window.libScrollingTabBar = true on touchstart for any .lib-tab-bar
+  // or .lib-lang-bar element, and clears it on touchend/touchcancel on those
+  // same elements (NOT on the document). This keeps the flag scoped to the
+  // bar's own touch lifetime and avoids any race with the document-level
+  // touchend that fires handleGesture() in share-print.js.
+  {
+    const tabBars = overlay.querySelectorAll('.lib-tab-bar, .lib-lang-bar');
+    tabBars.forEach(bar => {
+      bar.addEventListener('touchstart', () => {
+        window.libScrollingTabBar = true;
+      }, { passive: true });
+
+      bar.addEventListener('touchend',    () => { window.libScrollingTabBar = false; }, { passive: true });
+      bar.addEventListener('touchcancel', () => { window.libScrollingTabBar = false; }, { passive: true });
+    });
+  }
 
   // ── Populate the active tab's content area ───────────────────────────────────
   const contentEl = document.getElementById('libTabContent');
