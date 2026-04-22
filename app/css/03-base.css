@@ -12,6 +12,19 @@
  * ── DARK MODE ───────────────────────────────────────────────────────────
  * 06. Dark mode       – body.dark-mode overrides for all rules above
  *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 07. RTL overrides   – Mirrors layout for Arabic, Hebrew, Urdu
+ *                       (minimal in this file — base layout is flex/auto)
+ * 08. Script overrides – Per-script resets grouped by script family:
+ *                        A. Arabic script   — ar, ur
+ *                        B. Hebrew script   — he
+ *                        C. Devanagari      — ne, hi
+ *                        D. Myanmar         — my
+ *                        E. CJK             — zh (zh-CN), ja
+ *                        F. Hangul          — ko
+ *                        G. Cyrillic        — ru, uk  (chrome labels only)
+ *                        H. Greek           — el       (chrome labels only)
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -60,20 +73,20 @@ body {
    The save bar has its own max-width (340px) and is intentionally left
    narrow — stretching two buttons across a landscape phone looks odd.
    The top nav already spans full width (no max-width set). */
- 
+
 @media (orientation: landscape) {
   .content {
     max-width: 100%;
     padding: 0 28px 80px;
   }
 }
- 
+
 
 /* ── 04. BLOCKQUOTE ─────────────────────────────────────────────────────── */
 
 blockquote {
-  margin-left: 0;
-  padding-left: 10px;
+  margin-inline-start: 0;    /* was margin-left */
+  padding-inline-start: 10px; /* was padding-left */
 }
 
 
@@ -115,4 +128,140 @@ body.dark-mode {
 
 body.dark-mode .section-break-line {
   background: var(--dm-border);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   07. RTL OVERRIDES  (dir="rtl" on <html> set by the JS language switcher)
+   Applies to Arabic (ar), Urdu (ur), and Hebrew (he).
+   The body layout is flex/auto throughout and .content uses symmetric
+   padding, so no structural overrides are needed here. The dir="rtl"
+   attribute on <html> is sufficient for text direction and the
+   border-inline-start / padding-inline-* logical properties used in
+   component files handle element-level mirroring automatically.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* No rules needed here. See component files for element-level RTL overrides. */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   08. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   See 01-fonts.css section 04 for the canonical rationale on each script
+   family's requirements (letter-spacing, text-transform, font-style,
+   font-family, line-height).
+
+   BODY LINE-HEIGHT
+   The body rule above sets line-height: 1.7 — correct for Latin scripts.
+   Scripts with taller vertical metrics need more space; CJK needs less.
+   These overrides set the base line-height at the body level so all
+   elements that inherit it (paragraphs, list items, etc.) benefit
+   automatically. Component files apply additional per-element overrides
+   where tighter control is needed (e.g. preview snippets, modal bodies).
+
+   BODY DIRECTION
+   direction: rtl is NOT set here via CSS — it is applied by the JS
+   language switcher as dir="rtl" on <html>. Setting it in CSS would
+   interfere with elements that need to remain LTR (e.g. code blocks,
+   numeric inputs). The HTML attribute approach is the correct one.
+
+   .section-break-text is the only chrome label in this file. It carries
+   letter-spacing and text-transform that need resetting for non-Latin
+   scripts. For Cyrillic and Greek only letter-spacing is reset.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) body,
+:lang(ur) body {
+  line-height: 2;
+}
+
+:lang(ar) .section-break-text,
+:lang(ur) .section-break-text {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) body {
+  line-height: 1.9;
+}
+
+:lang(he) .section-break-text {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) body,
+:lang(hi) body {
+  line-height: 2;
+}
+
+:lang(ne) .section-break-text,
+:lang(hi) .section-break-text {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) body {
+  line-height: 2.2;
+}
+
+:lang(my) .section-break-text {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified, zh-CN), ja (Japanese) ──────────── */
+
+:lang(zh) body,
+:lang(ja) body {
+  line-height: 1.6;
+}
+
+:lang(zh) .section-break-text,
+:lang(ja) .section-break-text {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) body {
+  line-height: 1.7;   /* same as Latin default — Hangul is comfortable here */
+}
+
+:lang(ko) .section-break-text {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* No body line-height change needed — 1.7 is fine for Cyrillic.
+   Only the letter-spacing on the chrome label is reset. */
+
+:lang(ru) .section-break-text,
+:lang(uk) .section-break-text {
+  letter-spacing: 0;
+}
+
+
+/* ── H. Greek — el ───────────────────────────────────────────────────── */
+/* Same light-touch treatment as Cyrillic. */
+
+:lang(el) .section-break-text {
+  letter-spacing: 0;
 }

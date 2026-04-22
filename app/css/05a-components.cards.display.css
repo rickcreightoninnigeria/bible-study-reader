@@ -18,7 +18,22 @@
  * 08. Speak button      – Inline read-aloud button.
  *
  * ── DARK MODE ───────────────────────────────────────────────────────────
- * 08. Dark mode         – body.dark-mode overrides for all rules above
+ * 09. Dark mode         – body.dark-mode overrides for all rules above
+ *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 10. RTL overrides     – Mirrors layout for Arabic, Hebrew, Urdu (dir="rtl")
+ * 11. Script overrides  – Per-script resets for letter-spacing,
+ *                         text-transform, font-style, font-family, and
+ *                         line-height. Grouped by script family:
+ *                           A. Arabic script   — ar, ur
+ *                           B. Hebrew script   — he
+ *                           C. Devanagari      — ne, hi
+ *                           D. Myanmar         — my
+ *                           E. CJK             — zh (zh-CN), ja
+ *                           F. Hangul          — ko
+ *                           G. Cyrillic        — ru, uk  (chrome labels only)
+ *                         Latin scripts (en, fr, es, pt, ha, ff, sw, ig,
+ *                         yo, ms, tl) and Greek (el) need no overrides.
  *
  * ════════════════════════════════════════════════════════════════════════
  */
@@ -37,7 +52,7 @@
 .chapter-header::before {
   content: '';
   position: absolute;
-  top: -20px; right: -20px;
+  top: -20px; right: -20px;  /* decorative glow — intentionally physical, always top-right */
   width: 140px; height: 140px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(184,146,42,0.08) 0%, transparent 70%);
@@ -92,14 +107,15 @@
 
 /* ── 04. INTRO BLOCK ────────────────────────────────────────────────────── */
 /* Opening narrative paragraph card at the top of a chapter's content.
-   Left accent border signals "read this first" to the user. */
+   border-inline-start so the accent border flips to the right in RTL.
+   border-radius still uses physical values; RTL override in section 10. */
 
 .intro-block {
   background: var(--card-bg);
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);   /* was border-left */
   margin: 20px var(--content-margin);
   padding: 18px 20px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 8px 8px 0;                     /* mirrored for RTL in section 10 */
   box-shadow: 0 1px 4px var(--shadow);
 }
 .intro-block p {
@@ -117,10 +133,10 @@
 
 .bridge-text {
   background: var(--card-bg);
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);   /* was border-left */
   margin: 12px var(--content-margin);
   padding: 18px 20px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 8px 8px 0;                     /* mirrored for RTL in section 10 */
   box-shadow: 0 1px 4px var(--shadow);
   font-size: 0.9375rem;    /* was 15px — scales */
   color: var(--text-secondary);
@@ -129,15 +145,13 @@
 .bridge-text p + p { margin-top: 12px; }
 
 /* ── List indentation inside text cards ─────────────────────────────────── */
-/* ul/ol inside intro-block and bridge-text need explicit padding so that
-   bullet/number markers sit clearly inside the card rather than at the
-   content-box edge. 1.4em gives the marker room; nested lists step in
-   further. */
+/* padding-inline-start flips automatically in RTL so list markers always
+   sit inside the card on the correct side. */
 .intro-block ul,
 .intro-block ol,
 .bridge-text ul,
 .bridge-text ol {
-  padding-left: 1.4em;
+  padding-inline-start: 1.4em;                    /* was padding-left */
   margin: 8px 0;
 }
 .intro-block ul ul,
@@ -155,6 +169,7 @@
   margin-bottom: 4px;
   line-height: 1.65;
 }
+
 
 /* ── 06. REFLECTION ─────────────────────────────────────────────────────── */
 /* "Further Reflection" section at the foot of a chapter.
@@ -232,9 +247,10 @@
   margin: 0;
 }
 
+
 /* ── 08. SPEAK BUTTON ───────────────────────────────────────────────────── */
-/* Inline read-aloud button. Float right within bridge-text cards;
-   positioned inline within modal title bars. */
+/* Inline read-aloud button. Anchored to the inline-start corner of
+   bridge-text cards; inset-inline-start flips it in RTL automatically. */
 
 .intro-block,
 .bridge-text {
@@ -244,7 +260,7 @@
 .speak-btn {
   position: absolute;
   top: 2px;
-  left: 2px;
+  inset-inline-start: 2px;                        /* was left: 2px — flips in RTL */
   background: var(--surface-mid);
   border: none;
   border-radius: 50%;
@@ -256,7 +272,8 @@
   transition: opacity 0.15s, color 0.15s;
 }
 .speak-btn:hover  { opacity: 1; }
-.speak-btn-active { opacity: 1; color: var(--accent); } 
+.speak-btn-active { opacity: 1; color: var(--accent); }
+
 
 /* ══════════════════════════════════════════════════════════════════════════
    09. DARK MODE
@@ -317,3 +334,361 @@ body.dark-mode .chapter-image-caption {
 
 /* ── Speak button ── */
 body.dark-mode .speak-btn { color: var(--emphasis-light); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   10. RTL OVERRIDES  (dir="rtl" on <html> or a parent element)
+   Applies to Arabic (ar), Urdu (ur), and Hebrew (he).
+   Most directional properties were converted to logical equivalents above
+   (border-inline-start, padding-inline-start, inset-inline-start) and
+   flip automatically without any rules here.
+   The border-radius on intro/bridge cards still uses physical values
+   because there is no logical equivalent for border-radius yet, so we
+   mirror it explicitly.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] .intro-block,
+[dir="rtl"] .bridge-text {
+  border-radius: 8px 0 0 8px;   /* mirrors the LTR 0 8px 8px 0 */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   These selectors fire automatically when the JS language switcher sets the
+   lang attribute on <html> (e.g. <html lang="ar"> or <html lang="zh-CN">).
+   :lang(zh) matches zh-CN as a primary-language subtag match, so no
+   separate zh-CN rule is needed.
+
+   WHAT IS CHANGED AND WHY, BY SCRIPT FAMILY:
+
+   Arabic script (ar, ur)
+   ─────────────────────
+   • letter-spacing: 0  — Arabic is a cursive script; letter-spacing breaks
+     the joins between connected letters, rendering text illegible.
+   • text-transform: none  — Arabic has no uppercase/lowercase distinction.
+   • font-style: normal  — Arabic has no italic form. Browsers apply an
+     algorithmic oblique slant that looks wrong and should be suppressed.
+   • font-family: var(--main-font-family)  — Playfair Display (used for
+     headings) has no Arabic glyphs. Fall back to the active body font so
+     heading text renders in the correct script rather than blank boxes.
+   • line-height: 2  — Arabic text with full diacritical vowel marks
+     (harakat) needs extra vertical space to prevent line collisions.
+
+   Hebrew script (he)
+   ──────────────────
+   • Same as Arabic script above, except line-height: 1.9 — Hebrew is
+     slightly less vertically demanding than fully vowelled Arabic.
+
+   Devanagari (ne — Nepali, hi — Hindi)
+   ────────────────────────────────────
+   • letter-spacing: 0  — Devanagari uses a top connecting bar (shirorekha);
+     letter-spacing separates characters from it unnaturally.
+   • text-transform: none  — Devanagari has no case.
+   • font-style: normal  — No italic form; algorithmic obliquing tilts the
+     shirorekha and looks poor.
+   • font-family: var(--main-font-family)  — Playfair Display has no
+     Devanagari glyphs.
+   • line-height: 2  — Devanagari matras extend well above the cap height;
+     the default 1.25–1.75 causes inter-line collisions.
+
+   Myanmar script (my — Burmese)
+   ─────────────────────────────
+   • letter-spacing: 0  — Myanmar uses complex stacked and enclosing marks;
+     spacing disrupts these clusters.
+   • text-transform: none  — Myanmar has no case.
+   • font-style: normal  — No italic form.
+   • font-family: var(--main-font-family)  — Playfair Display has no Myanmar
+     glyphs.
+   • line-height: 2.2  — Myanmar has the tallest stacked characters of any
+     script in this app; requires the most generous line-height.
+
+   CJK — Chinese Simplified and Japanese (zh → zh-CN, ja)
+   ────────────────────────────────────────────────────────
+   • letter-spacing: 0  — CJK characters are fixed-width; Latin-style
+     tracking looks unnatural and wastes space.
+   • text-transform: none  — CJK has no case.
+   • font-style: normal  — No italic; algorithmic obliquing looks wrong on
+     ideographic characters.
+   • font-family: var(--main-font-family)  — Playfair Display has no CJK
+     glyphs.
+   • line-height: 1.6  — CJK glyphs are square and compact; the Latin-
+     optimised 1.75 looks too loose. 1.6 is the CJK convention.
+
+   Hangul — Korean (ko)
+   ────────────────────
+   • letter-spacing: 0  — Hangul syllable blocks are fixed-width; tracking
+     looks unnatural.
+   • text-transform: none  — Hangul has no case.
+   • font-style: normal  — Korean fonts rarely include a true italic cut;
+     suppress algorithmic obliquing.
+   • font-family: var(--main-font-family)  — Playfair Display has no Hangul.
+   • line-height: 1.7  — Hangul blocks are slightly taller than CJK
+     ideographs so a marginally larger value than the CJK 1.6 reads better.
+
+   Cyrillic — Russian and Ukrainian (ru, uk)
+   ─────────────────────────────────────────
+   • letter-spacing: 0 on chrome labels only  — Cyrillic has case and italic
+     so text-transform, font-style, and font-family are left unchanged.
+     However the 0.2em tracking on .chapter-label and 0.04em on
+     .chapter-image-caption (monospace all-caps chrome) look stretched on
+     Cyrillic glyph proportions. Reset to 0 for those specific elements
+     only; body text letter-spacing is unaffected.
+
+   Latin scripts (en, fr, es, pt, ha, ff, sw, ig, yo, ms, tl) and
+   Greek (el) need no overrides — they behave correctly with the
+   base rules as written.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) .chapter-label,
+:lang(ur) .chapter-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .chapter-title,
+:lang(ur) .chapter-title {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ar) .section-header,
+:lang(ur) .section-header,
+:lang(ar) .subsection-header,
+:lang(ur) .subsection-header {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ar) .reflection-header h3,
+:lang(ur) .reflection-header h3 {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ar) .chapter-image-caption,
+:lang(ur) .chapter-image-caption {
+  letter-spacing: 0;
+}
+
+:lang(ar) .intro-block p,
+:lang(ur) .intro-block p,
+:lang(ar) .bridge-text,
+:lang(ur) .bridge-text,
+:lang(ar) .reflection-q,
+:lang(ur) .reflection-q {
+  line-height: 2;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) .chapter-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .chapter-title {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(he) .section-header,
+:lang(he) .subsection-header {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(he) .reflection-header h3 {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(he) .chapter-image-caption {
+  letter-spacing: 0;
+}
+
+:lang(he) .intro-block p,
+:lang(he) .bridge-text,
+:lang(he) .reflection-q {
+  line-height: 1.9;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) .chapter-label,
+:lang(hi) .chapter-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .chapter-title,
+:lang(hi) .chapter-title {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ne) .section-header,
+:lang(hi) .section-header,
+:lang(ne) .subsection-header,
+:lang(hi) .subsection-header {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ne) .reflection-header h3,
+:lang(hi) .reflection-header h3 {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ne) .chapter-image-caption,
+:lang(hi) .chapter-image-caption {
+  letter-spacing: 0;
+}
+
+:lang(ne) .intro-block p,
+:lang(hi) .intro-block p,
+:lang(ne) .bridge-text,
+:lang(hi) .bridge-text,
+:lang(ne) .reflection-q,
+:lang(hi) .reflection-q {
+  line-height: 2;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) .chapter-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .chapter-title {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(my) .section-header,
+:lang(my) .subsection-header {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(my) .reflection-header h3 {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(my) .chapter-image-caption {
+  letter-spacing: 0;
+}
+
+/* Myanmar stacked characters are the tallest of any script in this app */
+:lang(my) .intro-block p,
+:lang(my) .bridge-text,
+:lang(my) .reflection-q {
+  line-height: 2.2;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified zh-CN), ja (Japanese) ──────────── */
+/* :lang(zh) matches zh-CN as a primary-language subtag match.            */
+
+:lang(zh) .chapter-label,
+:lang(ja) .chapter-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .chapter-title,
+:lang(ja) .chapter-title {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(zh) .section-header,
+:lang(ja) .section-header,
+:lang(zh) .subsection-header,
+:lang(ja) .subsection-header {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(zh) .reflection-header h3,
+:lang(ja) .reflection-header h3 {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(zh) .chapter-image-caption,
+:lang(ja) .chapter-image-caption {
+  letter-spacing: 0;
+}
+
+/* CJK square glyphs read better slightly tighter than the Latin default */
+:lang(zh) .intro-block p,
+:lang(ja) .intro-block p,
+:lang(zh) .bridge-text,
+:lang(ja) .bridge-text,
+:lang(zh) .reflection-q,
+:lang(ja) .reflection-q {
+  line-height: 1.6;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) .chapter-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .chapter-title {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ko) .section-header,
+:lang(ko) .subsection-header {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ko) .reflection-header h3 {
+  font-style: normal;
+  font-family: var(--main-font-family);
+}
+
+:lang(ko) .chapter-image-caption {
+  letter-spacing: 0;
+}
+
+/* Hangul syllable blocks are slightly taller than CJK ideographs */
+:lang(ko) .intro-block p,
+:lang(ko) .bridge-text,
+:lang(ko) .reflection-q {
+  line-height: 1.7;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* Cyrillic has case and italic, so text-transform, font-style, and
+   font-family are left unchanged. Only the aggressive letter-spacing
+   on monospace chrome labels is reset — 0.2em looks stretched on
+   Cyrillic glyph proportions. Body text letter-spacing is unaffected. */
+
+:lang(ru) .chapter-label,
+:lang(uk) .chapter-label {
+  letter-spacing: 0;
+}
+
+:lang(ru) .chapter-image-caption,
+:lang(uk) .chapter-image-caption {
+  letter-spacing: 0;
+}

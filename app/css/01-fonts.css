@@ -1,127 +1,531 @@
-  <!--
-    FONTS
-    ─────
-    @font-face declarations load fonts from the local fonts/ folder.
-    This ensures all fonts work offline (required for the Android APK build).
+/*
+ * ════════════════════════════════════════════════════════════════════════
+ * 01-fonts.css
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * @font-face declarations load fonts from the local fonts/ folder.
+ * This ensures all fonts work offline (required for the Android APK build).
+ *
+ * If you are serving this as a web page with internet access, the Google
+ * Fonts @import below acts as a fallback for any weights not covered
+ * here (though in practice all used weights are declared below).
+ *
+ * Font files (ttf) should be downloaded from Google Fonts and placed at:
+ *
+ *   LATIN / UI FONTS
+ *   ../fonts/PlayfairDisplay-Regular.ttf
+ *   ../fonts/PlayfairDisplay-Italic.ttf
+ *   ../fonts/PlayfairDisplay-SemiBold.ttf
+ *   ../fonts/SourceSerif4-Light.ttf
+ *   ../fonts/SourceSerif4-LightItalic.ttf
+ *   ../fonts/SourceSerif4-Regular.ttf
+ *   ../fonts/SourceSerif4-Italic.ttf
+ *   ../fonts/DMMono-Regular.ttf
+ *   ../fonts/DMMono-Medium.ttf
+ *   ../fonts/Inter-Regular.ttf
+ *   ../fonts/Inter-Italic.ttf
+ *   ../fonts/Inter-Medium.ttf
+ *
+ *   NOTO SCRIPT FONTS  (for non-Latin languages — see section 02 below)
+ *   ../fonts/NotoSansArabic-Regular.ttf
+ *   ../fonts/NotoSansArabic-Medium.ttf
+ *   ../fonts/NotoNastaliqUrdu-Regular.ttf       ← preferred for Urdu (ur)
+ *   ../fonts/NotoSansDevanagari-Regular.ttf
+ *   ../fonts/NotoSansDevanagari-Medium.ttf
+ *   ../fonts/NotoSansMyanmar-Regular.ttf
+ *   ../fonts/NotoSansMyanmar-Medium.ttf
+ *   ../fonts/NotoSansSC-Regular.ttf             ← Simplified Chinese (zh-CN)
+ *   ../fonts/NotoSansSC-Medium.ttf
+ *   ../fonts/NotoSansJP-Regular.ttf             ← Japanese (ja)
+ *   ../fonts/NotoSansJP-Medium.ttf
+ *   ../fonts/NotoSansKR-Regular.ttf             ← Korean (ko)
+ *   ../fonts/NotoSansKR-Medium.ttf
+ *   ../fonts/NotoSansHebrew-Regular.ttf
+ *   ../fonts/NotoSansHebrew-Medium.ttf
+ *
+ *   NOTE — Ethiopic (Amharic, am) and Greek (el) are not in the current
+ *   UI language list. System fonts are adequate for now. Add
+ *   NotoSansEthiopic and NotoSansGreek here if those languages ship.
+ *
+ * font-display: block suppresses the fallback flash. Fonts load instantly
+ * from local storage in the APK; on the web they load fast enough that
+ * the brief block period is preferable to a layout shift.
+ *
+ * ── SECTIONS ────────────────────────────────────────────────────────────
+ * 01. Google Fonts import      – Web fallback when local files are absent
+ * 02. Latin / UI @font-face    – Playfair Display, Source Serif 4,
+ *                                DM Mono, Inter
+ * 03. Noto @font-face          – Arabic, Urdu, Devanagari, Myanmar, CJK,
+ *                                Korean, Hebrew
+ * 04. Script-specific :lang()  – Font-family, letter-spacing, line-height,
+ *     overrides                  text-transform, font-style per script.
+ *                                THIS IS THE CANONICAL REFERENCE for all
+ *                                other CSS files in this project. Other
+ *                                files apply component-level overrides
+ *                                (e.g. resetting letter-spacing on a chrome
+ *                                label) and reference this file for rationale.
+ *
+ * ════════════════════════════════════════════════════════════════════════
+ */
 
-    If you are serving this as a web page with internet access, the Google
-    Fonts link below this block acts as a fallback for any weights not covered
-    here (though in practice all used weights are declared below).
 
-    Font files (ttf) should be downloaded from Google Fonts and placed at:
-      ../fonts/PlayfairDisplay-Regular.ttf
-      ../fonts/PlayfairDisplay-Italic.ttf
-      ../fonts/PlayfairDisplay-SemiBold.ttf
-      ../fonts/SourceSerif4-Light.ttf
-      ../fonts/SourceSerif4-LightItalic.ttf
-      ../fonts/SourceSerif4-Regular.ttf
-      ../fonts/SourceSerif4-Italic.ttf
-      ../fonts/DMMono-Regular.ttf
-      ../fonts/DMMono-Medium.ttf
-      ../fonts/Inter-Regular.ttf
-      ../fonts/Inter-Italic.ttf
-      ../fonts/Inter-Medium.ttf
+/* ── 01. GOOGLE FONTS IMPORT ────────────────────────────────────────────── */
+/* Web-browser fallback if local font files are absent.
+   In the Android APK build the @font-face blocks below take priority;
+   this import is a no-op when offline and the fonts/ folder is present.
+   The Noto families listed here cover all non-Latin scripts in the current
+   UI language set. Add Noto Sans Ethiopic and Noto Sans Greek if those
+   languages are added. */
 
-    font-display: block suppresses the fallback flash. Fonts load instantly
-    from local storage in the APK; on the web they load fast enough that the
-    brief block period is preferable to a layout shift.
-  -->
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@400;500&family=Noto+Nastaliq+Urdu:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500&family=Noto+Sans+Myanmar:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+KR:wght@400;500&family=Noto+Sans+Hebrew:wght@400;500&display=swap');
 
-  <!-- Google Fonts: web-browser fallback if local font files are absent.
-       In the Android APK build the @font-face block below takes priority;
-       this import is a no-op when offline and the fonts/ folder is present. -->
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Mono:wght@400;500&display=swap');
 
-    /* ── LOCAL FONT LOADING ─────────────────────────────────────────────────── */
+/* ── 02. LATIN / UI @font-face ──────────────────────────────────────────── */
 
-    /* Playfair Display — display headings */
-    @font-face {
-      font-family: 'Playfair Display';
-      src: url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'Playfair Display';
-      src: url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
-      font-weight: 400;
-      font-style: italic;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'Playfair Display';
-      src: url('../fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
-      font-weight: 600;
-      font-style: normal;
-      font-display: block;
-    }
+/* Playfair Display — display headings (Latin scripts only;
+   non-Latin headings override font-family in section 04 below) */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
 
-    /* Source Serif 4 — body / reading text (serif mode) */
-    @font-face {
-      font-family: 'Source Serif 4';
-      src: url('../fonts/SourceSerif4-Light.ttf') format('truetype');
-      font-weight: 300;
-      font-style: normal;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'Source Serif 4';
-      src: url('../fonts/SourceSerif4-LightItalic.ttf') format('truetype');
-      font-weight: 300;
-      font-style: italic;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'Source Serif 4';
-      src: url('../fonts/SourceSerif4-Regular.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'Source Serif 4';
-      src: url('../fonts/SourceSerif4-Italic.ttf') format('truetype');
-      font-weight: 400;
-      font-style: italic;
-      font-display: block;
-    }
+/* Source Serif 4 — body / reading text (serif mode) */
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
 
-    /* DM Mono — labels, UI chrome, monospace elements */
-    @font-face {
-      font-family: 'DM Mono';
-      src: url('../fonts/DMMono-Regular.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'DM Mono';
-      src: url('../fonts/DMMono-Medium.ttf') format('truetype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: block;
-    }
+/* DM Mono — labels, UI chrome, monospace elements */
+@font-face {
+  font-family: 'DM Mono';
+  src: url('../fonts/DMMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'DM Mono';
+  src: url('../fonts/DMMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
 
-    /* Inter — body / reading text (sans-serif mode) */
-    @font-face {
-      font-family: 'Inter';
-      src: url('../fonts/Inter-Regular.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('../fonts/Inter-Italic.ttf') format('truetype');
-      font-weight: 400;
-      font-style: italic;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('../fonts/Inter-Medium.ttf') format('truetype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: block;
-    }
+/* Inter — body / reading text (sans-serif mode) */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+
+/* ── 03. NOTO @font-face ────────────────────────────────────────────────── */
+/* One regular + one medium weight per script. Bold is intentionally omitted
+   as the UI does not use bold in translated body text.
+   IMPORTANT: These declarations do nothing by themselves — they only take
+   effect when font-family is referenced in the :lang() rules in section 04.
+   If a Noto file is absent the browser falls through to system fonts, which
+   is acceptable but may look inconsistent. For the APK build, include all
+   files listed in the file header above. */
+
+/* Noto Sans Arabic — Arabic script (ar) */
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../fonts/NotoSansArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../fonts/NotoSansArabic-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Noto Nastaliq Urdu — Urdu (ur) in Nastaliq calligraphic style.
+   Preferred over Noto Sans Arabic for Urdu because Nastaliq is the
+   conventional print style for Urdu and looks significantly better.
+   If NotoNastaliqUrdu is absent, Noto Sans Arabic will be used as
+   the font-family fallback declared in :lang(ur) below. */
+@font-face {
+  font-family: 'Noto Nastaliq Urdu';
+  src: url('../fonts/NotoNastaliqUrdu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Noto Sans Devanagari — Nepali (ne) and Hindi (hi) */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('../fonts/NotoSansDevanagari-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('../fonts/NotoSansDevanagari-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Noto Sans Myanmar — Burmese (my) */
+@font-face {
+  font-family: 'Noto Sans Myanmar';
+  src: url('../fonts/NotoSansMyanmar-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans Myanmar';
+  src: url('../fonts/NotoSansMyanmar-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Noto Sans SC — Chinese Simplified (zh, zh-CN) */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../fonts/NotoSansSC-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../fonts/NotoSansSC-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Noto Sans JP — Japanese (ja) */
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('../fonts/NotoSansJP-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('../fonts/NotoSansJP-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Noto Sans KR — Korean (ko) */
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('../fonts/NotoSansKR-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('../fonts/NotoSansKR-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Noto Sans Hebrew — Hebrew (he) */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  src: url('../fonts/NotoSansHebrew-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  src: url('../fonts/NotoSansHebrew-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   04. SCRIPT-SPECIFIC :lang() OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   THIS IS THE CANONICAL REFERENCE for multilingual CSS in this project.
+   All other component CSS files that apply per-script overrides (e.g.
+   resetting letter-spacing on a chrome label, lifting line-height on a
+   preview snippet) should reference this section for the rationale behind
+   each decision.
+
+   These selectors fire automatically when the JS language switcher sets
+   the lang attribute on <html> (e.g. <html lang="ar"> or
+   <html lang="zh-CN">). :lang(zh) matches zh-CN as a primary-language
+   subtag match, so no separate zh-CN rule is needed.
+
+   DEPENDENCY: For RTL languages (ar, ur, he) to lay out correctly, the JS
+   language switcher must also set dir="rtl" on <html> when switching to
+   those languages. The font and typography rules here are independent of
+   dir, but layout mirroring (border-inline-start, padding-inline-*, etc.)
+   in the component files depends on dir="rtl" being present.
+
+   WHAT IS CHANGED AND WHY, BY SCRIPT FAMILY:
+
+   Arabic script (ar, ur)
+   ─────────────────────
+   • font-family  — Playfair Display and Source Serif 4 have no Arabic
+     glyphs. 'Noto Sans Arabic' (ar) and 'Noto Nastaliq Urdu' (ur) are
+     declared in section 03 and used here as the primary font, with
+     Noto Sans Arabic as a fallback for Urdu if Nastaliq is absent.
+     system-ui and sans-serif are final safety nets.
+   • letter-spacing: 0  — Arabic is a cursive script; letter-spacing breaks
+     the joins between connected letters, rendering text illegible.
+   • text-transform: none  — Arabic has no uppercase / lowercase distinction.
+   • font-style: normal  — Arabic has no italic form. Browsers apply an
+     algorithmic oblique slant that looks wrong and should be suppressed.
+   • line-height: 2  — Arabic text with full diacritical vowel marks
+     (harakat) needs extra vertical space to prevent line collisions.
+
+   Hebrew script (he)
+   ──────────────────
+   • Same motivations as Arabic above.
+   • font-family: 'Noto Sans Hebrew' with system-ui fallback.
+   • line-height: 1.9  — Hebrew is slightly less vertically demanding than
+     fully vowelled Arabic.
+
+   Devanagari (ne — Nepali, hi — Hindi)
+   ────────────────────────────────────
+   • font-family: 'Noto Sans Devanagari'  — Playfair Display has no
+     Devanagari glyphs.
+   • letter-spacing: 0  — Devanagari uses a top connecting bar (shirorekha);
+     letter-spacing separates characters from it unnaturally.
+   • text-transform: none  — Devanagari has no case.
+   • font-style: normal  — No italic form; algorithmic obliquing tilts the
+     shirorekha and looks poor.
+   • line-height: 2  — Devanagari matras extend well above the cap height;
+     the default 1.25–1.75 causes inter-line collisions.
+
+   Myanmar script (my — Burmese)
+   ─────────────────────────────
+   • font-family: 'Noto Sans Myanmar'  — Playfair Display has no Myanmar
+     glyphs.
+   • letter-spacing: 0  — Myanmar uses complex stacked and enclosing marks;
+     letter-spacing disrupts these clusters.
+   • text-transform: none  — Myanmar has no case.
+   • font-style: normal  — No italic form.
+   • line-height: 2.2  — Myanmar has the tallest stacked characters of any
+     script in this app; requires the most generous line-height.
+
+   CJK — Chinese Simplified and Japanese (zh → zh-CN, ja)
+   ────────────────────────────────────────────────────────
+   • font-family: 'Noto Sans SC' (zh) / 'Noto Sans JP' (ja)  — Playfair
+     Display has no CJK glyphs.
+   • letter-spacing: 0  — CJK characters are fixed-width; Latin-style
+     tracking looks unnatural and wastes space.
+   • text-transform: none  — CJK has no case.
+   • font-style: normal  — No italic; algorithmic obliquing looks wrong on
+     ideographic characters.
+   • line-height: 1.6  — CJK glyphs are square and compact; the Latin-
+     optimised 1.75 looks too loose. 1.6 is the CJK convention.
+
+   Hangul — Korean (ko)
+   ────────────────────
+   • font-family: 'Noto Sans KR'  — Playfair Display has no Hangul glyphs.
+   • letter-spacing: 0  — Hangul syllable blocks are fixed-width; tracking
+     looks unnatural.
+   • text-transform: none  — Hangul has no case.
+   • font-style: normal  — Korean fonts rarely include a true italic cut;
+     suppress algorithmic obliquing.
+   • line-height: 1.7  — Hangul blocks are slightly taller than CJK
+     ideographs so a marginally larger value than the CJK 1.6 reads better.
+
+   Cyrillic — Russian and Ukrainian (ru, uk)
+   ─────────────────────────────────────────
+   • No font-family override  — Inter and Source Serif 4 both have good
+     Cyrillic coverage.
+   • letter-spacing: 0 on chrome labels only  — Cyrillic has case and italic
+     so text-transform, font-style, and font-family are left unchanged.
+     However the 0.15–0.2em tracking used on monospace all-caps chrome
+     labels looks stretched on Cyrillic glyph proportions. Component files
+     reset letter-spacing to 0 for those specific elements. Body text
+     letter-spacing is unaffected.
+   • No body-level rule is needed here; see individual component files.
+
+   Greek (el)
+   ──────────
+   • No font-family override  — Inter and Source Serif 4 both cover the
+     Greek alphabet well.
+   • Same light-touch treatment as Cyrillic: no body-level rule here.
+     Component files reset letter-spacing on monospace chrome labels only.
+
+   Latin scripts (en, fr, es, pt, ha, ff, sw, ig, yo, ms, tl) and all
+   other Latin-alphabet languages need no overrides — they behave
+   correctly with the base rules as written.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar ───────────────────────────────────────────── */
+
+:lang(ar) {
+  font-family: 'Noto Sans Arabic', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 2;
+}
+
+
+/* ── B. Urdu — ur (Arabic script, Nastaliq style) ────────────────────── */
+/* Urdu uses the Arabic script but the Nastaliq calligraphic style is the
+   conventional print form. Noto Nastaliq Urdu is preferred; Noto Sans
+   Arabic is the fallback if the Nastaliq file is absent.
+   line-height is raised to 2.2 for Nastaliq because descending strokes
+   extend further below the baseline than in Naskh (standard Arabic). */
+
+:lang(ur) {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 2.2;
+}
+
+
+/* ── C. Hebrew script — he ───────────────────────────────────────────── */
+
+:lang(he) {
+  font-family: 'Noto Sans Hebrew', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 1.9;
+}
+
+
+/* ── D. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne),
+:lang(hi) {
+  font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 2;
+}
+
+
+/* ── E. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) {
+  font-family: 'Noto Sans Myanmar', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 2.2;
+}
+
+
+/* ── F. CJK — zh (Chinese Simplified, zh-CN) ────────────────────────── */
+
+:lang(zh) {
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+
+/* ── G. CJK — ja (Japanese) ─────────────────────────────────────────── */
+
+:lang(ja) {
+  font-family: 'Noto Sans JP', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+
+/* ── H. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) {
+  font-family: 'Noto Sans KR', system-ui, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+
+/* ── I. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* No body-level override needed. Inter and Source Serif 4 cover Cyrillic
+   well. Component-level letter-spacing resets for monospace chrome labels
+   are handled in the individual component CSS files. */
+
+
+/* ── J. Greek — el ───────────────────────────────────────────────────── */
+/* No body-level override needed. Inter and Source Serif 4 cover Greek
+   well. Same light-touch treatment as Cyrillic applies at component level. */

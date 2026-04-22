@@ -16,6 +16,28 @@
  * ── DARK MODE ───────────────────────────────────────────────────────────
  * 07. Dark mode       – body.dark-mode overrides for all rules above
  *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 08. Script overrides – Per-script resets grouped by script family:
+ *                          A. Arabic script   — ar, ur
+ *                          B. Hebrew script   — he
+ *                          C. Devanagari      — ne, hi
+ *                          D. Myanmar         — my
+ *                          E. CJK             — zh (zh-CN), ja
+ *                          F. Hangul          — ko
+ *                          G. Cyrillic        — ru, uk  (labels only)
+ *
+ *                        Elements unique to this file that need overrides:
+ *                          .nav-title    — Playfair Display + italic +
+ *                                         letter-spacing on translated title
+ *                          .nav-btn      — letter-spacing on translated labels
+ *                          .menu-heading — Playfair Display + uppercase +
+ *                                         letter-spacing on translated label
+ *
+ *                        Elements covered by 05c-components.nav.css section 11
+ *                        and NOT duplicated here (same class, same property):
+ *                          .chapter-nav-btn font-family
+ *                          .page-close-btn  letter-spacing
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -62,7 +84,8 @@
 
 .progress-bar {
   position: absolute;
-  bottom: 0; left: 0;
+  bottom: 0;
+  inset-inline-start: 0;                         /* was left: 0 — grows from inline-start in RTL */
   height: 2px;
   background: var(--accent-light);
   /* Width is set dynamically by updateProgress() as the user fills answers */
@@ -279,7 +302,7 @@
   border: none;
 }
 
-/* ── 07. DARK MODE ──────────────────────────────────────────────────────── */
+
 /* ══════════════════════════════════════════════════════════════════════════
    07. DARK MODE
    body.dark-mode overrides for all rules in this file, gathered here.
@@ -322,4 +345,184 @@ body.dark-mode .page-close-btn {
 body.dark-mode .page-close-btn:hover {
   background: var(--dm-raised);
   color: var(--dm-text-mid);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   08. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   Elements unique to this file that need overrides:
+
+   .nav-title
+     font-family: var(--font-stack-heading) — Playfair Display has no
+     non-Latin glyphs; the translated chapter title will render as blank
+     boxes without a fallback.
+     font-style: italic — no italic form exists for non-Latin scripts;
+     suppress algorithmic obliquing.
+     letter-spacing: 0.02em — small but still disruptive for Arabic
+     cursive joins; reset for all non-Latin and Cyrillic.
+
+   .nav-btn
+     letter-spacing: 0.05em on translated UI button labels ("Contents",
+     "Settings", etc.). Reset for all non-Latin scripts and Cyrillic.
+     No font-family issue — uses --font-stack-mono with system fallbacks
+     that have reasonable non-Latin coverage.
+
+   .menu-heading
+     font-family: var(--font-stack-heading) — same Playfair Display issue
+     as .nav-title; the "Contents" heading label needs a fallback.
+     letter-spacing: 0.15em + text-transform: uppercase — both meaningless
+     or harmful for non-Latin scripts. Reset for non-Latin A–F; Cyrillic
+     gets only letter-spacing: 0 (uppercase is valid in Cyrillic).
+
+   NOT duplicated here (already covered by 05c section 11):
+     .chapter-nav-btn  font-family override
+     .page-close-btn   letter-spacing reset
+   These classes are defined in both files but the :lang() selector in
+   05c fires regardless of which file declared the base rule.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) .nav-title,
+:lang(ur) .nav-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+:lang(ar) .nav-btn,
+:lang(ur) .nav-btn {
+  letter-spacing: 0;
+}
+
+:lang(ar) .menu-heading,
+:lang(ur) .menu-heading {
+  font-family: var(--main-font-family);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) .nav-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+:lang(he) .nav-btn {
+  letter-spacing: 0;
+}
+
+:lang(he) .menu-heading {
+  font-family: var(--main-font-family);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) .nav-title,
+:lang(hi) .nav-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+:lang(ne) .nav-btn,
+:lang(hi) .nav-btn {
+  letter-spacing: 0;
+}
+
+:lang(ne) .menu-heading,
+:lang(hi) .menu-heading {
+  font-family: var(--main-font-family);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) .nav-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+:lang(my) .nav-btn {
+  letter-spacing: 0;
+}
+
+:lang(my) .menu-heading {
+  font-family: var(--main-font-family);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified zh-CN), ja (Japanese) ──────────── */
+
+:lang(zh) .nav-title,
+:lang(ja) .nav-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+:lang(zh) .nav-btn,
+:lang(ja) .nav-btn {
+  letter-spacing: 0;
+}
+
+:lang(zh) .menu-heading,
+:lang(ja) .menu-heading {
+  font-family: var(--main-font-family);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) .nav-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+:lang(ko) .nav-btn {
+  letter-spacing: 0;
+}
+
+:lang(ko) .menu-heading {
+  font-family: var(--main-font-family);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* Cyrillic has case and italic so text-transform, font-style, and
+   font-family are left unchanged. Only letter-spacing is reset —
+   even the modest 0.02em on .nav-title and 0.15em on .menu-heading
+   look stretched on Cyrillic glyph proportions. */
+
+:lang(ru) .nav-title,
+:lang(uk) .nav-title {
+  letter-spacing: 0;
+}
+
+:lang(ru) .nav-btn,
+:lang(uk) .nav-btn {
+  letter-spacing: 0;
+}
+
+:lang(ru) .menu-heading,
+:lang(uk) .menu-heading {
+  letter-spacing: 0;
 }

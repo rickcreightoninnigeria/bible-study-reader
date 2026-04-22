@@ -27,6 +27,18 @@
  * ── DARK MODE ───────────────────────────────────────────────────────────
  * 13. Dark mode          – body.dark-mode overrides for all rules above
  *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 14. RTL overrides       – Mirrors layout for Arabic, Hebrew, Urdu
+ * 15. Script overrides    – Per-script resets grouped by script family:
+ *                           A. Arabic script   — ar, ur
+ *                           B. Hebrew script   — he
+ *                           C. Devanagari      — ne, hi
+ *                           D. Myanmar         — my
+ *                           E. CJK             — zh (zh-CN), ja
+ *                           F. Hangul          — ko
+ *                           G. Cyrillic        — ru, uk  (chrome labels only)
+ *                           H. Greek           — el       (chrome labels only)
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -360,7 +372,7 @@
   text-transform: uppercase;
   color: rgba(245,240,232,0.35);
   white-space: nowrap;
-  padding-right: 10px;
+  padding-inline-end: 10px;      /* was padding-right */
   flex-shrink: 0;
 }
 .howto-tab {
@@ -447,7 +459,7 @@
 }
 .copyright-block ul {
   margin: 6px 0 0 0;
-  padding-left: 18px;
+  padding-inline-start: 18px;   /* was padding-left */
 }
 .copyright-block ul li {
   font-size: 0.844rem;     /* was 13.5px — scales */
@@ -506,7 +518,7 @@
 /* Introductory narrative card */
 .leaders-intro {
   background: var(--card-bg);
-  border-left: 3px solid var(--emphasis);
+  border-inline-start: 3px solid var(--emphasis);  /* was border-left */
   margin: 20px var(--content-margin);
   padding: 18px 20px;
   border-radius: 0 8px 8px 0;
@@ -576,7 +588,7 @@
 /* "Watch for" callout — inset accent strip within a leaders block */
 .leaders-watch {
   background: var(--surface-mid);
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);   /* was border-left */
   border-radius: 0 6px 6px 0;
   padding: 10px 14px;
   margin-top: 10px;
@@ -753,7 +765,7 @@
 .settings-row-desc ul,
 .settings-row-desc ol {
   margin: 6px 0 2px;
-  padding-left: 1.4em;
+  padding-inline-start: 1.4em;   /* was padding-left */
 }
 .settings-row-desc li {
   margin-bottom: 3px;
@@ -802,7 +814,7 @@
   flex: 1;
   background: var(--card-bg);
   border: none;
-  border-right: 1px solid var(--border);
+  border-inline-end: 1px solid var(--border);   /* was border-right */
   padding: 10px 6px;
   font-family: var(--font-stack-mono);
   font-size: 10px;         /* UI chrome — stays px */
@@ -811,7 +823,7 @@
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
-.settings-seg-btn:last-child         { border-right: none; }
+.settings-seg-btn:last-child         { border-inline-end: none; }   /* was border-right */
 .settings-seg-btn.active             { background: var(--text); color: var(--accent-light); }
 .settings-seg-btn:hover:not(.active) { background: var(--surface-mid); color: var(--text); }
 
@@ -1079,7 +1091,7 @@
 .encouragement-box {
   background: var(--card-bg);
   margin: 16px var(--content-margin) 0;
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);   /* was border-left */
   border-radius: 0 8px 8px 0;
   padding: 14px 18px;
   box-shadow: 0 1px 4px var(--shadow);
@@ -1579,7 +1591,7 @@
   color: var(--text-faint);
   font-size: 20px;         /* UI chrome — stays px */
   flex-shrink: 0;
-  margin-left: 2px;
+  margin-inline-start: 2px;      /* was margin-left */
   line-height: 1;
 }
 
@@ -1610,7 +1622,7 @@
   flex-direction: column;
   gap: 2px;
   flex-shrink: 0;
-  margin-left: 6px;
+  margin-inline-start: 6px;      /* was margin-left */
 }
 .study-card-reorder-btn {
   background: none;
@@ -1656,14 +1668,12 @@
   text-align: left;
 }
 .library-empty:has(.lib-try-block) {
-  padding-left: 0;
-  padding-right: 0;
+  padding-inline: 0;             /* was padding-left/right */
 }
 .library-empty:has(.lib-try-block) .library-empty-icon,
 .library-empty:has(.lib-try-block) .library-empty-title,
 .library-empty:has(.lib-try-block) .library-empty-body {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-inline: 24px;          /* was padding-left/right */
 }
 
 .library-version-footer {
@@ -1775,7 +1785,7 @@
 .lib-try-inner {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);   /* was border-left */
   border-radius: 10px;
   padding: 18px 20px 20px;
   display: flex;
@@ -2107,7 +2117,7 @@
   font-size: 10px;
   cursor: pointer;
   flex-shrink: 0;
-  margin-left: auto;
+  margin-inline-start: auto;    /* was margin-left */
   transition: background 0.15s;
 }
 .lib-shelf-section-info-btn:hover { background: var(--surface-mid); color: var(--text-secondary); }
@@ -2121,7 +2131,7 @@
   font-family: var(--font-stack-mono);
   font-size: 9px;
   cursor: pointer;
-  margin-left: auto;
+  margin-inline-start: auto;    /* was margin-left */
   flex-shrink: 0;
   transition: background 0.15s;
 }
@@ -2155,7 +2165,7 @@
 .lib-section-header--empty .lib-section-empty-info-btn {
   pointer-events: all;
   opacity: 1;
-  margin-left: auto;
+  margin-inline-start: auto;    /* was margin-left */
 }
 .lib-section-header--empty .lib-section-title {
   color: var(--text-faint);
@@ -2320,7 +2330,7 @@
   padding: 2px 7px;
   cursor: pointer;
   vertical-align: middle;
-  margin-left: 4px;
+  margin-inline-start: 4px;      /* was margin-left */
   transition: background 0.15s, color 0.15s;
 }
 .lib-tab-page-more-btn:hover { background: var(--surface-mid); color: var(--accent-light); }
@@ -2407,7 +2417,7 @@
 
 /* ── Paths accordion: level 2 ── */
 .lib-path-l2-wrap {
-  padding-left: 16px;
+  padding-inline-start: 16px;   /* was padding-left */
   margin-bottom: 6px;
 }
 .lib-path-l2-btn {
@@ -2463,7 +2473,7 @@
 .lib-path-l2-children.open { max-height: 1200px; }
 
 /* ── Paths accordion: level 3 ── */
-.lib-path-l3-wrap { padding-left: 16px; margin-top: 4px; }
+.lib-path-l3-wrap { padding-inline-start: 16px; margin-top: 4px; }   /* was padding-left */
 .lib-path-l3-row {
   display: flex;
   align-items: center;
@@ -2813,7 +2823,7 @@ body.dark-mode .settings-divider      { background: var(--dm-border); }
 body.dark-mode .settings-seg          { border-color: var(--dm-border); }
 body.dark-mode .settings-seg-btn {
   background: var(--dm-raised);
-  border-right-color: var(--dm-border);
+  border-inline-end-color: var(--dm-border);   /* was border-right-color */
   color: var(--dm-text-faint);
 }
 body.dark-mode .settings-seg-btn.active {
@@ -2890,7 +2900,7 @@ body.dark-mode .progress-chapter-title {
 body.dark-mode .progress-chapter-num  { color: var(--emphasis-light); }
 body.dark-mode .encouragement-box {
   background: var(--dm-raised);
-  border-left-color: var(--accent);
+  border-inline-start-color: var(--accent);    /* was border-left-color */
 }
 body.dark-mode .encouragement-box-text { color: var(--dm-text-mid); }
 
@@ -3037,7 +3047,1043 @@ body.dark-mode .lib-path-set-active-btn.is-set { color: var(--accent-light); opa
 body.dark-mode .lib-try-inner {
   background: var(--dm-raised);
   border-color: var(--dm-border);
-  border-left-color: var(--accent);
+  border-inline-start-color: var(--accent);    /* was border-left-color */
 }
 body.dark-mode .lib-try-title { color: var(--dm-text); }
 body.dark-mode .lib-try-desc  { color: var(--dm-text-faint); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   14. RTL OVERRIDES  (dir="rtl" on <html> set by the JS language switcher)
+   Applies to Arabic (ar), Urdu (ur), and Hebrew (he).
+   border-inline-start on callout blocks already flips the accent border
+   automatically. The border-radius physical values need explicit mirroring
+   because there is no logical equivalent for border-radius yet.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] .leaders-intro,
+[dir="rtl"] .encouragement-box,
+[dir="rtl"] .lib-try-inner {
+  border-radius: 8px 0 0 8px;   /* mirrors the LTR 0 8px 8px 0 */
+}
+
+/* title-page-divider is a short decorative line. In LTR it sits at the
+   start of the text block; in RTL it should align to the inline-end edge. */
+[dir="rtl"] .title-page-divider {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   15. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   See 01-fonts.css section 04 for the canonical rationale on each script
+   family's requirements (letter-spacing, text-transform, font-style,
+   font-family, line-height).
+
+   This file has two categories of elements:
+
+   CHROME LABELS — monospace, all-caps, letter-spaced UI labels:
+     .title-page-eyebrow, .title-page-author, .title-page-version,
+     .title-page-publisher-label, .howto-eyebrow, .howto-section-heading,
+     .howto-ui-label, .howto-tab-label, .howto-tab, .copyright-block-label,
+     .leaders-eyebrow, .leaders-chapter-number, .leaders-block-label,
+     .leaders-confidential, .settings-eyebrow, .settings-section-heading,
+     .settings-size-label, .settings-reset-btn, .settings-row-label,
+     .settings-seg-btn, .settings-icon-theme-label, .progress-eyebrow,
+     .progress-overall-label, .progress-chapter-num, .prog-star-label,
+     .progress-tab, .prog-pathway-study-num, .notes-info-link-label,
+     .notes-autosave-label, .study-card-subtitle, .library-version-footer,
+     .library-header h2, .library-header-close, .library-eyebrow,
+     .lib-ri-meta, .lib-recent-section-label, .lib-section-title,
+     .lib-subsection-label, .lib-tab-page-more-btn, .lib-shelves-ctrl-btn,
+     .lib-path-more-hint, .modal-eyebrow, .modal-btn-ok
+     → Reset: letter-spacing: 0; text-transform: none
+
+   DISPLAY HEADINGS — use --font-stack-heading (Playfair Display / italic):
+     .title-page-main, .title-page-sub, .title-page-author-name,
+     .howto-title, .howto-block-title, .copyright-title, .leaders-title,
+     .leaders-chapter-title, .settings-title, .progress-title,
+     .progress-overall-pct, .progress-chapter-title,
+     .study-card h3, .library-empty-title, .library-header h2,
+     .lib-try-title, .lib-ri-title, .lib-shelf-title, .lib-shelf-study-title,
+     .lib-paths-stub-title, .lib-paths-title, .lib-tab-page-title,
+     .lib-path-popup-title, .modal-title
+     → Reset: font-family: var(--main-font-family); font-style: normal
+
+   BODY / CONTENT TEXT — use --main-font-family:
+     .title-page-desc, .howto-block p, .howto-ui-desc, .leaders-subtitle,
+     .encouragement-box-text, .modal-body, .progress-subtitle,
+     .progress-answer-count, .progress-overall-detail, .prog-star-text,
+     .prog-pathway-study-title, .settings-row-desc, .settings-preview,
+     .settings-font-reset-btn, .settings-lang-label, .lib-path-l3-title,
+     .lib-paths-more-link
+     → line-height adjusted per script; no font-family change needed
+       (the :lang() rules in 01-fonts.css handle it at the html level)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) .title-page-eyebrow,
+:lang(ur) .title-page-eyebrow,
+:lang(ar) .title-page-author,
+:lang(ur) .title-page-author,
+:lang(ar) .title-page-version,
+:lang(ur) .title-page-version,
+:lang(ar) .title-page-publisher-label,
+:lang(ur) .title-page-publisher-label,
+:lang(ar) .howto-eyebrow,
+:lang(ur) .howto-eyebrow,
+:lang(ar) .howto-section-heading,
+:lang(ur) .howto-section-heading,
+:lang(ar) .howto-ui-label,
+:lang(ur) .howto-ui-label,
+:lang(ar) .howto-tab-label,
+:lang(ur) .howto-tab-label,
+:lang(ar) .howto-tab,
+:lang(ur) .howto-tab,
+:lang(ar) .copyright-block-label,
+:lang(ur) .copyright-block-label,
+:lang(ar) .leaders-eyebrow,
+:lang(ur) .leaders-eyebrow,
+:lang(ar) .leaders-chapter-number,
+:lang(ur) .leaders-chapter-number,
+:lang(ar) .leaders-block-label,
+:lang(ur) .leaders-block-label,
+:lang(ar) .leaders-confidential,
+:lang(ur) .leaders-confidential,
+:lang(ar) .settings-eyebrow,
+:lang(ur) .settings-eyebrow,
+:lang(ar) .settings-section-heading,
+:lang(ur) .settings-section-heading,
+:lang(ar) .settings-size-label,
+:lang(ur) .settings-size-label,
+:lang(ar) .settings-reset-btn,
+:lang(ur) .settings-reset-btn,
+:lang(ar) .settings-row-label,
+:lang(ur) .settings-row-label,
+:lang(ar) .settings-seg-btn,
+:lang(ur) .settings-seg-btn,
+:lang(ar) .settings-icon-theme-label,
+:lang(ur) .settings-icon-theme-label,
+:lang(ar) .progress-eyebrow,
+:lang(ur) .progress-eyebrow,
+:lang(ar) .progress-overall-label,
+:lang(ur) .progress-overall-label,
+:lang(ar) .progress-chapter-num,
+:lang(ur) .progress-chapter-num,
+:lang(ar) .prog-star-label,
+:lang(ur) .prog-star-label,
+:lang(ar) .progress-tab,
+:lang(ur) .progress-tab,
+:lang(ar) .prog-pathway-study-num,
+:lang(ur) .prog-pathway-study-num,
+:lang(ar) .notes-info-link-label,
+:lang(ur) .notes-info-link-label,
+:lang(ar) .notes-autosave-label,
+:lang(ur) .notes-autosave-label,
+:lang(ar) .study-card-subtitle,
+:lang(ur) .study-card-subtitle,
+:lang(ar) .library-version-footer,
+:lang(ur) .library-version-footer,
+:lang(ar) .library-header h2,
+:lang(ur) .library-header h2,
+:lang(ar) .library-header-close,
+:lang(ur) .library-header-close,
+:lang(ar) .library-eyebrow,
+:lang(ur) .library-eyebrow,
+:lang(ar) .lib-ri-meta,
+:lang(ur) .lib-ri-meta,
+:lang(ar) .lib-recent-section-label,
+:lang(ur) .lib-recent-section-label,
+:lang(ar) .lib-section-title,
+:lang(ur) .lib-section-title,
+:lang(ar) .lib-subsection-label,
+:lang(ur) .lib-subsection-label,
+:lang(ar) .lib-tab-page-more-btn,
+:lang(ur) .lib-tab-page-more-btn,
+:lang(ar) .lib-shelves-ctrl-btn,
+:lang(ur) .lib-shelves-ctrl-btn,
+:lang(ar) .lib-path-more-hint,
+:lang(ur) .lib-path-more-hint,
+:lang(ar) .modal-eyebrow,
+:lang(ur) .modal-eyebrow,
+:lang(ar) .modal-btn-ok,
+:lang(ur) .modal-btn-ok {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .title-page-main,
+:lang(ur) .title-page-main,
+:lang(ar) .title-page-sub,
+:lang(ur) .title-page-sub,
+:lang(ar) .title-page-author-name,
+:lang(ur) .title-page-author-name,
+:lang(ar) .howto-title,
+:lang(ur) .howto-title,
+:lang(ar) .howto-block-title,
+:lang(ur) .howto-block-title,
+:lang(ar) .copyright-title,
+:lang(ur) .copyright-title,
+:lang(ar) .leaders-title,
+:lang(ur) .leaders-title,
+:lang(ar) .leaders-chapter-title,
+:lang(ur) .leaders-chapter-title,
+:lang(ar) .settings-title,
+:lang(ur) .settings-title,
+:lang(ar) .progress-title,
+:lang(ur) .progress-title,
+:lang(ar) .progress-overall-pct,
+:lang(ur) .progress-overall-pct,
+:lang(ar) .progress-chapter-title,
+:lang(ur) .progress-chapter-title,
+:lang(ar) .study-card h3,
+:lang(ur) .study-card h3,
+:lang(ar) .library-empty-title,
+:lang(ur) .library-empty-title,
+:lang(ar) .lib-try-title,
+:lang(ur) .lib-try-title,
+:lang(ar) .lib-ri-title,
+:lang(ur) .lib-ri-title,
+:lang(ar) .lib-shelf-title,
+:lang(ur) .lib-shelf-title,
+:lang(ar) .lib-shelf-study-title,
+:lang(ur) .lib-shelf-study-title,
+:lang(ar) .lib-paths-stub-title,
+:lang(ur) .lib-paths-stub-title,
+:lang(ar) .lib-paths-title,
+:lang(ur) .lib-paths-title,
+:lang(ar) .lib-tab-page-title,
+:lang(ur) .lib-tab-page-title,
+:lang(ar) .lib-path-popup-title,
+:lang(ur) .lib-path-popup-title,
+:lang(ar) .modal-title,
+:lang(ur) .modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(ar) .title-page-desc,
+:lang(ur) .title-page-desc,
+:lang(ar) .howto-block p,
+:lang(ur) .howto-block p,
+:lang(ar) .howto-ui-desc,
+:lang(ur) .howto-ui-desc,
+:lang(ar) .leaders-subtitle,
+:lang(ur) .leaders-subtitle,
+:lang(ar) .encouragement-box-text,
+:lang(ur) .encouragement-box-text,
+:lang(ar) .modal-body,
+:lang(ur) .modal-body,
+:lang(ar) .progress-subtitle,
+:lang(ur) .progress-subtitle,
+:lang(ar) .progress-answer-count,
+:lang(ur) .progress-answer-count,
+:lang(ar) .progress-overall-detail,
+:lang(ur) .progress-overall-detail,
+:lang(ar) .prog-star-text,
+:lang(ur) .prog-star-text,
+:lang(ar) .prog-pathway-study-title,
+:lang(ur) .prog-pathway-study-title,
+:lang(ar) .settings-row-desc,
+:lang(ur) .settings-row-desc,
+:lang(ar) .settings-preview,
+:lang(ur) .settings-preview,
+:lang(ar) .lib-path-l3-title,
+:lang(ur) .lib-path-l3-title,
+:lang(ar) .lib-paths-more-link,
+:lang(ur) .lib-paths-more-link {
+  line-height: 2;
+  font-style: normal;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) .title-page-eyebrow,
+:lang(he) .title-page-author,
+:lang(he) .title-page-version,
+:lang(he) .title-page-publisher-label,
+:lang(he) .howto-eyebrow,
+:lang(he) .howto-section-heading,
+:lang(he) .howto-ui-label,
+:lang(he) .howto-tab-label,
+:lang(he) .howto-tab,
+:lang(he) .copyright-block-label,
+:lang(he) .leaders-eyebrow,
+:lang(he) .leaders-chapter-number,
+:lang(he) .leaders-block-label,
+:lang(he) .leaders-confidential,
+:lang(he) .settings-eyebrow,
+:lang(he) .settings-section-heading,
+:lang(he) .settings-size-label,
+:lang(he) .settings-reset-btn,
+:lang(he) .settings-row-label,
+:lang(he) .settings-seg-btn,
+:lang(he) .settings-icon-theme-label,
+:lang(he) .progress-eyebrow,
+:lang(he) .progress-overall-label,
+:lang(he) .progress-chapter-num,
+:lang(he) .prog-star-label,
+:lang(he) .progress-tab,
+:lang(he) .prog-pathway-study-num,
+:lang(he) .notes-info-link-label,
+:lang(he) .notes-autosave-label,
+:lang(he) .study-card-subtitle,
+:lang(he) .library-version-footer,
+:lang(he) .library-header h2,
+:lang(he) .library-header-close,
+:lang(he) .library-eyebrow,
+:lang(he) .lib-ri-meta,
+:lang(he) .lib-recent-section-label,
+:lang(he) .lib-section-title,
+:lang(he) .lib-subsection-label,
+:lang(he) .lib-tab-page-more-btn,
+:lang(he) .lib-shelves-ctrl-btn,
+:lang(he) .lib-path-more-hint,
+:lang(he) .modal-eyebrow,
+:lang(he) .modal-btn-ok {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .title-page-main,
+:lang(he) .title-page-sub,
+:lang(he) .title-page-author-name,
+:lang(he) .howto-title,
+:lang(he) .howto-block-title,
+:lang(he) .copyright-title,
+:lang(he) .leaders-title,
+:lang(he) .leaders-chapter-title,
+:lang(he) .settings-title,
+:lang(he) .progress-title,
+:lang(he) .progress-overall-pct,
+:lang(he) .progress-chapter-title,
+:lang(he) .study-card h3,
+:lang(he) .library-empty-title,
+:lang(he) .lib-try-title,
+:lang(he) .lib-ri-title,
+:lang(he) .lib-shelf-title,
+:lang(he) .lib-shelf-study-title,
+:lang(he) .lib-paths-stub-title,
+:lang(he) .lib-paths-title,
+:lang(he) .lib-tab-page-title,
+:lang(he) .lib-path-popup-title,
+:lang(he) .modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(he) .title-page-desc,
+:lang(he) .howto-block p,
+:lang(he) .howto-ui-desc,
+:lang(he) .leaders-subtitle,
+:lang(he) .encouragement-box-text,
+:lang(he) .modal-body,
+:lang(he) .progress-subtitle,
+:lang(he) .progress-answer-count,
+:lang(he) .progress-overall-detail,
+:lang(he) .prog-star-text,
+:lang(he) .prog-pathway-study-title,
+:lang(he) .settings-row-desc,
+:lang(he) .settings-preview,
+:lang(he) .lib-path-l3-title,
+:lang(he) .lib-paths-more-link {
+  line-height: 1.9;
+  font-style: normal;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) .title-page-eyebrow,
+:lang(hi) .title-page-eyebrow,
+:lang(ne) .title-page-author,
+:lang(hi) .title-page-author,
+:lang(ne) .title-page-version,
+:lang(hi) .title-page-version,
+:lang(ne) .title-page-publisher-label,
+:lang(hi) .title-page-publisher-label,
+:lang(ne) .howto-eyebrow,
+:lang(hi) .howto-eyebrow,
+:lang(ne) .howto-section-heading,
+:lang(hi) .howto-section-heading,
+:lang(ne) .howto-ui-label,
+:lang(hi) .howto-ui-label,
+:lang(ne) .howto-tab-label,
+:lang(hi) .howto-tab-label,
+:lang(ne) .howto-tab,
+:lang(hi) .howto-tab,
+:lang(ne) .copyright-block-label,
+:lang(hi) .copyright-block-label,
+:lang(ne) .leaders-eyebrow,
+:lang(hi) .leaders-eyebrow,
+:lang(ne) .leaders-chapter-number,
+:lang(hi) .leaders-chapter-number,
+:lang(ne) .leaders-block-label,
+:lang(hi) .leaders-block-label,
+:lang(ne) .leaders-confidential,
+:lang(hi) .leaders-confidential,
+:lang(ne) .settings-eyebrow,
+:lang(hi) .settings-eyebrow,
+:lang(ne) .settings-section-heading,
+:lang(hi) .settings-section-heading,
+:lang(ne) .settings-size-label,
+:lang(hi) .settings-size-label,
+:lang(ne) .settings-reset-btn,
+:lang(hi) .settings-reset-btn,
+:lang(ne) .settings-row-label,
+:lang(hi) .settings-row-label,
+:lang(ne) .settings-seg-btn,
+:lang(hi) .settings-seg-btn,
+:lang(ne) .settings-icon-theme-label,
+:lang(hi) .settings-icon-theme-label,
+:lang(ne) .progress-eyebrow,
+:lang(hi) .progress-eyebrow,
+:lang(ne) .progress-overall-label,
+:lang(hi) .progress-overall-label,
+:lang(ne) .progress-chapter-num,
+:lang(hi) .progress-chapter-num,
+:lang(ne) .prog-star-label,
+:lang(hi) .prog-star-label,
+:lang(ne) .progress-tab,
+:lang(hi) .progress-tab,
+:lang(ne) .prog-pathway-study-num,
+:lang(hi) .prog-pathway-study-num,
+:lang(ne) .notes-info-link-label,
+:lang(hi) .notes-info-link-label,
+:lang(ne) .notes-autosave-label,
+:lang(hi) .notes-autosave-label,
+:lang(ne) .study-card-subtitle,
+:lang(hi) .study-card-subtitle,
+:lang(ne) .library-version-footer,
+:lang(hi) .library-version-footer,
+:lang(ne) .library-header h2,
+:lang(hi) .library-header h2,
+:lang(ne) .library-header-close,
+:lang(hi) .library-header-close,
+:lang(ne) .library-eyebrow,
+:lang(hi) .library-eyebrow,
+:lang(ne) .lib-ri-meta,
+:lang(hi) .lib-ri-meta,
+:lang(ne) .lib-recent-section-label,
+:lang(hi) .lib-recent-section-label,
+:lang(ne) .lib-section-title,
+:lang(hi) .lib-section-title,
+:lang(ne) .lib-subsection-label,
+:lang(hi) .lib-subsection-label,
+:lang(ne) .lib-tab-page-more-btn,
+:lang(hi) .lib-tab-page-more-btn,
+:lang(ne) .lib-shelves-ctrl-btn,
+:lang(hi) .lib-shelves-ctrl-btn,
+:lang(ne) .lib-path-more-hint,
+:lang(hi) .lib-path-more-hint,
+:lang(ne) .modal-eyebrow,
+:lang(hi) .modal-eyebrow,
+:lang(ne) .modal-btn-ok,
+:lang(hi) .modal-btn-ok {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .title-page-main,
+:lang(hi) .title-page-main,
+:lang(ne) .title-page-sub,
+:lang(hi) .title-page-sub,
+:lang(ne) .title-page-author-name,
+:lang(hi) .title-page-author-name,
+:lang(ne) .howto-title,
+:lang(hi) .howto-title,
+:lang(ne) .howto-block-title,
+:lang(hi) .howto-block-title,
+:lang(ne) .copyright-title,
+:lang(hi) .copyright-title,
+:lang(ne) .leaders-title,
+:lang(hi) .leaders-title,
+:lang(ne) .leaders-chapter-title,
+:lang(hi) .leaders-chapter-title,
+:lang(ne) .settings-title,
+:lang(hi) .settings-title,
+:lang(ne) .progress-title,
+:lang(hi) .progress-title,
+:lang(ne) .progress-overall-pct,
+:lang(hi) .progress-overall-pct,
+:lang(ne) .progress-chapter-title,
+:lang(hi) .progress-chapter-title,
+:lang(ne) .study-card h3,
+:lang(hi) .study-card h3,
+:lang(ne) .library-empty-title,
+:lang(hi) .library-empty-title,
+:lang(ne) .lib-try-title,
+:lang(hi) .lib-try-title,
+:lang(ne) .lib-ri-title,
+:lang(hi) .lib-ri-title,
+:lang(ne) .lib-shelf-title,
+:lang(hi) .lib-shelf-title,
+:lang(ne) .lib-shelf-study-title,
+:lang(hi) .lib-shelf-study-title,
+:lang(ne) .lib-paths-stub-title,
+:lang(hi) .lib-paths-stub-title,
+:lang(ne) .lib-paths-title,
+:lang(hi) .lib-paths-title,
+:lang(ne) .lib-tab-page-title,
+:lang(hi) .lib-tab-page-title,
+:lang(ne) .lib-path-popup-title,
+:lang(hi) .lib-path-popup-title,
+:lang(ne) .modal-title,
+:lang(hi) .modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(ne) .title-page-desc,
+:lang(hi) .title-page-desc,
+:lang(ne) .howto-block p,
+:lang(hi) .howto-block p,
+:lang(ne) .howto-ui-desc,
+:lang(hi) .howto-ui-desc,
+:lang(ne) .leaders-subtitle,
+:lang(hi) .leaders-subtitle,
+:lang(ne) .encouragement-box-text,
+:lang(hi) .encouragement-box-text,
+:lang(ne) .modal-body,
+:lang(hi) .modal-body,
+:lang(ne) .progress-subtitle,
+:lang(hi) .progress-subtitle,
+:lang(ne) .progress-answer-count,
+:lang(hi) .progress-answer-count,
+:lang(ne) .progress-overall-detail,
+:lang(hi) .progress-overall-detail,
+:lang(ne) .prog-star-text,
+:lang(hi) .prog-star-text,
+:lang(ne) .prog-pathway-study-title,
+:lang(hi) .prog-pathway-study-title,
+:lang(ne) .settings-row-desc,
+:lang(hi) .settings-row-desc,
+:lang(ne) .settings-preview,
+:lang(hi) .settings-preview,
+:lang(ne) .lib-path-l3-title,
+:lang(hi) .lib-path-l3-title,
+:lang(ne) .lib-paths-more-link,
+:lang(hi) .lib-paths-more-link {
+  line-height: 2;
+  font-style: normal;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) .title-page-eyebrow,
+:lang(my) .title-page-author,
+:lang(my) .title-page-version,
+:lang(my) .title-page-publisher-label,
+:lang(my) .howto-eyebrow,
+:lang(my) .howto-section-heading,
+:lang(my) .howto-ui-label,
+:lang(my) .howto-tab-label,
+:lang(my) .howto-tab,
+:lang(my) .copyright-block-label,
+:lang(my) .leaders-eyebrow,
+:lang(my) .leaders-chapter-number,
+:lang(my) .leaders-block-label,
+:lang(my) .leaders-confidential,
+:lang(my) .settings-eyebrow,
+:lang(my) .settings-section-heading,
+:lang(my) .settings-size-label,
+:lang(my) .settings-reset-btn,
+:lang(my) .settings-row-label,
+:lang(my) .settings-seg-btn,
+:lang(my) .settings-icon-theme-label,
+:lang(my) .progress-eyebrow,
+:lang(my) .progress-overall-label,
+:lang(my) .progress-chapter-num,
+:lang(my) .prog-star-label,
+:lang(my) .progress-tab,
+:lang(my) .prog-pathway-study-num,
+:lang(my) .notes-info-link-label,
+:lang(my) .notes-autosave-label,
+:lang(my) .study-card-subtitle,
+:lang(my) .library-version-footer,
+:lang(my) .library-header h2,
+:lang(my) .library-header-close,
+:lang(my) .library-eyebrow,
+:lang(my) .lib-ri-meta,
+:lang(my) .lib-recent-section-label,
+:lang(my) .lib-section-title,
+:lang(my) .lib-subsection-label,
+:lang(my) .lib-tab-page-more-btn,
+:lang(my) .lib-shelves-ctrl-btn,
+:lang(my) .lib-path-more-hint,
+:lang(my) .modal-eyebrow,
+:lang(my) .modal-btn-ok {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .title-page-main,
+:lang(my) .title-page-sub,
+:lang(my) .title-page-author-name,
+:lang(my) .howto-title,
+:lang(my) .howto-block-title,
+:lang(my) .copyright-title,
+:lang(my) .leaders-title,
+:lang(my) .leaders-chapter-title,
+:lang(my) .settings-title,
+:lang(my) .progress-title,
+:lang(my) .progress-overall-pct,
+:lang(my) .progress-chapter-title,
+:lang(my) .study-card h3,
+:lang(my) .library-empty-title,
+:lang(my) .lib-try-title,
+:lang(my) .lib-ri-title,
+:lang(my) .lib-shelf-title,
+:lang(my) .lib-shelf-study-title,
+:lang(my) .lib-paths-stub-title,
+:lang(my) .lib-paths-title,
+:lang(my) .lib-tab-page-title,
+:lang(my) .lib-path-popup-title,
+:lang(my) .modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(my) .title-page-desc,
+:lang(my) .howto-block p,
+:lang(my) .howto-ui-desc,
+:lang(my) .leaders-subtitle,
+:lang(my) .encouragement-box-text,
+:lang(my) .modal-body,
+:lang(my) .progress-subtitle,
+:lang(my) .progress-answer-count,
+:lang(my) .progress-overall-detail,
+:lang(my) .prog-star-text,
+:lang(my) .prog-pathway-study-title,
+:lang(my) .settings-row-desc,
+:lang(my) .settings-preview,
+:lang(my) .lib-path-l3-title,
+:lang(my) .lib-paths-more-link {
+  line-height: 2.2;
+  font-style: normal;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified, zh-CN), ja (Japanese) ──────────── */
+
+:lang(zh) .title-page-eyebrow,
+:lang(ja) .title-page-eyebrow,
+:lang(zh) .title-page-author,
+:lang(ja) .title-page-author,
+:lang(zh) .title-page-version,
+:lang(ja) .title-page-version,
+:lang(zh) .title-page-publisher-label,
+:lang(ja) .title-page-publisher-label,
+:lang(zh) .howto-eyebrow,
+:lang(ja) .howto-eyebrow,
+:lang(zh) .howto-section-heading,
+:lang(ja) .howto-section-heading,
+:lang(zh) .howto-ui-label,
+:lang(ja) .howto-ui-label,
+:lang(zh) .howto-tab-label,
+:lang(ja) .howto-tab-label,
+:lang(zh) .howto-tab,
+:lang(ja) .howto-tab,
+:lang(zh) .copyright-block-label,
+:lang(ja) .copyright-block-label,
+:lang(zh) .leaders-eyebrow,
+:lang(ja) .leaders-eyebrow,
+:lang(zh) .leaders-chapter-number,
+:lang(ja) .leaders-chapter-number,
+:lang(zh) .leaders-block-label,
+:lang(ja) .leaders-block-label,
+:lang(zh) .leaders-confidential,
+:lang(ja) .leaders-confidential,
+:lang(zh) .settings-eyebrow,
+:lang(ja) .settings-eyebrow,
+:lang(zh) .settings-section-heading,
+:lang(ja) .settings-section-heading,
+:lang(zh) .settings-size-label,
+:lang(ja) .settings-size-label,
+:lang(zh) .settings-reset-btn,
+:lang(ja) .settings-reset-btn,
+:lang(zh) .settings-row-label,
+:lang(ja) .settings-row-label,
+:lang(zh) .settings-seg-btn,
+:lang(ja) .settings-seg-btn,
+:lang(zh) .settings-icon-theme-label,
+:lang(ja) .settings-icon-theme-label,
+:lang(zh) .progress-eyebrow,
+:lang(ja) .progress-eyebrow,
+:lang(zh) .progress-overall-label,
+:lang(ja) .progress-overall-label,
+:lang(zh) .progress-chapter-num,
+:lang(ja) .progress-chapter-num,
+:lang(zh) .prog-star-label,
+:lang(ja) .prog-star-label,
+:lang(zh) .progress-tab,
+:lang(ja) .progress-tab,
+:lang(zh) .prog-pathway-study-num,
+:lang(ja) .prog-pathway-study-num,
+:lang(zh) .notes-info-link-label,
+:lang(ja) .notes-info-link-label,
+:lang(zh) .notes-autosave-label,
+:lang(ja) .notes-autosave-label,
+:lang(zh) .study-card-subtitle,
+:lang(ja) .study-card-subtitle,
+:lang(zh) .library-version-footer,
+:lang(ja) .library-version-footer,
+:lang(zh) .library-header h2,
+:lang(ja) .library-header h2,
+:lang(zh) .library-header-close,
+:lang(ja) .library-header-close,
+:lang(zh) .library-eyebrow,
+:lang(ja) .library-eyebrow,
+:lang(zh) .lib-ri-meta,
+:lang(ja) .lib-ri-meta,
+:lang(zh) .lib-recent-section-label,
+:lang(ja) .lib-recent-section-label,
+:lang(zh) .lib-section-title,
+:lang(ja) .lib-section-title,
+:lang(zh) .lib-subsection-label,
+:lang(ja) .lib-subsection-label,
+:lang(zh) .lib-tab-page-more-btn,
+:lang(ja) .lib-tab-page-more-btn,
+:lang(zh) .lib-shelves-ctrl-btn,
+:lang(ja) .lib-shelves-ctrl-btn,
+:lang(zh) .lib-path-more-hint,
+:lang(ja) .lib-path-more-hint,
+:lang(zh) .modal-eyebrow,
+:lang(ja) .modal-eyebrow,
+:lang(zh) .modal-btn-ok,
+:lang(ja) .modal-btn-ok {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .title-page-main,
+:lang(ja) .title-page-main,
+:lang(zh) .title-page-sub,
+:lang(ja) .title-page-sub,
+:lang(zh) .title-page-author-name,
+:lang(ja) .title-page-author-name,
+:lang(zh) .howto-title,
+:lang(ja) .howto-title,
+:lang(zh) .howto-block-title,
+:lang(ja) .howto-block-title,
+:lang(zh) .copyright-title,
+:lang(ja) .copyright-title,
+:lang(zh) .leaders-title,
+:lang(ja) .leaders-title,
+:lang(zh) .leaders-chapter-title,
+:lang(ja) .leaders-chapter-title,
+:lang(zh) .settings-title,
+:lang(ja) .settings-title,
+:lang(zh) .progress-title,
+:lang(ja) .progress-title,
+:lang(zh) .progress-overall-pct,
+:lang(ja) .progress-overall-pct,
+:lang(zh) .progress-chapter-title,
+:lang(ja) .progress-chapter-title,
+:lang(zh) .study-card h3,
+:lang(ja) .study-card h3,
+:lang(zh) .library-empty-title,
+:lang(ja) .library-empty-title,
+:lang(zh) .lib-try-title,
+:lang(ja) .lib-try-title,
+:lang(zh) .lib-ri-title,
+:lang(ja) .lib-ri-title,
+:lang(zh) .lib-shelf-title,
+:lang(ja) .lib-shelf-title,
+:lang(zh) .lib-shelf-study-title,
+:lang(ja) .lib-shelf-study-title,
+:lang(zh) .lib-paths-stub-title,
+:lang(ja) .lib-paths-stub-title,
+:lang(zh) .lib-paths-title,
+:lang(ja) .lib-paths-title,
+:lang(zh) .lib-tab-page-title,
+:lang(ja) .lib-tab-page-title,
+:lang(zh) .lib-path-popup-title,
+:lang(ja) .lib-path-popup-title,
+:lang(zh) .modal-title,
+:lang(ja) .modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(zh) .title-page-desc,
+:lang(ja) .title-page-desc,
+:lang(zh) .howto-block p,
+:lang(ja) .howto-block p,
+:lang(zh) .howto-ui-desc,
+:lang(ja) .howto-ui-desc,
+:lang(zh) .leaders-subtitle,
+:lang(ja) .leaders-subtitle,
+:lang(zh) .encouragement-box-text,
+:lang(ja) .encouragement-box-text,
+:lang(zh) .modal-body,
+:lang(ja) .modal-body,
+:lang(zh) .progress-subtitle,
+:lang(ja) .progress-subtitle,
+:lang(zh) .progress-answer-count,
+:lang(ja) .progress-answer-count,
+:lang(zh) .progress-overall-detail,
+:lang(ja) .progress-overall-detail,
+:lang(zh) .prog-star-text,
+:lang(ja) .prog-star-text,
+:lang(zh) .prog-pathway-study-title,
+:lang(ja) .prog-pathway-study-title,
+:lang(zh) .settings-row-desc,
+:lang(ja) .settings-row-desc,
+:lang(zh) .settings-preview,
+:lang(ja) .settings-preview,
+:lang(zh) .lib-path-l3-title,
+:lang(ja) .lib-path-l3-title,
+:lang(zh) .lib-paths-more-link,
+:lang(ja) .lib-paths-more-link {
+  line-height: 1.6;
+  font-style: normal;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) .title-page-eyebrow,
+:lang(ko) .title-page-author,
+:lang(ko) .title-page-version,
+:lang(ko) .title-page-publisher-label,
+:lang(ko) .howto-eyebrow,
+:lang(ko) .howto-section-heading,
+:lang(ko) .howto-ui-label,
+:lang(ko) .howto-tab-label,
+:lang(ko) .howto-tab,
+:lang(ko) .copyright-block-label,
+:lang(ko) .leaders-eyebrow,
+:lang(ko) .leaders-chapter-number,
+:lang(ko) .leaders-block-label,
+:lang(ko) .leaders-confidential,
+:lang(ko) .settings-eyebrow,
+:lang(ko) .settings-section-heading,
+:lang(ko) .settings-size-label,
+:lang(ko) .settings-reset-btn,
+:lang(ko) .settings-row-label,
+:lang(ko) .settings-seg-btn,
+:lang(ko) .settings-icon-theme-label,
+:lang(ko) .progress-eyebrow,
+:lang(ko) .progress-overall-label,
+:lang(ko) .progress-chapter-num,
+:lang(ko) .prog-star-label,
+:lang(ko) .progress-tab,
+:lang(ko) .prog-pathway-study-num,
+:lang(ko) .notes-info-link-label,
+:lang(ko) .notes-autosave-label,
+:lang(ko) .study-card-subtitle,
+:lang(ko) .library-version-footer,
+:lang(ko) .library-header h2,
+:lang(ko) .library-header-close,
+:lang(ko) .library-eyebrow,
+:lang(ko) .lib-ri-meta,
+:lang(ko) .lib-recent-section-label,
+:lang(ko) .lib-section-title,
+:lang(ko) .lib-subsection-label,
+:lang(ko) .lib-tab-page-more-btn,
+:lang(ko) .lib-shelves-ctrl-btn,
+:lang(ko) .lib-path-more-hint,
+:lang(ko) .modal-eyebrow,
+:lang(ko) .modal-btn-ok {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .title-page-main,
+:lang(ko) .title-page-sub,
+:lang(ko) .title-page-author-name,
+:lang(ko) .howto-title,
+:lang(ko) .howto-block-title,
+:lang(ko) .copyright-title,
+:lang(ko) .leaders-title,
+:lang(ko) .leaders-chapter-title,
+:lang(ko) .settings-title,
+:lang(ko) .progress-title,
+:lang(ko) .progress-overall-pct,
+:lang(ko) .progress-chapter-title,
+:lang(ko) .study-card h3,
+:lang(ko) .library-empty-title,
+:lang(ko) .lib-try-title,
+:lang(ko) .lib-ri-title,
+:lang(ko) .lib-shelf-title,
+:lang(ko) .lib-shelf-study-title,
+:lang(ko) .lib-paths-stub-title,
+:lang(ko) .lib-paths-title,
+:lang(ko) .lib-tab-page-title,
+:lang(ko) .lib-path-popup-title,
+:lang(ko) .modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(ko) .title-page-desc,
+:lang(ko) .howto-block p,
+:lang(ko) .howto-ui-desc,
+:lang(ko) .leaders-subtitle,
+:lang(ko) .encouragement-box-text,
+:lang(ko) .modal-body,
+:lang(ko) .progress-subtitle,
+:lang(ko) .progress-answer-count,
+:lang(ko) .progress-overall-detail,
+:lang(ko) .prog-star-text,
+:lang(ko) .prog-pathway-study-title,
+:lang(ko) .settings-row-desc,
+:lang(ko) .settings-preview,
+:lang(ko) .lib-path-l3-title,
+:lang(ko) .lib-paths-more-link {
+  line-height: 1.7;
+  font-style: normal;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* Only the letter-spacing on monospace chrome labels is reset.
+   Cyrillic has case and italic, so text-transform, font-style, and
+   font-family are left unchanged. No body-level line-height changes needed. */
+
+:lang(ru) .title-page-eyebrow,
+:lang(uk) .title-page-eyebrow,
+:lang(ru) .title-page-author,
+:lang(uk) .title-page-author,
+:lang(ru) .title-page-version,
+:lang(uk) .title-page-version,
+:lang(ru) .title-page-publisher-label,
+:lang(uk) .title-page-publisher-label,
+:lang(ru) .howto-eyebrow,
+:lang(uk) .howto-eyebrow,
+:lang(ru) .howto-section-heading,
+:lang(uk) .howto-section-heading,
+:lang(ru) .howto-ui-label,
+:lang(uk) .howto-ui-label,
+:lang(ru) .howto-tab-label,
+:lang(uk) .howto-tab-label,
+:lang(ru) .howto-tab,
+:lang(uk) .howto-tab,
+:lang(ru) .copyright-block-label,
+:lang(uk) .copyright-block-label,
+:lang(ru) .leaders-eyebrow,
+:lang(uk) .leaders-eyebrow,
+:lang(ru) .leaders-chapter-number,
+:lang(uk) .leaders-chapter-number,
+:lang(ru) .leaders-block-label,
+:lang(uk) .leaders-block-label,
+:lang(ru) .leaders-confidential,
+:lang(uk) .leaders-confidential,
+:lang(ru) .settings-eyebrow,
+:lang(uk) .settings-eyebrow,
+:lang(ru) .settings-section-heading,
+:lang(uk) .settings-section-heading,
+:lang(ru) .settings-size-label,
+:lang(uk) .settings-size-label,
+:lang(ru) .settings-reset-btn,
+:lang(uk) .settings-reset-btn,
+:lang(ru) .settings-row-label,
+:lang(uk) .settings-row-label,
+:lang(ru) .settings-seg-btn,
+:lang(uk) .settings-seg-btn,
+:lang(ru) .settings-icon-theme-label,
+:lang(uk) .settings-icon-theme-label,
+:lang(ru) .progress-eyebrow,
+:lang(uk) .progress-eyebrow,
+:lang(ru) .progress-overall-label,
+:lang(uk) .progress-overall-label,
+:lang(ru) .progress-chapter-num,
+:lang(uk) .progress-chapter-num,
+:lang(ru) .prog-star-label,
+:lang(uk) .prog-star-label,
+:lang(ru) .progress-tab,
+:lang(uk) .progress-tab,
+:lang(ru) .prog-pathway-study-num,
+:lang(uk) .prog-pathway-study-num,
+:lang(ru) .notes-info-link-label,
+:lang(uk) .notes-info-link-label,
+:lang(ru) .notes-autosave-label,
+:lang(uk) .notes-autosave-label,
+:lang(ru) .study-card-subtitle,
+:lang(uk) .study-card-subtitle,
+:lang(ru) .library-version-footer,
+:lang(uk) .library-version-footer,
+:lang(ru) .library-header h2,
+:lang(uk) .library-header h2,
+:lang(ru) .library-header-close,
+:lang(uk) .library-header-close,
+:lang(ru) .library-eyebrow,
+:lang(uk) .library-eyebrow,
+:lang(ru) .lib-ri-meta,
+:lang(uk) .lib-ri-meta,
+:lang(ru) .lib-recent-section-label,
+:lang(uk) .lib-recent-section-label,
+:lang(ru) .lib-section-title,
+:lang(uk) .lib-section-title,
+:lang(ru) .lib-subsection-label,
+:lang(uk) .lib-subsection-label,
+:lang(ru) .lib-tab-page-more-btn,
+:lang(uk) .lib-tab-page-more-btn,
+:lang(ru) .lib-shelves-ctrl-btn,
+:lang(uk) .lib-shelves-ctrl-btn,
+:lang(ru) .lib-path-more-hint,
+:lang(uk) .lib-path-more-hint,
+:lang(ru) .modal-eyebrow,
+:lang(uk) .modal-eyebrow,
+:lang(ru) .modal-btn-ok,
+:lang(uk) .modal-btn-ok {
+  letter-spacing: 0;
+}
+
+
+/* ── H. Greek — el ───────────────────────────────────────────────────── */
+/* Same light-touch treatment as Cyrillic: letter-spacing reset on chrome
+   labels only. text-transform, font-style, and font-family unchanged. */
+
+:lang(el) .title-page-eyebrow,
+:lang(el) .title-page-author,
+:lang(el) .title-page-version,
+:lang(el) .title-page-publisher-label,
+:lang(el) .howto-eyebrow,
+:lang(el) .howto-section-heading,
+:lang(el) .howto-ui-label,
+:lang(el) .howto-tab-label,
+:lang(el) .howto-tab,
+:lang(el) .copyright-block-label,
+:lang(el) .leaders-eyebrow,
+:lang(el) .leaders-chapter-number,
+:lang(el) .leaders-block-label,
+:lang(el) .leaders-confidential,
+:lang(el) .settings-eyebrow,
+:lang(el) .settings-section-heading,
+:lang(el) .settings-size-label,
+:lang(el) .settings-reset-btn,
+:lang(el) .settings-row-label,
+:lang(el) .settings-seg-btn,
+:lang(el) .settings-icon-theme-label,
+:lang(el) .progress-eyebrow,
+:lang(el) .progress-overall-label,
+:lang(el) .progress-chapter-num,
+:lang(el) .prog-star-label,
+:lang(el) .progress-tab,
+:lang(el) .prog-pathway-study-num,
+:lang(el) .notes-info-link-label,
+:lang(el) .notes-autosave-label,
+:lang(el) .study-card-subtitle,
+:lang(el) .library-version-footer,
+:lang(el) .library-header h2,
+:lang(el) .library-header-close,
+:lang(el) .library-eyebrow,
+:lang(el) .lib-ri-meta,
+:lang(el) .lib-recent-section-label,
+:lang(el) .lib-section-title,
+:lang(el) .lib-subsection-label,
+:lang(el) .lib-tab-page-more-btn,
+:lang(el) .lib-shelves-ctrl-btn,
+:lang(el) .lib-path-more-hint,
+:lang(el) .modal-eyebrow,
+:lang(el) .modal-btn-ok {
+  letter-spacing: 0;
+}

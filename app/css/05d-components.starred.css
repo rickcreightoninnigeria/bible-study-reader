@@ -19,6 +19,17 @@
  * ── DARK MODE ───────────────────────────────────────────────────────────
  * 02. Dark mode               – body.dark-mode overrides for all rules above
  *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 03. RTL overrides           – Mirrors layout for Arabic, Hebrew, Urdu
+ * 04. Script overrides        – Per-script resets grouped by script family:
+ *                               A. Arabic script   — ar, ur
+ *                               B. Hebrew script   — he
+ *                               C. Devanagari      — ne, hi
+ *                               D. Myanmar         — my
+ *                               E. CJK             — zh (zh-CN), ja
+ *                               F. Hangul          — ko
+ *                               G. Cyrillic        — ru, uk  (labels only)
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -27,13 +38,14 @@
 /* Collapsible panel that appears when one or more questions are starred.
    Sits inline in the chapter content flow, above the first question card.
    Clicking the header toggles the list via the .open class (JS-managed).
-   Visually matches the intro-block style — left accent border, card-bg fill. */
+   border-inline-start so the accent border flips to the right in RTL.
+   border-radius still uses physical values; RTL override in section 03. */
 
 .starred-summary {
   background: var(--card-bg);
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);   /* was border-left */
   margin: 0 var(--content-margin) 4px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 8px 8px 0;                     /* mirrored for RTL in section 03 */
   box-shadow: 0 1px 4px var(--shadow);
   overflow: hidden;
 }
@@ -131,4 +143,166 @@ body.dark-mode .starred-summary-item:hover {
 }
 body.dark-mode .starred-summary-text {
   color: var(--dm-text-mid);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   03. RTL OVERRIDES  (dir="rtl" on <html> or a parent element)
+   Applies to Arabic (ar), Urdu (ur), and Hebrew (he).
+   border-inline-start on .starred-summary already flips the accent border
+   automatically. The border-radius physical values need explicit mirroring
+   because there is no logical equivalent for border-radius yet.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] .starred-summary {
+  border-radius: 8px 0 0 8px;   /* mirrors the LTR 0 8px 8px 0 */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   04. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   This file has two categories of text that need overrides:
+
+   CHROME LABELS (.starred-summary-title, .starred-summary-ref)
+     These are monospace, all-caps, letter-spaced UI labels. For non-Latin
+     scripts: letter-spacing breaks cursive joins or looks unnatural on
+     fixed-width glyphs; text-transform: uppercase is meaningless.
+
+   PREVIEW TEXT (.starred-summary-text)
+     This is a truncated snippet of the actual question content, rendered in
+     the active body font. For scripts with taller vertical metrics the
+     line-height needs lifting so descenders/ascenders don't collide —
+     though since this element is single-line (white-space: nowrap) the
+     practical impact is on the row height rather than inter-line spacing.
+
+   See 05a-components_cards_display.css section 11 for full rationale
+   on each script family's requirements.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) .starred-summary-title,
+:lang(ur) .starred-summary-title {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .starred-summary-ref,
+:lang(ur) .starred-summary-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .starred-summary-text,
+:lang(ur) .starred-summary-text {
+  line-height: 2;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) .starred-summary-title {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .starred-summary-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .starred-summary-text {
+  line-height: 1.9;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) .starred-summary-title,
+:lang(hi) .starred-summary-title {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .starred-summary-ref,
+:lang(hi) .starred-summary-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .starred-summary-text,
+:lang(hi) .starred-summary-text {
+  line-height: 2;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) .starred-summary-title {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .starred-summary-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .starred-summary-text {
+  line-height: 2.2;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified zh-CN), ja (Japanese) ──────────── */
+
+:lang(zh) .starred-summary-title,
+:lang(ja) .starred-summary-title {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .starred-summary-ref,
+:lang(ja) .starred-summary-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .starred-summary-text,
+:lang(ja) .starred-summary-text {
+  line-height: 1.6;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) .starred-summary-title {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .starred-summary-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .starred-summary-text {
+  line-height: 1.7;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* Only the letter-spacing on monospace chrome labels is reset.
+   text-transform, font-style, and font-family are left unchanged —
+   Cyrillic has case and italic. */
+
+:lang(ru) .starred-summary-title,
+:lang(uk) .starred-summary-title {
+  letter-spacing: 0;
+}
+
+:lang(ru) .starred-summary-ref,
+:lang(uk) .starred-summary-ref {
+  letter-spacing: 0;
 }

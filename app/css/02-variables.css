@@ -12,6 +12,14 @@
  * belong here. Actual body.dark-mode rule overrides live at the bottom
  * of each relevant sub-file.
  *
+ * MULTILINGUAL NOTE: Per-script font-family overrides (:lang() rules)
+ * are NOT defined here. They live in 01-fonts.css section 04, which is
+ * the canonical reference for all multilingual typography decisions.
+ * The font stacks below are used for Latin-script languages only; the
+ * :lang() rules in 01-fonts.css override --main-font-family at the
+ * element level for Arabic, Urdu, Hebrew, Devanagari, Myanmar, CJK,
+ * and Hangul scripts automatically when <html lang="…"> is set by JS.
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -42,7 +50,7 @@
   --border:         #c8bca8;      /* card borders, dividers            */
   --shadow: rgba(28,23,16,0.13);  /* unified shadow tint               */
   --card-bg:        #ffffff;      /* card / block surface colour       */
-  --validate:       #2a6b7c;      /* local validate: answer check */
+  --validate:       #2a6b7c;      /* local validate: answer check      */
 
   /* ── Dark-mode colour tokens ──
      These are plain custom properties, not overrides — they live here
@@ -57,18 +65,39 @@
   --dm-text-mid:    #c8bfaf;      /* secondary / body text, paragraph copy           */
   --dm-text-faint:  #6a5f50;      /* placeholders, disabled, faint labels            */
 
-  /* ── Typography stacks ── */
+  /* ── Typography stacks ──
+     These stacks cover Latin-script languages (en, fr, es, pt, ha, ff,
+     sw, ig, yo, ms, tl, ru, uk, el) and are the active fonts whenever
+     no :lang() override applies.
+
+     For non-Latin scripts the browser falls through the stack to Georgia
+     or system-ui, which is acceptable as a last resort but not ideal.
+     The :lang() rules in 01-fonts.css section 04 override font-family
+     before the fallback is reached, ensuring each script gets a
+     purpose-built Noto font. These stacks are therefore only exercised
+     by Latin-script and Cyrillic/Greek languages (which Inter and Source
+     Serif 4 both cover well).
+
+     --font-stack-heading (Playfair Display) is a Latin-only display font.
+     The :lang() overrides in 01-fonts.css replace it with the active body
+     font for any language whose script Playfair does not cover, so
+     headings in Arabic, Devanagari, CJK, etc. render correctly rather
+     than falling through to Georgia / Times New Roman. */
+
   --font-stack-serif:   'Source Serif 4', Georgia, 'Times New Roman', serif;        /* body text — serif mode  */
   --font-stack-sans:    'Inter', 'Helvetica Neue', Arial, sans-serif;               /* body text — sans mode   */
 
   /* --main-font-family is the active body font.
      It defaults to sans here but is switched at runtime by applyAllSettings()
      in response to the user's font preference stored in localStorage.
-     Do not hardcode a font-family on body — always use this token. */
+     Do not hardcode a font-family on body — always use this token.
+     :lang() rules in 01-fonts.css override this token at the element
+     level for non-Latin scripts, so both the serif and sans user
+     preference and the correct script font are respected simultaneously. */
   --main-font-family:   var(--font-stack-sans);
 
-  --font-stack-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;      /* display headings        */
-  --font-stack-mono:    'DM Mono', 'Courier New', Courier, monospace;               /* labels, UI chrome       */
+  --font-stack-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;      /* display headings — Latin only; see note above */
+  --font-stack-mono:    'DM Mono', 'Courier New', Courier, monospace;               /* labels, UI chrome — Latin/Cyrillic/Greek only  */
 
   /* ── Setting the margins for content panels ── */
   --content-margin: 4px; /* tweak this one value to adjust all panels */

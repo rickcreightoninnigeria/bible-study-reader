@@ -20,6 +20,26 @@
  * alongside the other Progress page dark mode rules.
  * All other dark mode rules are in their respective sub-files.
  *
+ * ── MULTILINGUAL NOTES ──────────────────────────────────────────────────
+ * RTL text direction in print is inherited automatically from the
+ * html[dir="rtl"] attribute set by the JS language switcher — no
+ * explicit direction rule is needed here.
+ *
+ * Screen-level :lang() overrides defined in section 11 of each component
+ * file remain active during printing (media queries don't strip lang
+ * selectors), so the following are already handled without duplication:
+ *   • question-ref letter-spacing     (05b section 11)
+ *   • reflection-header h3 font-style (05a section 11)
+ *   • All body-text line-heights       (05a, 05b section 11)
+ *
+ * New overrides added in this file cover print-specific rules that the
+ * screen section 11 blocks cannot reach because the print block
+ * re-declares the properties with hardcoded values:
+ *   • .chapter-label letter-spacing / text-transform (print re-declares both)
+ *   • .answer-field font-family (hardcoded to Source Serif 4 in print,
+ *     which has no non-Latin glyph coverage)
+ *   • .intro-block / .bridge-text border-left → border-inline-start
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -147,7 +167,8 @@
 
   /* ── Answer fields ──
      Rendered as static text boxes rather than interactive textareas.
-     Serif body font chosen for readability in print. */
+     Source Serif 4 is chosen for Latin-script readability in print;
+     non-Latin scripts override font-family below (section 02a). */
   .answer-field {
     display: block;
     width: 100%;
@@ -167,10 +188,13 @@
   }
 
   /* ── Intro and bridge blocks ──
-     Preserve the left accent border and warm cream background in print. */
+     Preserve the inline-start accent border and warm cream background.
+     border-inline-start so the accent border flips to the right edge
+     when printing in a RTL language (html[dir="rtl"] is still present
+     at print time). */
   .intro-block,
   .bridge-text {
-    border-left: 3pt solid #b8922a;
+    border-inline-start: 3pt solid #b8922a;      /* was border-left */
     background: #faf8f3 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -211,4 +235,131 @@
     margin-top: 1cm;  /* tighter top margin on first page — no running header */
   }
 
-}
+
+  /* ════════════════════════════════════════════════════════════════════════
+     02a. PRINT — SCRIPT-SPECIFIC OVERRIDES
+     ──────────────────────────────────────────────────────────────────────
+     These rules sit inside @media print so they only apply during printing.
+     They override the print-specific property values declared above that
+     the screen-level section 11 blocks in other files cannot reach,
+     because those blocks target screen rendering and the print block
+     re-declares the same properties with hardcoded values.
+
+     TWO ELEMENTS ARE TARGETED:
+
+     .chapter-label
+       The print block re-declares letter-spacing: 0.15em and
+       text-transform: uppercase. Non-Latin scripts need both reset.
+       Cyrillic needs only letter-spacing reset (uppercase is fine).
+
+     .answer-field
+       The print block hardcodes font-family to 'Source Serif 4', Georgia,
+       serif. Source Serif 4 and Georgia have no coverage for Arabic,
+       Devanagari, Myanmar, CJK, Hangul, or Hebrew script. Without an
+       override the browser falls back to a generic serif, which may
+       render poorly or produce blank boxes depending on the OS.
+       Explicitly setting system-ui (or the OS default sans) for each
+       script family ensures the user's typed answers print legibly.
+
+     WHAT IS NOT DUPLICATED HERE:
+       • question-ref letter-spacing — the 05b section 11 :lang() rules
+         remain active in print (lang selectors are not media-scoped).
+       • reflection-header h3 font-style — same, covered by 05a section 11.
+       • All line-heights — print rendering engine handles leading from
+         pt font sizes; the screen line-height values are not inherited
+         into print because the print block resets font-size to pt units
+         which implicitly resets line-height to normal.
+       • RTL direction — inherited from html[dir="rtl"] at print time.
+     ════════════════════════════════════════════════════════════════════════ */
+
+  /* ── A. Arabic script — ar, ur ──────────────────────────────────────── */
+
+  :lang(ar) .chapter-label,
+  :lang(ur) .chapter-label {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* Source Serif 4 / Georgia have no Arabic glyphs.
+     system-ui will resolve to the OS default Arabic-capable font. */
+  :lang(ar) .answer-field,
+  :lang(ur) .answer-field {
+    font-family: system-ui, sans-serif;
+  }
+
+
+  /* ── B. Hebrew script — he ───────────────────────────────────────────── */
+
+  :lang(he) .chapter-label {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :lang(he) .answer-field {
+    font-family: system-ui, sans-serif;
+  }
+
+
+  /* ── C. Devanagari — ne (Nepali), hi (Hindi) ────────────────────────── */
+
+  :lang(ne) .chapter-label,
+  :lang(hi) .chapter-label {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :lang(ne) .answer-field,
+  :lang(hi) .answer-field {
+    font-family: system-ui, sans-serif;
+  }
+
+
+  /* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+  :lang(my) .chapter-label {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :lang(my) .answer-field {
+    font-family: system-ui, sans-serif;
+  }
+
+
+  /* ── E. CJK — zh (Chinese Simplified zh-CN), ja (Japanese) ─────────── */
+
+  :lang(zh) .chapter-label,
+  :lang(ja) .chapter-label {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :lang(zh) .answer-field,
+  :lang(ja) .answer-field {
+    font-family: system-ui, sans-serif;
+  }
+
+
+  /* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+  :lang(ko) .chapter-label {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :lang(ko) .answer-field {
+    font-family: system-ui, sans-serif;
+  }
+
+
+  /* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ──────────────────────── */
+  /* Cyrillic text-transform: uppercase is fine — only letter-spacing reset.
+     Georgia (the fallback in the print font stack) has good Cyrillic
+     coverage, so no font-family override is needed. */
+
+  :lang(ru) .chapter-label,
+  :lang(uk) .chapter-label {
+    letter-spacing: 0;
+  }
+
+} /* end @media print */

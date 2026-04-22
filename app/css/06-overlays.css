@@ -30,6 +30,18 @@
  * ── DARK MODE ───────────────────────────────────────────────────────────
  * 11. Dark mode           – body.dark-mode overrides for all rules above
  *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 12. RTL overrides       – Mirrors layout for Arabic, Hebrew, Urdu
+ * 13. Script overrides    – Per-script resets grouped by script family:
+ *                           A. Arabic script   — ar, ur
+ *                           B. Hebrew script   — he
+ *                           C. Devanagari      — ne, hi
+ *                           D. Myanmar         — my
+ *                           E. CJK             — zh (zh-CN), ja
+ *                           F. Hangul          — ko
+ *                           G. Cyrillic        — ru, uk  (chrome labels only)
+ *                           H. Greek           — el       (chrome labels only)
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -106,8 +118,8 @@
 #qaModalSpeakBtn {
   position: static;
   flex-shrink: 0;
-  margin-left: auto;   /* pushes it to the right, before the close button */
-  margin-right: 8px;
+  margin-inline-start: auto;   /* was margin-left — pushes to inline-end, before close button */
+  margin-inline-end: 8px;         /* was margin-right */
   opacity: 0.6;
 }
 
@@ -132,7 +144,7 @@
   font-family: var(--font-stack-mono);
   font-size: 10px;         /* UI chrome — stays px */
   color: var(--text-faint);
-  text-align: right;
+  text-align: end;             /* was text-align: right */
 }
 .verse-modal-footer a {
   color: var(--emphasis);
@@ -187,7 +199,7 @@
 }
 .qa-callout-question ul, .qa-callout-question ol,
 .gen-callout-question ul, .gen-callout-question ol {
-  padding-left: 1.0rem;
+  padding-inline-start: 1.0rem;   /* was padding-left */
   margin: 4px 0;
 }
 /* "Read explanation →" button that opens the QA modal */
@@ -218,7 +230,7 @@
 .qa-callout-question ol,
 .qa-callout-answer ul,
 .qa-callout-answer ol {
-  padding-left: 1.4em;
+  padding-inline-start: 1.4em;   /* was padding-left */
   margin: 8px 0;
 }
 .gen-callout-question li,
@@ -286,7 +298,7 @@
   padding: 0;
   line-height: 1;
   flex-shrink: 0;
-  margin-left: 12px;
+  margin-inline-start: 12px;   /* was margin-left */
 }
 .qa-modal-text {
   font-family: var(--main-font-family);
@@ -299,7 +311,7 @@
 }
 .qa-modal-text ul,
 .qa-modal-text ol {
-  padding-left: 1.0rem;
+  padding-inline-start: 1.0rem;   /* was padding-left */
   margin: 4px 0;
 }
 
@@ -512,7 +524,7 @@
 }
 .onboarding-body ol,
 .onboarding-body ul {
-  padding-left: 1.5em;
+  padding-inline-start: 1.5em;   /* was padding-left */
 }
 
 /* ── 08. SEARCH OVERLAY ─────────────────────────────────────────────────── */
@@ -674,7 +686,7 @@
   background: none;
   border: none;
   padding: 0;
-  margin-left: 6px;
+  margin-inline-start: 6px;    /* was margin-left */
   cursor: pointer;
   color: var(--color-accent);
   opacity: 0.7;
@@ -751,7 +763,7 @@
   padding: 0;
   line-height: 1;
   flex-shrink: 0;
-  margin-left: 12px;
+  margin-inline-start: 12px;   /* was margin-left */
 }
 
 /* Body text */
@@ -767,7 +779,7 @@
 .info-modal-body ol,
 .info-modal ul,
 .info-modal ol {
-  padding-left: 1.2rem;
+  padding-inline-start: 1.2rem;   /* was padding-left */
   margin: 4px 0;
 }
 
@@ -835,3 +847,443 @@ body.dark-mode .info-modal        { background: var(--dm-raised); }
 body.dark-mode .info-modal-title  { color: var(--dm-text); }
 body.dark-mode .info-modal-body   { color: var(--dm-text); }
 body.dark-mode .info-modal-header { border-bottom-color: var(--dm-border); }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   12. RTL OVERRIDES  (dir="rtl" on <html> set by the JS language switcher)
+   Applies to Arabic (ar), Urdu (ur), and Hebrew (he).
+   border-inline-start / padding-inline-* logical properties used throughout
+   handle element-level mirroring automatically. The two cases below need
+   explicit attention:
+
+   1. .verse-modal-footer uses text-align: end (already logical), so the
+      attribution line correctly aligns to the inline-end edge in both LTR
+      and RTL without a further override here.
+
+   2. All bottom-sheets use border-radius: 16px 16px 0 0 (symmetric top
+      corners) — these are the same in LTR and RTL and need no override.
+
+   3. The speak buttons (#verseModalSpeakBtn, #qaModalSpeakBtn) use
+      margin-inline-start: auto which already pushes them to the correct
+      end in RTL.
+
+   No structural overrides are therefore needed in this file beyond the
+   logical property conversions already applied in the base rules above.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* No rules needed here. Logical properties in the base rules above handle
+   RTL layout automatically once dir="rtl" is set on <html> by JS. */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   13. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   See 01-fonts.css section 04 for the canonical rationale on each script
+   family's requirements (letter-spacing, text-transform, font-style,
+   font-family, line-height).
+
+   This file has three categories of elements:
+
+   CHROME LABELS — monospace, all-caps, letter-spaced UI labels:
+     .verse-modal-ref, .qa-callout-eyebrow, .gen-callout-eyebrow,
+     .qa-modal-eyebrow, .deeper-modal-eyebrow, .onboarding-eyebrow,
+     .onboarding-skip-btn, .search-cancel-btn, .search-section-label,
+     .search-result-meta, .modal-close-footer-btn
+     → Reset: letter-spacing: 0; text-transform: none
+     Note: .qa-callout-eyebrow and .gen-callout-eyebrow share the same
+     rule block so they are listed together.
+
+   DISPLAY HEADINGS — use --font-stack-heading (Playfair Display / italic):
+     .qa-callout-term, .gen-callout-term (also italic),
+     .qa-modal-term (also italic),
+     .onboarding-heading, .onboarding-next-btn, .info-modal-title
+     → Reset: font-family: var(--main-font-family); font-style: normal
+
+   CONTENT / BODY TEXT — uses --main-font-family:
+     .verse-modal-text, .qa-callout-question, .gen-callout-question,
+     .qa-modal-text, .deeper-modal-body, .onboarding-body,
+     .search-empty, .search-result-text, .search-result-answer (italic),
+     .info-modal-body
+     → line-height adjusted per script; font-style: normal on italic elements
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) .verse-modal-ref,
+:lang(ur) .verse-modal-ref,
+:lang(ar) .qa-callout-eyebrow,
+:lang(ur) .qa-callout-eyebrow,
+:lang(ar) .gen-callout-eyebrow,
+:lang(ur) .gen-callout-eyebrow,
+:lang(ar) .qa-modal-eyebrow,
+:lang(ur) .qa-modal-eyebrow,
+:lang(ar) .deeper-modal-eyebrow,
+:lang(ur) .deeper-modal-eyebrow,
+:lang(ar) .onboarding-eyebrow,
+:lang(ur) .onboarding-eyebrow,
+:lang(ar) .onboarding-skip-btn,
+:lang(ur) .onboarding-skip-btn,
+:lang(ar) .search-cancel-btn,
+:lang(ur) .search-cancel-btn,
+:lang(ar) .search-section-label,
+:lang(ur) .search-section-label,
+:lang(ar) .search-result-meta,
+:lang(ur) .search-result-meta,
+:lang(ar) .modal-close-footer-btn,
+:lang(ur) .modal-close-footer-btn {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .qa-callout-term,
+:lang(ur) .qa-callout-term,
+:lang(ar) .gen-callout-term,
+:lang(ur) .gen-callout-term,
+:lang(ar) .qa-modal-term,
+:lang(ur) .qa-modal-term,
+:lang(ar) .onboarding-heading,
+:lang(ur) .onboarding-heading,
+:lang(ar) .onboarding-next-btn,
+:lang(ur) .onboarding-next-btn,
+:lang(ar) .info-modal-title,
+:lang(ur) .info-modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(ar) .verse-modal-text,
+:lang(ur) .verse-modal-text,
+:lang(ar) .qa-callout-question,
+:lang(ur) .qa-callout-question,
+:lang(ar) .gen-callout-question,
+:lang(ur) .gen-callout-question,
+:lang(ar) .qa-modal-text,
+:lang(ur) .qa-modal-text,
+:lang(ar) .deeper-modal-body,
+:lang(ur) .deeper-modal-body,
+:lang(ar) .onboarding-body,
+:lang(ur) .onboarding-body,
+:lang(ar) .search-empty,
+:lang(ur) .search-empty,
+:lang(ar) .search-result-text,
+:lang(ur) .search-result-text,
+:lang(ar) .search-result-answer,
+:lang(ur) .search-result-answer,
+:lang(ar) .info-modal-body,
+:lang(ur) .info-modal-body {
+  line-height: 2;
+  font-style: normal;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) .verse-modal-ref,
+:lang(he) .qa-callout-eyebrow,
+:lang(he) .gen-callout-eyebrow,
+:lang(he) .qa-modal-eyebrow,
+:lang(he) .deeper-modal-eyebrow,
+:lang(he) .onboarding-eyebrow,
+:lang(he) .onboarding-skip-btn,
+:lang(he) .search-cancel-btn,
+:lang(he) .search-section-label,
+:lang(he) .search-result-meta,
+:lang(he) .modal-close-footer-btn {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .qa-callout-term,
+:lang(he) .gen-callout-term,
+:lang(he) .qa-modal-term,
+:lang(he) .onboarding-heading,
+:lang(he) .onboarding-next-btn,
+:lang(he) .info-modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(he) .verse-modal-text,
+:lang(he) .qa-callout-question,
+:lang(he) .gen-callout-question,
+:lang(he) .qa-modal-text,
+:lang(he) .deeper-modal-body,
+:lang(he) .onboarding-body,
+:lang(he) .search-empty,
+:lang(he) .search-result-text,
+:lang(he) .search-result-answer,
+:lang(he) .info-modal-body {
+  line-height: 1.9;
+  font-style: normal;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) .verse-modal-ref,
+:lang(hi) .verse-modal-ref,
+:lang(ne) .qa-callout-eyebrow,
+:lang(hi) .qa-callout-eyebrow,
+:lang(ne) .gen-callout-eyebrow,
+:lang(hi) .gen-callout-eyebrow,
+:lang(ne) .qa-modal-eyebrow,
+:lang(hi) .qa-modal-eyebrow,
+:lang(ne) .deeper-modal-eyebrow,
+:lang(hi) .deeper-modal-eyebrow,
+:lang(ne) .onboarding-eyebrow,
+:lang(hi) .onboarding-eyebrow,
+:lang(ne) .onboarding-skip-btn,
+:lang(hi) .onboarding-skip-btn,
+:lang(ne) .search-cancel-btn,
+:lang(hi) .search-cancel-btn,
+:lang(ne) .search-section-label,
+:lang(hi) .search-section-label,
+:lang(ne) .search-result-meta,
+:lang(hi) .search-result-meta,
+:lang(ne) .modal-close-footer-btn,
+:lang(hi) .modal-close-footer-btn {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .qa-callout-term,
+:lang(hi) .qa-callout-term,
+:lang(ne) .gen-callout-term,
+:lang(hi) .gen-callout-term,
+:lang(ne) .qa-modal-term,
+:lang(hi) .qa-modal-term,
+:lang(ne) .onboarding-heading,
+:lang(hi) .onboarding-heading,
+:lang(ne) .onboarding-next-btn,
+:lang(hi) .onboarding-next-btn,
+:lang(ne) .info-modal-title,
+:lang(hi) .info-modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(ne) .verse-modal-text,
+:lang(hi) .verse-modal-text,
+:lang(ne) .qa-callout-question,
+:lang(hi) .qa-callout-question,
+:lang(ne) .gen-callout-question,
+:lang(hi) .gen-callout-question,
+:lang(ne) .qa-modal-text,
+:lang(hi) .qa-modal-text,
+:lang(ne) .deeper-modal-body,
+:lang(hi) .deeper-modal-body,
+:lang(ne) .onboarding-body,
+:lang(hi) .onboarding-body,
+:lang(ne) .search-empty,
+:lang(hi) .search-empty,
+:lang(ne) .search-result-text,
+:lang(hi) .search-result-text,
+:lang(ne) .search-result-answer,
+:lang(hi) .search-result-answer,
+:lang(ne) .info-modal-body,
+:lang(hi) .info-modal-body {
+  line-height: 2;
+  font-style: normal;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) .verse-modal-ref,
+:lang(my) .qa-callout-eyebrow,
+:lang(my) .gen-callout-eyebrow,
+:lang(my) .qa-modal-eyebrow,
+:lang(my) .deeper-modal-eyebrow,
+:lang(my) .onboarding-eyebrow,
+:lang(my) .onboarding-skip-btn,
+:lang(my) .search-cancel-btn,
+:lang(my) .search-section-label,
+:lang(my) .search-result-meta,
+:lang(my) .modal-close-footer-btn {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .qa-callout-term,
+:lang(my) .gen-callout-term,
+:lang(my) .qa-modal-term,
+:lang(my) .onboarding-heading,
+:lang(my) .onboarding-next-btn,
+:lang(my) .info-modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(my) .verse-modal-text,
+:lang(my) .qa-callout-question,
+:lang(my) .gen-callout-question,
+:lang(my) .qa-modal-text,
+:lang(my) .deeper-modal-body,
+:lang(my) .onboarding-body,
+:lang(my) .search-empty,
+:lang(my) .search-result-text,
+:lang(my) .search-result-answer,
+:lang(my) .info-modal-body {
+  line-height: 2.2;
+  font-style: normal;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified, zh-CN), ja (Japanese) ──────────── */
+
+:lang(zh) .verse-modal-ref,
+:lang(ja) .verse-modal-ref,
+:lang(zh) .qa-callout-eyebrow,
+:lang(ja) .qa-callout-eyebrow,
+:lang(zh) .gen-callout-eyebrow,
+:lang(ja) .gen-callout-eyebrow,
+:lang(zh) .qa-modal-eyebrow,
+:lang(ja) .qa-modal-eyebrow,
+:lang(zh) .deeper-modal-eyebrow,
+:lang(ja) .deeper-modal-eyebrow,
+:lang(zh) .onboarding-eyebrow,
+:lang(ja) .onboarding-eyebrow,
+:lang(zh) .onboarding-skip-btn,
+:lang(ja) .onboarding-skip-btn,
+:lang(zh) .search-cancel-btn,
+:lang(ja) .search-cancel-btn,
+:lang(zh) .search-section-label,
+:lang(ja) .search-section-label,
+:lang(zh) .search-result-meta,
+:lang(ja) .search-result-meta,
+:lang(zh) .modal-close-footer-btn,
+:lang(ja) .modal-close-footer-btn {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .qa-callout-term,
+:lang(ja) .qa-callout-term,
+:lang(zh) .gen-callout-term,
+:lang(ja) .gen-callout-term,
+:lang(zh) .qa-modal-term,
+:lang(ja) .qa-modal-term,
+:lang(zh) .onboarding-heading,
+:lang(ja) .onboarding-heading,
+:lang(zh) .onboarding-next-btn,
+:lang(ja) .onboarding-next-btn,
+:lang(zh) .info-modal-title,
+:lang(ja) .info-modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(zh) .verse-modal-text,
+:lang(ja) .verse-modal-text,
+:lang(zh) .qa-callout-question,
+:lang(ja) .qa-callout-question,
+:lang(zh) .gen-callout-question,
+:lang(ja) .gen-callout-question,
+:lang(zh) .qa-modal-text,
+:lang(ja) .qa-modal-text,
+:lang(zh) .deeper-modal-body,
+:lang(ja) .deeper-modal-body,
+:lang(zh) .onboarding-body,
+:lang(ja) .onboarding-body,
+:lang(zh) .search-empty,
+:lang(ja) .search-empty,
+:lang(zh) .search-result-text,
+:lang(ja) .search-result-text,
+:lang(zh) .search-result-answer,
+:lang(ja) .search-result-answer,
+:lang(zh) .info-modal-body,
+:lang(ja) .info-modal-body {
+  line-height: 1.6;
+  font-style: normal;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) .verse-modal-ref,
+:lang(ko) .qa-callout-eyebrow,
+:lang(ko) .gen-callout-eyebrow,
+:lang(ko) .qa-modal-eyebrow,
+:lang(ko) .deeper-modal-eyebrow,
+:lang(ko) .onboarding-eyebrow,
+:lang(ko) .onboarding-skip-btn,
+:lang(ko) .search-cancel-btn,
+:lang(ko) .search-section-label,
+:lang(ko) .search-result-meta,
+:lang(ko) .modal-close-footer-btn {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .qa-callout-term,
+:lang(ko) .gen-callout-term,
+:lang(ko) .qa-modal-term,
+:lang(ko) .onboarding-heading,
+:lang(ko) .onboarding-next-btn,
+:lang(ko) .info-modal-title {
+  font-family: var(--main-font-family);
+  font-style: normal;
+}
+
+:lang(ko) .verse-modal-text,
+:lang(ko) .qa-callout-question,
+:lang(ko) .gen-callout-question,
+:lang(ko) .qa-modal-text,
+:lang(ko) .deeper-modal-body,
+:lang(ko) .onboarding-body,
+:lang(ko) .search-empty,
+:lang(ko) .search-result-text,
+:lang(ko) .search-result-answer,
+:lang(ko) .info-modal-body {
+  line-height: 1.7;
+  font-style: normal;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* Only the letter-spacing on monospace chrome labels is reset.
+   Cyrillic has case and italic, so text-transform, font-style, and
+   font-family are left unchanged. */
+
+:lang(ru) .verse-modal-ref,
+:lang(uk) .verse-modal-ref,
+:lang(ru) .qa-callout-eyebrow,
+:lang(uk) .qa-callout-eyebrow,
+:lang(ru) .gen-callout-eyebrow,
+:lang(uk) .gen-callout-eyebrow,
+:lang(ru) .qa-modal-eyebrow,
+:lang(uk) .qa-modal-eyebrow,
+:lang(ru) .deeper-modal-eyebrow,
+:lang(uk) .deeper-modal-eyebrow,
+:lang(ru) .onboarding-eyebrow,
+:lang(uk) .onboarding-eyebrow,
+:lang(ru) .onboarding-skip-btn,
+:lang(uk) .onboarding-skip-btn,
+:lang(ru) .search-cancel-btn,
+:lang(uk) .search-cancel-btn,
+:lang(ru) .search-section-label,
+:lang(uk) .search-section-label,
+:lang(ru) .search-result-meta,
+:lang(uk) .search-result-meta,
+:lang(ru) .modal-close-footer-btn,
+:lang(uk) .modal-close-footer-btn {
+  letter-spacing: 0;
+}
+
+
+/* ── H. Greek — el ───────────────────────────────────────────────────── */
+/* Same light-touch treatment as Cyrillic. */
+
+:lang(el) .verse-modal-ref,
+:lang(el) .qa-callout-eyebrow,
+:lang(el) .gen-callout-eyebrow,
+:lang(el) .qa-modal-eyebrow,
+:lang(el) .deeper-modal-eyebrow,
+:lang(el) .onboarding-eyebrow,
+:lang(el) .onboarding-skip-btn,
+:lang(el) .search-cancel-btn,
+:lang(el) .search-section-label,
+:lang(el) .search-result-meta,
+:lang(el) .modal-close-footer-btn {
+  letter-spacing: 0;
+}

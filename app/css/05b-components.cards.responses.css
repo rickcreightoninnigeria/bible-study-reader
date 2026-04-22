@@ -21,6 +21,16 @@
  * ── DARK MODE ───────────────────────────────────────────────────────────
  * 10. Dark mode         – body.dark-mode overrides for all rules above
  *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 11. Script overrides  – Per-script resets grouped by script family:
+ *                           A. Arabic script   — ar, ur
+ *                           B. Hebrew script   — he
+ *                           C. Devanagari      — ne, hi
+ *                           D. Myanmar         — my
+ *                           E. CJK             — zh (zh-CN), ja
+ *                           F. Hangul          — ko
+ *                           G. Cyrillic        — ru, uk  (labels only)
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
@@ -53,11 +63,12 @@
   text-transform: uppercase;
 }
 
-/* Split ref bar layout — reference left, action buttons right */
+/* Split ref bar layout — reference inline-start, action buttons inline-end */
 .question-ref-split {
   display: flex;
   justify-content: space-between;
 }
+
 /* Custom header text in the ref bar for question subtype 'header'.
    Allows mixed-case and slightly looser tracking than the default
    all-caps mono ref bar style. */
@@ -102,18 +113,21 @@
 }
 .deeper-btn:hover { opacity: 1; }
 
+
 /* ── 03. VERSE BUTTON ───────────────────────────────────────────────────── */
-/* Floated right inside the ref bar. Opens the verse popup modal.
-   Only rendered when a scripture reference is attached to the question. */
+/* Floated to the inline-end of the ref bar. Opens the verse popup modal.
+   Only rendered when a scripture reference is attached to the question.
+   float: inline-end and padding-inline-start flip correctly in RTL. */
 
 .verse-btn {
-  float: right;
+  float: inline-end;                              /* was float: right */
   background: none;
   border: none;
   color: var(--accent-light);
   font-size: 13px;         /* UI chrome — stays px */
   cursor: pointer;
-  padding: 0 0 0 8px;
+  padding: 0;
+  padding-inline-start: 8px;                     /* was padding: 0 0 0 8px */
   line-height: 1;
   opacity: 0.8;
   transition: opacity 0.2s;
@@ -157,9 +171,9 @@
   min-height: 450px;
 }
 
-/* Character count hint shown below long-form answer fields */
+/* Character count hint — text-align: end flips to left in RTL */
 .char-hint {
-  text-align: right;
+  text-align: end;                                /* was text-align: right */
   font-family: var(--font-stack-mono);
   font-size: 11px;         /* UI chrome — stays px */
   color: var(--text-faint);
@@ -205,23 +219,26 @@
 
 /* ── 06. STARRED CARD ───────────────────────────────────────────────────── */
 /* .starred-card is a modifier applied to .question-card when the user
-   stars a question. Left accent border + warm tint signals the starred state.
+   stars a question. Inline-start accent border + warm tint signals the
+   starred state. border-inline-start flips to the right edge in RTL.
    The full starred summary panel lives in components.starred.css. */
 
 .question-card.starred-card {
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);  /* was border-left */
   background: #fffdf5;
 }
 
-/* Star button — floated right inside the ref bar */
+/* Star button — floated to the inline-end of the ref bar.
+   padding-inline-start provides the gap from the adjacent verse button. */
 .star-btn {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 13px;         /* UI chrome — stays px */
-  padding: 0 0 0 6px;
+  padding: 0;
+  padding-inline-start: 6px;                     /* was padding: 0 0 0 6px */
   line-height: 1;
-  float: right;
+  float: inline-end;                             /* was float: right */
   color: var(--accent-light) !important;
   opacity: 1 !important;
   transition: transform 0.15s;
@@ -231,8 +248,8 @@
 
 /* ── 07. LIKERT SCALE ───────────────────────────────────────────────────── */
 /* Agreement-scale assessment card. Header row has an ⓘ info button on the
-   left and numeric column headers on the right. Each statement row has
-   custom-styled radio inputs. */
+   inline-start and numeric column headers on the inline-end. Each statement
+   row has custom-styled radio inputs. */
 
 .likert-card {
   background: var(--card-bg);
@@ -243,7 +260,7 @@
   box-shadow: var(--shadow) 0 1px 4px;
 }
 
-/* Header row: info button left, number labels right */
+/* Header row: info button inline-start, number labels inline-end */
 .likert-header-row {
   display: flex;
   align-items: center;
@@ -266,7 +283,7 @@
   cursor: pointer;
   flex-shrink: 0;
   transition: border-color 0.15s, color 0.15s;
-  margin-right: auto;
+  margin-inline-end: auto;                       /* was margin-right: auto */
   letter-spacing: 0.04em;
 }
 .likert-info-btn:hover {
@@ -413,8 +430,9 @@
   font-weight: bold;
 }
 
+
 /* ── 09. AI TUTOR & LOCAL VALIDATE ───────────────────────────────────────── */
-/* Action row: info icon pinned left, validate + mic grouped at the right    */
+/* Action row: info icon pinned inline-start, validate + mic at inline-end  */
 .answer-action-row {
   display: flex;
   flex-direction: row;
@@ -423,7 +441,7 @@
   padding: 4px 8px 4px 6px;
 }
 
-/* Info button — muted, pinned to left by margin-right:auto */
+/* Info button — muted, pinned to inline-start by margin-inline-end: auto */
 .answer-info-btn {
   background: none;
   border: none;
@@ -435,7 +453,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: auto;
+  margin-inline-end: auto;                       /* was margin-right: auto */
   transition: opacity 0.15s, background 0.15s;
 }
 .answer-info-btn:hover,
@@ -445,7 +463,7 @@
   outline: none;
 }
 
-/* Validate + mic: no margins, sit flush at the right edge */
+/* Validate + mic: no margins, sit flush at the inline-end edge */
 .check-answer-btn,
 .local-validate-btn {
   background: none;
@@ -466,13 +484,13 @@
   color: var(--validate);
 }
 
-/* 30px gap between local-validate and mic */
+/* Gap between local-validate and mic */
 .local-validate-btn {
-  margin-right: 4px;
+  margin-inline-end: 4px;                        /* was margin-right: 4px */
 }
 .answer-action-row .mic-btn {
   order: 99;
-  margin-left: 30px;
+  margin-inline-start: 30px;                     /* was margin-left: 30px */
 }
 
 .check-answer-btn:hover,
@@ -484,7 +502,7 @@
   outline: none;
 }
 
-/* Mic is last child visually — always rightmost */
+/* Mic is last child visually — always at inline-end */
 .answer-action-row .mic-btn {
   order: 99;
 }
@@ -643,6 +661,7 @@
 .ai-tutor-send:hover    { background: var(--accent-light); }
 .ai-tutor-send:disabled { opacity: 0.5; cursor: not-allowed; }
 
+
 /* ══════════════════════════════════════════════════════════════════════════
    10. DARK MODE
    body.dark-mode overrides for all rules in this file, gathered here.
@@ -692,7 +711,7 @@ body.dark-mode .mic-btn.mic-btn-active {
 /* ── Starred card ── */
 body.dark-mode .question-card.starred-card {
   background: var(--dm-sunken);
-  border-left-color: var(--accent);
+  border-inline-start-color: var(--accent);      /* was border-left-color */
 }
 
 /* ── Likert scale ── */
@@ -797,3 +816,482 @@ body.dark-mode .ai-tutor-send {
 }
 body.dark-mode .ai-tutor-send:hover { background: var(--accent); color: var(--dm-text); }
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   Elements targeted in this file, and why each needs treatment:
+
+   CHROME LABELS (letter-spacing + text-transform resets):
+     .question-ref           — scripture ref bar: 0.12em tracking, all-caps
+     .question-header-label  — ref bar header variant: 0.04em + italic
+     .likert-number-label    — numeric column headers: 0.05em (minor, but reset
+                               for consistency — numbers are script-neutral)
+     .likert-info-btn        — ⓘ label button: 0.04em tracking
+     .likert-popup-titlebar  — popup heading: 0.18em + all-caps
+     .likert-popup-key-row   — scale key rows: 0.04em tracking
+     .ai-tutor-turn-label    — "YOU" / "TUTOR" labels: 0.07em + all-caps
+     .ai-tutor-eyebrow       — panel header label: 0.1em + all-caps
+
+   ITALIC SUPPRESSION (font-style: normal):
+     .question-header-label  — italic applied to non-Latin header ref text
+     .answer-field::placeholder — italic on placeholder text
+     .likert-popup-instruction — italic on instruction paragraph
+
+   LINE-HEIGHT BUMPS for scripts with tall vertical metrics:
+     .question-text          — 1.6  → 2   for ar/ur/ne/hi/my
+     .likert-statement       — 1.45 → 2   for ar/ur/ne/hi/my
+     .likert-popup-instruction — 1.7 → 2  for ar/ur/ne/hi/my
+     .ai-tutor-turn-body p   — 1.55 → 2  for ar/ur/ne/hi/my
+     .ai-tutor-input         — 1.45 → 2  for ar/ur/ne/hi/my
+     Hebrew gets slightly less (1.9) than Arabic/Devanagari/Myanmar (2).
+     CJK gets 1.6, Hangul gets 1.7 — no change from base needed, stated
+     explicitly only where the base value differs.
+
+   NO CHANGES NEEDED for:
+     .answer-field — uses --main-font-family, no letter-spacing, no heading font
+     .mic-btn, .check-answer-btn, .local-validate-btn, .ai-tutor-send — icons only
+     .likert-radio, .likert-options — no text
+     .ai-tutor-typing-dots — animation only
+     All dark mode and animation rules
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) .question-ref,
+:lang(ur) .question-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .question-header-label,
+:lang(ur) .question-header-label {
+  letter-spacing: 0;
+  font-style: normal;
+}
+
+:lang(ar) .question-text,
+:lang(ur) .question-text {
+  line-height: 2;
+}
+
+:lang(ar) .answer-field::placeholder,
+:lang(ur) .answer-field::placeholder {
+  font-style: normal;
+}
+
+:lang(ar) .likert-number-label,
+:lang(ur) .likert-number-label {
+  letter-spacing: 0;
+}
+
+:lang(ar) .likert-info-btn,
+:lang(ur) .likert-info-btn {
+  letter-spacing: 0;
+}
+
+:lang(ar) .likert-statement,
+:lang(ur) .likert-statement {
+  line-height: 2;
+}
+
+:lang(ar) .likert-popup-titlebar,
+:lang(ur) .likert-popup-titlebar {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .likert-popup-instruction,
+:lang(ur) .likert-popup-instruction {
+  font-style: normal;
+  line-height: 2;
+}
+
+:lang(ar) .likert-popup-key-row,
+:lang(ur) .likert-popup-key-row {
+  letter-spacing: 0;
+}
+
+:lang(ar) .ai-tutor-turn-label,
+:lang(ur) .ai-tutor-turn-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .ai-tutor-eyebrow,
+:lang(ur) .ai-tutor-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .ai-tutor-turn-body p,
+:lang(ur) .ai-tutor-turn-body p {
+  line-height: 2;
+}
+
+:lang(ar) .ai-tutor-input,
+:lang(ur) .ai-tutor-input {
+  line-height: 2;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) .question-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .question-header-label {
+  letter-spacing: 0;
+  font-style: normal;
+}
+
+:lang(he) .question-text {
+  line-height: 1.9;
+}
+
+:lang(he) .answer-field::placeholder {
+  font-style: normal;
+}
+
+:lang(he) .likert-number-label {
+  letter-spacing: 0;
+}
+
+:lang(he) .likert-info-btn {
+  letter-spacing: 0;
+}
+
+:lang(he) .likert-statement {
+  line-height: 1.9;
+}
+
+:lang(he) .likert-popup-titlebar {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .likert-popup-instruction {
+  font-style: normal;
+  line-height: 1.9;
+}
+
+:lang(he) .likert-popup-key-row {
+  letter-spacing: 0;
+}
+
+:lang(he) .ai-tutor-turn-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .ai-tutor-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .ai-tutor-turn-body p {
+  line-height: 1.9;
+}
+
+:lang(he) .ai-tutor-input {
+  line-height: 1.9;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) .question-ref,
+:lang(hi) .question-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .question-header-label,
+:lang(hi) .question-header-label {
+  letter-spacing: 0;
+  font-style: normal;
+}
+
+:lang(ne) .question-text,
+:lang(hi) .question-text {
+  line-height: 2;
+}
+
+:lang(ne) .answer-field::placeholder,
+:lang(hi) .answer-field::placeholder {
+  font-style: normal;
+}
+
+:lang(ne) .likert-number-label,
+:lang(hi) .likert-number-label {
+  letter-spacing: 0;
+}
+
+:lang(ne) .likert-info-btn,
+:lang(hi) .likert-info-btn {
+  letter-spacing: 0;
+}
+
+:lang(ne) .likert-statement,
+:lang(hi) .likert-statement {
+  line-height: 2;
+}
+
+:lang(ne) .likert-popup-titlebar,
+:lang(hi) .likert-popup-titlebar {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .likert-popup-instruction,
+:lang(hi) .likert-popup-instruction {
+  font-style: normal;
+  line-height: 2;
+}
+
+:lang(ne) .likert-popup-key-row,
+:lang(hi) .likert-popup-key-row {
+  letter-spacing: 0;
+}
+
+:lang(ne) .ai-tutor-turn-label,
+:lang(hi) .ai-tutor-turn-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .ai-tutor-eyebrow,
+:lang(hi) .ai-tutor-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .ai-tutor-turn-body p,
+:lang(hi) .ai-tutor-turn-body p {
+  line-height: 2;
+}
+
+:lang(ne) .ai-tutor-input,
+:lang(hi) .ai-tutor-input {
+  line-height: 2;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) .question-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .question-header-label {
+  letter-spacing: 0;
+  font-style: normal;
+}
+
+:lang(my) .question-text {
+  line-height: 2.2;
+}
+
+:lang(my) .answer-field::placeholder {
+  font-style: normal;
+}
+
+:lang(my) .likert-number-label {
+  letter-spacing: 0;
+}
+
+:lang(my) .likert-info-btn {
+  letter-spacing: 0;
+}
+
+:lang(my) .likert-statement {
+  line-height: 2.2;
+}
+
+:lang(my) .likert-popup-titlebar {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .likert-popup-instruction {
+  font-style: normal;
+  line-height: 2.2;
+}
+
+:lang(my) .likert-popup-key-row {
+  letter-spacing: 0;
+}
+
+:lang(my) .ai-tutor-turn-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .ai-tutor-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .ai-tutor-turn-body p {
+  line-height: 2.2;
+}
+
+:lang(my) .ai-tutor-input {
+  line-height: 2.2;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified zh-CN), ja (Japanese) ──────────── */
+
+:lang(zh) .question-ref,
+:lang(ja) .question-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .question-header-label,
+:lang(ja) .question-header-label {
+  letter-spacing: 0;
+  font-style: normal;
+}
+
+:lang(zh) .answer-field::placeholder,
+:lang(ja) .answer-field::placeholder {
+  font-style: normal;
+}
+
+:lang(zh) .likert-number-label,
+:lang(ja) .likert-number-label {
+  letter-spacing: 0;
+}
+
+:lang(zh) .likert-info-btn,
+:lang(ja) .likert-info-btn {
+  letter-spacing: 0;
+}
+
+:lang(zh) .likert-popup-titlebar,
+:lang(ja) .likert-popup-titlebar {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .likert-popup-instruction,
+:lang(ja) .likert-popup-instruction {
+  font-style: normal;
+  /* line-height: base 1.7 is acceptable for CJK — no change needed */
+}
+
+:lang(zh) .likert-popup-key-row,
+:lang(ja) .likert-popup-key-row {
+  letter-spacing: 0;
+}
+
+:lang(zh) .ai-tutor-turn-label,
+:lang(ja) .ai-tutor-turn-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .ai-tutor-eyebrow,
+:lang(ja) .ai-tutor-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) .question-ref {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .question-header-label {
+  letter-spacing: 0;
+  font-style: normal;
+}
+
+:lang(ko) .answer-field::placeholder {
+  font-style: normal;
+}
+
+:lang(ko) .likert-number-label {
+  letter-spacing: 0;
+}
+
+:lang(ko) .likert-info-btn {
+  letter-spacing: 0;
+}
+
+:lang(ko) .likert-popup-titlebar {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .likert-popup-instruction {
+  font-style: normal;
+}
+
+:lang(ko) .likert-popup-key-row {
+  letter-spacing: 0;
+}
+
+:lang(ko) .ai-tutor-turn-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .ai-tutor-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* Cyrillic has case and italic so only letter-spacing on chrome labels
+   is reset. font-style, text-transform, and font-family are unchanged. */
+
+:lang(ru) .question-ref,
+:lang(uk) .question-ref {
+  letter-spacing: 0;
+}
+
+:lang(ru) .question-header-label,
+:lang(uk) .question-header-label {
+  letter-spacing: 0;
+}
+
+:lang(ru) .likert-number-label,
+:lang(uk) .likert-number-label {
+  letter-spacing: 0;
+}
+
+:lang(ru) .likert-info-btn,
+:lang(uk) .likert-info-btn {
+  letter-spacing: 0;
+}
+
+:lang(ru) .likert-popup-titlebar,
+:lang(uk) .likert-popup-titlebar {
+  letter-spacing: 0;
+}
+
+:lang(ru) .likert-popup-key-row,
+:lang(uk) .likert-popup-key-row {
+  letter-spacing: 0;
+}
+
+:lang(ru) .ai-tutor-turn-label,
+:lang(uk) .ai-tutor-turn-label {
+  letter-spacing: 0;
+}
+
+:lang(ru) .ai-tutor-eyebrow,
+:lang(uk) .ai-tutor-eyebrow {
+  letter-spacing: 0;
+}

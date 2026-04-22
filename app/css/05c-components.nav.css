@@ -18,13 +18,25 @@
  * ── DARK MODE ───────────────────────────────────────────────────────────
  * 09. Dark mode           – body.dark-mode overrides for all rules above
  *
+ * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
+ * 10. RTL overrides       – Physical padding flip for version-warning-close
+ * 11. Script overrides    – Per-script resets grouped by script family:
+ *                           A. Arabic script   — ar, ur
+ *                           B. Hebrew script   — he
+ *                           C. Devanagari      — ne, hi
+ *                           D. Myanmar         — my
+ *                           E. CJK             — zh (zh-CN), ja
+ *                           F. Hangul          — ko
+ *                           G. Cyrillic        — ru, uk  (labels only)
+ *
  * ════════════════════════════════════════════════════════════════════════
  */
 
 
 /* ── 01. TOAST ──────────────────────────────────────────────────────────── */
 /* Auto-dismiss notification confirming saves and other brief actions.
-   Appears below the top nav, centred horizontally. */
+   Appears below the top nav, centred horizontally.
+   left: 50% + translateX(-50%) is direction-neutral — no RTL change needed. */
 
 .toast,
 .validate-toast {
@@ -59,6 +71,7 @@
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
 
 /* ── 02. CELEBRATION TOAST ──────────────────────────────────────────────── */
 /* Milestone / chapter-complete toast. Distinct from the standard toast —
@@ -142,7 +155,7 @@
   color: rgba(245,240,232,0.4);
   font-size: 18px;         /* UI chrome — stays px */
   cursor: pointer;
-  padding: 0 0 0 8px;
+  padding-inline-start: 8px;  /* was padding: 0 0 0 8px — flips in RTL */
   flex-shrink: 0;
   line-height: 1;
 }
@@ -349,4 +362,266 @@ body.dark-mode .page-close-btn {
 body.dark-mode .page-close-btn:hover {
   background: var(--dm-raised);
   color: var(--dm-text-mid);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   10. RTL OVERRIDES  (dir="rtl" on <html> or a parent element)
+   Applies to Arabic (ar), Urdu (ur), and Hebrew (he).
+
+   .version-warning-close sits at the inline-end of a flex row. Its original
+   padding: 0 0 0 8px (physical left) separates it from the body text to its
+   left in LTR. In RTL the body text is to its right, so the gap must be on
+   the right — padding-inline-start (already applied in the base rule above)
+   handles this automatically with no additional rule needed here.
+
+   All toasts use left: 50% + translateX(-50%) for centring, which is
+   direction-neutral and requires no override.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* No physical layout overrides required in this file beyond the
+   padding-inline-start change already made to .version-warning-close. */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11. SCRIPT-SPECIFIC OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────
+   Elements targeted in this file:
+
+   .toast / .validate-toast      letter-spacing: 0.05em on translated text
+   .version-warning-eyebrow      letter-spacing: 0.15em + text-transform: uppercase
+   .version-warning-text         line-height: 1.6 (body text, translated)
+   .celebration-toast            font-family: 'Source Serif 4' hardcoded +
+                                 line-height: 1.5 (translated milestone text)
+   .chapter-nav-btn              font-family: var(--font-stack-heading) on
+                                 translated "Prev / Next" button labels
+   .page-close-btn               letter-spacing: 0.08em on translated label
+
+   Elements NOT targeted (no changes needed):
+   .save-btn       — uses --main-font-family, no letter-spacing, short emoji+label
+   .celebration-toast-sub — same font/container as parent toast, covered above
+   All animation, GPU, and dark-mode rules — no typographic content
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── A. Arabic script — ar, ur ────────────────────────────────────────── */
+
+:lang(ar) .toast,
+:lang(ur) .toast,
+:lang(ar) .validate-toast,
+:lang(ur) .validate-toast {
+  letter-spacing: 0;
+}
+
+:lang(ar) .version-warning-eyebrow,
+:lang(ur) .version-warning-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ar) .version-warning-text,
+:lang(ur) .version-warning-text {
+  line-height: 2;
+}
+
+:lang(ar) .celebration-toast,
+:lang(ur) .celebration-toast {
+  font-family: var(--main-font-family);
+  line-height: 2;
+}
+
+:lang(ar) .chapter-nav-btn,
+:lang(ur) .chapter-nav-btn {
+  font-family: var(--main-font-family);
+}
+
+:lang(ar) .page-close-btn,
+:lang(ur) .page-close-btn {
+  letter-spacing: 0;
+}
+
+
+/* ── B. Hebrew script — he ────────────────────────────────────────────── */
+
+:lang(he) .toast,
+:lang(he) .validate-toast {
+  letter-spacing: 0;
+}
+
+:lang(he) .version-warning-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(he) .version-warning-text {
+  line-height: 1.9;
+}
+
+:lang(he) .celebration-toast {
+  font-family: var(--main-font-family);
+  line-height: 1.9;
+}
+
+:lang(he) .chapter-nav-btn {
+  font-family: var(--main-font-family);
+}
+
+:lang(he) .page-close-btn {
+  letter-spacing: 0;
+}
+
+
+/* ── C. Devanagari — ne (Nepali), hi (Hindi) ─────────────────────────── */
+
+:lang(ne) .toast,
+:lang(hi) .toast,
+:lang(ne) .validate-toast,
+:lang(hi) .validate-toast {
+  letter-spacing: 0;
+}
+
+:lang(ne) .version-warning-eyebrow,
+:lang(hi) .version-warning-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ne) .version-warning-text,
+:lang(hi) .version-warning-text {
+  line-height: 2;
+}
+
+:lang(ne) .celebration-toast,
+:lang(hi) .celebration-toast {
+  font-family: var(--main-font-family);
+  line-height: 2;
+}
+
+:lang(ne) .chapter-nav-btn,
+:lang(hi) .chapter-nav-btn {
+  font-family: var(--main-font-family);
+}
+
+:lang(ne) .page-close-btn,
+:lang(hi) .page-close-btn {
+  letter-spacing: 0;
+}
+
+
+/* ── D. Myanmar script — my (Burmese) ───────────────────────────────── */
+
+:lang(my) .toast,
+:lang(my) .validate-toast {
+  letter-spacing: 0;
+}
+
+:lang(my) .version-warning-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(my) .version-warning-text {
+  line-height: 2.2;
+}
+
+:lang(my) .celebration-toast {
+  font-family: var(--main-font-family);
+  line-height: 2.2;
+}
+
+:lang(my) .chapter-nav-btn {
+  font-family: var(--main-font-family);
+}
+
+:lang(my) .page-close-btn {
+  letter-spacing: 0;
+}
+
+
+/* ── E. CJK — zh (Chinese Simplified zh-CN), ja (Japanese) ──────────── */
+
+:lang(zh) .toast,
+:lang(ja) .toast,
+:lang(zh) .validate-toast,
+:lang(ja) .validate-toast {
+  letter-spacing: 0;
+}
+
+:lang(zh) .version-warning-eyebrow,
+:lang(ja) .version-warning-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(zh) .version-warning-text,
+:lang(ja) .version-warning-text {
+  line-height: 1.6;   /* CJK default — same as base value, stated for clarity */
+}
+
+:lang(zh) .celebration-toast,
+:lang(ja) .celebration-toast {
+  font-family: var(--main-font-family);
+  line-height: 1.6;
+}
+
+:lang(zh) .chapter-nav-btn,
+:lang(ja) .chapter-nav-btn {
+  font-family: var(--main-font-family);
+}
+
+:lang(zh) .page-close-btn,
+:lang(ja) .page-close-btn {
+  letter-spacing: 0;
+}
+
+
+/* ── F. Hangul — ko (Korean) ─────────────────────────────────────────── */
+
+:lang(ko) .toast,
+:lang(ko) .validate-toast {
+  letter-spacing: 0;
+}
+
+:lang(ko) .version-warning-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:lang(ko) .version-warning-text {
+  line-height: 1.7;
+}
+
+:lang(ko) .celebration-toast {
+  font-family: var(--main-font-family);
+  line-height: 1.7;
+}
+
+:lang(ko) .chapter-nav-btn {
+  font-family: var(--main-font-family);
+}
+
+:lang(ko) .page-close-btn {
+  letter-spacing: 0;
+}
+
+
+/* ── G. Cyrillic — ru (Russian), uk (Ukrainian) ─────────────────────── */
+/* Cyrillic has case and italic so only letter-spacing on chrome labels
+   is reset. font-family and text-transform are left unchanged. */
+
+:lang(ru) .toast,
+:lang(uk) .toast,
+:lang(ru) .validate-toast,
+:lang(uk) .validate-toast {
+  letter-spacing: 0;
+}
+
+:lang(ru) .version-warning-eyebrow,
+:lang(uk) .version-warning-eyebrow {
+  letter-spacing: 0;
+}
+
+:lang(ru) .page-close-btn,
+:lang(uk) .page-close-btn {
+  letter-spacing: 0;
 }
