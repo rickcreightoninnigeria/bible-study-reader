@@ -1,0 +1,550 @@
+{
+  "learningPathways": [
+    {
+      "titleLevel1": " Crescimento para todos",
+      "description": " Um programa fundamental concebido para ajudar cada crente a estabelecer raízes firmes e progredir rumo à liderança.",
+      "pathways": [
+        {
+          "titleLevel2": " 1. Fundamentos",
+          "description": " O ponto de partida essencial para compreender a mensagem central da Bíblia e a nossa resposta a ela.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando Genesis",
+              "description": " Explorando as origens da relação de Deus com a humanidade.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "studyId": "introducing_genesis_v001"
+            },
+            {
+              "titleLevel3": " Apresentando Mark",
+              "description": " Uma análise dinâmica da vida e do ministério de Jesus.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "studyId": "introducing_mark_v001"
+            },
+            {
+              "titleLevel3": " Verdade Revelada (1)",
+              "description": " <b>Verdade Revelada, Volume 1: Crença Cristã</b><br><br>Oito estudos para ajudá-lo a compreender as verdades essenciais reveladas por Deus na Bíblia. Não podemos viver vidas piedosas a menos que compreendamos a verdade bíblica e a apliquemos como fundamento de nossas vidas. <i>Verdade Revelada</i> também é uma ótima ferramenta para aqueles que são cristãos há algum tempo e desejam revisar os fundamentos de sua fé. Você pode se surpreender com o que aprenderá!",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "studyId": "truth_unlocked_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Conversão",
+              "description": " <b>Conversão: Nova, não (apenas) agradável</b><br><br>Um estudo bíblico de nove sessões que explora o que significa a conversão genuína – e por que ela é importante.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "studyId": "conversion_v001"
+            },
+            {
+              "titleLevel3": " Liderança Servidora",
+              "description": " modelo bíblico de influência e cuidado.",
+              "studyId": "servant_leadership_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 2. Criando raízes",
+          "description": " Aprofundando-se na estrutura da Bíblia e nos hábitos espirituais pessoais.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "studyTitles": [
+            {
+              "titleLevel3": " Visão geral da Bíblia (1)",
+              "description": " Traçando a história do Antigo Testamento.",
+              "studyId": "bible_overview_(1)_v001"
+            },
+            {
+              "titleLevel3": " Visão geral da Bíblia (2)",
+              "description": " Traçando a história do Novo Testamento.",
+              "studyId": "bible_overview_(2)_v001"
+            },
+            {
+              "titleLevel3": " Verdade Revelada (2)",
+              "description": "<b>Verdade Revelada, Volume 2: Vida Cristã</b><br><br>Oito estudos para ajudá-lo a compreender as verdades essenciais reveladas por Deus na Bíblia. Não podemos viver vidas piedosas a menos que compreendamos a verdade bíblica e a apliquemos como fundamento de nossas vidas. <i>Verdade Revelada</i> também é uma ótima ferramenta para aqueles que são cristãos há algum tempo e desejam revisar os fundamentos de sua fé. Você pode se surpreender com o que aprenderá!",
+              "downloadLocation": "",
+              "studyId": "truth_unlocked_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Cresça em Cristo (1)",
+              "description": "<b>Cresça em Cristo (Curso de Discipulado)</b><br><br>Você está crescendo em Cristo? Deus quer que todos os seus filhos cresçam em Jesus. Se você não está crescendo, estes estudos o ajudarão a descobrir o que está errado e como corrigir. Se você já está crescendo, eles o ajudarão a crescer ainda mais. Trabalhando com as Escrituras, cada sessão combina leitura atenta com reflexão pessoal. (Dividimos este curso em vários volumes. Faça o volume 1 primeiro – mas se você já o fez, continue com o próximo volume.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Curso Compartilhando Jesus",
+              "description": " <b>Curso Compartilhando Jesus</b><br><br>Oito estudos que irão capacitá-lo a compartilhar Jesus com outras pessoas.",
+              "studyId": "sharing_jesus_course_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 3. Compreensão mais profunda",
+          "description": " Lidar com livros mais complexos e com a dinâmica do ministério.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando o Êxodo",
+              "description": " Redenção, Lei e a presença de Deus.",
+              "studyId": "introducing_exodus_v001"
+            },
+            {
+              "titleLevel3": " Apresentando Romanos",
+              "description": " Uma análise profunda da lógica do Evangelho.",
+              "studyId": "introducing_romans_v001"
+            },
+            {
+              "titleLevel3": " Quem sou eu?",
+              "description": " Entendendo nossa identidade em Cristo.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Cresça em Cristo (2)",
+              "description": "<b>Cresça em Cristo (Curso de Discipulado)</b><br><br>Você está crescendo em Cristo? Deus quer que todos os seus filhos cresçam em Jesus. Se você não está crescendo, estes estudos o ajudarão a descobrir o que está errado e como corrigir. Se você já está crescendo, eles o ajudarão a crescer ainda mais. Trabalhando com as Escrituras, cada sessão combina leitura atenta com reflexão pessoal. (Dividimos este curso em vários volumes. Presumimos que você fará o volume 2 aqui – mas se você já o fez, continue com o próximo volume.)",
+              "studyId": "grow_in_christ_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Dinâmica do Ministério",
+              "description": " Como servir eficazmente em uma igreja local.",
+              "studyId": "ministry_dynamics_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 4. Viva em missão",
+          "description": " Voltando nosso foco para o coração de Deus para o mundo.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Apresentando Jonah",
+              "description": " A compaixão de Deus pelas nações e nossa resistência.",
+              "studyId": "introducing_jonah_v001"
+            },
+            {
+              "titleLevel3": " Apresentando os Atos",
+              "description": " O nascimento da igreja e a propagação da Palavra.",
+              "studyId": "introducing_acts_v001"
+            },
+            {
+              "titleLevel3": " Apresentando Jesus",
+              "description": " Preparando-se para apresentar a outras pessoas a pessoa de Cristo.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " Compartilhando Jesus",
+              "description": " Estratégias avançadas de evangelização pessoal.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 5. Liderar os Outros",
+          "description": " Capacitação para funções de liderança formais e informais.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "[UM]",
+              "description": " Descrição do item A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Descrição do item B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Descrição do item C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Vida espiritual",
+      "description": " Recursos focados na jornada interior do crente e na aplicação da verdade ao coração.",
+      "pathways": [
+        {
+          "titleLevel2": " Combater o Pecado",
+          "description": " Auxílio prático e teológico para lidar com a tentação e padrões de desobediência.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando Eclesiastes",
+              "description": " Encontrando significado em um mundo despedaçado.",
+              "studyId": "introducing_ecclesiastes_v001"
+            },
+            {
+              "titleLevel3": " Introdução à Epístola aos Efésios",
+              "description": " A armadura de Deus e nossa posição nos reinos celestiais.",
+              "studyId": "introducing_ephesians_v001"
+            },
+            {
+              "titleLevel3": " Quem sou eu?",
+              "description": " Guerra contra o pecado baseada na identidade.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Encontre descanso para sua alma.",
+              "description": "<b>Encontre Descanso para a Sua Alma: Libertando-se do comportamento viciante ao encontrar uma alegria maior</b><br><br>Um estudo bíblico de dez sessões que explora a essência do vício — e como o Evangelho oferece mais do que qualquer falsa promessa. Trabalhando com as Escrituras, cada sessão combina leitura atenta com reflexão pessoal.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "studyId": "find_rest_for_your_soul_v001"
+            },
+            {
+              "titleLevel3": " Cresça em Cristo (1)",
+              "description": "<b>Cresça em Cristo (Curso de Discipulado)</b><br><br>Você está crescendo em Cristo? Deus quer que todos os seus filhos cresçam em Jesus. Se você não está crescendo, estes estudos o ajudarão a descobrir o que está errado e como corrigir. Se você já está crescendo, eles o ajudarão a crescer ainda mais. Trabalhando com as Escrituras, cada sessão combina leitura atenta com reflexão pessoal.<br><br>(Dividimos este curso em vários volumes. Faça o volume 1 primeiro – mas se você já o fez, continue com o próximo volume.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Teologia do Trabalho",
+          "description": " Enxergando nosso trabalho diário sob a perspectiva da criação e do reino de Deus.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando Neemias",
+              "description": " Liderança, trabalho e reconstrução para a glória de Deus.",
+              "studyId": "introducing_nehemiah_v001"
+            },
+            {
+              "titleLevel3": " Apresentando Colossenses",
+              "description": " Fazendo tudo como se estivesse fazendo para o Senhor.",
+              "studyId": "introducing_colossians_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Trabalhando para o bem",
+              "description": "<b>Trabalhando para o Bem: Fé, Amor e Adoração em nosso Trabalho Diário</b><br><br>Um estudo bíblico de oito sessões que explora o significado de trabalhar fielmente como cristão. Baseando-se em passagens de Gênesis a Apocalipse, cada sessão aborda uma dimensão diferente do trabalho: sua bondade dada por Deus, sua distorção pelo pecado e sua redenção em Cristo. Se você sente que seu trabalho é sem sentido, desconectado da sua fé ou simplesmente exaustivo, este estudo o convida a ver seu trabalho diário como um ato de amor, uma forma de adoração e parte dos propósitos maiores de Deus para o mundo.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "studyId": "working_for_the_good_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Sofrimento",
+          "description": " Caminhando pelo vale da sombra da morte com esperança.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Apresentando Job",
+              "description": " Descrição do item A.",
+              "studyId": "introducing_job_v001"
+            },
+            {
+              "titleLevel3": " Apresentando 1 Pedro",
+              "description": " Descrição do item B.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Descrição do item C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " Esperança para um mundo ferido",
+              "description": " Descrição do item D.",
+              "studyId": "hope_for_a_hurting_world_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Servir aos outros",
+      "description": " Estudos voltados para o cuidado pastoral, evangelização e ensino.",
+      "pathways": [
+        {
+          "titleLevel2": " Assistência Pastoral",
+          "description": " Capacitar os fiéis para caminharem juntos em momentos difíceis.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando os Salmos",
+              "description": " A linguagem do coração na oração e no aconselhamento.",
+              "studyId": "introducing_psalms_v001"
+            },
+            {
+              "titleLevel3": " Apresentando [Epístola]",
+              "description": " Uma carta do Novo Testamento com foco no cuidado pastoral.",
+              "studyId": "introducing_[epistle]_v001"
+            },
+            {
+              "titleLevel3": " Quem sou eu?",
+              "description": " Ajudar os outros a encontrar sua identidade em Cristo.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Cresça em Cristo (1)",
+              "description": "<b>Cresça em Cristo (Curso de Discipulado)</b><br><br>Você está crescendo em Cristo? Deus quer que todos os seus filhos cresçam em Jesus. Se você não está crescendo, estes estudos o ajudarão a descobrir o que está errado e como corrigir. Se você já está crescendo, eles o ajudarão a crescer ainda mais. Trabalhando com as Escrituras, cada sessão combina leitura atenta com reflexão pessoal. (Dividimos este curso em vários volumes. Faça o volume 1 primeiro – mas se você já o fez, continue com o próximo volume.)",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Conversas Pastorais",
+              "description": " Estudos de caso e técnicas práticas.",
+              "studyId": "pastoral_conversations_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Faça Cristo conhecido",
+          "description": " Com foco na evangelização e na explicação da fé de forma clara.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [UM]",
+              "description": " Descrição do item A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " Destaques do Evangelho",
+              "description": " Resumindo a mensagem central da salvação.",
+              "studyId": "gospel_highlights_v001"
+            },
+            {
+              "titleLevel3": " Apresentando Jesus",
+              "description": " Utilizando os Evangelhos para apresentar Cristo aos buscadores.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Compartilhando Jesus",
+              "description": " Passar da conversa para o convite.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Ensino e pregação",
+          "description": "Formação para aqueles que são chamados a lidar com a Palavra e explicá-la em um ambiente público.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [UM]",
+              "description": " Descrição do item A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Descrição do item B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Descrição do item C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Conhecer a verdade",
+      "description": " Com foco na Teologia Sistemática e nas doutrinas históricas da Igreja.",
+      "pathways": [
+        {
+          "titleLevel2": " Igreja",
+          "description": " Compreender a natureza, a missão e a estrutura do corpo de Cristo.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [UM]",
+              "description": " Descrição do item A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Descrição do item B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Descrição do item C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Fazer muitos discípulos profundos",
+              "description": " <b>Fazer Muitos Discípulos Profundos: Curso de membresia da Igreja Bíblica Bereana</b><br><br>Um estudo bíblico de cinco sessões que examina os valores fundamentais da igreja.",
+              "studyId": "make_many_deep_disciples_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Sabedoria",
+          "description": " Aprender a viver com habilidade no mundo de Deus.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando Provérbios",
+              "description": " Descrição do item A.",
+              "studyId": "introducing_proverbs_v001"
+            },
+            {
+              "titleLevel3": " Apresentando James",
+              "description": " Descrição do item B.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " Sabedoria e Amor",
+              "description": "Descrição do item C.",
+              "studyId": "wisdom_and_love_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Engajando o Mundo",
+      "description": " Como a igreja interage com a cultura, a comunidade e a sociedade em geral.",
+      "pathways": [
+        {
+          "titleLevel2": " Hospitalidade",
+          "description": " Abrir nossas vidas e lares como uma ponte para o Evangelho.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando Ruth",
+              "description": " Gentileza e acolhimento que transcendem as barreiras culturais.",
+              "studyId": "introducing_ruth_v001"
+            },
+            {
+              "titleLevel3": " Apresentando Luke",
+              "description": " Jesus, o anfitrião que se torna o convidado.",
+              "studyId": "introducing_luke_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Descrição do item C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Apologética Cultural",
+          "description": " Respondendo às perguntas que o mundo realmente está fazendo.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando Daniel",
+              "description": " Presença fiel em um império secular.",
+              "studyId": "introducing_daniel_v001"
+            },
+            {
+              "titleLevel3": " Apresentando 1 Pedro",
+              "description": " Vivendo como estrangeiros e forasteiros, mas com esperança.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Descrição do item C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Justiça social",
+          "description": " O coração de Deus para com os vulneráveis e oprimidos.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Apresentando Amos",
+              "description": " O chamado profético para que a justiça seja feita.",
+              "studyId": "introducing_amos_v001"
+            },
+            {
+              "titleLevel3": " Apresentando James",
+              "description": " Fé que se manifesta através do amor e da compaixão pelos pobres.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Descrição do item C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Descrição do item D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Descrição do item E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

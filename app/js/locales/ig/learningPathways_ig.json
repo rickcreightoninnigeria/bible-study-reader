@@ -1,0 +1,550 @@
+{
+  "learningPathways": [
+    {
+      "titleLevel1": " Uto maka Onye ọ bụla",
+      "description": " Ụzọ ntọala e mere iji nyere onye ọ bụla kwere ekwe aka ịtọ ntọala siri ike na ọganihu n'ịdu ndú.",
+      "pathways": [
+        {
+          "titleLevel2": " 1. Ntọala",
+          "description": " Isi ihe dị mkpa maka ịghọta isi ihe dị na Baịbụl na otú anyị si zaghachi.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "studyTitles": [
+            {
+              "titleLevel3": " Iwebata Jenesis",
+              "description": " Ịchọpụta mmalite nke mmekọrịta Chineke na ụmụ mmadụ.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "studyId": "introducing_genesis_v001"
+            },
+            {
+              "titleLevel3": " Iwebata Mark",
+              "description": " Nleba anya ngwa ngwa na ndụ na ozi Jisọs.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "studyId": "introducing_mark_v001"
+            },
+            {
+              "titleLevel3": " Eziokwu Emeghere (1)",
+              "description": " <b>Emeghere Eziokwu, Mpịakọta nke 1: Nkwenye Ndị Kraịst</b><br><br> Ọmụmụ ihe asatọ iji nyere gị aka ịghọta eziokwu ndị dị mkpa Chineke kpughere n'ime Baịbụl. Anyị agaghị ebi ndụ nsọpụrụ Chineke ma ọ bụrụ na anyị aghọtaghị eziokwu Baịbụl ma tinye ya n'ọrụ dị ka ntọala maka ndụ anyị. <i>Emeghere Eziokwu</i> bụkwa ihe na-enye aka maka ndị bụ Ndị Kraịst ruo oge ụfọdụ ma chọọ ịtụleghachi ihe ndị bụ isi nke okwukwe ha. Ihe ị na-amụta nwere ike iju gị anya!",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "studyId": "truth_unlocked_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Mgbanwe",
+              "description": " <b>Ngbanwe: Ọhụrụ abụghị (naanị) Ọma</b><br><br>Ọmụmụ Baịbụl nke oge itoolu na-enyocha ihe ezigbo ntọghata pụtara - na ihe kpatara o ji dị mkpa.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "studyId": "conversion_v001"
+            },
+            {
+              "titleLevel3": " Ọchịchị Ndị Ojere",
+              "description": "Ihe nlereanya Baịbụl maka mmetụta na nlekọta.",
+              "studyId": "servant_leadership_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 2. Mgbọrọgwụ ndị na-eto eto",
+          "description": " Ịbanye n'ime usoro nke Baịbụl na àgwà ime mmụọ nke onwe.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nchịkọta Baịbụl (1)",
+              "description": " Ịchọpụta akụkọ Agba Ochie.",
+              "studyId": "bible_overview_(1)_v001"
+            },
+            {
+              "titleLevel3": " Nchịkọta Baịbụl (2)",
+              "description": " Ịchọpụta akụkọ Agba Ọhụrụ.",
+              "studyId": "bible_overview_(2)_v001"
+            },
+            {
+              "titleLevel3": " Eziokwu Emeghere (2)",
+              "description": "<b>Emeghere Eziokwu, Mpịakọta nke 2: Ndụ Ndị Kraịst</b><br><br> Ọmụmụ ihe asatọ iji nyere gị aka ịghọta eziokwu ndị dị mkpa Chineke kpughere n'ime Baịbụl. Anyị agaghị ebi ndụ nsọpụrụ Chineke ma ọ bụrụ na anyị aghọtaghị eziokwu Baịbụl ma tinye ya n'ọrụ dị ka ntọala maka ndụ anyị. <i>Emeghere Eziokwu</i> bụkwa ihe na-enye aka maka ndị bụ Ndị Kraịst ruo oge ụfọdụ ma chọọ ịtụleghachi ihe ndị bụ isi nke okwukwe ha. Ihe ị na-amụta nwere ike iju gị anya!",
+              "downloadLocation": "",
+              "studyId": "truth_unlocked_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Toonụ n'ime Kraịst (1)",
+              "description": "<b>Too n'ime Kraịst (nkuzi ndị na-eso ụzọ)</b><br><br>Ị̀ na-eto n'ime Kraịst? Chineke chọrọ ka ụmụ ya niile tolite n'ime Jizọs. Ọ bụrụ na ị naghị eto, ọmụmụ ihe a ga-enyere gị aka ịchọpụta ihe na-ezighị ezi na otu esi edozi ya. Ọ bụrụ na ị na-eto eto, ha ga-enyere gị aka itolite karịa. Site n'iji Akwụkwọ Nsọ mee ihe, nnọkọ ọ bụla na-ejikọta ịgụ ihe nke ọma na ntụgharị uche nkeonwe. (Anyị kewara usoro a n'ọtụtụ mpịakọta. Mee mpịakọta nke 1 mbụ - mana ọ bụrụ na i meela nke ahụ, gaa n'ihu na mpịakọta na-esote.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Ịkọrọ Ndị Mmadụ Ihe Banyere Jizọs",
+              "description": " <b>Ịkọrọ Ndị Ọzọ Ihe Ọmụmụ Jizọs</b><br><br> Ọmụmụ ihe asatọ ga-enyere gị aka ịkọrọ ndị ọzọ gbasara Jizọs.",
+              "studyId": "sharing_jesus_course_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 3. Nghọta Miri Emi",
+          "description": " Ịgba mgba na akwụkwọ ndị ka mgbagwoju anya na usoro ọrụ.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Iwebata Ọpụpụ",
+              "description": " Mgbapụta, Iwu, na ọnụnọ nke Chineke.",
+              "studyId": "introducing_exodus_v001"
+            },
+            {
+              "titleLevel3": " Iwebata ndị Rom",
+              "description": " Ntụnye miri emi n'ime echiche nke Oziọma ahụ.",
+              "studyId": "introducing_romans_v001"
+            },
+            {
+              "titleLevel3": " Ònye ka m bụ?",
+              "description": " Ịghọta njirimara anyị n'ime Kraịst.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Toonụ n'ime Kraịst (2)",
+              "description": "<b>Too n'ime Kraịst (nkuzi ndị na-eso ụzọ)</b><br><br>Ị̀ na-eto n'ime Kraịst? Chineke chọrọ ka ụmụ ya niile tolite n'ime Jizọs. Ọ bụrụ na ị naghị eto, ọmụmụ ihe a ga-enyere gị aka ịchọpụta ihe na-ezighị ezi na otu esi edozi ya. Ọ bụrụ na ị na-eto, ha ga-enyere gị aka itolite karịa. Site n'iji Akwụkwọ Nsọ mee ihe, nnọkọ ọ bụla na-ejikọta ịgụ ihe nke ọma na ntụgharị uche nkeonwe. (Anyị kewara usoro a n'ọtụtụ mpịakọta. Anyị na-eche na ị ga-eme mpịakọta nke abụọ ebe a - mana ọ bụrụ na i meela nke ahụ, gaa n'ihu na mpịakọta na-esote.)",
+              "studyId": "grow_in_christ_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Ọnọdụ Ozi",
+              "description": " Otu esi eje ozi nke ọma n'ime ụka dị n'ógbè gị.",
+              "studyId": "ministry_dynamics_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 4. Biri ndụ n'ọrụ a",
+          "description": " Iji lekwasị anya n'obi Chineke maka ụwa.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Iwebata Jona",
+              "description": " Ọmịiko Chineke nwere n'ebe mba dị iche iche nọ na nguzogide anyị.",
+              "studyId": "introducing_jonah_v001"
+            },
+            {
+              "titleLevel3": " Iwebata Ọrụ Ndị Dị Mkpa",
+              "description": " Mmalite nke ụka na mgbasa nke Okwu Chineke.",
+              "studyId": "introducing_acts_v001"
+            },
+            {
+              "titleLevel3": " Ịkọwapụta Jisọs",
+              "description": " Ịkwadebe ime ka ndị ọzọ mata onye Kraịst bụ.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " Ịkọrọ Jisọs",
+              "description": " Atụmatụ ozi ọma nkeonwe dị elu.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 5. Idu Ndị Ọzọ",
+          "description": " Ịkwadebe maka ọrụ nduzi n'usoro na n'ụzọ na-abụghị nke iwu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "[A]",
+              "description": " Nkọwa maka ihe A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Nkọwa maka ihe B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Nkọwa maka ihe C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Ndụ Ime Mmụọ",
+      "description": " Akụrụngwa lekwasịrị anya na njem dị n'ime nke onye kwere ekwe na itinye eziokwu n'ime obi.",
+      "pathways": [
+        {
+          "titleLevel2": " Ịlụso Mmehie Ọgụ",
+          "description": " Enyemaka bara uru na nke okpukpe maka ịnagide ọnwụnwa na usoro nnupụisi.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Iwebata Ekliziastis",
+              "description": " Ịchọta ihe dị mkpa n'ụwa gbawara agbawa.",
+              "studyId": "introducing_ecclesiastes_v001"
+            },
+            {
+              "titleLevel3": " Iwebata Ndị Efesọs",
+              "description": " Ihe agha nke Chineke na ọnọdụ anyị n'eluigwe.",
+              "studyId": "introducing_ephesians_v001"
+            },
+            {
+              "titleLevel3": " Ònye ka m bụ?",
+              "description": " Agha dabere na njirimara megide mmehie.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Chọta Ezumike maka Mkpụrụ Obi Gị",
+              "description": "<b>Chọta Ezumike Maka Mkpụrụ Obi Gị: Ịzere omume riri ahụ site n'ịchọta ọṅụ ka mma</b><br><br>Ọmụmụ Baịbụl nke oge iri na-enyocha obi dị n'azụ ihe riri ahụ — na otu Oziọma si enye ihe karịrị nkwa ụgha ọ bụla nwere ike inye. Site n'iji Akwụkwọ Nsọ mee ihe, nnọkọ ọ bụla na-ejikọta ọgụgụ dị mma na ntụgharị uche nkeonwe.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "studyId": "find_rest_for_your_soul_v001"
+            },
+            {
+              "titleLevel3": " Toonụ n'ime Kraịst (1)",
+              "description": "<b>Too n'ime Kraịst (nkuzi ndị na-eso ụzọ)</b><br><br>Ị̀ na-eto n'ime Kraịst? Chineke chọrọ ka ụmụ ya niile tolite n'ime Jizọs. Ọ bụrụ na ị naghị eto, ọmụmụ ihe a ga-enyere gị aka ịchọpụta ihe na-ezighị ezi na otu esi edozi ya. Ọ bụrụ na ị na-eto, ha ga-enyere gị aka itolite karịa. Site n'iji Akwụkwọ Nsọ mee ihe, nnọkọ ọ bụla na-ejikọta ịgụ ihe nke ọma na ntụgharị uche nkeonwe.<br><br>(Anyị kewara usoro a n'ọtụtụ mpịakọta. Mee mpịakọta nke 1 mbụ - mana ọ bụrụ na i meela nke ahụ, gaa n'ihu na mpịakọta na-esote.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Nkà Mmụta Ọrụ",
+          "description": " Ile ọrụ anyị kwa ụbọchị anya site n'ihe okike na alaeze Chineke.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Iwebata Nehemaịa",
+              "description": " Ọchịchị, ọrụ, na iwughachi ụlọ maka otuto Chineke.",
+              "studyId": "introducing_nehemiah_v001"
+            },
+            {
+              "titleLevel3": " Iwebata Ndị Kọlọsi",
+              "description": " Ime ihe niile dịka ọ dị n'ebe Onyenwe anyị nọ.",
+              "studyId": "introducing_colossians_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Ịrụ Ọrụ Maka Ezi Ihe",
+              "description": "<b>Ịrụ Ọrụ Maka Ezi Ihe: Okwukwe, Ịhụnanya, na Ofufe n'Ọrụ Anyị Kwa Ụbọchị</b><br><br>Ọmụmụ Baịbụl nke oge asatọ na-enyocha ihe ọ pụtara ịrụ ọrụ n'ikwesị ntụkwasị obi dịka Onye Kraịst. Site n'iji amaokwu sitere na Jenesis ruo Mkpughe, nnọkọ ọ bụla na-atụle akụkụ dị iche iche nke ọrụ: ịdị mma Chineke nyere ya, mgbanwe ya site na mmehie, na mgbapụta ya n'ime Kraịst. Ma ị chere na ọrụ gị enweghị isi, enweghị njikọ na okwukwe gị, ma ọ bụ naanị ike ọgwụgwụ, ọmụmụ ihe a na-akpọ gị òkù ka ị hụ ọrụ gị kwa ụbọchị dị ka ihe omume ịhụnanya, ụdị ofufe, na akụkụ nke nzube Chineke maka ụwa.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "studyId": "working_for_the_good_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Ahụhụ",
+          "description": " Ije ije na ndagwurugwu onyinyo ọnwụ na olileanya.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Iwebata Ọrụ",
+              "description": " Nkọwa maka ihe A.",
+              "studyId": "introducing_job_v001"
+            },
+            {
+              "titleLevel3": " Iwebata 1 Pita",
+              "description": " Nkọwa maka ihe B.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Nkọwa maka ihe C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " Olileanya maka Ụwa Na-emerụ Ahụ",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "hope_for_a_hurting_world_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Ijere Ndị Ọzọ Ozi",
+      "description": " Ọmụmụ ihe ndị e mere maka nlekọta ndị okenye, ozi ọma, na izi ihe.",
+      "pathways": [
+        {
+          "titleLevel2": " Nlekọta Ndị Ọzụzụ Atụrụ",
+          "description": " Ịkwado ndị kwere ekwe ka ha soro ibe ha na-eje ije n'ihe isi ike.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Iwebata Abụ Ọma",
+              "description": " Asụsụ obi n'ekpere na ndụmọdụ.",
+              "studyId": "introducing_psalms_v001"
+            },
+            {
+              "titleLevel3": " Iwebata [Akwụkwọ ozi]",
+              "description": " Akwụkwọ ozi Agba Ọhụrụ lekwasịrị anya n'ilekọta ndị ọzụzụ atụrụ.",
+              "studyId": "introducing_[epistle]_v001"
+            },
+            {
+              "titleLevel3": " Ònye ka m bụ?",
+              "description": " Inyere ndị ọzọ aka ịchọta njirimara ha n'ime Kraịst.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Toonụ n'ime Kraịst (1)",
+              "description": "<b>Too n'ime Kraịst (nkuzi ndị na-eso ụzọ)</b><br><br>Ị̀ na-eto n'ime Kraịst? Chineke chọrọ ka ụmụ ya niile tolite n'ime Jizọs. Ọ bụrụ na ị naghị eto, ọmụmụ ihe a ga-enyere gị aka ịchọpụta ihe na-ezighị ezi na otu esi edozi ya. Ọ bụrụ na ị na-eto eto, ha ga-enyere gị aka itolite karịa. Site n'iji Akwụkwọ Nsọ mee ihe, nnọkọ ọ bụla na-ejikọta ịgụ ihe nke ọma na ntụgharị uche nkeonwe. (Anyị kewara usoro a n'ọtụtụ mpịakọta. Mee mpịakọta nke 1 mbụ - mana ọ bụrụ na i meela nke ahụ, gaa n'ihu na mpịakọta na-esote.)",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Mkparịta ụka Ndị Ọzụzụ Atụrụ",
+              "description": " Ọmụmụ ihe gbasara ikpe na usoro bara uru.",
+              "studyId": "pastoral_conversations_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Mee Ka A Mara Kraịst",
+          "description": " Ilekwasị anya n'ozi ọma na ịkọwa okwukwe ahụ n'ụzọ doro anya.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [A]",
+              "description": " Nkọwa maka ihe A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " Isi ihe dị mkpa gbasara oziọma",
+              "description": " Ichịkọta ozi bụ isi nke nzọpụta.",
+              "studyId": "gospel_highlights_v001"
+            },
+            {
+              "titleLevel3": " Ịkọwapụta Jisọs",
+              "description": " Iji Oziọma ahụ mee ka ndị na-achọ Kraịst mata ya.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Ịkọrọ Jisọs",
+              "description": " Ịga site na mkparịta ụka gaa na ịkpọ òkù.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Izi ihe na ikwusa ozi ọma",
+          "description": "Ọzụzụ maka ndị a kpọrọ ka ha na-ejikwa ma na-akọwa Okwu Chineke n'ebe ọha na eze.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [A]",
+              "description": " Nkọwa maka ihe A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Nkọwa maka ihe B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Nkọwa maka ihe C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Ịmata Eziokwu ahụ",
+      "description": " Ilekwasị anya na Usoro Okpukpe na ozizi akụkọ ihe mere eme nke Chọọchị.",
+      "pathways": [
+        {
+          "titleLevel2": " Ụka",
+          "description": " Ịghọta ọdịdị, ọrụ, na nhazi nke ahụ Kraịst.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [A]",
+              "description": " Nkọwa maka ihe A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Nkọwa maka ihe B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Nkọwa maka ihe C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Mee Ọtụtụ Ndị Na-eso Ụzọ Miri Emi",
+              "description": " <b>Mee Ọtụtụ Ndị Na-eso Ụzọ Miri Emi: Ọmụmụ ihe gbasara ndị otu chọọchị Baịbụl Berean</b><br><br> Ọmụmụ Baịbụl nke oge ise na-enyocha ụkpụrụ ndị bụ isi nke chọọchị.",
+              "studyId": "make_many_deep_disciples_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Amamihe",
+          "description": " Ịmụta ibi ndụ nke ọma n'ụwa Chineke.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Iwebata Ilu",
+              "description": " Nkọwa maka ihe A.",
+              "studyId": "introducing_proverbs_v001"
+            },
+            {
+              "titleLevel3": " Iwebata Jemes",
+              "description": " Nkọwa maka ihe B.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " Amamihe na Ịhụnanya",
+              "description": "Nkọwa maka ihe C.",
+              "studyId": "wisdom_and_love_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Na-adọrọ Ụwa Anya",
+      "description": " Otu ụka si emekọrịta ihe na omenala, obodo, na ọha mmadụ n'ozuzu ya.",
+      "pathways": [
+        {
+          "titleLevel2": " Ile ọbịa",
+          "description": " Imepe ndụ na ụlọ anyị dị ka àkwà mmiri maka Oziọma.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Ịkọwapụta Ruth",
+              "description": " Obiọma na nnabata n'ofe omenala.",
+              "studyId": "introducing_ruth_v001"
+            },
+            {
+              "titleLevel3": " Iwebata Luk",
+              "description": " Jisọs, onye ọbịa nke ghọrọ onye ọbịa.",
+              "studyId": "introducing_luke_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Nkọwa maka ihe C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Apologetics Omenala",
+          "description": " Ịza ajụjụ ndị ụwa na-ajụ n'ezie.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Ịkọwapụta Daniel",
+              "description": " Ọnụnọ kwesịrị ntụkwasị obi n'alaeze ukwu nke ụwa.",
+              "studyId": "introducing_daniel_v001"
+            },
+            {
+              "titleLevel3": " Iwebata 1 Pita",
+              "description": " Ibi ndụ dị ka ndị ọbịa na ndị ọbịa nwere olileanya.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Nkọwa maka ihe C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Ikpe Ziri Ezi nke Mmekọrịta",
+          "description": " Obi Chineke maka ndị na-adịghị ike na ndị a na-emegbu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Iwebata Emọs",
+              "description": " Oku amụma ka e mee ka ikpe ziri ezi daa.",
+              "studyId": "introducing_amos_v001"
+            },
+            {
+              "titleLevel3": " Iwebata Jemes",
+              "description": " Okwukwe nke na-arụ ọrụ site n'ịhụnanya na nlekọta maka ndị ogbenye.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Nkọwa maka ihe C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Nkọwa maka ihe D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Nkọwa maka ihe E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

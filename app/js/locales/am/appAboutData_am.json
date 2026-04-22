@@ -1,0 +1,28 @@
+{
+  "appTitle": "የመተግበሪያ",
+  "appDescription": "የመተግበሪያ",
+  "sampleTitle": "የናሙና",
+  "sampleSubtitle": "ናሙና",
+  "sampleShortTitle": "ናሙናአጭር",
+  "sampleDescription": "ናሙና",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": "appCopyright.licence.name\t",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        "appCopyright.licence.freedoms[0]\t",
+        "appCopyright.licence.freedoms[1]\t"
+      ],
+      "conditions": [
+        "appCopyright.licence.conditions[0]\t",
+        "appCopyright.licence.conditions[1]\tኤፍኤስፒኤስ፡"
+      ],
+      "notices": [
+        "appCopyright.licence.notices[0]\t",
+        "appCopyright.licence.notices[1]\t",
+        "appCopyright.licence.notices[2]\t"
+      ]
+    }
+  }
+}

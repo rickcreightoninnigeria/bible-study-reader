@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Lumang Tipan",
+    "description": " Mga pag-aaral na nagsasaliksik sa mga aklat na isinulat bago ang pagdating ni Kristo — mula sa Kautusan at mga Propeta hanggang sa mga Kasulatan. Isinasalaysay ng Lumang Tipan ang kuwento ng tipan ng Diyos sa Israel at tumutukoy sa Mesiyas.",
+    "sections": [
+      {
+        "section": " Batas",
+        "description": " Ang unang limang aklat ng Bibliya (ang Pentateuch), na sumasaklaw sa paglikha, sa pagbagsak, sa pag-alis, at sa pagbibigay ng Kautusan — ang pundasyon kung saan itinatatag ang iba pang bahagi ng Kasulatan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Genesis",
+            "description": " Ang aklat ng mga simula: ang paglikha, ang pagbagsak, at ang mga patriyarka — sina Abraham, Isaac, Jacob, at Jose."
+          },
+          {
+            "name": " Exodo",
+            "description": " Iniligtas ng Diyos ang kanyang bayan mula sa pagkaalipin sa Ehipto, inihayag ang kanyang pangalan, at ibinigay ang kanyang Kautusan sa Sinai."
+          },
+          {
+            "name": "Levitico",
+            "description": " Mga tagubilin para sa pagsamba at kabanalan, na nagpapakita kung paano makakalapit ang isang makasalanang bayan sa isang banal na Diyos."
+          },
+          {
+            "name": " Mga Numero",
+            "description": " Ang paglalakbay ng Israel sa ilang — ang mga pagkabigo nito, ang disiplina nito, at ang patuloy na katapatan ng Diyos."
+          },
+          {
+            "name": " Deuteronomio",
+            "description": " Mga sermon ng pamamaalam ni Moises, pagpapanibago ng tipan at paghahanda sa Israel sa pagpasok sa Lupang Pangako."
+          }
+        ]
+      },
+      {
+        "section": " Kasaysayan",
+        "description": " Sinusundan ng mga aklat pangkasaysayan ang kuwento ng Israel mula sa pananakop sa Canaan hanggang sa monarkiya, pagkatapon, at pagbabalik — na nagpapakita ng katapatan ng Diyos at ng paulit-ulit na kawalang-katapatan ng kanyang bayan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Joshua",
+            "description": "Ang pananakop at paghahati ng Lupang Pangako sa ilalim ng pamumuno ni Josue."
+          },
+          {
+            "name": " Mga Hukom",
+            "description": " Isang siklo ng paghihimagsik, pang-aapi, at pagsagip habang paulit-ulit na tinatalikuran ng Israel ang Diyos."
+          },
+          {
+            "name": " Ruth",
+            "description": " Isang kuwento ng katapatan, pag-aalay, at pagtubos na itinakda sa panahon ng mga hukom."
+          },
+          {
+            "name": " 1 Samuel",
+            "description": " Ang paglipat mula sa mga hukom patungo sa mga hari: Samuel, Saul, at ang pagbangon ni David."
+          },
+          {
+            "name": " 2 Samuel",
+            "description": " Ang paghahari ni David — ang kanyang mga tagumpay, mga pagkabigo, at ang tipan ng Diyos sa kanyang sambahayan."
+          },
+          {
+            "name": " 1 Hari",
+            "description": "Ang kaluwalhatian ni Solomon at ang pagkakahati ng kaharian; Si Elias at ang tunggalian sa Bundok Carmel."
+          },
+          {
+            "name": " 2 Hari",
+            "description": " Ang pagbagsak at pagbagsak ng parehong kaharian, na nagtapos sa pagkatapon."
+          },
+          {
+            "name": " 1 Cronica",
+            "description": " Isang muling pagsasalaysay ng kasaysayan ng Israel mula kay Adan hanggang kay David, na nakatuon sa pagsamba at sa templo."
+          },
+          {
+            "name": " 2 Cronica",
+            "description": " Si Solomon at ang templo, ang nahati na kaharian, at ang pag-asa ng pagpapanumbalik."
+          },
+          {
+            "name": " Ezra",
+            "description": " Ang pagbabalik mula sa pagkatapon at ang muling pagtatayo ng templo sa ilalim ng pamumuno ni Ezra."
+          },
+          {
+            "name": " Nehemias",
+            "description": "Ang muling pagtatayo ng mga pader ng Jerusalem at ang pagpapanibago ng komunidad ng tipan."
+          },
+          {
+            "name": " Esther",
+            "description": " Ang nakatagong tadhana ng Diyos na nagpoprotekta sa kanyang bayan sa korte ng Persia."
+          }
+        ]
+      },
+      {
+        "section": " Tula at Karunungan",
+        "description": " Job, Mga Awit, Mga Kawikaan, Eclesiastes, at Awit ng mga Awit — mga aklat na sumisiyasat sa lalim ng karanasan ng tao: pagdurusa, papuri, karunungan, at pag-ibig.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Trabaho",
+            "description": " Isang malalim na paggalugad sa pagdurusa, katarungan, at ang misteryo ng mga pamamaraan ng Diyos."
+          },
+          {
+            "name": " Mga Awit",
+            "description": " Ang aklat-awitan at aklat-panalangin ng Israel — ang buong saklaw ng emosyon ng tao na inihaharap sa Diyos."
+          },
+          {
+            "name": " Mga Kawikaan",
+            "description": "Praktikal na karunungan para sa pang-araw-araw na buhay, na nakaugat sa takot sa Panginoon."
+          },
+          {
+            "name": " Eclesiastes",
+            "description": " Isang masusing pagsusuri sa kahulugan, gawain, at mortalidad 'sa ilalim ng araw'."
+          },
+          {
+            "name": " Awit ng mga Awit",
+            "description": " Isang pagdiriwang ng pag-ibig at kasal, mayaman sa imahe ng tuwa at pananabik."
+          }
+        ]
+      },
+      {
+        "section": " Mga Propeta",
+        "description": " Ang mga aklat ng mga propeta ay nananawagan sa Israel sa pagsisisi, nagbabala tungkol sa paghuhukom, at tumutukoy sa pangwakas na pagtubos ng Diyos. Mahalaga ang mga ito para maunawaan ang katuparan ng mga pangakong iyon sa Bagong Tipan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Isaias",
+            "description": " Paghuhukom at nakamamanghang pag-asa — kabilang ang Mga Awit ng mga Lingkod na tumuturo kay Kristo."
+          },
+          {
+            "name": " Jeremias",
+            "description": " Ang dalamhati ng isang propeta habang bumabagsak ang Jerusalem, at ang pangako ng isang bagong tipan."
+          },
+          {
+            "name": " Mga Panaghoy",
+            "description": " Raw na kalungkutan dahil sa pagkawasak ng Jerusalem, na pinagbuklod ng pag-asa sa katapatan ng Diyos."
+          },
+          {
+            "name": " Ezekiel",
+            "description": " Mga pangitain ng pag-alis at pagbabalik ng kaluwalhatian ng Diyos, at ang pangako ng espirituwal na pagpapanibago."
+          },
+          {
+            "name": " Daniel",
+            "description": " Tapat na presensya sa pagkatapon, at mga pangitain ng soberanong kaharian ng Diyos sa lahat ng mga bansa."
+          },
+          {
+            "name": " Oseas",
+            "description": " Ang walang-maliw na pag-ibig ng Diyos para sa isang bayang hindi tapat, na inilarawan sa pamamagitan ng sariling kasal ni Oseas."
+          },
+          {
+            "name": " Joel",
+            "description": " Isang salot ng balang bilang panawagan sa pagsisisi, at ang pangako ng Espiritu."
+          },
+          {
+            "name": " Amos",
+            "description": " Isang matalas na panawagan para sa hustisya at ang babala na ang hungkag na relihiyon ay hindi mananatili."
+          },
+          {
+            "name": " Obadias",
+            "description": " Isang maikling hula laban sa Edom at sa darating na araw ng Panginoon."
+          },
+          {
+            "name": " Jonas",
+            "description": " Ang habag ng Diyos para sa mga bansa — at ang pagtutol dito ng isang nag-aatubiling propeta."
+          },
+          {
+            "name": " Micah",
+            "description": " Katarungan, awa, at kapakumbabaan — at ang pangako ng isang pinuno mula sa Bethlehem."
+          },
+          {
+            "name": " Nahum",
+            "description": "Ang pagbagsak ng Nineveh at ang kaaliwan ng hustisya ng Diyos para sa kanyang inaaping bayan."
+          },
+          {
+            "name": " Habakuk",
+            "description": " Matapat na pakikipagbuno sa Diyos laban sa kawalan ng katarungan, at pagkatutong magtiwala sa Kanyang takdang panahon."
+          },
+          {
+            "name": " Zefanias",
+            "description": " Ang araw ng Panginoon at ang kagalakan ng pagpapanumbalik para sa mga nalabi na dinalisay."
+          },
+          {
+            "name": " Hagai",
+            "description": " Isang panawagan upang muling itayo ang templo at unahin ang bahay ng Diyos kaysa sa personal na kaginhawahan."
+          },
+          {
+            "name": " Zacarias",
+            "description": " Mga pangitain ng pagpapanumbalik at isang Mesiyas na darating nang may pagpapakumbaba sakay ng isang asno."
+          },
+          {
+            "name": " Malakias",
+            "description": "Isang huling panawagan tungo sa katapatan bago ang mahabang katahimikan sa harap ni Juan Bautista."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Bagong Tipan",
+    "description": " Mga pag-aaral sa mga aklat na isinulat pagkatapos ng pagdating ni Kristo — ang mga Ebanghelyo, ang mga liham ng mga apostol, at ang Pahayag. Inihahayag ng Bagong Tipan ang katuparan ng mga pangako ng Diyos kay Hesus at sa buhay ng unang simbahan.",
+    "sections": [
+      {
+        "section": " Mga Ebanghelyo at Mga Gawa",
+        "description": " Ang apat na salaysay ng buhay, kamatayan, at muling pagkabuhay ni Hesus, at ang kuwento ng paglawak ng sinaunang simbahan sa buong mundo ng Roma.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mateo",
+            "description": " Si Hesus bilang katuparan ng Lumang Tipan, ang bagong Moises, at ang Hari ng kaharian ng Diyos."
+          },
+          {
+            "name": " Mark",
+            "description": " Isang mabilis na salaysay tungkol kay Hesus bilang ang nagdurusang Lingkod at Anak ng Diyos."
+          },
+          {
+            "name": " Lucas",
+            "description": " Si Hesus bilang Tagapagligtas ng sanlibutan — na may espesyal na atensyon sa mga mahihirap, kababaihan, at mga tagalabas."
+          },
+          {
+            "name": " Juan",
+            "description": " Ang pinakamalalim na teolohikong larawan ni Hesus — ang Salitang nagkatawang-tao, ang AKO NGA, ang Anak ng Diyos."
+          },
+          {
+            "name": " Mga Gawa",
+            "description": " Ang Banal na Espiritu ang nagbibigay ng kapangyarihan sa simbahan upang dalhin ang ebanghelyo mula sa Jerusalem hanggang sa mga dulo ng mundo."
+          }
+        ]
+      },
+      {
+        "section": " Mga Sulat ni Pablo",
+        "description": " Mga liham ni Pablo sa mga simbahan at mga indibidwal — paggalugad sa lohika ng ebanghelyo, pag-uugaling Kristiyano, at ang katangian ng simbahan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " mga Romano",
+            "description": "Ang pinakasistematikong pagpapaliwanag ni Pablo sa ebanghelyo: kasalanan, pagpapawalang-sala, pagpapabanal, at pag-asa."
+          },
+          {
+            "name": " 1 Corinto",
+            "description": " Pagtugon sa mga pagkakabaha-bahagi at kaguluhan sa Corinto, gamit ang mga turo tungkol sa pag-ibig, mga kaloob, at ang muling pagkabuhay."
+          },
+          {
+            "name": " 2 Corinto",
+            "description": " Ang pagtatanggol ni Pablo sa kanyang ministeryo at ang kabalintunaan ng lakas sa pamamagitan ng kahinaan."
+          },
+          {
+            "name": " Mga Taga-Galacia",
+            "description": " Isang masigasig na pagtatanggol sa pagpapawalang-sala sa pamamagitan lamang ng pananampalataya laban sa mga nagdaragdag ng kautusan."
+          },
+          {
+            "name": " Mga Taga-Efeso",
+            "description": " Ang kayamanan ng pagkakakilanlan ng mananampalataya kay Cristo, at ang simbahan bilang bagong sangkatauhan ng Diyos."
+          },
+          {
+            "name": " Mga Taga-Filipos",
+            "description": " Kagalakan sa lahat ng pagkakataon at ang halimbawa ng pagpapakumbaba ni Kristo."
+          },
+          {
+            "name": " Mga Taga-Colosas",
+            "description": " Si Kristo bilang kataas-taasan sa lahat ng bagay, at ang mga implikasyon nito sa pang-araw-araw na buhay."
+          },
+          {
+            "name": " 1 Tesalonica",
+            "description": " Pagpapalakas ng loob para sa isang batang simbahan, na may katuruan tungkol sa pagbabalik ni Kristo."
+          },
+          {
+            "name": " 2 Tesalonica",
+            "description": " Pagwawasto ng mga hindi pagkakaunawaan tungkol sa mga huling araw, at isang panawagan tungo sa tapat na gawain."
+          },
+          {
+            "name": " 1 Timoteo",
+            "description": " Mga tagubilin para sa buhay-iglesya, pamumuno, at wastong doktrina."
+          },
+          {
+            "name": " 2 Timoteo",
+            "description": "Ang huling liham ni Pablo — isang utos kay Timoteo na ingatan ang ebanghelyo at tapusin itong mabuti."
+          },
+          {
+            "name": " Tito",
+            "description": " Ang paghirang ng mga pinuno at pagtuturo ng matuwid na doktrina ay humahantong sa maka-Diyos na pamumuhay."
+          },
+          {
+            "name": " Filemon",
+            "description": " Isang personal na panawagan para sa pagkakasundo at ang mga panlipunang implikasyon ng ebanghelyo."
+          }
+        ]
+      },
+      {
+        "section": " Mga Pangkalahatang Sulat at Pahayag",
+        "description": " Mga liham mula kina Santiago, Pedro, Juan, Judas, at iba pa — sumasaklaw sa pananampalataya sa mga pagsubok, tunay na paniniwala, maling katuruan, at ang sukdulang pag-asa ng Pahayag.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mga Hebreo",
+            "description": " Si Hesus bilang katuparan ng lahat ng pagkasaserdote, sakripisyo, at tipan ng Lumang Tipan — nakahihigit sa lahat ng paraan."
+          },
+          {
+            "name": " James",
+            "description": " Pananampalatayang gumagana — praktikal na karunungan para sa pamumuhay bilang bayan ng Diyos sa mundo."
+          },
+          {
+            "name": " 1 Pedro",
+            "description": " Pag-asa at banal na pamumuhay para sa mga tapon sa isang masungit na mundo."
+          },
+          {
+            "name": " 2 Pedro",
+            "description": " Mga babala laban sa mga bulaang guro at pagtitiwala sa mga pangako ng Diyos."
+          },
+          {
+            "name": " 1 Juan",
+            "description": " Katiyakan ng kaligtasan at ang mga tanda ng tunay na pananampalataya: pag-ibig, pagsunod, at katotohanan."
+          },
+          {
+            "name": " 2 Juan",
+            "description": " Isang maikling liham tungkol sa pag-ibig, katotohanan, at hindi pagtanggap sa mga tumatanggi kay Kristo."
+          },
+          {
+            "name": " 3 Juan",
+            "description": "Pinupuri ang tapat na pagtanggap at nagbabala laban sa makasariling pamumuno."
+          },
+          {
+            "name": " Judas",
+            "description": " Isang malakas na panawagan upang ipaglaban ang pananampalataya laban sa mga maling katuruan na gumapang papasok sa simbahan."
+          },
+          {
+            "name": " Pahayag",
+            "description": " Mga pangitain ng ganap na tagumpay ng Diyos laban sa kasamaan, ang paghatol sa masasama, at ang pagbabago ng lahat ng bagay."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Mga Paniniwala",
+    "description": " Mga pag-aaral na nakatuon sa doktrinang Kristiyano — kung ano ang itinuturo ng Bibliya tungkol sa Diyos, sangkatauhan, kaligtasan, at hinaharap. Ang pagbatay ng ating sarili sa tamang paniniwala ang pundasyon para sa tamang pamumuhay.",
+    "sections": [
+      {
+        "section": " Pangkalahatang-ideya",
+        "description": " Mga pambungad na pag-aaral na sumusuri sa kabuuan ng katuruang Kristiyano — ang ebanghelyo, ang mga pangunahing doktrina, at ang mga makasaysayang pagpapahayag ng simbahan.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Mga Pundasyon",
+            "description": " Ang mahahalagang pundasyon ng paniniwalang Kristiyano — ang kailangang malaman ng bawat mananampalataya."
+          },
+          {
+            "name": " Ang Ebanghelyo",
+            "description": " Ang mga pag-aaral ay nakatuon sa puso ng mensaheng Kristiyano: kasalanan, biyaya, at kaligtasan sa pamamagitan ni Kristo."
+          },
+          {
+            "name": " Mga Kredo at Pagtatapat",
+            "description": " Ang mga makasaysayang pahayag ng pananampalataya na nagbigay-kahulugan sa ortodoksong Kristiyanismo sa paglipas ng mga siglo."
+          }
+        ]
+      },
+      {
+        "section": " Diyos",
+        "description": " Sino ang Diyos? Pinag-aaralan nito ang Trinidad, ang mga katangian ng Diyos, at kung ano ang kahulugan ng personal na pagkilala sa kanya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mga Katangian ng Diyos",
+            "description": " Ang kabanalan, pag-ibig, soberanya, katarungan, at iba pang mga katangiang ipinakikita ng Kasulatan ay ang kabanalan ng Diyos."
+          },
+          {
+            "name": " Ang Trinidad",
+            "description": " Iisang Diyos sa tatlong persona — Ama, Anak, at Espiritu Santo — at kung bakit ito mahalaga."
+          },
+          {
+            "name": " Diyos Ama",
+            "description": " Ang Diyos bilang Manlilikha, Hari, at Ama — at ang kahulugan ng pagiging kanyang anak."
+          }
+        ]
+      },
+      {
+        "section": " Kasulatan",
+        "description": " Mga pag-aaral sa Bibliya mismo — kung paano ito nabuo, kung ano ang inaangkin nito tungkol sa sarili nito, at kung paano ito basahin nang mabuti.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Awtoridad",
+            "description": " Bakit may karapatang magsalita ang Bibliya sa bawat aspeto ng buhay."
+          },
+          {
+            "name": " Inspirasyon",
+            "description": " Paano gumawa ang Diyos sa pamamagitan ng mga taong may-akda upang ibigay sa atin ang kanyang Salita."
+          },
+          {
+            "name": " Kanon",
+            "description": " Paano nakilala at pinagsama-sama ang mga aklat ng Bibliya."
+          },
+          {
+            "name": " Interpretasyon",
+            "description": " Mga prinsipyo para sa pagbabasa ng Bibliya nang tapat at wasto."
+          }
+        ]
+      },
+      {
+        "section": " Paglikha at Sangkatauhan",
+        "description": " Mga pag-aaral sa kung ano ang ibig sabihin ng pagiging tao — nilikha ayon sa wangis ng Diyos, nagkatawang-tao, at nilikha para sa isang layunin.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Paglikha",
+            "description": " Ang Diyos bilang Lumikha ng lahat ng bagay — at ang kahulugan nito sa kung paano natin tinitingnan ang mundo."
+          },
+          {
+            "name": " Larawan ng Diyos",
+            "description": " Ang ibig sabihin ng nilalang na kawangis ng Diyos, at ang dignidad na ibinibigay sa bawat tao."
+          },
+          {
+            "name": " Pagsasakatuparan",
+            "description": "Ang kabutihan ng pagkakaroon ng katawan, at ang sinasabi ng Kasulatan tungkol sa pisikal na pag-iral."
+          },
+          {
+            "name": " Layunin",
+            "description": " Kung bakit tayo narito — ang tawag sa tao na mahalin ang Diyos, maglingkod sa kapwa, at pangalagaan ang sangnilikha."
+          }
+        ]
+      },
+      {
+        "section": " Kasamaan at ang Pagbagsak",
+        "description": " Mga pag-aaral tungkol sa kasalanan — ang pinagmulan nito, ang kalikasan nito, at ang mapaminsalang epekto nito sa mga tao at sa mundo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kalikasan ng Kasalanan",
+            "description": " Kung ano talaga ang kasalanan — hindi lamang paglabag sa mga tuntunin, kundi isang pangunahing pagtalikod sa Diyos."
+          },
+          {
+            "name": " Ang Taglagas",
+            "description": " Ano ang nangyari sa Genesis 3, at paano ito nakakaapekto sa bawat tao."
+          },
+          {
+            "name": " Tukso",
+            "description": "Paano gumagana ang tukso, at paano makakayanan ng mga mananampalataya na manatiling matatag laban dito."
+          }
+        ]
+      },
+      {
+        "section": " Kristo",
+        "description": " Mga pag-aaral sa katauhan ni Hesukristo — ganap na Diyos at ganap na tao — at kung ano ang kahulugan ng kanyang pagparito.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Persona ni Kristo",
+            "description": " Ang doktrina ng dalawang kalikasan — kung paano si Hesus ay parehong ganap na banal at ganap na tao."
+          },
+          {
+            "name": " Pagkakatawang-tao",
+            "description": " Bakit nagkatawang-tao ang Anak ng Diyos, at ano ang kahulugan ng kanyang pagkatao para sa atin."
+          }
+        ]
+      },
+      {
+        "section": " Kaligtasan",
+        "description": " Paano inililigtas ng Diyos ang mga makasalanan? Mga pag-aaral na sumasaklaw sa pagbabayad-sala, pagpapawalang-sala, pag-aampon, at ang buong saklaw ng ginagawa ng Diyos upang iligtas tayo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pagbabayad-sala",
+            "description": "Paano humaharap ang kamatayan ni Kristo sa kasalanan — pagpapalit, pagtubos, pakikipagkasundo, at marami pang iba."
+          },
+          {
+            "name": " Pagbabago",
+            "description": " Ang ibig sabihin ng pagtalikod sa kasalanan at pagtitiwala kay Kristo — pagsisisi at pananampalataya."
+          },
+          {
+            "name": " Pangatwiranan",
+            "description": " Ang pagiging matuwid sa harap ng Diyos — sa pamamagitan lamang ng biyaya, sa pamamagitan ng pananampalataya, kay Cristo lamang."
+          },
+          {
+            "name": " Pag-aampon",
+            "description": " Ang pambihirang kaloob ng pagiging bahagi ng pamilya ng Diyos bilang kanyang mga anak na lalaki at babae."
+          }
+        ]
+      },
+      {
+        "section": " Ang Espiritu",
+        "description": " Mga pag-aaral tungkol sa Banal na Espiritu — kung sino siya, ano ang kanyang ginagawa, at kung paano siya gumagawa sa mga mananampalataya at sa simbahan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Persona ng Espiritu",
+            "description": "Ang Banal na Espiritu bilang ikatlong persona ng Trinidad — hindi isang puwersa, kundi isang persona."
+          },
+          {
+            "name": " Bunga ng Espiritu",
+            "description": " Ang mga katangiang nalilikha ng Espiritu sa mga lumalakad na kasama niya."
+          },
+          {
+            "name": " Mga Espirituwal na Kaloob",
+            "description": " Ang mga kaloob na ibinibigay ng Espiritu upang ihanda ang mga mananampalataya para sa paglilingkod sa katawan ni Cristo."
+          }
+        ]
+      },
+      {
+        "section": " Simbahan",
+        "description": " Ano ang simbahan, at bakit ito mahalaga? Mga pag-aaral sa kalikasan, misyon, at kayarian ng katawan ni Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kalikasan ng Simbahan",
+            "description": " Ano ang simbahan — ang bayan ng Diyos, ang katawan ni Cristo, ang templo ng Espiritu."
+          },
+          {
+            "name": " Mga Sakramento",
+            "description": "Ang Bautismo at ang Hapunan ng Panginoon — ano ang mga ito, ano ang kahulugan ng mga ito, at paano ito ipangingilin."
+          },
+          {
+            "name": " Pamumuno",
+            "description": " Mga huwaran ng pamumuno sa simbahan na ayon sa Bibliya: mga matatanda, mga diakono, at awtoridad na may pusong tagapaglingkod."
+          },
+          {
+            "name": " Pagsamba",
+            "description": " Ano ang pagsambang Kristiyano, bakit ito mahalaga, at paano nito hinuhubog ang buhay ng komunidad."
+          }
+        ]
+      },
+      {
+        "section": " Mga Huling Bagay",
+        "description": " Mga pag-aaral tungkol sa kamatayan, muling pagkabuhay, paghuhukom, at ang bagong paglikha — ang pag-asa na humuhubog sa kung paano namumuhay ang mga Kristiyano sa kasalukuyan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pagbabalik ni Kristo",
+            "description": " Ang tiyak na pag-asa na si Hesus ay babalik nang may kaluwalhatian upang husgahan ang mga buhay at ang mga patay."
+          },
+          {
+            "name": " Paghuhukom",
+            "description": "Ang huling hatol ng Diyos sa lahat ng tao — at ang mabuting balita na si Cristo ay humatol na para sa kaniyang sariling mga tao."
+          },
+          {
+            "name": " Langit at Impiyerno",
+            "description": " Ang mga walang hanggang tadhana na inilalarawan ng Kasulatan — at kung bakit mahalaga ang mga ito sa kung paano tayo namumuhay ngayon."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Buhay",
+    "description": " Mga pag-aaral na nag-uugnay sa katotohanan ng Bibliya sa pang-araw-araw na karanasan ng pagsunod kay Kristo — sa mga relasyon, trabaho, pagkakakilanlan, at ang patuloy na pakikibaka laban sa kasalanan.",
+    "sections": [
+      {
+        "section": " Mga Espirituwal na Disiplina",
+        "description": " Mga gawi na nagsasanay sa atin na manatiling malapit sa Diyos at lumago sa kabanalan — hindi mga paraan upang makamit ang pabor, kundi mga gawi na nagpapanatili sa atin na bukas sa kanyang biyaya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Panalangin",
+            "description": " Pakikipag-usap sa Diyos — ang mga pundasyon nito, ang mga anyo nito, at kung paano magkaroon ng mas masaganang buhay panalangin."
+          },
+          {
+            "name": "Pagbasa ng Bibliya",
+            "description": " Paano basahin nang maayos ang Banal na Kasulatan — nang may pag-unawa, pagiging palagian, at inaasahang magbabago."
+          },
+          {
+            "name": " Pagsamba",
+            "description": " Ang pagsamba ay isang panghabambuhay na postura, hindi lamang isang aktibidad tuwing Linggo."
+          }
+        ]
+      },
+      {
+        "section": " Pag-uugali at Pagpapabanal",
+        "description": " Ang patuloy na proseso ng pagiging mas katulad ni Kristo — pakikipaglaban sa kasalanan, paglago sa kabutihan, at pag-unawa kung sino tayo sa kanya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Bunga ng Espiritu",
+            "description": " Pag-ibig, kagalakan, kapayapaan, pagtitiis, kabaitan, kabutihan, katapatan, kahinahunan, at pagpipigil sa sarili."
+          },
+          {
+            "name": " Pagdaig sa Kasalanan",
+            "description": " Praktikal at teolohikal na tulong para sa pagharap sa patuloy na mga gawi ng kasalanan."
+          },
+          {
+            "name": "Paglago sa Biyaya",
+            "description": " Ano ang hitsura ng paglago bilang isang Kristiyano — at ano ang mga hadlang."
+          },
+          {
+            "name": " Pagkakakilanlan kay Kristo",
+            "description": " Kung sino tayo dahil sa ginawa ni Kristo — at kung bakit binabago nito ang lahat."
+          }
+        ]
+      },
+      {
+        "section": " Mga Relasyon at Pamilya",
+        "description": " Mga pag-aaral tungkol sa mga ugnayang inilagay tayo ng Diyos — kasal, pamilya, pagkakaibigan, at komunidad.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kasal",
+            "description": " Ang tipan ng kasal — ang layunin nito, ang mga hamon nito, at ang larawan nito kay Kristo at sa simbahan."
+          },
+          {
+            "name": " Pagiging walang asawa",
+            "description": " Ang pagiging walang asawa bilang isang ganap at makabuluhang tungkulin, hindi isang silid-hintayan para sa kasal."
+          },
+          {
+            "name": " Pagiging Magulang",
+            "description": " Pagpapalaki ng mga anak sa pananampalataya — nang may biyaya, katotohanan, at pangmatagalang pananaw."
+          },
+          {
+            "name": " Pagkakaibigan",
+            "description": " Ang kaloob ng Kristiyanong pagkakaibigan — at kung paano linangin ang mga ugnayang lumalalim."
+          },
+          {
+            "name": " Komunikasyon",
+            "description": " Nagsasalita nang totoo at may kabaitan — at nakikinig nang mabuti."
+          },
+          {
+            "name": " Komunidad",
+            "description": " Ang ibig sabihin ng mamuhay bilang katawan ni Cristo — magpasan ng mga pasanin ng isa't isa."
+          }
+        ]
+      },
+      {
+        "section": " Trabaho at Bokasyon",
+        "description": " Mga pag-aaral na naglalapat ng ebanghelyo sa trabaho, pera, oras, at ambisyon — ang pagtingin sa pang-araw-araw na paggawa bilang bahagi ng mga layunin ng Diyos.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Buhay sa Trabaho",
+            "description": "Ang sinasabi ng Bibliya tungkol sa trabaho — ang kabutihan nito, ang mga pagkabigo nito, at ang pagtubos nito kay Cristo."
+          },
+          {
+            "name": " Pera at mga Ari-arian",
+            "description": " Pagkabukas-palad, kasiyahan, at isang pananaw sa kayamanan na naaayon sa Bibliya."
+          },
+          {
+            "name": " Pangangasiwa ng Panahon",
+            "description": " Paano natin ginagamit ang ating oras — at paano hinuhubog ng ebanghelyo ang ating mga prayoridad."
+          },
+          {
+            "name": " Ambisyon",
+            "description": " Banal na ambisyon vs. makasariling ambisyon — at kung paano malalaman ang pagkakaiba."
+          },
+          {
+            "name": " Pagreretiro",
+            "description": " Kung ano ang hitsura ng tapat na pamumuhay sa mga huling yugto ng buhay."
+          }
+        ]
+      },
+      {
+        "section": " Etika at Kulturang Kristiyano",
+        "description": "Paano nag-iisip at kumikilos ang mga mananampalataya sa mga apurahang etikal na tanong sa ating panahon — mula sa katarungang panlipunan hanggang sa bioetika at teknolohiya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Katarungang Panlipunan",
+            "description": " Ang puso ng Diyos para sa mga mahihina at inaapi, at ang kahulugan nito para sa atin."
+          },
+          {
+            "name": " Bioetika",
+            "description": " Mga isyu ng simula at katapusan ng buhay — nilalapitan nang may teolohikong pangangalaga at habag."
+          },
+          {
+            "name": " Nakakaengganyong Teknolohiya",
+            "description": " Paano gamitin nang tapat ang teknolohiya sa isang mundong hinuhubog nito."
+          }
+        ]
+      },
+      {
+        "section": " Pagdurusa at Patnubay",
+        "description": " Mga pag-aaral na tumutulong sa mga mananampalataya na malampasan ang sakit, kawalan ng katiyakan, at kahirapan nang may katapatan at pag-asa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mga Pagsubok at Paghihirap",
+            "description": " Bakit pinahihintulutan ng Diyos ang pagdurusa, at paano tayo sinasangkapan ng Kasulatan upang matiis ito nang may pag-asa."
+          },
+          {
+            "name": " Pag-unawa sa Kalooban ng Diyos",
+            "description": " Paano gumawa ng matalinong mga desisyon — at kung ano talaga ang ipinapangako ng Banal na Kasulatan tungkol sa patnubay."
+          },
+          {
+            "name": " Kalusugang Pangkaisipan",
+            "description": " Depresyon, pagkabalisa, at iba pang mga pakikibaka — nilapitan nang may habag at pangangalaga mula sa Bibliya."
+          },
+          {
+            "name": " Pighati",
+            "description": " Paano magdalamhati bilang mga may pag-asa — nang tapat, at hindi nag-iisa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Ministeryo",
+    "description": " Mga pag-aaral para sa mga sangkot sa paglilingkod sa iba — sa ebanghelismo, pangangalagang pastoral, pagtuturo, at pamumuno. Nakaugat sa Banal na Kasulatan, ang mga pag-aaral na ito ay nagbibigay ng kakayahan sa mga mananampalataya na maglingkod nang epektibo at napapanatili.",
+    "sections": [
+      {
+        "section": "Teolohiya ng Ministeryo",
+        "description": " Ang mga pundasyong biblikal para sa lahat ng ministeryong Kristiyano — kung ano ang ibig sabihin ng paglilingkod, at kung anong uri ng tao dapat ang isang lingkod.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pamumunong Naglilingkod",
+            "description": " Nangunguna gaya ng pangunguna ni Hesus — nang may pagpapakumbaba, sakripisyo, at pagmamalasakit sa mga pinaglilingkuran."
+          },
+          {
+            "name": " Tumatawag",
+            "description": " Pag-unawa sa iyong tawag sa ministeryo — kung paano ito nauunawaan at kung ano ang kasama rito."
+          }
+        ]
+      },
+      {
+        "section": " Pangangaral at Pagtuturo (Homiletika)",
+        "description": " Mga pag-aaral para sa mga tinawag upang ipaliwanag ang Bibliya sa publiko — sumasaklaw sa pamamaraan, katangian, at ang bigat ng paghawak sa Salita ng Diyos.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pangangaral na Nagpapaliwanag",
+            "description": "Paano mangaral nang tapat mula sa teksto — hayaan ang Bibliya na magtakda ng adyenda."
+          },
+          {
+            "name": " Mga Nangungunang Pag-aaral sa Bibliya",
+            "description": " Paano mahusay na pamunuan ang isang grupo — pagtatanong ng magagandang tanong at pagtulong sa mga tao na makilala ang Diyos sa teksto."
+          }
+        ]
+      },
+      {
+        "section": " Pamumuno at Administrasyon",
+        "description": " Ang praktikal at teolohikal na mga dimensyon ng pamumuno sa isang simbahan o ministeryo — pangitain, mga pangkat, tunggalian, at pamamahala.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pananaw at Istratehiya",
+            "description": " Paano mag-isip nang malinaw tungkol sa kung saan inaakay ng Diyos at kung paano makakarating doon nang sama-sama."
+          },
+          {
+            "name": " Pagbuo ng Koponan",
+            "description": " Pagtitipon, pagpapaunlad, at pagpapanatili ng isang malusog na pangkat ng ministeryo."
+          },
+          {
+            "name": " Resolusyon sa Tunggalian",
+            "description": "Paano haharapin ang hindi pagkakasundo at pagkakabaha-bahagi sa paraang magbibigay-pugay sa Diyos at mapapanatili ang pagkakaisa."
+          },
+          {
+            "name": " Pamamahala ng Simbahan",
+            "description": " Ang mga istruktura at proseso na tumutulong sa isang simbahan na maging may pananagutan at maayos."
+          }
+        ]
+      },
+      {
+        "section": " Pangangalaga sa Pastoral",
+        "description": " Mga pag-aaral na nagbibigay-kakayahan sa mga mananampalataya na magtulungan sa gitna ng kahirapan, kawalan, krisis, at pangangailangan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mga Usapang Pastoral",
+            "description": " Ang mga kasanayan at postura na kailangan para sa mga kapaki-pakinabang na pag-uusap sa ministeryo nang paisa-isa."
+          },
+          {
+            "name": " Interbensyon sa Krisis",
+            "description": " Paano tumugon nang may katalinuhan at habag kapag ang isang tao ay nasa matinding pagkabalisa."
+          },
+          {
+            "name": " Pagbisita",
+            "description": "Ang ministeryo ng presensya — pagbisita sa mga maysakit, matatanda, at mga hindi makalabas ng bahay."
+          },
+          {
+            "name": " Paghahanda sa Kasal",
+            "description": " Pagtulong sa mga mag-asawa na maghanda para sa isang kasal na nakasalig kay Kristo."
+          },
+          {
+            "name": " Pangangalaga sa Pagluluksa",
+            "description": " Sumasama sa mga nagdadalamhati — kung ano ang sasabihin, kung ano ang hindi sasabihin, at kung paano manatili."
+          }
+        ]
+      },
+      {
+        "section": " Ebanghelismo at mga Misyon",
+        "description": " Mga pag-aaral sa pagdadala ng ebanghelyo sa mga hindi pa nakarinig nito — personal, lokal, at sa iba't ibang kultura.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Personal na Pagpapatotoo",
+            "description": " Paano ibahagi ang iyong pananampalataya nang natural at malinaw sa pang-araw-araw na pag-uusap."
+          },
+          {
+            "name": " Mga Apolohetika",
+            "description": "Pagsagot sa mga tanong na pumipigil sa mga tao na seryosohin ang Kristiyanismo."
+          },
+          {
+            "name": " Ministeryo sa Iba't Ibang Kultura",
+            "description": " Naglilingkod at nagbabahagi nang lampas sa mga hangganan ng kultura nang may sensitibidad at paggalang."
+          },
+          {
+            "name": " Pagtatanim ng Simbahan",
+            "description": " Ang teolohiya at pagsasagawa ng pagtatatag ng mga bagong komunidad ng ebanghelyo."
+          }
+        ]
+      },
+      {
+        "section": " Pagiging Disipulo at Paggabay",
+        "description": " Mga pag-aaral sa ministeryo ng pagtulong sa iba na lumago — isa-isa, sa maliliit na grupo, at sa pamamagitan ng pagsasanay sa susunod na henerasyon.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ministeryo ng Isa-sa-Isa",
+            "description": " Ang kapangyarihan ng intensyonal at personal na pagkadisipulo — regular na pagpupulong upang sama-samang buksan ang Bibliya."
+          },
+          {
+            "name": " Pamumuno sa Maliit na Grupo",
+            "description": " Paano pamunuan ang isang maliit na grupo na tunay, lumalago, at nakabatay sa Banal na Kasulatan."
+          },
+          {
+            "name": " Pagsasanay sa Iba",
+            "description": " Pagbibigay ng kakayahan sa iba na gawin ang gawain ng ministeryo — pagpaparami hindi lamang ng mga nahikayat kundi pati na rin ng mga pinuno."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Iba pa",
+    "description": " Mga pag-aaral na hindi akma sa ibang kategorya — o na ang impormasyon sa istante ay hindi pa naitakda.",
+    "sections": []
+  }
+]

@@ -1,0 +1,550 @@
+{
+  "learningPathways": [
+    {
+      "titleLevel1": " Okukula eri Buli Muntu",
+      "description": " Omutendera ogw’omusingi ogwategekebwa okuyamba buli mukkiriza okuteekawo emirandira eminywevu n’okukulaakulana okutuuka ku bukulembeze.",
+      "pathways": [
+        {
+          "titleLevel2": " 1. Emisingi",
+          "description": " Entandikwa enkulu ey’okutegeera obubaka obukulu obuli mu Baibuli n’engeri gye tuddamu.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Olubereberye",
+              "description": " Okunoonyereza ku nsibuko y’enkolagana ya Katonda n’abantu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "studyId": "introducing_genesis_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Makko",
+              "description": " Okutunuulira amangu obulamu n’obuweereza bwa Yesu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "studyId": "introducing_mark_v001"
+            },
+            {
+              "titleLevel3": " Amazima Gasumuluddwa (1) .",
+              "description": " <b>Truth Unlocked, Volume 1: Christian Belief</b><br><br>Emisomo munaana okukuyamba okutegeera amazima amakulu Katonda ge yabikkula mu Baibuli. Tetusobola kubeera na bulamu bwa Katonda okuggyako nga tutegedde amazima ga Baibuli ne tugassa mu nkola ng’omusingi gw’obulamu bwaffe. <i>Truth Unlocked</i> era kiwummuza ekiyamba eri abo abamaze ebbanga nga Bakristaayo era abaagala okwekenneenya emisingi gy’okukkiriza kwabwe. Oyinza okwewuunya ebyo by’oyiga!",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "studyId": "truth_unlocked_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Okukyuka",
+              "description": " <b>Okukyuka: New not (just) Nice</b><br><br>Okusoma Baibuli okw’emirundi mwenda nga twekenneenya okukyusa okwa nnamaddala kye kitegeeza – era lwaki kikulu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "studyId": "conversion_v001"
+            },
+            {
+              "titleLevel3": " Obukulembeze bw’Omuweereza",
+              "description": "Omuze gwa Baibuli ogw’okufuga n’okulabirira.",
+              "studyId": "servant_leadership_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 2. Okukula Ebikoola",
+          "description": " Okugenda mu buziba mu nsengeka ya Baibuli n’emize egy’omwoyo egy’obuntu.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "studyTitles": [
+            {
+              "titleLevel3": " Okunnyonnyola Baibuli (1) .",
+              "description": " Okulondoola emboozi y’Endagaano Enkadde.",
+              "studyId": "bible_overview_(1)_v001"
+            },
+            {
+              "titleLevel3": " Okunnyonnyola Baibuli (2) .",
+              "description": " Okulondoola emboozi y’Endagaano Empya.",
+              "studyId": "bible_overview_(2)_v001"
+            },
+            {
+              "titleLevel3": " Amazima Gasumuluddwa (2) .",
+              "description": "<b>Truth Unlocked, Volume 2: Christian Living</b><br><br>Emisomo munaana okukuyamba okutegeera amazima amakulu Katonda ge yabikkula mu Baibuli. Tetusobola kubeera na bulamu bwa Katonda okuggyako nga tutegedde amazima ga Baibuli ne tugassa mu nkola ng’omusingi gw’obulamu bwaffe. <i>Truth Unlocked</i> era kiwummuza ekiyamba eri abo abamaze ebbanga nga Bakristaayo era abaagala okwekenneenya emisingi gy’okukkiriza kwabwe. Oyinza okwewuunya ebyo by’oyiga!",
+              "downloadLocation": "",
+              "studyId": "truth_unlocked_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Kula mu Kristo (1) .",
+              "description": "<b>Kula mu Kristo (Discipleship course)</b><br><br>Okula mu Kristo? Katonda ayagala abaana be bonna bakule mu Yesu. Bw’oba tokula, okunoonyereza kuno kujja kukuyamba okuzuula ekikyamu n’engeri y’okukitereezaamu. Bw’oba okula, bajja kukuyamba okwongera okukula. Nga tukola okuyita mu Byawandiikibwa, buli kitundu kigatta okusoma okumpi n’okufumiitiriza okw’obuntu. (Omusomo guno tuguwuddemu emizingo egiwerako. Sooka okole omuzingo 1 – naye bw’oba ekyo wakikola dda, genda mu maaso n’omuzingo oguddako.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Okugabana Omusomo gwa Yesu",
+              "description": " <b>Okugabana Yesu Omusomo</b><br><br>Emisomo munaana egijja okukuwa ebyuma okugabana Yesu n’abalala.",
+              "studyId": "sharing_jesus_course_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 3. Okutegeera okusingawo",
+          "description": " Okumegganyizibwa n’ebitabo ebizibu ennyo n’enkyukakyuka y’obuweereza.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Okuva",
+              "description": " Obununuzi, Amateeka, n’okubeerawo kwa Katonda.",
+              "studyId": "introducing_exodus_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Abaruumi",
+              "description": " Okubbira mu buziba mu nsonga z’Enjiri.",
+              "studyId": "introducing_romans_v001"
+            },
+            {
+              "titleLevel3": " Nze ani?",
+              "description": " Okutegeera ensibuko yaffe mu Kristo.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Kula mu Kristo (2) .",
+              "description": "<b>Kula mu Kristo (Discipleship course)</b><br><br>Okula mu Kristo? Katonda ayagala abaana be bonna bakule mu Yesu. Bw’oba tokula, okunoonyereza kuno kujja kukuyamba okuzuula ekikyamu n’engeri y’okukitereezaamu. Bw’oba okula, bajja kukuyamba okwongera okukula. Nga tukola okuyita mu Byawandiikibwa, buli kitundu kigatta okusoma okumpi n’okufumiitiriza okw’obuntu. (Omusomo guno tuguwuddemu voliyumu eziwerako. Tukitwala nti ojja kukola volume 2 wano – naye bw’oba ekyo wakikola dda, genda mu maaso n’omuzingo oguddako.)",
+              "studyId": "grow_in_christ_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Enkyukakyuka mu buweereza",
+              "description": " Engeri y'okuweereza obulungi mu kkanisa y'omu kitundu.",
+              "studyId": "ministry_dynamics_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 4. Beera ku Mission",
+          "description": " Okukyusa essira lyaffe ebweru ku mutima gwa Katonda ku lw’ensi.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Nga twanjula Yona",
+              "description": " Okusaasira kwa Katonda eri amawanga n’okuziyiza kwaffe.",
+              "studyId": "introducing_jonah_v001"
+            },
+            {
+              "titleLevel3": " Okwanjula Ebikolwa by’Abatume",
+              "description": " Okuzaalibwa kw’ekkanisa n’okusaasaana kw’Ekigambo.",
+              "studyId": "introducing_acts_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Yesu",
+              "description": " Okwetegekera okwanjula abalala ku muntu wa Kristo.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " Okugabana Yesu",
+              "description": " Enkola z’okubuulira enjiri ez’obuntu ez’omulembe.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 5. Okukulembera Abalala",
+          "description": " Okuwa ebyuma ebikozesebwa mu mirimu gy’obukulembeze emitongole n’egitali ntongole.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "[OMU]",
+              "description": " Ennyonyola ku kintu A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B] .",
+              "description": " Ennyonyola ku kintu B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C] .",
+              "description": " Ennyonyola ku kintu C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Obulamu obw’Omwoyo",
+      "description": " Ebikozesebwa byassa essira ku lugendo lw’omukkiriza olw’omunda n’okukozesa amazima ku mutima.",
+      "pathways": [
+        {
+          "titleLevel2": " Okulwanyisa Ekibi",
+          "description": " Obuyambi obw’omugaso n’obw’eby’eddiini mu kukola ku kukemebwa n’engeri z’obujeemu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Omubuulizi",
+              "description": " Okuzuula amakulu mu nsi emenyese.",
+              "studyId": "introducing_ecclesiastes_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Abaefeso",
+              "description": " Eby’okulwanyisa bya Katonda n’ekifo kyaffe mu nsi ez’omu ggulu.",
+              "studyId": "introducing_ephesians_v001"
+            },
+            {
+              "titleLevel3": " Nze ani?",
+              "description": " Entalo ezesigamiziddwa ku ndagamuntu okulwanyisa ekibi.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Funa Ekiwummulo ky'Omwoyo gwo",
+              "description": "<b>Funa Ekiwummulo eri Omwoyo gwo: Okusimattuka enneeyisa y’omuze ng’ofuna essanyu erisingako</b><br><br>Okuyiga Baibuli okw’ebitundu kkumi nga tunoonyereza ku mutima oguli emabega w’emize — n’engeri Enjiri gy’ewa ebisinga ku kisuubizo kyonna eky’obulimba kye kiyinza okutuusa. Nga tukola okuyita mu Byawandiikibwa, buli kitundu kigatta okusoma okumpi n’okufumiitiriza okw’obuntu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "studyId": "find_rest_for_your_soul_v001"
+            },
+            {
+              "titleLevel3": " Kula mu Kristo (1) .",
+              "description": "<b>Kula mu Kristo (Discipleship course)</b><br><br>Okula mu Kristo? Katonda ayagala abaana be bonna bakule mu Yesu. Bw’oba tokula, okunoonyereza kuno kujja kukuyamba okuzuula ekikyamu n’engeri y’okukitereezaamu. Bw’oba okula, bajja kukuyamba okwongera okukula. Nga tukola nga tuyita mu Byawandiikibwa, buli kitundu kigatta okusoma okw’okumpi n’okufumiitiriza ku muntu.<br><br>(Omusomo guno tugugabanyizza mu mizingo egiwerako. Sooka okole omuzingo 1 – naye bw’oba ekyo wakikola dda, genda mu maaso n’omuzingo oguddako.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Eddiini y’Emirimu",
+          "description": " Okutunuulira emirimu gyaffe egya buli lunaku nga tuyita mu ndabirwamu y’ebitonde bya Katonda n’obwakabaka bwe.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Nekkemiya",
+              "description": " Obukulembeze, okukola emirimu, n’okuddamu okuzimba olw’ekitiibwa kya Katonda.",
+              "studyId": "introducing_nehemiah_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Abakkolosaayi",
+              "description": " Okukola buli kimu nga bwe kiri eri Mukama.",
+              "studyId": "introducing_colossians_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Okukolera Ebirungi",
+              "description": "<b>Okukolera Ebirungi: Okukkiriza, Okwagala, n’Okusinza mu Mirimu gyaffe egya Bulijjo</b><br><br>Okusoma Baibuli okw’ebitundu munaana nga twekenneenya kye kitegeeza okukola n’obwesigwa ng’Omukristaayo. Nga tusinziira ku bitundu okuva mu Olubereberye okutuuka mu Okubikkulirwa, buli kitundu kikwata ku kitundu eky’enjawulo eky’omulimu: obulungi bwagwo Katonda bwe yawa, okukyusibwakyusibwa kwagwo olw’ekibi, n’okununulibwa kwagwo mu Kristo. Ka kibe nti owulira ng’omulimu gwo tegulina makulu, nga tegulina kakwate na kukkiriza kwo, oba nga gukooya kwokka, okunoonyereza kuno kukuyita okulaba emirimu gyo egya buli lunaku ng’ekikolwa eky’okwagala, engeri y’okusinza, era ekitundu ku bigendererwa bya Katonda ebinene eri ensi.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "studyId": "working_for_the_good_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Okubonabona",
+          "description": " Okutambula mu kiwonvu ky’ekisiikirize ky’okufa n’essuubi.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Okwanjula Omulimu",
+              "description": " Ennyonyola ku kintu A.",
+              "studyId": "introducing_job_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula 1 Peetero",
+              "description": " Ennyonyola ku kintu B.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C] .",
+              "description": " Ennyonyola ku kintu C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " Essuubi ly'Ensi Erumya",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "hope_for_a_hurting_world_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Okuweereza Abalala",
+      "description": " Okunoonyereza okutunuulidde obusumba, okubuulira enjiri, n’okusomesa.",
+      "pathways": [
+        {
+          "titleLevel2": " Obusumba bw’abasumba",
+          "description": " Okuwa abakkiriza eby’okukozesa okutambula ku mabbali ga bannaabwe mu buzibu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Zabbuli",
+              "description": " Olulimi lw’omutima mu kusaba n’okubuulirira.",
+              "studyId": "introducing_psalms_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula [Ebbaluwa].",
+              "description": " Ebbaluwa y’Endagaano Empya yali ekwata ku busumba.",
+              "studyId": "introducing_[epistle]_v001"
+            },
+            {
+              "titleLevel3": " Nze ani?",
+              "description": " Okuyamba abalala okuzuula ensibuko yaabwe mu Kristo.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Kula mu Kristo (1) .",
+              "description": "<b>Kula mu Kristo (Discipleship course)</b><br><br>Okula mu Kristo? Katonda ayagala abaana be bonna bakule mu Yesu. Bw’oba tokula, okunoonyereza kuno kujja kukuyamba okuzuula ekikyamu n’engeri y’okukitereezaamu. Bw’oba okula, bajja kukuyamba okwongera okukula. Nga tukola okuyita mu Byawandiikibwa, buli kitundu kigatta okusoma okumpi n’okufumiitiriza okw’obuntu. (Omusomo guno tuguwuddemu emizingo egiwerako. Sooka okole omuzingo 1 – naye bw’oba ekyo wakikola dda, genda mu maaso n’omuzingo oguddako.)",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Emboozi z'Obusumba",
+              "description": " Okunoonyereza ku mbeera n’obukodyo obw’omugaso.",
+              "studyId": "pastoral_conversations_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Manya Kristo",
+          "description": " Essira liteekeddwa ku kubuulira enjiri n’okunnyonnyola enzikiriza mu ngeri entegeerekeka.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [OMU]",
+              "description": " Ennyonyola ku kintu A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " Ebikulu mu njiri",
+              "description": " Okufunza obubaka obukulu obw’obulokozi.",
+              "studyId": "gospel_highlights_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Yesu",
+              "description": " Okukozesa Enjiri okwanjula abanoonya ku Kristo.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Okugabana Yesu",
+              "description": " Okuva mu mboozi okudda mu kuyita.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Okusomesa & Okubuulira",
+          "description": "Okutendeka abo abayitibwa okukwata n’okunnyonnyola Ekigambo mu kifo eky’olukale.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [OMU]",
+              "description": " Ennyonyola ku kintu A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B] .",
+              "description": " Ennyonyola ku kintu B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C] .",
+              "description": " Ennyonyola ku kintu C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Okumanya Amazima",
+      "description": " Essira liteekeddwa ku Systematic Theology n’enjigiriza z’ebyafaayo ez’Ekkanisa.",
+      "pathways": [
+        {
+          "titleLevel2": " Ekereziya",
+          "description": " Okutegeera obutonde, obutume, n’ensengeka y’omubiri gwa Kristo.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [OMU]",
+              "description": " Ennyonyola ku kintu A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B] .",
+              "description": " Ennyonyola ku kintu B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C] .",
+              "description": " Ennyonyola ku kintu C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Fuula Abayigirizwa Bangi Abazito",
+              "description": " <b>Fula Abayigirizwa Bangi Abazito: Omusomo gw’obwammemba mu kkanisa ya Baibuli eya Berean</b><br><br>Okusoma Baibuli okw’emirundi etaano nga twekenneenya empisa enkulu ez’ekkanisa.",
+              "studyId": "make_many_deep_disciples_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Amagezi",
+          "description": " Okuyiga okubeera n’obukugu mu nsi ya Katonda.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Engero",
+              "description": " Ennyonyola ku kintu A.",
+              "studyId": "introducing_proverbs_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Yakobo",
+              "description": " Ennyonyola ku kintu B.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " Amagezi & Omukwano",
+              "description": "Ennyonyola ku kintu C.",
+              "studyId": "wisdom_and_love_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Okusikiriza Ensi",
+      "description": " Engeri ekkanisa gy’ekwataganamu n’obuwangwa, ekitundu, n’abantu okutwaliza awamu.",
+      "pathways": [
+        {
+          "titleLevel2": " Okwaniriza abagenyi",
+          "description": " Okuggulawo obulamu bwaffe n’amaka gaffe ng’omutala gw’Enjiri.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Luusi",
+              "description": " Ekisa n’okwanirizibwa okuyita mu nnyiriri z’obuwangwa.",
+              "studyId": "introducing_ruth_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Lukka",
+              "description": " Yesu, omugenyi afuuka omugenyi.",
+              "studyId": "introducing_luke_v001"
+            },
+            {
+              "titleLevel3": " [C] .",
+              "description": " Ennyonyola ku kintu C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Okwetonda mu by'obuwangwa",
+          "description": " Okuddamu ebibuuzo ensi by’ebuuza mu butuufu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Danyeri",
+              "description": " Okubeerawo okw’obwesigwa mu bwakabaka obw’ensi.",
+              "studyId": "introducing_daniel_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula 1 Peetero",
+              "description": " Okubeera ng’abagwira n’abagwira abalina essuubi.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C] .",
+              "description": " Ennyonyola ku kintu C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Obwenkanya mu mbeera z’abantu",
+          "description": " Omutima gwa Katonda eri abataliiko mwasirizi n'abanyigirizibwa.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Nga twanjula Amosi",
+              "description": " Omulanga gw’obunnabbi okuleka obwenkanya okuyiringisibwa wansi.",
+              "studyId": "introducing_amos_v001"
+            },
+            {
+              "titleLevel3": " Nga twanjula Yakobo",
+              "description": " Okukkiriza okukola okuyita mu kwagala n’okulabirira abaavu.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " [C] .",
+              "description": " Ennyonyola ku kintu C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D] .",
+              "description": " Ennyonyola ku kintu D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E] .",
+              "description": " Ennyonyola ku kintu E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

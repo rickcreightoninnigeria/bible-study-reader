@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Endagaano Enkadde",
+    "description": " Okunoonyereza okunoonyereza ku bitabo ebyawandiikibwa nga Kristo tannajja — okuva ku Mateeka ne Bannabbi okutuuka ku Byawandiikibwa. Endagaano enkadde eyogera ku ndagaano ya Katonda ne Isiraeri era n’esonga ku Masiya.",
+    "sections": [
+      {
+        "section": " Amateeka",
+        "description": " Ebitabo ebitaano ebisooka ebya Baibuli (Pentateuch), ebikwata ku kutonda, okugwa, okuva, n’okuwaayo Amateeka — omusingi Ebyawandiikibwa ebirala kwe bizimba.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Olubereberye",
+            "description": " Ekitabo ky’entandikwa: obutonzi, okugwa, n’abajjajja — Ibulayimu, Isaaka, Yakobo, ne Yusufu."
+          },
+          {
+            "name": " Okuva",
+            "description": " Katonda anunula abantu be okuva mu buddu e Misiri, abikkula erinnya lye, era n’awa Amateeka ge e Sinaayi."
+          },
+          {
+            "name": "Eby’Abaleevi",
+            "description": " Ebiragiro ebikwata ku kusinza n’obutukuvu, ebiraga engeri abantu aboonoonyi gye bayinza okusemberera Katonda omutukuvu."
+          },
+          {
+            "name": " Ennamba",
+            "description": " Olugendo lwa Isiraeri mu ddungu — okulemererwa kwayo, okukangavvula kwayo, n’obwesigwa bwa Katonda obutasalako."
+          },
+          {
+            "name": " Ekyamateeka",
+            "description": " Okubuulira kwa Musa okw’okusiibula, okuzza obuggya endagaano n’okuteekateeka Isirayiri okuyingira mu Nsi Ensuubize."
+          }
+        ]
+      },
+      {
+        "section": " Ebyafaayo",
+        "description": " Ebitabo by’ebyafaayo bilondoola emboozi ya Isirayiri okuva ku kuwamba Kanani okuyita mu bwakabaka, obuwanganguse, n’okudda — nga biraga obwesigwa bwa Katonda n’obutali bwesigwa bw’abantu be enfunda n’enfunda.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Yoswa",
+            "description": "Okuwamba n’okugabanyaamu Ensi Ensuubize wansi w’obukulembeze bwa Yoswa."
+          },
+          {
+            "name": " Abalamuzi",
+            "description": " Enzirukanya y’obujeemu, okunyigirizibwa, n’okununulibwa nga Isiraeri ekyuka enfunda n’enfunda okuva ku Katonda."
+          },
+          {
+            "name": " Luusi",
+            "description": " Emboozi y’obwesigwa, okulabirira, n’okununulibwa eyateekebwawo mu kiseera ky’abalamuzi."
+          },
+          {
+            "name": " 1 Samwiri",
+            "description": " Okukyuka okuva ku balamuzi okudda ku bakabaka: Samwiri, Sawulo, n’okusituka kwa Dawudi."
+          },
+          {
+            "name": " 2 Samwiri",
+            "description": " Obufuzi bwa Dawudi — obuwanguzi bwe, okulemererwa kwe, n’endagaano ya Katonda n’ennyumba ye."
+          },
+          {
+            "name": " 1 Bassekabaka",
+            "description": "Ekitiibwa kya Sulemaani n'enjawukana y'obwakabaka; Eriya n’okuvuganya ku lusozi Kalumeeri."
+          },
+          {
+            "name": " 2 Bassekabaka",
+            "description": " Okukendeera n’okugwa kw’obwakabaka bwombi, okuggwa mu buwanganguse."
+          },
+          {
+            "name": " 1 Ebyomumirembe",
+            "description": " Okuddamu okunyumya ebyafaayo bya Isiraeri okuva ku Adamu okutuuka ku Dawudi, nga essira lyali lisinga kulissa ku kusinza ne yeekaalu."
+          },
+          {
+            "name": " 2 Ebyomumirembe",
+            "description": " Sulemaani ne yeekaalu, obwakabaka obwawuddwamu, n’essuubi ery’okuzzaawo."
+          },
+          {
+            "name": " Ezera",
+            "description": " Okudda okuva mu buwaŋŋanguse n’okuddamu okuzimba yeekaalu wansi w’obukulembeze bwa Ezera."
+          },
+          {
+            "name": " Nekkemiya",
+            "description": "Okuddamu okuzimba bbugwe wa Yerusaalemi n’okuzza obuggya ekibiina ky’endagaano."
+          },
+          {
+            "name": " Eseza",
+            "description": " Obulabirizi bwa Katonda obukwekebwa ng’akuuma abantu be mu lubiri lwa Buperusi."
+          }
+        ]
+      },
+      {
+        "section": " Ebitontome & Amagezi",
+        "description": " Yobu, Zabbuli, Engero, Omubuulizi, n’Oluyimba — ebitabo ebinoonyereza ku buziba bw’obumanyirivu bw’omuntu: okubonaabona, okutenderezebwa, amagezi, n’okwagala.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Omulimu",
+            "description": " Okunoonyereza okw’amaanyi ku kubonaabona, obwenkanya, n’ekyama ky’amakubo ga Katonda."
+          },
+          {
+            "name": " Zabbuli",
+            "description": " Ekitabo ky’ennyimba n’ekitabo ky’okusaba ekya Isirayiri — enneewulira z’omuntu zonna ezaaleetebwa mu maaso ga Katonda."
+          },
+          {
+            "name": " Engero",
+            "description": "Amagezi ag’omugaso mu bulamu obwa bulijjo, nga gasibuka mu kutya Mukama."
+          },
+          {
+            "name": " Omubuulizi",
+            "description": " Okukebera okunoonya amakulu, emirimu, n’okufa ‘wansi w’enjuba’."
+          },
+          {
+            "name": " Oluyimba lw'Enyimba",
+            "description": " Okujaguza omukwano n’obufumbo, okugaggawala n’ebifaananyi eby’essanyu n’okwegomba."
+          }
+        ]
+      },
+      {
+        "section": " Bannabbi",
+        "description": " Ebitabo by’obunnabbi biyita Isirayiri okwenenya, okulabula ku musango, era ne bisonga mu maaso okununulibwa kwa Katonda okw’enkomerero. Byetaagisa nnyo okutegeera okutuukirizibwa kw’Endagaano Empya ku bisuubizo ebyo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Isaaya",
+            "description": " Omusango n’essuubi eriwunyiriza — nga mw’otwalidde n’Ennyimba z’Omuweereza ezisonga ku Kristo."
+          },
+          {
+            "name": " Yeremiya",
+            "description": " Obulumi bwa nnabbi nga Yerusaalemi egwa, n'okusuubiza endagaano empya."
+          },
+          {
+            "name": " Okukungubaga",
+            "description": " Ennaku embisi olw’okuzikirizibwa kwa Yerusaalemi, ekwatiddwa wamu olw’essuubi mu bwesigwa bwa Katonda."
+          },
+          {
+            "name": " Ezeekyeri",
+            "description": " Okwolesebwa kw’ekitiibwa kya Katonda okugenda n’okudda, n’okusuubiza okuzzibwa obuggya mu by’omwoyo."
+          },
+          {
+            "name": " Danyeri",
+            "description": " Okubeerawo n’obwesigwa mu buwaŋŋanguse, n’okwolesebwa kw’obwakabaka bwa Katonda obufuga amawanga gonna."
+          },
+          {
+            "name": " Koseya",
+            "description": " Okwagala kwa Katonda okutaggwaawo eri abantu abatali beesigwa, okwalagibwa mu bufumbo bwa Koseya yennyini."
+          },
+          {
+            "name": " Yoweri",
+            "description": " Ekibonyoobonyo ky’enzige ng’okukoowoola okwenenya, n’okusuubiza Omwoyo."
+          },
+          {
+            "name": " Amosi",
+            "description": " Omulanga ogw’obunnabbi ogw’amaanyi ogw’obwenkanya n’okulabula nti eddiini etaliimu kintu kyonna tegenda kuyimirira."
+          },
+          {
+            "name": " Obadiya",
+            "description": " Okwogera okumpimpi ku Edomu n’olunaku lwa Mukama olujja."
+          },
+          {
+            "name": " Yona",
+            "description": " Okusaasira kwa Katonda eri amawanga — ne nnabbi atayagala okukiziyiza."
+          },
+          {
+            "name": " Mikka",
+            "description": " Obwenkanya, okusaasira, n’obwetoowaze — n’ekisuubizo ky’omufuzi okuva e Besirekemu."
+          },
+          {
+            "name": " Nakumu",
+            "description": "Okugwa kw’e Nineeve n’okubudaabudibwa kw’obwenkanya bwa Katonda eri abantu be abanyigirizibwa."
+          },
+          {
+            "name": " Kaabakuuku",
+            "description": " Okumegganyizibwa mu bwesimbu ne Katonda olw’obutali bwenkanya, n’okuyiga okwesiga obudde bwe."
+          },
+          {
+            "name": " Zeffaniya",
+            "description": " Olunaku lwa Mukama n’essanyu ery’okuzzibwawo eri ensigalira erongooseddwa."
+          },
+          {
+            "name": " Kaggayi",
+            "description": " Omulanga gw’okuddamu okuzimba yeekaalu n’okukulembeza ennyumba ya Katonda okusinga okubudaabudibwa okw’obuntu."
+          },
+          {
+            "name": " Zekkaliya",
+            "description": " Okwolesebwa okw’okuzzaawo ne Masiya ajja mu bwetoowaze ku ndogoyi."
+          },
+          {
+            "name": " Malaki",
+            "description": "Omulanga ogusembayo eri obwesigwa nga tebannaba kusirika okumala ebbanga eddene mu maaso ga Yokaana Omubatiza."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Endagaano Empya",
+    "description": " Okusoma mu bitabo ebyawandiikibwa oluvannyuma lw’okujja kwa Kristo — Enjiri, ebbaluwa z’abatume, n’Okubikkulirwa. Endagaano empya eraga okutuukirizibwa kw’ebisuubizo bya Katonda mu Yesu n’obulamu bw’ekkanisa eyasooka.",
+    "sections": [
+      {
+        "section": " Enjiri & Ebikolwa by'Abatume",
+        "description": " Ebiwandiiko ebina ebikwata ku bulamu bwa Yesu, okufa, n’okuzuukira, n’emboozi y’okugaziwa kw’ekkanisa eyasooka mu nsi y’Abaruumi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Matayo",
+            "description": " Yesu nga okutuukirizibwa kw’Endagaano Enkadde, Musa omuggya, ne Kabaka w’obwakabaka bwa Katonda."
+          },
+          {
+            "name": " Mark",
+            "description": " Emboozi ey’amangu ekwata ku Yesu ng’Omuweereza era Omwana wa Katonda abonaabona."
+          },
+          {
+            "name": " Lukka",
+            "description": " Yesu ng’Omulokozi w’ensi — ng’afaayo nnyo ku baavu, abakyala, n’ab’ebweru."
+          },
+          {
+            "name": " Yokaana",
+            "description": " Ekifaananyi ky’eby’eddiini ekisinga obuziba ekya Yesu — Ekigambo ekyafuulibwa omubiri, NZE, Omwana wa Katonda."
+          },
+          {
+            "name": " Ebikolwa by’Abatume",
+            "description": " Omwoyo Omutukuvu awa ekkanisa amaanyi okutwala enjiri okuva e Yerusaalemi okutuuka ku nkomerero z’ensi."
+          }
+        ]
+      },
+      {
+        "section": " Ebbaluwa za Pawulo",
+        "description": " Ebbaluwa za Pawulo eri amakanisa n’abantu ssekinnoomu — okunoonyereza ku nsonga z’enjiri, enneeyisa y’Ekikristaayo, n’obutonde bw’ekkanisa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Abaruumi",
+            "description": "Ennyonyola ya Pawulo esinga entegeke ku njiri: ekibi, obutuukirivu, okutukuzibwa, n’essuubi."
+          },
+          {
+            "name": " 1 Abakkolinso",
+            "description": " Okukola ku njawukana n’obutabanguko mu Kkolinso, nga tuyigiriza ku kwagala, ebirabo, n’okuzuukira."
+          },
+          {
+            "name": " 2 Abakkolinso",
+            "description": " Pawulo okulwanirira obuweereza bwe n’enjawukana y’amaanyi okuyita mu bunafu."
+          },
+          {
+            "name": " Abaggalatiya",
+            "description": " Okulwanirira n’obwagazi okuweebwa obutuukirivu olw’okukkiriza kwokka eri abo abagattako amateeka."
+          },
+          {
+            "name": " Abaefeso",
+            "description": " Obugagga bw’omuntu omukkiriza mu Kristo, n’ekkanisa ng’obuntu bwa Katonda obupya."
+          },
+          {
+            "name": " Abafiripi",
+            "description": " Essanyu mu mbeera zonna n’ekyokulabirako eky’obwetoowaze bwa Kristo."
+          },
+          {
+            "name": " Abakkolosaayi",
+            "description": " Kristo nga ow’oku ntikko ku bintu byonna, n’ebigendererwa mu bulamu obwa bulijjo."
+          },
+          {
+            "name": " 1 Abasessaloniika",
+            "description": " Okuzzaamu amaanyi eri ekkanisa ento, nga waliwo okuyigiriza ku kudda kwa Kristo."
+          },
+          {
+            "name": " 2 Abasessaloniika",
+            "description": " Okutereeza obutategeeragana ku biseera by’enkomerero, n’okukoowoola okukola emirimu egy’obwesigwa."
+          },
+          {
+            "name": " 1 Timoseewo",
+            "description": " Ebiragiro ku bulamu bw’ekkanisa, obukulembeze, n’enjigiriza ennungi."
+          },
+          {
+            "name": " 2 Timoseewo",
+            "description": "Ebbaluwa ya Pawulo esembayo — omusango eri Timoseewo okukuuma enjiri n’okumaliriza obulungi."
+          },
+          {
+            "name": " Tito",
+            "description": " Okulonda abakulembeze n’okuyigiriza enjigiriza eyo ennungi kiviirako omuntu okufuna obulamu obw’okutya Katonda."
+          },
+          {
+            "name": " Filemoni",
+            "description": " Okujulira okw’obuntu okutabagana n’ebikwata ku njiri mu mbeera z’abantu."
+          }
+        ]
+      },
+      {
+        "section": " Ebbaluwa ez'enjawulo & Okubikkulirwa",
+        "description": " Ebbaluwa okuva ewa Yakobo, Peetero, Yokaana, Yuda, n’abalala — ezikwata ku kukkiriza mu kugezesebwa, okukkiriza okwa nnamaddala, okuyigiriza okw’obulimba, n’essuubi erisembayo ery’Okubikkulirwa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Abebbulaniya",
+            "description": " Yesu ng’okutuukirizibwa kw’obwakabona bwonna obw’Endagaano Enkadde, ssaddaaka, n’endagaano — okusinga mu buli ngeri."
+          },
+          {
+            "name": " Yakobo",
+            "description": " Okukkiriza okukola — amagezi ag’omugaso ag’okubeera ng’abantu ba Katonda mu nsi."
+          },
+          {
+            "name": " 1 Peetero",
+            "description": " Essuubi n’obulamu obutukuvu eri abawaŋŋanguse mu nsi ey’obulabe."
+          },
+          {
+            "name": " 2 Peetero",
+            "description": " Okulabula ku basomesa ab’obulimba n’okwesiga ebisuubizo bya Katonda."
+          },
+          {
+            "name": " 1 Yokaana",
+            "description": " Okukakasa obulokozi n’obubonero bw’okukkiriza okwa nnamaddala: okwagala, obuwulize, n’amazima."
+          },
+          {
+            "name": " 2 Yokaana",
+            "description": " Ebbaluwa ennyimpimpi ku kwagala, amazima, n’obutasembeza abo abeegaana Kristo."
+          },
+          {
+            "name": " 3 Yokaana",
+            "description": "Okusiima okusembeza abagenyi n’obwesigwa n’okulabula ku bukulembeze obweyagaza."
+          },
+          {
+            "name": " Yuda",
+            "description": " Omulanga ogw’amaanyi okulwanirira okukkiriza okulwanyisa enjigiriza ey’obulimba eyeekulukuunya mu kkanisa."
+          },
+          {
+            "name": " Okubikkulirwa",
+            "description": " Okwolesebwa kw’obuwanguzi bwa Katonda obw’enkomerero ku bubi, okusalirwa omusango gw’ababi, n’okuzza obuggya ebintu byonna."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Enzikiriza",
+    "description": " Okunoonyereza kwali kussa essira ku njigiriza y’Ekikristaayo — Baibuli ky’eyigiriza ku Katonda, obuntu, obulokozi, n’ebiseera eby’omu maaso. Okwenyweza mu nzikiriza entuufu gwe musingi gw’obulamu obutuufu.",
+    "sections": [
+      {
+        "section": " Okulambika okutwaliza awamu",
+        "description": " Okunoonyereza okwanjula nga kwekenneenya enjigiriza yonna ey’Ekikristaayo — enjiri, enjigiriza enkulu, n’okwatula kw’ekkanisa okw’ebyafaayo.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Emisingi",
+            "description": " Ebizimba ebikulu eby’enzikiriza y’Ekikristaayo — buli mukkiriza by’alina okumanya."
+          },
+          {
+            "name": " Enjiri",
+            "description": " Okunoonyereza kwassa essira ku mutima gw’obubaka bw’Ekikristaayo: ekibi, ekisa, n’obulokozi okuyita mu Kristo."
+          },
+          {
+            "name": " Enzikiriza & Okwatula",
+            "description": " Ebigambo by’ebyafaayo eby’okukkiriza ebibadde binnyonnyola Obukristaayo obw’ennono okuyita mu byasa."
+          }
+        ]
+      },
+      {
+        "section": " Katonda",
+        "description": " Katonda y’ani? Okunoonyereza okunoonyereza ku Busatu, engeri za Katonda, ne kye kitegeeza okumumanya kinnoomu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ebitendo bya Katonda",
+            "description": " Obutukuvu bwa Katonda, okwagala kwe, obufuzi bwe, obwenkanya, n’engeri endala Ebyawandiikibwa bye biraga."
+          },
+          {
+            "name": " Obusatu",
+            "description": " Katonda omu mu bantu basatu — Kitaffe, Omwana, n’Omwoyo Omutukuvu — era lwaki kino kikulu."
+          },
+          {
+            "name": " Katonda Kitaffe",
+            "description": " Katonda nga Omutonzi, Kabaka, era Kitaffe — ne kye kitegeeza okubeera omwana we."
+          }
+        ]
+      },
+      {
+        "section": " Ebyawandiikibwa",
+        "description": " Okusoma ku Baibuli yennyini — engeri gye yatuuka, kiki kye yeewozaako ku yo, n’engeri y’okugisoma obulungi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obuyinza",
+            "description": " Lwaki Bayibuli erina eddembe okwogera mu buli kitundu ky’obulamu."
+          },
+          {
+            "name": " Okulung'amizibwa",
+            "description": " Engeri Katonda gye yakola ng’ayita mu bawandiisi b’abantu okutuwa Ekigambo kye."
+          },
+          {
+            "name": " Canon",
+            "description": " Engeri ebitabo bya Baibuli gye byategeerwa era ne bikuŋŋaanyizibwa wamu."
+          },
+          {
+            "name": " Okuvvuunula",
+            "description": " Emisingi gy’okusoma Baibuli mu bwesigwa era mu butuufu."
+          }
+        ]
+      },
+      {
+        "section": " Obutonzi & Obuntu",
+        "description": " Okusoma ku kye kitegeeza okuba omuntu — eyakolebwa mu kifaananyi kya Katonda, eyakolebwa mu mubiri, era yatondebwa olw’ekigendererwa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obutonzi",
+            "description": " Katonda nga Omutonzi w’ebintu byonna — n’ekyo kye kitegeeza ku ngeri gye tutunuuliramu ensi."
+          },
+          {
+            "name": " Ekifaananyi kya Katonda",
+            "description": " Kye kitegeeza okukolebwa mu kifaananyi kya Katonda, n’ekitiibwa ekiwa buli muntu."
+          },
+          {
+            "name": " Embodiment y’omuntu",
+            "description": "Obulungi bw’okubeera n’omubiri, n’ebyo Ebyawandiikibwa bye byogera ku kubeerawo okw’omubiri."
+          },
+          {
+            "name": " Omugaso",
+            "description": " Lwaki tuli wano — okuyitibwa kw’omuntu okwagala Katonda, okuweereza abalala, n’okuwanika ebitonde."
+          }
+        ]
+      },
+      {
+        "section": " Obubi n’Okugwa",
+        "description": " Okunoonyereza ku kibi — ensibuko yaakyo, obutonde bwakyo, n’ebikosa abantu n’ensi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obutonde bw’Ekibi",
+            "description": " Ekibi kye kiri ddala — si kumenya mateeka gokka, naye okukyuka okw’omusingi okuva ku Katonda."
+          },
+          {
+            "name": " Okugwa",
+            "description": " Ebyo ebyaliwo mu Olubereberye 3, n’engeri gye bikwata ku buli muntu."
+          },
+          {
+            "name": " Okukemebwa",
+            "description": "Engeri okukemebwa gye kukola, n’engeri abakkiriza gye bayinza okuyimirira nga banywevu okugiziyiza."
+          }
+        ]
+      },
+      {
+        "section": " Kristo",
+        "description": " Okusoma ku muntu wa Yesu Kristo — Katonda mu bujjuvu era omuntu mu bujjuvu — n’okujja kwe kye kutegeeza.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Omuntu wa Kristo",
+            "description": " Enjigiriza y’obutonde obubiri — engeri Yesu gy’ali ow’obwakatonda mu bujjuvu era ow’obuntu mu bujjuvu."
+          },
+          {
+            "name": " Okufuuka omuntu",
+            "description": " Lwaki Omwana wa Katonda yafuuka omubiri, n’obuntu bwe kye butegeeza gye tuli."
+          }
+        ]
+      },
+      {
+        "section": " Obulokozi",
+        "description": " Katonda anunula atya aboonoonyi? Okunoonyereza okukwata ku kutangirira, okuweebwa obutuukirivu, okuzaalibwa, n’okusenya kwonna okw’ebyo Katonda by’akola okutulokola.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Okutangirira",
+            "description": "Engeri okufa kwa Kristo gye kukwatamu ekibi — okukyusakyusa, okununulibwa, okutabagana, n’ebirala."
+          },
+          {
+            "name": " Okukyuka",
+            "description": " Kye kitegeeza okuva mu kibi n’okwesiga Kristo — okwenenya n’okukkiriza."
+          },
+          {
+            "name": " Ensonga enkulu",
+            "description": " Okulangibwa okuba omutuukirivu mu maaso ga Katonda — olw’ekisa kyokka, olw’okukkiriza kwokka, mu Kristo yekka."
+          },
+          {
+            "name": " Okuzaala abaana",
+            "description": " Ekirabo eky’enjawulo eky’okuleetebwa mu maka ga Katonda nga batabani be ne bawala be."
+          }
+        ]
+      },
+      {
+        "section": " Omwoyo",
+        "description": " Okusoma ku Mwoyo Omutukuvu — ani, by’akola, n’engeri gy’akola mu bakkiriza n’ekkanisa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Omuntu w’Omwoyo",
+            "description": "Omwoyo Omutukuvu ng’omuntu owokusatu ow’Obusatu — si maanyi, wabula omuntu."
+          },
+          {
+            "name": " Ekibala ky’Omwoyo",
+            "description": " Engeri z’empisa Omwoyo z’afulumya mu abo abatambula naye."
+          },
+          {
+            "name": " Ebirabo eby’Omwoyo",
+            "description": " Ebirabo Omwoyo by’awa okusobola okufunira abakkiriza eby’okuweereza mu mubiri gwa Kristo."
+          }
+        ]
+      },
+      {
+        "section": " Ekereziya",
+        "description": " Ekkanisa kye ki, era lwaki kikulu? Okusoma ku butonde, obutume, n’ensengeka y’omubiri gwa Kristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obutonde bw’Ekkanisa",
+            "description": " Ekkanisa kyeri — abantu ba Katonda, omubiri gwa Kristo, yeekaalu y’Omwoyo."
+          },
+          {
+            "name": " Amasakramentu",
+            "description": "Okubatizibwa n’ekyeggulo kya Mukama waffe — kye biri, kye bitegeeza, n’engeri y’okubikuumamu."
+          },
+          {
+            "name": " Obukulembeze",
+            "description": " Enkola za Baibuli ez’obukulembeze bw’ekkanisa: abakadde, abadyankoni, n’obuyinza obw’omutima gw’omuweereza."
+          },
+          {
+            "name": " Okusinza",
+            "description": " Okusinza kw’Ekikristaayo kye ki, lwaki kukulu, n’engeri gye kubumbamu obulamu bw’ekitundu."
+          }
+        ]
+      },
+      {
+        "section": " Ebintu Ebisembayo",
+        "description": " Okunoonyereza ku kufa, okuzuukira, omusango, n’ebitonde ebipya — essuubi eribumba engeri Abakristaayo gye babeera mu kiseera kino.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Okudda kwa Kristo",
+            "description": " Essuubi erikakafu nti Yesu ajja kudda mu kitiibwa okusalira abalamu n’abafu omusango."
+          },
+          {
+            "name": " Okusala omusango",
+            "description": "Ensala ya Katonda esembayo ku bantu bonna — n’amawulire amalungi nti Kristo yeetikka omusango ku lulwe."
+          },
+          {
+            "name": " Eggulu & Geyena",
+            "description": " Enkomerero ezitaggwaawo Ebyawandiikibwa bye binnyonnyola — era lwaki bikulu ku ngeri gye tubeera kati."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Obulamu",
+    "description": " Okunoonyereza okuyunga amazima ga Baibuli ku bumanyirivu obwa bulijjo obw’okugoberera Kristo — mu nkolagana, emirimu, endagamuntu, n’okulwana okugenda mu maaso n’ekibi.",
+    "sections": [
+      {
+        "section": " Okukangavvula okw’Omwoyo",
+        "description": " Enkola ezitutendeka okusigala kumpi ne Katonda n’okukula mu kutya Katonda — si ngeri ya kufuna kusiimibwa, wabula emize egitukuuma nga tuggule eri ekisa kye.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Okusaba",
+            "description": " Okwogera ne Katonda — emisingi gyayo, ebifaananyi byayo, n’engeri y’okukulaakulanya obulamu bw’okusaba obw’obugagga."
+          },
+          {
+            "name": "Okusoma Baibuli",
+            "description": " Engeri y’okusomamu Ebyawandiikibwa obulungi — n’okutegeera, okukwatagana, n’okusuubira okukyusibwa."
+          },
+          {
+            "name": " Okusinza",
+            "description": " Okusinza ng’ennyimiririra y’obulamu bwonna, so si mulimu gwa Ssande yokka."
+          }
+        ]
+      },
+      {
+        "section": " Empisa & Okutukuzibwa",
+        "description": " Enkola egenda mu maaso ey’okufuuka nga Kristo — okulwanyisa ekibi, okukula mu mpisa ennungi, n’okutegeera kye tuli mu ye.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ekibala ky’Omwoyo",
+            "description": " Okwagala, essanyu, emirembe, obugumiikiriza, ekisa, obulungi, obwesigwa, obukkakkamu, n’okwefuga."
+          },
+          {
+            "name": " Okuwangula Ekibi",
+            "description": " Obuyambi obw’omugaso n’obw’eby’eddiini mu kukola ku nkola z’ekibi ezitaggwaawo."
+          },
+          {
+            "name": "Okukula mu Ekisa",
+            "description": " Bwe kifaanana okukula ng’Omukristaayo — n’ekiyingira mu kkubo."
+          },
+          {
+            "name": " Endagamuntu mu Kristo",
+            "description": " Kye tuli olw’ebyo Kristo by’akoze — era lwaki ekyo kikyusa buli kimu."
+          }
+        ]
+      },
+      {
+        "section": " Enkolagana & Amaka",
+        "description": " Okusoma ku nkolagana Katonda gy’atutaddemu — obufumbo, amaka, omukwano, n’ekitundu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obufumbo",
+            "description": " Endagaano y’obufumbo — ekigendererwa kyayo, okusoomoozebwa kwayo, n’ekifaananyi kyayo ekya Kristo n’ekkanisa."
+          },
+          {
+            "name": " Obutabeera obwannamunigina",
+            "description": " Obufumbo ng’okuyitibwa okujjuvu era okw’amakulu, so si kisenge mwe balindirira obufumbo."
+          },
+          {
+            "name": " Okuzaala abaana",
+            "description": " Okukuza abaana mu kukkiriza — n’ekisa, amazima, n’endowooza ey’ekiseera ekiwanvu."
+          },
+          {
+            "name": " Omukwaano",
+            "description": " Ekirabo ky’omukwano gw’Ekikristaayo — n’engeri y’okulima enkolagana egenda mu buziba."
+          },
+          {
+            "name": " Enjogerezaganya",
+            "description": " Okwogera mu mazima n’ekisa — n’okuwuliriza obulungi."
+          },
+          {
+            "name": " Ekyaalo",
+            "description": " Kye kitegeeza okubeera ng’omubiri gwa Kristo — nga buli omu yeetikka emigugu gya munne."
+          }
+        ]
+      },
+      {
+        "section": " Emirimu & Emirimu",
+        "description": " Okunoonyereza okukozesa enjiri ku mulimu, ssente, obudde, n’okwegomba — okulaba emirimu egya bulijjo ng’ekitundu ku bigendererwa bya Katonda.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obulamu bw'emirimu",
+            "description": "Baibuli ky’eyogera ku mulimu — obulungi bwagwo, ebigunyiiza, n’okununulibwa kwagwo mu Kristo."
+          },
+          {
+            "name": " Ssente & Ebintu",
+            "description": " Obugabi, obumativu, n’endowooza ya Baibuli ku by’obugagga."
+          },
+          {
+            "name": " Obuwanika bw’Ebiseera",
+            "description": " Engeri gye tukozesaamu ebiseera byaffe — n’engeri enjiri gy’ekyusaamu ebitukulembeza."
+          },
+          {
+            "name": " Okwagala ekintu",
+            "description": " Holy ambition vs. selfish ambition — n’engeri y’okutegeera enjawulo."
+          },
+          {
+            "name": " Okuwummula",
+            "description": " Obulamu obw’obwesigwa bwe bufaanana mu sizoni ez’oluvannyuma ez’obulamu."
+          }
+        ]
+      },
+      {
+        "section": " Empisa n'Obuwangwa bw'Ekikristaayo",
+        "description": "Engeri abakkiriza gye balowooza n’okukola ku bibuuzo eby’empisa eby’amangu eby’omulembe gwaffe — okuva ku bwenkanya mu bantu okutuuka ku mpisa z’ebiramu okutuuka ku tekinologiya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obwenkanya mu mbeera z’abantu",
+            "description": " Omutima gwa Katonda eri abataliiko mwasirizi n’abanyigirizibwa, n’ekyo kye kitegeeza gye tuli."
+          },
+          {
+            "name": " Empisa z’ebiramu",
+            "description": " Ensonga z’entandikwa n’enkomerero y’obulamu — zituukirirwa n’okufaayo n’okusaasira okw’eby’eddiini."
+          },
+          {
+            "name": " Tekinologiya akwatagana",
+            "description": " Engeri y’okukozesaamu tekinologiya n’obwesigwa mu nsi ekoleddwamu."
+          }
+        ]
+      },
+      {
+        "section": " Okubonaabona & Obulagirizi",
+        "description": " Okunoonyereza okuyamba abakkiriza okutambulira mu bulumi, obutali bukakafu, n’obuzibu n’obwesimbu n’essuubi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ebigezo n’Okubonaabona",
+            "description": " Lwaki Katonda akkiriza okubonaabona, n’engeri Ebyawandiikibwa gye bituwa ebyuma okugugumira n’essuubi."
+          },
+          {
+            "name": " Okutegeera Katonda By’ayagala",
+            "description": " Engeri y’okusalawo mu ngeri ey’amagezi — n’ebyo ebyawandiikibwa mu butuufu bye bisuubiza ku bulagirizi."
+          },
+          {
+            "name": " Obulamu bw'obwongo",
+            "description": " Okwennyamira, okweraliikirira, n‟entalo endala — yatuukirirwa n‟okusaasira n‟okufaayo okuva mu Baibuli."
+          },
+          {
+            "name": " Okukungubaga",
+            "description": " Engeri y’okunakuwala ng’abo abalina essuubi — mu bwesimbu, so si bokka."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Obuweereza",
+    "description": " Okusoma eri abo abeenyigira mu kuweereza abalala — mu kubuulira enjiri, okulabirira abasumba, okusomesa, n’obukulembeze. Emirandira mu Byawandiikibwa, okunoonyereza kuno kuwa abakkiriza ebyuma okuweereza obulungi era mu ngeri ey’okuwangaala.",
+    "sections": [
+      {
+        "section": "Eby’eddiini mu Buweereza",
+        "description": " Emisingi gya Baibuli egy’obuweereza bwonna obw’Ekikristaayo — kye kitegeeza okuweereza, n’omuntu wa ngeri ki omuweereza gy’alina okuba.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obukulembeze bw’Omuweereza",
+            "description": " Okukulembera nga Yesu bwe yakulembera — n’obwetoowaze, okwewaayo, n’okufaayo ku abo abaweereza."
+          },
+          {
+            "name": " Okukuba essimu",
+            "description": " Okutegeera okuyitibwa kwo mu buweereza — engeri gye kutegeerwamu ne bye kuzingiramu."
+          }
+        ]
+      },
+      {
+        "section": " Okubuulira n'okusomesa (Homiletics) .",
+        "description": " Okusoma eri abo abayitibwa okunnyonnyola Baibuli mu lujjudde — nga kukwata ku nkola, empisa, n’obuzito bw’okukwata Ekigambo kya Katonda.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Okubuulira Okunnyonnyola",
+            "description": "Engeri y’okubuulira n’obwesigwa okuva mu kiwandiiko — okuleka Baibuli okuteekawo enteekateeka."
+          },
+          {
+            "name": " Okukulembera Okuyiga Baibuli",
+            "description": " Engeri y’okukulembera ekibiina obulungi — okubuuza ebibuuzo ebirungi n’okuyamba abantu okusisinkana Katonda mu kiwandiiko."
+          }
+        ]
+      },
+      {
+        "section": " Obukulembeze & Enzirukanya y'emirimu",
+        "description": " Ebipimo by’enkola n’eby’eddiini eby’okukulembera ekkanisa oba obuweereza — okwolesebwa, ttiimu, enkaayana, n’enfuga.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Okwolesebwa & Enkola",
+            "description": " Engeri y’okulowooza obulungi ku Katonda gy’akulembera n’engeri y’okutuukayo nga tuli wamu."
+          },
+          {
+            "name": " Okuzimba ttiimu",
+            "description": " Okukung’aanya, okukulaakulanya, n’okuyimirizaawo ttiimu y’obuweereza ennungi."
+          },
+          {
+            "name": " Okugonjoola obutakkaanya",
+            "description": "Engeri y’okukwatamu obutakkaanya n’enjawukana mu ngeri essa ekitiibwa mu Katonda n’okukuuma obumu."
+          },
+          {
+            "name": " Enfuga y’Ekkanisa",
+            "description": " Ensengeka n’enkola eziyamba ekkanisa okuvunaanyizibwa n’okusengekebwa obulungi."
+          }
+        ]
+      },
+      {
+        "section": " Obusumba bw’abasumba",
+        "description": " Okunoonyereza okusobozesa abakkiriza okutambula ku mabbali ga bannaabwe mu buzibu, mu kufiirwa, mu buzibu, n’obwetaavu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Emboozi z'Obusumba",
+            "description": " Obukugu n’enyimirira ebyetaagisa mu mboozi z’obuweereza ez’omuntu ku muntu eziyamba."
+          },
+          {
+            "name": " Okuyingira mu nsonga z’obuzibu",
+            "description": " Engeri y’okuddamu mu ngeri ey’amagezi n’okusaasira ng’omuntu ali mu buzibu obw’amaanyi."
+          },
+          {
+            "name": " Okukyalira ensiko",
+            "description": "Obuweereza bw’okubeerawo — okukyalira abalwadde, abakadde, n’abatali waka."
+          },
+          {
+            "name": " Okuteekateeka obufumbo",
+            "description": " Okuyamba abafumbo okwetegekera obufumbo obuzimbibwa ku Kristo."
+          },
+          {
+            "name": " Okulabirira Abafiiriddwa",
+            "description": " Okutambula n’abo abali mu nnaku — kiki kye balina okwogera, kye batalina kwogera, n’engeri y’okusigala."
+          }
+        ]
+      },
+      {
+        "section": " Okubuulira Enjiri & Obuminsani",
+        "description": " Okunoonyereza ku kutwala enjiri eri abo abatagiwulira — kinnoomu, mu kitundu, ne mu buwangwa bwonna.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Okubuulira Omuntu",
+            "description": " Engeri y’okugabana okukkiriza kwo mu butonde era mu ngeri entegeerekeka mu mboozi eza bulijjo."
+          },
+          {
+            "name": " Okwetonda",
+            "description": "Okuddamu ebibuuzo ebiremesa abantu obutatwala Bukristaayo ng’ekikulu."
+          },
+          {
+            "name": " Minisitule y’ebyobuwangwa eby’enjawulo",
+            "description": " Okuweereza n‟okugabana okuyita ku nsalo z‟obuwangwa n‟obuwulize n‟ekitiibwa."
+          },
+          {
+            "name": " Okusimba Ekkanisa",
+            "description": " Enjigiriza n’enkola y’okutandikawo ebitundu by’enjiri ebipya."
+          }
+        ]
+      },
+      {
+        "section": " Obuyigirizwa & Okubuulirira",
+        "description": " Okunoonyereza ku buweereza bw’okuyamba abalala okukula — omu ku omu, mu bibinja ebitonotono, era nga batendeka omulembe oguddako.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Obuweereza bw’Omu ku Omu",
+            "description": " Amaanyi g’obuyigirizwa mu bugenderevu, obw’obuntu — okusisinkana buli kiseera okuggulawo Baibuli nga tuli wamu."
+          },
+          {
+            "name": " Okukulembera Ekibinja Ekitono",
+            "description": " Engeri y’okukulembera ekibinja ekitono eky’amazima, ekikula, era nga kyesigamiziddwa ku Byawandiikibwa."
+          },
+          {
+            "name": " Okutendeka Abalala",
+            "description": " Okuwa abalala ebyuma okukola omulimu gw’obuweereza — okukubisaamu si bakyufu bokka wabula n’abakulembeze."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Lala",
+    "description": " Okunoonyereza okutakwatagana bulungi mu kiti kirala — oba nga amawulire gaabwe aga shelf tegannaba kuteekebwawo.",
+    "sections": []
+  }
+]

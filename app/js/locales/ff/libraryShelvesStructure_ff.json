@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": "Alkawal Kesal",
+    "description": "Janndeeji limtooji defte binndaaɗe ko adii gartol Almasiihu — diga Tawreeta e Annabo'en haa Binndi. Alkawal Kesal ɗon holla habaru alkawal Allah bee Isra’iila nden ɗon holla Almasiihu.",
+    "sections": [
+      {
+        "section": "Umrore",
+        "description": "Defte jowi arandeeji nder Bibel (Pentateuch), ɗon limta tagdi, doggol, wurtugo, e hokkugo Tawreeta — limngal ko heddii nder Binndi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Fuɗɗoode",
+            "description": "Deftere fuɗɗoode: tagoore, doggol, e taaniraaɓe — Ibraahiima, Isiyaaku, Yaakubu e Yuusuf."
+          },
+          {
+            "name": "Kuugal",
+            "description": "Alla hisni leñol mum e maccungaagu to leydi Misra, holliri innde mum, rokki ɗum sariya mum to Sinayi."
+          },
+          {
+            "name": "Lewitik",
+            "description": "Jamirooje dewal e senaare, kollirooje no leñol bakkaat waawirta ɓadtaade Alla ceniiiɗo."
+          },
+          {
+            "name": "Limɗe",
+            "description": "Jahdu Isra’iila nder ladde — 6amtaare maako, neɗɗaaku maako, e jokkugo gooŋgaaku Allah."
+          },
+          {
+            "name": "Dewtere Dewtere",
+            "description": "Waajuuji Muusaa, kesɗitingol alkawal e hesɗitinde Isra’iila’en ngam nastugo lesdi fodaandi."
+          }
+        ]
+      },
+      {
+        "section": "Tariya",
+        "description": "Defte taariiha ɗon tokka habaru Isra'iila diga jaalorgal Kanaana haa laamu, eggugo, e wartugo — ɗon holla gooŋgaaku Allah e gooŋgaaku yimɓe maako ɗon ƴama gooŋgaaku.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Yosuwa",
+            "description": "Jaɓɓugol e feccugol leydi fodoore e gardagol Yosuwa."
+          },
+          {
+            "name": "Ñaawooɓe",
+            "description": "Taarde murto, tooñannge, e hisnude nde Isra’iila’en ruttitii e Alla laabi keewɗi."
+          },
+          {
+            "name": "Ruut",
+            "description": "Daartol gooŋɗinal, ballal, e rimɗude waɗaama e jamaanu ñaawooɓe."
+          },
+          {
+            "name": "1 Samuyila",
+            "description": "Jaltugol e ñaawooɓe haa e laamɓe: Samuyila, Sawulu, e ummital Daawuuda."
+          },
+          {
+            "name": "2 Samuyila",
+            "description": "Laamu Daawuuda — nasaraaku maako, baasal maako, e alkawal Allah bee saare maako."
+          },
+          {
+            "name": "1 Laamɓe",
+            "description": "Teddeendi Suleymaani e peccitagol laamu nguu; Eliya e pottital dow tulde Karmel."
+          },
+          {
+            "name": "2 Laamɓe",
+            "description": "Ustaare e doggol laamlaamuuji ɗiɗi ɗii fof, haa joofni e eggol."
+          },
+          {
+            "name": "1 Taariiha",
+            "description": "Taariiha Isra'iila diga Aadama haa Daawuda, ɗon yewta dow dewal e suudu dewal."
+          },
+          {
+            "name": "2 Taariiha",
+            "description": "Suleymaanu e suudu dewal, laamu fecciingu, e yaakaare moƴƴitingol."
+          },
+          {
+            "name": "Esra",
+            "description": "Gartugo diga lesdi e nyiɓugo suudu dewal les ardungal Esra."
+          },
+          {
+            "name": "Nehemiya",
+            "description": "Mahdi mahol Urusaliima e kesɗitinki ummaatoore alkawal."
+          },
+          {
+            "name": "Ester",
+            "description": "Providence Alla suuɗiiɗo ina reena leñol mum e nder suudu Perse."
+          }
+        ]
+      },
+      {
+        "section": "Yimre & Hakkille",
+        "description": "Ayyuuba, Jabuura, Tindi, Waajuuji, e Jimol — defte limtooje luggiɗnde nder taariiha ɓii aadama: torra, yettoode, hikma, e yidde.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Kugal",
+            "description": "Yiylo luggiɗngo e torra, nuunɗal, e sirlu laabi Alla."
+          },
+          {
+            "name": "Jabuura",
+            "description": "Deftere jimɗi Isra’iila e deftere du’aawu — timmuɗum nder ɓernde aadee waddaama yeeso Allah."
+          },
+          {
+            "name": "Tinndi",
+            "description": "Hakkille kuuɓtodinɗo ngam nguurndam ñalnde kala, gonɗo e kulol Joomiraaɗo."
+          },
+          {
+            "name": "Waajoowo",
+            "description": "Ƴeewndo njiylawu maanaa, golle, e maayde ‘les naange’."
+          },
+          {
+            "name": "Jimol Jimol",
+            "description": "Mawningol giɗli e dewgal, alɗungol natal weltaare e yiɗde."
+          }
+        ]
+      },
+      {
+        "section": "Annabaaɓe",
+        "description": "Defte annabaaku ɗon nodda Isra'iila'en ngam tuubugo, ɗon jeertina dow kiita, ɗon holla yeeso dow rimɗinki Allah haa timmi. Ɗe ngoni ko e faamde no Alkawal Kesal timminirta ɗeen fodoore.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Esaaya",
+            "description": "Ñaawoore e yaakaare ɓuuɓnde — ina jeyaa heen Jime Maccuɗo kollitooje Almasiihu."
+          },
+          {
+            "name": "Yeremiya",
+            "description": "Mette annabiijo nde Urusaliima yani, e fodoore alkawal kesal."
+          },
+          {
+            "name": "Wullaango",
+            "description": "Sunaare mawnde dow halkere Urusaliima, jogaande bee tammunde dow nuɗɗinki Allah."
+          },
+          {
+            "name": "Ezekiyel",
+            "description": "Yi’annde tedduŋgal Alla ina yaha ina warta, e fodoore hesɗitinde ruuhu."
+          },
+          {
+            "name": "Daniyel",
+            "description": "Heɓde gooŋɗinal e nder eggol, e gite laamu Alla jom doole dow leƴƴi ɗii fof."
+          },
+          {
+            "name": "Hoseya",
+            "description": "Giɗli Alla ɗi ŋakkataa e leñol ngol hoolaaki, ngol hollirta ko e dewgal Hoseya e hoore mum."
+          },
+          {
+            "name": "Yowel",
+            "description": "Ñawu mboros hono noddaango tuubugol, e fodoore Ruuhu."
+          },
+          {
+            "name": "Amos",
+            "description": "Noddaango annabaagal tiiɗngo ngam nuunɗal e jeertinaango wonde diine meho daraaki."
+          },
+          {
+            "name": "Obadiya",
+            "description": "Haala seeɗa dow Edom e nyalnde Joomiraawo nde warata."
+          },
+          {
+            "name": "Yunus",
+            "description": "Yurmeende Alla e leƴƴi — e annabi 6urcfo 6amtaade cfum."
+          },
+          {
+            "name": "Mika",
+            "description": "Aadi, yurmeende, e neɗɗaaku — e fodoore laamɗo ummoriiɗo Baytilaama."
+          },
+          {
+            "name": "Nahum",
+            "description": "Doggol Niniwe e cuusal peewal Alla wonande leñol mum tooñaaɗo."
+          },
+          {
+            "name": "Habakuk",
+            "description": "Haɓde e Alla e nuunɗal e dow tooñannge, e janngude hoolaade e sahaa mum."
+          },
+          {
+            "name": "Sefaniya",
+            "description": "Ñalnde Joomiraawo e weltaare wartirki ngam heddiiɓe laaɓɓe."
+          },
+          {
+            "name": "Haggay",
+            "description": "Noddaango ngam nyiɓugo suudu dewal e ardugo suudu Allah dow welwelo hoore."
+          },
+          {
+            "name": "Zakariya",
+            "description": "Yi’annde wartirki e Almasiihu garoowo bee neɗɗaaku dow puccu."
+          },
+          {
+            "name": "Malaki",
+            "description": "Noddaango sakkitiingo e gooŋɗinal hade silsil juutɗo yeeso Yuhanna lootoowo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": "Alkawal Kesal",
+    "description": "Jannde nder defte binndaaɗe ɓaawo gartol Almasiihu — Linjiila, ɓataakeeji nulaaɓe, e Wahyu. Alkawal Kesal holli timmingo alkawal Allah nder Yeesu e ngeedam ekklessiya arandeewal.",
+    "sections": [
+      {
+        "section": "Linjiila & Kuuɗe Nelaaɓe",
+        "description": "Haalaaji nayi dow ngeedam Yeesu, maayde maako, e ummitineeki maako, e habaru yaajnugo ekklessiya arandeere nder duuniyaaru Roma'en fuu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Matiyo",
+            "description": "Yeesu bana timminorde Alkawal Kiiɗɗo, Muusaa keso, e Laamiiɗo laamu Allah."
+          },
+          {
+            "name": "Mark",
+            "description": "Haala jaawka dow Yeesu bana Maccuɗo e Ɓii Allah mo torra."
+          },
+          {
+            "name": "Luuka",
+            "description": "Yeesu bana Dandoowo duniyaaru — bee hakkiilo maako dow miskinɓe, rewɓe, e yimɓe yaasi."
+          },
+          {
+            "name": "Yuhanna",
+            "description": "Natal diinaaji ɓurngal luggiɗde e Iisaa — Konngol ngol waɗi ɓanndu, ko miin woni, Ɓii Alla."
+          },
+          {
+            "name": "Kuuɗe Nelaaɓe",
+            "description": "Ruuhu Ceniiɗo hokkata bawɗe ekklessiya ngam hoosugo linjiila diga Urusaliima haa keerol duniyaaru."
+          }
+        ]
+      },
+      {
+        "section": "Ɓataakeeji Pool",
+        "description": "Ɓataakeeji Pol haa ekklessiyaaji e yimɓe — limtugo logic linjiila, gikkuuji Masiihiŋko’en, e sifa ekklessiya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Roomnaaɓe",
+            "description": "Facciro Pol ɓurngo laaɓtude e Linjiila: bakkaat, gooŋɗinal, senngo, e yaakaare."
+          },
+          {
+            "name": "1 Korintu'en",
+            "description": "Hawrude e cereeli e jiiɓru nder Korintu, bee janngirde dow yidde, dokke, e ummitineeki."
+          },
+          {
+            "name": "2 Korintiyankooɓe",
+            "description": "Faandaare Pol dow kuugal maako e paradox semmbe bee tampere."
+          },
+          {
+            "name": "Galaatiya'en",
+            "description": "Defaare cemmbiɗnde ngam gooŋɗinal e goonɗinal tan e dow ɓeydooɓe sariya."
+          },
+          {
+            "name": "Efesu'en",
+            "description": "Jawdi goonɗinɗo nder Almasiihu, e ekklessiya bana neɗɗaaku kesum Allah."
+          },
+          {
+            "name": "Filipiyankooɓe",
+            "description": "Seyo nder kala haala e yeru neɗɗaaku Almasiihu."
+          },
+          {
+            "name": "Koloosinaaɓe",
+            "description": "Almasiihu bana mawɗo dow kuuje fuu, e ko ɗum ɗon mari haaje nder ngeedam nyalde fuu."
+          },
+          {
+            "name": "1 Tesalonika'en",
+            "description": "Hirjinde ngam ekklessiya sukaaɓe, bee janngirde dow wartugo Almasiihu."
+          },
+          {
+            "name": "2 Tesalonika'en",
+            "description": "Feewnitde luural ko fayti e jamaanu timmuɗo, e noddaango golle gooŋɗinɗe."
+          },
+          {
+            "name": "1 Timote",
+            "description": "Jamirooje ngam nguurdam ekklessiya, ardungal, e janngirde booɗnde."
+          },
+          {
+            "name": "2 Timote",
+            "description": "Ɓataake Pol cakkitiiɗum — umroore haa Timote ngam o reena Linjiila o timmina no haandi."
+          },
+          {
+            "name": "Tiitus",
+            "description": "Toɗɗaade ardiiɓe e jannginde ndeen jaŋde moƴƴere ina addana en nguurndam Alla."
+          },
+          {
+            "name": "Filemon",
+            "description": "Eeraango neɗɗo ngam moƴƴitinde e ko Linjiila jogori arde e renndo."
+          }
+        ]
+      },
+      {
+        "section": "Ɓataakeeji kuuɓtidinɗi & Wahyu",
+        "description": "Bataakeeji ɗi Yaakubu, Piyeer, Yuhanna, Yahuuda, e woɓɓe feere — ɗon limta nuɗɗinki nder jarribooje, nuɗɗinki gooŋga, janngirde fenaande, e tammunde timmunde nder Wahyu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ibraniyankooɓe",
+            "description": "Yeesu bana timminorde fuu liman'en, sadaka, e alkawal Alkawal Kesal — ɓurdungal dow kala laawol fuu."
+          },
+          {
+            "name": "Yaakubu",
+            "description": "Goonɗinki kuugal — hikma kuugal ngam wuurdugo bana yimɓe Allah nder duniyaaru."
+          },
+          {
+            "name": "1 Piyeer",
+            "description": "Yaakaare e nguurndam ceniɗam wonande eggiyankooɓe e nder aduna bonɗo."
+          },
+          {
+            "name": "2 Piyeer",
+            "description": "Jeertinaango feewde e jannginooɓe fenaande e hoolaare e fodoore Alla."
+          },
+          {
+            "name": "1 Yuhanna",
+            "description": "Yaakaare kisndam e maandeeji goonɗinal goongawal: yiɗde, ɗooftaare, e goonga."
+          },
+          {
+            "name": "2 Yuhanna",
+            "description": "Ɓataake seeɗa dow yidde, gooŋga, e jaɓɓaago yedduɓe Almasiihu."
+          },
+          {
+            "name": "3 Yuhanna",
+            "description": "Yettude jaɓɓagol gooŋɗinngol e jeertinde ardorde yiɗde hoore mum."
+          },
+          {
+            "name": "Yahuuda",
+            "description": "Noddaango tiiɗngo ngam haɓaade goonɗinal e janngingol fenaande ngol naati e nder eklesiya."
+          },
+          {
+            "name": "Wahyu",
+            "description": "Yi’anndeeji dow nasaraaku Allah timmuɗum dow bonanndeeji, kiita bonɓe, e kesɗitingol kuuje fuu."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": "Goongɗingol",
+    "description": "Janndeeji ɗon tiitina dow janngirde Masiihiŋko’en — ko Bibel janngini dow Allah, neɗɗaaku, kisndam, e ko warata yeeso. Teddinde koye men e goongɗinal laaɓngal ko mbaydi nguurndam laaɓɗam.",
+    "sections": [
+      {
+        "section": "Yiyngo",
+        "description": "Janndeeji nastirde limtuki janngirde Masiihiŋko’en fuu — Linjiila, janngirde mawnde, e taariihaaji ekklessiya.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Fooyre",
+            "description": "Ko ɓuri himmude e mahdi goonɗinal Kerecee’en — ko kala goonɗinɗo foti anndude."
+          },
+          {
+            "name": "Linjiila oo",
+            "description": "Janndeeji ɗon ndarna ɓernde haala Kerecee’en: hakke, neema, e kisndam bee Almasiihu."
+          },
+          {
+            "name": "Goongɗinal & Konngol",
+            "description": "Haalaaji taariihaaji iimanaaku ɗi cifotoo diina Kiristaaku ortodoks nder teemerre."
+          }
+        ]
+      },
+      {
+        "section": "Allah",
+        "description": "Hol ko woni Alla? Janndeeji njiylotooɗi Trinité, sifaaji Alla, e ko firti anndude mo e hoore mum.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Sifaaaji Alla",
+            "description": "Senngo Alla, yidde mum, njiimaandi mum, nuunɗal mum, e sifaaji goɗɗi ɗi Binndi ɗii peeñnini."
+          },
+          {
+            "name": "Trinité",
+            "description": "Alla gooto e nder yimɓe tato — Baaba, Ɓiɗɗo, e Ruuhu Ceniiiɗo — e ko waɗi ɗum ina haani."
+          },
+          {
+            "name": "Alla Baaba",
+            "description": "Alla ko Tagɗo, Laamɗo, e Baaba — e ko firti wonde ɓiɗɗo makko."
+          }
+        ]
+      },
+      {
+        "section": "Binndi",
+        "description": "Jannde dow Bibel bee hoore maako — no ɗum wartiri, ko ɗum wi’ata dow hoore maako, e no ɗum janngirtee no haandi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ngomna",
+            "description": "Ko waɗi Biibal ina jogii hakke haalde e nder kala fannu nguurndam."
+          },
+          {
+            "name": "Sembe",
+            "description": "No Alla golliri e binndooɓe aadee ngam rokkude en konngol mum."
+          },
+          {
+            "name": "Kanko",
+            "description": "No defte Bibel anndirtee e mooɓtirtee."
+          },
+          {
+            "name": "Firo",
+            "description": "Kuule ngam janngude Biibal ngal e gooŋɗinal e laaɓal."
+          }
+        ]
+      },
+      {
+        "section": "Tagngo & Neɗɗaagal",
+        "description": "Jannde ko woni neɗɗo — tagaa e natal Alla, ɓanndu, tagaa ngam faandaare.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Tagngo",
+            "description": "Alla ko Tagɗo huunde fof — e ko ɗum firti e no njiyruɗen aduna."
+          },
+          {
+            "name": "Natal Alla",
+            "description": "Ko firti waɗeede e mbaadi Alla, e teddungal rokkata kala neɗɗo."
+          },
+          {
+            "name": "Ko ɓamtaare",
+            "description": "Moƴƴere jogaade ɓanndu, e ko Binndi ɗii mbiyata ko fayti e gonndigal ɓanndu."
+          },
+          {
+            "name": "Ngida",
+            "description": "Ko waɗi en ɗoo — noddaango neɗɗo ngam yiɗde Alla, gollanaade woɗɓe, e jogaade tagoore."
+          }
+        ]
+      },
+      {
+        "section": "Bonannde e Falnde",
+        "description": "Janngude dow bakkaat — iwdi mum, sifaa mum, e batte mum bonɗe e dow aadee e aduna.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Sifaa Bakkaat",
+            "description": "Ko bakkaat woni tigi — wonaa tan 6eydude kuule, kono ko 6eydude 6amtaare e Alla."
+          },
+          {
+            "name": "Ko Falnde",
+            "description": "Ko waɗi e Fuɗɗoode 3, e no ɗum jogori arde e kala neɗɗo."
+          },
+          {
+            "name": "Jarribo",
+            "description": "No jarribo ngo gollirta, e no goonɗinɓe mbaawirta daraade e ngo."
+          }
+        ]
+      },
+      {
+        "section": "Almasiihu",
+        "description": "Jannde dow neɗɗaaku Yeesu Almasiihu — Allah timmuɗo e neɗɗo timmuɗo — e ko gartol maako ɗon nufa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Neɗɗo Almasiihu",
+            "description": "Jaŋde tagooje ɗiɗi ɗee — no Iisaa woniri Alla timmuɗo e neɗɗo timmuɗo."
+          },
+          {
+            "name": "Inkarnaasiyoŋ",
+            "description": "Ko waɗi Ɓiɗɗo Alla wonti neɗɗo, e ko neɗɗaagal makko firti e men."
+          }
+        ]
+      },
+      {
+        "section": "Kisndam",
+        "description": "Hol no Alla dandirta bakkodinooe? Janndeeji kollitooji yaafuya, gooŋɗinal, jaɓgol, e denndaangal ko Alla waɗata ngam hisnude en.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Yaafuya",
+            "description": "No maayde Almasiihu waɗirta hakke — lomtingol, rimɗinki, jokkirgol, e ko nanndi heen."
+          },
+          {
+            "name": "Waylude",
+            "description": "Ko ɗum firti ruttaade e bakkaat e hoolaade Almasiihu — tuubude e goonɗinde."
+          },
+          {
+            "name": "Goongɗingol",
+            "description": "Wonnde gooŋgaajo yeeso Allah — bee neema tan, bee nuɗɗinki tan, bee Almasiihu tan."
+          },
+          {
+            "name": "Jaɓde",
+            "description": "Dokkal keeringal ngal o naatnaa e nder galle Alla hono ɓiɓɓe makko worɓe e rewɓe."
+          }
+        ]
+      },
+      {
+        "section": "Ruuhu oo",
+        "description": "Jannde dow Ruuhu Ceniiɗo — moye o woni, ko o waɗata, e no o huuwirta nder nuɗɗinɓe e ekklessiya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Neɗɗo Ruuhu",
+            "description": "Ruuhu Ceniiɗo bana neɗɗo tataɓo nder Trinity — naa semmbe, ammaa neɗɗo."
+          },
+          {
+            "name": "Ɓiɓɓe Ruuhu",
+            "description": "Jikkuuji ɗi Ruuhu oo yaltini e yahduɓe e makko."
+          },
+          {
+            "name": "Dokke Ruuhu",
+            "description": "Dokke ɗe Ruuhu hokkata ngam heɓugo nuɗɗinɓe ngam kuugal nder ɓanndu Almasiihu."
+          }
+        ]
+      },
+      {
+        "section": "Jullurde",
+        "description": "Hol ko woni eklesiya, hol ko waɗi ɗum ina waɗi nafoore? Jannde dow sifaa, kuugal, e mbaydi ɓanndu Almasiihu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Nafoore Eklesiya",
+            "description": "Ko Ekklessiya woni — yimɓe Allah, ɓanndu Almasiihu, suudu Ruuhu."
+          },
+          {
+            "name": "Sakramentuuji",
+            "description": "Lootgol e nyaamdu Joomiraawo — ko ɗum woni, ko ɗum firti, e no ɗum rewirtee."
+          },
+          {
+            "name": "Ardorde",
+            "description": "Laabi ardungal ekklessiya nder deftere nde: mawɓe, diinaaji, e laamu ɓernde maccuɗo."
+          },
+          {
+            "name": "Dewal",
+            "description": "Ko woni dewal Kerecee’en, ko waɗi ɗum woodi nafuuda, e no ɗum siforii nguurndam renndo."
+          }
+        ]
+      },
+      {
+        "section": "Geɗe cakkitiiɗe",
+        "description": "Jannde dow maayde, ummitineeki, kiita, e tagdi kesiri — yaakaare nde ɗon siftora no Masiihiŋko’en nguurdi haa jooni.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Gartol Almasiihu",
+            "description": "Yaakaare laaɓnde wonde Iisaa maa artu e teddungal ngam ñaawde wuurɓe e maayɓe."
+          },
+          {
+            "name": "Ñaawoore",
+            "description": "Kiita Allah timmuɗum dow yimɓe fuu — e habaru belɗum dow Almasiihu hokki kiita ngam yimɓe maako."
+          },
+          {
+            "name": "Asamaan & Jahannama",
+            "description": "Daareeji duumiiɗi ɗi Binndi ɗii cifotoo — e ko waɗi ɗi ina njogii nafoore e no nguurduɗen jooni."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": "Ngendam",
+    "description": "Janndeeji jokkindirɗi goonga deftere nde bee anndal nyalɗe fuu dow tokkugo Almasiihu — nder jokkindiral, kuugal, anndal, e hare jokkiinde dow hakke.",
+    "sections": [
+      {
+        "section": "Diisnondiral Ruuhu",
+        "description": "Golle ɗe njannginta en ngam jokkude ɓadtaade Alla e mawnude e nder dewal — wonaa laabi dañde moƴƴere, kono ko aadaaji ɗi mbaɗata en udditaade e moƴƴere makko.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Duwaawu",
+            "description": "Haaldude e Alla — jojjanɗe mum, mbaadiiji mum, e no ƴellitortoo nguurndam duwaawu ɓurɗam alɗude."
+          },
+          {
+            "name": "Janngugol Biibal",
+            "description": "No janngirtee Binndi ɗii no moƴƴi — e faamde, e jokkondire, e ɗaminaade wayleede."
+          },
+          {
+            "name": "Dewal",
+            "description": "Dewal ko darnde nguurndam fof, wonaa tan golle ñalnde alet."
+          }
+        ]
+      },
+      {
+        "section": "Jikku & Senngo",
+        "description": "Laawol jokkingol ngam ɓurde nanndude e Almasiihu — haɓaade bakkaat, mawnude e moƴƴere, e faamde ko ngonɗen e makko.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ɓiɓɓe Ruuhu",
+            "description": "Yidde, seyo, jam, munyal, moƴƴere, moƴƴere, hoolaare, neɗɗaaku e jogaade hoore."
+          },
+          {
+            "name": "Jaalɗude Bakkaat",
+            "description": "Ballal gollal e diineeji ngam haɓaade paandaale bakkaat duumotooɗe."
+          },
+          {
+            "name": "Mawnugol e nder Moƴƴere",
+            "description": "Ko nanndi e mawnugo bana Kerecee’en — e ko nastata nder laawol."
+          },
+          {
+            "name": "Anndinde e nder Almasiihu",
+            "description": "Mo en ngoni ngam ko Almasiihu waɗi — e ko waɗi ɗum wayli huunde fuu."
+          }
+        ]
+      },
+      {
+        "section": "Jokkondiral & Ɓiɓɓe",
+        "description": "Jannde dow jokkindiral ngal Allah wadi en nder — dewgal, saare, soobiraaku, e rento.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teegal",
+            "description": "Alkawal dewgal — faandaare maako, caɗeele maako, e natal maako dow Almasiihu e Ekklessiya."
+          },
+          {
+            "name": "Cehilaagal",
+            "description": "Cehilaagal ko noddaango timmungo, laaɓtungo, wonaa suudu fadndo ngam dewgal."
+          },
+          {
+            "name": "Jibinannde",
+            "description": "Mawnugo ɓikkoy nder nuɗɗinki — bee neema, gooŋga, e gite juutɗe."
+          },
+          {
+            "name": "Sobajo",
+            "description": "Dokkal sehilaagal Kerecee’en — e no rimɗinirta jokkondiral ngal yahrata haa luggiɗi."
+          },
+          {
+            "name": "Ngewte",
+            "description": "Haalde goonga e moƴƴere — e heɗaade no moƴƴi."
+          },
+          {
+            "name": "Ummatore",
+            "description": "Ko ɗum firti wuurdugo bana ɓanndu Almasiihu — jokkitondira bee teddeendi."
+          }
+        ]
+      },
+      {
+        "section": "Golle & Noddaango",
+        "description": "Jannde huuwtinirgo linjiila dow kuugal, ceede, wakkati, e yidde — yi’ugo kuugal nyalde fuu bana nder anniyaaji Allah.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Nguurndam Golle",
+            "description": "Ko Bibel wi’i dow kuugal — booɗɗum maajum, ɓilla maajum, e soodugo maajum nder Almasiihu."
+          },
+          {
+            "name": "Kaalis & Jawdi",
+            "description": "Yaakaare, weltaare, e yi’annde deftere dow jawdi."
+          },
+          {
+            "name": "Njuɓɓudi Waktu",
+            "description": "No en kuutortoo wakkati men — e no linjiila waylirta ko ɓuri himmude e men."
+          },
+          {
+            "name": "Ngiɗa",
+            "description": "Ambition ceniinde vs. ambition selfish — e no anndirta feere."
+          },
+          {
+            "name": "Retireede",
+            "description": "Hol no nguurndam gooŋɗinɗam wayi e yontaaji garooji nguurndam."
+          }
+        ]
+      },
+      {
+        "section": "Etikaaji e Pinal Kerecee’en",
+        "description": "No gooŋɗinɓe miijotoo e no mbaɗirta e naamne jowitiiɗe e koɗki jamaanu men hannde oo — gila e nuunɗal renndo haa e bioethics haa e karallaagal.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Njuɓɓudi Renndo",
+            "description": "Ɓernde Alla wonande waasɓe e tooñooɓe, e ko ɗum firti e men."
+          },
+          {
+            "name": "Biyoetik",
+            "description": "Fuɗɗoode e joofnirde geɗe nguurndam — ɓadtiima e toppitagol diine e yurmeende."
+          },
+          {
+            "name": "Karallaagal jokkondirngal",
+            "description": "No kuutorto-ɗen karallaagal e nuunɗal e nder aduna mo ngal mbayli."
+          }
+        ]
+      },
+      {
+        "section": "Torra & Ardungal",
+        "description": "Janndeeji ballooji nuɗɗinɓe yahdugo nder nawnaare, nder tammunde, e caɗeele bee gooŋgaaku e tammunde.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Jarribooji e Caɗeele",
+            "description": "Ko waɗi Alla ina jaɓa torra, e no Binndi ɗii ndokkirta en muñde ɗi e yaakaare."
+          },
+          {
+            "name": "Faamde Yiɗde Alla",
+            "description": "No mbaɗata kuule hakkilantaagal — e ko Binndi ɗii fodani tigi rigi ko fayti e ardungal."
+          },
+          {
+            "name": "Cellal hakkille",
+            "description": "Depression, anxiety, e hareeji goɗɗi — ɓadtiima e yurmeende e toppitagol deftere."
+          },
+          {
+            "name": "Haraka",
+            "description": "No mettinirten no ɓeen jogiiɓe yaakaare — e nuunɗal, tawa wonaa gooto."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": "Ministeer",
+    "description": "Jannde ngam ɓeen wonɓe e gollanaade woɗɓe — e nder linjiila, e reentaade, e jannginde, e ardaade. Ɗi’i janndeeji ɗi ɗon ndarna nder Binndi, ɗon hokka nuɗɗinɓe kuugal booɗngal e duumotoongal.",
+    "sections": [
+      {
+        "section": "Teoloji ministeer",
+        "description": "Fuɗɗoode deftere ngam kuugal Masiihiŋko’en fuu — ko woni kuugal, e no maccuɗo foti laata.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ardorde Maccuɗo",
+            "description": "Ardugo bana Yeesu ardi — bee neɗɗaaku, sadaka, e hakkiilo ngam ɓe kuuwata."
+          },
+          {
+            "name": "Noddude",
+            "description": "Famde noddaango maaɗa e kuugal — no ɗum anndirtee e ko ɗum hawrata."
+          }
+        ]
+      },
+      {
+        "section": "Waaju e jannginde (Homiletik)",
+        "description": "Jannde ngam ɓe noddaama ngam fammingo Bibel haa yeeso yimɓe — ɗon limta laawol, gikku, e teddungal jogaago wolde Allah.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Waaju firo",
+            "description": "No waajata bee gooŋgaaku diga binndi — accugo Bibel ɗon waɗa agenda."
+          },
+          {
+            "name": "Ardude Janngirɗe Bibel",
+            "description": "No ardirta fedde no haandi — ƴamugo ƴamɗe booɗɗe e wallugo yimɓe hawta bee Allah nder binndi."
+          }
+        ]
+      },
+      {
+        "section": "Ardorde & Njuɓɓudi",
+        "description": "Dimensiyonji kuugal e diina ngam ardungal ekklessiya malla kuugal — yi’annde, ekipaaji, fitinaaji, e laamu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Yiyngo & Feere",
+            "description": "No miijotoɗen laaɓndal hol to Alla ardi e no njogorii yahrude toon."
+          },
+          {
+            "name": "Mahngo Kippu",
+            "description": "Moftude, ƴellitde, e jogaade ekipaaji gollorɗi celluɗi."
+          },
+          {
+            "name": "Ƴellitaare luural",
+            "description": "No luural e feccere njuɓɓinirtee e no teddinirta Alla e reende ngootaagu."
+          },
+          {
+            "name": "Laamu Eklesiya",
+            "description": "Njuɓɓudi e laabi ballooji eklesiya ngam heɓde limto e yuɓɓo moƴƴo."
+          }
+        ]
+      },
+      {
+        "section": "Toppitagol durngol",
+        "description": "Janndeeji ballitooji goonɗinɓe ngam yahdugo bee maɓɓe nder caɗeele, majjugo, ɓillaaji, e haaje.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Jeewte Pastoral",
+            "description": "Karallaagal e darnde haani ngam yewtereeji kuugal ballooji gooto-gooto."
+          },
+          {
+            "name": "Naatgol e Kiriis",
+            "description": "No jaabotoo e hakkille e yurmeende so neɗɗo ina wondi e caɗeele teeŋtuɗe."
+          },
+          {
+            "name": "Njillu",
+            "description": "Jaagorgal gonngal — yi’ugo nyawɓe, mawɓe, e ɓe ɗon nder saare."
+          },
+          {
+            "name": "Dewgal Prep",
+            "description": "Wallude jommbaajo debbo ngam taskaago dewgal mahi dow Almasiihu."
+          },
+          {
+            "name": "Toppitagol Maayɓe",
+            "description": "Yahdude e mettuɓe — ko haaldata, ko haaldataa, e no heddotoo."
+          }
+        ]
+      },
+      {
+        "section": "Linjiila & Misiyoŋaaji",
+        "description": "Jannde dow hoosugo linjiila haa ɓe nanaay ɗum — bee hoore maako, haa nokkuure maako, e nder finaa-tawaa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Seedaade neɗɗo",
+            "description": "No ndokkirtaa gooŋɗinal maa e nafoore e laaɓal e nder jeewte ñalnde kala."
+          },
+          {
+            "name": "Yaafuya",
+            "description": "Jaabtaade naamne ɗe haɗata yimɓe ƴettude diine kerecee en no haanirta nii."
+          },
+          {
+            "name": "Ministeer hakkunde pine",
+            "description": "Gollaade e renndinde e nder keeri pinal e nder njurum e teddungal."
+          },
+          {
+            "name": "Lelnugol Eklesiya",
+            "description": "Tiyoloji e gollal ngam sosde renndooji kesi linjiila."
+          }
+        ]
+      },
+      {
+        "section": "Almuudo & Jaŋde",
+        "description": "Jannde dow ministeer wallugo woɓɓe mawna — gooto e gooto, nder pelle pamare, e bee janngingo yontaaji garooji.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ministeer gooto-e-gooto",
+            "description": "Doole anniyaaji, almudɓe hoore mum — kawral wakkati fuu ngam udditugo Bibel bee kawtal."
+          },
+          {
+            "name": "Ardiiɗo Fedde tokosere",
+            "description": "No ardirta fedde tokosere nde goonga, nde mawni, nde tuugnii e Binndi."
+          },
+          {
+            "name": "Jannginde Woɗɓe",
+            "description": "Hokkugo woɓɓe ngam waɗugo kuugal ministaajo — ɗuuɗal naa tan tuubɓe ammaa ardiiɓe."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": "Feere",
+    "description": "Janngirɗe ɗe njiidaani no moƴƴi e cate goɗɗe — walla ɗe humpitooji mum en ndartinaaka tawo.",
+    "sections": []
+  }
+]

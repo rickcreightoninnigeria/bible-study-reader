@@ -1,0 +1,550 @@
+{
+  "learningPathways": [
+    {
+      "titleLevel1": "人人共享成长机会",
+      "description": "旨在帮助每位信徒扎根并逐步走向领导地位的基础课程。",
+      "pathways": [
+        {
+          "titleLevel2": " 1. 基础",
+          "description": "理解圣经核心信息及其对我们回应方式的必要起点。",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "studyTitles": [
+            {
+              "titleLevel3": "创世纪简介",
+              "description": "探索上帝与人类关系的起源。",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "studyId": "introducing_genesis_v001"
+            },
+            {
+              "titleLevel3": "马克介绍",
+              "description": "一部节奏明快的耶稣生平及事工传记。",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "studyId": "introducing_mark_v001"
+            },
+            {
+              "titleLevel3": "真相揭秘（1）",
+              "description": " <b>真理解锁，第一卷：基督教信仰</b><br><br>八个单元的学习，帮助你理解上帝在圣经中所启示的基本真理。除非我们理解圣经真理并将其作为我们生活的根基，否则我们无法过敬虔的生活。<i>真理解锁</i>对于那些信主一段时间，希望复习信仰基础的人来说，也是一本有益的复习读物。你或许会惊讶于自己所学到的内容！",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "studyId": "truth_unlocked_volume_1_v001"
+            },
+            {
+              "titleLevel3": "转换",
+              "description": " <b>皈依：新的，而非（仅仅）美好</b><br><br>九节圣经学习课程，探讨真正的皈依意味着什么——以及它为何重要。",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "studyId": "conversion_v001"
+            },
+            {
+              "titleLevel3": "仆人式领导",
+              "description": "圣经中关于影响和关怀的模式。",
+              "studyId": "servant_leadership_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 2. 生根发芽",
+          "description": "深入探讨圣经的结构和个人灵修习惯。",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "studyTitles": [
+            {
+              "titleLevel3": "圣经概览（1）",
+              "description": "追溯旧约圣经的故事。",
+              "studyId": "bible_overview_(1)_v001"
+            },
+            {
+              "titleLevel3": "圣经概览（2）",
+              "description": "追溯新约圣经的故事。",
+              "studyId": "bible_overview_(2)_v001"
+            },
+            {
+              "titleLevel3": "真相揭秘（2）",
+              "description": "<b>真理解锁，第二卷：基督徒生活</b><br><br>八个单元的学习，帮助你理解上帝在圣经中所启示的基本真理。除非我们理解圣经真理并将其作为我们生活的根基，否则我们无法过敬虔的生活。<i>真理解锁</i>对于那些信主一段时间，希望复习信仰基础的人来说，也是一本有益的复习读物。你可能会对所学到的内容感到惊讶！",
+              "downloadLocation": "",
+              "studyId": "truth_unlocked_volume_2_v001"
+            },
+            {
+              "titleLevel3": "在基督里成长（1）",
+              "description": "<b>在基督里成长（门徒训练课程）</b><br><br>你在基督里成长吗？神希望他所有的儿女都在耶稣里成长。如果你没有成长，这套课程将帮助你找出问题所在以及如何改正。如果你正在成长，这套课程将帮助你成长得更进一步。课程将圣经研读与个人反思相结合。（本课程分为几个卷册。请先学习第一卷——如果你已经学完了，可以直接学习下一卷。）",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": "分享耶稣课程",
+              "description": " <b>分享耶稣课程</b><br><br>八项学习将帮助你与他人分享耶稣。",
+              "studyId": "sharing_jesus_course_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 3. 更深入的理解",
+          "description": "深入研读更复杂的书籍和理解事工的动态。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "介绍《出埃及记》",
+              "description": "救赎、律法和上帝的同在。",
+              "studyId": "introducing_exodus_v001"
+            },
+            {
+              "titleLevel3": "罗马书简介",
+              "description": "深入探究福音的逻辑。",
+              "studyId": "introducing_romans_v001"
+            },
+            {
+              "titleLevel3": "我是谁？",
+              "description": "认识我们在基督里的身份。",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": "在基督里成长（2）",
+              "description": "<b>在基督里成长（门徒训练课程）</b><br><br>你在基督里成长吗？神希望他所有的儿女都在耶稣里成长。如果你没有成长，这门课程将帮助你找出问题所在以及如何改正。如果你正在成长，这门课程将帮助你成长得更进一步。课程将圣经研读与个人反思相结合。（本课程分为几个卷册。我们假设你在这里学习的是第二卷——但如果你已经学完了，请继续学习下一卷。）",
+              "studyId": "grow_in_christ_volume_2_v001"
+            },
+            {
+              "titleLevel3": "部委动态",
+              "description": "如何在地方教会中有效地服侍。",
+              "studyId": "ministry_dynamics_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 4. 为使命而活",
+          "description": "将我们的目光转向上帝对世人的爱。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "介绍乔纳",
+              "description": "上帝对各国的怜悯以及我们的抵抗。",
+              "studyId": "introducing_jonah_v001"
+            },
+            {
+              "titleLevel3": "介绍法案",
+              "description": "教会的诞生和福音的传播。",
+              "studyId": "introducing_acts_v001"
+            },
+            {
+              "titleLevel3": "介绍耶稣",
+              "description": "准备向他人介绍基督。",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": "分享耶稣",
+              "description": "高级个人布道策略。",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 5. 领导他人",
+          "description": "为正式和非正式领导角色做好准备。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "[一个]",
+              "description": " A项描述。",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": "项目 B 的描述。",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " C项描述。",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": "精神生活",
+      "description": "侧重于信徒内心旅程和将真理应用于心灵的资源。",
+      "pathways": [
+        {
+          "titleLevel2": "对抗罪恶",
+          "description": "为应对诱惑和不服从的行为模式提供实用和神学方面的帮助。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "传道书简介",
+              "description": "在一个破碎的世界中寻找意义。",
+              "studyId": "introducing_ecclesiastes_v001"
+            },
+            {
+              "titleLevel3": "以弗所书简介",
+              "description": "神的盔甲和我们在天国中的地位。",
+              "studyId": "introducing_ephesians_v001"
+            },
+            {
+              "titleLevel3": "我是谁？",
+              "description": "基于身份认同的反罪恶战争。",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": "让你的灵魂得到安息",
+              "description": "<b>为你的灵魂寻得安息：摆脱成瘾行为，找到更美好的喜乐</b><br><br>这是一套十节课的圣经学习课程，旨在探索成瘾背后的本质，以及福音如何提供远胜于任何虚假承诺的丰盛。课程将圣经经文的细读与个人反思相结合。",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "studyId": "find_rest_for_your_soul_v001"
+            },
+            {
+              "titleLevel3": "在基督里成长（1）",
+              "description": "<b>在基督里成长（门徒训练课程）</b><br><br>你在基督里成长吗？神希望他所有的儿女都在耶稣里成长。如果你没有成长，这套课程将帮助你找出问题所在以及如何改正。如果你正在成长，这套课程将帮助你成长得更进一步。课程将研读圣经，每一节课都将细读经文与个人反思相结合。<br><br>（本课程分为几个卷册。请先学习第一卷——如果你已经学完了第一卷，可以直接学习下一卷。）",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": "工作神学",
+          "description": "透过上帝的创造和国度的视角来看待我们的日常劳动。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "尼希米记简介",
+              "description": "领导、劳动和重建，为了神的荣耀。",
+              "studyId": "introducing_nehemiah_v001"
+            },
+            {
+              "titleLevel3": "歌罗西书简介",
+              "description": "凡事都当作是为主而做。",
+              "studyId": "introducing_colossians_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": "为善而努力",
+              "description": "<b>为善而工作：在日常劳动中体现信仰、爱与敬拜</b><br><br>这是一套共八课的圣经学习课程，探讨作为基督徒，忠心工作的意义。课程选取从创世记到启示录的经文，每课都从不同的层面探讨工作：上帝赋予的良善、罪对工作的扭曲，以及在基督里的救赎。无论你觉得自己的工作毫无意义、与信仰脱节，还是仅仅感到疲惫不堪，这套课程都邀请你将日常劳动视为爱的行动、敬拜的形式，以及上帝对世界更宏大计划的一部分。",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "studyId": "working_for_the_good_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": "痛苦",
+          "description": "怀着希望，走过死荫的幽谷。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "介绍工作",
+              "description": " A项描述。",
+              "studyId": "introducing_job_v001"
+            },
+            {
+              "titleLevel3": "彼得前书简介",
+              "description": "项目 B 的描述。",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " C项描述。",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": "给受伤的世界带来希望",
+              "description": "D项描述。",
+              "studyId": "hope_for_a_hurting_world_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": "服务他人",
+      "description": "以牧灵关怀、福音传播和教学为导向的研究。",
+      "pathways": [
+        {
+          "titleLevel2": "牧灵关怀",
+          "description": "装备信徒，使他们能够在困境中彼此扶持。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "诗篇简介",
+              "description": "祷告和辅导中的心灵语言。",
+              "studyId": "introducing_psalms_v001"
+            },
+            {
+              "titleLevel3": "介绍[书信]",
+              "description": "一封以牧养关怀为主题的新约书信。",
+              "studyId": "introducing_[epistle]_v001"
+            },
+            {
+              "titleLevel3": "我是谁？",
+              "description": "帮助他人找到在基督里的身份认同。",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": "在基督里成长（1）",
+              "description": "<b>在基督里成长（门徒训练课程）</b><br><br>你在基督里成长吗？神希望他所有的儿女都在耶稣里成长。如果你没有成长，这套课程将帮助你找出问题所在以及如何改正。如果你正在成长，这套课程将帮助你成长得更进一步。课程将圣经研读与个人反思相结合。（本课程分为几个卷册。请先学习第一卷——如果你已经学完了，可以直接学习下一卷。）",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": "牧灵对话",
+              "description": "案例研究和实用技巧。",
+              "studyId": "pastoral_conversations_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": "传扬基督",
+          "description": "注重传福音，并以清晰易懂的方式解释信仰。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [一个]",
+              "description": " A项描述。",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": "福音亮点",
+              "description": "总结救赎的核心信息。",
+              "studyId": "gospel_highlights_v001"
+            },
+            {
+              "titleLevel3": "介绍耶稣",
+              "description": "利用福音书向寻求信仰的人介绍基督。",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": "分享耶稣",
+              "description": "从对话过渡到邀请。",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": "教导与讲道",
+          "description": "为那些蒙召在公共场合讲解圣经的人提供培训。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [一个]",
+              "description": " A项描述。",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": "项目 B 的描述。",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " C项描述。",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": "了解真相",
+      "description": "侧重于系统神学和教会的历史教义。",
+      "pathways": [
+        {
+          "titleLevel2": "教会",
+          "description": "了解基督身体的性质、使命和结构。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [一个]",
+              "description": " A项描述。",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": "项目 B 的描述。",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " C项描述。",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": "培养众多虔诚的门徒",
+              "description": " <b>培养众多深厚的门徒：庇哩亚圣经教会成员课程</b><br><br>为期五节课的圣经学习，探讨教会的核心价值观。",
+              "studyId": "make_many_deep_disciples_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": "智慧",
+          "description": "学习如何在上帝的世界里巧妙地生活。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "箴言简介",
+              "description": " A项描述。",
+              "studyId": "introducing_proverbs_v001"
+            },
+            {
+              "titleLevel3": "詹姆斯登场",
+              "description": "项目 B 的描述。",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": "智慧与爱",
+              "description": "C项描述。",
+              "studyId": "wisdom_and_love_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": "参与世界",
+      "description": "教会如何与文化、社区和社会互动。",
+      "pathways": [
+        {
+          "titleLevel2": "酒店业",
+          "description": "敞开我们的生活和家门，成为传播福音的桥梁。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "隆重介绍露丝",
+              "description": "跨越文化界限的友善与热情。",
+              "studyId": "introducing_ruth_v001"
+            },
+            {
+              "titleLevel3": "隆重介绍卢克",
+              "description": "耶稣，从主人变成了客人。",
+              "studyId": "introducing_luke_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " C项描述。",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": "文化护教学",
+          "description": "回答世界真正提出的问题。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "丹尼尔介绍",
+              "description": "在世俗帝国中保持忠诚。",
+              "studyId": "introducing_daniel_v001"
+            },
+            {
+              "titleLevel3": "彼得前书简介",
+              "description": "像外星人和陌生人一样怀揣希望地生活。",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " C项描述。",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": "社会正义",
+          "description": "上帝对弱势群体和受压迫者的怜悯之心。",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "介绍阿莫斯",
+              "description": "先知般的呼唤，让正义降临。",
+              "studyId": "introducing_amos_v001"
+            },
+            {
+              "titleLevel3": "詹姆斯登场",
+              "description": "通过爱和关怀穷人来践行信仰。",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " C项描述。",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": "D项描述。",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": "项目 E 的描述。",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

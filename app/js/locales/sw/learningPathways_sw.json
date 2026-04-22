@@ -1,0 +1,550 @@
+{
+  "learningPathways": [
+    {
+      "titleLevel1": " Ukuaji kwa Kila Mtu",
+      "description": " Njia ya msingi iliyoundwa ili kumsaidia kila mwamini kuanzisha mizizi imara na kusonga mbele kuelekea uongozi.",
+      "pathways": [
+        {
+          "titleLevel2": " 1. Misingi",
+          "description": " Sehemu muhimu ya kuanzia ya kuelewa ujumbe mkuu wa Biblia na mwitikio wetu.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "studyTitles": [
+            {
+              "titleLevel3": " Tunakuletea Mwanzo",
+              "description": " Kuchunguza asili ya uhusiano wa Mungu na wanadamu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "studyId": "introducing_genesis_v001"
+            },
+            {
+              "titleLevel3": " Tunamtambulisha Mark",
+              "description": " Mtazamo wa haraka wa maisha na huduma ya Yesu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "studyId": "introducing_mark_v001"
+            },
+            {
+              "titleLevel3": " Ukweli Umefunguliwa (1)",
+              "description": " <b>Ukweli Uliofunguliwa, Juzuu ya 1: Imani ya Kikristo</b><br><br>Masomo manane ya kukusaidia kuelewa ukweli muhimu uliofunuliwa na Mungu katika Biblia. Hatuwezi kuishi maisha ya kimungu isipokuwa tuelewe ukweli wa Biblia na kuutumia kama msingi wa maisha yetu. <i>Ukweli Uliofunguliwa</i> pia ni kiburudisho muhimu kwa wale ambao wamekuwa Wakristo kwa muda na wanataka kupitia misingi ya imani yao. Unaweza kushangazwa na unachojifunza!",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "studyId": "truth_unlocked_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Uongofu",
+              "description": " <b>Uongofu: Mpya si (tu) Nzuri</b><br><br>Somo la Biblia la vipindi tisa linalochunguza maana ya uongofu wa kweli - na kwa nini ni muhimu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "studyId": "conversion_v001"
+            },
+            {
+              "titleLevel3": " Uongozi wa Utumishi",
+              "description": "Mfano wa kibiblia wa ushawishi na utunzaji.",
+              "studyId": "servant_leadership_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 2. Kukua Mizizi",
+          "description": " Kuingia zaidi katika muundo wa Biblia na tabia za kiroho za kibinafsi.",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "studyTitles": [
+            {
+              "titleLevel3": " Muhtasari wa Biblia (1)",
+              "description": " Kufuatilia hadithi ya Agano la Kale.",
+              "studyId": "bible_overview_(1)_v001"
+            },
+            {
+              "titleLevel3": " Muhtasari wa Biblia (2)",
+              "description": " Kufuatilia hadithi ya Agano Jipya.",
+              "studyId": "bible_overview_(2)_v001"
+            },
+            {
+              "titleLevel3": " Ukweli Umefunguliwa (2)",
+              "description": "<b>Ukweli Uliofunguliwa, Juzuu ya 2: Maisha ya Kikristo</b><br><br>Masomo manane ya kukusaidia kuelewa ukweli muhimu uliofunuliwa na Mungu katika Biblia. Hatuwezi kuishi maisha ya kimungu isipokuwa tuelewe ukweli wa Biblia na kuutumia kama msingi wa maisha yetu. <i>Ukweli Uliofunguliwa</i> pia ni kiburudisho muhimu kwa wale ambao wamekuwa Wakristo kwa muda na wanataka kupitia misingi ya imani yao. Unaweza kushangazwa na unachojifunza!",
+              "downloadLocation": "",
+              "studyId": "truth_unlocked_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Kukua katika Kristo (1)",
+              "description": "<b>Kua katika Kristo (Kozi ya Uanafunzi)</b><br><br>Je, unakua katika Kristo? Mungu anataka watoto wake wote wakue katika Yesu. Kama hukui, masomo haya yatakusaidia kujua ni nini kibaya na jinsi ya kurekebisha. Kama unakua, yatakusaidia kukua zaidi. Kwa kusoma Maandiko, kila kipindi kinachanganya usomaji wa karibu na tafakari ya kibinafsi. (Tumegawanya kozi hii katika juzuu kadhaa. Fanya juzuu ya 1 kwanza - lakini ikiwa tayari umefanya hivyo, endelea na juzuu inayofuata.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Kozi ya Kushiriki Yesu",
+              "description": " <b>Kozi ya Kushiriki Yesu</b><br><br>Masomo manane yatakayokuandaa kushiriki Yesu na wengine.",
+              "studyId": "sharing_jesus_course_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 3. Uelewa wa Kina",
+          "description": " Kupambana na vitabu tata zaidi na mienendo ya huduma.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Tunakuletea Kutoka",
+              "description": " Ukombozi, Sheria, na uwepo wa Mungu.",
+              "studyId": "introducing_exodus_v001"
+            },
+            {
+              "titleLevel3": " Tunawatambulisha Warumi",
+              "description": " Kuzama kwa kina katika mantiki ya Injili.",
+              "studyId": "introducing_romans_v001"
+            },
+            {
+              "titleLevel3": " Mimi ni nani?",
+              "description": " Kuelewa utambulisho wetu katika Kristo.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Kukua katika Kristo (2)",
+              "description": "<b>Kua katika Kristo (Kozi ya Uanafunzi)</b><br><br>Je, unakua katika Kristo? Mungu anataka watoto wake wote wakue katika Yesu. Usipokua, masomo haya yatakusaidia kujua ni nini kibaya na jinsi ya kurekebisha. Ukikua, yatakusaidia kukua zaidi. Ukisoma Maandiko, kila kipindi kinachanganya usomaji wa karibu na tafakari ya kibinafsi. (Tumegawanya kozi hii katika juzuu kadhaa. Tunadhani utafanya juzuu ya 2 hapa - lakini ikiwa tayari umefanya hivyo, endelea na juzuu inayofuata.)",
+              "studyId": "grow_in_christ_volume_2_v001"
+            },
+            {
+              "titleLevel3": " Mabadiliko ya Huduma",
+              "description": " Jinsi ya kuhudumu kwa ufanisi ndani ya kanisa la mtaa.",
+              "studyId": "ministry_dynamics_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 4. Ishi kwa Misheni",
+          "description": " Kuelekeza umakini wetu nje kuelekea moyo wa Mungu kwa ajili ya ulimwengu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Kumtambulisha Yona",
+              "description": " Huruma ya Mungu kwa mataifa na upinzani wetu.",
+              "studyId": "introducing_jonah_v001"
+            },
+            {
+              "titleLevel3": " Kuanzisha Matendo",
+              "description": " Kuzaliwa kwa kanisa na kuenea kwa Neno.",
+              "studyId": "introducing_acts_v001"
+            },
+            {
+              "titleLevel3": " Kumtambulisha Yesu",
+              "description": " Kujiandaa kuwatambulisha wengine kwa utu wa Kristo.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " Kushiriki Yesu",
+              "description": " Mikakati ya uinjilisti wa kibinafsi iliyoboreshwa.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 5. Kuwaongoza Wengine",
+          "description": " Kuandaa majukumu rasmi na yasiyo rasmi ya uongozi.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "[A]",
+              "description": " Maelezo ya kipengee A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Maelezo ya kipengee B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Maelezo ya kipengee C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Maisha ya Kiroho",
+      "description": " Rasilimali zililenga safari ya ndani ya mwamini na matumizi ya ukweli moyoni.",
+      "pathways": [
+        {
+          "titleLevel2": " Kupambana na Dhambi",
+          "description": " Msaada wa vitendo na wa kitheolojia wa kukabiliana na majaribu na mifumo ya kutotii.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Kumtambulisha Mhubiri",
+              "description": " Kupata maana katika ulimwengu uliovunjika.",
+              "studyId": "introducing_ecclesiastes_v001"
+            },
+            {
+              "titleLevel3": " Tunawatambulisha Waefeso",
+              "description": " Silaha za Mungu na nafasi yetu katika ulimwengu wa mbinguni.",
+              "studyId": "introducing_ephesians_v001"
+            },
+            {
+              "titleLevel3": " Mimi ni nani?",
+              "description": " Vita dhidi ya dhambi vinavyotokana na utambulisho.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Tafuta Pumziko kwa ajili ya Nafsi Yako",
+              "description": "<b>Tafuta Pumziko kwa Ajili ya Nafsi Yako: Kuepuka tabia ya uraibu kwa kupata furaha bora</b><br><br>Somo la Biblia la vipindi kumi linalochunguza moyo ulio nyuma ya uraibu — na jinsi Injili inavyotoa zaidi ya ahadi yoyote ya uongo inavyoweza kutoa. Kwa kufanya kazi kupitia Maandiko, kila kipindi kinachanganya usomaji wa karibu na tafakari ya kibinafsi.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "studyId": "find_rest_for_your_soul_v001"
+            },
+            {
+              "titleLevel3": " Kukua katika Kristo (1)",
+              "description": "<b>Kua katika Kristo (Kozi ya Uanafunzi)</b><br><br>Je, unakua katika Kristo? Mungu anataka watoto wake wote wakue katika Yesu. Usipokua, masomo haya yatakusaidia kujua ni nini kibaya na jinsi ya kurekebisha. Ukikua, yatakusaidia kukua zaidi. Ukisoma Maandiko, kila kipindi kinachanganya usomaji wa karibu na tafakari ya kibinafsi.<br><br>(Tumegawanya kozi hii katika juzuu kadhaa. Fanya juzuu ya 1 kwanza - lakini ikiwa tayari umefanya hivyo, endelea na juzuu inayofuata.)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Theolojia ya Kazi",
+          "description": " Kuangalia kazi yetu ya kila siku kupitia lenzi ya uumbaji na ufalme wa Mungu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Kumtambulisha Nehemia",
+              "description": " Uongozi, kazi, na ujenzi upya kwa ajili ya utukufu wa Mungu.",
+              "studyId": "introducing_nehemiah_v001"
+            },
+            {
+              "titleLevel3": " Kuanzisha Wakolosai",
+              "description": " Kufanya kila kitu kama kwa Bwana.",
+              "studyId": "introducing_colossians_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Kufanya Kazi kwa Ajili ya Wema",
+              "description": "<b>Kufanya Kazi kwa Ajili ya Mema: Imani, Upendo, na Ibada katika Kazi Yetu ya Kila Siku</b><br><br>Somo la Biblia la vipindi nane linalochunguza maana ya kufanya kazi kwa uaminifu kama Mkristo. Kwa kutumia vifungu kutoka Mwanzo hadi Ufunuo, kila kipindi kinashughulikia mwelekeo tofauti wa kazi: wema wake uliotolewa na Mungu, upotoshaji wake na dhambi, na ukombozi wake katika Kristo. Iwe unahisi kazi yako haina maana, imetenganishwa na imani yako, au inakuchosha tu, somo hili linakualika kuona kazi yako ya kila siku kama kitendo cha upendo, aina ya ibada, na sehemu ya makusudi makubwa ya Mungu kwa ulimwengu.",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "studyId": "working_for_the_good_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Mateso",
+          "description": " Kutembea kupitia bonde la uvuli wa mauti kwa matumaini.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "Kuanzisha Kazi",
+              "description": " Maelezo ya kipengee A.",
+              "studyId": "introducing_job_v001"
+            },
+            {
+              "titleLevel3": " Tunakuletea 1 Peter",
+              "description": " Maelezo ya kipengee B.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Maelezo ya kipengee C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " Matumaini ya Ulimwengu Unaoumia",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "hope_for_a_hurting_world_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Kuwahudumia Wengine",
+      "description": " Masomo yanayolenga utunzaji wa kichungaji, uinjilisti, na ufundishaji.",
+      "pathways": [
+        {
+          "titleLevel2": " Huduma ya Kichungaji",
+          "description": " Kuwaandaa waumini kutembea pamoja katika shida.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Kuanzisha Zaburi",
+              "description": " Lugha ya moyo katika sala na ushauri.",
+              "studyId": "introducing_psalms_v001"
+            },
+            {
+              "titleLevel3": " Tunakuletea [Barua]",
+              "description": " Barua ya Agano Jipya ililenga utunzaji wa kichungaji.",
+              "studyId": "introducing_[epistle]_v001"
+            },
+            {
+              "titleLevel3": " Mimi ni nani?",
+              "description": " Kuwasaidia wengine kupata utambulisho wao katika Kristo.",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " Kukua katika Kristo (1)",
+              "description": "<b>Kua katika Kristo (Kozi ya Uanafunzi)</b><br><br>Je, unakua katika Kristo? Mungu anataka watoto wake wote wakue katika Yesu. Kama hukui, masomo haya yatakusaidia kujua ni nini kibaya na jinsi ya kurekebisha. Kama unakua, yatakusaidia kukua zaidi. Kwa kusoma Maandiko, kila kipindi kinachanganya usomaji wa karibu na tafakari ya kibinafsi. (Tumegawanya kozi hii katika juzuu kadhaa. Fanya juzuu ya 1 kwanza - lakini ikiwa tayari umefanya hivyo, endelea na juzuu inayofuata.)",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " Mazungumzo ya Kichungaji",
+              "description": " Uchunguzi wa kesi na mbinu za vitendo.",
+              "studyId": "pastoral_conversations_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Mjulishe Kristo",
+          "description": " Kuzingatia uinjilisti na kuelezea imani kwa njia iliyo wazi.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [A]",
+              "description": " Maelezo ya kipengee A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " Mambo Muhimu ya Injili",
+              "description": " Kufupisha ujumbe mkuu wa wokovu.",
+              "studyId": "gospel_highlights_v001"
+            },
+            {
+              "titleLevel3": " Kumtambulisha Yesu",
+              "description": " Kutumia Injili kuwatambulisha watafutaji kwa Kristo.",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Kushiriki Yesu",
+              "description": " Kuhama kutoka mazungumzo hadi mwaliko.",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Kufundisha na Kuhubiri",
+          "description": "Mafunzo kwa wale walioitwa kushughulikia na kuelezea Neno hadharani.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [A]",
+              "description": " Maelezo ya kipengee A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Maelezo ya kipengee B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Maelezo ya kipengee C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Kujua Ukweli",
+      "description": " Mkazo katika Theolojia ya Kimfumo na mafundisho ya kihistoria ya Kanisa.",
+      "pathways": [
+        {
+          "titleLevel2": " Kanisa",
+          "description": " Kuelewa asili, misheni, na muundo wa mwili wa Kristo.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [A]",
+              "description": " Maelezo ya kipengee A.",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [B]",
+              "description": " Maelezo ya kipengee B.",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Maelezo ya kipengee C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " Fanya Wanafunzi Wengi wa Kina",
+              "description": " <b>Fanya Wanafunzi Wengi wa Kina: Kozi ya uanachama wa Kanisa la Biblia la Beroya</b><br><br>Somo la Biblia la vipindi vitano linalochunguza maadili ya msingi ya kanisa.",
+              "studyId": "make_many_deep_disciples_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Hekima",
+          "description": " Kujifunza kuishi kwa ustadi katika ulimwengu wa Mungu.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Kuanzisha Methali",
+              "description": " Maelezo ya kipengee A.",
+              "studyId": "introducing_proverbs_v001"
+            },
+            {
+              "titleLevel3": " Tunamtambulisha James",
+              "description": " Maelezo ya kipengee B.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " Hekima na Upendo",
+              "description": "Maelezo ya kipengee C.",
+              "studyId": "wisdom_and_love_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " Kushirikisha Ulimwengu",
+      "description": " Jinsi kanisa linavyoingiliana na utamaduni, jamii, na jamii kwa ujumla.",
+      "pathways": [
+        {
+          "titleLevel2": " Ukarimu",
+          "description": " Kufungua maisha na nyumba zetu kama daraja la Injili.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Kumtambulisha Ruth",
+              "description": " Ukaribisho na wema katika nyanja zote za kitamaduni.",
+              "studyId": "introducing_ruth_v001"
+            },
+            {
+              "titleLevel3": " Tunamtambulisha Luka",
+              "description": " Yesu, mwenyeji ambaye anakuwa mgeni.",
+              "studyId": "introducing_luke_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Maelezo ya kipengee C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Utetezi wa Kitamaduni",
+          "description": " Kujibu maswali ambayo ulimwengu unauliza kweli.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Kumtambulisha Danieli",
+              "description": " Uwepo mwaminifu katika himaya isiyo ya kidunia.",
+              "studyId": "introducing_daniel_v001"
+            },
+            {
+              "titleLevel3": " Tunakuletea 1 Peter",
+              "description": " Kuishi kama wageni na wageni kwa matumaini.",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Maelezo ya kipengee C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " Haki ya Kijamii",
+          "description": " Moyo wa Mungu kwa ajili ya walio dhaifu na waliokandamizwa.",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " Tunamtambulisha Amosi",
+              "description": " Wito wa kinabii wa kuruhusu haki iendelee.",
+              "studyId": "introducing_amos_v001"
+            },
+            {
+              "titleLevel3": " Tunamtambulisha James",
+              "description": " Imani inayofanya kazi kupitia upendo na kuwajali maskini.",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " [C]",
+              "description": " Maelezo ya kipengee C.",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [D]",
+              "description": " Maelezo ya kipengee D.",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [E]",
+              "description": " Maelezo ya kipengee E.",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

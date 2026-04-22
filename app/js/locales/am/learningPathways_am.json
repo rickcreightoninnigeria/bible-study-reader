@@ -1,0 +1,550 @@
+{
+  "learningPathways": [
+    {
+      "titleLevel1": " ለሁሉም ሰው የሚሆን እድገት",
+      "description": " እያንዳንዱ አማኝ ጠንካራ ሥር እንዲይዝና ወደ አመራር እንዲያድግ ለመርዳት የተነደፈ መሠረታዊ መንገድ።",
+      "pathways": [
+        {
+          "titleLevel2": " 1. መሠረቶች",
+          "description": " የመጽሐፍ ቅዱስን ዋና መልእክት እና ምላሻችንን ለመረዳት አስፈላጊው የመነሻ ነጥብ።",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "studyTitles": [
+            {
+              "titleLevel3": " ዘፍጥረትን በማስተዋወቅ ላይ",
+              "description": " እግዚአብሔር ከሰው ልጅ ጋር ያለውን ግንኙነት መነሻ መመርመር።",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "studyId": "introducing_genesis_v001"
+            },
+            {
+              "titleLevel3": " ማርክን በማስተዋወቅ ላይ",
+              "description": " የኢየሱስን ሕይወትና አገልግሎት በፍጥነት የሚያጠናክር።",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "studyId": "introducing_mark_v001"
+            },
+            {
+              "titleLevel3": " እውነት ተከፍቷል (1)",
+              "description": " <b>እውነት ተከፍቷል፣ ጥራዝ 1፡ የክርስቲያን እምነት</b><br><br>በመጽሐፍ ቅዱስ ውስጥ የተገለጹትን አስፈላጊ እውነቶች እንድትረዱ የሚያግዙዎት ስምንት ጥናቶች። የመጽሐፍ ቅዱስን እውነት ካልተረዳን እና ለሕይወታችን መሠረት አድርገን ካልተጠቀምንበት በስተቀር አምላካዊ ሕይወት መኖር አንችልም። <i>እውነት ተከፍቷል</i> ለተወሰነ ጊዜ ክርስቲያን ለነበሩ እና የእምነታቸውን መሠረታዊ ነገሮች ለመገምገም ለሚፈልጉ ሰዎች ጠቃሚ ማደስ ነው። በሚማሩት ነገር ሊገረሙ ይችላሉ!",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "studyId": "truth_unlocked_volume_1_v001"
+            },
+            {
+              "titleLevel3": " ልወጣ",
+              "description": " <b>ልወጣ፡ አዲስ አይደለም (ብቻ) ጥሩ</b><br><br>እውነተኛ ልወጣ ምን ማለት እንደሆነ እና ለምን አስፈላጊ እንደሆነ የሚያጠና የዘጠኝ ክፍለ ጊዜ የመጽሐፍ ቅዱስ ጥናት።",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "studyId": "conversion_v001"
+            },
+            {
+              "titleLevel3": " የአገልጋይ አመራር",
+              "description": "የመጽሐፍ ቅዱስ ሞዴል ለተጽዕኖና ለእንክብካቤ።",
+              "studyId": "servant_leadership_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 2. የሚያድጉ ሥሮች",
+          "description": " ወደ መጽሐፍ ቅዱስ አወቃቀር እና የግል መንፈሳዊ ልማዶች በጥልቀት እንገባለን።",
+          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "studyTitles": [
+            {
+              "titleLevel3": " የመጽሐፍ ቅዱስ አጠቃላይ እይታ (1)",
+              "description": " የብሉይ ኪዳንን ታሪክ መከታተል።",
+              "studyId": "bible_overview_(1)_v001"
+            },
+            {
+              "titleLevel3": " የመጽሐፍ ቅዱስ አጠቃላይ እይታ (2)",
+              "description": " የአዲስ ኪዳንን ታሪክ መከታተል።",
+              "studyId": "bible_overview_(2)_v001"
+            },
+            {
+              "titleLevel3": " እውነት ተከፍቷል (2)",
+              "description": "<b>እውነት ተከፍቷል፣ ጥራዝ 2፡ የክርስቲያን ኑሮ</b><br><br>በመጽሐፍ ቅዱስ ውስጥ የተገለጹትን አስፈላጊ እውነቶች እንድትረዱ የሚያግዙዎት ስምንት ጥናቶች። የመጽሐፍ ቅዱስን እውነት ካልተረዳን እና ለሕይወታችን መሠረት አድርገን ካልተጠቀምንበት በስተቀር አምላካዊ ሕይወት መኖር አንችልም። <i>እውነት ተከፍቷል</i> ለተወሰነ ጊዜ ክርስቲያን ለነበሩ እና የእምነታቸውን መሠረታዊ ነገሮች ለመገምገም ለሚፈልጉ ሰዎች ጠቃሚ ማደስ ነው። በሚማሩት ነገር ሊገረሙ ይችላሉ!",
+              "downloadLocation": "",
+              "studyId": "truth_unlocked_volume_2_v001"
+            },
+            {
+              "titleLevel3": " በክርስቶስ እደጉ (1)",
+              "description": "<b>በክርስቶስ እደጉ (የደቀ መዝሙርነት ትምህርት)</b><br><br>በክርስቶስ እደጉ? እግዚአብሔር ልጆቹ ሁሉ በኢየሱስ እንዲያድጉ ይፈልጋል። እያደጉ ካልሆነ፣ እነዚህ ጥናቶች የተሳሳቱትን ነገሮች እና እንዴት ማስተካከል እንደሚችሉ ለማወቅ ይረዱዎታል። እያደጉ ከሆነ፣ የበለጠ እንዲያድጉ ይረዱዎታል። በቅዱሳት መጻሕፍት ውስጥ በመስራት፣ እያንዳንዱ ክፍለ ጊዜ የቅርብ ንባብን ከግል ነጸብራቅ ጋር ያጣምራል። (ይህንን ትምህርት ወደ በርካታ ጥራዞች ከፍለነዋል። በመጀመሪያ ጥራዝ 1ን ያድርጉ - ነገር ግን ያንን ካደረጉት፣ በሚቀጥለው ጥራዝ ይቀጥሉ።)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " የኢየሱስን ትምህርት መጋራት",
+              "description": " <b>የኢየሱስን ትምህርት ማጋራት</b><br><br>ኢየሱስን ለሌሎች ለማካፈል የሚያስታጥቁዎት ስምንት ጥናቶች።",
+              "studyId": "sharing_jesus_course_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 3. ጥልቅ ግንዛቤ",
+          "description": " ይበልጥ ውስብስብ ከሆኑ መጻሕፍት እና የአገልግሎት ተለዋዋጭነት ጋር መታገል።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " ዘጸአትን በማስተዋወቅ ላይ",
+              "description": " ቤዛነት፣ ሕግ እና የእግዚአብሔር መገኘት።",
+              "studyId": "introducing_exodus_v001"
+            },
+            {
+              "titleLevel3": " ሮማውያንን በማስተዋወቅ ላይ",
+              "description": " በወንጌል አመክንዮ ውስጥ ጥልቅ ዘልቆ መግባት።",
+              "studyId": "introducing_romans_v001"
+            },
+            {
+              "titleLevel3": " ማነኝ፧",
+              "description": " በክርስቶስ ውስጥ ያለንን ማንነት መረዳት።",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " በክርስቶስ እደጉ (2)",
+              "description": "<b>በክርስቶስ እደጉ (የደቀ መዝሙርነት ትምህርት)</b><br><br>በክርስቶስ እደጉ? እግዚአብሔር ልጆቹ ሁሉ በኢየሱስ እንዲያድጉ ይፈልጋል። እያደጉ ካልሆነ፣ እነዚህ ጥናቶች የተሳሳቱትን ነገሮች እና እንዴት ማስተካከል እንደሚችሉ ለማወቅ ይረዱዎታል። እያደጉ ከሆነ፣ የበለጠ እንዲያድጉ ይረዱዎታል። በቅዱሳት መጻሕፍት ውስጥ ስንጠቀም፣ እያንዳንዱ ክፍለ ጊዜ የቅርብ ንባብን ከግል ነጸብራቅ ጋር ያጣምራል። (ይህንን ትምህርት ወደ በርካታ ጥራዞች ከፍለነዋል። ጥራዝ 2ን እዚህ እንደምታዘጋጁ እናስባለን - ነገር ግን ያንን አስቀድመው ካደረጉት፣ በሚቀጥለው ጥራዝ ይቀጥሉ።)",
+              "studyId": "grow_in_christ_volume_2_v001"
+            },
+            {
+              "titleLevel3": " የሚኒስትሪ ዳይናሚክስ",
+              "description": " በአካባቢ ቤተክርስቲያን ውስጥ ውጤታማ በሆነ መንገድ እንዴት ማገልገል እንደሚቻል።",
+              "studyId": "ministry_dynamics_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 4. በተልዕኮ መኖር",
+          "description": " ትኩረታችንን ወደ እግዚአብሔር ልብ ወደ ዓለም ማዞር።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "ዮናስን በማስተዋወቅ ላይ",
+              "description": " የእግዚአብሔር ለአሕዛብ ያለው ርኅራኄና ተቃውሞአችን።",
+              "studyId": "introducing_jonah_v001"
+            },
+            {
+              "titleLevel3": " ድርጊቶችን በማስተዋወቅ ላይ",
+              "description": " የቤተክርስቲያን መወለድና የቃሉ መስፋፋት።",
+              "studyId": "introducing_acts_v001"
+            },
+            {
+              "titleLevel3": " ኢየሱስን ማስተዋወቅ",
+              "description": " ሌሎችን ከክርስቶስ ማንነት ጋር ለማስተዋወቅ መዘጋጀት።",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " ኢየሱስን ማካፈል",
+              "description": " የላቀ የግል የወንጌል አገልግሎት ስልቶች።",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " 5. ሌሎችን መምራት",
+          "description": " ለመደበኛ እና መደበኛ ያልሆነ የአመራር ሚናዎች ዝግጅት።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "[ሀ]",
+              "description": " የንጥል ሀ መግለጫ።",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [ለ]",
+              "description": " የንጥል ቢ መግለጫ።",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [ሐ]",
+              "description": " የንጥል ሐ መግለጫ።",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " መንፈሳዊ ሕይወት",
+      "description": " በአማኙ ውስጣዊ ጉዞ እና እውነትን በልብ ላይ በመተግበር ላይ ያተኮሩ ሀብቶች።",
+      "pathways": [
+        {
+          "titleLevel2": " ኃጢአትን መዋጋት",
+          "description": " ፈተናንና አለመታዘዝን ለመቋቋም ተግባራዊና ሥነ-መለኮታዊ እገዛ።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " መክብብን በማስተዋወቅ ላይ",
+              "description": " በተበላሸ ዓለም ውስጥ ትርጉም ማግኘት።",
+              "studyId": "introducing_ecclesiastes_v001"
+            },
+            {
+              "titleLevel3": " ኤፌሶንን በማስተዋወቅ ላይ",
+              "description": " የእግዚአብሔር የጦር ትጥቅ እና በሰማያዊው ዓለም ያለን ቦታ።",
+              "studyId": "introducing_ephesians_v001"
+            },
+            {
+              "titleLevel3": " ማነኝ፧",
+              "description": " ከኃጢአት ጋር በማንነት ላይ የተመሠረተ ጦርነት።",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " ለነፍስህ እረፍት ፈልግ",
+              "description": "<b>ለነፍስህ እረፍት አግኝ፡ የተሻለ ደስታን በማግኘት ሱስ የሚያስይዝ ባህሪን ማምለጥ</b><br><br>ከሱስ በስተጀርባ ያለውን ልብ እና ወንጌል ከማንኛውም የሐሰት ተስፋ ሊያመጣ ከሚችለው በላይ እንዴት እንደሚያቀርብ የሚዳስስ የአስር ክፍለ ጊዜ የመጽሐፍ ቅዱስ ጥናት። በቅዱሳት መጻሕፍት ውስጥ በመስራት፣ እያንዳንዱ ክፍለ ጊዜ የቅርብ ንባብን ከግል ነጸብራቅ ጋር ያጣምራል።",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "studyId": "find_rest_for_your_soul_v001"
+            },
+            {
+              "titleLevel3": " በክርስቶስ እደጉ (1)",
+              "description": "<b>በክርስቶስ እደጉ (የደቀ መዝሙርነት ትምህርት)</b><br><br>በክርስቶስ እያደጉ ነው? እግዚአብሔር ልጆቹ ሁሉ በኢየሱስ እንዲያድጉ ይፈልጋል። እያደጉ ካልሆነ፣ እነዚህ ጥናቶች የተሳሳቱትን ነገሮች እና እንዴት ማስተካከል እንደሚችሉ ለማወቅ ይረዱዎታል። እያደጉ ከሆነ፣ የበለጠ እንዲያድጉ ይረዱዎታል። በቅዱሳት መጻሕፍት ውስጥ በመስራት፣ እያንዳንዱ ክፍለ ጊዜ የቅርብ ንባብን ከግል ነጸብራቅ ጋር ያጣምራል።<br><br>(ይህንን ትምህርት በበርካታ ጥራዞች ከፍለነዋል። በመጀመሪያ ጥራዝ 1ን ያድርጉ - ነገር ግን ያንን ካደረጉት፣ በሚቀጥለው ጥራዝ ይቀጥሉ።)",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "studyId": "grow_in_christ_volume_1_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " የሥራ ሥነ-መለኮት",
+          "description": " የዕለት ተዕለት ሥራችንን በእግዚአብሔር ፍጥረትና መንግሥት መነጽር መመልከት።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " ነህምያን በማስተዋወቅ ላይ",
+              "description": " ለእግዚአብሔር ክብር አመራር፣ ጉልበት እና መልሶ መገንባት።",
+              "studyId": "introducing_nehemiah_v001"
+            },
+            {
+              "titleLevel3": " ቆላስይስን በማስተዋወቅ ላይ",
+              "description": " ለጌታ እንደምታደርጉት ሁሉን ነገር አድርጉ።",
+              "studyId": "introducing_colossians_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " ለበጎ ነገር መስራት",
+              "description": "<b>ለበጎ ነገር መሥራት፡ በዕለት ተዕለት ድካማችን ውስጥ እምነት፣ ፍቅር እና አምልኮ</b><br><br>እንደ ክርስቲያን በታማኝነት መሥራት ምን ማለት እንደሆነ የሚያጠና ስምንት ክፍለ ጊዜ የመጽሐፍ ቅዱስ ጥናት። ከዘፍጥረት እስከ ራዕይ ያሉትን ምንባቦች በመጥቀስ፣ እያንዳንዱ ክፍለ ጊዜ የተለያዩ የሥራ ገጽታዎችን ያብራራል፤ እግዚአብሔር የሰጠውን መልካምነት፣ በኃጢአት ምክንያት የሚመጣ መዛባት እና በክርስቶስ የሚመጣ ቤዛነት። ሥራህ ትርጉም የለሽ፣ ከእምነትህ የተላቀቀ ወይም በቀላሉ አድካሚ እንደሆነ ቢሰማህ፣ ይህ ጥናት የዕለት ተዕለት ሥራህን እንደ ፍቅር ተግባር፣ የአምልኮ ዓይነት እና እግዚአብሔር ለዓለም ካለው ትልቅ ዓላማ አካል አድርገህ እንድትመለከተው ይጋብዝሃል።",
+              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "studyId": "working_for_the_good_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " መከራ",
+          "description": " በተስፋ በሞት ጥላ ሸለቆ ውስጥ መራመድ።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": "ሥራን በማስተዋወቅ ላይ",
+              "description": " የንጥል ሀ መግለጫ።",
+              "studyId": "introducing_job_v001"
+            },
+            {
+              "titleLevel3": " 1ኛ ጴጥሮስን በማስተዋወቅ ላይ",
+              "description": " የንጥል ቢ መግለጫ።",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [ሐ]",
+              "description": " የንጥል ሐ መግለጫ።",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " ለተጎዳ ዓለም ተስፋ",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "hope_for_a_hurting_world_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " ሌሎችን ማገልገል",
+      "description": " በፓስተር እንክብካቤ፣ በወንጌላዊነት እና በማስተማር ላይ ያተኮሩ ጥናቶች።",
+      "pathways": [
+        {
+          "titleLevel2": " የፓስተር እንክብካቤ",
+          "description": " አማኞች በችግር ውስጥ እርስ በእርሳቸው አብረው እንዲሄዱ ማስታጠቅ።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " መዝሙራትን በማስተዋወቅ ላይ",
+              "description": " በጸሎትና በምክር ውስጥ የልብ ቋንቋ።",
+              "studyId": "introducing_psalms_v001"
+            },
+            {
+              "titleLevel3": " [ደብዳቤ]ን በማስተዋወቅ ላይ",
+              "description": " የአዲስ ኪዳን ደብዳቤ ስለ ፓስተር እንክብካቤ ያተኮረ ነበር።",
+              "studyId": "introducing_[epistle]_v001"
+            },
+            {
+              "titleLevel3": " ማነኝ፧",
+              "description": " ሌሎች በክርስቶስ ማንነታቸውን እንዲያገኙ መርዳት።",
+              "studyId": "who_am_i_v001"
+            },
+            {
+              "titleLevel3": " በክርስቶስ እደጉ (1)",
+              "description": "<b>በክርስቶስ እደጉ (የደቀ መዝሙርነት ትምህርት)</b><br><br>በክርስቶስ እደጉ? እግዚአብሔር ልጆቹ ሁሉ በኢየሱስ እንዲያድጉ ይፈልጋል። እያደጉ ካልሆነ፣ እነዚህ ጥናቶች የተሳሳቱትን ነገሮች እና እንዴት ማስተካከል እንደሚችሉ ለማወቅ ይረዱዎታል። እያደጉ ከሆነ፣ የበለጠ እንዲያድጉ ይረዱዎታል። በቅዱሳት መጻሕፍት ውስጥ በመስራት፣ እያንዳንዱ ክፍለ ጊዜ የቅርብ ንባብን ከግል ነጸብራቅ ጋር ያጣምራል። (ይህንን ትምህርት ወደ በርካታ ጥራዞች ከፍለነዋል። በመጀመሪያ ጥራዝ 1ን ያድርጉ - ነገር ግን ያንን ካደረጉት፣ በሚቀጥለው ጥራዝ ይቀጥሉ።)",
+              "studyId": "grow_in_christ_volume_1_v001"
+            },
+            {
+              "titleLevel3": " የፓስተር ውይይቶች",
+              "description": " የጉዳይ ጥናቶች እና ተግባራዊ ቴክኒኮች።",
+              "studyId": "pastoral_conversations_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " ክርስቶስን አሳውቁ",
+          "description": " በወንጌላዊነት ላይ ማተኮር እና እምነቱን በግልፅ ማስረዳት።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [ሀ]",
+              "description": " የንጥል ሀ መግለጫ።",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " የወንጌል ዋና ዋና ዜናዎች",
+              "description": " የመዳንን ዋና መልእክት ማጠቃለል።",
+              "studyId": "gospel_highlights_v001"
+            },
+            {
+              "titleLevel3": " ኢየሱስን ማስተዋወቅ",
+              "description": " ወንጌሎችን በመጠቀም ፈላጊዎችን ከክርስቶስ ጋር ማስተዋወቅ።",
+              "studyId": "introducing_jesus_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " ኢየሱስን ማካፈል",
+              "description": " ከውይይት ወደ ግብዣ እየተሸጋገረ።",
+              "studyId": "sharing_jesus_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " ማስተማር እና መስበክ",
+          "description": "ቃሉን በሕዝብ ፊት ለማስተናገድና ለማስረዳት ለተጠሩ ሰዎች ሥልጠና።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [ሀ]",
+              "description": " የንጥል ሀ መግለጫ።",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [ለ]",
+              "description": " የንጥል ቢ መግለጫ።",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [ሐ]",
+              "description": " የንጥል ሐ መግለጫ።",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " እውነትን ማወቅ",
+      "description": " በስርዓት ሥነ-መለኮት እና በቤተክርስቲያን ታሪካዊ አስተምህሮዎች ላይ ትኩረት።",
+      "pathways": [
+        {
+          "titleLevel2": " ቤተክርስቲያን",
+          "description": " የክርስቶስን አካል ተፈጥሮ፣ ተልዕኮ እና መዋቅር መረዳት።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " [ሀ]",
+              "description": " የንጥል ሀ መግለጫ።",
+              "studyId": "placeholder_[a]_v001"
+            },
+            {
+              "titleLevel3": " [ለ]",
+              "description": " የንጥል ቢ መግለጫ።",
+              "studyId": "placeholder_[b]_v001"
+            },
+            {
+              "titleLevel3": " [ሐ]",
+              "description": " የንጥል ሐ መግለጫ።",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " ብዙ ጥልቅ ደቀ መዛሙርት አድርጉ",
+              "description": " <b>ብዙ ጥልቅ ደቀ መዛሙርት አድርጉ፡ የቤርያ የመጽሐፍ ቅዱስ ቤተክርስቲያን የአባልነት ኮርስ</b><br><br>የቤተክርስቲያኗን ዋና ዋና እሴቶች የሚመረምር የአምስት ክፍለ ጊዜ የመጽሐፍ ቅዱስ ጥናት።",
+              "studyId": "make_many_deep_disciples_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " ጥበብ",
+          "description": " በእግዚአብሔር ዓለም ውስጥ በብቃት መኖርን መማር።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " ምሳሌዎችን በማስተዋወቅ ላይ",
+              "description": " የንጥል ሀ መግለጫ።",
+              "studyId": "introducing_proverbs_v001"
+            },
+            {
+              "titleLevel3": " ጄምስን በማስተዋወቅ ላይ",
+              "description": " የንጥል ቢ መግለጫ።",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " ጥበብ እና ፍቅር",
+              "description": "የንጥል ሐ መግለጫ።",
+              "studyId": "wisdom_and_love_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titleLevel1": " ዓለምን ማሳተፍ",
+      "description": " ቤተክርስቲያን ከባህል፣ ከማህበረሰብ እና ከማህበረሰቡ ጋር እንዴት እንደምትገናኝ።",
+      "pathways": [
+        {
+          "titleLevel2": " እንግዳ ተቀባይነት",
+          "description": " ሕይወታችንንና ቤታችንን ለወንጌል ድልድይ አድርገን መክፈት።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " ሩትን በማስተዋወቅ ላይ",
+              "description": " በባህል መስመሮች ሁሉ ደግነት እና አቀባበል።",
+              "studyId": "introducing_ruth_v001"
+            },
+            {
+              "titleLevel3": " ሉቃስን በማስተዋወቅ ላይ",
+              "description": " እንግዳ የሚሆነው አስተናጋጅ ኢየሱስ።",
+              "studyId": "introducing_luke_v001"
+            },
+            {
+              "titleLevel3": " [ሐ]",
+              "description": " የንጥል ሐ መግለጫ።",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " የባህል አፖሎጂቲክስ",
+          "description": " ዓለም እያነሳቸው ያሉትን ጥያቄዎች መመለስ።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " ዳንኤልን በማስተዋወቅ ላይ",
+              "description": " በዓለማዊ ግዛት ውስጥ ታማኝ መገኘት።",
+              "studyId": "introducing_daniel_v001"
+            },
+            {
+              "titleLevel3": " 1ኛ ጴጥሮስን በማስተዋወቅ ላይ",
+              "description": " እንደ ባዕድና እንግዳ ተስፋ በማድረግ መኖር።",
+              "studyId": "introducing_1_peter_v001"
+            },
+            {
+              "titleLevel3": " [ሐ]",
+              "description": " የንጥል ሐ መግለጫ።",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        },
+        {
+          "titleLevel2": " ማህበራዊ ፍትህ",
+          "description": " የእግዚአብሔር ልብ ለድሆችና ለተጨቆኑ።",
+          "downloadLocation": "",
+          "studyTitles": [
+            {
+              "titleLevel3": " አሞጽን በማስተዋወቅ ላይ",
+              "description": " ፍትህ እንዲፈርስ የተነገረው ትንቢታዊ ጥሪ።",
+              "studyId": "introducing_amos_v001"
+            },
+            {
+              "titleLevel3": " ጄምስን በማስተዋወቅ ላይ",
+              "description": " ለድሆች ፍቅርና እንክብካቤ የሚሰጥ እምነት።",
+              "studyId": "introducing_james_v001"
+            },
+            {
+              "titleLevel3": " [ሐ]",
+              "description": " የንጥል ሐ መግለጫ።",
+              "studyId": "placeholder_[c]_v001"
+            },
+            {
+              "titleLevel3": " [መ]",
+              "description": " የንጥል ዲ መግለጫ።",
+              "studyId": "placeholder_[d]_v001"
+            },
+            {
+              "titleLevel3": " [ኢ]",
+              "description": " የንጥል ኢ መግለጫ።",
+              "studyId": "placeholder_[e]_v001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

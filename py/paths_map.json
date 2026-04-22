@@ -1,0 +1,802 @@
+[
+  {
+    "path": "learningPathways[0].titleLevel1",
+    "text": "Growth for Everyone"
+  },
+  {
+    "path": "learningPathways[0].description",
+    "text": "A foundational track designed to help every believer establish firm roots and progress toward leadership."
+  },
+  {
+    "path": "learningPathways[0].pathways[0].titleLevel2",
+    "text": "1. Foundations"
+  },
+  {
+    "path": "learningPathways[0].pathways[0].description",
+    "text": "The essential starting point for understanding the core message of the Bible and our response."
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[0].titleLevel3",
+    "text": "Introducing Genesis"
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[0].description",
+    "text": "Exploring the origins of God's relationship with humanity."
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[1].titleLevel3",
+    "text": "Introducing Mark"
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[1].description",
+    "text": "A fast-paced look at the life and ministry of Jesus."
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[2].titleLevel3",
+    "text": "Truth Unlocked (1)"
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[2].description",
+    "text": "<b>Truth Unlocked, Volume 1: Christian Belief</b><br><br>Eight studies to help you understand the essential truths revealed by God in the Bible. We cannot live godly lives unless we understand Biblical truth and apply it as the foundation for our lives. <i>Truth Unlocked</i> is also a helpful refresher for those who have been Christians for some time and wish to review the basics of their faith. You may be surprised by what you learn!"
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[3].titleLevel3",
+    "text": "Conversion"
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[3].description",
+    "text": "<b>Conversion: New not (just) Nice</b><br><br>A nine-session Bible study exploring what genuine conversion means \u2013 and why it matters."
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[4].titleLevel3",
+    "text": "Servant Leadership"
+  },
+  {
+    "path": "learningPathways[0].pathways[0].studyTitles[4].description",
+    "text": "The biblical model for influence and care."
+  },
+  {
+    "path": "learningPathways[0].pathways[1].titleLevel2",
+    "text": "2. Growing Roots"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].description",
+    "text": "Moving deeper into the structure of the Bible and personal spiritual habits."
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[0].titleLevel3",
+    "text": "Bible Overview (1)"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[0].description",
+    "text": "Tracing the story of the Old Testament."
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[1].titleLevel3",
+    "text": "Bible Overview (2)"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[1].description",
+    "text": "Tracing the story of the New Testament."
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[2].titleLevel3",
+    "text": "Truth Unlocked (2)"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[2].description",
+    "text": "<b>Truth Unlocked, Volume 2: Christian Living</b><br><br>Eight studies to help you understand the essential truths revealed by God in the Bible. We cannot live godly lives unless we understand Biblical truth and apply it as the foundation for our lives. <i>Truth Unlocked</i> is also a helpful refresher for those who have been Christians for some time and wish to review the basics of their faith. You may be surprised by what you learn!"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[3].titleLevel3",
+    "text": "Grow in Christ (1)"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[3].description",
+    "text": "<b>Grow in Christ (Discipleship course)</b><br><br>Are you growing in Christ? God wants all his children to grow in Jesus. If you are not growing, this studies will help you work out what is wrong and how to put it right. If you are growing, they will help you grow more. Working through Scripture, each session combines close reading with personal reflection. (We have split this course into several volumes. Do volume 1 first \u2013 but if you've already done that, carry on with the next volume.)"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[4].titleLevel3",
+    "text": "Sharing Jesus Course"
+  },
+  {
+    "path": "learningPathways[0].pathways[1].studyTitles[4].description",
+    "text": "<b>Sharing Jesus Course</b><br><br>Eight studies that will equip you to share Jesus with others."
+  },
+  {
+    "path": "learningPathways[0].pathways[2].titleLevel2",
+    "text": "3. Deeper Understanding"
+  },
+  {
+    "path": "learningPathways[0].pathways[2].description",
+    "text": "Wrestling with more complex books and the dynamics of ministry."
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[0].titleLevel3",
+    "text": "Introducing Exodus"
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[0].description",
+    "text": "Redemption, Law, and the presence of God."
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[1].titleLevel3",
+    "text": "Introducing Romans"
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[1].description",
+    "text": "A deep dive into the logic of the Gospel."
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[2].titleLevel3",
+    "text": "Who am I?"
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[2].description",
+    "text": "Understanding our identity in Christ."
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[3].titleLevel3",
+    "text": "Grow in Christ (2)"
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[3].description",
+    "text": "<b>Grow in Christ (Discipleship course)</b><br><br>Are you growing in Christ? God wants all his children to grow in Jesus. If you are not growing, this studies will help you work out what is wrong and how to put it right. If you are growing, they will help you grow more. Working through Scripture, each session combines close reading with personal reflection. (We have split this course into several volumes. We are assuming you will do volume 2 here \u2013 but if you've already done that, carry on with the next volume.)"
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[4].titleLevel3",
+    "text": "Ministry Dynamics"
+  },
+  {
+    "path": "learningPathways[0].pathways[2].studyTitles[4].description",
+    "text": "How to serve effectively within a local church."
+  },
+  {
+    "path": "learningPathways[0].pathways[3].titleLevel2",
+    "text": "4. Live on a Mission"
+  },
+  {
+    "path": "learningPathways[0].pathways[3].description",
+    "text": "Turning our focus outward to God's heart for the world."
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[0].titleLevel3",
+    "text": "Introducing Jonah"
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[0].description",
+    "text": "God's compassion for the nations and our resistance."
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[1].titleLevel3",
+    "text": "Introducing Acts"
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[1].description",
+    "text": "The birth of the church and the spread of the Word."
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[2].titleLevel3",
+    "text": "Introducing Jesus"
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[2].description",
+    "text": "Preparing to introduce others to the person of Christ."
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[3].titleLevel3",
+    "text": "Sharing Jesus"
+  },
+  {
+    "path": "learningPathways[0].pathways[3].studyTitles[3].description",
+    "text": "Advanced personal evangelism strategies."
+  },
+  {
+    "path": "learningPathways[0].pathways[4].titleLevel2",
+    "text": "5. Leading Others"
+  },
+  {
+    "path": "learningPathways[0].pathways[4].description",
+    "text": "Equipping for formal and informal leadership roles."
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[0].titleLevel3",
+    "text": "[A]"
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[0].description",
+    "text": "Description for item A."
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[1].titleLevel3",
+    "text": "[B]"
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[1].description",
+    "text": "Description for item B."
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[2].titleLevel3",
+    "text": "[C]"
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[0].pathways[4].studyTitles[4].description",
+    "text": "Description for item E."
+  },
+  {
+    "path": "learningPathways[1].titleLevel1",
+    "text": "Spiritual Life"
+  },
+  {
+    "path": "learningPathways[1].description",
+    "text": "Resources focused on the internal journey of the believer and the application of truth to the heart."
+  },
+  {
+    "path": "learningPathways[1].pathways[0].titleLevel2",
+    "text": "Fighting Sin"
+  },
+  {
+    "path": "learningPathways[1].pathways[0].description",
+    "text": "Practical and theological help for dealing with temptation and patterns of disobedience."
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[0].titleLevel3",
+    "text": "Introducing Ecclesiastes"
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[0].description",
+    "text": "Finding meaning in a broken world."
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[1].titleLevel3",
+    "text": "Introducing Ephesians"
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[1].description",
+    "text": "The armor of God and our position in the heavenly realms."
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[2].titleLevel3",
+    "text": "Who am I?"
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[2].description",
+    "text": "Identity-based warfare against sin."
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[3].titleLevel3",
+    "text": "Find Rest for your Soul"
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[3].description",
+    "text": "<b>Find Rest for your Soul: Escaping addictive behaviour by finding a better joy</b><br><br>A ten-session Bible study exploring the heart behind addiction \u2014 and how the Gospel offers more than any false promise can deliver. Working through Scripture, each session combines close reading with personal reflection."
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[4].titleLevel3",
+    "text": "Grow in Christ (1)"
+  },
+  {
+    "path": "learningPathways[1].pathways[0].studyTitles[4].description",
+    "text": "<b>Grow in Christ (Discipleship course)</b><br><br>Are you growing in Christ? God wants all his children to grow in Jesus. If you are not growing, this studies will help you work out what is wrong and how to put it right. If you are growing, they will help you grow more. Working through Scripture, each session combines close reading with personal reflection.<br><br>(We have split this course into several volumes. Do volume 1 first \u2013 but if you've already done that, carry on with the next volume.)"
+  },
+  {
+    "path": "learningPathways[1].pathways[1].titleLevel2",
+    "text": "Theology of Work"
+  },
+  {
+    "path": "learningPathways[1].pathways[1].description",
+    "text": "Viewing our daily labor through the lens of God's creation and kingdom."
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[0].titleLevel3",
+    "text": "Introducing Nehemiah"
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[0].description",
+    "text": "Leadership, labor, and rebuilding for God's glory."
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[1].titleLevel3",
+    "text": "Introducing Colossians"
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[1].description",
+    "text": "Doing everything as unto the Lord."
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[2].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[2].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[3].titleLevel3",
+    "text": "Working for the Good"
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[3].description",
+    "text": "<b>Working for the Good: Faith, Love, and Worship in our Everyday Labour</b><br><br>An eight-session Bible study exploring what it means to work faithfully as a Christian. Drawing on passages from Genesis to Revelation, each session tackles a different dimension of work: its God-given goodness, its distortion by sin, and its redemption in Christ. Whether you feel your job is meaningless, disconnected from your faith, or simply exhausting, this study invites you to see your daily labour as an act of love, a form of worship, and part of God's larger purposes for the world."
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[1].pathways[1].studyTitles[4].description",
+    "text": "Description for item E."
+  },
+  {
+    "path": "learningPathways[1].pathways[2].titleLevel2",
+    "text": "Suffering"
+  },
+  {
+    "path": "learningPathways[1].pathways[2].description",
+    "text": "Walking through the valley of the shadow of death with hope."
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[0].titleLevel3",
+    "text": "Introducing Job"
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[0].description",
+    "text": "Description for item A."
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[1].titleLevel3",
+    "text": "Introducing 1 Peter"
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[1].description",
+    "text": "Description for item B."
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[2].titleLevel3",
+    "text": "[C]"
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[3].titleLevel3",
+    "text": "Hope for a Hurting World"
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[1].pathways[2].studyTitles[4].description",
+    "text": "Description for item E."
+  },
+  {
+    "path": "learningPathways[2].titleLevel1",
+    "text": "Serving Others"
+  },
+  {
+    "path": "learningPathways[2].description",
+    "text": "Studies oriented toward pastoral care, evangelism, and teaching."
+  },
+  {
+    "path": "learningPathways[2].pathways[0].titleLevel2",
+    "text": "Pastoral Care"
+  },
+  {
+    "path": "learningPathways[2].pathways[0].description",
+    "text": "Equipping believers to walk alongside one another in difficulty."
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[0].titleLevel3",
+    "text": "Introducing Psalms"
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[0].description",
+    "text": "The language of the heart in prayer and counseling."
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[1].titleLevel3",
+    "text": "Introducing [Epistle]"
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[1].description",
+    "text": "A New Testament letter focused on pastoral care."
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[2].titleLevel3",
+    "text": "Who am I?"
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[2].description",
+    "text": "Helping others find their identity in Christ."
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[3].titleLevel3",
+    "text": "Grow in Christ (1)"
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[3].description",
+    "text": "<b>Grow in Christ (Discipleship course)</b><br><br>Are you growing in Christ? God wants all his children to grow in Jesus. If you are not growing, this studies will help you work out what is wrong and how to put it right. If you are growing, they will help you grow more. Working through Scripture, each session combines close reading with personal reflection. (We have split this course into several volumes. Do volume 1 first \u2013 but if you've already done that, carry on with the next volume.)"
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[4].titleLevel3",
+    "text": "Pastoral Conversations"
+  },
+  {
+    "path": "learningPathways[2].pathways[0].studyTitles[4].description",
+    "text": "Case studies and practical techniques."
+  },
+  {
+    "path": "learningPathways[2].pathways[1].titleLevel2",
+    "text": "Make Christ Known"
+  },
+  {
+    "path": "learningPathways[2].pathways[1].description",
+    "text": "A focus on evangelism and explaining the faith in a clear way."
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[0].titleLevel3",
+    "text": "[A]"
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[0].description",
+    "text": "Description for item A."
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[1].titleLevel3",
+    "text": "Gospel highlights"
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[1].description",
+    "text": "Summarizing the core message of salvation."
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[2].titleLevel3",
+    "text": "Introducing Jesus"
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[2].description",
+    "text": "Using the Gospels to introduce seekers to Christ."
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[4].titleLevel3",
+    "text": "Sharing Jesus"
+  },
+  {
+    "path": "learningPathways[2].pathways[1].studyTitles[4].description",
+    "text": "Moving from conversation to invitation."
+  },
+  {
+    "path": "learningPathways[2].pathways[2].titleLevel2",
+    "text": "Teaching & Preaching"
+  },
+  {
+    "path": "learningPathways[2].pathways[2].description",
+    "text": "Training for those called to handle and explain the Word in a public setting."
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[0].titleLevel3",
+    "text": "[A]"
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[0].description",
+    "text": "Description for item A."
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[1].titleLevel3",
+    "text": "[B]"
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[1].description",
+    "text": "Description for item B."
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[2].titleLevel3",
+    "text": "[C]"
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[2].pathways[2].studyTitles[4].description",
+    "text": "Description for item E."
+  },
+  {
+    "path": "learningPathways[3].titleLevel1",
+    "text": "Knowing the Truth"
+  },
+  {
+    "path": "learningPathways[3].description",
+    "text": "A focus on Systematic Theology and the historical doctrines of the Church."
+  },
+  {
+    "path": "learningPathways[3].pathways[0].titleLevel2",
+    "text": "Church"
+  },
+  {
+    "path": "learningPathways[3].pathways[0].description",
+    "text": "Understanding the nature, mission, and structure of the body of Christ."
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[0].titleLevel3",
+    "text": "[A]"
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[0].description",
+    "text": "Description for item A."
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[1].titleLevel3",
+    "text": "[B]"
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[1].description",
+    "text": "Description for item B."
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[2].titleLevel3",
+    "text": "[C]"
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[4].titleLevel3",
+    "text": "Make Many Deep Disciples"
+  },
+  {
+    "path": "learningPathways[3].pathways[0].studyTitles[4].description",
+    "text": "<b>Make Many Deep Disciples: Berean Bible Church membership course</b><br><br>A five-session Bible study examining the church's core values."
+  },
+  {
+    "path": "learningPathways[3].pathways[1].titleLevel2",
+    "text": "Wisdom"
+  },
+  {
+    "path": "learningPathways[3].pathways[1].description",
+    "text": "Learning to live skillfully in God's world."
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[0].titleLevel3",
+    "text": "Introducing Proverbs"
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[0].description",
+    "text": "Description for item A."
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[1].titleLevel3",
+    "text": "Introducing James"
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[1].description",
+    "text": "Description for item B."
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[2].titleLevel3",
+    "text": "Wisdom & Love"
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[3].pathways[1].studyTitles[4].description",
+    "text": "Description for item E."
+  },
+  {
+    "path": "learningPathways[4].titleLevel1",
+    "text": "Engaging the World"
+  },
+  {
+    "path": "learningPathways[4].description",
+    "text": "How the church interacts with culture, community, and society at large."
+  },
+  {
+    "path": "learningPathways[4].pathways[0].titleLevel2",
+    "text": "Hospitality"
+  },
+  {
+    "path": "learningPathways[4].pathways[0].description",
+    "text": "Opening our lives and homes as a bridge for the Gospel."
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[0].titleLevel3",
+    "text": "Introducing Ruth"
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[0].description",
+    "text": "Kindness and welcome across cultural lines."
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[1].titleLevel3",
+    "text": "Introducing Luke"
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[1].description",
+    "text": "Jesus, the host who becomes the guest."
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[2].titleLevel3",
+    "text": "[C]"
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[4].pathways[0].studyTitles[4].description",
+    "text": "Description for item E."
+  },
+  {
+    "path": "learningPathways[4].pathways[1].titleLevel2",
+    "text": "Cultural Apologetics"
+  },
+  {
+    "path": "learningPathways[4].pathways[1].description",
+    "text": "Answering the questions the world is actually asking."
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[0].titleLevel3",
+    "text": "Introducing Daniel"
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[0].description",
+    "text": "Faithful presence in a secular empire."
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[1].titleLevel3",
+    "text": "Introducing 1 Peter"
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[1].description",
+    "text": "Living as aliens and strangers with hope."
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[2].titleLevel3",
+    "text": "[C]"
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[4].pathways[1].studyTitles[4].description",
+    "text": "Description for item E."
+  },
+  {
+    "path": "learningPathways[4].pathways[2].titleLevel2",
+    "text": "Social Justice"
+  },
+  {
+    "path": "learningPathways[4].pathways[2].description",
+    "text": "God's heart for the vulnerable and the oppressed."
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[0].titleLevel3",
+    "text": "Introducing Amos"
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[0].description",
+    "text": "The prophetic call to let justice roll down."
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[1].titleLevel3",
+    "text": "Introducing James"
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[1].description",
+    "text": "Faith that works through love and care for the poor."
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[2].titleLevel3",
+    "text": "[C]"
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[2].description",
+    "text": "Description for item C."
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[3].titleLevel3",
+    "text": "[D]"
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[3].description",
+    "text": "Description for item D."
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[4].titleLevel3",
+    "text": "[E]"
+  },
+  {
+    "path": "learningPathways[4].pathways[2].studyTitles[4].description",
+    "text": "Description for item E."
+  }
+]

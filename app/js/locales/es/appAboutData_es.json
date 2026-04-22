@@ -1,0 +1,28 @@
+{
+  "appTitle": " Libro de estudio bíblico",
+  "appDescription": " Una aplicación diseñada principalmente para dispositivos móviles que permite seguir cursos de estudio bíblico: leer, reflexionar y registrar las respuestas a medida que se avanza.",
+  "sampleTitle": " Conversión",
+  "sampleSubtitle": " Nuevo, no (simplemente) agradable",
+  "sampleShortTitle": " Conversión",
+  "sampleDescription": " Un estudio bíblico de nueve sesiones que explora qué significa la verdadera conversión y por qué es importante.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": " Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        " Compartir: copiar y redistribuir el material en cualquier medio o formato.",
+        " Adaptar: remezclar, transformar y desarrollar el material para cualquier propósito, incluso comercial."
+      ],
+      "conditions": [
+        " Atribución: debe dar el crédito correspondiente, proporcionar un enlace a la licencia e indicar si se realizaron cambios.",
+        "Compartir Igual: si remezcla, transforma o crea obras derivadas del material, debe distribuir sus contribuciones bajo la misma licencia que el original."
+      ],
+      "notices": [
+        " No es necesario que cumpla con la licencia para los elementos del material que sean de dominio público o cuando su uso esté permitido por una excepción o limitación aplicable.",
+        " No se ofrecen garantías. Es posible que la licencia no le otorgue todos los permisos necesarios para el uso previsto.",
+        " Para crear esta aplicación, el autor utilizó Claude, ChatGPT y Gemini para una codificación de ambientes exhaustiva. El autor es responsable de todas las decisiones sobre el contenido y la redacción final."
+      ]
+    }
+  }
+}

@@ -565,15 +565,19 @@ async function loadAnyFile(file) {
     }
 
     if (zip) {
-      // Check whether this zip contains .estudy files (bundle) or study.json (single study)
-      const innerEstudyFiles = Object.values(zip.files)
-        .filter(f => !f.dir && f.name.endsWith('.estudy'));
+      // A bundle zip contains multiple study files — either .estudy or .zip entries.
+      // A single-study zip contains study.json directly (no inner study files).
+      const innerStudyFiles = Object.values(zip.files)
+        .filter(f => !f.dir && (f.name.endsWith('.estudy') || f.name.endsWith('.zip')));
 
-      if (innerEstudyFiles.length > 0) {
-        // ── Bundle: zip of .estudy files ─────────────────────────────────────
-        await loadBundleFromFile(zip, innerEstudyFiles);
+      const hasSingleStudyJson = Object.keys(zip.files)
+        .some(name => name.endsWith('study.json'));
+
+      if (innerStudyFiles.length > 0 && !hasSingleStudyJson) {
+        // ── Bundle: zip containing multiple .estudy or .zip study files ──────
+        await loadBundleFromFile(zip, innerStudyFiles);
       } else {
-        // ── Single zip-format .estudy ─────────────────────────────────────────
+        // ── Single zip-format .estudy (contains study.json directly) ─────────
         await loadStudyFromFile(file);
       }
     } else {
@@ -744,23 +748,21 @@ async function _installStudyFileQuietly(file) {
   }
 }
 
-// Processes a bundle zip that contains multiple .estudy files.
-// Opens each inner .estudy (itself a zip or plain JSON), installs it,
-// and reports progress to the user.
-async function loadBundleFromFile(outerZip, innerEstudyFiles) {
-  const total = innerEstudyFiles.length;
+// Processes a bundle zip that contains multiple .estudy or .zip study files.
+// Installs each one quietly (no UI thrashing between studies), then opens the
+// library so the user sees everything that was installed.
+async function loadBundleFromFile(outerZip, innerStudyFiles) {
+  const total = innerStudyFiles.length;
   let installed = 0;
   let failed = 0;
 
   showToast({ message: t('studyloader_bundle_installing', { count: total }) });
 
-  for (const entry of innerEstudyFiles) {
+  for (const entry of innerStudyFiles) {
     try {
-      // Extract the inner .estudy as a Blob then wrap it as a File so
-      // loadStudyFromFile() can process it identically to a user-selected file.
       const blob = await entry.async('blob');
       const innerFile = new File([blob], entry.name, { type: 'application/octet-stream' });
-      await loadStudyFromFile(innerFile);
+      await _installStudyFileQuietly(innerFile);
       installed++;
     } catch (err) {
       console.error(`Failed to install ${entry.name}:`, err);
@@ -768,7 +770,10 @@ async function loadBundleFromFile(outerZip, innerEstudyFiles) {
     }
   }
 
-  renderLibrary();
+  // Open the library once so the user sees all newly installed studies together.
+  // recordStudyInstalled is called here (not inside _installStudyFileQuietly)
+  // so only user-initiated bundle imports appear in the Recently Installed list.
+  openLibrary();
 
   if (failed === 0) {
     showToast({ message: t('studyloader_bundle_success', { count: installed }) });

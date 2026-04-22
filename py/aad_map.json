@@ -1,0 +1,58 @@
+[
+  {
+    "Path": "appTitle",
+    "Text": "Bible Study Reader"
+  },
+  {
+    "Path": "appDescription",
+    "Text": "A mobile-first app for working through Bible study courses \u2014 reading, reflecting, and recording answers as you go."
+  },
+  {
+    "Path": "sampleTitle",
+    "Text": "Conversion"
+  },
+  {
+    "Path": "sampleSubtitle",
+    "Text": "New not (just) Nice"
+  },
+  {
+    "Path": "sampleShortTitle",
+    "Text": "Conversion"
+  },
+  {
+    "Path": "sampleDescription",
+    "Text": "A nine-session Bible study exploring what genuine conversion means \u2013 and why it matters."
+  },
+  {
+    "Path": "appCopyright.licence.name",
+    "Text": "Creative Commons Attribution-ShareAlike 4.0 International"
+  },
+  {
+    "Path": "appCopyright.licence.freedoms[0]",
+    "Text": "Share: copy and redistribute the material in any medium or format"
+  },
+  {
+    "Path": "appCopyright.licence.freedoms[1]",
+    "Text": "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+  },
+  {
+    "Path": "appCopyright.licence.conditions[0]",
+    "Text": "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made"
+  },
+  {
+    "Path": "appCopyright.licence.conditions[1]",
+    "Text": "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+  },
+  {
+    "Path": "appCopyright.licence.notices[0]",
+    "Text": "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation."
+  },
+  {
+    "Path": "appCopyright.licence.notices[1]",
+    "Text": "No warranties are given. The licence may not give you all of the permissions necessary for your intended use."
+  },
+  {
+    "Path": "appCopyright.licence.notices[2]",
+    "Text": "In creating this app, the author made use of Claude, ChatGPT, and Gemini for extensive \u2018vibe coding\u2019. All content decisions, and final wording are the author's responsibility."
+  }
+]

@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Agba Ochie",
+    "description": " Ọmụmụ ihe ndị na-enyocha akwụkwọ ndị e dere tupu Kraịst abịa — site n'Iwu na Ndị Amụma ruo n'Akwụkwọ Nsọ. Agba Ochie na-akọ akụkọ ọgbụgba ndụ Chineke na Izrel ma na-atụ aka na Mezaịa.",
+    "sections": [
+      {
+        "section": " Iwu",
+        "description": " Akwụkwọ ise mbụ nke Baịbụl (Pentateuch), nke gụnyere ihe e kere eke, ọdịda, ọpụpụ, na inye Iwu — ntọala nke akụkụ Akwụkwọ Nsọ ndị ọzọ na-ewulite.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Jenesis",
+            "description": " Akwụkwọ nke mmalite: okike, ọdịda, na ndị nna ochie — Abraham, Aịzik, Jekọb, na Josef."
+          },
+          {
+            "name": " Ọpụpụ",
+            "description": " Chineke napụtara ndị ya n'ohu n'Ijipt, kpughee aha ya, ma nye Iwu ya na Saịnaị."
+          },
+          {
+            "name": "Levitikọs",
+            "description": " Ntuziaka maka ofufe na ịdị nsọ, nke na-egosi otu ndị mmehie nwere ike isi bịaruo Chineke dị nsọ nso."
+          },
+          {
+            "name": " Ọnụọgụgụ",
+            "description": " Njem ọzara nke Izrel — ọdịda ya, ịdọ aka ná ntị ya, na ikwesị ntụkwasị obi Chineke na-aga n'ihu."
+          },
+          {
+            "name": " Deuteronomium",
+            "description": " Okwu Mozis ji katọọ ndị Izrel, ime ka ọgbụgba ndụ ahụ dị ọhụrụ ma kwadebe ha ka ha banye n'Ala Nkwa ahụ."
+          }
+        ]
+      },
+      {
+        "section": " Akụkọ ihe mere eme",
+        "description": " Akwụkwọ akụkọ ihe mere eme na-akọwa akụkọ Izrel site na mmeri Kenan ruo n'ọchịchị eze, ndọrọ n'agha, na nlọghachi — na-egosi ikwesị ntụkwasị obi Chineke na enweghị ntụkwasị obi nke ndị ya ugboro ugboro.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Joshua",
+            "description": "Mmeri na nkewa nke Ala Nkwa ahụ n'okpuru nduzi Joshua."
+          },
+          {
+            "name": " Ndị Ikpe",
+            "description": " Usoro nnupụisi, mmegbu, na nnapụta ka Izrel na-agbanwekarị site n'ebe Chineke nọ."
+          },
+          {
+            "name": " Rut",
+            "description": " Akụkọ banyere iguzosi ike n'ihe, nlekọta, na mgbapụta nke e guzobere n'oge ndị ikpe."
+          },
+          {
+            "name": " 1 Samuel",
+            "description": " Mgbanwe site n'aka ndị ikpe gaa n'aka ndị eze: Samuel, Sọl, na mbilite nke Devid."
+          },
+          {
+            "name": " 2 Samuel",
+            "description": " Ọchịchị Devid — mmeri ya, ọdịda ya, na ọgbụgba ndụ Chineke na ụlọ ya."
+          },
+          {
+            "name": " Ndị Eze 1",
+            "description": "Ebube Solomọn na nkewa nke alaeze ahụ; Ịlaịja na asọmpi ahụ n'Ugwu Kamel."
+          },
+          {
+            "name": " Ndị Eze Abụọ",
+            "description": " Ọdịda na ọdịda nke alaeze abụọ ahụ, nke mechara bụrụ mba ọzọ."
+          },
+          {
+            "name": " 1 Ihe E Mere",
+            "description": " Ịkọghachi akụkọ ihe mere eme nke Izrel site n'Adam ruo Devid, lekwasịrị anya n'ofufe na ụlọ nsọ ahụ."
+          },
+          {
+            "name": " 2 Ihe E Mere",
+            "description": " Solomọn na ụlọ nsọ ahụ, alaeze kewara ekewa, na olileanya nke mweghachi."
+          },
+          {
+            "name": " Ezra",
+            "description": " Nlaghachi site na ndọrọ n'agha na iwughachi ụlọ nsọ ahụ n'okpuru nduzi Ezra."
+          },
+          {
+            "name": " Nehemaịa",
+            "description": "Ịrụgharị mgbidi Jerusalem na ime ka obodo ọgbụgba ndụ dị ọhụrụ."
+          },
+          {
+            "name": " Esta",
+            "description": " Chineke nke zoro ezo na-echebe ndị ya n'obí eze Peshia."
+          }
+        ]
+      },
+      {
+        "section": " Abụ na Amamihe",
+        "description": " Job, Abụ Ọma, Ilu, Eklisiastis, na Abụ Abụ — akwụkwọ ndị na-enyocha omimi nke ahụmịhe mmadụ: nhụjuanya, otuto, amamihe, na ịhụnanya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ọrụ",
+            "description": " Nnyocha miri emi nke ahụhụ, ikpe ziri ezi, na ihe omimi nke ụzọ Chineke."
+          },
+          {
+            "name": " Abụ Ọma",
+            "description": " Akwụkwọ abụ na akwụkwọ ekpere nke Izrel — ụdị mmetụta uche mmadụ niile e wetara n'ihu Chineke."
+          },
+          {
+            "name": " Ilu",
+            "description": "Amamihe bara uru maka ndụ kwa ụbọchị, nke sitere n'egwu Onyenwe anyị."
+          },
+          {
+            "name": " Ekliziastis",
+            "description": " Nnyocha nyocha nke ihe ọ pụtara, ọrụ, na ọnwụ 'n'okpuru anyanwụ'."
+          },
+          {
+            "name": " Abụ nke Abụ",
+            "description": " Ememe ịhụnanya na alụmdi na nwunye, jupụtara na onyonyo nke obi ụtọ na agụụ."
+          }
+        ]
+      },
+      {
+        "section": " Ndị Amụma",
+        "description": " Akwụkwọ amụma kpọrọ Izrel ka ha chegharịa, dọọ aka ná ntị maka ikpe, ma tụọ aka n'ọgbụgbapụta Chineke nke ikpeazụ. Ha dị mkpa maka nghọta nke mmezu nke Agba Ọhụrụ nke nkwa ndị ahụ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Aịzaịa",
+            "description": " Ikpe na olileanya na-akpali akpali — gụnyere Abụ Ohu nke na-ezo aka na Kraịst."
+          },
+          {
+            "name": " Jeremaịa",
+            "description": " Obi mgbawa nke onye amụma mgbe Jerusalem dara, na nkwa nke ọgbụgba ndụ ọhụrụ."
+          },
+          {
+            "name": " Abụ Ákwá",
+            "description": " Iru újú dị egwu maka mbibi Jerusalem, nke olileanya n'ikwesị ntụkwasị obi Chineke jigide."
+          },
+          {
+            "name": " Ezikiel",
+            "description": " Ọhụụ nke ebube Chineke na-apụ ma na-alọghachi, na nkwa nke ime ka mmụọ dị ọhụrụ."
+          },
+          {
+            "name": " Daniel",
+            "description": " Ịnọ n'ebe a na-akwaga mba ọzọ n'okwukwe, na ọhụụ nke alaeze Chineke nke ga-achị mba niile."
+          },
+          {
+            "name": " Hosia",
+            "description": " Ịhụnanya na-adịghị agwụ agwụ nke Chineke nwere n'ebe ndị na-ekwesịghị ntụkwasị obi nọ, nke e sere onyinyo ya site n'alụmdi na nwunye Hosia."
+          },
+          {
+            "name": " Joel",
+            "description": " Ihe otiti igurube dị ka oku maka nchegharị, na nkwa nke Mmụọ Nsọ."
+          },
+          {
+            "name": " Emọs",
+            "description": " Oku amụma dị nkọ maka ikpe ziri ezi na ịdọ aka ná ntị na okpukpe efu agaghị adịte aka."
+          },
+          {
+            "name": " Obadaịa",
+            "description": " Okwu dị mkpirikpi megide Edom na ụbọchị Onyenwe anyị na-abịa."
+          },
+          {
+            "name": " Jona",
+            "description": " Ọmịiko Chineke nwere maka mba dị iche iche — na mmegide nke onye amụma na-ala azụ megide ya."
+          },
+          {
+            "name": " Maịka",
+            "description": " Ikpe ziri ezi, ebere, na ịdị umeala n'obi — na nkwa nke onye ọchịchị si Betlehem."
+          },
+          {
+            "name": " Nahọm",
+            "description": "Ọdịda nke Nineve na nkasi obi nke ikpe ziri ezi Chineke nye ndị ya a na-emegbu."
+          },
+          {
+            "name": " Habakọk",
+            "description": " Ịgbaso Chineke mgba n'eziokwu megide ikpe na-ezighị ezi, na ịmụta ịtụkwasị obi n'oge ya."
+          },
+          {
+            "name": " Zefanaya",
+            "description": " Ụbọchị nke Onyenwe anyị na ọṅụ nke mweghachi maka ihe fọdụrụ e mere ka ha dị ọcha."
+          },
+          {
+            "name": " Hagaị",
+            "description": " Ọkpụkpọ oku ka e wughachi ụlọ nsọ ahụ ma tinye ụlọ Chineke n'ọnọdụ dị mkpa karịa nkasi obi onwe onye."
+          },
+          {
+            "name": " Zekaraịa",
+            "description": " Ọhụụ nke mweghachi na Mesaịa nke ji obi umeala bịa n'elu ịnyịnya ibu."
+          },
+          {
+            "name": " Malakaị",
+            "description": "Ọkpụkpọ oku ikpeazụ maka ikwesị ntụkwasị obi tupu ogologo oge ahụ dị jụụ n'ihu Jọn Onye Na-eme Baptizim."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Agba Ọhụrụ",
+    "description": " Ọmụmụ ihe dị n'akwụkwọ ndị e dere mgbe Kraịst bịasịrị - Oziọma, akwụkwọ ozi nke ndịozi, na Mkpughe. Agba Ọhụrụ na-ekpughe mmezu nke nkwa Chineke n'ime Jisọs na ndụ nke chọọchị mbụ.",
+    "sections": [
+      {
+        "section": " Oziọma na Ọrụ Ndịozi",
+        "description": " Akụkọ anọ gbasara ndụ Jizọs, ọnwụ ya, na mbilite n'ọnwụ ya, na akụkọ gbasara mgbasawanye nke chọọchị mbụ n'ụwa niile nke ndị Rom.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Matiu",
+            "description": " Jizọs dịka mmezu nke Agba Ochie, Mozis ọhụrụ, na Eze nke alaeze Chineke."
+          },
+          {
+            "name": " Mak",
+            "description": " Akụkọ dị ngwa ngwa gbasara Jizọs dịka Ohu na Ọkpara Chineke nke na-ata ahụhụ."
+          },
+          {
+            "name": " Luk",
+            "description": " Jizọs dịka Onye Nzọpụta nke ụwa — na nlebara anya pụrụ iche nye ndị ogbenye, ụmụ nwanyị, na ndị si mba ọzọ."
+          },
+          {
+            "name": " Jọn",
+            "description": " Ihe osise okpukpe kacha omimi nke Jisọs — Okwu ahụ mere ka anụ ahụ bụrụ anụ ahụ, Abụ m, Ọkpara Chineke."
+          },
+          {
+            "name": " Ọrụ Ndịozi",
+            "description": " Mmụọ Nsọ na-enye ụka ike iburu ozi ọma site na Jerusalem ruo nsọtụ ụwa."
+          }
+        ]
+      },
+      {
+        "section": " Akwụkwọ Ozi Pọl",
+        "description": " Akwụkwọ ozi Pọl degaara ụka na ndị mmadụ n'otu n'otu — inyocha echiche nke ozi ọma, omume Ndị Kraịst, na ọdịdị nke ụka.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ndị Rom",
+            "description": "Nkọwa kachasị mma nke ozi ọma Pọl nyere: mmehie, ikpe ziri ezi, nsọ, na olileanya."
+          },
+          {
+            "name": " 1 Ndị Kọrịnt",
+            "description": " Ịza nkewa na nsogbu dị iche iche na Kọrịnt, site n'izi ihe gbasara ịhụnanya, onyinye, na mbilite n'ọnwụ."
+          },
+          {
+            "name": " Ndị Kọrịnt nke Abụọ",
+            "description": " Ngọpụ Pọl maka ozi ya na ihe mgbagwoju anya nke ike site n'adịghị ike."
+          },
+          {
+            "name": " Ndị Galeshia",
+            "description": " Ngọpụ siri ike nke izi ezi site n'okwukwe naanị megide ndị na-agbakwụnye iwu."
+          },
+          {
+            "name": " Ndị Efesọs",
+            "description": " Akụ̀ nke njirimara onye kwere ekwe n'ime Kraịst, na chọọchị dịka mmadụ ọhụrụ nke Chineke."
+          },
+          {
+            "name": " Ndị Filipaị",
+            "description": " Ọṅụ n'ọnọdụ niile na ihe nlereanya nke ịdị umeala n'obi Kraịst."
+          },
+          {
+            "name": " Ndị Kọlọsi",
+            "description": " Kraịst dịka onye kachasị ihe niile, na ihe ndị metụtara ndụ kwa ụbọchị."
+          },
+          {
+            "name": " Ndị Tesalonaịka nke Mbụ",
+            "description": " Nkwanye ume maka ụka na-eto eto, ya na nkuzi maka nlọghachi Kraịst."
+          },
+          {
+            "name": " Ndị Tesalonaịka nke Abụọ",
+            "description": " Ndozi nghọtahie gbasara oge ọgwụgwụ, na oku maka ọrụ kwesịrị ntụkwasị obi."
+          },
+          {
+            "name": " 1 Timoti",
+            "description": " Ntuziaka maka ndụ ụka, nduzi, na ozizi dị mma."
+          },
+          {
+            "name": " 2 Timoti",
+            "description": "Akwụkwọ ozi ikpeazụ nke Pọl — iwu o nyere Timoti ka o chebe ozi ọma ahụ ma mechaa nke ọma."
+          },
+          {
+            "name": " Taịtọs",
+            "description": " Ịhọpụta ndị ndu na ịkụziri na ozizi dị mma na-eduga ná ndụ nsọpụrụ Chineke."
+          },
+          {
+            "name": " Faịlimọn",
+            "description": " Arịrịọ nkeonwe maka ime udo na ihe ozi ọma pụtara n'etiti mmadụ na ibe ya."
+          }
+        ]
+      },
+      {
+        "section": " Akwụkwọ Ozi Izugbe na Mkpughe",
+        "description": " Akwụkwọ ozi sitere n'aka Jems, Pita, Jọn, Jud, na ndị ọzọ — na-ekwu maka okwukwe n'ọnwụnwa, nkwenye ezi, ozizi ụgha, na olileanya kachasị elu nke Mkpughe.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ndị Hibru",
+            "description": " Jizọs dịka mmezu nke ọrụ nchụaja, àjà, na ọgbụgba ndụ niile nke Agba Ochie — nke ka mma n'ụzọ niile."
+          },
+          {
+            "name": " Jemes",
+            "description": " Okwukwe nke na-arụ ọrụ — amamihe bara uru maka ibi ndụ dịka ndị Chineke n'ụwa."
+          },
+          {
+            "name": " 1 Pita",
+            "description": " Olileanya na ibi ndụ dị nsọ maka ndị a dọọrọ n'agha n'ụwa nke ndị iro."
+          },
+          {
+            "name": " Pita nke Abụọ",
+            "description": " Ịdọ aka ná ntị megide ndị ozizi ụgha na ntụkwasị obi n'ime nkwa Chineke."
+          },
+          {
+            "name": " 1 Jọn",
+            "description": " Nkwenye nke nzọpụta na akara nke ezigbo okwukwe: ịhụnanya, nrubeisi, na eziokwu."
+          },
+          {
+            "name": " 2 Jọn",
+            "description": " Akwụkwọ ozi dị mkpirikpi gbasara ịhụnanya, eziokwu, na ịnabataghị ndị na-agọnarị Kraịst."
+          },
+          {
+            "name": " 3 Jọn",
+            "description": "Ịja onye ọbịa nke ọma ma dọọ aka ná ntị megide ndị ndu na-achọ ọdịmma onwe ha nanị."
+          },
+          {
+            "name": " Jud",
+            "description": " Oku siri ike ka a lụso okwukwe ọgụ megide ozizi ụgha nke batara n'ime chọọchị."
+          },
+          {
+            "name": " Mkpughe",
+            "description": " Ọhụụ nke mmeri ikpeazụ Chineke ga-emeri ihe ọjọọ, ikpe nke ndị ajọ omume, na ime ka ihe niile dị ọhụrụ."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Nkwenye",
+    "description": " Ọmụmụ ihe lekwasịrị anya n'ozizi Ndị Kraịst - ihe Baịbụl na-akụzi gbasara Chineke, ụmụ mmadụ, nzọpụta, na ọdịnihu. Itinye onwe anyị n'okwukwe ziri ezi bụ ntọala maka ibi ndụ ziri ezi.",
+    "sections": [
+      {
+        "section": " Nchịkọta",
+        "description": " Ọmụmụ ihe mmeghe nke na-enyocha ozizi Ndị Kraịst dum - ozi ọma, ozizi ndị bụ isi, na nkwupụta akụkọ ihe mere eme nke ụka.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ntọala",
+            "description": " Ihe ndị dị mkpa maka nkwenye Ndị Kraịst — ihe onye ọ bụla kwere ekwe kwesịrị ịma."
+          },
+          {
+            "name": " Oziọma ahụ",
+            "description": " Ọmụmụ ihe lekwasịrị anya n'isi ihe dị n'ozi Ndị Kraịst: mmehie, amara, na nzọpụta site na Kraịst."
+          },
+          {
+            "name": " Okwukwe na Nkwupụta",
+            "description": " Okwu okwukwe ndị mere eme nke kọwara Iso Ụzọ Kraịst Ọtọdọks n'ime ọtụtụ narị afọ."
+          }
+        ]
+      },
+      {
+        "section": " Chineke",
+        "description": " Ònye bụ Chineke? Ọmụmụ ihe na-enyocha Atọ n'Ime Otu, àgwà Chineke, na ihe ọ pụtara ịmara ya nke ọma.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Àgwà Chineke",
+            "description": " Ịdị nsọ nke Chineke, ịhụnanya ya, ọbụbụeze ya, ikpe ziri ezi ya, na ihe ndị ọzọ Akwụkwọ Nsọ na-ekpughe."
+          },
+          {
+            "name": " Atọ n'Ime Otu",
+            "description": " Otu Chineke n'ime mmadụ atọ — Nna, Ọkpara, na Mmụọ Nsọ — na ihe kpatara nke a ji dị mkpa."
+          },
+          {
+            "name": " Chineke Nna",
+            "description": " Chineke dịka Onye Okike, Eze, na Nna — na ihe ọ pụtara ịbụ nwa ya."
+          }
+        ]
+      },
+      {
+        "section": " Akwụkwọ Nsọ",
+        "description": " Ọmụmụ ihe gbasara Baịbụl n'onwe ya — otú o si malite, ihe ọ na-ekwu gbasara onwe ya, na otu esi agụ ya nke ọma.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ọchịchị",
+            "description": " Ihe mere Baịbụl ji nwee ikike ikwu okwu gbasara akụkụ niile nke ndụ."
+          },
+          {
+            "name": " Mkpalite mmụọ nsọ",
+            "description": " Otu Chineke si jiri ndị dere mmadụ rụọ ọrụ iji nye anyị Okwu ya."
+          },
+          {
+            "name": " Kanọn",
+            "description": " Otu esi amata ma chịkọta akwụkwọ dị na Baịbụl."
+          },
+          {
+            "name": " Nkọwa",
+            "description": " Ụkpụrụ maka ịgụ Baịbụl n'ụzọ kwesịrị ekwesị na n'ụzọ ziri ezi."
+          }
+        ]
+      },
+      {
+        "section": " Ihe Okike na Ụmụ Mmadụ",
+        "description": " Ọmụmụ ihe gbasara ihe ọ pụtara ịbụ mmadụ — nke e kere n'onyinyo Chineke, nke e ji ihe dị ndụ mee, ma kee maka nzube.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ihe okike",
+            "description": " Chineke dịka Onye Okike nke ihe niile — na ihe nke ahụ pụtara maka otú anyị si ele ụwa anya."
+          },
+          {
+            "name": " Foto Chineke",
+            "description": " Ihe ọ pụtara bụ na e kere mmadụ n'oyiyi Chineke, nakwa ùgwù nke na-enye onye ọ bụla."
+          },
+          {
+            "name": " Ebumnobi",
+            "description": "Ịdị mma nke inwe ahụ, na ihe Akwụkwọ Nsọ na-ekwu maka ịdị ndụ anụ ahụ."
+          },
+          {
+            "name": " Ebumnuche",
+            "description": " Ihe mere anyị ji nọrọ ebe a — ọkpụkpọ mmadụ nke ịhụ Chineke n'anya, ijere ndị ọzọ ozi, na okike onye nlekọta."
+          }
+        ]
+      },
+      {
+        "section": " Ihe Ọjọọ na Ọdịda",
+        "description": " Ọmụmụ ihe gbasara mmehie — mmalite ya, ọdịdị ya, na mmetụta ọjọọ ya n'ahụ ụmụ mmadụ na ụwa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ọdịdị nke Mmehie",
+            "description": " Ihe mmehie bụ n'ezie — ọ bụghị naanị imebi iwu, kama ọ bụ isi ihe na-agbakụta Chineke azụ."
+          },
+          {
+            "name": " Ọdịda",
+            "description": " Ihe mere na Jenesis nke atọ, na otu o si metụta mmadụ niile."
+          },
+          {
+            "name": " Ọnwụnwa",
+            "description": "Otu ọnwụnwa si arụ ọrụ, na otu ndị kwere ekwe ga-esi guzogide ya."
+          }
+        ]
+      },
+      {
+        "section": " Kraịst",
+        "description": " Ọmụmụ ihe gbasara onye Jizọs Kraịst bụ - Chineke zuru oke na mmadụ zuru oke - na ihe ọbịbịa ya pụtara.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Onye nke Kraịst",
+            "description": " Ozizi nke ọdịdị abụọ ahụ — otú Jizọs si bụrụ ma Chineke ma mmadụ zuru oke."
+          },
+          {
+            "name": " Ịdị ndụ",
+            "description": " Ihe mere Ọkpara Chineke ji bụrụ anụ ahụ, na ihe mmadụ ya pụtara nye anyị."
+          }
+        ]
+      },
+      {
+        "section": " Nzọpụta",
+        "description": " Olee otu Chineke si anapụta ndị mmehie? Ọmụmụ ihe gbasara mkpuchi mmehie, izi ezi, nnabata, na ihe niile Chineke na-eme iji zọpụta anyị.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mkpuchi Mmehie",
+            "description": "Otu ọnwụ Kraịst si emeso mmehie — nnọchi, mgbapụta, ime udo, na ihe ndị ọzọ."
+          },
+          {
+            "name": " Mgbanwe",
+            "description": " Ihe ọ pụtara bụ ịpụ n'ime mmehie ma tụkwasị Kraịst obi — nchegharị na okwukwe."
+          },
+          {
+            "name": " Nkọwapụta",
+            "description": " Ịbụ onye ezi omume n'ihu Chineke — site na amara naanị, site na okwukwe naanị, na Kraịst naanị."
+          },
+          {
+            "name": " Nkuchi",
+            "description": " Onyinye pụrụ iche nke ịbụ onye a kpọbatara n'ezinụlọ Chineke dị ka ụmụ ya ndị nwoke na ndị nwanyị."
+          }
+        ]
+      },
+      {
+        "section": " Mmụọ Nsọ",
+        "description": " Ọmụmụ ihe gbasara Mmụọ Nsọ - onye ọ bụ, ihe ọ na-eme, na otu o si arụ ọrụ n'ime ndị kwere ekwe na chọọchị.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Onye nke Mmụọ Nsọ",
+            "description": "Mmụọ Nsọ dịka onye nke atọ n'ime Atọ n'Ime Otu — ọ bụghị ike, kama onye."
+          },
+          {
+            "name": " Mkpụrụ nke Mmụọ Nsọ",
+            "description": " Àgwà àgwà nke Mmụọ Nsọ na-emepụta n'ime ndị na-eso ya eje ije."
+          },
+          {
+            "name": " Onyinye Ime Mmụọ",
+            "description": " Onyinye nke Mmụọ Nsọ na-enye iji kwadebe ndị kwere ekwe maka ọrụ n'ahụ Kraịst."
+          }
+        ]
+      },
+      {
+        "section": " Ụka",
+        "description": " Gịnị bụ ụka, gịnịkwa mere o ji dị mkpa? Ọmụmụ ihe gbasara ọdịdị, ọrụ, na nhazi nke ahụ Kraịst.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ọdịdị nke Chọọchị",
+            "description": " Ihe ụka bụ — ndị Chineke, ahụ Kraịst, ụlọ nsọ nke Mmụọ Nsọ."
+          },
+          {
+            "name": " Sakrament",
+            "description": "Baptizim na Nri Anyasị Onyenweanyị — ihe ha bụ, ihe ha pụtara, na otu esi edebe ha."
+          },
+          {
+            "name": " Ọchịchị",
+            "description": " Ụkpụrụ nduzi ụka dị na Baịbụl: ndị okenye, ndị dikọn, na ikike sitere n'obi ohu."
+          },
+          {
+            "name": " Ofufe",
+            "description": " Ihe ofufe Ndị Kraịst bụ, ihe mere o ji dị mkpa, na otu o si akpụzi ndụ obodo."
+          }
+        ]
+      },
+      {
+        "section": " Ihe Ikpeazụ",
+        "description": " Ọmụmụ ihe gbasara ọnwụ, mbilite n'ọnwụ, ikpe, na ihe e kere eke ọhụrụ - olileanya nke na-akpụzi otú Ndị Kraịst si ebi ndụ ugbu a.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Nlaghachi nke Kraịst",
+            "description": " Olileanya doro anya na Jisọs ga-alọghachi n'ebube ikpe ndị dị ndụ na ndị nwụrụ anwụ ikpe."
+          },
+          {
+            "name": " Ikpe",
+            "description": "Ikpe ikpeazụ nke Chineke ga-ekpe mmadụ niile ikpe—nakwa ozi ọma na Kraịst eburula ikpe maka ndị nke ya."
+          },
+          {
+            "name": " Eluigwe na Hel",
+            "description": " Akwụkwọ Nsọ na-akọwa akara aka ebighị ebi — na ihe mere ha ji dị mkpa maka otu anyị si ebi ndụ ugbu a."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Ndụ",
+    "description": " Ọmụmụ ihe ndị na-ejikọta eziokwu Baịbụl na ahụmịhe kwa ụbọchị nke iso Kraịst — na mmekọrịta, ọrụ, njirimara, na ọgụ na-aga n'ihu megide mmehie.",
+    "sections": [
+      {
+        "section": " Ọzụzụ Ime Mmụọ",
+        "description": " Omume ndị na-azụ anyị ịnọ Chineke nso ma na-eto n'ime nsọpụrụ Chineke - ọ bụghị ụzọ isi nweta ihu ọma, kama omume ndị na-eme ka anyị dịrị njikere maka amara ya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ekpere",
+            "description": " Ịgwa Chineke okwu — ntọala ya, ọdịdị ya, na otu esi azụlite ndụ ekpere bara ụba."
+          },
+          {
+            "name": "Ịgụ Baịbụl",
+            "description": " Otu esi agụ Akwụkwọ Nsọ nke ọma — na nghọta, ịdị n'otu, na atụmanya nke mgbanwe."
+          },
+          {
+            "name": " Ofufe",
+            "description": " Ofufe dị ka ihe a na-eme ná ndụ dum, ọ bụghị naanị ihe omume Sọnde."
+          }
+        ]
+      },
+      {
+        "section": " Àgwà na Ịdị Nsọ",
+        "description": " Usoro na-aga n'ihu nke ịghọ ihe dị ka Kraịst — ịlụso mmehie ọgụ, itolite n'omume ọma, na ịghọta onye anyị bụ n'ime ya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mkpụrụ nke Mmụọ Nsọ",
+            "description": " Ịhụnanya, ọṅụ, udo, ndidi, obiọma, ịdị mma, ikwesị ntụkwasị obi, ịdị nwayọọ, na njide onwe onye."
+          },
+          {
+            "name": " Imeri Mmehie",
+            "description": " Enyemaka bara uru na nke okpukpe maka ịnagide ụdị mmehie na-adịgide adịgide."
+          },
+          {
+            "name": "Uto n'Amara",
+            "description": " Ihe o yiri ka ọ na-eto eto dịka Onye Kraịst — na ihe na-egbochi ya."
+          },
+          {
+            "name": " Njirimara n'ime Kraịst",
+            "description": " Onye anyị bụ n'ihi ihe Kraịst mere — na ihe kpatara nke ahụ ji agbanwe ihe niile."
+          }
+        ]
+      },
+      {
+        "section": " Mmekọrịta na Ezinụlọ",
+        "description": " Ọmụmụ ihe gbasara mmekọrịta Chineke tinyere anyị n'ime ya - alụmdi na nwunye, ezinụlọ, ọbụbụenyi, na obodo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Alụmdi na nwunye",
+            "description": " Ọgbụgba ndụ alụmdi na nwunye — ebumnuche ya, ihe ịma aka ya, na onyinyo ya nke Kraịst na chọọchị."
+          },
+          {
+            "name": " Ịnọghị di ma ọ bụ nwunye",
+            "description": " Ịbụ onye na-alụbeghị di ma ọ bụ nwunye dị ka oku zuru oke na nke bara uru, ọ bụghị ebe a na-eche maka alụmdi na nwunye."
+          },
+          {
+            "name": " Ịzụ ụmụ",
+            "description": " Ịzụlite ụmụ n'okwukwe — site n'amara, eziokwu, na echiche ogologo oge."
+          },
+          {
+            "name": " Ọbụbụenyi",
+            "description": " Onyinye nke ọbụbụenyi Ndị Kraịst — na otu esi azụlite mmekọrịta ndị miri emi."
+          },
+          {
+            "name": " Nkwurịta okwu",
+            "description": " Na-ekwu eziokwu na obiọma — na ige ntị nke ọma."
+          },
+          {
+            "name": " Obodo",
+            "description": " Ihe ọ pụtara ibi ndụ dịka ahụ Kraịst — ibu ibu arọ nke ibe anyị."
+          }
+        ]
+      },
+      {
+        "section": " Ọrụ na Ọrụ",
+        "description": " Ọmụmụ ihe gbasara itinye ozi ọma n'ọrụ, ego, oge, na ọchịchọ — ịhụ ọrụ kwa ụbọchị dị ka akụkụ nke nzube Chineke.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ndụ Ọrụ",
+            "description": "Ihe Baịbụl kwuru gbasara ọrụ — ịdị mma ya, ihe mwute ya, na mgbapụta ya n'ime Kraịst."
+          },
+          {
+            "name": " Ego na ihe onwunwe",
+            "description": " Mmesapụ aka, afọ ojuju, na echiche Baịbụl banyere akụnụba."
+          },
+          {
+            "name": " Nlekọta nke Oge",
+            "description": " Otu anyị si eji oge anyị eme ihe — na otu ozi ọma si agbanwe ihe ndị kacha mkpa anyị."
+          },
+          {
+            "name": " Ọchịchọ",
+            "description": " Ọchịchọ dị nsọ megide ọchịchọ onwe onye — na otu esi amata ọdịiche dị."
+          },
+          {
+            "name": " Ezumike ezumike nká",
+            "description": " Ihe ndụ kwesịrị ntụkwasị obi dị ka ya n'oge ikpeazụ nke ndụ."
+          }
+        ]
+      },
+      {
+        "section": " Ụkpụrụ na Omenala Ndị Kraịst",
+        "description": "Otu ndị kwere ekwe si eche echiche ma mee ihe gbasara ajụjụ omume dị mkpa nke oge anyị - site na ikpe ziri ezi ọha mmadụ ruo na ụkpụrụ omume bio ruo na teknụzụ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ikpe Ziri Ezi nke Mmekọrịta",
+            "description": " Obi Chineke maka ndị na-adịghị ike na ndị a na-emegbu, na ihe nke ahụ pụtara nye anyị."
+          },
+          {
+            "name": " Ụkpụrụ omume bayọlọjik",
+            "description": " Mmalite na njedebe nke nsogbu ndụ — e jiri nlekọta okpukpe na ọmịiko bịakwute ya."
+          },
+          {
+            "name": " Teknụzụ Na-adọrọ adọrọ",
+            "description": " Otu esi eji teknụzụ eme ihe n'eziokwu n'ụwa nke e ji ya kpụọ."
+          }
+        ]
+      },
+      {
+        "section": " Ahụhụ na Nduzi",
+        "description": " Ọmụmụ ihe ndị na-enyere ndị kwere ekwe aka ịgafe ihe mgbu, enweghị obi ike, na ihe isi ike site n'ikwu eziokwu na olileanya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ọnwụnwa na Nsogbu",
+            "description": " Ihe mere Chineke ji kwere ka nhụjuanya dịrị, na otu Akwụkwọ Nsọ si akwado anyị iji olileanya nagide ya."
+          },
+          {
+            "name": " Ịghọta Uche Chineke",
+            "description": " Otu esi eme mkpebi amamihe dị na ya - na ihe Akwụkwọ Nsọ kwere nkwa n'ezie gbasara nduzi."
+          },
+          {
+            "name": " Ahụike Uche",
+            "description": " Ịda mbà n'obi, nchekasị, na nsogbu ndị ọzọ — e jiri ọmịiko na nlekọta Baịbụl mee ihe."
+          },
+          {
+            "name": " Iru újú",
+            "description": " Otu esi eru uju dịka ndị nwere olileanya — n'eziokwu, ọ bụghị naanị ha."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Ozi",
+    "description": " Ọmụmụ ihe maka ndị na-ejere ndị ọzọ ozi — n'ozi ọma, nlekọta ndị okenye, izi ihe, na idu ndú. Site n'Akwụkwọ Nsọ, ọmụmụ ihe ndị a na-enyere ndị kwere ekwe aka ije ozi nke ọma na nke ga-adịgide.",
+    "sections": [
+      {
+        "section": "Nkà Mmụta Okpukpe nke Ozi",
+        "description": " Ntọala Baịbụl maka ozi Ndị Kraịst niile — ihe ọ pụtara ijere ozi, na ụdị onye ohu ahụ ga-abụ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ọchịchị Ndị Ojere",
+            "description": " Idu ndú dịka Jisọs si duru — site n'ịdị umeala n'obi, ịchụ àjà, na nlekọta maka ndị a na-ejere ozi."
+          },
+          {
+            "name": " Ịkpọ oku",
+            "description": " Ịghọta ọkpụkpọ oku gị maka ozi - otu esi achọpụta ya na ihe ọ gụnyere."
+          }
+        ]
+      },
+      {
+        "section": " Nkwusa na Izi Ihe (Homiletics)",
+        "description": " Ọmụmụ ihe maka ndị a kpọrọ ka ha kọwaa Baịbụl n'ihu ọha - nke na-ekpuchi usoro, àgwà, na ibu ọrụ nke iji Okwu Chineke eme ihe.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Nkwusa Ihe Ngosi",
+            "description": "Otu esi ekwusa ozi ọma n'eziokwu site n'ihe e dere n'akwụkwọ nsọ — ikwe ka Baịbụl tọọ ihe a ga-eme."
+          },
+          {
+            "name": " Ndị Na-eduzi Ọmụmụ Baịbụl",
+            "description": " Otu esi eduzi otu nke ọma — ịjụ ajụjụ dị mma na inyere ndị mmadụ aka izute Chineke n'ihe odide ahụ."
+          }
+        ]
+      },
+      {
+        "section": " Ọchịchị na Nchịkwa",
+        "description": " Akụkụ bara uru na nke nkà mmụta okpukpe nke iduzi ụka ma ọ bụ ozi - ọhụụ, otu, esemokwu, na ọchịchị.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ọhụụ na Atụmatụ",
+            "description": " Otu esi eche echiche nke ọma gbasara ebe Chineke na-edu na otu esi aga ebe ahụ ọnụ."
+          },
+          {
+            "name": " Iwulite Ndị otu",
+            "description": " Ịchịkọta, ịmepụta, na ịkwado otu ndị otu ozi dị mma."
+          },
+          {
+            "name": " Mkpebi Esemokwu",
+            "description": "Otu esi ejikwa esemokwu na nkewa n'ụzọ ga-asọpụrụ Chineke ma chekwaa ịdị n'otu."
+          },
+          {
+            "name": " Ọchịchị Chọọchị",
+            "description": " Nhazi na usoro ndị na-enyere ụka aka ịbụ ndị a ga-aza ajụjụ ma hazie nke ọma."
+          }
+        ]
+      },
+      {
+        "section": " Nlekọta Ndị Ọzụzụ Atụrụ",
+        "description": " Ọmụmụ ihe na-akwado ndị kwere ekwe ka ha soro ibe ha na-eje ije n'ihe isi ike, ọnwụ, nsogbu, na mkpa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mkparịta ụka Ndị Ọzụzụ Atụrụ",
+            "description": " Nkà na ọnọdụ dị mkpa maka mkparịta ụka ozi ọma nke otu onye na otu."
+          },
+          {
+            "name": " Ntinye Aka n'Ọrịa",
+            "description": " Otu esi emeso mmadụ ihe n'ụzọ amamihe na ọmịiko mgbe ọ nọ n'ọnọdụ dị oke njọ."
+          },
+          {
+            "name": " Nleta",
+            "description": "Ozi nke ọnụnọ — ileta ndị ọrịa, ndị agadi, na ndị na-anaghị apụ apụ n'ụlọ."
+          },
+          {
+            "name": " Nkwadebe maka Alụmdi na Nwunye",
+            "description": " Inyere di na nwunye aka ịkwadebe maka alụmdi na nwunye nke e wusiri ike na Kraịst."
+          },
+          {
+            "name": " Nlekọta Ịnwụ Újú",
+            "description": " Ije ije na ndị na-eru uju — ihe a ga-ekwu, ihe a na-agaghị ekwu, na otu esi anọgide."
+          }
+        ]
+      },
+      {
+        "section": " Oziọma na Ọrụ Ndị Ọzọ",
+        "description": " Ọmụmụ ihe gbasara iwegara ndị na-anụbeghị ozi ọma ahụ — n'onwe ha, n'ógbè ha, na n'ofe omenala.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ịgba Àmà Onwe Onye",
+            "description": " Otu esi ekerịta okwukwe gị n'ụzọ ebumpụta ụwa na nke doro anya n'okwu kwa ụbọchị."
+          },
+          {
+            "name": " Ịgbaghara Ndị Mmadụ",
+            "description": "Ịza ajụjụ ndị na-egbochi ndị mmadụ iwere Iso Ụzọ Kraịst dị ka ihe dị mkpa."
+          },
+          {
+            "name": " Ozi Omenala Dị Iche Iche",
+            "description": " Ije ozi na ịkekọrịta ókèala omenala n'ụzọ mmetụta uche na nkwanye ùgwù."
+          },
+          {
+            "name": " Ịkụ Ụlọ Nzukọ",
+            "description": " Nkà mmụta okpukpe na omume nke ịmepụta obodo ozi ọma ọhụrụ."
+          }
+        ]
+      },
+      {
+        "section": " Ịbụ onye na-eso ụzọ na onye ndụmọdụ",
+        "description": " Ọmụmụ ihe gbasara ozi nke inyere ndị ọzọ aka itolite — otu otu, n'obere ìgwè, na site n'ịzụ ọgbọ na-abịa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ozi Otu-na-Otu",
+            "description": " Ike nke ịbụ onye na-eso ụzọ n'ebumnobi na nke onwe — na-ezukọ mgbe niile iji meghee Baịbụl ọnụ."
+          },
+          {
+            "name": " Ndị Ndú Otu Obere",
+            "description": " Otu esi eduzi obere otu nke bụ ezigbo mmadụ, nke na-eto eto, ma dabere n'Akwụkwọ Nsọ."
+          },
+          {
+            "name": " Ịzụ Ndị Ọzọ",
+            "description": " Ịkwadebe ndị ọzọ ịrụ ọrụ nke ozi — ime ka ndị a tọghatara ghọọ ndị na-eme mgbanwe, ọ bụghị naanị ndị ndu."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Ndị ọzọ",
+    "description": " Ọmụmụ ihe ndị na-adabaghị nke ọma n'ime otu ọzọ — ma ọ bụ nke edobebeghị ozi nchekwa ha.",
+    "sections": []
+  }
+]

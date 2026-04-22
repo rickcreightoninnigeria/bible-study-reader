@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Tsohon Alkawari",
+    "description": " Nazarin da ke bincika littattafan da aka rubuta kafin zuwan Almasihu - daga Doka da Annabawa zuwa Rubuce-rubuce. Tsohon Alkawari yana ba da labarin alkawarin Allah da Isra'ila kuma yana nuni ga Almasihu.",
+    "sections": [
+      {
+        "section": " Dokar",
+        "description": " Littattafai biyar na farko na Littafi Mai Tsarki (Pentateuch), waɗanda suka shafi halitta, faɗuwa, fitar da mutane daga Masar, da kuma bayar da Shari'a - tushen da sauran Littattafai ke ginawa a kai.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Farawa",
+            "description": " Littafin Farko: Halitta, Faɗuwa, da Ubanni — Ibrahim, Ishaku, Yakubu, da Yusufu."
+          },
+          {
+            "name": " Fitowa",
+            "description": " Allah ya ceci mutanensa daga bauta a Masar, ya bayyana sunansa, kuma ya ba da Dokarsa a Sinai."
+          },
+          {
+            "name": "Littafin Firistoci",
+            "description": " Umarni game da bauta da tsarki, wanda ke nuna yadda mutane masu zunubi za su iya kusantar Allah mai tsarki."
+          },
+          {
+            "name": " Lambobi",
+            "description": " Tafiyar Isra'ila ta jeji — gazawarta, horonta, da kuma amincin Allah na ci gaba da wanzuwa."
+          },
+          {
+            "name": " Kubawar Shari'a",
+            "description": " Wa'azin bankwana na Musa, sabunta alkawari da kuma shirya Isra'ila don shiga Ƙasar Alkawari."
+          }
+        ]
+      },
+      {
+        "section": " Tarihi",
+        "description": " Littattafan tarihi sun bi diddigin labarin Isra'ila tun daga cin nasarar Kan'ana ta hanyar sarauta, hijira, da dawowa — wanda ke nuna amincin Allah da kuma rashin amincin da mutanensa suka yi akai-akai.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Joshua",
+            "description": "Mamaye da raba Ƙasar Alkawari a ƙarƙashin jagorancin Joshua."
+          },
+          {
+            "name": " Alƙalai",
+            "description": " Zagayen tawaye, zalunci, da ceto yayin da Isra'ila ke juyawa daga Allah akai-akai."
+          },
+          {
+            "name": " Rut",
+            "description": " Labarin aminci, karimci, da fansa da aka kafa a zamanin alkalai."
+          },
+          {
+            "name": " 1 Sama'ila",
+            "description": " Sauyin mulki daga alƙalai zuwa sarakuna: Sama'ila, Saul, da kuma tashin Dauda."
+          },
+          {
+            "name": " 2 Sama'ila",
+            "description": " Mulkin Dauda — nasarorinsa, gazawarsa, da kuma alkawarin Allah da gidansa."
+          },
+          {
+            "name": " Sarakuna 1",
+            "description": "Daukakar Sulemanu da rabon masarautar; Iliya da gasar a Dutsen Karmel."
+          },
+          {
+            "name": " Sarakuna 2",
+            "description": " Faduwar da faduwar masarautun biyu, wanda ya ƙare da gudun hijira."
+          },
+          {
+            "name": " 1 Tarihi",
+            "description": " Sake ba da labarin tarihin Isra'ila daga Adamu zuwa Dauda, wanda ya mayar da hankali kan bauta da haikali."
+          },
+          {
+            "name": " 2 Tarihi",
+            "description": " Sulemanu da haikalin, daular da aka raba, da kuma begen maidowa."
+          },
+          {
+            "name": " Ezra",
+            "description": " Dawowa daga gudun hijira da sake gina haikalin ƙarƙashin jagorancin Ezra."
+          },
+          {
+            "name": " Nehemiya",
+            "description": "Sake gina ganuwar Urushalima da kuma sabunta al'ummar alkawari."
+          },
+          {
+            "name": " Esther",
+            "description": " Ɓoyayyen tanadin Allah yana kare mutanensa a fadar Farisa."
+          }
+        ]
+      },
+      {
+        "section": " Waƙa & Hikima",
+        "description": " Ayuba, Zabura, Karin Magana, Mai-Wa'azi, da Waƙar Waƙoƙi — littattafai da ke bincika zurfin abubuwan da ɗan adam ya fuskanta: wahala, yabo, hikima, da ƙauna.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Aiki",
+            "description": " Bincike mai zurfi game da wahala, adalci, da kuma asirin hanyoyin Allah."
+          },
+          {
+            "name": " Zabura",
+            "description": " Littafin waƙa da littafin addu'a na Isra'ila — cikakken yanayin motsin zuciyar ɗan adam da aka kawo a gaban Allah."
+          },
+          {
+            "name": " Karin Magana",
+            "description": "Hikima mai amfani ga rayuwar yau da kullum, wadda aka gina ta da tsoron Ubangiji."
+          },
+          {
+            "name": " Mai-Wa'azi",
+            "description": " Binciken bincike na ma'ana, aiki, da kuma mace-mace 'a ƙarƙashin rana'."
+          },
+          {
+            "name": " Waƙar Waƙoƙi",
+            "description": " Bikin soyayya da aure, cike da hotunan farin ciki da bege."
+          }
+        ]
+      },
+      {
+        "section": " Annabawa",
+        "description": " Littattafan annabci suna kira ga Isra'ila da ta tuba, suna gargaɗi game da hukunci, kuma suna nuna fansar Allah ta ƙarshe. Suna da mahimmanci don fahimtar cikar Sabon Alkawari ga waɗannan alkawuran.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ishaya",
+            "description": " Hukunci da bege mai ban sha'awa — gami da Waƙoƙin Bawa da ke nuni ga Almasihu."
+          },
+          {
+            "name": " Irmiya",
+            "description": " Baƙin cikin annabi yayin da Urushalima ta faɗi, da kuma alƙawarin sabon alkawari."
+          },
+          {
+            "name": " Makoki",
+            "description": " Baƙin ciki mai tsanani game da halakar Urushalima, wanda aka haɗa shi da bege cikin amincin Allah."
+          },
+          {
+            "name": " Ezekiyel",
+            "description": " Wahayi na ɗaukakar Allah tana tashi da dawowa, da kuma alƙawarin sabuntawar ruhaniya."
+          },
+          {
+            "name": " Daniyel",
+            "description": " Kasancewa cikin aminci a cikin ƙaura, da kuma wahayin mulkin Allah mai iko bisa dukkan al'ummai."
+          },
+          {
+            "name": " Yusha'u",
+            "description": " Ƙaunar Allah marar ƙarewa ga mutane marasa aminci, wadda aka kwatanta ta wurin auren Hosea."
+          },
+          {
+            "name": " Joel",
+            "description": " Annobar fari a matsayin kira zuwa ga tuba, da kuma alƙawarin Ruhu."
+          },
+          {
+            "name": " Amos",
+            "description": " Kira mai kaifi na annabci game da adalci da kuma gargaɗin cewa addini mara komai ba zai tsaya ba."
+          },
+          {
+            "name": " Obadiya",
+            "description": " Takaitaccen jawabi game da Edom da kuma zuwan ranar Ubangiji."
+          },
+          {
+            "name": " Yunusa",
+            "description": " Tausayin Allah ga al'ummai - da kuma juriyar annabi mai jinkirin yin hakan."
+          },
+          {
+            "name": " Mika",
+            "description": " Adalci, jinƙai, da tawali'u - da kuma alƙawarin mai mulki daga Baitalami."
+          },
+          {
+            "name": " Nahum",
+            "description": "Faɗuwar Nineveh da kuma jin daɗin adalcin Allah ga mutanensa da aka zalunta."
+          },
+          {
+            "name": " Habakkuk",
+            "description": " Kokawa da Allah da gaskiya game da rashin adalci, da kuma koyon amincewa da lokacinsa."
+          },
+          {
+            "name": " Zafaniya",
+            "description": " Ranar Ubangiji da kuma farin cikin dawowa ga ragowar da aka tsarkake."
+          },
+          {
+            "name": " Haggai",
+            "description": " Kira don sake gina haikalin da kuma fifita gidan Allah fiye da jin daɗin mutum."
+          },
+          {
+            "name": " Zakariya",
+            "description": " Wahayi na maidowa da kuma Almasihu wanda ya zo cikin tawali'u a kan jaki."
+          },
+          {
+            "name": " Malachi",
+            "description": "Kira na ƙarshe zuwa ga aminci kafin dogon shirun da ke gaban Yahaya Maibaftisma."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Sabon Alkawari",
+    "description": " Nazari a cikin littattafan da aka rubuta bayan zuwan Almasihu - Linjila, wasiƙun manzanni, da Ru'ya ta Yohanna. Sabon Alkawari ya bayyana cikar alkawuran Allah a cikin Yesu da rayuwar cocin farko.",
+    "sections": [
+      {
+        "section": " Linjila & Ayyukan Manzanni",
+        "description": " Labarai guda huɗu game da rayuwar Yesu, mutuwarsa, da tashinsa daga matattu, da kuma labarin faɗaɗa cocin farko a faɗin duniyar Romawa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Matiyu",
+            "description": " Yesu a matsayin cikar Tsohon Alkawari, sabon Musa, da kuma Sarkin mulkin Allah."
+          },
+          {
+            "name": " Alamar",
+            "description": " Labarin da ke da sauri game da Yesu a matsayin Bawa mai wahala kuma Ɗan Allah."
+          },
+          {
+            "name": " Luka",
+            "description": " Yesu a matsayin Mai Ceton duniya — tare da kulawa ta musamman ga talakawa, mata, da kuma waɗanda ba na waje ba."
+          },
+          {
+            "name": " Yohanna",
+            "description": " Mafi zurfin hoton tauhidi na Yesu — Kalmar da ta zama jiki, NI NE, Ɗan Allah."
+          },
+          {
+            "name": " Ayyukan Manzanni",
+            "description": " Ruhu Mai Tsarki yana ba coci iko ta ɗauki bishara daga Urushalima zuwa iyakar duniya."
+          }
+        ]
+      },
+      {
+        "section": " Wasikun Bulus",
+        "description": " Wasikun Bulus ga majami'u da daidaikun mutane — bincika ma'anar bishara, ɗabi'un Kirista, da kuma yanayin cocin.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Romawa",
+            "description": "Bayanin da Bulus ya fi tsarawa game da bishara: zunubi, barata, tsarkakewa, da bege."
+          },
+          {
+            "name": " 1 Korintiyawa",
+            "description": " Magance rarrabuwar kawuna da rikice-rikice a Koranti, tare da koyarwa kan ƙauna, kyautai, da tashin matattu."
+          },
+          {
+            "name": " 2 Korintiyawa",
+            "description": " Karewar Bulus ga hidimarsa da kuma rashin tabbas na ƙarfi ta hanyar rauni."
+          },
+          {
+            "name": " Galatiyawa",
+            "description": " Kariya mai ƙarfi ta hanyar bangaskiya kawai a kan waɗanda ke ƙara doka."
+          },
+          {
+            "name": " Afisawa",
+            "description": " Arzikin asalin mai bi a cikin Almasihu, da kuma coci a matsayin sabuwar ɗan adam ta Allah."
+          },
+          {
+            "name": " Filibiyawa",
+            "description": " Farin ciki a kowane yanayi da kuma misalin tawali'un Kristi."
+          },
+          {
+            "name": " Kolosiyawa",
+            "description": " Kristi a matsayin wanda ya fi kowa iko a kan komai, da kuma abubuwan da ke tattare da rayuwar yau da kullum."
+          },
+          {
+            "name": " 1 Tasalonikawa",
+            "description": " Ƙarfafawa ga ƙaramin coci, tare da koyarwa game da dawowar Almasihu."
+          },
+          {
+            "name": " Tasalonikawa ta 2",
+            "description": " Gyaran rashin fahimta game da ƙarshen zamani, da kuma kira zuwa ga aiki mai aminci."
+          },
+          {
+            "name": " 1 Timoti",
+            "description": " Umarni don rayuwar coci, jagoranci, da kuma koyarwa mai kyau."
+          },
+          {
+            "name": " 2 Timoti",
+            "description": "Wasikar ƙarshe ta Bulus — umarni ga Timoti ya kiyaye bishara ya kuma gama da kyau."
+          },
+          {
+            "name": " Titus",
+            "description": " Naɗa shugabanni da kuma koyar da cewa koyarwa mai kyau tana haifar da rayuwa mai kyau."
+          },
+          {
+            "name": " Filimon",
+            "description": " Kira na kai tsaye don sulhu da kuma tasirin da bishara ke da shi a zamantakewa."
+          }
+        ]
+      },
+      {
+        "section": " Wasiku na Gabaɗaya & Wahayi",
+        "description": " Wasiƙu daga Yaƙub, Bitrus, Yohanna, Yahuda, da sauransu — sun ƙunshi bangaskiya cikin gwaje-gwaje, imani na gaske, koyarwar ƙarya, da kuma begen Ru'ya ta Yohanna.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ibraniyawa",
+            "description": " Yesu a matsayin cikar dukkan firistoci, hadaya, da alkawari na Tsohon Alkawari — ya fi girma ta kowace hanya."
+          },
+          {
+            "name": " Jamus",
+            "description": " Bangaskiya da ke aiki — hikima mai amfani don rayuwa a matsayin mutanen Allah a duniya."
+          },
+          {
+            "name": " 1 Bitrus",
+            "description": " Bege da rayuwa mai tsarki ga waɗanda aka yi hijira a cikin duniya mai ƙiyayya."
+          },
+          {
+            "name": " 2 Bitrus",
+            "description": " Gargaɗi game da malaman ƙarya da kuma amincewa da alkawuran Allah."
+          },
+          {
+            "name": " 1 Yahaya",
+            "description": " Tabbacin ceto da alamun bangaskiya ta gaske: ƙauna, biyayya, da gaskiya."
+          },
+          {
+            "name": " 2 Yohanna",
+            "description": " Wasiƙa mai taƙaice game da ƙauna, gaskiya, da rashin maraba da waɗanda suka musanta Almasihu."
+          },
+          {
+            "name": " 3 Yohanna",
+            "description": "Yabon karimci mai aminci da gargaɗi game da shugabanci na neman kai."
+          },
+          {
+            "name": " Yahuda",
+            "description": " Kira mai ƙarfi don yin gwagwarmaya don bangaskiya game da koyarwar ƙarya da ta shiga cikin coci."
+          },
+          {
+            "name": " Wahayin Yahaya",
+            "description": " Wahayi na nasarar ƙarshe ta Allah akan mugunta, hukuncin miyagu, da kuma sabunta komai."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Imani",
+    "description": " Nazari ya mayar da hankali kan koyarwar Kirista - abin da Littafi Mai Tsarki ke koyarwa game da Allah, ɗan adam, ceto, da kuma nan gaba. Gina kanmu cikin imani mai kyau shine ginshiƙin rayuwa mai kyau.",
+    "sections": [
+      {
+        "section": " Bayani",
+        "description": " Nazarce-nazarcen gabatarwa da suka yi nazari kan dukkan koyarwar Kirista - bishara, manyan koyaswar, da kuma ikirari na tarihi na coci.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Tushe",
+            "description": " Muhimman tubalan ginin imani na Kirista - abin da kowane mai bi yake buƙatar sani."
+          },
+          {
+            "name": " Linjila",
+            "description": " Nazari ya mayar da hankali kan zuciyar saƙon Kirista: zunubi, alheri, da ceto ta wurin Almasihu."
+          },
+          {
+            "name": " Iƙirari da Iƙirari",
+            "description": " Bayanan tarihi na imani waɗanda suka ayyana Kiristanci na gargajiya a tsawon ƙarni da yawa."
+          }
+        ]
+      },
+      {
+        "section": " Allah",
+        "description": " Wanene Allah? Nazarin da ke bincika Uku-Cikin-Ɗaya, halayen Allah, da kuma abin da ake nufi da saninsa da kansa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Halayen Allah",
+            "description": " Tsarkin Allah, ƙaunarsa, ikon mallaka, adalci, da sauran halaye da Littafi Mai Tsarki ya bayyana."
+          },
+          {
+            "name": " Triniti",
+            "description": " Allah ɗaya cikin mutum uku — Uba, Ɗa, da Ruhu Mai Tsarki — kuma dalilin da ya sa wannan yake da muhimmanci."
+          },
+          {
+            "name": " Allah Uba",
+            "description": " Allah a matsayin Mahalicci, Sarki, kuma Uba - da kuma abin da ake nufi da zama ɗansa."
+          }
+        ]
+      },
+      {
+        "section": " Littafi Mai Tsarki",
+        "description": " Nazari kan Littafi Mai Tsarki da kansa - yadda ya kasance, abin da yake da'awa game da kansa, da kuma yadda ake karanta shi da kyau.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Hukuma",
+            "description": " Dalilin da yasa Littafi Mai Tsarki yake da ikon yin magana a kan kowane fanni na rayuwa."
+          },
+          {
+            "name": " Wahayi",
+            "description": " Yadda Allah ya yi aiki ta hanyar marubutan ɗan adam don ya ba mu Kalmarsa."
+          },
+          {
+            "name": " Canon",
+            "description": " Yadda aka gane littattafan Littafi Mai Tsarki kuma aka tattara su wuri ɗaya."
+          },
+          {
+            "name": " Fassara",
+            "description": " Ka'idoji don karanta Littafi Mai Tsarki da aminci da kuma daidai."
+          }
+        ]
+      },
+      {
+        "section": " Halitta da Bil Adama",
+        "description": " Nazari kan abin da ake nufi da zama ɗan adam — wanda aka yi shi cikin siffar Allah, aka halicce shi, kuma aka halicce shi don wata manufa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ƙirƙira",
+            "description": " Allah a matsayin Mahaliccin dukkan abubuwa - kuma menene ma'anar hakan ga yadda muke kallon duniya."
+          },
+          {
+            "name": " Siffar Allah",
+            "description": " Abin da ake nufi da a yi shi cikin kamannin Allah, da kuma darajar da ke bai wa kowane mutum."
+          },
+          {
+            "name": " Kayan aiki",
+            "description": "Kyakkyawan samun jiki, da kuma abin da Littafi Mai Tsarki ya ce game da wanzuwar jiki."
+          },
+          {
+            "name": " Manufa",
+            "description": " Dalilin da ya sa muke nan - kiran ɗan adam na ƙaunar Allah, yi wa wasu hidima, da kuma halittar mai hidima."
+          }
+        ]
+      },
+      {
+        "section": " Mugunta da Faɗuwa",
+        "description": " Nazari kan zunubi — asalinsa, yanayinsa, da kuma mummunan tasirinsa ga ɗan adam da duniya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Yanayin Zunubi",
+            "description": " Abin da zunubi a zahiri yake - ba wai kawai karya dokoki ba, amma kuma juyawar asali daga Allah."
+          },
+          {
+            "name": " Kaka",
+            "description": " Abin da ya faru a cikin Farawa 3, da kuma yadda yake shafar kowane ɗan adam."
+          },
+          {
+            "name": " Jaraba",
+            "description": "Yadda jaraba ke aiki, da kuma yadda masu bi za su iya tsayawa tsayin daka a kanta."
+          }
+        ]
+      },
+      {
+        "section": " Kristi",
+        "description": " Nazari kan halin Yesu Kiristi - cikakken Allah da kuma cikakken ɗan adam - da kuma ma'anar zuwansa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mutum na Almasihu",
+            "description": " Koyarwar yanayi biyu — yadda Yesu cikakken allahntaka ne kuma cikakken ɗan adam."
+          },
+          {
+            "name": " Jiki cikin jiki",
+            "description": " Dalilin da ya sa Ɗan Allah ya zama jiki, da kuma abin da ɗan'adam ɗinsa yake nufi a gare mu."
+          }
+        ]
+      },
+      {
+        "section": " Ceto",
+        "description": " Ta yaya Allah yake ceton masu zunubi? Nazarce-nazarce da suka shafi kafara, barata, ɗaukar ɗa, da kuma cikakken binciken abin da Allah yake yi don cetonmu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kafara",
+            "description": "Yadda mutuwar Kristi ta shafi zunubi - maye gurbinsa, fansa, sulhu, da sauransu."
+          },
+          {
+            "name": " Juyawa",
+            "description": " Abin da ake nufi da juyowa daga zunubi da kuma dogara ga Kristi - tuba da bangaskiya."
+          },
+          {
+            "name": " Tabbatarwa",
+            "description": " A bayyana shi a matsayin mai adalci a gaban Allah — ta wurin alheri kaɗai, ta wurin bangaskiya kaɗai, cikin Almasihu kaɗai."
+          },
+          {
+            "name": " Ɗauka",
+            "description": " Baiwar da ba a saba gani ba ta shiga cikin iyalin Allah a matsayin 'ya'yansa maza da mata."
+          }
+        ]
+      },
+      {
+        "section": " Ruhu",
+        "description": " Nazari akan Ruhu Mai Tsarki - wanene shi, abin da yake yi, da kuma yadda yake aiki a cikin masu bi da kuma coci.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mutum na Ruhu",
+            "description": "Ruhu Mai Tsarki a matsayin mutum na uku na Triniti — ba iko ba ne, amma mutum ne."
+          },
+          {
+            "name": " 'Ya'yan Ruhu",
+            "description": " Halayen hali da Ruhu ke samarwa a cikin waɗanda ke tafiya tare da shi."
+          },
+          {
+            "name": " Kyauta ta Ruhaniya",
+            "description": " Baiwai da Ruhu ke bayarwa don samar da masu bi don hidima a jikin Kristi."
+          }
+        ]
+      },
+      {
+        "section": " Coci",
+        "description": " Menene coci, kuma me ya sa yake da muhimmanci? Nazarin da aka yi kan yanayi, manufa, da kuma tsarin jikin Kristi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Yanayin Coci",
+            "description": " Abin da cocin take nufi - mutanen Allah, jikin Kristi, haikalin Ruhu."
+          },
+          {
+            "name": " Sakrament",
+            "description": "Baftisma da Jibin Ubangiji — menene su, menene ma'anarsu, da kuma yadda ake kiyaye su."
+          },
+          {
+            "name": " Jagoranci",
+            "description": " Tsarin Littafi Mai Tsarki na shugabancin coci: dattawa, dikonni, da kuma ikon da ke zuciyar bawa."
+          },
+          {
+            "name": " Bauta",
+            "description": " Menene ibadar Kirista, dalilin da ya sa take da muhimmanci, da kuma yadda take tsara rayuwar al'umma."
+          }
+        ]
+      },
+      {
+        "section": " Abubuwa na Ƙarshe",
+        "description": " Nazari kan mutuwa, tashin matattu, hukunci, da kuma sabon halitta - begen da ke tsara yadda Kiristoci ke rayuwa a halin yanzu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Dawowar Almasihu",
+            "description": " Tabbataccen bege cewa Yesu zai dawo cikin ɗaukaka domin ya yi wa masu rai da matattu shari'a."
+          },
+          {
+            "name": " Hukunci",
+            "description": "Hukuncin ƙarshe na Allah ga dukkan mutane - da kuma bisharar cewa Kristi ya ɗauki hukunci ga nasa."
+          },
+          {
+            "name": " Aljanna da Jahannama",
+            "description": " Littafi Mai Tsarki ya bayyana madawwamin ƙaddara - da kuma dalilin da yasa suke da mahimmanci ga yadda muke rayuwa a yanzu."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Rayuwa",
+    "description": " Nazarin da ke haɗa gaskiyar Littafi Mai Tsarki da gogewar bin Kristi ta yau da kullun - a cikin dangantaka, aiki, asali, da kuma gwagwarmayar da ake ci gaba da yi da zunubi.",
+    "sections": [
+      {
+        "section": " Dabi'un Ruhaniya",
+        "description": " Ayyukan da ke horar da mu mu kasance kusa da Allah da kuma girma cikin ibada - ba hanyoyin samun tagomashi ba, amma halaye da ke sa mu kasance a buɗe ga alherinsa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Addu'a",
+            "description": " Yin magana da Allah — tushensa, siffofinsa, da kuma yadda ake gina rayuwa mai wadata ta addu'a."
+          },
+          {
+            "name": "Karatun Littafi Mai Tsarki",
+            "description": " Yadda ake karanta Littafi Mai Tsarki da kyau - da fahimta, daidaito, da kuma tsammanin za a canza."
+          },
+          {
+            "name": " Bauta",
+            "description": " Ibada a matsayin tsari na rayuwa gaba ɗaya, ba kawai aikin Lahadi ba."
+          }
+        ]
+      },
+      {
+        "section": " Halaye & Tsarkakewa",
+        "description": " Ci gaba da zama kamar Kristi — yaƙi da zunubi, girma cikin nagarta, da fahimtar ko wanene mu a cikinsa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " 'Ya'yan Ruhu",
+            "description": " Soyayya, farin ciki, salama, haƙuri, kirki, nagarta, aminci, tawali'u, da kuma kame kai."
+          },
+          {
+            "name": " Cin Nasara a Zunubi",
+            "description": " Taimakon aiki da na tauhidi don magance matsalolin zunubi da suka daɗe."
+          },
+          {
+            "name": "Girma a cikin Alheri",
+            "description": " Abin da yake kama da girma a matsayin Kirista - da kuma abin da ke hana shi."
+          },
+          {
+            "name": " Imani a cikin Almasihu",
+            "description": " Wanene mu saboda abin da Kristi ya yi - kuma dalilin da yasa hakan ke canza komai."
+          }
+        ]
+      },
+      {
+        "section": " Dangantaka & Iyali",
+        "description": " Nazari kan dangantakar da Allah ya sanya mu a ciki - aure, iyali, abota, da kuma al'umma.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Aure",
+            "description": " Alƙawarin aure — manufarsa, ƙalubalensa, da kuma hotonsa na Almasihu da coci."
+          },
+          {
+            "name": " Rashin Aure",
+            "description": " Rashin aure a matsayin cikakken kira mai ma'ana, ba wurin jira na aure ba."
+          },
+          {
+            "name": " Iyaye",
+            "description": " Renon yara cikin imani — da alheri, gaskiya, da kuma hangen nesa na dogon lokaci."
+          },
+          {
+            "name": " Abota",
+            "description": " Kyautar abota ta Kirista - da kuma yadda ake gina dangantaka mai zurfi."
+          },
+          {
+            "name": " Sadarwa",
+            "description": " Yin magana da gaskiya da kirki — da kuma sauraro da kyau."
+          },
+          {
+            "name": " Al'umma",
+            "description": " Abin da ake nufi da rayuwa a matsayin jikin Kristi — ɗaukar nauyin juna."
+          }
+        ]
+      },
+      {
+        "section": " Aiki & Sana'a",
+        "description": " Nazari kan amfani da bishara ga aiki, kuɗi, lokaci, da buri — ganin aiki na yau da kullun a matsayin wani ɓangare na manufofin Allah.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Rayuwar Aiki",
+            "description": "Abin da Littafi Mai Tsarki ya ce game da aiki — nagartarsa, takaicinsa, da fansarsa cikin Almasihu."
+          },
+          {
+            "name": " Kuɗi da Mallaka",
+            "description": " Karimci, gamsuwa, da kuma ra'ayin Littafi Mai Tsarki game da wadata."
+          },
+          {
+            "name": " Gudanar da Lokaci",
+            "description": " Yadda muke amfani da lokacinmu - da kuma yadda bishara ke sake tsara abubuwan da muka fi mayar da hankali a kansu."
+          },
+          {
+            "name": " Babban Buri",
+            "description": " Buri mai tsarki da kuma buri mai son kai — da kuma yadda ake bambancewa."
+          },
+          {
+            "name": " Ritaya",
+            "description": " Yadda rayuwa mai aminci take a lokutan ƙarshe na rayuwa."
+          }
+        ]
+      },
+      {
+        "section": " Ɗabi'a da Al'adu na Kirista",
+        "description": "Yadda masu bi ke tunani da kuma aiki kan muhimman tambayoyin ɗabi'u na zamaninmu - daga adalci na zamantakewa zuwa ɗabi'un halitta zuwa fasaha.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Adalci na Zamantakewa",
+            "description": " Zuciyar Allah ga marasa galihu da waɗanda aka zalunta, da kuma abin da hakan ke nufi a gare mu."
+          },
+          {
+            "name": " Ilimin Halittu",
+            "description": " Matsalolin farko da ƙarshen rayuwa - an kusantar da su da kulawar tauhidi da tausayi."
+          },
+          {
+            "name": " Fasaha Mai Jan Hankali",
+            "description": " Yadda ake amfani da fasaha da aminci a duniyar da ta siffanta ta."
+          }
+        ]
+      },
+      {
+        "section": " Wahala & Jagora",
+        "description": " Nazarin da ke taimaka wa masu bi su shawo kan wahala, rashin tabbas, da wahala da gaskiya da bege.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Gwaje-gwaje da Wahala",
+            "description": " Dalilin da yasa Allah ya bar wahala, da kuma yadda Littafi Mai Tsarki ya shirya mana mu jure ta da bege."
+          },
+          {
+            "name": " Fahimtar Nufin Allah",
+            "description": " Yadda ake yanke shawara mai kyau - da kuma abin da Littafi Mai Tsarki ya yi alkawari game da jagora."
+          },
+          {
+            "name": " Lafiyar Kwakwalwa",
+            "description": " Damuwa, damuwa, da sauran matsaloli - an yi su ne da tausayi da kulawa ta Littafi Mai Tsarki."
+          },
+          {
+            "name": " Baƙin ciki",
+            "description": " Yadda ake yin baƙin ciki a matsayin waɗanda ke da bege - da gaske, ba kai kaɗai ba."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Ma'aikatar",
+    "description": " Nazari ga waɗanda ke da hannu wajen yi wa wasu hidima - a cikin wa'azin bishara, kula da fastoci, koyarwa, da jagoranci. Waɗannan nazarce-nazarcen sun samo asali ne daga Littafi Mai Tsarki, suna ba wa masu bi damar yin hidima yadda ya kamata da kuma dorewa.",
+    "sections": [
+      {
+        "section": "Tauhidin Ma'aikatar",
+        "description": " Tushen Littafi Mai Tsarki ga dukkan hidimar Kirista - abin da ake nufi da hidima, da kuma irin mutumin da dole ne bawa ya kasance.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Jagorancin Bawa",
+            "description": " Jagoranci kamar yadda Yesu ya jagoranta — da tawali'u, sadaukarwa, da kuma kulawa ga waɗanda ake yi wa hidima."
+          },
+          {
+            "name": " Kira",
+            "description": " Fahimtar kiranka zuwa hidima — yadda ake gane shi da kuma abin da ya ƙunsa."
+          }
+        ]
+      },
+      {
+        "section": " Wa'azi da Koyarwa (Homiletics)",
+        "description": " Nazari ga waɗanda aka kira su bayyana Littafi Mai Tsarki a fili - ya ƙunshi hanya, hali, da kuma nauyin sarrafa Kalmar Allah.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Wa'azin Bayyanawa",
+            "description": "Yadda ake yin wa'azi da aminci daga rubutun — barin Littafi Mai Tsarki ya tsara ajanda."
+          },
+          {
+            "name": " Jagoran Nazarin Littafi Mai Tsarki",
+            "description": " Yadda ake jagorantar ƙungiya da kyau - yin tambayoyi masu kyau da kuma taimaka wa mutane su haɗu da Allah a cikin rubutun."
+          }
+        ]
+      },
+      {
+        "section": " Jagoranci & Gudanarwa",
+        "description": " Ma'anonin aiki da na tauhidi na jagorantar coci ko hidima - hangen nesa, ƙungiyoyi, rikici, da shugabanci.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Hangen Nesa da Dabaru",
+            "description": " Yadda ake tunani a sarari game da inda Allah yake jagoranta da kuma yadda za a isa can tare."
+          },
+          {
+            "name": " Gina Ƙungiya",
+            "description": " Tattara, haɓaka, da kuma ci gaba da ƙungiyar ma'aikata mai lafiya."
+          },
+          {
+            "name": " Magance Rikici",
+            "description": "Yadda za a magance rashin jituwa da rarrabuwar kawuna ta hanyar da za ta girmama Allah da kuma kiyaye haɗin kai."
+          },
+          {
+            "name": " Shugabancin Coci",
+            "description": " Tsarin da hanyoyin da ke taimaka wa coci su kasance masu alhakin da kuma tsari mai kyau."
+          }
+        ]
+      },
+      {
+        "section": " Kula da Kiwo",
+        "description": " Nazari yana ba wa masu bi damar tafiya tare da juna a cikin wahala, asara, rikici, da buƙata.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Tattaunawar Fastoci",
+            "description": " Kwarewa da kuma yanayin da ake buƙata don tattaunawa mai amfani tsakanin mutum da mutum a hidima."
+          },
+          {
+            "name": " Shige da Fice a Rikicin",
+            "description": " Yadda ake mayar da martani cikin hikima da tausayi idan wani yana cikin mawuyacin hali."
+          },
+          {
+            "name": " Ziyara",
+            "description": "Hidimar kasancewa — ziyartar marasa lafiya, tsofaffi, da kuma waɗanda ba sa gida."
+          },
+          {
+            "name": " Shirye-shiryen Aure",
+            "description": " Taimaka wa ma'aurata su shirya don auren da aka gina bisa ga Almasihu."
+          },
+          {
+            "name": " Kula da Makoki",
+            "description": " Tafiya tare da waɗanda ke cikin baƙin ciki — abin da za a faɗa, abin da ba za a faɗa ba, da kuma yadda za a ci gaba da zama."
+          }
+        ]
+      },
+      {
+        "section": " Bishara da Ayyukan Manzanni",
+        "description": " Nazari kan kai bishara ga waɗanda ba su ji ta ba - da kansu, a gida, da kuma a cikin al'adu daban-daban.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Yin Wa'azi Kai Tsaye",
+            "description": " Yadda za ka raba imaninka ta halitta da kuma a sarari a cikin tattaunawar yau da kullum."
+          },
+          {
+            "name": " Neman Afuwa",
+            "description": "Amsa tambayoyin da ke hana mutane ɗaukar Kiristanci da muhimmanci."
+          },
+          {
+            "name": " Ma'aikatar Al'adu ta Ƙasashe",
+            "description": " Hidima da rabawa a fadin iyakokin al'adu cikin ladabi da girmamawa."
+          },
+          {
+            "name": " Dasa Coci",
+            "description": " Tauhidi da kuma aikin kafa sabbin al'ummomin bishara."
+          }
+        ]
+      },
+      {
+        "section": " Almajiranci da Jagora",
+        "description": " Nazari kan hidimar taimaka wa wasu su girma — ɗaya bayan ɗaya, a ƙananan ƙungiyoyi, da kuma ta hanyar horar da tsara mai zuwa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Hidima Ɗaya-da-Ɗaya",
+            "description": " Ikon almajiranci da gangan — haɗuwa akai-akai don buɗe Littafi Mai Tsarki tare."
+          },
+          {
+            "name": " Ƙaramin Jagoran Rukuni",
+            "description": " Yadda ake jagorantar ƙaramin rukuni wanda yake da gaskiya, girma, kuma tushen Nassosi ne."
+          },
+          {
+            "name": " Horar da Wasu",
+            "description": " Samar da wasu don yin aikin hidima — ba wai kawai shugabanni ne suka ninka waɗanda suka tuba ba."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Wani",
+    "description": " Nazarin da bai dace da wani rukuni ba - ko kuma bayanan shiryayyensu ba a saita su ba tukuna.",
+    "sections": []
+  }
+]

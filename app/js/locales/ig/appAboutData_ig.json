@@ -1,0 +1,28 @@
+{
+  "appTitle": " Onye Na-agụ Ọmụmụ Baịbụl",
+  "appDescription": " Ngwa mkpanaka maka ịrụ ọrụ na usoro ọmụmụ Baịbụl — ịgụ ihe, ịtụgharị uche, na idekọ azịza ka ị na-aga.",
+  "sampleTitle": " Mgbanwe",
+  "sampleSubtitle": " Ọhụrụ abụghị (naanị) Mara mma",
+  "sampleShortTitle": " Mgbanwe",
+  "sampleDescription": " Ọmụmụ Baịbụl nke oge itoolu na-enyocha ihe ezigbo mgbanwe pụtara - na ihe mere o ji dị mkpa.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": " Ihe Okike Commons Attribution-NonCommercial-ShareAlike 4.0 Mba Nile",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        " Kesaa: detuo ma kesaa ihe ahụ ọzọ n'ụdị ma ọ bụ usoro ọ bụla",
+        " Gbanwee: gbanwee, gbanwee, ma wulite ihe ahụ maka ebumnuche ọ bụla, ọbụlagodi n'ahịa"
+      ],
+      "conditions": [
+        " Nnyefe: ị ga-enyerịrị kredit kwesịrị ekwesị, nye njikọ na ikike ahụ, ma gosi ma e mere mgbanwe",
+        "Attribution: Ọ bụrụ na ị gbanwee, gbanwee, ma ọ bụ wulite ihe ahụ, ị ga-ekesa onyinye gị n'okpuru otu ikike ahụ dị ka nke mbụ ahụ"
+      ],
+      "notices": [
+        " Ịkwesighi ịgbaso ikike maka ihe ndị dị na ngalaba ọha ma ọ bụ ebe e nyere ikike iji gị site na mwepu ma ọ bụ mmachi dị mkpa.",
+        " A naghị enye nkwa ọ bụla. Akwụkwọ ikike ahụ nwere ike ọ gaghị enye gị ikike niile dị mkpa maka ojiji ịchọrọ.",
+        " N'ịmepụta ngwa a, onye dere ya jiri Claude, ChatGPT, na Gemini mee ihe maka 'ime koodu vibe' sara mbara. Mkpebi ọdịnaya niile, na okwu ikpeazụ bụ ọrụ onye dere ya."
+      ]
+    }
+  }
+}

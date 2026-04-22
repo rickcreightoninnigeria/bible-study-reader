@@ -1,0 +1,1434 @@
+[
+  {
+    "path": "[0].shelf",
+    "text": "Old Testament"
+  },
+  {
+    "path": "[0].description",
+    "text": "Studies that explore the books written before the coming of Christ \u2014 from the Law and the Prophets to the Writings. The Old Testament tells the story of God's covenant with Israel and points forward to the Messiah."
+  },
+  {
+    "path": "[0].sections[0].section",
+    "text": "Law"
+  },
+  {
+    "path": "[0].sections[0].description",
+    "text": "The first five books of the Bible (the Pentateuch), covering creation, the fall, the exodus, and the giving of the Law \u2014 the foundation on which the rest of Scripture builds."
+  },
+  {
+    "path": "[0].sections[0].subsections[0].name",
+    "text": "Genesis"
+  },
+  {
+    "path": "[0].sections[0].subsections[0].description",
+    "text": "The book of beginnings: creation, the fall, and the patriarchs \u2014 Abraham, Isaac, Jacob, and Joseph."
+  },
+  {
+    "path": "[0].sections[0].subsections[1].name",
+    "text": "Exodus"
+  },
+  {
+    "path": "[0].sections[0].subsections[1].description",
+    "text": "God rescues his people from slavery in Egypt, reveals his name, and gives his Law at Sinai."
+  },
+  {
+    "path": "[0].sections[0].subsections[2].name",
+    "text": "Leviticus"
+  },
+  {
+    "path": "[0].sections[0].subsections[2].description",
+    "text": "Instructions for worship and holiness, showing how a sinful people can draw near to a holy God."
+  },
+  {
+    "path": "[0].sections[0].subsections[3].name",
+    "text": "Numbers"
+  },
+  {
+    "path": "[0].sections[0].subsections[3].description",
+    "text": "Israel's wilderness journey \u2014 its failures, its discipline, and God's continued faithfulness."
+  },
+  {
+    "path": "[0].sections[0].subsections[4].name",
+    "text": "Deuteronomy"
+  },
+  {
+    "path": "[0].sections[0].subsections[4].description",
+    "text": "Moses' farewell sermons, renewing the covenant and preparing Israel to enter the Promised Land."
+  },
+  {
+    "path": "[0].sections[1].section",
+    "text": "History"
+  },
+  {
+    "path": "[0].sections[1].description",
+    "text": "The historical books trace Israel's story from the conquest of Canaan through the monarchy, exile, and return \u2014 showing God's faithfulness and his people's repeated unfaithfulness."
+  },
+  {
+    "path": "[0].sections[1].subsections[0].name",
+    "text": "Joshua"
+  },
+  {
+    "path": "[0].sections[1].subsections[0].description",
+    "text": "The conquest and division of the Promised Land under Joshua's leadership."
+  },
+  {
+    "path": "[0].sections[1].subsections[1].name",
+    "text": "Judges"
+  },
+  {
+    "path": "[0].sections[1].subsections[1].description",
+    "text": "A cycle of rebellion, oppression, and rescue as Israel repeatedly turns from God."
+  },
+  {
+    "path": "[0].sections[1].subsections[2].name",
+    "text": "Ruth"
+  },
+  {
+    "path": "[0].sections[1].subsections[2].description",
+    "text": "A story of loyalty, providence, and redemption set in the time of the judges."
+  },
+  {
+    "path": "[0].sections[1].subsections[3].name",
+    "text": "1 Samuel"
+  },
+  {
+    "path": "[0].sections[1].subsections[3].description",
+    "text": "The transition from judges to kings: Samuel, Saul, and the rise of David."
+  },
+  {
+    "path": "[0].sections[1].subsections[4].name",
+    "text": "2 Samuel"
+  },
+  {
+    "path": "[0].sections[1].subsections[4].description",
+    "text": "David's reign \u2014 his triumphs, failures, and God's covenant with his house."
+  },
+  {
+    "path": "[0].sections[1].subsections[5].name",
+    "text": "1 Kings"
+  },
+  {
+    "path": "[0].sections[1].subsections[5].description",
+    "text": "Solomon's glory and the kingdom's division; Elijah and the contest on Mount Carmel."
+  },
+  {
+    "path": "[0].sections[1].subsections[6].name",
+    "text": "2 Kings"
+  },
+  {
+    "path": "[0].sections[1].subsections[6].description",
+    "text": "The decline and fall of both kingdoms, ending in exile."
+  },
+  {
+    "path": "[0].sections[1].subsections[7].name",
+    "text": "1 Chronicles"
+  },
+  {
+    "path": "[0].sections[1].subsections[7].description",
+    "text": "A retelling of Israel's history from Adam to David, focused on worship and the temple."
+  },
+  {
+    "path": "[0].sections[1].subsections[8].name",
+    "text": "2 Chronicles"
+  },
+  {
+    "path": "[0].sections[1].subsections[8].description",
+    "text": "Solomon and the temple, the divided kingdom, and the hope of restoration."
+  },
+  {
+    "path": "[0].sections[1].subsections[9].name",
+    "text": "Ezra"
+  },
+  {
+    "path": "[0].sections[1].subsections[9].description",
+    "text": "The return from exile and the rebuilding of the temple under Ezra's leadership."
+  },
+  {
+    "path": "[0].sections[1].subsections[10].name",
+    "text": "Nehemiah"
+  },
+  {
+    "path": "[0].sections[1].subsections[10].description",
+    "text": "The rebuilding of Jerusalem's walls and the renewal of the covenant community."
+  },
+  {
+    "path": "[0].sections[1].subsections[11].name",
+    "text": "Esther"
+  },
+  {
+    "path": "[0].sections[1].subsections[11].description",
+    "text": "God's hidden providence protecting his people in the Persian court."
+  },
+  {
+    "path": "[0].sections[2].section",
+    "text": "Poetry & Wisdom"
+  },
+  {
+    "path": "[0].sections[2].description",
+    "text": "Job, Psalms, Proverbs, Ecclesiastes, and Song of Songs \u2014 books that explore the depths of human experience: suffering, praise, wisdom, and love."
+  },
+  {
+    "path": "[0].sections[2].subsections[0].name",
+    "text": "Job"
+  },
+  {
+    "path": "[0].sections[2].subsections[0].description",
+    "text": "A profound exploration of suffering, justice, and the mystery of God's ways."
+  },
+  {
+    "path": "[0].sections[2].subsections[1].name",
+    "text": "Psalms"
+  },
+  {
+    "path": "[0].sections[2].subsections[1].description",
+    "text": "Israel's songbook and prayer book \u2014 the full range of human emotion brought before God."
+  },
+  {
+    "path": "[0].sections[2].subsections[2].name",
+    "text": "Proverbs"
+  },
+  {
+    "path": "[0].sections[2].subsections[2].description",
+    "text": "Practical wisdom for everyday life, rooted in the fear of the Lord."
+  },
+  {
+    "path": "[0].sections[2].subsections[3].name",
+    "text": "Ecclesiastes"
+  },
+  {
+    "path": "[0].sections[2].subsections[3].description",
+    "text": "A searching examination of meaning, work, and mortality 'under the sun'."
+  },
+  {
+    "path": "[0].sections[2].subsections[4].name",
+    "text": "Song of Songs"
+  },
+  {
+    "path": "[0].sections[2].subsections[4].description",
+    "text": "A celebration of love and marriage, rich with imagery of delight and longing."
+  },
+  {
+    "path": "[0].sections[3].section",
+    "text": "Prophets"
+  },
+  {
+    "path": "[0].sections[3].description",
+    "text": "The prophetic books call Israel to repentance, warn of judgement, and point forward to God's ultimate redemption. They are essential for understanding the New Testament's fulfilment of those promises."
+  },
+  {
+    "path": "[0].sections[3].subsections[0].name",
+    "text": "Isaiah"
+  },
+  {
+    "path": "[0].sections[3].subsections[0].description",
+    "text": "Judgement and breathtaking hope \u2014 including the Servant Songs that point to Christ."
+  },
+  {
+    "path": "[0].sections[3].subsections[1].name",
+    "text": "Jeremiah"
+  },
+  {
+    "path": "[0].sections[3].subsections[1].description",
+    "text": "A prophet's anguish as Jerusalem falls, and the promise of a new covenant."
+  },
+  {
+    "path": "[0].sections[3].subsections[2].name",
+    "text": "Lamentations"
+  },
+  {
+    "path": "[0].sections[3].subsections[2].description",
+    "text": "Raw grief over the destruction of Jerusalem, held together by hope in God's faithfulness."
+  },
+  {
+    "path": "[0].sections[3].subsections[3].name",
+    "text": "Ezekiel"
+  },
+  {
+    "path": "[0].sections[3].subsections[3].description",
+    "text": "Visions of God's glory departing and returning, and the promise of spiritual renewal."
+  },
+  {
+    "path": "[0].sections[3].subsections[4].name",
+    "text": "Daniel"
+  },
+  {
+    "path": "[0].sections[3].subsections[4].description",
+    "text": "Faithful presence in exile, and visions of God's sovereign kingdom over all nations."
+  },
+  {
+    "path": "[0].sections[3].subsections[5].name",
+    "text": "Hosea"
+  },
+  {
+    "path": "[0].sections[3].subsections[5].description",
+    "text": "God's unfailing love for an unfaithful people, pictured through Hosea's own marriage."
+  },
+  {
+    "path": "[0].sections[3].subsections[6].name",
+    "text": "Joel"
+  },
+  {
+    "path": "[0].sections[3].subsections[6].description",
+    "text": "A locust plague as a call to repentance, and the promise of the Spirit."
+  },
+  {
+    "path": "[0].sections[3].subsections[7].name",
+    "text": "Amos"
+  },
+  {
+    "path": "[0].sections[3].subsections[7].description",
+    "text": "A sharp prophetic call for justice and the warning that empty religion will not stand."
+  },
+  {
+    "path": "[0].sections[3].subsections[8].name",
+    "text": "Obadiah"
+  },
+  {
+    "path": "[0].sections[3].subsections[8].description",
+    "text": "A brief oracle against Edom and the coming day of the Lord."
+  },
+  {
+    "path": "[0].sections[3].subsections[9].name",
+    "text": "Jonah"
+  },
+  {
+    "path": "[0].sections[3].subsections[9].description",
+    "text": "God's compassion for the nations \u2014 and a reluctant prophet's resistance to it."
+  },
+  {
+    "path": "[0].sections[3].subsections[10].name",
+    "text": "Micah"
+  },
+  {
+    "path": "[0].sections[3].subsections[10].description",
+    "text": "Justice, mercy, and humility \u2014 and the promise of a ruler from Bethlehem."
+  },
+  {
+    "path": "[0].sections[3].subsections[11].name",
+    "text": "Nahum"
+  },
+  {
+    "path": "[0].sections[3].subsections[11].description",
+    "text": "The fall of Nineveh and the comfort of God's justice for his oppressed people."
+  },
+  {
+    "path": "[0].sections[3].subsections[12].name",
+    "text": "Habakkuk"
+  },
+  {
+    "path": "[0].sections[3].subsections[12].description",
+    "text": "Wrestling honestly with God over injustice, and learning to trust in his timing."
+  },
+  {
+    "path": "[0].sections[3].subsections[13].name",
+    "text": "Zephaniah"
+  },
+  {
+    "path": "[0].sections[3].subsections[13].description",
+    "text": "The day of the Lord and the joy of restoration for a purified remnant."
+  },
+  {
+    "path": "[0].sections[3].subsections[14].name",
+    "text": "Haggai"
+  },
+  {
+    "path": "[0].sections[3].subsections[14].description",
+    "text": "A call to rebuild the temple and prioritise God's house over personal comfort."
+  },
+  {
+    "path": "[0].sections[3].subsections[15].name",
+    "text": "Zechariah"
+  },
+  {
+    "path": "[0].sections[3].subsections[15].description",
+    "text": "Visions of restoration and a Messiah who comes humbly on a donkey."
+  },
+  {
+    "path": "[0].sections[3].subsections[16].name",
+    "text": "Malachi"
+  },
+  {
+    "path": "[0].sections[3].subsections[16].description",
+    "text": "A final call to faithfulness before the long silence before John the Baptist."
+  },
+  {
+    "path": "[1].shelf",
+    "text": "New Testament"
+  },
+  {
+    "path": "[1].description",
+    "text": "Studies in the books written after the coming of Christ \u2014 the Gospels, the letters of the apostles, and Revelation. The New Testament reveals the fulfilment of God's promises in Jesus and the life of the early church."
+  },
+  {
+    "path": "[1].sections[0].section",
+    "text": "Gospels & Acts"
+  },
+  {
+    "path": "[1].sections[0].description",
+    "text": "The four accounts of Jesus's life, death, and resurrection, and the story of the early church's expansion across the Roman world."
+  },
+  {
+    "path": "[1].sections[0].subsections[0].name",
+    "text": "Matthew"
+  },
+  {
+    "path": "[1].sections[0].subsections[0].description",
+    "text": "Jesus as the fulfilment of the Old Testament, the new Moses, and the King of God's kingdom."
+  },
+  {
+    "path": "[1].sections[0].subsections[1].name",
+    "text": "Mark"
+  },
+  {
+    "path": "[1].sections[0].subsections[1].description",
+    "text": "A fast-paced account of Jesus as the suffering Servant and Son of God."
+  },
+  {
+    "path": "[1].sections[0].subsections[2].name",
+    "text": "Luke"
+  },
+  {
+    "path": "[1].sections[0].subsections[2].description",
+    "text": "Jesus as Saviour of the world \u2014 with special attention to the poor, women, and outsiders."
+  },
+  {
+    "path": "[1].sections[0].subsections[3].name",
+    "text": "John"
+  },
+  {
+    "path": "[1].sections[0].subsections[3].description",
+    "text": "The deepest theological portrait of Jesus \u2014 the Word made flesh, the I AM, the Son of God."
+  },
+  {
+    "path": "[1].sections[0].subsections[4].name",
+    "text": "Acts"
+  },
+  {
+    "path": "[1].sections[0].subsections[4].description",
+    "text": "The Holy Spirit empowers the church to take the gospel from Jerusalem to the ends of the earth."
+  },
+  {
+    "path": "[1].sections[1].section",
+    "text": "Paul's Letters"
+  },
+  {
+    "path": "[1].sections[1].description",
+    "text": "Paul's letters to churches and individuals \u2014 exploring the logic of the gospel, Christian conduct, and the nature of the church."
+  },
+  {
+    "path": "[1].sections[1].subsections[0].name",
+    "text": "Romans"
+  },
+  {
+    "path": "[1].sections[1].subsections[0].description",
+    "text": "Paul's most systematic exposition of the gospel: sin, justification, sanctification, and hope."
+  },
+  {
+    "path": "[1].sections[1].subsections[1].name",
+    "text": "1 Corinthians"
+  },
+  {
+    "path": "[1].sections[1].subsections[1].description",
+    "text": "Addressing divisions and disorders in Corinth, with teaching on love, gifts, and the resurrection."
+  },
+  {
+    "path": "[1].sections[1].subsections[2].name",
+    "text": "2 Corinthians"
+  },
+  {
+    "path": "[1].sections[1].subsections[2].description",
+    "text": "Paul's defence of his ministry and the paradox of strength through weakness."
+  },
+  {
+    "path": "[1].sections[1].subsections[3].name",
+    "text": "Galatians"
+  },
+  {
+    "path": "[1].sections[1].subsections[3].description",
+    "text": "A passionate defence of justification by faith alone against those adding the law."
+  },
+  {
+    "path": "[1].sections[1].subsections[4].name",
+    "text": "Ephesians"
+  },
+  {
+    "path": "[1].sections[1].subsections[4].description",
+    "text": "The riches of the believer's identity in Christ, and the church as God's new humanity."
+  },
+  {
+    "path": "[1].sections[1].subsections[5].name",
+    "text": "Philippians"
+  },
+  {
+    "path": "[1].sections[1].subsections[5].description",
+    "text": "Joy in all circumstances and the example of Christ's humility."
+  },
+  {
+    "path": "[1].sections[1].subsections[6].name",
+    "text": "Colossians"
+  },
+  {
+    "path": "[1].sections[1].subsections[6].description",
+    "text": "Christ as supreme over all things, and the implications for everyday life."
+  },
+  {
+    "path": "[1].sections[1].subsections[7].name",
+    "text": "1 Thessalonians"
+  },
+  {
+    "path": "[1].sections[1].subsections[7].description",
+    "text": "Encouragement for a young church, with teaching on the return of Christ."
+  },
+  {
+    "path": "[1].sections[1].subsections[8].name",
+    "text": "2 Thessalonians"
+  },
+  {
+    "path": "[1].sections[1].subsections[8].description",
+    "text": "Correction of misunderstandings about the end times, and a call to faithful work."
+  },
+  {
+    "path": "[1].sections[1].subsections[9].name",
+    "text": "1 Timothy"
+  },
+  {
+    "path": "[1].sections[1].subsections[9].description",
+    "text": "Instructions for church life, leadership, and sound doctrine."
+  },
+  {
+    "path": "[1].sections[1].subsections[10].name",
+    "text": "2 Timothy"
+  },
+  {
+    "path": "[1].sections[1].subsections[10].description",
+    "text": "Paul's final letter \u2014 a charge to Timothy to guard the gospel and finish well."
+  },
+  {
+    "path": "[1].sections[1].subsections[11].name",
+    "text": "Titus"
+  },
+  {
+    "path": "[1].sections[1].subsections[11].description",
+    "text": "Appointing leaders and teaching that sound doctrine leads to godly living."
+  },
+  {
+    "path": "[1].sections[1].subsections[12].name",
+    "text": "Philemon"
+  },
+  {
+    "path": "[1].sections[1].subsections[12].description",
+    "text": "A personal appeal for reconciliation and the social implications of the gospel."
+  },
+  {
+    "path": "[1].sections[2].section",
+    "text": "General Letters & Revelation"
+  },
+  {
+    "path": "[1].sections[2].description",
+    "text": "Letters from James, Peter, John, Jude, and others \u2014 covering faith in trials, genuine belief, false teaching, and the ultimate hope of Revelation."
+  },
+  {
+    "path": "[1].sections[2].subsections[0].name",
+    "text": "Hebrews"
+  },
+  {
+    "path": "[1].sections[2].subsections[0].description",
+    "text": "Jesus as the fulfilment of all the Old Testament's priesthood, sacrifice, and covenant \u2014 superior in every way."
+  },
+  {
+    "path": "[1].sections[2].subsections[1].name",
+    "text": "James"
+  },
+  {
+    "path": "[1].sections[2].subsections[1].description",
+    "text": "Faith that works \u2014 practical wisdom for living as God's people in the world."
+  },
+  {
+    "path": "[1].sections[2].subsections[2].name",
+    "text": "1 Peter"
+  },
+  {
+    "path": "[1].sections[2].subsections[2].description",
+    "text": "Hope and holy living for exiles in a hostile world."
+  },
+  {
+    "path": "[1].sections[2].subsections[3].name",
+    "text": "2 Peter"
+  },
+  {
+    "path": "[1].sections[2].subsections[3].description",
+    "text": "Warnings against false teachers and confidence in God's promises."
+  },
+  {
+    "path": "[1].sections[2].subsections[4].name",
+    "text": "1 John"
+  },
+  {
+    "path": "[1].sections[2].subsections[4].description",
+    "text": "Assurance of salvation and the marks of genuine faith: love, obedience, and truth."
+  },
+  {
+    "path": "[1].sections[2].subsections[5].name",
+    "text": "2 John"
+  },
+  {
+    "path": "[1].sections[2].subsections[5].description",
+    "text": "A brief letter on love, truth, and not welcoming those who deny Christ."
+  },
+  {
+    "path": "[1].sections[2].subsections[6].name",
+    "text": "3 John"
+  },
+  {
+    "path": "[1].sections[2].subsections[6].description",
+    "text": "Commending faithful hospitality and warning against self-seeking leadership."
+  },
+  {
+    "path": "[1].sections[2].subsections[7].name",
+    "text": "Jude"
+  },
+  {
+    "path": "[1].sections[2].subsections[7].description",
+    "text": "A strong call to contend for the faith against false teaching that has crept into the church."
+  },
+  {
+    "path": "[1].sections[2].subsections[8].name",
+    "text": "Revelation"
+  },
+  {
+    "path": "[1].sections[2].subsections[8].description",
+    "text": "Visions of God's ultimate victory over evil, the judgement of the wicked, and the renewal of all things."
+  },
+  {
+    "path": "[2].shelf",
+    "text": "Beliefs"
+  },
+  {
+    "path": "[2].description",
+    "text": "Studies focused on Christian doctrine \u2014 what the Bible teaches about God, humanity, salvation, and the future. Grounding ourselves in right belief is the foundation for right living."
+  },
+  {
+    "path": "[2].sections[0].section",
+    "text": "Overview"
+  },
+  {
+    "path": "[2].sections[0].description",
+    "text": "Introductory studies surveying the whole of Christian teaching \u2014 the gospel, the core doctrines, and the historic confessions of the church."
+  },
+  {
+    "path": "[2].sections[0].subsections[0].name",
+    "text": "Foundations"
+  },
+  {
+    "path": "[2].sections[0].subsections[0].description",
+    "text": "The essential building blocks of Christian belief \u2014 what every believer needs to know."
+  },
+  {
+    "path": "[2].sections[0].subsections[1].name",
+    "text": "The Gospel"
+  },
+  {
+    "path": "[2].sections[0].subsections[1].description",
+    "text": "Studies focused on the heart of the Christian message: sin, grace, and salvation through Christ."
+  },
+  {
+    "path": "[2].sections[0].subsections[2].name",
+    "text": "Creeds & Confessions"
+  },
+  {
+    "path": "[2].sections[0].subsections[2].description",
+    "text": "The historic statements of faith that have defined orthodox Christianity across the centuries."
+  },
+  {
+    "path": "[2].sections[1].section",
+    "text": "God"
+  },
+  {
+    "path": "[2].sections[1].description",
+    "text": "Who is God? Studies exploring the Trinity, God's attributes, and what it means to know him personally."
+  },
+  {
+    "path": "[2].sections[1].subsections[0].name",
+    "text": "Attributes of God"
+  },
+  {
+    "path": "[2].sections[1].subsections[0].description",
+    "text": "God's holiness, love, sovereignty, justice, and the other characteristics Scripture reveals."
+  },
+  {
+    "path": "[2].sections[1].subsections[1].name",
+    "text": "The Trinity"
+  },
+  {
+    "path": "[2].sections[1].subsections[1].description",
+    "text": "One God in three persons \u2014 Father, Son, and Holy Spirit \u2014 and why this matters."
+  },
+  {
+    "path": "[2].sections[1].subsections[2].name",
+    "text": "God the Father"
+  },
+  {
+    "path": "[2].sections[1].subsections[2].description",
+    "text": "God as Creator, King, and Father \u2014 and what it means to be his child."
+  },
+  {
+    "path": "[2].sections[2].section",
+    "text": "Scripture"
+  },
+  {
+    "path": "[2].sections[2].description",
+    "text": "Studies on the Bible itself \u2014 how it came to be, what it claims about itself, and how to read it well."
+  },
+  {
+    "path": "[2].sections[2].subsections[0].name",
+    "text": "Authority"
+  },
+  {
+    "path": "[2].sections[2].subsections[0].description",
+    "text": "Why the Bible has the right to speak into every area of life."
+  },
+  {
+    "path": "[2].sections[2].subsections[1].name",
+    "text": "Inspiration"
+  },
+  {
+    "path": "[2].sections[2].subsections[1].description",
+    "text": "How God worked through human authors to give us his Word."
+  },
+  {
+    "path": "[2].sections[2].subsections[2].name",
+    "text": "Canon"
+  },
+  {
+    "path": "[2].sections[2].subsections[2].description",
+    "text": "How the books of the Bible were recognised and gathered together."
+  },
+  {
+    "path": "[2].sections[2].subsections[3].name",
+    "text": "Interpretation"
+  },
+  {
+    "path": "[2].sections[2].subsections[3].description",
+    "text": "Principles for reading the Bible faithfully and accurately."
+  },
+  {
+    "path": "[2].sections[3].section",
+    "text": "Creation & Humanity"
+  },
+  {
+    "path": "[2].sections[3].description",
+    "text": "Studies on what it means to be human \u2014 made in God's image, embodied, and created for a purpose."
+  },
+  {
+    "path": "[2].sections[3].subsections[0].name",
+    "text": "Creation"
+  },
+  {
+    "path": "[2].sections[3].subsections[0].description",
+    "text": "God as Creator of all things \u2014 and what that means for how we view the world."
+  },
+  {
+    "path": "[2].sections[3].subsections[1].name",
+    "text": "Image of God"
+  },
+  {
+    "path": "[2].sections[3].subsections[1].description",
+    "text": "What it means to be made in God's likeness, and the dignity that gives every person."
+  },
+  {
+    "path": "[2].sections[3].subsections[2].name",
+    "text": "Embodiment"
+  },
+  {
+    "path": "[2].sections[3].subsections[2].description",
+    "text": "The goodness of having a body, and what Scripture says about physical existence."
+  },
+  {
+    "path": "[2].sections[3].subsections[3].name",
+    "text": "Purpose"
+  },
+  {
+    "path": "[2].sections[3].subsections[3].description",
+    "text": "Why we are here \u2014 the human calling to love God, serve others, and steward creation."
+  },
+  {
+    "path": "[2].sections[4].section",
+    "text": "Evil and the Fall"
+  },
+  {
+    "path": "[2].sections[4].description",
+    "text": "Studies on sin \u2014 its origin, its nature, and its devastating effects on human beings and the world."
+  },
+  {
+    "path": "[2].sections[4].subsections[0].name",
+    "text": "Nature of Sin"
+  },
+  {
+    "path": "[2].sections[4].subsections[0].description",
+    "text": "What sin actually is \u2014 not just rule-breaking, but a fundamental turning away from God."
+  },
+  {
+    "path": "[2].sections[4].subsections[1].name",
+    "text": "The Fall"
+  },
+  {
+    "path": "[2].sections[4].subsections[1].description",
+    "text": "What happened in Genesis 3, and how it affects every human being."
+  },
+  {
+    "path": "[2].sections[4].subsections[2].name",
+    "text": "Temptation"
+  },
+  {
+    "path": "[2].sections[4].subsections[2].description",
+    "text": "How temptation works, and how believers can stand firm against it."
+  },
+  {
+    "path": "[2].sections[5].section",
+    "text": "Christ"
+  },
+  {
+    "path": "[2].sections[5].description",
+    "text": "Studies on the person of Jesus Christ \u2014 fully God and fully human \u2014 and what his coming means."
+  },
+  {
+    "path": "[2].sections[5].subsections[0].name",
+    "text": "Person of Christ"
+  },
+  {
+    "path": "[2].sections[5].subsections[0].description",
+    "text": "The doctrine of the two natures \u2014 how Jesus is both fully divine and fully human."
+  },
+  {
+    "path": "[2].sections[5].subsections[1].name",
+    "text": "Incarnation"
+  },
+  {
+    "path": "[2].sections[5].subsections[1].description",
+    "text": "Why the Son of God became flesh, and what his humanity means for us."
+  },
+  {
+    "path": "[2].sections[6].section",
+    "text": "Salvation"
+  },
+  {
+    "path": "[2].sections[6].description",
+    "text": "How does God rescue sinners? Studies covering atonement, justification, adoption, and the whole sweep of what God does to save us."
+  },
+  {
+    "path": "[2].sections[6].subsections[0].name",
+    "text": "Atonement"
+  },
+  {
+    "path": "[2].sections[6].subsections[0].description",
+    "text": "How Christ's death deals with sin \u2014 substitution, redemption, reconciliation, and more."
+  },
+  {
+    "path": "[2].sections[6].subsections[1].name",
+    "text": "Conversion"
+  },
+  {
+    "path": "[2].sections[6].subsections[1].description",
+    "text": "What it means to turn from sin and trust in Christ \u2014 repentance and faith."
+  },
+  {
+    "path": "[2].sections[6].subsections[2].name",
+    "text": "Justification"
+  },
+  {
+    "path": "[2].sections[6].subsections[2].description",
+    "text": "Being declared righteous before God \u2014 by grace alone, through faith alone, in Christ alone."
+  },
+  {
+    "path": "[2].sections[6].subsections[3].name",
+    "text": "Adoption"
+  },
+  {
+    "path": "[2].sections[6].subsections[3].description",
+    "text": "The extraordinary gift of being brought into God's family as his sons and daughters."
+  },
+  {
+    "path": "[2].sections[7].section",
+    "text": "The Spirit"
+  },
+  {
+    "path": "[2].sections[7].description",
+    "text": "Studies on the Holy Spirit \u2014 who he is, what he does, and how he works in believers and the church."
+  },
+  {
+    "path": "[2].sections[7].subsections[0].name",
+    "text": "Person of the Spirit"
+  },
+  {
+    "path": "[2].sections[7].subsections[0].description",
+    "text": "The Holy Spirit as the third person of the Trinity \u2014 not a force, but a person."
+  },
+  {
+    "path": "[2].sections[7].subsections[1].name",
+    "text": "Fruit of the Spirit"
+  },
+  {
+    "path": "[2].sections[7].subsections[1].description",
+    "text": "The character qualities the Spirit produces in those who walk with him."
+  },
+  {
+    "path": "[2].sections[7].subsections[2].name",
+    "text": "Spiritual Gifts"
+  },
+  {
+    "path": "[2].sections[7].subsections[2].description",
+    "text": "The gifts the Spirit gives to equip believers for service in the body of Christ."
+  },
+  {
+    "path": "[2].sections[8].section",
+    "text": "Church"
+  },
+  {
+    "path": "[2].sections[8].description",
+    "text": "What is the church, and why does it matter? Studies on the nature, mission, and structure of the body of Christ."
+  },
+  {
+    "path": "[2].sections[8].subsections[0].name",
+    "text": "Nature of Church"
+  },
+  {
+    "path": "[2].sections[8].subsections[0].description",
+    "text": "What the church is \u2014 the people of God, the body of Christ, the temple of the Spirit."
+  },
+  {
+    "path": "[2].sections[8].subsections[1].name",
+    "text": "Sacraments"
+  },
+  {
+    "path": "[2].sections[8].subsections[1].description",
+    "text": "Baptism and the Lord's Supper \u2014 what they are, what they mean, and how to observe them."
+  },
+  {
+    "path": "[2].sections[8].subsections[2].name",
+    "text": "Leadership"
+  },
+  {
+    "path": "[2].sections[8].subsections[2].description",
+    "text": "Biblical patterns of church leadership: elders, deacons, and servant-hearted authority."
+  },
+  {
+    "path": "[2].sections[8].subsections[3].name",
+    "text": "Worship"
+  },
+  {
+    "path": "[2].sections[8].subsections[3].description",
+    "text": "What Christian worship is, why it matters, and how it shapes the life of the community."
+  },
+  {
+    "path": "[2].sections[9].section",
+    "text": "Last Things"
+  },
+  {
+    "path": "[2].sections[9].description",
+    "text": "Studies on death, resurrection, judgement, and the new creation \u2014 the hope that shapes how Christians live in the present."
+  },
+  {
+    "path": "[2].sections[9].subsections[0].name",
+    "text": "Return of Christ"
+  },
+  {
+    "path": "[2].sections[9].subsections[0].description",
+    "text": "The certain hope that Jesus will return in glory to judge the living and the dead."
+  },
+  {
+    "path": "[2].sections[9].subsections[1].name",
+    "text": "Judgment"
+  },
+  {
+    "path": "[2].sections[9].subsections[1].description",
+    "text": "God's final verdict on all people \u2014 and the good news that Christ has borne judgment for his own."
+  },
+  {
+    "path": "[2].sections[9].subsections[2].name",
+    "text": "Heaven & Hell"
+  },
+  {
+    "path": "[2].sections[9].subsections[2].description",
+    "text": "The eternal destinies Scripture describes \u2014 and why they matter for how we live now."
+  },
+  {
+    "path": "[3].shelf",
+    "text": "Life"
+  },
+  {
+    "path": "[3].description",
+    "text": "Studies that connect biblical truth to the everyday experience of following Christ \u2014 in relationships, work, identity, and the ongoing struggle against sin."
+  },
+  {
+    "path": "[3].sections[0].section",
+    "text": "Spiritual Disciplines"
+  },
+  {
+    "path": "[3].sections[0].description",
+    "text": "Practices that train us to stay close to God and grow in godliness \u2014 not ways to earn favour, but habits that keep us open to his grace."
+  },
+  {
+    "path": "[3].sections[0].subsections[0].name",
+    "text": "Prayer"
+  },
+  {
+    "path": "[3].sections[0].subsections[0].description",
+    "text": "Talking with God \u2014 its foundations, its forms, and how to develop a richer prayer life."
+  },
+  {
+    "path": "[3].sections[0].subsections[1].name",
+    "text": "Bible Reading"
+  },
+  {
+    "path": "[3].sections[0].subsections[1].description",
+    "text": "How to read Scripture well \u2014 with understanding, consistency, and an expectation of being changed."
+  },
+  {
+    "path": "[3].sections[0].subsections[2].name",
+    "text": "Worship"
+  },
+  {
+    "path": "[3].sections[0].subsections[2].description",
+    "text": "Worship as a whole-life posture, not just a Sunday activity."
+  },
+  {
+    "path": "[3].sections[1].section",
+    "text": "Character & Sanctification"
+  },
+  {
+    "path": "[3].sections[1].description",
+    "text": "The ongoing process of becoming more like Christ \u2014 fighting sin, growing in virtue, and understanding who we are in him."
+  },
+  {
+    "path": "[3].sections[1].subsections[0].name",
+    "text": "Fruit of the Spirit"
+  },
+  {
+    "path": "[3].sections[1].subsections[0].description",
+    "text": "Love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control."
+  },
+  {
+    "path": "[3].sections[1].subsections[1].name",
+    "text": "Overcoming Sin"
+  },
+  {
+    "path": "[3].sections[1].subsections[1].description",
+    "text": "Practical and theological help for dealing with persistent patterns of sin."
+  },
+  {
+    "path": "[3].sections[1].subsections[2].name",
+    "text": "Growth in Grace"
+  },
+  {
+    "path": "[3].sections[1].subsections[2].description",
+    "text": "What it looks like to grow as a Christian \u2014 and what gets in the way."
+  },
+  {
+    "path": "[3].sections[1].subsections[3].name",
+    "text": "Identity in Christ"
+  },
+  {
+    "path": "[3].sections[1].subsections[3].description",
+    "text": "Who we are because of what Christ has done \u2014 and why that changes everything."
+  },
+  {
+    "path": "[3].sections[2].section",
+    "text": "Relationships & Family"
+  },
+  {
+    "path": "[3].sections[2].description",
+    "text": "Studies on the relationships God has placed us in \u2014 marriage, family, friendship, and community."
+  },
+  {
+    "path": "[3].sections[2].subsections[0].name",
+    "text": "Marriage"
+  },
+  {
+    "path": "[3].sections[2].subsections[0].description",
+    "text": "The covenant of marriage \u2014 its purpose, its challenges, and its picture of Christ and the church."
+  },
+  {
+    "path": "[3].sections[2].subsections[1].name",
+    "text": "Singleness"
+  },
+  {
+    "path": "[3].sections[2].subsections[1].description",
+    "text": "Singleness as a full and meaningful calling, not a waiting room for marriage."
+  },
+  {
+    "path": "[3].sections[2].subsections[2].name",
+    "text": "Parenting"
+  },
+  {
+    "path": "[3].sections[2].subsections[2].description",
+    "text": "Raising children in the faith \u2014 with grace, truth, and a long-term perspective."
+  },
+  {
+    "path": "[3].sections[2].subsections[3].name",
+    "text": "Friendship"
+  },
+  {
+    "path": "[3].sections[2].subsections[3].description",
+    "text": "The gift of Christian friendship \u2014 and how to cultivate relationships that go deep."
+  },
+  {
+    "path": "[3].sections[2].subsections[4].name",
+    "text": "Communication"
+  },
+  {
+    "path": "[3].sections[2].subsections[4].description",
+    "text": "Speaking truthfully and kindly \u2014 and listening well."
+  },
+  {
+    "path": "[3].sections[2].subsections[5].name",
+    "text": "Community"
+  },
+  {
+    "path": "[3].sections[2].subsections[5].description",
+    "text": "What it means to live as the body of Christ \u2014 bearing one another's burdens."
+  },
+  {
+    "path": "[3].sections[3].section",
+    "text": "Work & Vocation"
+  },
+  {
+    "path": "[3].sections[3].description",
+    "text": "Studies applying the gospel to work, money, time, and ambition \u2014 seeing everyday labour as part of God's purposes."
+  },
+  {
+    "path": "[3].sections[3].subsections[0].name",
+    "text": "Work Life"
+  },
+  {
+    "path": "[3].sections[3].subsections[0].description",
+    "text": "What the Bible says about work \u2014 its goodness, its frustrations, and its redemption in Christ."
+  },
+  {
+    "path": "[3].sections[3].subsections[1].name",
+    "text": "Money & Possessions"
+  },
+  {
+    "path": "[3].sections[3].subsections[1].description",
+    "text": "Generosity, contentment, and a biblical view of wealth."
+  },
+  {
+    "path": "[3].sections[3].subsections[2].name",
+    "text": "Stewardship of Time"
+  },
+  {
+    "path": "[3].sections[3].subsections[2].description",
+    "text": "How we use our time \u2014 and how the gospel reshapes our priorities."
+  },
+  {
+    "path": "[3].sections[3].subsections[3].name",
+    "text": "Ambition"
+  },
+  {
+    "path": "[3].sections[3].subsections[3].description",
+    "text": "Holy ambition vs. selfish ambition \u2014 and how to tell the difference."
+  },
+  {
+    "path": "[3].sections[3].subsections[4].name",
+    "text": "Retirement"
+  },
+  {
+    "path": "[3].sections[3].subsections[4].description",
+    "text": "What faithful living looks like in the later seasons of life."
+  },
+  {
+    "path": "[3].sections[4].section",
+    "text": "Christian Ethics & Culture"
+  },
+  {
+    "path": "[3].sections[4].description",
+    "text": "How believers think and act on the pressing ethical questions of our time \u2014 from social justice to bioethics to technology."
+  },
+  {
+    "path": "[3].sections[4].subsections[0].name",
+    "text": "Social Justice"
+  },
+  {
+    "path": "[3].sections[4].subsections[0].description",
+    "text": "God's heart for the vulnerable and the oppressed, and what that means for us."
+  },
+  {
+    "path": "[3].sections[4].subsections[1].name",
+    "text": "Bioethics"
+  },
+  {
+    "path": "[3].sections[4].subsections[1].description",
+    "text": "Beginning and end of life issues \u2014 approached with theological care and compassion."
+  },
+  {
+    "path": "[3].sections[4].subsections[2].name",
+    "text": "Engaging Technology"
+  },
+  {
+    "path": "[3].sections[4].subsections[2].description",
+    "text": "How to use technology faithfully in a world that is shaped by it."
+  },
+  {
+    "path": "[3].sections[5].section",
+    "text": "Suffering & Guidance"
+  },
+  {
+    "path": "[3].sections[5].description",
+    "text": "Studies that help believers walk through pain, uncertainty, and difficulty with honesty and hope."
+  },
+  {
+    "path": "[3].sections[5].subsections[0].name",
+    "text": "Trials and Affliction"
+  },
+  {
+    "path": "[3].sections[5].subsections[0].description",
+    "text": "Why God allows suffering, and how Scripture equips us to endure it with hope."
+  },
+  {
+    "path": "[3].sections[5].subsections[1].name",
+    "text": "Discerning God's Will"
+  },
+  {
+    "path": "[3].sections[5].subsections[1].description",
+    "text": "How to make wise decisions \u2014 and what Scripture actually promises about guidance."
+  },
+  {
+    "path": "[3].sections[5].subsections[2].name",
+    "text": "Mental Health"
+  },
+  {
+    "path": "[3].sections[5].subsections[2].description",
+    "text": "Depression, anxiety, and other struggles \u2014 approached with compassion and biblical care."
+  },
+  {
+    "path": "[3].sections[5].subsections[3].name",
+    "text": "Grief"
+  },
+  {
+    "path": "[3].sections[5].subsections[3].description",
+    "text": "How to grieve as those who have hope \u2014 honestly, and not alone."
+  },
+  {
+    "path": "[4].shelf",
+    "text": "Ministry"
+  },
+  {
+    "path": "[4].description",
+    "text": "Studies for those involved in serving others \u2014 in evangelism, pastoral care, teaching, and leadership. Rooted in Scripture, these studies equip believers to serve effectively and sustainably."
+  },
+  {
+    "path": "[4].sections[0].section",
+    "text": "Theology of Ministry"
+  },
+  {
+    "path": "[4].sections[0].description",
+    "text": "The biblical foundations for all Christian ministry \u2014 what it means to serve, and what kind of person the servant must be."
+  },
+  {
+    "path": "[4].sections[0].subsections[0].name",
+    "text": "Servant Leadership"
+  },
+  {
+    "path": "[4].sections[0].subsections[0].description",
+    "text": "Leading as Jesus led \u2014 with humility, sacrifice, and care for those being served."
+  },
+  {
+    "path": "[4].sections[0].subsections[1].name",
+    "text": "Calling"
+  },
+  {
+    "path": "[4].sections[0].subsections[1].description",
+    "text": "Understanding your calling to ministry \u2014 how it is discerned and what it involves."
+  },
+  {
+    "path": "[4].sections[1].section",
+    "text": "Preaching & Teaching (Homiletics)"
+  },
+  {
+    "path": "[4].sections[1].description",
+    "text": "Studies for those called to explain the Bible publicly \u2014 covering method, character, and the weight of handling God's Word."
+  },
+  {
+    "path": "[4].sections[1].subsections[0].name",
+    "text": "Expository Preaching"
+  },
+  {
+    "path": "[4].sections[1].subsections[0].description",
+    "text": "How to preach faithfully from the text \u2014 letting the Bible set the agenda."
+  },
+  {
+    "path": "[4].sections[1].subsections[1].name",
+    "text": "Leading Bible Studies"
+  },
+  {
+    "path": "[4].sections[1].subsections[1].description",
+    "text": "How to lead a group well \u2014 asking good questions and helping people meet God in the text."
+  },
+  {
+    "path": "[4].sections[2].section",
+    "text": "Leadership & Administration"
+  },
+  {
+    "path": "[4].sections[2].description",
+    "text": "The practical and theological dimensions of leading a church or ministry \u2014 vision, teams, conflict, and governance."
+  },
+  {
+    "path": "[4].sections[2].subsections[0].name",
+    "text": "Vision & Strategy"
+  },
+  {
+    "path": "[4].sections[2].subsections[0].description",
+    "text": "How to think clearly about where God is leading and how to get there together."
+  },
+  {
+    "path": "[4].sections[2].subsections[1].name",
+    "text": "Team Building"
+  },
+  {
+    "path": "[4].sections[2].subsections[1].description",
+    "text": "Gathering, developing, and sustaining a healthy ministry team."
+  },
+  {
+    "path": "[4].sections[2].subsections[2].name",
+    "text": "Conflict Resolution"
+  },
+  {
+    "path": "[4].sections[2].subsections[2].description",
+    "text": "How to handle disagreement and division in a way that honours God and preserves unity."
+  },
+  {
+    "path": "[4].sections[2].subsections[3].name",
+    "text": "Church Governance"
+  },
+  {
+    "path": "[4].sections[2].subsections[3].description",
+    "text": "The structures and processes that help a church be accountable and well-ordered."
+  },
+  {
+    "path": "[4].sections[3].section",
+    "text": "Pastoral Care"
+  },
+  {
+    "path": "[4].sections[3].description",
+    "text": "Studies equipping believers to walk alongside one another in difficulty, loss, crisis, and need."
+  },
+  {
+    "path": "[4].sections[3].subsections[0].name",
+    "text": "Pastoral Conversations"
+  },
+  {
+    "path": "[4].sections[3].subsections[0].description",
+    "text": "The skills and posture needed for helpful one-to-one ministry conversations."
+  },
+  {
+    "path": "[4].sections[3].subsections[1].name",
+    "text": "Crisis Intervention"
+  },
+  {
+    "path": "[4].sections[3].subsections[1].description",
+    "text": "How to respond wisely and compassionately when someone is in acute distress."
+  },
+  {
+    "path": "[4].sections[3].subsections[2].name",
+    "text": "Visitation"
+  },
+  {
+    "path": "[4].sections[3].subsections[2].description",
+    "text": "The ministry of presence \u2014 visiting the sick, the elderly, and the housebound."
+  },
+  {
+    "path": "[4].sections[3].subsections[3].name",
+    "text": "Marriage Prep"
+  },
+  {
+    "path": "[4].sections[3].subsections[3].description",
+    "text": "Helping couples prepare for a marriage built on Christ."
+  },
+  {
+    "path": "[4].sections[3].subsections[4].name",
+    "text": "Bereavement Care"
+  },
+  {
+    "path": "[4].sections[3].subsections[4].description",
+    "text": "Walking with those who are grieving \u2014 what to say, what not to say, and how to stay."
+  },
+  {
+    "path": "[4].sections[4].section",
+    "text": "Evangelism & Missions"
+  },
+  {
+    "path": "[4].sections[4].description",
+    "text": "Studies on taking the gospel to those who haven't heard it \u2014 personally, locally, and across cultures."
+  },
+  {
+    "path": "[4].sections[4].subsections[0].name",
+    "text": "Personal Witnessing"
+  },
+  {
+    "path": "[4].sections[4].subsections[0].description",
+    "text": "How to share your faith naturally and clearly in everyday conversation."
+  },
+  {
+    "path": "[4].sections[4].subsections[1].name",
+    "text": "Apologetics"
+  },
+  {
+    "path": "[4].sections[4].subsections[1].description",
+    "text": "Answering the questions that keep people from taking Christianity seriously."
+  },
+  {
+    "path": "[4].sections[4].subsections[2].name",
+    "text": "Cross-Cultural Ministry"
+  },
+  {
+    "path": "[4].sections[4].subsections[2].description",
+    "text": "Serving and sharing across cultural boundaries with sensitivity and respect."
+  },
+  {
+    "path": "[4].sections[4].subsections[3].name",
+    "text": "Church Planting"
+  },
+  {
+    "path": "[4].sections[4].subsections[3].description",
+    "text": "The theology and practice of establishing new gospel communities."
+  },
+  {
+    "path": "[4].sections[5].section",
+    "text": "Discipleship & Mentoring"
+  },
+  {
+    "path": "[4].sections[5].description",
+    "text": "Studies on the ministry of helping others grow \u2014 one to one, in small groups, and by training the next generation."
+  },
+  {
+    "path": "[4].sections[5].subsections[0].name",
+    "text": "One-to-One Ministry"
+  },
+  {
+    "path": "[4].sections[5].subsections[0].description",
+    "text": "The power of intentional, personal discipleship \u2014 meeting regularly to open the Bible together."
+  },
+  {
+    "path": "[4].sections[5].subsections[1].name",
+    "text": "Small Group Leading"
+  },
+  {
+    "path": "[4].sections[5].subsections[1].description",
+    "text": "How to lead a small group that is genuine, growing, and grounded in Scripture."
+  },
+  {
+    "path": "[4].sections[5].subsections[2].name",
+    "text": "Training Others"
+  },
+  {
+    "path": "[4].sections[5].subsections[2].description",
+    "text": "Equipping others to do the work of ministry \u2014 multiplying not just converts but leaders."
+  },
+  {
+    "path": "[5].shelf",
+    "text": "Other"
+  },
+  {
+    "path": "[5].description",
+    "text": "Studies that don't fit neatly into another category \u2014 or whose shelf information hasn't been set yet."
+  }
+]

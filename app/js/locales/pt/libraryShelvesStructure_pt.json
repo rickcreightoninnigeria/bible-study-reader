@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Antigo Testamento",
+    "description": " Estudos que exploram os livros escritos antes da vinda de Cristo — da Lei e dos Profetas aos Escritos. O Antigo Testamento narra a história da aliança de Deus com Israel e aponta para o Messias.",
+    "sections": [
+      {
+        "section": " Lei",
+        "description": " Os cinco primeiros livros da Bíblia (o Pentateuco), que abrangem a criação, a queda, o êxodo e a entrega da Lei — o alicerce sobre o qual o restante das Escrituras se constrói.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Gênese",
+            "description": " O livro dos começos: a criação, a queda e os patriarcas — Abraão, Isaque, Jacó e José."
+          },
+          {
+            "name": " Êxodo",
+            "description": " Deus liberta seu povo da escravidão no Egito, revela seu nome e dá sua Lei no Sinai."
+          },
+          {
+            "name": "Levítico",
+            "description": " Instruções para adoração e santidade, mostrando como um povo pecador pode se aproximar de um Deus santo."
+          },
+          {
+            "name": " Números",
+            "description": " A jornada de Israel pelo deserto — seus fracassos, sua disciplina e a fidelidade contínua de Deus."
+          },
+          {
+            "name": " Deuteronômio",
+            "description": " Os sermões de despedida de Moisés, renovando a aliança e preparando Israel para entrar na Terra Prometida."
+          }
+        ]
+      },
+      {
+        "section": " História",
+        "description": " Os livros históricos traçam a trajetória de Israel desde a conquista de Canaã, passando pela monarquia, o exílio e o retorno — mostrando a fidelidade de Deus e a repetida infidelidade do seu povo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Josué",
+            "description": " conquista e a divisão da Terra Prometida sob a liderança de Josué."
+          },
+          {
+            "name": " Juízes",
+            "description": " Um ciclo de rebelião, opressão e resgate, à medida que Israel se afasta repetidamente de Deus."
+          },
+          {
+            "name": " Ruth",
+            "description": " Uma história de lealdade, providência e redenção ambientada na época dos juízes."
+          },
+          {
+            "name": " 1 Samuel",
+            "description": " A transição de juízes para reis: Samuel, Saul e a ascensão de Davi."
+          },
+          {
+            "name": " 2 Samuel",
+            "description": " O reinado de Davi — seus triunfos, fracassos e a aliança de Deus com sua casa."
+          },
+          {
+            "name": " 1 Reis",
+            "description": " glória de Salomão e a divisão do reino; Elias e a contenda no Monte Carmelo."
+          },
+          {
+            "name": " 2 Reis",
+            "description": " O declínio e a queda de ambos os reinos, culminando no exílio."
+          },
+          {
+            "name": " 1 Crônicas",
+            "description": " Uma recontagem da história de Israel, de Adão a Davi, com foco na adoração e no templo."
+          },
+          {
+            "name": " 2 Crônicas",
+            "description": " Salomão e o templo, o reino dividido e a esperança de restauração."
+          },
+          {
+            "name": " Esdras",
+            "description": " O retorno do exílio e a reconstrução do templo sob a liderança de Esdras."
+          },
+          {
+            "name": " Neemias",
+            "description": " reconstrução dos muros de Jerusalém e a renovação da comunidade da aliança."
+          },
+          {
+            "name": " Ester",
+            "description": " A providência oculta de Deus protegendo seu povo na corte persa."
+          }
+        ]
+      },
+      {
+        "section": " Poesia e Sabedoria",
+        "description": " Jó, Salmos, Provérbios, Eclesiastes e Cântico dos Cânticos — livros que exploram as profundezas da experiência humana: sofrimento, louvor, sabedoria e amor.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Trabalho",
+            "description": " Uma profunda exploração do sofrimento, da justiça e do mistério dos caminhos de Deus."
+          },
+          {
+            "name": " Salmos",
+            "description": " O hinário e o livro de orações de Israel — toda a gama de emoções humanas levadas a Deus."
+          },
+          {
+            "name": " Provérbios",
+            "description": "Sabedoria prática para o dia a dia, fundamentada no temor do Senhor."
+          },
+          {
+            "name": " Eclesiastes",
+            "description": " Uma análise profunda sobre significado, trabalho e mortalidade 'sob o sol'."
+          },
+          {
+            "name": " Cântico dos Cânticos",
+            "description": " Uma celebração do amor e do casamento, repleta de imagens de deleite e saudade."
+          }
+        ]
+      },
+      {
+        "section": " Profetas",
+        "description": " Os livros proféticos chamam Israel ao arrependimento, advertem sobre o juízo e apontam para a redenção final de Deus. Eles são essenciais para a compreensão do cumprimento dessas promessas no Novo Testamento.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Isaías",
+            "description": " Julgamento e esperança inspiradora — incluindo os Cânticos do Servo que apontam para Cristo."
+          },
+          {
+            "name": " Jeremias",
+            "description": " A angústia de um profeta com a queda de Jerusalém e a promessa de uma nova aliança."
+          },
+          {
+            "name": " Lamentações",
+            "description": " Uma dor profunda pela destruição de Jerusalém, sustentada pela esperança na fidelidade de Deus."
+          },
+          {
+            "name": " Ezequiel",
+            "description": " Visões da glória de Deus partindo e retornando, e a promessa de renovação espiritual."
+          },
+          {
+            "name": " Daniel",
+            "description": " Presença fiel no exílio e visões do reino soberano de Deus sobre todas as nações."
+          },
+          {
+            "name": " Oséias",
+            "description": " O amor infalível de Deus por um povo infiel, retratado através do próprio casamento de Oséias."
+          },
+          {
+            "name": " Joel",
+            "description": " Uma praga de gafanhotos como um chamado ao arrependimento e a promessa do Espírito."
+          },
+          {
+            "name": " Amos",
+            "description": " Um forte apelo profético por justiça e a advertência de que a religião vazia não prevalecerá."
+          },
+          {
+            "name": " Obadias",
+            "description": " Um breve oráculo contra Edom e o dia vindouro do Senhor."
+          },
+          {
+            "name": " Jonas",
+            "description": " A compaixão de Deus pelas nações — e a resistência a ela de um profeta relutante."
+          },
+          {
+            "name": " Miquéias",
+            "description": " Justiça, misericórdia e humildade — e a promessa de um governante de Belém."
+          },
+          {
+            "name": " Nahum",
+            "description": " queda de Nínive e o consolo da justiça de Deus para o seu povo oprimido."
+          },
+          {
+            "name": " Habacuque",
+            "description": " Lutar honestamente com Deus contra a injustiça e aprender a confiar no Seu tempo."
+          },
+          {
+            "name": " Sofonias",
+            "description": " O dia do Senhor e a alegria da restauração para um remanescente purificado."
+          },
+          {
+            "name": " Ageu",
+            "description": " Um apelo para reconstruir o templo e priorizar a casa de Deus em detrimento do conforto pessoal."
+          },
+          {
+            "name": " Zacarias",
+            "description": " Visões de restauração e de um Messias que vem humildemente montado em um jumento."
+          },
+          {
+            "name": " Malaquias",
+            "description": "Um último apelo à fidelidade antes do longo silêncio que se seguiu a João Batista."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Novo Testamento",
+    "description": " Estudos nos livros escritos após a vinda de Cristo — os Evangelhos, as cartas dos apóstolos e o Apocalipse. O Novo Testamento revela o cumprimento das promessas de Deus em Jesus e a vida da igreja primitiva.",
+    "sections": [
+      {
+        "section": " Evangelhos e Atos",
+        "description": " Os quatro relatos da vida, morte e ressurreição de Jesus, e a história da expansão da igreja primitiva pelo mundo romano.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mateus",
+            "description": " Jesus como o cumprimento do Antigo Testamento, o novo Moisés e o Rei do reino de Deus."
+          },
+          {
+            "name": " Marca",
+            "description": " Um relato dinâmico da vida de Jesus como Servo sofredor e Filho de Deus."
+          },
+          {
+            "name": " Lucas",
+            "description": " Jesus como Salvador do mundo — com atenção especial aos pobres, às mulheres e aos marginalizados."
+          },
+          {
+            "name": " John",
+            "description": " O retrato teológico mais profundo de Jesus — o Verbo que se fez carne, o EU SOU, o Filho de Deus."
+          },
+          {
+            "name": " Atos",
+            "description": " O Espírito Santo capacita a igreja a levar o evangelho de Jerusalém até os confins da terra."
+          }
+        ]
+      },
+      {
+        "section": " Cartas de Paulo",
+        "description": " As cartas de Paulo às igrejas e aos indivíduos — explorando a lógica do evangelho, a conduta cristã e a natureza da igreja.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Romanos",
+            "description": " exposição mais sistemática do evangelho feita por Paulo: pecado, justificação, santificação e esperança."
+          },
+          {
+            "name": " 1 Coríntios",
+            "description": " Abordando as divisões e desordens em Corinto, com ensinamentos sobre o amor, os dons e a ressurreição."
+          },
+          {
+            "name": " 2 Coríntios",
+            "description": " A defesa do ministério de Paulo e o paradoxo da força na fraqueza."
+          },
+          {
+            "name": " Gálatas",
+            "description": " Uma defesa apaixonada da justificação somente pela fé contra aqueles que acrescentam a lei."
+          },
+          {
+            "name": " Efésios",
+            "description": " As riquezas da identidade do crente em Cristo e da igreja como a nova humanidade de Deus."
+          },
+          {
+            "name": " Filipenses",
+            "description": " Alegria em todas as circunstâncias e o exemplo da humildade de Cristo."
+          },
+          {
+            "name": " Colossenses",
+            "description": " Cristo como supremo sobre todas as coisas e as implicações disso para a vida cotidiana."
+          },
+          {
+            "name": " 1 Tessalonicenses",
+            "description": " Encorajamento para uma igreja jovem, com ensinamentos sobre a volta de Cristo."
+          },
+          {
+            "name": " 2 Tessalonicenses",
+            "description": " Correção de mal-entendidos sobre o fim dos tempos e um chamado ao trabalho fiel."
+          },
+          {
+            "name": " 1 Timóteo",
+            "description": " Instruções para a vida na igreja, liderança e sã doutrina."
+          },
+          {
+            "name": " 2 Timóteo",
+            "description": " última carta de Paulo — uma incumbência a Timóteo para que guarde o evangelho e termine bem a sua missão."
+          },
+          {
+            "name": " Tito",
+            "description": " Nomear líderes e ensinar que a sã doutrina leva a uma vida piedosa."
+          },
+          {
+            "name": " Filemon",
+            "description": " Um apelo pessoal à reconciliação e às implicações sociais do Evangelho."
+          }
+        ]
+      },
+      {
+        "section": " Cartas Gerais e Revelação",
+        "description": " Cartas de Tiago, Pedro, João, Judas e outros — abordando a fé em meio às provações, a crença genuína, os falsos ensinamentos e a esperança final da Revelação.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " hebreus",
+            "description": " Jesus como o cumprimento de todo o sacerdócio, sacrifício e aliança do Antigo Testamento — superior em todos os sentidos."
+          },
+          {
+            "name": " James",
+            "description": " Fé que funciona — sabedoria prática para viver como povo de Deus no mundo."
+          },
+          {
+            "name": " 1 Pedro",
+            "description": " Esperança e vida santa para exilados em um mundo hostil."
+          },
+          {
+            "name": " 2 Pedro",
+            "description": " Advertências contra falsos profetas e confiança nas promessas de Deus."
+          },
+          {
+            "name": " 1 João",
+            "description": " Certeza da salvação e marcas da fé genuína: amor, obediência e verdade."
+          },
+          {
+            "name": " 2 João",
+            "description": " Uma breve carta sobre amor, verdade e sobre não acolher aqueles que negam a Cristo."
+          },
+          {
+            "name": " 3 João",
+            "description": "Elogiando a hospitalidade fiel e alertando contra a liderança egoísta."
+          },
+          {
+            "name": " Jude",
+            "description": " Um forte apelo para lutar pela fé contra os falsos ensinamentos que se infiltraram na igreja."
+          },
+          {
+            "name": " Revelação",
+            "description": " Visões da vitória final de Deus sobre o mal, do julgamento dos ímpios e da renovação de todas as coisas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Crenças",
+    "description": " Estudos focados na doutrina cristã — o que a Bíblia ensina sobre Deus, a humanidade, a salvação e o futuro. Fundamentar-nos na crença correta é o alicerce para uma vida correta.",
+    "sections": [
+      {
+        "section": " Visão geral",
+        "description": " Estudos introdutórios que abrangem todo o ensinamento cristão — o evangelho, as doutrinas centrais e as confissões históricas da igreja.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Fundamentos",
+            "description": " Os alicerces essenciais da fé cristã — o que todo crente precisa saber."
+          },
+          {
+            "name": " O Evangelho",
+            "description": " Estudos focados no cerne da mensagem cristã: pecado, graça e salvação por meio de Cristo."
+          },
+          {
+            "name": " Credos e Confissões",
+            "description": " As declarações históricas de fé que definiram o cristianismo ortodoxo ao longo dos séculos."
+          }
+        ]
+      },
+      {
+        "section": " Deus",
+        "description": " Quem é Deus? Estudos que exploram a Trindade, os atributos de Deus e o que significa conhecê-lo pessoalmente.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Atributos de Deus",
+            "description": " A santidade, o amor, a soberania, a justiça e as demais características de Deus reveladas nas Escrituras."
+          },
+          {
+            "name": " A Trindade",
+            "description": " Um só Deus em três pessoas — Pai, Filho e Espírito Santo — e por que isso é importante."
+          },
+          {
+            "name": " Deus Pai",
+            "description": " Deus como Criador, Rei e Pai — e o que significa ser seu filho."
+          }
+        ]
+      },
+      {
+        "section": " Escrituras",
+        "description": " Estudos sobre a própria Bíblia — como ela surgiu, o que afirma sobre si mesma e como lê-la corretamente.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Autoridade",
+            "description": " Por que a Bíblia tem o direito de influenciar todas as áreas da vida."
+          },
+          {
+            "name": " Inspiração",
+            "description": " Como Deus usou autores humanos para nos dar a Sua Palavra."
+          },
+          {
+            "name": " Cânone",
+            "description": " Como os livros da Bíblia foram reconhecidos e reunidos."
+          },
+          {
+            "name": " Interpretação",
+            "description": " Princípios para ler a Bíblia com fidelidade e precisão."
+          }
+        ]
+      },
+      {
+        "section": " Criação e Humanidade",
+        "description": " Estudos sobre o que significa ser humano — feito à imagem de Deus, encarnado e criado com um propósito.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Criação",
+            "description": " Deus como Criador de todas as coisas — e o que isso significa para a nossa visão de mundo."
+          },
+          {
+            "name": " Imagem de Deus",
+            "description": " O que significa ser feito à imagem de Deus e a dignidade que isso confere a cada pessoa."
+          },
+          {
+            "name": " Incorporação",
+            "description": " bondade de ter um corpo e o que as Escrituras dizem sobre a existência física."
+          },
+          {
+            "name": " Propósito",
+            "description": " Por que estamos aqui — a vocação humana de amar a Deus, servir ao próximo e cuidar da criação."
+          }
+        ]
+      },
+      {
+        "section": " O Mal e a Queda",
+        "description": " Estudos sobre o pecado — sua origem, sua natureza e seus efeitos devastadores sobre os seres humanos e o mundo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " A natureza do pecado",
+            "description": " O que o pecado realmente é — não apenas quebrar regras, mas um afastamento fundamental de Deus."
+          },
+          {
+            "name": " O Outono",
+            "description": " O que aconteceu em Gênesis 3 e como isso afeta todos os seres humanos."
+          },
+          {
+            "name": " Tentação",
+            "description": "Como funciona a tentação e como os crentes podem resistir a ela."
+          }
+        ]
+      },
+      {
+        "section": " Cristo",
+        "description": " Estudos sobre a pessoa de Jesus Cristo — plenamente Deus e plenamente humano — e o que significa a sua vinda.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pessoa de Cristo",
+            "description": " A doutrina das duas naturezas — como Jesus é plenamente divino e plenamente humano."
+          },
+          {
+            "name": " Encarnação",
+            "description": " Por que o Filho de Deus se fez carne e o que sua humanidade significa para nós."
+          }
+        ]
+      },
+      {
+        "section": " Salvação",
+        "description": " Como Deus resgata os pecadores? Estudos que abrangem a expiação, a justificação, a adoção e toda a extensão do que Deus faz para nos salvar.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Expiação",
+            "description": "Como a morte de Cristo lida com o pecado — substituição, redenção, reconciliação e muito mais."
+          },
+          {
+            "name": " Conversão",
+            "description": " O que significa se afastar do pecado e confiar em Cristo — arrependimento e fé."
+          },
+          {
+            "name": " Justificação",
+            "description": " Ser declarado justo perante Deus — somente pela graça, somente pela fé, somente em Cristo."
+          },
+          {
+            "name": " Adoção",
+            "description": " O dom extraordinário de sermos acolhidos na família de Deus como seus filhos e filhas."
+          }
+        ]
+      },
+      {
+        "section": " O Espírito",
+        "description": " Estudos sobre o Espírito Santo — quem ele é, o que faz e como age nos crentes e na igreja.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pessoa do Espírito",
+            "description": " Espírito Santo como a terceira pessoa da Trindade — não uma força, mas uma pessoa."
+          },
+          {
+            "name": " Fruto do Espírito",
+            "description": " As qualidades de caráter que o Espírito produz naqueles que andam com Ele."
+          },
+          {
+            "name": " Dons Espirituais",
+            "description": " Os dons que o Espírito Santo concede para capacitar os crentes para o serviço no corpo de Cristo."
+          }
+        ]
+      },
+      {
+        "section": " Igreja",
+        "description": " O que é a igreja e por que ela é importante? Estudos sobre a natureza, a missão e a estrutura do corpo de Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Natureza da Igreja",
+            "description": " O que é a igreja — o povo de Deus, o corpo de Cristo, o templo do Espírito."
+          },
+          {
+            "name": " Sacramentos",
+            "description": "Batismo e Ceia do Senhor — o que são, o que significam e como celebrá-los."
+          },
+          {
+            "name": " Liderança",
+            "description": " Padrões bíblicos de liderança na igreja: presbíteros, diáconos e autoridade com espírito de servidor."
+          },
+          {
+            "name": " Adorar",
+            "description": " O que é o culto cristão, por que ele é importante e como ele molda a vida da comunidade."
+          }
+        ]
+      },
+      {
+        "section": " Últimas coisas",
+        "description": " Estudos sobre a morte, a ressurreição, o juízo e a nova criação — a esperança que molda a forma como os cristãos vivem no presente.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " O Retorno de Cristo",
+            "description": " A certeza da esperança de que Jesus retornará em glória para julgar os vivos e os mortos."
+          },
+          {
+            "name": " Julgamento",
+            "description": " veredito final de Deus sobre todas as pessoas — e a boa notícia de que Cristo carregou o julgamento em seu lugar."
+          },
+          {
+            "name": " Céu e Inferno",
+            "description": " Os destinos eternos descritos nas Escrituras — e por que eles são importantes para a forma como vivemos hoje."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Vida",
+    "description": " Estudos que conectam a verdade bíblica à experiência cotidiana de seguir a Cristo — nos relacionamentos, no trabalho, na identidade e na luta constante contra o pecado.",
+    "sections": [
+      {
+        "section": " Disciplinas Espirituais",
+        "description": " Práticas que nos treinam a permanecer perto de Deus e a crescer em piedade — não maneiras de ganhar favores, mas hábitos que nos mantêm abertos à sua graça.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Oração",
+            "description": " Conversar com Deus — seus fundamentos, suas formas e como desenvolver uma vida de oração mais rica."
+          },
+          {
+            "name": "Leitura da Bíblia",
+            "description": " Como ler bem as Escrituras — com compreensão, constância e a expectativa de transformação."
+          },
+          {
+            "name": " Adorar",
+            "description": " Adoração como uma postura para toda a vida, não apenas uma atividade de domingo."
+          }
+        ]
+      },
+      {
+        "section": " Caráter e Santificação",
+        "description": " O processo contínuo de nos tornarmos mais semelhantes a Cristo — lutando contra o pecado, crescendo em virtude e compreendendo quem somos nele.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Fruto do Espírito",
+            "description": " Amor, alegria, paz, paciência, amabilidade, bondade, fidelidade, mansidão e domínio próprio."
+          },
+          {
+            "name": " Superando o Pecado",
+            "description": " Auxílio prático e teológico para lidar com padrões persistentes de pecado."
+          },
+          {
+            "name": "Crescimento na Graça",
+            "description": " Como é crescer como cristão — e o que atrapalha esse processo."
+          },
+          {
+            "name": " Identidade em Cristo",
+            "description": " Quem somos por causa do que Cristo fez — e por que isso muda tudo."
+          }
+        ]
+      },
+      {
+        "section": " Relacionamentos e Família",
+        "description": " Estudos sobre os relacionamentos nos quais Deus nos colocou — casamento, família, amizade e comunidade.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Casado",
+            "description": " O pacto matrimonial — seu propósito, seus desafios e sua representação de Cristo e da igreja."
+          },
+          {
+            "name": " Solteirice",
+            "description": " A solteirice como uma vocação plena e significativa, não como uma sala de espera para o casamento."
+          },
+          {
+            "name": " Educação dos filhos",
+            "description": " Educar os filhos na fé — com graça, verdade e uma perspectiva de longo prazo."
+          },
+          {
+            "name": " Amizade",
+            "description": " O dom da amizade cristã — e como cultivar relacionamentos profundos."
+          },
+          {
+            "name": " Comunicação",
+            "description": " Falar com sinceridade e gentileza — e ouvir atentamente."
+          },
+          {
+            "name": " Comunidade",
+            "description": " O que significa viver como o corpo de Cristo — carregando os fardos uns dos outros."
+          }
+        ]
+      },
+      {
+        "section": " Trabalho e Vocação",
+        "description": " Estudos que aplicam o evangelho ao trabalho, ao dinheiro, ao tempo e à ambição — considerando o trabalho cotidiano como parte dos propósitos de Deus.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Vida profissional",
+            "description": " que a Bíblia diz sobre o trabalho — sua bondade, suas frustrações e sua redenção em Cristo."
+          },
+          {
+            "name": " Dinheiro e bens",
+            "description": " Generosidade, contentamento e uma visão bíblica da riqueza."
+          },
+          {
+            "name": " Gestão do Tempo",
+            "description": " Como usamos nosso tempo — e como o evangelho transforma nossas prioridades."
+          },
+          {
+            "name": " Ambição",
+            "description": " Ambição santa versus ambição egoísta — e como distinguir uma da outra."
+          },
+          {
+            "name": " Aposentadoria",
+            "description": " Como se manifesta uma vida de fé nas últimas fases da vida."
+          }
+        ]
+      },
+      {
+        "section": " Ética e Cultura Cristãs",
+        "description": "Como os crentes pensam e agem em relação às questões éticas prementes de nosso tempo — da justiça social à bioética e à tecnologia.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Justiça social",
+            "description": " O amor de Deus pelos vulneráveis e oprimidos, e o que isso significa para nós."
+          },
+          {
+            "name": " Bioética",
+            "description": " Questões relativas ao início e ao fim da vida — abordadas com cuidado e compaixão teológicos."
+          },
+          {
+            "name": " Tecnologia envolvente",
+            "description": " Como usar a tecnologia de forma consciente em um mundo que é moldado por ela."
+          }
+        ]
+      },
+      {
+        "section": " Sofrimento e Orientação",
+        "description": " Estudos que ajudam os crentes a atravessar a dor, a incerteza e as dificuldades com honestidade e esperança.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Provações e Aflições",
+            "description": " Por que Deus permite o sofrimento e como as Escrituras nos capacitam a suportá-lo com esperança."
+          },
+          {
+            "name": " Discernindo a Vontade de Deus",
+            "description": " Como tomar decisões sábias — e o que as Escrituras realmente prometem sobre orientação."
+          },
+          {
+            "name": " Saúde mental",
+            "description": " Depressão, ansiedade e outras dificuldades — abordadas com compaixão e cuidado bíblico."
+          },
+          {
+            "name": " Pesar",
+            "description": " Como vivenciar o luto para aqueles que ainda têm esperança — com sinceridade e em comunidade."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Ministério",
+    "description": " Estudos para aqueles envolvidos no serviço ao próximo — evangelismo, cuidado pastoral, ensino e liderança. Fundamentados nas Escrituras, esses estudos capacitam os crentes a servir de forma eficaz e sustentável.",
+    "sections": [
+      {
+        "section": "Teologia do Ministério",
+        "description": " Os fundamentos bíblicos para todo o ministério cristão — o que significa servir e que tipo de pessoa o servo deve ser.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Liderança Servidora",
+            "description": " Liderar como Jesus liderou — com humildade, sacrifício e cuidado para com aqueles a quem se serve."
+          },
+          {
+            "name": " Chamando",
+            "description": " Entendendo seu chamado para o ministério — como ele é discernido e o que envolve."
+          }
+        ]
+      },
+      {
+        "section": " Pregação e Ensino (Homilética)",
+        "description": " Estudos para aqueles que são chamados a explicar a Bíblia publicamente — abordando método, caráter e a importância de lidar com a Palavra de Deus.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pregação expositiva",
+            "description": "Como pregar fielmente a partir do texto — deixando que a Bíblia defina a pauta."
+          },
+          {
+            "name": " Liderando Estudos Bíblicos",
+            "description": " Como liderar bem um grupo — fazendo boas perguntas e ajudando as pessoas a encontrar Deus no texto."
+          }
+        ]
+      },
+      {
+        "section": " Liderança e Administração",
+        "description": " As dimensões práticas e teológicas de liderar uma igreja ou ministério — visão, equipes, conflitos e governança.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Visão e estratégia",
+            "description": " Como pensar com clareza sobre para onde Deus está nos guiando e como chegar lá juntos."
+          },
+          {
+            "name": " Formação de Equipes",
+            "description": " Reunir, desenvolver e manter uma equipe ministerial saudável."
+          },
+          {
+            "name": " Resolução de Conflitos",
+            "description": "Como lidar com desentendimentos e divisões de uma forma que honre a Deus e preserve a unidade."
+          },
+          {
+            "name": " Governança da Igreja",
+            "description": " As estruturas e os processos que ajudam uma igreja a ser responsável e bem organizada."
+          }
+        ]
+      },
+      {
+        "section": " Assistência Pastoral",
+        "description": " Estudos que capacitam os fiéis a caminharem juntos em momentos de dificuldade, perda, crise e necessidade.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Conversas Pastorais",
+            "description": " As habilidades e a postura necessárias para conversas ministeriais individuais proveitosas."
+          },
+          {
+            "name": " Intervenção em Crise",
+            "description": " Como responder com sabedoria e compaixão quando alguém está em sofrimento agudo."
+          },
+          {
+            "name": " Visitação",
+            "description": " ministério da presença — visitar os doentes, os idosos e os que estão acamados."
+          },
+          {
+            "name": " Preparação para o casamento",
+            "description": " Ajudando casais a se prepararem para um casamento alicerçado em Cristo."
+          },
+          {
+            "name": " Apoio ao Luto",
+            "description": " Acompanhar aqueles que estão de luto — o que dizer, o que não dizer e como permanecer ao lado deles."
+          }
+        ]
+      },
+      {
+        "section": " Evangelismo e Missões",
+        "description": " Estudos sobre como levar o evangelho àqueles que não o ouviram — pessoalmente, localmente e em diferentes culturas.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Testemunho pessoal",
+            "description": " Como compartilhar sua fé de forma natural e clara em conversas do dia a dia."
+          },
+          {
+            "name": " Apologética",
+            "description": "Respondendo às perguntas que impedem as pessoas de levarem o cristianismo a sério."
+          },
+          {
+            "name": " Ministério Intercultural",
+            "description": " Servir e compartilhar além das fronteiras culturais com sensibilidade e respeito."
+          },
+          {
+            "name": " Plantação de Igrejas",
+            "description": " A teologia e a prática de estabelecer novas comunidades evangélicas."
+          }
+        ]
+      },
+      {
+        "section": " Discipulado e Mentoria",
+        "description": " Estudos sobre o ministério de ajudar os outros a crescer — individualmente, em pequenos grupos e treinando a próxima geração.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ministério Individual",
+            "description": " O poder do discipulado intencional e pessoal — reunir-se regularmente para estudar a Bíblia juntos."
+          },
+          {
+            "name": " Liderança de Pequenos Grupos",
+            "description": " Como liderar um pequeno grupo que seja genuíno, crescente e fundamentado nas Escrituras."
+          },
+          {
+            "name": " Treinar outros",
+            "description": " Capacitar outros para realizar a obra do ministério — multiplicando não apenas convertidos, mas também líderes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Outro",
+    "description": " Estudos que não se encaixam perfeitamente em outra categoria — ou cujas informações de catalogação ainda não foram definidas.",
+    "sections": []
+  }
+]

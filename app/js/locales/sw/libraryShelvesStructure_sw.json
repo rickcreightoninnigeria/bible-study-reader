@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Agano la Kale",
+    "description": " Masomo yanayochunguza vitabu vilivyoandikwa kabla ya kuja kwa Kristo — kuanzia Sheria na Manabii hadi Maandiko. Agano la Kale linasimulia hadithi ya agano la Mungu na Israeli na linaelekeza mbele kwa Masihi.",
+    "sections": [
+      {
+        "section": " Sheria",
+        "description": " Vitabu vitano vya kwanza vya Biblia (Pentateuki), vinavyohusu uumbaji, anguko, kutoka, na utoaji wa Sheria — msingi ambao Maandiko mengine yote yanajengwa juu yake.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mwanzo",
+            "description": " Kitabu cha mwanzo: uumbaji, anguko, na mababu — Ibrahimu, Isaka, Yakobo, na Yusufu."
+          },
+          {
+            "name": " Kutoka",
+            "description": " Mungu anawaokoa watu wake kutoka utumwani Misri, anafunua jina lake, na kutoa Sheria yake huko Sinai."
+          },
+          {
+            "name": "Mambo ya Walawi",
+            "description": " Maagizo ya ibada na utakatifu, yanayoonyesha jinsi watu wenye dhambi wanavyoweza kumkaribia Mungu mtakatifu."
+          },
+          {
+            "name": " Nambari",
+            "description": " Safari ya Israeli jangwani — kushindwa kwake, nidhamu yake, na uaminifu unaoendelea wa Mungu."
+          },
+          {
+            "name": " Kumbukumbu la Torati",
+            "description": " Mahubiri ya Musa ya kuaga, kufanya upya agano na kuwaandaa Israeli kuingia Nchi ya Ahadi."
+          }
+        ]
+      },
+      {
+        "section": " Historia",
+        "description": " Vitabu vya kihistoria vinafuatilia hadithi ya Israeli kuanzia ushindi wa Kanaani kupitia ufalme, uhamisho, na kurudi — vinaonyesha uaminifu wa Mungu na ukosefu wa uaminifu wa watu wake mara kwa mara.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Yoshua",
+            "description": "Ushindi na mgawanyo wa Nchi ya Ahadi chini ya uongozi wa Yoshua."
+          },
+          {
+            "name": " Waamuzi",
+            "description": " Mzunguko wa uasi, ukandamizaji, na uokoaji huku Israeli ikimwacha Mungu mara kwa mara."
+          },
+          {
+            "name": " Ruthu",
+            "description": " Hadithi ya uaminifu, majaliwa, na ukombozi iliandikwa wakati wa waamuzi."
+          },
+          {
+            "name": " 1 Samweli",
+            "description": " Mabadiliko kutoka kwa waamuzi hadi wafalme: Samweli, Sauli, na kuinuka kwa Daudi."
+          },
+          {
+            "name": " 2 Samweli",
+            "description": " Utawala wa Daudi — ushindi wake, kushindwa kwake, na agano la Mungu na nyumba yake."
+          },
+          {
+            "name": " 1 Wafalme",
+            "description": "Utukufu wa Sulemani na mgawanyiko wa ufalme; Eliya na shindano la Mlima Karmeli."
+          },
+          {
+            "name": " 2 Wafalme",
+            "description": " Kuanguka na kushuka kwa falme zote mbili, na kuishia uhamishoni."
+          },
+          {
+            "name": " 1 Mambo ya Nyakati",
+            "description": " Usimulizi upya wa historia ya Israeli kuanzia Adamu hadi Daudi, ukizingatia ibada na hekalu."
+          },
+          {
+            "name": " 2 Mambo ya Nyakati",
+            "description": " Sulemani na hekalu, ufalme uliogawanyika, na tumaini la kurejeshwa."
+          },
+          {
+            "name": " Ezra",
+            "description": " Kurudi kutoka uhamishoni na ujenzi upya wa hekalu chini ya uongozi wa Ezra."
+          },
+          {
+            "name": " Nehemia",
+            "description": "Kujengwa upya kwa kuta za Yerusalemu na kufanywa upya kwa jumuiya ya agano."
+          },
+          {
+            "name": " Esta",
+            "description": " Maongozi ya Mungu yaliyofichwa yakiwalinda watu wake katika mahakama ya Uajemi."
+          }
+        ]
+      },
+      {
+        "section": " Ushairi na Hekima",
+        "description": " Ayubu, Zaburi, Mithali, Mhubiri, na Wimbo Ulio Bora — vitabu vinavyochunguza kina cha uzoefu wa mwanadamu: mateso, sifa, hekima, na upendo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kazi",
+            "description": " Uchunguzi wa kina wa mateso, haki, na siri ya njia za Mungu."
+          },
+          {
+            "name": " Zaburi",
+            "description": " Kitabu cha nyimbo cha Israeli na kitabu cha maombi — aina kamili ya hisia za kibinadamu zinazoletwa mbele za Mungu."
+          },
+          {
+            "name": " Mithali",
+            "description": "Hekima ya vitendo kwa maisha ya kila siku, yenye mizizi katika hofu ya Bwana."
+          },
+          {
+            "name": " Mhubiri",
+            "description": " Uchunguzi wa kina wa maana, kazi, na vifo 'chini ya jua'."
+          },
+          {
+            "name": " Wimbo wa Nyimbo",
+            "description": " Sherehe ya mapenzi na ndoa, iliyojaa taswira ya furaha na matamanio."
+          }
+        ]
+      },
+      {
+        "section": " Manabii",
+        "description": " Vitabu vya unabii vinawaita Israeli watubu, vinaonya kuhusu hukumu, na vinaelekeza mbele kwenye ukombozi wa mwisho wa Mungu. Ni muhimu kwa kuelewa utimilifu wa ahadi hizo katika Agano Jipya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Isaya",
+            "description": " Hukumu na tumaini la kutisha — ikiwa ni pamoja na Nyimbo za Mtumishi zinazomlenga Kristo."
+          },
+          {
+            "name": " Yeremia",
+            "description": " Uchungu wa nabii Yerusalemu inapoanguka, na ahadi ya agano jipya."
+          },
+          {
+            "name": " Maombolezo",
+            "description": " Huzuni kubwa juu ya uharibifu wa Yerusalemu, ikiwa imeshikiliwa pamoja kwa tumaini katika uaminifu wa Mungu."
+          },
+          {
+            "name": " Ezekieli",
+            "description": " Maono ya utukufu wa Mungu ukiondoka na kurudi, na ahadi ya upya wa kiroho."
+          },
+          {
+            "name": " Danieli",
+            "description": " Uwepo mwaminifu uhamishoni, na maono ya ufalme mkuu wa Mungu juu ya mataifa yote."
+          },
+          {
+            "name": " Hosea",
+            "description": " Upendo usiokoma wa Mungu kwa watu wasio waaminifu, unaoonyeshwa kupitia ndoa ya Hosea mwenyewe."
+          },
+          {
+            "name": " Yoeli",
+            "description": " Pigo la nzige kama wito wa toba, na ahadi ya Roho."
+          },
+          {
+            "name": " Amosi",
+            "description": " Wito mkali wa kinabii wa haki na onyo kwamba dini tupu haitasimama."
+          },
+          {
+            "name": " Obadia",
+            "description": " Ufunuo mfupi dhidi ya Edomu na siku ya Bwana inayokuja."
+          },
+          {
+            "name": " Yona",
+            "description": " Huruma ya Mungu kwa mataifa — na upinzani wa nabii asiyetaka kuipinga."
+          },
+          {
+            "name": " Mika",
+            "description": " Haki, rehema, na unyenyekevu — na ahadi ya mtawala kutoka Bethlehemu."
+          },
+          {
+            "name": " Nahumu",
+            "description": "Kuanguka kwa Ninawi na faraja ya haki ya Mungu kwa watu wake waliokandamizwa."
+          },
+          {
+            "name": " Habakuki",
+            "description": " Kushindana kwa uaminifu na Mungu dhidi ya dhuluma, na kujifunza kuamini wakati wake."
+          },
+          {
+            "name": " Sefania",
+            "description": " Siku ya Bwana na furaha ya urejesho kwa mabaki waliotakaswa."
+          },
+          {
+            "name": " Hagai",
+            "description": " Wito wa kujenga upya hekalu na kutanguliza nyumba ya Mungu badala ya starehe ya kibinafsi."
+          },
+          {
+            "name": " Zekaria",
+            "description": " Maono ya urejesho na Masihi anayekuja kwa unyenyekevu juu ya punda."
+          },
+          {
+            "name": " Malaki",
+            "description": "Wito wa mwisho wa uaminifu kabla ya ukimya mrefu mbele ya Yohana Mbatizaji."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Agano Jipya",
+    "description": " Masomo katika vitabu vilivyoandikwa baada ya kuja kwa Kristo — Injili, barua za mitume, na Ufunuo. Agano Jipya linafunua utimilifu wa ahadi za Mungu katika Yesu na maisha ya kanisa la kwanza.",
+    "sections": [
+      {
+        "section": " Injili na Matendo",
+        "description": " Masimulizi manne ya maisha ya Yesu, kifo chake, na ufufuo wake, na hadithi ya upanuzi wa kanisa la kwanza katika ulimwengu wa Kirumi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mathayo",
+            "description": " Yesu kama utimilifu wa Agano la Kale, Musa mpya, na Mfalme wa ufalme wa Mungu."
+          },
+          {
+            "name": " Marko",
+            "description": " Simulizi la haraka la Yesu kama Mtumishi na Mwana wa Mungu aliyeteseka."
+          },
+          {
+            "name": " Luka",
+            "description": " Yesu kama Mwokozi wa ulimwengu — kwa uangalifu maalum kwa maskini, wanawake, na watu wa nje."
+          },
+          {
+            "name": " Yohana",
+            "description": " Picha ya kina zaidi ya kitheolojia ya Yesu — Neno aliyefanyika mwili, MIMI NIKO, Mwana wa Mungu."
+          },
+          {
+            "name": " Matendo",
+            "description": " Roho Mtakatifu hulitia nguvu kanisa kupeleka injili kutoka Yerusalemu hadi miisho ya dunia."
+          }
+        ]
+      },
+      {
+        "section": " Barua za Paulo",
+        "description": " Barua za Paulo kwa makanisa na watu binafsi — zikichunguza mantiki ya injili, mwenendo wa Kikristo, na asili ya kanisa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Warumi",
+            "description": "Ufafanuzi wa kimfumo zaidi wa Paulo kuhusu injili: dhambi, kuhesabiwa haki, utakaso, na tumaini."
+          },
+          {
+            "name": " 1 Wakorintho",
+            "description": " Kushughulikia migawanyiko na machafuko huko Korintho, kwa kufundisha kuhusu upendo, karama, na ufufuo."
+          },
+          {
+            "name": " 2 Wakorintho",
+            "description": " Utetezi wa Paulo kwa huduma yake na kitendawili cha nguvu kupitia udhaifu."
+          },
+          {
+            "name": " Wagalatia",
+            "description": " Utetezi mkali wa kuhesabiwa haki kwa imani pekee dhidi ya wale wanaoongeza sheria."
+          },
+          {
+            "name": " Waefeso",
+            "description": " Utajiri wa utambulisho wa mwamini katika Kristo, na kanisa kama ubinadamu mpya wa Mungu."
+          },
+          {
+            "name": " Wafilipi",
+            "description": " Furaha katika hali zote na mfano wa unyenyekevu wa Kristo."
+          },
+          {
+            "name": " Wakolosai",
+            "description": " Kristo kama mkuu juu ya vitu vyote, na matokeo yake kwa maisha ya kila siku."
+          },
+          {
+            "name": " 1 Wathesalonike",
+            "description": " Kutia moyo kwa kanisa changa, pamoja na mafundisho kuhusu kurudi kwa Kristo."
+          },
+          {
+            "name": " 2 Wathesalonike",
+            "description": " Marekebisho ya kutoelewana kuhusu nyakati za mwisho, na wito wa kufanya kazi kwa uaminifu."
+          },
+          {
+            "name": " 1 Timotheo",
+            "description": " Maelekezo kwa ajili ya maisha ya kanisa, uongozi, na mafundisho sahihi."
+          },
+          {
+            "name": " 2 Timotheo",
+            "description": "Barua ya mwisho ya Paulo — agizo kwa Timotheo kulinda injili na kumaliza vizuri."
+          },
+          {
+            "name": " Tito",
+            "description": " Kuteua viongozi na kufundisha kwamba mafundisho sahihi yanaongoza kwenye maisha ya kumcha Mungu."
+          },
+          {
+            "name": " Filemoni",
+            "description": " Wito binafsi wa upatanisho na athari za kijamii za injili."
+          }
+        ]
+      },
+      {
+        "section": " Barua za Jumla na Ufunuo",
+        "description": " Barua kutoka kwa Yakobo, Petro, Yohana, Yuda, na wengine — zikizungumzia imani katika majaribu, imani ya kweli, mafundisho ya uongo, na tumaini kuu la Ufunuo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Waebrania",
+            "description": " Yesu kama utimilifu wa ukuhani wote wa Agano la Kale, dhabihu, na agano — bora kwa kila njia."
+          },
+          {
+            "name": " Yakobo",
+            "description": " Imani inayofanya kazi — hekima ya vitendo ya kuishi kama watu wa Mungu duniani."
+          },
+          {
+            "name": " 1 Petro",
+            "description": " Tumaini na maisha matakatifu kwa wahamishwaji katika ulimwengu wenye uadui."
+          },
+          {
+            "name": " 2 Petro",
+            "description": " Maonyo dhidi ya walimu wa uongo na kujiamini katika ahadi za Mungu."
+          },
+          {
+            "name": " 1 Yohana",
+            "description": " Uhakikisho wa wokovu na alama za imani ya kweli: upendo, utii, na ukweli."
+          },
+          {
+            "name": " 2 Yohana",
+            "description": " Barua fupi kuhusu upendo, ukweli, na kutowakaribisha wale wanaomkana Kristo."
+          },
+          {
+            "name": " 3 Yohana",
+            "description": "Kupongeza ukarimu mwaminifu na kuonya dhidi ya uongozi unaojitafutia faida."
+          },
+          {
+            "name": " Yuda",
+            "description": " Wito mkali wa kuitetea imani dhidi ya mafundisho ya uongo ambayo yameingia kanisani."
+          },
+          {
+            "name": " Ufunuo",
+            "description": " Maono ya ushindi wa mwisho wa Mungu dhidi ya uovu, hukumu ya waovu, na kufanywa upya kwa vitu vyote."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Imani",
+    "description": " Masomo yalilenga mafundisho ya Kikristo — kile ambacho Biblia inafundisha kuhusu Mungu, ubinadamu, wokovu, na wakati ujao. Kujikita katika imani sahihi ndio msingi wa maisha sahihi.",
+    "sections": [
+      {
+        "section": " Muhtasari",
+        "description": " Masomo ya utangulizi yanayochunguza mafundisho yote ya Kikristo — injili, mafundisho ya msingi, na maungamo ya kihistoria ya kanisa.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Misingi",
+            "description": " Vipimo muhimu vya ujenzi wa imani ya Kikristo — kile ambacho kila muumini anahitaji kujua."
+          },
+          {
+            "name": " Injili",
+            "description": " Masomo yalilenga kiini cha ujumbe wa Kikristo: dhambi, neema, na wokovu kupitia Kristo."
+          },
+          {
+            "name": " Imani na Maungamo",
+            "description": " Kauli za kihistoria za imani ambazo zimefafanua Ukristo wa kawaida katika karne nyingi."
+          }
+        ]
+      },
+      {
+        "section": " Mungu",
+        "description": " Mungu ni nani? Masomo yanachunguza Utatu, sifa za Mungu, na maana ya kumjua yeye binafsi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Sifa za Mungu",
+            "description": " Utakatifu wa Mungu, upendo, enzi kuu, haki, na sifa zingine ambazo Maandiko yanafunua."
+          },
+          {
+            "name": " Utatu",
+            "description": " Mungu mmoja katika nafsi tatu — Baba, Mwana, na Roho Mtakatifu — na kwa nini hili ni muhimu."
+          },
+          {
+            "name": " Mungu Baba",
+            "description": " Mungu kama Muumba, Mfalme, na Baba — na maana ya kuwa mtoto wake."
+          }
+        ]
+      },
+      {
+        "section": " Maandiko",
+        "description": " Masomo kuhusu Biblia yenyewe — jinsi ilivyotokea, kile inachodai kuihusu, na jinsi ya kuisoma vizuri.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mamlaka",
+            "description": " Kwa nini Biblia ina haki ya kuzungumza katika kila eneo la maisha."
+          },
+          {
+            "name": " Msukumo",
+            "description": " Jinsi Mungu alivyofanya kazi kupitia waandishi wa kibinadamu ili kutupa Neno lake."
+          },
+          {
+            "name": " Kanoni",
+            "description": " Jinsi vitabu vya Biblia vilivyotambuliwa na kukusanywa pamoja."
+          },
+          {
+            "name": " Tafsiri",
+            "description": " Kanuni za kusoma Biblia kwa uaminifu na kwa usahihi."
+          }
+        ]
+      },
+      {
+        "section": " Uumbaji na Ubinadamu",
+        "description": " Hujifunza maana ya kuwa mwanadamu — aliyeumbwa kwa mfano wa Mungu, aliyeumbwa kwa mwili, na aliyeumbwa kwa kusudi fulani.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Uumbaji",
+            "description": " Mungu kama Muumba wa vitu vyote — na hilo linamaanisha nini kwa jinsi tunavyouona ulimwengu."
+          },
+          {
+            "name": " Mfano wa Mungu",
+            "description": " Maana ya kuumbwa kwa mfano wa Mungu, na heshima inayompa kila mtu."
+          },
+          {
+            "name": " Mfano",
+            "description": "Uzuri wa kuwa na mwili, na kile ambacho Maandiko yanasema kuhusu kuwepo kimwili."
+          },
+          {
+            "name": " Kusudi",
+            "description": " Kwa nini tuko hapa — wito wa kibinadamu wa kumpenda Mungu, kuwatumikia wengine, na uumbaji wa msimamizi."
+          }
+        ]
+      },
+      {
+        "section": " Uovu na Kuanguka",
+        "description": " Masomo kuhusu dhambi — asili yake, asili yake, na athari zake mbaya kwa wanadamu na ulimwengu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Asili ya Dhambi",
+            "description": " Dhambi ni nini hasa — si uvunjaji wa sheria tu, bali ni kugeuka kimsingi kutoka kwa Mungu."
+          },
+          {
+            "name": " Kuanguka",
+            "description": " Kilichotokea katika Mwanzo 3, na jinsi kinavyomgusa kila mwanadamu."
+          },
+          {
+            "name": " Jaribu",
+            "description": "Jinsi majaribu yanavyofanya kazi, na jinsi waumini wanavyoweza kusimama imara dhidi yake."
+          }
+        ]
+      },
+      {
+        "section": " Kristo",
+        "description": " Masomo kuhusu utu wa Yesu Kristo — Mungu kamili na mwanadamu kamili — na maana ya kuja kwake.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Utu wa Kristo",
+            "description": " Fundisho la asili hizo mbili — jinsi Yesu alivyo Mungu kikamilifu na mwanadamu kikamilifu."
+          },
+          {
+            "name": " Utu wa mwili",
+            "description": " Kwa nini Mwana wa Mungu alifanyika mwili, na ubinadamu wake unamaanisha nini kwetu."
+          }
+        ]
+      },
+      {
+        "section": " Wokovu",
+        "description": " Mungu huwaokoaje wenye dhambi? Masomo yanayohusu upatanisho, kuhesabiwa haki, kufanywa wana, na matokeo yote ya kile ambacho Mungu hufanya ili kutuokoa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Upatanisho",
+            "description": "Jinsi kifo cha Kristo kinavyoshughulikia dhambi — mbadala, ukombozi, upatanisho, na mengineyo."
+          },
+          {
+            "name": " Uongofu",
+            "description": " Maana ya kugeuka kutoka dhambini na kumwamini Kristo ni toba na imani."
+          },
+          {
+            "name": " Uhalalishaji",
+            "description": " Kutangazwa kuwa mwadilifu mbele za Mungu — kwa neema pekee, kupitia imani pekee, katika Kristo pekee."
+          },
+          {
+            "name": " Kuasili",
+            "description": " Zawadi ya ajabu ya kuletwa katika familia ya Mungu kama wana na binti zake."
+          }
+        ]
+      },
+      {
+        "section": " Roho",
+        "description": " Masomo kuhusu Roho Mtakatifu — yeye ni nani, anafanya nini, na jinsi anavyofanya kazi katika waumini na kanisa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mtu wa Roho",
+            "description": "Roho Mtakatifu kama nafsi ya tatu ya Utatu — si nguvu, bali mtu."
+          },
+          {
+            "name": " Tunda la Roho",
+            "description": " Sifa za tabia ambazo Roho huzalisha kwa wale wanaotembea naye."
+          },
+          {
+            "name": " Karama za Kiroho",
+            "description": " Karama ambazo Roho hutoa ili kuwaandaa waumini kwa ajili ya huduma katika mwili wa Kristo."
+          }
+        ]
+      },
+      {
+        "section": " Kanisa",
+        "description": " Kanisa ni nini, na kwa nini lina umuhimu? Masomo kuhusu asili, misheni, na muundo wa mwili wa Kristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Asili ya Kanisa",
+            "description": " Kanisa ni nini — watu wa Mungu, mwili wa Kristo, hekalu la Roho."
+          },
+          {
+            "name": " Sakramenti",
+            "description": "Ubatizo na Meza ya Bwana — ni nini, vinamaanisha nini, na jinsi ya kuvitunza."
+          },
+          {
+            "name": " Uongozi",
+            "description": " Mifumo ya Kibiblia ya uongozi wa kanisa: wazee, mashemasi, na mamlaka yenye moyo wa utumishi."
+          },
+          {
+            "name": " Ibada",
+            "description": " Ibada ya Kikristo ni nini, kwa nini ni muhimu, na jinsi inavyounda maisha ya jamii."
+          }
+        ]
+      },
+      {
+        "section": " Mambo ya Mwisho",
+        "description": " Masomo kuhusu kifo, ufufuo, hukumu, na uumbaji mpya — tumaini linalounda jinsi Wakristo wanavyoishi wakati huu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kurudi kwa Kristo",
+            "description": " Tumaini la uhakika kwamba Yesu atarudi katika utukufu kuwahukumu walio hai na wafu."
+          },
+          {
+            "name": " Hukumu",
+            "description": "Hukumu ya mwisho ya Mungu kwa watu wote — na habari njema kwamba Kristo ametoa hukumu kwa ajili yake mwenyewe."
+          },
+          {
+            "name": " Mbingu na Kuzimu",
+            "description": " Hatima za milele ambazo Maandiko yanaelezea — na kwa nini ni muhimu kwa jinsi tunavyoishi sasa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Maisha",
+    "description": " Masomo yanayounganisha ukweli wa kibiblia na uzoefu wa kila siku wa kumfuata Kristo — katika mahusiano, kazi, utambulisho, na mapambano yanayoendelea dhidi ya dhambi.",
+    "sections": [
+      {
+        "section": " Nidhamu za Kiroho",
+        "description": " Mazoea yanayotufunza kukaa karibu na Mungu na kukua katika utauwa — si njia za kupata kibali, bali tabia zinazotuweka wazi kwa neema yake.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Maombi",
+            "description": " Kuzungumza na Mungu — misingi yake, aina zake, na jinsi ya kukuza maisha ya maombi yenye utajiri zaidi."
+          },
+          {
+            "name": "Usomaji wa Biblia",
+            "description": " Jinsi ya kusoma Maandiko vizuri — kwa uelewa, uthabiti, na matarajio ya kubadilishwa."
+          },
+          {
+            "name": " Ibada",
+            "description": " Ibada kama mkao wa maisha yote, si shughuli ya Jumapili tu."
+          }
+        ]
+      },
+      {
+        "section": " Tabia na Utakaso",
+        "description": " Mchakato unaoendelea wa kufanana zaidi na Kristo — kupigana na dhambi, kukua katika wema, na kuelewa sisi ni nani ndani yake.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Tunda la Roho",
+            "description": " Upendo, furaha, amani, uvumilivu, wema, fadhili, uaminifu, upole, na kiasi."
+          },
+          {
+            "name": " Kushinda Dhambi",
+            "description": " Msaada wa vitendo na kitheolojia kwa ajili ya kukabiliana na mifumo endelevu ya dhambi."
+          },
+          {
+            "name": "Ukuaji katika Neema",
+            "description": " Jinsi inavyoonekana kukua kama Mkristo — na ni nini kinachokuzuia."
+          },
+          {
+            "name": " Utambulisho katika Kristo",
+            "description": " Sisi ni nani kwa sababu ya kile ambacho Kristo amefanya — na kwa nini hilo hubadilisha kila kitu."
+          }
+        ]
+      },
+      {
+        "section": " Mahusiano na Familia",
+        "description": " Masomo kuhusu mahusiano ambayo Mungu ametuweka ndani yake — ndoa, familia, urafiki, na jamii.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ndoa",
+            "description": " Agano la ndoa — kusudi lake, changamoto zake, na picha yake ya Kristo na kanisa."
+          },
+          {
+            "name": " Useja",
+            "description": " Useja kama wito kamili na wenye maana, si chumba cha kusubiri ndoa."
+          },
+          {
+            "name": " Uzazi",
+            "description": " Kulea watoto katika imani — kwa neema, ukweli, na mtazamo wa muda mrefu."
+          },
+          {
+            "name": " Urafiki",
+            "description": " Zawadi ya urafiki wa Kikristo — na jinsi ya kukuza mahusiano yenye kina kirefu."
+          },
+          {
+            "name": " Mawasiliano",
+            "description": " Kusema ukweli na wema — na kusikiliza vizuri."
+          },
+          {
+            "name": " Jumuiya",
+            "description": " Maana ya kuishi kama mwili wa Kristo — kubeba mizigo ya kila mmoja."
+          }
+        ]
+      },
+      {
+        "section": " Kazi na Ufundi",
+        "description": " Masomo ya kutumia injili katika kazi, pesa, wakati, na tamaa — kuona kazi ya kila siku kama sehemu ya makusudi ya Mungu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Maisha ya Kazini",
+            "description": "Biblia inasema nini kuhusu kazi — wema wake, kukatishwa tamaa kwake, na ukombozi wake katika Kristo."
+          },
+          {
+            "name": " Pesa na Mali",
+            "description": " Ukarimu, kuridhika, na mtazamo wa kibiblia kuhusu utajiri."
+          },
+          {
+            "name": " Usimamizi wa Wakati",
+            "description": " Jinsi tunavyotumia muda wetu — na jinsi injili inavyobadilisha vipaumbele vyetu."
+          },
+          {
+            "name": " Tamaa",
+            "description": " Tamaa takatifu dhidi ya tamaa ya ubinafsi — na jinsi ya kutofautisha."
+          },
+          {
+            "name": " Kustaafu",
+            "description": " Maisha ya uaminifu yanaonekanaje katika misimu ya mwisho ya maisha?"
+          }
+        ]
+      },
+      {
+        "section": " Maadili na Utamaduni wa Kikristo",
+        "description": "Jinsi waumini wanavyofikiri na kutenda kuhusu masuala muhimu ya kimaadili ya wakati wetu — kuanzia haki ya kijamii hadi maadili ya kibiolojia hadi teknolojia.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Haki ya Kijamii",
+            "description": " Moyo wa Mungu kwa walio dhaifu na waliokandamizwa, na hilo linamaanisha nini kwetu."
+          },
+          {
+            "name": " Maadili ya kibiolojia",
+            "description": " Masuala ya mwanzo na mwisho wa maisha — yanashughulikiwa kwa uangalifu wa kitheolojia na huruma."
+          },
+          {
+            "name": " Teknolojia Inayovutia",
+            "description": " Jinsi ya kutumia teknolojia kwa uaminifu katika ulimwengu unaoundwa nayo."
+          }
+        ]
+      },
+      {
+        "section": " Mateso na Mwongozo",
+        "description": " Masomo yanayowasaidia waumini kupitia maumivu, kutokuwa na uhakika, na ugumu kwa uaminifu na matumaini.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Majaribu na Mateso",
+            "description": " Kwa nini Mungu huruhusu mateso, na jinsi Maandiko yanavyotuwezesha kuyavumilia kwa matumaini."
+          },
+          {
+            "name": " Kutambua Mapenzi ya Mungu",
+            "description": " Jinsi ya kufanya maamuzi ya busara — na kile ambacho Maandiko yanaahidi kuhusu mwongozo."
+          },
+          {
+            "name": " Afya ya Akili",
+            "description": " Msongo wa mawazo, wasiwasi, na mapambano mengine — yanashughulikiwa kwa huruma na utunzaji wa kibiblia."
+          },
+          {
+            "name": " Huzuni",
+            "description": " Jinsi ya kuomboleza kama wale walio na tumaini — kwa uaminifu, na sio peke yao."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Wizara",
+    "description": " Masomo kwa wale wanaohusika katika kuwahudumia wengine — katika uinjilisti, utunzaji wa kichungaji, ufundishaji, na uongozi. Yakiwa na mizizi katika Maandiko, masomo haya yanawapa waumini uwezo wa kutumikia kwa ufanisi na endelevu.",
+    "sections": [
+      {
+        "section": "Theolojia ya Huduma",
+        "description": " Misingi ya kibiblia kwa huduma yote ya Kikristo — maana ya kutumikia, na aina ya mtu ambaye mtumishi lazima awe.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Uongozi wa Utumishi",
+            "description": " Kuongoza kama Yesu alivyoongoza — kwa unyenyekevu, kujitolea, na kuwajali wale wanaohudumiwa."
+          },
+          {
+            "name": " Kupiga simu",
+            "description": " Kuelewa wito wako wa huduma — jinsi unavyotambuliwa na unahusisha nini."
+          }
+        ]
+      },
+      {
+        "section": " Kuhubiri na Kufundisha (Homiletics)",
+        "description": " Masomo kwa wale walioitwa kuelezea Biblia hadharani — yakihusu mbinu, tabia, na uzito wa kushughulikia Neno la Mungu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mahubiri ya Ufafanuzi",
+            "description": "Jinsi ya kuhubiri kwa uaminifu kutoka kwa maandishi — kuruhusu Biblia kuweka ajenda."
+          },
+          {
+            "name": " Kuongoza Masomo ya Biblia",
+            "description": " Jinsi ya kuongoza kikundi vizuri — kuuliza maswali mazuri na kuwasaidia watu kukutana na Mungu katika maandishi."
+          }
+        ]
+      },
+      {
+        "section": " Uongozi na Utawala",
+        "description": " Vipimo vya vitendo na vya kitheolojia vya kuongoza kanisa au huduma — maono, timu, migogoro, na utawala.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Maono na Mkakati",
+            "description": " Jinsi ya kufikiria waziwazi kuhusu mahali ambapo Mungu anaongoza na jinsi ya kufika huko pamoja."
+          },
+          {
+            "name": " Ujenzi wa Timu",
+            "description": " Kukusanya, kukuza, na kudumisha timu ya huduma yenye afya."
+          },
+          {
+            "name": " Utatuzi wa Migogoro",
+            "description": "Jinsi ya kushughulikia kutokubaliana na mgawanyiko kwa njia inayomheshimu Mungu na kudumisha umoja."
+          },
+          {
+            "name": " Utawala wa Kanisa",
+            "description": " Miundo na michakato inayosaidia kanisa kuwajibika na kuwa na utaratibu mzuri."
+          }
+        ]
+      },
+      {
+        "section": " Huduma ya Kichungaji",
+        "description": " Masomo yanayowapa waumini uwezo wa kutembea pamoja katika shida, hasara, mgogoro, na mahitaji.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mazungumzo ya Kichungaji",
+            "description": " Ujuzi na mkao unaohitajika kwa mazungumzo ya huduma ya mtu mmoja mmoja yenye manufaa."
+          },
+          {
+            "name": " Uingiliaji kati wa Mgogoro",
+            "description": " Jinsi ya kujibu kwa busara na huruma mtu anapopatwa na dhiki kubwa."
+          },
+          {
+            "name": " Kutembelea",
+            "description": "Huduma ya uwepo — kuwatembelea wagonjwa, wazee, na wasioweza kutoka nyumbani."
+          },
+          {
+            "name": " Maandalizi ya Ndoa",
+            "description": " Kuwasaidia wanandoa kujiandaa kwa ajili ya ndoa iliyojengwa juu ya Kristo."
+          },
+          {
+            "name": " Huduma ya Msiba",
+            "description": " Kutembea na wale wanaoomboleza — la kusema, la kutosema, na jinsi ya kukaa."
+          }
+        ]
+      },
+      {
+        "section": " Uinjilisti na Misheni",
+        "description": " Masomo kuhusu kupeleka injili kwa wale ambao hawajaisikia — kibinafsi, kieneo, na katika tamaduni mbalimbali.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ushuhuda wa Kibinafsi",
+            "description": " Jinsi ya kushiriki imani yako kwa njia ya kawaida na waziwazi katika mazungumzo ya kila siku."
+          },
+          {
+            "name": " Uombaji msamaha",
+            "description": "Kujibu maswali yanayowazuia watu kuchukua Ukristo kwa uzito."
+          },
+          {
+            "name": " Huduma ya Utamaduni Mbalimbali",
+            "description": " Kuhudumia na kushirikishana katika mipaka ya kitamaduni kwa usikivu na heshima."
+          },
+          {
+            "name": " Upandaji wa Makanisa",
+            "description": " Theolojia na mazoezi ya kuanzisha jumuiya mpya za injili."
+          }
+        ]
+      },
+      {
+        "section": " Ufuasi na Ushauri",
+        "description": " Masomo kuhusu huduma ya kuwasaidia wengine kukua — mmoja mmoja, katika vikundi vidogo, na kwa kufunza kizazi kijacho.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Huduma ya Mtu Mmoja",
+            "description": " Nguvu ya ufuasi wa kibinafsi na wa kukusudia — kukutana mara kwa mara ili kufungua Biblia pamoja."
+          },
+          {
+            "name": " Uongozi wa Vikundi Vidogo",
+            "description": " Jinsi ya kuongoza kikundi kidogo ambacho ni cha kweli, kinachokua, na chenye msingi katika Maandiko."
+          },
+          {
+            "name": " Kuwafunza Wengine",
+            "description": " Kuwaandaa wengine kufanya kazi ya huduma — kuzidisha sio waongofu tu bali pia viongozi."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Nyingine",
+    "description": " Uchunguzi ambao hauendani vizuri na kategoria nyingine — au ambao taarifa zake za rafu hazijawekwa bado.",
+    "sections": []
+  }
+]

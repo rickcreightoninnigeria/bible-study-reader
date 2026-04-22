@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Májẹ̀mú Láéláé",
+    "description": " Àwọn ẹ̀kọ́ tí ó ń ṣàyẹ̀wò àwọn ìwé tí a kọ ṣáájú wíwá Kristi — láti Òfin àti àwọn Wòlíì sí àwọn Ìwé Mímọ́. Májẹ̀mú Láéláé sọ ìtàn májẹ̀mú Ọlọ́run pẹ̀lú Ísírẹ́lì ó sì tọ́ka sí Mèsáyà.",
+    "sections": [
+      {
+        "section": " Òfin",
+        "description": " Àwọn ìwé márùn-ún àkọ́kọ́ nínú Bíbélì (Pentateuch), tí ó sọ̀rọ̀ nípa ìṣẹ̀dá, ìṣubú, ìjádelọ, àti fífúnni ní Òfin — ìpìlẹ̀ tí ìyókù Ìwé Mímọ́ kọ́ lé lórí.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Jẹ́nẹ́sísì",
+            "description": " Ìwé ìbẹ̀rẹ̀: ìṣẹ̀dá, ìṣubú, àti àwọn baba ńlá — Ábúráhámù, Ísákì, Jákọ́bù, àti Jósẹ́fù."
+          },
+          {
+            "name": " Ẹ́kísódù",
+            "description": " Ọlọ́run gba àwọn ènìyàn rẹ̀ sílẹ̀ kúrò ní oko ẹrú ní Íjíbítì, ó fi orúkọ rẹ̀ hàn, ó sì fúnni ní Òfin rẹ̀ ní Sínáì."
+          },
+          {
+            "name": "Léfítíkù",
+            "description": " Àwọn ìtọ́ni fún ìjọsìn àti ìjẹ́mímọ́, tí ó ń fi bí àwọn ènìyàn ẹlẹ́ṣẹ̀ ṣe lè súnmọ́ Ọlọ́run mímọ́ hàn."
+          },
+          {
+            "name": " Àwọn nọ́mbà",
+            "description": " Ìrìn àjò aginjù Ísírẹ́lì — àwọn ìkùnà rẹ̀, ìbáwí rẹ̀, àti ìṣòtítọ́ Ọlọ́run tí ń bá a lọ."
+          },
+          {
+            "name": " Diutarónómì",
+            "description": " Àwọn ìwàásù ìdágbére Mósè, mímú májẹ̀mú tuntun àti mímúra Ísírẹ́lì sílẹ̀ láti wọ Ilẹ̀ Ìlérí."
+          }
+        ]
+      },
+      {
+        "section": " Ìtàn",
+        "description": " Àwọn ìwé ìtàn náà tọ́pasẹ̀ ìtàn Ísírẹ́lì láti ìgbà tí wọ́n ṣẹ́gun Kénáánì títí dé ìgbà ìjọba ọba, ìgbèkùn, àti ìpadàbọ̀ — èyí tí ó fi ìṣòtítọ́ Ọlọ́run àti àìṣòtítọ́ àwọn ènìyàn rẹ̀ hàn nígbà gbogbo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Jóṣúà",
+            "description": "Ṣíṣẹ́gun àti pípín Ilẹ̀ Ìlérí lábẹ́ ìdarí Jóṣúà."
+          },
+          {
+            "name": " Àwọn Onídàájọ́",
+            "description": " Ìyípadà ọ̀tẹ̀, ìnilára, àti ìgbàlà bí Ísírẹ́lì ṣe ń yípadà kúrò lọ́dọ̀ Ọlọ́run leralera."
+          },
+          {
+            "name": " Rúùtù",
+            "description": " Ìtàn ìdúróṣinṣin, ìtọ́jú, àti ìràpadà tí a gbé kalẹ̀ ní àkókò àwọn adájọ́."
+          },
+          {
+            "name": " 1 Sámúẹ́lì",
+            "description": " Ìyípadà láti ọ̀dọ̀ àwọn adájọ́ sí àwọn ọba: Samuẹli, Saulu, àti ìdìde Dafidi."
+          },
+          {
+            "name": " 2 Sámúẹ́lì",
+            "description": " Ìjọba Dáfídì — àwọn ìṣẹ́gun rẹ̀, àwọn ìkùnà rẹ̀, àti májẹ̀mú Ọlọ́run pẹ̀lú ilé rẹ̀."
+          },
+          {
+            "name": " Àwọn Ọba Kìíní",
+            "description": "Ògo Solomoni àti ìpín ìjọba; Elijah àti ìdíje lórí Òkè Karmeli."
+          },
+          {
+            "name": " Àwọn Ọba Kejì",
+            "description": " Ìparẹ́ àti ìṣubú ìjọba méjèèjì, tí ó parí sí ìgbèkùn."
+          },
+          {
+            "name": " 1 Kíróníkà",
+            "description": " Àtúnsọ ìtàn Ísírẹ́lì láti ọ̀dọ̀ Ádámù títí dé Dáfídì, tó dá lórí ìjọsìn àti tẹ́ḿpìlì."
+          },
+          {
+            "name": " 2 Kíróníkà",
+            "description": " Sólómọ́nì àti tẹ́ḿpìlì náà, ìjọba tí a pín sí méjì, àti ìrètí ìmúpadàbọ̀sípò."
+          },
+          {
+            "name": " Ẹ́sírà",
+            "description": " Ìpadàbọ̀ láti ìgbèkùn àti àtúnkọ́ tẹ́ḿpìlì lábẹ́ ìdarí Ẹ́sírà."
+          },
+          {
+            "name": " Nehemáyà",
+            "description": "Àtúnkọ́ àwọn odi Jerúsálẹ́mù àti ìtúnṣe àwùjọ májẹ̀mú."
+          },
+          {
+            "name": " Ẹsita",
+            "description": " Ìtọ́jú ìkọ̀kọ̀ Ọlọ́run tó ń dáàbò bo àwọn ènìyàn rẹ̀ ní ààfin Páṣíà."
+          }
+        ]
+      },
+      {
+        "section": " Ewi ati Ogbon",
+        "description": " Jobu, Orin Dafidi, Owe, Oniwasu, ati Orin Orin — awon iwe ti o n se iwadi ijinle iriri eniyan: ijiya, iyin, ogbon, ati ife.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Iṣẹ́",
+            "description": " Ìwádìí jíjinlẹ̀ nípa ìjìyà, ìdájọ́ òdodo, àti ohun ìjìnlẹ̀ nípa ọ̀nà Ọlọ́run."
+          },
+          {
+            "name": " Sáàmù",
+            "description": " Ìwé orin àti ìwé àdúrà Ísírẹ́lì — gbogbo onírúurú ìmọ̀lára ènìyàn tí a gbé kalẹ̀ níwájú Ọlọ́run."
+          },
+          {
+            "name": " Àwọn Òwe",
+            "description": "Ọgbọ́n tó wúlò fún ìgbésí ayé ojoojúmọ́, tó fìdí múlẹ̀ nínú ìbẹ̀rù Olúwa."
+          },
+          {
+            "name": " Oníwàásù",
+            "description": " Àyẹ̀wò ìwádìí lórí ìtumọ̀, iṣẹ́, àti ikú “lábẹ́ oòrùn”."
+          },
+          {
+            "name": " Orin Àwọn Orin",
+            "description": " Ayẹyẹ ìfẹ́ àti ìgbéyàwó, tí ó kún fún àwòrán ayọ̀ àti ìfẹ́kúfẹ̀ẹ́."
+          }
+        ]
+      },
+      {
+        "section": " Àwọn Wòlíì",
+        "description": " Àwọn ìwé àsọtẹ́lẹ̀ pe Israẹli sí ìrònúpìwàdà, wọ́n kìlọ̀ nípa ìdájọ́, wọ́n sì tọ́ka sí ìràpadà ìkẹyìn Ọlọ́run. Wọ́n ṣe pàtàkì fún òye ìmúṣẹ Májẹ̀mú Tuntun fún àwọn ìlérí wọ̀nyẹn.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Aísáyà",
+            "description": " Ìdájọ́ àti ìrètí tó ń múni yọ̀ — pẹ̀lú Àwọn Orin Ìránṣẹ́ tó ń tọ́ka sí Kristi."
+          },
+          {
+            "name": " Jeremáyà",
+            "description": " Ìrora wòlíì kan bí Jerúsálẹ́mù ṣe ń ṣubú, àti ìlérí májẹ̀mú tuntun kan."
+          },
+          {
+            "name": " Ẹkún Ìròyìn",
+            "description": " Ìbànújẹ́ àìròtẹ́lẹ̀ lórí ìparun Jerúsálẹ́mù, ìrètí nínú ìṣòtítọ́ Ọlọ́run so pọ̀."
+          },
+          {
+            "name": " Esekiẹli",
+            "description": " Àwọn ìran nípa ògo Ọlọ́run tí ń lọ tí ó sì ń padà bọ̀, àti ìlérí ìtúnṣe ẹ̀mí."
+          },
+          {
+            "name": " Dáníẹ́lì",
+            "description": " Wíwà ní ìgbèkùn pẹ̀lú olóòótọ́, àti ìran ìjọba alágbára Ọlọ́run lórí gbogbo orílẹ̀-èdè."
+          },
+          {
+            "name": " Hóséà",
+            "description": " Ìfẹ́ tí kò ní àbùkù fún Ọlọ́run fún àwọn ènìyàn aláìṣòótọ́, tí a fi hàn nípasẹ̀ ìgbéyàwó Hóséà fúnra rẹ̀."
+          },
+          {
+            "name": " Jóẹ́lì",
+            "description": " Àjàkálẹ̀ eṣú gẹ́gẹ́ bí ìpè sí ìrònúpìwàdà, àti ìlérí Ẹ̀mí."
+          },
+          {
+            "name": " Ámósì",
+            "description": " Ìpè àsọtẹ́lẹ̀ tó lágbára fún ìdájọ́ òdodo àti ìkìlọ̀ pé ìsìn òfo kò ní dúró."
+          },
+          {
+            "name": " Ọbadáyà",
+            "description": " Ọ̀rọ̀ ìkékúrú kan nípa Edomu àti ọjọ́ tí ń bọ̀ wá fún Olúwa."
+          },
+          {
+            "name": " Jónà",
+            "description": " Àánú Ọlọ́run fún àwọn orílẹ̀-èdè — àti àtakò wòlíì tí kò fẹ́ ṣe é."
+          },
+          {
+            "name": " Míkà",
+            "description": " Ìdájọ́ òdodo, àánú, àti ìrẹ̀lẹ̀ — àti ìlérí alákòóso kan láti Bẹ́tílẹ́hẹ́mù."
+          },
+          {
+            "name": " Náhúmù",
+            "description": "Ìṣubú Nínéfè àti ìtùnú ìdájọ́ òdodo Ọlọ́run fún àwọn ènìyàn rẹ̀ tí a ń ni lára."
+          },
+          {
+            "name": " Hábákúkù",
+            "description": " Gbíjà pẹ̀lú Ọlọ́run ní òtítọ́ lórí àìṣòdodo, àti kíkọ́ láti gbẹ́kẹ̀lé àkókò rẹ̀."
+          },
+          {
+            "name": " Sefaniah",
+            "description": " Ọjọ́ Olúwa àti ayọ̀ ìmúpadàbọ̀sípò fún àwọn àṣẹ́kù tí a ti sọ di mímọ́."
+          },
+          {
+            "name": " Hágáì",
+            "description": " Ìpè láti tún tẹ́ḿpìlì kọ́ àti láti fi ilé Ọlọ́run sí ipò àkọ́kọ́ ju ìtùnú ara ẹni lọ."
+          },
+          {
+            "name": " Sekariah",
+            "description": " Àwọn ìran nípa ìmúpadàbọ̀sípò àti Mèsáyà tí ó wá pẹ̀lú ìrẹ̀lẹ̀ lórí kẹ́tẹ́kẹ́tẹ́."
+          },
+          {
+            "name": " Málákì",
+            "description": "Ìpè ìkẹyìn sí ìṣòtítọ́ ṣáájú ìdákẹ́jẹ́ẹ́ gígùn níwájú Jòhánù Onítẹ̀bọmi."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Májẹ̀mú Tuntun",
+    "description": " Àwọn ìkẹ́kọ̀ọ́ nínú àwọn ìwé tí a kọ lẹ́yìn wíwá Kristi — àwọn ìwé Ìhìnrere, àwọn lẹ́tà àwọn aposteli, àti Ìfihàn. Májẹ̀mú Tuntun fi ìmúṣẹ àwọn ìlérí Ọlọ́run nínú Jésù àti ìgbésí ayé ìjọ ìṣáájú hàn.",
+    "sections": [
+      {
+        "section": " Àwọn Ìhìnrere àti Ìṣe",
+        "description": " Àwọn àkọsílẹ̀ mẹ́rin nípa ìgbésí ayé Jésù, ikú rẹ̀, àti àjíǹde rẹ̀, àti ìtàn ìtẹ̀síwájú ìjọ ìjímìjí kárí ayé Róòmù.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Mátíù",
+            "description": " Jesu gẹ́gẹ́ bí ìmúṣẹ Májẹ̀mú Láéláé, Mósè tuntun, àti Ọba ìjọba Ọlọ́run."
+          },
+          {
+            "name": " Mark",
+            "description": " Ìtàn kíákíá nípa Jésù gẹ́gẹ́ bí Ìránṣẹ́ àti Ọmọ Ọlọ́run tó ń jìyà."
+          },
+          {
+            "name": " Lúùkù",
+            "description": " Jesu gẹ́gẹ́ bí Olùgbàlà ayé — pẹ̀lú àfiyèsí pàtàkì sí àwọn tálákà, àwọn obìnrin, àti àwọn ará ìta."
+          },
+          {
+            "name": " Jòhánù",
+            "description": " Àwòrán ẹ̀kọ́ ìsìn tó jinlẹ̀ jùlọ nípa Jésù — Ọ̀rọ̀ náà tí a sọ di ara, Èmi ni, Ọmọ Ọlọ́run."
+          },
+          {
+            "name": " Àwọn Ìṣe",
+            "description": " Ẹ̀mí Mímọ́ fún ìjọ lágbára láti mú ìhìnrere láti Jerúsálẹ́mù dé òpin ayé."
+          }
+        ]
+      },
+      {
+        "section": " Àwọn Lẹ́tà Pọ́ọ̀lù",
+        "description": " Àwọn lẹ́tà Pọ́ọ̀lù sí àwọn ìjọ àti àwọn ẹnìkọ̀ọ̀kan — ṣíṣe àwárí ìrònú ìhìnrere, ìwà Kristẹni, àti ìwà ìjọ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Àwọn ará Róòmù",
+            "description": "Ìfihàn ìhìnrere tí Pọ́ọ̀lù ṣe jùlọ: ẹ̀ṣẹ̀, ìdáláre, ìsọdimímọ́, àti ìrètí."
+          },
+          {
+            "name": " 1 Kọ́ríńtì",
+            "description": " Kíkọ́ ìyapa àti ìrúkèrúdò ní Kọ́ríńtì, pẹ̀lú ẹ̀kọ́ nípa ìfẹ́, ẹ̀bùn àti àjíǹde."
+          },
+          {
+            "name": " 2 Kọ́ríńtì",
+            "description": " Ìgbèjà Pọ́ọ̀lù fún iṣẹ́ ìránṣẹ́ rẹ̀ àti àríyànjiyàn agbára nípasẹ̀ àìlera."
+          },
+          {
+            "name": " Àwọn ará Gálátíà",
+            "description": " Ìgbèjà ìtara ti ìdáláre nípasẹ̀ ìgbàgbọ́ nìkan lòdì sí àwọn tí ń fi òfin kún un."
+          },
+          {
+            "name": " Éfésù",
+            "description": " Ọrọ̀ ìdámọ̀ onígbàgbọ́ nínú Kristi, àti ìjọ gẹ́gẹ́ bí ẹ̀dá ènìyàn tuntun ti Ọlọ́run."
+          },
+          {
+            "name": " Àwọn ará Fílípì",
+            "description": " Ayọ̀ ní gbogbo ipò àti àpẹẹrẹ ìrẹ̀lẹ̀ Kristi."
+          },
+          {
+            "name": " Kólósè",
+            "description": " Kristi gẹ́gẹ́ bí ẹni tí ó ga jùlọ lórí ohun gbogbo, àti àwọn ìtumọ̀ fún ìgbésí ayé ojoojúmọ́."
+          },
+          {
+            "name": " 1 Tẹsalóníkà",
+            "description": " Ìṣírí fún ìjọ kékeré kan, pẹ̀lú ẹ̀kọ́ nípa ìpadàbọ̀ Kristi."
+          },
+          {
+            "name": " 2 Tẹsalóníkà",
+            "description": " Àtúnṣe àwọn àìlóye nípa àkókò ìkẹyìn, àti ìpè sí iṣẹ́ olóòótọ́."
+          },
+          {
+            "name": " 1 Tímótì",
+            "description": " Àwọn ìtọ́ni fún ìgbésí ayé ìjọ, ìtọ́sọ́nà, àti ẹ̀kọ́ tó péye."
+          },
+          {
+            "name": " 2 Tímótì",
+            "description": "Lẹ́tà ìkẹyìn Pọ́ọ̀lù — àṣẹ sí Tímótì láti ṣọ́ ìhìnrere kí ó sì parí rẹ̀ dáadáa."
+          },
+          {
+            "name": " Títù",
+            "description": " Yíyan àwọn aṣáájú àti kíkọ́ni pé ẹ̀kọ́ tó péye máa ń yọrí sí ìgbé ayé ìwà-bí-Ọlọ́run."
+          },
+          {
+            "name": " Fílémónì",
+            "description": " Ẹ̀bẹ̀ ara ẹni fún ìpadàbọ̀ àti àwọn ìtumọ̀ àwùjọ ti ìhìnrere."
+          }
+        ]
+      },
+      {
+        "section": " Àwọn Lẹ́tà Gbogbogbò àti Ìfihàn",
+        "description": " Àwọn lẹ́tà láti ọ̀dọ̀ Jákọ́bù, Pétérù, Jòhánù, Júúdà, àti àwọn mìíràn — tí ó sọ̀rọ̀ nípa ìgbàgbọ́ nínú àdánwò, ìgbàgbọ́ tòótọ́, ẹ̀kọ́ èké, àti ìrètí ìkẹyìn ti Ìṣípayá.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Àwọn Hébérù",
+            "description": " Jesu gẹ́gẹ́ bí ìmúṣẹ gbogbo iṣẹ́ àlùfáà, ẹbọ, àti májẹ̀mú Májẹ̀mú Láéláé — tí ó ga jùlọ ní gbogbo ọ̀nà."
+          },
+          {
+            "name": " Jákọ́bù",
+            "description": " Ìgbàgbọ́ tó ń ṣiṣẹ́ — ọgbọ́n tó wúlò fún gbígbé gẹ́gẹ́ bí ènìyàn Ọlọ́run ní ayé."
+          },
+          {
+            "name": " 1 Pétérù",
+            "description": " Ìrètí àti ìgbé-ayé mímọ́ fún àwọn ìgbèkùn nínú ayé ọ̀tá."
+          },
+          {
+            "name": " 2 Pétérù",
+            "description": " Àwọn ìkìlọ̀ lòdì sí àwọn olùkọ́ èké àti ìgbẹ́kẹ̀lé nínú àwọn ìlérí Ọlọ́run."
+          },
+          {
+            "name": " 1 Jòhánù",
+            "description": " Ìdánilójú ìgbàlà àti àwọn àmì ìgbàgbọ́ tòótọ́: ìfẹ́, ìgbọ́ràn, àti òtítọ́."
+          },
+          {
+            "name": " 2 Jòhánù",
+            "description": " Lẹ́tà kúkúrú kan lórí ìfẹ́, òtítọ́, àti àìtẹ́wọ́gba àwọn tí wọ́n sẹ́ Kristi."
+          },
+          {
+            "name": " 3 Jòhánù",
+            "description": "Gbígbóríyìn fún àlejò tó jẹ́ olóòótọ́ àti ìkìlọ̀ lòdì sí ìṣàájú tó ń wá ara rẹ̀."
+          },
+          {
+            "name": " Júúdà",
+            "description": " Ìpè líle láti jà fún ìgbàgbọ́ lòdì sí ẹ̀kọ́ èké tí ó ti yọ́ wọ inú ìjọ."
+          },
+          {
+            "name": " Ìfihàn",
+            "description": " Àwọn ìran nípa ìṣẹ́gun ìkẹyìn Ọlọ́run lórí ibi, ìdájọ́ àwọn ènìyàn búburú, àti ìtúnṣe ohun gbogbo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Àwọn ìgbàgbọ́",
+    "description": " Àwọn ẹ̀kọ́ dá lórí ẹ̀kọ́ Kristẹni — ohun tí Bíbélì kọ́ni nípa Ọlọ́run, aráyé, ìgbàlà, àti ọjọ́ iwájú. Gbígbé ara wa kalẹ̀ ní ìgbàgbọ́ tó tọ́ ni ìpìlẹ̀ fún ìgbésí ayé tó tọ́.",
+    "sections": [
+      {
+        "section": " Àkótán Àkótán",
+        "description": " Àwọn ìkẹ́kọ̀ọ́ ìṣáájú tí ó ń ṣe àyẹ̀wò gbogbo ẹ̀kọ́ Kristẹni — ìhìnrere, àwọn ẹ̀kọ́ pàtàkì, àti àwọn ìjẹ́wọ́ ìtàn ìjọ.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Àwọn ìpìlẹ̀",
+            "description": " Àwọn ipilẹ̀ pàtàkì ti ìgbàgbọ́ Kristẹni — ohun tí gbogbo onígbàgbọ́ nílò láti mọ̀."
+          },
+          {
+            "name": " Ìhìnrere",
+            "description": " Àwọn ẹ̀kọ́ náà dá lórí ọkàn ìhìnrere Kristẹni: ẹ̀ṣẹ̀, oore-ọ̀fẹ́, àti ìgbàlà nípasẹ̀ Kristi."
+          },
+          {
+            "name": " Àwọn Ẹ̀sìn àti Ìjẹ́wọ́",
+            "description": " Àwọn gbólóhùn ìgbàgbọ́ ìtàn tí ó ti ṣàlàyé ẹ̀sìn Kristẹni àtijọ́ ní ọ̀pọ̀ ọ̀rúndún."
+          }
+        ]
+      },
+      {
+        "section": " Ọlọ́run",
+        "description": " Ta ni Ọlọ́run? Àwọn ìkẹ́kọ̀ọ́ tí a ṣe láti ṣàyẹ̀wò Mẹ́talọ́kan, àwọn ànímọ́ Ọlọ́run, àti ohun tí ó túmọ̀ sí láti mọ̀ ọ́n ní ti ara ẹni.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Àwọn Ànímọ́ Ọlọ́run",
+            "description": " Ìwà mímọ́ Ọlọ́run, ìfẹ́ rẹ̀, agbára ìjọba rẹ̀, ìdájọ́ òdodo rẹ̀, àti àwọn ànímọ́ mìíràn tí Ìwé Mímọ́ fi hàn."
+          },
+          {
+            "name": " Mẹ́talọ́kan",
+            "description": " Ọlọ́run kan nínú ènìyàn mẹ́ta — Baba, Ọmọ, àti Ẹ̀mí Mímọ́ — àti ìdí tí èyí fi ṣe pàtàkì."
+          },
+          {
+            "name": " Ọlọ́run Baba",
+            "description": " Ọlọ́run gẹ́gẹ́ bí Ẹlẹ́dàá, Ọba, àti Baba — àti ohun tí ó túmọ̀ sí láti jẹ́ ọmọ rẹ̀."
+          }
+        ]
+      },
+      {
+        "section": " Ìwé Mímọ́",
+        "description": " Àwọn ìkẹ́kọ̀ọ́ lórí Bíbélì fúnra rẹ̀ — bí ó ṣe dé, ohun tí ó sọ nípa ara rẹ̀, àti bí a ṣe lè kà á dáadáa.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Aláṣẹ",
+            "description": " Ìdí tí Bíbélì fi ní ẹ̀tọ́ láti sọ̀rọ̀ nípa gbogbo ẹ̀ka ìgbésí ayé."
+          },
+          {
+            "name": " Ìmísí",
+            "description": " Bí Ọlọ́run ṣe lo àwọn òǹkọ̀wé ènìyàn láti fún wa ní Ọ̀rọ̀ rẹ̀."
+          },
+          {
+            "name": " Kánónì",
+            "description": " Bí a ṣe mọ àwọn ìwé Bíbélì àti bí a ṣe kó wọn jọ."
+          },
+          {
+            "name": " Ìtumọ̀",
+            "description": " Àwọn ìlànà fún kíkà Bíbélì pẹ̀lú ìṣòtítọ́ àti pípéye."
+          }
+        ]
+      },
+      {
+        "section": " Ìṣẹ̀dá àti Ènìyàn",
+        "description": " Àwọn ẹ̀kọ́ lórí ohun tí ó túmọ̀ sí láti jẹ́ ènìyàn — tí a dá ní àwòrán Ọlọ́run, tí a gbé kalẹ̀, tí a sì dá fún ète kan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìṣẹ̀dá",
+            "description": " Ọlọ́run gẹ́gẹ́ bí Ẹlẹ́dàá ohun gbogbo — àti ohun tí èyí túmọ̀ sí fún bí a ṣe ń wo ayé."
+          },
+          {
+            "name": " Àwòrán Ọlọ́run",
+            "description": " Kí ni ìtumọ̀ rẹ̀ láti jẹ́ ẹni tí a dá ní àwòrán Ọlọ́run, àti ọlá tí ó ń fún gbogbo ènìyàn."
+          },
+          {
+            "name": " Ẹ̀yà ara",
+            "description": "Àǹfààní níní ara, àti ohun tí Ìwé Mímọ́ sọ nípa ìwàláàyè ara."
+          },
+          {
+            "name": " Ète",
+            "description": " Ìdí tí a fi wà níbí — ìpè ènìyàn láti fẹ́ràn Ọlọ́run, láti sin àwọn ẹlòmíràn, àti láti ṣẹ̀dá ìríjú."
+          }
+        ]
+      },
+      {
+        "section": " Ibi ati Isubu",
+        "description": " Àwọn ẹ̀kọ́ lórí ẹ̀ṣẹ̀ — ìpilẹ̀ṣẹ̀ rẹ̀, ìwà rẹ̀, àti àwọn ipa búburú rẹ̀ lórí ènìyàn àti ayé.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìwà Ẹ̀ṣẹ̀",
+            "description": " Ohun tí ẹ̀ṣẹ̀ jẹ́ gan-an — kìí ṣe rírú òfin nìkan, ṣùgbọ́n ìyípadà pàtàkì kúrò lọ́dọ̀ Ọlọ́run."
+          },
+          {
+            "name": " Ìrẹ̀wẹ̀sì",
+            "description": " Kí ló ṣẹlẹ̀ nínú Jẹ́nẹ́sísì orí kẹta, àti bí ó ṣe kan gbogbo ènìyàn."
+          },
+          {
+            "name": " Ìdẹwò",
+            "description": "Bí ìdánwò ṣe ń ṣiṣẹ́, àti bí àwọn onígbàgbọ́ ṣe lè dúró ṣinṣin lòdì sí i."
+          }
+        ]
+      },
+      {
+        "section": " Kristi",
+        "description": " Àwọn ẹ̀kọ́ lórí ẹni tí Jésù Kristi jẹ́ — Ọlọ́run pátápátá àti ènìyàn pátápátá — àti ohun tí wíwá rẹ̀ túmọ̀ sí.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ènìyàn Kristi",
+            "description": " Ẹ̀kọ́ nípa ìwà méjì — bí Jésù ṣe jẹ́ Ọlọ́run pátápátá àti ènìyàn pátápátá."
+          },
+          {
+            "name": " Ìṣẹ̀dá ara ẹni",
+            "description": " Ìdí tí Ọmọ Ọlọ́run fi di ara, àti ohun tí ẹ̀dá ènìyàn rẹ̀ túmọ̀ sí fún wa."
+          }
+        ]
+      },
+      {
+        "section": " Ìgbàlà",
+        "description": " Báwo ni Ọlọ́run ṣe ń gba àwọn ẹlẹ́ṣẹ̀ là? Àwọn ẹ̀kọ́ tó dá lórí ètùtù, ìdáláre, ìgba ọmọ, àti gbogbo ohun tí Ọlọ́run ṣe láti gbà wá là.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ètùtù",
+            "description": "Bí ikú Kristi ṣe bá ẹ̀ṣẹ̀ lò — ìyípadà, ìràpadà, ìpadàbọ̀, àti bẹ́ẹ̀ bẹ́ẹ̀ lọ."
+          },
+          {
+            "name": " Ìyípadà",
+            "description": " Ohun tí ó túmọ̀ sí láti yípadà kúrò nínú ẹ̀ṣẹ̀ àti láti gbẹ́kẹ̀lé Kristi — ìrònúpìwàdà àti ìgbàgbọ́."
+          },
+          {
+            "name": " Ìdáláre",
+            "description": " Jíjẹ́ ẹni tí a polongo ní olódodo níwájú Ọlọ́run — nípa oore-ọ̀fẹ́ nìkan, nípasẹ̀ ìgbàgbọ́ nìkan, nínú Kristi nìkan."
+          },
+          {
+            "name": " Ìgbàlọ́wọ́",
+            "description": " Ẹ̀bùn àrà ọ̀tọ̀ ti jíjẹ́ ẹni tí a mú wá sínú ìdílé Ọlọ́run gẹ́gẹ́ bí ọmọkùnrin àti ọmọbìnrin rẹ̀."
+          }
+        ]
+      },
+      {
+        "section": " Ẹ̀mí",
+        "description": " Àwọn ẹ̀kọ́ lórí Ẹ̀mí Mímọ́ — ẹni tí ó jẹ́, ohun tí ó ń ṣe, àti bí ó ṣe ń ṣiṣẹ́ nínú àwọn onígbàgbọ́ àti ìjọ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ẹni ti Ẹ̀mí",
+            "description": "Ẹ̀mí Mímọ́ gẹ́gẹ́ bí ẹni kẹta nínú Mẹ́talọ́kan — kìí ṣe agbára, bí kò ṣe ènìyàn kan."
+          },
+          {
+            "name": " Èso Ẹ̀mí",
+            "description": " Àwọn ànímọ́ ìwà tí Ẹ̀mí ń mú jáde nínú àwọn tí wọ́n bá ń bá a rìn."
+          },
+          {
+            "name": " Àwọn Ẹ̀bùn Ẹ̀mí",
+            "description": " Àwọn ẹ̀bùn tí Ẹ̀mí ń fúnni láti fún àwọn onígbàgbọ́ ní agbára láti ṣe iṣẹ́ ìsìn nínú ara Kristi."
+          }
+        ]
+      },
+      {
+        "section": " Ṣọ́ọ̀ṣì",
+        "description": " Kí ni ìjọ, kí sì ni ìdí tí ó fi ṣe pàtàkì? Àwọn ẹ̀kọ́ lórí ìṣẹ̀dá, iṣẹ́ ìránṣẹ́, àti ìṣètò ara Kristi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìwà Ìjọ",
+            "description": " Ohun tí ìjọ jẹ́ ni—àwọn ènìyàn Ọlọ́run, ara Kristi, tẹ́ḿpìlì Ẹ̀mí."
+          },
+          {
+            "name": " Àwọn Sakramẹ́ntì",
+            "description": "Ìrìbọmi àti Oúnjẹ Alẹ́ Olúwa — ohun tí wọ́n jẹ́, ohun tí wọ́n túmọ̀ sí, àti bí a ṣe lè máa ṣe wọ́n."
+          },
+          {
+            "name": " Ìdarí",
+            "description": " Àwọn àpẹẹrẹ ìdarí ìjọ nínú Bíbélì: àwọn alàgbà, àwọn díákónì, àti àṣẹ tí ó wà lọ́kàn ìránṣẹ́."
+          },
+          {
+            "name": " Ìjọsìn",
+            "description": " Kí ni ìsìn Kristẹni jẹ́, ìdí tí ó fi ṣe pàtàkì, àti bí ó ṣe ń darí ìgbésí ayé àwùjọ."
+          }
+        ]
+      },
+      {
+        "section": " Àwọn Ohun Ìkẹyìn",
+        "description": " Àwọn ẹ̀kọ́ lórí ikú, àjíǹde, ìdájọ́, àti ìṣẹ̀dá tuntun — ìrètí tí ó ń ṣe àgbékalẹ̀ bí àwọn Kristẹni ṣe ń gbé ní àkókò yìí.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìpadàbọ̀ Kristi",
+            "description": " Ìrètí tó dájú pé Jésù yóò padà wá nínú ògo láti ṣe ìdájọ́ àwọn alààyè àti òkú."
+          },
+          {
+            "name": " Ìdájọ́",
+            "description": "Ìdájọ́ ìkẹyìn Ọlọ́run lórí gbogbo ènìyàn — àti ìhìn rere pé Kristi ti ṣe ìdájọ́ fún àwọn tirẹ̀."
+          },
+          {
+            "name": " Ọ̀run àti Ọ̀run Àpáàdì",
+            "description": " Àwọn àyànmọ́ ayérayé tí Ìwé Mímọ́ ṣàlàyé — àti ìdí tí wọ́n fi ṣe pàtàkì fún bí a ṣe ń gbé ìgbésí ayé wa nísinsìnyí."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Ìgbésí ayé",
+    "description": " Àwọn ẹ̀kọ́ tí ó so òtítọ́ Bíbélì pọ̀ mọ́ ìrírí ojoojúmọ́ ti títẹ̀lé Kristi — nínú àjọṣepọ̀, iṣẹ́, ìdámọ̀, àti ìjàkadì tí ń lọ lọ́wọ́ lòdì sí ẹ̀ṣẹ̀.",
+    "sections": [
+      {
+        "section": " Àwọn Ìlànà Ẹ̀mí",
+        "description": " Àwọn ìwà tí ó ń kọ́ wa láti sún mọ́ Ọlọ́run àti láti dàgbàsókè nínú ìwà-bí-Ọlọ́run—kì í ṣe àwọn ọ̀nà láti jèrè ojúrere, bí kò ṣe àwọn ìwà tí ó ń jẹ́ kí a ṣí sílẹ̀ sí oore-ọ̀fẹ́ rẹ̀.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Àdúrà",
+            "description": " Sísọ̀rọ̀ pẹ̀lú Ọlọ́run — ìpìlẹ̀ rẹ̀, àwọn ìrísí rẹ̀, àti bí a ṣe lè gbé ìgbésí ayé àdúrà tó ní ọrọ̀ sókè."
+          },
+          {
+            "name": "Kíkà Bíbélì",
+            "description": " Bí a ṣe lè ka Ìwé Mímọ́ dáadáa — pẹ̀lú òye, ìdúróṣinṣin, àti ìrètí pé a ó yípadà."
+          },
+          {
+            "name": " Ìjọsìn",
+            "description": " Ìjọsìn gẹ́gẹ́ bí ìdúró ìgbésí ayé gbogbo, kìí ṣe iṣẹ́ ọjọ́ ìsinmi nìkan."
+          }
+        ]
+      },
+      {
+        "section": " Ìwà àti Ìsọdimímọ́",
+        "description": " Ilana ti nlọ lọwọ lati di bi Kristi — ija lodi si ẹṣẹ, idagbasoke ninu iwa rere, ati oye ẹniti a jẹ ninu rẹ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Èso Ẹ̀mí",
+            "description": " Ìfẹ́, ayọ̀, àlàáfíà, sùúrù, inú rere, ìwà rere, òtítọ́, ìwà tútù, àti ìkóra-ẹni-níjàánu."
+          },
+          {
+            "name": " Bíborí Ẹ̀ṣẹ̀",
+            "description": " Ìrànlọ́wọ́ tó wúlò àti ti ẹ̀kọ́ nípa Ọlọ́run fún bíbá àwọn ìwà ẹ̀ṣẹ̀ tó ń bá a lọ jẹ́ẹ́jẹ́."
+          },
+          {
+            "name": "Ìdàgbàsókè nínú Oore-ọ̀fẹ́",
+            "description": " Ohun tí ó rí bí a ṣe ń dàgbà gẹ́gẹ́ bí Kristẹni — àti ohun tí ó ń dí ọ̀nà lọ́wọ́."
+          },
+          {
+            "name": " Idanimọ ninu Kristi",
+            "description": " Ẹni tí a jẹ́ nítorí ohun tí Kristi ti ṣe — àti ìdí tí èyí fi ń yí ohun gbogbo padà."
+          }
+        ]
+      },
+      {
+        "section": " Àwọn ìbátan àti Ìdílé",
+        "description": " Àwọn ẹ̀kọ́ nípa àjọṣepọ̀ tí Ọlọ́run ti fi sí wa — ìgbéyàwó, ìdílé, ìbádọ́rẹ̀ẹ́, àti àwùjọ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìgbéyàwó",
+            "description": " Májẹ̀mú ìgbéyàwó — ète rẹ̀, àwọn ìpèníjà rẹ̀, àti àwòrán rẹ̀ nípa Kristi àti ìjọ."
+          },
+          {
+            "name": " Àìní àpọ́n",
+            "description": " Àìnípọ́ gẹ́gẹ́ bí ìpè pípé àti ìtúmọ̀, kìí ṣe yàrá ìdúró fún ìgbéyàwó."
+          },
+          {
+            "name": " Ìtọ́jú ọmọ",
+            "description": " Títọ́ àwọn ọmọ dàgbà nínú ìgbàgbọ́ — pẹ̀lú oore-ọ̀fẹ́, òtítọ́, àti ojú ìwòye ìgbà pípẹ́."
+          },
+          {
+            "name": " Ìbádọ́rẹ̀ẹ́",
+            "description": " Ẹ̀bùn ìbádọ́rẹ̀ẹ́ Kristẹni — àti bí a ṣe lè ní àjọṣepọ̀ tó jinlẹ̀."
+          },
+          {
+            "name": " Ibaraẹnisọrọ",
+            "description": " Sísọ̀rọ̀ ní òtítọ́ àti pẹ̀lú inú rere — àti fífetísílẹ̀ dáadáa."
+          },
+          {
+            "name": " Àwùjọ",
+            "description": " Ohun tí ó túmọ̀ sí láti gbé gẹ́gẹ́ bí ara Kristi — gbígbé ẹrù ara ẹni."
+          }
+        ]
+      },
+      {
+        "section": " Iṣẹ́ àti Iṣẹ́-ọnà",
+        "description": " Àwọn ẹ̀kọ́ nípa lílo ìhìnrere fún iṣẹ́, owó, àkókò, àti ìfẹ́ ọkàn — rírí iṣẹ́ ojoojúmọ́ gẹ́gẹ́ bí apá kan nínú ète Ọlọ́run.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìgbésí Ayé Iṣẹ́",
+            "description": "Ohun tí Bíbélì sọ nípa iṣẹ́ — ìwà rere rẹ̀, ìjákulẹ̀ rẹ̀, àti ìràpadà rẹ̀ nínú Kristi."
+          },
+          {
+            "name": " Owó àti Àwọn Ohun ìní",
+            "description": " Ọ̀làwọ́, ìtẹ́lọ́rùn, àti ojú ìwòye Bíbélì nípa ọrọ̀."
+          },
+          {
+            "name": " Ìtọ́jú Àkókò",
+            "description": " Bí a ṣe ń lo àkókò wa — àti bí ìhìnrere ṣe ń tún àwọn ohun pàtàkì wa ṣe."
+          },
+          {
+            "name": " Ifẹkansi",
+            "description": " Ìfẹ́ ọkàn mímọ́ àti ìfẹ́ ọkàn ara ẹni — àti bí a ṣe lè mọ ìyàtọ̀ náà."
+          },
+          {
+            "name": " Ifẹyinti",
+            "description": " Bí ìgbé-ayé olóòtítọ́ ṣe rí ní àwọn àkókò ìkẹyìn ìgbésí ayé."
+          }
+        ]
+      },
+      {
+        "section": " Ìwà àti Àṣà Kristẹni",
+        "description": "Bí àwọn onígbàgbọ́ ṣe ń ronú àti bí wọ́n ṣe ń hùwà sí àwọn ìbéèrè ìwà rere tó ń wúni lórí ní àkókò wa — láti ìdájọ́ òdodo àwùjọ sí ìwà rere ẹ̀dá sí ìmọ̀ ẹ̀rọ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìdájọ́ Òdodo Àwùjọ",
+            "description": " Ọkàn Ọlọ́run fún àwọn aláìlera àti àwọn tí a ń ni lára, àti ohun tí èyí túmọ̀ sí fún wa."
+          },
+          {
+            "name": " Ìwà rere nípa ẹ̀dá-ara",
+            "description": " Ìbẹ̀rẹ̀ àti òpin ìgbésí ayé — a fi ìtọ́jú àti àánú àti ìtọ́jú ẹ̀kọ́ ìsìn ti súnmọ́ ọn."
+          },
+          {
+            "name": " Imọ-ẹrọ ti o ni ipa",
+            "description": " Bí a ṣe lè lo ìmọ̀-ẹ̀rọ lọ́nà títọ́ ní ayé tí ó ní ìrísí rẹ̀."
+          }
+        ]
+      },
+      {
+        "section": " Ìjìyà àti Ìtọ́sọ́nà",
+        "description": " Àwọn ẹ̀kọ́ tí ó ń ran àwọn onígbàgbọ́ lọ́wọ́ láti rìn nínú ìrora, àìdánilójú, àti ìṣòro pẹ̀lú òtítọ́ àti ìrètí.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Àwọn Àdánwò àti Ìpọ́njú",
+            "description": " Ìdí tí Ọlọ́run fi gba ìjìyà láàyè, àti bí Ìwé Mímọ́ ṣe fún wa ní agbára láti fara dà á pẹ̀lú ìrètí."
+          },
+          {
+            "name": " Mímọ Ìfẹ́ Ọlọ́run",
+            "description": " Bí a ṣe lè ṣe àwọn ìpinnu ọlọ́gbọ́n — àti ohun tí Ìwé Mímọ́ ṣèlérí nípa ìtọ́sọ́nà."
+          },
+          {
+            "name": " Ìlera Ọpọlọ",
+            "description": " Ìsoríkọ́, àníyàn, àti àwọn ìjàkadì mìíràn — pẹ̀lú àánú àti ìtọ́jú Bíbélì."
+          },
+          {
+            "name": " Ìbànújẹ́",
+            "description": " Báwo ni a ṣe lè banújẹ́ gẹ́gẹ́ bí àwọn tí wọ́n ní ìrètí — ní òótọ́, kì í ṣe nìkan."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Iṣẹ́-ìránṣẹ́",
+    "description": " Àwọn ẹ̀kọ́ fún àwọn tó ń ṣiṣẹ́ fún àwọn ẹlòmíràn — nínú iṣẹ́ ìwàásù ìhìnrere, ìtọ́jú olùṣọ́ àgùntàn, kíkọ́ni, àti ìdarí. Láti inú Ìwé Mímọ́, àwọn ẹ̀kọ́ wọ̀nyí ń fún àwọn onígbàgbọ́ ní agbára láti ṣiṣẹ́ sìn lọ́nà tó gbéṣẹ́ àti láìsí ìṣòro.",
+    "sections": [
+      {
+        "section": "Ẹ̀kọ́ nípa Ìsìn ti Iṣẹ́-Ìránṣẹ́",
+        "description": " Àwọn ìpìlẹ̀ Bíbélì fún gbogbo iṣẹ́ ìránṣẹ́ Kristẹni — ohun tí ó túmọ̀ sí láti sìn, àti irú ẹni tí ìránṣẹ́ náà gbọ́dọ̀ jẹ́.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìdarí Àwọn Olùránṣẹ́",
+            "description": " Ṣíṣe amọ̀nà gẹ́gẹ́ bí Jésù ṣe ń darí — pẹ̀lú ìrẹ̀lẹ̀, ìrúbọ, àti ìtọ́jú fún àwọn tí a ń sìn."
+          },
+          {
+            "name": " Ìpè",
+            "description": " Lílóye ìpè rẹ sí iṣẹ́ ìránṣẹ́ — bí a ṣe ń mọ̀ ọ́n àti ohun tí ó ní í ṣe pẹ̀lú rẹ̀."
+          }
+        ]
+      },
+      {
+        "section": " Ìwàásù àti Ìkọ́ni (Homiletics)",
+        "description": " Àwọn ìkẹ́kọ̀ọ́ fún àwọn tí a pè láti ṣàlàyé Bíbélì ní gbangba — tí ó bo ọ̀nà, ìwà, àti ìwọ̀n mímú Ọ̀rọ̀ Ọlọ́run lò.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìwàásù Àfihàn",
+            "description": "Bí a ṣe lè wàásù pẹ̀lú òtítọ́ láti inú ìwé náà — jíjẹ́ kí Bíbélì ṣètò àkójọpọ̀ náà."
+          },
+          {
+            "name": " Àwọn Ìkẹ́kọ̀ọ́ Bíbélì Tó Ń Ṣíṣe Àkóso",
+            "description": " Bí a ṣe lè darí àwùjọ dáadáa — bíbéèrè àwọn ìbéèrè rere àti ríran àwọn ènìyàn lọ́wọ́ láti pàdé Ọlọ́run nínú ìwé náà."
+          }
+        ]
+      },
+      {
+        "section": " Aṣáájú àti Ìṣàkóso",
+        "description": " Àwọn apá tó wúlò àti ti ẹ̀kọ́ nípa ìtọ́sọ́nà ìjọ tàbí iṣẹ́ ìránṣẹ́ — ìran, àwọn ẹgbẹ́, ìjà, àti ìṣàkóso.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìran àti Ìlànà",
+            "description": " Báwo ni a ṣe lè ronú jinlẹ̀ nípa ibi tí Ọlọ́run ń darí wa àti bí a ṣe lè dé ibẹ̀ papọ̀."
+          },
+          {
+            "name": " Kíkọ́ Ẹgbẹ́",
+            "description": " Kíkójọpọ̀, dídára, àti gbígbé ẹgbẹ́ ìránṣẹ́ tí ó ní ìlera ró."
+          },
+          {
+            "name": " Ìpinnu Ìforígbárí",
+            "description": "Bá a ṣe lè yanjú àìgbọ́ra-ẹni-yé àti ìyàsọ́tọ̀ ní ọ̀nà tí ó ń bu ọlá fún Ọlọ́run tí ó sì ń pa ìṣọ̀kan mọ́."
+          },
+          {
+            "name": " Ìṣàkóso Ìjọ",
+            "description": " Àwọn ètò àti ìlànà tó ń ran ìjọ lọ́wọ́ láti jẹ́ ẹni tó ní ẹ̀tọ́ àti tó wà ní ìṣètò dáadáa."
+          }
+        ]
+      },
+      {
+        "section": " Ìtọ́jú Àgùntàn",
+        "description": " Àwọn ẹ̀kọ́ tó ń fún àwọn onígbàgbọ́ ní agbára láti rìn lẹ́gbẹ̀ẹ́ ara wọn nínú ìṣòro, àdánù, ìṣòro, àti àìní.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìjíròrò Àgùntàn",
+            "description": " Àwọn ọgbọ́n àti ìdúró tí a nílò fún ìjíròrò iṣẹ́-ìránṣẹ́ kan-sí-ọ̀kan tí ó wúlò."
+          },
+          {
+            "name": " Ìdásí-ìdásí-ìṣòro",
+            "description": " Bí a ṣe lè fi ọgbọ́n àti àánú dáhùn nígbà tí ẹnìkan bá wà nínú ìṣòro ńlá."
+          },
+          {
+            "name": " Ìbẹ̀wò",
+            "description": "Iṣẹ́ ìránṣẹ́ wíwà níbẹ̀ — ṣíṣe àbẹ̀wò sí àwọn aláìsàn, àwọn àgbàlagbà, àti àwọn tí kò sí nílé."
+          },
+          {
+            "name": " Ìmúrasílẹ̀ Ìgbéyàwó",
+            "description": " Ríran àwọn tọkọtaya lọ́wọ́ láti múra sílẹ̀ fún ìgbéyàwó tí a kọ́ lórí Kristi."
+          },
+          {
+            "name": " Ìtọ́jú Ọ̀fọ̀",
+            "description": " Rírìn pẹ̀lú àwọn tí wọ́n ń ṣọ̀fọ̀ — ohun tí a ó sọ, ohun tí a kò gbọdọ̀ sọ, àti bí a ó ṣe dúró."
+          }
+        ]
+      },
+      {
+        "section": " Ihinrere ati Awọn Iṣẹ apinfunni",
+        "description": " Àwọn ẹ̀kọ́ lórí mímú ìhìnrere lọ sí ọ̀dọ̀ àwọn tí kò tíì gbọ́ ọ — ní ti ara ẹni, ní agbègbè, àti ní gbogbo àṣà.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ìjẹ́rìí Ara Ẹni",
+            "description": " Bí o ṣe lè sọ ìgbàgbọ́ rẹ nípa ti ara àti ní kedere nínú ìjíròrò ojoojúmọ́."
+          },
+          {
+            "name": " Àforíjì",
+            "description": "Dídáhùn sí àwọn ìbéèrè tí ó ń dí àwọn ènìyàn lọ́wọ́ láti má ṣe gba ẹ̀sìn Kristẹni ní pàtàkì."
+          },
+          {
+            "name": " Iṣẹ́ Àjọṣepọ̀ Àṣà",
+            "description": " Ṣíṣe ìránṣẹ́ àti pínpín káàkiri ààlà àṣà pẹ̀lú ìmọ̀lára àti ọ̀wọ̀."
+          },
+          {
+            "name": " Gbígbìn Ṣọ́ọ̀ṣì",
+            "description": " Ẹ̀kọ́ ìsìn àti ìṣe ìdásílẹ̀ àwọn àwùjọ ìhìnrere tuntun."
+          }
+        ]
+      },
+      {
+        "section": " Ìmọ̀ràn àti Ìmọ̀ràn fún Ọmọ-ẹ̀yìn",
+        "description": " Àwọn ẹ̀kọ́ lórí iṣẹ́ ìránṣẹ́ láti ran àwọn ẹlòmíràn lọ́wọ́ láti dàgbàsókè — ọ̀kan sí ọ̀kan, ní àwọn àwùjọ kékeré, àti nípa kíkọ́ ìran tí ń bọ̀.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Iṣẹ́-Ìránṣẹ́ Ọ̀kan-sí-Ọ̀kan",
+            "description": " Agbára jíjẹ́ ọmọ-ẹ̀yìn tí a mọ̀ọ́mọ̀ ṣe — pípàdé déédéé láti ṣí Bíbélì papọ̀."
+          },
+          {
+            "name": " Aṣáájú Ẹgbẹ́ Kékeré",
+            "description": " Bí a ṣe lè ṣe amọ̀nà àwùjọ kékeré kan tí ó jẹ́ olóòótọ́, tí ó ń dàgbàsókè, tí ó sì dúró lórí Ìwé Mímọ́."
+          },
+          {
+            "name": " Kọ́ Àwọn Ẹlòmíràn",
+            "description": " Pípèsè àwọn ẹlòmíràn láti ṣe iṣẹ́ ìránṣẹ́ — pípọ̀ kìí ṣe àwọn tí a yípadà nìkan ṣùgbọ́n àwọn olórí."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Òmíràn",
+    "description": " Àwọn ìwádìí tí kò bá ara wọn mu dáadáa sí ẹ̀ka mìíràn — tàbí tí a kò tí ì ṣètò ìwífún nípa àwọn ohun èlò ìpamọ́ wọn.",
+    "sections": []
+  }
+]

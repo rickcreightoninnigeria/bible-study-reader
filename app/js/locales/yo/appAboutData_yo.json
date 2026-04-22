@@ -1,0 +1,28 @@
+{
+  "appTitle": " Olùkà Ẹ̀kọ́ Bíbélì",
+  "appDescription": " Ohun èlò alágbékalẹ̀ alágbékalẹ̀ kan fún ṣíṣe àgbékalẹ̀ àwọn ẹ̀kọ́ Bíbélì — kíkà, ríronú jinlẹ̀, àti gbígbọ́ ìdáhùn sílẹ̀ bí o ṣe ń lọ.",
+  "sampleTitle": " Ìyípadà",
+  "sampleSubtitle": " Tuntun kìí ṣe (ó kàn dára)",
+  "sampleShortTitle": " Ìyípadà",
+  "sampleDescription": " Ìkẹ́kọ̀ọ́ Bíbélì ìgbà mẹ́sàn-án tí a ń ṣe àgbéyẹ̀wò ohun tí ìyípadà tòótọ́ túmọ̀ sí - àti ìdí tí ó fi ṣe pàtàkì.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": " Ìdáhùn Creative Commons- Attribution-NonCommercial-ShareAlike 4.0 Àgbáyé",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        " Pin: daakọ ati tun pin ohun elo naa ni eyikeyi ọna kika tabi ọna kika",
+        " Ṣàtúnṣe: àtúnṣe, yí padà, kí o sì kọ́ lórí ohun èlò náà fún ète èyíkéyìí, kódà ní ti ìṣòwò pàápàá"
+      ],
+      "conditions": [
+        " Ìfilọ́lẹ̀: o gbọ́dọ̀ fúnni ní gbèsè tó yẹ, pèsè ìjápọ̀ sí ìwé-àṣẹ náà, kí o sì fi hàn bóyá a ti ṣe àwọn àyípadà",
+        "Attribution: Tí o bá ṣe àtúnṣe, yípadà, tàbí kọ́ lórí ohun èlò náà, o gbọ́dọ̀ pín àwọn àfikún rẹ lábẹ́ ìwé àṣẹ kan náà gẹ́gẹ́ bí ti àtilẹ̀wá náà."
+      ],
+      "notices": [
+        " O ko ni lati tẹle iwe-aṣẹ fun awọn eroja ti ohun elo naa ni agbegbe gbogbogbo tabi nibiti a ti gba laaye lilo rẹ nipasẹ iyasoto tabi idiwọn ti o wulo.",
+        " A ko fun ọ ni atilẹyin ọja. Iwe-aṣẹ naa le ma fun ọ ni gbogbo awọn igbanilaaye ti o yẹ fun lilo ti o pinnu.",
+        " Nígbà tí ó ń ṣẹ̀dá àpù yìí, òǹkọ̀wé náà lo Claude, ChatGPT, àti Gemini fún ‘fífi ìkọ̀wé’ tó gbòòrò. Gbogbo ìpinnu lórí àkóónú, àti ọ̀rọ̀ tó kẹ́yìn ni ojúṣe òǹkọ̀wé."
+      ]
+    }
+  }
+}

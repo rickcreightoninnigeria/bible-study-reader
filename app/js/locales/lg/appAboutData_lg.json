@@ -1,0 +1,28 @@
+{
+  "appTitle": " Omusomi w’Okuyiga Baibuli",
+  "appDescription": " App esooka ku ssimu okukola okuyita mu misomo gy’okuyiga Baibuli — okusoma, okufumiitiriza, n’okuwandiika eby’okuddamu nga bw’ogenda.",
+  "sampleTitle": " Okukyuka",
+  "sampleSubtitle": " Ekipya si (just) Kirungi",
+  "sampleShortTitle": " Okukyuka",
+  "sampleDescription": " Okuyiga Baibuli okw’ebitundu mwenda nga okunoonyereza ku kukyuka okwa nnamaddala kye kitegeeza – era lwaki kikulu.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": " Creative Commons Attribution-ShareAlike 4.0 Enkola y'ensi yonna",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        " Gabana: koppa era oddemu okusaasaanya ebintu mu ngeri yonna oba mu nkola yonna",
+        " Adapt: remix, transform, era okuzimba ku material olw’ekigendererwa kyonna, wadde mu by’obusuubuzi"
+      ],
+      "conditions": [
+        " Attribution: olina okuwa credit esaanidde, okuwa link eri layisinsi, n’okulaga oba enkyukakyuka zakolebwa",
+        "ShareAlike: bw’oba okyusakyusa, okukyusa, oba okuzimba ku bintu, olina okugaba ebiweebwayo byo wansi wa layisinsi y’emu ne eyasooka"
+      ],
+      "notices": [
+        " Tolina kugoberera layisinsi ya bintu by’ebintu ebiri mu lujjudde oba ng’okukozesa kwo kukkirizibwa okujjako oba okukoma okukolebwa.",
+        " Tewali ggaranti eweebwa. Layisinsi eyinza obutakuwa lukusa lwonna olwetaagisa okukozesa gy’ogenderera.",
+        " Mu kutondawo app eno, omuwandiisi yakozesezza Claude, ChatGPT, ne Gemini okukola ‘vibe coding’ ennene. Okusalawo kwonna ku birimu, n’ebigambo ebisembayo buvunaanyizibwa bwa muwandiisi."
+      ]
+    }
+  }
+}

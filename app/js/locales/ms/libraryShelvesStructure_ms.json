@@ -1,0 +1,817 @@
+[
+  {
+    "shelf": " Perjanjian Lama",
+    "description": " Kajian yang meneroka kitab-kitab yang ditulis sebelum kedatangan Kristus — daripada Hukum Taurat dan Kitab Para Nabi hinggalah kepada Kitab Suci. Perjanjian Lama menceritakan kisah perjanjian Tuhan dengan Israel dan menunjukkan kepada Mesias.",
+    "sections": [
+      {
+        "section": " Undang-undang",
+        "description": " Lima kitab pertama dalam Bible (Pentateukh), yang merangkumi penciptaan, kejatuhan, eksodus, dan pemberian Hukum Taurat — asas yang menjadi asas bagi seluruh Kitab Suci.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kejadian",
+            "description": " Kitab permulaan: penciptaan, kejatuhan, dan para leluhur — Abraham, Ishak, Yakub, dan Yusuf."
+          },
+          {
+            "name": " Keluaran",
+            "description": " Tuhan menyelamatkan umat-Nya dari perhambaan di Mesir, menyatakan nama-Nya, dan memberikan Hukum-Nya di Sinai."
+          },
+          {
+            "name": "Imamat",
+            "description": " Petunjuk untuk penyembahan dan kekudusan, menunjukkan bagaimana umat yang berdosa dapat mendekat kepada Tuhan yang kudus."
+          },
+          {
+            "name": " Nombor",
+            "description": " Perjalanan Israel di padang gurun — kegagalannya, disiplinnya, dan kesetiaan Tuhan yang berterusan."
+          },
+          {
+            "name": " Ulangan",
+            "description": " Khutbah perpisahan Musa, memperbaharui perjanjian dan mempersiapkan Israel untuk memasuki Tanah Perjanjian."
+          }
+        ]
+      },
+      {
+        "section": " Sejarah",
+        "description": " Kitab-kitab sejarah menelusuri kisah Israel dari penaklukan Kanaan hinggalah kepada pemerintahan beraja, pengasingan, dan kepulangan — menunjukkan kesetiaan Tuhan dan ketidaksetiaan umat-Nya yang berulang kali.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Joshua",
+            "description": "Penaklukan dan pembahagian Tanah Perjanjian di bawah kepimpinan Yosua."
+          },
+          {
+            "name": " Hakim-hakim",
+            "description": " Satu kitaran pemberontakan, penindasan, dan penyelamatan apabila Israel berulang kali berpaling daripada Tuhan."
+          },
+          {
+            "name": " Rut",
+            "description": " Sebuah kisah tentang kesetiaan, pemeliharaan, dan penebusan yang berlatarkan zaman para hakim."
+          },
+          {
+            "name": " 1 Samuel",
+            "description": " Peralihan daripada hakim kepada raja: Samuel, Saul, dan kebangkitan Daud."
+          },
+          {
+            "name": " 2 Samuel",
+            "description": " Pemerintahan Daud — kejayaan, kegagalannya, dan perjanjian Tuhan dengan keluarganya."
+          },
+          {
+            "name": " 1 Raja-raja",
+            "description": "Kemuliaan Salomo dan perpecahan kerajaan; Elia dan pertandingan di Gunung Karmel."
+          },
+          {
+            "name": " 2 Raja-raja",
+            "description": " Kemerosotan dan kejatuhan kedua-dua kerajaan, berakhir dengan pengasingan."
+          },
+          {
+            "name": " 1 Tawarikh",
+            "description": " Penceritaan semula sejarah Israel dari Adam hingga Daud, yang tertumpu pada ibadah dan bait suci."
+          },
+          {
+            "name": " 2 Tawarikh",
+            "description": " Salomo dan bait suci, kerajaan yang terbahagi, dan harapan pemulihan."
+          },
+          {
+            "name": " Ezra",
+            "description": " Kepulangan dari pembuangan dan pembangunan semula bait suci di bawah kepimpinan Ezra."
+          },
+          {
+            "name": " Nehemia",
+            "description": "Pembinaan semula tembok Yerusalem dan pembaharuan komuniti perjanjian."
+          },
+          {
+            "name": " Ester",
+            "description": " Pemeliharaan Tuhan yang tersembunyi melindungi umat-Nya di istana Parsi."
+          }
+        ]
+      },
+      {
+        "section": " Puisi & Kebijaksanaan",
+        "description": " Ayub, Mazmur, Amsal, Pengkhutbah, dan Kidung Agung — buku-buku yang meneroka kedalaman pengalaman manusia: penderitaan, pujian, hikmat, dan kasih.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ayub",
+            "description": " Penerokaan mendalam tentang penderitaan, keadilan, dan misteri jalan Tuhan."
+          },
+          {
+            "name": " Mazmur",
+            "description": " Buku nyanyian dan buku doa Israel — pelbagai emosi manusia yang dibawa ke hadapan Tuhan."
+          },
+          {
+            "name": " Peribahasa",
+            "description": "Kebijaksanaan praktikal untuk kehidupan seharian, berakar umbi dalam takut akan Tuhan."
+          },
+          {
+            "name": " Pengkhotbah",
+            "description": " Satu pemeriksaan menyeluruh terhadap makna, pekerjaan, dan kematian 'di bawah matahari'."
+          },
+          {
+            "name": " Kidung Agung",
+            "description": " Satu perayaan cinta dan perkahwinan, kaya dengan gambaran kegembiraan dan kerinduan."
+          }
+        ]
+      },
+      {
+        "section": " Nabi-nabi",
+        "description": " Kitab-kitab nubuatan menyeru Israel untuk bertaubat, memberi amaran tentang penghakiman, dan menunjukkan penebusan Tuhan yang muktamad. Kitab-kitab nubuatan adalah penting untuk memahami penggenapan janji-janji tersebut dalam Perjanjian Baru.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Yesaya",
+            "description": " Penghakiman dan harapan yang menakjubkan — termasuk Lagu-lagu Hamba yang menunjuk kepada Kristus."
+          },
+          {
+            "name": " Yeremia",
+            "description": " Kesedihan seorang nabi ketika Yerusalem runtuh, dan janji perjanjian baru."
+          },
+          {
+            "name": " Ratapan",
+            "description": " Kesedihan yang mendalam atas kemusnahan Yerusalem, disatukan oleh harapan akan kesetiaan Tuhan."
+          },
+          {
+            "name": " Yehezkiel",
+            "description": " Penglihatan tentang kemuliaan Tuhan yang pergi dan kembali, dan janji pembaharuan rohani."
+          },
+          {
+            "name": " Daniel",
+            "description": " Kehadiran yang setia dalam pembuangan, dan penglihatan tentang kerajaan Tuhan yang berdaulat atas segala bangsa."
+          },
+          {
+            "name": " Hosea",
+            "description": " Kasih Tuhan yang tidak berkesudahan bagi umat yang tidak setia, digambarkan melalui perkahwinan Hosea sendiri."
+          },
+          {
+            "name": " Joel",
+            "description": " Wabak belalang sebagai seruan untuk bertaubat, dan janji Roh Kudus."
+          },
+          {
+            "name": " Amos",
+            "description": " Seruan nubuatan yang tajam untuk keadilan dan amaran bahawa agama yang kosong tidak akan bertahan."
+          },
+          {
+            "name": " Obaja",
+            "description": " Nubuat ringkas tentang Edom dan hari Tuhan yang akan datang."
+          },
+          {
+            "name": " Yunus",
+            "description": " Belas kasihan Tuhan terhadap bangsa-bangsa — dan penentangan seorang nabi yang enggan terhadapnya."
+          },
+          {
+            "name": " Mikha",
+            "description": " Keadilan, belas kasihan, dan kerendahan hati — dan janji seorang pemerintah dari Betlehem."
+          },
+          {
+            "name": " Nahum",
+            "description": "Kejatuhan Niniwe dan penghiburan keadilan Tuhan bagi umat-Nya yang tertindas."
+          },
+          {
+            "name": " Habakuk",
+            "description": " Bergelut secara jujur dengan Tuhan mengatasi ketidakadilan, dan belajar untuk percaya pada waktunya."
+          },
+          {
+            "name": " Zefanya",
+            "description": " Hari Tuhan dan kegembiraan pemulihan bagi sisa umat yang telah disucikan."
+          },
+          {
+            "name": " Hagai",
+            "description": " Seruan untuk membina semula bait suci dan mengutamakan rumah Tuhan melebihi keselesaan peribadi."
+          },
+          {
+            "name": " Zakharia",
+            "description": " Penglihatan pemulihan dan seorang Mesias yang datang dengan rendah hati di atas seekor keldai."
+          },
+          {
+            "name": " Maleakhi",
+            "description": "Seruan terakhir kepada kesetiaan sebelum kesunyian yang panjang di hadapan Yohanes Pembaptis."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Perjanjian Baru",
+    "description": " Kajian terhadap kitab-kitab yang ditulis selepas kedatangan Kristus — Injil, surat-surat para rasul, dan Wahyu. Perjanjian Baru mendedahkan penggenapan janji-janji Tuhan dalam Yesus dan kehidupan gereja awal.",
+    "sections": [
+      {
+        "section": " Injil & Kisah Para Rasul",
+        "description": " Empat kisah tentang kehidupan, kematian, dan kebangkitan Yesus, serta kisah pengembangan gereja awal di seluruh dunia Rom.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Matius",
+            "description": " Yesus sebagai penggenapan Perjanjian Lama, Musa yang baru, dan Raja kerajaan Tuhan."
+          },
+          {
+            "name": " Mark",
+            "description": " Sebuah kisah pantas tentang Yesus sebagai Hamba dan Anak Tuhan yang menderita."
+          },
+          {
+            "name": " Lukas",
+            "description": " Yesus sebagai Penyelamat dunia — dengan perhatian khusus kepada orang miskin, wanita, dan orang luar."
+          },
+          {
+            "name": " John",
+            "description": " Potret teologi Yesus yang paling dalam — Firman yang menjadi manusia, AKULAH ADALAH, Anak Tuhan."
+          },
+          {
+            "name": " Kisah Para Rasul",
+            "description": " Roh Kudus memberi kuasa kepada gereja untuk menyebarkan Injil dari Yerusalem ke hujung bumi."
+          }
+        ]
+      },
+      {
+        "section": " Surat-surat Paulus",
+        "description": " Surat-surat Paulus kepada gereja-gereja dan individu-individu — meneroka logik injil, tingkah laku Kristian, dan sifat gereja.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Orang Rom",
+            "description": "Penjelasan Paulus yang paling sistematis tentang Injil: dosa, pembenaran, pengudusan, dan harapan."
+          },
+          {
+            "name": " 1 Korintus",
+            "description": " Menangani perpecahan dan kekacauan di Korintus, dengan ajaran tentang kasih, kurnia, dan kebangkitan."
+          },
+          {
+            "name": " 2 Korintus",
+            "description": " Pembelaan Paulus terhadap pelayanannya dan paradoks kekuatan melalui kelemahan."
+          },
+          {
+            "name": " Galatia",
+            "description": " Pembelaan yang penuh semangat terhadap pembenaran hanya melalui iman terhadap mereka yang menambahkan hukum."
+          },
+          {
+            "name": " Efesus",
+            "description": " Kekayaan identiti orang percaya dalam Kristus, dan gereja sebagai kemanusiaan Tuhan yang baru."
+          },
+          {
+            "name": " Filipi",
+            "description": " Sukacita dalam segala keadaan dan teladan kerendahan hati Kristus."
+          },
+          {
+            "name": " Kolose",
+            "description": " Kristus sebagai yang tertinggi atas segala sesuatu, dan implikasinya untuk kehidupan seharian."
+          },
+          {
+            "name": " 1 Tesalonika",
+            "description": " Galakan untuk gereja yang baru, dengan ajaran tentang kedatangan Kristus kembali."
+          },
+          {
+            "name": " 2 Tesalonika",
+            "description": " Pembetulan salah faham tentang akhir zaman, dan seruan untuk bekerja dengan setia."
+          },
+          {
+            "name": " 1 Timotius",
+            "description": " Petunjuk untuk kehidupan gereja, kepimpinan, dan doktrin yang benar."
+          },
+          {
+            "name": " 2 Timotius",
+            "description": "Surat terakhir Paulus — satu pesanan kepada Timotius untuk memelihara Injil dan menyelesaikannya dengan baik."
+          },
+          {
+            "name": " Titus",
+            "description": " Melantik pemimpin dan mengajarkan ajaran yang benar akan membawa kepada kehidupan yang saleh."
+          },
+          {
+            "name": " Filemon",
+            "description": " Rayuan peribadi untuk perdamaian dan implikasi sosial daripada injil."
+          }
+        ]
+      },
+      {
+        "section": " Surat-surat Am & Wahyu",
+        "description": " Surat-surat daripada Yakobus, Petrus, Yohanes, Yudas, dan lain-lain — yang merangkumi iman dalam pencubaan, kepercayaan sejati, ajaran palsu, dan harapan muktamad Wahyu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ibrani",
+            "description": " Yesus sebagai penggenapan semua keimamatan, kurban, dan perjanjian Perjanjian Lama — lebih unggul dalam segala hal."
+          },
+          {
+            "name": " James",
+            "description": " Iman yang berfungsi — hikmat praktikal untuk hidup sebagai umat Tuhan di dunia."
+          },
+          {
+            "name": " 1 Petrus",
+            "description": " Harapan dan kehidupan suci bagi orang buangan di dunia yang bermusuhan."
+          },
+          {
+            "name": " 2 Petrus",
+            "description": " Amaran terhadap guru-guru palsu dan keyakinan terhadap janji-janji Tuhan."
+          },
+          {
+            "name": " 1 Yohanes",
+            "description": " Jaminan keselamatan dan tanda-tanda iman yang sejati: kasih, ketaatan, dan kebenaran."
+          },
+          {
+            "name": " 2 Yohanes",
+            "description": " Surat ringkas tentang kasih, kebenaran, dan tidak menyambut mereka yang menafikan Kristus."
+          },
+          {
+            "name": " 3 Yohanes",
+            "description": "Memuji layanan yang setia dan memberi amaran terhadap kepimpinan yang mementingkan diri sendiri."
+          },
+          {
+            "name": " Yudas",
+            "description": " Seruan yang kuat untuk memperjuangkan iman menentang ajaran sesat yang telah menyusup masuk ke dalam gereja."
+          },
+          {
+            "name": " Wahyu",
+            "description": " Visi tentang kemenangan muktamad Tuhan atas kejahatan, penghakiman orang fasik, dan pembaharuan segala sesuatu."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Kepercayaan",
+    "description": " Kajian tertumpu pada doktrin Kristian — apa yang diajar oleh Bible tentang Tuhan, manusia, keselamatan, dan masa depan. Membangunkan kepercayaan yang betul adalah asas untuk kehidupan yang betul.",
+    "sections": [
+      {
+        "section": " Gambaran Keseluruhan",
+        "description": " Kajian pengenalan yang meninjau keseluruhan ajaran Kristian — injil, doktrin teras, dan pengakuan sejarah gereja.",
+        "downloadLocation": "https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Yayasan",
+            "description": " Blok binaan penting kepercayaan Kristian — apa yang perlu diketahui oleh setiap penganut."
+          },
+          {
+            "name": " Injil",
+            "description": " Kajian tertumpu pada inti mesej Kristian: dosa, rahmat, dan keselamatan melalui Kristus."
+          },
+          {
+            "name": " Pengakuan Iman & Akidah",
+            "description": " Pernyataan iman bersejarah yang telah mendefinisikan agama Kristian ortodoks sepanjang abad."
+          }
+        ]
+      },
+      {
+        "section": " Tuhan",
+        "description": " Siapakah Tuhan? Kajian meneroka Triniti, sifat-sifat Tuhan, dan apa ertinya mengenali-Nya secara peribadi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Sifat-sifat Tuhan",
+            "description": " Kekudusan, kasih, kedaulatan, keadilan Tuhan, dan ciri-ciri lain yang diungkapkan oleh Kitab Suci."
+          },
+          {
+            "name": " Triniti",
+            "description": " Satu Tuhan dalam tiga oknum — Bapa, Anak, dan Roh Kudus — dan mengapa ini penting."
+          },
+          {
+            "name": " Tuhan Bapa",
+            "description": " Tuhan sebagai Pencipta, Raja, dan Bapa — dan apa ertinya menjadi anak-Nya."
+          }
+        ]
+      },
+      {
+        "section": " Kitab Suci",
+        "description": " Kajian tentang Bible itu sendiri — bagaimana ia wujud, apa yang didakwanya tentang dirinya sendiri, dan cara membacanya dengan baik.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Pihak Berkuasa",
+            "description": " Mengapa Bible berhak untuk berbicara dalam setiap aspek kehidupan."
+          },
+          {
+            "name": " Inspirasi",
+            "description": " Bagaimana Tuhan bekerja melalui penulis manusia untuk memberikan Firman-Nya kepada kita."
+          },
+          {
+            "name": " Kanun",
+            "description": " Bagaimana kitab-kitab dalam Bible diiktiraf dan dikumpulkan."
+          },
+          {
+            "name": " Tafsiran",
+            "description": " Prinsip-prinsip untuk membaca Bible dengan setia dan tepat."
+          }
+        ]
+      },
+      {
+        "section": " Ciptaan & Kemanusiaan",
+        "description": " Kajian tentang apa ertinya menjadi manusia — diciptakan menurut imej Tuhan, dijelmakan, dan diciptakan untuk suatu tujuan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Penciptaan",
+            "description": " Tuhan sebagai Pencipta segala sesuatu — dan apakah maksudnya terhadap cara kita memandang dunia."
+          },
+          {
+            "name": " Imej Tuhan",
+            "description": " Apa ertinya diciptakan menurut rupa Tuhan, dan martabat yang diberikan kepada setiap orang."
+          },
+          {
+            "name": " Perwujudan",
+            "description": "Kebaikan memiliki tubuh badan, dan apa yang dikatakan Kitab Suci tentang kewujudan fizikal."
+          },
+          {
+            "name": " Tujuan",
+            "description": " Mengapa kita berada di sini — panggilan manusia untuk mengasihi Tuhan, melayani sesama, dan memelihara ciptaan."
+          }
+        ]
+      },
+      {
+        "section": " Kejahatan dan Kejatuhan",
+        "description": " Kajian tentang dosa — asal usulnya, sifatnya, dan kesan buruknya terhadap manusia dan dunia.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Sifat Dosa",
+            "description": " Apa sebenarnya dosa itu — bukan sekadar melanggar peraturan, tetapi satu penolakan asas daripada Tuhan."
+          },
+          {
+            "name": " Kejatuhan",
+            "description": " Apa yang berlaku dalam Kejadian 3, dan bagaimana ia mempengaruhi setiap manusia."
+          },
+          {
+            "name": " Godaan",
+            "description": "Bagaimana godaan berfungsi, dan bagaimana orang percaya dapat berdiri teguh melawannya."
+          }
+        ]
+      },
+      {
+        "section": " Kristus",
+        "description": " Kajian tentang peribadi Yesus Kristus — sepenuhnya Tuhan dan sepenuhnya manusia — dan apa erti kedatangan-Nya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Orang Kristus",
+            "description": " Doktrin tentang dua sifat — bagaimana Yesus adalah sepenuhnya ilahi dan juga sepenuhnya manusia."
+          },
+          {
+            "name": " Penjelmaan",
+            "description": " Mengapa Anak Tuhan menjadi manusia, dan apakah erti kemanusiaan-Nya bagi kita."
+          }
+        ]
+      },
+      {
+        "section": " Keselamatan",
+        "description": " Bagaimanakah Tuhan menyelamatkan orang berdosa? Kajian yang merangkumi penebusan, pembenaran, pengangkatan anak, dan keseluruhan tindakan Tuhan untuk menyelamatkan kita.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Penebusan",
+            "description": "Bagaimana kematian Kristus menangani dosa — penggantian, penebusan, pendamaian, dan banyak lagi."
+          },
+          {
+            "name": " Penukaran",
+            "description": " Apa ertinya berpaling daripada dosa dan percaya kepada Kristus — pertaubatan dan iman."
+          },
+          {
+            "name": " Justifikasi",
+            "description": " Diisytiharkan benar di hadapan Tuhan — hanya oleh rahmat, melalui iman, dan hanya di dalam Kristus."
+          },
+          {
+            "name": " Pengambilan anak angkat",
+            "description": " Anugerah luar biasa untuk dibawa ke dalam keluarga Tuhan sebagai anak-anak lelaki dan perempuan-Nya."
+          }
+        ]
+      },
+      {
+        "section": " Roh",
+        "description": " Kajian tentang Roh Kudus — siapakah Dia, apa yang Dia lakukan, dan bagaimana Dia bekerja dalam diri orang percaya dan gereja.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Orang Rohani",
+            "description": "Roh Kudus sebagai peribadi ketiga dalam Triniti — bukan suatu kuasa, tetapi suatu peribadi."
+          },
+          {
+            "name": " Buah Roh",
+            "description": " Sifat-sifat watak yang dihasilkan oleh Roh Kudus dalam diri mereka yang berjalan bersama-Nya."
+          },
+          {
+            "name": " Kurnia Rohani",
+            "description": " Karunia-karunia yang diberikan oleh Roh Kudus untuk memperlengkapi orang percaya bagi pelayanan dalam tubuh Kristus."
+          }
+        ]
+      },
+      {
+        "section": " Gereja",
+        "description": " Apakah gereja itu, dan mengapa ia penting? Kajian tentang sifat, misi, dan struktur tubuh Kristus.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Sifat Gereja",
+            "description": " Apakah gereja itu — umat Tuhan, tubuh Kristus, bait Roh."
+          },
+          {
+            "name": " Sakramen-sakramen",
+            "description": "Pembaptisan dan Perjamuan Kudus — apakah itu, maksudnya, dan cara untuk meraikannya."
+          },
+          {
+            "name": " Kepimpinan",
+            "description": " Corak kepimpinan gereja menurut Alkitab: penatua, diakon, dan pihak berkuasa yang berhati hamba."
+          },
+          {
+            "name": " Ibadah",
+            "description": " Apakah ibadah Kristian, mengapa ia penting, dan bagaimana ia membentuk kehidupan masyarakat."
+          }
+        ]
+      },
+      {
+        "section": " Perkara Terakhir",
+        "description": " Kajian tentang kematian, kebangkitan, penghakiman, dan ciptaan baru — harapan yang membentuk cara orang Kristian hidup pada masa kini.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kepulangan Kristus",
+            "description": " Harapan yang pasti bahawa Yesus akan kembali dalam kemuliaan untuk menghakimi orang yang hidup dan yang mati."
+          },
+          {
+            "name": " Penghakiman",
+            "description": "Keputusan terakhir Tuhan ke atas semua orang — dan berita baik bahawa Kristus telah menanggung penghakiman untuk diri-Nya sendiri."
+          },
+          {
+            "name": " Syurga & Neraka",
+            "description": " Takdir abadi yang digambarkan oleh Kitab Suci — dan mengapa ia penting untuk cara kita hidup sekarang."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Kehidupan",
+    "description": " Kajian yang menghubungkan kebenaran alkitabiah dengan pengalaman seharian mengikuti Kristus — dalam hubungan, pekerjaan, identiti, dan perjuangan berterusan melawan dosa.",
+    "sections": [
+      {
+        "section": " Disiplin Kerohanian",
+        "description": " Amalan yang melatih kita untuk tetap dekat dengan Tuhan dan bertumbuh dalam kesalehan — bukan cara untuk mendapatkan perkenan, tetapi tabiat yang membuat kita tetap terbuka kepada rahmat-Nya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Doa",
+            "description": " Bercakap dengan Tuhan — asasnya, bentuknya, dan cara untuk membangunkan kehidupan doa yang lebih kaya."
+          },
+          {
+            "name": "Pembacaan Bible",
+            "description": " Cara membaca Kitab Suci dengan baik — dengan pemahaman, konsistensi, dan jangkaan untuk berubah."
+          },
+          {
+            "name": " Ibadah",
+            "description": " Beribadah sebagai sikap seumur hidup, bukan sekadar aktiviti pada hari Ahad."
+          }
+        ]
+      },
+      {
+        "section": " Watak & Pengudusan",
+        "description": " Proses berterusan untuk menjadi lebih seperti Kristus — melawan dosa, bertumbuh dalam kebajikan, dan memahami siapa diri kita di dalam-Nya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Buah Roh",
+            "description": " Kasih, sukacita, damai sejahtera, kesabaran, kemurahan, kebaikan, kesetiaan, kelemahlembutan, dan penguasaan diri."
+          },
+          {
+            "name": " Mengatasi Dosa",
+            "description": " Bantuan praktikal dan teologi untuk menangani corak dosa yang berterusan."
+          },
+          {
+            "name": "Pertumbuhan dalam Rahmat",
+            "description": " Bagaimana rupanya untuk bertumbuh sebagai seorang Kristian — dan apa yang menghalangnya."
+          },
+          {
+            "name": " Identiti dalam Kristus",
+            "description": " Siapakah kita kerana apa yang telah Kristus lakukan — dan mengapa itu mengubah segala-galanya."
+          }
+        ]
+      },
+      {
+        "section": " Hubungan & Keluarga",
+        "description": " Kajian tentang hubungan yang telah Tuhan tempatkan untuk kita — perkahwinan, keluarga, persahabatan dan komuniti.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Perkahwinan",
+            "description": " Perjanjian perkahwinan — tujuannya, cabarannya, dan gambarannya tentang Kristus dan gereja."
+          },
+          {
+            "name": " Kebujangan",
+            "description": " Kehidupan membujang sebagai panggilan yang penuh dan bermakna, bukan ruang menunggu untuk perkahwinan."
+          },
+          {
+            "name": " Keibubapaan",
+            "description": " Membesarkan anak-anak dalam iman — dengan rahmat, kebenaran, dan perspektif jangka panjang."
+          },
+          {
+            "name": " Persahabatan",
+            "description": " Kurnia persahabatan Kristian — dan cara memupuk hubungan yang mendalam."
+          },
+          {
+            "name": " Komunikasi",
+            "description": " Bercakap dengan jujur dan baik — serta mendengar dengan baik."
+          },
+          {
+            "name": " Komuniti",
+            "description": " Apa ertinya hidup sebagai tubuh Kristus — saling menanggung beban."
+          }
+        ]
+      },
+      {
+        "section": " Kerja & Vokasional",
+        "description": " Kajian yang mengaplikasikan injil kepada pekerjaan, wang, masa, dan cita-cita — melihat pekerjaan seharian sebagai sebahagian daripada tujuan Tuhan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kehidupan Kerja",
+            "description": "Apa yang dikatakan Alkitab tentang pekerjaan — kebaikannya, kekecewaannya, dan penebusannya dalam Kristus."
+          },
+          {
+            "name": " Wang & Harta Benda",
+            "description": " Kemurahan hati, kepuasan, dan pandangan alkitabiah tentang kekayaan."
+          },
+          {
+            "name": " Pentadbiran Masa",
+            "description": " Bagaimana kita menggunakan masa kita — dan bagaimana Injil membentuk semula keutamaan kita."
+          },
+          {
+            "name": " Cita-cita",
+            "description": " Cita-cita suci vs. cita-cita mementingkan diri sendiri — dan cara membezakannya."
+          },
+          {
+            "name": " Persaraan",
+            "description": " Bagaimana rupa kehidupan yang setia di akhir zaman."
+          }
+        ]
+      },
+      {
+        "section": " Etika & Budaya Kristian",
+        "description": "Bagaimana orang yang beriman berfikir dan bertindak terhadap persoalan etika yang mendesak pada zaman kita — daripada keadilan sosial kepada bioetika dan teknologi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Keadilan Sosial",
+            "description": " Hati Tuhan bagi mereka yang terdedah dan tertindas, dan apa maksudnya bagi kita."
+          },
+          {
+            "name": " Bioetika",
+            "description": " Isu permulaan dan pengakhiran kehidupan — didekati dengan penjagaan teologi dan belas kasihan."
+          },
+          {
+            "name": " Teknologi yang Menarik",
+            "description": " Cara menggunakan teknologi dengan setia dalam dunia yang dibentuk olehnya."
+          }
+        ]
+      },
+      {
+        "section": " Penderitaan & Bimbingan",
+        "description": " Kajian yang membantu orang percaya mengharungi kesakitan, ketidakpastian, dan kesukaran dengan kejujuran dan harapan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Ujian dan Kesusahan",
+            "description": " Mengapa Tuhan membenarkan penderitaan, dan bagaimana Kitab Suci melengkapi kita untuk menanggungnya dengan harapan."
+          },
+          {
+            "name": " Mengenal pasti Kehendak Tuhan",
+            "description": " Cara membuat keputusan yang bijak — dan apa yang sebenarnya dijanjikan oleh Kitab Suci tentang bimbingan."
+          },
+          {
+            "name": " Kesihatan Mental",
+            "description": " Kemurungan, kegelisahan, dan pergelutan lain — dihadapi dengan belas kasihan dan penjagaan alkitabiah."
+          },
+          {
+            "name": " Kesedihan",
+            "description": " Bagaimana untuk bersedih sebagai mereka yang mempunyai harapan — secara jujur, dan tidak bersendirian."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Kementerian",
+    "description": " Kajian untuk mereka yang terlibat dalam melayani orang lain — dalam penginjilan, penjagaan pastoral, pengajaran dan kepimpinan. Berakar umbi dalam Kitab Suci, kajian ini melengkapkan orang percaya untuk melayani secara berkesan dan lestari.",
+    "sections": [
+      {
+        "section": "Teologi Kementerian",
+        "description": " Asas-asas alkitabiah untuk semua pelayanan Kristian — apa ertinya melayani, dan orang seperti apakah yang sepatutnya menjadi hamba.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kepimpinan Pelayan",
+            "description": " Memimpin seperti yang dipimpin oleh Yesus — dengan rendah hati, berkorban, dan mengambil berat terhadap mereka yang dilayan."
+          },
+          {
+            "name": " Memanggil",
+            "description": " Memahami panggilan anda untuk pelayanan — bagaimana ia difahami dan apa yang terlibat di dalamnya."
+          }
+        ]
+      },
+      {
+        "section": " Dakwah & Pengajaran (Homiletik)",
+        "description": " Pengajian untuk mereka yang dipanggil untuk menerangkan Bible secara terbuka — merangkumi kaedah, perwatakan, dan kepentingan mengendalikan Firman Tuhan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Khutbah Ekspositori",
+            "description": "Cara berkhutbah dengan setia berdasarkan teks — membiarkan Bible menetapkan agenda."
+          },
+          {
+            "name": " Pengajian Bible Terkemuka",
+            "description": " Cara memimpin kumpulan dengan baik — menanyakan soalan yang bernas dan membantu orang ramai bertemu Tuhan dalam teks."
+          }
+        ]
+      },
+      {
+        "section": " Kepimpinan & Pentadbiran",
+        "description": " Dimensi praktikal dan teologi dalam memimpin gereja atau pelayanan — visi, pasukan, konflik dan tadbir urus.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Visi & Strategi",
+            "description": " Bagaimana untuk berfikir dengan jelas tentang ke mana Tuhan memimpin dan bagaimana untuk sampai ke sana bersama-sama."
+          },
+          {
+            "name": " Pembinaan Pasukan",
+            "description": " Mengumpulkan, membangun dan mengekalkan pasukan pelayanan yang sihat."
+          },
+          {
+            "name": " Penyelesaian Konflik",
+            "description": "Cara menangani perselisihan faham dan perpecahan dengan cara yang memuliakan Tuhan dan memelihara perpaduan."
+          },
+          {
+            "name": " Tadbir Urus Gereja",
+            "description": " Struktur dan proses yang membantu gereja menjadi bertanggungjawab dan teratur."
+          }
+        ]
+      },
+      {
+        "section": " Penjagaan Pastoral",
+        "description": " Kajian-kajian yang memperlengkapi orang percaya untuk berjalan seiring antara satu sama lain dalam kesusahan, kehilangan, krisis, dan keperluan.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Perbualan Pastoral",
+            "description": " Kemahiran dan sikap yang diperlukan untuk perbualan pelayanan secara individu yang membantu."
+          },
+          {
+            "name": " Intervensi Krisis",
+            "description": " Bagaimana untuk bertindak balas dengan bijak dan penuh belas kasihan apabila seseorang berada dalam kesusahan yang teruk."
+          },
+          {
+            "name": " Lawatan",
+            "description": "Pelayanan kehadiran — melawat orang sakit, warga emas, dan mereka yang tidak dapat keluar rumah."
+          },
+          {
+            "name": " Persediaan Perkahwinan",
+            "description": " Membantu pasangan membuat persediaan untuk perkahwinan yang dibina di atas Kristus."
+          },
+          {
+            "name": " Penjagaan Kematian",
+            "description": " Berjalan bersama mereka yang sedang berduka — apa yang perlu dikatakan, apa yang tidak perlu dikatakan, dan bagaimana untuk kekal."
+          }
+        ]
+      },
+      {
+        "section": " Penginjilan & Misi",
+        "description": " Kajian tentang cara menyampaikan Injil kepada mereka yang belum pernah mendengarnya — secara peribadi, tempatan, dan merentasi budaya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kesaksian Peribadi",
+            "description": " Cara berkongsi kepercayaan anda secara semula jadi dan jelas dalam perbualan seharian."
+          },
+          {
+            "name": " Apologetik",
+            "description": "Menjawab soalan-soalan yang menghalang orang ramai daripada menganggap agama Kristian sebagai sesuatu yang serius."
+          },
+          {
+            "name": " Kementerian Rentas Budaya",
+            "description": " Berkhidmat dan berkongsi merentasi sempadan budaya dengan penuh kepekaan dan rasa hormat."
+          },
+          {
+            "name": " Penanaman Gereja",
+            "description": " Teologi dan amalan mewujudkan komuniti injil baharu."
+          }
+        ]
+      },
+      {
+        "section": " Pemuridan & Bimbingan",
+        "description": " Kajian tentang pelayanan membantu orang lain berkembang — seorang demi seorang, dalam kumpulan kecil dan dengan melatih generasi seterusnya.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": " Kementerian Satu-ke-Satu",
+            "description": " Kuasa pemuridan peribadi yang disengajakan — bertemu secara berkala untuk membuka Bible bersama-sama."
+          },
+          {
+            "name": " Kepimpinan Kumpulan Kecil",
+            "description": " Bagaimana untuk memimpin kumpulan kecil yang tulen, bertumbuh, dan berasaskan Kitab Suci."
+          },
+          {
+            "name": " Melatih Orang Lain",
+            "description": " Melengkapi orang lain untuk melakukan kerja pelayanan — melipatgandakan bukan sahaja mualaf tetapi juga pemimpin."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "shelf": " Lain-lain",
+    "description": " Kajian yang tidak sesuai dengan kategori lain — atau yang maklumat raknya belum ditetapkan lagi.",
+    "sections": []
+  }
+]

@@ -35,11 +35,6 @@ const HOWTO_TABS = [
 // flag:  the flag emoji shown in the tab label and on each language button.
 // label: the language name written in that language (never translated).
 //const LANGUAGE_MAP = { group: used to render regional dividers in the language picker.
-const LANGUAGE_MAP = {
-  en: { flag: '🇬🇧', label: 'English',            group: 'europe' },
-  fr: { flag: '🇫🇷', label: 'Français',           group: 'europe' },
-  es: { flag: '🇪🇸', label: 'Español',            group: 'europe' },
-  pt: { flag: '🇵🇹', label: 'Português',          group: 'europe' },
   // SVG icons: use getters so ICONS is read at access time, not at parse time.
   // ICONS is an empty object when this file first evaluates — applyIconTheme()
   // populates it later during boot, so a static reference captures undefined.
@@ -47,18 +42,62 @@ const LANGUAGE_MAP = {
   // badge: optional { letter, bg } — used instead of flag/SVG when multiple
   // languages share the same national flag (e.g. Nigerian languages). Any
   // language entry can carry a badge; renderLangBadge() handles the fallback.
-  ha: { get flag() { return ICONS.hausa;    }, label: 'Hausa',    group: 'africa', badge: { letter: 'H', bg: '#008751' } },
-  ig: { get flag() { return ICONS.igbo;     }, label: 'Igbo',     group: 'africa', badge: { letter: 'I', bg: '#008751' } },
-  yo: { get flag() { return ICONS.yoruba;   }, label: 'Yorùbá',   group: 'africa', badge: { letter: 'Y', bg: '#008751' } },
-  ff: { get flag() { return ICONS.fulfulde; }, label: 'Fulfulde', group: 'africa', badge: { letter: 'F', bg: '#008751' } },
-  sw: { flag: '🇰🇪', label: 'Kiswahili',          group: 'africa' },
-  am: { flag: '🇪🇹', label: 'አማርኛ (Amharic)',                   group: 'africa' },
-  ne: { flag: '🇳🇵', label: 'नेपाली (Nepali)',                        group: 'asia'   },
-  ms: { flag: '🇲🇾', label: 'Bahasa Melayu',      group: 'asia'   },
-  ur: { flag: '🇵🇰', label: 'اردو (Urdu)',        group: 'asia'   },
-  my: { flag: '🇲🇲', label: 'မြန်မာစာ (Burmese)',   group: 'asia'   },
-  tl: { flag: '🇵🇭', label: 'Tagalog',            group: 'asia'   },
-  ar: { flag: '🇸🇦', label: 'العربية (Arabic)',   group: 'asia'   },
+const LANGUAGE_MAP = {
+  am:      { flag: '🇪🇹', label: 'አማርኛ (Amharic)',            group: 'africa' },
+  ar:      { flag: '🇸🇦', label: 'العربية (Arabic)',            group: 'asia'   },
+  az:      { flag: '🇦🇿', label: 'Azərbaycan (Azerbaijani)',    group: 'asia'   },
+  bg:      { flag: '🇧🇬', label: 'Български (Bulgarian)',     group: 'europe' },
+  bho:     { flag: '🇮🇳', label: 'भोजपुरी (Bhojpuri)',          group: 'asia'   },
+  ceb:     { flag: '🇵🇭', label: 'Cebuano',                    group: 'asia'   },
+  cs:      { flag: '🇨🇿', label: 'Čeština (Czech)',           group: 'europe' },
+  da:      { flag: '🇩🇰', label: 'Dansk (Danish)',            group: 'europe' },
+  de:      { flag: '🇩🇪', label: 'Deutsch (German)',          group: 'europe' },
+  el:      { flag: '🇬🇷', label: 'Ελληνικά (Greek)',           group: 'europe' },
+  en:      { flag: '🇬🇧', label: 'English',                    group: 'europe' },
+  es:      { flag: '🇪🇸', label: 'Español',                    group: 'europe' },
+  fa:      { flag: '🇮🇷', label: 'فارسی (Persian)',            group: 'asia'   },
+  ff:      { get flag() { return ICONS.fulfulde; }, label: 'Fulfulde', group: 'africa', badge: { letter: 'F', bg: '#008751' } },
+  fi:      { flag: '🇫🇮', label: 'Suomi (Finnish)',           group: 'europe' },
+  fr:      { flag: '🇫🇷', label: 'Français',                   group: 'europe' },
+  gu:      { flag: '🇮🇳', label: 'ગુજરાતી (Gujarati)',         group: 'asia'   },
+  ha:      { get flag() { return ICONS.hausa;    }, label: 'Hausa',    group: 'africa', badge: { letter: 'H', bg: '#008751' } },
+  he:      { flag: '🇮🇱', label: 'עברית (Hebrew)',            group: 'asia'   },
+  hi:      { flag: '🇮🇳', label: 'हिन्दी (Hindi)',             group: 'asia'   },
+  hu:      { flag: '🇭🇺', label: 'Magyar (Hungarian)',        group: 'europe' },
+  id:      { flag: '🇮🇩', label: 'Bahasa Indonesia',           group: 'asia'   },
+  ig:      { get flag() { return ICONS.igbo;     }, label: 'Igbo',     group: 'africa', badge: { letter: 'I', bg: '#008751' } },
+  it:      { flag: '🇮🇹', label: 'Italiano (Italian)',        group: 'europe' },
+  ja:      { flag: '🇯🇵', label: '日本語 (Japanese)',           group: 'asia'   },
+  kn:      { flag: '🇮🇳', label: 'ಕನ್ನಡ (Kannada)',            group: 'asia'   },
+  ko:      { flag: '🇰🇷', label: '한국어 (Korean)',             group: 'asia'   },
+  lg:      { flag: '🇺🇬', label: 'Luganda',                    group: 'africa' },
+  mai:     { flag: '🇮🇳', label: 'मैथिली (Maithili)',          group: 'asia'   },
+  ml:      { flag: '🇮🇳', label: 'മലയാളം (Malayalam)',         group: 'asia'   },
+  ms:      { flag: '🇲🇾', label: 'Bahasa Melayu',              group: 'asia'   },
+  my:      { flag: '🇲🇲', label: 'မြန်မာစာ (Burmese)',         group: 'asia'   },
+  ne:      { flag: '🇳🇵', label: 'नेपाली (Nepali)',            group: 'asia'   },
+  nl:      { flag: '🇳🇱', label: 'Nederlands (Dutch)',        group: 'europe' },
+  no:      { flag: '🇳🇴', label: 'Norsk (Norwegian)',         group: 'europe' },
+  or:      { flag: '🇮🇳', label: 'ଓଡ଼ିଆ (Odia)',               group: 'asia'   },
+  pa:      { flag: '🇮🇳', label: 'ਪੰਜਾਬੀ (Panjabi)',           group: 'asia'   },
+  pl:      { flag: '🇵🇱', label: 'Polski (Polish)',           group: 'europe' },
+  ps:      { flag: '🇦🇫', label: 'پښتو (Pashto)',              group: 'asia'   },
+  pt:      { flag: '🇵🇹', label: 'Português',                  group: 'europe' },
+  ro:      { flag: '🇷🇴', label: 'Română (Romanian)',         group: 'europe' },
+  ru:      { flag: '🇷🇺', label: 'Русский (Russian)',          group: 'europe' },
+  skr:     { flag: '🇵🇰', label: 'سرائیکی (Saraiki)',          group: 'asia'   },
+  su:      { flag: '🇮🇩', label: 'Basa Sunda (Sundanese)',     group: 'asia'   },
+  sv:      { flag: '🇸🇪', label: 'Svenska (Swedish)',         group: 'europe' },
+  sw:      { flag: '🇰🇪', label: 'Kiswahili',                  group: 'africa' },
+  th:      { flag: '🇹🇭', label: 'ไทย (Thai)',                 group: 'asia'   },
+  tl:      { flag: '🇵🇭', label: 'Tagalog',                    group: 'asia'   },
+  uk:      { flag: '🇺🇦', label: 'Українська (Ukrainian)',     group: 'europe' },
+  ur:      { flag: '🇵🇰', label: 'اردو (Urdu)',                group: 'asia'   },
+  uz:      { flag: '🇺🇿', label: 'Oʻzbek (Uzbek)',             group: 'asia'   },
+  vi:      { flag: '🇻🇳', label: 'Tiếng Việt (Vietnamese)',    group: 'asia'   },
+  yo:      { get flag() { return ICONS.yoruba;   }, label: 'Yorùbá',   group: 'africa', badge: { letter: 'Y', bg: '#008751' } },
+  'zh-CN': { flag: '🇨🇳', label: '简体中文 (Chinese simplified)', group: 'asia' },  
+  zu:      { flag: '🇿🇦', label: 'isiZulu (Zulu)',             group: 'africa' },
 };
 
 // Returns the flag emoji (or badge HTML) for the active language, falling
@@ -1488,8 +1527,8 @@ function renderSettings(tabId) {
 
     const groups = [
       { key: 'europe', codes: ['en', 'fr', 'es', 'pt'] },
-      { key: 'africa', codes: ['ha', 'ig', 'yo', 'ff', 'sw', 'am'] },
-      { key: 'asia',   codes: ['ne', 'ms', 'my', 'ur', 'tl', 'ar'] },
+      { key: 'africa', codes: ['ha', 'ig', 'yo', 'ff', 'sw', 'am', 'lg'] },
+      { key: 'asia',   codes: ['ne', 'ms', 'my', 'ur', 'tl', 'ar', 'zh-CN'] },
     ];
 
     const groupsHtml = groups.map(group => `

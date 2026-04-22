@@ -1,0 +1,28 @@
+{
+  "appTitle": " Mambabasa ng Pag-aaral ng Bibliya",
+  "appDescription": " Isang mobile-first app para sa pag-aaral ng mga kurso sa Bibliya — pagbabasa, pagninilay-nilay, at pagtatala ng mga sagot habang ginagawa mo ito.",
+  "sampleTitle": " Pagbabago",
+  "sampleSubtitle": " Bago hindi (lang) Maganda",
+  "sampleShortTitle": " Pagbabago",
+  "sampleDescription": " Isang siyam na sesyon ng pag-aaral sa Bibliya na nagsasaliksik kung ano ang ibig sabihin ng tunay na pagbabalik-loob – at kung bakit ito mahalaga.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": " Creative Commons Attribution-ShareAlike 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        " Ibahagi: kopyahin at ipamahagi muli ang materyal sa anumang midyum o format",
+        " Iangkop: i-remix, baguhin, at dagdagan ang materyal para sa anumang layunin, kahit na para sa komersyo"
+      ],
+      "conditions": [
+        " Pagpapatungkol: dapat kang magbigay ng naaangkop na kredito, magbigay ng link sa lisensya, at ipahiwatig kung may mga pagbabagong ginawa",
+        "ShareAlike: kung ikaw ay magre-remix, magbabago, o bubuo batay sa materyal, dapat mong ipamahagi ang iyong mga kontribusyon sa ilalim ng parehong lisensya gaya ng orihinal"
+      ],
+      "notices": [
+        " Hindi mo kailangang sumunod sa lisensya para sa mga elemento ng materyal na nasa pampublikong dominyo o kung saan ang iyong paggamit ay pinahihintulutan ng isang naaangkop na eksepsiyon o limitasyon.",
+        " Walang ibinibigay na mga garantiya. Maaaring hindi ka mabibigyan ng lisensya ng lahat ng kinakailangang pahintulot para sa iyong nilalayong paggamit.",
+        " Sa paggawa ng app na ito, ginamit ng may-akda sina Claude, ChatGPT, at Gemini para sa malawakang 'vibe coding'. Responsibilidad ng may-akda ang lahat ng desisyon sa nilalaman at ang pangwakas na mga salita."
+      ]
+    }
+  }
+}

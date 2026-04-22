@@ -1,0 +1,28 @@
+{
+  "appTitle": " Msomaji wa Kujifunza Biblia",
+  "appDescription": " Programu ya simu ya kwanza ya kufanya kazi kupitia kozi za kujifunza Biblia — kusoma, kutafakari, na kurekodi majibu unapoendelea.",
+  "sampleTitle": " Uongofu",
+  "sampleSubtitle": " Mpya si (tu) Nzuri",
+  "sampleShortTitle": " Uongofu",
+  "sampleDescription": " Somo la Biblia la vipindi tisa linalochunguza maana ya uongofu wa kweli - na kwa nini ni muhimu.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": " Creative Commons Attribution-ShareAlike 4.0 Kimataifa",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        " Shiriki: nakili na usambaze nyenzo hizo katika mfumo au umbizo lolote",
+        " Badilisha: badilisha, badilisha, na ujenge juu ya nyenzo kwa madhumuni yoyote, hata kibiashara"
+      ],
+      "conditions": [
+        " Utambulisho: lazima utoe sifa inayofaa, utoe kiungo cha leseni, na uonyeshe kama mabadiliko yalifanywa",
+        "ShareAlike: Ukibadilisha, kubadilisha, au kujenga juu ya nyenzo, lazima usambaze michango yako chini ya leseni sawa na ile ya awali"
+      ],
+      "notices": [
+        " Huna haja ya kuzingatia leseni ya vipengele vya nyenzo hiyo katika uwanja wa umma au pale ambapo matumizi yako yanaruhusiwa na ubaguzi au kikomo kinachotumika.",
+        " Hakuna dhamana inayotolewa. Leseni inaweza isikupe ruhusa zote muhimu kwa matumizi yako uliyokusudia.",
+        " Katika kuunda programu hii, mwandishi alitumia Claude, ChatGPT, na Gemini kwa ajili ya 'kuandika msimbo wa mhemko' kwa kina. Maamuzi yote ya maudhui, na maneno ya mwisho ni jukumu la mwandishi."
+      ]
+    }
+  }
+}

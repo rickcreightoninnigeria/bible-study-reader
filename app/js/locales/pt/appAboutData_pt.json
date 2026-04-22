@@ -1,0 +1,28 @@
+{
+  "appTitle": " Leitor de Estudo Bíblico",
+  "appDescription": " Um aplicativo desenvolvido especificamente para dispositivos móveis para realizar estudos bíblicos — lendo, refletindo e registrando respostas à medida que avança.",
+  "sampleTitle": " Conversão",
+  "sampleSubtitle": " Novo, não (apenas) legal",
+  "sampleShortTitle": " Conversão",
+  "sampleDescription": " Um estudo bíblico de nove sessões que explora o significado da conversão genuína e por que ela é importante.",
+  "appCopyright": {
+    "licence": {
+      "spdxId": "CC-BY-SA-4.0",
+      "name": " Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms": [
+        " Compartilhe: copie e redistribua o material em qualquer meio ou formato.",
+        " Adaptar: remixar, transformar e desenvolver o material para qualquer finalidade, inclusive comercial."
+      ],
+      "conditions": [
+        " Atribuição: você deve dar o devido crédito, fornecer um link para a licença e indicar se foram feitas alterações.",
+        "ShareAlike: se você remixar, transformar ou criar algo a partir deste material, deverá distribuir suas contribuições sob a mesma licença que a obra original."
+      ],
+      "notices": [
+        " Você não precisa cumprir a licença para elementos do material que estejam em domínio público ou cujo uso seja permitido por uma exceção ou limitação aplicável.",
+        " Não são fornecidas garantias. A licença pode não lhe conceder todas as permissões necessárias para o uso pretendido.",
+        " Na criação deste aplicativo, o autor utilizou Claude, ChatGPT e Gemini para uma extensa \"codificação de vibrações\". Todas as decisões de conteúdo e a redação final são de responsabilidade do autor."
+      ]
+    }
+  }
+}
