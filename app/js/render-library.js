@@ -152,6 +152,16 @@ function renderLangBar(langs) {
   bar.style.display = 'flex';
   const active = window.libLangFilter || 'all';
 
+  // Determine which flag emojis appear more than once among the present langs.
+  // When two or more present languages share a flag, use their badges instead
+  // so the user can tell them apart. If only one language from a flag group is
+  // present, the flag alone is unambiguous and looks better than a badge.
+  const flagCounts = {};
+  langs.forEach(code => {
+    const f = LANGUAGE_MAP[code]?.flag;
+    if (f) flagCounts[f] = (flagCounts[f] || 0) + 1;
+  });
+
   const buttons = [
     `<button class="lib-lang-btn${active === 'all' ? ' active' : ''}"
              onclick="setLibLangFilter('all')"
@@ -160,11 +170,15 @@ function renderLangBar(langs) {
     ...langs.map(code => {
       const entry = LANGUAGE_MAP[code];
       if (!entry) return '';
-      const label = entry.label;
+      const label      = entry.label;
+      const flagShared = flagCounts[entry.flag] > 1;
+      const display    = (flagShared && entry.badge)
+        ? renderLangBadge(entry)   // badge: distinguishes same-flag languages
+        : entry.flag;              // flag: unambiguous when alone or no badge defined
       return `<button class="lib-lang-btn${active === code ? ' active' : ''}"
                        onclick="setLibLangFilter('${code}')"
                        aria-label="${label}"
-                       title="${label}">${renderLangBadge(entry)}</button>`;
+                       title="${label}">${display}</button>`;
     }),
   ].join('');
 

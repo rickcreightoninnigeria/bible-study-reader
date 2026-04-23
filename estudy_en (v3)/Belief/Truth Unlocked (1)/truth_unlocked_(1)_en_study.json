@@ -79,7 +79,7 @@
           "linkedPassage"    :"Colossians 1:3",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"This verse identifies God as ’the Father of our Lord Jesus Christ’, revealing that God is not an impersonal force but a personal being who stands in a Father-Son relationship with Jesus. It also shows that God is someone to whom we can give thanks and speak to in prayer.",
           "questionHint"     :"Paul uses a very specific title for God here — what does that title tell you about the kind of relationship God has with Jesus, and what might that imply about His nature?"
@@ -111,7 +111,7 @@
           "linkedPassage"    :"Psalm 19:1",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The verse suggests that creation itself is a witness to God’s existence and glory. The sky and heavens are not neutral — they actively ’declare’ and ’display’ something about God. Just as a piece of artwork points to an artist, the created world points to a Creator. Evidence for God is not hidden away; it is visible above us every day.",
           "questionHint"     :"If the heavens are said to ’declare’ something, what does that imply about what an observer of the natural world should be able to conclude?"
@@ -134,7 +134,7 @@
           "linkedPassage"    :"Psalm 139:13-14",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The image of being ’woven together’ suggests that human life is not an accident or a random biological event, but an intentional, careful act of craftsmanship by God. Just as a weaver works deliberately, thread by thread, God was personally involved in forming each person. This points to God’s intimate knowledge of and care for every individual human being from the very beginning of their existence.",
           "questionHint"     :"Think about what weaving involves — would you describe it as a careless, random process, or a deliberate and careful one? What does that tell you about how God formed you?"
@@ -157,7 +157,7 @@
           "linkedPassage"    :"John 20:30-31",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John says he recorded these signs so that readers would come to believe that Jesus is the Christ, the Son of God, and through that belief find life in his name. This tells us that the Bible is not merely a historical record or a collection of moral teachings — it has an intentional, evangelistic purpose. It is written to bring people to faith and, through faith, to life.",
           "questionHint"     :"John tells us directly what outcome he was hoping for in his readers — can you spot the two goals he mentions, and how are they connected to each other?"
@@ -180,7 +180,7 @@
           "linkedPassage"    :"Hebrews 1:1-3",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"According to this passage, God spoke in the past through the prophets in many different ways, but has now spoken definitively and finally through His Son, Jesus. The passage makes extraordinary claims about Jesus’ relationship to God: he is the ’radiance of his glory’ and the ’representation of his essence’, meaning that to see Jesus is to see what God is truly like. Jesus also created the world, sustains all things, and has now accomplished the cleansing of sins — pointing to a unique divine identity.",
           "questionHint"     :"The passage contrasts how God spoke ’long ago’ with how he has spoken ’in these last days’ — what is different about the two ways, and what does the description of the Son in verse 3 tell you about how closely he is linked to God himself?"
@@ -212,7 +212,7 @@
           "linkedPassage"    :"Isaiah 6:3",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"For God to be ’holy’ means He is utterly set apart — morally perfect, pure, and completely unlike anything in the created world. Holiness is not just one quality among many but speaks to His absolute otherness and majesty. The threefold repetition (‘holy, holy, holy’) is the strongest form of emphasis in Hebrew — it is not just saying God is very holy, but that holiness defines His very being to the highest possible degree. No other attribute of God is praised in this tripled way in Scripture.",
           "questionHint"     :"In everyday language, if you want to stress how extremely something is true, what do you do — and how might that same idea apply to why the angels repeat the word ’holy’ three times rather than just once?"
@@ -235,7 +235,7 @@
           "linkedPassage"    :"John 14:7-9",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Jesus makes a remarkable claim: that to have seen Him is to have seen the Father. He is not merely a messenger from God, or someone who teaches about God — He is the very image and presence of God. This means that if we want to know what God is like, we do not need to look further than Jesus: His compassion, His honesty, His treatment of people, His willingness to lay down His life — all of these reveal the character of God the Father.",
           "questionHint"     :"Philip asks to be shown the Father as if the Father were somewhere else — why does Jesus find this question so surprising, and what does His answer imply about where the Father can actually be found?"
@@ -258,7 +258,7 @@
           "linkedPassage"    :"Psalm 90:2, 4",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"This passage tells us that God exists outside of and before time itself — He was God before the earth or mountains existed, and He will continue to be God forever. Verse 4 shows that God does not experience time as we do: what feels like a thousand years to us is like a single day to Him. God is not constrained by time the way we are; He sees all of history as present to Him at once, which means He is never caught off guard, never in a hurry, and never late.",
           "questionHint"     :"The psalmist says God existed even before the mountains or the earth were ’born’ — what does that tell you about whether God had a beginning, and how might that affect the way He experiences time compared to us?"
@@ -281,7 +281,7 @@
           "linkedPassage"    :"James 1:17",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"It means that God’s character, His love, His promises, and His goodness never shift or fluctuate. Unlike human relationships — where people can be kind one day and cold the next — God is completely consistent. This is enormously significant because it means we can trust Him fully. His love for us today is exactly as strong as it was yesterday and will be tomorrow. His promises do not expire or get revised. We never have to worry that God has changed His mind about us.",
           "questionHint"     :"Think about a time when someone’s changing moods or broken promises made it hard to trust them — how might God being completely unchanging make a difference to how you relate to Him?"
@@ -304,7 +304,7 @@
           "linkedPassage"    :"Psalm 139:7-10",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"This passage tells us that God is omnipresent — there is literally nowhere in the universe, from the heights of heaven to the depths of Sheol, where God is absent. His presence is inescapable. Whether that is comforting or challenging likely depends on how we feel about God. For someone who trusts God and longs for His help, it is deeply comforting — no matter how far or alone we feel, His hand is still guiding us. But it can also feel challenging or exposing, because it means nothing in our lives is hidden from Him.",
           "questionHint"     :"The psalmist lists extreme opposites — heaven and Sheol, near and far — to make a point about God’s presence. What conclusion is he building towards, and does knowing God is always present feel like good news or an uncomfortable truth to you personally?"
@@ -327,7 +327,7 @@
           "linkedPassage"    :"1 John 4:8",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Saying God loves is saying something He does — an action He can choose or withhold. But saying God is love means love is inseparable from His very being; He cannot stop being loving any more than He can stop being God. It means His love is not a response to us being lovable — it flows from who He is. This also means that love is not just a feeling God has but the core of His identity, which gives us grounds to trust that His love is permanent, unconditional, and inexhaustible.",
           "questionHint"     :"Consider the difference between saying ’a teacher is kind’ and ’a teacher sometimes acts kindly’ — which says more about their core identity, and how does that distinction apply to what John is claiming about God?"
@@ -359,7 +359,7 @@
           "linkedPassage"    :"Romans 5:8",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul says God demonstrated His love through the death of Christ on our behalf. What is especially striking is the timing: God did not wait for us to clean up our lives, earn His favour, or become worthy of His love. Christ died for us while we were still sinners — still in rebellion against God. This overturns the human assumption that love must be deserved. God’s love is not a reward for good behaviour; it is a free, initiating love given to those who had done nothing to merit it.",
           "questionHint"     :"In most human relationships, we tend to show kindness to people who have been kind to us — so what is surprising or unexpected about the specific moment Paul says God chose to demonstrate His love?"
@@ -382,7 +382,7 @@
           "linkedPassage"    :"1 John 4:9-10",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John is explicit that God took the initiative — love is defined here not as our love for God, but as His love for us. God moved first. He sent His Son before we sought Him, to deal with the sin that separated us from Him. This tells us that God’s love is not reactive or conditional — it is originating and unconditional. We do not draw God’s love out of Him by our devotion; He loved us freely and acted on that love at great cost, sending His only Son as a sacrifice.",
           "questionHint"     :"John says ’not that we have loved God, but that he loved us’ — who does he say made the first move, and what practical difference might it make to you personally to know that the relationship started with God, not with you?"
@@ -477,7 +477,7 @@
           "linkedPassage"    :"John 1:1-3",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Before coming to earth, Jesus — the Word — already existed. He was with God in the beginning, meaning He has always been in close relationship with the Father. More than that, He was fully God Himself. John also tells us that all things were created through Him, meaning Jesus was not a created being who appeared at some point in history, but the eternal Creator who was present before anything else existed.",
           "questionHint"     :"John says the Word was ’in the beginning’ — does that suggest Jesus had a starting point, or that He was already there before anything began? What else does John say about His role before creation?"
@@ -500,7 +500,7 @@
           "linkedPassage"    :"Colossians 1:15-17",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul says that all things — in heaven and on earth, visible and invisible — were created by Jesus, through Jesus, and for Jesus. His role in creation was total: nothing came into existence apart from Him. Verse 17 then goes further, saying that in Him all things ’hold together’. This means Jesus is not just the originator of creation but its ongoing sustainer — the universe continues to exist and cohere because of Him. He is not a distant figure who started things and stepped away; He is actively involved in holding everything together at this very moment.",
           "questionHint"     :"Paul uses three prepositions in verse 16 — all things were created ’by’, ‘through’, and ’for’ Jesus. What does adding those three together suggest about the scope of His involvement in creation, and how does verse 17 extend that idea into the present?"
@@ -532,7 +532,7 @@
           "linkedPassage"    :"Matthew 1:21",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The angel explains the name directly: Jesus means ’he will save his people from their sins’. The name itself is a mission statement. Jesus did not come primarily as a political liberator, a moral teacher, or a miracle worker — He came to deal with the problem of sin. His name tells us that rescue from sin is the central purpose of His life, and that this rescue was planned and announced before He was even born.",
           "questionHint"     :"The angel gives a reason for the name with the word ’for’ — what specific problem does He say Jesus will come to solve, and does that surprise you given what people might have expected a Saviour to do?"
@@ -564,7 +564,7 @@
           "linkedPassage"    :"Luke 2:7, 40",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Verse 7 shows that Jesus was born in the ordinary, physical way — wrapped in cloth like any newborn infant and laid in a manger. He entered the world in vulnerability and poverty, not in heavenly splendour. Verse 40 then tells us He grew and became strong, and was filled with wisdom over time. This is the pattern of a normal human childhood: development, growth, and gradual maturation. Jesus was not born fully formed or all-knowing in His human experience — He grew up just as we do.",
           "questionHint"     :"Verse 40 says Jesus ’grew’ and ’became strong’ — do those words suggest something that happened all at once or over time, and what does that tell you about whether His childhood was similar to ours?"
@@ -587,7 +587,7 @@
           "linkedPassage"    :"Luke 4:2",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"That Jesus ’was famished’ means He experienced real, intense physical hunger — the kind that comes from forty days without food. This is not a metaphor; it is a physiological reality. A purely divine being would not experience bodily hunger, but Jesus did. This confirms that His human body was genuine and subject to the same physical limitations as ours: He needed food, He felt the pain of going without it, and His body was weakened by the experience. His humanity was not a costume — it was real.",
           "questionHint"     :"Think about what hunger feels like after missing just one meal — what does experiencing it after forty days tell you about whether Jesus had a real human body with real physical needs?"
@@ -610,7 +610,7 @@
           "linkedPassage"    :"Matthew 8:23-24",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sleep is one of the most fundamental marks of being human — it reflects physical tiredness and the body’s need for rest. The fact that Jesus was asleep in the boat, even in the middle of a violent storm, tells us He had been working hard enough to be genuinely exhausted. He was not pretending to be tired; He actually needed rest. This small detail quietly but powerfully confirms that His humanity was authentic: He got tired just as we do.",
           "questionHint"     :"Why do human beings need to sleep at all, and what does needing sleep tell you about the kind of body a person has — could someone who never truly got tired fall into a deep sleep during a dangerous storm?"
@@ -633,7 +633,7 @@
           "linkedPassage"    :"John 19:32-33",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John records that the soldiers — professionals whose job was to ensure death — confirmed that Jesus was already dead. They had no reason to spare Him and every reason to make sure. The fact that He was genuinely dead is significant on two levels. First, it confirms His full humanity: a divine being who merely appeared human could not truly die. Second, it establishes that the resurrection was a real resurrection from actual death, not a recovery from unconsciousness. John is providing eyewitness evidence that the death was real, so that the reader can trust that the resurrection was equally real.",
           "questionHint"     :"The soldiers broke the legs of the others to speed their deaths — so why is it significant that they did not need to do this to Jesus, and what were they effectively confirming by leaving Him alone?"
@@ -665,7 +665,7 @@
           "linkedPassage"    :"John 1:1",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John opens his Gospel with a deliberate echo of Genesis — ‘In the beginning’ — and immediately places Jesus (the Word) there, before anything else existed. He then makes two statements in one breath: the Word was with God (pointing to a distinct, personal relationship) and the Word was fully God (pointing to a shared divine nature). This verse establishes from the outset that Jesus cannot be understood as merely a great man or even a lesser divine being — He is fully God, and the rest of John’s Gospel is written to demonstrate what that means.",
           "questionHint"     :"John says the Word was both ’with God’ and ’was fully God’ — do those two statements contradict each other, or could they together be pointing to something about Jesus that is more complex than a simple either/or?"
@@ -688,7 +688,7 @@
           "linkedPassage"    :"Mark 2:5-12",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The religious leaders correctly identify that only God can forgive sins — and Jesus does not correct them on that point. Instead, He accepts the premise and then acts on it. He heals the paralysed man as visible proof that He has the authority to do what only God can do: forgive sins. Jesus is not claiming to forgive sins on God’s behalf, as a priest might; He is claiming to do it in His own right. His question — ‘which is easier?’ — is a trap: since both are impossible for a mere human, doing one publicly proves the authority to do the other. The miracle is His answer to their question.",
           "questionHint"     :"The religious leaders’ logic was: only God forgives sins, therefore Jesus is blaspheming by claiming to do it — but what does Jesus do next, and how does that action respond to the charge rather than simply arguing against it?"
@@ -711,7 +711,7 @@
           "linkedPassage"    :"John 14:8-9",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Jesus is claiming that He is not merely a representative or messenger of the Father, but that He so perfectly reveals and embodies the Father that seeing Him is seeing the Father. This is an extraordinary claim: it means that if you want to know what God is like — His compassion, His honesty, His attitude to sinners, His willingness to suffer — you look at Jesus. Jesus does not point people away from Himself to find God; He says that God is found in Him. It is a direct claim to share in the divine nature and identity of the Father.",
           "questionHint"     :"Philip wanted to be shown the Father as if Jesus and the Father were two entirely separate things to find — why does Jesus find this question so bewildering, and what does His surprise tell you about how closely He sees Himself as connected to the Father?"
@@ -734,7 +734,7 @@
           "linkedPassage"    :"Mark 4:37-41",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The disciples’ question is the right one, and the miracle itself supplies the answer. In the Old Testament, it is God who commands the seas and the winds — nature obeys its Creator. When Jesus rebukes the storm and it immediately calms, He is doing something that only God does. The disciples were not just impressed; they were ’overwhelmed with fear’ — a response that in Scripture is typically prompted by an encounter with the divine. The miracle points to the answer: this is God Himself in human form, the one who made the sea and therefore has authority over it.",
           "questionHint"     :"In the Old Testament, who is described as having authority over the sea and storms? Knowing that, what conclusion does it seem like Mark wants the reader to draw from the disciples’ question?"
@@ -757,7 +757,7 @@
           "linkedPassage"    :"John 11:25, 43-44",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Jesus does not say He can bring resurrection or that He knows the way to life — He says He is the resurrection and the life. It is an identity claim, not just a capability claim. He then immediately backs it up by calling a man who had been dead for four days out of his tomb with a single command. Death had no power to resist Him. This tells us that Jesus’ authority over death is not borrowed or limited — it is intrinsic to who He is. And because He is the resurrection and the life, the promise He makes to believers — that they will live even if they die — rests on His own identity and power.",
           "questionHint"     :"Notice that Jesus says ’I am the resurrection’ rather than ’I can perform resurrections’ — what is the difference between those two statements, and what does it suggest about where the power over death actually resides?"
@@ -799,7 +799,7 @@
           "linkedPassage"    :"Hebrews 4:15",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The writer says that because Jesus was tempted in every way just as we are, He is able to sympathise with our weaknesses — not from a distance, but from personal experience. He is not a high priest who is immune to the pressures we face; He knows what it is to feel the pull of temptation from the inside. This means that when we come to Him in our struggle, we are not coming to someone who shrugs and says ’I don’t understand what that feels like.’ We are coming to one who does understand, and who — crucially — came through it without sin, which means He knows the way through.",
           "questionHint"     :"Think about whether you would rather seek help from someone who has only read about a difficult experience or from someone who has actually been through it themselves — how does that apply to what this verse is saying about Jesus?"
@@ -893,7 +893,7 @@
           "linkedPassage"    :"Romans 8:26-27",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"In these verses the Spirit helps us in our weakness, intercedes for us when we do not know how to pray, and does so according to God’s will — meaning He has knowledge of both our needs and God’s purposes. These are not the actions of an impersonal force. A force does not intercede, does not have a ’mind’, and does not groan on behalf of someone. Intercession requires awareness, compassion, intention, and relationship — all marks of personhood. The passage uses the personal pronoun ’himself’, reinforcing that the Spirit is a ’he’, not an ’it’.",
           "questionHint"     :"Think about what interceding for someone actually involves — could a wind or an electrical current do it? What does it require, and do those qualities belong to a force or a person?"
@@ -916,7 +916,7 @@
           "linkedPassage"    :"Ephesians 4:30",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Grief is an emotional response — it requires the capacity to feel, to care, and to be affected by what others do. You cannot grieve a force of nature: you cannot grieve electricity, or gravity, or the wind. The fact that Paul warns us not to grieve the Holy Spirit tells us that the Spirit has feelings and is personally affected by how we live. This places Him firmly in the category of a person, not a power. It also implies that the Spirit has a relationship with us close enough that our behaviour genuinely matters to Him.",
           "questionHint"     :"Can you grieve a tool, a machine, or a natural force? What kind of being must something be in order to experience grief, and what does that imply about the Holy Spirit?"
@@ -948,7 +948,7 @@
           "linkedPassage"    :"John 7:37-39",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Water is essential for life — without it, living things wither and die. By describing the Spirit as living water that flows from within, Jesus suggests that the Spirit is not an optional extra for believers but a vital, life-giving presence. The image of ’rivers’ flowing from within also suggests abundance and outward movement — the Spirit is not a small, stagnant pool but a generous, overflowing source. He satisfies a deep spiritual thirst that nothing else can meet, and His work in us is not contained — it spills outward to those around us.",
           "questionHint"     :"What happens to a person, plant, or animal that goes without water for a long time — and if the Spirit is like living water, what does that suggest about how essential He is to spiritual life?"
@@ -971,7 +971,7 @@
           "linkedPassage"    :"Acts 2:2-3",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Wind and fire are both powerful, visible in their effects, and impossible to fully control or contain. The wind here is not a gentle breeze but a violent, rushing sound — suggesting the Spirit’s arrival was forceful, dramatic, and unmistakable. Fire is a purifying and consuming force, associated in the Old Testament with God’s presence. That tongues of fire rested on each individual suggests that the Spirit came not just to fill a room but to touch each person personally. Together, these images point to a Spirit whose coming is powerful, purifying, impossible to ignore, and deeply personal.",
           "questionHint"     :"Think about the properties of wind and fire — they are both powerful, both impossible to fully control, and both visible through their effects rather than directly. What might those qualities be saying about how the Spirit works?"
@@ -1003,7 +1003,7 @@
           "linkedPassage"    :"Romans 8:9",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul says the mark of belonging to Christ is having the Spirit of Christ living in you. He then states the reverse just as clearly: if anyone does not have the Spirit, that person does not belong to Christ. There is no middle category — no such thing as a Christian without the Spirit. This means the Spirit is not a special gift for particularly advanced or committed Christians; He is given to every believer at the point of coming to faith. Receiving the Spirit is not a second step or a higher level of Christian experience — it is what it means to belong to Christ at all.",
           "questionHint"     :"Paul states this as an either/or with no exceptions — you either have the Spirit or you don’t belong to Christ. What does that absolute framing tell you about whether the Spirit is available only to certain kinds of Christians?"
@@ -1035,7 +1035,7 @@
           "linkedPassage"    :"Acts 1:8",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Jesus promises that the Spirit will give us power, and He connects that power directly to a purpose: being His witnesses — starting locally and spreading outward to the ends of the earth. The power is not given for personal benefit but for mission. Today, the same promise applies to all believers. We are still called to be witnesses to Jesus in our homes, communities, cities, and across the world, and the Spirit is still the one who equips us for that. Without the Spirit’s power, effective witness is beyond us; with it, ordinary people can speak and act in ways that change lives.",
           "questionHint"     :"Jesus links the gift of power directly to a specific task — what is that task, and does the fact that it stretches ’to the farthest parts of the earth’ suggest it was only meant for the first disciples, or for all followers of Jesus?"
@@ -1068,7 +1068,7 @@
           "linkedPassage"    :"John 16:7-9",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"When Jesus was on earth, His physical presence was limited to one place at a time — only those near Him could hear Him, see Him, or be helped by Him. The Spirit, by contrast, is given to all believers everywhere simultaneously. Every Christian in every century and every corner of the world has access to the Spirit’s help, teaching, and comfort — not just those who happened to walk the roads of Galilee. The Spirit also works from within rather than from outside, shaping our hearts and minds in ways that a physical presence alongside us could not. In that sense, the Spirit’s coming genuinely is an advantage: He is more widely present, more intimately available, and more personally transformative.",
           "questionHint"     :"When Jesus was physically present, how many people could be with Him at once — and how does the Spirit’s way of being present with believers differ from that limitation?"
@@ -1091,7 +1091,7 @@
           "linkedPassage"    :"John 14:25-26",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Jesus says the Holy Spirit will teach His followers everything, and will cause them to remember what Jesus said. These are two distinct but related gifts: ongoing teaching that opens up understanding of God’s truth, and a Spirit-aided memory that brings Jesus’ words back to mind when they are needed. In practice, many Christians experience this when reading Scripture and finding that a familiar passage suddenly becomes alive and meaningful in a new way, or when a verse comes to mind at exactly the moment it is needed. Both gifts point to the Spirit as the one who makes God’s word personally real and applicable in daily life.",
           "questionHint"     :"Jesus mentions two separate things the Spirit will do — can you identify them both in verse 26, and think of a time when you may have experienced either of them while reading the Bible or facing a difficult situation?"
@@ -1114,7 +1114,7 @@
           "linkedPassage"    :"1 Corinthians 2:10-15",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul argues that just as only a person’s own spirit truly knows what is going on inside them, only God’s Spirit truly knows the deep things of God. This means that genuine understanding of God and His word is not achievable through human intelligence or study alone — it requires the Spirit’s illumination. The Spirit, who knows God from the inside, reveals these things to believers. This is why Paul says the unbeliever finds spiritual things foolish: without the Spirit, they simply cannot be discerned. For the Christian, the Spirit is the one who makes God’s truth comprehensible, personal, and transformative — turning words on a page into living revelation.",
           "questionHint"     :"Paul uses an analogy about knowing another person’s inner thoughts — only their own spirit has access to that. How does he apply that same logic to the question of who can truly understand the things of God?"
@@ -1137,7 +1137,7 @@
           "linkedPassage"    :"Romans 8:26",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Most Christians experience times when they feel too overwhelmed, confused, or exhausted to pray — or simply do not know what to ask for. This verse offers real comfort by telling us that in precisely those moments, we are not left alone. The Spirit Himself steps in and intercedes for us, bringing before God what we cannot find words for. The phrase ’inexpressible groanings’ captures those moments of deep need that go beyond language. The comfort is not that prayer becomes easier, but that our inadequacy in prayer is covered — the Spirit carries what we cannot carry, and God, who searches our hearts, understands perfectly what the Spirit is expressing on our behalf.",
           "questionHint"     :"Paul doesn’t say the Spirit helps us find better words — he says the Spirit intercedes when we have no words at all. What does it mean for your prayer life to know that your weakness in prayer is something the Spirit is already covering?"
@@ -1169,7 +1169,7 @@
           "linkedPassage"    :"1 Corinthians 12:8-10",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul lists: a message of wisdom, a message of knowledge, faith, gifts of healing, performance of miracles, prophecy, discernment of spirits, different kinds of tongues, and interpretation of tongues. The list spans both the seemingly ordinary (wisdom, knowledge, faith) and the more dramatic (miracles, tongues, healing). Many people are surprised to see ’faith’ listed as a gift — we might assume everyone has it equally — but Paul suggests that some are given an unusually strong or specific gift of faith. Others find the more supernatural gifts surprising, either because they did not expect them in the Bible, or because they had assumed they were no longer given today.",
           "questionHint"     :"Look back through the list carefully — which of these gifts would you expect to find in any church today, and are there any that seem more unusual or unexpected to you, and why?"
@@ -1192,7 +1192,7 @@
           "linkedPassage"    :"Galatians 5:22-25",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Gifts are given instantly and can be used immediately. Fruit, by contrast, grows gradually — it requires time, the right conditions, and a living connection to the source. By calling these qualities ’fruit of the Spirit’, Paul suggests they are not switched on overnight but develop slowly and organically as we remain connected to the Spirit and walk in step with Him. Just as you cannot force fruit to ripen by willpower alone, you cannot manufacture love, patience, or self-control by trying harder — they are the natural result of the Spirit’s life growing within us over time.",
           "questionHint"     :"Think about how fruit grows on a tree — does it appear instantly, or does it take time and depend on the health of the connection between the branch and the tree? How might that process mirror the way these qualities develop in a Christian?"
@@ -1224,7 +1224,7 @@
           "linkedPassage"    :"1 Corinthians 12:7, 11",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul says it is the Spirit who decides which gift each person receives — it is His sovereign choice, not ours to demand or select. And verse 7 makes clear that every gift is given ’for the benefit of all’, not for personal prestige or private use. This should shape the way we use our gifts significantly: if the Spirit chose them for the community’s benefit, then hoarding them, using them for self-promotion, or refusing to use them at all is a failure to fulfil their purpose. Our gifts are entrusted to us for others — they are a form of stewardship, not ownership.",
           "questionHint"     :"Verse 7 says gifts are given ’for the benefit of all’ — so if a gift is being used primarily to make the person look impressive or feel special, does that align with the purpose Paul describes here?"
@@ -1256,7 +1256,7 @@
           "linkedPassage"    :"John 16:14",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Jesus says the Spirit’s ultimate purpose is to glorify Him — to take what belongs to Jesus and make it known. The Spirit does not draw attention to Himself or promote His own agenda; He points consistently to Jesus. This gives us a useful test for evaluating whether something is genuinely the Spirit’s work: does it exalt Jesus, or does it exalt something else — a personality, an experience, an institution? Where the Spirit is truly at work, Jesus becomes more central, more clearly known, and more deeply loved. Conversely, where the focus drifts away from Jesus, that is a signal to be cautious.",
           "questionHint"     :"If the Spirit’s stated purpose is to glorify Jesus, what question might you ask about a teaching, experience, or movement to test whether it is genuinely the Spirit’s work?"
@@ -1370,7 +1370,7 @@
           "linkedPassage"    :"Genesis 1:1; Isaiah 45:12",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Both passages present God as the sole Creator and originator of everything that exists. Genesis 1:1 states this simply and absolutely — ‘In the beginning God created the heavens and the earth’ — leaving no room for creation to have happened without Him or before Him. Isaiah 45:12 adds a note of personal directness: God speaks in the first person, saying ’I made the earth’ and ’my own hands stretched out the heavens’. He did not delegate creation to another power; He made it Himself, with full authority — even giving orders to the stars. The overall picture is of a God who is the personal, sovereign, and intentional originator of all that exists.",
           "questionHint"     :"In Isaiah 45:12, God uses the words ’I’ and ’my own hands’ — what does that personal, direct language suggest about how involved He was in the act of creation, and whether He needed anyone else’s help?"
@@ -1403,7 +1403,7 @@
           "linkedPassage"    :"John 1:1-3; Colossians 1:16-17",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John 1:1-3 tells us that nothing was created apart from Jesus — He was not a created being but the one through whom all creation came into existence. Colossians 1:16-17 deepens this further: all things were created not just through Him but by Him and for Him — meaning the entire created order has Jesus as both its origin and its goal. Verse 17 then adds that He is ’before all things’ and that in Him all things ’hold together’, meaning the universe continues to exist and cohere because of His ongoing sustaining power. For many people, thinking of Jesus primarily as a teacher or healer, this picture of Him as the Creator and Sustainer of all things significantly changes how they understand who He is.",
           "questionHint"     :"Colossians 1:16 says everything was created not just ’through’ Jesus but also ’for’ him — what does it mean for creation to have been made for Jesus, and how does that compare with the way you normally think about Him?"
@@ -1436,7 +1436,7 @@
           "linkedPassage"    :"Genesis 1:2; Psalm 104:30",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Genesis 1:2 places the Spirit of God at the very beginning — moving over the formless, empty waters before God speaks creation into order. The image suggests a hovering, active presence, ready and involved from the outset. Psalm 104:30 shows that the Spirit’s creative work is not limited to the initial act: when God sends His breath (Spirit), living creatures are created and the ground is renewed. The Spirit is involved in ongoing creation and replenishment, not just in the original event. The involvement of all three persons of the Trinity — Father, Son, and Spirit — in creation tells us that creation was not the work of one member acting alone, but a unified act of the whole Godhead. The world did not come from one dimension of God but from the fullness of who God is.",
           "questionHint"     :"Genesis 1:2 shows the Spirit present at the very start, before anything was formed — and Psalm 104:30 shows Him involved in bringing new life into being. What do those two moments together suggest about the scope of the Spirit’s involvement in creation?"
@@ -1470,7 +1470,7 @@
           "linkedPassage"    :"Genesis 1:1-2:3",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Six main things God created: (1) light and the separation of day and night; (2) the sky and the separation of waters; (3) dry land, seas, and vegetation; (4) the sun, moon, and stars; (5) sea creatures and birds; (6) land animals and human beings. A clear pattern emerges across the six days: the first three days form the environments or ’spaces’ (light, sky, land/sea), and the next three days fill those spaces with their corresponding inhabitants (luminaries fill the sky, fish and birds fill sea and sky, animals and humans fill the land). Each day ends with ’God saw that it was good’, and the whole sequence concludes with ’very good’. The pattern moves from formless and empty to ordered and filled — showing creation as deliberate, structured, and purposeful.",
           "questionHint"     :"Look at days 1-3 and then days 4-6 side by side — do you notice a relationship between what is created on day 1 and day 4, day 2 and day 5, day 3 and day 6? What does that pairing suggest about the structure of the account?"
@@ -1503,7 +1503,7 @@
           "linkedPassage"    :"Genesis 1:3",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The repeated pattern of ’God said... and it was so’ throughout Genesis 1 shows that God’s word alone is sufficient to bring anything into existence. He does not need materials, effort, tools, or assistance — He simply speaks and reality responds instantly and completely. This tells us that God’s authority over creation is absolute: the created world does not exist independently of Him but is entirely subject to His command. No human being, no force of nature, and nothing in the universe has power comparable to God’s — creation came into being by His word, continues to exist by His sustaining power, and answers to Him entirely.",
           "questionHint"     :"When a human being gives an order, it might or might not be obeyed — but when God speaks in Genesis 1, what always happens immediately, and what does that instant, total response tell you about the kind of authority He has?"
@@ -1535,7 +1535,7 @@
           "linkedPassage"    :"Genesis 1:31",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The declaration ’very good’ tells us that the world as God originally made it was not flawed, broken, or morally neutral — it was perfectly aligned with God’s intention and reflected His character. There was no suffering, no death, no corruption. This matters enormously for how we think about the world now, because it means the pain, brokenness, and evil we see are not original features of creation — they are intrusions. The world as it now is has been damaged, not designed that way. This gives us reason to grieve what has been lost and hope for what God has promised to restore — it also means we cannot blame God for the state of the world as it currently exists.",
           "questionHint"     :"If God called the original creation ’very good’ but the world we see today contains suffering and brokenness, what does that difference suggest about whether God designed things this way, or whether something has gone wrong since?"
@@ -1567,7 +1567,7 @@
           "linkedPassage"    :"Psalm 19:1",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"According to this verse, creation serves the purpose of declaring God’s glory and displaying His handiwork. The heavens are not silent witnesses — they actively proclaim something about their Maker. Creation is, in a sense, a constant, universal testimony to God’s existence, power, and beauty, available to every person in every age and culture. Many people find that moments in the natural world — a vast night sky, a mountain range, a coastline, the intricacy of a living creature — produce a sense of awe that points instinctively beyond the thing itself to the one who made it. This is precisely what the psalmist says creation is designed to do.",
           "questionHint"     :"The psalm says the heavens ’declare’ something — as if creation is actively communicating a message. What is the message it is declaring, and have you ever found yourself sensing that message when looking at something in the natural world?"
@@ -1590,7 +1590,7 @@
           "linkedPassage"    :"Isaiah 43:7",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"To live for God’s glory means to live in a way that makes God look great — that draws attention to His character, His goodness, and His worth rather than to ourselves. In practice, this is not about a single dramatic act but about the orientation of an entire life: the choices we make, the way we treat people, the things we pursue and prioritise, and whether our lives point others towards God or away from Him. Since we are made in God’s image (Genesis 1:27), living for His glory also means reflecting His character — His love, justice, faithfulness, and compassion — in our everyday lives. The purpose of our existence, according to Isaiah, is not self-fulfilment but God-centred living.",
           "questionHint"     :"If being created ’for God’s glory’ means our lives are meant to point to Him, what kinds of things might a person do — or avoid doing — in ordinary daily life that would either reflect or contradict that purpose?"
@@ -1622,7 +1622,7 @@
           "linkedPassage"    :"Genesis 1:27",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Being made in the image of God means that human beings uniquely reflect something of God’s own nature — His rationality, His moral sense, His capacity for relationship, creativity, and love. No other creature in Genesis is described this way. The animals are made ’according to their kinds’, but human beings are made according to God’s own image and likeness, which places us in an entirely different category. It means we are not merely biological organisms but personal beings designed for relationship with God, capable of knowing Him, representing Him in the world, and being held morally accountable to Him. It also means that every human life has an inherent dignity that cannot be stripped away, because it is God’s image that is borne in each person.",
           "questionHint"     :"Genesis describes animals being made ’according to their kinds’ but describes humans differently — made in the image and likeness of God Himself. What does that different description suggest about the kind of relationship God intends to have with human beings compared to the rest of creation?"
@@ -1672,7 +1672,7 @@
           "linkedPassage"    :"Genesis 1:26; Genesis 2:15",
           "answerType"       :"freeText",
           "required"         :false,
-          "answerPlaceholder":"Your thoughts…",
+          "answerPlaceholder":"Answer the question from the passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The two responsibilities are: (1) to rule over creation — exercising authority and oversight on God’s behalf as His representatives in the world; and (2) to care for and maintain it — the language of Genesis 2:15 is that of a gardener or steward, tending and preserving what has been entrusted. These are complementary, not contradictory: the authority to rule is given in the context of responsible care, not exploitation. As for how well we are fulfilling these responsibilities today — many would argue honestly that the widespread environmental damage, species loss, and exploitation of natural resources reflects a failure of the stewardship God intended. The mandate to rule was never a licence to destroy; it was a call to serve creation on God’s behalf.",
           "questionHint"     :"Genesis 1:26 gives humans authority to ’rule over’ creation, while Genesis 2:15 says the man was placed in the garden to ’care for it and maintain it’ — do those two ideas feel like the same thing to you, or do they add different dimensions to what responsible stewardship looks like?"

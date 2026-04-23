@@ -1,0 +1,689 @@
+{
+  "studyMetadata":{
+    "studyId"          :"ekekhai_yohuleliwa_1_v001",
+    "title"            :"ekekhai yohuleliwa (1)",
+    "subtitle"         :"Mpantta Wopacerya - Wamini Wokristu",
+    "shortTitle"       :"ekekhai (1)",
+    "description"      :"BUKHU OHUSIHA SA MULOKO NI TANNAMOSA (8) SA MBIBLIANI ENKHALIHERYA OHULA EKEKHAI YA MULUKU",
+    "author"           :"Paul Adams & John Phillips",
+    "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Overview", "Subsection": "Foundations" }],
+    "estudyFileVersion":3,
+    "studyVersion"     :1,
+    "language"         :"vmw",
+    "createdAt"        :"2026-04-07T00:00:00Z",
+    "updatedAt"        :"2026-04-07T00:00:00Z",
+    "tags"             :["god", "theology", "bible", "salvation"],
+    "shareMessage"     :"Check out this Bible Study Reader app.\n\nAvailable soon on Google Play and the App Store."
+  },
+  "theme":{
+    "theme-annotation":"Blue-dominant study theme — deep royal blue palette with subdued gold accent. Blue is the dominant colour throughout surfaces, borders, text, and interactive elements. Gold appears only as a quiet highlight. Authoritative and clear.",
+    "surface"         :"#ddeef9",
+    "surface-mid"     :"#c8dff5",
+    "text"            :"#0a1e32",
+    "text-secondary"  :"#1e4a7a",
+    "text-faint"      :"#4a7aaa",
+    "emphasis"        :"#1158a8",
+    "emphasis-light"  :"#1a72cc",
+    "success"         :"#1a6e4a",
+    "accent"          :"#c87e14",
+    "accent-light"    :"#e0a040",
+    "border"          :"#7aafd4",
+    "shadow"          :"rgba(10,21,32,0.14)",
+    "card-bg"         :"#ffffff",
+    "dm-base"         :"#04101e",
+    "dm-surface"      :"#091828",
+    "dm-raised"       :"#102238",
+    "dm-sunken"       :"#0b1c30",
+    "dm-border"       :"#1a3a60",
+    "dm-text"         :"#cce0f5",
+    "dm-text-mid"     :"#7aafd4",
+    "dm-text-faint"   :"#2e5a88"
+  },
+  "chapters":[
+    {
+      "chapterNumber":1,
+      "chapterTitle" :"MULUKU TIITHI",
+      "elements"     :[
+        {
+          "elementId"    :"ch01-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"ATHU AKHALANA MIRUKU SONANARA MWAHA WA MULUKU NI MAKALELO-\nAWE.NAPHAVELA, OMUSUWELA VEKEKHAI MAKHALELO-AWE, NIHANA\nOWEHA EXEENI BIBLIA ONIHIMYAWE, OKHALA MULUKU OHISUWELIHA\nMEKHAIYE MBIBLIANI.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el02",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"MULUKU TANI?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el03",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"AKOLOSI 1:3",
+          "translation"  :"NET",
+          "passageText"  :"Okathi wothene ninnimuxukhuru Muluku, Tiithi awe Pwiy’ahu Yesu Kristu, noovekelelakani nyuwo.",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el04",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MULUKU TANI?",
+          "linkedPassage"    :"AKOLOSI 1:3",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"This verse identifies God as ’the Father of our Lord Jesus Christ’, revealing that God is not an impersonal force but a personal being who stands in a Father-Son relationship with Jesus. It also shows that God is someone to whom we can give thanks and speak to in prayer.",
+          "questionHint"     :"Paul uses a very specific title for God here — what does that title tell you about the kind of relationship God has with Jesus, and what might that imply about His nature?"
+        },
+        {
+          "elementId"    :"ch01-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"MAKHALELO XEENI ANONIHERYA WIRA MULUKU OKHALA?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"MASALMO 19:1",
+          "translation"  :"NET",
+          "passageText"  :"Erimu ennilaleya ovuwa wa Muluku",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el07",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MAKHALELO XEENI ANONIHERYA WIRA MULUKU OKHALA?",
+          "linkedPassage"    :"Psalm 19:1",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The verse suggests that creation itself is a witness to God’s existence and glory. The sky and heavens are not neutral — they actively ’declare’ and ’display’ something about God. Just as a piece of artwork points to an artist, the created world points to a Creator. Evidence for God is not hidden away; it is visible above us every day.",
+          "questionHint"     :"If the heavens are said to ’declare’ something, what does that imply about what an observer of the natural world should be able to conclude?"
+        },
+        {
+          "elementId"    :"ch01-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"MASALMO 139:13-14",
+          "translation"  :"NET",
+          "passageText"  :"TI nyuwo mpanke murimaka: ti nyuwo mupale eruthuaka mmirimani mwamama 14 Kinnoxuchuruni, mana mukumpe votikiniha: kolaleya wira miteko sanyu sothene ti sovuwa. Nyuwo mosuwela oratteene erooho aka",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MAKHALELO XEENI ANONIHERYA WIRA MULUKU OKHALA?",
+          "linkedPassage"    :"MASALMO 139:13-14",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The image of being ’woven together’ suggests that human life is not an accident or a random biological event, but an intentional, careful act of craftsmanship by God. Just as a weaver works deliberately, thread by thread, God was personally involved in forming each person. This points to God’s intimate knowledge of and care for every individual human being from the very beginning of their existence.",
+          "questionHint"     :"Think about what weaving involves — would you describe it as a careless, random process, or a deliberate and careful one? What does that tell you about how God formed you?"
+        },
+        {
+          "elementId"    :"ch01-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"YOHANI 20:30-31",
+          "translation"  :"NET",
+          "passageText"  :"<sup>30</sup>Tthiri Yesu aahiira vamaithoni v’awiixutti awe mitikiniho sinci-ene sikina sihilempwe eliivuru-ene y’ela. <sup>31</sup>Vano Itthu iya silempwe wira mwaaminiki wira Yesu ti Kristu, Mwaana a Muluku; nave-tho wira, mwaaminiki siiso, mphwanye ekumi mwa Yoowo",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el11",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MAKHALELO XEENI ANONIHERYA WIRA MULUKU OKHALA?",
+          "linkedPassage"    :"YOHANI 20:30-31",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"John says he recorded these signs so that readers would come to believe that Jesus is the Christ, the Son of God, and through that belief find life in his name. This tells us that the Bible is not merely a historical record or a collection of moral teachings — it has an intentional, evangelistic purpose. It is written to bring people to faith and, through faith, to life.",
+          "questionHint"     :"John tells us directly what outcome he was hoping for in his readers — can you spot the two goals he mentions, and how are they connected to each other?"
+        },
+        {
+          "elementId"    :"ch01-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"AHEPERI 1:1-3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Khalayi, Muluku aahaalavuliha axitiith’ahu imaara sinci-ene n’inamuna sinci-ene ni moolumo a maprofeta. <sup>2</sup>Vano, mahiku ala ookiserya, owo onnilavuliha ni nsu na Mwan’awe, yoowo omuhiyenry’awe Itthu sothene, nave-tho mwa yoowo opattuxanny’awe olumwenku. <sup>3</sup>Mwaana yoowo t’ori omwaleela wa nttitimiho ni elatarato yoomalela…",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el13",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MAKHALELO XEENI ANONIHERYA WIRA MULUKU OKHALA?",
+          "linkedPassage"    :"AHEPERI 1:1-3",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"According to this passage, God spoke in the past through the prophets in many different ways, but has now spoken definitively and finally through His Son, Jesus. The passage makes extraordinary claims about Jesus’ relationship to God: he is the ’radiance of his glory’ and the ’representation of his essence’, meaning that to see Jesus is to see what God is truly like. Jesus also created the world, sustains all things, and has now accomplished the cleansing of sins — pointing to a unique divine identity.",
+          "questionHint"     :"The passage contrasts how God spoke ’long ago’ with how he has spoken ’in these last days’ — what is different about the two ways, and what does the description of the Son in verse 3 tell you about how closely he is linked to God himself?"
+        },
+        {
+          "elementId"    :"ch01-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"MULUKU ORI SAYI?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"YESAIYA 6:3",
+          "translation"  :"NET",
+          "passageText"  :"vano maserafi awo yanikhuwelelana yiiraka: owarya, owarya, owarya, T’Apwiya owerya sothene. Elapo yothene ennilaleya ovuwa waya.",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MULUKU ORI SAYI?",
+          "linkedPassage"    :"YESAIYA 6:3",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"For God to be ’holy’ means He is utterly set apart — morally perfect, pure, and completely unlike anything in the created world. Holiness is not just one quality among many but speaks to His absolute otherness and majesty. The threefold repetition (‘holy, holy, holy’) is the strongest form of emphasis in Hebrew — it is not just saying God is very holy, but that holiness defines His very being to the highest possible degree. No other attribute of God is praised in this tripled way in Scripture.",
+          "questionHint"     :"In everyday language, if you want to stress how extremely something is true, what do you do — and how might that same idea apply to why the angels repeat the word ’holy’ three times rather than just once?"
+        },
+        {
+          "elementId"    :"ch01-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"YOHANI 14:7-9",
+          "translation"  :"NET",
+          "passageText"  :"<sup>7</sup>Nyuwo mwakisuwela, mwamwaasuwenla-tho Atiithi aKa. Vano–tho, oKhuma oKathi yoola, nyuwo muhaasuwela Atiithi, hata muhaaweha.",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el18",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MULUKU ORI SAYI?",
+          "linkedPassage"    :"YOHANI 14:7-9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus makes a remarkable claim: that to have seen Him is to have seen the Father. He is not merely a messenger from God, or someone who teaches about God — He is the very image and presence of God. This means that if we want to know what God is like, we do not need to look further than Jesus: His compassion, His honesty, His treatment of people, His willingness to lay down His life — all of these reveal the character of God the Father.",
+          "questionHint"     :"Philip asks to be shown the Father as if the Father were somewhere else — why does Jesus find this question so surprising, and what does His answer imply about where the Father can actually be found?"
+        },
+        {
+          "elementId"    :"ch01-el19",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"MASALMO 90:2, 4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>Miyako sihinatthi okhala, muhinathi oopattuxa elapo n’ulumwenku, nyuwo mwa Muluku okhuma wopajeryani mpakha mahiku othene ... <sup>4</sup>Apwiya iyaakha ekonto emosa vamaithoni vanyu\nsinlikana nihiku na nsana nivinre, siri ntoko okathi vakhaani w’ohiyu.",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el20",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MULUKU ORI SAYI?",
+          "linkedPassage"    :"MASALMO 90:2, 4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"This passage tells us that God exists outside of and before time itself — He was God before the earth or mountains existed, and He will continue to be God forever. Verse 4 shows that God does not experience time as we do: what feels like a thousand years to us is like a single day to Him. God is not constrained by time the way we are; He sees all of history as present to Him at once, which means He is never caught off guard, never in a hurry, and never late.",
+          "questionHint"     :"The psalmist says God existed even before the mountains or the earth were ’born’ — what does that tell you about whether God had a beginning, and how might that affect the way He experiences time compared to us?"
+        },
+        {
+          "elementId"    :"ch01-el21",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"YAKOPO 1:17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>Soovahiwa ni sooreera sothene sinnrwa osulo, siKhumaKa w’Atiithi aneene apattunxe omwaleela wirimu, ahinrukunuwa makhalelo-aya ntoko muuttutthi.",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MULUKU ORI SAYI?",
+          "linkedPassage"    :"YAKOPO 1:17",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"It means that God’s character, His love, His promises, and His goodness never shift or fluctuate. Unlike human relationships — where people can be kind one day and cold the next — God is completely consistent. This is enormously significant because it means we can trust Him fully. His love for us today is exactly as strong as it was yesterday and will be tomorrow. His promises do not expire or get revised. We never have to worry that God has changed His mind about us.",
+          "questionHint"     :"Think about a time when someone’s changing moods or broken promises made it hard to trust them — how might God being completely unchanging make a difference to how you relate to Him?"
+        },
+        {
+          "elementId"    :"ch01-el23",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"MASALMO 139:7-10",
+          "translation"  :"NET",
+          "passageText"  :"Kirowe vai, wira kirakamelane ni erooho anyu? Kitthawele vai, wira kotthaweni? <sup>8</sup>Kawela wirimu, nyuwo muri weiwo: kakhuruwela elapo yalipa okhwa nyuwo muri weiwo. <sup>9</sup>Kapakhiriwa n’ipeyo wira kilaphuwele ekhopela y’ephareya <sup>10</sup>weiwo-tho munnihkala nyuwo wira mukhethiheke weiwo-tho kinimopwanyani nyuwo munkisuka.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+139&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MULUKU ORI SAYI?",
+          "linkedPassage"    :"MASALMO 139:7-10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"This passage tells us that God is omnipresent — there is literally nowhere in the universe, from the heights of heaven to the depths of Sheol, where God is absent. His presence is inescapable. Whether that is comforting or challenging likely depends on how we feel about God. For someone who trusts God and longs for His help, it is deeply comforting — no matter how far or alone we feel, His hand is still guiding us. But it can also feel challenging or exposing, because it means nothing in our lives is hidden from Him.",
+          "questionHint"     :"The psalmist lists extreme opposites — heaven and Sheol, near and far — to make a point about God’s presence. What conclusion is he building towards, and does knowing God is always present feel like good news or an uncomfortable truth to you personally?"
+        },
+        {
+          "elementId"    :"ch01-el25",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 YOHANI 4:8",
+          "translation"  :"NET",
+          "passageText"  :"Ole ohiniphenta, khaninusuwela Muluku, maana Muluku Ophenta.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=1+John+4&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MULUKU ORI SAYI?",
+          "linkedPassage"    :"1 YOHANI 4:8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Saying God loves is saying something He does — an action He can choose or withhold. But saying God is love means love is inseparable from His very being; He cannot stop being loving any more than He can stop being God. It means His love is not a response to us being lovable — it flows from who He is. This also means that love is not just a feeling God has but the core of His identity, which gives us grounds to trust that His love is permanent, unconditional, and inexhaustible.",
+          "questionHint"     :"Consider the difference between saying ’a teacher is kind’ and ’a teacher sometimes acts kindly’ — which says more about their core identity, and how does that distinction apply to what John is claiming about God?"
+        },
+        {
+          "elementId"    :"ch01-el27",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"NINSUWELA SAYI WIRA MULUKU ONNINIPHENTTA?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el28",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"AROOMA 5:8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>Nto Muluku onooniherya oniphenta w’awe, maana oKathi wiir’ahu nlelo nri anatampi, Kristu oonikhwela hiyo.",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el29",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"NINSUWELA SAYI WIRA MULUKU ONNINIPHENTTA?",
+          "linkedPassage"    :"AROOMA 5:8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul says God demonstrated His love through the death of Christ on our behalf. What is especially striking is the timing: God did not wait for us to clean up our lives, earn His favour, or become worthy of His love. Christ died for us while we were still sinners — still in rebellion against God. This overturns the human assumption that love must be deserved. God’s love is not a reward for good behaviour; it is a free, initiating love given to those who had done nothing to merit it.",
+          "questionHint"     :"In most human relationships, we tend to show kindness to people who have been kind to us — so what is surprising or unexpected about the specific moment Paul says God chose to demonstrate His love?"
+        },
+        {
+          "elementId"    :"ch01-el30",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"1 YOHANI 4:9-10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>9</sup>Nto omphenta wa Muluku onoonihery’awe t’ula: Owo omuruma Mwan’awe mmosa-ene orwa vathi-va wira hiyo nikhalane ekumi mwa yoowo. 10 Nave Ophenta ti nno: Khanihiyo hiyo nimphentale Muluku, nto owo t’oniphentale hiyo, khunvahererya mwan’awe ntoko mukuttho wooliverya itampi sahu.",
+          "passageUrl"   :"",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch01-el31",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"NINSUWELA SAYI WIRA MULUKU ONNINIPHENTTA?",
+          "linkedPassage"    :"1 YOHANI 4:9-10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"???",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"John is explicit that God took the initiative — love is defined here not as our love for God, but as His love for us. God moved first. He sent His Son before we sought Him, to deal with the sin that separated us from Him. This tells us that God’s love is not reactive or conditional — it is originating and unconditional. We do not draw God’s love out of Him by our devotion; He loved us freely and acted on that love at great cost, sending His only Son as a sacrifice.",
+          "questionHint"     :"John says ’not that we have loved God, but that he loved us’ — who does he say made the first move, and what practical difference might it make to you personally to know that the relationship started with God, not with you?"
+        },
+        {
+          "elementId"    :"ch01-el32",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"EKEKHAI SOHULELA",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el33",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"<blockquote><blockquote><span style=\"font-size: 14.08px;\">OLOLO WUPUWELA WIRA MULUKU KOKHANLE.</span></blockquote><p><em>\"</em>ANNIRA ATHU OHIROROMELA VAMURIMANI-WAYA: MULUKU\nKHAVO.&nbsp;</p><p>— MASALMO 14:1a</p><p><br></p><p><br></p></blockquote><blockquote>MULUKU ONNINIPHENTA NI ONTHUNA WI NAKHULELE\nOSIVELAWAWE.<br>MONE WUNNUWAWE WA NIPHENTO NA TITHI ONNIVAHAWE:\nWI NITHANIWE ANAMWANE A MULUKU.<p><span style=\"font-size: 0.88rem;\">— 1 YOHANI 3:1a</span></p></blockquote>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el34",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"SOWUPUWELELA",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch01-el35",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"MAKHALELO XEENI MWATHUNANYU ONWERYA MWAPARINYU OMULELA WI VEKEKHAI MULUKU OKHALA?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el36",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"WAKHALA WI MWAMUKOHIWA, MULUKU ORI HAYI? MAKHALELO XEENI EKEKHAI NYUWO MWAROWANYO OMUHIMYA?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    }
+  ],
+  "studyOnboardingSlides":[
+    {
+      "icon"   :"📖",
+      "eyebrow":"Welcome",
+      "heading":"Truth Unlocked",
+      "body"   :"An eight-session Bible study on the basics of Christian belief.\n\nWork through each chapter at your own pace, or use it with a group.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"✍️",
+      "eyebrow":"How it works",
+      "heading":"Read, reflect, write",
+      "body"   :"Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>ⓘ</b> beside any Bible reference to read the passage without leaving the app.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"💾",
+      "eyebrow":"Your answers",
+      "heading":"Saved on your device",
+      "body"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"⚙️",
+      "eyebrow":"Make it yours",
+      "heading":"Adjust to your preference",
+      "body"   :"<div style=“font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;“>\n      If you need bigger text go straight to settings now\n    </div>",
+      "action" :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
+      "format"   :"HTML"
+    },
+    {
+      "icon"   :"👋",
+      "eyebrow":"Before you begin",
+      "heading":"How to use this app",
+      "body"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
+      "action" :{
+        "label":"Go to the ‘How to use’ page →",
+        "fn"   :null
+      },
+      "bodyAfter":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+      "format"   :"HTML"
+    }
+  ],
+  "howToUseData":{
+    "sections":[
+      {
+        "heading":"Who Is This Study For?",
+        "blocks" :[
+          {
+            "title":"People new to Christianity",
+            "body" :"If you have little or no church background, this study is a good place to start. It doesn’t assume any prior knowledge. It works through the foundations of Christian belief — who God is, who Jesus is, what the Bible says about sin and salvation — and explains each one from the Bible itself. Take it at your own pace, and don’t be afraid to write down the questions that occur to you as you go."
+          },
+          {
+            "title":"People who grew up in Christian circles",
+            "body" :"If you have been around church for most of your life, you may find that you have never stopped to ask a basic question: do I actually understand and believe what I think I believe? You know the language, you know the stories, you may even know the Bible well. This study is designed to help you examine the foundations carefully and honestly — not to unsettle you, but to give you something solid to stand on."
+          },
+          {
+            "title":"People discipling others",
+            "body" :"If you are walking alongside someone else in their faith — as a mentor, a small group leader, or a friend — this study gives you a structured way to work through the foundations of Christian belief together. The eight studies cover the ground that matters most: who God is, the person and work of Christ, the Holy Spirit, creation, sin, the cross, the resurrection, and our response. Each chapter ends with personal reflection questions that naturally prompt deeper conversation."
+          }
+        ]
+      },
+      {
+        "heading":"Individual or Group Study?",
+        "blocks" :[
+          {
+            "title":"On your own",
+            "body" :"This study works well as a personal study. Work through each chapter at your own pace, read the Bible passages, write your answers to the questions, and meditate on the reflection questions at the end. There is no right speed — some chapters may take twenty minutes, others may take longer if a question stops you in your tracks."
+          },
+          {
+            "title":"In a group",
+            "body" :"The study also works well in a small group setting. You could work through each chapter together from scratch, reading the passages and discussing the questions as a group. Alternatively — and this is often the most rewarding approach — each person works through the chapter individually first, writes their answers, and then the group comes together to discuss what they found. Either way works. The questions are designed to prompt genuine reflection, not just right answers."
+          }
+        ]
+      },
+      {
+        "heading":"Group Leaders & Mentors",
+        "blocks" :[
+          {
+            "title":"Working with a leader or mentor",
+            "body" :"<p>It can make a real difference to have someone guiding you through the study — a group leader, a pastor, or a more experienced Christian who can help you think through your answers and questions. Perhaps they are the one who recommended this study to you in the first place.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
+          }
+        ]
+      },
+      {
+        "heading":"A Note on the Questions",
+        "blocks" :[
+          {
+            "title":"Two kinds of questions",
+            "body" :"Each chapter has two kinds of questions. The <b>Bible questions</b> are tied to specific passages — asking you to look carefully at what the text says. The <b>reflection questions</b> at the end are more personal — asking what the chapter means for you specifically."
+          },
+          {
+            "title":"Common Misunderstanding boxes",
+            "body" :"Throughout the study you will encounter darker-coloured cards headed <b>Common Misunderstanding</b>. These address words — like <b>grace</b>, <b>repentance</b>, or <b>faith</b> — that Christians use all the time but that are often misunderstood. Take a moment to think about what you understand by the word, then tap <b>Find out</b> to see a short clarification."
+          }
+        ]
+      }
+    ]
+  },
+  "leadersNotesData":{
+    "subtitle":"Truth Unlocked",
+    "intro"   :[
+      "These notes are designed to help group leaders and mentors get the most out of each chapter – both for the people they are leading and for themselves. They are not a substitute for working through the material yourself first. The best leaders are those who have worked through the questions personally before they help others doing the same.",
+      "<strong>Create a safe space for honesty.</strong> The questions in this study are designed to prompt real reflection, not just correct answers. Your job is to make the group feel safe enough to say what they actually think, not what they think a Christian is supposed to say.",
+      "<strong>Don’t rush the silences.</strong> Some of the best moments in a group study happen after a question lands and nobody speaks for a few seconds. Resist the urge to fill every silence.",
+      "<strong>Watch for the person who goes quiet.</strong> Sometimes the most significant thing happening in the room is with the person who says the least. Check in with them afterwards."
+    ],
+    "chapters":[
+      {
+        "chapterNumber":1,
+        "keyPoints"    :"<p>This chapter establishes the study’s foundation: that we do not have to guess what God is like, because He has revealed Himself. The key movements are (1) the existence of God as evidenced by creation and Scripture, (2) the character of God — holy, eternal, unchanging, omnipresent, and loving — and (3) the decisive demonstration of His love in sending His Son.</p>\n<p>The final section on <b>how we know God loves us</b> (Romans 5:8; 1 John 4:9–10) is particularly important: God’s love is not an abstract sentiment but a concrete act, taken before we deserved it or asked for it.</p>",
+        "pastorals"    :"<p>Many people come to a study like this carrying an image of God that is distant, demanding, or simply vague. The opening question — ‘What is God really like?’ — is worth spending time on. Don’t rush past it to get to the Bible passages.</p>\n<p>The passage from Psalm 139:7–10 (God’s omnipresence) can be unsettling for some and comforting for others. Both reactions are worth exploring. The question asks the group to name which it is for them — take that seriously.</p>",
+        "watch"        :"👁️ Watch for people who intellectually accept God’s existence but have never personally connected that with God’s love for them. The move from ‘God exists’ to ‘God loves me’ is not automatic, and this chapter tries to make it.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":2,
+        "keyPoints"    :"<p>This chapter makes two essential and complementary claims about Jesus: that He is <b>truly human</b> and <b>truly God</b>. Both matter. His humanity means He genuinely understands our experience. His deity means His death has infinite weight and His words carry ultimate authority.</p>\n<p>The Common Misunderstanding callout on ‘Son of God’ addresses a very widespread confusion: that the title implies Jesus is somehow less than God. Ensure the group understands that in its Biblical context it means the opposite.</p>\n<p>Hebrews 4:15 — that Jesus was tempted in every way, yet without sin — is both a proof of His humanity and a source of comfort. It should not be rushed past.</p>",
+        "pastorals"    :"<p>Some in the group may have friends or family of other faiths who honour Jesus as a prophet or teacher but reject His divinity. The material in this chapter gives them something to think through carefully, not as ammunition for arguments, but as an invitation to look at the evidence more closely.</p>\n<p>The miracle passages (calming the storm, raising Lazarus) can prompt questions about whether miracles are credible. Acknowledge the question honestly: the chapter is not trying to prove miracles philosophically, but to show what the eyewitnesses recorded and what that implies about who Jesus is.</p>",
+        "watch"        :"👁️ Watch for people who are comfortable with Jesus as a moral example or spiritual teacher, but resist the claim that He is God. This chapter is designed to press that question gently but clearly.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":3,
+        "keyPoints"    :"<p>The Holy Spirit is often the least understood person of the Trinity. This chapter establishes three things: (1) the Spirit is a <b>person</b>, not a force or feeling; (2) He is given to <b>every</b> believer, not just some; and (3) His ultimate purpose is to <b>glorify Christ</b> (John 16:14).</p>\n<p>The distinction between <b>gifts</b> (1 Corinthians 12) and <b>fruit</b> (Galatians 5) is worth dwelling on. Gifts are distributed sovereignly by the Spirit for the benefit of others; fruit is the character produced over time in every believer by the Spirit’s work.</p>\n<p>The Common Misunderstanding callout on ‘the Trinity’ addresses one of the most common sources of confusion in Christian theology. Be prepared for this to open wider questions.</p>",
+        "pastorals"    :"<p>Different people in the group may come from very different backgrounds when it comes to the Spirit: some may have had charismatic experiences they are unsure about; others may be sceptical of anything experiential. The chapter tries to hold the ground carefully — affirming the Spirit’s genuine and present work, without prescribing what that must look or feel like.</p>\n<p>The reflection question about spiritual gifts can be particularly fruitful in a group setting. People often discover gifts they hadn’t named, or are encouraged by others who can see gifts in them that they can’t see in themselves.</p>",
+        "watch"        :"👁️ Watch for people who equate the Spirit’s work entirely with dramatic visible manifestations, or conversely those who are so cautious that they effectively discount Him altogether. The chapter aims to hold a Biblical centre.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":4,
+        "keyPoints"    :"<p>This chapter covers the Biblical account of creation: who was involved (all three persons of the Trinity), what was made, how it was made (by God’s word alone), and why — for God’s glory, and for relationship with Him.</p>\n<p>The unique dignity of human beings made <b>in the image of God</b> (Genesis 1:27) is central. It distinguishes us from the rest of creation and grounds both our value and our responsibility. The two stewardship passages (Genesis 1:26; 2:15) point to creation care as a genuine theological concern, not a secular add-on.</p>\n<p>The Genesis 1 reading callout gives the group a chance to read the full creation account together — worth encouraging even if time is short, as the cumulative effect of the repeated ‘it was good’ and the climactic ‘very good’ carries its own weight.</p>",
+        "pastorals"    :"<p>Some in the group may be anxious about how to relate the Genesis account to modern science. It is fine to acknowledge that Christians hold a range of views on this, and that the study is not taking a position on the mechanism or timescale of creation — only on the theological claims the text makes. Focus on those.</p>\n<p>The reflection question — ‘What does it mean to you to know you are made in God’s image?’ — can be surprisingly moving for people who have rarely been told that their life has inherent worth and dignity.</p>",
+        "watch"        :"👁️ Watch for the assumption that creation’s goodness is a naive claim in the face of suffering and brokenness. The chapter doesn’t ignore that — it’s precisely the contrast between what God made and what sin has done to it that the next chapter explores.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":5,
+        "keyPoints"    :"<p>This chapter is the hinge of the study: moving from the goodness of creation to the reality of what has gone wrong. It covers the <b>origin</b> of sin (Genesis 2–3), its <b>nature</b> (rebellion, not just bad behaviour — Mark 7:14–23), its <b>universality</b> (Romans 3:9–12, 23), and its <b>consequences</b> (Romans 6:23).</p>\n<p>The Common Misunderstanding callout on ‘sin’ is one of the most important in the study. The everyday reduction of sin to a list of very bad actions is exactly what prevents people from taking seriously that they themselves are sinners. The Biblical definition — self at the centre rather than God — needs time to land.</p>\n<p>The closing bridge paragraph is deliberately honest: the picture is bleak. Don’t soften it. The good news of the following chapters only has force if this chapter has done its work.</p>",
+        "pastorals"    :"<p>This is often the chapter where people most want to push back. Expect it. The claim that everyone has sinned without exception will feel unfair or extreme to some. Take Romans 3:9–12 seriously and let the text speak — Paul anticipates the objection and addresses it directly.</p>\n<p>Romans 7:21–25 — Paul’s description of his own internal conflict — is often personally resonant. Give people space to reflect on whether they recognise it in their own experience.</p>",
+        "watch"        :"👁️ Watch for people who hear the chapter as an attack on their character rather than a diagnosis of the human condition. The point is not that they are especially bad, but that all of us face the same problem.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":6,
+        "keyPoints"    :"<p>This is where the good news begins. The chapter establishes that God’s response to sin is not condemnation but rescue — and that rescue came at the highest possible cost. The key theological concept is <b>substitutionary atonement</b>: Jesus taking the penalty for our sin in our place (2 Corinthians 5:21; Galatians 3:13; 1 Peter 2:24).</p>\n<p>Matthew 27:46 — the cry of dereliction — deserves careful attention. It is not a cry of despair but a theological event: the Son bearing the Father’s judgement on sin. The bridge paragraph after the atonement verses makes this explicit.</p>\n<p>The Common Misunderstanding callout on ‘salvation’ reframes the word as rescue — which is its plain meaning and often much more accessible than the religious register in which it is usually heard.</p>",
+        "pastorals"    :"<p>The section on those who do not believe (John 3:18; 2 Thessalonians 1:5–10) will likely be the most difficult for the group emotionally. Don’t skip it or rush it. The question — ‘How does this sit with you?’ — is intentionally open-ended. Let people be honest.</p>\n<p>Some may find the idea of substitutionary atonement morally troubling (‘How can it be just for one person to take another’s punishment?’). This is worth addressing: the answer lies in the fact that it is God Himself, in the person of His Son, who bears the penalty — not an arbitrary third party.</p>",
+        "watch"        :"👁️ Watch for people who hear ‘Jesus died for us’ as a familiar phrase they have never really stopped to think about. This chapter is designed to make them stop and think about exactly what that means.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":7,
+        "keyPoints"    :"<p>The resurrection is not an optional extra to the Christian faith — Paul makes this explicit in 1 Corinthians 15:14–19. This chapter covers the <b>evidence</b> for the resurrection (empty tomb, post-resurrection appearances, over 500 witnesses), its <b>significance</b> (death defeated, future resurrection guaranteed), and its <b>continuing implications</b> (Jesus reigning, interceding, and returning).</p>\n<p>The bridge paragraph on Jesus’ present ministry (‘He is our great High Priest, and He never stops’) addresses a common assumption: that Jesus finished his work at the cross and ascension. Hebrews 7:25 corrects this — His intercession is continuous and present.</p>\n<p>John 14:2–3 closes the chapter on the forward-looking promise of Christ’s return and the believer’s eternal home with Him. Don’t lose this in the apologetic material earlier in the chapter.</p>",
+        "pastorals"    :"<p>The resurrection is the point at which many people feel the Christian claim becomes hardest to accept. Acknowledge this honestly. The chapter does not try to prove the resurrection philosophically but to present the historical evidence the New Testament offers and ask what best explains it.</p>\n<p>The reflection question — ‘Which verse gives you the greatest comfort or strength?’ — is a good way to close. It moves from the apologetic register of the chapter into something more personal and devotional.</p>",
+        "watch"        :"👁️ Watch for people who treat the resurrection as a metaphor (Jesus ‘lives on’ in memory or influence). The passages in this chapter — particularly Luke 24:36–43 and 1 Corinthians 15:5–8 — are insisting on a physical, bodily, historical event.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":8,
+        "keyPoints"    :"<p>This final chapter asks the question the whole study has been building toward: <b>how do we respond?</b> The two responses the Bible calls for are repentance and faith — and the chapter is careful to hold them together as two sides of the same turning, not two separate steps.</p>\n<p>The Common Misunderstanding callout on ‘grace’ is crucial here. Salvation is entirely God’s gift (Ephesians 2:8–9) — not a reward for effort, goodness, or religious activity. This must be clear before the call to repentance is heard correctly, or repentance itself becomes a work we perform to earn God’s favour.</p>\n<p>The closing section on changed living (Romans 6:15, 18) makes clear that grace is not a licence to continue in sin. Those who have been freed from sin have become servants of righteousness. The Christian life is not a static event but an ongoing reorientation.</p>",
+        "pastorals"    :"<p>This is the chapter most likely to prompt a personal response. Be alert to people who are ready to make a commitment but don’t know how to do it, or who feel they have too much to give up. Be ready to talk personally with individuals after the group session.</p>\n<p>The distinction between repentance as genuine inward change (not just regret or reform) and faith as active trust (not just intellectual assent) is important and worth drawing out carefully. Both can be counterfeited, and both can be misunderstood.</p>",
+        "watch"        :"👁️ Watch for people who hear the call to repentance and conclude that they must clean up their life before they can come to God. The order in the gospel is the opposite: come as you are, and God will begin the transformation from there.",
+        "format"       :"HTML"
+      }
+    ],
+    "format":"HTML"
+  },
+  "studyAboutData":{
+    "author":{
+      "paras":[
+        "Paul Adams ... .",
+        "John Phillips ... .",
+        "",
+        "",
+        ""
+      ],
+      "format":"plainText"
+    },
+    "publisher":{
+      "name" :"BeaconLight",
+      "url"  :"https://www.beaconlight.co.uk",
+      "paras":[
+        "BeaconLight is a non-denominational Christian training organisation based in the UK, founded in 1995. Its aim is to equip Christians worldwide with practically-applied Biblical gospel ministry tools — resources designed to help people both equip themselves and equip others.",
+        "BeaconLight’s resources include CrossCheck, which enables Christians to explain their faith and lead others to Jesus, and Word@Work, a verse-by-verse applied devotional commentary of the whole New Testament. BeaconLight also provides printed Biblical resources to prisons, seafarers, police, and the armed services.",
+        "BeaconLight believes that Christian ministry should be free of charge, and all its online materials are available without registration or payment. The ministry is funded entirely by donations.",
+        "BeaconLight is a member of the Evangelical Alliance and Global Connections, and is a registered charity in England and Wales (Charity No. 1047046)."
+      ],
+      "format":"plainText"
+    }
+  },
+  "copyrightData":{
+    "licence":{
+      "spdxId"  :"CC-BY-SA-4.0",
+      "name"    :"Creative Commons Attribution-ShareAlike 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format",
+        "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+      ],
+      "conditions":[
+        "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made",
+        "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+      ],
+      "format":"plainText"
+    },
+    "copyright":{
+      "holder"   :"Paul Adams, John Phillips & Rick Creighton",
+      "year"     :2026,
+      "statement":"Paul Adams, John Phillips & Rick Creighton, 2026. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License."
+    },
+    "bibleTranslation":{
+      "name"     :"NET Bible",
+      "version"  :"NET Bible® (New English Translation)",
+      "copyright":"©1996, 2019 Biblical Studies Press, L.L.C.",
+      "url"      :"https://netbible.com",
+      "usedWith" :"permission"
+    },
+    "notices":[
+      "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
+      "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
+      "In preparing this edition, the author made use of Claude, ChatGPT, and Grammarly for editorial feedback and redrafting suggestions – particularly in relation to opening illustrations, closing summaries, and reflection questions. Claude also helped with a certain amount of vibe coding. All content decisions, theological judgements, and final wording are the author’s responsibility.",
+      "Adapted from ‘Truth Direct’ by Paul Adams and Rick Creighton (published in 2007 by BeaconLight but titled ‘Life Direct’ in the first edition), which was adapted from ‘Directions: Fifteen Bible Study Outlines on Basic Christianity’ by Norman Warren (published in 1969 by Kingsway). Used with permission.",
+      "The Scriptures quoted are from the NET Bible® http://netbible.com copyright ©1996, 2019 used with permission from Biblical Studies Press, L.L.C. All rights reserved."
+    ],
+    "format":"HTML"
+  },
+  "imageData":{
+    "cover":{
+      "alt"     :"A key",
+      "fallback":"🗝️"
+    },
+    "publisher":{
+      "alt"     :"🔆BeaconLight — biblical truth to share",
+      "fallback":"🔆BeaconLight"
+    },
+    "author":{
+      "alt"       :"Paul Adams, John Phillips & Rick Creighton",
+      "fallback"  :"👨‍🌾",
+      "provenance":"offline photo"
+    }
+  },
+  "studyAiData":{
+    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Truth Unlocked: 8 essential Bible studies to help you unlock the truth of God’s Word’."
+  }
+}
