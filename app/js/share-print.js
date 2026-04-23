@@ -50,7 +50,7 @@ function handleGesture() {
   if (delta < -swipeThreshold) {
     if (typeof currentChapter !== 'undefined' && currentChapter < chapters.length - 1) {
       currentChapter++;
-      renderChapter(currentChapter);
+      goToChapter(currentChapter);
       window.scrollTo(0, 0);
     }
   }
@@ -58,7 +58,7 @@ function handleGesture() {
   if (delta > swipeThreshold) {
     if (typeof currentChapter !== 'undefined' && currentChapter > 0) {
       currentChapter--;
-      renderChapter(currentChapter);
+      goToChapter(currentChapter);
       window.scrollTo(0, 0);
     } else if (currentChapter === 0) {
       renderTitlePage();

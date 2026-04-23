@@ -15,13 +15,13 @@ function renderMenu() {
   const heading = document.getElementById('menuHeading');
   if (heading) {
     const shortTitle = window.titlePageData?.shortTitle || window.titlePageData?.title || '';
-    heading.textContent = shortTitle ? `Chapters of ${shortTitle}` : 'Chapters';
+    heading.textContent = shortTitle ? t('main_menu_heading_with_title', { title: shortTitle }) : t('main_menu_heading');
   }
 
   let html = `
     <div class="chapter-item" onclick="goToTitlePage()">
       <span class="chapter-num">✦</span>
-      <span class="chapter-name">Title Page</span>
+      <span class="chapter-name">${t('main_menu_title_page')}</span>
     </div>`;
 
   // 8. My Progress and How to Use removed from Contents — they live in the top bar
@@ -43,7 +43,7 @@ function renderMenu() {
     html += `
     <div class="chapter-item" onclick="renderNotesPage()">
       <span class="chapter-num">✎</span>
-      <span class="chapter-name">Notes &amp; Comments</span>
+      <span class="chapter-name">${t('main_menu_notes')}</span>
       ${hasNotesContent ? '<span class="chapter-check">✓</span>' : ''}
     </div>`;
   }
@@ -52,7 +52,7 @@ function renderMenu() {
     html += `
     <div class="chapter-item" onclick="renderLeadersNotes()">
       <span class="chapter-num">✦</span>
-      <span class="chapter-name">Leaders’ Notes</span>
+      <span class="chapter-name">${t('main_menu_leaders_notes')}</span>
     </div>`;
   }
 
@@ -60,7 +60,7 @@ function renderMenu() {
     html += `
     <div class="chapter-item" onclick="renderAbout()">
       <span class="chapter-num">✦</span>
-      <span class="chapter-name">About</span>
+      <span class="chapter-name">${t('main_menu_about')}</span>
     </div>`;
   }
 
@@ -84,19 +84,16 @@ function renderTitlePage() {
     content.innerHTML = `
       <div style="padding:40px 20px; text-align:center; font-family:var(--main-font-family);">
         <div style="font-size:4rem; margin-bottom:20px;">${ICONS.library}</div>
-        <h2 style="color:var(--text); margin-bottom:10px;">No Study Loaded</h2>
-        <p style="color:var(--text-faint); margin-bottom:30px;">
-          It looks like you haven’t selected a Bible study yet.
-          Please visit your library to get started.
-        </p>
-        <button class="howto-share-btn" style="margin:0 auto; display:inline-flex;" onclick="openLibrary()"><span>${ICONS.library}</span> Go to the Library</button>
+        <h2 style="color:var(--text); margin-bottom:10px;">${t('main_no_study_heading')}</h2>
+        <p style="color:var(--text-faint); margin-bottom:30px;">${t('main_no_study_body')}</p>
+        <button class="howto-share-btn" style="margin:0 auto; display:inline-flex;" onclick="openLibrary()"><span>${ICONS.library}</span>${t('main_no_study_btn')}</button>
       </div>`;
     return;
   }
 
   // 2. Update nav bar title
   const navTitle = document.getElementById('header-title');
-  if (navTitle) navTitle.innerText = meta.shortTitle || meta.title || 'Study';
+  if (navTitle) navTitle.innerText = meta.shortTitle || meta.title || t('main_fallback_study_title');
 
   // 3. Resolve last position for Continue button
   const pos = appSettings.rememberPosition && getLastPosition();
@@ -107,24 +104,24 @@ function renderTitlePage() {
       ${meta.image?.src ? `<img class="title-page-image" src="${meta.image.src}" alt="${meta.image?.alt || ''}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
       <div class="title-page-image-fallback" style="${meta.image?.src ? 'display:none' : 'display:flex'}">${meta.image?.fallbackEmoji || '📖'}</div>
       <div class="title-page-body">
-        <div class="title-page-main">${meta.title || 'Untitled Study'}</div>
+        <div class="title-page-main">${meta.title || t('main_fallback_untitled')}</div>
         <div class="title-page-sub">${meta.subtitle || ''}</div>
         <div class="title-page-divider"></div>
         <div class="title-page-desc">${meta.description || ''}</div>
-        <div class="title-page-author">${meta.authorLabel || 'Author'}</div>
+        <div class="title-page-author">${meta.authorLabel || t('main_fallback_author_label')}</div>
         <div class="title-page-author-name">${meta.authorName || meta.author || ''}</div>
         <div class="title-page-version">${meta.version || ''}</div>
         ${pos ? `
           <button class="title-page-start-btn" onclick="returnToLastPosition()">
-            Continue → Ch. ${pos.chapterIdx + 1}
+            ${t('main_titlepage_continue', { chapter: chapters[pos.chapterIdx].chapterNumber })}
           </button>
-          <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="goToChapter(0)">Start from the beginning</button>
+          <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="goToChapter(0)">${t('main_titlepage_start_beginning')}</button>
         ` : `
-          <button class="title-page-start-btn" onclick="goToChapter(0)">Begin the Course →</button>
+          <button class="title-page-start-btn" onclick="goToChapter(0)">${t('main_titlepage_begin')}</button>
         `}
-        <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="renderHowToUse()">How to use this app →</button>
+        <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="renderHowToUse()">${t('main_titlepage_howto')}</button>
         <div class="title-page-publisher">
-          <span class="title-page-publisher-label">Published by</span>
+          <span class="title-page-publisher-label">${t('main_titlepage_published_by')}</span>
           <button class="title-page-publisher-logo" onclick="renderAbout('publisher')">
             <img src="${window.studyAboutData?.publisher?.image || ''}" alt="${window.studyAboutData?.publisher?.logoAlt || '[Publisher info]'}" class="publisher-logo-img" onerror="this.style.display='none'" />
             <span style="color:rgba(245,240,232,0.45); margin-left:4px;">${ICONS.triggerInfo}</span>

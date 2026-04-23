@@ -121,6 +121,7 @@ const LANGUAGE_MAP = {
   ur:      { flag: '🇵🇰', label: 'اردو (Urdu)',                 group: 'asia',   badge: { letter: 'Ur', bg: '#01411C' } },
   uz:      { flag: '🇺🇿', label: 'Oʻzbek (Uzbek)',              group: 'asia'   },
   vi:      { flag: '🇻🇳', label: 'Tiếng Việt (Vietnamese)',     group: 'asia'   },
+  vmw:     { flag: '🇲🇿', label: 'Makhuwa',                     group: 'africa' },
   wo:      { flag: '🇸🇳', label: 'Wolof',                       group: 'africa' },
   xh:      { flag: '🇿🇦', label: 'isiXhosa (Xhosa)',            group: 'africa', badge: { letter: 'Xh', bg: '#007A4D' } },
   yo:      { flag: '🇳🇬', label: 'Yorùbá',                      group: 'africa', badge: { letter: 'Yo', bg: '#008751' } },

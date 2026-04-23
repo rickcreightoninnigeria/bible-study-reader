@@ -728,7 +728,7 @@ function showAppOnboarding() {
 // Slides come from the studyOnboardingSlides global (loaded from the .estudy file).
 
 function showOnboardingIfNeeded() {
-  if (localStorage.getItem('onboardingComplete')) return;
+  if (localStorage.getItem(`onboardingComplete_${window.activeStudyId}`)) return;
   if (!studyOnboardingSlides || !studyOnboardingSlides.length) return;
   showSlideOverlay({
     id:           'studyOnboarding',
@@ -736,11 +736,11 @@ function showOnboardingIfNeeded() {
     skipLabel:    t('onboarding_skip_intro'),
     restoreScroll: false,
     onComplete: () => {
-      localStorage.setItem('onboardingComplete', 'true');
+      localStorage.setItem(`onboardingComplete_${window.activeStudyId}`, 'true');
       renderTitlePage();
     },
     onSkip: () => {
-      localStorage.setItem('onboardingComplete', 'true');
+      localStorage.setItem(`onboardingComplete_${window.activeStudyId}`, 'true');
       renderTitlePage();
     },
   });

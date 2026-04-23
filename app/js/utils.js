@@ -45,11 +45,11 @@ function getLastPosition() {
 // Navigates to the last saved chapter and restores the scroll position.
 // The 100ms timeout allows renderChapter() to complete its DOM writes
 // before scrollTo() is called.
-function returnToLastPosition() {
+async function returnToLastPosition() {
   const pos = getLastPosition();
   if (!pos) return;
-  goToChapter(pos.chapterIdx);
-  setTimeout(() => window.scrollTo(0, pos.scrollY), 100);
+  await goToChapter(pos.chapterIdx);
+  window.scrollTo(0, pos.scrollY);
 }
 
 // ── showToast TO SHOW TOASTS ──────────────────────────────────────────────────
@@ -175,15 +175,6 @@ function fallbackCopy(text) {
 
 // Provides visual feedback after a long-press copy: briefly turns the field
 // border green and shows "✓ Answer copied" in the toast, then restores both.
-//function showCopyFeedback(field) {
-//  const original = field.style.borderColor;
-//  field.style.transition = 'border-color 0.1s';
-//  field.style.borderColor = 'var(--success)';
-//
-//  showToast({ message: '✓ Answer copied', duration: 3000 });
-//  field.style.borderColor = original; 
-//}
-
 function showCopyFeedback(field) {
   const original = field.style.borderColor;
   field.style.transition = 'border-color 0.1s';

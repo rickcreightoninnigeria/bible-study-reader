@@ -661,5 +661,6 @@
   "validation_lv_pass_no_sample_no_hint"                :"Your answer passes basic checks. This question doesn't have thematic data available, so no advanced check was done.",
   "___section: voice.js"                                :"🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴",
   "voice_error_mic_denied"                              :"Microphone access denied",
-  "voice_error_no_api"                                  :"Use the 🎤 on your keyboard"
+  "voice_error_no_api"                                  :"Use the 🎤 on your keyboard",
+  "main_fallback_untitled" : "Untitled Study"
 }

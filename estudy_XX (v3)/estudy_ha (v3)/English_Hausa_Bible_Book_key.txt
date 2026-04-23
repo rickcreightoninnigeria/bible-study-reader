@@ -1,0 +1,66 @@
+Genesis, Farawa
+Exodus, Fitowa
+Leviticus, Littafin Firistoci
+Numbers, Littafin Ƙidaya
+Deuteronomy, Maimaitawar Shari'a
+Joshua, Joshuwa
+Judges, Littafin Mahukunta
+Ruth, Rut
+1 Samuel, 1 Sama'ila
+2 Samuel, 2 Sama'ila
+1 Kings, 1 Sarakuna
+2 Kings, 2 Sarakuna
+1 Chronicles, 1 Tarihi
+2 Chronicles, 2 Tarihi
+Ezra, Ezra
+Nehemiah, Nehemiya
+Esther, Esta
+Job, Ayuba
+Psalms, Zabura
+Proverbs, Karin Magana
+Ecclesiastes, Mai Hadishi
+Song of Solomon, Waƙar Waƙoƙi
+Isaiah, Ishaya
+Jeremiah, Irmiya
+Lamentations, Makoki
+Ezekiel, Ezekiyel
+Daniel, Daniyel
+Hosea, Yusha'u
+Joel, Yowel
+Amos, Amos
+Obadiah, Obadiya
+Jonah, Yunusa
+Micah, Mika
+Nahum, Nahum
+Habakkuk, Habakuk
+Zephaniah, Zafaniya
+Haggai, Haggai
+Zechariah, Zakariya
+Malachi, Malakai
+Matthew, Matiyu
+Mark, Markus
+Luke, Luka
+John, Yahaya
+Acts, Ayyukan Manzanni
+Romans, Romawa
+1 Corinthians, 1 Korantiyawa
+2 Corinthians, 2 Korantiyawa
+Galatians, Galatiyawa
+Ephesians, Afisawa
+Philippians, Filibiyawa
+Colossians, Kolosiyawa
+1 Thessalonians, 1 Tasalonikawa
+2 Thessalonians, 2 Tasalonikawa
+1 Timothy, 1 Timoti
+2 Timothy, 2 Timoti
+Titus, Titus
+Philemon, Filimon
+Hebrews, Ibraniyawa
+James, Yakubu
+1 Peter, 1 Bitrus
+2 Peter, 2 Bitrus
+1 John, 1 Yahaya
+2 John, 2 Yahaya
+3 John, 3 Yahaya
+Jude, Yahuza
+Revelation, Wahayin Yohanna

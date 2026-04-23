@@ -496,27 +496,30 @@ async function loadStudyFromJson(jsonString) {
         // Always persist to IDB so the study is available on next launch
         // and so startApp() can find it even if it runs after this call.
         const studyId = data.studyMetadata && data.studyMetadata.studyId;
-        if (studyId) {
-            await StudyIDB.set(`study_content_${studyId}`, data);
-            let registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
-            if (!registry.includes(studyId)) {
-                registry.push(studyId);
-                localStorage.setItem('study_registry', JSON.stringify(registry));
-            }
-            localStorage.setItem('bsr_last_active_study', studyId);
-            recordStudyInstalled(studyId); // ← track in Recently Installed
+        if (!studyId) {
+            alert(t('studyloader_error_no_study_id', { filename: 'JSON' }));
+            return;
         }
+
+        await StudyIDB.set(`study_content_${studyId}`, data);
+        let registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
+        if (!registry.includes(studyId)) {
+            registry.push(studyId);
+            localStorage.setItem('study_registry', JSON.stringify(registry));
+        }
+        localStorage.setItem('bsr_last_active_study', studyId);
+        recordStudyInstalled(studyId); // ← track in Recently Installed
 
         // If the app is already initialised (DOMContentLoaded has fired),
         // apply immediately. Otherwise stash for startApp() to pick up.
         if (window._appReady) {
-            window.activeStudyId = studyId || null;
+            window.activeStudyId = studyId;
             checkEstudyVersion(data);
             closeNonChapterPage();
             applyStudyData(data);
         } else {
             window.pendingStudyData = data;
-            window.activeStudyId   = studyId || null;
+            window.activeStudyId   = studyId;
         }
     } catch(e) {
         alert(t('studyloader_error_load_json', { error: e.message }));
@@ -629,10 +632,6 @@ async function installDefaultStudiesIfNeeded() {
 
     if (innerEstudyFiles.length === 0) {
       console.warn('[defaultStudies] firstEstudies.zip contains no .estudy files');
-      // Still mark as done so we don't retry every launch
-      if (successCount > 0) {
-      	localStorage.setItem('default_studies_installed', 'true');
-      }
       return;
     }
 
@@ -640,21 +639,17 @@ async function installDefaultStudiesIfNeeded() {
     // loadStudyFromFile() normally calls applyStudyData() and navigates — we
     // do NOT want that here.  We use _installStudyFromZipEntry() instead, which
     // only persists to IDB and the registry without touching the UI.
-    let successCount = 0;
     for (const entry of innerEstudyFiles) {
         try {
             const blob = await entry.async('blob');
             const innerFile = new File([blob], entry.name, { type: 'application/octet-stream' });
             await _installStudyFileQuietly(innerFile);
-            successCount++;
         } catch (entryErr) {
             console.error('[defaultStudies] Failed to install', entry.name, entryErr);
         }
     }
 
-    if (successCount > 0) {
-        localStorage.setItem('default_studies_installed', 'true');
-    }
+    localStorage.setItem('default_studies_installed', 'true');
 
   } catch (err) {
     console.error('[defaultStudies] installDefaultStudiesIfNeeded failed:', err);
