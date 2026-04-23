@@ -89,7 +89,14 @@ function showVersionWarning(msg) {
 
 // 3. Switch the Engine to a specific Study
 async function activateStudy(id) {
-    const data = await StudyIDB.get(`study_content_${id}`);
+    let data;
+    try {
+      data = await StudyIDB.get(`study_content_${id}`);
+    } catch (err) {
+      if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+      throw err;
+    }
+
     if (!data) return;
 
     // 1. Record the active study before applyStudyData runs
@@ -167,10 +174,15 @@ async function deleteStudy(id, title) {
     localStorage.setItem('study_registry', JSON.stringify(registry));
 
     // 2. Remove the study content and any stored images from IDB
-    await StudyIDB.remove(`study_content_${id}`);
-    await StudyIDB.removeImage(`${id}_cover`);
-    await StudyIDB.removeImage(`${id}_publisher`);
-    await StudyIDB.removeImage(`${id}_author`);
+    try {
+    	await StudyIDB.remove(`study_content_${id}`);
+  	   await StudyIDB.removeImage(`${id}_cover`);
+  	   await StudyIDB.removeImage(`${id}_publisher`);
+  	   await StudyIDB.removeImage(`${id}_author`);
+  	 } catch (err) {
+  	   if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+  	   throw err;
+  	 }
 
     // 3. Remove from all library history lists
     removeStudyFromHistory(id);
@@ -501,7 +513,16 @@ async function loadStudyFromJson(jsonString) {
             return;
         }
 
-        await StudyIDB.set(`study_content_${studyId}`, data);
+        try {
+          await StudyIDB.set(`study_content_${studyId}`, data);
+        } catch (err) {
+          if (err.name === 'IDBUnavailable') {
+            showPickerError(t('error_idb_unavailable'));
+            return;
+          }
+          throw err;
+        }
+
         let registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
         if (!registry.includes(studyId)) {
             registry.push(studyId);
@@ -697,7 +718,12 @@ async function _installStudyFileQuietly(file) {
       const entry = zip.file(`images/${name}.webp`);
       if (entry) {
         const blob = await entry.async('blob');
-        await StudyIDB.setImage(`${studyId}_${name}`, blob);
+        try {
+          await StudyIDB.setImage(`${studyId}_${name}`, blob);
+        } catch (err) {
+            if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+            throw err;
+        }
       }
     }
 
@@ -708,14 +734,27 @@ async function _installStudyFileQuietly(file) {
           const entry = zip.file(`images/${el.elementId}.webp`);
           if (entry) {
             const blob = await entry.async('blob');
-            await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
+            try {
+              await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
+            } catch (err) {
+              if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+              throw err;
+            }
           }
         }
       }
     }
 
     // Persist study data and register
-    await StudyIDB.set(`study_content_${studyId}`, data);
+    try {
+      await StudyIDB.set(`study_content_${studyId}`, data);
+    } catch (err) {
+      if (err.name === 'IDBUnavailable') {
+        showPickerError(t('error_idb_unavailable'));
+        return;
+      }
+      throw err;
+    }
     const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     if (!registry.includes(studyId)) {
       registry.push(studyId);
@@ -734,7 +773,16 @@ async function _installStudyFileQuietly(file) {
       return;
     }
 
-    await StudyIDB.set(`study_content_${studyId}`, data);
+    try {
+      await StudyIDB.set(`study_content_${studyId}`, data);
+    } catch (err) {
+      if (err.name === 'IDBUnavailable') {
+        showPickerError(t('error_idb_unavailable'));
+        return;
+      }
+      throw err;
+    }
+
     const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     if (!registry.includes(studyId)) {
       registry.push(studyId);
@@ -815,7 +863,12 @@ async function loadStudyFromFile(file) {
         const entry = zip.file(`images/${name}.webp`);
         if (entry) {
           const blob = await entry.async('blob');
-          await StudyIDB.setImage(`${studyId}_${name}`, blob);
+          try {
+            await StudyIDB.setImage(`${studyId}_${name}`, blob);
+          } catch (err) {
+              if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+              throw err;
+          }
         }
       }
 
@@ -826,14 +879,27 @@ async function loadStudyFromFile(file) {
             const entry = zip.file(`images/${el.elementId}.webp`);
             if (entry) {
               const blob = await entry.async('blob');
-              await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
+              try {
+                await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
+              } catch (err) {
+                if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+                throw err;
+              }
             }
           }
         }
       }
 
       // 3. Store the parsed study object in IDB and update the registry
-      await StudyIDB.set(`study_content_${studyId}`, data);
+      try {
+        await StudyIDB.set(`study_content_${studyId}`, data);
+      } catch (err) {
+        if (err.name === 'IDBUnavailable') {
+          showPickerError(t('error_idb_unavailable'));
+          return;
+        }
+        throw err;
+      }
       let registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
       if (!registry.includes(studyId)) {
         registry.push(studyId);

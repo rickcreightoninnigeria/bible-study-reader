@@ -8,16 +8,50 @@ const StudyIDB = (() => {
   const STORE    = 'studies';
   const IMG_STORE = 'images';
 
+  // Set to a DOMException-like object if IDB is unavailable (e.g. Firefox private
+  // browsing, restricted Android WebViews). All public methods check this first
+  // and reject immediately with a consistent error rather than throwing.
+  let _unavailableError = null;
+
+  // Warm up on first load — if IDB itself is inaccessible this will set
+  // _unavailableError so that the first real call fails fast and cleanly.
+  (() => {
+    try {
+      if (typeof indexedDB === 'undefined' || indexedDB === null) {
+        _unavailableError = new Error('IndexedDB is not available in this environment.');
+        _unavailableError.name = 'IDBUnavailable';
+      }
+    } catch (e) {
+      // Accessing indexedDB itself throws in some private-browsing contexts.
+      _unavailableError = e;
+      _unavailableError.name = 'IDBUnavailable';
+    }
+  })();
+
   function open() {
+    if (_unavailableError) return Promise.reject(_unavailableError);
     return new Promise((resolve, reject) => {
-      const req = indexedDB.open(DB_NAME, DB_VER);
+      let req;
+      try {
+        req = indexedDB.open(DB_NAME, DB_VER);
+      } catch (e) {
+        // indexedDB.open() itself can throw synchronously in some WebViews.
+        _unavailableError = e;
+        _unavailableError.name = 'IDBUnavailable';
+        return reject(_unavailableError);
+      }
       req.onupgradeneeded = e => {
         const db = e.target.result;
         if (!db.objectStoreNames.contains(STORE))     db.createObjectStore(STORE);
         if (!db.objectStoreNames.contains(IMG_STORE)) db.createObjectStore(IMG_STORE);
       };
       req.onsuccess = e => resolve(e.target.result);
-      req.onerror   = e => reject(e.target.error);
+      req.onerror   = e => {
+        // Firefox private browsing rejects the open request (not throws).
+        _unavailableError = e.target.error;
+        _unavailableError.name = 'IDBUnavailable';
+        reject(_unavailableError);
+      };
     });
   }
 

@@ -160,7 +160,13 @@ async function cleanOrphanedRegistry() {
   const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
   const valid = [];
   for (const id of registry) {
-    const exists = await StudyIDB.get(`study_content_${id}`);
+    let exists;
+    try {
+      exists = await StudyIDB.get(`study_content_${id}`);
+    } catch (err) {
+      if (err.name === 'IDBUnavailable') { _showIdbUnavailableError(); return; }
+      throw err;
+    }
     if (exists) valid.push(id);
   }
   if (valid.length !== registry.length) {
@@ -176,6 +182,24 @@ async function cleanOrphanedRegistry() {
       timerProgressBar: true,
     });
     localStorage.setItem('study_registry', JSON.stringify(valid));
+  }
+}
+
+// ── IDB UNAVAILABLE ───────────────────────────────────────────────────────────
+function _showIdbUnavailableError() {
+  // Render a static error screen — Swal and t() may not be available yet
+  // if IDB failed before locale data loaded.
+  const content = document.getElementById('mainContent');
+  if (content) {
+    content.innerHTML = `
+      <div style="padding:40px 20px; text-align:center; font-family:sans-serif;">
+        <div style="font-size:3rem; margin-bottom:16px;">⚠️</div>
+        <h2 style="margin-bottom:12px;">Storage unavailable</h2>
+        <p style="color:#888; max-width:320px; margin:0 auto;">
+          This app needs browser storage to work. If you're in a private or
+          incognito window, please reopen it in a normal window and try again.
+        </p>
+      </div>`;
   }
 }
 
@@ -246,6 +270,7 @@ async function startApp() {
         return;
       }
     } catch (e) {
+      if (e.name === 'IDBUnavailable') { _showIdbUnavailableError(); return; }
       console.warn('Failed to restore last study:', e);
       Swal.fire({
         toast: true,
