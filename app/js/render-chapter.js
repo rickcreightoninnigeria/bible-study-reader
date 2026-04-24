@@ -2,7 +2,8 @@
 // Orchestrator: builds full chapter HTML and injects it into #mainContent.
 //
 // Element rendering is delegated to render-elements.js.
-// Save bar, notes field, and nav buttons come from render-chapter-ui.js.
+// Save bar, notes field, nav buttons, and language bar come from
+// render-chapter-ui.js.
 // This file contains only orchestration, post-render DOM wiring, and error
 // handling — no element-level HTML is built here.
 //
@@ -10,18 +11,22 @@
 //   render-elements.js      – renderHeading, renderText, renderBiblePassage,
 //                             renderQuestion, renderImage, renderCallout,
 //                             renderLikertScaleElement
-//   render-chapter-ui.js    – buildSaveBar, buildNotesField, buildNavButtons
+//   render-chapter-ui.js    – buildSaveBar, buildNotesField, buildNavButtons,
+//                             buildLangBar, setStudyLang
 //
 // Structure rendered (in order):
-//   1.  Chapter header (label + title)
-//   2.  Starred summary panel placeholder (populated after innerHTML is set)
-//   3.  Elements loop — delegates to render-elements.js per type
-//   4.  Notes field                   — buildNotesField()
-//   5.  Prev/Next nav buttons         — buildNavButtons()
-//   6.  Save/Share bar                — buildSaveBar()
-//   7.  Spacer div
+//   1.  #chapterLangBar      — sticky lang switcher, created once outside
+//                              contentHtml; populated by buildLangBar() post-render
+//   2.  Chapter header (label + title)
+//   3.  Starred summary panel placeholder (populated after innerHTML is set)
+//   4.  Elements loop — delegates to render-elements.js per type
+//   5.  Notes field                   — buildNotesField()
+//   6.  Prev/Next nav buttons         — buildNavButtons()
+//   7.  Save/Share bar                — buildSaveBar()
+//   8.  Spacer div
 //
 // Post-render DOM work (after innerHTML is set):
+//   – Language bar population        (buildLangBar)
 //   – Starred summary population
 //   – Local-validate eligibility check + input wiring
 //   – Chapter-eyebrow info trigger (chapter 1 only, once globally)
@@ -58,6 +63,41 @@
 //   Swal                             – sweetalert2 (vendor)
 //   window.activeStudyId,
 //   window.titlePageData             – state.js
+//   buildLangBar, setStudyLang       – render-chapter-ui.js
+//   LANGUAGE_MAP                     – render-pages.js
+
+
+// ── DETECT AVAILABLE LANGUAGES ────────────────────────────────────────────────
+// Scans the chapter's elements for languageN slots and returns a de-duplicated,
+// ordered array of language codes present in the data.
+//
+// The scan visits every element and collects language1, language2, … languageN
+// until a numbered slot is absent. De-duplication preserves first-seen order so
+// the language bar reflects the order in which languages appear in the study.
+//
+// Returns an empty array if no language-keyed fields are found (e.g. a purely
+// legacy single-language chapter) — in that case buildLangBar() hides the bar.
+
+function detectAvailableLangs(ch) {
+  const seen   = new Set();
+  const result = [];
+
+  for (const el of (ch.elements || [])) {
+    for (let i = 1; ; i++) {
+      const code = el[`language${i}`];
+      if (!code) break;
+      if (!seen.has(code)) {
+        seen.add(code);
+        result.push(code);
+      }
+    }
+  }
+
+  return result;
+}
+
+
+// ── RENDER CHAPTER ────────────────────────────────────────────────────────────
 
 async function renderChapter(idx, scrollY = 0) {
   try {
@@ -65,6 +105,7 @@ async function renderChapter(idx, scrollY = 0) {
     isNonChapterPage = false;
     restoreStudyTheme();
 
+    verseData = {};
     const ch = chapters[idx];
     if (!ch) {
       // No study loaded or index out of range — fall back to title page
@@ -73,7 +114,33 @@ async function renderChapter(idx, scrollY = 0) {
     }
 
     const container = document.getElementById('mainContent');
+
+    // ── 1. Ensure the sticky lang bar node exists ─────────────────────────────
+    // #chapterLangBar lives as the first child of #mainContent and is never
+    // part of contentHtml — it must survive the innerHTML = '' wipe below.
+    // We detach it first and reattach after the wipe.
+    let langBarEl = document.getElementById('chapterLangBar');
+    if (!langBarEl) {
+      langBarEl = document.createElement('div');
+      langBarEl.id        = 'chapterLangBar';
+      langBarEl.className = 'chapter-lang-bar';
+    }
+    // Detach before innerHTML clear so we can reattach it immediately after.
+    if (langBarEl.parentNode === container) container.removeChild(langBarEl);
+
     container.innerHTML = '';
+    container.insertBefore(langBarEl, container.firstChild);
+
+    // ── Detect available languages and resolve the active one ─────────────────
+    // window._activeStudyLang persists across chapters for the session.
+    // If it is set but not present in this chapter, fall back to the first
+    // available language (the preferred language may not be in every chapter).
+    const availableLangs = detectAvailableLangs(ch);
+    const activeLang = (() => {
+      const preferred = window._activeStudyLang;
+      if (preferred && availableLangs.includes(preferred)) return preferred;
+      return availableLangs[0] || 'en';   // 'en' safety net for zero-lang chapters
+    })();
 
     // ── elementId → element map for resolving repeatElement references ────────
     const elementMap = {};
@@ -96,17 +163,29 @@ async function renderChapter(idx, scrollY = 0) {
     };
     window._answerRowInfoHtml = answerRowInfoHtml;
 
-    // ── 1. Chapter header ─────────────────────────────────────────────────────
+    // ── 2. Chapter header ─────────────────────────────────────────────────────
     let contentHtml = `
       <div class="chapter-header">
         <div class="chapter-label" id="chapter-label-el">${t('renderchapter_chapter_label', { current: ch.chapterNumber, total: chapters[0].chapterNumber + chapters.length - 1 })}</div>
         <h1 class="chapter-title">${ch.chapterTitle}</h1>
       </div>`;
 
-    // ── 2. Starred summary placeholder ────────────────────────────────────────
+    // ── 3. Starred summary placeholder ────────────────────────────────────────
     contentHtml += `<div id="starredSummaryContainer"></div>`;
 
-    // ── 3. Elements loop ──────────────────────────────────────────────────────
+    // ── 4a. Pre-pass: register all biblePassage elements into verseData ───────
+    // This must run before the main loop so that renderQuestion() can check
+    // verseData[ref] regardless of element order in the chapter data.
+    for (const el of (ch.elements || [])) {
+      const resolved = el.repeatElement ? elementMap[el.repeatElement] : el;
+      if (!resolved) continue;
+      if (resolved.type === 'biblePassage') {
+        const ctx = { el: resolved, ch, noPad: '', activeLang };
+        renderBiblePassage(ctx);
+      }
+    }
+
+    // ── 4b. Elements loop ─────────────────────────────────────────────────────
     for (const el of (ch.elements || [])) {
 
       // Resolve repeatElement references
@@ -114,7 +193,9 @@ async function renderChapter(idx, scrollY = 0) {
       if (!resolved) continue; // skip unresolvable references; do not abort render
 
       const noPad = resolved.bottomPadding === 'none' ? ' style="margin-bottom:0"' : '';
-      const ctx   = { el: resolved, ch, noPad, answerRowInfoHtml };
+
+      // activeLang is threaded into every ctx so renderers can call resolveText().
+      const ctx = { el: resolved, ch, noPad, answerRowInfoHtml, activeLang };
 
       switch (resolved.type) {
 
@@ -164,18 +245,28 @@ async function renderChapter(idx, scrollY = 0) {
       }
     }
 
-    // ── 4. Notes field ────────────────────────────────────────────────────────
+    // ── 5. Notes field ────────────────────────────────────────────────────────
     contentHtml += buildNotesField(ch);
 
-    // ── 5. Prev/Next nav buttons ──────────────────────────────────────────────
+    // ── 6. Prev/Next nav buttons ──────────────────────────────────────────────
     contentHtml += buildNavButtons(idx);
 
-    // ── 6. Save/Share bar + 7. Spacer ─────────────────────────────────────────
+    // ── 7. Save/Share bar + 8. Spacer ─────────────────────────────────────────
     contentHtml += buildSaveBar(ch);
     contentHtml += `<div style="height:80px"></div>`;
 
     // ── Set innerHTML (single write) ──────────────────────────────────────────
-    container.innerHTML = contentHtml;
+    // Append to the container; langBarEl is already the first child.
+    const contentWrapper = document.createElement('div');
+    contentWrapper.innerHTML = contentHtml;
+    while (contentWrapper.firstChild) {
+      container.appendChild(contentWrapper.firstChild);
+    }
+
+    // ── Post-render: language bar ─────────────────────────────────────────────
+    // Populates #chapterLangBar with flag buttons for the available languages.
+    // Hides the bar automatically when only one language is present.
+    buildLangBar(availableLangs, activeLang);
 
     // ── Post-render: starred summary ──────────────────────────────────────────
     const starredQuestions = getStarredQuestions(ch);

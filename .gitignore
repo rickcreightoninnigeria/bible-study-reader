@@ -1,6 +1,7 @@
 *.apk
 *.aab
 .apk_hash.txt
+*registration.properties
 *.zip
 *~
 *_original.json

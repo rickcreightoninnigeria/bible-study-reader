@@ -96,7 +96,8 @@ function renderTitlePage() {
   if (navTitle) navTitle.innerText = meta.shortTitle || meta.title || t('main_fallback_study_title');
 
   // 3. Resolve last position for Continue button
-  const pos = appSettings.rememberPosition && getLastPosition();
+  const savedPos = appSettings.rememberPosition && getLastPosition();
+  const pos = savedPos && savedPos.chapterIdx < chapters.length ? savedPos : null;
 
   // 4. Render the title page using the established CSS classes
   content.innerHTML = `

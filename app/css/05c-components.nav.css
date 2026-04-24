@@ -233,6 +233,18 @@
 }
 .chapter-nav-btn.secondary:hover { background: var(--surface-mid); }
 
+.chapter-lang-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(245,240,232,0.10);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.chapter-lang-bar::-webkit-scrollbar { display: none; }
+
+
 
 /* ── 06. PAGE CLOSE BUTTON ──────────────────────────────────────────────── */
 /* Shared ✕ Close button used on non-chapter full-screen pages

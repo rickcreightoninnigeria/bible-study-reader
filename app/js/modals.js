@@ -7,7 +7,7 @@
 // Also contains renderLikertScale() and qaCalloutHtml(), which build the
 // inline HTML for those components during chapter rendering.
 //
-// Dependencies (all available as globals before this file loads):
+// Dependencies (all available as globals before this file loads):\
 //   ICONS         – icons.js
 //   appSettings   – settings.js
 //   ttsAvailable, ttsSpeak, ttsStop – tts.js
@@ -157,22 +157,128 @@ function renderLikertScale(el, chNum) {
     </div>`;
 }
 
-// Opens the verse modal and populates it with the NET Bible text for 'ref'.
-// 'ref' must match a key in window.verseData exactly (populated by renderChapter()).
-// If no match is found, returns silently.
+
+// ── VERSE MODAL ───────────────────────────────────────────────────────────────
+// Opens the verse modal and populates it with the passage for 'ref'.
+// 'ref' must match a key in window.verseData (populated by renderBiblePassage()
+// in render-elements.js).
+//
+// verseData[ref] shape (v2, multi-translation):
+//   { translations: [{ label, text, url, ref }, ...] }
+//
+// verseData[ref] shape (v1, legacy single-translation):
+//   { text, netUrl }
+//   Normalised to the v2 shape on first access so the rest of this
+//   function only needs to handle one code path.
+//
+// Translation tab behaviour:
+//   • A row of .verse-trans-btn buttons is rendered, one per translation.
+//   • The last-selected translation label is stored in window._activeTranslationLabel
+//     (session-only) so the same translation is pre-selected when the next
+//     passage is opened.
+//   • If the stored label is not present in this passage, the first available
+//     translation is used.
+//   • Clicking a tab updates the ref display, passage text, speak button, and
+//     external link — no modal close/reopen needed.
+
 function openVerseModal(ref) {
-  const data = verseData[ref];
-  if (!data) return;
-  document.getElementById('verseModalRef').textContent = t('modals_verse_ref_label', { ref });
-  document.getElementById('verseModalText').innerHTML = data.text;
-  document.getElementById('verseModalFooter').innerHTML =
-    `(<a href="${data.netUrl}" target="_blank">${t('modals_verse_net_link')}</a>)`;
+  const raw = verseData[ref];
+  if (!raw) return;
+
+  // ── Normalise legacy v1 shape → v2 shape ─────────────────────────────────
+  const data = raw.translations
+    ? raw
+    : {
+        translations: [{
+          label: raw.translation || 'NET',
+          text:  raw.text  || '',
+          url:   raw.netUrl || '',
+          ref:   ref,
+        }],
+      };
+
+  if (!data.translations.length) return;
+
+  // ── Resolve the active translation ────────────────────────────────────────
+  // Prefer the session-persistent label; fall back to the first slot.
+  const preferred  = window._activeTranslationLabel;
+  const activeTrans = data.translations.find(t => t.label === preferred)
+    || data.translations[0];
+
+  // ── Render the translation tab row ────────────────────────────────────────
+  // Omitted entirely when only one translation is present (no tab row needed).
+  const tabRowHtml = data.translations.length > 1
+    ? `<div class="verse-trans-tab-row">${
+        data.translations.map(tr =>
+          `<button
+            class="verse-trans-btn${tr.label === activeTrans.label ? ' active' : ''}"
+            onclick="switchVerseTranslation('${ref}', '${tr.label}')"
+          >${tr.label}</button>`
+        ).join('')
+      }</div>`
+    : '';
+
+  // ── Populate modal DOM ─────────────────────────────────────────────────────
+  const tabRowEl = document.getElementById('verseModalTabRow');
+  if (tabRowEl) tabRowEl.innerHTML = tabRowHtml;
+
+  document.getElementById('verseModalRef').textContent   = activeTrans.ref || ref;
+  document.getElementById('verseModalText').innerHTML    = activeTrans.text;
+  document.getElementById('verseModalFooter').innerHTML  =
+    activeTrans.url
+      ? `(<a href="${activeTrans.url}" target="_blank">${t('modals_verse_net_link')}</a>)`
+      : '';
+
   document.getElementById('verseModalOverlay').classList.add('open');
+
+  // ── Wire speak button ─────────────────────────────────────────────────────
+  _wireVerseModalSpeak(activeTrans.text);
+}
+
+// Switches the active translation tab without closing/reopening the modal.
+// Called by the onclick on each .verse-trans-btn.
+//
+// ref   – the verseData key for the passage currently shown
+// label – the translation label of the tab that was tapped
+function switchVerseTranslation(ref, label) {
+  const raw = verseData[ref];
+  if (!raw) return;
+
+  const data = raw.translations
+    ? raw
+    : { translations: [{ label: raw.translation || 'NET', text: raw.text, url: raw.netUrl, ref }] };
+
+  const tr = data.translations.find(t => t.label === label);
+  if (!tr) return;
+
+  // Persist for the next passage opened in this session.
+  window._activeTranslationLabel = label;
+
+  // Update tab active state.
+  document.querySelectorAll('.verse-trans-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim() === label);
+  });
+
+  // Update ref, text, footer link.
+  document.getElementById('verseModalRef').textContent  = tr.ref || ref;
+  document.getElementById('verseModalText').innerHTML   = tr.text;
+  document.getElementById('verseModalFooter').innerHTML =
+    tr.url
+      ? `(<a href="${tr.url}" target="_blank">${t('modals_verse_net_link')}</a>)`
+      : '';
+
+  // Re-wire the speak button to the new translation's text.
+  _wireVerseModalSpeak(tr.text);
+}
+
+// Internal helper: sets the speak button's visibility and onclick for the
+// currently displayed translation text. Extracted to avoid repetition between
+// openVerseModal and switchVerseTranslation.
+function _wireVerseModalSpeak(text) {
   const vsb = document.getElementById('verseModalSpeakBtn');
-  if (vsb) {
-    vsb.innerHTML = ttsAvailable() && appSettings.ttsMode !== 'never' ? ICONS.speak : '';
-    vsb.onclick = () => ttsSpeak(data.text, vsb);
-  }
+  if (!vsb) return;
+  vsb.innerHTML = ttsAvailable() && appSettings.ttsMode !== 'never' ? ICONS.speak : '';
+  vsb.onclick   = () => ttsSpeak(text, vsb);
 }
 
 // Closes the verse modal. Called by the ✕ button and by clicking the overlay.
@@ -183,6 +289,7 @@ function closeVerseModal(event) {
   ttsStop();
   document.getElementById('verseModalOverlay').classList.remove('open');
 }
+
 
 // Opens a plain info modal explaining the chapter Notes field.
 // Uses the shared #info-modal-overlay
@@ -351,7 +458,7 @@ function closeInfoModal(event) {
 // Floating placement — icon is appended to the heading automatically
 
 //  createInfoTrigger(
-//  //  //    'likert-intro',
+//    'likert-intro',
 //    {
 //      title: 'About this scale',
 //      body:  '<p>Rate each statement honestly — there are no right or wrong answers.</p>'

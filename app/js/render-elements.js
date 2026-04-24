@@ -8,10 +8,14 @@
 // (render-chapter.js) before calling renderImage().
 //
 // ctx shape (all renderers):
-//   ctx.el    {object}  The resolved element object from chapters[].elements[]
-//   ctx.ch    {object}  The chapter object (chapters[idx])
-//   ctx.noPad {string}  Either ' style="margin-bottom:0"' or '' — derived from
-//                       el.bottomPadding by the orchestrator
+//   ctx.el         {object}  The resolved element object from chapters[].elements[]
+//   ctx.ch         {object}  The chapter object (chapters[idx])
+//   ctx.noPad      {string}  Either ' style="margin-bottom:0"' or '' — derived from
+//                            el.bottomPadding by the orchestrator
+//   ctx.activeLang {string}  Active study language code (e.g. 'ha', 'en').
+//                            Set by the orchestrator from window._activeStudyLang,
+//                            falling back to the first language1 found in the chapter.
+//                            Used by resolveText() to pick the right language slot.
 //
 // ctx shape (renderQuestion only, additional):
 //   ctx.answerRowInfoHtml {object}  { title, body } — built once per render in
@@ -45,15 +49,49 @@
 //   renderParas                      – utils.js
 
 
+// ── LANGUAGE RESOLUTION ───────────────────────────────────────────────────────
+// resolveText(el, lang, field)
+//
+// Returns the value of el[field + N] where el['language' + N] === lang.
+// Scans language1, language2, … languageN until a slot is absent, then falls
+// back to field1 (the first slot) so something is always shown even if the
+// requested language is missing from a particular element.
+//
+// Examples:
+//   resolveText(el, 'ha', 'question')   → el.question1  (when language1 === 'ha')
+//   resolveText(el, 'en', 'text')       → el.text2      (when language2 === 'en')
+//   resolveText(el, 'fr', 'question')   → el.question1  (fallback: 'fr' not found)
+//
+// The 'field' parameter must be the base name without a number suffix.
+// Callers pass: 'text', 'question', 'answerPlaceholder', etc.
+
+function resolveText(el, lang, field) {
+  // Scan numbered slots until the language key is absent.
+  for (let i = 1; ; i++) {
+    const langKey = `language${i}`;
+    if (!el[langKey]) break;                      // no more slots — fall through to fallback
+    if (el[langKey] === lang) {
+      return el[`${field}${i}`] || '';            // found: return value (empty string if blank)
+    }
+  }
+  // Fallback: return slot 1, or the unnumbered field for legacy single-lang elements.
+  return el[`${field}1`] || el[field] || '';
+}
+
+
 // ── HEADING ───────────────────────────────────────────────────────────────────
 
 function renderHeading(ctx) {
-  const { el, noPad } = ctx;
+  const { el, noPad, activeLang } = ctx;
+
+  // Headings use the 'text' field. resolveText handles both multilingual
+  // (text1/text2) and legacy single-language (text) elements gracefully.
+  const text = resolveText(el, activeLang, 'text');
 
   if (el.subtype === 'reflection') {
     return `
       <div class="reflection-header"${noPad}>
-        <h3>${el.text}</h3>
+        <h3>${text}</h3>
       </div>`;
   }
 
@@ -62,12 +100,12 @@ function renderHeading(ctx) {
       <div class="section-break">
         <div class="section-break-line"></div>
       </div>
-      <h2 class="section-header"${noPad}>${el.text}</h2>`;
+      <h2 class="section-header"${noPad}>${text}</h2>`;
   }
 
   if (el.subtype === 'subsection') {
     return `
-      <h3 class="subsection-header"${noPad}>${el.text}</h3>`;
+      <h3 class="subsection-header"${noPad}>${text}</h3>`;
   }
 
   return '';
@@ -83,9 +121,12 @@ function renderHeading(ctx) {
 // TTS onclick selector will break and must be updated here to match.
 
 function renderText(ctx) {
-  const { el, noPad } = ctx;
+  const { el, noPad, activeLang } = ctx;
 
-  const html        = el.format === 'HTML' ? el.text : renderParas(el.text);
+  // resolveText returns the raw text for the active language.
+  // Format conversion (HTML passthrough vs. paragraph wrapping) is applied below.
+  const rawText     = resolveText(el, activeLang, 'text');
+  const html        = el.format === 'HTML' ? rawText : renderParas(rawText);
   const encodedHtml = html.replace(/"/g, '&quot;');
   const speakTitle  = t('renderchapter_speak_btn_title');
 
@@ -134,14 +175,58 @@ function renderText(ctx) {
 // renders no visible HTML of its own; its presence makes linked question refs
 // tappable.
 //
-// Side-effect: writes verseData[el.bibleRef] = { text, netUrl }.
+// verseData is keyed on bibleRef1 (the primary / first-language ref), which
+// must match the linkedPassage field on question elements. linkedPassage should
+// always equal bibleRef1 for a given passage element.
+//
+// Side-effect: writes verseData[el.bibleRef1] = { translations: [...] }
+//
+// Translation slots are collected dynamically: translation1/passageText1/
+// passageUrl1/bibleRef1, translation2/passageText2/passageUrl2/bibleRef2, …
+// continuing until a numbered slot is absent. Slots with an empty passageText
+// are silently skipped so the modal never shows a blank tab.
+//
+// Legacy shape support: if el.bibleRef (unnumbered) is present and el.bibleRef1
+// is absent, the old single-translation shape is stored as a one-entry array
+// so openVerseModal() only needs to handle the new shape.
 
 function renderBiblePassage(ctx) {
   const { el } = ctx;
-  verseData[el.bibleRef] = {
-    text:   el.passageText,
-    netUrl: el.passageUrl,
-  };
+
+  // ── Collect all non-empty translation slots ──────────────────────────────
+  const translations = [];
+
+  for (let i = 1; ; i++) {
+    const labelKey = `translation${i}`;
+    if (!el[labelKey]) break;                         // no more numbered slots
+    const text = el[`passageText${i}`] || '';
+    if (!text) continue;                              // skip empty-text slots silently
+    translations.push({
+      label:  el[labelKey],
+      text,
+      url:    el[`passageUrl${i}`]  || '',
+      ref:    el[`bibleRef${i}`]    || el.bibleRef1 || '',
+    });
+  }
+
+  // ── Legacy single-translation shape (unnumbered fields) ──────────────────
+  // Handles v1 .estudy files that store el.bibleRef / el.passageText / el.passageUrl.
+  if (translations.length === 0 && el.passageText) {
+    translations.push({
+      label: el.translation || 'NET',
+      text:  el.passageText,
+      url:   el.passageUrl  || '',
+      ref:   el.bibleRef    || '',
+    });
+  }
+
+  if (translations.length === 0) return ''; // nothing to register
+
+  // ── Key on bibleRef1 (primary ref), falling back to unnumbered bibleRef ──
+  const key = el.bibleRef1 || el.bibleRef || '';
+  if (!key) return '';
+
+  verseData[key] = { translations };
   return '';
 }
 
@@ -151,7 +236,7 @@ function renderBiblePassage(ctx) {
 // standard subtype (scripture ref, optionally tappable via verseData).
 
 function renderQuestion(ctx) {
-  const { el, ch, noPad, answerRowInfoHtml } = ctx;
+  const { el, ch, noPad, answerRowInfoHtml, activeLang } = ctx;
 
   const isReflection = el.subtype === 'reflection';
   const isHeader     = el.subtype === 'header';
@@ -159,8 +244,18 @@ function renderQuestion(ctx) {
   const val          = localStorage.getItem(key) || '';
   const starred      = isStarred(ch.chapterNumber, el.elementId);
   const cardId       = el.elementId;
-  const placeholder  = el.answerPlaceholder
-    || (isReflection ? t('renderchapter_placeholder_reflection') : t('renderchapter_placeholder_thoughts'));
+
+  // Resolve the question text for the active language.
+  const questionText = resolveText(el, activeLang, 'question');
+
+  // Resolve the answer placeholder. Prefer a language-keyed slot
+  // (answerPlaceholder1/answerPlaceholder2…); fall back to the unnumbered
+  // el.answerPlaceholder for studies that have not yet added language variants,
+  // then to the generic i18n defaults.
+  const placeholder =
+    resolveText(el, activeLang, 'answerPlaceholder') ||
+    el.answerPlaceholder ||
+    (isReflection ? t('renderchapter_placeholder_reflection') : t('renderchapter_placeholder_thoughts'));
 
   const encodedSampleAnswer = el.sampleAnswer ? el.sampleAnswer.replace(/"/g, '&quot;') : '';
   const encodedQuestionHint = el.questionHint ? el.questionHint.replace(/"/g, '&quot;') : '';
@@ -215,7 +310,7 @@ function renderQuestion(ctx) {
           ${starBtn}
         </div>
         <div class="question-body">
-          <div class="question-text">${el.question}${deeperBtn}</div>
+          <div class="question-text">${questionText}${deeperBtn}</div>
         </div>
         ${textarea}
         ${actionRow}
@@ -237,7 +332,7 @@ function renderQuestion(ctx) {
         ${starBtn}
       </div>
       <div class="question-body">
-        <div class="question-text">${el.question}${deeperBtn}</div>
+        <div class="question-text">${questionText}${deeperBtn}</div>
       </div>
       ${textarea}
       ${actionRow}
@@ -248,6 +343,9 @@ function renderQuestion(ctx) {
 // ── IMAGE ─────────────────────────────────────────────────────────────────────
 // imgSrc is pre-resolved by the orchestrator (render-chapter.js) via the async
 // StudyIDB.getImage() call. This function is fully synchronous.
+// Caption and alt text are not language-keyed in the current schema — they are
+// treated as single-language fields. If the schema adds caption1/caption2 in
+// future, resolveText(el, activeLang, 'caption') can replace el.caption here.
 
 function renderImage(ctx) {
   const { el, noPad, imgSrc } = ctx;
@@ -285,6 +383,9 @@ function renderImage(ctx) {
 
 // ── CALLOUT ───────────────────────────────────────────────────────────────────
 // Subtypes: 'general' (gen-callout-card) and 'misunderstanding' (qa-callout-card).
+// Callout fields (eyebrow, term, question) are not currently language-keyed in
+// the schema. If language variants are added in future, resolveText() can be
+// applied to them here using ctx.activeLang.
 
 function renderCallout(ctx) {
   const { el, noPad } = ctx;
