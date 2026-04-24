@@ -1,4 +1,5 @@
 *.apk
+*.aab
 .apk_hash.txt
 *.zip
 *~
