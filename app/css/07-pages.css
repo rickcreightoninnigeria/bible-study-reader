@@ -1587,6 +1587,24 @@
   text-transform: uppercase;
   color: var(--text-faint);
 }
+.study-card-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 5px;
+}
+/* Scale badges down slightly so they sit quietly below the subtitle */
+.study-card-langs .lang-badge {
+  width: 24px;
+  height: 17px;
+  font-size: 9px;          /* UI chrome — stays px */
+}
+/* Flag emoji in the langs row (for languages without a badge) */
+.study-card-langs span {
+  font-size: 15px;         /* emoji — stays px */
+  line-height: 1;
+}
+
 .study-card-chevron {
   color: var(--text-faint);
   font-size: 20px;         /* UI chrome — stays px */

@@ -341,6 +341,41 @@ async function renderLibrary() {
       : `<div class="${fbClass}">${entry.fallback}</div>`;
   }
 
+  // ── Helper: language badge strip HTML ───────────────────────────────────────
+  // Returns a <div class="study-card-langs"> containing one badge per language
+  // for multilingual studies, or '' for single-language studies (hidden).
+  // Reads language1/language2/... from studyMetadata; falls back to `language`
+  // for studies that predate the numbered keys. Uses renderLangBadge() so
+  // badge appearance is identical to the library lang-filter bar.
+  function studyLangBadgesHtml(meta) {
+    if (!meta) return '';
+
+    // Collect numbered languageN keys in order, up to however many exist.
+    const codes = [];
+    let n = 1;
+    while (meta[`language${n}`]) {
+      codes.push(meta[`language${n}`]);
+      n++;
+    }
+
+    // Fall back to the bare `language` key for single-language studies that
+    // don't use numbered keys. Deduplicate in case both forms are present.
+    if (codes.length === 0 && meta.language) {
+      codes.push(meta.language);
+    }
+
+    // Only show the row when there are 2 or more languages.
+    if (codes.length < 2) return '';
+
+    const badges = codes.map(code => {
+      const entry = LANGUAGE_MAP[code];
+      if (!entry) return '';
+      return `<span title="${entry.label}">${renderLangBadge(entry)}</span>`;
+    }).join('');
+
+    return `<div class="study-card-langs">${badges}</div>`;
+  }
+
   // ── TAB: Load ───────────────────────────────────────────────────────────────
   function buildLoadTab() {
     // Recently installed strip (up to 4, auto-generated, no reorder)
@@ -466,6 +501,7 @@ async function renderLibrary() {
         <div class="study-card-text" style="flex:1;">
           <h3>${e.title}</h3>
           ${e.subtitle ? `<div class="study-card-subtitle">${e.subtitle}</div>` : ''}
+          ${studyLangBadgesHtml(e.meta)}
         </div>
         ${reorderHtml}`;
 
@@ -569,6 +605,7 @@ async function renderLibrary() {
         <div class="study-card-text" style="flex:1;">
           <h3>${e.title}</h3>
           ${e.subtitle ? `<div class="study-card-subtitle">${e.subtitle}</div>` : ''}
+          ${studyLangBadgesHtml(e.meta)}
         </div>
         ${reorderHtml}`;
 
@@ -1442,4 +1479,3 @@ function libToggleSection(bodyId, chevId, event) {
   body.classList.toggle('open', !isOpen);
   if (chev) chev.classList.toggle('open', !isOpen);
 }
-
