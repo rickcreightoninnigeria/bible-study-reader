@@ -23,26 +23,32 @@ function ttsShouldShow(plainTextLength) {
   return plainTextLength >= TTS_LONG_THRESHOLD;
 }
 
+// Decodes all named and numeric HTML entities (e.g. &mdash; &rsquo; &#8220;)
+// by delegating to the browser/WebView HTML parser. <textarea> is used rather
+// than <div> because it treats its content as plain text — no child HTML is
+// parsed or executed — making it safe to assign arbitrary HTML strings to
+// .innerHTML without XSS risk.
+function _ttsDecodeEntities(str) {
+  const el = document.createElement('textarea');
+  el.innerHTML = str;
+  return el.value;
+}
+
 function ttsStripHtml(html) {
   if (!html) return '';
 
+  // 1. Decode all HTML entities first (handles &mdash; &rsquo; &hellip; etc.)
+  html = _ttsDecodeEntities(html);
+
   return html
-    // 1. Remove <sup> tags and everything inside them (verse numbers)
+    // 2. Remove <sup> tags and everything inside them (verse numbers)
     .replace(/<sup\b[^>]*>([\s\S]*?)<\/sup>/gi, '')
 
-    // 2. Replace block tags (div, p, br, li) with a space to prevent words clumping
+    // 3. Replace block tags (div, p, br, li) with a space to prevent words clumping
     .replace(/<(?:p|div|br|li|h[1-6])[^>]*>/gi, ' ')
 
-    // 3. Strip all remaining HTML tags
+    // 4. Strip all remaining HTML tags
     .replace(/<[^>]+>/g, '')
-
-    // 4. Decode common HTML entities (crucial for TTS)
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
 
     // 5. Clean up whitespace: convert tabs/newlines/multiple spaces into one single space
     .replace(/\s+/g, ' ')
