@@ -51,15 +51,18 @@
 // activeLang – the currently selected language code.
 
 function buildLangBar(langs, activeLang) {
-  const bar = document.getElementById('chapterLangBar');
+  const bar  = document.getElementById('chapterLangBar');
+  const page = bar && bar.closest('.chapter-page');
   if (!bar) return;
 
   if (langs.length < 2) {
     bar.style.display = 'none';
+    if (page) page.classList.remove('chapter-page--with-lang-bar');
     return;
   }
 
   bar.style.display = 'flex';
+  if (page) page.classList.add('chapter-page--with-lang-bar');
 
   // Determine which flag emojis appear more than once among the present langs.
   // When two or more present languages share a flag, use their badges instead
@@ -78,7 +81,7 @@ function buildLangBar(langs, activeLang) {
     const display    = (flagShared && entry?.badge)
       ? renderLangBadge(entry)   // badge: distinguishes same-flag languages
       : (entry?.flag || '🌐');   // flag: unambiguous when alone or no badge
-    return `<button class="chapter-lang-btn${activeLang === code ? ' active' : ''}"
+    return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
                      onclick="setStudyLang('${code}')"
                      aria-label="${label}"
                      title="${label}">${display}</button>`;

@@ -151,6 +151,43 @@
   text-decoration: underline;
 }
 
+/* ── Translation tabs ───────────────────────────────────────────────────── */
+/* Pill-strip of translation buttons (e.g. 1979 · CLV · SRK · NET) that      */
+/* appears between the title bar and passage text when multiple translations  */
+/* are available. One button per translation; .active marks the visible one.  */
+/* Class names as rendered by openVerseModal() in modals.js:                  */
+/*   container → .verse-trans-tab-row   button → .verse-trans-btn             */
+.verse-trans-tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.verse-trans-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-faint);
+  font-family: var(--font-stack-mono);
+  font-size: 10px;         /* UI chrome — stays px */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  line-height: 1.6;
+}
+.verse-trans-btn:hover {
+  background: var(--surface-mid);
+  border-color: var(--text-faint);
+  color: var(--text);
+}
+.verse-trans-btn.active {
+  background: var(--emphasis);
+  border-color: var(--emphasis);
+  color: var(--surface);
+}
+
 
 /* ── 03. QA / GEN CALLOUT ───────────────────────────────────────────────── */
 /* Inline card rendered within chapter content to flag a common
@@ -797,6 +834,20 @@ body.dark-mode .verse-modal-text {
 }
 body.dark-mode .verse-modal-ref {
   color: var(--emphasis-light);
+}
+body.dark-mode .verse-trans-btn {
+  border-color: var(--dm-border);
+  color: var(--dm-text-faint, rgba(245,240,232,0.45));
+}
+body.dark-mode .verse-trans-btn:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.25);
+  color: var(--dm-text);
+}
+body.dark-mode .verse-trans-btn.active {
+  background: var(--emphasis);
+  border-color: var(--emphasis);
+  color: var(--surface);
 }
 
 /* ── QA / Gen callout ── */

@@ -200,8 +200,12 @@
 .save-btn span   { font-size: 14px; }   /* emoji — stays px */
 
 
-/* ── 05. CHAPTER NAV ────────────────────────────────────────────────────── */
-/* Prev / Next buttons at the foot of each chapter. */
+/* ── 05. CHAPTER NAV + LANGUAGE BAR ────────────────────────────────────── */
+/* Prev / Next buttons at the foot of each chapter.
+   Language bar: sticky strip of flag/badge buttons below the top nav,
+   shown only when a chapter contains content in more than one language.
+   Matches the visual style and positioning of .lib-sticky-header in
+   07-pages.css — same background, same z-index, same top offset. */
 
 .chapter-nav {
   display: flex;
@@ -233,8 +237,21 @@
 }
 .chapter-nav-btn.secondary:hover { background: var(--surface-mid); }
 
+/* .chapter-lang-bar is the fixed lang switcher for chapters.
+   position:fixed mirrors the top nav and save bar — all persistent UI chrome
+   in this app is fixed rather than sticky, since window is the scroll root
+   and the top nav itself is fixed. top: 52px + safe-area-inset-top places it
+   flush below the fixed nav. z-index:49 keeps it below modals (50+).
+   Buttons use .lib-lang-btn directly (defined in 07-pages.css) so no
+   separate .chapter-lang-btn ruleset is needed. */
 .chapter-lang-bar {
-  display: flex;
+  position: fixed;
+  top: calc(52px + env(safe-area-inset-top));  /* flush below the fixed top nav */
+  left: 0;
+  right: 0;
+  z-index: 49;                                 /* below modals (z≥50) but above content */
+  background: #1c1710;                         /* = var(--text) hardcoded as fallback */
+  display: none;                               /* hidden by default; JS sets display:flex */
   align-items: center;
   gap: 4px;
   padding: 5px 8px;
@@ -243,6 +260,16 @@
   scrollbar-width: none;
 }
 .chapter-lang-bar::-webkit-scrollbar { display: none; }
+
+/* When the lang bar is visible, the chapter content needs to clear it.
+   The bar height is approximately 38px (padding 5px top + 5px bottom +
+   18px emoji + border). A padding-top on .chapter-page pushes the
+   chapter header below the fixed bar.
+   JS sets chapter-page--with-lang-bar on the wrapper when the bar shows,
+   so single-language chapters (bar hidden) are unaffected. */
+.chapter-page--with-lang-bar {
+  padding-top: 38px;
+}
 
 
 
@@ -364,6 +391,16 @@ body.dark-mode .chapter-nav-btn.secondary {
 }
 body.dark-mode .chapter-nav-btn.secondary:hover {
   background: var(--dm-raised);
+}
+
+/* ── Chapter language bar ──
+   In dark mode the top nav uses --dm-base, so the lang bar matches that
+   rather than --text. The lib-lang-btn dark-mode tints already apply via
+   the .lib-lang-btn rules in 07-pages.css dark-mode section, so only the
+   bar background and border need overriding here. */
+body.dark-mode .chapter-lang-bar {
+  background: #0f0c09;                         /* = var(--dm-base) hardcoded as fallback */
+  border-bottom-color: var(--dm-border);
 }
 
 /* ── Page close button ── */
