@@ -188,3 +188,71 @@ Once finished, output the updated json data for this/these chapter(s).
 NB Do not allow smart/curly quotes to be changed for straight quotes. If you are adding text make sure you use smart/curly quotes, including around quotations and in contractions.
 
 ===========================================================
+
+Attached is a JSON fragment. Some of its elementId entries have fields labeled "sampleAnswer1", "questionHint1", "text1", "question1", "sampleAnswer2", "questionHint2", "text2", "question2", "sampleAnswer3", "questionHint3", "text3", "question3", 
+
+"sampleAnswer3" and "questionHint3" are populated with English language text strings, while "sampleAnswer1", "questionHint1", "sampleAnswer2", and "questionHint2" are all empty.
+Also chapterTitle1 and chapterTitle2 are empty, but chapterTitle3 is populated with English language text strings.
+I want you to undertake a translation task as follows:
+
+Populate "chapterTitle1" with a Hausa translation of "chapterTitle3"
+Populate "text1" with a Hausa translation of "text3"
+Populate "question1" with a Hausa translation of "question3"
+Populate "sampleAnswer1" with a Hausa translation of "sampleAnswer3"
+Populate "questionHint1" with a Hausa translation of "questionHint3"
+Populate "text2" with a Fulfulde/Fulani translation of "text3"
+Populate "question2" with a Fulfulde/Fulani translation of "question3"
+Populate "chapterTitle2" with a Fulfulde/Fulani translation of "chapterTitle3"
+Populate "sampleAnswer2" with a Fulfulde/Fulani translation of "sampleAnswer3"
+Populate "questionHint2" with a Fulfulde/Fulani translation of "questionHint3"
+Also do the following checks:
+
+Make sure that the translated sampleAnswer fields make sense as answers to the questions in the same language, based on the bible passage in the same language (if it is present; if it is not present, you can skip this step).
+Make sure that the translated questionHint fields make sense as Socratic-style hints to help users who are stuck to answer the questions in the same language, based on the bible passage in the same language (if it is present; if it is not present, you can skip this step).
+Some extra instructions:
+If there are empty question1 fields please populate those by translating the English question available in question3 into Hausa.
+Follow the existing Hausa written register that is available in other fields (standard Northern Nigerian)
+Use the existing Fulfulde written register that is available in other fields (Adamawa Fulfulde dialect). Follow the orthography of the 1979 translation.
+Follow existing conventions for terms like "Christ," "Holy Spirit," "righteousness," "repentance," etc.
+Preserve HTML if it already exists. Otherwise, use plain text.
+If you notice any errors in the file, flag them for later review, but do not try to fix them.
+A fluent speaker review is already scheduled, so what you do will be reviewed before it is put into use.
+
+Notes on conventions from the existing text:
+Hausa: "Ruhu Mai Tsarki" (Holy Spirit), "Almasihu" (Christ), "Yesu" (Jesus), "Tirniti" (Trinity), "gaskata" (believe/faith), "ikkilisiya" (church), "Uba" (Father), "addu'a" (prayer)
+Fulfulde: "Ruuhu Ceniiɗo" (Holy Spirit), "Almasiihu" (Christ), "Yeesu" (Jesus), "Tati-In-Go'o" (Trinity), "goonɗinɓe" (believers), "dewal/ekklisiya" (church), "Nyaako Mo Dow" (Father), "do'aare" (prayer), "yonki" (life), "neɗɗo" (person)
+
+When you are done,  output the updated JSON for download.
+
+Before you start, ask any questions you need to for clarification, and make any suggestions. Let me review these before you begin.
+
+===========================================================
+
+Attached is a JSON fragment. Some of its elementId entries have fields labeled "sampleAnswer1", "questionHint1", "text1", "question1", "sampleAnswer2", "questionHint2", "text2", "question2", "sampleAnswer3", "questionHint3", "text3", "question3", and others
+
+"sampleAnswer3" and "questionHint3" are populated with English language text strings, while "sampleAnswer1", "questionHint1", "sampleAnswer2", and "questionHint2" are all empty.
+Also chapterTitle1 and chapterTitle2 are empty, but chapterTitle3 is populated with English language text strings.
+I want you to undertake a translation task as follows:
+
+Populate any empty field ending "...1" with a Hausa translation of equivalent "...3" (for example, populate "text1" with a Hausa translation of "text3")
+If "...1" is not empty, then skip
+IF "...3" is empty, then skip
+Skip all "...2" fields (e.g. "text2, "question2","chapterTitle2", ... etc.)
+Skip entirely any fields called bibleRef1, passageText1, passageURL1
+
+Make sure that the translated sampleAnswer fields make sense as answers to the questions in the same language, based on the bible passage in the same language (if it is present; if it is not present, you can skip this step).
+Make sure that the translated questionHint fields make sense as Socratic-style hints to help users who are stuck to answer the questions in the same language, based on the bible passage in the same language (if it is present; if it is not present, you can skip this step).
+Some extra instructions:
+Follow the existing Hausa written register that is available in other fields (standard Northern Nigerian)
+Follow existing conventions for terms like "Christ," "Holy Spirit," "righteousness," "repentance," etc.
+Preserve HTML if it already exists. Otherwise, use plain text.
+If you notice any errors in the file, flag them for later review, but do not try to fix them.
+A fluent speaker review is already scheduled, so what you do will be reviewed before it is put into use.
+
+Notes on conventions from the existing text:
+Hausa: "Ruhu Mai Tsarki" (Holy Spirit), "Almasihu" (Christ), "Yesu" (Jesus), "Tirniti" (Trinity), "gaskata" (believe/faith), "ikkilisiya" (church), "Uba" (Father), "addu'a" (prayer)
+
+When you are done,  output the updated JSON for download.
+
+Before you start, ask any questions you need to for clarification, and make any suggestions. Let me review these before you begin.
+

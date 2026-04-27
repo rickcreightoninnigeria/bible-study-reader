@@ -16,6 +16,12 @@
 //
 // Globals used (must be loaded before this file):
 //   t()                  – i18n.js
+//   LANGUAGE_MAP         – i18n.js
+//   SUPPORTED_LANGUAGES  – i18n.js
+//   renderLangBadge      – i18n.js
+//   resolveLanguage      – i18n.js
+//   applyLanguageToDom   – i18n.js
+//   loadLocale           – app-init.js
 //   ICONS                – icons.js
 //   appSettings          – settings.js
 //   chapters             – main.js STATE section
@@ -30,8 +36,28 @@
 //   shareAnswers         – share-print.js
 //   goToChapter          – main.js
 //   renderChapter        – render-chapter.js
-//   LANGUAGE_MAP         – render-pages.js
-//   renderLangBadge      – render-pages.js
+
+
+// ── SESSION UI LANGUAGE OVERRIDE ──────────────────────────────────────────────
+// When the user switches to a UI-supported study language via the chapter lang
+// bar, we temporarily override the UI language for the session without touching
+// the user's saved preference in localStorage.
+//
+// window._sessionUiLangOverride  – the lang code currently overriding the UI,
+//                                  or null when no override is active.
+//
+// clearStudyUiLangOverride() is called at the top of every non-chapter page
+// renderer (renderHowToUse, renderSettings, renderLeadersNotes, renderAbout,
+// and openLibrary) so the user's real preference is restored the moment they
+// leave the study.
+
+async function clearStudyUiLangOverride() {
+  if (!window._sessionUiLangOverride) return;
+  window._sessionUiLangOverride = null;
+  const realLang = resolveLanguage(); // reads the user's saved localStorage preference
+  applyLanguageToDom(realLang);
+  await loadLocale(realLang);
+}
 
 
 // ── LANGUAGE BAR ──────────────────────────────────────────────────────────────
@@ -92,16 +118,37 @@ function buildLangBar(langs, activeLang) {
 
 
 // ── SET STUDY LANGUAGE ────────────────────────────────────────────────────────
-// Called by the chapter lang bar buttons. Updates the session preference and
-// re-renders the current chapter at the current scroll position so all
-// language-keyed text updates in one pass.
+// Called by the chapter lang bar buttons. Updates the session content-language
+// preference and, if the chosen language has UI support, also updates the
+// active UI locale for the session (without touching the user's saved
+// preference in localStorage).
 //
-// window._activeStudyLang is session-only (not persisted to localStorage).
-// On a fresh load it will be undefined, and the orchestrator defaults to the
-// first language found in the chapter data.
+// UI language behaviour:
+//   • If the chosen language is in SUPPORTED_LANGUAGES, load its locale and
+//     set it as the active UI language for this session.
+//   • If not, leave the UI locale unchanged — the user sees the study content
+//     in the new language but all UI chrome stays in the last supported language.
+//
+// window._activeStudyLang   – session content language (persists across chapters)
+// window._sessionUiLangOverride – session UI language override (null = inactive)
+//
+// A single renderChapter() call handles the re-render after any locale swap,
+// avoiding a double render.
 
-function setStudyLang(code) {
+async function setStudyLang(code) {
   window._activeStudyLang = code;
+
+  if (SUPPORTED_LANGUAGES.includes(code)) {
+    // This language has UI support — update the session UI locale.
+    window._sessionUiLangOverride = code;
+    applyLanguageToDom(code);
+    await loadLocale(code);
+  }
+  // If not UI-supported, _sessionUiLangOverride retains its previous value
+  // (the last supported language the user selected, or null if they started
+  // on an unsupported language), so the UI stays in whichever supported
+  // language was last active.
+
   renderChapter(currentChapter, window.scrollY);
 }
 

@@ -662,5 +662,22 @@
   "___section: voice.js"                                :"🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴",
   "voice_error_mic_denied"                              :"Microphone access denied",
   "voice_error_no_api"                                  :"Use the 🎤 on your keyboard",
-  "main_fallback_untitled" : "Untitled Study"
+  "main_fallback_untitled" : "Untitled Study",
+  "___subsection: resetAllData":        "── resetAllData() ───────────────────────────────────────",
+  "settings_resetall_title":            "Reset all data?",
+  "settings_resetall_body":             "This will permanently erase <strong>everything</strong>: all downloaded studies, all answers and notes, all progress, all settings, and your reading position.<br><br>This cannot be undone.",
+  "settings_resetall_confirm":          "Continue",
+  "settings_resetall_cancel":           "Cancel",
+  "settings_resetall_confirm2_title":   "Are you absolutely sure?",
+  "settings_resetall_confirm2_body":    "Type <strong>reset</strong> to confirm. Every study, answer, and setting will be permanently deleted.",
+  "settings_resetall_confirm2_placeholder": "reset",
+  "settings_resetall_confirm2_keyword": "reset",
+  "settings_resetall_confirm2_btn":     "Erase everything",
+  "settings_resetall_confirm2_mismatch": "Please type \u2018reset\u2019 to confirm.",
+
+  "renderpages_settings_nuclear_warning_label": "Danger zone",
+  "renderpages_settings_nuclear_warning_text":  "The following action is irreversible. It will erase all downloaded studies, answers, notes, progress, and settings from this device.",
+  "renderpages_settings_nuclear_desc":          "Use this only if you want to start completely fresh, as if the app was just installed.",
+  "renderpages_settings_nuclear_btn":           "Reset all data"
+
 }

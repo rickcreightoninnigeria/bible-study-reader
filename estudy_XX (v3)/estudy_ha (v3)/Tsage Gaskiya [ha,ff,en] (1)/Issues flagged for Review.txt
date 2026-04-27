@@ -1,0 +1,54 @@
+Ch 1 Issues flagged:
+
+ch01-el15 (Isaiah 6:3): The Hausa passage text in both the 1979 and SRK fields appears incomplete — it contains only the framing narrative ("one called to another"), not the actual "Holy, holy, holy" declaration. The NET text carries the full verse. Worth checking the source data.
+ch01-el19 (Psalm 90:2,4): Check if verses are complete.
+
+
+Ch 2 Issues flagged:
+ch02-el08 (Matthew 1:21, 1979 text): The passage text begins with # Luk 1.31 — a raw cross-reference marker that appears unintentionally in the display text, similar to the issue noted in ch01-el19 from Chapter 1. Worth checking.
+ch02-el30 (callout element): This element has no text1/text2 localization fields — only English question and answer fields. If this callout is intended to display in Hausa and Fulfulde, those fields appear to be missing from the data structure entirely. Worth flagging for a content decision.
+ch02-el22 (Mark 2:5-12, 1979 text): The closing quotation marks in the passage appear inconsistent — some speeches close with " and others don't. This may be a source text issue rather than a data entry error, but worth checking against the original.
+
+
+Ch 3 Errors flagged for reviewer attention:
+
+ch03-el08 (Yahaya 7:37-39), passageText3, SRK translation: The verse numbering begins with <sup>30</sup> but should be <sup>37</sup>. This appears to be a copy-paste error from another passage.
+ch03-el08, passageText4 (FUV, Fulfulde): Opening quotation mark uses a straight " rather than the typographic " used elsewhere in the same passage. Minor orthographic inconsistency worth checking.
+ch03-el38 (callout, "Common Misunderstanding"): This element has no text1/text2 parallel translations for the question and answer fields. It is unclear whether these are intentionally English-only or whether Hausa and Fulfulde versions are pending — flagged for content team review.
+
+
+Ch 4 Flags for fluent-speaker review:
+
+ch04-el03/04 passageText2 and passageText4 — Several Bible passages have empty passageText2 (CLV) and passageText4 (FUV) fields. These are empty in the original and were left as-is — they may need text added from the relevant translations.
+
+
+Ch 5 Errors flagged for review:
+
+ch05-el10 (Isaiah 53:6) — Both Hausa passages (1979 and SRK) are truncated, containing only the first clause of the verse. The second half ("each of us had turned his own way. The Lord let the guilt of all of us fall on him") is missing. The Fulfulde passageText4 is also empty.
+ch05-el12 (Psalm 106:43) — The Hausa 1979 passageText1 is truncated to only the first clause; the second half about rebellious attitude and degradation is absent. The Fulfulde passageText4 is also empty.
+ch05-el35 (Romans 7:21-25) — passageUrl1 incorrectly links to ROM.1 instead of ROM.7: https://www.bible.com/bible/71/ROM.1.HAU
+ch05-el22 (callout element) — The question and answer fields exist only in English with no question1/question2 or language1/language2 equivalents. This may be intentional for callout elements but warrants confirmation.
+
+CH 6 Flags for reviewer attention:
+
+ch06-el40 — Hausa text1: The quote renders "Ni ne hanya, ni ne gaskiya, ni ne kuma rai. Ba mai zuwa wurin Uba sai ta wurina" but the framing says 'Yesu ya ce masa' — the pronoun "masa" (to him) is slightly ambiguous here without a referent. May need adjustment depending on wider context.
+ch06-el31 — Hausa text1: "Ba mutuwa ta al'ada ba ce" is a brief bridge sentence that seems incomplete compared to the Fulfulde and English versions, which are more developed. Worth checking whether a fuller Hausa version was intended.
+ch06-el35 — Hausa text1: "Ya Bulus ya yi bayani akan Yesu?" uses an interrogative section heading, which is consistent with other headings, but the literal form "Ya Bulus ya yi bayani" could also read as a past-tense statement ("How Paul described Jesus") rather than a question. A reviewer may want to verify this is the intended register.
+General — Fulfulde passageText2 fields: All Bible passage elements have empty passageText2 (CLV translation). This appears to be a systematic gap in the source data, not introduced by this work — flagged for the content team to verify whether CLV Hausa text needs to be added.
+
+
+Ch 7 Errors flagged for reviewer attention:
+
+el03 (1 Korantiyawa 15:14, 17-19), passageText1 (1979 Hausa): Verse 17 appears to contain a reference string (Luk 24.34 ; Mat 28.16, 17 ; Mar 16.14 ; Luk 24.36 ; Yah 20.19) inserted inline where the verse text should be, and the actual text of verse 17 is missing entirely. This looks like a copy-paste error where cross-references were substituted for the passage text. Verse 18 follows directly after these references without verse 17's content appearing.
+el12 (1 Korantiyawa 15:5-8), passageText1 (1979 Hausa): The passage begins mid-sentence (ya kuma bayyana ga Kefas…) without an opening verse text for the context leading into verse 5. This may be intentional if the passage is excerpted from a larger block, but the abrupt opening with a lowercase ya is worth checking against the intended extract.
+el38, text1 (Hausa bridge text): The closing reference reads "1 Korantiyawa 15:17, 20a" — the chapter and verse are correct, but the quoted Hausa text says an ta da Almasihu daga matattu while the SRK translation in el03 uses a tashe Kiristi. The inconsistency in the name used (Almasihu vs. Kiristi) between the bridge text and the passage translations is worth reviewing for consistency across the chapter.
+el31 (Ibraniyawa 7:25b): The bibleRef fields use "7:25b" (indicating a half-verse) but the passageUrl fields and the linkedPassage field in el32 refer to "Hebrews 7:25" without the "b" qualifier. This inconsistency is minor but worth standardising.
+
+
+Ch 8 Flags for fluent-speaker review:
+
+ch08-el12 passageText1 and passageText3 — Both contain curly/smart quotation marks (e.g. "Lokaci ya yi…") that were present in the source. These were preserved as-is. If the rendering environment expects escaped quotes or plain ASCII, these may need attention.
+ch08-el15 passageText4 — The FUV passage text for Ezekiel 18:30-31a is empty in the source, unlike most other elements which have FUV text. Since the translation exists at the linked URL, this may be an omission worth filling in from the FUV Bible.
+ch08-el37 text1 — The bridge text cites "Ayyukan Mazanni 2:38" but the heading element ch08-el17 uses "Ayyukan Manzanni" (with an 'n'). This inconsistency in the original should be checked — Manzanni is the standard Hausa form.
+ch08-el09 questionHint2 (Fulfulde) — The word mawningo (boasting/pride) follows the pattern of mawnina hoore muuɗum used in the FUV passage text (v.9); reviewers may want to confirm this is the preferred term over alternatives.
+

@@ -1,0 +1,48 @@
+Ch 1 Flags for reviewer:
+
+ch01-el31 question3 ("How else?") — This is a very short follow-on question that only makes sense in direct sequence after ch01-el29. The translation "Ta yaya kuma?" preserves that, but the reviewer may want to confirm this reads naturally in the app's flow.
+ch01-el13 / ch01-el17 — These image elements have "provenance": "made by author" but no "src" or "base64" field (unlike ch01-el21–27 which have empty "src" and "base64"). This inconsistency in the source JSON may be worth flagging to the content team.
+ch01-el33 — The "answerPlaceholder" (unnumbered) field says "Describe your growth graph here…" — this seems mismatched to a question that asks the user to draw a sketch, suggesting a drawing/canvas input may be intended but is represented as freeText. Not a translation issue, but worth noting.
+
+
+Ch 2 Suggestions
+
+Terminology for "grace" — A common Hausa rendering is "alheri" (God's undeserved kindness/favour). I'll use this unless you prefer another convention.
+"discipleship" — Could be rendered "almajiranci" (following as a disciple). Do you want me to use that, or a more descriptive phrase?
+"reconciled/reconciliation" — I'd suggest "sulhu / an yi sulhu da Allah". Does that fit your register?
+One potential flag — In ch02-el21, passageText5 for Titus 2:12 opens with <i>It trains us</i> — this italic lead-in appears to be a bridging note inserted into the passage element to connect it to the previous verse context. It reads a little awkwardly as a standalone passage. Worth flagging for the fluent reviewer to check. 
+
+
+
+Ch 3 Flags for review:
+
+ch03-el27 — structural inconsistency: This element has "answerPlaceholder" (no numeric suffix) instead of "answerPlaceholder1/2/3" like all other elements. The question1 field has been translated as instructed, but the unnumbered answerPlaceholder was left untouched per the rules. Worth flagging for the developer.
+Coined phrase — "Shirin Girma a cikin Bishara" (Gospel-Growth Plan, ch03-el25): This is a coined phrase with no established convention. The reviewer should confirm whether this rendering is natural or suggest an alternative.
+"fitsari" for "gossip" (ch03-el24): This is the standard Hausa term but regional variants exist — reviewer should confirm it fits the target audience.
+"fasikanci" for "sexual immorality": Standard term in Northern Nigerian Hausa Christian writing, but the reviewer may prefer a more specific or contextually appropriate rendering.
+"dogon sa'a a kafofin watsa labarai" for "doom-scrolling": This is a functional paraphrase rather than a direct equivalent, since no established Hausa term exists for this concept. The reviewer may wish to refine it.
+
+
+Ch 4 Suggestions / Flags:
+
+Potential error to flag: Element ch04-el12 asks about "hints of hope" but links to Genesis 3:21 only, while the actual answer also draws on Genesis 3:15 (which is a separate element ch04-el14). The linkedPassage for ch04-el12 may be intentionally narrow, but it seems like the sample answer goes slightly beyond its linked passage. Worth flagging for review.
+scale3 labels in the Likert element — should I translate the scale labels ("Strongly Disagree" etc.) into scale1? They follow the ...1/...3 pattern.
+statements3 in the Likert element — same question: should I populate statements1 with Hausa translations of statements3?
+The sampleAnswer3 for ch04-el12 references animal skin as hinting at substitutionary atonement — this is a theologically loaded interpretation. I'll translate it faithfully, but flagging it in case the editorial team wants to moderate the tone.
+
+
+Ch 5 Suggestions:
+
+ch05-el15 (Romans 1:21b) — passageText5 has a structural HTML issue: the <i> tag opens before the verse content but the <sup>21</sup> tag appears mid-sentence inside it, partially after the closing </i>. The verse reference labelled "21b" also appears to quote material that begins earlier than verse 21b. Worth checking against the intended passage boundaries.
+ch05-el32 / ch05-el42 (Titus 3:3) — The passage appears as "Titus 3:3b" in el32 and "Titus 3:3a" in el42, i.e. the second half before the first half. If this sequencing is intentional for pedagogical reasons (effects on others before effects on self), it's fine — but worth a conscious confirmation.
+
+
+Ch 6 
+
+
+
+Ch 7 Flags for reviewer:
+
+ch07-el08 / ch07-el10 (Luke 15:28a / 28b): As noted before, these two elements split the same half-verse and the passageText5 overlaps — with the second element repeating the first element's text in italics as context. This is structurally unusual and could confuse readers or render oddly. Worth checking against the intended app display behaviour.
+ch07-el01 (Augustine quote): The text1 field was left empty intentionally — the quote itself (text3) is HTML and contains a named non-biblical attribution. A reviewer should decide whether to translate the Augustine quote into Hausa, leave it in English, or transliterate it, as this was ambiguous. I left it blank rather than guess.
+Terminology note for reviewer: I used lalle (henna/scarlet dye) for "scarlet" in Isaiah 1:18, as this is the most culturally resonant equivalent in Hausa. A reviewer may prefer a more literal rendering. Similarly, furuci for "confess" — standard but worth confirming against the preferred Hausa Bible version in use.

@@ -48,6 +48,7 @@
 //
 // Dependencies (globals — must be loaded before this file):
 //   t()                              – i18n.js
+//   LANGUAGE_MAP                     – i18n.js
 //   ICONS                            – icons.js
 //   appSettings                      – settings.js
 //   chapters, currentChapter,
@@ -66,7 +67,6 @@
 //   window.activeStudyId,
 //   window.titlePageData             – state.js
 //   buildLangBar, setStudyLang       – render-chapter-ui.js
-//   LANGUAGE_MAP                     – render-pages.js
 
 
 // ── DETECT AVAILABLE LANGUAGES ────────────────────────────────────────────────

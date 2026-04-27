@@ -253,6 +253,55 @@ function resetToDefaults() {
   });
 }
 
+async function resetAllData() {
+  // Two-step confirmation — the second prompt requires typing to proceed.
+  const step1 = await Swal.fire({
+    title:             t('settings_resetall_title'),
+    html:              t('settings_resetall_body'),
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: t('settings_resetall_confirm'),
+    cancelButtonText:  t('settings_resetall_cancel'),
+    reverseButtons: true,
+  });
+  if (!step1.isConfirmed) return;
+
+  const step2 = await Swal.fire({
+    title:             t('settings_resetall_confirm2_title'),
+    html:              t('settings_resetall_confirm2_body'),
+    input: 'text',
+    inputPlaceholder:  t('settings_resetall_confirm2_placeholder'),
+    inputAttributes: { autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off' },
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: t('settings_resetall_confirm2_btn'),
+    cancelButtonText:  t('settings_resetall_cancel'),
+    reverseButtons: true,
+    preConfirm: (val) => {
+      if (val.trim().toLowerCase() !== t('settings_resetall_confirm2_keyword').toLowerCase()) {
+        Swal.showValidationMessage(t('settings_resetall_confirm2_mismatch'));
+        return false;
+      }
+      return true;
+    },
+  });
+  if (!step2.isConfirmed) return;
+
+  // 1. Wipe all localStorage
+  localStorage.clear();
+
+  // 2. Wipe all IndexedDB stores
+  try {
+    await StudyIDB.clearAll();
+  } catch (e) {
+    // IDB unavailable or already empty — not fatal, continue
+    console.warn('resetAllData: IDB clear failed', e);
+  }
+
+  // 3. Reload the app fresh — no state to restore
+  window.location.reload();
+}
+
 // Returns the CSS min-height string for answer textareas based on
 // the answerFieldSize setting (small/medium/large).
 function getAnswerFieldMinHeight() {

@@ -119,13 +119,15 @@ async function activateStudy(id) {
     closeNonChapterPage();
 }
 
-function openLibrary() {
+async function openLibrary() {
   window.libLangFilter = 'all';
   closeMenu();
   _resetNonChapterPageState();
   isNonChapterPage = true;
   window.activeTabPage = 'library';
   suspendStudyTheme();
+  document.getElementById('mainContent').innerHTML = '';
+  await clearStudyUiLangOverride();
   const libBtn = document.getElementById('navLibBtn');
   if (libBtn) { libBtn.innerHTML = ICONS.close; libBtn.onclick = () => closeNonChapterPage(); }
   const saveBtn = document.getElementById('saveBtn');
@@ -173,16 +175,17 @@ async function deleteStudy(id, title) {
     registry = registry.filter(item => item !== id);
     localStorage.setItem('study_registry', JSON.stringify(registry));
 
-    // 2. Remove the study content and any stored images from IDB
+    // 2. Remove the study content and all stored images from IDB.
+    // removeImagesByPrefix catches both the fixed metadata images
+    // (cover, publisher, author) and any inline chapter images
+    // ({id}_{elementId}) that are not individually tracked.
     try {
-    	await StudyIDB.remove(`study_content_${id}`);
-  	   await StudyIDB.removeImage(`${id}_cover`);
-  	   await StudyIDB.removeImage(`${id}_publisher`);
-  	   await StudyIDB.removeImage(`${id}_author`);
-  	 } catch (err) {
-  	   if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
-  	   throw err;
-  	 }
+      await StudyIDB.remove(`study_content_${id}`);
+      await StudyIDB.removeImagesByPrefix(`${id}_`);
+    } catch (err) {
+      if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+      throw err;
+    }
 
     // 3. Remove from all library history lists
     removeStudyFromHistory(id);
@@ -623,7 +626,8 @@ async function loadAnyFile(file) {
 // Called from app-init.js before the startup routing decision, so studies are
 // present in the registry by the time the library is first rendered.
 async function installDefaultStudiesIfNeeded() {
-  if (localStorage.getItem('default_studies_installed')) return;
+  const currentVersion = window.appAboutData?.appVersion || '0';
+  if (localStorage.getItem('default_studies_installed') === currentVersion) return;
 
   try {
     // Use XHR instead of fetch — fetch('file://...') is blocked in Android WebView.
@@ -656,21 +660,20 @@ async function installDefaultStudiesIfNeeded() {
       return;
     }
 
-    // Install each .estudy silently using the existing per-file loader.
-    // loadStudyFromFile() normally calls applyStudyData() and navigates — we
-    // do NOT want that here.  We use _installStudyFromZipEntry() instead, which
-    // only persists to IDB and the registry without touching the UI.
+    // Install each .estudy silently. Extract as ArrayBuffer directly from the
+    // outer zip and pass it straight to _installStudyFileQuietly — bypassing
+    // the File/Blob constructor round-trip that corrupts binary data in some
+    // Android WebViews.
     for (const entry of innerEstudyFiles) {
         try {
-            const blob = await entry.async('blob');
-            const innerFile = new File([blob], entry.name, { type: 'application/octet-stream' });
-            await _installStudyFileQuietly(innerFile);
+            const arrayBuf = await entry.async('arraybuffer');
+            await _installStudyFileQuietly(arrayBuf, entry.name);
         } catch (entryErr) {
             console.error('[defaultStudies] Failed to install', entry.name, entryErr);
         }
     }
 
-    localStorage.setItem('default_studies_installed', 'true');
+    localStorage.setItem('default_studies_installed', currentVersion);
 
   } catch (err) {
     console.error('[defaultStudies] installDefaultStudiesIfNeeded failed:', err);
@@ -678,7 +681,7 @@ async function installDefaultStudiesIfNeeded() {
     // Do NOT set the flag — allow a retry on next launch in case it was transient.
     // If the zip simply doesn't exist in a dev build, this will toast every launch;
     // set the flag manually in the console to suppress: 
-    //   localStorage.setItem('default_studies_installed', 'true')
+    //   localStorage.setItem('default_studies_installed', currentVersion);
   }
 }
 
@@ -687,10 +690,12 @@ async function installDefaultStudiesIfNeeded() {
 // so the default studies land silently in the background.
 //
 // Supports both zip-format .estudy (study.json + images/) and legacy plain-JSON.
-async function _installStudyFileQuietly(file) {
+async function _installStudyFileQuietly(file, fileName) {
+  // Accept either a File object or a raw ArrayBuffer (from bundle extraction).
+  const name = fileName || file.name || 'unknown';
   let zip;
   try {
-    const arrayBuffer = await file.arrayBuffer();
+    const arrayBuffer = file instanceof ArrayBuffer ? file : await file.arrayBuffer();
     zip = await JSZip.loadAsync(arrayBuffer);
   } catch (_) {
     zip = null;
@@ -698,9 +703,12 @@ async function _installStudyFileQuietly(file) {
 
   if (zip) {
     // ── Zip-format .estudy ──────────────────────────────────────────────────
-    const jsonFile = zip.file('study.json');
+    // Look for study.json first (canonical name), then fall back to any root-level
+    // JSON file — older .estudy files use custom names like 'truth_unlocked_en_study.json'.
+    const jsonFile = zip.file('study.json') ||
+      Object.values(zip.files).find(f => !f.dir && f.name.endsWith('.json') && !f.name.includes('/'));
     if (!jsonFile) {
-      console.warn('[defaultStudies] Skipping', file.name, '— no study.json inside');
+      console.warn('[defaultStudies] Skipping', name, '— no JSON file found inside');
       return;
     }
 

@@ -30,127 +30,6 @@ const HOWTO_TABS = [
   { id: 'sharing',  label: () => t('renderpages_tab_sharing')  },
 ];
 
-// ── LANGUAGE MAP ──────────────────────────────────────────────────────────────
-// Single source of truth for all supported UI languages.
-// flag:  the flag emoji shown in the tab label and on each language button.
-// label: the language name written in that language (never translated).
-//const LANGUAGE_MAP = { group: used to render regional dividers in the language picker.
-  // SVG icons: use getters so ICONS is read at access time, not at parse time.
-  // ICONS is an empty object when this file first evaluates — applyIconTheme()
-  // populates it later during boot, so a static reference captures undefined.
-  //
-  // badge: optional { letter, bg } — used instead of flag/SVG when multiple
-  // languages share the same national flag (e.g. Nigerian languages). Any
-  // language entry can carry a badge; renderLangBadge() handles the fallback.
-const LANGUAGE_MAP = {
-  am:      { flag: '🇪🇹', label: 'አማርኛ (Amharic)',                                           group: 'africa' },
-  ar:      { flag: '🇸🇦', label: 'العربية (Arabic)',            group: 'asia'   },
-  az:      { flag: '🇦🇿', label: 'Azərbaycan (Azerbaijani)',    group: 'asia'   },
-  bg:      { flag: '🇧🇬', label: 'Български (Bulgarian)',       group: 'europe' },
-  bho:     { flag: '🇮🇳', label: 'भोजपुरी (Bhojpuri)',                                         group: 'asia',   badge: { letter: 'Bh', bg: '#FF9933' } },
-  bo:      { flag: '🇨🇳', label: 'བོད་སྐད་ (Tibetan)',              group: 'asia',   badge: { letter: 'Bo', bg: '#DE2910' } },
-  bs:      { flag: '🇧🇦', label: 'Bosanski (Bosnian)',          group: 'europe' },
-  ceb:     { flag: '🇵🇭', label: 'Cebuano',                     group: 'asia',   badge: { letter: 'Ce', bg: '#0038A8' } },
-  cs:      { flag: '🇨🇿', label: 'Čeština (Czech)',             group: 'europe' },
-  cy:      { flag: '🏴󠁧󠁢󠁷󠁬󠁳󠁿', label: 'Cymraeg (Welsh)',             group: 'europe' },
-  da:      { flag: '🇩🇰', label: 'Dansk (Danish)',              group: 'europe' },
-  de:      { flag: '🇩🇪', label: 'Deutsch (German)',            group: 'europe' },
-  el:      { flag: '🇬🇷', label: 'Ελληνικά (Greek)',            group: 'europe' },
-  en:      { flag: '🇬🇧', label: 'English',                     group: 'europe' },
-  es:      { flag: '🇪🇸', label: 'Español',                     group: 'europe' },
-  et:      { flag: '🇪🇪', label: 'Eesti (Estonian)',            group: 'europe' },
-  fa:      { flag: '🇮🇷', label: 'فارسی (Persian)',             group: 'asia'   },
-  ff:      { flag: '🇳🇬', label: 'Fulfulde',                    group: 'africa', badge: { letter: 'Ff', bg: '#008751' } },
-  fi:      { flag: '🇫🇮', label: 'Suomi (Finnish)',             group: 'europe' },
-  fr:      { flag: '🇫🇷', label: 'Français',                    group: 'europe' },
-  'fr-CA': { flag: '🇨🇦', label: 'Français (Canada)',           group: 'americas' },
-  ga:      { flag: '🇮🇪', label: 'Gaeilge (Irish)',             group: 'europe' },
-  gu:      { flag: '🇮🇳', label: 'ગુજરાતી (Gujarati)',                                      group: 'asia',   badge: { letter: 'Gu', bg: '#FF9933' } },
-  ha:      { flag: '🇳🇬', label: 'Hausa',                       group: 'africa', badge: { letter: 'Ha', bg: '#008751' } },
-  he:      { flag: '🇮🇱', label: 'עברית (Hebrew)',              group: 'asia'   },
-  hi:      { flag: '🇮🇳', label: 'हिन्दी (Hindi)',                                                     group: 'asia',   badge: { letter: 'Hi', bg: '#FF9933' } },
-  hr:      { flag: '🇭🇷', label: 'Hrvatski (Croatian)',         group: 'europe' },
-  hu:      { flag: '🇭🇺', label: 'Magyar (Hungarian)',          group: 'europe' },
-  hy:      { flag: '🇦🇲', label: 'Հայերեն (Armenian)',          group: 'asia'   },
-  id:      { flag: '🇮🇩', label: 'Bahasa Indonesia',            group: 'asia',   badge: { letter: 'Id', bg: '#CE2028' } },
-  ig:      { flag: '🇳🇬', label: 'Igbo',                        group: 'africa', badge: { letter: 'Ig', bg: '#008751' } },
-  it:      { flag: '🇮🇹', label: 'Italiano (Italian)',          group: 'europe' },
-  ja:      { flag: '🇯🇵', label: '日本語 (Japanese)',            group: 'asia'   },
-  ka:      { flag: '🇬🇪', label: 'ქართული (Georgian)',          group: 'asia'   },
-  kn:      { flag: '🇮🇳', label: 'ಕನ್ನಡ (Kannada)',                                             group: 'asia',   badge: { letter: 'Kn', bg: '#FF9933' } },
-  ko:      { flag: '🇰🇷', label: '한국어 (Korean)',                 group: 'asia'   },
-  kok:     { flag: '🇮🇳', label: 'कोंकणी (Konkani)',                                           group: 'asia',   badge: { letter: 'Ko', bg: '#FF9933' } },
-  ks:      { flag: '🇮🇳', label: 'कॉशुर (Kashmiri)',                                           group: 'asia',   badge: { letter: 'Ks', bg: '#FF9933' } },
-  lg:      { flag: '🇺🇬', label: 'Luganda',                     group: 'africa' },
-  lt:      { flag: '🇱🇹', label: 'Lietuvių (Lithuanian)',       group: 'europe' },
-  lv:      { flag: '🇱🇻', label: 'Latviešu (Latvian)',          group: 'europe' },
-  mai:     { flag: '🇮🇳', label: 'मैथिली (Maithili)',                                          group: 'asia',   badge: { letter: 'Ma', bg: '#FF9933' } },
-  mg:      { flag: '🇲🇬', label: 'Malagasy',                    group: 'africa' },
-  mk:      { flag: '🇲🇰', label: 'Македонски (Macedonian)',     group: 'europe' },
-  ml:      { flag: '🇮🇳', label: 'മലയാളം (Malayalam)',                               group: 'asia',   badge: { letter: 'Ml', bg: '#FF9933' } },
-  mr:      { flag: '🇮🇳', label: 'मराठी (Marathi)',                                              group: 'asia',   badge: { letter: 'Mr', bg: '#FF9933' } },
-  ms:      { flag: '🇲🇾', label: 'Bahasa Melayu',               group: 'asia'   },
-  my:      { flag: '🇲🇲', label: 'မြန်မာစာ (Burmese)',            group: 'asia'   },
-  ne:      { flag: '🇳🇵', label: 'नेपाली (Nepali)',                                                group: 'asia'   },
-  nl:      { flag: '🇳🇱', label: 'Nederlands (Dutch)',          group: 'europe' },
-  no:      { flag: '🇳🇴', label: 'Norsk (Norwegian)',           group: 'europe' },
-  or:      { flag: '🇮🇳', label: 'ଓଡ଼ିଆ (Odia)',                                                     group: 'asia',   badge: { letter: 'Or', bg: '#FF9933' } },
-  pa:      { flag: '🇮🇳', label: 'ਪੰਜਾਬੀ (Panjabi)',                                            group: 'asia',   badge: { letter: 'Pa', bg: '#FF9933' } },
-  pl:      { flag: '🇵🇱', label: 'Polski (Polish)',             group: 'europe' },
-  ps:      { flag: '🇦🇫', label: 'پښتو (Pashto)',               group: 'asia'   },
-  pt:      { flag: '🇵🇹', label: 'Português',                   group: 'europe' },
-  'pt-BR': { flag: '🇧🇷', label: 'Português (Brasil)',          group: 'americas' },
-  ro:      { flag: '🇷🇴', label: 'Română (Romanian)',           group: 'europe', badge: { letter: 'Ro', bg: '#002B7F' } },
-  rom:     { flag: '🇷🇴', label: 'Romani',                      group: 'europe', badge: { letter: 'Rm', bg: '#002B7F' } },
-  ru:      { flag: '🇷🇺', label: 'Русский (Russian)',           group: 'europe' },
-  sa:      { flag: '🇮🇳', label: 'संस्कृतम् (Sanskrit)',                                       group: 'asia',   badge: { letter: 'Sa', bg: '#FF9933' } },
-  sd:      { flag: '🇵🇰', label: 'سنڌي (Sindhi)',               group: 'asia',   badge: { letter: 'Sd', bg: '#01411C' } },
-  skr:     { flag: '🇵🇰', label: 'سرائیکی (Saraiki)',           group: 'asia',   badge: { letter: 'Sk', bg: '#01411C' } },
-  sl:      { flag: '🇸🇮', label: 'Slovenščina (Slovenian)',     group: 'europe' },
-  sr:      { flag: '🇷🇸', label: 'Српски (Serbian)',            group: 'europe' },
-  su:      { flag: '🇮🇩', label: 'Basa Sunda (Sundanese)',      group: 'asia',   badge: { letter: 'Su', bg: '#CE2028' } },
-  sv:      { flag: '🇸🇪', label: 'Svenska (Swedish)',           group: 'europe' },
-  sw:      { flag: '🇰🇪', label: 'Kiswahili',                   group: 'africa' },
-  ta:      { flag: '🇮🇳', label: 'தமிழ் (Tamil)',                                                   group: 'asia',   badge: { letter: 'Ta', bg: '#FF9933' } },
-  te:      { flag: '🇮🇳', label: 'తెలుగు (Telugu)',                                 group: 'asia',   badge: { letter: 'Te', bg: '#FF9933' } },
-  th:      { flag: '🇹🇭', label: 'ไทย (Thai)',                                                         group: 'asia'   },
-  tk:      { flag: '🇹🇲', label: 'Türkmen (Turkmen)',           group: 'asia'   },
-  tl:      { flag: '🇵🇭', label: 'Tagalog',                     group: 'asia',   badge: { letter: 'Tl', bg: '#0038A8' } },
-  to:      { flag: '🇹🇴', label: 'Lea Faka-Tonga (Tongan)',     group: 'asia'   },
-  uk:      { flag: '🇺🇦', label: 'Українська (Ukrainian)',      group: 'europe' },
-  ur:      { flag: '🇵🇰', label: 'اردو (Urdu)',                 group: 'asia',   badge: { letter: 'Ur', bg: '#01411C' } },
-  uz:      { flag: '🇺🇿', label: 'Oʻzbek (Uzbek)',              group: 'asia'   },
-  vi:      { flag: '🇻🇳', label: 'Tiếng Việt (Vietnamese)',     group: 'asia'   },
-  vmw:     { flag: '🇲🇿', label: 'Makhuwa',                     group: 'africa' },
-  wo:      { flag: '🇸🇳', label: 'Wolof',                       group: 'africa' },
-  xh:      { flag: '🇿🇦', label: 'isiXhosa (Xhosa)',            group: 'africa', badge: { letter: 'Xh', bg: '#007A4D' } },
-  yo:      { flag: '🇳🇬', label: 'Yorùbá',                      group: 'africa', badge: { letter: 'Yo', bg: '#008751' } },
-  'zh-CN': { flag: '🇨🇳', label: '简体中文 (Chinese simplified)', group: 'asia',   badge: { letter: 'Zh', bg: '#DE2910' } },
-  zu:      { flag: '🇿🇦', label: 'isiZulu (Zulu)',              group: 'africa', badge: { letter: 'Zu', bg: '#007A4D' } },
-};
-
-// Returns the flag emoji for the currently active language, falling back to 🌐.
-// Always returns the raw flag (never a badge) — used in the Settings tab label
-// where the language name is also shown and is sufficient to distinguish it.
-function currentLangFlag() {
-  const lang  = window.appLocale || resolveLanguage();
-  const entry = LANGUAGE_MAP[lang];
-  return (entry && entry.flag) || '🌐';
-}
-
-// Returns a letter-badge <span> when the LANGUAGE_MAP entry has a badge
-// property, otherwise returns the raw flag value (emoji or SVG string).
-// Badge shape matches a flag: rectangular, coloured background, white letter.
-// NOTE: only call this from the library lang bar (via flagOrBadgeForBar()).
-// The Settings page always uses the raw flag — the language name there is
-// sufficient to distinguish same-flag languages.
-function renderLangBadge(entry) {
-  if (entry && entry.badge) {
-    return `<span class="lang-badge" style="--badge-bg:${entry.badge.bg}">${entry.badge.letter}</span>`;
-  }
-  return (entry && entry.flag) || '🌐';
-}
-
 // SETTINGS_TABS is computed dynamically so the Library tab is hidden in Basic
 // and Intermediate modes. Call getSettingsTabs() wherever the list is needed.
 function getSettingsTabs() {
@@ -189,9 +68,10 @@ function navigateTab(page, direction) {
 // Renders the "How to Use This App" instructional page into #mainContent.
 // Accessible from the title page, the onboarding overlay, and the Contents menu.
 
-function renderHowToUse(tabId) {
+async function renderHowToUse(tabId) {
   closeMenu();
   _resetNonChapterPageState();
+  await clearStudyUiLangOverride();
   isNonChapterPage = true;
   window.activeTabPage = 'howto';
   window.activeTabId   = tabId || 'study';
@@ -661,9 +541,10 @@ function renderHowToUse(tabId) {
 // highlighted in the main user flow.
 const LEADERS_TABS = []; // populated dynamically — see renderLeadersNotes
 
-function renderLeadersNotes(tabId) {
+async function renderLeadersNotes(tabId) {
   closeMenu();
   _resetNonChapterPageState();
+  await clearStudyUiLangOverride();
   isNonChapterPage = true;
   window.activeTabPage = 'leaders';
   restoreStudyTheme();
@@ -784,9 +665,10 @@ const ABOUT_TABS = [
   { id: 'copyright', label: () => t('renderpages_tab_copyright') },
 ];
 
-function renderAbout(tabId) {
+async function renderAbout(tabId) {
   closeMenu();
   _resetNonChapterPageState();
+  await clearStudyUiLangOverride();
   isNonChapterPage = true;
   window.activeTabPage = 'about';
   restoreStudyTheme();
@@ -890,9 +772,10 @@ function renderAbout(tabId) {
 // wired to saveSetting() so each toggle immediately saves and applies its change.
 // updateSettingsControls() is called after render to sync the size dots and labels.
 
-function renderSettings(tabId) {
+async function renderSettings(tabId) {
   closeMenu();
   _resetNonChapterPageState();
+  await clearStudyUiLangOverride();
   isNonChapterPage = true;
   window.activeTabPage = 'settings';
   window.activeTabId   = tabId || 'app';
@@ -1435,6 +1318,23 @@ function renderSettings(tabId) {
           </div>
           <button class="settings-danger-btn" onclick="confirmClearAnswers()">
             &#128465; ${t('renderpages_settings_clearanswers_btn')}
+          </button>
+        </div>
+
+        <div class="settings-block">
+          <div style="background:#fdf3f0; border:1px solid var(--emphasis); border-radius:8px; padding:14px 16px; margin-bottom:16px;">
+            <div style="font-family:var(--font-stack-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--emphasis); margin-bottom:8px; font-weight:bold;">
+              &#9888;&#9888; ${t('renderpages_settings_nuclear_warning_label')}
+            </div>
+            <div style="font-family:var(--main-font-family); font-size:0.875rem; color:var(--emphasis); line-height:1.65;">
+              ${t('renderpages_settings_nuclear_warning_text')}
+            </div>
+          </div>
+          <div style="font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65; margin-bottom:14px;">
+            ${t('renderpages_settings_nuclear_desc')}
+          </div>
+          <button class="settings-danger-btn" onclick="resetAllData()">
+            &#128683; ${t('renderpages_settings_nuclear_btn')}
           </button>
         </div>
       </div>` : ''}`;

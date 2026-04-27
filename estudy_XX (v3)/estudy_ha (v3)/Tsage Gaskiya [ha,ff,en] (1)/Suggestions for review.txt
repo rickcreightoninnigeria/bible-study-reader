@@ -1,0 +1,62 @@
+Ch 1 Flagged potential errors for review:
+
+ch01-el06 (Zabura 19:1, version 2/HAUCLV): passageText2 reads only "Sammai suna shelar" — this appears truncated (the rest of the verse is missing).
+ch01-el15 (Ishaya 6:3, versions 1–4): The Hausa and Fulfulde passage texts appear very incomplete — version 1 just has a cross-reference marker, version 2 cuts off mid-sentence, versions 3 and 4 are similarly truncated. The English (version 5) is the only complete text. This may affect the validity check for sampleAnswer1/questionHint1.
+ch01-el19 (Zabura 90:2, 4, versions 1–3): All three Hausa versions appear truncated (e.g. version 1 ends at "Kafin a kafa tuddai, ...", version 2 at "Gama a idanunka shekara dubu"). Same issue for Fulfulde (version 4 is empty).
+ch01-el23 (Zabura 139:7-10): Fulfulde passageText4 is empty.
+
+
+
+
+Ch 2 Suggestions:
+
+Flag for review — ch02-el35 (text1/text2): The text3 field contains quoted Bible verses in English inside the blockquote. The Hausa and Fulfulde translations of those same verses already exist in passageText1 and passageText4 respectively (in the biblePassage elements). I'd suggest pulling those existing translations rather than re-translating from scratch, to ensure consistency. I'll do this unless you instruct otherwise.
+Flag for review — ch02-el30 (callout element): This element has no *1/*2 language fields at all — only question and answer in English. This looks like it may be missing multilingual support in the schema. Worth noting for the developer.
+Terminology consistency: The Fulfulde existing text uses Yeesu (not Yesu) and Nyaako Mo Dow for Father — I'll follow these throughout.
+
+
+Ch 3 Observations / flags to note before starting:
+
+ch03-el01 text1 — As noted above, the existing Hausa text is two unrelated quotes, not a translation of text3. This looks like an authoring error worth flagging regardless of what you decide.
+ch03-el03 passageText3 — The SRK passage has verse number prefixes embedded in the text (26 Haka nan ma..., 27 Shi kuma...) which is inconsistent with the 1979 and CLV versions. Same issue appears in several other SRK passages (ch03-el05, ch03-el08, ch03-el10, etc.). Not correcting, just flagging.
+ch03-el08 passageText2 (CLV, John 7:37-39) — Contains a translator's note embedded mid-text (7.37-38 Wani juyi na waɗannan ayoyin...). This looks like editorial content that may not be intended for display.
+ch03-el13 passageText4 — The FUV passage contains an inline footnote (# 8.9: Ruuhu Almasiihu e Ruuhu Allah fuu ɗum go'o) embedded within the verse text, inconsistent with how footnotes are handled elsewhere. Flagging for review.
+chapterTitle1 and chapterTitle2 are both currently empty — this chapter appears not to have Hausa or Fulfulde titles yet, unlike previous chapters.
+
+
+Ch 4 Suggestions:
+
+The chapter has no translation1/2/3/4/5 fields on the biblePassage elements (unlike ch05), but ch04-el03 has "translation": "NET" — this looks like a structural inconsistency worth flagging.
+Several Hausa and Fulfulde passageText fields are truncated (e.g. ch04-el04, ch04-el09, ch04-el10, ch04-el19, ch04-el22, ch04-el24) — worth flagging.
+Errors flagged for review before starting:
+ch04-el03, ch04-el04, ch04-el09, ch04-el10, ch04-el19, ch04-el22, ch04-el24 — Hausa passageText1 and/or passageText2 (CLV) fields are truncated, containing only partial verses.
+ch04-el04, ch04-el09, ch04-el10, ch04-el19, ch04-el22, ch04-el24 — Fulfulde passageText4 is empty.
+biblePassage elements throughout ch04 — Use "translation": "NET" as a single field rather than "translation1", "translation2" etc. as used in ch05. Structural inconsistency worth reviewing.
+ch04-el13 (callout) — No language1/language2 field equivalents exist for eyebrow, term, question, answer. The new translated fields will be added as eyebrow1, term1, question1, answer1.
+ch04-el35 — The phrase "indeed, it was perfect" is editorial and does not appear in Genesis 1:31.
+
+
+Ch 5 Suggestions:
+
+Potential error to flag: In ch05-el03 (passageText2 for Ecclesiastes 1:14-15), the passage appears to be cut off mid-sentence — "Duk abin da ya tanƙware" without completing verse 15. I'll flag this for review.
+Potential error to flag: In ch05-el10 (passageText1 for Isaiah 53:6), the Hausa text appears truncated — it begins "Dukanmu muna kama da tumakin da suka ɓata," but doesn't include the second half of the verse ("each of us had turned his own way / The Lord let the guilt of all of us fall on him"). I'll flag this.
+"chapterTitle1" population — The chapterTitle3 value is simply "Sin." I would suggest translating this as "Zunubi" (the standard Hausa term already used throughout the existing text). Please confirm.
+Register/tone — The existing Hausa in passageText fields appears to be drawn from published Hausa Bible translations, while sampleAnswer and questionHint fields will need to be in a fluent but accessible standard Hausa prose register. I'll model this on the existing non-scripture Hausa in the file where visible.
+ch05-el03 passageText2 truncated mid-sentence
+ch05-el10 passageText1 truncated mid-verse
+
+Ch 6 Suggestions:
+
+Flagged error — ch06-el02: The text3 section heading is "What does God think about His world?" but ch06-el04 (the linked question) references the passage as being about God's love, not his general attitude. This is a minor framing inconsistency — worth flagging for the fluent reviewer.
+Flagged potential error — ch06-el36 (1 Timothy 2:5-6, passageText2): The Hausa CLV text appears truncated — it reads only "Gama Allah ɗaya ne, Shi ne ya ba da kansa" and cuts off. This looks like a data entry error. I'll flag it but not fix it.
+Term consistency: I'll use "Almasihu" for Christ, "Yesu" for Jesus, "gaskata" for believe/trust, "adalci" for righteousness, "zunubi" for sin, "ceto/ceton" for salvation/save, "fansa" for ransom/redeem, and "hukunci" for condemnation/judgment — consistent with the existing Hausa text in the file.
+
+
+Ch 7 Suggestions:
+
+Flagging potential error now: In ch07-el38 and ch07-el39 (the "Key truths" blockquotes), text3 contains English Bible quotations embedded in the HTML. If text1 is populated as a Hausa translation, the embedded quoted scripture should align with the Hausa Bible text already used elsewhere in the document (the HAU version). I'll handle this carefully — worth flagging for the fluent reviewer.
+"chapterTitle1" — There is only one chapter-level element (ch07), and chapterTitle3 is "God's Remedy: 2 The Resurrection and Ascension." The numeral "2" appears to be a series/sequence marker (i.e., this is the second study on "God's Remedy"). I'll preserve it in the Hausa. Please confirm if that's correct, or if it should be handled differently.
+Register consistency — The existing Hausa uses a formal, reverent register consistent with Northern Nigerian Standard Hausa. I'll maintain this throughout.
+
+
+Ch 8 

@@ -116,5 +116,38 @@ const StudyIDB = (() => {
     });
   }
 
-  return { get, set, remove, getImage, setImage, removeImage };
+  // Removes all images whose key starts with the given prefix.
+  // Used by deleteStudy to sweep up inline chapter images ({studyId}_{elementId})
+  // that are not individually tracked at install time.
+  async function removeImagesByPrefix(prefix) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const tx    = db.transaction(IMG_STORE, 'readwrite');
+      const store = tx.objectStore(IMG_STORE);
+      const req   = store.openCursor();
+      req.onsuccess = e => {
+        const cursor = e.target.result;
+        if (!cursor) return; // iteration complete; tx will commit
+        if (cursor.key.startsWith(prefix)) cursor.delete();
+        cursor.continue();
+      };
+      req.onerror  = e => reject(e.target.error);
+      tx.oncomplete = () => resolve();
+      tx.onerror    = e => reject(e.target.error);
+    });
+  }
+
+  // Wipes all records from both object stores. Used by resetAllData().
+  async function clearAll() {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction([STORE, IMG_STORE], 'readwrite');
+      tx.objectStore(STORE).clear();
+      tx.objectStore(IMG_STORE).clear();
+      tx.oncomplete = () => resolve();
+      tx.onerror    = e => reject(e.target.error);
+    });
+  }
+
+  return { get, set, remove, getImage, setImage, removeImage, removeImagesByPrefix, clearAll };
 })();
