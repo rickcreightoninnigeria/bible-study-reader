@@ -43,7 +43,35 @@ function getSettingsTabs() {
   return tabs;
 }
 
-// Navigates to the adjacent tab on a tabbed page.
+// ── PAGE-LEVEL STUDY LANGUAGE SWITCHER ────────────────────────────────────────
+// setPageStudyLang(code, rerender)
+//
+// Used by the lang bars on renderLeadersNotes and tabStudy (renderHowToUse).
+// Mirrors the behaviour of setStudyLang() in render-chapter-ui.js but accepts
+// a rerender callback so both pages can share one implementation.
+//
+// Sets window._activeStudyLang (shared with chapter pages), optionally updates
+// the session UI locale if the chosen language has UI support, then calls the
+// supplied rerender function to refresh the page.
+//
+// The rerender callback is passed as an inline string via onclick, so it must
+// be resolvable as a global. The two callers use:
+//   () => renderLeadersNotes(window.activeTabId)
+//   () => renderHowToUse('study')
+
+async function setPageStudyLang(code, rerender) {
+  window._activeStudyLang = code;
+
+  if (SUPPORTED_LANGUAGES.includes(code)) {
+    window._sessionUiLangOverride = code;
+    applyLanguageToDom(code);
+    await loadLocale(code);
+  }
+
+  rerender();
+}
+
+
 // page:      'settings' | 'howto'
 // direction: +1 (swipe left → next tab) | -1 (swipe right → prev tab)
 function navigateTab(page, direction) {
@@ -71,7 +99,11 @@ function navigateTab(page, direction) {
 async function renderHowToUse(tabId) {
   closeMenu();
   _resetNonChapterPageState();
-  await clearStudyUiLangOverride();
+  // Note: clearStudyUiLangOverride() is intentionally NOT called here.
+  // The Study tab carries its own lang bar and shares window._activeStudyLang
+  // with the chapter pages, so the session language override is preserved.
+  // clearStudyUiLangOverride() is still called by renderSettings, renderAbout,
+  // and openLibrary where no study content is displayed.
   isNonChapterPage = true;
   window.activeTabPage = 'howto';
   window.activeTabId   = tabId || 'study';
@@ -95,6 +127,50 @@ async function renderHowToUse(tabId) {
     const studyShortTitle = window.titlePageData?.shortTitle || '';
     const hasStudy        = !!window.titlePageData;
 
+    // ── Language bar (multilingual studies only) ──────────────────────────────
+    // Resolve the active language and build the slot map for this tab's content.
+    // The bar is hidden for mono-lingual studies (availableLangs.length < 2).
+    // Shares window._activeStudyLang with chapter pages and leaders notes.
+    const availableLangs = detectAvailableLangs();
+    const activeLang     = getActiveLang(availableLangs) || 'en';
+    const langMap        = buildLangMap(window.studyMetadata || {});
+
+    const langBarHtml = (() => {
+      if (availableLangs.length < 2) return '';
+
+      // Determine which flags appear more than once (mirrors buildLangBar logic).
+      const flagCounts = {};
+      availableLangs.forEach(code => {
+        const f = LANGUAGE_MAP[code]?.flag;
+        if (f) flagCounts[f] = (flagCounts[f] || 0) + 1;
+      });
+
+      const buttons = availableLangs.map(code => {
+        const entry      = LANGUAGE_MAP[code];
+        const label      = entry?.label || code.toUpperCase();
+        const flagShared = entry && flagCounts[entry.flag] > 1;
+        const display    = ((flagShared || entry?.alwaysBadge) && entry?.badge)
+          ? renderLangBadge(entry)
+          : (entry?.flag || '🌐');
+        return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
+                         onclick="setPageStudyLang('${code}', () => renderHowToUse('study'))"
+                         aria-label="${label}"
+                         title="${label}">${display}</button>`;
+      }).join('');
+
+      return `<div class="howto-lang-bar">${buttons}</div>`;
+    })();
+
+    // Resolve the study title/shortTitle for the active language (used in the
+    // "New here?" panel). Falls back to the raw meta fields for mono-lingual studies.
+    const meta              = window.titlePageData;
+    const resolvedTitle      = meta && activeLang
+      ? (resolveMetaField(meta, 'title',      activeLang, langMap) || meta.title      || studyTitle)
+      : studyTitle;
+    const resolvedShortTitle = meta && activeLang
+      ? (resolveMetaField(meta, 'shortTitle', activeLang, langMap) || meta.shortTitle || studyShortTitle)
+      : studyShortTitle;
+
     // "New here?" panel — adapts based on whether a study is loaded.
     // When no study is loaded, the study-slides button is replaced with a
     // prompt to visit the Library, since there is nothing to show.
@@ -103,10 +179,10 @@ async function renderHowToUse(tabId) {
       <div class="howto-block">
         <div class="howto-block-title">${t('renderpages_newhere_title')}</div>
         ${hasStudy ? `
-          <p>${t('renderpages_newhere_hasstudy_body', { studyTitle })}</p>
+          <p>${t('renderpages_newhere_hasstudy_body', { studyTitle: resolvedTitle })}</p>
           <button class="howto-share-btn" style="background:var(--text); margin-top:8px;"
                   onclick="showOnboarding()">
-            <span>${ICONS.triggerSlides}</span> ${t('renderpages_newhere_hasstudy_btn', { studyShortTitle })}
+            <span>${ICONS.triggerSlides}</span> ${t('renderpages_newhere_hasstudy_btn', { studyShortTitle: resolvedShortTitle })}
           </button>
         ` : `
           <p>${t('renderpages_newhere_nostudy_body')}</p>
@@ -124,19 +200,29 @@ async function renderHowToUse(tabId) {
      </div>`;
 
     return `
+      ${langBarHtml}
+
       ${newHerePanel}
 
-      ${sections.map(section => `
+      ${sections.map(section => {
+        // Resolve section heading for the active language.
+        // Multilingual: heading1/heading2/… — mono-lingual: heading (unnumbered).
+        const heading = resolveMetaField(section, 'heading', activeLang, langMap);
+        return `
         <div class="howto-section">
-          <div class="howto-section-heading">${section.heading}</div>
-          ${section.blocks.map(block => `
+          <div class="howto-section-heading">${heading}</div>
+          ${section.blocks.map(block => {
+            // Resolve block title and body for the active language.
+            const blockTitle = resolveMetaField(block, 'title', activeLang, langMap);
+            const blockBody  = resolveMetaField(block, 'body',  activeLang, langMap);
+            return `
             <div class="howto-block">
-              <div class="howto-block-title">${block.title}</div>
-              <div class="howto-block-body">${block.body}</div>
-            </div>
-          `).join('')}
-        </div>
-      `).join('')}
+              <div class="howto-block-title">${blockTitle}</div>
+              <div class="howto-block-body">${blockBody}</div>
+            </div>`;
+          }).join('')}
+        </div>`;
+      }).join('')}
 
       ${hasStudy ? `
         <div class="howto-section" style="margin-top: 24px;">
@@ -539,12 +625,24 @@ async function renderHowToUse(tabId) {
 // with key teaching points and sensitivities for each chapter.
 // Intended for leaders/mentors; accessible from the Contents menu but not
 // highlighted in the main user flow.
+//
+// Multilingual studies: all content fields (subtitle, intro, keyPoints,
+// pastorals, watch) are resolved for the active language via resolveMetaField().
+// A lang bar (same visual pattern as the chapter lang bar) is shown when two or
+// more languages are available, and shares window._activeStudyLang with the
+// chapter pages and the How To Use Study tab.
+//
+// Mono-lingual studies: langMap is empty, resolveMetaField falls through to
+// unnumbered fields (d.intro, ch.keyPoints, etc.), behaviour is unchanged.
 const LEADERS_TABS = []; // populated dynamically — see renderLeadersNotes
 
 async function renderLeadersNotes(tabId) {
   closeMenu();
   _resetNonChapterPageState();
-  await clearStudyUiLangOverride();
+  // Note: clearStudyUiLangOverride() is intentionally NOT called here.
+  // Leaders Notes carries its own lang bar and shares window._activeStudyLang
+  // with chapter pages. clearStudyUiLangOverride() is still called by
+  // renderSettings, renderAbout, and openLibrary.
   isNonChapterPage = true;
   window.activeTabPage = 'leaders';
   restoreStudyTheme();
@@ -555,7 +653,44 @@ async function renderLeadersNotes(tabId) {
   document.getElementById('header-title').innerText = t('renderpages_header_leaders');
 
   const d = leadersNotesData;
-  const hasIntro = !!(typeof d.intro === 'string' ? d.intro.trim() : (d.intro || []).join('').trim());
+
+  // ── Language resolution ───────────────────────────────────────────────────
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs) || 'en';
+  const langMap        = buildLangMap(window.studyMetadata || {});
+
+  // ── Lang bar HTML (hidden for mono-lingual studies) ───────────────────────
+  const langBarHtml = (() => {
+    if (availableLangs.length < 2) return '';
+
+    const flagCounts = {};
+    availableLangs.forEach(code => {
+      const f = LANGUAGE_MAP[code]?.flag;
+      if (f) flagCounts[f] = (flagCounts[f] || 0) + 1;
+    });
+
+    const buttons = availableLangs.map(code => {
+      const entry      = LANGUAGE_MAP[code];
+      const label      = entry?.label || code.toUpperCase();
+      const flagShared = entry && flagCounts[entry.flag] > 1;
+      const display    = ((flagShared || entry?.alwaysBadge) && entry?.badge)
+        ? renderLangBadge(entry)
+        : (entry?.flag || '🌐');
+      return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
+                       onclick="setPageStudyLang('${code}', () => renderLeadersNotes(window.activeTabId))"
+                       aria-label="${label}"
+                       title="${label}">${display}</button>`;
+    }).join('');
+
+    return `<div class="leaders-lang-bar">${buttons}</div>`;
+  })();
+
+  // ── Resolve intro — may be a string or an array of paragraph strings ──────
+  // Multilingual: d.intro1/d.intro2/… — mono-lingual: d.intro (string or array)
+  const rawIntro   = resolveMetaField(d, 'intro', activeLang, langMap);
+  const hasIntro   = !!(typeof rawIntro === 'string'
+    ? rawIntro.trim()
+    : (Array.isArray(rawIntro) ? rawIntro.join('').trim() : ''));
 
   // Build tab definitions once and cache on the constant so navigateTab() can use it
   LEADERS_TABS.length = 0;
@@ -576,7 +711,9 @@ async function renderLeadersNotes(tabId) {
 
   let tabContent = '';
   if (activeTab === 'intro' && hasIntro) {
-    const introHtml = typeof d.intro === 'string' ? d.intro : (d.intro || []).map(p => `<p>${p}</p>`).join('\n');
+    const introHtml = typeof rawIntro === 'string'
+      ? rawIntro
+      : (rawIntro || []).map(p => `<p>${p}</p>`).join('\n');
     tabContent = `
       <div class="leaders-intro" style="margin:20px 16px;">
         ${introHtml}
@@ -585,33 +722,58 @@ async function renderLeadersNotes(tabId) {
     const chNum = activeTab.startsWith('ch_') ? parseInt(activeTab.slice(3), 10) : null;
     const ch = (d.chapters || []).find(c => c.chapterNumber === chNum);
     if (ch) {
+      // Resolve per-chapter fields for the active language.
+      // Multilingual: keyPoints1/2/…, pastorals1/2/…, watch1/2/…
+      // Mono-lingual: keyPoints, pastorals, watch (unnumbered — unchanged)
+      const keyPoints = resolveMetaField(ch, 'keyPoints', activeLang, langMap);
+      const pastorals = resolveMetaField(ch, 'pastorals', activeLang, langMap);
+      const watch     = resolveMetaField(ch, 'watch',     activeLang, langMap);
+
+      // Resolve the chapter title for the active language (matches Contents overlay).
+      const chapterTitle = resolveMetaField(ch, 'chapterTitle', activeLang, langMap)
+        || (window.chapters || []).find(c => c.chapterNumber === ch.chapterNumber)?.chapterTitle
+        || '';
+
+      // Note: the watch field in multilingual studies already includes the 👁️
+      // emoji prefix inside the JSON value. Mono-lingual studies that do not
+      // include it will have it prepended below for backwards compatibility.
+      const watchHtml = watch
+        ? (watch.startsWith('👁') ? watch : `👁️ ${watch}`)
+        : '';
+
       tabContent = `
         <div class="leaders-chapter" style="margin-top:16px;">
           <div class="leaders-chapter-header">
             <span class="leaders-chapter-number">${t('renderpages_leaders_chapter_label', { number: ch.chapterNumber })}</span>
-            <span class="leaders-chapter-title">${ch.title || (window.chapters || []).find(c => c.chapterNumber === ch.chapterNumber)?.chapterTitle || ''}</span>
+            <span class="leaders-chapter-title">${chapterTitle}</span>
           </div>
           <div class="leaders-chapter-body">
             <div class="leaders-block">
               <div class="leaders-block-label">${t('renderpages_leaders_keypoints_label')}</div>
-              ${ch.keyPoints}
+              ${keyPoints}
             </div>
             <div class="leaders-block">
               <div class="leaders-block-label">${t('renderpages_leaders_pastorals_label')}</div>
-              ${ch.pastorals}
-              ${ch.watch ? `<div class="leaders-watch">👁️ ${ch.watch}</div>` : ''}
+              ${pastorals}
+              ${watchHtml ? `<div class="leaders-watch">${watchHtml}</div>` : ''}
             </div>
           </div>
         </div>`;
     }
   }
 
+  // Resolve the page subtitle for the active language.
+  // Multilingual: subtitle1/subtitle2/… — mono-lingual: subtitle (unchanged).
+  const subtitle = resolveMetaField(d, 'subtitle', activeLang, langMap);
+
   content.innerHTML = `
     <div class="leaders-page">
       <div class="howto-header">
         <div class="howto-eyebrow">${t('renderpages_leaders_eyebrow')}</div>
-        <div class="howto-title">${t('renderpages_leaders_title')}</div>
+        <div class="howto-title">${t('renderpages_leaders_title')}${subtitle ? ` — ${subtitle}` : ''}</div>
       </div>
+
+      ${langBarHtml}
 
       ${tabBarHtml}
 

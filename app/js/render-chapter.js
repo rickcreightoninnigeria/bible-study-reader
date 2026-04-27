@@ -10,7 +10,7 @@
 // Load order (must precede this file):
 //   render-elements.js      – renderHeading, renderText, renderBiblePassage,
 //                             renderQuestion, renderImage, renderCallout,
-//                             renderLikertScaleElement
+//                             renderLikertScaleElement, buildLangMap
 //   render-chapter-ui.js    – buildSaveBar, buildNotesField, buildNavButtons,
 //                             buildLangBar, setStudyLang
 //
@@ -65,36 +65,32 @@
 //   StudyIDB                         – idb.js
 //   Swal                             – sweetalert2 (vendor)
 //   window.activeStudyId,
-//   window.titlePageData             – state.js
+//   window.titlePageData,
+//   window.studyMetadata       – state.js / study-loader.js (language slot map source)
 //   buildLangBar, setStudyLang       – render-chapter-ui.js
 
 
 // ── DETECT AVAILABLE LANGUAGES ────────────────────────────────────────────────
-// Scans the chapter's elements for languageN slots and returns a de-duplicated,
-// ordered array of language codes present in the data.
+// Returns an ordered array of language codes available in this study.
 //
-// The scan visits every element and collects language1, language2, … languageN
-// until a numbered slot is absent. De-duplication preserves first-seen order so
-// the language bar reflects the order in which languages appear in the study.
+// Multilingual studies (v3+) declare language1/language2/language3 in
+// studyMetadata once for the whole study — all chapters share the same set.
+// window.studyMetadata is set by applyStudyData() in study-loader.js.
 //
-// Returns an empty array if no language-keyed fields are found (e.g. a purely
-// legacy single-language chapter) — in that case buildLangBar() hides the bar.
+// Mono-lingual studies carry no numbered language slots anywhere, so this
+// returns [] and buildLangBar() hides the bar.
+//
+// The 'ch' parameter is accepted for callers that still pass it, but is no
+// longer used — the scan has moved to studyMetadata.
 
 function detectAvailableLangs(ch) {
-  const seen   = new Set();
-  const result = [];
-
-  for (const el of (ch.elements || [])) {
-    for (let i = 1; ; i++) {
-      const code = el[`language${i}`];
-      if (!code) break;
-      if (!seen.has(code)) {
-        seen.add(code);
-        result.push(code);
-      }
-    }
+  const metadata = window.studyMetadata || {};
+  const result   = [];
+  for (let i = 1; ; i++) {
+    const code = metadata[`language${i}`];
+    if (!code) break;
+    result.push(code);
   }
-
   return result;
 }
 
@@ -128,6 +124,24 @@ async function renderChapter(idx, scrollY = 0) {
       return availableLangs[0] || 'en';   // 'en' safety net for zero-lang chapters
     })();
 
+    // ── Build the language-slot map ───────────────────────────────────────────
+    // { ha: 1, ff: 2, en: 3 } — derived once from studyMetadata and threaded
+    // into every ctx so resolveText() can find el[fieldN] without re-scanning.
+    // Empty object for mono-lingual studies (resolveText falls back to el[field]).
+    const langMap = buildLangMap(window.studyMetadata || {});
+
+    // ── Resolve the chapter title for the active language ─────────────────────
+    // Multilingual studies store chapterTitle1/chapterTitle2/chapterTitle3.
+    // Mono-lingual studies store chapterTitle (unnumbered).
+    const chapterTitle = (() => {
+      if (langMap && Object.keys(langMap).length > 0) {
+        const slot = langMap[activeLang];
+        if (slot !== undefined) return ch[`chapterTitle${slot}`] || ch[`chapterTitle1`] || ch.chapterTitle || '';
+        return ch[`chapterTitle1`] || ch.chapterTitle || '';
+      }
+      return ch.chapterTitle || '';
+    })();
+
     // ── elementId → element map for resolving repeatElement references ────────
     const elementMap = {};
     (ch.elements || []).forEach(el => {
@@ -159,7 +173,7 @@ async function renderChapter(idx, scrollY = 0) {
       <div class="chapter-lang-bar" id="chapterLangBar"></div>
       <div class="chapter-header">
         <div class="chapter-label" id="chapter-label-el">${t('renderchapter_chapter_label', { current: ch.chapterNumber, total: chapters[0].chapterNumber + chapters.length - 1 })}</div>
-        <h1 class="chapter-title">${ch.chapterTitle}</h1>
+        <h1 class="chapter-title">${chapterTitle}</h1>
       </div>`;
 
     // ── 3. Starred summary placeholder ────────────────────────────────────────
@@ -174,8 +188,9 @@ async function renderChapter(idx, scrollY = 0) {
 
       const noPad = resolved.bottomPadding === 'none' ? ' style="margin-bottom:0"' : '';
 
-      // activeLang is threaded into every ctx so renderers can call resolveText().
-      const ctx = { el: resolved, ch, noPad, answerRowInfoHtml, activeLang };
+      // activeLang and langMap are threaded into every ctx so renderers can
+      // call resolveText() with the correct slot map for this study.
+      const ctx = { el: resolved, ch, noPad, answerRowInfoHtml, activeLang, langMap };
 
       switch (resolved.type) {
 

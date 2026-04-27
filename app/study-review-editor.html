@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Review Editor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg:          #f4f1ec;
+    --surface:     #ffffff;
+    --border:      #e2dbd0;
+    --text:        #1c1814;
+    --text-mid:    #4a443c;
+    --text-faint:  #8a8078;
+    --accent:      #7a4f2e;
+    --accent-lt:   #b07a50;
+    --topbar-h:    50px;
+    --sidebar-w:   230px;
+    --setup-ok:    #2d6a4f;
+    --ok-bg:       #f0fdf4;
+    --ok-border:   #86efac;
+    --warn-bg:     #fffbeb;
+    --warn-border: #fcd34d;
+    --err-bg:      #fef2f2;
+    --err-border:  #fca5a5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ══ TOPBAR ══════════════════════════════════════════ */
+  #topbar {
+    height: var(--topbar-h);
+    background: #1c1814;
+    color: #f0ebe4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 18px;
+    flex-shrink: 0;
+    z-index: 100;
+  }
+  #topbar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-right: 4px;
+  }
+  .tb-sep { width: 1px; height: 20px; background: #3a332c; }
+  .tb-file { font-size: 0.72rem; color: #9a9088; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tbtn {
+    padding: 5px 13px; border-radius: 5px; border: none; cursor: pointer;
+    font-family: 'Source Sans 3', sans-serif; font-size: 0.76rem; font-weight: 500;
+    transition: background 0.15s, opacity 0.15s; white-space: nowrap;
+  }
+  .tbtn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .tbtn-load { background: #3a332c; color: #f0ebe4; }
+  .tbtn-load:hover:not(:disabled) { background: #4a443c; }
+  .tbtn-dl   { background: #1a3a5c; color: #fff; }
+  .tbtn-dl:hover:not(:disabled)   { background: #264f7a; }
+  .tbtn-save { background: var(--accent); color: #fff; }
+  .tbtn-save:hover:not(:disabled) { background: var(--accent-lt); }
+  .spacer { flex: 1; }
+  #unsaved-dot {
+    display: none; width: 8px; height: 8px; border-radius: 50%;
+    background: #e67e22; flex-shrink: 0;
+  }
+
+  /* ══ SETUP PANEL ═════════════════════════════════════ */
+  #setup-panel {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    background: var(--bg);
+  }
+  .setup-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 36px;
+    width: 100%;
+    max-width: 640px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  }
+  .setup-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .setup-card .setup-sub {
+    font-size: 0.84rem;
+    color: var(--text-faint);
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+  .setup-section {
+    margin-bottom: 24px;
+  }
+  .setup-section-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 10px;
+  }
+  .lang-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .lang-group label {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    margin-bottom: 5px;
+  }
+  .lang-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--bg);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .lang-group select:focus { border-color: var(--accent-lt); }
+
+  /* Translation checkboxes */
+  .transl-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .transl-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    background: var(--bg);
+    user-select: none;
+  }
+  .transl-chip:hover { border-color: var(--accent-lt); }
+  .transl-chip.checked {
+    background: #2d3a2e;
+    border-color: #4a6a50;
+    color: #c8e0ca;
+  }
+  .transl-chip input { display: none; }
+  .transl-chip .chip-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    font-weight: 500;
+  }
+  .chip-check { font-size: 0.9rem; }
+
+  .setup-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 28px;
+  }
+  .btn-begin {
+    padding: 10px 28px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-begin:hover { background: var(--accent-lt); }
+  .btn-begin:disabled { opacity: 0.4; cursor: not-allowed; }
+  .setup-hint { font-size: 0.78rem; color: var(--text-faint); }
+
+  /* select-all/none links */
+  .chip-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .chip-ctrl-btn {
+    font-size: 0.72rem;
+    color: var(--accent-lt);
+    cursor: pointer;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  /* ══ MAIN WORKSPACE ══════════════════════════════════ */
+  #workspace {
+    display: none;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ══ SIDEBAR ═════════════════════════════════════════ */
+  #sidebar {
+    width: var(--sidebar-w);
+    background: #1f1c18;
+    color: #c0b8ae;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  #sidebar-head {
+    padding: 12px 14px;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5a544c;
+    border-bottom: 1px solid #2c2722;
+    flex-shrink: 0;
+  }
+  #nav-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 0;
+  }
+  #nav-list::-webkit-scrollbar { width: 3px; }
+  #nav-list::-webkit-scrollbar-thumb { background: #3a332c; border-radius: 2px; }
+  .nav-item {
+    display: block;
+    width: 100%;
+    padding: 7px 14px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #9a9088;
+    text-align: left;
+    border-left: 3px solid transparent;
+    transition: background 0.1s, color 0.1s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-item:hover  { background: #2c2722; color: #d0c8be; }
+  .nav-item.active { background: #2c2722; color: #e8dfd4; border-left-color: var(--accent-lt); }
+  .nav-item .nav-progress {
+    float: right;
+    font-size: 0.62rem;
+    color: #5a544c;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .nav-item.active .nav-progress { color: #7a7068; }
+
+  /* ══ CONTENT AREA ════════════════════════════════════ */
+  #content-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #content-header {
+    padding: 14px 24px 10px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  #content-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    flex: 1;
+  }
+  #content-sub {
+    font-size: 0.76rem;
+    color: var(--text-faint);
+  }
+  #content-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 24px 48px;
+  }
+  #content-area::-webkit-scrollbar { width: 6px; }
+  #content-area::-webkit-scrollbar-thumb { background: #d0c8be; border-radius: 3px; }
+
+  /* ══ COLUMN HEADERS ══════════════════════════════════ */
+  .col-headers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 96px;
+    gap: 0;
+    margin-bottom: 6px;
+    padding: 0 4px;
+  }
+  .col-hdr {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    padding: 0 8px;
+  }
+  .col-hdr.right { text-align: right; }
+
+  /* ══ ELEMENT CARDS ═══════════════════════════════════ */
+  .el-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .el-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+
+  .el-type-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px;
+    background: #f8f5f0;
+    border-bottom: 1px solid var(--border);
+  }
+  .el-tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .tag-heading  { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+  .tag-text     { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+  .tag-question { background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; }
+  .tag-bible    { background: #fdf4ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+  .tag-callout  { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+  .el-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-faint);
+    margin-left: auto;
+  }
+
+  /* ══ FIELD ROWS ══════════════════════════════════════ */
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 96px;
+    border-bottom: 1px solid #f0ece6;
+    min-height: 44px;
+  }
+  .field-row:last-child { border-bottom: none; }
+  .field-row.bible-row {
+    grid-template-columns: 1fr 96px;
+    background: #faf7f4;
+  }
+
+  .field-cell {
+    padding: 8px 12px;
+    border-right: 1px solid #f0ece6;
+  }
+  .field-cell:last-child { border-right: none; }
+  .field-cell.ro { background: #faf8f4; }
+
+  .field-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #b0a89e;
+    margin-bottom: 3px;
+    display: block;
+  }
+  .field-val {
+    font-size: 0.86rem;
+    color: var(--text-mid);
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .field-val.html-val { white-space: normal; }
+  .field-val b, .field-val strong { font-weight: 600; }
+  .field-val i, .field-val em { font-style: italic; }
+  .field-val.empty-val { color: #c0b8ae; font-style: italic; font-size: 0.78rem; }
+  .field-val a { color: var(--accent-lt); font-size: 0.78rem; word-break: break-all; }
+
+  /* ── Right-side editable cell ── */
+  .field-cell.editable { background: #f7fcf9; }
+  .field-edit-area {
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.86rem;
+    color: var(--text);
+    background: #fff;
+    border: 1px solid #c8ddd4;
+    border-radius: 5px;
+    padding: 5px 8px;
+    resize: none;
+    line-height: 1.55;
+    overflow-y: hidden;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    min-height: 30px;
+    display: none; /* shown only when ❎ selected */
+  }
+  .field-edit-area.visible {
+    display: block;
+  }
+  .field-edit-area:focus {
+    outline: none;
+    border-color: #8fc4a8;
+    box-shadow: 0 0 0 2px rgba(143,196,168,0.2);
+  }
+
+  /* ── Review buttons cell ── */
+  .review-cell {
+    padding: 6px 8px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+  .rev-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .rev-btn:hover { border-color: #999; transform: scale(1.08); }
+  .rev-btn.active-q  { background: #f8f3e0; border-color: #d4b84a; box-shadow: 0 0 0 2px #d4b84a33; }
+  .rev-btn.active-ok { background: #e8f5e9; border-color: #4caf50; box-shadow: 0 0 0 2px #4caf5033; }
+  .rev-btn.active-x  { background: #fdecea; border-color: #e53935; box-shadow: 0 0 0 2px #e5393533; }
+
+  /* ── Bible passage translation block ── */
+  .bible-transl-block {
+    border-bottom: 1px solid var(--border);
+    padding: 10px 12px;
+  }
+  .bible-transl-block:last-child { border-bottom: none; }
+  .bible-transl-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .bible-transl-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    background: #2d3a2e;
+    color: #c8e0ca;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .bible-transl-ref {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    flex: 1;
+  }
+
+  .bible-field-row {
+    display: grid;
+    grid-template-columns: 1fr 96px;
+    border: 1px solid #f0ece6;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .bible-field-row:last-child { margin-bottom: 0; }
+
+  /* ── Section dividers ── */
+  .sec-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 10px;
+  }
+  .sec-divider span {
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+  .sec-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── Correction textarea wrapper ── */
+  .correction-wrap {
+    margin-top: 4px;
+  }
+
+  /* ── No-file state ── */
+  .no-file-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 14px;
+    color: var(--text-faint);
+    text-align: center;
+    padding: 40px;
+  }
+  .no-file-state .nf-icon { font-size: 2.8rem; opacity: 0.3; }
+  .no-file-state h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--text-mid); }
+
+  /* ── Toast ── */
+  #toast {
+    position: fixed; bottom: 18px; right: 18px;
+    background: #1c1814; color: #f0ebe4;
+    padding: 9px 16px; border-radius: 7px;
+    font-size: 0.82rem; font-weight: 500;
+    opacity: 0; transform: translateY(5px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none; z-index: 9999;
+  }
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  .file-input { display: none; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d0c8be; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<input type="file" id="file-input" class="file-input" accept=".json" onchange="loadFile(event)">
+
+<!-- TOPBAR -->
+<div id="topbar">
+  <h1>Study Review Editor</h1>
+  <div class="tb-sep"></div>
+  <span class="tb-file" id="tb-filename">No file loaded</span>
+  <button class="tbtn tbtn-load" onclick="document.getElementById('file-input').click()">📂 Open JSON</button>
+  <div class="spacer"></div>
+  <span id="unsaved-dot"></span>
+  <button class="tbtn tbtn-save" id="btn-save" disabled onclick="saveBrowser()">💾 Save</button>
+  <button class="tbtn tbtn-dl"   id="btn-dl"   disabled onclick="downloadJson()">⬇ Download</button>
+</div>
+
+<!-- SETUP PANEL -->
+<div id="setup-panel">
+  <div class="no-file-state">
+    <div class="nf-icon">📖</div>
+    <h2>Open a study JSON file to begin</h2>
+    <p style="font-size:0.86rem;max-width:300px;line-height:1.6;">Load a multilingual study file, choose your language pair and bible translations, then review.</p>
+    <button class="btn-begin" onclick="document.getElementById('file-input').click()" style="margin-top:8px">📂 Open file…</button>
+  </div>
+</div>
+
+<!-- MAIN WORKSPACE (hidden until setup complete) -->
+<div id="workspace" style="display:none;flex:1;overflow:hidden;display:none">
+  <nav id="sidebar">
+    <div id="sidebar-head">Chapters</div>
+    <div id="nav-list"></div>
+  </nav>
+  <div id="content-wrap">
+    <div id="content-header">
+      <div id="content-title">—</div>
+      <div id="content-sub"></div>
+    </div>
+    <div id="content-area"></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+let studyData    = null;
+let filename     = '';
+let config       = { origLang: 1, transLang: 3, bibleTrans: [] };
+// reviewState: { [chapterIdx_elementId_fieldKey]: { status: 'q'|'ok'|'x', correction: '' } }
+let reviewState  = {};
+let currentChIdx = 0;
+let unsaved      = false;
+
+// ═══════════════════════════════════════════════════════════
+// FILE LOAD
+// ═══════════════════════════════════════════════════════════
+function loadFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      studyData = JSON.parse(e.target.result);
+    } catch(err) {
+      alert('Invalid JSON: ' + err.message);
+      event.target.value = '';
+      return;
+    }
+    filename = file.name;
+    document.getElementById('tb-filename').textContent = file.name;
+    document.getElementById('btn-save').disabled = false;
+    document.getElementById('btn-dl').disabled   = false;
+
+    // Try restore from localStorage
+    const lsKey = getLsKey();
+    if (lsKey) {
+      try {
+        const saved = JSON.parse(localStorage.getItem(lsKey) || 'null');
+        if (saved) {
+          studyData   = saved.data;
+          reviewState = saved.review || {};
+          showToast('Restored saved session ✓');
+        }
+      } catch {}
+    }
+
+    buildSetupPanel();
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function getLsKey() {
+  const sid = studyData?.studyMetadata?.studyId;
+  return sid ? 'review_editor_' + sid : null;
+}
+
+// ═══════════════════════════════════════════════════════════
+// SETUP PANEL
+// ═══════════════════════════════════════════════════════════
+function buildSetupPanel() {
+  const meta = studyData.studyMetadata;
+  const panel = document.getElementById('setup-panel');
+
+  // Collect languages and bible translations
+  const langs = [];
+  for (let i = 1; i <= 5; i++) {
+    if (meta[`language${i}`]) langs.push({ n: i, code: meta[`language${i}`] });
+  }
+  const bibleTrans = [];
+  for (let i = 1; i <= 9; i++) {
+    if (meta[`bibleTranslation${i}`]) bibleTrans.push({ n: i, id: meta[`bibleTranslation${i}`] });
+  }
+
+  // Default: first lang = orig, last lang = trans; all bible translations checked
+  config.origLang   = langs[0]?.n || 1;
+  config.transLang  = langs[langs.length - 1]?.n || langs[0]?.n || 1;
+  config.bibleTrans = bibleTrans.map(b => b.n);
+
+  panel.innerHTML = '';
+  const card = document.createElement('div');
+  card.className = 'setup-card';
+  card.innerHTML = `
+    <h2>Configure Review</h2>
+    <p class="setup-sub">Study: <b>${meta.title || filename}</b> · ${langs.map(l=>l.code).join(' / ')}</p>
+
+    <div class="setup-section">
+      <div class="setup-section-title">Language columns</div>
+      <div class="lang-row">
+        <div class="lang-group">
+          <label>Original (left column)</label>
+          <select id="sel-orig">${langs.map(l=>`<option value="${l.n}"${l.n===config.origLang?' selected':''}>${l.code.toUpperCase()} (language${l.n})</option>`).join('')}</select>
+        </div>
+        <div class="lang-group">
+          <label>Translation (right column)</label>
+          <select id="sel-trans">${langs.map(l=>`<option value="${l.n}"${l.n===config.transLang?' selected':''}>${l.code.toUpperCase()} (language${l.n})</option>`).join('')}</select>
+        </div>
+      </div>
+    </div>
+
+    <div class="setup-section">
+      <div class="setup-section-title">Bible translations to display</div>
+      <div class="chip-controls">
+        <button class="chip-ctrl-btn" onclick="setAllChips(true)">Select all</button>
+        <button class="chip-ctrl-btn" onclick="setAllChips(false)">Select none</button>
+      </div>
+      <div class="transl-grid" id="transl-chips">
+        ${bibleTrans.map(b => `
+          <label class="transl-chip checked" id="chip-${b.n}">
+            <input type="checkbox" value="${b.n}" checked onchange="toggleChip(${b.n}, this.checked)">
+            <span class="chip-check">✓</span>
+            <span class="chip-id">${b.id}</span>
+          </label>`).join('')}
+      </div>
+    </div>
+
+    <div class="setup-actions">
+      <button class="btn-begin" onclick="beginReview()">Begin Review →</button>
+      <span class="setup-hint">You can reload the file to change these settings</span>
+    </div>
+  `;
+  panel.appendChild(card);
+  panel.style.display = 'flex';
+  document.getElementById('workspace').style.display = 'none';
+}
+
+function toggleChip(n, checked) {
+  const chip = document.getElementById(`chip-${n}`);
+  chip.classList.toggle('checked', checked);
+  if (checked) {
+    if (!config.bibleTrans.includes(n)) config.bibleTrans.push(n);
+  } else {
+    config.bibleTrans = config.bibleTrans.filter(x => x !== n);
+  }
+}
+
+function setAllChips(checked) {
+  document.querySelectorAll('.transl-chip input').forEach(inp => {
+    inp.checked = checked;
+    toggleChip(parseInt(inp.value), checked);
+  });
+}
+
+function beginReview() {
+  config.origLang  = parseInt(document.getElementById('sel-orig').value);
+  config.transLang = parseInt(document.getElementById('sel-trans').value);
+  config.bibleTrans.sort((a,b) => a - b);
+
+  document.getElementById('setup-panel').style.display  = 'none';
+  const ws = document.getElementById('workspace');
+  ws.style.display = 'flex';
+
+  buildSidebar();
+  navigateTo(0);
+}
+
+// ═══════════════════════════════════════════════════════════
+// SIDEBAR
+// ═══════════════════════════════════════════════════════════
+function buildSidebar() {
+  const list = document.getElementById('nav-list');
+  list.innerHTML = '';
+  studyData.chapters.forEach((ch, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'nav-item';
+    btn.dataset.idx = i;
+    btn.onclick = () => navigateTo(i);
+    updateNavBtn(btn, ch, i);
+    list.appendChild(btn);
+  });
+}
+
+function updateNavBtn(btn, ch, i) {
+  const title = ch[`chapterTitle${config.transLang}`] || ch[`chapterTitle${config.origLang}`] || `Chapter ${ch.chapterNumber}`;
+  const progress = getChapterProgress(i);
+  btn.innerHTML = `Ch ${ch.chapterNumber} · ${title} <span class="nav-progress">${progress}</span>`;
+}
+
+function getChapterProgress(chIdx) {
+  const ch = studyData.chapters[chIdx];
+  let total = 0, done = 0;
+  ch.elements.forEach(el => {
+    getReviewableFields(el).forEach(f => {
+      total++;
+      const st = getReviewStatus(chIdx, el.elementId, f.key);
+      if (st !== 'q') done++;
+    });
+  });
+  return total ? `${done}/${total}` : '';
+}
+
+// ═══════════════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════════════
+function navigateTo(chIdx) {
+  currentChIdx = chIdx;
+  document.querySelectorAll('.nav-item').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.idx) === chIdx);
+  });
+  renderChapter(chIdx);
+}
+
+// ═══════════════════════════════════════════════════════════
+// REVIEW STATE HELPERS
+// ═══════════════════════════════════════════════════════════
+function stateKey(chIdx, elId, fieldKey) {
+  return `${chIdx}__${elId}__${fieldKey}`;
+}
+function getReviewStatus(chIdx, elId, fieldKey) {
+  return (reviewState[stateKey(chIdx, elId, fieldKey)] || {}).status || 'q';
+}
+function getCorrection(chIdx, elId, fieldKey) {
+  return (reviewState[stateKey(chIdx, elId, fieldKey)] || {}).correction || '';
+}
+function setReviewStatus(chIdx, elId, fieldKey, status) {
+  const k = stateKey(chIdx, elId, fieldKey);
+  if (!reviewState[k]) reviewState[k] = { status: 'q', correction: '' };
+  reviewState[k].status = status;
+  markDirty();
+}
+function setCorrection(chIdx, elId, fieldKey, value) {
+  const k = stateKey(chIdx, elId, fieldKey);
+  if (!reviewState[k]) reviewState[k] = { status: 'x', correction: '' };
+  reviewState[k].correction = value;
+  markDirty();
+}
+
+// ═══════════════════════════════════════════════════════════
+// DETERMINE REVIEWABLE FIELDS FOR AN ELEMENT
+// These are the right-side (transLang) fields that get reviewed
+// ═══════════════════════════════════════════════════════════
+function getReviewableFields(el) {
+  const n = config.transLang;
+  const fields = [];
+  switch (el.type) {
+    case 'heading':
+      if (el[`text${n}`] !== undefined) fields.push({ key: `text${n}`, label: 'Heading' });
+      break;
+    case 'text':
+      if (el[`text${n}`] !== undefined) fields.push({ key: `text${n}`, label: 'Text', html: el.format === 'HTML' });
+      break;
+    case 'question':
+      ['question','answerPlaceholder','sampleAnswer','questionHint'].forEach(f => {
+        if (el[`${f}${n}`] !== undefined) fields.push({ key: `${f}${n}`, label: f });
+      });
+      break;
+    case 'biblePassage':
+      // Bible passages are handled separately per-translation
+      break;
+    case 'callout':
+      // Callouts are not numbered — no per-language review
+      break;
+  }
+  return fields;
+}
+
+function getBibleReviewableFields(el, transN) {
+  const fields = [];
+  ['bibleRef','passageText','passageUrl'].forEach(f => {
+    if (el[`${f}${transN}`] !== undefined) fields.push({ key: `${f}${transN}`, label: f });
+  });
+  return fields;
+}
+
+// ═══════════════════════════════════════════════════════════
+// RENDER CHAPTER
+// ═══════════════════════════════════════════════════════════
+function renderChapter(chIdx) {
+  const ch = studyData.chapters[chIdx];
+  const oN = config.origLang;
+  const tN = config.transLang;
+
+  document.getElementById('content-title').textContent =
+    ch[`chapterTitle${tN}`] || ch[`chapterTitle${oN}`] || `Chapter ${ch.chapterNumber}`;
+  document.getElementById('content-sub').textContent =
+    `Chapter ${ch.chapterNumber} · Original: language${oN} · Translation: language${tN}`;
+
+  const area = document.getElementById('content-area');
+  area.innerHTML = '';
+
+  // Column headers
+  const headers = document.createElement('div');
+  headers.className = 'col-headers';
+  headers.innerHTML = `
+    <div class="col-hdr">Original (language${oN})</div>
+    <div class="col-hdr">Translation (language${tN})</div>
+    <div class="col-hdr right">Review</div>
+  `;
+  area.appendChild(headers);
+
+  ch.elements.forEach(el => {
+    if (el.repeatElement) return; // skip repeats
+
+    switch (el.type) {
+      case 'heading':    area.appendChild(makeHeadingCard(el, chIdx, oN, tN)); break;
+      case 'text':       area.appendChild(makeTextCard(el, chIdx, oN, tN)); break;
+      case 'question':   area.appendChild(makeQuestionCard(el, chIdx, oN, tN)); break;
+      case 'biblePassage': area.appendChild(makeBibleCard(el, chIdx)); break;
+      case 'callout':    area.appendChild(makeCalloutCard(el)); break;
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// CARD BUILDERS
+// ═══════════════════════════════════════════════════════════
+
+function makeTypeBar(tagClass, tagLabel, elId) {
+  const bar = document.createElement('div');
+  bar.className = 'el-type-bar';
+  bar.innerHTML = `<span class="el-tag ${tagClass}">${tagLabel}</span><span class="el-id">${elId || ''}</span>`;
+  return bar;
+}
+
+function makeFieldRow(origVal, origHtml, transKey, transVal, transHtml, el, chIdx) {
+  const elId = el.elementId;
+  const row = document.createElement('div');
+  row.className = 'field-row';
+
+  // Left: original
+  const leftCell = document.createElement('div');
+  leftCell.className = 'field-cell ro';
+  leftCell.innerHTML = roVal(origVal, origHtml);
+
+  // Middle: translation (editable via correction)
+  const midCell = document.createElement('div');
+  midCell.className = 'field-cell editable';
+  const status = getReviewStatus(chIdx, elId, transKey);
+  const correction = getCorrection(chIdx, elId, transKey);
+  const currentVal = (status === 'x' && correction) ? correction : transVal;
+  const isHtml = transHtml || false;
+
+  const valDiv = document.createElement('div');
+  valDiv.className = 'field-val' + (isHtml ? ' html-val' : '') + (!transVal && transVal !== 0 ? ' empty-val' : '');
+  if (!transVal && transVal !== 0) {
+    valDiv.textContent = '(empty)';
+  } else if (isHtml) {
+    valDiv.innerHTML = status === 'x' && correction ? correction : transVal;
+  } else {
+    valDiv.textContent = status === 'x' && correction ? correction : transVal;
+  }
+  midCell.appendChild(valDiv);
+
+  // Correction textarea
+  const corrWrap = document.createElement('div');
+  corrWrap.className = 'correction-wrap';
+  const ta = document.createElement('textarea');
+  ta.className = 'field-edit-area' + (status === 'x' ? ' visible' : '');
+  ta.value = correction;
+  ta.placeholder = 'Enter corrected text…';
+  ta.rows = 2;
+  ta.addEventListener('input', () => {
+    autoResize(ta);
+    setCorrection(chIdx, elId, transKey, ta.value);
+    // update display
+    if (isHtml) valDiv.innerHTML = ta.value || transVal;
+    else valDiv.textContent = ta.value || transVal;
+    updateNavProgress(chIdx);
+  });
+  setTimeout(() => autoResize(ta), 0);
+  corrWrap.appendChild(ta);
+  midCell.appendChild(corrWrap);
+
+  // Right: review buttons
+  const revCell = makeReviewCell(chIdx, elId, transKey, ta, valDiv, transVal, isHtml);
+
+  row.appendChild(leftCell);
+  row.appendChild(midCell);
+  row.appendChild(revCell);
+  return row;
+}
+
+function makeReviewCell(chIdx, elId, fieldKey, ta, valDiv, origVal, isHtml) {
+  const cell = document.createElement('div');
+  cell.className = 'review-cell';
+
+  const status = getReviewStatus(chIdx, elId, fieldKey);
+
+  const btns = [
+    { sym: '❓', cls: 'q', title: 'Not checked yet' },
+    { sym: '✅', cls: 'ok', title: 'Checked — correct as is' },
+    { sym: '❎', cls: 'x',  title: 'Checked — needs adjustment' },
+  ];
+
+  const btnEls = {};
+  btns.forEach(b => {
+    const btn = document.createElement('button');
+    btn.className = 'rev-btn' + (status === b.cls ? ` active-${b.cls}` : '');
+    btn.textContent = b.sym;
+    btn.title = b.title;
+    btn.addEventListener('click', () => {
+      // deactivate all
+      btns.forEach(x => btnEls[x.cls].className = 'rev-btn');
+      // activate this
+      btn.className = `rev-btn active-${b.cls}`;
+      setReviewStatus(chIdx, elId, fieldKey, b.cls);
+      // show/hide correction textarea
+      if (ta) {
+        ta.classList.toggle('visible', b.cls === 'x');
+        if (b.cls !== 'x') {
+          // restore original value display
+          if (isHtml) valDiv.innerHTML = origVal || '';
+          else valDiv.textContent = origVal || '';
+        }
+      }
+      updateNavProgress(chIdx);
+    });
+    btnEls[b.cls] = btn;
+    cell.appendChild(btn);
+  });
+
+  return cell;
+}
+
+function roVal(val, isHtml) {
+  if (val === undefined || val === null || val === '') {
+    return '<span class="field-val empty-val">(empty)</span>';
+  }
+  if (isHtml) {
+    return `<div class="field-val html-val">${val}</div>`;
+  }
+  return `<div class="field-val">${escHtml(val)}</div>`;
+}
+
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── HEADING ──
+function makeHeadingCard(el, chIdx, oN, tN) {
+  const card = document.createElement('div');
+  card.className = 'el-card';
+  card.appendChild(makeTypeBar('tag-heading', `Heading · ${el.subtype || ''}`, el.elementId));
+  card.appendChild(makeFieldRow(
+    el[`text${oN}`], false,
+    `text${tN}`, el[`text${tN}`], false,
+    el, chIdx
+  ));
+  return card;
+}
+
+// ── TEXT ──
+function makeTextCard(el, chIdx, oN, tN) {
+  const card = document.createElement('div');
+  card.className = 'el-card';
+  card.appendChild(makeTypeBar('tag-text', `Text · ${el.subtype || ''}`, el.elementId));
+  const isHtml = el.format === 'HTML';
+  card.appendChild(makeFieldRow(
+    el[`text${oN}`], isHtml,
+    `text${tN}`, el[`text${tN}`], isHtml,
+    el, chIdx
+  ));
+  return card;
+}
+
+// ── QUESTION ──
+function makeQuestionCard(el, chIdx, oN, tN) {
+  const card = document.createElement('div');
+  card.className = 'el-card';
+  card.appendChild(makeTypeBar('tag-question', 'Question', el.elementId));
+
+  const fieldDefs = [
+    { base: 'question',          label: 'Question' },
+    { base: 'answerPlaceholder', label: 'Placeholder' },
+    { base: 'sampleAnswer',      label: 'Sample Answer' },
+    { base: 'questionHint',      label: 'Hint' },
+  ];
+
+  fieldDefs.forEach(({ base, label }) => {
+    const oKey = `${base}${oN}`;
+    const tKey = `${base}${tN}`;
+    if (el[oKey] === undefined && el[tKey] === undefined) return;
+
+    const row = makeFieldRow(
+      el[oKey], false,
+      tKey, el[tKey], false,
+      el, chIdx
+    );
+    // Add key label
+    const keyLabel = document.createElement('span');
+    keyLabel.className = 'field-key';
+    keyLabel.textContent = label;
+    row.children[0].prepend(keyLabel.cloneNode(true));
+    row.children[1].prepend(keyLabel);
+    card.appendChild(row);
+  });
+
+  return card;
+}
+
+// ── BIBLE PASSAGE ──
+function makeBibleCard(el, chIdx) {
+  const card = document.createElement('div');
+  card.className = 'el-card';
+  card.appendChild(makeTypeBar('tag-bible', 'Bible Passage', el.elementId));
+
+  if (config.bibleTrans.length === 0) {
+    const note = document.createElement('div');
+    note.style.cssText = 'padding:12px;font-size:0.82rem;color:var(--text-faint);font-style:italic';
+    note.textContent = 'No bible translations selected.';
+    card.appendChild(note);
+    return card;
+  }
+
+  config.bibleTrans.forEach(n => {
+    const refKey  = `bibleRef${n}`;
+    const textKey = `passageText${n}`;
+    const urlKey  = `passageUrl${n}`;
+    if (el[refKey] === undefined && el[textKey] === undefined) return;
+
+    const block = document.createElement('div');
+    block.className = 'bible-transl-block';
+
+    // Translation header
+    const head = document.createElement('div');
+    head.className = 'bible-transl-head';
+    const meta = studyData.studyMetadata;
+    const transId = meta[`bibleTranslation${n}`] || `#${n}`;
+    head.innerHTML = `<span class="bible-transl-id">${transId}</span><span class="bible-transl-ref">${el[refKey] || ''}</span>`;
+    block.appendChild(head);
+
+    // bibleRef row
+    if (el[refKey] !== undefined) {
+      block.appendChild(makeBibleFieldRow(el, chIdx, refKey, el[refKey], false, 'Reference'));
+    }
+    // passageText row
+    if (el[textKey] !== undefined) {
+      block.appendChild(makeBibleFieldRow(el, chIdx, textKey, el[textKey], true, 'Passage Text'));
+    }
+    // passageUrl row
+    if (el[urlKey] !== undefined) {
+      block.appendChild(makeBibleFieldRow(el, chIdx, urlKey, el[urlKey], false, 'URL'));
+    }
+
+    card.appendChild(block);
+  });
+
+  return card;
+}
+
+function makeBibleFieldRow(el, chIdx, fieldKey, val, isHtml, label) {
+  const elId = el.elementId;
+  const row = document.createElement('div');
+  row.className = 'bible-field-row';
+
+  const status     = getReviewStatus(chIdx, elId, fieldKey);
+  const correction = getCorrection(chIdx, elId, fieldKey);
+
+  // Content cell
+  const cell = document.createElement('div');
+  cell.className = 'field-cell';
+  cell.style.cssText = 'background:#faf7f4;';
+
+  const keyEl = document.createElement('span');
+  keyEl.className = 'field-key';
+  keyEl.textContent = label;
+  cell.appendChild(keyEl);
+
+  const valDiv = document.createElement('div');
+  if (!val && val !== 0) {
+    valDiv.className = 'field-val empty-val';
+    valDiv.textContent = '(empty)';
+  } else if (isHtml) {
+    valDiv.className = 'field-val html-val';
+    valDiv.innerHTML = (status === 'x' && correction) ? correction : val;
+  } else if (fieldKey.startsWith('passageUrl')) {
+    valDiv.className = 'field-val';
+    const a = document.createElement('a');
+    a.href = val; a.target = '_blank'; a.textContent = val;
+    valDiv.appendChild(a);
+  } else {
+    valDiv.className = 'field-val';
+    valDiv.textContent = (status === 'x' && correction) ? correction : val;
+  }
+  cell.appendChild(valDiv);
+
+  // Correction textarea
+  const ta = document.createElement('textarea');
+  ta.className = 'field-edit-area' + (status === 'x' ? ' visible' : '');
+  ta.value = correction;
+  ta.placeholder = 'Enter correction…';
+  ta.rows = 2;
+  ta.addEventListener('input', () => {
+    autoResize(ta);
+    setCorrection(chIdx, elId, fieldKey, ta.value);
+    if (isHtml) valDiv.innerHTML = ta.value || val;
+    else { valDiv.textContent = ta.value || val; valDiv.className = 'field-val'; }
+    updateNavProgress(chIdx);
+  });
+  setTimeout(() => autoResize(ta), 0);
+  cell.appendChild(ta);
+
+  // Review cell
+  const revCell = makeReviewCell(chIdx, elId, fieldKey, ta, valDiv, val, isHtml);
+
+  row.appendChild(cell);
+  row.appendChild(revCell);
+  return row;
+}
+
+// ── CALLOUT ──
+function makeCalloutCard(el) {
+  const card = document.createElement('div');
+  card.className = 'el-card';
+  card.appendChild(makeTypeBar('tag-callout', `Callout · ${el.subtype || ''}`, el.elementId));
+
+  const inner = document.createElement('div');
+  inner.style.cssText = 'padding:10px 14px;';
+
+  const note = document.createElement('div');
+  note.style.cssText = 'font-size:0.75rem;color:var(--text-faint);font-style:italic;margin-bottom:6px;';
+  note.textContent = 'Callout — no numbered language fields (English only)';
+  inner.appendChild(note);
+
+  if (el.term) {
+    const t = document.createElement('div');
+    t.innerHTML = `<span class="field-key">Term</span><div class="field-val">${escHtml(el.term)}</div>`;
+    inner.appendChild(t);
+  }
+
+  card.appendChild(inner);
+  return card;
+}
+
+// ═══════════════════════════════════════════════════════════
+// NAV PROGRESS UPDATE
+// ═══════════════════════════════════════════════════════════
+function updateNavProgress(chIdx) {
+  const btn = document.querySelector(`.nav-item[data-idx="${chIdx}"]`);
+  if (btn) updateNavBtn(btn, studyData.chapters[chIdx], chIdx);
+}
+
+// ═══════════════════════════════════════════════════════════
+// DIRTY STATE
+// ═══════════════════════════════════════════════════════════
+function markDirty() {
+  unsaved = true;
+  document.getElementById('unsaved-dot').style.display = 'inline-block';
+}
+function markClean() {
+  unsaved = false;
+  document.getElementById('unsaved-dot').style.display = 'none';
+}
+
+// ═══════════════════════════════════════════════════════════
+// APPLY CORRECTIONS TO DATA
+// When downloading: replace field values with corrections where status=x
+// ═══════════════════════════════════════════════════════════
+function buildOutputData() {
+  const output = JSON.parse(JSON.stringify(studyData));
+  // Remove api key
+  if (output.studyAiData) delete output.studyAiData.apiKey;
+
+  Object.entries(reviewState).forEach(([k, v]) => {
+    if (v.status !== 'x' || !v.correction) return;
+    const parts = k.split('__');
+    if (parts.length !== 3) return;
+    const [chIdxStr, elId, fieldKey] = parts;
+    const chIdx = parseInt(chIdxStr);
+    const ch = output.chapters[chIdx];
+    if (!ch) return;
+    const el = ch.elements.find(e => e.elementId === elId);
+    if (!el) return;
+    el[fieldKey] = v.correction;
+  });
+
+  return output;
+}
+
+// ═══════════════════════════════════════════════════════════
+// OUTPUT
+// ═══════════════════════════════════════════════════════════
+function saveBrowser() {
+  const lsKey = getLsKey();
+  if (!lsKey) { showToast('No studyId — cannot save'); return; }
+  localStorage.setItem(lsKey, JSON.stringify({
+    data: buildOutputData(),
+    review: reviewState
+  }));
+  markClean();
+  showToast('Saved to browser ✓');
+}
+
+function downloadJson() {
+  const output = buildOutputData();
+  const blob = new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = filename.replace('.json', '_reviewed.json');
+  a.click();
+  URL.revokeObjectURL(url);
+  markClean();
+  showToast('Downloaded ✓');
+}
+
+// ═══════════════════════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════════════════════
+function autoResize(ta) {
+  ta.style.height = 'auto';
+  ta.style.height = Math.max(ta.scrollHeight, 30) + 'px';
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+window.addEventListener('beforeunload', e => {
+  if (unsaved) { e.preventDefault(); e.returnValue = ''; }
+});
+</script>
+</body>
+</html>

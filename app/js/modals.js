@@ -13,22 +13,38 @@
 //   ttsAvailable, ttsSpeak, ttsStop – tts.js
 //   likertKey     – main.js (storageKey helpers)
 //   verseData, chapters, currentChapter – window globals / main.js
+//   resolveText, buildLangMap – render-elements.js (language resolution)
+//   window.studyMetadata      – study-loader.js (language slot map source)
 
-// Opens the QA modal from an inline callout element (v2 .estudy format).
+// Opens the QA modal from an inline callout element (v2/v3 .estudy format).
 // Looks up the element by its elementId across the current chapter's elements[].
-function openQaModalFromElement(elementId) {
+//
+// lang – the currently active study language code (e.g. 'ha', 'en'), passed
+//        by renderCallout() via the button's onclick attribute. Used to resolve
+//        the correct language slot for eyebrow, term, and answer.
+//        Falls back gracefully to unnumbered fields for mono-lingual studies.
+function openQaModalFromElement(elementId, lang) {
   const ch = chapters[currentChapter];
   if (!ch) return;
   const el = (ch.elements || []).find(e => e.elementId === elementId);
   if (!el) return;
-  document.getElementById('qaModalEyebrow').textContent = el.eyebrow || '';
-  document.getElementById('qaModalTerm').textContent    = el.term    || '';
-  document.getElementById('qaModalText').innerHTML      = el.answer  || '';
+
+  // Build the slot map from studyMetadata so we can resolve numbered fields.
+  // For mono-lingual studies studyMetadata carries no languageN keys, so
+  // langMap will be empty and resolveText falls back to unnumbered fields.
+  const langMap = buildLangMap(window.studyMetadata || {});
+  const activeLang = lang || window._activeStudyLang || 'en';
+
+  // resolveText is defined in render-elements.js (loaded before modals.js).
+  document.getElementById('qaModalEyebrow').textContent = resolveText(el, activeLang, 'eyebrow', langMap);
+  document.getElementById('qaModalTerm').textContent    = resolveText(el, activeLang, 'term',    langMap);
+  const answerHtml                                      = resolveText(el, activeLang, 'answer',  langMap);
+  document.getElementById('qaModalText').innerHTML      = answerHtml;
   document.getElementById('qaModalOverlay').classList.add('open');
   const qsb = document.getElementById('qaModalSpeakBtn');
   if (qsb) {
     qsb.innerHTML = ttsAvailable() && appSettings.ttsMode !== 'never' ? ICONS.speak : '';
-    qsb.onclick = () => ttsSpeak(el.answer || '', qsb);
+    qsb.onclick = () => ttsSpeak(answerHtml, qsb);
   }
 }
 

@@ -14,8 +14,11 @@
 //                            el.bottomPadding by the orchestrator
 //   ctx.activeLang {string}  Active study language code (e.g. 'ha', 'en').
 //                            Set by the orchestrator from window._activeStudyLang,
-//                            falling back to the first language1 found in the chapter.
-//                            Used by resolveText() to pick the right language slot.
+//                            falling back to the first language in studyMetadata.
+//   ctx.langMap    {object}  Slot-index map built from studyMetadata, e.g.
+//                            { ha: 1, ff: 2, en: 3 }. Empty object for
+//                            mono-lingual studies. Passed to resolveText() so
+//                            it can find el[field + N] without scanning elements.
 //
 // ctx shape (renderQuestion only, additional):
 //   ctx.answerRowInfoHtml {object}  { title, body } — built once per render in
@@ -50,43 +53,140 @@
 
 
 // ── LANGUAGE RESOLUTION ───────────────────────────────────────────────────────
-// resolveText(el, lang, field)
+// buildLangMap(studyMetadata)
+//   Builds a slot-index map: { ha: 1, ff: 2, en: 3 }
 //
-// Returns the value of el[field + N] where el['language' + N] === lang.
-// Scans language1, language2, … languageN until a slot is absent, then falls
-// back to field1 (the first slot) so something is always shown even if the
-// requested language is missing from a particular element.
+// resolveText(el, lang, field, langMap)
+//   Resolves a numbered field on a chapter element for the active language.
+//
+// resolveMetaField(obj, field, lang, langMap)
+//   Resolves a numbered field on any plain object (metadata, leaders notes,
+//   howToUse sections, etc.) using the same slot system as resolveText().
+//
+// getActiveLang(availableLangs)
+//   Returns the session active language constrained to a given set of codes.
+//   Shared by all page renderers so they mirror renderChapter()'s logic.
+//
+// buildLangMap(studyMetadata)
+//
+// Builds a slot-index map from studyMetadata so resolvers can find the right
+// numbered field without scanning every element.
+//
+//   Input:  studyMetadata = { language1: 'ha', language2: 'ff', language3: 'en', … }
+//   Output: { ha: 1, ff: 2, en: 3 }
+//
+// Returns an empty object for studies that carry no numbered language slots
+// (mono-lingual studies use unnumbered fields throughout).
+
+function buildLangMap(studyMetadata) {
+  const map = {};
+  if (!studyMetadata) return map;
+  for (let i = 1; ; i++) {
+    const code = studyMetadata[`language${i}`];
+    if (!code) break;
+    map[code] = i;
+  }
+  return map;
+}
+
+
+// resolveText(el, lang, field, langMap)
+//
+// Returns the localised value of a numbered field on an element.
+//
+// Lookup order:
+//   1. langMap present and lang found in it → el[field + slotIndex]
+//   2. langMap present but lang missing (element doesn't carry this lang) →
+//      el[field + 1] (first available slot, i.e. the primary language)
+//   3. langMap absent or empty (mono-lingual study) → el[field] (unnumbered)
+//   4. Final safety net → '' (never returns undefined)
+//
+// The 'field' parameter is the base name without a number suffix.
+// Callers pass: 'text', 'question', 'answerPlaceholder', 'sampleAnswer',
+// 'questionHint', 'eyebrow', 'term', 'answer', etc.
+//
+// langMap is optional: callers that don't have it (e.g. helpers called outside
+// a render ctx) can omit it and the function will fall back gracefully.
+
+function resolveText(el, lang, field, langMap) {
+  // ── Multilingual path (langMap has entries) ────────────────────────────────
+  if (langMap && Object.keys(langMap).length > 0) {
+    const slot = langMap[lang];
+    if (slot !== undefined) {
+      // This element may not carry every language slot — fall back to slot 1.
+      return el[`${field}${slot}`] || el[`${field}1`] || '';
+    }
+    // lang not in langMap at all — fall back to slot 1.
+    return el[`${field}1`] || '';
+  }
+
+  // ── Mono-lingual path (no langMap) ────────────────────────────────────────
+  // Study uses plain unnumbered fields (el.text, el.question, …).
+  // Also handles old-style per-element language1/language2 scanning as a
+  // last resort (for any transitional format).
+  if (el[field] !== undefined) return el[field] || '';
+
+  // Transitional: scan per-element languageN slots.
+  for (let i = 1; ; i++) {
+    if (!el[`language${i}`]) break;
+    if (el[`language${i}`] === lang) return el[`${field}${i}`] || '';
+  }
+  return el[`${field}1`] || '';
+}
+
+
+// ── METADATA FIELD RESOLUTION ─────────────────────────────────────────────────
+// resolveMetaField(obj, field, lang, langMap)
+//
+// Resolves a numbered field from a plain metadata-like object (studyMetadata,
+// leadersNotesData, a howToUseData section/block, etc.) using the same slot
+// system as resolveText().
+//
+// This is a thin wrapper around resolveText() — the object IS the "element"
+// in this context. Kept as a named helper so call-sites are self-documenting.
 //
 // Examples:
-//   resolveText(el, 'ha', 'question')   → el.question1  (when language1 === 'ha')
-//   resolveText(el, 'en', 'text')       → el.text2      (when language2 === 'en')
-//   resolveText(el, 'fr', 'question')   → el.question1  (fallback: 'fr' not found)
+//   resolveMetaField(studyMetadata, 'title',    'en', langMap)  → meta.title3
+//   resolveMetaField(section,       'heading',  'ha', langMap)  → section.heading1
+//   resolveMetaField(ch,            'keyPoints','ff', langMap)  → ch.keyPoints2
 //
-// The 'field' parameter must be the base name without a number suffix.
-// Callers pass: 'text', 'question', 'answerPlaceholder', etc.
+// Mono-lingual fallback: when langMap is empty, resolveText falls through to
+// obj[field] (unnumbered), so mono-lingual studies work without any changes.
 
-function resolveText(el, lang, field) {
-  // Scan numbered slots until the language key is absent.
-  for (let i = 1; ; i++) {
-    const langKey = `language${i}`;
-    if (!el[langKey]) break;                      // no more slots — fall through to fallback
-    if (el[langKey] === lang) {
-      return el[`${field}${i}`] || '';            // found: return value (empty string if blank)
-    }
-  }
-  // Fallback: return slot 1, or the unnumbered field for legacy single-lang elements.
-  return el[`${field}1`] || el[field] || '';
+function resolveMetaField(obj, field, lang, langMap) {
+  return resolveText(obj, lang, field, langMap);
+}
+
+
+// ── ACTIVE LANGUAGE RESOLUTION ────────────────────────────────────────────────
+// getActiveLang(availableLangs)
+//
+// Returns the active study language for the current session, constrained to
+// the languages present in the current study/page.
+//
+// Lookup order:
+//   1. window._activeStudyLang if it is present in availableLangs
+//   2. First entry in availableLangs
+//   3. null if availableLangs is empty (mono-lingual studies pass [])
+//
+// Shared by renderTitlePage, renderMenu, renderLeadersNotes, and tabStudy()
+// so they all use exactly the same resolution logic as renderChapter().
+
+function getActiveLang(availableLangs) {
+  const preferred = window._activeStudyLang;
+  if (preferred && availableLangs.includes(preferred)) return preferred;
+  return availableLangs[0] || null;
 }
 
 
 // ── HEADING ───────────────────────────────────────────────────────────────────
 
 function renderHeading(ctx) {
-  const { el, noPad, activeLang } = ctx;
+  const { el, noPad, activeLang, langMap } = ctx;
 
   // Headings use the 'text' field. resolveText handles both multilingual
-  // (text1/text2) and legacy single-language (text) elements gracefully.
-  const text = resolveText(el, activeLang, 'text');
+  // (text1/text2) and mono-lingual (text) elements gracefully.
+  const text = resolveText(el, activeLang, 'text', langMap);
 
   if (el.subtype === 'reflection') {
     return `
@@ -121,11 +221,11 @@ function renderHeading(ctx) {
 // TTS onclick selector will break and must be updated here to match.
 
 function renderText(ctx) {
-  const { el, noPad, activeLang } = ctx;
+  const { el, noPad, activeLang, langMap } = ctx;
 
   // resolveText returns the raw text for the active language.
   // Format conversion (HTML passthrough vs. paragraph wrapping) is applied below.
-  const rawText     = resolveText(el, activeLang, 'text');
+  const rawText     = resolveText(el, activeLang, 'text', langMap);
   const html        = el.format === 'HTML' ? rawText : renderParas(rawText);
   const encodedHtml = html.replace(/"/g, '&quot;');
   const speakTitle  = t('renderchapter_speak_btn_title');
@@ -175,43 +275,67 @@ function renderText(ctx) {
 // renders no visible HTML of its own; its presence makes linked question refs
 // tappable.
 //
-// verseData is keyed on bibleRef1 (the primary / first-language ref), which
-// must match the linkedPassage field on question elements. linkedPassage should
-// always equal bibleRef1 for a given passage element.
+// verseData is keyed on the primary ref (bibleRef1 for multilingual, bibleRef
+// for mono-lingual), which must match the linkedPassage field on question
+// elements.
 //
-// Side-effect: writes verseData[el.bibleRef1] = { translations: [...] }
+// Side-effect: writes verseData[primaryRef] = { translations: [...] }
 //
-// Translation slots are collected dynamically: translation1/passageText1/
-// passageUrl1/bibleRef1, translation2/passageText2/passageUrl2/bibleRef2, …
-// continuing until a numbered slot is absent. Slots with an empty passageText
-// are silently skipped so the modal never shows a blank tab.
+// Multilingual format (v3+):
+//   Translation labels come from studyMetadata.bibleTranslation1/2/3…
+//   (independent of the language slots — 5 Bible translations for 3 languages
+//   is a valid configuration). passageText1/bibleRef1/passageUrl1 are matched
+//   by slot index to bibleTranslation1, and so on.
+//   Slots with empty passageText are silently skipped.
 //
-// Legacy shape support: if el.bibleRef (unnumbered) is present and el.bibleRef1
-// is absent, the old single-translation shape is stored as a one-entry array
-// so openVerseModal() only needs to handle the new shape.
+// Legacy per-element format (v2 multilingual):
+//   translation1/passageText1/passageUrl1/bibleRef1, … continuing until a
+//   numbered slot is absent. Labels come from el.translationN directly.
+//
+// Mono-lingual legacy format (v1):
+//   el.bibleRef / el.passageText / el.passageUrl — stored as a one-entry array.
 
 function renderBiblePassage(ctx) {
   const { el } = ctx;
-
-  // ── Collect all non-empty translation slots ──────────────────────────────
+  const studyMetadata = window.studyMetadata || {};
   const translations = [];
 
-  for (let i = 1; ; i++) {
-    const labelKey = `translation${i}`;
-    if (!el[labelKey]) break;                         // no more numbered slots
-    const text = el[`passageText${i}`] || '';
-    if (!text) continue;                              // skip empty-text slots silently
-    translations.push({
-      label:  el[labelKey],
-      text,
-      url:    el[`passageUrl${i}`]  || '',
-      ref:    el[`bibleRef${i}`]    || el.bibleRef1 || '',
-    });
-  }
+  // ── Detect which format this passage element uses ──────────────────────────
+  const hasMetadataTranslations = !!studyMetadata.bibleTranslation1;
+  const hasPerElementTranslations = !!el.translation1;
 
-  // ── Legacy single-translation shape (unnumbered fields) ──────────────────
-  // Handles v1 .estudy files that store el.bibleRef / el.passageText / el.passageUrl.
-  if (translations.length === 0 && el.passageText) {
+  if (hasMetadataTranslations) {
+    // ── v3 multilingual: labels from studyMetadata.bibleTranslationN ─────────
+    for (let i = 1; ; i++) {
+      const label = studyMetadata[`bibleTranslation${i}`];
+      if (!label) break;                              // no more translation slots
+      const text = el[`passageText${i}`] || '';
+      if (!text) continue;                            // this passage doesn't have slot i
+      translations.push({
+        label,
+        text,
+        url: el[`passageUrl${i}`] || '',
+        ref: el[`bibleRef${i}`]   || el.bibleRef1 || '',
+      });
+    }
+
+  } else if (hasPerElementTranslations) {
+    // ── v2 multilingual: labels embedded on the element itself ────────────────
+    for (let i = 1; ; i++) {
+      const label = el[`translation${i}`];
+      if (!label) break;
+      const text = el[`passageText${i}`] || '';
+      if (!text) continue;
+      translations.push({
+        label,
+        text,
+        url: el[`passageUrl${i}`] || '',
+        ref: el[`bibleRef${i}`]   || el.bibleRef1 || '',
+      });
+    }
+
+  } else if (el.passageText) {
+    // ── v1 mono-lingual legacy: unnumbered fields ─────────────────────────────
     translations.push({
       label: el.translation || 'NET',
       text:  el.passageText,
@@ -220,9 +344,9 @@ function renderBiblePassage(ctx) {
     });
   }
 
-  if (translations.length === 0) return ''; // nothing to register
+  if (translations.length === 0) return '';
 
-  // ── Key on bibleRef1 (primary ref), falling back to unnumbered bibleRef ──
+  // Key on the primary ref (must match linkedPassage on question elements).
   const key = el.bibleRef1 || el.bibleRef || '';
   if (!key) return '';
 
@@ -236,7 +360,7 @@ function renderBiblePassage(ctx) {
 // standard subtype (scripture ref, optionally tappable via verseData).
 
 function renderQuestion(ctx) {
-  const { el, ch, noPad, answerRowInfoHtml, activeLang } = ctx;
+  const { el, ch, noPad, answerRowInfoHtml, activeLang, langMap } = ctx;
 
   const isReflection = el.subtype === 'reflection';
   const isHeader     = el.subtype === 'header';
@@ -246,22 +370,26 @@ function renderQuestion(ctx) {
   const cardId       = el.elementId;
 
   // Resolve the question text for the active language.
-  const questionText = resolveText(el, activeLang, 'question');
+  const questionText = resolveText(el, activeLang, 'question', langMap);
 
-  // Resolve the answer placeholder. Prefer a language-keyed slot
-  // (answerPlaceholder1/answerPlaceholder2…); fall back to the unnumbered
-  // el.answerPlaceholder for studies that have not yet added language variants,
-  // then to the generic i18n defaults.
+  // Resolve the answer placeholder for the active language.
+  // Falls back to the generic i18n defaults when no language-keyed slot exists.
   const placeholder =
-    resolveText(el, activeLang, 'answerPlaceholder') ||
-    el.answerPlaceholder ||
+    resolveText(el, activeLang, 'answerPlaceholder', langMap) ||
     (isReflection ? t('renderchapter_placeholder_reflection') : t('renderchapter_placeholder_thoughts'));
 
-  const encodedSampleAnswer = el.sampleAnswer ? el.sampleAnswer.replace(/"/g, '&quot;') : '';
-  const encodedQuestionHint = el.questionHint ? el.questionHint.replace(/"/g, '&quot;') : '';
+  // Resolve sampleAnswer and questionHint for the active language.
+  // Multilingual studies use sampleAnswer1/2/3 and questionHint1/2/3;
+  // mono-lingual studies use sampleAnswer and questionHint (unnumbered).
+  // resolveText handles both cases transparently via langMap.
+  const sampleAnswerText = resolveText(el, activeLang, 'sampleAnswer', langMap);
+  const questionHintText = resolveText(el, activeLang, 'questionHint', langMap);
 
-  const sampleAnswerAttr = el.sampleAnswer ? ` data-sample-answer="${encodedSampleAnswer}"` : '';
-  const questionHintAttr = el.questionHint ? ` data-question-hint="${encodedQuestionHint}"` : '';
+  const encodedSampleAnswer = sampleAnswerText ? sampleAnswerText.replace(/"/g, '&quot;') : '';
+  const encodedQuestionHint = questionHintText ? questionHintText.replace(/"/g, '&quot;') : '';
+
+  const sampleAnswerAttr = sampleAnswerText ? ` data-sample-answer="${encodedSampleAnswer}"` : '';
+  const questionHintAttr = questionHintText ? ` data-question-hint="${encodedQuestionHint}"` : '';
 
   const deeperBtn = el.deeper
     ? ` <button class="deeper-btn" onclick="openDeeperModal('${cardId}')">(${el.deeper.label || t('renderchapter_go_deeper')} ${ICONS.triggerInfo})</button>`
@@ -383,23 +511,29 @@ function renderImage(ctx) {
 
 // ── CALLOUT ───────────────────────────────────────────────────────────────────
 // Subtypes: 'general' (gen-callout-card) and 'misunderstanding' (qa-callout-card).
-// Callout fields (eyebrow, term, question) are not currently language-keyed in
-// the schema. If language variants are added in future, resolveText() can be
-// applied to them here using ctx.activeLang.
+// All display fields (eyebrow, term, question) are now language-keyed in
+// multilingual studies (eyebrow1/2/3, term1/2/3, question1/2/3).
+// The answer field (eyebrow, term, answer) shown in the QA modal is also
+// language-keyed and stored on the element as answer1/2/3.
+// resolveText handles both multilingual and mono-lingual studies transparently.
 
 function renderCallout(ctx) {
-  const { el, noPad } = ctx;
+  const { el, noPad, activeLang, langMap } = ctx;
   const safeId = el.elementId.replace(/'/g, "\\'");
+
+  const eyebrow  = resolveText(el, activeLang, 'eyebrow',  langMap);
+  const term     = resolveText(el, activeLang, 'term',     langMap);
+  const question = resolveText(el, activeLang, 'question', langMap);
 
   if (el.subtype === 'general') {
     const btnLabel = el.buttonText || t('renderchapter_callout_general_btn');
     return `
       <div class="gen-callout-card"${noPad}>
-        <div class="gen-callout-eyebrow">${el.eyebrow}</div>
+        <div class="gen-callout-eyebrow">${eyebrow}</div>
         <div class="gen-callout-body">
-          <div class="gen-callout-term">${el.term}</div>
-          <div class="gen-callout-question">${el.question}</div>
-          <button class="gen-callout-btn" onclick="openQaModalFromElement('${safeId}')">
+          <div class="gen-callout-term">${term}</div>
+          <div class="gen-callout-question">${question}</div>
+          <button class="gen-callout-btn" onclick="openQaModalFromElement('${safeId}', '${activeLang}')">
             ${btnLabel}
           </button>
         </div>
@@ -410,11 +544,11 @@ function renderCallout(ctx) {
     const btnLabel = el.buttonText || t('renderchapter_callout_misunderstanding_btn');
     return `
       <div class="qa-callout-card"${noPad}>
-        <div class="qa-callout-eyebrow">${el.eyebrow}</div>
+        <div class="qa-callout-eyebrow">${eyebrow}</div>
         <div class="qa-callout-body">
-          <div class="qa-callout-term">${el.term}</div>
-          <div class="qa-callout-question">${el.question}</div>
-          <button class="qa-callout-btn" onclick="openQaModalFromElement('${safeId}')">
+          <div class="qa-callout-term">${term}</div>
+          <div class="qa-callout-question">${question}</div>
+          <button class="qa-callout-btn" onclick="openQaModalFromElement('${safeId}', '${activeLang}')">
             ${btnLabel}
           </button>
         </div>

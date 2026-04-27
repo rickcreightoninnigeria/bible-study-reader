@@ -295,22 +295,29 @@ function applyImageData(imageData) {
 // (search, share, print, progress, starring) continue to work unchanged.
 
 // Returns the text of the first element with the given subtype.
+// For multilingual studies (text1/text2…), slot 1 is used as the canonical
+// value for the legacy search/share/print path, which is language-agnostic.
 function _extractTextBySubtype(elements, subtype) {
   const el = (elements || []).find(e => e.type === 'text' && e.subtype === subtype);
-  return el ? el.text : '';
+  if (!el) return '';
+  return el.text || el.text1 || '';
 }
 
 // Returns an array of reflection question strings.
+// For multilingual studies, slot 1 is the canonical value for the
+// language-agnostic legacy search/share/print path.
 function _extractReflectionQuestions(elements) {
   return (elements || [])
     .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
-    .map(e => e.question);
+    .map(e => e.question || e.question1 || '');
 }
 
 // Reconstructs sections[] from the flat elements[].
 // A new section starts at each bridge text element (or implicitly at the first
 // biblePassage when there is no leading bridge). Questions are grouped under
 // the most recently seen biblePassage reference.
+// For multilingual studies, slot-1 values are the canonical text for the
+// language-agnostic legacy search/share/print path.
 function _buildSectionsFromElements(elements) {
   const els = (elements || []).filter(e => !e.repeatElement);
   const sections = [];
@@ -319,7 +326,7 @@ function _buildSectionsFromElements(elements) {
 
   els.forEach(el => {
     if (el.type === 'text' && el.subtype === 'bridge') {
-      currentSection = { bridge: el.text, questions: [] };
+      currentSection = { bridge: el.text || el.text1 || '', questions: [] };
       sections.push(currentSection);
       lastRef = null;
     } else if (el.type === 'biblePassage') {
@@ -327,7 +334,9 @@ function _buildSectionsFromElements(elements) {
         currentSection = { questions: [] };
         sections.push(currentSection);
       }
-      lastRef = el.bibleRef;
+      // linkedPassage on question elements always stores the primary ref;
+      // bibleRef1 is the multilingual canonical, bibleRef the mono-lingual one.
+      lastRef = el.bibleRef1 || el.bibleRef || '';
     } else if (el.type === 'question' && el.subtype !== 'reflection') {
       if (!currentSection) {
         currentSection = { questions: [] };
@@ -335,7 +344,7 @@ function _buildSectionsFromElements(elements) {
       }
       currentSection.questions.push({
         ref:       el.linkedPassage || lastRef || '',
-        text:      el.question,
+        text:      el.question || el.question1 || '',
         elementId: el.elementId,
       });
     }
@@ -442,6 +451,11 @@ async function applyStudyData(data) {
     }
     return slide;
   });
+
+  // Expose studyMetadata as a global so render-elements.js can build the
+  // language-slot map (language1 → slot 1, language2 → slot 2, …) without
+  // having to scan every element. Renderers read window.studyMetadata directly.
+  window.studyMetadata = data.studyMetadata || {};
 
   // Load shortTitle title
   const metadata = data.studyMetadata || {};

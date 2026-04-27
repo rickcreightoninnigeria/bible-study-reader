@@ -1,0 +1,348 @@
+{
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "chapterTitle1": "Taken taken babi",
+      "chapterTitle2": "",
+      "chapterTitle3": "Chapter One Title",
+      "elements": [
+
+        {
+          "elementId": "ch01-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text1": "Wannan shi ne gabatarwa ta babi. Tana saita yanayi kafin tambayar Littafi Mai Tsarki ta farko. Ya kamata ta kasance mai jawo hankalin mai karatu cikin jigon babi. Zai iya ƙunshe rubutu mai <b>ƙarfi</b> ko <em>mai karkata</em>.",
+          "text2": "",
+          "text3": "This is the chapter introduction. It sets the scene before the first Bible question. It should be engaging and draw the reader into the chapter theme. It can contain <b>bold</b> or <em>italic</em> text.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el02",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text1": "Taken sashe na sabon",
+          "text2": "",
+          "text3": "A New Section Heading",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el03",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text1": "Taken ƙaramin sashe",
+          "text2": "",
+          "text3": "A Subsection Heading",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el04",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text1": "Tambayoyin Tunani",
+          "text2": "",
+          "text3": "Reflection Questions",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el05",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef1": "Yahaya 3:16",
+          "passageText1": "<sup>16</sup>Domin haka ne Allah ya ƙaunaci duniya, har ya ba da Ɗansa ɗaya tilo, duk wanda ya gaskata da shi, kada ya halaka, sai dai ya sami rai madawwami.",
+          "passageUrl1": "https://www.bible.com/bible/71/JHN.3.HAU",
+          "bibleRef2": "Yuuhanna 3:16",
+          "passageText2": "<sup>16</sup>Ko ɗii fuu Alla yiɗi aduna noon, si o hokki Ɓiiɗo makko gooto, tawa kala mo diiɗi mo yottaani halki, kono o heɓa nguurndam jaɓɓeendam.",
+          "passageUrl2": "https://www.bible.com/bible/1159/JHN.3.FUV",
+          "bibleRef3": "Yahaya 3:16",
+          "passageText3": "<sup>16</sup>Domin Allah ya ƙaunaci duniya haka, ya ba da Ɗansa ɗaya tilo, don duk wanda ya gaskata da shi ba zai halaka ba, sai dai ya sami rai na har abada.",
+          "passageUrl3": "https://www.bible.com/bible/1614/JHN.3.SRK",
+          "bibleRef4": "Yuuhanna 3:16",
+          "passageText4": "<sup>16</sup>Ko ɗii fuu Alla yiɗi aduna noon, si o hokki Ɓiiɗo makko gooto, tawa kala mo diiɗi mo yottaani halki, kono o heɓa nguurndam jaɓɓeendam.",
+          "passageUrl4": "https://www.bible.com/bible/1159/JHN.3.FUV",
+          "bibleRef5": "John 3:16",
+          "passageText5": "<sup>16</sup>For this is the way God loved the world: he gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.",
+          "passageUrl5": "https://www.biblegateway.com/passage/?search=John+3&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch01-el06",
+          "type": "question",
+          "format": "plainText",
+          "question1": "Me wannan aya take faɗa mana game da dalilan Allah wajen aika Ɗansa?",
+          "question2": "",
+          "question3": "What does this verse tell us about God's motivation in sending his Son?",
+          "linkedPassage": "John 3:16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder1": "Ka tuna ka amsa tambayar daga cikin nassin",
+          "answerPlaceholder2": "",
+          "answerPlaceholder3": "Remember to answer the question from the passage",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el07",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question1": "Me Littafi Mai Tsarki ke koyarwa game da yanayin Allah?",
+          "question2": "",
+          "question3": "What does the Bible teach about the nature of God?",
+          "linkedPassage": "John 3:16",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder1": "Ka tuna ka amsa tambayar daga cikin nassin",
+          "answerPlaceholder2": "",
+          "answerPlaceholder3": "Remember to answer the question from the passage",
+          "deeper": {
+            "label1": "Je da zurfin tunani …",
+            "label2": "",
+            "label3": "Go deeper …",
+            "question1": "Yaya fahimtar Bulus game da adalci ta bambanta da yadda ake amfani da kalmar a yau?",
+            "question2": "",
+            "question3": "How does Paul's understanding of righteousness differ from the way the word is used in everyday speech today?",
+            "answerType": "freeText",
+            "required": false,
+            "answerPlaceholder1": "Tunanka …",
+            "answerPlaceholder2": "",
+            "answerPlaceholder3": "Your reflection…"
+          },
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el08",
+          "type": "question",
+          "subtype": "header",
+          "format": "plainText",
+          "header1": "Tsayawa don Tunani",
+          "header2": "",
+          "header3": "Pause for thought",
+          "question1": "Shin kun taɓa ji kamar Bulus? (Idan eh, yaushe hakan ya faru?)",
+          "question2": "",
+          "question3": "Have you ever felt like Paul? (If yes, when was that?)",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder1": "Tunanka …",
+          "answerPlaceholder2": "",
+          "answerPlaceholder3": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el09",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question1": "Mene ne abu ɗaya daga wannan babi da kake son ɗaukar sa ka yi aiki a kai a wannan mako?",
+          "question2": "",
+          "question3": "What is one thing from this chapter you want to take away and act on this week?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder1": "Tunanka …",
+          "answerPlaceholder2": "",
+          "answerPlaceholder3": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el10",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text1": "Wannan saƙon haɗi ne. Yana haɗa sassan tambayoyi guda biyu, yana ba da mahallin da ake buƙata, ko yana haɓaka jigo. Zai iya ƙunshe jimloli da yawa kuma ya ƙunshe rubutu mai <b>ƙarfi</b> ko <em>mai karkata</em> idan an buƙata.",
+          "text2": "",
+          "text3": "This is a bridge paragraph. It connects two sections of questions, provides context, or develops a theme. It can span multiple sentences and contains <b>bold</b> or <em>italic</em> text as needed.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el11",
+          "type": "callout",
+          "subtype": "general",
+          "format": "plainText",
+          "eyebrow1": "Lura",
+          "eyebrow2": "",
+          "eyebrow3": "Note",
+          "term1": "Babbar Umarni",
+          "term2": "",
+          "term3": "The Great Commission",
+          "question1": "Matiyu 28:19-20 galibi ana kiransa da 'Babbar Umarni'.",
+          "question2": "",
+          "question3": "Matthew 28:19-20 is often referred to as 'The Great Commission'.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el12",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow1": "Karatun Littafi Mai Tsarki (fassarar NET)",
+          "eyebrow2": "",
+          "eyebrow3": "Bible Reading (NET translation)",
+          "term1": "''",
+          "term2": "''",
+          "term3": "Read: John 3:1–21",
+          "question1": "''",
+          "question2": "''",
+          "question3": "It's worth reading the whole passage before you begin…",
+          "answer1": "''",
+          "answer2": "''",
+          "answer3": "<p><sup>1</sup>Now a certain man, a Pharisee named Nicodemus, who was a member of the Jewish ruling council, <sup>2</sup>came to Jesus at night and said to him, &ldquo;Rabbi, we know that you are a teacher who has come from God. For no one could perform the miraculous signs that you do unless God is with him.&rdquo; <sup>3</sup>Jesus replied, &ldquo;I tell you the solemn truth, unless a person is born from above, he cannot see the kingdom of God.&rdquo;</p><p><sup>16</sup>For this is the way God loved the world: he gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.</p><br><p style='text-align: right; font-size: 0.8em;'><a href='https://www.biblegateway.com/passage/?search=John+3&version=NET'>(NET - see context ↗)</a></p>",
+          "buttonText1": "Karanta nassin ➡",
+          "buttonText2": "",
+          "buttonText3": "Read passage ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el13",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow1": "Rashin Fahimta Na Yau Da Kullum",
+          "eyebrow2": "",
+          "eyebrow3": "Common Misunderstanding",
+          "term1": "'Ɗan Allah'",
+          "term2": "",
+          "term3": "'Son of God'",
+          "question1": "Me kake tunani a kai idan ka ji ana kiran Yesu da <b>'Ɗan Allah'</b>? Ka yi tunani a kai kafin ka danna alamar amsar.",
+          "question2": "",
+          "question3": "What do you think of when you hear Jesus described as <b>'the Son of God'</b>? Think about it before tapping 'Find out'.",
+          "answer1": "<p>Mutane wani lokaci suna ɗauka cewa wannan yana nufin Yesu ya fi Allah ƙasa da shi. Duk da haka, Littafi Mai Tsarki ya yi amfani da 'Ɗan Allah' don nufin akasin haka. 'Ɗan' a cikin wannan mahallin yana nuna yanayi da asali, ba asali ko matsayi ba. Yesu cikakken Allah ne.</p>",
+          "answer2": "",
+          "answer3": "<p>People sometimes assume this means Jesus is in some way less than God. The Bible, however, uses 'Son of God' to mean the opposite. 'Son of' in this context conveys nature and identity, not origin or rank. Jesus is fully God.</p>",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el14",
+          "type": "likertScale",
+          "scaleNumber": 5,
+          "popupTitle1": "Game da wannan ma'auni",
+          "popupTitle2": "",
+          "popupTitle3": "About this scale",
+          "instruction1": "Zaɓi zaɓin da ya fi nuna yadda ka yarda ko rashin yarda da kowace magana.",
+          "instruction2": "",
+          "instruction3": "Choose the option that best reflects how well you agree or disagree with each statement.",
+          "scale1": [
+            "Ƙarfin Rashin Yarda",
+            "Ban Yarda Ba",
+            "Tsakiya",
+            "Na Yarda",
+            "Ƙarfin Yarda"
+          ],
+          "scale2": [],
+          "scale3": [
+            "Strongly Disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly Agree"
+          ],
+          "statements1": [
+            "Ina da fahimtar sarari game da abin da nake gaskatawa.",
+            "A halin yanzu ina girma a bangaren imani.",
+            "Ina kashe lokaci tare da Allah a cikin addu'a da karatun Littafi Mai Tsarki."
+          ],
+          "statements2": [],
+          "statements3": [
+            "I have a clear understanding of what I believe.",
+            "I am currently growing in my faith.",
+            "I regularly spend time with God in prayer and Bible reading."
+          ],
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el15",
+          "type": "likertScale",
+          "subtype": "bipolar",
+          "scaleNumber": 5,
+          "popupTitle1": "Game da wannan ma'auni",
+          "popupTitle2": "",
+          "popupTitle3": "About this scale",
+          "instruction1": "Ga kowane nau'i na jimloli, zaɓi matakin da ya fi kwatanta yadda kake tunanin Allah yake ganinka.",
+          "instruction2": "",
+          "instruction3": "For each pair of statements, choose the point on the scale that best represents how you think God sees you.",
+          "scale1": [
+            "Na yarda",
+            "Na yarda wani ɓangare",
+            "Tsakiya",
+            "Na yarda wani ɓangare",
+            "Na yarda"
+          ],
+          "scale2": [],
+          "scale3": [
+            "Agree",
+            "Partly Agree",
+            "Neutral",
+            "Partly Agree",
+            "Agree"
+          ],
+          "statementPairs1": [
+            {
+              "left": "Yana karɓan ni duk da kurakurana",
+              "right": "Ya ƙi ni saboda kurakurana"
+            },
+            {
+              "left": "Yana ganin ni a matsayin yaransa",
+              "right": "Yana ganin ni a matsayin bako"
+            }
+          ],
+          "statementPairs2": [],
+          "statementPairs3": [
+            {
+              "left": "He accepts me despite my failures",
+              "right": "He rejects me because of my failures"
+            },
+            {
+              "left": "He sees me as his child",
+              "right": "He sees me as a stranger"
+            }
+          ],
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el16",
+          "type": "image",
+          "src": "",
+          "alt": "A descriptive caption for accessibility",
+          "fallback": "🖼️",
+          "align": "full",
+          "width": "100",
+          "caption": "An optional caption shown below the image.",
+          "format": "plainText",
+          "base64": "",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch01-el17",
+          "type": "text",
+          "subtype": "closing",
+          "format": "plainText",
+          "text1": "Wannan ƙarshen babi ne na taƙaitawa. Yana tattara manyan jigogi na babi kuma yana nuna gaba. Ya kamata ya ƙarfafa mai karatu kuma ya bar shi da wani abu a bayyane don riƙewa.",
+          "text2": "",
+          "text3": "This is the chapter closing summary. It draws together the key themes of the chapter and points forward. It should be encouraging and leave the reader with something clear to hold on to.",
+          "bottomPadding": "normal"
+        }
+
+      ]
+    }
+  ]
+}

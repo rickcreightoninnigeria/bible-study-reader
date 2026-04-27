@@ -6,15 +6,29 @@
 // A ✓ checkmark is shown if the first question of a chapter has a saved answer.
 // NOTE: this check only tests question 0_0; a chapter where Q1 is unanswered
 // but others are answered will not show a checkmark. Consider using getChapterProgress().
+//
+// Multilingual studies: the menu heading shortTitle and each chapter title are
+// resolved for the active study language. The Contents overlay carries no lang
+// bar — it silently follows window._activeStudyLang.
 
 function renderMenu() {
   const list = document.getElementById('menuList');
   const currentStudyId = window.activeStudyId;
 
+  // Resolve active language for multilingual title/chapter display.
+  // For mono-lingual studies langMap is {} and resolveMetaField falls through
+  // to the unnumbered field, so nothing changes for existing studies.
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs);
+  const langMap        = buildLangMap(window.studyMetadata || {});
+
   // 7. Dynamic heading: "Chapters of [shortTitle]"
   const heading = document.getElementById('menuHeading');
   if (heading) {
-    const shortTitle = window.titlePageData?.shortTitle || window.titlePageData?.title || '';
+    const meta       = window.titlePageData;
+    const shortTitle = meta
+      ? ((activeLang ? resolveMetaField(meta, 'shortTitle', activeLang, langMap) : '') || meta.shortTitle || meta.title || '')
+      : '';
     heading.textContent = shortTitle ? t('main_menu_heading_with_title', { title: shortTitle }) : t('main_menu_heading');
   }
 
@@ -30,10 +44,13 @@ function renderMenu() {
     const hasAnswers = Object.keys(localStorage).some(key =>
       key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_q`) || key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_r`)
     );
+    // Resolve the chapter title for the active language.
+    // chapterTitle1/2/3 for multilingual, chapterTitle for mono-lingual.
+    const chTitle = (activeLang ? resolveMetaField(ch, 'chapterTitle', activeLang, langMap) : '') || ch.chapterTitle || '';
     return `
       <div class="chapter-item" onclick="goToChapter(${i})">
         <span class="chapter-num">${String(ch.chapterNumber).padStart(2,'0')}</span>
-        <span class="chapter-name">${ch.chapterTitle}</span>
+        <span class="chapter-name">${chTitle}</span>
         ${hasAnswers ? '<span class="chapter-check">✓</span>' : ''}
       </div>`;
   }).join('');
@@ -71,6 +88,11 @@ function renderMenu() {
 // in localStorage, shows a "Continue" button alongside "Begin the Course".
 // The cover image has an onerror fallback to a CSS gradient + emoji if the
 // image file is missing (useful during development or if assets fail to load).
+//
+// Multilingual studies: title, subtitle, shortTitle and description are
+// resolved for the active study language via resolveMetaField(). The page
+// carries no language bar — it silently follows window._activeStudyLang,
+// which the chapter lang bar (or the leaders/how-to lang bars) sets.
 
 function renderTitlePage() {
   isNonChapterPage = true;
@@ -91,24 +113,36 @@ function renderTitlePage() {
     return;
   }
 
-  // 2. Update nav bar title
-  const navTitle = document.getElementById('header-title');
-  if (navTitle) navTitle.innerText = meta.shortTitle || meta.title || t('main_fallback_study_title');
+  // 2. Resolve active language and build the lang→slot map.
+  //    For mono-lingual studies langMap is {}, and resolveMetaField falls
+  //    through to the unnumbered field (meta.title, meta.subtitle, etc.).
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs);
+  const langMap        = buildLangMap(window.studyMetadata || {});
 
-  // 3. Resolve last position for Continue button
+  const title      = (activeLang ? resolveMetaField(meta, 'title',      activeLang, langMap) : '') || meta.title      || t('main_fallback_untitled');
+  const subtitle   = (activeLang ? resolveMetaField(meta, 'subtitle',   activeLang, langMap) : '') || meta.subtitle   || '';
+  const shortTitle = (activeLang ? resolveMetaField(meta, 'shortTitle', activeLang, langMap) : '') || meta.shortTitle || meta.title || '';
+  const description= (activeLang ? resolveMetaField(meta, 'description',activeLang, langMap) : '') || meta.description|| '';
+
+  // 3. Update nav bar title
+  const navTitle = document.getElementById('header-title');
+  if (navTitle) navTitle.innerText = shortTitle || t('main_fallback_study_title');
+
+  // 4. Resolve last position for Continue button
   const savedPos = appSettings.rememberPosition && getLastPosition();
   const pos = savedPos && savedPos.chapterIdx < chapters.length ? savedPos : null;
 
-  // 4. Render the title page using the established CSS classes
+  // 5. Render the title page using the established CSS classes
   content.innerHTML = `
     <div class="title-page">
       ${meta.image?.src ? `<img class="title-page-image" src="${meta.image.src}" alt="${meta.image?.alt || ''}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
       <div class="title-page-image-fallback" style="${meta.image?.src ? 'display:none' : 'display:flex'}">${meta.image?.fallbackEmoji || '📖'}</div>
       <div class="title-page-body">
-        <div class="title-page-main">${meta.title || t('main_fallback_untitled')}</div>
-        <div class="title-page-sub">${meta.subtitle || ''}</div>
+        <div class="title-page-main">${title}</div>
+        <div class="title-page-sub">${subtitle}</div>
         <div class="title-page-divider"></div>
-        <div class="title-page-desc">${meta.description || ''}</div>
+        <div class="title-page-desc">${description}</div>
         <div class="title-page-author">${meta.authorLabel || t('main_fallback_author_label')}</div>
         <div class="title-page-author-name">${meta.authorName || meta.author || ''}</div>
         <div class="title-page-version">${meta.version || ''}</div>
