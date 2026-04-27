@@ -37,8 +37,12 @@ ch05-el15 (Romans 1:21b) — passageText5 has a structural HTML issue: the <i> t
 ch05-el32 / ch05-el42 (Titus 3:3) — The passage appears as "Titus 3:3b" in el32 and "Titus 3:3a" in el42, i.e. the second half before the first half. If this sequencing is intentional for pedagogical reasons (effects on others before effects on self), it's fine — but worth a conscious confirmation.
 
 
-Ch 6 
+Ch 6 Flags for fluent reviewer:
 
+ch06-el25 (Luke 15:20b) — As noted before, passageText5 overlaps significantly with ch06-el22 (Luke 15:19-20a), repeating verse 19 in italics before verse 20. This appears intentional (re-anchoring a new question on the father's behaviour specifically), but is worth an editorial check.
+chapterTitle1 — "Grow in the Father's Love (part i)" rendered as "Girma cikin Ƙaunar Uba (ɓangare na ɗaya)". "Girma" can mean both "grow/grow up" and "greatness" — a reviewer may prefer "Bunƙasa" or "Ƙaruwa" for "grow" depending on the register used elsewhere in the series.
+sampleAnswer1 for ch06-el29 — The phrase "urgency" was rendered as a concept rather than a direct loanword; reviewer should check "gaggawa" would be more natural than the circumlocution used.
+General tone — The bridge texts (e.g. ch06-el18, ch06-el20) use a direct, conversational "you" register. These have been translated using the informal singular "ka/kana" consistent with what appears to be the target register. A reviewer should confirm this is correct for the audience, or switch to plural "ku/kuna" if the text is addressed to groups.
 
 
 Ch 7 Flags for reviewer:
