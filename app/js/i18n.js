@@ -37,7 +37,7 @@ const LANGUAGE_MAP = {
   da:      { flag: '🇩🇰', label: 'Dansk (Danish)',              group: 'europe' },
   de:      { flag: '🇩🇪', label: 'Deutsch (German)',            group: 'europe' },
   el:      { flag: '🇬🇷', label: 'Ελληνικά (Greek)',            group: 'europe' },
-  en:      { flag: '🇬🇧', label: 'English',                     group: 'europe' },
+  en:      { flag: '🇬🇧', label: 'English',                     group: 'europe', badge: { letter: 'En', bg: '#1A56A0' }, alwaysBadge: true },
   es:      { flag: '🇪🇸', label: 'Español',                     group: 'europe' },
   et:      { flag: '🇪🇪', label: 'Eesti (Estonian)',            group: 'europe' },
   fa:      { flag: '🇮🇷', label: 'فارسی (Persian)',             group: 'asia'   },
@@ -133,12 +133,13 @@ function renderLangBadge(entry) {
 }
 
 // Returns the flag emoji for the currently active UI language, falling back
-// to 🌐. Always returns the raw flag (never a badge) — used in the Settings
-// tab label where the language name alongside it is sufficient to distinguish
-// same-flag languages.
+// to 🌐. Returns a badge for languages with alwaysBadge set, otherwise the raw flag.
+// used in the Settings tab label where the language name alongside it is sufficient
+// to distinguish same-flag languages.
 function currentLangFlag() {
   const lang  = window.appLocale || resolveLanguage();
   const entry = LANGUAGE_MAP[lang];
+  if (entry && entry.alwaysBadge) return renderLangBadge(entry);
   return (entry && entry.flag) || '🌐';
 }
 

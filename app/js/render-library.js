@@ -166,14 +166,14 @@ function renderLangBar(langs) {
     `<button class="lib-lang-btn${active === 'all' ? ' active' : ''}"
              onclick="setLibLangFilter('all')"
              aria-label="All languages"
-             title="All languages">🌐</button>`,
+             title="All languages"><span class="lang-badge" style="--badge-bg:#555">all</span></button>`,
     ...langs.map(code => {
       const entry = LANGUAGE_MAP[code];
       if (!entry) return '';
       const label      = entry.label;
       const flagShared = flagCounts[entry.flag] > 1;
-      const display    = (flagShared && entry.badge)
-        ? renderLangBadge(entry)   // badge: distinguishes same-flag languages
+      const display    = ((flagShared || entry.alwaysBadge) && entry.badge)
+        ? renderLangBadge(entry)   // badge: always for alwaysBadge; shared-flag otherwise
         : entry.flag;              // flag: unambiguous when alone or no badge defined
       return `<button class="lib-lang-btn${active === code ? ' active' : ''}"
                        onclick="setLibLangFilter('${code}')"

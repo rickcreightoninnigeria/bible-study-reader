@@ -1475,7 +1475,7 @@ async function renderSettings(tabId) {
           onclick="setLanguage('${code}'); renderSettings('language')"
           aria-pressed="${isActive}"
         >
-          <span class="settings-lang-flag">${lang.flag}</span>
+          <span class="settings-lang-flag">${lang.alwaysBadge ? renderLangBadge(lang) : lang.flag}</span>
           <span class="settings-lang-label">${lang.label}</span>
           ${isActive ? '<span class="settings-lang-check">✓</span>' : ''}
         </button>`;

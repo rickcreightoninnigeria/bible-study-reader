@@ -104,8 +104,8 @@ function buildLangBar(langs, activeLang) {
     // Graceful fallback for language codes not yet in LANGUAGE_MAP.
     const label      = entry?.label || code.toUpperCase();
     const flagShared = entry && flagCounts[entry.flag] > 1;
-    const display    = (flagShared && entry?.badge)
-      ? renderLangBadge(entry)   // badge: distinguishes same-flag languages
+    const display    = ((flagShared || entry?.alwaysBadge) && entry?.badge)
+      ? renderLangBadge(entry)   // badge: always for alwaysBadge; shared-flag otherwise
       : (entry?.flag || '🌐');   // flag: unambiguous when alone or no badge
     return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
                      onclick="setStudyLang('${code}')"
