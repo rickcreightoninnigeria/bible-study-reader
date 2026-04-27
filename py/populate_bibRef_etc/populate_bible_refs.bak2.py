@@ -321,44 +321,13 @@ def translate_ref(book: str, chapter: str, verses: str, lookup: dict) -> str:
 # Core processing
 # ---------------------------------------------------------------------------
 
-def find_net_ref_number(data: dict) -> int:
-    """
-    Inspect studyMetadata to find which bibleTranslationN slot holds "NET".
-    Returns the slot number (1-based integer), e.g. 1 if bibleTranslation1 == "NET".
-    Raises ValueError if no slot is "NET" (so the caller can abort gracefully).
-    """
-    metadata = data.get("studyMetadata", {})
-    for n in range(1, 10):  # supports up to bibleTranslation9
-        key = f"bibleTranslation{n}"
-        if metadata.get(key, "").upper() == "NET":
-            return n
-    raise ValueError(
-        "No bibleTranslationN field with value 'NET' found in studyMetadata. "
-        "Cannot determine the English source reference slot."
-    )
-
-
-def process_element(el: dict, element_id: str, net_slot: int) -> dict:
+def process_element(el: dict, element_id: str) -> dict:
     """
     Update a single biblePassage element in place and return it.
-    net_slot is the 1-based index of the bibleRefN field that holds the
-    English (NET) reference, as determined from studyMetadata.
-    If that slot is empty (data inconsistency), the function falls back to
-    scanning all bibleRefN slots for the first parseable English reference.
     """
-    english_ref = el.get(f"bibleRef{net_slot}", "")
+    bibleRef5 = el.get("bibleRef5", "")
 
-    # Fallback: if the designated slot is empty, try every slot in order.
-    if not english_ref:
-        for n in range(1, 10):
-            candidate = el.get(f"bibleRef{n}", "")
-            if candidate:
-                book_test, _, _ = parse_bible_ref(candidate)
-                if book_test:
-                    english_ref = candidate
-                    break
-
-    book, chapter, verses = parse_bible_ref(english_ref)
+    book, chapter, verses = parse_bible_ref(bibleRef5)
 
     # --- bibleRef1 / 2 / 3  →  Hausa ---
     for field in ("bibleRef1", "bibleRef2", "bibleRef3"):
@@ -432,20 +401,12 @@ def process_file(input_path: Path):
     with input_path.open(encoding="utf-8") as f:
         data = json.load(f)
 
-    try:
-        net_slot = find_net_ref_number(data)
-        print(f"  English (NET) source: bibleRef{net_slot} "
-              f"(bibleTranslation{net_slot} = 'NET')")
-    except ValueError as e:
-        print(f"  ERROR: {e}")
-        return
-
     passage_count = 0
     for chapter in data.get("chapters", []):
         for el in chapter.get("elements", []):
             if el.get("type") == "biblePassage":
                 element_id = el.get("elementId", "unknown")
-                process_element(el, element_id, net_slot)
+                process_element(el, element_id)
                 passage_count += 1
 
     output_path = input_path.with_name(
