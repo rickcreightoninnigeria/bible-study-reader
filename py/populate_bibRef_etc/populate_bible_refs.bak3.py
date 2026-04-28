@@ -1,37 +1,16 @@
 """
-populate_bible_refs.py  –  v2.0
+populate_bible_refs.py
 
 For each biblePassage element in a study JSON file:
-
-  1. Identify the NET translation slot N by scanning studyMetadata for the
-     bibleTranslationN field whose value is "NET".  bibleRefN is the English
-     source reference used for all translation work below.
-
-  2. For every OTHER slot M where bibleTranslationM is defined:
-       • Look up the language for that translation code in
-         TRANSLATIONCODE_TO_LANGUAGE (e.g. "HCL" → "Hausa").
-       • If a lookup table exists for that language (LANGUAGE_TO_LOOKUP),
-         and bibleRefM is currently empty, populate it with the translated
-         reference derived from bibleRefN.
-       • Slots whose translation code is unknown, or for which no lookup
-         table exists, are left unchanged (a warning is printed).
-
-  3. For every passageUrlM field:
-       • If M == N (the NET slot):
-           – If passageUrlN is already non-empty, leave it alone.
-           – If passageUrlN is empty, populate it with:
-             https://www.biblegateway.com/passage/?search=BookName+Chapter&version=NET
-             e.g. https://www.biblegateway.com/passage/?search=Colossians+1&version=NET
-       • For all other M:
-           – Replace XXX with the 3-letter book code from bibleRefM.
-           – Replace NNN with the chapter number from bibleRefM.
-           – If neither placeholder is present the URL is left unchanged.
+  1. Populate empty bibleRef1/2/3 with the Hausa equivalent of bibleRef5.
+  2. Populate empty bibleRef4 with the Fulfulde equivalent of bibleRef5.
+  3. Replace XXX in passageUrl1/2/3/4 with the 3-letter book code from bibleRef1/2/3/4.
+  4. Replace NNN in passageUrl1/2/3/4 with the chapter number from bibleRef1/2/3/4.
 
 Usage:
     python populate_bible_refs.py <input_file.json> [<input_file2.json> ...]
 
-Output files are written alongside the input files with the suffix
-_updated_refs.json.
+Output files are written alongside the input files with the suffix _updated_refs.json.
 """
 
 import json
@@ -40,54 +19,11 @@ import sys
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# Translation-code → language name
+# Hardcoded lookup tables
 # ---------------------------------------------------------------------------
 
-TRANSLATIONCODE_TO_LANGUAGE = {
-    # --- Common West African Paratext Codes ---
-    "HAU":   "Hausa",
-    "HCL":   "Hausa",     # Common for Hausa Common Language
-    "HAU79": "Hausa",
-    "SRK":   "Hausa",
-    "FUV":   "Fulfulde",  # Adamawa Fulfulde
-    "FUF":   "Pular",     # Fouta Djallon Fulfulde
-    "FB":    "Fulfulde",
-    "FBDC":  "Fulfulde",
-    "FUB":   "Fulfulde",
-    "FUQ":   "Fulfulde",
-    "IBO":   "Igbo",
-    "YOR":   "Yoruba",
-    "EFI":   "Efik",
-    "TIV":   "Tiv",
-    "SWA":   "Swahili",
-    "FRN":   "French",    # Common code in Francophone Africa projects
-    "FRA":   "French",    # ISO standard for French
-    # --- Major English/International Translations ---
-    "ESV":   "English",
-    "KJV":   "English",
-    "NIV":   "English",
-    "NAS":   "English",
-    "RSV":   "English",
-    "MSG":   "English",
-    "NET":   "English",
-    "NIV84": "English",
-    "NLT96": "English",
-    "GNTUK": "English",
-    "SPA":   "Spanish",
-    "POR":   "Portuguese",
-    # --- Biblical/Source Languages ---
-    "HEB":   "Hebrew",
-    "HEB2":  "Hebrew",
-    "GRC":   "Ancient Greek",
-    "ARA":   "Aramaic",
-    "LXX":   "Greek",     # Septuagint
-    "VUL":   "Latin",     # Vulgate
-}
-
-# ---------------------------------------------------------------------------
-# Book-name lookup tables (English → target language)
-# ---------------------------------------------------------------------------
-
+# English book name → Hausa book name
+# "Psalm" (singular) and "Psalms" (plural) are both handled explicitly.
 ENGLISH_TO_HAUSA = {
     "Genesis": "Farawa",
     "Exodus": "Fitowa",
@@ -158,6 +94,7 @@ ENGLISH_TO_HAUSA = {
     "Revelation": "Wahayin Yohanna",
 }
 
+# English book name → Fulfulde book name
 ENGLISH_TO_FULFULDE = {
     "Genesis": "Fuɗɗoode",
     "Exodus": "Perol",
@@ -228,17 +165,7 @@ ENGLISH_TO_FULFULDE = {
     "Revelation": "Banginal",
 }
 
-# Language name → lookup table.
-# Languages not listed here have no book-name translation available; the
-# script will skip those slots with a warning rather than crashing.
-LANGUAGE_TO_LOOKUP = {
-    "Hausa":    ENGLISH_TO_HAUSA,
-    "Fulfulde": ENGLISH_TO_FULFULDE,
-    # "English" is intentionally absent — it is the source, not a target.
-    # Add further languages here as lookup tables become available.
-}
-
-# English book name → 3-letter Paratext/USFM book code
+# English book name → 3-letter code
 ENGLISH_TO_3LETTER = {
     "Genesis": "GEN",
     "Exodus": "EXO",
@@ -334,9 +261,9 @@ _BOOK_NAMES_LONGEST_FIRST = sorted(ENGLISH_TO_HAUSA.keys(), key=len, reverse=Tru
 # verbatim for translated bibleRef fields; only the first chapter number is
 # used for URL substitution.
 _CHAPTER_VERSE_RE = re.compile(
-    r'^(\d+)'                   # group 1: first (and usually only) chapter number
-    r':'                        # colon separator
-    r'([\d\s,\-–:a-b]+)'       # group 2: everything that follows (verse string)
+    r'^(\d+)'          # group 1: first (and usually only) chapter number
+    r':'               # colon separator
+    r'([\d\s,\-–:a-b]+)'  # group 2: everything that follows (verse string)
     r'$',
     re.UNICODE,
 )
@@ -391,21 +318,19 @@ def translate_ref(book: str, chapter: str, verses: str, lookup: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Metadata helpers
+# Core processing
 # ---------------------------------------------------------------------------
 
-def find_net_slot(data: dict) -> int:
+def find_net_ref_number(data: dict) -> int:
     """
     Inspect studyMetadata to find which bibleTranslationN slot holds "NET".
     Returns the slot number (1-based integer), e.g. 1 if bibleTranslation1 == "NET".
     Raises ValueError if no slot is "NET" (so the caller can abort gracefully).
     """
     metadata = data.get("studyMetadata", {})
-    for n in range(1, 100):
+    for n in range(1, 10):  # supports up to bibleTranslation9
         key = f"bibleTranslation{n}"
-        if key not in metadata:
-            break
-        if metadata[key].upper() == "NET":
+        if metadata.get(key, "").upper() == "NET":
             return n
     raise ValueError(
         "No bibleTranslationN field with value 'NET' found in studyMetadata. "
@@ -413,61 +338,19 @@ def find_net_slot(data: dict) -> int:
     )
 
 
-def collect_translation_slots(data: dict) -> dict[int, str]:
-    """
-    Return a dict mapping slot number → translation code for every
-    bibleTranslationN key present in studyMetadata.
-    e.g. {1: "NET", 2: "HAU79", 3: "HCL", 4: "SRK", 5: "FUV"}
-    Stops scanning at the first gap (bibleTranslation1, 2, 3 present but
-    not 4 → only 1–3 are returned).
-    """
-    metadata = data.get("studyMetadata", {})
-    slots = {}
-    for n in range(1, 100):
-        key = f"bibleTranslation{n}"
-        if key not in metadata:
-            break
-        slots[n] = metadata[key]
-    return slots
-
-
-# ---------------------------------------------------------------------------
-# Core processing
-# ---------------------------------------------------------------------------
-
-def build_net_url(book: str, chapter: str) -> str:
-    """
-    Build a BibleGateway NET URL for the given English book name and chapter.
-    Spaces in the book name are replaced with '+'.
-    e.g. build_net_url("1 Corinthians", "12")
-         → "https://www.biblegateway.com/passage/?search=1+Corinthians+12&version=NET"
-    """
-    encoded_book = book.replace(" ", "+")
-    return (
-        f"https://www.biblegateway.com/passage/"
-        f"?search={encoded_book}+{chapter}&version=NET"
-    )
-
-
-def process_element(
-    el: dict,
-    element_id: str,
-    net_slot: int,
-    translation_slots: dict[int, str],
-) -> dict:
+def process_element(el: dict, element_id: str, net_slot: int) -> dict:
     """
     Update a single biblePassage element in place and return it.
-
-    net_slot            – 1-based index of the NET (English source) slot.
-    translation_slots   – {slot_number: translation_code} for every defined
-                          bibleTranslationN in studyMetadata.
+    net_slot is the 1-based index of the bibleRefN field that holds the
+    English (NET) reference, as determined from studyMetadata.
+    If that slot is empty (data inconsistency), the function falls back to
+    scanning all bibleRefN slots for the first parseable English reference.
     """
     english_ref = el.get(f"bibleRef{net_slot}", "")
 
-    # Fallback: if the designated NET slot is empty, scan all slots in order
-    # for the first parseable English reference.
+    # Fallback: if the designated slot is empty, try every slot in order.
     if not english_ref:
-        for n in sorted(translation_slots):
+        for n in range(1, 10):
             candidate = el.get(f"bibleRef{n}", "")
             if candidate:
                 book_test, _, _ = parse_bible_ref(candidate)
@@ -477,58 +360,47 @@ def process_element(
 
     book, chapter, verses = parse_bible_ref(english_ref)
 
-    # ------------------------------------------------------------------
-    # 1. Populate empty bibleRefM for non-NET slots
-    # ------------------------------------------------------------------
-    for slot, code in translation_slots.items():
-        if slot == net_slot:
-            continue  # source slot — never overwrite
-
-        ref_field = f"bibleRef{slot}"
-        if ref_field not in el or el[ref_field] != "":
-            continue  # field absent or already populated — leave it alone
-
-        language = TRANSLATIONCODE_TO_LANGUAGE.get(code.upper())
-        if language is None:
-            print(f"  WARNING: Unknown translation code '{code}' "
-                  f"for slot {slot} (element {element_id}) — skipping bibleRef{slot}")
-            continue
-
-        if language == "English":
-            # Another English translation — copy the NET reference verbatim.
+    # --- bibleRef1 / 2 / 3  →  Hausa ---
+    for field in ("bibleRef1", "bibleRef2", "bibleRef3"):
+        if field in el and el[field] == "":
             if book:
-                el[ref_field] = english_ref
-            continue
+                el[field] = translate_ref(book, chapter, verses, ENGLISH_TO_HAUSA)
+            # (leave empty if parse failed; warning already printed)
 
-        lookup = LANGUAGE_TO_LOOKUP.get(language)
-        if lookup is None:
-            print(f"  WARNING: No book-name lookup table available for language "
-                  f"'{language}' (code '{code}', slot {slot}, element {element_id}) "
-                  f"— skipping bibleRef{slot}")
-            continue
-
+    # --- bibleRef4  →  Fulfulde ---
+    if "bibleRef4" in el and el.get("bibleRef4") == "":
         if book:
-            el[ref_field] = translate_ref(book, chapter, verses, lookup)
+            el["bibleRef4"] = translate_ref(book, chapter, verses, ENGLISH_TO_FULFULDE)
 
-    # ------------------------------------------------------------------
-    # 2. Populate / update passageUrlM fields
-    # ------------------------------------------------------------------
-    for slot in translation_slots:
-        url_field = f"passageUrl{slot}"
+    # --- passageUrl1/2/3/4  →  replace XXX and NNN ---
+    # Map each URL field to its corresponding bibleRef field so we can look up
+    # the correct book/chapter for that specific language.
+    url_to_ref = {
+        "passageUrl1": "bibleRef1",
+        "passageUrl2": "bibleRef2",
+        "passageUrl3": "bibleRef3",
+        "passageUrl4": "bibleRef4",
+    }
+
+    for url_field, ref_field in url_to_ref.items():
         url = el.get(url_field, "")
-
-        if slot == net_slot:
-            # NET slot: only fill if currently empty.
-            if not url and book:
-                el[url_field] = build_net_url(book, chapter)
-            continue
-
-        # Non-NET slot: replace XXX / NNN placeholders using that slot's
-        # bibleRef (now populated above if it was empty).
         if not url:
             continue
         if "XXX" not in url and "NNN" not in url:
             continue
+
+        # Determine which book/chapter to use for this URL.
+        # The translated bibleRef fields already exist (just set above),
+        # but for the 3-letter code we still need the English book name —
+        # which we get by re-parsing bibleRef5 (already done above).
+        #
+        # Note: all four URLs derive their book/chapter from the *same*
+        # underlying English reference (bibleRef5); they just link to
+        # different Bible versions.  The bibleRef fields differ only in
+        # language, not in book/chapter.
+        #
+        # For multi-chapter references (e.g. "James 3:16, 4:1-2"), chapter
+        # holds the *first* chapter number, which is used for NNN.
 
         if "XXX" in url:
             if book:
@@ -540,14 +412,14 @@ def process_element(
                           f"(element {element_id}, field {url_field})")
             else:
                 print(f"  WARNING: Cannot replace XXX in {url_field} of element "
-                      f"{element_id} — source reference could not be parsed")
+                      f"{element_id} — bibleRef5 could not be parsed")
 
         if "NNN" in url:
             if chapter:
                 url = url.replace("NNN", chapter)
             else:
                 print(f"  WARNING: Cannot replace NNN in {url_field} of element "
-                      f"{element_id} — source reference could not be parsed")
+                      f"{element_id} — bibleRef5 could not be parsed")
 
         el[url_field] = url
 
@@ -561,23 +433,19 @@ def process_file(input_path: Path):
         data = json.load(f)
 
     try:
-        net_slot = find_net_slot(data)
+        net_slot = find_net_ref_number(data)
+        print(f"  English (NET) source: bibleRef{net_slot} "
+              f"(bibleTranslation{net_slot} = 'NET')")
     except ValueError as e:
         print(f"  ERROR: {e}")
         return
-
-    translation_slots = collect_translation_slots(data)
-    print(f"  Translation slots found: "
-          + ", ".join(f"{n}={code}" for n, code in sorted(translation_slots.items())))
-    print(f"  English (NET) source: bibleRef{net_slot} "
-          f"(bibleTranslation{net_slot} = 'NET')")
 
     passage_count = 0
     for chapter in data.get("chapters", []):
         for el in chapter.get("elements", []):
             if el.get("type") == "biblePassage":
                 element_id = el.get("elementId", "unknown")
-                process_element(el, element_id, net_slot, translation_slots)
+                process_element(el, element_id, net_slot)
                 passage_count += 1
 
     output_path = input_path.with_name(

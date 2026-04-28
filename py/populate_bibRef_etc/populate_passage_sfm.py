@@ -27,6 +27,9 @@ Output is written as <stem>_updated_passages.json alongside each input file.
 import json
 import re
 import sys
+import io
+import contextlib
+import os
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -221,12 +224,19 @@ _sfm_cache: dict = {}
 
 
 def load_sfm(sfm_path: str):
-    """Return the parsed USJ dict for an SFM file, with caching."""
+    """Return the parsed USJ dict for an SFM file, with caching.
+
+    usfm_grammar prints token-level diagnostics directly to stdout (and
+    sometimes stderr) even when ignore_errors=True.  We suppress both
+    file descriptors at the OS level so nothing leaks through.
+    """
     if sfm_path in _sfm_cache:
         return _sfm_cache[sfm_path]
 
     p = Path(sfm_path)
     if not p.exists():
+        p = Path(sfm_path)
+        print(f"  DEBUG: Looking for: {sfm_path}  exists={p.exists()}")
         print(f"  WARNING: SFM file not found: {sfm_path}")
         _sfm_cache[sfm_path] = None
         return None
@@ -234,8 +244,26 @@ def load_sfm(sfm_path: str):
     try:
         from usfm_grammar import USFMParser
         text = p.read_text(encoding="utf-8", errors="replace")
-        parser = USFMParser(text)
-        usj = parser.to_usj(ignore_errors=True)
+
+        # Suppress stdout AND stderr at the file-descriptor level so that
+        # usfm_grammar's C-level / tree-sitter diagnostics are silenced.
+        devnull_fd = os.open(os.devnull, os.O_WRONLY)
+        old_stdout_fd = os.dup(1)
+        old_stderr_fd = os.dup(2)
+        try:
+            os.dup2(devnull_fd, 1)
+            os.dup2(devnull_fd, 2)
+            with contextlib.redirect_stdout(io.StringIO()), \
+                 contextlib.redirect_stderr(io.StringIO()):
+                parser = USFMParser(text)
+                usj = parser.to_usj(ignore_errors=True)
+        finally:
+            os.dup2(old_stdout_fd, 1)
+            os.dup2(old_stderr_fd, 2)
+            os.close(devnull_fd)
+            os.close(old_stdout_fd)
+            os.close(old_stderr_fd)
+
         _sfm_cache[sfm_path] = usj
         return usj
     except Exception as exc:
@@ -414,6 +442,9 @@ def process_element(el: dict, translations: dict) -> None:
     Find the NET slot (the index whose translation code is 'NET').
     Parse book/chapter/verses from that bibleRef (it's always English).
     Then for every slot N that has an empty passageTextN, fetch from SFM.
+
+    NET is treated no differently from any other slot: if passageTextN is
+    absent or empty and bibleRefN is present, we attempt to populate it.
     """
     # Find the NET index
     net_index = None
@@ -439,18 +470,26 @@ def process_element(el: dict, translations: dict) -> None:
     if book is None:
         return  # warning already printed
 
-    # Iterate over every passageTextN present in the element
+    # Iterate over every translation slot, including NET itself.
+    # A slot is processed if its passageText is absent or empty.
     for idx, translation_code in translations.items():
         text_key = f"passageText{idx}"
         ref_key  = f"bibleRef{idx}"
 
         # Skip if passageText already populated
-        if el.get(text_key, "").strip():
+        existing_text = el.get(text_key, "")
+        if isinstance(existing_text, str) and existing_text.strip():
             continue
 
-        # Skip if the corresponding bibleRef is empty
-        if not el.get(ref_key, "").strip():
-            continue
+        # For NET, we already have the parsed ref; for other slots we
+        # still need a non-empty bibleRef to confirm the slot is active.
+        if idx == net_index:
+            # NET slot: always use the already-parsed ref
+            slot_ref = net_ref
+        else:
+            slot_ref = el.get(ref_key, "").strip()
+            if not slot_ref:
+                continue  # no reference, slot not active for this element
 
         # Skip if no translation code
         if not translation_code:
@@ -458,7 +497,7 @@ def process_element(el: dict, translations: dict) -> None:
 
         html = get_passage_html(
             translation_code, book, chapter, verse_groups,
-            ref_for_logging=el.get(ref_key, "")
+            ref_for_logging=slot_ref
         )
         if html:
             el[text_key] = html
