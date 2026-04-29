@@ -20,6 +20,7 @@ the full file format so you can author one from scratch.
      - [`heading`](#heading-element)
      - [`biblePassage`](#biblepassage-element)
      - [`question`](#question-element)
+       - [Short answer threshold](#short-answer-threshold)
      - [`callout`](#callout-element)
      - [`likertScale`](#likertscale-element)
      - [`image`](#image-element)
@@ -350,6 +351,7 @@ the user's answer.
 | `answerPlaceholder` | No | Custom placeholder text inside the textarea. |
 | `sampleAnswer` | No | A model answer string used internally by the local answer validator. Never shown to the user. |
 | `questionHint` | No | A hint string available to the local validator. Never shown directly. |
+| `shortAnswerThreshold` | No | Overrides the minimum word count used by the local answer validator's short-answer check for this question only. Use this when a genuinely short answer is the correct form of response. See [Short answer threshold](#short-answer-threshold) below. |
 | `deeper` | No | Adds a "(Go deeper)" button next to the question text that opens a modal with an additional question. `label` is the button text; `question` is the deeper question itself. |
 
 **`header` subtype** — when `subtype` is `"header"`, the ref bar shows the
@@ -368,6 +370,66 @@ value of a `header` field instead of a scripture reference:
 
 Setting `"format": "HTML"` on a `header` subtype allows the `header` field to
 contain HTML (e.g. styled labels). For plain text, omit `format`.
+
+---
+
+#### Short answer threshold
+
+By default the local answer validator flags answers that are too short — the minimum is 6 words, or 35% of the `sampleAnswer` word count (whichever is smaller, and capped at 6). This is a sensible floor for most passage-based questions.
+
+Some questions legitimately expect a short answer, however. For example:
+
+- *"What one word would you use to describe your relationship with work right now?"*
+- *"Which of these three options best describes your situation?"*
+- *"Name the verb Paul uses in verse 23."*
+
+For these, set `shortAnswerThreshold` to lower the floor or remove it entirely:
+
+```json
+{
+  "type":                  "question",
+  "subtype":               "bible",
+  "elementId":             "ch2_q_004",
+  "question":              "What one word would you use to describe how you feel about your work right now?",
+  "linkedPassage":         "Ecclesiastes 2:17-23",
+  "sampleAnswer":          "Frustrated.",
+  "shortAnswerThreshold":  1
+}
+```
+
+```json
+{
+  "type":                  "question",
+  "subtype":               "bible",
+  "elementId":             "ch3_q_011",
+  "question":              "Which of the three temptations do you find most relatable?",
+  "linkedPassage":         "Matthew 4:1-11",
+  "shortAnswerThreshold":  0
+}
+```
+
+| Value | Effect |
+|-------|--------|
+| Absent or `null` | Use the default logic (35% of `sampleAnswer` length, capped at 6 words; or 6 words if no `sampleAnswer` is present). |
+| Integer ≥ `1` | Require at least this many words. Values lower than the default are the typical use case. |
+| `0` | Disable the short-answer check entirely for this question. All other checks (filler detection, repeats-question, repeats-passage, thematic) still run. |
+
+**Multilingual studies.** In a multilingual `.estudy` file, a single `shortAnswerThreshold` (no suffix) applies to all languages for that element. To set a different threshold per language, use the numbered suffix convention — `shortAnswerThreshold1`, `shortAnswerThreshold2`, `shortAnswerThreshold3` — matching the `language1` / `language2` / `language3` codes in `studyMetadata`. A numbered entry takes precedence over the unsuffixed fallback; the unsuffixed fallback takes precedence over the built-in default.
+
+```json
+{
+  "elementId":             "ch01-el09",
+  "type":                  "question",
+  "question1":             "Hausa question text…",
+  "question2":             "Fulfulde question text…",
+  "question3":             "English question text…",
+  "shortAnswerThreshold1": 2,
+  "shortAnswerThreshold2": 1,
+  "shortAnswerThreshold3": 3
+}
+```
+
+> **Note:** `shortAnswerThreshold` values are written by the renderer to a `data-short-answer-threshold` attribute on the question card element and read from there by the validator. Study authors set the JSON field; the renderer handles the rest.
 
 ---
 

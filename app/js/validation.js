@@ -42,6 +42,29 @@
 //   _localValidate reads it from the DOM if present and uses it for thematic
 //   checking. It is never rendered visibly to the user.
 //
+// shortAnswerThreshold (optional, per question):
+//   Overrides the default minimum word count used in the short-answer check
+//   (step 2) for a specific question. Useful when a genuinely short answer is
+//   the correct form of response (e.g. "name one word", "which option best
+//   describes you?").
+//
+//   The renderer resolves the effective threshold and writes it as
+//   data-short-answer-threshold on the .question-card element:
+//
+//   Monolingual studies:
+//     element.shortAnswerThreshold  →  data-short-answer-threshold
+//
+//   Multilingual studies (languageN suffix convention):
+//     Resolution order for the active language suffix N:
+//       1. element.shortAnswerThresholdN  (per-language override)
+//       2. element.shortAnswerThreshold   (cross-language default)
+//       3. Attribute omitted              (built-in default logic applies)
+//
+//   Values:
+//     Integer ≥ 1  — use as the minimum word count for this question
+//     0            — disable the short-answer check entirely for this question
+//     Absent       — use the existing default (35% of sampleAnswer length, ≤ 6)
+//
 // ── SHARED DEPENDENCIES (globals) ────────────────────────────────────────────
 //   ICONS, showToast, chapters, currentChapter, storageKey,
 //   saveAnswers, window.studyAiData, window.leadersNotesData, verseData
@@ -574,6 +597,14 @@ function _autoResizeTutorInput(el) {
 //   element IF it is present. _localValidate reads it from there if available.
 //   It is never rendered visibly to the user anywhere in the UI.
 //
+// shortAnswerThreshold:
+//   An optional per-question override for the minimum word count checked in
+//   step 2. The renderer resolves the effective value (honouring the
+//   shortAnswerThresholdN / shortAnswerThreshold multilingual fallback chain)
+//   and writes it as data-short-answer-threshold on the .question-card element.
+//   0 = disable the short-answer check entirely for this question.
+//   Absent = use the built-in default (35% of sampleAnswer length, capped at 6).
+//
 // ── Eligibility check ─────────────────────────────────────────────────────────
 
 // Question subtypes that local validate should run on.
@@ -614,11 +645,12 @@ function openLocalValidateForCard(buttonEl) {
   // Guard: icon should be disabled when empty, but double-check here
   if (!answer) return;
 
-  const questionText = _getQuestionText(card);
-  const sampleAnswer = card.dataset.sampleAnswer || null;
-  const questionHint = card.dataset.questionHint || null;
+  const questionText          = _getQuestionText(card);
+  const sampleAnswer          = card.dataset.sampleAnswer || null;
+  const questionHint          = card.dataset.questionHint || null;
+  const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
 
-  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint);
+  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold);
 
   // feedback is always a non-null string (either a problem message or a
   // positive confirmation). Scroll card to centre first so the toast
@@ -651,11 +683,12 @@ function localValidateAutoTrigger(textareaEl) {
   // Record the answer we are about to validate so next blur can diff
   card.dataset.lvLastAnswer = answer;
 
-  const questionText = _getQuestionText(card);
-  const sampleAnswer = card.dataset.sampleAnswer || null;
-  const questionHint = card.dataset.questionHint || null;
+  const questionText          = _getQuestionText(card);
+  const sampleAnswer          = card.dataset.sampleAnswer || null;
+  const questionHint          = card.dataset.questionHint || null;
+  const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
 
-  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint);
+  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold);
   _localValidateShowFeedback(card, feedback);
 }
 
@@ -665,12 +698,17 @@ function localValidateAutoTrigger(textareaEl) {
 // Callers decide how to display it (toast, thread, etc.).
 //
 // Parameters:
-//   userAnswer   — the raw answer text from the textarea
-//   questionText — the question text (plain, from DOM)
-//   card         — the .question-card element (for passage lookup)
-//   sampleAnswer — optional model answer string (from data-sample-answer)
+//   userAnswer           — the raw answer text from the textarea
+//   questionText         — the question text (plain, from DOM)
+//   card                 — the .question-card element (for passage lookup)
+//   sampleAnswer         — optional model answer string (from data-sample-answer)
+//   questionHint         — optional hint string (from data-question-hint)
+//   shortAnswerThreshold — optional string from data-short-answer-threshold:
+//                            '0'        → disable the short-answer check
+//                            '1', '2'…  → use as the minimum word count
+//                            null       → use built-in default logic
 
-function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHint) {
+function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold) {
   const answer = userAnswer.trim();
 
   // ── Shared utilities ────────────────────────────────────────────────────────
@@ -710,11 +748,15 @@ function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHi
 
   // ── 2. Very short answer ────────────────────────────────────────────────────
   // Minimum words calibrated against sampleAnswer length if available.
+  // shortAnswerThreshold (from data-short-answer-threshold on the card) overrides
+  // the default when present. 0 = skip this check entirely for this question.
   const wordCount = answer.split(/\s+/).filter(Boolean).length;
-  const minWords  = sampleAnswer
-    ? Math.min(6, Math.round(sampleAnswer.split(/\s+/).filter(Boolean).length * 0.35))
-    : 6;
-  if (wordCount < minWords) {
+  const minWords  = shortAnswerThreshold !== null
+    ? parseInt(shortAnswerThreshold, 10)                         // author-supplied override
+    : sampleAnswer
+      ? Math.min(6, Math.round(sampleAnswer.split(/\s+/).filter(Boolean).length * 0.35))
+      : 6;
+  if (minWords > 0 && wordCount < minWords) {
     return withHint(
       t('validation_lv_too_short'),
       t('validation_lv_too_short')
