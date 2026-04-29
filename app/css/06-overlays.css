@@ -71,7 +71,7 @@
   position: fixed;
   inset: 0;
   background: rgba(44,36,22,0.55);
-  z-index: 300;
+  z-index: var(--z-modal);
   align-items: flex-end;
   justify-content: center;
 }
@@ -287,7 +287,7 @@
   position: fixed;
   inset: 0;
   background: rgba(44,36,22,0.6);
-  z-index: 300;
+  z-index: var(--z-modal);
   align-items: flex-end;
   justify-content: center;
 }
@@ -361,7 +361,7 @@
   position: fixed;
   inset: 0;
   background: rgba(44,36,22,0.6);
-  z-index: 300;
+  z-index: var(--z-modal);
   align-items: flex-end;
   justify-content: center;
 }
@@ -429,7 +429,7 @@
 .onboarding-overlay {
   position: fixed;
   inset: 0;
-  z-index: 400;
+  z-index: var(--z-onboarding);
   background: var(--text);
   display: flex;
   flex-direction: column;
@@ -566,14 +566,14 @@
 
 /* ── 08. SEARCH OVERLAY ─────────────────────────────────────────────────── */
 /* Full-screen search panel that slides down from below the top nav.
-   z-index 95 keeps it below modals (z-index 300+) but above page content. */
+   var(--z-search) keeps it below modals (var(--z-modal)) but above page content. */
 
 /* Base hidden state — no animation here to prevent initial flash */
 .search-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 95;
+  z-index: var(--z-search);
   top: calc(52px + env(safe-area-inset-top)) !important;
   height: calc(100vh - (52px + env(safe-area-inset-top))) !important;
   background: var(--text);
@@ -755,7 +755,7 @@
   position: fixed;
   inset: 0;
   background: rgba(44,36,22,0.6);
-  z-index: 300;
+  z-index: var(--z-modal);
   align-items: flex-end;
   justify-content: center;
 }

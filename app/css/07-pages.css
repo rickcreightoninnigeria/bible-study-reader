@@ -352,7 +352,7 @@
 .howto-tab-bar {
   position: sticky;
   top: calc(52px + env(safe-area-inset-top));
-  z-index: 50;
+  z-index: var(--z-subnav);
   background: var(--text);
   border-bottom: 1px solid rgba(245,240,232,0.10);
   display: flex;
@@ -1182,7 +1182,7 @@
 .progress-tab-bar {
   position: sticky;
   top: calc(52px + env(safe-area-inset-top));
-  z-index: 50;
+  z-index: var(--z-subnav);
   background: var(--text);
   border-bottom: 1px solid rgba(245,240,232,0.10);
   display: flex;
@@ -1386,7 +1386,7 @@
 .lib-sticky-header {
   position: sticky;
   top: calc(52px + env(safe-area-inset-top));
-  z-index: 50;
+  z-index: var(--z-subnav);
   background: var(--text);
 }
 
@@ -2541,7 +2541,7 @@
   position: fixed;
   inset: 0;
   background: rgba(28,23,16,0.55);
-  z-index: 300;
+  z-index: var(--z-modal);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -2606,7 +2606,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 500;
+  z-index: var(--z-dialog);
   background: rgba(44,36,22,0.65);
   display: flex;
   align-items: center;

@@ -65,6 +65,21 @@
   --dm-text-mid:    #c8bfaf;      /* secondary / body text, paragraph copy           */
   --dm-text-faint:  #6a5f50;      /* placeholders, disabled, faint labels            */
 
+  /* ── Stacking layers ──
+     Named z-index tokens. Every z-index in the codebase must reference
+     one of these tokens — no magic numbers. The calc() pattern at usage
+     sites (e.g. calc(var(--z-subnav) - 1)) is permitted where a layer
+     must sit immediately below a named tier without needing its own token.
+     Layers in ascending order: */
+  --z-subnav:      50;   /* sticky page sub-headers (howto, progress, library) */
+  --z-search:      95;   /* slide-down search panel and hamburger drawer        */
+  --z-nav:        100;   /* fixed top nav                                       */
+  --z-tooltip:    200;   /* floating tooltips and hint popovers                 */
+  --z-modal:      300;   /* content overlays: verse, QA, deeper-dive, info      */
+  --z-onboarding: 400;   /* onboarding overlay — above all content modals       */
+  --z-dialog:     500;   /* system dialogs: Settings/Library confirm actions    */
+  --z-toast:      600;   /* toast and celebration notifications — always on top */
+
   /* ── Typography stacks ──
      These stacks cover Latin-script languages (en, fr, es, pt, ha, ff,
      sw, ig, yo, ms, tl, ru, uk, el) and are the active fonts whenever
