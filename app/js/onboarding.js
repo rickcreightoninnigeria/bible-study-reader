@@ -64,7 +64,7 @@ function getUpgradeOnboardingSlides() {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>Multilingual:</b> improved support</li><li><b>Answer checking:</b> bugfixes</li></ul>.]',
+      body:    '<ul><li><b>Multilingual:</b> improved support</li><li><b>Answer checking:</b> bugfixes</li></ul>',
     },
   ];
 }

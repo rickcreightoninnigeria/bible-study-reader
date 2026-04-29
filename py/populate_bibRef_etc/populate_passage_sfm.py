@@ -1,46 +1,39 @@
 """
-populate_passage_sfm.py  —  v1.0
+populate_passage_texts.py
 
-Finds the bibleTranslationN slot whose value is "NET" in studyMetadata,
-then for every biblePassage element whose passageText1 (or whichever
-passageTextN corresponds to the NET slot) is empty, extracts the passage
-text from the matching Paratext SFM file and writes it as HTML.
+For each biblePassage element in a study JSON file, populate any empty
+passageTextN fields by extracting the relevant passage from a Paratext
+SFM file, using the translation code in studyMetadata.bibleTranslationN.
 
-Only the NET slot is populated. Other translation slots (HAU79, HCL, etc.)
-are not touched by this script.
+The NET translation slot is also populated if its passageText is empty,
+regardless of which index (1, 2, 3, ...) it occupies.
 
-Output HTML format (matching pre-populated passages in the JSON):
-
-    <p><sup>3</sup>Verse text. <sup>4</sup>Next verse.</p>
-    <br>
-    <p style='text-align: right; font-size: 0.8em;'>
-      <a href='https://www.biblegateway.com/…'>(NET — see context ↗)</a>
-    </p>
-
-For non-contiguous verse groups (e.g. Acts 18:1–3, 18–19, 24–26) a
-paragraph break with " … " is inserted between groups.
+The book name and chapter/verse range are always derived from the bibleRefN
+whose corresponding bibleTranslation is "NET" — that field is always in English.
+For non-English slots the chapter/verse are read from the same reference parsed
+from the NET slot (book/chapter/verses are the same across all translations).
 
 SFM files are expected at:
     /home/rick/SFM/<CODE>/<NN><BOOK>BT<CODE>.SFM
-where <CODE> is the translation code (e.g. NET) and the path template
-per book is defined in ENGLISH_TO_SFM below.
+The ENGLISH_TO_SFM dict below encodes the exact paths with "XXX" as placeholder
+for the translation code.
 
 Usage:
-    python populate_passage_sfm.py <input.json> [<input2.json> ...]
+    python populate_passage_texts.py <input.json> [<input2.json> ...]
 
-Output is written as <stem>_updated_passages.json alongside each input.
+Output is written as <stem>_updated_passages.json alongside each input file.
 """
 
-import contextlib
-import io
 import json
-import os
 import re
 import sys
+import io
+import contextlib
+import os
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# SFM path templates  (XXX = translation-code placeholder)
+# Hardcoded SFM path templates  (XXX = translation code placeholder)
 # ---------------------------------------------------------------------------
 
 ENGLISH_TO_SFM = {
@@ -113,33 +106,39 @@ ENGLISH_TO_SFM = {
     "Revelation":       "/home/rick/SFM/XXX/67REVBTXXX.SFM",
 }
 
+# ---------------------------------------------------------------------------
+# Reference parsing  (English refs only, used for NET bibleRef slot)
+# ---------------------------------------------------------------------------
+
 _BOOK_NAMES_LONGEST_FIRST = sorted(ENGLISH_TO_SFM.keys(), key=len, reverse=True)
 
-# ---------------------------------------------------------------------------
-# Reference parsing
-# ---------------------------------------------------------------------------
 
 def _strip_letter_suffix(s: str) -> int:
-    """Convert a verse token that may carry a letter suffix to an int.
-    e.g. "21b" → 21, "20a" → 20, "7" → 7."""
+    """
+    Convert a verse token that may carry a letter suffix to an int.
+    e.g. "21b" → 21, "20a" → 20, "7" → 7.
+    Raises ValueError if the numeric part cannot be parsed.
+    """
     return int(re.sub(r'[a-zA-Z]+$', '', s.strip()))
 
 
 def parse_english_ref(ref: str):
     """
-    Parse an English Bible reference into (book_name, chapter_int, verse_groups).
-
-    verse_groups is a list of (start_verse, end_verse) integer tuples.
-    Single verses are (v, v).  Contiguous segments are merged.
-    Non-contiguous segments become separate tuples — the caller inserts
-    " … " between them in the output HTML.
+    Parse an English Bible reference such as "Colossians 1:3",
+    "Psalm 90:2, 4", "John 11:25, 43-44", "Romans 7:21–23",
+    "Romans 1:21b", "Titus 3:3a", "Luke 15:19-20a",
+    or "James 3:16, 4:1-2" (multi-chapter).
 
     Handles:
-      - En-dashes (–) as range separators
-      - Letter suffixes (a/b) stripped before int conversion
-      - Multi-chapter refs (e.g. "James 3:16, 4:1-2"): only chapter N
-        verses are included; segments from later chapters are dropped with
-        a warning.
+      - En-dashes (–) as range separators (treated identically to hyphens).
+      - Letter suffixes (a/b) on verse numbers, stripped before int conversion.
+      - Multi-chapter references: only the first chapter and its verses are
+        used; any segments belonging to a subsequent chapter are ignored.
+
+    Returns (book_name, chapter_int, verse_groups) where verse_groups is a
+    list of (start_verse, end_verse) integer tuples representing contiguous
+    ranges.  Single verses are (v, v).  Non-contiguous groups are separate
+    entries.
 
     Returns (None, None, None) on failure.
     """
@@ -150,46 +149,57 @@ def parse_english_ref(ref: str):
     for book in _BOOK_NAMES_LONGEST_FIRST:
         if ref.startswith(book):
             remainder = ref[len(book):].strip()
-            m = re.match(
-                r'^(\d+):([\d\s,\-–:a-zA-Z]+)$', remainder, re.UNICODE
-            )
+
+            # Accept digits, letters a/b, commas, spaces, hyphens, en-dashes,
+            # and colons (colons appear in multi-chapter refs like "3:16, 4:1-2").
+            m = re.match(r'^(\d+):([\d\s,\-–:a-zA-Z]+)$', remainder,
+                         re.UNICODE)
             if not m:
                 print(f"  WARNING: Cannot parse chapter/verse from '{ref}' "
                       f"(remainder: '{remainder}')")
                 return None, None, None
 
             chapter = int(m.group(1))
+
+            # Normalise en-dashes to hyphens for uniform splitting.
             verse_str = m.group(2).replace('–', '-')
 
+            # Split on commas to get segments; each segment may be:
+            #   "21b"          single verse with suffix
+            #   "7-8"          hyphen range
+            #   "19-20a"       range with suffix on end
+            #   "4:1-2"        new-chapter segment — stop processing here
             verse_groups = []
             for segment in verse_str.split(','):
                 segment = segment.strip()
 
-                # Multi-chapter segment — stop here
+                # Multi-chapter segment (contains a colon) — we've already
+                # captured the first chapter's verses, so stop.
                 if ':' in segment:
                     print(f"  WARNING: '{ref}' spans multiple chapters — "
                           f"only chapter {chapter} verses included; "
-                          f"'{segment}' and further segments skipped.")
+                          f"'{segment.strip()}' and any further segments skipped.")
                     break
 
+                # Normalise en-dash (already done above) then split on hyphen.
                 if '-' in segment:
                     parts = segment.split('-', 1)
                     try:
                         v_start = _strip_letter_suffix(parts[0])
                         v_end   = _strip_letter_suffix(parts[1])
                     except ValueError:
-                        print(f"  WARNING: Cannot parse verse range "
-                              f"'{segment}' in '{ref}'")
+                        print(f"  WARNING: Cannot parse verse range '{segment}' "
+                              f"in '{ref}'")
                         return None, None, None
                 else:
                     try:
                         v_start = v_end = _strip_letter_suffix(segment)
                     except ValueError:
-                        print(f"  WARNING: Cannot parse verse "
-                              f"'{segment}' in '{ref}'")
+                        print(f"  WARNING: Cannot parse verse '{segment}' "
+                              f"in '{ref}'")
                         return None, None, None
 
-                # Merge if contiguous with the previous group
+                # If contiguous with the previous group, merge.
                 if verse_groups and v_start == verse_groups[-1][1] + 1:
                     verse_groups[-1] = (verse_groups[-1][0], v_end)
                 else:
@@ -206,31 +216,38 @@ def parse_english_ref(ref: str):
 
 
 # ---------------------------------------------------------------------------
-# SFM loading (with caching)
+# SFM file loading & caching
 # ---------------------------------------------------------------------------
 
+# Cache: (sfm_path_str) → USJ dict  (or None if file missing / parse failed)
 _sfm_cache: dict = {}
 
 
 def load_sfm(sfm_path: str):
     """Return the parsed USJ dict for an SFM file, with caching.
-    usfm_grammar emits noise to stdout/stderr even with ignore_errors=True;
-    both file descriptors are suppressed at the OS level."""
+
+    usfm_grammar prints token-level diagnostics directly to stdout (and
+    sometimes stderr) even when ignore_errors=True.  We suppress both
+    file descriptors at the OS level so nothing leaks through.
+    """
     if sfm_path in _sfm_cache:
         return _sfm_cache[sfm_path]
 
     p = Path(sfm_path)
     if not p.exists():
+        p = Path(sfm_path)
+        print(f"  DEBUG: Looking for: {sfm_path}  exists={p.exists()}")
         print(f"  WARNING: SFM file not found: {sfm_path}")
         _sfm_cache[sfm_path] = None
         return None
 
     try:
         from usfm_grammar import USFMParser
-
         text = p.read_text(encoding="utf-8", errors="replace")
 
-        devnull_fd    = os.open(os.devnull, os.O_WRONLY)
+        # Suppress stdout AND stderr at the file-descriptor level so that
+        # usfm_grammar's C-level / tree-sitter diagnostics are silenced.
+        devnull_fd = os.open(os.devnull, os.O_WRONLY)
         old_stdout_fd = os.dup(1)
         old_stderr_fd = os.dup(2)
         try:
@@ -239,7 +256,7 @@ def load_sfm(sfm_path: str):
             with contextlib.redirect_stdout(io.StringIO()), \
                  contextlib.redirect_stderr(io.StringIO()):
                 parser = USFMParser(text)
-                usj    = parser.to_usj(ignore_errors=True)
+                usj = parser.to_usj(ignore_errors=True)
         finally:
             os.dup2(old_stdout_fd, 1)
             os.dup2(old_stderr_fd, 2)
@@ -249,7 +266,6 @@ def load_sfm(sfm_path: str):
 
         _sfm_cache[sfm_path] = usj
         return usj
-
     except Exception as exc:
         print(f"  WARNING: Failed to parse SFM file {sfm_path}: {exc}")
         _sfm_cache[sfm_path] = None
@@ -257,29 +273,41 @@ def load_sfm(sfm_path: str):
 
 
 # ---------------------------------------------------------------------------
-# USJ traversal — build flat {verse_int: text} map for one chapter
+# USJ traversal — build a flat verse-text map for one chapter
 # ---------------------------------------------------------------------------
 
-def _extract_text(node) -> str:
-    """Recursively extract plain text from a USJ node, ignoring verse
-    milestone markers (which carry no text themselves)."""
+def _extract_text_from_node(node) -> str:
+    """
+    Recursively extract plain text from a USJ node or string,
+    ignoring structural/milestone markers and collecting only text content
+    from char nodes and bare strings.
+    """
     if isinstance(node, str):
         return node
     if isinstance(node, dict):
-        if node.get("type") == "verse":
+        node_type = node.get("type", "")
+        # Skip verse milestone markers (they carry no text themselves)
+        if node_type in ('verse', 'note'):
             return ""
-        return "".join(_extract_text(c) for c in node.get("content", []))
+        # For char nodes and paras: recurse into content
+        content = node.get("content", [])
+        return "".join(_extract_text_from_node(c) for c in content)
     return ""
 
 
-def _parse_verse_number(raw: str) -> list:
-    """Parse a verse marker value that may be a bridge (e.g. "7-8").
-    Returns a list of all integer verse numbers covered."""
+def _parse_verse_number(raw: str):
+    """
+    Parse a verse marker number which may be a single verse ("3") or a
+    bridged range ("7-8").  Returns a list of all integer verse numbers
+    covered, e.g. [3] or [7, 8].
+    """
     raw = raw.strip()
     if '-' in raw:
         parts = raw.split('-', 1)
         try:
-            return list(range(int(parts[0].strip()), int(parts[1].strip()) + 1))
+            v_start = int(parts[0].strip())
+            v_end   = int(parts[1].strip())
+            return list(range(v_start, v_end + 1))
         except ValueError:
             pass
     try:
@@ -289,11 +317,16 @@ def _parse_verse_number(raw: str) -> list:
 
 
 def build_verse_map(usj: dict, target_chapter: int) -> dict:
-    """Walk USJ content and return {verse_int: text} for target_chapter.
+    """
+    Walk the USJ content and return a dict {verse_number: text_string}
+    for all verses in target_chapter.  Text is stripped of surrounding
+    whitespace.  Only verse-level text is collected (no section headings etc.).
+
     Bridged verses (e.g. \\v 7-8) are stored under every verse number they
-    cover.  Section headings and other non-verse content are ignored."""
-    verse_map: dict = {}
-    in_target = False
+    cover, so a request for verse 7 or verse 8 will both find the text.
+    """
+    verse_map = {}
+    in_target_chapter = False
 
     for block in usj.get("content", []):
         if not isinstance(block, dict):
@@ -301,67 +334,64 @@ def build_verse_map(usj: dict, target_chapter: int) -> dict:
 
         block_type = block.get("type", "")
 
+        # Track which chapter we are in
         if block_type == "chapter":
-            in_target = (int(block.get("number", 0)) == target_chapter)
+            chapter_num = int(block.get("number", 0))
+            in_target_chapter = (chapter_num == target_chapter)
             continue
 
-        if not in_target or block_type != "para":
+        if not in_target_chapter:
             continue
 
-        current_verses: list = []
-        verse_parts:    list = []
+        # Para-level blocks that may contain verses
+        if block_type == "para":
+            para_content = block.get("content", [])
+            current_verses = []   # list of ints (may be >1 for bridges)
+            verse_parts = []
 
-        for item in block.get("content", []):
-            if isinstance(item, dict) and item.get("type") == "verse":
-                # Flush text accumulated for the previous verse(s)
-                if current_verses:
-                    text = re.sub(r'\s+', ' ', " ".join(verse_parts)).strip()
-                    for v in current_verses:
-                        existing = verse_map.get(v, "")
-                        verse_map[v] = (existing + " " + text).strip() \
-                                       if existing else text
+            for item in para_content:
+                if isinstance(item, dict) and item.get("type") == "verse":
+                    # Save text accumulated for the previous verse(s)
+                    if current_verses:
+                        text = re.sub(r'\s+', ' ',
+                                      " ".join(verse_parts)).strip()
+                        for v in current_verses:
+                            existing = verse_map.get(v, "")
+                            verse_map[v] = (existing + " " + text).strip() \
+                                           if existing else text
+                    current_verses = _parse_verse_number(item.get("number", ""))
+                    if not current_verses:
+                        print(f"  WARNING: Could not parse verse marker "
+                              f"number '{item.get('number', '')}' — skipping")
+                    verse_parts = []
+                else:
+                    verse_parts.append(_extract_text_from_node(item))
 
-                current_verses = _parse_verse_number(item.get("number", ""))
-                if not current_verses:
-                    print(f"  WARNING: Could not parse verse marker "
-                          f"'{item.get('number', '')}' — skipping")
-                verse_parts = []
-            else:
-                verse_parts.append(_extract_text(item))
-
-        # Flush last verse(s) in this para
-        if current_verses:
-            text = re.sub(r'\s+', ' ', " ".join(verse_parts)).strip()
-            for v in current_verses:
-                existing = verse_map.get(v, "")
-                verse_map[v] = (existing + " " + text).strip() \
-                               if existing else text
+            # Save the last verse(s) in this para
+            if current_verses:
+                text = re.sub(r'\s+', ' ', " ".join(verse_parts)).strip()
+                for v in current_verses:
+                    existing = verse_map.get(v, "")
+                    verse_map[v] = (existing + " " + text).strip() \
+                                   if existing else text
 
     return verse_map
 
 
 # ---------------------------------------------------------------------------
-# Build the final HTML string
+# Build the HTML passage string from a verse map + verse groups
 # ---------------------------------------------------------------------------
 
 def build_passage_html(verse_map: dict, verse_groups: list,
-                       passage_url: str, ref: str) -> str:
+                        ref: str) -> str:
     """
-    Build the full HTML for a passage, matching the format used in
-    pre-populated elements:
+    Build an HTML string like:
+        <sup>3</sup>Verse text here. <sup>4</sup>Next verse.
 
-        <p><sup>3</sup>Verse text. <sup>4</sup>Next verse.</p>
-        <br>
-        <p style='text-align: right; font-size: 0.8em;'>
-          <a href='URL'>(NET — see context ↗)</a>
-        </p>
-
-    Non-contiguous verse groups are each wrapped in their own <p> with
-    a " … " paragraph between them.
-
-    Returns empty string if any requested verse is missing from verse_map.
+    For non-contiguous groups, insert " ... " between them.
+    Returns empty string if any requested verse is missing.
     """
-    group_paras = []
+    group_htmls = []
 
     for (v_start, v_end) in verse_groups:
         parts = []
@@ -371,85 +401,106 @@ def build_passage_html(verse_map: dict, verse_groups: list,
                 print(f"  WARNING: Verse {v} not found in SFM for '{ref}'")
                 return ""
             parts.append(f"<sup>{v}</sup>{text}")
-        group_paras.append("<p>" + " ".join(parts) + "</p>")
+        group_htmls.append(" ".join(parts))
 
-    # Join non-contiguous groups with a " … " paragraph between them
-    body = "<p> … </p>".join(group_paras)
-
-    attribution = (
-        f"<br><p style='text-align: right; font-size: 0.8em;'>"
-        f"<a href='{passage_url}'>(NET — see context ↗)</a></p>"
-    )
-
-    return body + "\n" + attribution
+    return " ... ".join(group_htmls)
 
 
 # ---------------------------------------------------------------------------
-# Core: fetch passage HTML for one element slot
+# Core: get passage HTML for one (translation_code, book, chapter, groups)
 # ---------------------------------------------------------------------------
 
-def get_passage_html(translation_code: str, book: str, chapter: int,
-                     verse_groups: list, passage_url: str,
-                     ref: str) -> str:
-    """Load the SFM file for (translation_code, book), build the verse map
-    for chapter, and return the final HTML string.
-    Returns empty string on any failure."""
-    template = ENGLISH_TO_SFM.get(book)
-    if template is None:
-        print(f"  WARNING: No SFM path template for book '{book}'")
+def get_passage_html(translation_code: str, book: str,
+                     chapter: int, verse_groups: list,
+                     ref_for_logging: str) -> str:
+    """
+    Look up the SFM file, parse it, and return the HTML passage string.
+    Returns empty string on any failure.
+    """
+    sfm_template = ENGLISH_TO_SFM.get(book)
+    if sfm_template is None:
+        print(f"  WARNING: No SFM template for book '{book}'")
         return ""
 
-    sfm_path = template.replace("XXX", translation_code)
+    sfm_path = sfm_template.replace("XXX", translation_code)
     usj = load_sfm(sfm_path)
     if usj is None:
         return ""
 
     verse_map = build_verse_map(usj, chapter)
-    return build_passage_html(verse_map, verse_groups, passage_url, ref)
+    return build_passage_html(verse_map, verse_groups, ref_for_logging)
 
 
 # ---------------------------------------------------------------------------
 # Process a single biblePassage element
 # ---------------------------------------------------------------------------
 
-def process_element(el: dict, net_index: int, translation_code: str) -> None:
+def process_element(el: dict, translations: dict) -> None:
     """
-    Populate passageText{net_index} for this element if it is currently empty.
+    translations: {index: translation_code}  e.g. {1: 'HAU79', 2: 'HCL', ...}
 
-    net_index        — the N in bibleTranslationN that equals "NET"
-    translation_code — the actual code string (always "NET" here, but passed
-                       explicitly so the SFM path is built correctly)
+    Find the NET slot (the index whose translation code is 'NET').
+    Parse book/chapter/verses from that bibleRef (it's always English).
+    Then for every slot N that has an empty passageTextN, fetch from SFM.
+
+    NET is treated no differently from any other slot: if passageTextN is
+    absent or empty and bibleRefN is present, we attempt to populate it.
     """
-    element_id  = el.get("elementId", "?")
-    text_key    = f"passageText{net_index}"
-    ref_key     = f"bibleRef{net_index}"
-    url_key     = f"passageUrl{net_index}"
+    # Find the NET index
+    net_index = None
+    for idx, code in translations.items():
+        if code.upper() == "NET":
+            net_index = idx
+            break
 
-    # Skip if already populated
-    existing = el.get(text_key, "")
-    if isinstance(existing, str) and existing.strip():
+    if net_index is None:
+        print(f"  WARNING: No NET translation found in studyMetadata "
+              f"for element {el.get('elementId', '?')} — skipping")
         return
 
-    ref = el.get(ref_key, "").strip()
-    if not ref:
-        print(f"  WARNING: {ref_key} is empty for element {element_id} — skipping")
+    # Get the English reference from the NET bibleRef slot
+    net_ref_key = f"bibleRef{net_index}"
+    net_ref = el.get(net_ref_key, "").strip()
+    if not net_ref:
+        print(f"  WARNING: {net_ref_key} is empty for element "
+              f"{el.get('elementId', '?')} — skipping")
         return
 
-    passage_url = el.get(url_key, "").strip()
-    if not passage_url:
-        print(f"  WARNING: {url_key} is empty for element {element_id} — "
-              f"attribution link will be blank")
-
-    book, chapter, verse_groups = parse_english_ref(ref)
+    book, chapter, verse_groups = parse_english_ref(net_ref)
     if book is None:
         return  # warning already printed
 
-    html = get_passage_html(
-        translation_code, book, chapter, verse_groups, passage_url, ref
-    )
-    if html:
-        el[text_key] = html
-        print(f"    Populated {text_key} for {element_id} ({ref})")
+    # Iterate over every translation slot, including NET itself.
+    # A slot is processed if its passageText is absent or empty.
+    for idx, translation_code in translations.items():
+        text_key = f"passageText{idx}"
+        ref_key  = f"bibleRef{idx}"
+
+        # Skip if passageText already populated
+        existing_text = el.get(text_key, "")
+        if isinstance(existing_text, str) and existing_text.strip():
+            continue
+
+        # For NET, we already have the parsed ref; for other slots we
+        # still need a non-empty bibleRef to confirm the slot is active.
+        if idx == net_index:
+            # NET slot: always use the already-parsed ref
+            slot_ref = net_ref
+        else:
+            slot_ref = el.get(ref_key, "").strip()
+            if not slot_ref:
+                continue  # no reference, slot not active for this element
+
+        # Skip if no translation code
+        if not translation_code:
+            continue
+
+        html = get_passage_html(
+            translation_code, book, chapter, verse_groups,
+            ref_for_logging=slot_ref
+        )
+        if html:
+            el[text_key] = html
 
 
 # ---------------------------------------------------------------------------
@@ -464,37 +515,25 @@ def process_file(input_path: Path) -> None:
 
     meta = data.get("studyMetadata", {})
 
-    # Find the NET slot dynamically
-    net_index = None
-    net_code  = None
+    # Build translations dict: discover all bibleTranslationN keys dynamically
+    translations = {}
     for key, value in meta.items():
         m = re.match(r'^bibleTranslation(\d+)$', key)
-        if m and isinstance(value, str) and value.upper() == "NET":
-            net_index = int(m.group(1))
-            net_code  = value
-            break
+        if m and value:
+            translations[int(m.group(1))] = value
 
-    if net_index is None:
-        print("  ERROR: No bibleTranslationN field with value 'NET' found "
-              "in studyMetadata — nothing to do.")
+    if not translations:
+        print("  ERROR: No bibleTranslation fields found in studyMetadata.")
         return
 
-    print(f"  NET slot: bibleTranslation{net_index} = '{net_code}'")
+    print(f"  Translations: { {i: translations[i] for i in sorted(translations)} }")
 
-    populated = 0
-    skipped   = 0
-
+    passage_count = 0
     for chapter in data.get("chapters", []):
         for el in chapter.get("elements", []):
-            if el.get("type") != "biblePassage":
-                continue
-            text_key = f"passageText{net_index}"
-            existing = el.get(text_key, "")
-            if isinstance(existing, str) and existing.strip():
-                skipped += 1
-                continue
-            process_element(el, net_index, net_code)
-            populated += 1
+            if el.get("type") == "biblePassage":
+                process_element(el, translations)
+                passage_count += 1
 
     output_path = input_path.with_name(
         input_path.stem + "_updated_passages" + input_path.suffix
@@ -502,8 +541,7 @@ def process_file(input_path: Path) -> None:
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"  Done — {populated} element(s) attempted, "
-          f"{skipped} already populated.")
+    print(f"  Done — {passage_count} biblePassage elements processed.")
     print(f"  Output: {output_path}")
 
 
@@ -513,7 +551,7 @@ def process_file(input_path: Path) -> None:
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python populate_passage_sfm.py <file.json> [...]")
+        print("Usage: python populate_passage_texts.py <file.json> [...]")
         sys.exit(1)
 
     for arg in sys.argv[1:]:
