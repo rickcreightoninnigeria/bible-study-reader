@@ -339,8 +339,62 @@
     border-radius: 10px;
     margin-bottom: 10px;
     overflow: hidden;
+    transition: opacity 0.2s, margin-bottom 0.2s;
   }
   .el-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+
+  /* Fully-approved card — shrinks to a slim bar */
+  .el-card.all-ok {
+    opacity: 0.28;
+    margin-bottom: 3px;
+  }
+  .el-card.all-ok:hover {
+    opacity: 0.6;
+    box-shadow: none;
+  }
+  /* Hide all content inside an all-ok card except the collapsed bar */
+  .el-card.all-ok .el-type-bar,
+  .el-card.all-ok .field-row,
+  .el-card.all-ok .bible-transl-block,
+  .el-card.all-ok .bible-transl-head,
+  .el-card.all-ok .bible-field-row,
+  .el-card.all-ok .field-cell,
+  .el-card.all-ok .review-cell {
+    display: none;
+  }
+  /* The collapsed bar that replaces all content */
+  .collapsed-bar {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    height: 22px;
+    background: transparent;
+  }
+  .el-card.all-ok .collapsed-bar {
+    display: flex;
+  }
+  .collapsed-bar .cb-label {
+    font-size: 9pt;
+    color: var(--text-faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .collapsed-bar .cb-rev-btn {
+    font-size: 9pt;
+    opacity: 0.6;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0 2px;
+    line-height: 1;
+    transition: opacity 0.15s;
+  }
+  .collapsed-bar .cb-rev-btn:hover { opacity: 1; }
+  .collapsed-bar .cb-rev-btn.cb-active { opacity: 1; }
 
   .el-type-bar {
     display: flex;
@@ -844,15 +898,24 @@ function getReviewableFields(el) {
       if (el[`text${n}`] !== undefined) fields.push({ key: `text${n}`, label: 'Text', html: el.format === 'HTML' });
       break;
     case 'question':
-      ['question','answerPlaceholder','sampleAnswer','questionHint'].forEach(f => {
+      ['header','question','answerPlaceholder','sampleAnswer','questionHint'].forEach(f => {
         if (el[`${f}${n}`] !== undefined) fields.push({ key: `${f}${n}`, label: f });
+      });
+      break;
+    case 'callout': {
+      const isHtml = el.format === 'HTML';
+      ['eyebrow','term','question','answer','buttonText'].forEach(f => {
+        if (el[`${f}${n}`] !== undefined) fields.push({ key: `${f}${n}`, label: f, html: isHtml && f === 'answer' });
+      });
+      break;
+    }
+    case 'likertScale':
+      ['popupTitle','instruction','scale','statements','statementPairs'].forEach(f => {
+        if (el[`${f}${n}`] !== undefined) fields.push({ key: `${f}${n}`, label: f, isArray: true });
       });
       break;
     case 'biblePassage':
       // Bible passages are handled separately per-translation
-      break;
-    case 'callout':
-      // Callouts are not numbered — no per-language review
       break;
   }
   return fields;
@@ -896,11 +959,12 @@ function renderChapter(chIdx) {
     if (el.repeatElement) return; // skip repeats
 
     switch (el.type) {
-      case 'heading':    area.appendChild(makeHeadingCard(el, chIdx, oN, tN)); break;
-      case 'text':       area.appendChild(makeTextCard(el, chIdx, oN, tN)); break;
-      case 'question':   area.appendChild(makeQuestionCard(el, chIdx, oN, tN)); break;
-      case 'biblePassage': area.appendChild(makeBibleCard(el, chIdx)); break;
-      case 'callout':    area.appendChild(makeCalloutCard(el)); break;
+      case 'heading':     area.appendChild(makeHeadingCard(el, chIdx, oN, tN)); break;
+      case 'text':        area.appendChild(makeTextCard(el, chIdx, oN, tN)); break;
+      case 'question':    area.appendChild(makeQuestionCard(el, chIdx, oN, tN)); break;
+      case 'biblePassage':area.appendChild(makeBibleCard(el, chIdx)); break;
+      case 'callout':     area.appendChild(makeCalloutCard(el, chIdx, oN, tN)); break;
+      case 'likertScale': area.appendChild(makeLikertCard(el, chIdx, oN, tN)); break;
     }
   });
 }
@@ -916,7 +980,7 @@ function makeTypeBar(tagClass, tagLabel, elId) {
   return bar;
 }
 
-function makeFieldRow(origVal, origHtml, transKey, transVal, transHtml, el, chIdx) {
+function makeFieldRow(origVal, origHtml, transKey, transVal, transHtml, el, chIdx, rawArrayVal) {
   const elId = el.elementId;
   const row = document.createElement('div');
   row.className = 'field-row';
@@ -931,17 +995,19 @@ function makeFieldRow(origVal, origHtml, transKey, transVal, transHtml, el, chId
   midCell.className = 'field-cell editable';
   const status = getReviewStatus(chIdx, elId, transKey);
   const correction = getCorrection(chIdx, elId, transKey);
-  const currentVal = (status === 'x' && correction) ? correction : transVal;
   const isHtml = transHtml || false;
+  const isEmpty = (transVal === '' || transVal === null || transVal === undefined);
 
   const valDiv = document.createElement('div');
-  valDiv.className = 'field-val' + (isHtml ? ' html-val' : '') + (!transVal && transVal !== 0 ? ' empty-val' : '');
-  if (!transVal && transVal !== 0) {
-    valDiv.textContent = '(empty)';
+  if (isEmpty && !correction) {
+    valDiv.className = 'field-val empty-val';
+    valDiv.textContent = '(empty — enter translation below)';
   } else if (isHtml) {
-    valDiv.innerHTML = status === 'x' && correction ? correction : transVal;
+    valDiv.className = 'field-val html-val';
+    valDiv.innerHTML = (status === 'x' && correction) ? correction : (transVal || '');
   } else {
-    valDiv.textContent = status === 'x' && correction ? correction : transVal;
+    valDiv.className = 'field-val';
+    valDiv.textContent = (status === 'x' && correction) ? correction : (transVal || '');
   }
   midCell.appendChild(valDiv);
 
@@ -949,16 +1015,23 @@ function makeFieldRow(origVal, origHtml, transKey, transVal, transHtml, el, chId
   const corrWrap = document.createElement('div');
   corrWrap.className = 'correction-wrap';
   const ta = document.createElement('textarea');
-  ta.className = 'field-edit-area' + (status === 'x' ? ' visible' : '');
-  ta.value = correction;
-  ta.placeholder = 'Enter corrected text…';
+  // Auto-show textarea if field is empty (needs translation input)
+  const showTa = status === 'x' || isEmpty;
+  ta.className = 'field-edit-area' + (showTa ? ' visible' : '');
+  ta.value = correction || (isEmpty && status === 'x' ? '' : '');
+  ta.placeholder = isEmpty ? 'Enter translation…' : 'Enter corrected text…';
   ta.rows = 2;
   ta.addEventListener('input', () => {
     autoResize(ta);
     setCorrection(chIdx, elId, transKey, ta.value);
-    // update display
-    if (isHtml) valDiv.innerHTML = ta.value || transVal;
-    else valDiv.textContent = ta.value || transVal;
+    if (isEmpty) {
+      valDiv.className = ta.value ? 'field-val' + (isHtml ? ' html-val' : '') : 'field-val empty-val';
+      if (isHtml) valDiv.innerHTML = ta.value || '(empty — enter translation below)';
+      else valDiv.textContent = ta.value || '(empty — enter translation below)';
+    } else {
+      if (isHtml) valDiv.innerHTML = ta.value || transVal;
+      else valDiv.textContent = ta.value || transVal;
+    }
     updateNavProgress(chIdx);
   });
   setTimeout(() => autoResize(ta), 0);
@@ -966,7 +1039,7 @@ function makeFieldRow(origVal, origHtml, transKey, transVal, transHtml, el, chId
   midCell.appendChild(corrWrap);
 
   // Right: review buttons
-  const revCell = makeReviewCell(chIdx, elId, transKey, ta, valDiv, transVal, isHtml);
+  const revCell = makeReviewCell(chIdx, elId, transKey, ta, valDiv, transVal, isHtml, isEmpty);
 
   row.appendChild(leftCell);
   row.appendChild(midCell);
@@ -974,14 +1047,14 @@ function makeFieldRow(origVal, origHtml, transKey, transVal, transHtml, el, chId
   return row;
 }
 
-function makeReviewCell(chIdx, elId, fieldKey, ta, valDiv, origVal, isHtml) {
+function makeReviewCell(chIdx, elId, fieldKey, ta, valDiv, origVal, isHtml, isEmpty) {
   const cell = document.createElement('div');
   cell.className = 'review-cell';
 
   const status = getReviewStatus(chIdx, elId, fieldKey);
 
   const btns = [
-    { sym: '❓', cls: 'q', title: 'Not checked yet' },
+    { sym: '❓', cls: 'q',  title: 'Not checked yet' },
     { sym: '✅', cls: 'ok', title: 'Checked — correct as is' },
     { sym: '❎', cls: 'x',  title: 'Checked — needs adjustment' },
   ];
@@ -993,20 +1066,20 @@ function makeReviewCell(chIdx, elId, fieldKey, ta, valDiv, origVal, isHtml) {
     btn.textContent = b.sym;
     btn.title = b.title;
     btn.addEventListener('click', () => {
-      // deactivate all
       btns.forEach(x => btnEls[x.cls].className = 'rev-btn');
-      // activate this
       btn.className = `rev-btn active-${b.cls}`;
       setReviewStatus(chIdx, elId, fieldKey, b.cls);
-      // show/hide correction textarea
       if (ta) {
-        ta.classList.toggle('visible', b.cls === 'x');
-        if (b.cls !== 'x') {
-          // restore original value display
+        const showTa = b.cls === 'x' || isEmpty;
+        ta.classList.toggle('visible', showTa);
+        if (b.cls !== 'x' && !isEmpty) {
           if (isHtml) valDiv.innerHTML = origVal || '';
           else valDiv.textContent = origVal || '';
         }
       }
+      // Check if the whole card should collapse
+      const card = cell.closest('.el-card');
+      if (card) updateCardCollapse(card, chIdx);
       updateNavProgress(chIdx);
     });
     btnEls[b.cls] = btn;
@@ -1014,6 +1087,77 @@ function makeReviewCell(chIdx, elId, fieldKey, ta, valDiv, origVal, isHtml) {
   });
 
   return cell;
+}
+
+// Check whether all reviewable fields in a card are ✅, and collapse/expand accordingly
+function updateCardCollapse(card, chIdx) {
+  const allRevCells = card.querySelectorAll('.review-cell, .bible-field-row .review-cell');
+  if (allRevCells.length === 0) return;
+
+  // Collect status of every review button set in this card
+  const allOk = Array.from(card.querySelectorAll('.rev-btn.active-ok')).length === allRevCells.length
+    && Array.from(card.querySelectorAll('.rev-btn.active-q, .rev-btn.active-x')).length === 0;
+
+  card.classList.toggle('all-ok', allOk);
+
+  // Update the collapsed bar
+  const bar = card.querySelector('.collapsed-bar');
+  if (!bar) return;
+
+  // Sync collapsed bar buttons with current statuses
+  const cbBtns = bar.querySelectorAll('.cb-rev-btn');
+  // Collapsed bar just shows the card is all-ok — buttons reopen the card
+  // We don't need per-field buttons in the bar, just a single row of controls
+  // (already rendered once in makeCollapsedBar)
+}
+
+function makeCollapsedBar(card, label) {
+  const bar = document.createElement('div');
+  bar.className = 'collapsed-bar';
+
+  const lbl = document.createElement('span');
+  lbl.className = 'cb-label';
+  lbl.textContent = label;
+  bar.appendChild(lbl);
+
+  // Three tiny buttons that unset the all-ok state for the whole card
+  const syms = [
+    { sym: '❓', title: 'Mark all as unchecked', cls: 'q' },
+    { sym: '✅', title: 'All correct (current)', cls: 'ok' },
+    { sym: '❎', title: 'Mark all as needing adjustment', cls: 'x' },
+  ];
+  syms.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'cb-rev-btn' + (s.cls === 'ok' ? ' cb-active' : '');
+    btn.textContent = s.sym;
+    btn.title = s.title;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // Clicking any button on collapsed bar expands the card
+      card.classList.remove('all-ok');
+      // If ❓ or ❎ clicked, also update all field statuses in the card
+      if (s.cls !== 'ok') {
+        card.querySelectorAll('.review-cell').forEach(cell => {
+          const activeBtn = cell.querySelector(`.rev-btn.active-ok`);
+          if (activeBtn) {
+            // Fire click on the appropriate button
+            const target = cell.querySelector(`.rev-btn[title="${s.cls === 'q' ? 'Not checked yet' : 'Checked — needs adjustment'}"]`);
+            if (target) target.click();
+          }
+        });
+      }
+    });
+    bar.appendChild(btn);
+  });
+
+  return bar;
+}
+
+function appendCollapsedBar(card, labelText, chIdx) {
+  const bar = makeCollapsedBar(card, labelText);
+  card.appendChild(bar);
+  // Restore collapse state from reviewState on initial render
+  requestAnimationFrame(() => updateCardCollapse(card, chIdx));
 }
 
 function roVal(val, isHtml) {
@@ -1040,6 +1184,7 @@ function makeHeadingCard(el, chIdx, oN, tN) {
     `text${tN}`, el[`text${tN}`], false,
     el, chIdx
   ));
+  appendCollapsedBar(card, `${el.elementId} · heading`, chIdx);
   return card;
 }
 
@@ -1054,6 +1199,7 @@ function makeTextCard(el, chIdx, oN, tN) {
     `text${tN}`, el[`text${tN}`], isHtml,
     el, chIdx
   ));
+  appendCollapsedBar(card, `${el.elementId} · text`, chIdx);
   return card;
 }
 
@@ -1064,6 +1210,7 @@ function makeQuestionCard(el, chIdx, oN, tN) {
   card.appendChild(makeTypeBar('tag-question', 'Question', el.elementId));
 
   const fieldDefs = [
+    { base: 'header',            label: 'Header' },
     { base: 'question',          label: 'Question' },
     { base: 'answerPlaceholder', label: 'Placeholder' },
     { base: 'sampleAnswer',      label: 'Sample Answer' },
@@ -1089,6 +1236,7 @@ function makeQuestionCard(el, chIdx, oN, tN) {
     card.appendChild(row);
   });
 
+  appendCollapsedBar(card, `${el.elementId} · question`, chIdx);
   return card;
 }
 
@@ -1139,6 +1287,7 @@ function makeBibleCard(el, chIdx) {
     card.appendChild(block);
   });
 
+  appendCollapsedBar(card, `${el.elementId} · bible passage`, chIdx);
   return card;
 }
 
@@ -1203,26 +1352,104 @@ function makeBibleFieldRow(el, chIdx, fieldKey, val, isHtml, label) {
 }
 
 // ── CALLOUT ──
-function makeCalloutCard(el) {
+function makeCalloutCard(el, chIdx, oN, tN) {
   const card = document.createElement('div');
   card.className = 'el-card';
   card.appendChild(makeTypeBar('tag-callout', `Callout · ${el.subtype || ''}`, el.elementId));
 
-  const inner = document.createElement('div');
-  inner.style.cssText = 'padding:10px 14px;';
+  const isHtml = el.format === 'HTML';
+  const fieldDefs = [
+    { base: 'eyebrow',     label: 'Eyebrow' },
+    { base: 'term',        label: 'Term' },
+    { base: 'question',    label: 'Question' },
+    { base: 'answer',      label: 'Answer',     html: isHtml },
+    { base: 'buttonText',  label: 'Button Text' },
+  ];
 
-  const note = document.createElement('div');
-  note.style.cssText = 'font-size:0.75rem;color:var(--text-faint);font-style:italic;margin-bottom:6px;';
-  note.textContent = 'Callout — no numbered language fields (English only)';
-  inner.appendChild(note);
+  let hasRows = false;
+  fieldDefs.forEach(({ base, label, html }) => {
+    const oKey = `${base}${oN}`;
+    const tKey = `${base}${tN}`;
+    if (el[oKey] === undefined && el[tKey] === undefined) return;
+    hasRows = true;
+    const row = makeFieldRow(el[oKey], html || false, tKey, el[tKey], html || false, el, chIdx);
+    const keyLabel = document.createElement('span');
+    keyLabel.className = 'field-key';
+    keyLabel.textContent = label;
+    row.children[0].prepend(keyLabel.cloneNode(true));
+    row.children[1].prepend(keyLabel);
+    card.appendChild(row);
+  });
 
-  if (el.term) {
-    const t = document.createElement('div');
-    t.innerHTML = `<span class="field-key">Term</span><div class="field-val">${escHtml(el.term)}</div>`;
-    inner.appendChild(t);
+  if (!hasRows) {
+    // Fallback: unnumbered callout (older schema)
+    const inner = document.createElement('div');
+    inner.style.cssText = 'padding:10px 14px;';
+    const note = document.createElement('div');
+    note.style.cssText = 'font-size:0.75rem;color:var(--text-faint);font-style:italic;margin-bottom:6px;';
+    note.textContent = 'Callout — no numbered language fields';
+    inner.appendChild(note);
+    if (el.term) {
+      const t = document.createElement('div');
+      t.innerHTML = `<span class="field-key">Term</span><div class="field-val">${escHtml(el.term)}</div>`;
+      inner.appendChild(t);
+    }
+    card.appendChild(inner);
   }
 
-  card.appendChild(inner);
+  appendCollapsedBar(card, `${el.elementId} · callout`, chIdx);
+  return card;
+}
+
+// ── LIKERT SCALE ──
+// Helper: format an array value for display (one item per line)
+function formatArrayVal(val) {
+  if (!val || (Array.isArray(val) && val.length === 0)) return '';
+  if (Array.isArray(val)) {
+    // Could be strings or {left, right} objects
+    return val.map(item => {
+      if (typeof item === 'object' && item !== null) {
+        return `${item.left || ''} ↔ ${item.right || ''}`;
+      }
+      return String(item);
+    }).join('\n');
+  }
+  return String(val);
+}
+
+function makeLikertCard(el, chIdx, oN, tN) {
+  const card = document.createElement('div');
+  card.className = 'el-card';
+  card.appendChild(makeTypeBar('tag-callout', `Likert Scale`, el.elementId));
+
+  const fieldDefs = [
+    { base: 'popupTitle',     label: 'Popup Title',     isArray: false },
+    { base: 'instruction',    label: 'Instruction',     isArray: false },
+    { base: 'scale',          label: 'Scale Labels',    isArray: true  },
+    { base: 'statements',     label: 'Statements',      isArray: true  },
+    { base: 'statementPairs', label: 'Statement Pairs', isArray: true  },
+  ];
+
+  fieldDefs.forEach(({ base, label, isArray }) => {
+    const oKey = `${base}${oN}`;
+    const tKey = `${base}${tN}`;
+    if (el[oKey] === undefined && el[tKey] === undefined) return;
+
+    const oRaw = el[oKey];
+    const tRaw = el[tKey];
+    const oVal = isArray ? formatArrayVal(oRaw) : (oRaw || '');
+    const tVal = isArray ? formatArrayVal(tRaw) : (tRaw || '');
+
+    const row = makeFieldRow(oVal, false, tKey, tVal, false, el, chIdx, isArray ? tRaw : null);
+    const keyLabel = document.createElement('span');
+    keyLabel.className = 'field-key';
+    keyLabel.textContent = label + (isArray ? ' (one per line)' : '');
+    row.children[0].prepend(keyLabel.cloneNode(true));
+    row.children[1].prepend(keyLabel);
+    card.appendChild(row);
+  });
+
+  appendCollapsedBar(card, `${el.elementId} · likert scale`, chIdx);
   return card;
 }
 

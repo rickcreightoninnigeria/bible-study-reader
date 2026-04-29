@@ -193,18 +193,17 @@
           "repeatElement":"ch01-el13"
         },
         {
-          "elementId"           :"ch01-el16",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Where does responsibility lie?",
-          "linkedPassage"       :"James 1:15",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"With us. James’s whole argument is that we cannot blame God, and the chain he describes — desire, sin, death — begins with something that belongs to us: our own desires. The birth metaphor reinforces this: these are our desires giving birth to our sins. The passage does not deny that circumstances and pressures are real, but it locates the decisive point of responsibility in the person who harbours and acts on the desire.",
-          "questionHint"        :"James traces a clear chain from desire to sin to death — at each link in that chain, whose desire, whose sin, and whose death is he describing?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch01-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Where does responsibility lie?",
+          "linkedPassage"    :"James 1:15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"With us. James’s whole argument is that we cannot blame God, and the chain he describes — desire, sin, death — begins with something that belongs to us: our own desires. The birth metaphor reinforces this: these are our desires giving birth to our sins. The passage does not deny that circumstances and pressures are real, but it locates the decisive point of responsibility in the person who harbours and acts on the desire.",
+          "questionHint"     :"James traces a clear chain from desire to sin to death — at each link in that chain, whose desire, whose sin, and whose death is he describing?"
         },
         {
           "elementId"    :"ch01-el17",
@@ -881,18 +880,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch02-el36",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What name does John say we are given the right to be called?",
-          "linkedPassage"       :"John 1:12",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"God’s children. John says that to all who received Jesus and believed in his name, he gave the right to become God’s children. The word ’right’ is significant — this is not a tentative possibility or a metaphor for approval; it is a legal status conferred. To be a child of God is to have a specific, defined, permanent relationship to the Father.",
-          "questionHint"        :"John uses the word ’right’ — not ’opportunity’ or ’chance.’ What does being given a ’right’ to something suggest about how secure and settled that status is?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch02-el36",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What name does John say we are given the right to be called?",
+          "linkedPassage"    :"John 1:12",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"God’s children. John says that to all who received Jesus and believed in his name, he gave the right to become God’s children. The word ’right’ is significant — this is not a tentative possibility or a metaphor for approval; it is a legal status conferred. To be a child of God is to have a specific, defined, permanent relationship to the Father.",
+          "questionHint"     :"John uses the word ’right’ — not ’opportunity’ or ’chance.’ What does being given a ’right’ to something suggest about how secure and settled that status is?"
         },
         {
           "elementId"    :"ch02-el37",
@@ -998,18 +996,17 @@
           "repeatElement":"ch02-el43"
         },
         {
-          "elementId"           :"ch02-el48",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Are these the actions of someone who is tolerating the son’s return, or something more?",
-          "linkedPassage"       :"Luke 15:20-24",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Clearly something more — and dramatically more. Someone tolerating a return does not run to meet the person while they are still far off. They do not hug and kiss before hearing any explanation. They do not throw a party. Every detail of the father’s response communicates not reluctant acceptance but joyful, wholehearted welcome. His words to the servants — ‘this son of mine was dead, and is alive again; he was lost and is found’ — express delight, not relief that a difficult situation has been managed.",
-          "questionHint"        :"Think about what the opposite of tolerance would look like in someone receiving back a person who had wronged them deeply — does the father’s behaviour look more like tolerance or its opposite?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch02-el48",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Are these the actions of someone who is tolerating the son’s return, or something more?",
+          "linkedPassage"    :"Luke 15:20-24",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Clearly something more — and dramatically more. Someone tolerating a return does not run to meet the person while they are still far off. They do not hug and kiss before hearing any explanation. They do not throw a party. Every detail of the father’s response communicates not reluctant acceptance but joyful, wholehearted welcome. His words to the servants — ‘this son of mine was dead, and is alive again; he was lost and is found’ — express delight, not relief that a difficult situation has been managed.",
+          "questionHint"     :"Think about what the opposite of tolerance would look like in someone receiving back a person who had wronged them deeply — does the father’s behaviour look more like tolerance or its opposite?"
         },
         {
           "elementId"    :"ch02-el49",
@@ -1240,18 +1237,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch03-el09",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What does John say casts out fear?",
-          "linkedPassage"       :"1 John 4:18",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Perfect love casts out fear. John says there is no fear in love — they are incompatible. When love is ’perfect’ (complete, mature, fully received), it drives the fear out. The fear John has in mind is specifically the fear connected with punishment or judgment — the fear that we will be found wanting and condemned. When we are fully persuaded that we are loved and not under threat, that fear has no ground to stand on.",
-          "questionHint"        :"John says perfect love ’drives out’ fear — that’s an active image, not a passive one. What does it suggest about the relationship between receiving love and the diminishment of fear?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch03-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does John say casts out fear?",
+          "linkedPassage"    :"1 John 4:18",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Perfect love casts out fear. John says there is no fear in love — they are incompatible. When love is ’perfect’ (complete, mature, fully received), it drives the fear out. The fear John has in mind is specifically the fear connected with punishment or judgment — the fear that we will be found wanting and condemned. When we are fully persuaded that we are loved and not under threat, that fear has no ground to stand on.",
+          "questionHint"     :"John says perfect love ’drives out’ fear — that’s an active image, not a passive one. What does it suggest about the relationship between receiving love and the diminishment of fear?"
         },
         {
           "elementId"    :"ch03-el10",
@@ -1385,18 +1381,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch03-el24",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What can separate us from the love of Christ?",
-          "linkedPassage"       :"Romans 8:35-39",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Nothing. Paul’s answer, after running through the most comprehensive possible list of threats — trouble, distress, persecution, famine, danger, death, life, angels, present and future, height and depth, anything else in creation — is that none of it can separate us from the love of God in Christ Jesus. The structure of the passage is itself rhetorical: it asks who could separate us, lists every conceivable candidate, and then answers: not one of them.",
-          "questionHint"        :"Paul asks ’who will separate us?’ and then lists many possible answers before giving his conclusion — what is his conclusion, and how does the exhaustiveness of the list make the conclusion stronger?",
-          "shortAnswerThreshold":1
+          "elementId"        :"ch03-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What can separate us from the love of Christ?",
+          "linkedPassage"    :"Romans 8:35-39",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Nothing. Paul’s answer, after running through the most comprehensive possible list of threats — trouble, distress, persecution, famine, danger, death, life, angels, present and future, height and depth, anything else in creation — is that none of it can separate us from the love of God in Christ Jesus. The structure of the passage is itself rhetorical: it asks who could separate us, lists every conceivable candidate, and then answers: not one of them.",
+          "questionHint"     :"Paul asks ’who will separate us?’ and then lists many possible answers before giving his conclusion — what is his conclusion, and how does the exhaustiveness of the list make the conclusion stronger?"
         },
         {
           "elementId"    :"ch03-el25",
@@ -3454,18 +3449,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch07-el25",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What does Paul say we were like when Christ died for us?",
-          "linkedPassage"       :"Romans 5:6-8",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Paul says we were helpless, ungodly, and sinners. Not promising candidates, not people in the process of improvement, not people who had shown enough potential to be worth investing in. The three descriptions together paint a picture of complete moral inability — we had nothing to offer and no capacity to change our situation. Christ died for us in precisely that condition, not after it had improved.",
-          "questionHint"        :"Paul uses three words to describe what we were when Christ died for us — helpless, ungodly, sinners. What do those three words together tell you about whether Christ’s love for us was a response to anything deserving in us?",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch07-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does Paul say we were like when Christ died for us?",
+          "linkedPassage"    :"Romans 5:6-8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul says we were helpless, ungodly, and sinners. Not promising candidates, not people in the process of improvement, not people who had shown enough potential to be worth investing in. The three descriptions together paint a picture of complete moral inability — we had nothing to offer and no capacity to change our situation. Christ died for us in precisely that condition, not after it had improved.",
+          "questionHint"     :"Paul uses three words to describe what we were when Christ died for us — helpless, ungodly, sinners. What do those three words together tell you about whether Christ’s love for us was a response to anything deserving in us?"
         },
         {
           "elementId"    :"ch07-el26",
@@ -3693,18 +3687,17 @@
           "repeatElement":"ch07-el45"
         },
         {
-          "elementId"           :"ch07-el49",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Christ ’sat down.’ What does that say about his work?",
-          "linkedPassage"       :"Hebrews 10:12-14",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Sitting down is the posture of completed work. The priests in verse 11 stand — because their work is never done, the same sacrifice must be offered again tomorrow. Christ sits — because there is nothing left to do. The work is finished. Sitting at the right hand of God is not passive waiting; it is the position of accomplished authority. For the person trapped in self-punishment — trying to add their own suffering to what Christ has done — the image of the sitting priest is the answer: there is nothing left to add, because there is nothing left to do.",
-          "questionHint"        :"The priests stand because their work is never finished — they must come back tomorrow. Christ sits. What is the difference between the posture of someone whose work is ongoing and someone whose work is complete, and what does Christ’s sitting tell you about the state of the debt for sin?",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch07-el49",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Christ ’sat down.’ What does that say about his work?",
+          "linkedPassage"    :"Hebrews 10:12-14",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Sitting down is the posture of completed work. The priests in verse 11 stand — because their work is never done, the same sacrifice must be offered again tomorrow. Christ sits — because there is nothing left to do. The work is finished. Sitting at the right hand of God is not passive waiting; it is the position of accomplished authority. For the person trapped in self-punishment — trying to add their own suffering to what Christ has done — the image of the sitting priest is the answer: there is nothing left to add, because there is nothing left to do.",
+          "questionHint"     :"The priests stand because their work is never finished — they must come back tomorrow. Christ sits. What is the difference between the posture of someone whose work is ongoing and someone whose work is complete, and what does Christ’s sitting tell you about the state of the debt for sin?"
         },
         {
           "elementId"    :"ch07-el50",
@@ -3717,18 +3710,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch07-el51",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What is now true of those who are in Christ Jesus?",
-          "linkedPassage"       :"Romans 8:1",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"There is now no condemnation. The verdict is not ’partially condemned,‘ or ’condemned pending improvement,‘ or ’condemned for past sins but acquitted going forward.’ It is total: no condemnation. The word ’therefore’ connects this to everything Paul has argued in Romans about what Christ has accomplished — the ’no condemnation’ rests on completed work, not on the believer’s performance. The word ’now’ makes it present tense — not a future hope contingent on further progress, but a current reality.",
-          "questionHint"        :"Paul says ’no condemnation’ — not ’less condemnation’ or ’condemnation for future sins only.’ What does the absoluteness of ’no’ tell you about whether this verdict is based on how well you’re doing?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch07-el51",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is now true of those who are in Christ Jesus?",
+          "linkedPassage"    :"Romans 8:1",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"There is now no condemnation. The verdict is not ’partially condemned,‘ or ’condemned pending improvement,‘ or ’condemned for past sins but acquitted going forward.’ It is total: no condemnation. The word ’therefore’ connects this to everything Paul has argued in Romans about what Christ has accomplished — the ’no condemnation’ rests on completed work, not on the believer’s performance. The word ’now’ makes it present tense — not a future hope contingent on further progress, but a current reality.",
+          "questionHint"     :"Paul says ’no condemnation’ — not ’less condemnation’ or ’condemnation for future sins only.’ What does the absoluteness of ’no’ tell you about whether this verdict is based on how well you’re doing?"
         },
         {
           "elementId"    :"ch07-el52",
@@ -3854,18 +3846,17 @@
           "repeatElement":"ch07-el62"
         },
         {
-          "elementId"           :"ch07-el65",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What is the source of the new song?",
-          "linkedPassage"       :"Psalm 40:1-3",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"The new song comes from God — he ’put a new song in my mouth.’ It is not something David has worked up or performed. It is given. The song is praise to God, and it has an outward effect: many will see it and be moved to worship and trust. The source of the new song is the experience of rescue — the contrast between the pit and the rock, between the mud and the secure place. It is the song of someone who knows where they came from and who brought them out.",
-          "questionHint"        :"David says God ’put a new song in my mouth’ — he doesn’t say he worked up the praise himself. What does the source of the song tell you about the relationship between being rescued and being able to worship?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch07-el65",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is the source of the new song?",
+          "linkedPassage"    :"Psalm 40:1-3",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The new song comes from God — he ’put a new song in my mouth.’ It is not something David has worked up or performed. It is given. The song is praise to God, and it has an outward effect: many will see it and be moved to worship and trust. The source of the new song is the experience of rescue — the contrast between the pit and the rock, between the mud and the secure place. It is the song of someone who knows where they came from and who brought them out.",
+          "questionHint"     :"David says God ’put a new song in my mouth’ — he doesn’t say he worked up the praise himself. What does the source of the song tell you about the relationship between being rescued and being able to worship?"
         },
         {
           "elementId"    :"ch07-el66",
@@ -4097,18 +4088,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch08-el17",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What was God’s purpose in sending his Son?",
-          "linkedPassage"       :"John 3:16-17",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"God’s purpose was salvation, not condemnation. John states this explicitly in verse 17: the Son was not sent to condemn the world but to save it. The positive purpose is that those who believe will not perish but have eternal life. The motivation behind the sending is love — ‘God so loved the world.’ God’s initiative in sending his Son was not reluctant or judicial; it was an act of love aimed at rescue.",
-          "questionHint"        :"Verse 17 specifically says what God’s purpose was not — condemnation — before stating what it was. Why might John make that contrast explicit, and what does it tell someone who approaches God expecting judgment?",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch08-el17",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What was God’s purpose in sending his Son?",
+          "linkedPassage"    :"John 3:16-17",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"God’s purpose was salvation, not condemnation. John states this explicitly in verse 17: the Son was not sent to condemn the world but to save it. The positive purpose is that those who believe will not perish but have eternal life. The motivation behind the sending is love — ‘God so loved the world.’ God’s initiative in sending his Son was not reluctant or judicial; it was an act of love aimed at rescue.",
+          "questionHint"     :"Verse 17 specifically says what God’s purpose was not — condemnation — before stating what it was. Why might John make that contrast explicit, and what does it tell someone who approaches God expecting judgment?"
         },
         {
           "elementId"    :"ch08-el18",
@@ -4146,18 +4136,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch08-el22",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What is the victory that overcomes the patterns of this world?",
-          "linkedPassage"       :"1 John 5:4-5",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"John says the victory that overcomes the world is faith — specifically, faith in Jesus as the Son of God. Not moral effort, not discipline, not willpower, not therapeutic technique. The victory is located in a particular belief about a particular person. John is not being simplistic — he is saying that the capacity to overcome the world’s patterns is generated by a right understanding of who Jesus is and what that means, because faith in Christ is what connects us to the power of God and to the new identity that makes genuine change possible.",
-          "questionHint"        :"John doesn’t say the victory over the world’s patterns comes from trying harder or from a programme of behaviour change — he says it’s faith. What does that tell you about where the power for change is located, and what your responsibility is in accessing it?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch08-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is the victory that overcomes the patterns of this world?",
+          "linkedPassage"    :"1 John 5:4-5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"John says the victory that overcomes the world is faith — specifically, faith in Jesus as the Son of God. Not moral effort, not discipline, not willpower, not therapeutic technique. The victory is located in a particular belief about a particular person. John is not being simplistic — he is saying that the capacity to overcome the world’s patterns is generated by a right understanding of who Jesus is and what that means, because faith in Christ is what connects us to the power of God and to the new identity that makes genuine change possible.",
+          "questionHint"     :"John doesn’t say the victory over the world’s patterns comes from trying harder or from a programme of behaviour change — he says it’s faith. What does that tell you about where the power for change is located, and what your responsibility is in accessing it?"
         },
         {
           "elementId"    :"ch08-el23",
@@ -5148,18 +5137,17 @@
           "repeatElement":"ch09-el44"
         },
         {
-          "elementId"           :"ch09-el47",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Is there a limit on this promise – a point at which it expires, or a condition beyond which it does not apply?",
-          "linkedPassage"       :"1 John 1:9",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"The text sets no limit. The condition is confession — and the scope of the promise is ’all unrighteousness.’ There is no qualifying clause about how many times, how serious the sin, or how long the pattern has lasted. The promise holds because it is grounded in God’s faithfulness and righteousness — both of which are unlimited. The only condition is that we confess; the only limit on the promise is if we stop doing that.",
-          "questionHint"        :"Read the verse again carefully — does John add any qualification about the number of times this applies, or the severity of the sin it covers? What does the absence of any such qualification tell you?",
-          "shortAnswerThreshold":1
+          "elementId"        :"ch09-el47",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Is there a limit on this promise – a point at which it expires, or a condition beyond which it does not apply?",
+          "linkedPassage"    :"1 John 1:9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The text sets no limit. The condition is confession — and the scope of the promise is ’all unrighteousness.’ There is no qualifying clause about how many times, how serious the sin, or how long the pattern has lasted. The promise holds because it is grounded in God’s faithfulness and righteousness — both of which are unlimited. The only condition is that we confess; the only limit on the promise is if we stop doing that.",
+          "questionHint"     :"Read the verse again carefully — does John add any qualification about the number of times this applies, or the severity of the sin it covers? What does the absence of any such qualification tell you?"
         },
         {
           "elementId"    :"ch09-el48",
@@ -5518,18 +5506,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch10-el22",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What does Jesus say he came to bring?",
-          "linkedPassage"       :"John 10:10",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Jesus says he came to bring life — and not merely life, but life abundantly. The contrast is with the thief, whose agenda is to steal, kill, and destroy. Jesus offers the opposite of that: life in its fullest expression. ’Abundantly’ translates a Greek word that implies excess, overflowing, more than sufficient — a life that surpasses what is merely adequate.",
-          "questionHint"        :"Jesus doesn’t just say ’life’ — he says life ’abundantly.’ What does the word ’abundantly’ add to the promise, and how does it sit alongside the contrast with the thief who ’steals, kills, and destroys’?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch10-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does Jesus say he came to bring?",
+          "linkedPassage"    :"John 10:10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus says he came to bring life — and not merely life, but life abundantly. The contrast is with the thief, whose agenda is to steal, kill, and destroy. Jesus offers the opposite of that: life in its fullest expression. ’Abundantly’ translates a Greek word that implies excess, overflowing, more than sufficient — a life that surpasses what is merely adequate.",
+          "questionHint"     :"Jesus doesn’t just say ’life’ — he says life ’abundantly.’ What does the word ’abundantly’ add to the promise, and how does it sit alongside the contrast with the thief who ’steals, kills, and destroys’?"
         },
         {
           "elementId"    :"ch10-el23",

@@ -597,18 +597,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch02-el09",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What should we do with our worries? What does God promise?",
-          "linkedPassage"       :"Phil 4:6-7",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Instead of being anxious, we are to bring every concern to God through prayer and petition, combined with thanksgiving. The thanksgiving is significant – it reminds us of who we are praying to and what he has already done, which reframes our worries. God’s promise in response is not that circumstances will change, but that his peace – which goes beyond rational explanation – will guard our hearts and minds. Prayer does not necessarily remove the situation; it changes how we carry it, because we are no longer carrying it alone.",
-          "questionHint"        :"Paul says to pray ’with thanksgiving’ – why do you think gratitude is included alongside bringing requests, and what exactly does God promise will happen as a result?",
-          "shortAnswerThreshold":10
+          "elementId"        :"ch02-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What should we do with our worries? What does God promise?",
+          "linkedPassage"    :"Phil 4:6-7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Instead of being anxious, we are to bring every concern to God through prayer and petition, combined with thanksgiving. The thanksgiving is significant – it reminds us of who we are praying to and what he has already done, which reframes our worries. God’s promise in response is not that circumstances will change, but that his peace – which goes beyond rational explanation – will guard our hearts and minds. Prayer does not necessarily remove the situation; it changes how we carry it, because we are no longer carrying it alone.",
+          "questionHint"     :"Paul says to pray ’with thanksgiving’ – why do you think gratitude is included alongside bringing requests, and what exactly does God promise will happen as a result?"
         },
         {
           "elementId"    :"ch02-el10",
@@ -1030,18 +1029,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch03-el07",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What command does Jesus give to His followers?",
-          "linkedPassage"       :"Matt 28:19-20",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Jesus commands his followers to make disciples of all nations – going, baptising, and teaching. This is not a suggestion for the spiritually advanced, but a commission given to all his disciples. It is both a universal mandate (all nations) and a comprehensive one (teaching everything he commanded). Significantly, Jesus frames the command with his own authority (‘all authority has been given to me’) and closes with his constant presence – the mission is not accomplished by human effort alone but in dependence on him.",
-          "questionHint"        :"Jesus says ’all nations’ and ’everything I have commanded’ – what do those two words ’all’ and ’everything’ tell you about the scope of the commission?",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch03-el07",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What command does Jesus give to His followers?",
+          "linkedPassage"    :"Matt 28:19-20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus commands his followers to make disciples of all nations – going, baptising, and teaching. This is not a suggestion for the spiritually advanced, but a commission given to all his disciples. It is both a universal mandate (all nations) and a comprehensive one (teaching everything he commanded). Significantly, Jesus frames the command with his own authority (‘all authority has been given to me’) and closes with his constant presence – the mission is not accomplished by human effort alone but in dependence on him.",
+          "questionHint"     :"Jesus says ’all nations’ and ’everything I have commanded’ – what do those two words ’all’ and ’everything’ tell you about the scope of the commission?"
         },
         {
           "elementId"    :"ch03-el08",
@@ -1123,18 +1121,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch03-el15",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What power enables believers to witness? And where should that witness spread?",
-          "linkedPassage"       :"Acts 1:8",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"The power that enables witness is the Holy Spirit – not human confidence, personality, or skill. Jesus makes clear that the disciples must wait for this power before they go, which means evangelism is fundamentally a Spirit-empowered activity. The geographic progression – Jerusalem, Judea and Samaria, the farthest parts of the earth – describes expanding circles of witness, starting close to home and moving outward without limit. This tells us that every believer is called to witness where they are, while the church’s vision extends to the whole world.",
-          "questionHint"        :"Jesus says ’you will receive power’ before listing where the witness will spread – what does the order of those two things tell you about the source of effectiveness in evangelism?",
-          "shortAnswerThreshold":10
+          "elementId"        :"ch03-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What power enables believers to witness? And where should that witness spread?",
+          "linkedPassage"    :"Acts 1:8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The power that enables witness is the Holy Spirit – not human confidence, personality, or skill. Jesus makes clear that the disciples must wait for this power before they go, which means evangelism is fundamentally a Spirit-empowered activity. The geographic progression – Jerusalem, Judea and Samaria, the farthest parts of the earth – describes expanding circles of witness, starting close to home and moving outward without limit. This tells us that every believer is called to witness where they are, while the church’s vision extends to the whole world.",
+          "questionHint"     :"Jesus says ’you will receive power’ before listing where the witness will spread – what does the order of those two things tell you about the source of effectiveness in evangelism?"
         },
         {
           "elementId"    :"ch03-el16",
@@ -1266,18 +1263,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch03-el28",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Who builds the church?",
-          "linkedPassage"       :"Matt 16:18",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Jesus builds the church. He says ’I will build my church’ – it is his project, initiated and sustained by him, belonging to him. This is both a comfort and a corrective: a comfort because the church does not ultimately depend on our cleverness or effort, and a corrective because we can be tempted to treat the church as our institution to manage. The promise that even the gates of Hades will not overpower it gives confidence that no opposition, difficulty, or failure is ultimately fatal – the outcome is secure in Christ’s hands.",
-          "questionHint"        :"Jesus says ’I will build my church’ – whose initiative and responsibility does that make the growth of the church, and why is that encouraging when things are hard?",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch03-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Who builds the church?",
+          "linkedPassage"    :"Matt 16:18",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus builds the church. He says ’I will build my church’ – it is his project, initiated and sustained by him, belonging to him. This is both a comfort and a corrective: a comfort because the church does not ultimately depend on our cleverness or effort, and a corrective because we can be tempted to treat the church as our institution to manage. The promise that even the gates of Hades will not overpower it gives confidence that no opposition, difficulty, or failure is ultimately fatal – the outcome is secure in Christ’s hands.",
+          "questionHint"     :"Jesus says ’I will build my church’ – whose initiative and responsibility does that make the growth of the church, and why is that encouraging when things are hard?"
         },
         {
           "elementId"    :"ch03-el29",

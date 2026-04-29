@@ -652,30 +652,24 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"           :"ch02-el17",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Who are the ’many’ people your work serves? (Try to list them.)",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":3,
-          "sampleAnswer"        :"My work serves many people, even ones I never meet directly. As a starting point: my immediate customers or clients, the colleagues who depend on my output, my employer or organisation, the wider community that benefits from the goods or services we provide, and in some cases people in supply chains or receiving services downstream. The further out I look, the longer the list gets.",
-          "questionHint"        :"Think beyond the people you interact with directly — who benefits further down the chain from what you produce or provide each day?"
+          "elementId"        :"ch02-el17",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Who are the ’many’ people your work serves? (Try to list them.)",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
         },
         {
-          "elementId"           :"ch02-el18",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Who are the ’few’ people God has placed in your care personally?",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":3,
-          "sampleAnswer"        :"The few people God has placed in my personal care include those I have direct, ongoing responsibility for — a junior colleague I mentor, members of my immediate team, an apprentice or intern, perhaps a neighbour or someone in my church community I am walking alongside. These are the people whose names I know well and whose growth I am genuinely invested in.",
-          "questionHint"        :"Think about whose growth, wellbeing, or development you feel a particular responsibility for — not just professionally, but personally."
+          "elementId"        :"ch02-el18",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Who are the ’few’ people God has placed in your care personally?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"        :"ch02-el19",
@@ -1422,15 +1416,14 @@
           "bottomPadding"    :"normal"
         },
         {
-          "elementId"           :"ch04-el15",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Which do you most easily overlook?",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":2
+          "elementId"        :"ch04-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Which do you most easily overlook?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"    :"ch04-el16",
@@ -2259,18 +2252,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch06-el15",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Is Hebrews 4 describing physical rest, spiritual rest, or both?",
-          "linkedPassage"       :"Hebrews 4:1–11",
-          "sampleAnswer"        :"Hebrews 4 primarily describes a spiritual rest — the rest that comes from ceasing to work for our own salvation and trusting in God’s completed work in Christ. The writer connects God’s original seventh-day rest with the rest that believers ’enter’ through faith, and points to a final ’Sabbath rest’ still to come for God’s people. But this spiritual rest is not disconnected from physical rest — the weekly Sabbath is a sign pointing to this deeper reality. Every time we rest from physical work in trust, we rehearse the greater rest of the gospel: that God has done what we could not do for ourselves.",
-          "questionHint"        :"The writer says we ’enter’ God’s rest by faith, and connects this with ceasing from our own works just as God did from his — what might it mean to ’rest’ from trying to earn something that has already been given?",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":10
+          "elementId"        :"ch06-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Is Hebrews 4 describing physical rest, spiritual rest, or both?",
+          "linkedPassage"    :"Hebrews 4:1–11",
+          "sampleAnswer"     :"Hebrews 4 primarily describes a spiritual rest — the rest that comes from ceasing to work for our own salvation and trusting in God’s completed work in Christ. The writer connects God’s original seventh-day rest with the rest that believers ’enter’ through faith, and points to a final ’Sabbath rest’ still to come for God’s people. But this spiritual rest is not disconnected from physical rest — the weekly Sabbath is a sign pointing to this deeper reality. Every time we rest from physical work in trust, we rehearse the greater rest of the gospel: that God has done what we could not do for ourselves.",
+          "questionHint"     :"The writer says we ’enter’ God’s rest by faith, and connects this with ceasing from our own works just as God did from his — what might it mean to ’rest’ from trying to earn something that has already been given?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"        :"ch06-el16",
@@ -2426,17 +2418,14 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"           :"ch06-el30",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Which of these rhythms could you start this week?",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":3,
-          "sampleAnswer"        :"One rhythm I could begin this week is a short prayer at the start of the working day — offering the day to God before opening email or starting tasks. Another accessible rhythm is a genuine lunch break away from my desk: a small act of trust that the work does not depend entirely on me. Even one of these, practised consistently, begins to reshape the week.",
-          "questionHint"        :"Pick one that feels genuinely achievable in your current season — a small, concrete step is better than an ambitious one that won’t stick."
+          "elementId"        :"ch06-el30",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Which of these rhythms could you start this week?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"        :"ch06-el31",
@@ -3044,18 +3033,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch08-el09",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What should we always do when seeking wisdom?",
-          "linkedPassage"       :"James 1:5",
-          "sampleAnswer"        :"James says to ask God — simply, directly, and with confidence. The remarkable thing is not just that God gives wisdom, but how he gives it: generously and without reprimand. He does not scold us for not knowing, or give grudgingly when asked. This means the first and most important step in any discernment process is prayer — not as a ritual to complete before getting on with things, but as a genuine asking of the God who wants to give. Many work decisions are made without this step ever really being taken.",
-          "questionHint"        :"James says God gives wisdom ’without reprimand’ to those who ask — what does that detail suggest about how God receives us when we come to him confused or uncertain about a decision?",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch08-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What should we always do when seeking wisdom?",
+          "linkedPassage"    :"James 1:5",
+          "sampleAnswer"     :"James says to ask God — simply, directly, and with confidence. The remarkable thing is not just that God gives wisdom, but how he gives it: generously and without reprimand. He does not scold us for not knowing, or give grudgingly when asked. This means the first and most important step in any discernment process is prayer — not as a ritual to complete before getting on with things, but as a genuine asking of the God who wants to give. Many work decisions are made without this step ever really being taken.",
+          "questionHint"     :"James says God gives wisdom ’without reprimand’ to those who ask — what does that detail suggest about how God receives us when we come to him confused or uncertain about a decision?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"        :"ch08-el10",
@@ -3089,18 +3077,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch08-el13",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"Which of these four marks do you find hardest to achieve?",
-          "linkedPassage"       :"1 Corinthians 10:31",
-          "sampleAnswer"        :"Paul’s standard — doing everything for God’s glory — is comprehensive and demanding. The hardest mark varies by person and circumstance. For some it is aligning work with God’s purposes when their industry operates in ethically grey areas. For others it is the fit between their gifts and their current role — they are capable but not fulfilled. For many, the hardest is simply doing everything with a clear conscience before God: honestly examining whether what they do and how they do it could genuinely be offered to him as an act of worship, or whether there are corners being cut and compromises being made that they prefer not to examine.",
-          "questionHint"        :"Paul says ’whatever you do’ — which of the four marks feels most challenging for you specifically to meet in your current work situation, and what makes it difficult?",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":10
+          "elementId"        :"ch08-el13",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Which of these four marks do you find hardest to achieve?",
+          "linkedPassage"    :"1 Corinthians 10:31",
+          "sampleAnswer"     :"Paul’s standard — doing everything for God’s glory — is comprehensive and demanding. The hardest mark varies by person and circumstance. For some it is aligning work with God’s purposes when their industry operates in ethically grey areas. For others it is the fit between their gifts and their current role — they are capable but not fulfilled. For many, the hardest is simply doing everything with a clear conscience before God: honestly examining whether what they do and how they do it could genuinely be offered to him as an act of worship, or whether there are corners being cut and compromises being made that they prefer not to examine.",
+          "questionHint"     :"Paul says ’whatever you do’ — which of the four marks feels most challenging for you specifically to meet in your current work situation, and what makes it difficult?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"        :"ch08-el14",

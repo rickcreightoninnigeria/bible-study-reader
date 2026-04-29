@@ -115,18 +115,17 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"           :"ch01-el08",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"How does God create? What ’process’ does He use?",
-          "linkedPassage"       :"Genesis 1:3-5",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "sampleAnswer"        :"God creates simply by speaking. He says ”Let there be light,“ and light immediately exists. There is no process, no struggle, no materials He has to work with. The act of creation is instant and effortless — His word is enough. He then names what He has made and evaluates it, but the creative act itself requires nothing more than His command.",
-          "questionHint"        :"Look at the structure of each verse — what happens immediately after God speaks?",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch01-el08",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How does God create? What ’process’ does He use?",
+          "linkedPassage"    :"Genesis 1:3-5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "sampleAnswer"     :"God creates simply by speaking. He says ”Let there be light,“ and light immediately exists. There is no process, no struggle, no materials He has to work with. The act of creation is instant and effortless — His word is enough. He then names what He has made and evaluates it, but the creative act itself requires nothing more than His command.",
+          "questionHint"     :"Look at the structure of each verse — what happens immediately after God speaks?",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"    :"ch01-el09",
@@ -304,18 +303,17 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"           :"ch01-el26",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"According to this passage, what makes humans unique compared to the rest of creation?",
-          "linkedPassage"       :"Genesis 1:26-28",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "sampleAnswer"        :"Humans alone are made in God’s image and likeness — no other creature receives this description. They are also given a unique role: to rule over the rest of creation. Additionally, God speaks directly to humans and blesses them with a specific commission. This combination of being made in God’s image, being given authority over creation, and being directly addressed by God sets humanity apart from everything else He made.",
-          "questionHint"        :"Compare how God creates everything else in this chapter with the specific language He uses in verse 26 — what is different about the way humans are introduced?",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch01-el26",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"According to this passage, what makes humans unique compared to the rest of creation?",
+          "linkedPassage"    :"Genesis 1:26-28",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "sampleAnswer"     :"Humans alone are made in God’s image and likeness — no other creature receives this description. They are also given a unique role: to rule over the rest of creation. Additionally, God speaks directly to humans and blesses them with a specific commission. This combination of being made in God’s image, being given authority over creation, and being directly addressed by God sets humanity apart from everything else He made.",
+          "questionHint"     :"Compare how God creates everything else in this chapter with the specific language He uses in verse 26 — what is different about the way humans are introduced?",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"    :"ch01-el27",
@@ -666,18 +664,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch02-el09",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What responsibility does God give the man in the garden?",
-          "linkedPassage"       :"Genesis 2:8–15",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "sampleAnswer"        :"God places the man in the garden specifically ”to care for it and to maintain it” (verse 15). He is not there simply to enjoy it passively — he has a custodial responsibility over the garden. This is active, purposeful work: tending, cultivating, and keeping. The man is, in effect, a steward of what God has made and planted — working within God’s creation on God’s behalf.",
-          "questionHint"        :"Look at verse 15 closely — what are the two specific verbs that describe what the man is placed in the garden to do?",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch02-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What responsibility does God give the man in the garden?",
+          "linkedPassage"    :"Genesis 2:8–15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"God places the man in the garden specifically ”to care for it and to maintain it” (verse 15). He is not there simply to enjoy it passively — he has a custodial responsibility over the garden. This is active, purposeful work: tending, cultivating, and keeping. The man is, in effect, a steward of what God has made and planted — working within God’s creation on God’s behalf.",
+          "questionHint"     :"Look at verse 15 closely — what are the two specific verbs that describe what the man is placed in the garden to do?",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"        :"ch02-el10",
@@ -1201,18 +1198,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch03-el18",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What changes immediately after they sin?",
-          "linkedPassage"       :"Genesis 3:7–10",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "sampleAnswer"        :"Three things change immediately. First, they become aware of their nakedness and feel shame — contrasting sharply with the ”no shame” of Genesis 2:25. Second, they attempt to cover themselves with fig leaves — self-protection and concealment replace openness. Third, when they hear God, they hide — the relationship that was previously characterised by ease and freedom has become something they now fear. The man explicitly says he was afraid. Shame, hiding, and fear are the immediate fruits of the sin.",
-          "questionHint"        :"Compare this passage directly with Genesis 2:25 — what was true of them before, and what is true of them now?",
-          "bottomPadding"       :"normal",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch03-el18",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What changes immediately after they sin?",
+          "linkedPassage"    :"Genesis 3:7–10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Three things change immediately. First, they become aware of their nakedness and feel shame — contrasting sharply with the ”no shame” of Genesis 2:25. Second, they attempt to cover themselves with fig leaves — self-protection and concealment replace openness. Third, when they hear God, they hide — the relationship that was previously characterised by ease and freedom has become something they now fear. The man explicitly says he was afraid. Shame, hiding, and fear are the immediate fruits of the sin.",
+          "questionHint"     :"Compare this passage directly with Genesis 2:25 — what was true of them before, and what is true of them now?",
+          "bottomPadding"    :"normal"
         },
         {
           "elementId"        :"ch03-el19",
@@ -2169,18 +2165,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch05-el11",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What is different about Noah?",
-          "linkedPassage"       :"Genesis 6:8–10",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Noah stands in stark contrast to the world around him. While the rest of humanity was characterised by wickedness, Noah ‘found favour in the sight of the Lord.’ The passage describes him as ‘a godly man,’ ‘blameless among his contemporaries,’ and one who ‘walked with God.’ His life was oriented toward God in a way that set him apart from his generation.",
-          "questionHint"        :"Look at the three phrases used to describe Noah in verse 9 — what picture of a life do they build together?",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch05-el11",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is different about Noah?",
+          "linkedPassage"    :"Genesis 6:8–10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Noah stands in stark contrast to the world around him. While the rest of humanity was characterised by wickedness, Noah ‘found favour in the sight of the Lord.’ The passage describes him as ‘a godly man,’ ‘blameless among his contemporaries,’ and one who ‘walked with God.’ His life was oriented toward God in a way that set him apart from his generation.",
+          "questionHint"     :"Look at the three phrases used to describe Noah in verse 9 — what picture of a life do they build together?"
         },
         {
           "elementId"        :"ch05-el12",
@@ -2390,18 +2385,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch05-el32",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"How does Noah respond after leaving the ark?",
-          "linkedPassage"       :"Genesis 8:20–22",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Noah’s first act after leaving the ark is to build an altar and offer burnt offerings to God. Before establishing a home, before thinking about food or shelter, he worships. God responds with a promise: He will never again curse the ground or destroy all living things as He has done. Noah’s worship is met with God’s grace — a commitment to the preservation of the created order.",
-          "questionHint"        :"What does it tell you about Noah’s priorities that worship is the very first thing he does when he steps off the ark?",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch05-el32",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How does Noah respond after leaving the ark?",
+          "linkedPassage"    :"Genesis 8:20–22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Noah’s first act after leaving the ark is to build an altar and offer burnt offerings to God. Before establishing a home, before thinking about food or shelter, he worships. God responds with a promise: He will never again curse the ground or destroy all living things as He has done. Noah’s worship is met with God’s grace — a commitment to the preservation of the created order.",
+          "questionHint"     :"What does it tell you about Noah’s priorities that worship is the very first thing he does when he steps off the ark?"
         },
         {
           "elementId"    :"ch05-el33",
@@ -2414,18 +2408,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch05-el34",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What does God promise, and what is the sign of the covenant?",
-          "linkedPassage"       :"Genesis 9:8–17",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts...",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"God promises that never again will all living things be destroyed by a flood, and that this covenant extends not just to Noah and his descendants but to every living creature. The sign of this covenant is the rainbow in the clouds — a visible, recurring reminder of God’s commitment. Whenever the rainbow appears, God says He will ‘remember’ the everlasting covenant He has made with the earth.",
-          "questionHint"        :"How many times does God say ‘never again’ in this passage, and who exactly is included in the covenant He is making?",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch05-el34",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does God promise, and what is the sign of the covenant?",
+          "linkedPassage"    :"Genesis 9:8–17",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"God promises that never again will all living things be destroyed by a flood, and that this covenant extends not just to Noah and his descendants but to every living creature. The sign of this covenant is the rainbow in the clouds — a visible, recurring reminder of God’s commitment. Whenever the rainbow appears, God says He will ‘remember’ the everlasting covenant He has made with the earth.",
+          "questionHint"     :"How many times does God say ‘never again’ in this passage, and who exactly is included in the covenant He is making?"
         },
         {
           "elementId"    :"ch05-el35",
@@ -2761,18 +2754,17 @@
           "questionHint"     :"God’s stated reason is in verse 6 — what concern about the direction of human ambition does He express, and is His intervention better understood as punishment or as prevention?"
         },
         {
-          "elementId"           :"ch06-el22",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What does this tell us about God’s authority over human plans?",
-          "linkedPassage"       :"Genesis 11:5-7",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"God’s intervention shows that no human plan, however well-resourced or united in purpose, can succeed if God chooses to interrupt it. The people’s language is confused and their project collapses the moment God acts. His authority is absolute — it extends over human ambition, human unity, and human ingenuity. Nothing proceeds beyond the limit He sets.",
-          "questionHint"        :"The builders seemed to have every advantage — unity, language, skill, resources — and yet what happens the moment God acts? What does that tell you about the limits of human power?",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch06-el22",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What does this tell us about God’s authority over human plans?",
+          "linkedPassage"    :"Genesis 11:5-7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"God’s intervention shows that no human plan, however well-resourced or united in purpose, can succeed if God chooses to interrupt it. The people’s language is confused and their project collapses the moment God acts. His authority is absolute — it extends over human ambition, human unity, and human ingenuity. Nothing proceeds beyond the limit He sets.",
+          "questionHint"     :"The builders seemed to have every advantage — unity, language, skill, resources — and yet what happens the moment God acts? What does that tell you about the limits of human power?"
         },
         {
           "elementId"    :"ch06-el23",
@@ -3074,18 +3066,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch07-el16",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What is God asking Abram to leave behind?",
-          "linkedPassage"       :"Genesis 12:1",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"God asks Abram to leave three things: his country, his relatives, and his father’s household. These represent the entire fabric of his security and identity — his homeland, his extended family network, and his immediate household. In the ancient world, these were not optional comforts; they were the foundation of a person’s safety, belonging, and sense of who they were. God calls Abram to leave all of it behind.",
-          "questionHint"        :"In the ancient world, what would your country, your clan, and your household have provided for you — and what would it mean to leave all three behind at once?",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch07-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What is God asking Abram to leave behind?",
+          "linkedPassage"    :"Genesis 12:1",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"God asks Abram to leave three things: his country, his relatives, and his father’s household. These represent the entire fabric of his security and identity — his homeland, his extended family network, and his immediate household. In the ancient world, these were not optional comforts; they were the foundation of a person’s safety, belonging, and sense of who they were. God calls Abram to leave all of it behind.",
+          "questionHint"     :"In the ancient world, what would your country, your clan, and your household have provided for you — and what would it mean to leave all three behind at once?"
         },
         {
           "elementId"        :"ch07-el17",
@@ -3128,18 +3119,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch07-el21",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What promises does God make to Abram?",
-          "linkedPassage"       :"Genesis 12:2-3",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Your thoughts…",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"God makes three clusters of promises to Abram: He will make him into a great nation; He will bless him and make his name great; and through him, all the families of the earth will be blessed. He also promises to bless those who bless Abram and to curse those who treat him lightly. The promises are both personal (Abram’s own future) and universal (blessing reaching to all peoples).",
-          "questionHint"        :"Count the number of times God says ‘I will’ in verses 2 and 3 — who is doing the promising, and who is doing the acting?",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch07-el21",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What promises does God make to Abram?",
+          "linkedPassage"    :"Genesis 12:2-3",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts…",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"God makes three clusters of promises to Abram: He will make him into a great nation; He will bless him and make his name great; and through him, all the families of the earth will be blessed. He also promises to bless those who bless Abram and to curse those who treat him lightly. The promises are both personal (Abram’s own future) and universal (blessing reaching to all peoples).",
+          "questionHint"     :"Count the number of times God says ‘I will’ in verses 2 and 3 — who is doing the promising, and who is doing the acting?"
         },
         {
           "elementId"        :"ch07-el22",
