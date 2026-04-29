@@ -259,6 +259,13 @@ async function startApp() {
     return;
   }
 
+  // Upgrade onboarding: shown once per version for existing users.
+  // Suppressed on first run (isFirstRun already returned above) and on
+  // versions where getUpgradeOnboardingSlides() returns [].
+  // Does not block the routing cases below — it layers over the library.
+  const _appVersion = window.appAboutData?.appVersion;
+  if (_appVersion) showUpgradeOnboardingIfNeeded(_appVersion);
+
   // Case 1: restore or activate the last active study.
   if (lastStudyId && registry.includes(lastStudyId)) {
     try {

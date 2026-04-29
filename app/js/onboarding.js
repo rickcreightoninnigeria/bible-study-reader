@@ -1,10 +1,11 @@
 // ── ONBOARDING & SLIDE OVERLAY ENGINE ────────────────────────────────────────
 // Single source of truth for all slide-based overlays in the app:
 //   • App-level onboarding   (showAppOnboardingIfNeeded, showAppOnboarding)
+//   • Upgrade onboarding     (showUpgradeOnboardingIfNeeded, showUpgradeOnboarding)
 //   • Study-level onboarding (showOnboardingIfNeeded, showOnboarding)
 //   • Feature tutorials      (showFeatureTutorial)
 //
-// All three are thin wrappers around the single core engine: showSlideOverlay().
+// All four are thin wrappers around the single core engine: showSlideOverlay().
 //
 // Dependencies (all available as globals before this file loads):
 //   FONT_MAX, ICONS           – state.js / icons.js
@@ -43,6 +44,28 @@ function getAppOnboardingSlides() {
      heading: t('onboarding_app_slide3_heading'),
      body:    t('onboarding_app_slide3_body'),
    },
+  ];
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// UPGRADE ONBOARDING SLIDES
+// Shown once per app version for existing users (suppressed on brand-new install).
+// localStorage key: 'upgrade_onboarding_seen_[version]'
+// On complete / skip: no navigation — library remains visible behind overlay.
+// ══════════════════════════════════════════════════════════════════════════════
+
+function getUpgradeOnboardingSlides() {
+  // Return one slide per notable feature in this release.
+  // Return an empty array [] for versions that have no upgrade slides —
+  // showUpgradeOnboardingIfNeeded() will silently skip, and
+  // showUpgradeOnboarding() will show a "nothing to see" toast instead.
+  return [
+    {
+      icon:    '✨',
+      eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
+      heading: 'Main Changes in this Update',
+      body:    '<ul><li><b>Multilingual:</b> improved support</li><li><b>Answer checking:</b> bugfixes</li></ul>.]',
+    },
   ];
 }
 
@@ -714,6 +737,78 @@ function showAppOnboarding() {
     },
   });
 }
+
+
+// ══════════════════════════════════════════════════════════════════════════════
+// WRAPPER — Upgrade onboarding
+// ══════════════════════════════════════════════════════════════════════════════
+//
+// showUpgradeOnboardingIfNeeded(version):
+//   Guard wrapper. Called from startApp() after loadLocale() has resolved.
+//   Suppressed on a brand-new install (app_onboarding_complete not yet set).
+//   Returns true if slides were shown (mirrors showAppOnboardingIfNeeded pattern).
+//
+// showUpgradeOnboarding():
+//   Unconditional. Called from the HowTo "What's New" button.
+//   Shows a Swal toast instead if getUpgradeOnboardingSlides() is empty.
+//
+// localStorage key: 'upgrade_onboarding_seen_[version]'
+// On complete / skip from startup: mark seen, no navigation (library stays visible).
+// On complete / skip from HowTo:   returnTo HowTo 'study' tab.
+
+function showUpgradeOnboardingIfNeeded(version) {
+  // Never show on a brand-new install — the user has no "previous version"
+  // to be upgrading from.
+  if (!localStorage.getItem('app_onboarding_complete')) return false;
+
+  const seenKey = `upgrade_onboarding_seen_${version}`;
+  if (localStorage.getItem(seenKey)) return false;
+
+  const slides = getUpgradeOnboardingSlides();
+  if (!slides || !slides.length) {
+    // No slides defined for this version — mark seen silently so we never
+    // re-check on subsequent launches of the same version.
+    localStorage.setItem(seenKey, 'true');
+    return false;
+  }
+
+  showSlideOverlay({
+    id:            'upgradeOnboarding',
+    slides:        slides,
+    skipLabel:     t('onboarding_close'),
+    finalLabel:    t('onboarding_close'),
+    fadeOut:       true,
+    restoreScroll: false,
+    onComplete: () => { localStorage.setItem(seenKey, 'true'); },
+    onSkip:     () => { localStorage.setItem(seenKey, 'true'); },
+  });
+  return true;
+}
+
+function showUpgradeOnboarding() {
+  const slides = getUpgradeOnboardingSlides();
+  if (!slides || !slides.length) {
+    Swal.fire({
+      toast:             true,
+      position:          'bottom',
+      icon:              'info',
+      title:             t('onboarding_upgrade_no_slides'),
+      showConfirmButton: false,
+      timer:             3000,
+      timerProgressBar:  true,
+    });
+    return;
+  }
+  showSlideOverlay({
+    id:            'upgradeOnboarding',
+    slides:        slides,
+    skipLabel:     t('onboarding_close'),
+    finalLabel:    t('onboarding_close'),
+    restoreScroll: true,
+    returnTo:      () => renderHowToUse('study'),
+  });
+}
+
 
 // ══════════════════════════════════════════════════════════════════════════════
 // WRAPPER — Study onboarding

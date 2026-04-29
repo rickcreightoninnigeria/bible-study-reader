@@ -17,7 +17,8 @@
 //   goToChapter                    – navigation.js
 //   tutorialIcon, showFeatureTutorial,
 //   showOnboardingFromHowTo,
-//   showAppOnboardingFromHowTo     – onboarding.js
+//   showAppOnboardingFromHowTo,
+//   showUpgradeOnboarding         – onboarding.js
 
 // ── TAB PAGE CONSTANTS ────────────────────────────────────────────────────────
 // Defined at module level so navigateTab() can access them for swipe navigation.
@@ -195,6 +196,11 @@ async function renderHowToUse(tabId) {
         <button class="howto-share-btn" style="background:var(--text-secondary); margin-top:8px;"
                 onclick="showAppOnboardingFromHowTo()">
           <span>${ICONS.triggerSlides}</span> ${t('renderpages_newhere_appslides_btn')}
+        </button>
+        <p style="margin-top:16px;">${t('renderpages_newhere_upgradeslides_prompt')}</p>
+        <button class="howto-share-btn" style="background:var(--text-secondary); margin-top:8px;"
+                onclick="showUpgradeOnboarding()">
+          <span>✨</span> ${t('renderpages_newhere_upgradeslides_btn', { version: window.appAboutData?.appVersion ?? '—' })}
         </button>
       </div>
      </div>`;
