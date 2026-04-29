@@ -206,9 +206,26 @@ function buildNotesField(ch) {
 // Rendered only when appSettings.showNavButtons is true.
 // Uses a flex spacer div when a direction is unavailable so the remaining
 // button stays correctly aligned.
+//
+// activeLang – the currently active study language code (e.g. 'ha')
+// langMap    – slot-index map e.g. { ha: 1, ff: 2, en: 3 }. Empty for mono-lingual.
 
-function buildNavButtons(idx) {
+function buildNavButtons(idx, activeLang, langMap) {
   if (!appSettings.showNavButtons) return '';
+
+  // Resolve a chapter title for the active language.
+  // Multilingual: chapterTitle1/2/3 keyed by langMap slot.
+  // Mono-lingual: plain chapterTitle (unnumbered).
+  function resolveChapterTitle(ch) {
+    if (langMap && Object.keys(langMap).length > 0) {
+      const slot = langMap[activeLang];
+      if (slot !== undefined) {
+        return ch[`chapterTitle${slot}`] || ch[`chapterTitle1`] || ch.chapterTitle || '';
+      }
+      return ch[`chapterTitle1`] || ch.chapterTitle || '';
+    }
+    return ch.chapterTitle || '';
+  }
 
   const showBack = idx > 0;
   const showNext = idx < chapters.length - 1;
@@ -216,10 +233,10 @@ function buildNavButtons(idx) {
   return `
     <div class="chapter-nav">
       ${showBack
-        ? `<button class="chapter-nav-btn secondary" onclick="goToChapter(${idx - 1})">← ${chapters[idx - 1].chapterTitle}</button>`
+        ? `<button class="chapter-nav-btn secondary" onclick="goToChapter(${idx - 1})">← ${resolveChapterTitle(chapters[idx - 1])}</button>`
         : `<div style="flex:1"></div>`}
       ${showNext
-        ? `<button class="chapter-nav-btn" onclick="goToChapter(${idx + 1})">→ ${chapters[idx + 1].chapterTitle}</button>`
+        ? `<button class="chapter-nav-btn" onclick="goToChapter(${idx + 1})">→ ${resolveChapterTitle(chapters[idx + 1])}</button>`
         : `<div style="flex:1"></div>`}
     </div>`;
 }

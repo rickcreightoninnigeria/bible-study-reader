@@ -232,7 +232,7 @@ const ACTION_FN_MAP = {
 };
 
 function resolveActionFn(label) {
-  if (!label) return null;
+  if (!label || typeof label !== 'string') return null;
   for (const [key, fn] of Object.entries(ACTION_FN_MAP)) {
     if (label.includes(key)) return fn;
   }
@@ -295,29 +295,22 @@ function applyImageData(imageData) {
 // (search, share, print, progress, starring) continue to work unchanged.
 
 // Returns the text of the first element with the given subtype.
-// For multilingual studies (text1/text2…), slot 1 is used as the canonical
-// value for the legacy search/share/print path, which is language-agnostic.
 function _extractTextBySubtype(elements, subtype) {
   const el = (elements || []).find(e => e.type === 'text' && e.subtype === subtype);
-  if (!el) return '';
-  return el.text || el.text1 || '';
+  return el ? el.text : '';
 }
 
 // Returns an array of reflection question strings.
-// For multilingual studies, slot 1 is the canonical value for the
-// language-agnostic legacy search/share/print path.
 function _extractReflectionQuestions(elements) {
   return (elements || [])
     .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
-    .map(e => e.question || e.question1 || '');
+    .map(e => e.question);
 }
 
 // Reconstructs sections[] from the flat elements[].
 // A new section starts at each bridge text element (or implicitly at the first
 // biblePassage when there is no leading bridge). Questions are grouped under
 // the most recently seen biblePassage reference.
-// For multilingual studies, slot-1 values are the canonical text for the
-// language-agnostic legacy search/share/print path.
 function _buildSectionsFromElements(elements) {
   const els = (elements || []).filter(e => !e.repeatElement);
   const sections = [];
@@ -326,7 +319,7 @@ function _buildSectionsFromElements(elements) {
 
   els.forEach(el => {
     if (el.type === 'text' && el.subtype === 'bridge') {
-      currentSection = { bridge: el.text || el.text1 || '', questions: [] };
+      currentSection = { bridge: el.text, questions: [] };
       sections.push(currentSection);
       lastRef = null;
     } else if (el.type === 'biblePassage') {
@@ -334,9 +327,7 @@ function _buildSectionsFromElements(elements) {
         currentSection = { questions: [] };
         sections.push(currentSection);
       }
-      // linkedPassage on question elements always stores the primary ref;
-      // bibleRef1 is the multilingual canonical, bibleRef the mono-lingual one.
-      lastRef = el.bibleRef1 || el.bibleRef || '';
+      lastRef = el.bibleRef;
     } else if (el.type === 'question' && el.subtype !== 'reflection') {
       if (!currentSection) {
         currentSection = { questions: [] };
@@ -344,7 +335,7 @@ function _buildSectionsFromElements(elements) {
       }
       currentSection.questions.push({
         ref:       el.linkedPassage || lastRef || '',
-        text:      el.question || el.question1 || '',
+        text:      el.question,
         elementId: el.elementId,
       });
     }
@@ -445,23 +436,116 @@ async function applyStudyData(data) {
     sections:   _buildSectionsFromElements(ch.elements),
   }));
 
-  studyOnboardingSlides = (data.studyOnboardingSlides || []).map(slide => {
-    if (slide.action && slide.action.fn === null) {
-      slide.action.fn = resolveActionFn(slide.action.label);
+  // ── Expose studyMetadata globally ─────────────────────────────────────────
+  // render-elements.js, modals.js, render-library.js, and render-chapter-ui.js
+  // all read window.studyMetadata to build the language-slot map and to resolve
+  // numbered metadata fields (title1/2/3, subtitle1/2/3, shortTitle1/2/3).
+  const metadata = data.studyMetadata || {};
+  window.studyMetadata = metadata;
+
+  // ── Build the language-slot map once ──────────────────────────────────────
+  // { ha: 1, ff: 2, en: 3 } — used for all metadata and slide field resolution
+  // below. Identical logic to buildLangMap() in render-elements.js; duplicated
+  // here so study-loader.js carries no dependency on render-elements.js.
+  const _langMap = {};
+  for (let i = 1; ; i++) {
+    const code = metadata[`language${i}`];
+    if (!code) break;
+    _langMap[code] = i;
+  }
+
+  // ── Resolve active language for metadata fields ────────────────────────────
+  // Use the session preference if it maps to a valid slot, otherwise slot 1.
+  const _activeLang   = window._activeStudyLang || '';
+  const _activeSlot   = _langMap[_activeLang] || 1;
+  const _isMultilang  = Object.keys(_langMap).length > 0;
+
+  // ── Helper: resolve a numbered metadata field ──────────────────────────────
+  // Priority (multilingual):
+  //   1. metadata[field + activeSlot]   — active language
+  //   2. metadata[field + '1']          — slot-1 fallback
+  //   3. metadata[field]                — unnumbered (mono-lingual)
+  //   4. fallback string
+  // For mono-lingual studies (no languageN keys) falls straight through to
+  // the unnumbered field, preserving full backward compatibility.
+  function _resolveMeta(field, fallback = '') {
+    if (_isMultilang) {
+      return metadata[`${field}${_activeSlot}`]
+          || metadata[`${field}1`]
+          || metadata[field]
+          || fallback;
     }
-    return slide;
+    return metadata[field] || fallback;
+  }
+
+  // ── Normalise title / subtitle / shortTitle onto studyMetadata ────────────
+  // Downstream code (library, chapter nav, header) reads the plain unnumbered
+  // fields. We resolve once here and write them back onto window.studyMetadata
+  // so nothing else needs to know about the numbered schema.
+  //
+  // shortTitle priority: shortTitle1 > shortTitle (unnumbered) > title slot > 'Study'
+  const resolvedTitle    = _resolveMeta('title',    'Untitled Study');
+  const resolvedSubtitle = _resolveMeta('subtitle', '');
+  const resolvedShortTitle = (() => {
+    // shortTitle1 always wins when present (multilingual canonical).
+    if (_isMultilang && metadata.shortTitle1) {
+      return metadata[`shortTitle${_activeSlot}`] || metadata.shortTitle1;
+    }
+    // Unnumbered shortTitle is present (legacy or English-only slot).
+    if (metadata.shortTitle) return metadata.shortTitle;
+    // Fall back to resolved title.
+    return resolvedTitle || 'Study';
+  })();
+
+  // Write resolved plain fields back so all downstream readers get correct values.
+  window.studyMetadata.title    = resolvedTitle;
+  window.studyMetadata.subtitle = resolvedSubtitle;
+
+  // ── Resolve onboarding slides ──────────────────────────────────────────────
+  // Slides from multilingual estudies store eyebrow/heading/body/bodyAfter as
+  // numbered fields (eyebrow1/2/3, heading1/2/3, body1/2/3, bodyAfter1/2/3)
+  // and action.label as label1/label2/label3.
+  // We resolve every field to a plain string here, at load time, so
+  // showSlideOverlay() can stay format-agnostic (it always reads s.eyebrow etc).
+  // Mono-lingual slides already carry plain unnumbered fields — _resolveMeta
+  // logic is applied per-field so both shapes work transparently.
+  studyOnboardingSlides = (data.studyOnboardingSlides || []).map(slide => {
+    // Resolve each text field: numbered slot wins over unnumbered fallback.
+    function _resolveSlideField(field) {
+      if (_isMultilang) {
+        return slide[`${field}${_activeSlot}`]
+            || slide[`${field}1`]
+            || slide[field]
+            || '';
+      }
+      return slide[field] || '';
+    }
+
+    const resolved = {
+      ...slide,
+      eyebrow:   _resolveSlideField('eyebrow'),
+      heading:   _resolveSlideField('heading'),
+      body:      _resolveSlideField('body'),
+      bodyAfter: _resolveSlideField('bodyAfter'),
+    };
+
+    // Resolve action if present.
+    if (slide.action) {
+      // label is now numbered (label1/label2/label3); fall back to plain label.
+      const resolvedLabel = _isMultilang
+        ? (slide.action[`label${_activeSlot}`] || slide.action.label1 || slide.action.label || '')
+        : (slide.action.label || '');
+
+      resolved.action = {
+        label: resolvedLabel,
+        fn:    slide.action.fn === null ? resolveActionFn(resolvedLabel) : slide.action.fn,
+      };
+    }
+
+    return resolved;
   });
 
-  // Expose studyMetadata as a global so render-elements.js can build the
-  // language-slot map (language1 → slot 1, language2 → slot 2, …) without
-  // having to scan every element. Renderers read window.studyMetadata directly.
-  window.studyMetadata = data.studyMetadata || {};
-
-  // Load shortTitle title
-  const metadata = data.studyMetadata || {};
-  const shortTitle = metadata.shortTitle || metadata.title || "Study";
-
-  // Resolve cover image — mirrors the library's own logic:
+  // ── Resolve cover image ────────────────────────────────────────────────────
   // 1. Prefer a blob URL already attached in-session (zip just loaded).
   // 2. Fall back to the IDB image store (survives page reloads).
   // 3. Fall back to legacy base64 embedded in data.imageData.
@@ -482,8 +566,12 @@ async function applyStudyData(data) {
   }
 
   window.titlePageData = {
-    ...(data.studyMetadata || {}),
-    headerTitle: shortTitle,
+    ...metadata,
+    // Expose resolved plain fields so all title-page renderers work without
+    // knowing about the numbered schema.
+    title:       resolvedTitle,
+    subtitle:    resolvedSubtitle,
+    headerTitle: resolvedShortTitle,
     image: {
         src:           coverSrc,
         alt:           data.imageData?.cover?.alt || '',

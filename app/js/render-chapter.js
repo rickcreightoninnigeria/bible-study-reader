@@ -244,7 +244,7 @@ async function renderChapter(idx, scrollY = 0) {
     contentHtml += buildNotesField(ch);
 
     // ── 6. Prev/Next nav buttons ──────────────────────────────────────────────
-    contentHtml += buildNavButtons(idx);
+    contentHtml += buildNavButtons(idx, activeLang, langMap);
 
     // ── 7. Save/Share bar + 8. Spacer ─────────────────────────────────────────
     contentHtml += buildSaveBar(ch);

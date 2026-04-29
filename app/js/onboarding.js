@@ -482,10 +482,11 @@ function showSlideOverlay(config) {
 
     // Optional action button on this slide
     if (s.action) {
+      const actionLabel = s.action.label || '';
       const btn = document.createElement('button');
-      btn.textContent = s.action.label;
+      btn.textContent = actionLabel;
 
-      const isSettingsBtn = s.action.label.toLowerCase().includes('settings');
+      const isSettingsBtn = actionLabel.toLowerCase().includes('settings');
       if (isSettingsBtn) {
         btn.style.cssText = `margin-top:20px; background:var(--accent); border:none;
           color:var(--surface); border-radius:8px; padding:16px;
@@ -503,7 +504,8 @@ function showSlideOverlay(config) {
         if (typeof s.action.fn === 'function') s.action.fn();
         dismiss(true); // action has already navigated; stay put
       };
-      slide.appendChild(btn);
+      // Only append the button if there's a label to show.
+      if (actionLabel) slide.appendChild(btn);
     }
 
     // Optional extra body below the action button
@@ -511,7 +513,7 @@ function showSlideOverlay(config) {
       const afterEl = document.createElement('div');
       afterEl.className = 'onboarding-body';
       afterEl.style.marginTop = '16px';
-      afterEl.innerHTML = s.bodyAfter;
+      afterEl.innerHTML = (s.bodyAfter || '').replace(/\n/g, '<br><br>');
       slide.appendChild(afterEl);
     }
 

@@ -128,13 +128,16 @@ function moveRecentStudy(id, direction) {
 // Only affects the All, Shelves, and Paths tabs.
 
 // Returns true when a studyCache entry should be shown under the current filter.
-// Studies with a language not in LANGUAGE_MAP, or with no language field, only
-// appear when the filter is 'all'.
+// For multilingual studies (entry.langs array), the study matches if any of its
+// languages match the filter. For mono-lingual studies entry.lang is checked.
+// Studies with no language field only appear when the filter is 'all'.
 function studyMatchesLangFilter(entry) {
   const filter = window.libLangFilter || 'all';
   if (filter === 'all') return true;
-  const lang = entry?.meta?.language;
-  return lang === filter;
+  // Multilingual: match if any of the study's languages equals the filter.
+  if (entry?.langs?.length > 0) return entry.langs.includes(filter);
+  // Mono-lingual fallback.
+  return entry?.lang === filter;
 }
 
 // Populates #libLangBar with flag buttons for the languages present in the
@@ -306,6 +309,9 @@ async function renderLibrary() {
 
   // ── Build a lookup of all study data ────────────────────────────────────────
   // We load everything once so tab renderers can reference it cheaply.
+  // For multilingual studies, title/subtitle are resolved to the active language
+  // (window._activeStudyLang), falling back to slot 1 if the active language is
+  // not one of this study's languages. Mono-lingual studies use plain fields.
   const studyCache = {};
   for (const id of registry) {
     const data = await StudyIDB.get(`study_content_${id}`);
@@ -319,14 +325,51 @@ async function renderLibrary() {
         reader.readAsDataURL(coverBlob);
       });
     }
+
+    const meta = data.studyMetadata || {};
+
+    // Build the slot map for this study: { ha: 1, ff: 2, en: 3 }
+    const _sm = {};
+    for (let i = 1; ; i++) {
+      const code = meta[`language${i}`];
+      if (!code) break;
+      _sm[code] = i;
+    }
+    const _isML = Object.keys(_sm).length > 0;
+
+    // Determine the display slot: active lang if it's in this study, else slot 1.
+    const _activeLang = window._activeStudyLang || '';
+    const _slot = (_isML && _sm[_activeLang]) ? _sm[_activeLang] : 1;
+
+    // Resolve a metadata field to a display string for the current slot.
+    // Priority: slotN → slot1 → unnumbered → fallback.
+    function _res(field, fb = '') {
+      if (_isML) return meta[`${field}${_slot}`] || meta[`${field}1`] || meta[field] || fb;
+      return meta[field] || fb;
+    }
+
+    // Collect all language codes for this study (used by lang filter and badges).
+    // Multilingual: language1/language2/…  Mono-lingual: language (unnumbered).
+    const _langs = [];
+    if (_isML) {
+      for (let i = 1; ; i++) {
+        const code = meta[`language${i}`];
+        if (!code) break;
+        _langs.push(code);
+      }
+    } else if (meta.language) {
+      _langs.push(meta.language);
+    }
+
     studyCache[id] = {
       data,
-      meta:    data.studyMetadata || {},
-      title:   (data.studyMetadata?.title || 'Untitled Study').trim(),
-      subtitle: data.studyMetadata?.subtitle || '',
-      shelves: data.studyMetadata?.libraryShelves || null,
+      meta,
+      title:    _res('title', 'Untitled Study').trim(),
+      subtitle: _res('subtitle', ''),
+      shelves:  meta.libraryShelves || null,
       fallback: data.imageData?.cover?.fallback || '📖',
-      lang:    data.studyMetadata?.language || '',
+      langs:    _langs,          // ordered array of all language codes for this study
+      lang:     _langs[0] || '', // primary language (for legacy single-lang filter)
       coverSrc,
     };
   }
@@ -1343,8 +1386,11 @@ async function renderLibrary() {
   // ── Compute which languages are present (for the lang filter bar) ────────────
   // Only counts languages that exist in LANGUAGE_MAP so unmapped languages don't
   // produce orphaned buttons. Order follows LANGUAGE_MAP definition order.
+  // Checks entry.langs (array, multilingual) and entry.lang (string, mono-lingual).
   const presentLangCodes = Object.keys(LANGUAGE_MAP).filter(code =>
-    Object.values(studyCache).some(e => e.lang === code)
+    Object.values(studyCache).some(e =>
+      (e.langs && e.langs.includes(code)) || e.lang === code
+    )
   );
 
   overlay.innerHTML = `

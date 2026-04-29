@@ -27,6 +27,9 @@ Output is written as <stem>_updated_passages.json alongside each input file.
 import json
 import re
 import sys
+import io
+import contextlib
+import os
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -110,10 +113,27 @@ ENGLISH_TO_SFM = {
 _BOOK_NAMES_LONGEST_FIRST = sorted(ENGLISH_TO_SFM.keys(), key=len, reverse=True)
 
 
+def _strip_letter_suffix(s: str) -> int:
+    """
+    Convert a verse token that may carry a letter suffix to an int.
+    e.g. "21b" → 21, "20a" → 20, "7" → 7.
+    Raises ValueError if the numeric part cannot be parsed.
+    """
+    return int(re.sub(r'[a-zA-Z]+$', '', s.strip()))
+
+
 def parse_english_ref(ref: str):
     """
-    Parse an English Bible reference such as "Colossians 1:3" or
-    "Psalm 90:2, 4" or "John 11:25, 43-44".
+    Parse an English Bible reference such as "Colossians 1:3",
+    "Psalm 90:2, 4", "John 11:25, 43-44", "Romans 7:21–23",
+    "Romans 1:21b", "Titus 3:3a", "Luke 15:19-20a",
+    or "James 3:16, 4:1-2" (multi-chapter).
+
+    Handles:
+      - En-dashes (–) as range separators (treated identically to hyphens).
+      - Letter suffixes (a/b) on verse numbers, stripped before int conversion.
+      - Multi-chapter references: only the first chapter and its verses are
+        used; any segments belonging to a subsequent chapter are ignored.
 
     Returns (book_name, chapter_int, verse_groups) where verse_groups is a
     list of (start_verse, end_verse) integer tuples representing contiguous
@@ -129,43 +149,65 @@ def parse_english_ref(ref: str):
     for book in _BOOK_NAMES_LONGEST_FIRST:
         if ref.startswith(book):
             remainder = ref[len(book):].strip()
-            # remainder: "1:3"  or  "90:2, 4"  or  "11:25, 43-44"
-            m = re.match(r'^(\d+):([\d,\s\-]+)$', remainder)
+
+            # Accept digits, letters a/b, commas, spaces, hyphens, en-dashes,
+            # and colons (colons appear in multi-chapter refs like "3:16, 4:1-2").
+            m = re.match(r'^(\d+):([\d\s,\-–:a-zA-Z]+)$', remainder,
+                         re.UNICODE)
             if not m:
                 print(f"  WARNING: Cannot parse chapter/verse from '{ref}' "
                       f"(remainder: '{remainder}')")
                 return None, None, None
 
             chapter = int(m.group(1))
-            verse_str = m.group(2)
 
-            # Split on commas to get segments; each segment may be a range
+            # Normalise en-dashes to hyphens for uniform splitting.
+            verse_str = m.group(2).replace('–', '-')
+
+            # Split on commas to get segments; each segment may be:
+            #   "21b"          single verse with suffix
+            #   "7-8"          hyphen range
+            #   "19-20a"       range with suffix on end
+            #   "4:1-2"        new-chapter segment — stop processing here
             verse_groups = []
-            last_end = None
             for segment in verse_str.split(','):
                 segment = segment.strip()
+
+                # Multi-chapter segment (contains a colon) — we've already
+                # captured the first chapter's verses, so stop.
+                if ':' in segment:
+                    print(f"  WARNING: '{ref}' spans multiple chapters — "
+                          f"only chapter {chapter} verses included; "
+                          f"'{segment.strip()}' and any further segments skipped.")
+                    break
+
+                # Normalise en-dash (already done above) then split on hyphen.
                 if '-' in segment:
                     parts = segment.split('-', 1)
                     try:
-                        v_start = int(parts[0].strip())
-                        v_end   = int(parts[1].strip())
+                        v_start = _strip_letter_suffix(parts[0])
+                        v_end   = _strip_letter_suffix(parts[1])
                     except ValueError:
                         print(f"  WARNING: Cannot parse verse range '{segment}' "
                               f"in '{ref}'")
                         return None, None, None
                 else:
                     try:
-                        v_start = v_end = int(segment)
+                        v_start = v_end = _strip_letter_suffix(segment)
                     except ValueError:
                         print(f"  WARNING: Cannot parse verse '{segment}' "
                               f"in '{ref}'")
                         return None, None, None
 
-                # If this group is contiguous with the previous one, merge.
+                # If contiguous with the previous group, merge.
                 if verse_groups and v_start == verse_groups[-1][1] + 1:
                     verse_groups[-1] = (verse_groups[-1][0], v_end)
                 else:
                     verse_groups.append((v_start, v_end))
+
+            if not verse_groups:
+                print(f"  WARNING: No verse groups parsed from '{ref}'")
+                return None, None, None
 
             return book, chapter, verse_groups
 
@@ -182,12 +224,19 @@ _sfm_cache: dict = {}
 
 
 def load_sfm(sfm_path: str):
-    """Return the parsed USJ dict for an SFM file, with caching."""
+    """Return the parsed USJ dict for an SFM file, with caching.
+
+    usfm_grammar prints token-level diagnostics directly to stdout (and
+    sometimes stderr) even when ignore_errors=True.  We suppress both
+    file descriptors at the OS level so nothing leaks through.
+    """
     if sfm_path in _sfm_cache:
         return _sfm_cache[sfm_path]
 
     p = Path(sfm_path)
     if not p.exists():
+        p = Path(sfm_path)
+        print(f"  DEBUG: Looking for: {sfm_path}  exists={p.exists()}")
         print(f"  WARNING: SFM file not found: {sfm_path}")
         _sfm_cache[sfm_path] = None
         return None
@@ -195,8 +244,26 @@ def load_sfm(sfm_path: str):
     try:
         from usfm_grammar import USFMParser
         text = p.read_text(encoding="utf-8", errors="replace")
-        parser = USFMParser(text)
-        usj = parser.to_usj(ignore_errors=True)
+
+        # Suppress stdout AND stderr at the file-descriptor level so that
+        # usfm_grammar's C-level / tree-sitter diagnostics are silenced.
+        devnull_fd = os.open(os.devnull, os.O_WRONLY)
+        old_stdout_fd = os.dup(1)
+        old_stderr_fd = os.dup(2)
+        try:
+            os.dup2(devnull_fd, 1)
+            os.dup2(devnull_fd, 2)
+            with contextlib.redirect_stdout(io.StringIO()), \
+                 contextlib.redirect_stderr(io.StringIO()):
+                parser = USFMParser(text)
+                usj = parser.to_usj(ignore_errors=True)
+        finally:
+            os.dup2(old_stdout_fd, 1)
+            os.dup2(old_stderr_fd, 2)
+            os.close(devnull_fd)
+            os.close(old_stdout_fd)
+            os.close(old_stderr_fd)
+
         _sfm_cache[sfm_path] = usj
         return usj
     except Exception as exc:
@@ -375,6 +442,9 @@ def process_element(el: dict, translations: dict) -> None:
     Find the NET slot (the index whose translation code is 'NET').
     Parse book/chapter/verses from that bibleRef (it's always English).
     Then for every slot N that has an empty passageTextN, fetch from SFM.
+
+    NET is treated no differently from any other slot: if passageTextN is
+    absent or empty and bibleRefN is present, we attempt to populate it.
     """
     # Find the NET index
     net_index = None
@@ -400,18 +470,26 @@ def process_element(el: dict, translations: dict) -> None:
     if book is None:
         return  # warning already printed
 
-    # Iterate over every passageTextN present in the element
+    # Iterate over every translation slot, including NET itself.
+    # A slot is processed if its passageText is absent or empty.
     for idx, translation_code in translations.items():
         text_key = f"passageText{idx}"
         ref_key  = f"bibleRef{idx}"
 
         # Skip if passageText already populated
-        if el.get(text_key, "").strip():
+        existing_text = el.get(text_key, "")
+        if isinstance(existing_text, str) and existing_text.strip():
             continue
 
-        # Skip if the corresponding bibleRef is empty
-        if not el.get(ref_key, "").strip():
-            continue
+        # For NET, we already have the parsed ref; for other slots we
+        # still need a non-empty bibleRef to confirm the slot is active.
+        if idx == net_index:
+            # NET slot: always use the already-parsed ref
+            slot_ref = net_ref
+        else:
+            slot_ref = el.get(ref_key, "").strip()
+            if not slot_ref:
+                continue  # no reference, slot not active for this element
 
         # Skip if no translation code
         if not translation_code:
@@ -419,7 +497,7 @@ def process_element(el: dict, translations: dict) -> None:
 
         html = get_passage_html(
             translation_code, book, chapter, verse_groups,
-            ref_for_logging=el.get(ref_key, "")
+            ref_for_logging=slot_ref
         )
         if html:
             el[text_key] = html

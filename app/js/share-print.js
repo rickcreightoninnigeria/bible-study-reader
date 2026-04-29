@@ -14,7 +14,7 @@
 //   renderChapter, renderTitlePage, navigateTab – main.js (runtime calls only)
 //   window.activeTabPage – state.js
 
-let touchstartX = 0;
+let touchstartX = null;
 let touchendX   = 0;
 
 // Determines swipe direction and triggers navigation if the delta exceeds
@@ -22,6 +22,7 @@ let touchendX   = 0;
 // tabs. On chapter pages, swipes move between chapters; swiping right on the
 // first chapter returns to the title page.
 function handleGesture() {
+  if (touchstartX === null) return;
   // Block swipe navigation while any modal or popup overlay is visible.
   // Covers both .open-class overlays and dynamically appended overlays.
   const hasOpenClassOverlay = document.querySelector(
@@ -89,6 +90,10 @@ document.addEventListener('touchend', e => {
   handleGesture();
 });
 
+document.addEventListener('touchcancel', () => {
+  touchstartX = null;
+});
+
 // Save scroll position continuously while reading a chapter.
 // { passive: true } tells the browser this listener won't call preventDefault(),
 // allowing it to optimise scroll performance on mobile.
@@ -98,10 +103,23 @@ document.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// Save position when the app goes to background (e.g. user switches apps).
+// Save position and answers when the app goes to background (e.g. user switches apps).
 // visibilitychange fires more reliably than beforeunload on mobile WebViews.
+// Answers are saved silently (no toast, no UI update) — the priority is writing
+// to localStorage before the OS kills the process, which is the highest-risk
+// data-loss scenario on iOS WebView. The ch guard handles backgrounding on the
+// title page where currentChapter may be undefined.
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'hidden') {
+    const ch = chapters[currentChapter];
+    if (ch) {
+      document.querySelectorAll('.answer-field').forEach(field => {
+        localStorage.setItem(
+          storageKey(ch.chapterNumber, field.dataset.type, field.dataset.index),
+          field.value
+        );
+      });
+    }
     saveLastPosition();
   }
 });
