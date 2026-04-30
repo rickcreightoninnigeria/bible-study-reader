@@ -77,7 +77,7 @@ async function setPageStudyLang(code, rerender) {
 // direction: +1 (swipe left → next tab) | -1 (swipe right → prev tab)
 function navigateTab(page, direction) {
   const tabs = page === 'settings' ? getSettingsTabs()
-             : page === 'library'  ? (window._libTabs || [{ id: 'load' }, { id: 'recent' }, { id: 'all' }])
+             : page === 'library'  ? (window._libTabs || [{ id: 'all' }, { id: 'recent' }, { id: 'load' }])
              : page === 'leaders'  ? LEADERS_TABS
              : page === 'about'    ? ABOUT_TABS
              : page === 'progress' ? PROGRESS_TABS

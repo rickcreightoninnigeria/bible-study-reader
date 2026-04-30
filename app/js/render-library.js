@@ -1373,9 +1373,9 @@ async function renderLibrary() {
   const _longLabels = _extraTabs === 0;
   const tabs = [
     { id: 'all',     label: _longLabels ? t('renderlib_tab_all_long') : t('renderlib_tab_all')  },
-    ...(showRecent  ? [{ id: 'recent',  label: t('renderlib_tab_recent') }] : []),
     ...(showShelves ? [{ id: 'shelves', label: t('renderlib_tab_shelves') }] : []),
     ...(showPaths   ? [{ id: 'paths',   label: t('renderlib_tab_paths') }] : []),
+    ...(showRecent  ? [{ id: 'recent',  label: t('renderlib_tab_recent') }] : []),
     { id: 'load',    label: _longLabels ? t('renderlib_tab_load_long') : t('renderlib_tab_load') },
   ];
 
