@@ -797,20 +797,24 @@ function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHi
   // Skipped when skipBibleVerseCheck is true (author has flagged that a direct
   // quote is the expected form of answer, e.g. "What does Paul say about X?").
   if (!skipBibleVerseCheck) {
-    const refEl      = card && card.querySelector('.question-ref span[onclick]');
-    const passageRef = refEl
-      ? refEl.getAttribute('onclick').match(/openVerseModal\('(.+?)'\)/)?.[1]
-      : null;
-    const passageRaw = passageRef && typeof verseData !== 'undefined' && verseData[passageRef]
-      ? _stripHtml(verseData[passageRef].text || '')
-          // Strip inline verse numbers (digits at a word boundary before text,
-          // e.g. "21For" → "For", "22adultery" → "adultery").
-          // These are kept by normalise() and corrupt token matching when the
-          // user's pasted text doesn't include them.
-          .replace(/\b\d+(?=[a-zA-Z])/g, '')
-      : null;
-    if (passageRaw && passageRaw.length > 20) {
-      const pWords    = contentWords(passageRaw);
+    const refEl      = card && card.querySelector('.question-ref span[data-ref]');
+    const passageRef = refEl ? refEl.dataset.ref : null;
+    // Build the union of content words across all translations for this passage.
+    // Multilingual studies store multiple translations in the translations array
+    // (one per bibleTranslationN). Checking all of them means that pasting any
+    // translation — not just the first — is correctly caught.
+    const passageEntry   = passageRef && typeof verseData !== 'undefined' && verseData[passageRef];
+    const translations   = passageEntry?.translations || [];
+    const passageStrings = translations
+      .map(tr => _stripHtml(tr.text || '')
+        // Strip inline verse numbers (digits at a word boundary before text,
+        // e.g. "21For" → "For", "22adultery" → "adultery").
+        .replace(/\b\d+(?=[a-zA-Z])/g, ''))
+      .filter(s => s.length > 20);
+
+    if (passageStrings.length > 0) {
+      // Union of content words from every translation
+      const pWords    = new Set(passageStrings.flatMap(s => [...contentWords(s)]));
       const aWordList = normAnswer.split(' ').filter(w => w.length > 1 && !STOPWORDS.has(w));
       const overlap   = aWordList.filter(w => pWords.has(w)).length;
 
@@ -818,9 +822,8 @@ function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHi
       // Catches answers that are mostly or entirely copied verse text.
       const ratioAnswer = aWordList.length > 0 ? overlap / aWordList.length : 0;
 
-      // Direction 2: does the answer contain ANY content words not in the passage?
-      // Catches answers that are 100% verse with no original contribution, even
-      // if they only quote a portion (so ratioAnswer alone might be < 0.70).
+      // Direction 2: does the answer contain ANY content words not in ANY translation?
+      // Catches a pure copy of any translation with no original contribution.
       const hasOriginalWords = aWordList.some(w => !pWords.has(w));
 
       if (ratioAnswer > 0.70 || !hasOriginalWords) {
