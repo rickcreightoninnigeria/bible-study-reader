@@ -241,9 +241,15 @@ async function initApp() {
   }
 }
 
-// Track progress as user types
+// Track progress as user types.
+// Debounced at 200ms so querySelectorAll and the DOM write in updateProgress()
+// run at most once per 200ms burst of keystrokes rather than on every character.
+let _updateProgressTimer = null;
 document.addEventListener('input', e => {
-  if (e.target.classList.contains('answer-field')) updateProgress();
+  if (e.target.classList.contains('answer-field')) {
+    clearTimeout(_updateProgressTimer);
+    _updateProgressTimer = setTimeout(updateProgress, 200);
+  }
 });
 
 // Auto-save on blur (when the user taps away from an answer field).
