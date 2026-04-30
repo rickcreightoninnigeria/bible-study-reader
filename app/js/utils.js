@@ -71,7 +71,7 @@ function escapeHtml(str) {
  * options:
  *   message    {string}  – text or HTML to display. Default: current toast text (no change).
  *   isHtml     {boolean} – if true, sets innerHTML instead of textContent. Default: false.
- *   isManual   {boolean} – if false, only shows when appSettings.autoSaveToast is on. Default: true.
+ *   isManual   {boolean} – if false, only shows when appSettings.autoSaveToast is on. Default: false.
  *   duration   {number}  – display time in ms. Default: auto-calculated from message length.
  *   elementId  {string}  – ID of the toast element to use. Default: 'toast'.
  *   resetText  {string}  – text to restore after hiding. Default: '✓ Answers saved'.
@@ -79,7 +79,7 @@ function escapeHtml(str) {
 function showToast({
   message    = null,
   isHtml     = false,
-  isManual   = true,
+  isManual   = false,
   duration   = null,
   elementId  = 'toast',
   resetText  = t('utils_answers_saved')
@@ -115,6 +115,7 @@ function showCelebrationToast(ch) {
   showToast({
     message:   `⭐ ${escapeHtml(ch.chapterTitle)} ⭐<br><span class="celebration-toast-sub">${t('utils_celebration_sub', { number: ch.chapterNumber })}</span><br><button class="celebration-toast-share" onclick="shareAnswers(); document.getElementById('celebrationToast').classList.remove('show')">${t('utils_celebration_share')} ${ICONS.share}</button>`,
     isHtml:    true,
+    isManual: true,
     duration:  10000,
     elementId: 'celebrationToast',
     resetText: ''   // celebration toast has no default text to restore

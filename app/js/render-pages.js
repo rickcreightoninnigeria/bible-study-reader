@@ -822,7 +822,7 @@ function shareAppLink() {
     });
   } else {
     copyToClipboard(message);
-    showToast({ message: t('renderpages_shareapp_copied_toast') });
+    showToast({ message: t('renderpages_shareapp_copied_toast'), isManual: true });
   }
 }
 

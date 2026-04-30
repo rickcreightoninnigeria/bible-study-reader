@@ -184,7 +184,7 @@ async function handleFileSelect(event) {
     // Mirrors loadBundleFromFile() — no activation, single summary toast.
     let installed = 0;
     let failed = 0;
-    showToast({ message: t('studyloader_bundle_installing', { count: files.length }) });
+    showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
     for (const file of files) {
         try {
             await _installStudyFileQuietly(file);
@@ -197,9 +197,9 @@ async function handleFileSelect(event) {
     openLibrary();
     switchLibTab('all');
     if (failed === 0) {
-        showToast({ message: t('studyloader_bundle_success', { count: installed }) });
+        showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
     } else {
-        showToast({ message: t('studyloader_bundle_partial', { installed, failed }) });
+        showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
     }
 }
 
@@ -254,7 +254,7 @@ async function deleteStudy(id, title) {
 
     // 5. Refresh the list
     openLibrary();
-    if (typeof showToast === 'function') showToast({ message: t('studyloader_delete_success') });
+    if (typeof showToast === 'function') showToast({ message: t('studyloader_delete_success'), isManual: true });
     id = null;
 }
 
@@ -828,7 +828,7 @@ async function installDefaultStudiesIfNeeded() {
 
   } catch (err) {
     console.error('[defaultStudies] installDefaultStudiesIfNeeded failed:', err);
-    showToast({ message: t('studyloader_default_studies_error') });
+    showToast({ message: t('studyloader_default_studies_error'), isManual: true });
     // Do NOT set the flag — allow a retry on next launch in case it was transient.
     // If the zip simply doesn't exist in a dev build, this will toast every launch;
     // set the flag manually in the console to suppress: 
@@ -958,7 +958,7 @@ async function loadBundleFromFile(outerZip, innerStudyFiles) {
   let installed = 0;
   let failed = 0;
 
-  showToast({ message: t('studyloader_bundle_installing', { count: total }) });
+  showToast({ message: t('studyloader_bundle_installing', { count: total }), isManual: true });
 
   for (const entry of innerStudyFiles) {
     try {
@@ -978,9 +978,9 @@ async function loadBundleFromFile(outerZip, innerStudyFiles) {
   openLibrary();
 
   if (failed === 0) {
-    showToast({ message: t('studyloader_bundle_success', { count: installed }) });
+    showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
   } else {
-    showToast({ message: t('studyloader_bundle_partial', { installed, failed }) });
+    showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
   }
 }
 
@@ -1109,7 +1109,7 @@ function showPickerError(msg) {
     // loaded, that element won't be in the DOM — fall back to a toast so
     // the error is never swallowed silently.
     if (typeof showToast === 'function') {
-      showToast({ message: '⚠️ ' + msg });
+      showToast({ message: '⚠️ ' + msg, isManual: true });
     } else {
       alert(msg);
     }
@@ -1229,7 +1229,7 @@ async function handlePickerFileChange(event) {
   // Mirrors loadBundleFromFile() — no activation, single summary toast.
   let installed = 0;
   let failed = 0;
-  showToast({ message: t('studyloader_bundle_installing', { count: files.length }) });
+  showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
   for (const file of files) {
     try {
       await _installStudyFileQuietly(file);
@@ -1242,9 +1242,9 @@ async function handlePickerFileChange(event) {
   openLibrary();
   switchLibTab('all');
   if (failed === 0) {
-    showToast({ message: t('studyloader_bundle_success', { count: installed }) });
+    showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
   } else {
-    showToast({ message: t('studyloader_bundle_partial', { installed, failed }) });
+    showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
   }
 }
 

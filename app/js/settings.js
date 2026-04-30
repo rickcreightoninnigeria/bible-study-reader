@@ -225,7 +225,7 @@ function confirmClearAnswers() {
     keysToDelete.forEach(k => localStorage.removeItem(k));
     clearLastPosition();
     currentChapter = 0;
-    showToast({ message: t('settings_clear_answers_toast') });
+    showToast({ message: t('settings_clear_answers_toast'), isManual: true });
     renderMenu();
     renderTitlePage();
   });
@@ -248,7 +248,7 @@ function resetToDefaults() {
     applyAllSettings();
     localStorage.removeItem('onboardingComplete');
     localStorage.removeItem('app_onboarding_complete');
-    showToast({ message: t('settings_reset_toast') });
+    showToast({ message: t('settings_reset_toast'), isManual: true });
     renderSettings();
   });
 }
