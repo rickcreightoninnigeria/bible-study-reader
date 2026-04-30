@@ -678,6 +678,10 @@
   "renderpages_settings_nuclear_warning_label": "Danger zone",
   "renderpages_settings_nuclear_warning_text":  "The following action is irreversible. It will erase all downloaded studies, answers, notes, progress, and settings from this device.",
   "renderpages_settings_nuclear_desc":          "Use this only if you want to start completely fresh, as if the app was just installed.",
-  "renderpages_settings_nuclear_btn":           "Reset all data"
-
+  "renderpages_settings_nuclear_btn":           "Reset all data",
+  "___section: router.js"                               :"🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴",
+  "router_exit_title":   "Leave the app?",
+  "router_exit_body":    "Your answers are saved.",
+  "router_exit_confirm": "Exit",
+  "router_exit_cancel":  "Stay"
 }

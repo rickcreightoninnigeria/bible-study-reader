@@ -12,12 +12,13 @@
  * 04. Chapter nav     – Prev / Next chapter buttons at foot of chapter
  * 05. Page close btn  – Shared ✕ Close button used on non-chapter pages
  * 06. Close animations – Rotation and squish feedback on all close buttons
+ * 07. router.js        – history and dialogue
  *
  * ── DARK MODE ───────────────────────────────────────────────────────────
- * 07. Dark mode       – body.dark-mode overrides for all rules above
+ * 08. Dark mode       – body.dark-mode overrides for all rules above
  *
  * ── MULTILINGUAL / RTL ──────────────────────────────────────────────────
- * 08. Script overrides – Per-script resets grouped by script family:
+ * 09. Script overrides – Per-script resets grouped by script family:
  *                          A. Arabic script   — ar, ur
  *                          B. Hebrew script   — he
  *                          C. Devanagari      — ne, hi
@@ -302,9 +303,32 @@
   border: none;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   07. ROUTER.JS
+   Adjust duration / easing to taste.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#mainContent {
+  animation-duration: 220ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+#mainContent.nav-slide-right { animation-name: slideInFromRight; }
+#mainContent.nav-slide-left  { animation-name: slideInFromLeft;  }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   07. DARK MODE
+   08. DARK MODE
    body.dark-mode overrides for all rules in this file, gathered here.
    ══════════════════════════════════════════════════════════════════════════ */
 
@@ -349,7 +373,7 @@ body.dark-mode .page-close-btn:hover {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   08. SCRIPT-SPECIFIC OVERRIDES
+   09. SCRIPT-SPECIFIC OVERRIDES
    ──────────────────────────────────────────────────────────────────────────
    Elements unique to this file that need overrides:
 
