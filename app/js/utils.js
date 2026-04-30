@@ -137,15 +137,14 @@ function initLongPressCopy() {
     }, LONG_PRESS_DURATION);
   }, { passive: true });
 
-  document.addEventListener('touchend', () => {
+  function clearLongPressTimer() {
     clearTimeout(longPressTimer);
     longPressTimer = null;
-  });
+  }
 
-  document.addEventListener('touchmove', () => {
-    clearTimeout(longPressTimer);
-    longPressTimer = null;
-  });
+  document.addEventListener('touchend',    clearLongPressTimer);
+  document.addEventListener('touchmove',   clearLongPressTimer);
+  document.addEventListener('touchcancel', clearLongPressTimer);
 }
 
 // Copies text to the clipboard using the modern Clipboard API where available,
