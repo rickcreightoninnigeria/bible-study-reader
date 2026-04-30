@@ -224,6 +224,7 @@ Used for everything except large study content. All app keys are prefixed with
 | `bsr_{studyId}_ch{N}_q_{sIdx}_{qIdx}` | User's answer to question `qIdx` in section `sIdx` of chapter `N` |
 | `bsr_{studyId}_ch{N}_r_{rIdx}` | User's answer to reflection question `rIdx` in chapter `N` |
 | `bsr_{studyId}_ch{N}_notes_0` | Free-text notes for chapter `N` |
+| `bsr_{studyId}_ch{N}_celebrated_0` | `"1"` once the chapter-completion celebration toast has fired; cleared with answers |
 | `bsr_{studyId}_ch{N}_likert_{elementId}_{stIdx}` | Likert scale response |
 | `bsr_{studyId}_star_ch{N}_{elementId}` | `"1"` if a question is starred |
 | `lastPosition_{studyId}` | `{ chapterIdx, scrollY }` — last reading position |

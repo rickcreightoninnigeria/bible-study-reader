@@ -96,7 +96,7 @@ function showToast({
 }
 
 function showCelebrationToast(ch) {
-  const flag = `bsr_${window.activeStudyId}_ch${ch.chapterNumber}_celebrated`;
+  const flag = storageKey(ch.chapterNumber, 'celebrated', 0);
   if (localStorage.getItem(flag)) return;
   localStorage.setItem(flag, '1');
 
