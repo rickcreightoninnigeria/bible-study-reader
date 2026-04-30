@@ -53,6 +53,18 @@ async function returnToLastPosition() {
 }
 
 // ── showToast TO SHOW TOASTS ──────────────────────────────────────────────────
+// Escapes a string for safe injection into innerHTML.
+// Covers the four characters that are meaningful in HTML contexts.
+// Use this wherever user-supplied or study-supplied strings are injected via
+// isHtml: true in showToast(), or any other innerHTML assignment.
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 /**
  * showToast(options)
  *
@@ -101,7 +113,7 @@ function showCelebrationToast(ch) {
   localStorage.setItem(flag, '1');
 
   showToast({
-    message:   `⭐ ${ch.chapterTitle} ⭐<br><span class="celebration-toast-sub">${t('utils_celebration_sub', { number: ch.chapterNumber })}</span><br><button class="celebration-toast-share" onclick="shareAnswers(); document.getElementById('celebrationToast').classList.remove('show')">${t('utils_celebration_share')} ${ICONS.share}</button>`,
+    message:   `⭐ ${escapeHtml(ch.chapterTitle)} ⭐<br><span class="celebration-toast-sub">${t('utils_celebration_sub', { number: ch.chapterNumber })}</span><br><button class="celebration-toast-share" onclick="shareAnswers(); document.getElementById('celebrationToast').classList.remove('show')">${t('utils_celebration_share')} ${ICONS.share}</button>`,
     isHtml:    true,
     duration:  10000,
     elementId: 'celebrationToast',
