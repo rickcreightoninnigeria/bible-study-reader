@@ -202,18 +202,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch01-el16",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What two responses does Paul summarise as his message?",
-          "linkedPassage"       :"Acts 20:21",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Remember to answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Paul summarises his entire message to both Jews and Greeks as calling for two responses: repentance toward God and faith in the Lord Jesus. These two are presented together as the core of what he proclaimed.",
-          "questionHint"        :"The verse names two specific responses Paul testified to — can you identify both, and notice to whom and in whom they are directed?",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch01-el16",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What two responses does Paul summarise as his message?",
+          "linkedPassage"    :"Acts 20:21",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Remember to answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul summarises his entire message to both Jews and Greeks as calling for two responses: repentance toward God and faith in the Lord Jesus. These two are presented together as the core of what he proclaimed.",
+          "questionHint"     :"The verse names two specific responses Paul testified to — can you identify both, and notice to whom and in whom they are directed?"
         },
         {
           "elementId"    :"ch01-el17",
@@ -243,18 +242,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch01-el20",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What did the Thessalonians turn from – and to?",
-          "linkedPassage"       :"1 Thessalonians 1:9",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Remember to answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"The Thessalonians turned from idols and turned to God — described here as ’the living and true God’. Their conversion had a clear direction: away from false objects of worship and toward the one real God, whom they now serve and await.",
-          "questionHint"        :"The verse uses the language of turning — what specific thing did the Thessalonians turn away from, and what (or whom) did they turn toward?",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch01-el20",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What did the Thessalonians turn from – and to?",
+          "linkedPassage"    :"1 Thessalonians 1:9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Remember to answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The Thessalonians turned from idols and turned to God — described here as ’the living and true God’. Their conversion had a clear direction: away from false objects of worship and toward the one real God, whom they now serve and await.",
+          "questionHint"     :"The verse uses the language of turning — what specific thing did the Thessalonians turn away from, and what (or whom) did they turn toward?"
         },
         {
           "elementId"    :"ch01-el21",
@@ -1428,18 +1426,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch04-el09",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What two kinds of grief does Paul distinguish?",
-          "linkedPassage"       :"2 Corinthians 7:9-10",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Remember to answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Paul distinguishes between godly grief and worldly grief. Godly grief — sorrow oriented toward God — produces repentance that leads to salvation, and leaves no regret. Worldly grief — sorrow oriented toward oneself, one’s reputation, or one’s consequences — brings about death. Both involve genuine emotional pain, but they move in entirely different directions.",
-          "questionHint"        :"Paul names two types of grief and traces where each one leads — what are the two different outcomes he says each kind of grief produces?",
-          "shortAnswerThreshold":4
+          "elementId"        :"ch04-el09",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What two kinds of grief does Paul distinguish?",
+          "linkedPassage"    :"2 Corinthians 7:9-10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Remember to answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul distinguishes between godly grief and worldly grief. Godly grief — sorrow oriented toward God — produces repentance that leads to salvation, and leaves no regret. Worldly grief — sorrow oriented toward oneself, one’s reputation, or one’s consequences — brings about death. Both involve genuine emotional pain, but they move in entirely different directions.",
+          "questionHint"     :"Paul names two types of grief and traces where each one leads — what are the two different outcomes he says each kind of grief produces?"
         },
         {
           "elementId"    :"ch04-el10",
@@ -1687,18 +1684,17 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"           :"ch04-el34",
-          "type"                :"question",
-          "format"              :"plainText",
-          "question"            :"What two responses does Jesus command?",
-          "linkedPassage"       :"Mark 1:14-15",
-          "answerType"          :"freeText",
-          "required"            :false,
-          "answerPlaceholder"   :"Remember to answer the question from the passage",
-          "bottomPadding"       :"normal",
-          "sampleAnswer"        :"Jesus commands repentance and belief — ‘Repent and believe the gospel.’ These are both commands, not suggestions, and they are given together as the proper response to the arrival of the kingdom of God. The announcement (‘the time is fulfilled and the kingdom of God is near’) is what makes both responses urgent.",
-          "questionHint"        :"Jesus issues his call in response to an announcement he has just made — what is that announcement, and how does it explain why both repentance and belief are commanded as an immediate response?",
-          "shortAnswerThreshold":3
+          "elementId"        :"ch04-el34",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What two responses does Jesus command?",
+          "linkedPassage"    :"Mark 1:14-15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Remember to answer the question from the passage",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus commands repentance and belief — ‘Repent and believe the gospel.’ These are both commands, not suggestions, and they are given together as the proper response to the arrival of the kingdom of God. The announcement (‘the time is fulfilled and the kingdom of God is near’) is what makes both responses urgent.",
+          "questionHint"     :"Jesus issues his call in response to an announcement he has just made — what is that announcement, and how does it explain why both repentance and belief are commanded as an immediate response?"
         },
         {
           "elementId"    :"ch04-el35",
