@@ -26,6 +26,27 @@
 //   studyOnboardingSlides – main.js STATE section
 //   window.*           – state.js
 
+// ── BLOB URL LIFECYCLE ────────────────────────────────────────────────────────
+// Every blob URL created in this file is registered here so it can be revoked
+// when a new study is applied. Without revocation, switching studies accumulates
+// blob URLs in memory for the lifetime of the page — a significant leak on
+// Android WebView where RAM is limited.
+//
+// Usage: replace URL.createObjectURL(blob) with _createBlobUrl(blob) everywhere
+// in this file. Call _revokeAllBlobUrls() at the top of applyStudyData().
+const _activeBlobUrls = [];
+
+function _createBlobUrl(blob) {
+  const url = URL.createObjectURL(blob);
+  _activeBlobUrls.push(url);
+  return url;
+}
+
+function _revokeAllBlobUrls() {
+  _activeBlobUrls.forEach(url => URL.revokeObjectURL(url));
+  _activeBlobUrls.length = 0;
+}
+
 // ── ESTUDY VERSION CHECK ──────────────────────────────────────────────────────
 // Compares the estudyFileVersion declared in a study's metadata against the
 // version this app expects (window.appAboutData.estudyVersion).
@@ -437,6 +458,10 @@ function restoreStudyTheme() {
 }
 
 async function applyStudyData(data) {
+  // Revoke any blob URLs created for the previous study before overwriting
+  // state. This prevents blob URLs accumulating in memory across study switches.
+  _revokeAllBlobUrls();
+
   // Record this study as recently opened every time it is applied — this covers
   // fresh loads, startup restore, and Android intent delivery, not just
   // activateStudy() (which only runs when switching between already-installed studies).
@@ -1048,7 +1073,7 @@ async function loadStudyFromFile(file) {
           const entry = zip.file(`images/${name}.webp`);
           if (entry && data.imageData[name]) {
             const blob = await entry.async('blob');
-            data.imageData[name].src = URL.createObjectURL(blob);
+            data.imageData[name].src = _createBlobUrl(blob);
           }
         }
       }
