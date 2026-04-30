@@ -66,9 +66,12 @@ function recordStudyInstalled(id) {
 function recordStudyOpened(id) {
   let list = getRecentOpened().filter(x => x !== id);
   list.unshift(id);
-  // Keep max 7, but never drop pinned studies from the list
+  // Keep max 7 non-pinned, but never drop pinned studies from the list.
+  // A hard ceiling of Math.max(20, pinned.length) prevents unbounded growth
+  // when many studies are pinned (all pinned studies are always retained).
   const pinned = getPinned();
-  const trimmed = list.filter(x => pinned.includes(x) || list.indexOf(x) < 7);
+  const cap     = Math.max(20, pinned.length);
+  const trimmed = list.filter(x => pinned.includes(x) || list.indexOf(x) < 7).slice(0, cap);
   saveRecentOpened(trimmed);
 }
 
