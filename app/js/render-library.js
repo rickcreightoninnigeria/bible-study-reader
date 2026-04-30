@@ -25,6 +25,18 @@ const RECENT_OPENED_KEY    = 'lib_recent_opened';    // newest-first, max 7
 const PINNED_KEY           = 'lib_pinned';           // ordered array
 const PINNED_ALL_KEY       = 'lib_pinned_all';       // ordered array (All tab)
 
+// ── COVER IMAGE CACHE ────────────────────────────────────────────────────────
+// Caches the base64 data URL for each study's cover image so that IDB reads
+// and FileReader.readAsDataURL() conversions only happen once per session.
+// Keyed by studyId. Call invalidateCoverCache(id) when a study's cover changes
+// or the study is deleted so the next render re-reads from IDB.
+const _coverCache = new Map();
+
+function invalidateCoverCache(id) {
+  if (id) _coverCache.delete(id);
+  else     _coverCache.clear();
+}
+
 function getRecentInstalled() {
   try { return JSON.parse(localStorage.getItem(RECENT_INSTALLED_KEY) || '[]'); }
   catch(_) { return []; }
@@ -320,13 +332,21 @@ async function renderLibrary() {
     const data = await StudyIDB.get(`study_content_${id}`);
     if (!data) continue;
     let coverSrc = '';
-    const coverBlob = await StudyIDB.getImage(`${id}_cover`);
-    if (coverBlob) {
-      coverSrc = await new Promise(resolve => {
-        const reader = new FileReader();
-        reader.onload = e => resolve(e.target.result);
-        reader.readAsDataURL(coverBlob);
-      });
+    if (_coverCache.has(id)) {
+      coverSrc = _coverCache.get(id);
+    } else {
+      const coverBlob = await StudyIDB.getImage(`${id}_cover`);
+      if (coverBlob) {
+        coverSrc = await new Promise(resolve => {
+          const reader = new FileReader();
+          reader.onload = e => resolve(e.target.result);
+          reader.readAsDataURL(coverBlob);
+        });
+        _coverCache.set(id, coverSrc);
+      } else {
+        // No cover blob — cache the empty string so we don't hit IDB again.
+        _coverCache.set(id, '');
+      }
     }
 
     const meta = data.studyMetadata || {};

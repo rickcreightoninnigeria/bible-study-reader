@@ -253,6 +253,7 @@ async function deleteStudy(id, title) {
     }
 
     // 5. Refresh the list
+    invalidateCoverCache(id);
     openLibrary();
     if (typeof showToast === 'function') showToast({ message: t('studyloader_delete_success'), isManual: true });
     id = null;
