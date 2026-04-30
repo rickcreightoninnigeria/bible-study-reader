@@ -97,9 +97,16 @@ document.addEventListener('touchcancel', () => {
 // Save scroll position continuously while reading a chapter.
 // { passive: true } tells the browser this listener won't call preventDefault(),
 // allowing it to optimise scroll performance on mobile.
+// The rAF guard caps localStorage writes to at most one per frame (~16ms at
+// 60fps) without any perceptible change in position-save accuracy.
+let _scrollRafPending = false;
 document.addEventListener('scroll', () => {
-  if (!isNonChapterPage && appSettings.rememberPosition) {
-    saveLastPosition();
+  if (!isNonChapterPage && appSettings.rememberPosition && !_scrollRafPending) {
+    _scrollRafPending = true;
+    requestAnimationFrame(() => {
+      saveLastPosition();
+      _scrollRafPending = false;
+    });
   }
 }, { passive: true });
 
