@@ -51,7 +51,7 @@ window.studyOnboardingSlides = [];
 
 // ── Storage Key helpers ───────────────────────────────────────────────────────
 // Returns the localStorage key for a given answer field.
-// Format: bsr_ch{N}_{type}_{index}
+// Format: bsr_{studyId}_ch{N}_{type}_{index}
 //   type  – 'q' (question), 'r' (reflection), 'notes'
 //   index – 'sIdx_qIdx' for questions, rIdx for reflections, 0 for notes
 // The 'bsr_' prefix namespaces all app keys so they can be bulk-deleted safely.
