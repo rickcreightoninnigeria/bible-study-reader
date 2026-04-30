@@ -457,7 +457,7 @@ async function renderLibrary() {
     return `
       ${riHtml}
       <div class="library-eyebrow">${t('renderlib_add_study')}</div>
-      <input type="file" id="studyPicker" accept=".estudy,.zip,application/zip,application/octet-stream,*/*" style="display:none" onchange="handleFileSelect(event)">
+      <input type="file" id="studyPicker" accept=".estudy,.zip,application/zip,application/octet-stream,*/*" multiple style="display:none" onchange="handleFileSelect(event)">
       <button class="import-btn" onclick="openDriveStudyFolder()">
         ${ICONS.download}&nbsp;${t('renderlib_download_estudy')}
       </button>

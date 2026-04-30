@@ -151,11 +151,35 @@ function openDriveStudyFolder() {
 }
 
 async function handleFileSelect(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+    const files = Array.from(event.target.files || []);
+    if (!files.length) return;
     // Reset the input so selecting the same file again fires onchange
     event.target.value = '';
-    await loadAnyFile(file);
+    if (files.length === 1) {
+        await loadAnyFile(files[0]);
+        return;
+    }
+    // Multiple files: install all quietly, then open Library / All tab.
+    // Mirrors loadBundleFromFile() — no activation, single summary toast.
+    let installed = 0;
+    let failed = 0;
+    showToast({ message: t('studyloader_bundle_installing', { count: files.length }) });
+    for (const file of files) {
+        try {
+            await _installStudyFileQuietly(file);
+            installed++;
+        } catch (err) {
+            console.error(`Failed to install ${file.name}:`, err);
+            failed++;
+        }
+    }
+    openLibrary();
+    switchLibTab('all');
+    if (failed === 0) {
+        showToast({ message: t('studyloader_bundle_success', { count: installed }) });
+    } else {
+        showToast({ message: t('studyloader_bundle_partial', { installed, failed }) });
+    }
 }
 
 async function deleteStudy(id, title) {
@@ -1145,6 +1169,7 @@ function renderStudyPicker() {
         <input
           type="file"
           accept=".estudy,.zip,application/zip,application/octet-stream,*/*"
+          multiple
           style="display:none;"
           onchange="handlePickerFileChange(event)"
         />
@@ -1168,9 +1193,33 @@ function renderStudyPicker() {
 
 // Called by the file input's onchange event.
 async function handlePickerFileChange(event) {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
+  const files = Array.from(event.target.files || []);
+  if (!files.length) return;
   event.target.value = '';
-  await loadAnyFile(file);
+  if (files.length === 1) {
+    await loadAnyFile(files[0]);
+    return;
+  }
+  // Multiple files: install all quietly, then open Library / All tab.
+  // Mirrors loadBundleFromFile() — no activation, single summary toast.
+  let installed = 0;
+  let failed = 0;
+  showToast({ message: t('studyloader_bundle_installing', { count: files.length }) });
+  for (const file of files) {
+    try {
+      await _installStudyFileQuietly(file);
+      installed++;
+    } catch (err) {
+      console.error(`Failed to install ${file.name}:`, err);
+      failed++;
+    }
+  }
+  openLibrary();
+  switchLibTab('all');
+  if (failed === 0) {
+    showToast({ message: t('studyloader_bundle_success', { count: installed }) });
+  } else {
+    showToast({ message: t('studyloader_bundle_partial', { installed, failed }) });
+  }
 }
 
