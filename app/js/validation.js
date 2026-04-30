@@ -481,7 +481,7 @@ function _persistConversation(textarea, history, elementId) {
 
   // Resize and save
   if (typeof autoResize === 'function') autoResize(textarea);
-  saveAnswers();
+  saveAnswers(false);
 }
 
 

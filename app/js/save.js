@@ -12,8 +12,8 @@
 // Saves all visible answer fields for the current chapter to localStorage,
 // clears the search cache so saved answers appear in future searches,
 // shows the save toast, and refreshes the progress bar and menu checkmarks.
-// Called by the Save button and the auto-save blur handler.
-function saveAnswers() {
+// Called by the Save button (isManual=true) and the auto-save blur handler (isManual=false).
+function saveAnswers(isManual = true) {
   const ch = chapters[currentChapter];
   const fields = document.querySelectorAll('.answer-field');
   fields.forEach(field => {
@@ -25,7 +25,7 @@ function saveAnswers() {
   // Clear the search cache so the next search sees the newly saved answers
   storageCache.clear();
 
-  showToast({ isManual: true });
+  showToast({ isManual });
   updateProgress();
   renderMenu();
 }

@@ -417,7 +417,7 @@ function renderQuestion(ctx) {
       data-index="${el.elementId}"
       placeholder="${placeholder}"
       oninput="autoResize(this)"
-      onblur="saveAnswers(); localValidateAutoTrigger(this)"
+      onblur="saveAnswers(false); localValidateAutoTrigger(this)"
     >${val}</textarea>`;
 
   const cardOpen = `
