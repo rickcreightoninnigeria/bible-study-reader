@@ -80,6 +80,7 @@ function navigateTab(page, direction) {
              : page === 'library'  ? (window._libTabs || [{ id: 'load' }, { id: 'recent' }, { id: 'all' }])
              : page === 'leaders'  ? LEADERS_TABS
              : page === 'about'    ? ABOUT_TABS
+             : page === 'progress' ? PROGRESS_TABS
              :                       HOWTO_TABS;
   const currentId = window.activeTabId || tabs[0].id;
   const idx       = tabs.findIndex(t => t.id === currentId);
@@ -90,6 +91,7 @@ function navigateTab(page, direction) {
   else if (page === 'library')  switchLibTab(newId);
   else if (page === 'leaders')  renderLeadersNotes(newId);
   else if (page === 'about')    renderAbout(newId);
+  else if (page === 'progress') { if (document.getElementById('progressTabBar')) switchProgressTab(newId); }
   else                          renderHowToUse(newId);
   if (page !== 'library') window.scrollTo(0, 0);
 }
@@ -831,6 +833,13 @@ const ABOUT_TABS = [
   { id: 'author',    label: () => t('renderpages_tab_author')    },
   { id: 'publisher', label: () => t('renderpages_tab_publisher') },
   { id: 'copyright', label: () => t('renderpages_tab_copyright') },
+];
+
+// Progress page has two tabs, but only renders them when a pathway is active.
+// navigateTab() guards against the no-pathway case before calling switchProgressTab().
+const PROGRESS_TABS = [
+  { id: 'study'   },
+  { id: 'pathway' },
 ];
 
 async function renderAbout(tabId) {
