@@ -391,8 +391,11 @@ function renderQuestion(ctx) {
   const sampleAnswerAttr = sampleAnswerText ? ` data-sample-answer="${encodedSampleAnswer}"` : '';
   const questionHintAttr = questionHintText ? ` data-question-hint="${encodedQuestionHint}"` : '';
 
+  const deeperLabel = el.deeper
+    ? (resolveText(el.deeper, activeLang, 'label', langMap) || t('renderchapter_go_deeper'))
+    : '';
   const deeperBtn = el.deeper
-    ? ` <button class="deeper-btn" onclick="openDeeperModal('${cardId}')">(${el.deeper.label || t('renderchapter_go_deeper')} ${ICONS.triggerInfo})</button>`
+    ? ` <button class="deeper-btn" onclick="openDeeperModal('${cardId}', '${activeLang}')">(${deeperLabel} ${ICONS.triggerInfo})</button>`
     : '';
 
   const actionRow = `
