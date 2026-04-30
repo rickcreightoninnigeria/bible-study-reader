@@ -11,6 +11,24 @@
 // resolved for the active study language. The Contents overlay carries no lang
 // bar — it silently follows window._activeStudyLang.
 
+// Toggles the ✓ checkmark on the Notes item in the chapter menu without
+// rebuilding the entire menu. Called from the globalNotesField oninput handler
+// in render-progress.js as a cheap alternative to renderMenu().
+// Guards against the item being absent (showPageNotes off, or menu not open).
+function updateNotesMenuIndicator(hasContent) {
+  const item = document.getElementById('menuItemNotes');
+  if (!item) return;
+  const existing = item.querySelector('.chapter-check');
+  if (hasContent && !existing) {
+    const span = document.createElement('span');
+    span.className = 'chapter-check';
+    span.textContent = '✓';
+    item.appendChild(span);
+  } else if (!hasContent && existing) {
+    existing.remove();
+  }
+}
+
 function renderMenu() {
   const list = document.getElementById('menuList');
   const currentStudyId = window.activeStudyId;
@@ -58,7 +76,7 @@ function renderMenu() {
   if (appSettings.showPageNotes) {
     const hasNotesContent = !!localStorage.getItem(`bsr_${currentStudyId}_global_notes`);
     html += `
-    <div class="chapter-item" onclick="renderNotesPage()">
+    <div class="chapter-item" id="menuItemNotes" onclick="renderNotesPage()">
       <span class="chapter-num">✎</span>
       <span class="chapter-name">${t('main_menu_notes')}</span>
       ${hasNotesContent ? '<span class="chapter-check">✓</span>' : ''}

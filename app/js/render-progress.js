@@ -582,7 +582,7 @@ function renderNotesPage() {
           id="globalNotesField"
           class="answer-field"
           placeholder="${t('progress_notes_placeholder')}"
-          oninput="autoResize(this); localStorage.setItem(\`bsr_${currentStudyId}_global_notes\`, this.value); renderMenu();"
+          oninput="autoResize(this); localStorage.setItem(\`bsr_${currentStudyId}_global_notes\`, this.value); updateNotesMenuIndicator(!!this.value);"
         >${savedText}</textarea>
       </div>
       <div class="notes-autosave-label">${t('progress_notes_autosave_label')}</div>
