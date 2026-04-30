@@ -358,7 +358,7 @@ async function _aiTutorSend(sendBtn, textOverride) {
     } else {
       toastMsg = t('validation_tutor_err_unknown');
     }
-    showToast({ message: toastMsg });
+    showToast({ message: toastMsg, isManual: true });
 
     // Roll back the user turn so the conversation stays clean for a retry.
     // The AI tutor catch block no longer falls back to local validate — that
@@ -642,7 +642,7 @@ function localValidateEligible(card) {
 // regardless of where on the screen the card started.
 function _localValidateShowFeedback(card, feedback) {
   card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  showToast({ message: feedback, duration: 10000, elementId: 'validate-toast' });
+  showToast({ message: feedback, duration: 10000, elementId: 'validate-toast', isManual: true });
 }
 
 // Called by the localValidate button injected into each eligible question card.
