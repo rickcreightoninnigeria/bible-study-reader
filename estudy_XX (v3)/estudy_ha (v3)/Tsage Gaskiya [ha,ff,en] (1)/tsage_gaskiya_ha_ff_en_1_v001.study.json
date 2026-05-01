@@ -20,15 +20,25 @@
     "language1"        :"ha",
     "language2"        :"ff",
     "language3"        :"en",
-    "bibleTranslation1":{"ha": "HAU79"},
-    "bibleTranslation2":{"ha": "HCL"},
-    "bibleTranslation3":{"ha": "SRK"},
-    "bibleTranslation4":{"ff": "FUV"},
-    "bibleTranslation5":{"en": "NET"},
-    "createdAt"        :"2026-04-07T00:00:00Z",
-    "updatedAt"        :"2026-04-07T00:00:00Z",
-    "tags"             :["god", "theology", "bible", "salvation"],
-    "shareMessage"     :"Check out this Bible Study Reader app.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation1":{
+      "ha":"HAU79"
+    },
+    "bibleTranslation2":{
+      "ha":"HCL"
+    },
+    "bibleTranslation3":{
+      "ha":"SRK"
+    },
+    "bibleTranslation4":{
+      "ff":"FUV"
+    },
+    "bibleTranslation5":{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-07T00:00:00Z",
+    "updatedAt"   :"2026-04-07T00:00:00Z",
+    "tags"        :["god", "theology", "bible", "salvation"],
+    "shareMessage":"Check out this Bible Study Reader app.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Blue-dominant study theme — deep royal blue palette with subdued gold accent. Blue is the dominant colour throughout surfaces, borders, text, and interactive elements. Gold appears only as a quiet highlight. Authoritative and clear.",
@@ -6088,183 +6098,183 @@
       ]
     }
   ],
-"studyOnboardingSlides": [
-  {
-    "icon"    : "📖",
-    "eyebrow1": "Barka da zuwa",
-    "eyebrow2": "Jam waɗɗi",
-    "eyebrow3": "Welcome",
-    "heading1": "Gaskiya Ta Buɗe",
-    "heading2": "Haqqiqi Udditaama",
-    "heading3": "Truth Unlocked",
-    "body1"   : "Nazarin Littafi Mai Tsarki na zaman takwas kan tushen imani na Kirista.\n\nYi ta kowane babi a farantin ka, ko kuma yi amfani da shi tare da ƙungiya.",
-    "body2"   : "Jokkondiral Bookara Sentel deftere Allah darowol duuɓi jeetati dow daarde imaan Kirista.\n\nGollal kala esde e yeeso maa, maa golle e jam'iyya.",
-    "body3"   : "An eight-session Bible study on the basics of Christian belief.\n\nWork through each chapter at your own pace, or use it with a group.",
-    "format"  : "HTML"
-  },
-  {
-    "icon"    : "✍️",
-    "eyebrow1": "Yadda yake aiki",
-    "eyebrow2": "No ndu gollorta",
-    "eyebrow3": "How it works",
-    "heading1": "Karanta, yi tunani, rubuta",
-    "heading2": "Jaŋgu, miijo, windu",
-    "heading3": "Read, reflect, write",
-    "body1"   : "Kowane babi yana da tambayoyin Littafi Mai Tsarki da aka haɗa da sassan takamaiman, da tambayoyin tunani na sirri a ƙarshe.\n\nTabba <b>i</b> kusa da kowane nassosi na Littafi Mai Tsarki don karanta sassan ba tare da fita daga manhaja ba.",
-    "body2"   : "Kala esde woodii ɗemɗe Bookara Sentel deftere Allah feewɗe e cuɗoli ɓurɗi, e ɗemɗe miijorɗe e nder yiynde.\n\nhiɓ <b>i</b> dow kala ñiiɓirde Bookara Sentel Deftere Allah ngam jaŋgude cuɗol ɗo ngalaa.",
-    "body3"   : "Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>i</b> beside any Bible reference to read the passage without leaving the app.",
-    "format"  : "HTML"
-  },
-  {
-    "icon"    : "💾",
-    "eyebrow1": "Amsoshin ka",
-    "eyebrow2": "Jaabaaji maa",
-    "eyebrow3": "Your answers",
-    "heading1": "An adana a na'urarka",
-    "heading2": "Mooftaama e jawdi maa",
-    "heading3": "Saved on your device",
-    "body1"   : "Ana adana amsoshinku ta atomatik yayin da kuke rubuta, kuma ana ajiye su a wannan na'ura.\n\nYi amfani da maɓallin <b>Raba</b> a ƙasan kowane babi don aika amsoshinku ga shugaban ƙungiya ko mai ba da shawara.",
-    "body2"   : "Jaabaaji maa mooftee e laawol e nder winditaali maa, mooftee e jawdi ngii.\n\nHiɓ biyol <b>Feernu</b> e les kala esde ngam neldude jaabaaji maa e hooreejo jam'iyya maa maa kalfineejo.",
-    "body3"   : "Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
-    "format"  : "HTML"
-  },
-  {
-    "icon"    : "⚙️",
-    "eyebrow1": "Masa da naka",
-    "eyebrow2": "Waɗtu e hakkunde maa",
-    "eyebrow3": "Make it yours",
-    "heading1": "Daidaita zuwa ga bukatarka",
-    "heading2": "Naawnu e mbiyaari maa",
-    "heading3": "Adjust to your preference",
-    "body1"   : "<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      Idan kuna buƙatar rubutun da ya fi girma je kai tsaye zuwa saitunan yanzu\n    </div>",
-    "body2"   : "<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      So a sɓii binde mawngo yah e laawol e saituuji jooni\n    </div>",
-    "body3"   : "<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
-    "action"  : {
-      "label": "⚙ Settings",
-      "fn"   : null
-    },
-    "bodyAfter1": "Tabba alama <b>⚙</b> a kusurwar sama don buɗe Saitunan a kowane lokaci don canza girman rubutu ko canzawa zuwa yanayin duhu.\n\nTabba <b>☰</b> (abubuwan ciki) don tsallaka zuwa kowane babi.",
-    "bodyAfter2": "Hiɓ seedorde <b>⚙</b> e nder ɓalndu dow ngam udditde Saituuji kala sahaa ngam waɗtude ɓalɗe binde maa maa waɗtude e hal-habri ɓalewal.\n\nHiɓ <b>☰</b> (lefol) ngam yahde e kala esde.",
-    "bodyAfter3": "Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
-    "format"   : "HTML"
-  },
-  {
-    "icon"    : "👋",
-    "eyebrow1": "Kafin ka fara",
-    "eyebrow2": "Ɓaawo jokkondiral",
-    "eyebrow3": "Before you begin",
-    "heading1": "Yadda ake amfani da wannan manhaja",
-    "heading2": "No njogitirtee e mbiyundi nguu",
-    "heading3": "How to use this app",
-    "body1"   : "Idan kuna son cikakken jagora don cin gajiyar wannan manhaja da wannan nazari - ko a kan naka ko tare da ƙungiya - zaku iya tabba maɓallin da ke ƙasa.",
-    "body2"   : "So a yiɗi kaɓirɗe famɗude ko waɗi e mbiyundi nguu e jokkondiral nguu – ko e yiyngel maa maa e jam'iyya – a waawi hiɓde biyol ngol les.",
-    "body3"   : "If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
-    "action"  : {
-      "label": "Go to the 'How to use' page →",
-      "fn"   : null
-    },
-    "bodyAfter1": "Hakanan zaka iya samun sa a kowane lokaci ta hanyar alama <b>?</b> a cikin bayin kewayawa na sama.",
-    "bodyAfter2": "A waawi yilude ɗum kala sahaa e seedorde <b>?</b> e nder laaci newnowo dow.",
-    "bodyAfter3": "You can also find it any time via the <b>?</b> icon in the top navigation bar.",
-    "format"   : "HTML"
-  }
-],
-"howToUseData": {
-  "sections": [
+  "studyOnboardingSlides":[
     {
-      "heading1": "Wannan Nazarin Yaya Yake Da Amfani?",
-      "heading2": "Hol No Jokkondiral Nguu Woni?",
-      "heading3": "Who Is This Study For?",
-      "blocks": [
-        {
-          "title1": "Mutanen da suka fara sanin Kiristanci",
-          "title2": "Rewɓe ɓe njimata Kiristanci",
-          "title3": "People new to Christianity",
-          "body1": "Idan kana da ɗan tarihin coci ko babu, wannan nazari wuri ne mai kyau don fara. Ba ya ɗauka cewa kana da ilimin da ya gabata. Yana bi ta tushen imani na Kirista — wanda Allah yake, wanda Yesu yake, abin da Littafi Mai Tsarki ke faɗa game da zunubi da ceto — kuma yana bayyana kowannensu daga Littafi Mai Tsarki kansa. Yi shi a farantin ka, kuma kada ka ji tsoron rubuta tambayoyin da suka taso maka yayin da kake ci gaba.",
-          "body2": "So a jogii keeweendi e laaɓal kanisa maa maa walaa, jokkondiral nguu woni dow dow ngam fuɗtaade. Walaa miijo maa famɗinɗo. Njokku e daarde imaan Kirista — hol Allah woni, hol Iisaa woni, ko Deftere Allah wi'i e dow hakke e kisiindi — kala gootal ɓurata e nder Deftere Allah keewnde. Gollal e laawol maa, maa hulaa winditde ɗemɗe ndiyam ɗe ngarii maa e nder yeeso.",
-          "body3": "If you have little or no church background, this study is a good place to start. It doesn't assume any prior knowledge. It works through the foundations of Christian belief — who God is, who Jesus is, what the Bible says about sin and salvation — and explains each one from the Bible itself. Take it at your own pace, and don't be afraid to write down the questions that occur to you as you go."
-        },
-        {
-          "title1": "Mutanen da suka girma a cikin al'ummar Kiristanci",
-          "title2": "Rewɓe ɓe ndarii e nder laaɓal Kirista",
-          "title3": "People who grew up in Christian circles",
-          "body1": "Idan ka kasance a kusa da coci mafi yawan rayuwarka, kila za ka gano cewa ba ka taɓa tsayawa don tambayi tambaya ta asali ba: shin na gane kuma na gaskata abin da nake tsammanin na gaskata? Kana san harshen, kana san labarun, kila ma kana san Littafi Mai Tsarki da kyau. Wannan nazari an tsara shi don taimaka maka bincika tushen a hankali da gaskiya — ba don damunka ba, amma don ba ka wani abu ƙarƙashin ƙafa.",
-          "body2": "So a woodnoo e haaɓre kanisa e nder duuɓi maa fof, a waawi yiyde ya a haalanaa tammbinde ɗemɗe ndiyam mawnde: mbele mi famɗii e mi yettiima ko mi miijii mi yettii? A anndi ɗemngal, a anndi tindirɗe, kono a waawi fawnude Deftere Allah. Jokkondiral nguu dirtinaa ngam wallitde maa tortoraade e daarde ɓurɗe e goongal — walaa ngam huɓindude maa, kono ngam hokkaade maa ko feewi ngam njiɗtaade dow.",
-          "body3": "If you have been around church for most of your life, you may find that you have never stopped to ask a basic question: do I actually understand and believe what I think I believe? You know the language, you know the stories, you may even know the Bible well. This study is designed to help you examine the foundations carefully and honestly — not to unsettle you, but to give you something solid to stand on."
-        },
-        {
-          "title1": "Mutanen da ke koyar da wasu",
-          "title2": "Rewɓe ɓe njokkinii wiyɓe",
-          "title3": "People discipling others",
-          "body1": "Idan kana tafiya tare da wani a imaninsa — a matsayin mai ba da shawara, shugaban ƙungiya ƙarama, ko aboki — wannan nazari yana ba ka hanya mai tsari don bi ta tushen imani na Kirista tare. Nazarin takwas sun rufe ƙasar da ta fi muhimmanci: wanda Allah yake, mutum da aikin Almasihu, Ruhu Mai Tsarki, halitta, zunubi, gicciye, tashin matattu, da amsarmu. Kowane babi yana ƙarewa da tambayoyin tunani na sirri waɗanda ke ƙarfafa tattaunawar da ta fi zurfi.",
-          "body2": "So a njokkinii goɗɗo e nder imaan muuɗum — ko kalfineejo, ko hooreejo jam'iyya ɓurɗo, maa ko tawanteejo — jokkondiral nguu hokkata maa laawol dirtinaaɗo ngam gollondirde e daarde imaan Kirista. Jokkondiraaji jeetati ɓee mawnoroo leydi nde ɓuri fawde: hol Allah woni, mawɗo e gollal Almasiihu, Ruuhu Ceniiɗo, yamiroore, hakke, ladde, nguyka, e jaabawol amen. Kala esde jokkoo e ɗemɗe miijorɗe ɗe njiiɗtinirta haala mawngo.",
-          "body3": "If you are walking alongside someone else in their faith — as a mentor, a small group leader, or a friend — this study gives you a structured way to work through the foundations of Christian belief together. The eight studies cover the ground that matters most: who God is, the person and work of Christ, the Holy Spirit, creation, sin, the cross, the resurrection, and our response. Each chapter ends with personal reflection questions that naturally prompt deeper conversation."
-        }
-      ]
+      "icon"    :"📖",
+      "eyebrow1":"Barka da zuwa",
+      "eyebrow2":"Jam waɗɗi",
+      "eyebrow3":"Welcome",
+      "heading1":"Gaskiya Ta Buɗe",
+      "heading2":"Haqqiqi Udditaama",
+      "heading3":"Truth Unlocked",
+      "body1"   :"Nazarin Littafi Mai Tsarki na zaman takwas kan tushen imani na Kirista.\n\nYi ta kowane babi a farantin ka, ko kuma yi amfani da shi tare da ƙungiya.",
+      "body2"   :"Jokkondiral Bookara Sentel deftere Allah darowol duuɓi jeetati dow daarde imaan Kirista.\n\nGollal kala esde e yeeso maa, maa golle e jam’iyya.",
+      "body3"   :"An eight-session Bible study on the basics of Christian belief.\n\nWork through each chapter at your own pace, or use it with a group.",
+      "format"  :"HTML"
     },
     {
-      "heading1": "Nazarin Mutum Ɗaya ko Ƙungiya?",
-      "heading2": "Jokkondiral Gooto maa Jam'iyya?",
-      "heading3": "Individual or Group Study?",
-      "blocks": [
-        {
-          "title1": "A kan naka",
-          "title2": "E yiyngel maa",
-          "title3": "On your own",
-          "body1": "Wannan nazari yana aiki da kyau a matsayin nazarin sirri. Yi ta kowane babi a farantin ka, karanta sassan Littafi Mai Tsarki, rubuta amsoshin ka ga tambayoyin, kuma yi tunani a kan tambayoyin tunani a ƙarshe. Babu saurin da ya dace — wasu babi na iya ɗaukar mintuna ashirin, wasu na iya ɗaukar tsawo idan tambaya ta tsayar da kai.",
-          "body2": "Jokkondiral nguu gollortoo e nder yiyngel maa. Gollal kala esde e laawol maa, jaŋgu cuɗoli Deftere Allah, windu jaabaaji maa e ɗemɗe ndiyam, maa miijoro e ɗemɗe miijorɗe e nder yiynde. Walaa faango feewɗo — kala esde waawa waɗde minooje capanɗe ɗiɗi, wiyɓe waawa waɗde balɗe keewnde so ɗemngal ndiyam neldii maa.",
-          "body3": "This study works well as a personal study. Work through each chapter at your own pace, read the Bible passages, write your answers to the questions, and meditate on the reflection questions at the end. There is no right speed — some chapters may take twenty minutes, others may take longer if a question stops you in your tracks."
-        },
-        {
-          "title1": "A cikin ƙungiya",
-          "title2": "E nder jam'iyya",
-          "title3": "In a group",
-          "body1": "Nazarin kuma yana aiki da kyau a cikin ƙungiya ƙarama. Za ku iya bi ta kowane babi tare daga farko, karanta sassan kuma tattauna tambayoyin a matsayin ƙungiya. A madadin haka — kuma wannan yawanci shine hanyar da ta fi amfani — kowane mutum yana bi ta babi da kansa da farko, rubuta amsoshinsa, sannan ƙungiyar ta taru don tattauna abin da suka gano. Kowace hanya tana aiki. An tsara tambayoyin don ƙarfafa tunani na gaske, ba kawai amsoshi masu kyau ba.",
-          "body2": "Jokkondiral nguu gollortoo e nder jam'iyya ɓurɗo. A waawi gollondirde kala esde fuɗtaade e fuɗtorde, jaŋgude cuɗoli e haaldude ɗemɗe ndiyam ko jam'iyya. Maa tawon — kono ko oon laawol ɓuri rewde — kala gooto golloto e esde e yiyngel muuɗum faa adii, windu jaabaaji muuɗum, haa jam'iyya nguurdana haalde ko njiyii. Laawol kala gollortoo. Ɗemɗe ndiyam dirtinaa ngam firnaade miijo goongal, walaa ko jaabaaji ɓurɗi tiiɗde.",
-          "body3": "The study also works well in a small group setting. You could work through each chapter together from scratch, reading the passages and discussing the questions as a group. Alternatively — and this is often the most rewarding approach — each person works through the chapter individually first, writes their answers, and then the group comes together to discuss what they found. Either way works. The questions are designed to prompt genuine reflection, not just right answers."
-        }
-      ]
+      "icon"    :"✍️",
+      "eyebrow1":"Yadda yake aiki",
+      "eyebrow2":"No ndu gollorta",
+      "eyebrow3":"How it works",
+      "heading1":"Karanta, yi tunani, rubuta",
+      "heading2":"Jaŋgu, miijo, windu",
+      "heading3":"Read, reflect, write",
+      "body1"   :"Kowane babi yana da tambayoyin Littafi Mai Tsarki da aka haɗa da sassan takamaiman, da tambayoyin tunani na sirri a ƙarshe.\n\nTabba <b>i</b> kusa da kowane nassosi na Littafi Mai Tsarki don karanta sassan ba tare da fita daga manhaja ba.",
+      "body2"   :"Kala esde woodii ɗemɗe Bookara Sentel deftere Allah feewɗe e cuɗoli ɓurɗi, e ɗemɗe miijorɗe e nder yiynde.\n\nhiɓ <b>i</b> dow kala ñiiɓirde Bookara Sentel Deftere Allah ngam jaŋgude cuɗol ɗo ngalaa.",
+      "body3"   :"Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>i</b> beside any Bible reference to read the passage without leaving the app.",
+      "format"  :"HTML"
     },
     {
-      "heading1": "Shugabannin Ƙungiya da Masu Ba Da Shawara",
-      "heading2": "Hooreejo Jam'iyya e Kalfineejo",
-      "heading3": "Group Leaders & Mentors",
-      "blocks": [
-        {
-          "title1": "Yin aiki tare da shugaba ko mai ba da shawara",
-          "title2": "Gollondirde e hooreejo maa kalfineejo",
-          "title3": "Working with a leader or mentor",
-          "body1": "<p>Yana iya yin babban bambanci idan akwai wanda ke jagorantar ka ta cikin nazarin — shugaban ƙungiya, fasto, ko Kirista mai ƙarin gogewa wanda zai iya taimaka maka tunani a kan amsoshin ka da tambayoyinka. Watakila su ne suka ba ka shawara game da wannan nazari a farkon farko.</p><p>A ƙarshen kowane babi, maɓallin <b>Raba</b> yana baka damar aika amsoshin ka na rubutu kai tsaye ga shugabanka ko mai ba da shawara — ta WhatsApp, imel, ko kowane app a wayarka. Wannan yana ba su taga zuwa ga tunaninka kafin ku hadu, kuma yana sa tattaunawar ta zama mai ƙarin arziƙi.</p>",
-          "body2": "<p>Waawi waɗde goɗɗo fewjande maa e nder jokkondiral nguu — hooreejo jam'iyya, moodi, maa Kirista famɗinɗo ɓuri mo waawi wallitde maa miijorde e jaabaaji maa e ɗemɗe maa ndiyam. Tawon ko kanko addani maa jokkondiral nguu e fuɗtorde.</p><p>E nder yiynde kala esde, biyol <b>Feernu</b> hokkata maa laawol neldude jaabaaji maa windaaɗi tiiɗɗi e hooreejo maa maa kalfineejo maa — e dow WhatsApp, imel, maa mbiyundi kese e nder telefon maa. Ngam hokka ɓe tiitoonde e miijo maa ɓaawo tawandiroyde, maa waɗtu haala ɓurnde moƴƴude.</p>",
-          "body3": "<p>It can make a real difference to have someone guiding you through the study — a group leader, a pastor, or a more experienced Christian who can help you think through your answers and questions. Perhaps they are the one who recommended this study to you in the first place.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
-        }
-      ]
+      "icon"    :"💾",
+      "eyebrow1":"Amsoshin ka",
+      "eyebrow2":"Jaabaaji maa",
+      "eyebrow3":"Your answers",
+      "heading1":"An adana a na’urarka",
+      "heading2":"Mooftaama e jawdi maa",
+      "heading3":"Saved on your device",
+      "body1"   :"Ana adana amsoshinku ta atomatik yayin da kuke rubuta, kuma ana ajiye su a wannan na’ura.\n\nYi amfani da maɓallin <b>Raba</b> a ƙasan kowane babi don aika amsoshinku ga shugaban ƙungiya ko mai ba da shawara.",
+      "body2"   :"Jaabaaji maa mooftee e laawol e nder winditaali maa, mooftee e jawdi ngii.\n\nHiɓ biyol <b>Feernu</b> e les kala esde ngam neldude jaabaaji maa e hooreejo jam’iyya maa maa kalfineejo.",
+      "body3"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
+      "format"  :"HTML"
     },
     {
-      "heading1": "Bayanin Tambayoyin",
-      "heading2": "Tiitoonde e Ɗemɗe Ndiyam",
-      "heading3": "A Note on the Questions",
-      "blocks": [
-        {
-          "title1": "Nau'ukan tambayoyi biyu",
-          "title2": "Ɗemɗe ndiyam ɗiɗi",
-          "title3": "Two kinds of questions",
-          "body1": "Kowane babi yana da nau'ukan tambayoyi biyu. <b>Tambayoyin Littafi Mai Tsarki</b> an haɗa su da sassan takamaiman — suna tambayar ka ka duba da kyau abin da rubutun ke faɗa. <b>Tambayoyin tunani</b> a ƙarshe sun fi na sirri — suna tambayar abin da babi ke nufin maka musamman.",
-          "body2": "Kala esde woodii ɗemɗe ndiyam ɗiɗi. <b>Ɗemɗe ndiyam Deftere Allah</b> dirtinaa e cuɗoli ɓurɗi — tammbinirta maa yiylude e himminde ko binndol wi'i. <b>Ɗemɗe miijorɗe</b> e nder yiynde ɓuri sikkitaare — tammbinirta maa ko esde ngoo firi maa e nder yiyngel maa.",
-          "body3": "Each chapter has two kinds of questions. The <b>Bible questions</b> are tied to specific passages — asking you to look carefully at what the text says. The <b>reflection questions</b> at the end are more personal — asking what the chapter means for you specifically."
-        },
-        {
-          "title1": "Akwatunan Fahimtar Kuskure ta Kowa",
-          "title2": "Kaɗe Famɗaari Ɓurɗi Yiyde",
-          "title3": "Common Misunderstanding boxes",
-          "body1": "A cikin duk nazarin za ka sami katunan da ke da launi mai duhu a kai da taken <b>Fahimtar Kuskure ta Kowa</b>. Waɗannan suna magance kalmomi — kamar <b>alheri</b>, <b>tuba</b>, ko <b>imani</b> — waɗanda Kiristoci ke amfani da su koyaushe amma da yawa ana fahimtar su ba daidai ba. Yi ɗan lokaci don tunani game da abin da kake fahimta da kalmar, sannan tabba <b>Gano</b> don ganin ɗan bayani.",
-          "body2": "E nder gollal jokkondiral nguu fof a waawi kaɗe ɓalɗe e nder ɓalɗe <b>Famɗaari Ɓurɗi Yiyde</b>. Ɗee ɗemɗe njiiɗtinirta — ko <b>nimre</b>, <b>tawbee</b>, maa <b>imaan</b> — ɗe Kiristeeɓe ndokkira kala sahaa kono ɗe famɗaa keewaado. Waɗtu sahaa miijorde ko a famɗii e nder ɗemngal ngaal, haa hiɓu <b>Yiy</b> ngam yiyde tiitoonde ɓurnde famɗude.",
-          "body3": "Throughout the study you will encounter darker-coloured cards headed <b>Common Misunderstanding</b>. These address words — like <b>grace</b>, <b>repentance</b>, or <b>faith</b> — that Christians use all the time but that are often misunderstood. Take a moment to think about what you understand by the word, then tap <b>Find out</b> to see a short clarification."
-        }
-      ]
+      "icon"    :"⚙️",
+      "eyebrow1":"Masa da naka",
+      "eyebrow2":"Waɗtu e hakkunde maa",
+      "eyebrow3":"Make it yours",
+      "heading1":"Daidaita zuwa ga bukatarka",
+      "heading2":"Naawnu e mbiyaari maa",
+      "heading3":"Adjust to your preference",
+      "body1"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      Idan kuna buƙatar rubutun da ya fi girma je kai tsaye zuwa saitunan yanzu\n    </div>",
+      "body2"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      So a sɓii binde mawngo yah e laawol e saituuji jooni\n    </div>",
+      "body3"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "action"  :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+      "bodyAfter1":"Tabba alama <b>⚙</b> a kusurwar sama don buɗe Saitunan a kowane lokaci don canza girman rubutu ko canzawa zuwa yanayin duhu.\n\nTabba <b>☰</b> (abubuwan ciki) don tsallaka zuwa kowane babi.",
+      "bodyAfter2":"Hiɓ seedorde <b>⚙</b> e nder ɓalndu dow ngam udditde Saituuji kala sahaa ngam waɗtude ɓalɗe binde maa maa waɗtude e hal-habri ɓalewal.\n\nHiɓ <b>☰</b> (lefol) ngam yahde e kala esde.",
+      "bodyAfter3":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
+      "format"    :"HTML"
+    },
+    {
+      "icon"    :"👋",
+      "eyebrow1":"Kafin ka fara",
+      "eyebrow2":"Ɓaawo jokkondiral",
+      "eyebrow3":"Before you begin",
+      "heading1":"Yadda ake amfani da wannan manhaja",
+      "heading2":"No njogitirtee e mbiyundi nguu",
+      "heading3":"How to use this app",
+      "body1"   :"Idan kuna son cikakken jagora don cin gajiyar wannan manhaja da wannan nazari - ko a kan naka ko tare da ƙungiya - zaku iya tabba maɓallin da ke ƙasa.",
+      "body2"   :"So a yiɗi kaɓirɗe famɗude ko waɗi e mbiyundi nguu e jokkondiral nguu – ko e yiyngel maa maa e jam’iyya – a waawi hiɓde biyol ngol les.",
+      "body3"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
+      "action"  :{
+        "label":"Go to the ’How to use’ page →",
+        "fn"   :null
+      },
+      "bodyAfter1":"Hakanan zaka iya samun sa a kowane lokaci ta hanyar alama <b>?</b> a cikin bayin kewayawa na sama.",
+      "bodyAfter2":"A waawi yilude ɗum kala sahaa e seedorde <b>?</b> e nder laaci newnowo dow.",
+      "bodyAfter3":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+      "format"    :"HTML"
     }
-  ]
-},
+  ],
+  "howToUseData":{
+    "sections":[
+      {
+        "heading1":"Wannan Nazarin Yaya Yake Da Amfani?",
+        "heading2":"Hol No Jokkondiral Nguu Woni?",
+        "heading3":"Who Is This Study For?",
+        "blocks"  :[
+          {
+            "title1":"Mutanen da suka fara sanin Kiristanci",
+            "title2":"Rewɓe ɓe njimata Kiristanci",
+            "title3":"People new to Christianity",
+            "body1" :"Idan kana da ɗan tarihin coci ko babu, wannan nazari wuri ne mai kyau don fara. Ba ya ɗauka cewa kana da ilimin da ya gabata. Yana bi ta tushen imani na Kirista — wanda Allah yake, wanda Yesu yake, abin da Littafi Mai Tsarki ke faɗa game da zunubi da ceto — kuma yana bayyana kowannensu daga Littafi Mai Tsarki kansa. Yi shi a farantin ka, kuma kada ka ji tsoron rubuta tambayoyin da suka taso maka yayin da kake ci gaba.",
+            "body2" :"So a jogii keeweendi e laaɓal kanisa maa maa walaa, jokkondiral nguu woni dow dow ngam fuɗtaade. Walaa miijo maa famɗinɗo. Njokku e daarde imaan Kirista — hol Allah woni, hol Iisaa woni, ko Deftere Allah wi’i e dow hakke e kisiindi — kala gootal ɓurata e nder Deftere Allah keewnde. Gollal e laawol maa, maa hulaa winditde ɗemɗe ndiyam ɗe ngarii maa e nder yeeso.",
+            "body3" :"If you have little or no church background, this study is a good place to start. It doesn’t assume any prior knowledge. It works through the foundations of Christian belief — who God is, who Jesus is, what the Bible says about sin and salvation — and explains each one from the Bible itself. Take it at your own pace, and don’t be afraid to write down the questions that occur to you as you go."
+          },
+          {
+            "title1":"Mutanen da suka girma a cikin al’ummar Kiristanci",
+            "title2":"Rewɓe ɓe ndarii e nder laaɓal Kirista",
+            "title3":"People who grew up in Christian circles",
+            "body1" :"Idan ka kasance a kusa da coci mafi yawan rayuwarka, kila za ka gano cewa ba ka taɓa tsayawa don tambayi tambaya ta asali ba: shin na gane kuma na gaskata abin da nake tsammanin na gaskata? Kana san harshen, kana san labarun, kila ma kana san Littafi Mai Tsarki da kyau. Wannan nazari an tsara shi don taimaka maka bincika tushen a hankali da gaskiya — ba don damunka ba, amma don ba ka wani abu ƙarƙashin ƙafa.",
+            "body2" :"So a woodnoo e haaɓre kanisa e nder duuɓi maa fof, a waawi yiyde ya a haalanaa tammbinde ɗemɗe ndiyam mawnde: mbele mi famɗii e mi yettiima ko mi miijii mi yettii? A anndi ɗemngal, a anndi tindirɗe, kono a waawi fawnude Deftere Allah. Jokkondiral nguu dirtinaa ngam wallitde maa tortoraade e daarde ɓurɗe e goongal — walaa ngam huɓindude maa, kono ngam hokkaade maa ko feewi ngam njiɗtaade dow.",
+            "body3" :"If you have been around church for most of your life, you may find that you have never stopped to ask a basic question: do I actually understand and believe what I think I believe? You know the language, you know the stories, you may even know the Bible well. This study is designed to help you examine the foundations carefully and honestly — not to unsettle you, but to give you something solid to stand on."
+          },
+          {
+            "title1":"Mutanen da ke koyar da wasu",
+            "title2":"Rewɓe ɓe njokkinii wiyɓe",
+            "title3":"People discipling others",
+            "body1" :"Idan kana tafiya tare da wani a imaninsa — a matsayin mai ba da shawara, shugaban ƙungiya ƙarama, ko aboki — wannan nazari yana ba ka hanya mai tsari don bi ta tushen imani na Kirista tare. Nazarin takwas sun rufe ƙasar da ta fi muhimmanci: wanda Allah yake, mutum da aikin Almasihu, Ruhu Mai Tsarki, halitta, zunubi, gicciye, tashin matattu, da amsarmu. Kowane babi yana ƙarewa da tambayoyin tunani na sirri waɗanda ke ƙarfafa tattaunawar da ta fi zurfi.",
+            "body2" :"So a njokkinii goɗɗo e nder imaan muuɗum — ko kalfineejo, ko hooreejo jam’iyya ɓurɗo, maa ko tawanteejo — jokkondiral nguu hokkata maa laawol dirtinaaɗo ngam gollondirde e daarde imaan Kirista. Jokkondiraaji jeetati ɓee mawnoroo leydi nde ɓuri fawde: hol Allah woni, mawɗo e gollal Almasiihu, Ruuhu Ceniiɗo, yamiroore, hakke, ladde, nguyka, e jaabawol amen. Kala esde jokkoo e ɗemɗe miijorɗe ɗe njiiɗtinirta haala mawngo.",
+            "body3" :"If you are walking alongside someone else in their faith — as a mentor, a small group leader, or a friend — this study gives you a structured way to work through the foundations of Christian belief together. The eight studies cover the ground that matters most: who God is, the person and work of Christ, the Holy Spirit, creation, sin, the cross, the resurrection, and our response. Each chapter ends with personal reflection questions that naturally prompt deeper conversation."
+          }
+        ]
+      },
+      {
+        "heading1":"Nazarin Mutum Ɗaya ko Ƙungiya?",
+        "heading2":"Jokkondiral Gooto maa Jam’iyya?",
+        "heading3":"Individual or Group Study?",
+        "blocks"  :[
+          {
+            "title1":"A kan naka",
+            "title2":"E yiyngel maa",
+            "title3":"On your own",
+            "body1" :"Wannan nazari yana aiki da kyau a matsayin nazarin sirri. Yi ta kowane babi a farantin ka, karanta sassan Littafi Mai Tsarki, rubuta amsoshin ka ga tambayoyin, kuma yi tunani a kan tambayoyin tunani a ƙarshe. Babu saurin da ya dace — wasu babi na iya ɗaukar mintuna ashirin, wasu na iya ɗaukar tsawo idan tambaya ta tsayar da kai.",
+            "body2" :"Jokkondiral nguu gollortoo e nder yiyngel maa. Gollal kala esde e laawol maa, jaŋgu cuɗoli Deftere Allah, windu jaabaaji maa e ɗemɗe ndiyam, maa miijoro e ɗemɗe miijorɗe e nder yiynde. Walaa faango feewɗo — kala esde waawa waɗde minooje capanɗe ɗiɗi, wiyɓe waawa waɗde balɗe keewnde so ɗemngal ndiyam neldii maa.",
+            "body3" :"This study works well as a personal study. Work through each chapter at your own pace, read the Bible passages, write your answers to the questions, and meditate on the reflection questions at the end. There is no right speed — some chapters may take twenty minutes, others may take longer if a question stops you in your tracks."
+          },
+          {
+            "title1":"A cikin ƙungiya",
+            "title2":"E nder jam’iyya",
+            "title3":"In a group",
+            "body1" :"Nazarin kuma yana aiki da kyau a cikin ƙungiya ƙarama. Za ku iya bi ta kowane babi tare daga farko, karanta sassan kuma tattauna tambayoyin a matsayin ƙungiya. A madadin haka — kuma wannan yawanci shine hanyar da ta fi amfani — kowane mutum yana bi ta babi da kansa da farko, rubuta amsoshinsa, sannan ƙungiyar ta taru don tattauna abin da suka gano. Kowace hanya tana aiki. An tsara tambayoyin don ƙarfafa tunani na gaske, ba kawai amsoshi masu kyau ba.",
+            "body2" :"Jokkondiral nguu gollortoo e nder jam’iyya ɓurɗo. A waawi gollondirde kala esde fuɗtaade e fuɗtorde, jaŋgude cuɗoli e haaldude ɗemɗe ndiyam ko jam’iyya. Maa tawon — kono ko oon laawol ɓuri rewde — kala gooto golloto e esde e yiyngel muuɗum faa adii, windu jaabaaji muuɗum, haa jam’iyya nguurdana haalde ko njiyii. Laawol kala gollortoo. Ɗemɗe ndiyam dirtinaa ngam firnaade miijo goongal, walaa ko jaabaaji ɓurɗi tiiɗde.",
+            "body3" :"The study also works well in a small group setting. You could work through each chapter together from scratch, reading the passages and discussing the questions as a group. Alternatively — and this is often the most rewarding approach — each person works through the chapter individually first, writes their answers, and then the group comes together to discuss what they found. Either way works. The questions are designed to prompt genuine reflection, not just right answers."
+          }
+        ]
+      },
+      {
+        "heading1":"Shugabannin Ƙungiya da Masu Ba Da Shawara",
+        "heading2":"Hooreejo Jam’iyya e Kalfineejo",
+        "heading3":"Group Leaders & Mentors",
+        "blocks"  :[
+          {
+            "title1":"Yin aiki tare da shugaba ko mai ba da shawara",
+            "title2":"Gollondirde e hooreejo maa kalfineejo",
+            "title3":"Working with a leader or mentor",
+            "body1" :"<p>Yana iya yin babban bambanci idan akwai wanda ke jagorantar ka ta cikin nazarin — shugaban ƙungiya, fasto, ko Kirista mai ƙarin gogewa wanda zai iya taimaka maka tunani a kan amsoshin ka da tambayoyinka. Watakila su ne suka ba ka shawara game da wannan nazari a farkon farko.</p><p>A ƙarshen kowane babi, maɓallin <b>Raba</b> yana baka damar aika amsoshin ka na rubutu kai tsaye ga shugabanka ko mai ba da shawara — ta WhatsApp, imel, ko kowane app a wayarka. Wannan yana ba su taga zuwa ga tunaninka kafin ku hadu, kuma yana sa tattaunawar ta zama mai ƙarin arziƙi.</p>",
+            "body2" :"<p>Waawi waɗde goɗɗo fewjande maa e nder jokkondiral nguu — hooreejo jam’iyya, moodi, maa Kirista famɗinɗo ɓuri mo waawi wallitde maa miijorde e jaabaaji maa e ɗemɗe maa ndiyam. Tawon ko kanko addani maa jokkondiral nguu e fuɗtorde.</p><p>E nder yiynde kala esde, biyol <b>Feernu</b> hokkata maa laawol neldude jaabaaji maa windaaɗi tiiɗɗi e hooreejo maa maa kalfineejo maa — e dow WhatsApp, imel, maa mbiyundi kese e nder telefon maa. Ngam hokka ɓe tiitoonde e miijo maa ɓaawo tawandiroyde, maa waɗtu haala ɓurnde moƴƴude.</p>",
+            "body3" :"<p>It can make a real difference to have someone guiding you through the study — a group leader, a pastor, or a more experienced Christian who can help you think through your answers and questions. Perhaps they are the one who recommended this study to you in the first place.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
+          }
+        ]
+      },
+      {
+        "heading1":"Bayanin Tambayoyin",
+        "heading2":"Tiitoonde e Ɗemɗe Ndiyam",
+        "heading3":"A Note on the Questions",
+        "blocks"  :[
+          {
+            "title1":"Nau’ukan tambayoyi biyu",
+            "title2":"Ɗemɗe ndiyam ɗiɗi",
+            "title3":"Two kinds of questions",
+            "body1" :"Kowane babi yana da nau’ukan tambayoyi biyu. <b>Tambayoyin Littafi Mai Tsarki</b> an haɗa su da sassan takamaiman — suna tambayar ka ka duba da kyau abin da rubutun ke faɗa. <b>Tambayoyin tunani</b> a ƙarshe sun fi na sirri — suna tambayar abin da babi ke nufin maka musamman.",
+            "body2" :"Kala esde woodii ɗemɗe ndiyam ɗiɗi. <b>Ɗemɗe ndiyam Deftere Allah</b> dirtinaa e cuɗoli ɓurɗi — tammbinirta maa yiylude e himminde ko binndol wi’i. <b>Ɗemɗe miijorɗe</b> e nder yiynde ɓuri sikkitaare — tammbinirta maa ko esde ngoo firi maa e nder yiyngel maa.",
+            "body3" :"Each chapter has two kinds of questions. The <b>Bible questions</b> are tied to specific passages — asking you to look carefully at what the text says. The <b>reflection questions</b> at the end are more personal — asking what the chapter means for you specifically."
+          },
+          {
+            "title1":"Akwatunan Fahimtar Kuskure ta Kowa",
+            "title2":"Kaɗe Famɗaari Ɓurɗi Yiyde",
+            "title3":"Common Misunderstanding boxes",
+            "body1" :"A cikin duk nazarin za ka sami katunan da ke da launi mai duhu a kai da taken <b>Fahimtar Kuskure ta Kowa</b>. Waɗannan suna magance kalmomi — kamar <b>alheri</b>, <b>tuba</b>, ko <b>imani</b> — waɗanda Kiristoci ke amfani da su koyaushe amma da yawa ana fahimtar su ba daidai ba. Yi ɗan lokaci don tunani game da abin da kake fahimta da kalmar, sannan tabba <b>Gano</b> don ganin ɗan bayani.",
+            "body2" :"E nder gollal jokkondiral nguu fof a waawi kaɗe ɓalɗe e nder ɓalɗe <b>Famɗaari Ɓurɗi Yiyde</b>. Ɗee ɗemɗe njiiɗtinirta — ko <b>nimre</b>, <b>tawbee</b>, maa <b>imaan</b> — ɗe Kiristeeɓe ndokkira kala sahaa kono ɗe famɗaa keewaado. Waɗtu sahaa miijorde ko a famɗii e nder ɗemngal ngaal, haa hiɓu <b>Yiy</b> ngam yiyde tiitoonde ɓurnde famɗude.",
+            "body3" :"Throughout the study you will encounter darker-coloured cards headed <b>Common Misunderstanding</b>. These address words — like <b>grace</b>, <b>repentance</b>, or <b>faith</b> — that Christians use all the time but that are often misunderstood. Take a moment to think about what you understand by the word, then tap <b>Find out</b> to see a short clarification."
+          }
+        ]
+      }
+    ]
+  },
   "leadersNotesData":{
     "subtitle1":"",
     "subtitle2":"",
@@ -6301,97 +6311,97 @@
         "watch3"       :"👁️ Watch for people who intellectually accept God’s existence but have never personally connected that with God’s love for them. The move from ‘God exists’ to ‘God loves me’ is not automatic, and this chapter tries to make it.",
         "format"       :"HTML"
       },
-  {
-    "chapterNumber": 2,
-    "keyPoints1": "<p>Wannan babi yana gabatar da da'awa guda biyu masu muhimmanci kuma masu haɗin kai game da Yesu: cewa Shi <b>ɗan adam ne na gaske</b> kuma <b>Allah ne na gaske</b>. Dukkansu suna da muhimmanci. Ɗan adamtarsa na nufin yana fahimtar ƙwarewarmu da gaske. Allantarsa na nufin mutuwarsa tana da nauyi mara iyaka kuma kalmominsa suna ɗauke da iko na ƙarshe.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da 'Ɗan Allah' yana magance rikicewar da ta yadu sosai: cewa taken yana nufin Yesu ya yi ƙasa da Allah ta wata hanya. Ka tabbatar ƙungiyar ta fahimci cewa a mahallin Littafi Mai Tsarki yana nufin akasin haka.</p>\n<p>Ibraniyawa 4:15 — cewa an gwada Yesu ta kowace hanya, amma ba tare da zunubi ba — hujja ce ta ɗan adamtarsa kuma tushen ta'aziyya. Kada a yi gaggawar wuceta.</p>",
-    "keyPoints2": "<p>Ɗoo esde ina waɗde gollondiral ɗiɗi gasɗi e jokkondirɗi e dow Iisaa: wonde Kanko ko <b>neɗɗo goonga</b> e <b>Alla goonga</b>. Ko ɗiɗo ɓuri. Neɗɗaagu makko ina hollira nde Kanko famɗii tigi rigi golle am en. Allaagu makko ina hollira wonde miijoore makko ina jogi naawre alaa ɗo haaɗi e konguɗi makko ina njogii baawɗe laaɓtude.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow 'Ɓii Allah' ina waɗtana rikki mawngo njiiɗtaangol: wonde innde ndee ina hollira Iisaa waɗii les Alla e nder goonga. Hoolno fedde ndee famɗii wonde e nder maana makko e Binndi Ɗii ko ɗum ɓurtata.</p>\n<p>Ibraniiyankooɓe 4:15 — wonde Iisaa neldaama e nder kala laawol, kono walaa hakke — ko hujja neɗɗaagu makko e ɓalndu semmbiɗingal. Hoto yaawa ƴakkugo ɗum.</p>",
-    "keyPoints3": "<p>This chapter makes two essential and complementary claims about Jesus: that He is <b>truly human</b> and <b>truly God</b>. Both matter. His humanity means He genuinely understands our experience. His deity means His death has infinite weight and His words carry ultimate authority.</p>\n<p>The Common Misunderstanding callout on 'Son of God' addresses a very widespread confusion: that the title implies Jesus is somehow less than God. Ensure the group understands that in its Biblical context it means the opposite.</p>\n<p>Hebrews 4:15 — that Jesus was tempted in every way, yet without sin — is both a proof of His humanity and a source of comfort. It should not be rushed past.</p>",
-    "pastorals1": "<p>Wasu a cikin ƙungiyar na iya samun abokai ko dangi na addinai dabam-dabam waɗanda suke girmama Yesu a matsayin annabi ko malami amma suke ƙin allantarsa. Kayan wannan babi yana ba su wani abu don tunani a hankali, ba a matsayin harsashin gardama ba, amma a matsayin gayyata don duba shaidar da kyau.</p>\n<p>Sassan mu'ujizai (kwantar da guguwa, taya Lazaru) na iya haifar da tambayoyi game da ko mu'ujizai suna da gaskiya. Ka amsa tambayar da gaskiya: babi baya ƙoƙarin tabbatar da mu'ujizai ta falsafa, amma don nuna abin da shaidu suka rubuta da kuma abin da hakan ke nuna game da wanda Yesu yake.</p>",
-    "pastorals2": "<p>Woɓɓe e nder fedde ndee waawan jogaade tawariɓɓe walla familiiji diine goɗɗi ɓe njiɗɗi Iisaa ko annabi maa karamoko kono ɓe mbiyi allaagu makko wonaa goonga. Kayan ɗoo esde ina hokka ɓe huunde ngam miijorde e himminde, walaa ko mbottiiji peŋaaji, kono ko binndiwal ngam yiyde hujja ndee e himminde.</p>\n<p>Cuɗoli karamokooɓe (haɓɓude henndu, umoraade Laazaaru) waawan neldude ɗemɗe ndiyam e dow ko karamokooɓe ina paamaa. Jaabir naamnal ngal e goonga: esde ngee walaa ngam tabbita karamokooɓe e falasafi, kono ngam hollirde ko ceeɗooɓe winndii e ko ɗum hollirta e dow hol Iisaa woni.</p>",
-    "pastorals3": "<p>Some in the group may have friends or family of other faiths who honour Jesus as a prophet or teacher but reject His divinity. The material in this chapter gives them something to think through carefully, not as ammunition for arguments, but as an invitation to look at the evidence more closely.</p>\n<p>The miracle passages (calming the storm, raising Lazarus) can prompt questions about whether miracles are credible. Acknowledge the question honestly: the chapter is not trying to prove miracles philosophically, but to show what the eyewitnesses recorded and what that implies about who Jesus is.</p>",
-    "watch1": "👁️ Ku lura da mutanen da suke jin daɗin Yesu a matsayin misalin ɗabi'a ko malamin ruhaniya, amma suna ƙin da'awar cewa Shi Allah ne. An tsara wannan babi don matsa wannan tambayar a hankali amma a fili.",
-    "watch2": "👁️ Yeewtu yimɓe mooliiɓe e Iisaa ko misaal deeɗal walla karamoko ruuhaani, kono ɓe mbiyi allaagu makko wonaa goonga. Ɗoo esde dirtinaa ngam tammbinde ɗemngal ngal e himminde kono e laaɓal.",
-    "watch3": "👁️ Watch for people who are comfortable with Jesus as a moral example or spiritual teacher, but resist the claim that He is God. This chapter is designed to press that question gently but clearly.",
-    "format": "HTML"
-  },
-  {
-    "chapterNumber": 3,
-    "keyPoints1": "<p>Ruhu Mai Tsarki galibi shine mutum mafi ƙarancin fahimta na Triniti. Wannan babi yana kafa abubuwa uku: (1) Ruhu shi ne <b>mutum</b>, ba ƙarfi ko ji ba; (2) ana ba shi ga <b>kowane</b> mai imani, ba wasu kawai ba; kuma (3) manufarsa ta ƙarshe ita ce <b>ɗaukaka Almasihu</b> (Yahaya 16:14).</p>\n<p>Bambancin tsakanin <b>kyaututtuka</b> (1 Korintiyawa 12) da <b>'ya'yan itace</b> (Galatiyawa 5) ya cancanci ɓata lokaci a kai. Ana rarraba kyaututtuka ta hanyar Ruhu don amfanin wasu; 'ya'yan itace sune halin da Ruhu ke haifar da shi a hankali a cikin kowane mai imani.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da 'Triniti' yana magance ɗaya daga cikin mafi yawan tushen rikici a tauhidin Kirista. Ka shirya don wannan ya buɗe tambayoyi mafi faɗi.</p>",
-    "keyPoints2": "<p>Ruuhu Ceniiɗo ko famɗaama ɓuri e nder neɗɗo Triniti. Ɗoo esde ina tabitina tati: (1) Ruuhu ko <b>neɗɗo</b>, walaa baawɗe maa miijo; (2) neldaa e <b>kala</b> jom-goonɗiniiɗo, walaa woɓɓe tan; e (3) muuɗum sakkitiingel ko <b>jalninaade Almasiihu</b> (Yuhanna 16:14).</p>\n<p>Faranditaare takkunde takkunde <b>dokkaaje</b> (1 Korintiyankoobe 12) e <b>ɓiɓɓe</b> (Galatiyankoobe 5) ina foti waɗde heen sahaa. Dokkaaje diwiraa e baawɗe Ruuhu ngam naforde wiyɓe; ɓiɓɓe ko sifaa dirtinaaɗo e sahaa nder kala jom-goonɗiniiɗo e gollaaji Ruuhu.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow 'Triniti' ina waɗtana kala ɓuri ɗemɗe rikki e teologiya Kiristeeɓe. Hoolno ngam ɗum udditde ɗemɗe ndiyam mawɗe ɓuri.</p>",
-    "keyPoints3": "<p>The Holy Spirit is often the least understood person of the Trinity. This chapter establishes three things: (1) the Spirit is a <b>person</b>, not a force or feeling; (2) He is given to <b>every</b> believer, not just some; and (3) His ultimate purpose is to <b>glorify Christ</b> (John 16:14).</p>\n<p>The distinction between <b>gifts</b> (1 Corinthians 12) and <b>fruit</b> (Galatians 5) is worth dwelling on. Gifts are distributed sovereignly by the Spirit for the benefit of others; fruit is the character produced over time in every believer by the Spirit's work.</p>\n<p>The Common Misunderstanding callout on 'the Trinity' addresses one of the most common sources of confusion in Christian theology. Be prepared for this to open wider questions.</p>",
-    "pastorals1": "<p>Mutane daban-daban a cikin ƙungiyar na iya zuwa da ƙwarewar daban-daban sosai game da Ruhu: wasu na iya samun ƙwarewar karismatik da suke da shakka a kai; wasu na iya zama masu shakka game da komai na ƙwarewa. Babi yana ƙoƙarin riƙe ƙasa da kyau — yana tabbatar da ainihin aikin Ruhu na yanzu, ba tare da tsara yadda dole ne ya kama ko ya ji ba.</p>\n<p>Tambayar tunani game da kyaututtukan ruhaniya na iya zama mai amfani musamman a cikin ƙungiya. Mutane galibi suna gano kyaututtuka da ba su ambata su ba, ko suna karɓar ƙarfafawa daga wasu da ke ganin kyaututtuka a cikinsu da suke kasa ganin a cikin kansu.</p>",
-    "pastorals2": "<p>Yimɓe goɗɗi e nder fedde ndee waawan waarde e nder suuɗe goɗɗe tiiɗɗe e dow Ruuhu: woɓɓe waawan jogaade golle karismatiki ɗe ɓe ngalaa e mum en; woɓɓe waawan sikkitaade e kala ko ƙaawɗo. Esde ngee ina ekkina reende leydi e himminde — tabitinde gollal Ruuhu goonga e jooni, walaa ngam dartinde no feewnde maa miijoree.</p>\n<p>Ɗemngal ndiyam e dow dokkaaje ruuhaani waawa ɓuri rawnude e nder fedde. Yimɓe keɓoo dokkaaje ɗe ɓe mbinndaali, maa semmbinaama e wiyɓe ɓe njiyata dokkaaje e maɓɓe ɗe ɓe ngalaa e mum en.</p>",
-    "pastorals3": "<p>Different people in the group may come from very different backgrounds when it comes to the Spirit: some may have had charismatic experiences they are unsure about; others may be sceptical of anything experiential. The chapter tries to hold the ground carefully — affirming the Spirit's genuine and present work, without prescribing what that must look or feel like.</p>\n<p>The reflection question about spiritual gifts can be particularly fruitful in a group setting. People often discover gifts they hadn't named, or are encouraged by others who can see gifts in them that they can't see in themselves.</p>",
-    "watch1": "👁️ Ku lura da mutanen da ke daidaita aikin Ruhu gaba ɗaya da bayyanar da ake iya gani mai ban mamaki, ko akasin haka waɗanda suke da hankali sosai har suke watsi da Shi gaba ɗaya. Babi yana nufin riƙe tsakiyar Littafi Mai Tsarki.",
-    "watch2": "👁️ Yeewtu yimɓe naɗɗoɓe gollaaji Ruuhu fof e hollital mawngo yiyeteengo, maa e ɓe ɓuri himmude haa ɓe mbiyi walaa ko Kanko waɗi. Esde ngee ina ekkina reende takkunde Binndi Ɗii.",
-    "watch3": "👁️ Watch for people who equate the Spirit's work entirely with dramatic visible manifestations, or conversely those who are so cautious that they effectively discount Him altogether. The chapter aims to hold a Biblical centre.",
-    "format": "HTML"
-  },
-  {
-    "chapterNumber": 4,
-    "keyPoints1": "<p>Wannan babi yana rufe labarin halitta na Littafi Mai Tsarki: wanda ya shiga (dukkan mutane uku na Triniti), abin da aka yi, yadda aka yi (ta maganar Allah kaɗai), da kuma dalilin — don ɗaukakar Allah, da kuma dangantaka da Shi.</p>\n<p>Musamman darajar mutane da aka yi <b>cikin surar Allah</b> (Farawa 1:27) tana da matuƙar muhimmanci. Tana bambanta mu daga sauran halitta kuma tana kafa duka ƙimarmu da nauyin alhakinmu. Sassan kula guda biyu (Farawa 1:26; 2:15) suna nuna kula da halitta a matsayin damuwar tauhidi ta gaske, ba ƙarin na duniya ba.</p>\n<p>Gargaɗin karanta Farawa 1 yana ba ƙungiyar dama don karanta cikakken labarin halitta tare — ya cancanci ƙarfafawa ko da lokaci ya yi ƙasa, domin tasirin tarayyar 'yana da kyau' da aka maimaita da 'yana da kyau ƙwarai' mai ɗaukakar yana ɗauke da nauyinsa.</p>",
-    "keyPoints2": "<p>Ɗoo esde ina waɗde kuutordi Binndi Ɗii e dow tagoore: hol gollii (neɗɗo tataɓo Triniti), ko tagoranoo, no tagoranaa (e konguɗi Alla tan), e no waɗi — ngam jalninaade Alla, e ngam jokkondirde e Makko.</p>\n<p>Moƴƴere keso yimɓe tagoranɗe <b>e nder natal Alla</b> (Faraawa 1:27) ko laaɓal. Ɗum fartinatnoo en e seyru hakkunde am en e tagoore ndee e nder ɗum ko damaaji am en e jaɓɓudi am en. Cuɗoli ɗiɗi doole (Faraawa 1:26; 2:15) ina hollira laamu tagoore ko damal teologiya goonga, walaa ko ɓurtaare duniyaaru.</p>\n<p>Gollal jaŋgude Faraawa 1 ina hokka fedde ndee laawol ngam jaŋgude kuutordi tagoore fof fof — ina foti semmbinaade ko sahaaji mbaaɗi, sabu gollal tarayyaaru 'ina moƴƴi' e 'ina moƴƴi tigi rigi' jalninaango ina jogi naawre mum.</p>",
-    "keyPoints3": "<p>This chapter covers the Biblical account of creation: who was involved (all three persons of the Trinity), what was made, how it was made (by God's word alone), and why — for God's glory, and for relationship with Him.</p>\n<p>The unique dignity of human beings made <b>in the image of God</b> (Genesis 1:27) is central. It distinguishes us from the rest of creation and grounds both our value and our responsibility. The two stewardship passages (Genesis 1:26; 2:15) point to creation care as a genuine theological concern, not a secular add-on.</p>\n<p>The Genesis 1 reading callout gives the group a chance to read the full creation account together — worth encouraging even if time is short, as the cumulative effect of the repeated 'it was good' and the climactic 'very good' carries its own weight.</p>",
-    "pastorals1": "<p>Wasu a cikin ƙungiyar na iya zama masu damuwa game da yadda za a danganta labarin Farawa da kimiyya ta zamani. Ba laifi ne a yarda cewa Kiristoci suna da ra'ayoyi daban-daban game da wannan, kuma nazarin baya ɗaukar matsayi game da hanyar ko lokacin halitta — kawai game da da'awar tauhidi da rubutu ke yi. Mayar da hankali kan waɗannan.</p>\n<p>Tambayar tunani — 'Menene ma'ana a gare ka sanin an yi ka cikin surar Allah?' — na iya zama mai motsa zuciya sosai ga mutanen da ba a taɓa gaya musu cewa rayuwarsu tana da daraja da mutunci na dabi'a ba.</p>",
-    "pastorals2": "<p>Woɓɓe e nder fedde ndee waawan worrude e dow no jokkondirta kuutordi Faraawa e kimiya jooni. Ina moƴƴi jaabude wonde Kiristeeɓe ina njogii miijo goɗɗi e dow ɗum, e wonde jokkondiral nguu ina waɗtaa e nder laawol tagoore maa sahaa makko — kono e dow ko binndol BI wi'i e nder teologiya tan. Tokkoo ɗum.</p>\n<p>Ɗemngal ndiyam — 'Hol ko firi maa annde wonde a tagoraa e nder natal Alla?' — waawa hollirde e himminde yimɓe ɗe mbinndaali cii wonde nguurndam mum en jogii naawre e moƴƴere gootum.</p>",
-    "pastorals3": "<p>Some in the group may be anxious about how to relate the Genesis account to modern science. It is fine to acknowledge that Christians hold a range of views on this, and that the study is not taking a position on the mechanism or timescale of creation — only on the theological claims the text makes. Focus on those.</p>\n<p>The reflection question — 'What does it mean to you to know you are made in God's image?' — can be surprisingly moving for people who have rarely been told that their life has inherent worth and dignity.</p>",
-    "watch1": "👁️ Ku lura da hasashen cewa alherin halitta ƙaramin da'awa ne a fuskar wahala da rushewar. Babi baya yin watsi da hakan — daidai bambancin tsakanin abin da Allah ya yi da abin da zunubi ya yi a kai ita ce abin da babi na gaba ke bincika.",
-    "watch2": "👁️ Yeewtu miijo ngoo wonde moƴƴere tagoore ko aadi ndi alaa ko waɗata e yeeso musiibaaɓe e baasgol. Esde ngee walaa ngam yaafirnde ɗum — ko takkunde takkunde hakkunde ko Alla tagori e ko hakke waɗi e mum ko esde taccungal ndee ina yooɓa.",
-    "watch3": "👁️ Watch for the assumption that creation's goodness is a naive claim in the face of suffering and brokenness. The chapter doesn't ignore that — it's precisely the contrast between what God made and what sin has done to it that the next chapter explores.",
-    "format": "HTML"
-  },
-  {
-    "chapterNumber": 5,
-    "keyPoints1": "<p>Wannan babi shine mahaɗin nazarin: motsi daga alherin halitta zuwa ga gaskiyar abin da ya yi kuskure. Yana rufe <b>asalin</b> zunubi (Farawa 2–3), <b>yanayin</b> sa (tawaye, ba kawai munin hali ba — Markus 7:14–23), <b>dunƙulewarsa</b> (Romawa 3:9–12, 23), da kuma <b>sakamakonsa</b> (Romawa 6:23).</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da 'zunubi' yana ɗaya daga cikin mafi muhimmanci a cikin nazarin. Rage zunubi a yau zuwa ga jerin munanan ayyuka shine daidai abin da ke hana mutane ɗaukar da gaske cewa su kansu su ne masu zunubi. Ma'anar Littafi Mai Tsarki — kai a tsakiya maimakon Allah — yana buƙatar lokaci don sauka.</p>\n<p>Sakin layi na ƙarshe na gadar yana da gaskiya da gangan: hoton yana da ɓacin rai. Kada a taushi shi. Labari mai daɗi na babi masu zuwa yana da ƙarfi ne kawai idan wannan babi ya yi aikinsa.</p>",
-    "keyPoints2": "<p>Ɗoo esde ko dogingol jokkondiral nguu: yiɗtaade e moƴƴere tagoore feewde e goonga ko wayii. Ina waɗde <b>fuɗtorde</b> hakke (Faraawa 2–3), <b>yontaare</b> makko (firweendi, walaa ko yiɗaani tan — Markus 7:14–23), <b>dunkooru</b> makko (Roomankooɓe 3:9–12, 23), e <b>jawdi</b> makko (Roomankooɓe 6:23).</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow 'hakke' ko ɗuuɗum ɓuri gollal jokkondiral nguu. Naawtugo hakke e jooni ngam listol golle bonɗe ko daidaari wonde yimɓe mbiya ɓe meeɗaa hakke. Maana Binndi Ɗii — hoore e laaɓal e nder maa ko Alla — ina haana sahaa ngam sella.</p>\n<p>Saɗo laawol maayirde ina goonɗii e goonga: natal ngol ina feṭɗo. Hoto weeɗna ɗum. Habaru lobbo ɗo ɗee biyol waaway tan sii ɗoo esde gollii gollaaji mum.</p>",
-    "keyPoints3": "<p>This chapter is the hinge of the study: moving from the goodness of creation to the reality of what has gone wrong. It covers the <b>origin</b> of sin (Genesis 2–3), its <b>nature</b> (rebellion, not just bad behaviour — Mark 7:14–23), its <b>universality</b> (Romans 3:9–12, 23), and its <b>consequences</b> (Romans 6:23).</p>\n<p>The Common Misunderstanding callout on 'sin' is one of the most important in the study. The everyday reduction of sin to a list of very bad actions is exactly what prevents people from taking seriously that they themselves are sinners. The Biblical definition — self at the centre rather than God — needs time to land.</p>\n<p>The closing bridge paragraph is deliberately honest: the picture is bleak. Don't soften it. The good news of the following chapters only has force if this chapter has done its work.</p>",
-    "pastorals1": "<p>Wannan galibi shine babi da mutane suka fi son yin hamayya da shi. Ka sa ran hakan. Da'awar cewa kowa ya yi zunubi ba tare da togaciya ba za ta ji ba daidai ko matsananci ga wasu. Ka ɗauki Romawa 3:9–12 da muhimmanci kuma ka bar rubutun ya yi magana — Bulus yana hasashen ƙin yarda kuma yana magance shi kai tsaye.</p>\n<p>Romawa 7:21–25 — bayyanar Bulus game da rikicin cikinsa — galibi yana da alaƙa ta sirri. Ka ba mutane sarari don tunani game da ko suna gane shi a cikin ƙwarewarsu.</p>",
-    "pastorals2": "<p>Ɗoo ko esde ɗo yimɓe ɓuri yiɗde takkude. Yiiloo ɗum. Gollal wonde kala gooto waɗii hakke e nder leydi ndii alaa togaande waawa hisde wonde bonande maa tiiɗde e woɓɓe. Ƴetta Roomankooɓe 3:9–12 e himminde maa njanngu binndol ngol — Bulus ina yiila ɗemngal ndiyam ngam jaabude tigi rigi.</p>\n<p>Roomankooɓe 7:21–25 — bayti Bulus e dow rikki e nder makko — ko ɓurɗo yiyde e nder yiyngel mum. Hokku yimɓe laawol ngam miijorde e dow ko ɓe njiyii e nder golle mum en.</p>",
-    "pastorals3": "<p>This is often the chapter where people most want to push back. Expect it. The claim that everyone has sinned without exception will feel unfair or extreme to some. Take Romans 3:9–12 seriously and let the text speak — Paul anticipates the objection and addresses it directly.</p>\n<p>Romans 7:21–25 — Paul's description of his own internal conflict — is often personally resonant. Give people space to reflect on whether they recognise it in their own experience.</p>",
-    "watch1": "👁️ Ku lura da mutanen da ke ji babi a matsayin hari ga halinsu maimakon ganewar yanayin ɗan adam. Manufar ba ita ce suna da mugun ɗabi'a musamman ba, amma dukkanmu muna fuskantar matsalar ɗaya.",
-    "watch2": "👁️ Yeewtu yimɓe keɓɓoɓe esde ngee ko dogital e sifaa mum en e nder ko goneeki ganeta ɗum yontaare yimɓe. Muuɗum wonaa wonde ɓe ɓuri bonnude, kono ko en fof ina am en ko ɗuum torrirde.",
-    "watch3": "👁️ Watch for people who hear the chapter as an attack on their character rather than a diagnosis of the human condition. The point is not that they are especially bad, but that all of us face the same problem.",
-    "format": "HTML"
-  },
-  {
-    "chapterNumber": 6,
-    "keyPoints1": "<p>Anan ne labari mai daɗi ya fara. Babi yana kafa cewa amsar Allah ga zunubi ba la'anta ba ne amma ceto — kuma ceton ya zo da mafi girman farashi. Manufar tauhidi ta muhimmanci ita ce <b>fansarwa ta maye gurbin</b>: Yesu ɗaukar hukuncin zunubinmu a maimakonmu (2 Korintiyawa 5:21; Galatiyawa 3:13; 1 Bitrus 2:24).</p>\n<p>Matiyu 27:46 — kukan fitar da kai — ya cancanci kulawa da kyau. Ba kukan ɓacin rai ba ne amma taron tauhidi: Ɗan ɗauke hukuncin Uban game da zunubi. Sakin layi na gadar bayan ayoyin fansarwa yana bayyana wannan a sarari.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da 'ceto' yana sake tsara kalmar a matsayin ceto — wanda shine ma'anarta ta fili kuma galibi tana da sauƙin isa fiye da tsarin addinin da ake ji ta cikinshi.</p>",
-    "keyPoints2": "<p>Ɗoo noon ko ɗo habaru lobbo fuɗtii. Esde ngee ina tabitina wonde jaabawol Alla e dow hakke wonaa doomi kono ko kisal — e kisal ngal warii e nder naawre mawnde nde alaa nde foti. Muuɗum teologiya ko <b>fansaare takkiinde</b>: Iisaa ɗaɓɓaade hokkuure hakke amen e nder fawre am en (2 Korintiyankoobe 5:21; Galatiyankoobe 3:13; 1 Bitrus 2:24).</p>\n<p>Maatiyuus 27:46 — wulaango deenirde — ina foti kulde e himminde. Wonaa wulaango felooji kono ko gollal teologiya: Ɓii ɗaɓɓii doomi Baaba e dow hakke. Saɗo laawol gadar caggal aayeeje fansaare ina hollira ɗum e laaɓal.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow 'kisal' ina waɗtana konngol ngol ko ngam kisɗinde — ko maana makko laaɓtunde e ko ɓuri heɓtineede ɓuri e tiitoonde diine ɗo keɓetee e mum.</p>",
-    "keyPoints3": "<p>This is where the good news begins. The chapter establishes that God's response to sin is not condemnation but rescue — and that rescue came at the highest possible cost. The key theological concept is <b>substitutionary atonement</b>: Jesus taking the penalty for our sin in our place (2 Corinthians 5:21; Galatians 3:13; 1 Peter 2:24).</p>\n<p>Matthew 27:46 — the cry of dereliction — deserves careful attention. It is not a cry of despair but a theological event: the Son bearing the Father's judgement on sin. The bridge paragraph after the atonement verses makes this explicit.</p>\n<p>The Common Misunderstanding callout on 'salvation' reframes the word as rescue — which is its plain meaning and often much more accessible than the religious register in which it is usually heard.</p>",
-    "pastorals1": "<p>Sashe game da waɗanda ba su yi imani ba (Yahaya 3:18; 2 Tessaloniyawa 1:5–10) mai yiwuwa zai zama mafi wahala ga ƙungiyar ta motsin rai. Kada a tsallake shi ko yi gaggawar wuceta. Tambayar — 'Yaya wannan take zaune da kai?' — tana buɗe ƙarshe da gangan. Ka bar mutane su zama masu gaskiya.</p>\n<p>Wasu na iya samun ra'ayin fansarwar ta maye gurbin abin damuwa ta ɗabi'a ('Yaya zai iya zama daidai mutum ɗaya ya ɗauki hukuncin wani?'). Wannan ya cancanci magancewa: amsar tana cikin gaskiyar cewa Allah kansa, a cikin mutum ɗansa, yana ɗauke hukuncin — ba wata ɓangare ta uku ta bazuwar ba.</p>",
-    "pastorals2": "<p>Taƴre e dow ɓe ngoonɗinaaki (Yuhanna 3:18; 2 Tessaloniyankoobe 1:5–10) waawa laataago tiiɗtunde e nder fedde ndee e dow miijo. Hoto ƴakku maa yaawa. Ɗemngal ndiyam — 'Hol no ɗum fewjii e ma?' — dirtinaa ngam udditde e goonga. Hokku yimɓe laawol ngam gooɗde.</p>\n<p>Woɓɓe waawan yiyde miijo fansaare takkiinde ko bonnande e deeɗal ('Hol no waawi laataago deeɗal e nder gooto ɗaɓɓa hokkuure goɗɗo?'). Ɗum ina foti jaabude: jaabawol ina e nder goonga wonde ko Alla Hoore Makko, e nder neɗɗo Ɓiyiiko, mo ɗaɓɓii hokkuure ndee — walaa ɓangere tataɓo ngenndiire.</p>",
-    "pastorals3": "<p>The section on those who do not believe (John 3:18; 2 Thessalonians 1:5–10) will likely be the most difficult for the group emotionally. Don't skip it or rush it. The question — 'How does this sit with you?' — is intentionally open-ended. Let people be honest.</p>\n<p>Some may find the idea of substitutionary atonement morally troubling ('How can it be just for one person to take another's punishment?'). This is worth addressing: the answer lies in the fact that it is God Himself, in the person of His Son, who bears the penalty — not an arbitrary third party.</p>",
-    "watch1": "👁️ Ku lura da mutanen da ke ji 'Yesu ya mutu dominmu' a matsayin jumla da suka saba da ita ba tare da taɓa tsayawa don tunani a kai ba. An tsara wannan babi don sa su tsaya su yi tunani game da daidai abin da hakan ke nufi.",
-    "watch2": "👁️ Yeewtu yimɓe keɓɓoɓe 'Iisaa maayii ngam men' ko haala ɗaɓɓiinde ɗe meeɗaa dartaade miijorde e dow. Ɗoo esde dirtinaa ngam dartinde ɓe ngam miijorde e himminde ko tigi rigi ɗum hollirta.",
-    "watch3": "👁️ Watch for people who hear 'Jesus died for us' as a familiar phrase they have never really stopped to think about. This chapter is designed to make them stop and think about exactly what that means.",
-    "format": "HTML"
-  },
-  {
-    "chapterNumber": 7,
-    "keyPoints1": "<p>Tashin matattu ba ƙarin abu ne na zaɓi ga bangaskiyar Kirista ba — Bulus yana bayyana wannan a fili a 1 Korintiyawa 15:14–19. Wannan babi yana rufe <b>shaidar</b> tashin matattu (kabarin da ya wofi, bayyanarsa bayan tashin matattu, fiye da shaidu 500), <b>muhimmancinsa</b> (mutuwa ta sha kashi, tashin matattu na gaba an tabbatar da shi), da kuma <b>sakamakon da ke ci gaba</b> (Yesu yana mulki, yana fafutuka, kuma zai dawo).</p>\n<p>Sakin layi na gadar game da hidimar Yesu ta yanzu ('Shi ne babban Firist ɗinmu, kuma ba ya tsayawa') yana magance hasashe na kowa: cewa Yesu ya kammala aikinsa a gicciye da hawan sama. Ibraniyawa 7:25 yana gyara wannan — ceton sa yana ci gaba kuma yana nan.</p>\n<p>Yahaya 14:2–3 yana rufe babi a kan alkawarin da ke duba gaba na dawōwar Almasihu da gidan har abada na mai imani tare da Shi. Kada a rasa wannan a cikin kayan apolegetik a farkon babi.</p>",
-    "keyPoints2": "<p>Nguyka wonaa huunde ɓurtaande ngam goonɗinal Kiristeeɓe — Bulus ina hollira ɗum e laaɓal e 1 Korintiyankoobe 15:14–19. Ɗoo esde ina waɗde <b>hujja</b> nguyka (kabaru folluɗo, hollital caggal nguyka, ceeɗooɓe ɓuri 500), <b>naawre</b> makko (maayde nattii, nguyka taccungal garantiima), e <b>gollal makko jokkangal</b> (Iisaa ina laamu, ina fafude, e ina wara).</p>\n<p>Saɗo laawol gadar e dow gollal Iisaa jooni ('Kanko ko Karamoko Mawngo amen, maa dartaa') ina waɗtana miijo ngam ɓuri yiyde: wonde Iisaa timmiti gollal makko e ladde e waltaade. Ibraniiyankooɓe 7:25 ina fewtina ɗum — fafugol makko ina jokki e ina woodi jooni.</p>\n<p>Yuhanna 14:2–3 ina uddita esde ngee e alkawali yiiɗoowo yeeso waltaade Almasiihu e galle duumaagu jom-goonɗiniiɗo e Makko. Hoto yoofu ɗum e nder kayan apologetik e fuɗtorde esde ngee.</p>",
-    "keyPoints3": "<p>The resurrection is not an optional extra to the Christian faith — Paul makes this explicit in 1 Corinthians 15:14–19. This chapter covers the <b>evidence</b> for the resurrection (empty tomb, post-resurrection appearances, over 500 witnesses), its <b>significance</b> (death defeated, future resurrection guaranteed), and its <b>continuing implications</b> (Jesus reigning, interceding, and returning).</p>\n<p>The bridge paragraph on Jesus' present ministry ('He is our great High Priest, and He never stops') addresses a common assumption: that Jesus finished his work at the cross and ascension. Hebrews 7:25 corrects this — His intercession is continuous and present.</p>\n<p>John 14:2–3 closes the chapter on the forward-looking promise of Christ's return and the believer's eternal home with Him. Don't lose this in the apologetic material earlier in the chapter.</p>",
-    "pastorals1": "<p>Tashin matattu shine inda mutane da yawa ke ji da'awar Kirista ta zama mafi wahala a karɓa. Ka yarda da wannan da gaskiya. Babi baya ƙoƙarin tabbatar da tashin matattu ta falsafa amma don gabatar da shaidar tarihi da Sabon Alkawari ke bayarwa kuma ya tambayi abin da ya fi bayyana shi.</p>\n<p>Tambayar tunani — 'Wane aya ne ke ba ka mafi girman ta'aziyya ko ƙarfi?' — hanya ce mai kyau don rufe. Tana motsi daga tsarin apolegetik na babi zuwa ga wani abu na sirri kuma na ibada.</p>",
-    "pastorals2": "<p>Nguyka ko ɗo yimɓe ɓuri yiyde wonde gollal Kiristeeɓe ɓuri tiiɗde ngam jaɓude. Jaabir ɗum e goonga. Esde ngee ina ekkina tabbita nguyka e falasafi kono ngam hollirde hujja tariindi Kabaaru Kesiri ina waɗa e tammbinde ko ɓuri hollirde ɗum.</p>\n<p>Ɗemngal ndiyam — 'Aaye hoɗɗo hokkata maa ɓalɗe semmbinaare maa baawɗe?' — ko laawol moƴƴo ngam udditde. Ina yiɗtaade e tiitoonde apologetiki esde ngee feewde e huunde ɓurnde yiyngel e waajugo.</p>",
-    "pastorals3": "<p>The resurrection is the point at which many people feel the Christian claim becomes hardest to accept. Acknowledge this honestly. The chapter does not try to prove the resurrection philosophically but to present the historical evidence the New Testament offers and ask what best explains it.</p>\n<p>The reflection question — 'Which verse gives you the greatest comfort or strength?' — is a good way to close. It moves from the apologetic register of the chapter into something more personal and devotional.</p>",
-    "watch1": "👁️ Ku lura da mutanen da ke ɗaukar tashin matattu a matsayin misali (Yesu 'yana ci gaba da rayuwa' a cikin ƙwaƙwalwa ko tasiri). Sassan wannan babi — musamman Luuka 24:36–43 da 1 Korintiyawa 15:5–8 — suna nuna taron jiki, na gaske, na tarihi.",
-    "watch2": "👁️ Yeewtu yimɓe naɗɗoɓe nguyka ko misaali (Iisaa 'ina nguura' e nder hakkillo maa laamu). Cuɗoli ɗoo esde — tiiɗɗo e Luukas 24:36–43 e 1 Korintiyankoobe 15:5–8 — ina tabitina gollal e nder jaaɓnde, e nder jinde, e nder tariika.",
-    "watch3": "👁️ Watch for people who treat the resurrection as a metaphor (Jesus 'lives on' in memory or influence). The passages in this chapter — particularly Luke 24:36–43 and 1 Corinthians 15:5–8 — are insisting on a physical, bodily, historical event.",
-    "format": "HTML"
-  },
-  {
-    "chapterNumber": 8,
-    "keyPoints1": "<p>Wannan babi na ƙarshe yana tambayar tambayar da dukan nazarin ya kasance yana gina zuwa ga: <b>yaya muke amsa?</b> Amsoshin guda biyu da Littafi Mai Tsarki ke kira musu sune tuba da imani — kuma babi yana kulawa riƙe su tare a matsayin gefen biyu na juya ɗaya, ba matakai biyu daban-daban ba.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da 'alheri' yana da matuƙar muhimmanci a nan. Ceto kyautar Allah ce gaba ɗaya (Afisawa 2:8–9) — ba lada don ƙoƙari, kyakkyawa, ko aikin addini ba. Wannan dole ne ya zama a sarari kafin kiran tuba ya ji daidai, ko kuma tuba kanta ta zama aiki da muke yi don samun alherinAllah.</p>\n<p>Sashe na rufe game da rayuwa mai sauyi (Romawa 6:15, 18) yana bayyana a sarari cewa alheri ba lasisin ci gaba da zunubi ba ne. Waɗanda aka 'yantar da su daga zunubi sun zama bayin adalci. Rayuwar Kirista ba taron da ya tsaya a wuri ba ne amma sake tsarawa mai ci gaba.</p>",
-    "keyPoints2": "<p>Ɗoo esde sakkitiinde ina tammbinde ɗemngal ndiyam ngam jokkondiral nguu fof gollii ngam fewnde e mum: <b>hol no en njaabirii?</b> Jaabaaji ɗiɗi Binndi Ɗii ina naamndoo ko tawbee e goonɗinal — e esde ngee ina kulde reende ɓe fawtuɗe e gal ɓiɓɓe ɗiɗi waɗtirde gooto, walaa laabi ɗiɗi goɗɗi.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow 'nimre' ko laaɓal heen. Kisal ko koorka Alla tan (Efesiyankoobe 2:8–9) — walaa hokkuure ngam gollal, moƴƴere, maa gollal diine. Ɗum foti laaɓde ɓaawo tawbee keɓetee e nder goonga, maa tawbee hoore makko laata gollal am en ngam heɓde nimre Alla.</p>\n<p>Taƴre udditorɗe e dow nguurndam waylanooɗo (Roomankooɓe 6:15, 18) ina hollira e laaɓal wonde nimre wonaa liisaas ngam jokkeede e nder hakke. Ɓe nattii e hakke laatii jiyaaɓe deeɗal. Nguurndam Kirista wonaa gollal dartiiɗo kono ko waɗtugo jokkangal.</p>",
-    "keyPoints3": "<p>This final chapter asks the question the whole study has been building toward: <b>how do we respond?</b> The two responses the Bible calls for are repentance and faith — and the chapter is careful to hold them together as two sides of the same turning, not two separate steps.</p>\n<p>The Common Misunderstanding callout on 'grace' is crucial here. Salvation is entirely God's gift (Ephesians 2:8–9) — not a reward for effort, goodness, or religious activity. This must be clear before the call to repentance is heard correctly, or repentance itself becomes a work we perform to earn God's favour.</p>\n<p>The closing section on changed living (Romans 6:15, 18) makes clear that grace is not a licence to continue in sin. Those who have been freed from sin have become servants of righteousness. The Christian life is not a static event but an ongoing reorientation.</p>",
-    "pastorals1": "<p>Wannan shine babi da ya fi yiwuwar haifar da amsa ta sirri. Ka yi hankali ga mutanen da suke shirye don yin alkawari amma ba su san yadda za su yi hakan ba, ko waɗanda ke ji suna da abu da yawa don bayarwa. Ka shirya don yin magana da mutane kai tsaye bayan taron ƙungiyar.</p>\n<p>Bambancin tsakanin tuba a matsayin canjin cikin na gaske (ba kawai nadama ko gyara ba) da kuma imani a matsayin amincewar aiki (ba kawai yarda ta hankali ba) yana da muhimmanci kuma ya cancanci fitar da shi da kyau. Dukkansu na iya zama na karya, kuma dukkansu na iya fahimtarwa ba daidai ba.</p>",
-    "pastorals2": "<p>Ɗoo ko esde ɗo ɓuri laataago jaabawal e nder yiyngel. Yiiloo yimɓe mooliiɓe ngam waɗde alkawari kono ɓe mbii hol no waɗirtee, maa ɓe yiyde ɓe njogii ko ɓuri keewnde ngam hokkeede. Hoolno ngam haaldude e yimɓe e nder yiyngel mum en caggal jokkondiral jam'iyya.</p>\n<p>Faranditaare takkunde takkunde tawbee ko gollal sinnde goonga e nder yiyngel (walaa ko pooɗaari tan maa waylaare) e goonɗinal ko goonɗinal gollangal (walaa ko yettinaare e nder hakkillo tan) ko laaɓal e ina foti udditeede e himminde. Ko ɗiɗo waawi laataago cuuɗii, e ko ɗiɗo waawi famɗaago e nder cuɗordi bondi.</p>",
-    "pastorals3": "<p>This is the chapter most likely to prompt a personal response. Be alert to people who are ready to make a commitment but don't know how to do it, or who feel they have too much to give up. Be ready to talk personally with individuals after the group session.</p>\n<p>The distinction between repentance as genuine inward change (not just regret or reform) and faith as active trust (not just intellectual assent) is important and worth drawing out carefully. Both can be counterfeited, and both can be misunderstood.</p>",
-    "watch1": "👁️ Ku lura da mutanen da ke ji kiran tuba kuma suka yanke shawara dole ne su tsarkake rayuwarsu kafin su zo ga Allah. Tsarin cikin bishara ya bambanta: zo kamar yadda kake, kuma Allah zai fara canzawa daga nan.",
-    "watch2": "👁️ Yeewtu yimɓe keɓɓoɓe wulaango tawbee e nder miijo ngam nattinde wonde ɓe foti feewnanaade nguurndam mum en ɓaawo waraade e Alla. Laawol e nder habaru lobbo ko ɓurtata: wara no njiɗaa, maa Alla fuɗtana waylaango e ɗon.",
-    "watch3": "👁️ Watch for people who hear the call to repentance and conclude that they must clean up their life before they can come to God. The order in the gospel is the opposite: come as you are, and God will begin the transformation from there.",
-    "format": "HTML"
-  }
+      {
+        "chapterNumber":2,
+        "keyPoints1"   :"<p>Wannan babi yana gabatar da da’awa guda biyu masu muhimmanci kuma masu haɗin kai game da Yesu: cewa Shi <b>ɗan adam ne na gaske</b> kuma <b>Allah ne na gaske</b>. Dukkansu suna da muhimmanci. Ɗan adamtarsa na nufin yana fahimtar ƙwarewarmu da gaske. Allantarsa na nufin mutuwarsa tana da nauyi mara iyaka kuma kalmominsa suna ɗauke da iko na ƙarshe.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da ’Ɗan Allah’ yana magance rikicewar da ta yadu sosai: cewa taken yana nufin Yesu ya yi ƙasa da Allah ta wata hanya. Ka tabbatar ƙungiyar ta fahimci cewa a mahallin Littafi Mai Tsarki yana nufin akasin haka.</p>\n<p>Ibraniyawa 4:15 — cewa an gwada Yesu ta kowace hanya, amma ba tare da zunubi ba — hujja ce ta ɗan adamtarsa kuma tushen ta’aziyya. Kada a yi gaggawar wuceta.</p>",
+        "keyPoints2"   :"<p>Ɗoo esde ina waɗde gollondiral ɗiɗi gasɗi e jokkondirɗi e dow Iisaa: wonde Kanko ko <b>neɗɗo goonga</b> e <b>Alla goonga</b>. Ko ɗiɗo ɓuri. Neɗɗaagu makko ina hollira nde Kanko famɗii tigi rigi golle am en. Allaagu makko ina hollira wonde miijoore makko ina jogi naawre alaa ɗo haaɗi e konguɗi makko ina njogii baawɗe laaɓtude.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow ’Ɓii Allah’ ina waɗtana rikki mawngo njiiɗtaangol: wonde innde ndee ina hollira Iisaa waɗii les Alla e nder goonga. Hoolno fedde ndee famɗii wonde e nder maana makko e Binndi Ɗii ko ɗum ɓurtata.</p>\n<p>Ibraniiyankooɓe 4:15 — wonde Iisaa neldaama e nder kala laawol, kono walaa hakke — ko hujja neɗɗaagu makko e ɓalndu semmbiɗingal. Hoto yaawa ƴakkugo ɗum.</p>",
+        "keyPoints3"   :"<p>This chapter makes two essential and complementary claims about Jesus: that He is <b>truly human</b> and <b>truly God</b>. Both matter. His humanity means He genuinely understands our experience. His deity means His death has infinite weight and His words carry ultimate authority.</p>\n<p>The Common Misunderstanding callout on ’Son of God’ addresses a very widespread confusion: that the title implies Jesus is somehow less than God. Ensure the group understands that in its Biblical context it means the opposite.</p>\n<p>Hebrews 4:15 — that Jesus was tempted in every way, yet without sin — is both a proof of His humanity and a source of comfort. It should not be rushed past.</p>",
+        "pastorals1"   :"<p>Wasu a cikin ƙungiyar na iya samun abokai ko dangi na addinai dabam-dabam waɗanda suke girmama Yesu a matsayin annabi ko malami amma suke ƙin allantarsa. Kayan wannan babi yana ba su wani abu don tunani a hankali, ba a matsayin harsashin gardama ba, amma a matsayin gayyata don duba shaidar da kyau.</p>\n<p>Sassan mu’ujizai (kwantar da guguwa, taya Lazaru) na iya haifar da tambayoyi game da ko mu’ujizai suna da gaskiya. Ka amsa tambayar da gaskiya: babi baya ƙoƙarin tabbatar da mu’ujizai ta falsafa, amma don nuna abin da shaidu suka rubuta da kuma abin da hakan ke nuna game da wanda Yesu yake.</p>",
+        "pastorals2"   :"<p>Woɓɓe e nder fedde ndee waawan jogaade tawariɓɓe walla familiiji diine goɗɗi ɓe njiɗɗi Iisaa ko annabi maa karamoko kono ɓe mbiyi allaagu makko wonaa goonga. Kayan ɗoo esde ina hokka ɓe huunde ngam miijorde e himminde, walaa ko mbottiiji peŋaaji, kono ko binndiwal ngam yiyde hujja ndee e himminde.</p>\n<p>Cuɗoli karamokooɓe (haɓɓude henndu, umoraade Laazaaru) waawan neldude ɗemɗe ndiyam e dow ko karamokooɓe ina paamaa. Jaabir naamnal ngal e goonga: esde ngee walaa ngam tabbita karamokooɓe e falasafi, kono ngam hollirde ko ceeɗooɓe winndii e ko ɗum hollirta e dow hol Iisaa woni.</p>",
+        "pastorals3"   :"<p>Some in the group may have friends or family of other faiths who honour Jesus as a prophet or teacher but reject His divinity. The material in this chapter gives them something to think through carefully, not as ammunition for arguments, but as an invitation to look at the evidence more closely.</p>\n<p>The miracle passages (calming the storm, raising Lazarus) can prompt questions about whether miracles are credible. Acknowledge the question honestly: the chapter is not trying to prove miracles philosophically, but to show what the eyewitnesses recorded and what that implies about who Jesus is.</p>",
+        "watch1"       :"👁️ Ku lura da mutanen da suke jin daɗin Yesu a matsayin misalin ɗabi’a ko malamin ruhaniya, amma suna ƙin da’awar cewa Shi Allah ne. An tsara wannan babi don matsa wannan tambayar a hankali amma a fili.",
+        "watch2"       :"👁️ Yeewtu yimɓe mooliiɓe e Iisaa ko misaal deeɗal walla karamoko ruuhaani, kono ɓe mbiyi allaagu makko wonaa goonga. Ɗoo esde dirtinaa ngam tammbinde ɗemngal ngal e himminde kono e laaɓal.",
+        "watch3"       :"👁️ Watch for people who are comfortable with Jesus as a moral example or spiritual teacher, but resist the claim that He is God. This chapter is designed to press that question gently but clearly.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":3,
+        "keyPoints1"   :"<p>Ruhu Mai Tsarki galibi shine mutum mafi ƙarancin fahimta na Triniti. Wannan babi yana kafa abubuwa uku: (1) Ruhu shi ne <b>mutum</b>, ba ƙarfi ko ji ba; (2) ana ba shi ga <b>kowane</b> mai imani, ba wasu kawai ba; kuma (3) manufarsa ta ƙarshe ita ce <b>ɗaukaka Almasihu</b> (Yahaya 16:14).</p>\n<p>Bambancin tsakanin <b>kyaututtuka</b> (1 Korintiyawa 12) da <b>’ya’yan itace</b> (Galatiyawa 5) ya cancanci ɓata lokaci a kai. Ana rarraba kyaututtuka ta hanyar Ruhu don amfanin wasu; ’ya’yan itace sune halin da Ruhu ke haifar da shi a hankali a cikin kowane mai imani.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da ’Triniti’ yana magance ɗaya daga cikin mafi yawan tushen rikici a tauhidin Kirista. Ka shirya don wannan ya buɗe tambayoyi mafi faɗi.</p>",
+        "keyPoints2"   :"<p>Ruuhu Ceniiɗo ko famɗaama ɓuri e nder neɗɗo Triniti. Ɗoo esde ina tabitina tati: (1) Ruuhu ko <b>neɗɗo</b>, walaa baawɗe maa miijo; (2) neldaa e <b>kala</b> jom-goonɗiniiɗo, walaa woɓɓe tan; e (3) muuɗum sakkitiingel ko <b>jalninaade Almasiihu</b> (Yuhanna 16:14).</p>\n<p>Faranditaare takkunde takkunde <b>dokkaaje</b> (1 Korintiyankoobe 12) e <b>ɓiɓɓe</b> (Galatiyankoobe 5) ina foti waɗde heen sahaa. Dokkaaje diwiraa e baawɗe Ruuhu ngam naforde wiyɓe; ɓiɓɓe ko sifaa dirtinaaɗo e sahaa nder kala jom-goonɗiniiɗo e gollaaji Ruuhu.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow ’Triniti’ ina waɗtana kala ɓuri ɗemɗe rikki e teologiya Kiristeeɓe. Hoolno ngam ɗum udditde ɗemɗe ndiyam mawɗe ɓuri.</p>",
+        "keyPoints3"   :"<p>The Holy Spirit is often the least understood person of the Trinity. This chapter establishes three things: (1) the Spirit is a <b>person</b>, not a force or feeling; (2) He is given to <b>every</b> believer, not just some; and (3) His ultimate purpose is to <b>glorify Christ</b> (John 16:14).</p>\n<p>The distinction between <b>gifts</b> (1 Corinthians 12) and <b>fruit</b> (Galatians 5) is worth dwelling on. Gifts are distributed sovereignly by the Spirit for the benefit of others; fruit is the character produced over time in every believer by the Spirit’s work.</p>\n<p>The Common Misunderstanding callout on ’the Trinity’ addresses one of the most common sources of confusion in Christian theology. Be prepared for this to open wider questions.</p>",
+        "pastorals1"   :"<p>Mutane daban-daban a cikin ƙungiyar na iya zuwa da ƙwarewar daban-daban sosai game da Ruhu: wasu na iya samun ƙwarewar karismatik da suke da shakka a kai; wasu na iya zama masu shakka game da komai na ƙwarewa. Babi yana ƙoƙarin riƙe ƙasa da kyau — yana tabbatar da ainihin aikin Ruhu na yanzu, ba tare da tsara yadda dole ne ya kama ko ya ji ba.</p>\n<p>Tambayar tunani game da kyaututtukan ruhaniya na iya zama mai amfani musamman a cikin ƙungiya. Mutane galibi suna gano kyaututtuka da ba su ambata su ba, ko suna karɓar ƙarfafawa daga wasu da ke ganin kyaututtuka a cikinsu da suke kasa ganin a cikin kansu.</p>",
+        "pastorals2"   :"<p>Yimɓe goɗɗi e nder fedde ndee waawan waarde e nder suuɗe goɗɗe tiiɗɗe e dow Ruuhu: woɓɓe waawan jogaade golle karismatiki ɗe ɓe ngalaa e mum en; woɓɓe waawan sikkitaade e kala ko ƙaawɗo. Esde ngee ina ekkina reende leydi e himminde — tabitinde gollal Ruuhu goonga e jooni, walaa ngam dartinde no feewnde maa miijoree.</p>\n<p>Ɗemngal ndiyam e dow dokkaaje ruuhaani waawa ɓuri rawnude e nder fedde. Yimɓe keɓoo dokkaaje ɗe ɓe mbinndaali, maa semmbinaama e wiyɓe ɓe njiyata dokkaaje e maɓɓe ɗe ɓe ngalaa e mum en.</p>",
+        "pastorals3"   :"<p>Different people in the group may come from very different backgrounds when it comes to the Spirit: some may have had charismatic experiences they are unsure about; others may be sceptical of anything experiential. The chapter tries to hold the ground carefully — affirming the Spirit’s genuine and present work, without prescribing what that must look or feel like.</p>\n<p>The reflection question about spiritual gifts can be particularly fruitful in a group setting. People often discover gifts they hadn’t named, or are encouraged by others who can see gifts in them that they can’t see in themselves.</p>",
+        "watch1"       :"👁️ Ku lura da mutanen da ke daidaita aikin Ruhu gaba ɗaya da bayyanar da ake iya gani mai ban mamaki, ko akasin haka waɗanda suke da hankali sosai har suke watsi da Shi gaba ɗaya. Babi yana nufin riƙe tsakiyar Littafi Mai Tsarki.",
+        "watch2"       :"👁️ Yeewtu yimɓe naɗɗoɓe gollaaji Ruuhu fof e hollital mawngo yiyeteengo, maa e ɓe ɓuri himmude haa ɓe mbiyi walaa ko Kanko waɗi. Esde ngee ina ekkina reende takkunde Binndi Ɗii.",
+        "watch3"       :"👁️ Watch for people who equate the Spirit’s work entirely with dramatic visible manifestations, or conversely those who are so cautious that they effectively discount Him altogether. The chapter aims to hold a Biblical centre.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":4,
+        "keyPoints1"   :"<p>Wannan babi yana rufe labarin halitta na Littafi Mai Tsarki: wanda ya shiga (dukkan mutane uku na Triniti), abin da aka yi, yadda aka yi (ta maganar Allah kaɗai), da kuma dalilin — don ɗaukakar Allah, da kuma dangantaka da Shi.</p>\n<p>Musamman darajar mutane da aka yi <b>cikin surar Allah</b> (Farawa 1:27) tana da matuƙar muhimmanci. Tana bambanta mu daga sauran halitta kuma tana kafa duka ƙimarmu da nauyin alhakinmu. Sassan kula guda biyu (Farawa 1:26; 2:15) suna nuna kula da halitta a matsayin damuwar tauhidi ta gaske, ba ƙarin na duniya ba.</p>\n<p>Gargaɗin karanta Farawa 1 yana ba ƙungiyar dama don karanta cikakken labarin halitta tare — ya cancanci ƙarfafawa ko da lokaci ya yi ƙasa, domin tasirin tarayyar ’yana da kyau’ da aka maimaita da ’yana da kyau ƙwarai’ mai ɗaukakar yana ɗauke da nauyinsa.</p>",
+        "keyPoints2"   :"<p>Ɗoo esde ina waɗde kuutordi Binndi Ɗii e dow tagoore: hol gollii (neɗɗo tataɓo Triniti), ko tagoranoo, no tagoranaa (e konguɗi Alla tan), e no waɗi — ngam jalninaade Alla, e ngam jokkondirde e Makko.</p>\n<p>Moƴƴere keso yimɓe tagoranɗe <b>e nder natal Alla</b> (Faraawa 1:27) ko laaɓal. Ɗum fartinatnoo en e seyru hakkunde am en e tagoore ndee e nder ɗum ko damaaji am en e jaɓɓudi am en. Cuɗoli ɗiɗi doole (Faraawa 1:26; 2:15) ina hollira laamu tagoore ko damal teologiya goonga, walaa ko ɓurtaare duniyaaru.</p>\n<p>Gollal jaŋgude Faraawa 1 ina hokka fedde ndee laawol ngam jaŋgude kuutordi tagoore fof fof — ina foti semmbinaade ko sahaaji mbaaɗi, sabu gollal tarayyaaru ’ina moƴƴi’ e ’ina moƴƴi tigi rigi’ jalninaango ina jogi naawre mum.</p>",
+        "keyPoints3"   :"<p>This chapter covers the Biblical account of creation: who was involved (all three persons of the Trinity), what was made, how it was made (by God’s word alone), and why — for God’s glory, and for relationship with Him.</p>\n<p>The unique dignity of human beings made <b>in the image of God</b> (Genesis 1:27) is central. It distinguishes us from the rest of creation and grounds both our value and our responsibility. The two stewardship passages (Genesis 1:26; 2:15) point to creation care as a genuine theological concern, not a secular add-on.</p>\n<p>The Genesis 1 reading callout gives the group a chance to read the full creation account together — worth encouraging even if time is short, as the cumulative effect of the repeated ’it was good’ and the climactic ’very good’ carries its own weight.</p>",
+        "pastorals1"   :"<p>Wasu a cikin ƙungiyar na iya zama masu damuwa game da yadda za a danganta labarin Farawa da kimiyya ta zamani. Ba laifi ne a yarda cewa Kiristoci suna da ra’ayoyi daban-daban game da wannan, kuma nazarin baya ɗaukar matsayi game da hanyar ko lokacin halitta — kawai game da da’awar tauhidi da rubutu ke yi. Mayar da hankali kan waɗannan.</p>\n<p>Tambayar tunani — ‘Menene ma’ana a gare ka sanin an yi ka cikin surar Allah?’ — na iya zama mai motsa zuciya sosai ga mutanen da ba a taɓa gaya musu cewa rayuwarsu tana da daraja da mutunci na dabi’a ba.</p>",
+        "pastorals2"   :"<p>Woɓɓe e nder fedde ndee waawan worrude e dow no jokkondirta kuutordi Faraawa e kimiya jooni. Ina moƴƴi jaabude wonde Kiristeeɓe ina njogii miijo goɗɗi e dow ɗum, e wonde jokkondiral nguu ina waɗtaa e nder laawol tagoore maa sahaa makko — kono e dow ko binndol BI wi’i e nder teologiya tan. Tokkoo ɗum.</p>\n<p>Ɗemngal ndiyam — ‘Hol ko firi maa annde wonde a tagoraa e nder natal Alla?’ — waawa hollirde e himminde yimɓe ɗe mbinndaali cii wonde nguurndam mum en jogii naawre e moƴƴere gootum.</p>",
+        "pastorals3"   :"<p>Some in the group may be anxious about how to relate the Genesis account to modern science. It is fine to acknowledge that Christians hold a range of views on this, and that the study is not taking a position on the mechanism or timescale of creation — only on the theological claims the text makes. Focus on those.</p>\n<p>The reflection question — ‘What does it mean to you to know you are made in God’s image?’ — can be surprisingly moving for people who have rarely been told that their life has inherent worth and dignity.</p>",
+        "watch1"       :"👁️ Ku lura da hasashen cewa alherin halitta ƙaramin da’awa ne a fuskar wahala da rushewar. Babi baya yin watsi da hakan — daidai bambancin tsakanin abin da Allah ya yi da abin da zunubi ya yi a kai ita ce abin da babi na gaba ke bincika.",
+        "watch2"       :"👁️ Yeewtu miijo ngoo wonde moƴƴere tagoore ko aadi ndi alaa ko waɗata e yeeso musiibaaɓe e baasgol. Esde ngee walaa ngam yaafirnde ɗum — ko takkunde takkunde hakkunde ko Alla tagori e ko hakke waɗi e mum ko esde taccungal ndee ina yooɓa.",
+        "watch3"       :"👁️ Watch for the assumption that creation’s goodness is a naive claim in the face of suffering and brokenness. The chapter doesn’t ignore that — it’s precisely the contrast between what God made and what sin has done to it that the next chapter explores.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":5,
+        "keyPoints1"   :"<p>Wannan babi shine mahaɗin nazarin: motsi daga alherin halitta zuwa ga gaskiyar abin da ya yi kuskure. Yana rufe <b>asalin</b> zunubi (Farawa 2–3), <b>yanayin</b> sa (tawaye, ba kawai munin hali ba — Markus 7:14–23), <b>dunƙulewarsa</b> (Romawa 3:9–12, 23), da kuma <b>sakamakonsa</b> (Romawa 6:23).</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da ’zunubi’ yana ɗaya daga cikin mafi muhimmanci a cikin nazarin. Rage zunubi a yau zuwa ga jerin munanan ayyuka shine daidai abin da ke hana mutane ɗaukar da gaske cewa su kansu su ne masu zunubi. Ma’anar Littafi Mai Tsarki — kai a tsakiya maimakon Allah — yana buƙatar lokaci don sauka.</p>\n<p>Sakin layi na ƙarshe na gadar yana da gaskiya da gangan: hoton yana da ɓacin rai. Kada a taushi shi. Labari mai daɗi na babi masu zuwa yana da ƙarfi ne kawai idan wannan babi ya yi aikinsa.</p>",
+        "keyPoints2"   :"<p>Ɗoo esde ko dogingol jokkondiral nguu: yiɗtaade e moƴƴere tagoore feewde e goonga ko wayii. Ina waɗde <b>fuɗtorde</b> hakke (Faraawa 2–3), <b>yontaare</b> makko (firweendi, walaa ko yiɗaani tan — Markus 7:14–23), <b>dunkooru</b> makko (Roomankooɓe 3:9–12, 23), e <b>jawdi</b> makko (Roomankooɓe 6:23).</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow ’hakke’ ko ɗuuɗum ɓuri gollal jokkondiral nguu. Naawtugo hakke e jooni ngam listol golle bonɗe ko daidaari wonde yimɓe mbiya ɓe meeɗaa hakke. Maana Binndi Ɗii — hoore e laaɓal e nder maa ko Alla — ina haana sahaa ngam sella.</p>\n<p>Saɗo laawol maayirde ina goonɗii e goonga: natal ngol ina feṭɗo. Hoto weeɗna ɗum. Habaru lobbo ɗo ɗee biyol waaway tan sii ɗoo esde gollii gollaaji mum.</p>",
+        "keyPoints3"   :"<p>This chapter is the hinge of the study: moving from the goodness of creation to the reality of what has gone wrong. It covers the <b>origin</b> of sin (Genesis 2–3), its <b>nature</b> (rebellion, not just bad behaviour — Mark 7:14–23), its <b>universality</b> (Romans 3:9–12, 23), and its <b>consequences</b> (Romans 6:23).</p>\n<p>The Common Misunderstanding callout on ’sin’ is one of the most important in the study. The everyday reduction of sin to a list of very bad actions is exactly what prevents people from taking seriously that they themselves are sinners. The Biblical definition — self at the centre rather than God — needs time to land.</p>\n<p>The closing bridge paragraph is deliberately honest: the picture is bleak. Don’t soften it. The good news of the following chapters only has force if this chapter has done its work.</p>",
+        "pastorals1"   :"<p>Wannan galibi shine babi da mutane suka fi son yin hamayya da shi. Ka sa ran hakan. Da’awar cewa kowa ya yi zunubi ba tare da togaciya ba za ta ji ba daidai ko matsananci ga wasu. Ka ɗauki Romawa 3:9–12 da muhimmanci kuma ka bar rubutun ya yi magana — Bulus yana hasashen ƙin yarda kuma yana magance shi kai tsaye.</p>\n<p>Romawa 7:21–25 — bayyanar Bulus game da rikicin cikinsa — galibi yana da alaƙa ta sirri. Ka ba mutane sarari don tunani game da ko suna gane shi a cikin ƙwarewarsu.</p>",
+        "pastorals2"   :"<p>Ɗoo ko esde ɗo yimɓe ɓuri yiɗde takkude. Yiiloo ɗum. Gollal wonde kala gooto waɗii hakke e nder leydi ndii alaa togaande waawa hisde wonde bonande maa tiiɗde e woɓɓe. Ƴetta Roomankooɓe 3:9–12 e himminde maa njanngu binndol ngol — Bulus ina yiila ɗemngal ndiyam ngam jaabude tigi rigi.</p>\n<p>Roomankooɓe 7:21–25 — bayti Bulus e dow rikki e nder makko — ko ɓurɗo yiyde e nder yiyngel mum. Hokku yimɓe laawol ngam miijorde e dow ko ɓe njiyii e nder golle mum en.</p>",
+        "pastorals3"   :"<p>This is often the chapter where people most want to push back. Expect it. The claim that everyone has sinned without exception will feel unfair or extreme to some. Take Romans 3:9–12 seriously and let the text speak — Paul anticipates the objection and addresses it directly.</p>\n<p>Romans 7:21–25 — Paul’s description of his own internal conflict — is often personally resonant. Give people space to reflect on whether they recognise it in their own experience.</p>",
+        "watch1"       :"👁️ Ku lura da mutanen da ke ji babi a matsayin hari ga halinsu maimakon ganewar yanayin ɗan adam. Manufar ba ita ce suna da mugun ɗabi’a musamman ba, amma dukkanmu muna fuskantar matsalar ɗaya.",
+        "watch2"       :"👁️ Yeewtu yimɓe keɓɓoɓe esde ngee ko dogital e sifaa mum en e nder ko goneeki ganeta ɗum yontaare yimɓe. Muuɗum wonaa wonde ɓe ɓuri bonnude, kono ko en fof ina am en ko ɗuum torrirde.",
+        "watch3"       :"👁️ Watch for people who hear the chapter as an attack on their character rather than a diagnosis of the human condition. The point is not that they are especially bad, but that all of us face the same problem.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":6,
+        "keyPoints1"   :"<p>Anan ne labari mai daɗi ya fara. Babi yana kafa cewa amsar Allah ga zunubi ba la’anta ba ne amma ceto — kuma ceton ya zo da mafi girman farashi. Manufar tauhidi ta muhimmanci ita ce <b>fansarwa ta maye gurbin</b>: Yesu ɗaukar hukuncin zunubinmu a maimakonmu (2 Korintiyawa 5:21; Galatiyawa 3:13; 1 Bitrus 2:24).</p>\n<p>Matiyu 27:46 — kukan fitar da kai — ya cancanci kulawa da kyau. Ba kukan ɓacin rai ba ne amma taron tauhidi: Ɗan ɗauke hukuncin Uban game da zunubi. Sakin layi na gadar bayan ayoyin fansarwa yana bayyana wannan a sarari.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da ’ceto’ yana sake tsara kalmar a matsayin ceto — wanda shine ma’anarta ta fili kuma galibi tana da sauƙin isa fiye da tsarin addinin da ake ji ta cikinshi.</p>",
+        "keyPoints2"   :"<p>Ɗoo noon ko ɗo habaru lobbo fuɗtii. Esde ngee ina tabitina wonde jaabawol Alla e dow hakke wonaa doomi kono ko kisal — e kisal ngal warii e nder naawre mawnde nde alaa nde foti. Muuɗum teologiya ko <b>fansaare takkiinde</b>: Iisaa ɗaɓɓaade hokkuure hakke amen e nder fawre am en (2 Korintiyankoobe 5:21; Galatiyankoobe 3:13; 1 Bitrus 2:24).</p>\n<p>Maatiyuus 27:46 — wulaango deenirde — ina foti kulde e himminde. Wonaa wulaango felooji kono ko gollal teologiya: Ɓii ɗaɓɓii doomi Baaba e dow hakke. Saɗo laawol gadar caggal aayeeje fansaare ina hollira ɗum e laaɓal.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow ’kisal’ ina waɗtana konngol ngol ko ngam kisɗinde — ko maana makko laaɓtunde e ko ɓuri heɓtineede ɓuri e tiitoonde diine ɗo keɓetee e mum.</p>",
+        "keyPoints3"   :"<p>This is where the good news begins. The chapter establishes that God’s response to sin is not condemnation but rescue — and that rescue came at the highest possible cost. The key theological concept is <b>substitutionary atonement</b>: Jesus taking the penalty for our sin in our place (2 Corinthians 5:21; Galatians 3:13; 1 Peter 2:24).</p>\n<p>Matthew 27:46 — the cry of dereliction — deserves careful attention. It is not a cry of despair but a theological event: the Son bearing the Father’s judgement on sin. The bridge paragraph after the atonement verses makes this explicit.</p>\n<p>The Common Misunderstanding callout on ’salvation’ reframes the word as rescue — which is its plain meaning and often much more accessible than the religious register in which it is usually heard.</p>",
+        "pastorals1"   :"<p>Sashe game da waɗanda ba su yi imani ba (Yahaya 3:18; 2 Tessaloniyawa 1:5–10) mai yiwuwa zai zama mafi wahala ga ƙungiyar ta motsin rai. Kada a tsallake shi ko yi gaggawar wuceta. Tambayar — ‘Yaya wannan take zaune da kai?’ — tana buɗe ƙarshe da gangan. Ka bar mutane su zama masu gaskiya.</p>\n<p>Wasu na iya samun ra’ayin fansarwar ta maye gurbin abin damuwa ta ɗabi’a (‘Yaya zai iya zama daidai mutum ɗaya ya ɗauki hukuncin wani?’). Wannan ya cancanci magancewa: amsar tana cikin gaskiyar cewa Allah kansa, a cikin mutum ɗansa, yana ɗauke hukuncin — ba wata ɓangare ta uku ta bazuwar ba.</p>",
+        "pastorals2"   :"<p>Taƴre e dow ɓe ngoonɗinaaki (Yuhanna 3:18; 2 Tessaloniyankoobe 1:5–10) waawa laataago tiiɗtunde e nder fedde ndee e dow miijo. Hoto ƴakku maa yaawa. Ɗemngal ndiyam — ‘Hol no ɗum fewjii e ma?’ — dirtinaa ngam udditde e goonga. Hokku yimɓe laawol ngam gooɗde.</p>\n<p>Woɓɓe waawan yiyde miijo fansaare takkiinde ko bonnande e deeɗal (‘Hol no waawi laataago deeɗal e nder gooto ɗaɓɓa hokkuure goɗɗo?’). Ɗum ina foti jaabude: jaabawol ina e nder goonga wonde ko Alla Hoore Makko, e nder neɗɗo Ɓiyiiko, mo ɗaɓɓii hokkuure ndee — walaa ɓangere tataɓo ngenndiire.</p>",
+        "pastorals3"   :"<p>The section on those who do not believe (John 3:18; 2 Thessalonians 1:5–10) will likely be the most difficult for the group emotionally. Don’t skip it or rush it. The question — ‘How does this sit with you?’ — is intentionally open-ended. Let people be honest.</p>\n<p>Some may find the idea of substitutionary atonement morally troubling (‘How can it be just for one person to take another’s punishment?’). This is worth addressing: the answer lies in the fact that it is God Himself, in the person of His Son, who bears the penalty — not an arbitrary third party.</p>",
+        "watch1"       :"👁️ Ku lura da mutanen da ke ji ’Yesu ya mutu dominmu’ a matsayin jumla da suka saba da ita ba tare da taɓa tsayawa don tunani a kai ba. An tsara wannan babi don sa su tsaya su yi tunani game da daidai abin da hakan ke nufi.",
+        "watch2"       :"👁️ Yeewtu yimɓe keɓɓoɓe ’Iisaa maayii ngam men’ ko haala ɗaɓɓiinde ɗe meeɗaa dartaade miijorde e dow. Ɗoo esde dirtinaa ngam dartinde ɓe ngam miijorde e himminde ko tigi rigi ɗum hollirta.",
+        "watch3"       :"👁️ Watch for people who hear ’Jesus died for us’ as a familiar phrase they have never really stopped to think about. This chapter is designed to make them stop and think about exactly what that means.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":7,
+        "keyPoints1"   :"<p>Tashin matattu ba ƙarin abu ne na zaɓi ga bangaskiyar Kirista ba — Bulus yana bayyana wannan a fili a 1 Korintiyawa 15:14–19. Wannan babi yana rufe <b>shaidar</b> tashin matattu (kabarin da ya wofi, bayyanarsa bayan tashin matattu, fiye da shaidu 500), <b>muhimmancinsa</b> (mutuwa ta sha kashi, tashin matattu na gaba an tabbatar da shi), da kuma <b>sakamakon da ke ci gaba</b> (Yesu yana mulki, yana fafutuka, kuma zai dawo).</p>\n<p>Sakin layi na gadar game da hidimar Yesu ta yanzu (‘Shi ne babban Firist ɗinmu, kuma ba ya tsayawa’) yana magance hasashe na kowa: cewa Yesu ya kammala aikinsa a gicciye da hawan sama. Ibraniyawa 7:25 yana gyara wannan — ceton sa yana ci gaba kuma yana nan.</p>\n<p>Yahaya 14:2–3 yana rufe babi a kan alkawarin da ke duba gaba na dawōwar Almasihu da gidan har abada na mai imani tare da Shi. Kada a rasa wannan a cikin kayan apolegetik a farkon babi.</p>",
+        "keyPoints2"   :"<p>Nguyka wonaa huunde ɓurtaande ngam goonɗinal Kiristeeɓe — Bulus ina hollira ɗum e laaɓal e 1 Korintiyankoobe 15:14–19. Ɗoo esde ina waɗde <b>hujja</b> nguyka (kabaru folluɗo, hollital caggal nguyka, ceeɗooɓe ɓuri 500), <b>naawre</b> makko (maayde nattii, nguyka taccungal garantiima), e <b>gollal makko jokkangal</b> (Iisaa ina laamu, ina fafude, e ina wara).</p>\n<p>Saɗo laawol gadar e dow gollal Iisaa jooni (‘Kanko ko Karamoko Mawngo amen, maa dartaa’) ina waɗtana miijo ngam ɓuri yiyde: wonde Iisaa timmiti gollal makko e ladde e waltaade. Ibraniiyankooɓe 7:25 ina fewtina ɗum — fafugol makko ina jokki e ina woodi jooni.</p>\n<p>Yuhanna 14:2–3 ina uddita esde ngee e alkawali yiiɗoowo yeeso waltaade Almasiihu e galle duumaagu jom-goonɗiniiɗo e Makko. Hoto yoofu ɗum e nder kayan apologetik e fuɗtorde esde ngee.</p>",
+        "keyPoints3"   :"<p>The resurrection is not an optional extra to the Christian faith — Paul makes this explicit in 1 Corinthians 15:14–19. This chapter covers the <b>evidence</b> for the resurrection (empty tomb, post-resurrection appearances, over 500 witnesses), its <b>significance</b> (death defeated, future resurrection guaranteed), and its <b>continuing implications</b> (Jesus reigning, interceding, and returning).</p>\n<p>The bridge paragraph on Jesus’ present ministry (‘He is our great High Priest, and He never stops’) addresses a common assumption: that Jesus finished his work at the cross and ascension. Hebrews 7:25 corrects this — His intercession is continuous and present.</p>\n<p>John 14:2–3 closes the chapter on the forward-looking promise of Christ’s return and the believer’s eternal home with Him. Don’t lose this in the apologetic material earlier in the chapter.</p>",
+        "pastorals1"   :"<p>Tashin matattu shine inda mutane da yawa ke ji da’awar Kirista ta zama mafi wahala a karɓa. Ka yarda da wannan da gaskiya. Babi baya ƙoƙarin tabbatar da tashin matattu ta falsafa amma don gabatar da shaidar tarihi da Sabon Alkawari ke bayarwa kuma ya tambayi abin da ya fi bayyana shi.</p>\n<p>Tambayar tunani — ‘Wane aya ne ke ba ka mafi girman ta’aziyya ko ƙarfi?’ — hanya ce mai kyau don rufe. Tana motsi daga tsarin apolegetik na babi zuwa ga wani abu na sirri kuma na ibada.</p>",
+        "pastorals2"   :"<p>Nguyka ko ɗo yimɓe ɓuri yiyde wonde gollal Kiristeeɓe ɓuri tiiɗde ngam jaɓude. Jaabir ɗum e goonga. Esde ngee ina ekkina tabbita nguyka e falasafi kono ngam hollirde hujja tariindi Kabaaru Kesiri ina waɗa e tammbinde ko ɓuri hollirde ɗum.</p>\n<p>Ɗemngal ndiyam — ‘Aaye hoɗɗo hokkata maa ɓalɗe semmbinaare maa baawɗe?’ — ko laawol moƴƴo ngam udditde. Ina yiɗtaade e tiitoonde apologetiki esde ngee feewde e huunde ɓurnde yiyngel e waajugo.</p>",
+        "pastorals3"   :"<p>The resurrection is the point at which many people feel the Christian claim becomes hardest to accept. Acknowledge this honestly. The chapter does not try to prove the resurrection philosophically but to present the historical evidence the New Testament offers and ask what best explains it.</p>\n<p>The reflection question — ‘Which verse gives you the greatest comfort or strength?’ — is a good way to close. It moves from the apologetic register of the chapter into something more personal and devotional.</p>",
+        "watch1"       :"👁️ Ku lura da mutanen da ke ɗaukar tashin matattu a matsayin misali (Yesu ’yana ci gaba da rayuwa’ a cikin ƙwaƙwalwa ko tasiri). Sassan wannan babi — musamman Luuka 24:36–43 da 1 Korintiyawa 15:5–8 — suna nuna taron jiki, na gaske, na tarihi.",
+        "watch2"       :"👁️ Yeewtu yimɓe naɗɗoɓe nguyka ko misaali (Iisaa ’ina nguura’ e nder hakkillo maa laamu). Cuɗoli ɗoo esde — tiiɗɗo e Luukas 24:36–43 e 1 Korintiyankoobe 15:5–8 — ina tabitina gollal e nder jaaɓnde, e nder jinde, e nder tariika.",
+        "watch3"       :"👁️ Watch for people who treat the resurrection as a metaphor (Jesus ’lives on’ in memory or influence). The passages in this chapter — particularly Luke 24:36–43 and 1 Corinthians 15:5–8 — are insisting on a physical, bodily, historical event.",
+        "format"       :"HTML"
+      },
+      {
+        "chapterNumber":8,
+        "keyPoints1"   :"<p>Wannan babi na ƙarshe yana tambayar tambayar da dukan nazarin ya kasance yana gina zuwa ga: <b>yaya muke amsa?</b> Amsoshin guda biyu da Littafi Mai Tsarki ke kira musu sune tuba da imani — kuma babi yana kulawa riƙe su tare a matsayin gefen biyu na juya ɗaya, ba matakai biyu daban-daban ba.</p>\n<p>Gargaɗin Fahimtar Kuskure ta Kowa game da ’alheri’ yana da matuƙar muhimmanci a nan. Ceto kyautar Allah ce gaba ɗaya (Afisawa 2:8–9) — ba lada don ƙoƙari, kyakkyawa, ko aikin addini ba. Wannan dole ne ya zama a sarari kafin kiran tuba ya ji daidai, ko kuma tuba kanta ta zama aiki da muke yi don samun alherinAllah.</p>\n<p>Sashe na rufe game da rayuwa mai sauyi (Romawa 6:15, 18) yana bayyana a sarari cewa alheri ba lasisin ci gaba da zunubi ba ne. Waɗanda aka ’yantar da su daga zunubi sun zama bayin adalci. Rayuwar Kirista ba taron da ya tsaya a wuri ba ne amma sake tsarawa mai ci gaba.</p>",
+        "keyPoints2"   :"<p>Ɗoo esde sakkitiinde ina tammbinde ɗemngal ndiyam ngam jokkondiral nguu fof gollii ngam fewnde e mum: <b>hol no en njaabirii?</b> Jaabaaji ɗiɗi Binndi Ɗii ina naamndoo ko tawbee e goonɗinal — e esde ngee ina kulde reende ɓe fawtuɗe e gal ɓiɓɓe ɗiɗi waɗtirde gooto, walaa laabi ɗiɗi goɗɗi.</p>\n<p>Gollal Famɗaari Ɓurɗi Yiyde e dow ’nimre’ ko laaɓal heen. Kisal ko koorka Alla tan (Efesiyankoobe 2:8–9) — walaa hokkuure ngam gollal, moƴƴere, maa gollal diine. Ɗum foti laaɓde ɓaawo tawbee keɓetee e nder goonga, maa tawbee hoore makko laata gollal am en ngam heɓde nimre Alla.</p>\n<p>Taƴre udditorɗe e dow nguurndam waylanooɗo (Roomankooɓe 6:15, 18) ina hollira e laaɓal wonde nimre wonaa liisaas ngam jokkeede e nder hakke. Ɓe nattii e hakke laatii jiyaaɓe deeɗal. Nguurndam Kirista wonaa gollal dartiiɗo kono ko waɗtugo jokkangal.</p>",
+        "keyPoints3"   :"<p>This final chapter asks the question the whole study has been building toward: <b>how do we respond?</b> The two responses the Bible calls for are repentance and faith — and the chapter is careful to hold them together as two sides of the same turning, not two separate steps.</p>\n<p>The Common Misunderstanding callout on ’grace’ is crucial here. Salvation is entirely God’s gift (Ephesians 2:8–9) — not a reward for effort, goodness, or religious activity. This must be clear before the call to repentance is heard correctly, or repentance itself becomes a work we perform to earn God’s favour.</p>\n<p>The closing section on changed living (Romans 6:15, 18) makes clear that grace is not a licence to continue in sin. Those who have been freed from sin have become servants of righteousness. The Christian life is not a static event but an ongoing reorientation.</p>",
+        "pastorals1"   :"<p>Wannan shine babi da ya fi yiwuwar haifar da amsa ta sirri. Ka yi hankali ga mutanen da suke shirye don yin alkawari amma ba su san yadda za su yi hakan ba, ko waɗanda ke ji suna da abu da yawa don bayarwa. Ka shirya don yin magana da mutane kai tsaye bayan taron ƙungiyar.</p>\n<p>Bambancin tsakanin tuba a matsayin canjin cikin na gaske (ba kawai nadama ko gyara ba) da kuma imani a matsayin amincewar aiki (ba kawai yarda ta hankali ba) yana da muhimmanci kuma ya cancanci fitar da shi da kyau. Dukkansu na iya zama na karya, kuma dukkansu na iya fahimtarwa ba daidai ba.</p>",
+        "pastorals2"   :"<p>Ɗoo ko esde ɗo ɓuri laataago jaabawal e nder yiyngel. Yiiloo yimɓe mooliiɓe ngam waɗde alkawari kono ɓe mbii hol no waɗirtee, maa ɓe yiyde ɓe njogii ko ɓuri keewnde ngam hokkeede. Hoolno ngam haaldude e yimɓe e nder yiyngel mum en caggal jokkondiral jam’iyya.</p>\n<p>Faranditaare takkunde takkunde tawbee ko gollal sinnde goonga e nder yiyngel (walaa ko pooɗaari tan maa waylaare) e goonɗinal ko goonɗinal gollangal (walaa ko yettinaare e nder hakkillo tan) ko laaɓal e ina foti udditeede e himminde. Ko ɗiɗo waawi laataago cuuɗii, e ko ɗiɗo waawi famɗaago e nder cuɗordi bondi.</p>",
+        "pastorals3"   :"<p>This is the chapter most likely to prompt a personal response. Be alert to people who are ready to make a commitment but don’t know how to do it, or who feel they have too much to give up. Be ready to talk personally with individuals after the group session.</p>\n<p>The distinction between repentance as genuine inward change (not just regret or reform) and faith as active trust (not just intellectual assent) is important and worth drawing out carefully. Both can be counterfeited, and both can be misunderstood.</p>",
+        "watch1"       :"👁️ Ku lura da mutanen da ke ji kiran tuba kuma suka yanke shawara dole ne su tsarkake rayuwarsu kafin su zo ga Allah. Tsarin cikin bishara ya bambanta: zo kamar yadda kake, kuma Allah zai fara canzawa daga nan.",
+        "watch2"       :"👁️ Yeewtu yimɓe keɓɓoɓe wulaango tawbee e nder miijo ngam nattinde wonde ɓe foti feewnanaade nguurndam mum en ɓaawo waraade e Alla. Laawol e nder habaru lobbo ko ɓurtata: wara no njiɗaa, maa Alla fuɗtana waylaango e ɗon.",
+        "watch3"       :"👁️ Watch for people who hear the call to repentance and conclude that they must clean up their life before they can come to God. The order in the gospel is the opposite: come as you are, and God will begin the transformation from there.",
+        "format"       :"HTML"
+      }
     ],
     "format":"HTML"
   },

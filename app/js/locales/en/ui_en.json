@@ -653,7 +653,7 @@
   "validation_lv_stuck_no_hint"                         :"It looks like you might be stuck. Try starting with what the passage makes you think, feel, or wonder about — even if you're not sure of the full answer.",
   "validation_lv_too_short"                             :"That's a start — but can you say a little more? Even just a sentence or two will help you engage more deeply with the question.",
   "validation_lv_repeats_question"                      :"It looks like your answer might be repeating the question. Try putting the idea into your own words.",
-  "validation_lv_repeats_passage"                       :"It looks like your answer might be repeating the passage. Try to <i>answer the question</i> <b>from</b> the passage, in your own words.",
+  "validation_lv_repeats_passage"                       :"It looks like your answer might be repeating the passage. Try to answer the question from the passage, in your own words.",
   "validation_lv_off_topic_hint"                        :"Your answer might be going in a different direction from what the question is asking (or maybe you just have a unique and interesting way of expressing yourself).",
   "validation_lv_off_topic_no_hint"                     :"Your answer might be going in a different direction from what the question is asking (or maybe you just have a unique and interesting way of expressing yourself). Re-read the question carefully and double-check: What specific idea is it pointing you toward?",
   "validation_lv_pass_thematic"                         :"Looks good. Your answer engages with the question — keep going.",

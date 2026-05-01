@@ -20,15 +20,25 @@
     "language1"        :"ha",
     "language2"        :"ff",
     "language3"        :"en",
-    "bibleTranslation1":"HAU79",
-    "bibleTranslation2":"HCL",
-    "bibleTranslation3":"SRK",
-    "bibleTranslation4":"FUV",
-    "bibleTranslation5":"NET",
-    "createdAt"        :"2026-04-13T00:00:00Z",
-    "updatedAt"        :"2026-04-13T00:00:00Z",
-    "tags"             :["growth", "discipleship", "sanctification", "spiritual-formation"],
-    "shareMessage"     :"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation1":{
+      "ha":"HAU79"
+    },
+    "bibleTranslation2":{
+      "ha":"HCL"
+    },
+    "bibleTranslation3":{
+      "ha":"SRK"
+    },
+    "bibleTranslation4":{
+      "ff":"FUV"
+    },
+    "bibleTranslation5":{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-13T00:00:00Z",
+    "updatedAt"   :"2026-04-13T00:00:00Z",
+    "tags"        :["growth", "discipleship", "sanctification", "spiritual-formation"],
+    "shareMessage":"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Green study theme — muted sage and forest palette. Organic and grounded, evoking growth, new life, and the natural world. Suited to studies on renewal, creation, or spiritual formation. Restful rather than urgent.",

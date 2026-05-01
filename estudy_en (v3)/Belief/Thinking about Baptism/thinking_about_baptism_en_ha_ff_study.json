@@ -20,12 +20,12 @@
     "language1"        :"en",
     "language2"        :"ha",
     "language3"        :"ff",
-    "bibleTranslation1":"NIV",
-    "bibleTranslation2":"NET",
-    "bibleTranslation3":"HAU79",
-    "bibleTranslation4":"HCL",
-    "bibleTranslation5":"SRK",
-    "bibleTranslation6":"FUV",
+    "bibleTranslation1":{"en": "NIV"},
+    "bibleTranslation2":{"en": "NET"},
+    "bibleTranslation3":{"ha": "HAU79"},
+    "bibleTranslation4":{"ha": "HCL"},
+    "bibleTranslation5":{"ha": "SRK"},
+    "bibleTranslation6":{"ff": "FUV"},
     "createdAt"        :"2026-04-29T00:00:00Z",
     "updatedAt"        :"2026-04-29T00:00:00Z",
     "tags"             :["discipleship", "sacrament", "baptism"],
@@ -137,8 +137,11 @@
         {
           "elementId"         :"ch00-el07",
           "type"              :"question",
-          "subtype"           :"standard",
-          "format"            :"plainText",
+          "subtype": "header",
+          "format": "plainText",
+          "header1": "Pause for thought",
+          "header2": "",
+          "header3": "Tsayawa don Tunani",
           "question1"         :"Before you begin, take a moment to write down what you already think baptism is. Where has that idea come from — your upbringing, your church, something you’ve read or heard?",
           "question2"         :"",
           "question3"         :"",
@@ -152,8 +155,11 @@
         {
           "elementId"         :"ch00-el08",
           "type"              :"question",
-          "subtype"           :"standard",
-          "format"            :"plainText",
+          "subtype": "header",
+          "format": "plainText",
+          "header1": "Pause for thought",
+          "header2": "",
+          "header3": "Tsayawa don Tunani",
           "question1"         :"What is the main question you are hoping this study will answer? What would it mean for you to finish it with clarity?",
           "question2"         :"",
           "question3"         :"",
@@ -168,12 +174,7 @@
             "label3"            :"",
             "question1"         :"Is there anything that makes you hesitant or nervous about the idea of being baptised — a person whose reaction you are worried about, a question you are afraid to ask, or a doubt you have not voiced yet? It is worth naming it honestly at the start.",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -410,14 +411,11 @@
         {
           "elementId"         :"ch01-el06",
           "type"              :"question",
-          "subtype"           :"header",
           "format"            :"plainText",
-          "header1"           :"“Cut to the heart” (v37)",
-          "header2"           :"",
-          "header3"           :"",
           "question1"         :"Peter tells the crowd that God has made Jesus — the one they crucified — both Lord and Messiah. The people are described as being “cut to the heart.” What do you think that means? What is it about Peter’s message that produces that reaction?",
           "question2"         :"",
           "question3"         :"",
+          "linkedPassage": "Acts 2:36–41",
           "answerType"        :"freeText",
           "required"          :false,
           "answerPlaceholder1":"Your thoughts…",
@@ -429,12 +427,7 @@
             "label3"            :"",
             "question1"         :"Have you ever had a moment when something you heard or read about Jesus landed differently — not just as information, but as something that personally confronted or moved you? What was that like?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -509,12 +502,7 @@
             "label3"            :"",
             "question1"         :"Is there anything that makes you hesitate to say plainly that you have personally accepted the gospel message — the news that Jesus died for your sins and rose again? If so, what is it?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -573,12 +561,7 @@
             "label3"            :"",
             "question1"         :"John, in our opening story, described a moment when his faith moved from his head to somewhere deeper — from knowing about Jesus to actually trusting him. Has anything like that happened for you? If you are not sure, what would it mean for that to happen?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -868,12 +851,7 @@
             "label3"            :"",
             "question1"         :"Have you experienced a genuine sense of your own sin — not just as a general acknowledgment, but as a personal weight? How did you respond to it, and what difference has Jesus’ forgiveness made to you?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -933,12 +911,7 @@
             "label3"            :"",
             "question1"         :"Paul uses the phrase “united with him” (v5). What does it mean, in your own experience, to be united with Christ — not just to know about him, but to be joined to him in a living relationship? What difference does that union make day to day?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -976,12 +949,7 @@
             "label3"            :"",
             "question1"         :"Paul does not say that sin becomes impossible for a Christian — he says it should no longer be our <em>master</em> (v14). Is there an area of your life where sin still feels more like a master than a defeated enemy? What does this passage say to you about that?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -1099,12 +1067,7 @@
             "label3"            :"",
             "question1"         :"Romans 6:4 says we are raised “in order that… we too may live a new life.” The point of baptism is not just the moment in the water — it is the life that follows. What does living a new life look like for you, practically, in your home, your relationships, your work?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -1374,12 +1337,7 @@
             "label3"            :"",
             "question1"         :"In what areas of your life do you find it hardest to live as though Jesus has all authority — not just in church, but everywhere? What would it look like to take his authority seriously in those areas?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -1417,12 +1375,7 @@
             "label3"            :"",
             "question1"         :"Jesus says disciples are to come from “all nations.” What does it mean that baptism — this one act — is the shared entry point for Christians from every culture, language, and background on earth? How does that change the way you think about your own baptism?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -1518,12 +1471,7 @@
             "label3"            :"",
             "question1"         :"Paul says to “make every effort to keep the unity of the Spirit through the bond of peace” (v3). Unity is something to be kept, not created — it already exists because of the Spirit. Where in your church community do you see that unity being lived out well? Where is it being threatened?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -1604,12 +1552,7 @@
             "label3"            :"",
             "question1"         :"What would it mean for you to be genuinely committed to a local church — not just attending, but belonging, serving, and being known? What would you need to change, give up, or step into for that to be true?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -1868,12 +1811,7 @@
             "label3"            :"",
             "question1"         :"Is there a difference between being <em>ready</em> to be baptised and <em>understanding</em> baptism fully? Do you think you need to understand everything before you obey? What does the example of the New Testament Christians suggest?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -1986,12 +1924,7 @@
             "label3"            :"",
             "question1"         :"Is there anyone you are nervous about inviting — someone whose reaction you are uncertain of, or who might not respond well? What is holding you back from inviting them, and what might it mean for them to be there?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
@@ -2136,12 +2069,7 @@
             "label3"            :"",
             "question1"         :"Read through what you have written. Is Jesus clearly at the centre — or does it sound more like a story about your own journey and growth? What would you change to make his work more visible in the telling?",
             "question2"         :"",
-            "question3"         :"",
-            "answerType"        :"freeText",
-            "required"          :false,
-            "answerPlaceholder1":"Your reflection…",
-            "answerPlaceholder2":"",
-            "answerPlaceholder3":""
+            "question3"         :""
           },
           "bottomPadding":"normal"
         },
