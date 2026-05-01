@@ -6088,179 +6088,183 @@
       ]
     }
   ],
-  "studyOnboardingSlides":[
-    {
-      "icon"    :"📖",
-      "eyebrow1":"",
-      "eyebrow2":"",
-      "eyebrow3":"Welcome",
-      "heading1":"",
-      "heading2":"",
-      "heading3":"Truth Unlocked",
-      "body1"   :"",
-      "body2"   :"",
-      "body3"   :"An eight-session Bible study on the basics of Christian belief.\n\nWork through each chapter at your own pace, or use it with a group.",
-      "format"  :"HTML"
-    },
-    {
-      "icon"    :"✍️",
-      "eyebrow1":"",
-      "eyebrow2":"",
-      "eyebrow3":"How it works",
-      "heading1":"",
-      "heading2":"",
-      "heading3":"Read, reflect, write",
-      "body1"   :"",
-      "body2"   :"",
-      "body3"   :"Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>ⓘ</b> beside any Bible reference to read the passage without leaving the app.",
-      "format"  :"HTML"
-    },
-    {
-      "icon"    :"💾",
-      "eyebrow1":"",
-      "eyebrow2":"",
-      "eyebrow3":"Your answers",
-      "heading1":"",
-      "heading2":"",
-      "heading3":"Saved on your device",
-      "body1"   :"",
-      "body2"   :"",
-      "body3"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
-      "format"  :"HTML"
-    },
-    {
-      "icon"    :"⚙️",
-      "eyebrow1":"",
-      "eyebrow2":"",
-      "eyebrow3":"Make it yours",
-      "heading1":"",
-      "heading2":"",
-      "heading3":"Adjust to your preference",
-      "body1"   :"",
-      "body2"   :"",
-      "body3"   :"<div style=“font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;“>\n      If you need bigger text go straight to settings now\n    </div>",
-      "action"  :{
-        "label":"⚙ Settings",
-        "fn"   :null
-      },
-      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
-      "format"   :"HTML"
-    },
-    {
-      "icon"    :"👋",
-      "eyebrow1":"",
-      "eyebrow2":"",
-      "eyebrow3":"Before you begin",
-      "heading1":"",
-      "heading2":"",
-      "heading3":"How to use this app",
-      "body1"   :"",
-      "body2"   :"",
-      "body3"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
-      "action"  :{
-        "label":"Go to the ‘How to use’ page →",
-        "fn"   :null
-      },
-      "bodyAfter":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
-      "format"   :"HTML"
-    }
-  ],
-  "howToUseData":{
-    "sections":[
-      {
-        "heading1":"",
-        "heading2":"",
-        "heading3":"Who Is This Study For?",
-        "blocks"  :[
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"People new to Christianity",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"If you have little or no church background, this study is a good place to start. It doesn’t assume any prior knowledge. It works through the foundations of Christian belief — who God is, who Jesus is, what the Bible says about sin and salvation — and explains each one from the Bible itself. Take it at your own pace, and don’t be afraid to write down the questions that occur to you as you go."
-          },
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"People who grew up in Christian circles",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"If you have been around church for most of your life, you may find that you have never stopped to ask a basic question: do I actually understand and believe what I think I believe? You know the language, you know the stories, you may even know the Bible well. This study is designed to help you examine the foundations carefully and honestly — not to unsettle you, but to give you something solid to stand on."
-          },
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"People discipling others",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"If you are walking alongside someone else in their faith — as a mentor, a small group leader, or a friend — this study gives you a structured way to work through the foundations of Christian belief together. The eight studies cover the ground that matters most: who God is, the person and work of Christ, the Holy Spirit, creation, sin, the cross, the resurrection, and our response. Each chapter ends with personal reflection questions that naturally prompt deeper conversation."
-          }
-        ]
-      },
-      {
-        "heading1":"",
-        "heading2":"",
-        "heading3":"Individual or Group Study?",
-        "blocks"  :[
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"On your own",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"This study works well as a personal study. Work through each chapter at your own pace, read the Bible passages, write your answers to the questions, and meditate on the reflection questions at the end. There is no right speed — some chapters may take twenty minutes, others may take longer if a question stops you in your tracks."
-          },
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"In a group",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"The study also works well in a small group setting. You could work through each chapter together from scratch, reading the passages and discussing the questions as a group. Alternatively — and this is often the most rewarding approach — each person works through the chapter individually first, writes their answers, and then the group comes together to discuss what they found. Either way works. The questions are designed to prompt genuine reflection, not just right answers."
-          }
-        ]
-      },
-      {
-        "heading1":"",
-        "heading2":"",
-        "heading3":"Group Leaders & Mentors",
-        "blocks"  :[
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"Working with a leader or mentor",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"<p>It can make a real difference to have someone guiding you through the study — a group leader, a pastor, or a more experienced Christian who can help you think through your answers and questions. Perhaps they are the one who recommended this study to you in the first place.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
-          }
-        ]
-      },
-      {
-        "heading1":"",
-        "heading2":"",
-        "heading3":"A Note on the Questions",
-        "blocks"  :[
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"Two kinds of questions",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"Each chapter has two kinds of questions. The <b>Bible questions</b> are tied to specific passages — asking you to look carefully at what the text says. The <b>reflection questions</b> at the end are more personal — asking what the chapter means for you specifically."
-          },
-          {
-            "title1":"",
-            "title2":"",
-            "title3":"Common Misunderstanding boxes",
-            "body1" :"",
-            "body2" :"",
-            "body3" :"Throughout the study you will encounter darker-coloured cards headed <b>Common Misunderstanding</b>. These address words — like <b>grace</b>, <b>repentance</b>, or <b>faith</b> — that Christians use all the time but that are often misunderstood. Take a moment to think about what you understand by the word, then tap <b>Find out</b> to see a short clarification."
-          }
-        ]
-      }
-    ]
+"studyOnboardingSlides": [
+  {
+    "icon"    : "📖",
+    "eyebrow1": "Barka da zuwa",
+    "eyebrow2": "Jam waɗɗi",
+    "eyebrow3": "Welcome",
+    "heading1": "Gaskiya Ta Buɗe",
+    "heading2": "Haqqiqi Udditaama",
+    "heading3": "Truth Unlocked",
+    "body1"   : "Nazarin Littafi Mai Tsarki na zaman takwas kan tushen imani na Kirista.\n\nYi ta kowane babi a farantin ka, ko kuma yi amfani da shi tare da ƙungiya.",
+    "body2"   : "Jokkondiral Bookara Sentel deftere Allah darowol duuɓi jeetati dow daarde imaan Kirista.\n\nGollal kala esde e yeeso maa, maa golle e jam'iyya.",
+    "body3"   : "An eight-session Bible study on the basics of Christian belief.\n\nWork through each chapter at your own pace, or use it with a group.",
+    "format"  : "HTML"
   },
+  {
+    "icon"    : "✍️",
+    "eyebrow1": "Yadda yake aiki",
+    "eyebrow2": "No ndu gollorta",
+    "eyebrow3": "How it works",
+    "heading1": "Karanta, yi tunani, rubuta",
+    "heading2": "Jaŋgu, miijo, windu",
+    "heading3": "Read, reflect, write",
+    "body1"   : "Kowane babi yana da tambayoyin Littafi Mai Tsarki da aka haɗa da sassan takamaiman, da tambayoyin tunani na sirri a ƙarshe.\n\nTabba <b>i</b> kusa da kowane nassosi na Littafi Mai Tsarki don karanta sassan ba tare da fita daga manhaja ba.",
+    "body2"   : "Kala esde woodii ɗemɗe Bookara Sentel deftere Allah feewɗe e cuɗoli ɓurɗi, e ɗemɗe miijorɗe e nder yiynde.\n\nhiɓ <b>i</b> dow kala ñiiɓirde Bookara Sentel Deftere Allah ngam jaŋgude cuɗol ɗo ngalaa.",
+    "body3"   : "Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>i</b> beside any Bible reference to read the passage without leaving the app.",
+    "format"  : "HTML"
+  },
+  {
+    "icon"    : "💾",
+    "eyebrow1": "Amsoshin ka",
+    "eyebrow2": "Jaabaaji maa",
+    "eyebrow3": "Your answers",
+    "heading1": "An adana a na'urarka",
+    "heading2": "Mooftaama e jawdi maa",
+    "heading3": "Saved on your device",
+    "body1"   : "Ana adana amsoshinku ta atomatik yayin da kuke rubuta, kuma ana ajiye su a wannan na'ura.\n\nYi amfani da maɓallin <b>Raba</b> a ƙasan kowane babi don aika amsoshinku ga shugaban ƙungiya ko mai ba da shawara.",
+    "body2"   : "Jaabaaji maa mooftee e laawol e nder winditaali maa, mooftee e jawdi ngii.\n\nHiɓ biyol <b>Feernu</b> e les kala esde ngam neldude jaabaaji maa e hooreejo jam'iyya maa maa kalfineejo.",
+    "body3"   : "Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
+    "format"  : "HTML"
+  },
+  {
+    "icon"    : "⚙️",
+    "eyebrow1": "Masa da naka",
+    "eyebrow2": "Waɗtu e hakkunde maa",
+    "eyebrow3": "Make it yours",
+    "heading1": "Daidaita zuwa ga bukatarka",
+    "heading2": "Naawnu e mbiyaari maa",
+    "heading3": "Adjust to your preference",
+    "body1"   : "<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      Idan kuna buƙatar rubutun da ya fi girma je kai tsaye zuwa saitunan yanzu\n    </div>",
+    "body2"   : "<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      So a sɓii binde mawngo yah e laawol e saituuji jooni\n    </div>",
+    "body3"   : "<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+    "action"  : {
+      "label": "⚙ Settings",
+      "fn"   : null
+    },
+    "bodyAfter1": "Tabba alama <b>⚙</b> a kusurwar sama don buɗe Saitunan a kowane lokaci don canza girman rubutu ko canzawa zuwa yanayin duhu.\n\nTabba <b>☰</b> (abubuwan ciki) don tsallaka zuwa kowane babi.",
+    "bodyAfter2": "Hiɓ seedorde <b>⚙</b> e nder ɓalndu dow ngam udditde Saituuji kala sahaa ngam waɗtude ɓalɗe binde maa maa waɗtude e hal-habri ɓalewal.\n\nHiɓ <b>☰</b> (lefol) ngam yahde e kala esde.",
+    "bodyAfter3": "Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
+    "format"   : "HTML"
+  },
+  {
+    "icon"    : "👋",
+    "eyebrow1": "Kafin ka fara",
+    "eyebrow2": "Ɓaawo jokkondiral",
+    "eyebrow3": "Before you begin",
+    "heading1": "Yadda ake amfani da wannan manhaja",
+    "heading2": "No njogitirtee e mbiyundi nguu",
+    "heading3": "How to use this app",
+    "body1"   : "Idan kuna son cikakken jagora don cin gajiyar wannan manhaja da wannan nazari - ko a kan naka ko tare da ƙungiya - zaku iya tabba maɓallin da ke ƙasa.",
+    "body2"   : "So a yiɗi kaɓirɗe famɗude ko waɗi e mbiyundi nguu e jokkondiral nguu – ko e yiyngel maa maa e jam'iyya – a waawi hiɓde biyol ngol les.",
+    "body3"   : "If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
+    "action"  : {
+      "label": "Go to the 'How to use' page →",
+      "fn"   : null
+    },
+    "bodyAfter1": "Hakanan zaka iya samun sa a kowane lokaci ta hanyar alama <b>?</b> a cikin bayin kewayawa na sama.",
+    "bodyAfter2": "A waawi yilude ɗum kala sahaa e seedorde <b>?</b> e nder laaci newnowo dow.",
+    "bodyAfter3": "You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+    "format"   : "HTML"
+  }
+],
+"howToUseData": {
+  "sections": [
+    {
+      "heading1": "Wannan Nazarin Yaya Yake Da Amfani?",
+      "heading2": "Hol No Jokkondiral Nguu Woni?",
+      "heading3": "Who Is This Study For?",
+      "blocks": [
+        {
+          "title1": "Mutanen da suka fara sanin Kiristanci",
+          "title2": "Rewɓe ɓe njimata Kiristanci",
+          "title3": "People new to Christianity",
+          "body1": "Idan kana da ɗan tarihin coci ko babu, wannan nazari wuri ne mai kyau don fara. Ba ya ɗauka cewa kana da ilimin da ya gabata. Yana bi ta tushen imani na Kirista — wanda Allah yake, wanda Yesu yake, abin da Littafi Mai Tsarki ke faɗa game da zunubi da ceto — kuma yana bayyana kowannensu daga Littafi Mai Tsarki kansa. Yi shi a farantin ka, kuma kada ka ji tsoron rubuta tambayoyin da suka taso maka yayin da kake ci gaba.",
+          "body2": "So a jogii keeweendi e laaɓal kanisa maa maa walaa, jokkondiral nguu woni dow dow ngam fuɗtaade. Walaa miijo maa famɗinɗo. Njokku e daarde imaan Kirista — hol Allah woni, hol Iisaa woni, ko Deftere Allah wi'i e dow hakke e kisiindi — kala gootal ɓurata e nder Deftere Allah keewnde. Gollal e laawol maa, maa hulaa winditde ɗemɗe ndiyam ɗe ngarii maa e nder yeeso.",
+          "body3": "If you have little or no church background, this study is a good place to start. It doesn't assume any prior knowledge. It works through the foundations of Christian belief — who God is, who Jesus is, what the Bible says about sin and salvation — and explains each one from the Bible itself. Take it at your own pace, and don't be afraid to write down the questions that occur to you as you go."
+        },
+        {
+          "title1": "Mutanen da suka girma a cikin al'ummar Kiristanci",
+          "title2": "Rewɓe ɓe ndarii e nder laaɓal Kirista",
+          "title3": "People who grew up in Christian circles",
+          "body1": "Idan ka kasance a kusa da coci mafi yawan rayuwarka, kila za ka gano cewa ba ka taɓa tsayawa don tambayi tambaya ta asali ba: shin na gane kuma na gaskata abin da nake tsammanin na gaskata? Kana san harshen, kana san labarun, kila ma kana san Littafi Mai Tsarki da kyau. Wannan nazari an tsara shi don taimaka maka bincika tushen a hankali da gaskiya — ba don damunka ba, amma don ba ka wani abu ƙarƙashin ƙafa.",
+          "body2": "So a woodnoo e haaɓre kanisa e nder duuɓi maa fof, a waawi yiyde ya a haalanaa tammbinde ɗemɗe ndiyam mawnde: mbele mi famɗii e mi yettiima ko mi miijii mi yettii? A anndi ɗemngal, a anndi tindirɗe, kono a waawi fawnude Deftere Allah. Jokkondiral nguu dirtinaa ngam wallitde maa tortoraade e daarde ɓurɗe e goongal — walaa ngam huɓindude maa, kono ngam hokkaade maa ko feewi ngam njiɗtaade dow.",
+          "body3": "If you have been around church for most of your life, you may find that you have never stopped to ask a basic question: do I actually understand and believe what I think I believe? You know the language, you know the stories, you may even know the Bible well. This study is designed to help you examine the foundations carefully and honestly — not to unsettle you, but to give you something solid to stand on."
+        },
+        {
+          "title1": "Mutanen da ke koyar da wasu",
+          "title2": "Rewɓe ɓe njokkinii wiyɓe",
+          "title3": "People discipling others",
+          "body1": "Idan kana tafiya tare da wani a imaninsa — a matsayin mai ba da shawara, shugaban ƙungiya ƙarama, ko aboki — wannan nazari yana ba ka hanya mai tsari don bi ta tushen imani na Kirista tare. Nazarin takwas sun rufe ƙasar da ta fi muhimmanci: wanda Allah yake, mutum da aikin Almasihu, Ruhu Mai Tsarki, halitta, zunubi, gicciye, tashin matattu, da amsarmu. Kowane babi yana ƙarewa da tambayoyin tunani na sirri waɗanda ke ƙarfafa tattaunawar da ta fi zurfi.",
+          "body2": "So a njokkinii goɗɗo e nder imaan muuɗum — ko kalfineejo, ko hooreejo jam'iyya ɓurɗo, maa ko tawanteejo — jokkondiral nguu hokkata maa laawol dirtinaaɗo ngam gollondirde e daarde imaan Kirista. Jokkondiraaji jeetati ɓee mawnoroo leydi nde ɓuri fawde: hol Allah woni, mawɗo e gollal Almasiihu, Ruuhu Ceniiɗo, yamiroore, hakke, ladde, nguyka, e jaabawol amen. Kala esde jokkoo e ɗemɗe miijorɗe ɗe njiiɗtinirta haala mawngo.",
+          "body3": "If you are walking alongside someone else in their faith — as a mentor, a small group leader, or a friend — this study gives you a structured way to work through the foundations of Christian belief together. The eight studies cover the ground that matters most: who God is, the person and work of Christ, the Holy Spirit, creation, sin, the cross, the resurrection, and our response. Each chapter ends with personal reflection questions that naturally prompt deeper conversation."
+        }
+      ]
+    },
+    {
+      "heading1": "Nazarin Mutum Ɗaya ko Ƙungiya?",
+      "heading2": "Jokkondiral Gooto maa Jam'iyya?",
+      "heading3": "Individual or Group Study?",
+      "blocks": [
+        {
+          "title1": "A kan naka",
+          "title2": "E yiyngel maa",
+          "title3": "On your own",
+          "body1": "Wannan nazari yana aiki da kyau a matsayin nazarin sirri. Yi ta kowane babi a farantin ka, karanta sassan Littafi Mai Tsarki, rubuta amsoshin ka ga tambayoyin, kuma yi tunani a kan tambayoyin tunani a ƙarshe. Babu saurin da ya dace — wasu babi na iya ɗaukar mintuna ashirin, wasu na iya ɗaukar tsawo idan tambaya ta tsayar da kai.",
+          "body2": "Jokkondiral nguu gollortoo e nder yiyngel maa. Gollal kala esde e laawol maa, jaŋgu cuɗoli Deftere Allah, windu jaabaaji maa e ɗemɗe ndiyam, maa miijoro e ɗemɗe miijorɗe e nder yiynde. Walaa faango feewɗo — kala esde waawa waɗde minooje capanɗe ɗiɗi, wiyɓe waawa waɗde balɗe keewnde so ɗemngal ndiyam neldii maa.",
+          "body3": "This study works well as a personal study. Work through each chapter at your own pace, read the Bible passages, write your answers to the questions, and meditate on the reflection questions at the end. There is no right speed — some chapters may take twenty minutes, others may take longer if a question stops you in your tracks."
+        },
+        {
+          "title1": "A cikin ƙungiya",
+          "title2": "E nder jam'iyya",
+          "title3": "In a group",
+          "body1": "Nazarin kuma yana aiki da kyau a cikin ƙungiya ƙarama. Za ku iya bi ta kowane babi tare daga farko, karanta sassan kuma tattauna tambayoyin a matsayin ƙungiya. A madadin haka — kuma wannan yawanci shine hanyar da ta fi amfani — kowane mutum yana bi ta babi da kansa da farko, rubuta amsoshinsa, sannan ƙungiyar ta taru don tattauna abin da suka gano. Kowace hanya tana aiki. An tsara tambayoyin don ƙarfafa tunani na gaske, ba kawai amsoshi masu kyau ba.",
+          "body2": "Jokkondiral nguu gollortoo e nder jam'iyya ɓurɗo. A waawi gollondirde kala esde fuɗtaade e fuɗtorde, jaŋgude cuɗoli e haaldude ɗemɗe ndiyam ko jam'iyya. Maa tawon — kono ko oon laawol ɓuri rewde — kala gooto golloto e esde e yiyngel muuɗum faa adii, windu jaabaaji muuɗum, haa jam'iyya nguurdana haalde ko njiyii. Laawol kala gollortoo. Ɗemɗe ndiyam dirtinaa ngam firnaade miijo goongal, walaa ko jaabaaji ɓurɗi tiiɗde.",
+          "body3": "The study also works well in a small group setting. You could work through each chapter together from scratch, reading the passages and discussing the questions as a group. Alternatively — and this is often the most rewarding approach — each person works through the chapter individually first, writes their answers, and then the group comes together to discuss what they found. Either way works. The questions are designed to prompt genuine reflection, not just right answers."
+        }
+      ]
+    },
+    {
+      "heading1": "Shugabannin Ƙungiya da Masu Ba Da Shawara",
+      "heading2": "Hooreejo Jam'iyya e Kalfineejo",
+      "heading3": "Group Leaders & Mentors",
+      "blocks": [
+        {
+          "title1": "Yin aiki tare da shugaba ko mai ba da shawara",
+          "title2": "Gollondirde e hooreejo maa kalfineejo",
+          "title3": "Working with a leader or mentor",
+          "body1": "<p>Yana iya yin babban bambanci idan akwai wanda ke jagorantar ka ta cikin nazarin — shugaban ƙungiya, fasto, ko Kirista mai ƙarin gogewa wanda zai iya taimaka maka tunani a kan amsoshin ka da tambayoyinka. Watakila su ne suka ba ka shawara game da wannan nazari a farkon farko.</p><p>A ƙarshen kowane babi, maɓallin <b>Raba</b> yana baka damar aika amsoshin ka na rubutu kai tsaye ga shugabanka ko mai ba da shawara — ta WhatsApp, imel, ko kowane app a wayarka. Wannan yana ba su taga zuwa ga tunaninka kafin ku hadu, kuma yana sa tattaunawar ta zama mai ƙarin arziƙi.</p>",
+          "body2": "<p>Waawi waɗde goɗɗo fewjande maa e nder jokkondiral nguu — hooreejo jam'iyya, moodi, maa Kirista famɗinɗo ɓuri mo waawi wallitde maa miijorde e jaabaaji maa e ɗemɗe maa ndiyam. Tawon ko kanko addani maa jokkondiral nguu e fuɗtorde.</p><p>E nder yiynde kala esde, biyol <b>Feernu</b> hokkata maa laawol neldude jaabaaji maa windaaɗi tiiɗɗi e hooreejo maa maa kalfineejo maa — e dow WhatsApp, imel, maa mbiyundi kese e nder telefon maa. Ngam hokka ɓe tiitoonde e miijo maa ɓaawo tawandiroyde, maa waɗtu haala ɓurnde moƴƴude.</p>",
+          "body3": "<p>It can make a real difference to have someone guiding you through the study — a group leader, a pastor, or a more experienced Christian who can help you think through your answers and questions. Perhaps they are the one who recommended this study to you in the first place.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
+        }
+      ]
+    },
+    {
+      "heading1": "Bayanin Tambayoyin",
+      "heading2": "Tiitoonde e Ɗemɗe Ndiyam",
+      "heading3": "A Note on the Questions",
+      "blocks": [
+        {
+          "title1": "Nau'ukan tambayoyi biyu",
+          "title2": "Ɗemɗe ndiyam ɗiɗi",
+          "title3": "Two kinds of questions",
+          "body1": "Kowane babi yana da nau'ukan tambayoyi biyu. <b>Tambayoyin Littafi Mai Tsarki</b> an haɗa su da sassan takamaiman — suna tambayar ka ka duba da kyau abin da rubutun ke faɗa. <b>Tambayoyin tunani</b> a ƙarshe sun fi na sirri — suna tambayar abin da babi ke nufin maka musamman.",
+          "body2": "Kala esde woodii ɗemɗe ndiyam ɗiɗi. <b>Ɗemɗe ndiyam Deftere Allah</b> dirtinaa e cuɗoli ɓurɗi — tammbinirta maa yiylude e himminde ko binndol wi'i. <b>Ɗemɗe miijorɗe</b> e nder yiynde ɓuri sikkitaare — tammbinirta maa ko esde ngoo firi maa e nder yiyngel maa.",
+          "body3": "Each chapter has two kinds of questions. The <b>Bible questions</b> are tied to specific passages — asking you to look carefully at what the text says. The <b>reflection questions</b> at the end are more personal — asking what the chapter means for you specifically."
+        },
+        {
+          "title1": "Akwatunan Fahimtar Kuskure ta Kowa",
+          "title2": "Kaɗe Famɗaari Ɓurɗi Yiyde",
+          "title3": "Common Misunderstanding boxes",
+          "body1": "A cikin duk nazarin za ka sami katunan da ke da launi mai duhu a kai da taken <b>Fahimtar Kuskure ta Kowa</b>. Waɗannan suna magance kalmomi — kamar <b>alheri</b>, <b>tuba</b>, ko <b>imani</b> — waɗanda Kiristoci ke amfani da su koyaushe amma da yawa ana fahimtar su ba daidai ba. Yi ɗan lokaci don tunani game da abin da kake fahimta da kalmar, sannan tabba <b>Gano</b> don ganin ɗan bayani.",
+          "body2": "E nder gollal jokkondiral nguu fof a waawi kaɗe ɓalɗe e nder ɓalɗe <b>Famɗaari Ɓurɗi Yiyde</b>. Ɗee ɗemɗe njiiɗtinirta — ko <b>nimre</b>, <b>tawbee</b>, maa <b>imaan</b> — ɗe Kiristeeɓe ndokkira kala sahaa kono ɗe famɗaa keewaado. Waɗtu sahaa miijorde ko a famɗii e nder ɗemngal ngaal, haa hiɓu <b>Yiy</b> ngam yiyde tiitoonde ɓurnde famɗude.",
+          "body3": "Throughout the study you will encounter darker-coloured cards headed <b>Common Misunderstanding</b>. These address words — like <b>grace</b>, <b>repentance</b>, or <b>faith</b> — that Christians use all the time but that are often misunderstood. Take a moment to think about what you understand by the word, then tap <b>Find out</b> to see a short clarification."
+        }
+      ]
+    }
+  ]
+},
   "leadersNotesData":{
     "subtitle1":"",
     "subtitle2":"",
