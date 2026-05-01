@@ -128,6 +128,12 @@ async function reloadLocaleAndRerender(langCode) {
 }
 
 function rerenderCurrentView() {
+  // NOTE: This function intentionally bypasses Router.navigate() and
+  // Router.replaceState(). It is called after a locale reload to re-render
+  // the current view in the new language — the history stack is already
+  // correct, so we call render functions directly without pushing or
+  // replacing any history entries.
+
   if (!isNonChapterPage) {
     // User is on the title page or a chapter
     if (typeof currentChapter === 'number' && currentChapter >= 0) {
@@ -140,13 +146,13 @@ function rerenderCurrentView() {
 
   // User is on a non-chapter page — dispatch by activeTabPage
   switch (window.activeTabPage) {
-    case 'library':  openLibrary();           break;
-    case 'settings': renderSettings(window.activeTabId); break;
-    case 'howto':    renderHowToUse(window.activeTabId); break;
-    case 'about':    renderAbout(window.activeTabId);    break;
-    case 'leaders':  renderLeadersNotes();    break;
-    case 'progress': renderProgressOverview(); break;
-    case 'notes':    renderNotesPage();        break;
+    case 'library':  openLibrary();                           break;
+    case 'settings': renderSettings(window.activeTabId);     break;
+    case 'howto':    renderHowToUse(window.activeTabId);     break;
+    case 'about':    renderAbout(window.activeTabId);        break;
+    case 'leaders':  renderLeadersNotes();                   break;
+    case 'progress': renderProgressOverview();               break;
+    case 'notes':    renderNotesPage();                      break;
     default:
       // Fallback — shouldn't happen, but safe
       openLibrary();
@@ -255,6 +261,7 @@ async function startApp() {
   // so the onboarding is never skipped just because the registry is non-empty.
   if (isFirstRun) {
     openLibrary();
+    Router.boot({ page: 'library' });
     showAppOnboarding();
     return;
   }
@@ -294,11 +301,13 @@ async function startApp() {
   // Case 2: library exists but no current study — show the library.
   if (hasLibrary) {
     openLibrary();
+    Router.boot({ page: 'library' });
     return;
   }
 
   // Case 4: no library, not first run — show the Load Study picker.
   openLibrary();
+  Router.boot({ page: 'library' });
 }
 
 document.addEventListener('DOMContentLoaded', startApp);

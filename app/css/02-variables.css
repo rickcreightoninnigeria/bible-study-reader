@@ -50,6 +50,7 @@
   --border:         #c8bca8;      /* card borders, dividers            */
   --shadow: rgba(28,23,16,0.13);  /* unified shadow tint               */
   --card-bg:        #ffffff;      /* card / block surface colour       */
+  --input-focus-bg: color-mix(in srgb, var(--card-bg) 85%, var(--surface)); /* answer field focus background blends towards --surface; override per study theme */
   --validate:       #2a6b7c;      /* local validate: answer check      */
 
   /* ── Dark-mode colour tokens ──

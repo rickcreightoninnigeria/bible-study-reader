@@ -87,12 +87,12 @@ function navigateTab(page, direction) {
   const newIdx    = Math.max(0, Math.min(tabs.length - 1, idx + direction));
   if (newIdx === idx) return;
   const newId = tabs[newIdx].id;
-  if      (page === 'settings') renderSettings(newId);
+  if      (page === 'settings') { Router.replaceState({ page: 'settings', tabId: newId }); renderSettings(newId); }
   else if (page === 'library')  switchLibTab(newId);
-  else if (page === 'leaders')  renderLeadersNotes(newId);
-  else if (page === 'about')    renderAbout(newId);
+  else if (page === 'leaders')  { Router.replaceState({ page: 'leaders',  tabId: newId }); renderLeadersNotes(newId); }
+  else if (page === 'about')    { Router.replaceState({ page: 'about',    tabId: newId }); renderAbout(newId); }
   else if (page === 'progress') { if (document.getElementById('progressTabBar')) switchProgressTab(newId); }
-  else                          renderHowToUse(newId);
+  else                          { Router.replaceState({ page: 'howto',    tabId: newId }); renderHowToUse(newId); }
   if (page !== 'library') window.scrollTo(0, 0);
 }
 
@@ -112,7 +112,7 @@ async function renderHowToUse(tabId) {
   window.activeTabId   = tabId || 'study';
   if (window.activeTabId === 'study') { restoreStudyTheme(); } else { suspendStudyTheme(); }
   const howtoBtn = document.getElementById('navHowtoBtn');
-  if (howtoBtn) { howtoBtn.innerHTML = ICONS.close; howtoBtn.onclick = () => closeNonChapterPage(); }
+  if (howtoBtn) { howtoBtn.innerHTML = ICONS.close; howtoBtn.onclick = () => Router.back(); }
   const content = document.getElementById('mainContent');
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
@@ -156,7 +156,7 @@ async function renderHowToUse(tabId) {
           ? renderLangBadge(entry)
           : (entry?.flag || '🌐');
         return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
-                         onclick="setPageStudyLang('${code}', () => renderHowToUse('study'))"
+                         onclick="setPageStudyLang('${code}', () => { Router.replaceState({ page: 'howto', tabId: 'study' }); renderHowToUse('study'); })"
                          aria-label="${label}"
                          title="${label}">${display}</button>`;
       }).join('');
@@ -190,7 +190,7 @@ async function renderHowToUse(tabId) {
         ` : `
           <p>${t('renderpages_newhere_nostudy_body')}</p>
           <button class="howto-share-btn" style="background:var(--text); margin-top:8px;"
-                  onclick="openLibrary()">
+                  onclick="Router.navigate({ page: 'library' })">
             <span>${ICONS.library}</span> ${t('renderpages_newhere_nostudy_btn')}
           </button>
         `}
@@ -234,10 +234,10 @@ async function renderHowToUse(tabId) {
 
       ${hasStudy ? `
         <div class="howto-section" style="margin-top: 24px;">
-          <button class="howto-start-btn" onclick="goToChapter(0)">${t('renderpages_begin_ch1_btn')}</button>
+          <button class="howto-start-btn" onclick="Router.navigate({ page: 'chapter', idx: 0 })">${t('renderpages_begin_ch1_btn')}</button>
           <button class="howto-start-btn howto-leaders-btn"
                   style="margin-top:12px; font-size:15px;"
-                  onclick="renderLeadersNotes()">
+                  onclick="Router.navigate({ page: 'leaders' })">
             ${t('renderpages_leaders_notes_btn')}
           </button>
         </div>
@@ -264,7 +264,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_topbar_search_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="search"
-                      onclick="showFeatureTutorial('search', () => renderHowToUse('topbar'))">
+                      onclick="showFeatureTutorial('search', () => { Router.replaceState({ page: 'howto', tabId: 'topbar' }); renderHowToUse('topbar'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('search')}</span>
               </button>
             </div>
@@ -278,7 +278,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_topbar_progress_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="my-progress"
-                      onclick="showFeatureTutorial('my-progress', () => renderHowToUse('topbar'))">
+                      onclick="showFeatureTutorial('my-progress', () => { Router.replaceState({ page: 'howto', tabId: 'topbar' }); renderHowToUse('topbar'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('my-progress')}</span>
               </button>
             </div>
@@ -316,7 +316,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_topbar_progressbar_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="progress-bar"
-                      onclick="showFeatureTutorial('progress-bar', () => renderHowToUse('topbar'))">
+                      onclick="showFeatureTutorial('progress-bar', () => { Router.replaceState({ page: 'howto', tabId: 'topbar' }); renderHowToUse('topbar'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('progress-bar')}</span>
               </button>
             </div>
@@ -327,7 +327,7 @@ async function renderHowToUse(tabId) {
         <div class="howto-block" style="margin: 16px 0 0;">
           <div class="howto-block-title">${t('renderpages_topbar_gotosettings_title')}</div>
           <p>${t('renderpages_topbar_gotosettings_body')}</p>
-          <button class="howto-share-btn" style="background: var(--text); margin-top:8px;" onclick="renderSettings()">
+          <button class="howto-share-btn" style="background: var(--text); margin-top:8px;" onclick="Router.navigate({ page: 'settings' })">
             <span>${ICONS.settings}</span> ${t('renderpages_topbar_gotosettings_btn')}
           </button>
         </div>
@@ -345,7 +345,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_biblepopup_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="bible-popups"
-                      onclick="showFeatureTutorial('bible-popups', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('bible-popups', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('bible-popups')}</span>
               </button>
             </div>
@@ -359,7 +359,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_starring_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="starring-questions"
-                      onclick="showFeatureTutorial('starring-questions', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('starring-questions', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('starring-questions')}</span>
               </button>
             </div>
@@ -373,7 +373,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_notes_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="notes-area"
-                      onclick="showFeatureTutorial('notes-area', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('notes-area', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('notes-area')}</span>
               </button>
             </div>
@@ -387,7 +387,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_save_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="auto-save"
-                      onclick="showFeatureTutorial('auto-save', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('auto-save', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('auto-save')}</span>
               </button>
             </div>
@@ -409,7 +409,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_share_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="sharing"
-                      onclick="showFeatureTutorial('sharing', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('sharing', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('sharing')}</span>
               </button>
             </div>
@@ -423,7 +423,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_voice_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="voice-input"
-                      onclick="showFeatureTutorial('voice-input', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('voice-input', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('voice-input')}</span>
               </button>
             </div>
@@ -437,7 +437,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_answercheck_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="answer-check"
-                      onclick="showFeatureTutorial('answer-check', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('answer-check', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('answer-check')}</span>
               </button>
             </div>
@@ -452,7 +452,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_readaloud_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="read-aloud"
-                      onclick="showFeatureTutorial('read-aloud', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('read-aloud', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('read-aloud')}</span>
               </button>
             </div>
@@ -466,7 +466,7 @@ async function renderHowToUse(tabId) {
             <div class="howto-ui-label">
               ${t('renderpages_chapters_navbtns_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="swipe-navigation"
-                      onclick="showFeatureTutorial('swipe-navigation', () => renderHowToUse('chapters'))">
+                      onclick="showFeatureTutorial('swipe-navigation', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('swipe-navigation')}</span>
               </button>
             </div>
@@ -484,7 +484,7 @@ async function renderHowToUse(tabId) {
 
       </div>
 
-      <button class="howto-start-btn" onclick="goToChapter(0)">${t('renderpages_begin_ch1_btn')}</button>`;
+      <button class="howto-start-btn" onclick="Router.navigate({ page: 'chapter', idx: 0 })">${t('renderpages_begin_ch1_btn')}</button>`;
   }
 
   function tabLibrary() {
@@ -495,7 +495,7 @@ async function renderHowToUse(tabId) {
         <div style="margin-bottom:16px;">
           <button class="howto-tutorial-btn" style="font-size:14px; color:var(--accent);"
                   data-tutorial-id="library"
-                  onclick="showFeatureTutorial('library', () => renderHowToUse('library'))">
+                  onclick="showFeatureTutorial('library', () => { Router.replaceState({ page: 'howto', tabId: 'library' }); renderHowToUse('library'); })">
             <span class="tutorial-trigger-icon">${tutorialIcon('library')}</span>
             ${t('renderpages_library_tour_btn')}
           </button>
@@ -527,7 +527,7 @@ async function renderHowToUse(tabId) {
         <div style="margin-bottom:16px;">
           <button class="howto-tutorial-btn" style="font-size:14px; color:var(--accent);"
                   data-tutorial-id="sharing"
-                  onclick="showFeatureTutorial('sharing', () => renderHowToUse('sharing'))">
+                  onclick="showFeatureTutorial('sharing', () => { Router.replaceState({ page: 'howto', tabId: 'sharing' }); renderHowToUse('sharing'); })">
             <span class="tutorial-trigger-icon">${tutorialIcon('sharing')}</span>
             ${t('renderpages_sharing_tour_btn')}
           </button>
@@ -600,7 +600,7 @@ async function renderHowToUse(tabId) {
       ${TABS.map(t => `
         <button
           class="howto-tab${t.id === activeTab ? ' active' : ''}"
-          onclick="renderHowToUse('${t.id}')"
+          onclick="Router.replaceState({ page: 'howto', tabId: '${t.id}' }); renderHowToUse('${t.id}')"
         >${typeof t.label === 'function' ? t.label() : t.label}</button>`).join('')}
     </div>`;
 
@@ -620,7 +620,7 @@ async function renderHowToUse(tabId) {
       </div>
 
       <div class="page-close-bar">
-        <button class="page-close-btn" onclick="closeNonChapterPage()"><span>&#10005;</span> ${t('renderpages_close_btn')}</button>
+        <button class="page-close-btn" onclick="Router.back()"><span>&#10005;</span> ${t('renderpages_close_btn')}</button>
       </div>
 
       <div style="height:40px;"></div>
@@ -685,7 +685,7 @@ async function renderLeadersNotes(tabId) {
         ? renderLangBadge(entry)
         : (entry?.flag || '🌐');
       return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
-                       onclick="setPageStudyLang('${code}', () => renderLeadersNotes(window.activeTabId))"
+                       onclick="setPageStudyLang('${code}', () => { Router.replaceState({ page: 'leaders', tabId: window.activeTabId }); renderLeadersNotes(window.activeTabId); })"
                        aria-label="${label}"
                        title="${label}">${display}</button>`;
     }).join('');
@@ -713,7 +713,7 @@ async function renderLeadersNotes(tabId) {
       ${LEADERS_TABS.map(t => `
         <button
           class="howto-tab${t.id === activeTab ? ' active' : ''}"
-          onclick="renderLeadersNotes('${t.id}')"
+          onclick="Router.replaceState({ page: 'leaders', tabId: '${t.id}' }); renderLeadersNotes('${t.id}')"
         >${t.label}</button>`).join('')}
     </div>`;
 
@@ -791,7 +791,7 @@ async function renderLeadersNotes(tabId) {
 
       <div class="leaders-confidential">${t('renderpages_leaders_confidential')}</div>
       <div class="page-close-bar">
-        <button class="page-close-btn" onclick="closeNonChapterPage()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
+        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
       </div>
       <div style="height: 40px;"></div>
     </div>
@@ -868,7 +868,7 @@ async function renderAbout(tabId) {
       ${ABOUT_TABS.map(t => `
         <button
           class="howto-tab${t.id === activeTab ? ' active' : ''}"
-          onclick="renderAbout('${t.id}')"
+          onclick="Router.replaceState({ page: 'about', tabId: '${t.id}' }); renderAbout('${t.id}')"
         >${typeof t.label === 'function' ? t.label() : t.label}</button>`).join('')}
     </div>`;
 
@@ -935,7 +935,7 @@ async function renderAbout(tabId) {
       </div>
 
       <div class="page-close-bar">
-        <button class="page-close-btn" onclick="closeNonChapterPage()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
+        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
       </div>
       <div style="height: 40px;"></div>
     </div>
@@ -958,7 +958,7 @@ async function renderSettings(tabId) {
   window.activeTabId   = tabId || 'app';
   if (window.activeTabId === 'study') { restoreStudyTheme(); } else { suspendStudyTheme(); }
   const settingsBtn = document.getElementById('navSettingsBtn');
-  if (settingsBtn) { settingsBtn.innerHTML = ICONS.close; settingsBtn.onclick = () => closeNonChapterPage(); }
+  if (settingsBtn) { settingsBtn.innerHTML = ICONS.close; settingsBtn.onclick = () => Router.back(); }
   const content = document.getElementById('mainContent');
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
@@ -1017,7 +1017,7 @@ async function renderSettings(tabId) {
               <div class="settings-row-label">
                 ${t('renderpages_settings_rememberplace_label')}
                 <button class="howto-tutorial-btn" data-tutorial-id="remember-position"
-                        onclick="showFeatureTutorial('remember-position', () => renderSettings('app'))">
+                        onclick="showFeatureTutorial('remember-position', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
                   <span class="tutorial-trigger-icon">${tutorialIcon('remember-position')}</span>
                 </button>
               </div>
@@ -1064,7 +1064,7 @@ async function renderSettings(tabId) {
         <div class="settings-section-heading">
           ${t('renderpages_settings_answercheck_heading')}
           <button class="howto-tutorial-btn" data-tutorial-id="answer-check"
-                  onclick="showFeatureTutorial('answer-check', () => renderSettings('app'))">
+                  onclick="showFeatureTutorial('answer-check', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
             <span class="tutorial-trigger-icon">${tutorialIcon('answer-check')}</span>
           </button>
         </div>
@@ -1092,7 +1092,7 @@ async function renderSettings(tabId) {
         <div class="settings-section-heading">
           ${t('renderpages_settings_navigation_heading')}
           <button class="howto-tutorial-btn" data-tutorial-id="swipe-navigation"
-                  onclick="showFeatureTutorial('swipe-navigation', () => renderSettings('app'))">
+                  onclick="showFeatureTutorial('swipe-navigation', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
             <span class="tutorial-trigger-icon">${tutorialIcon('swipe-navigation')}</span>
           </button>
         </div>
@@ -1155,7 +1155,7 @@ async function renderSettings(tabId) {
               <div class="settings-row-label">
                 ${t('renderpages_settings_myprogress_label')}
                 <button class="howto-tutorial-btn" data-tutorial-id="my-progress"
-                        onclick="showFeatureTutorial('my-progress', () => renderSettings('app'))">
+                        onclick="showFeatureTutorial('my-progress', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
                   <span class="tutorial-trigger-icon">${tutorialIcon('my-progress')}</span>
                 </button>
               </div>
@@ -1179,7 +1179,7 @@ async function renderSettings(tabId) {
               <div class="settings-row-label">
                 ${t('renderpages_settings_leaders_label')}
                 <button class="howto-tutorial-btn" data-tutorial-id="leaders-notes"
-                        onclick="showFeatureTutorial('leaders-notes', () => renderSettings('app'))">
+                        onclick="showFeatureTutorial('leaders-notes', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
                   <span class="tutorial-trigger-icon">${tutorialIcon('leaders-notes')}</span>
                 </button>
               </div>
@@ -1209,8 +1209,8 @@ async function renderSettings(tabId) {
         </div>
       </div>` : '';
 
-    // ── Saving & Sharing — Advanced only ─────────────────────────────────────
-    const savingSection = adv ? `
+    // ── Saving & Sharing — Auto-save always shown; Share format Advanced only ──
+    const savingSection = `
       <div class="settings-section">
         <div class="settings-section-heading">${t('renderpages_settings_saving_heading')}</div>
         <div class="settings-block">
@@ -1221,6 +1221,7 @@ async function renderSettings(tabId) {
             </div>
             ${tog('autoSaveToast')}
           </div>
+          ${adv ? `
           <div class="settings-divider"></div>
           <div class="settings-row">
             <div class="settings-row-text">
@@ -1233,9 +1234,9 @@ async function renderSettings(tabId) {
               onclick="saveSetting('shareFormat', 'plain')">${t('renderpages_settings_shareformat_plain')}</button>
             <button class="settings-seg-btn ${appSettings.shareFormat === 'formatted' ? 'active' : ''}"
               onclick="saveSetting('shareFormat', 'formatted')">${t('renderpages_settings_shareformat_whatsapp')}</button>
-          </div>
+          </div>` : ''}
         </div>
-      </div>` : '';
+      </div>`;
 
     // ── Read Aloud — Advanced only ────────────────────────────────────────────
     const ttsSection = adv ? `
@@ -1243,7 +1244,7 @@ async function renderSettings(tabId) {
         <div class="settings-section-heading">
           ${t('renderpages_settings_readaloud_heading')}
           <button class="howto-tutorial-btn" data-tutorial-id="read-aloud"
-                  onclick="showFeatureTutorial('read-aloud', () => renderSettings('app'))">
+                  onclick="showFeatureTutorial('read-aloud', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
             <span class="tutorial-trigger-icon">${tutorialIcon('read-aloud')}</span>
           </button>
         </div>
@@ -1274,9 +1275,7 @@ async function renderSettings(tabId) {
               <div class="settings-row-label">${t('renderpages_settings_answerbtn_label')}</div>
               <div class="settings-row-desc">${t('renderpages_settings_answerbtn_desc')}</div>
             </div>
-            <button class="settings-toggle ${appSettings.showCheckAnswerBtn ? 'on' : ''}"
-              onclick="saveSetting('showCheckAnswerBtn', !appSettings.showCheckAnswerBtn); applyCheckAnswerBtnVisibility()">
-            </button>
+            ${tog('showCheckAnswerBtn')}
           </div>
         </div>
       </div>` : '';
@@ -1332,13 +1331,13 @@ async function renderSettings(tabId) {
       `<li><em>Optional pages</em> — turn on My Progress, Notes &amp; Comments, and Leaders’ Notes</li>` +
       `<li><em>Library tab</em> in Settings — control which Library tabs are visible</li>` +
       `<li><em>App Updates</em> — download the latest version directly</li>` +
+      `<li><em>Auto-save notification</em> — a brief confirmation when answers are auto-saved</li>` +
       `</ul>` +
       `<p><br><b>Advanced</b> adds everything else:</p>` +
       `<ul>` +
       `<li><em>Icon style</em> — choose your preferred icon set</li>` +
       `<li><em>Next / Previous buttons</em> — show chapter navigation buttons (in addition to swiping)</li>` +
       `<li><em>How to Use</em> and <em>About</em> pages — toggle these optional pages on or off</li>` +
-      `<li><em>Auto-save notification</em> — a brief confirmation when answers are auto-saved</li>` +
       `<li><em>Share format</em> — choose between WhatsApp Formatted and Plain Text</li>` +
       `<li><em>Read Aloud</em> — control when the speaker icon appears on passages to let the app read them aloud</li>` +
       `</ul>` +
@@ -1353,7 +1352,7 @@ async function renderSettings(tabId) {
           <button class="info-trigger-btn" style="margin-left:6px;"
             onclick="openInfoModal('interface-mode-intro', {title: t('renderpages_settings_interfacemode_heading'), body: window._interfaceModePopupHtml}, this)">${ICONS.triggerInfo}</button>
           <button class="howto-tutorial-btn" data-tutorial-id="interface-mode"
-                  onclick="showFeatureTutorial('interface-mode', () => renderSettings('app'))">
+                  onclick="showFeatureTutorial('interface-mode', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
             <span class="tutorial-trigger-icon">${tutorialIcon('interface-mode')}</span>
           </button>
         </div>
@@ -1364,11 +1363,11 @@ async function renderSettings(tabId) {
           <div class="settings-row" style="flex-direction:column; align-items:stretch; gap:10px;">
             <div class="settings-seg">
               <button class="settings-seg-btn ${mode === 'basic'        ? 'active' : ''}"
-                onclick="setInterfaceMode('basic'); renderSettings('app')">${t('renderpages_settings_mode_basic')}</button>
+                onclick="setInterfaceMode('basic'); Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app')">${t('renderpages_settings_mode_basic')}</button>
               <button class="settings-seg-btn ${mode === 'intermediate' ? 'active' : ''}"
-                onclick="setInterfaceMode('intermediate'); renderSettings('app')">${t('renderpages_settings_mode_intermediate')}</button>
+                onclick="setInterfaceMode('intermediate'); Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app')">${t('renderpages_settings_mode_intermediate')}</button>
               <button class="settings-seg-btn ${mode === 'advanced'     ? 'active' : ''}"
-                onclick="setInterfaceMode('advanced'); renderSettings('app')">${t('renderpages_settings_mode_advanced')}</button>
+                onclick="setInterfaceMode('advanced'); Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app')">${t('renderpages_settings_mode_advanced')}</button>
             </div>
           </div>
           <div class="settings-row-desc" style="margin-top:10px; font-size:0.82rem;">
@@ -1443,7 +1442,7 @@ async function renderSettings(tabId) {
           <div class="settings-row-label" style="margin-bottom:4px;">
             ${t('renderpages_settings_shareall_label')}
             <button class="howto-tutorial-btn" data-tutorial-id="sharing"
-                    onclick="showFeatureTutorial('sharing', () => renderSettings('study'))">
+                    onclick="showFeatureTutorial('sharing', () => { Router.replaceState({ page: 'settings', tabId: 'study' }); renderSettings('study'); })">
               <span class="tutorial-trigger-icon">${tutorialIcon('sharing')}</span>
             </button>
           </div>
@@ -1649,7 +1648,7 @@ async function renderSettings(tabId) {
           return `
         <button
           class="settings-lang-btn${isActive ? ' active' : ''}"
-          onclick="setLanguage('${code}'); renderSettings('language')"
+          onclick="setLanguage('${code}'); Router.replaceState({ page: 'settings', tabId: 'language' }); renderSettings('language')"
           aria-pressed="${isActive}"
         >
           <span class="settings-lang-flag">${lang.alwaysBadge ? renderLangBadge(lang) : lang.flag}</span>
@@ -1682,7 +1681,7 @@ async function renderSettings(tabId) {
       ${SETTINGS_TABS.map(t => `
         <button
           class="howto-tab${t.id === activeTab ? ' active' : ''}"
-          onclick="renderSettings('${t.id}')"
+          onclick="Router.replaceState({ page: 'settings', tabId: '${t.id}' }); renderSettings('${t.id}')"
         >${typeof t.label === 'function' ? t.label() : t.label}</button>`).join('')}
     </div>`;
 
@@ -1704,7 +1703,7 @@ async function renderSettings(tabId) {
       </div>
 
       <div class="page-close-bar">
-        <button class="page-close-btn" onclick="closeNonChapterPage()"><span>&#10005;</span> ${t('renderpages_close_btn')}</button>
+        <button class="page-close-btn" onclick="Router.back()"><span>&#10005;</span> ${t('renderpages_close_btn')}</button>
       </div>
 
       <div style="height:40px;"></div>

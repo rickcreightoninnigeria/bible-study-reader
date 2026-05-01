@@ -158,7 +158,7 @@
   border-radius: 0 0 10px 10px;
 }
 .answer-field:focus {
-  background: #fffdf7;
+  background: var(--input-focus-bg, var(--card-bg));
   border-color: var(--accent);
 }
 .answer-field::placeholder {

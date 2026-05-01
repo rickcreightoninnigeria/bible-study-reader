@@ -51,9 +51,10 @@ window.studyOnboardingSlides = [];
 
 // ── Storage Key helpers ───────────────────────────────────────────────────────
 // Returns the localStorage key for a given answer field.
-// Format: bsr_ch{N}_{type}_{index}
+// Format: bsr_{studyId}_ch{N}_{type}_{index}
+//   e.g.  bsr_grow_in_christ_1_ch3_q_1-2
 //   type  – 'q' (question), 'r' (reflection), 'notes'
-//   index – 'sIdx_qIdx' for questions, rIdx for reflections, 0 for notes
+//   index – '{sIdx}_{qIdx}' for questions, rIdx for reflections, 0 for notes
 // The 'bsr_' prefix namespaces all app keys so they can be bulk-deleted safely.
 function storageKey(chapterNum, type, index) {
   const currentStudyId = window.activeStudyId;
@@ -61,8 +62,9 @@ function storageKey(chapterNum, type, index) {
 }
 
 // Returns the localStorage key for a single Likert statement answer.
-// keyed by the scale's elementId and statement index, so it remains
-// stable regardless of where the element sits in the chapter's element list.
+// Format: bsr_{studyId}_ch{N}_likert_{elementId}_{stIdx}
+//   e.g.  bsr_grow_in_christ_1_ch2_likert_el_42_0
+// Keyed by elementId so the key is stable regardless of element position.
 function likertKey(chapterNum, elementId, stIdx) {
   const currentStudyId = window.activeStudyId || 'mmdd';
   return `bsr_${currentStudyId}_ch${chapterNum}_likert_${elementId}_${stIdx}`;

@@ -137,7 +137,7 @@ async function activateStudy(id) {
     applyStudyData(data);
 
     // 4. Close the library after the study is loaded
-    closeNonChapterPage();
+    Router.back();
 }
 
 async function openLibrary() {
@@ -150,7 +150,7 @@ async function openLibrary() {
   document.getElementById('mainContent').innerHTML = '';
   await clearStudyUiLangOverride();
   const libBtn = document.getElementById('navLibBtn');
-  if (libBtn) { libBtn.innerHTML = ICONS.close; libBtn.onclick = () => closeNonChapterPage(); }
+  if (libBtn) { libBtn.innerHTML = ICONS.close; libBtn.onclick = () => Router.back(); }
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
@@ -194,7 +194,7 @@ async function handleFileSelect(event) {
             failed++;
         }
     }
-    openLibrary();
+    Router.navigate({ page: 'library' });
     switchLibTab('all');
     if (failed === 0) {
         showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
@@ -249,12 +249,12 @@ async function deleteStudy(id, title) {
         window.studyMetadata = {};
         localStorage.removeItem('bsr_last_active_study');
         resetTheme();
-        renderTitlePage();
+        Router.navigate({ page: 'title' });
     }
 
     // 5. Refresh the list
     invalidateCoverCache(id);
-    openLibrary();
+    Router.navigate({ page: 'library' });
     if (typeof showToast === 'function') showToast({ message: t('studyloader_delete_success'), isManual: true });
     id = null;
 }
@@ -273,8 +273,8 @@ async function deleteStudy(id, title) {
 
 // Map of action label keywords → the engine function they should invoke.
 const ACTION_FN_MAP = {
-  'Settings':     () => renderSettings(),
-  'How to use':   () => renderHowToUse(),
+  'Settings':     () => Router.navigate({ page: 'settings' }),
+  'How to use':   () => Router.navigate({ page: 'howto' }),
 };
 
 function resolveActionFn(label) {
@@ -691,7 +691,7 @@ async function loadStudyFromJson(jsonString) {
         if (window._appReady) {
             window.activeStudyId = studyId;
             checkEstudyVersion(data);
-            closeNonChapterPage();
+            Router.back();
             applyStudyData(data);
         } else {
             window.pendingStudyData = data;
@@ -976,7 +976,7 @@ async function loadBundleFromFile(outerZip, innerStudyFiles) {
   // Open the library once so the user sees all newly installed studies together.
   // recordStudyInstalled is called here (not inside _installStudyFileQuietly)
   // so only user-initiated bundle imports appear in the Recently Installed list.
-  openLibrary();
+  Router.navigate({ page: 'library' });
 
   if (failed === 0) {
     showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
@@ -1081,7 +1081,7 @@ async function loadStudyFromFile(file) {
 
       // 4. Apply to the running app
       checkEstudyVersion(data);
-      closeNonChapterPage();
+      Router.back();
       window.activeStudyId = studyId;
       applyStudyData(data);
 
@@ -1090,7 +1090,7 @@ async function loadStudyFromFile(file) {
       const text = await file.text();
       const data = JSON.parse(text);
       checkEstudyVersion(data);
-      closeNonChapterPage();
+      Router.back();
       applyStudyData(data);
     }
 
@@ -1240,7 +1240,7 @@ async function handlePickerFileChange(event) {
       failed++;
     }
   }
-  openLibrary();
+  Router.navigate({ page: 'library' });
   switchLibTab('all');
   if (failed === 0) {
     showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });

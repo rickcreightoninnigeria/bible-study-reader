@@ -152,7 +152,7 @@ function toggleProgressStarred(chNum) {
 // by cardId. The 300ms timeout allows renderChapter() to complete its DOM
 // writes before scrollIntoView() is called.
 function navigateToStarred(chIdx, cardId) {
-  goToChapter(chIdx);
+  Router.navigate({ page: 'chapter', idx: chIdx });
   setTimeout(() => {
     const card = document.getElementById(cardId);
     if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });

@@ -2788,15 +2788,15 @@ body.dark-mode .howto-ui-desc {
 body.dark-mode .howto-share-btn {
   background: var(--dm-raised);
   border: 1px solid var(--success);
-  color: var(--success);
+  color: var(--dm-text);
 }
 body.dark-mode .howto-start-btn {
   background: var(--accent);
-  color: var(--dm-surface);
+  color: var(--dm-text);
 }
 body.dark-mode .howto-leaders-btn {
-  border-color: var(--emphasis-light);
-  color: var(--emphasis-light);
+  border-color: var(--accent-light);
+  color: var(--dm-text);
 }
 body.dark-mode .howto-tab-bar {
   background: var(--dm-base);

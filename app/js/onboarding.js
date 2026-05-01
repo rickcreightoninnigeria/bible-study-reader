@@ -193,7 +193,7 @@ function getFeatureTutorials() {
         body:    t('onboarding_readaloud_slide2_body'),
         action:  {
           label: t('onboarding_action_go_to_settings'),
-          fn:    () => renderSettings('app'),
+          fn:    () => Router.navigate({ page: 'settings', tabId: 'app' }),
         },
       },
     ],
@@ -263,7 +263,7 @@ function getFeatureTutorials() {
         body:    t('onboarding_interfacemode_slide3_body'),
         action:  {
           label: t('onboarding_action_go_to_settings'),
-          fn:    () => renderSettings('app'),
+          fn:    () => Router.navigate({ page: 'settings', tabId: 'app' }),
         },
       },
     ],
@@ -321,7 +321,7 @@ function getFeatureTutorials() {
         body:    t('onboarding_swipenav_slide2_body'),
         action:  {
           label: t('onboarding_action_go_to_settings'),
-          fn:    () => renderSettings('app'),
+          fn:    () => Router.navigate({ page: 'settings', tabId: 'app' }),
         },
       },
     ],
@@ -337,7 +337,7 @@ function getFeatureTutorials() {
         body:    t('onboarding_rememberpos_slide1_body'),
         action:  {
           label: t('onboarding_action_go_to_settings'),
-          fn:    () => renderSettings('app'),
+          fn:    () => Router.navigate({ page: 'settings', tabId: 'app' }),
         },
       },
     ],
@@ -359,7 +359,7 @@ function getFeatureTutorials() {
         body:    t('onboarding_leadersnotes_slide2_body'),
         action:  {
           label: t('onboarding_action_go_to_settings'),
-          fn:    () => renderSettings('app'),
+          fn:    () => Router.navigate({ page: 'settings', tabId: 'app' }),
         },
       },
     ],
@@ -387,7 +387,7 @@ function getFeatureTutorials() {
         body:    t('onboarding_answercheck_slide3_body'),
         action:  {
           label: t('onboarding_action_go_to_settings'),
-          fn:    () => renderSettings('app'),
+          fn:    () => Router.navigate({ page: 'settings', tabId: 'app' }),
         },
       },
     ],
@@ -726,12 +726,14 @@ function showAppOnboarding() {
     onComplete: () => {
       localStorage.setItem('app_onboarding_complete', 'true');
       window._libActiveTab = 'all';
+      Router.replaceState({ page: 'library' });
       openLibrary();
       showOnboardingIfNeeded();
     },
     onSkip: () => {
       localStorage.setItem('app_onboarding_complete', 'true');
       window._libActiveTab = 'all';
+      Router.replaceState({ page: 'library' });
       openLibrary();
       showOnboardingIfNeeded();
     },
@@ -805,7 +807,7 @@ function showUpgradeOnboarding() {
     skipLabel:     t('onboarding_close'),
     finalLabel:    t('onboarding_close'),
     restoreScroll: true,
-    returnTo:      () => renderHowToUse('study'),
+    returnTo:      () => { Router.replaceState({ page: 'howto', tabId: 'study' }); renderHowToUse('study'); },
   });
 }
 
@@ -851,7 +853,7 @@ function showOnboarding() {
     slides:       studyOnboardingSlides,
     skipLabel:    t('onboarding_close'),
     restoreScroll: true,
-    returnTo:     () => renderHowToUse('study'),
+    returnTo:     () => { Router.replaceState({ page: 'howto', tabId: 'study' }); renderHowToUse('study'); },
   });
 }
 
@@ -864,7 +866,7 @@ function showAppOnboardingFromHowTo() {
     skipLabel:    t('onboarding_close'),
     finalLabel:   t('onboarding_close'),
     restoreScroll: true,
-    returnTo:     () => renderHowToUse('study'),
+    returnTo:     () => { Router.replaceState({ page: 'howto', tabId: 'study' }); renderHowToUse('study'); },
   });
 }
 
@@ -918,15 +920,15 @@ function updateNavButtons() {
 // ══════════════════════════════════════════════════════════════════════════════
 
 function navLibClick() {
-  if (window.activeTabPage === 'library') { closeNonChapterPage(); } else { openLibrary(); }
+  if (window.activeTabPage === 'library') { Router.back(); } else { Router.navigate({ page: 'library' }); }
 }
 function navSearchClick()   { openSearch(); }
 function navProgressClick() {
-  if (window.activeTabPage === 'progress') { closeNonChapterPage(); } else { renderProgressOverview(); }
+  if (window.activeTabPage === 'progress') { Router.back(); } else { Router.navigate({ page: 'progress' }); }
 }
 function navHowtoClick() {
-  if (window.activeTabPage === 'howto') { closeNonChapterPage(); } else { renderHowToUse(); }
+  if (window.activeTabPage === 'howto') { Router.back(); } else { Router.navigate({ page: 'howto' }); }
 }
 function navSettingsClick() {
-  if (window.activeTabPage === 'settings') { closeNonChapterPage(); } else { renderSettings(); }
+  if (window.activeTabPage === 'settings') { Router.back(); } else { Router.navigate({ page: 'settings' }); }
 }

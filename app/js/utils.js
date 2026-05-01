@@ -48,7 +48,7 @@ function getLastPosition() {
 async function returnToLastPosition() {
   const pos = getLastPosition();
   if (!pos) return;
-  await goToChapter(pos.chapterIdx);
+  await Router.navigate({ page: 'chapter', idx: pos.chapterIdx, scrollY: pos.scrollY });
   window.scrollTo(0, pos.scrollY);
 }
 

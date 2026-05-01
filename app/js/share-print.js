@@ -50,19 +50,17 @@ function handleGesture() {
 
   if (delta < -swipeThreshold) {
     if (typeof currentChapter !== 'undefined' && currentChapter < chapters.length - 1) {
-      currentChapter++;
-      goToChapter(currentChapter);
+      Router.navigate({ page: 'chapter', idx: currentChapter + 1 });
       window.scrollTo(0, 0);
     }
   }
 
   if (delta > swipeThreshold) {
     if (typeof currentChapter !== 'undefined' && currentChapter > 0) {
-      currentChapter--;
-      goToChapter(currentChapter);
+      Router.navigate({ page: 'chapter', idx: currentChapter - 1 });
       window.scrollTo(0, 0);
     } else if (currentChapter === 0) {
-      renderTitlePage();
+      Router.navigate({ page: 'title' });
       window.scrollTo(0, 0);
     }
   }
