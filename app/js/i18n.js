@@ -117,14 +117,34 @@ const SUPPORTED_LANGUAGES = Object.keys(LANGUAGE_MAP);
 const RTL_LANGUAGES = ['ar', 'he', 'fa', 'ur'];
 
 
-// ── LANGUAGE HELPERS ──────────────────────────────────────────────────────────
-
-// Returns a letter-badge <span> when the LANGUAGE_MAP entry has a badge
-// property, otherwise returns the raw flag value (emoji or SVG string).
-// Badge shape matches a flag: rectangular, coloured background, white letter.
-// NOTE: the Settings page always uses the raw flag — the language name there
-// is sufficient to distinguish same-flag languages. Use this only where space
-// is tight and same-flag languages may appear together (e.g. library lang bar).
+// ── LANGUAGE MAP ──────────────────────────────────────────────────────────────
+// Single source of truth for all languages the app is aware of. It serves two
+// distinct purposes that are easy to confuse:
+//
+// 1. CONTENT LANGUAGES — any code here can appear in a .estudy file's
+//    studyMetadata.language field. The library filter bar builds itself from
+//    whichever codes are found in installed studies, so adding an entry here
+//    is all that is needed to support a new content language.
+//
+// 2. UI LANGUAGES — the subset of codes whose full interface translation
+//    exists in js/locales/{lang}/. This subset is defined separately in the
+//    `groups` array inside tabLanguage() in render-pages.js. A code can be
+//    in LANGUAGE_MAP (for the library filter) without being in `groups`
+//    (no Settings picker button) — that is intentional for languages whose
+//    UI translation is not yet complete.
+//
+// To add a new content language: add an entry here. Done.
+// To also make it a UI language: see "Adding a new UI language" in README.md.
+//
+// SUPPORTED_LANGUAGES below is derived from this map automatically — do not
+// maintain a separate list.
+//
+// flag:  the flag emoji shown in the tab label and on each language button.
+// label: the language name written in that language (never translated).
+// group: used to render regional dividers in the language picker.
+// badge: optional { letter, bg } — used instead of flag when multiple languages
+//        share the same national flag (e.g. Nigerian languages). Any language
+//        entry can carry a badge; renderLangBadge() handles the fallback.
 function renderLangBadge(entry) {
   if (entry && entry.badge) {
     return `<span class="lang-badge" style="--badge-bg:${entry.badge.bg}">${entry.badge.letter}</span>`;

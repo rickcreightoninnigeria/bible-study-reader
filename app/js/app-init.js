@@ -251,7 +251,7 @@ function _showIdbUnavailableError() {
         <div style="font-size:3rem; margin-bottom:16px;">⚠️</div>
         <h2 style="margin-bottom:12px;">Storage unavailable</h2>
         <p style="color:#888; max-width:320px; margin:0 auto;">
-          This app needs browser storage to work. If you're in a private or
+          This app needs browser storage to work. If you’re in a private or
           incognito window, please reopen it in a normal window and try again.
         </p>
       </div>`;
