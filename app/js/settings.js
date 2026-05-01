@@ -249,8 +249,8 @@ function resetToDefaults() {
     localStorage.removeItem('onboardingComplete');
     localStorage.removeItem('app_onboarding_complete');
     showToast({ message: t('settings_reset_toast'), isManual: true });
-    Router.replaceState({ page: 'settings' });
-    renderSettings();
+    Router.replaceState({ page: 'settings', tabId: window.activeTabId });
+    renderSettings(window.activeTabId);
   });
 }
 

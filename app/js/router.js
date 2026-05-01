@@ -216,12 +216,18 @@ const Router = (() => {
     }).then(result => {
       if (!result.isConfirmed) return;
 
+      // Android WebView bridge (plain WebView — no Capacitor/Cordova)
+      if (window.Android?.exitApp) {
+        window.Android.exitApp();
+      }
+
       // Attempt Capacitor exit first, then Cordova, then no-op.
       // In a plain browser context neither will be defined and the dialog
       // simply closes — correct behaviour for desktop testing.
-      if (window.Capacitor?.Plugins?.App?.exitApp) {
+      else if (window.Capacitor?.Plugins?.App?.exitApp) {
         window.Capacitor.Plugins.App.exitApp();
-      } else if (window.navigator?.app?.exitApp) {
+      }
+      else if (window.navigator?.app?.exitApp) {
         window.navigator.app.exitApp();
       }
     });

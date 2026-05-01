@@ -58,7 +58,7 @@ function _resetNonChapterPageState() {
 // Closes the menu drawer and renders the title page.
 function goToTitlePage() {
   closeMenu();
-  renderTitlePage();
+  Router.navigate({ page: 'title' });
 }
 
 // Closes the menu drawer and navigates to the copyright/licence page.

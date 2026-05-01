@@ -552,6 +552,7 @@ function renderNotesPage() {
   closeMenu();
   _resetNonChapterPageState();
   isNonChapterPage = true;
+  window.activeTabPage = 'notes';
   const content = document.getElementById('mainContent');
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';

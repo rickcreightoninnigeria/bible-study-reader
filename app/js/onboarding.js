@@ -64,7 +64,7 @@ function getUpgradeOnboardingSlides() {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>Multilingual:</b> improved support</li><li><b>Answer checking:</b> bugfixes</li></ul>',
+      body:    '<ul><li><b>Back:</b> improved handling of back button and navigation history</li><li><b>Dark mode:</b> some minor bugfixes</li></ul>',
     },
   ];
 }
@@ -836,11 +836,11 @@ function showOnboardingIfNeeded() {
     restoreScroll: false,
     onComplete: () => {
       localStorage.setItem(`onboardingComplete_${window.activeStudyId}`, 'true');
-      renderTitlePage();
+      Router.navigate({ page: 'title' });
     },
     onSkip: () => {
       localStorage.setItem(`onboardingComplete_${window.activeStudyId}`, 'true');
-      renderTitlePage();
+      Router.navigate({ page: 'title' });
     },
   });
 }
