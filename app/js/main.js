@@ -224,7 +224,7 @@ function updateProgress() {
   if (pct === 100) showCelebrationToast(ch);
 }
 
-async function initApp() {
+async function initApp({ isStudySwitch = false } = {}) {
   // Called after study data is loaded into the engine.
   // Decides whether to restore a saved position or show the title page,
   // then shows study-specific onboarding on first open of this study.
@@ -238,17 +238,30 @@ async function initApp() {
   // Guard: discard the saved position if its chapter index is out of range
   // for the current study (e.g. switching from a longer study to a shorter one).
   const _launchPos = _savedPos && _savedPos.chapterIdx < window.chapters.length
-    ? _savedPos
-    : null;
+    ? _savedPos : null;
   if (!_launchPos) clearLastPosition();
 
   if (_launchPos) {
     await goToChapter(_launchPos.chapterIdx);
     setTimeout(() => window.scrollTo(0, _launchPos.scrollY), 100);
-    Router.boot({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
+    if (isStudySwitch) {
+      // Push a history entry for the new study view WITHOUT re-rendering —
+      // goToChapter() above has already rendered it. Router.navigate() would
+      // call _applyNavigation() → goToChapter() a second time, breaking sticky
+      // bars. We push state directly and update Router's internal _lastPage via
+      // replaceState-then-push so slide direction tracking stays consistent.
+      history.pushState({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY, tabId: null }, '');
+    } else {
+      Router.boot({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
+    }
   } else {
     renderTitlePage();
-    Router.boot({ page: 'title' });
+    if (isStudySwitch) {
+      // Same reasoning: renderTitlePage() already rendered — just push state.
+      history.pushState({ page: 'title', idx: null, scrollY: 0, tabId: null }, '');
+    } else {
+      Router.boot({ page: 'title' });
+    }
   }
 
   renderMenu();

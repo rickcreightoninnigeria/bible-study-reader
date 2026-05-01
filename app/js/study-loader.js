@@ -134,10 +134,12 @@ async function activateStudy(id) {
 
     // 3. applyStudyData handles everything: chapters normalisation, image data,
     //    shortTitle → headerTitle, QA lookups, onboarding slides, and initApp().
-    applyStudyData(data);
-
-    // 4. Close the library after the study is loaded
-    Router.back();
+    //    isStudySwitch:true makes initApp() push a new history entry (via
+    //    Router.navigate) rather than replace (Router.boot), so the library
+    //    entry stays on the stack and back returns to it.
+    applyStudyData(data, { isStudySwitch: true });
+    // No Router.back() — initApp() now owns the history entry for the new
+    // study view, pushed on top of the existing library entry.
 }
 
 async function openLibrary() {
@@ -458,7 +460,7 @@ function restoreStudyTheme() {
   }
 }
 
-async function applyStudyData(data) {
+async function applyStudyData(data, { isStudySwitch = false } = {}) {
   // Revoke any blob URLs created for the previous study before overwriting
   // state. This prevents blob URLs accumulating in memory across study switches.
   _revokeAllBlobUrls();
@@ -648,7 +650,7 @@ async function applyStudyData(data) {
 
   window.verseData = {}; // populated by renderChapter() from biblePassage elements
   
-  initApp();
+  initApp({ isStudySwitch });
 } // end applyStudyData
 
 // wrapper to parse string handed over from Android
@@ -692,7 +694,7 @@ async function loadStudyFromJson(jsonString) {
             window.activeStudyId = studyId;
             checkEstudyVersion(data);
             Router.back();
-            applyStudyData(data);
+            applyStudyData(data, { isStudySwitch: true });
         } else {
             window.pendingStudyData = data;
             window.activeStudyId   = studyId;
@@ -1083,7 +1085,7 @@ async function loadStudyFromFile(file) {
       checkEstudyVersion(data);
       Router.back();
       window.activeStudyId = studyId;
-      applyStudyData(data);
+      applyStudyData(data, { isStudySwitch: true });
 
     } else {
       // ── Legacy plain-JSON .estudy ─────────────────────────────────────────
@@ -1091,7 +1093,7 @@ async function loadStudyFromFile(file) {
       const data = JSON.parse(text);
       checkEstudyVersion(data);
       Router.back();
-      applyStudyData(data);
+      applyStudyData(data, { isStudySwitch: true });
     }
 
   } catch (err) {

@@ -62,33 +62,25 @@ function _fetchJson(path) {
 // Uses file-level fallback for data files (appAboutData, shelvesStructure,
 // learningPathways) and key-level fallback for ui strings.
 // Called once on startup and again whenever the user changes language.
-async function loadLocale(langCode) {
-  const localePath   = `js/locales/${langCode}`;
-  const fallbackPath = `js/locales/en`;
-  const isEnglish    = langCode === 'en';
 
-  // Fetch locale files and English fallbacks in parallel.
-  // When the resolved language is already English, locale and fallback paths
-  // are identical — the files are fetched twice but load from the APK bundle
-  // near-instantly, so the minor redundancy is not worth complicating the code.
-  const [
-    untranslated,
-    aboutLocale,    aboutFallback,
-    shelvesLocale,  shelvesFallback,
-    pathwaysLocale, pathwaysFallback,
-    uiLocale,       uiFallback,
-  ] = await Promise.all([
-    _fetchJson('js/appAboutData_untranslated.json'),
-    _fetchJson(`${localePath}/appAboutData_${langCode}.json`),
-    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/appAboutData_en.json`),
-    _fetchJson(`${localePath}/libraryShelvesStructure_${langCode}.json`),
-    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/libraryShelvesStructure_en.json`),
-    _fetchJson(`${localePath}/learningPathways_${langCode}.json`),
-    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/learningPathways_en.json`),
-    _fetchJson(`${localePath}/ui_${langCode}.json`),
-    isEnglish ? Promise.resolve(null) : _fetchJson(`${fallbackPath}/ui_en.json`),
-  ]);
-
+// Shared assembly step used by both branches of loadLocale().
+// Accepts the locale fetch results plus optional English fallbacks (null when
+// the resolved language is already English) and writes to window globals.
+//
+//   untranslated  – appAboutData_untranslated.json (language-independent)
+//   aboutLocale / aboutFallback     – file-level fallback: locale wins or en
+//   shelvesLocale / shelvesFallback – file-level fallback: locale wins or en
+//   pathwaysLocale / pathwaysFallback – file-level fallback: locale wins or en
+//   uiLocale / uiFallback           – key-level fallback: en base + locale overlay
+//   langCode      – stored on window.appLocale
+function _applyLocaleData({
+  langCode,
+  untranslated,
+  aboutLocale,    aboutFallback,
+  shelvesLocale,  shelvesFallback,
+  pathwaysLocale, pathwaysFallback,
+  uiLocale,       uiFallback,
+}) {
   // File-level fallback: use the locale version if it loaded, otherwise English.
   const aboutData    = aboutLocale    || aboutFallback    || {};
   const shelvesData  = shelvesLocale  || shelvesFallback  || [];
@@ -100,13 +92,70 @@ async function loadLocale(langCode) {
   const uiStrings = { ...(uiFallback || {}), ...(uiLocale || {}) };
 
   window.appAboutData = {
-    ...(untranslated  || {}),
+    ...(untranslated || {}),
     ...(aboutData),
     libraryShelvesStructure: shelvesData,
     learningPathways:        pathwaysData,
   };
   window.appStrings = uiStrings;
   window.appLocale  = langCode;
+}
+
+async function loadLocale(langCode) {
+  const localePath   = `js/locales/${langCode}`;
+  const fallbackPath = `js/locales/en`;
+  const isEnglish    = langCode === 'en';
+
+  if (isEnglish) {
+    // English: locale and fallback paths are identical, so fetch each file
+    // only once and pass the result as both locale and fallback. _applyLocaleData
+    // will prefer the locale value (left-hand side of ||), so the outcome is
+    // identical to the non-English path with no wasted requests.
+    const [untranslated, aboutLocale, shelvesLocale, pathwaysLocale, uiLocale] =
+      await Promise.all([
+        _fetchJson('js/appAboutData_untranslated.json'),
+        _fetchJson(`${localePath}/appAboutData_en.json`),
+        _fetchJson(`${localePath}/libraryShelvesStructure_en.json`),
+        _fetchJson(`${localePath}/learningPathways_en.json`),
+        _fetchJson(`${localePath}/ui_en.json`),
+      ]);
+    _applyLocaleData({
+      langCode,
+      untranslated,
+      aboutLocale,    aboutFallback:    null,
+      shelvesLocale,  shelvesFallback:  null,
+      pathwaysLocale, pathwaysFallback: null,
+      uiLocale,       uiFallback:       null,
+    });
+    return;
+  }
+
+  // Non-English: fetch locale files and English fallbacks in parallel.
+  const [
+    untranslated,
+    aboutLocale,    aboutFallback,
+    shelvesLocale,  shelvesFallback,
+    pathwaysLocale, pathwaysFallback,
+    uiLocale,       uiFallback,
+  ] = await Promise.all([
+    _fetchJson('js/appAboutData_untranslated.json'),
+    _fetchJson(`${localePath}/appAboutData_${langCode}.json`),
+    _fetchJson(`${fallbackPath}/appAboutData_en.json`),
+    _fetchJson(`${localePath}/libraryShelvesStructure_${langCode}.json`),
+    _fetchJson(`${fallbackPath}/libraryShelvesStructure_en.json`),
+    _fetchJson(`${localePath}/learningPathways_${langCode}.json`),
+    _fetchJson(`${fallbackPath}/learningPathways_en.json`),
+    _fetchJson(`${localePath}/ui_${langCode}.json`),
+    _fetchJson(`${fallbackPath}/ui_en.json`),
+  ]);
+  _applyLocaleData({
+    langCode,
+    untranslated,
+    aboutLocale,    aboutFallback,
+    shelvesLocale,  shelvesFallback,
+    pathwaysLocale, pathwaysFallback,
+    uiLocale,       uiFallback,
+  });
 }
 
 // ── LOCALE RELOAD + RE-RENDER ─────────────────────────────────────────────────
