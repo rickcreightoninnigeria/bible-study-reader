@@ -141,6 +141,11 @@ const Router = (() => {
         // Trigger reflow so removing + re-adding the class restarts the animation.
         void content.offsetWidth;
         content.classList.add(slideClass);
+        // Remove the class once the animation finishes. Leaving it in place
+        // would cause the animation to create a stacking context that confines
+        // position:fixed children (lang bar, save bar) to #mainContent rather
+        // than the viewport — making them appear stuck mid-page.
+        setTimeout(() => content.classList.remove(slideClass), 220);
       }
 
       // Dispatch to the existing render functions.
@@ -236,6 +241,15 @@ const Router = (() => {
   // ── popstate listener ───────────────────────────────────────────────────────
 
   window.addEventListener('popstate', async (e) => {
+    // If the search overlay is open, close it and re-push the state we just
+    // popped — the overlay closing is not a navigation, just a UI dismiss.
+    const searchOverlay = document.getElementById('searchOverlay');
+    if (searchOverlay?.classList.contains('open')) {
+      closeSearch();
+      history.pushState(e.state, '');  // restore the entry we just popped
+      return;
+    }
+
     if (!e.state || e.state.page === null) {
       // Stack is exhausted — user pressed back past the first entry.
       _handleExitIntent();
@@ -318,7 +332,22 @@ const Router = (() => {
     _lastPage = state.page;
   }
 
-  return { navigate, back, boot, replaceState };
+  /**
+   * pushWithoutRender(destination)
+   *
+   * Pushes a history entry WITHOUT calling _applyNavigation().
+   * Use when the view has already been rendered by direct calls (e.g. initApp
+   * on a study switch), and you only need the history stack updated.
+   * Updates _lastPage so slide direction tracking stays consistent, and the
+   * _navigating guard is never touched — so no spurious popstate re-renders.
+   */
+  function pushWithoutRender(destination) {
+    const state = _makeState(destination);
+    history.pushState(state, '');
+    _lastPage = state.page;
+  }
+
+  return { navigate, back, boot, replaceState, pushWithoutRender };
 
 })();
 
@@ -351,23 +380,3 @@ function navSettingsClick() {
   if (window.activeTabPage === 'settings') { Router.back(); }
   else { Router.navigate({ page: 'settings' }); }
 }
-
-
-// ── BOOT INTEGRATION ──────────────────────────────────────────────────────────
-//
-// In main.js, update initApp() to call Router.boot() after the initial render:
-//
-//   async function initApp() {
-//     // ... existing setup ...
-//
-//     if (_launchPos) {
-//       await goToChapter(_launchPos.chapterIdx);
-//       setTimeout(() => window.scrollTo(0, _launchPos.scrollY), 100);
-//       Router.boot({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
-//     } else {
-//       renderTitlePage();
-//       Router.boot({ page: 'title' });
-//     }
-//
-//     // ... rest of initApp ...
-//   }

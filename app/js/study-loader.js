@@ -142,7 +142,7 @@ async function activateStudy(id) {
     // study view, pushed on top of the existing library entry.
 }
 
-async function openLibrary() {
+function openLibrary() {
   window.libLangFilter = 'all';
   closeMenu();
   _resetNonChapterPageState();
@@ -150,11 +150,14 @@ async function openLibrary() {
   window.activeTabPage = 'library';
   suspendStudyTheme();
   document.getElementById('mainContent').innerHTML = '';
-  await clearStudyUiLangOverride();
+  // Intentionally not awaited: renderLibrary() uses only app-locale renderlib_*
+  // keys which exist in every locale file, so it is safe to render immediately
+  // while the locale reload completes in the background. Awaiting here held the
+  // Router._navigating lock across multiple XHR fetches, causing any Back press
+  // during that window to be silently dropped, leaving sticky bars broken.
+  clearStudyUiLangOverride();
   const libBtn = document.getElementById('navLibBtn');
   if (libBtn) { libBtn.innerHTML = ICONS.close; libBtn.onclick = () => Router.back(); }
-  const saveBtn = document.getElementById('saveBtn');
-  if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
   document.getElementById('header-title').innerText = t('studyloader_header_library');
   renderLibrary();
@@ -246,15 +249,18 @@ async function deleteStudy(id, title) {
 
     // 5. If this study is currently open, reset the UI and theme
     if (window.activeStudyId === id) {
-        window.activeStudyId = null;
-        window.chapters = [];
-        window.studyMetadata = {};
-        localStorage.removeItem('bsr_last_active_study');
-        resetTheme();
-        Router.navigate({ page: 'title' });
+      window.activeStudyId = null;
+      window.chapters = [];
+      window.titlePageData = null;      // prevents stale title page render
+      window.studyMetadata = {};
+      localStorage.removeItem('bsr_last_active_study');
+      resetTheme();
+      // Don't navigate to 'title' here — the library navigate below handles it.
+      // Re-render the menu now so it reflects the empty state immediately.
+      renderMenu();                     // clears the stale chapter list
     }
 
-    // 5. Refresh the list
+    // 6. Refresh the list
     invalidateCoverCache(id);
     Router.navigate({ page: 'library' });
     if (typeof showToast === 'function') showToast({ message: t('studyloader_delete_success'), isManual: true });

@@ -311,7 +311,11 @@
 #mainContent {
   animation-duration: 220ms;
   animation-timing-function: ease-out;
-  animation-fill-mode: both;
+  animation-fill-mode: none;   /* 'both' would create a persistent stacking context
+                                    that confines position:fixed children (lang bar,
+                                    save bar) to #mainContent rather than the viewport,
+                                    causing them to appear stuck mid-page after a
+                                    study switch. 'none' avoids this entirely. */
 }
 
 @keyframes slideInFromRight {

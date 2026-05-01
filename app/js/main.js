@@ -31,7 +31,24 @@ function updateNotesMenuIndicator(hasContent) {
 
 function renderMenu() {
   const list = document.getElementById('menuList');
+  if (!list) return;
+
   const currentStudyId = window.activeStudyId;
+
+  // Guard: if no study is loaded (e.g. after deleting the active study),
+  // render a minimal menu with only a Library link and bail out.
+  // This prevents stale chapter items from persisting in the menu after
+  // the globals have been cleared by deleteStudy().
+  if (!currentStudyId || !window.chapters?.length) {
+    const heading = document.getElementById('menuHeading');
+    if (heading) heading.textContent = t('main_menu_heading');
+    list.innerHTML = `
+      <div class="chapter-item" onclick="Router.navigate({ page: 'library' })">
+        <span class="chapter-num">${ICONS.library}</span>
+        <span class="chapter-name">${t('main_menu_no_study')}</span>
+      </div>`;
+    return;
+  }
 
   // Resolve active language for multilingual title/chapter display.
   // For mono-lingual studies langMap is {} and resolveMetaField falls through
@@ -40,7 +57,7 @@ function renderMenu() {
   const activeLang     = getActiveLang(availableLangs);
   const langMap        = buildLangMap(window.studyMetadata || {});
 
-  // 7. Dynamic heading: "Chapters of [shortTitle]"
+  // 1. Dynamic heading: "Chapters of [shortTitle]"
   const heading = document.getElementById('menuHeading');
   if (heading) {
     const meta       = window.titlePageData;
@@ -56,7 +73,7 @@ function renderMenu() {
       <span class="chapter-name">${t('main_menu_title_page')}</span>
     </div>`;
 
-  // 8. My Progress and How to Use removed from Contents — they live in the top bar
+  // 2. My Progress and How to Use removed from Contents — they live in the top bar
 
   html += chapters.map((ch, i) => {
     const hasAnswers = Object.keys(localStorage).some(key =>
@@ -245,12 +262,14 @@ async function initApp({ isStudySwitch = false } = {}) {
     await goToChapter(_launchPos.chapterIdx);
     setTimeout(() => window.scrollTo(0, _launchPos.scrollY), 100);
     if (isStudySwitch) {
-      // Push a history entry for the new study view WITHOUT re-rendering —
-      // goToChapter() above has already rendered it. Router.navigate() would
-      // call _applyNavigation() → goToChapter() a second time, breaking sticky
-      // bars. We push state directly and update Router's internal _lastPage via
-      // replaceState-then-push so slide direction tracking stays consistent.
-      history.pushState({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY, tabId: null }, '');
+      // Push a history entry for the new study view WITHOUT re-rendering.
+      // goToChapter() above has already rendered it. Using Router.navigate()
+      // would call _applyNavigation() → goToChapter() a second time, breaking
+      // sticky bars. Using bare history.pushState() bypasses the router's
+      // _lastPage tracking and can trigger a spurious popstate in some WebViews.
+      // pushWithoutRender() is the correct primitive: it pushes state, updates
+      // _lastPage, and never touches _navigating.
+      Router.pushWithoutRender({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
     } else {
       Router.boot({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
     }
@@ -258,7 +277,7 @@ async function initApp({ isStudySwitch = false } = {}) {
     renderTitlePage();
     if (isStudySwitch) {
       // Same reasoning: renderTitlePage() already rendered — just push state.
-      history.pushState({ page: 'title', idx: null, scrollY: 0, tabId: null }, '');
+      Router.pushWithoutRender({ page: 'title' });
     } else {
       Router.boot({ page: 'title' });
     }

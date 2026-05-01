@@ -675,6 +675,8 @@
   "settings_resetall_confirm2_btn":     "Erase everything",
   "settings_resetall_confirm2_mismatch": "Please type \u2018reset\u2019 to confirm.",
 
+  "main_menu_no_study": "No active study (so visit Library!)",
+
   "renderpages_settings_nuclear_warning_label": "Danger zone",
   "renderpages_settings_nuclear_warning_text":  "The following action is irreversible. It will erase all downloaded studies, answers, notes, progress, and settings from this device.",
   "renderpages_settings_nuclear_desc":          "Use this only if you want to start completely fresh, as if the app was just installed.",
