@@ -1315,21 +1315,17 @@ async function renderLibrary() {
     finalUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
   }
 
-  // Use the Android bridge if available (required for WebView), otherwise open in browser
+  // Use the Android bridge if available (required for WebView), otherwise open
+  // in a new browser tab. window.open() is preferred over a hidden <a download>
+  // click for Drive URLs because the uc?export=download endpoint redirects
+  // through an interstitial — window.open follows the redirect chain correctly
+  // while the download attribute on an anchor behaves inconsistently across
+  // browsers for cross-origin redirects.
   if (window.Android && typeof window.Android.openUrl === 'function') {
     window.Android.openUrl(finalUrl);
   } else {
     window.open(finalUrl, '_blank');
   }
-  
-    // Create a temporary hidden anchor to force the download behavior
-    const link = document.createElement('a');
-    link.href = finalUrl;
-    link.setAttribute('download', '');
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   window.libPathSetActive = function(pathwayKey, btn) {
