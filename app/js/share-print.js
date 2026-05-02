@@ -367,7 +367,7 @@ function buildChapterBody(ch) {
       body += `<div class="question-block">
         <div class="question-ref">${q.ref}</div>
         <div class="question-text">${q.text}</div>
-        <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() || t('shareprint_print_no_answer')}</div>
+        <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() ? escapeHtml(answer.trim()) : t('shareprint_print_no_answer')}</div>
       </div>`;
     });
   });
@@ -389,7 +389,7 @@ function buildChapterBody(ch) {
       body += `<div class="question-block">
         <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
         <div class="question-text">${rq}</div>
-        <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() || t('shareprint_print_no_answer')}</div>
+        <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() ? escapeHtml(answer.trim()) : t('shareprint_print_no_answer')}</div>
       </div>`;
     });
   }
@@ -398,7 +398,7 @@ function buildChapterBody(ch) {
   const notesVal = localStorage.getItem(storageKey(ch.chapterNumber, 'notes', 0)) || '';
   if (notesVal.trim()) {
     body += `<div class="notes-heading">${t('shareprint_print_notes_heading')}</div>
-      <div class="answer">${notesVal.trim()}</div>`;
+      <div class="answer">${escapeHtml(notesVal.trim())}</div>`;
   }
 
   return body;
@@ -488,7 +488,7 @@ ${buildChapterBody(ch)}`;
   if (appSettings.showPageNotes && globalNotes && globalNotes.trim()) {
     chaptersHTML += `
 <h2>${t('shareprint_print_notes_page_heading')}</h2>
-<div class="answer" style="min-height:0;">${globalNotes.trim()}</div>`;
+<div class="answer" style="min-height:0;">${escapeHtml(globalNotes.trim())}</div>`;
   }
 
   const html = `<!DOCTYPE html>

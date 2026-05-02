@@ -50,9 +50,12 @@ function closeSearch() {
 // Wraps all occurrences of 'query' in 'text' with <mark> tags for highlighting
 // in search results. Escapes regex special characters in the query first.
 function highlightMatch(text, query) {
-  if (!query) return text;
+  // Always HTML-escape the input text first so that answer content containing
+  // '<', '>', or '&' cannot inject markup into the search results innerHTML.
+  const safeText = escapeHtml(text);
+  if (!query) return safeText;
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
+  return safeText.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
 }
 
 // Strips all HTML tags from a string, returning plain text.

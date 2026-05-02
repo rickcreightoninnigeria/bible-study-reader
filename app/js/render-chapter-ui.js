@@ -178,7 +178,7 @@ function buildSaveBar(ch) {
 
 function buildNotesField(ch) {
   const notesKey = storageKey(ch.chapterNumber, 'notes', 0);
-  const notesVal = localStorage.getItem(notesKey) || '';
+  const notesVal = escapeHtml(localStorage.getItem(notesKey) || '');
 
   return `
     <div class="section-break section-break-spaced">

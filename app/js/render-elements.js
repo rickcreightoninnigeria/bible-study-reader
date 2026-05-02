@@ -422,7 +422,7 @@ function renderQuestion(ctx) {
   const isReflection = el.subtype === 'reflection';
   const isHeader     = el.subtype === 'header';
   const key          = storageKey(ch.chapterNumber, isReflection ? 'r' : 'q', el.elementId);
-  const val          = localStorage.getItem(key) || '';
+  const val          = escapeHtml(localStorage.getItem(key) || '');
   const starred      = isStarred(ch.chapterNumber, el.elementId);
   const cardId       = el.elementId;
 

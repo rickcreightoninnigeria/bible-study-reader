@@ -560,7 +560,7 @@ function renderNotesPage() {
   document.getElementById('header-title').innerText = t('progress_notes_page_title');
 
   const currentStudyId = window.activeStudyId;
-  const savedText      = localStorage.getItem(`bsr_${currentStudyId}_global_notes`) || '';
+  const savedText      = escapeHtml(localStorage.getItem(`bsr_${currentStudyId}_global_notes`) || '');
 
   content.innerHTML = `
     <div class="howto-page">
