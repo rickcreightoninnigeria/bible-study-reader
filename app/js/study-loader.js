@@ -439,6 +439,13 @@ function resetTheme() {
 
 function suspendStudyTheme() {
   const root = document.documentElement;
+
+  // Guard: if a theme is already suspended, don't overwrite the stash with an
+  // empty object. This handles the case where suspendStudyTheme() is called
+  // twice without an intervening restoreStudyTheme() (e.g. navigating from
+  // Library to Settings via the nav button while a study theme is active).
+  if (root._suspendedTheme && Object.keys(root._suspendedTheme).length > 0) return;
+
   const saved = {};
   THEME_PROPS.forEach(prop => {
     const val = root.style.getPropertyValue(`--${prop}`);

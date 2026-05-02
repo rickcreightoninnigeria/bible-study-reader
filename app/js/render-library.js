@@ -1099,7 +1099,7 @@ async function renderLibrary() {
         const showDlBtn = hasDl && !alreadyInstalled;
         const safeDlUrl = hasDl ? s.downloadLocation.replace(/'/g, "\\'") : '';
         const downloadHintL3 = showDlBtn
-          ? `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">{{ICONS.download}} This study is available to download. Tap the download icon next to <b>${s.titleLevel3}</b> to install it.</p>`
+          ? `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${ICONS.download} This study is available to download. Tap the download icon next to <b>${s.titleLevel3}</b> to install it.</p>`
           : alreadyInstalled
           ? ''
           : `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${t('renderlib_study_not_available')}</p>`;
@@ -1141,9 +1141,9 @@ async function renderLibrary() {
           .filter(s => s.studyId)
           .every(s => installedIds.includes(s.studyId) && studyMatchesLangFilter(studyCache[s.studyId]));
         const showL2Dl = l2HasDl && !allInstalled;
-        const pathwayHint = `<p style="margin-top:12px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">Click the {{ICONS.pathwayOff}} icon next to <b>${p2.titleLevel2}</b> to activate this pathway. Your progress across all its studies will then appear in a new tab on the My Progress page.</p>`;
+        const pathwayHint = `<p style="margin-top:12px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">Click the ${ICONS.pathwayOff} icon next to <b>${p2.titleLevel2}</b> to activate this pathway. Your progress across all its studies will then appear in a new tab on the My Progress page.</p>`;
         const downloadHintL2 = showL2Dl
-          ? `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">{{ICONS.download}} This bundle is available to download. Tap the download icon next to <b>${p2.titleLevel2}</b> to install all its studies at once.</p>`
+          ? `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${ICONS.download} This bundle is available to download. Tap the download icon next to <b>${p2.titleLevel2}</b> to install all its studies at once.</p>`
           : `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${t('renderlib_pathway_not_available')}</p>`;
         const fullDesc2  = (p2.description || '') + pathwayHint + downloadHintL2;
         const safeDesc = fullDesc2.replace(/'/g, "\\'").replace(/"/g, '&quot;');
