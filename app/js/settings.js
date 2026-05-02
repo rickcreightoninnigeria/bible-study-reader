@@ -97,23 +97,14 @@ function getInterfaceMode() {
 }
 
 function updateSettingControl(key, value) {
-  const toggles = document.querySelectorAll('.settings-toggle');
-  toggles.forEach(toggle => {
-    const onclick = toggle.getAttribute('onclick') || '';
-    if (onclick.includes(`'${key}'`)) {
-      toggle.classList.toggle('on', !!value);
-    }
+  // Toggles: match by data-setting-key attribute
+  document.querySelectorAll(`.settings-toggle[data-setting-key="${key}"]`).forEach(toggle => {
+    toggle.classList.toggle('on', !!value);
   });
 
-  const segBtns = document.querySelectorAll('.settings-seg-btn');
-  segBtns.forEach(btn => {
-    const onclick = btn.getAttribute('onclick') || '';
-    if (onclick.includes(`'${key}'`)) {
-      const match = onclick.match(/,\s*'([^']+)'\s*\)$/) || onclick.match(/,\s*(\S+?)\s*\)$/);
-      if (match) {
-        btn.classList.toggle('active', match[1] === String(value));
-      }
-    }
+  // Segmented buttons: match by data-setting-key, activate by data-setting-value
+  document.querySelectorAll(`.settings-seg-btn[data-setting-key="${key}"]`).forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.settingValue === String(value));
   });
 }
 

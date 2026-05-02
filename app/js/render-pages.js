@@ -782,7 +782,7 @@ async function renderSettings(tabId) {
 
   // ── Helper: toggle switch HTML ─────────────────────────────────────────────
   function tog(key) {
-    return `<div class="settings-toggle ${appSettings[key] ? 'on' : ''}" onclick="saveSetting('${key}', !appSettings['${key}'])">
+    return `<div class="settings-toggle ${appSettings[key] ? 'on' : ''}" data-setting-key="${key}" onclick="saveSetting('${key}', !appSettings['${key}'])">
       <div class="settings-toggle-knob"></div>
     </div>`;
   }
@@ -843,8 +843,10 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${appSettings.useSansSerif ? '' : 'active'}"
+                data-setting-key="useSansSerif" data-setting-value="false"
                 onclick="saveSetting('useSansSerif', false)">${t('renderpages_settings_font_serif')}</button>
               <button class="settings-seg-btn ${appSettings.useSansSerif ? 'active' : ''}"
+                data-setting-key="useSansSerif" data-setting-value="true"
                 onclick="saveSetting('useSansSerif', true)">${t('renderpages_settings_font_sansserif')}</button>
             </div>
           </div>` : ''}
@@ -859,6 +861,7 @@ async function renderSettings(tabId) {
             <div class="settings-seg">
               ${ICON_THEME_LABELS.map(t => `
                 <button class="settings-icon-theme-btn settings-seg-btn ${appSettings.iconStyle === t.value ? 'active' : ''}"
+                  data-setting-key="iconStyle" data-setting-value="${t.value}"
                   onclick="saveSetting('iconStyle', '${t.value}')">
                   <span class="settings-icon-theme-preview">${ICON_THEMES[t.value].search || ICONS.search}</span>
                   <span class="settings-icon-theme-label">${t.label}</span>
@@ -887,8 +890,10 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${lvMode === 'manual' ? 'active' : ''}"
+                data-setting-key="localValidateMode" data-setting-value="manual"
                 onclick="saveSetting('localValidateMode', 'manual')">${t('renderpages_settings_answercheck_manual')}</button>
               <button class="settings-seg-btn ${lvMode === 'auto' ? 'active' : ''}"
+                data-setting-key="localValidateMode" data-setting-value="auto"
                 onclick="saveSetting('localValidateMode', 'auto')">${t('renderpages_settings_answercheck_auto')}</button>
             </div>
           </div>
@@ -922,10 +927,13 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg" id="swipe-seg">
               <button class="settings-seg-btn ${appSettings.swipeSensitivity === 'low' ? 'active' : ''}"
+                data-setting-key="swipeSensitivity" data-setting-value="low"
                 onclick="saveSetting('swipeSensitivity', 'low')">${t('renderpages_settings_swipe_low')}</button>
               <button class="settings-seg-btn ${appSettings.swipeSensitivity === 'medium' ? 'active' : ''}"
+                data-setting-key="swipeSensitivity" data-setting-value="medium"
                 onclick="saveSetting('swipeSensitivity', 'medium')">${t('renderpages_settings_swipe_medium')}</button>
               <button class="settings-seg-btn ${appSettings.swipeSensitivity === 'high' ? 'active' : ''}"
+                data-setting-key="swipeSensitivity" data-setting-value="high"
                 onclick="saveSetting('swipeSensitivity', 'high')">${t('renderpages_settings_swipe_high')}</button>
             </div>
           </div>
@@ -944,10 +952,13 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${appSettings.answerFieldSize === 'small' ? 'active' : ''}"
+                data-setting-key="answerFieldSize" data-setting-value="small"
                 onclick="saveSetting('answerFieldSize', 'small')">${t('renderpages_settings_size_small')}</button>
               <button class="settings-seg-btn ${appSettings.answerFieldSize === 'medium' || !appSettings.answerFieldSize ? 'active' : ''}"
+                data-setting-key="answerFieldSize" data-setting-value="medium"
                 onclick="saveSetting('answerFieldSize', 'medium')">${t('renderpages_settings_size_medium')}</button>
               <button class="settings-seg-btn ${appSettings.answerFieldSize === 'large' ? 'active' : ''}"
+                data-setting-key="answerFieldSize" data-setting-value="large"
                 onclick="saveSetting('answerFieldSize', 'large')">${t('renderpages_settings_size_large')}</button>
             </div>
           </div>
@@ -1040,8 +1051,10 @@ async function renderSettings(tabId) {
           </div>
           <div class="settings-seg" style="margin-top:8px;">
             <button class="settings-seg-btn ${appSettings.shareFormat === 'plain' ? 'active' : ''}"
+              data-setting-key="shareFormat" data-setting-value="plain"
               onclick="saveSetting('shareFormat', 'plain')">${t('renderpages_settings_shareformat_plain')}</button>
             <button class="settings-seg-btn ${appSettings.shareFormat === 'formatted' ? 'active' : ''}"
+              data-setting-key="shareFormat" data-setting-value="formatted"
               onclick="saveSetting('shareFormat', 'formatted')">${t('renderpages_settings_shareformat_whatsapp')}</button>
           </div>` : ''}
         </div>
@@ -1064,10 +1077,13 @@ async function renderSettings(tabId) {
           <div class="settings-row" style="flex-direction:column; align-items:stretch; gap:10px;">
             <div class="settings-seg">
               <button class="settings-seg-btn ${appSettings.ttsMode === 'never' ? 'active' : ''}"
+                data-setting-key="ttsMode" data-setting-value="never"
                 onclick="saveSetting('ttsMode','never')">${t('renderpages_settings_tts_never')}</button>
               <button class="settings-seg-btn ${appSettings.ttsMode === 'long' ? 'active' : ''}"
+                data-setting-key="ttsMode" data-setting-value="long"
                 onclick="saveSetting('ttsMode','long')">${t('renderpages_settings_tts_long')}</button>
               <button class="settings-seg-btn ${appSettings.ttsMode === 'always' ? 'active' : ''}"
+                data-setting-key="ttsMode" data-setting-value="always"
                 onclick="saveSetting('ttsMode','always')">${t('renderpages_settings_tts_always')}</button>
             </div>
           </div>
@@ -1095,8 +1111,8 @@ async function renderSettings(tabId) {
     const appStoreButton = (() => {
       if (platform === 'android') {
         const pkg        = window.appAboutData?.androidPackageId;
-        const playUrl    = 'https://play.google.com/store/apps/details?id=${pkg}';
-        const intentUrl  = 'market://details?id=${pkg}';
+        const playUrl    = `https://play.google.com/store/apps/details?id=${pkg}`;
+        const intentUrl  = `market://details?id=${pkg}`;
         const onclick    = `window.Android?.openUrl ? Android.openUrl('${intentUrl}') : window.open('${playUrl}', '_blank')`;
         return `<button class="howto-share-btn" style="margin:0 0 4px;" onclick="${onclick}">
                   ${ICONS.download}&nbsp;${t('renderpages_settings_appupdates_btn_android')}
@@ -1183,10 +1199,13 @@ async function renderSettings(tabId) {
           <div class="settings-row" style="flex-direction:column; align-items:stretch; gap:10px;">
             <div class="settings-seg">
               <button class="settings-seg-btn ${mode === 'basic'        ? 'active' : ''}"
+                data-setting-key="interfaceMode" data-setting-value="basic"
                 onclick="setInterfaceMode('basic'); Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app')">${t('renderpages_settings_mode_basic')}</button>
               <button class="settings-seg-btn ${mode === 'intermediate' ? 'active' : ''}"
+                data-setting-key="interfaceMode" data-setting-value="intermediate"
                 onclick="setInterfaceMode('intermediate'); Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app')">${t('renderpages_settings_mode_intermediate')}</button>
               <button class="settings-seg-btn ${mode === 'advanced'     ? 'active' : ''}"
+                data-setting-key="interfaceMode" data-setting-value="advanced"
                 onclick="setInterfaceMode('advanced'); Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app')">${t('renderpages_settings_mode_advanced')}</button>
             </div>
           </div>
@@ -1356,10 +1375,13 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${r === 'off' ? 'active' : ''}"
+                data-setting-key="libShowRecent" data-setting-value="off"
                 onclick="saveSetting('libShowRecent', 'off')">${t('renderpages_settings_visibility_off')}</button>
               <button class="settings-seg-btn ${r === '>5'  ? 'active' : ''}"
+                data-setting-key="libShowRecent" data-setting-value=">5"
                 onclick="saveSetting('libShowRecent', '>5')">&gt;5</button>
               <button class="settings-seg-btn ${r === 'on'  ? 'active' : ''}"
+                data-setting-key="libShowRecent" data-setting-value="on"
                 onclick="saveSetting('libShowRecent', 'on')">${t('renderpages_settings_visibility_on')}</button>
             </div>
           </div>
@@ -1375,10 +1397,13 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${s === 'off' ? 'active' : ''}"
+                data-setting-key="libShowShelvesTab" data-setting-value="off"
                 onclick="saveSetting('libShowShelvesTab', 'off')">${t('renderpages_settings_visibility_off')}</button>
               <button class="settings-seg-btn ${s === '>8'  ? 'active' : ''}"
+                data-setting-key="libShowShelvesTab" data-setting-value=">8"
                 onclick="saveSetting('libShowShelvesTab', '>8')">&gt;8</button>
               <button class="settings-seg-btn ${s === 'on'  ? 'active' : ''}"
+                data-setting-key="libShowShelvesTab" data-setting-value="on"
                 onclick="saveSetting('libShowShelvesTab', 'on')">${t('renderpages_settings_visibility_on')}</button>
             </div>
           </div>
@@ -1393,12 +1418,16 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${appSettings.libShowEmptyAmount === 'none' ? 'active' : ''}"
+                data-setting-key="libShowEmptyAmount" data-setting-value="none"
                 onclick="saveSetting('libShowEmptyAmount', 'none')">${t('renderpages_settings_amount_none')}</button>
               <button class="settings-seg-btn ${appSettings.libShowEmptyAmount === 'few'  ? 'active' : ''}"
+                data-setting-key="libShowEmptyAmount" data-setting-value="few"
                 onclick="saveSetting('libShowEmptyAmount', 'few')">${t('renderpages_settings_amount_few')}</button>
               <button class="settings-seg-btn ${appSettings.libShowEmptyAmount === 'many' ? 'active' : ''}"
+                data-setting-key="libShowEmptyAmount" data-setting-value="many"
                 onclick="saveSetting('libShowEmptyAmount', 'many')">${t('renderpages_settings_amount_many')}</button>
               <button class="settings-seg-btn ${appSettings.libShowEmptyAmount === 'all'  ? 'active' : ''}"
+                data-setting-key="libShowEmptyAmount" data-setting-value="all"
                 onclick="saveSetting('libShowEmptyAmount', 'all')">${t('renderpages_settings_amount_all')}</button>
             </div>
           </div>` : ''}
@@ -1414,10 +1443,13 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${pt === 'off' ? 'active' : ''}"
+                data-setting-key="libShowPathsTab" data-setting-value="off"
                 onclick="saveSetting('libShowPathsTab', 'off')">${t('renderpages_settings_visibility_off')}</button>
               <button class="settings-seg-btn ${pt === '>2'  ? 'active' : ''}"
+                data-setting-key="libShowPathsTab" data-setting-value=">2"
                 onclick="saveSetting('libShowPathsTab', '>2')">&gt;2</button>
               <button class="settings-seg-btn ${pt === 'on'  ? 'active' : ''}"
+                data-setting-key="libShowPathsTab" data-setting-value="on"
                 onclick="saveSetting('libShowPathsTab', 'on')">${t('renderpages_settings_visibility_on')}</button>
             </div>
           </div>
@@ -1432,12 +1464,16 @@ async function renderSettings(tabId) {
             </div>
             <div class="settings-seg">
               <button class="settings-seg-btn ${pa === 'one' ? 'active' : ''}"
+                data-setting-key="libShowPathsAmount" data-setting-value="one"
                 onclick="saveSetting('libShowPathsAmount', 'one')">${t('renderpages_settings_pathsamount_one')}</button>
               <button class="settings-seg-btn ${pa === 'few'  ? 'active' : ''}"
+                data-setting-key="libShowPathsAmount" data-setting-value="few"
                 onclick="saveSetting('libShowPathsAmount', 'few')">${t('renderpages_settings_amount_few')}</button>
               <button class="settings-seg-btn ${pa === 'many' ? 'active' : ''}"
+                data-setting-key="libShowPathsAmount" data-setting-value="many"
                 onclick="saveSetting('libShowPathsAmount', 'many')">${t('renderpages_settings_amount_many')}</button>
               <button class="settings-seg-btn ${pa === 'all'  ? 'active' : ''}"
+                data-setting-key="libShowPathsAmount" data-setting-value="all"
                 onclick="saveSetting('libShowPathsAmount', 'all')">${t('renderpages_settings_amount_all')}</button>
             </div>
           </div>` : ''}
