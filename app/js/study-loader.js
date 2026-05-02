@@ -679,7 +679,9 @@ async function loadStudyFromJson(jsonString) {
         // and so startApp() can find it even if it runs after this call.
         const studyId = data.studyMetadata && data.studyMetadata.studyId;
         if (!studyId) {
-            alert(t('studyloader_error_no_study_id', { filename: 'JSON' }));
+            // alert() is blocked or unstyled on Android WebView — use the
+            // same safe fallback chain as showPickerError().
+            showPickerError(t('studyloader_error_no_study_id', { filename: 'JSON' }));
             return;
         }
 
@@ -713,7 +715,10 @@ async function loadStudyFromJson(jsonString) {
             window.activeStudyId   = studyId;
         }
     } catch(e) {
-        alert(t('studyloader_error_load_json', { error: e.message }));
+        // alert() is blocked or unstyled on Android WebView — this function is
+        // called directly from Kotlin via the JS bridge, so showPickerError()'s
+        // safe fallback chain (Swal → toast → static HTML) is used instead.
+        showPickerError(t('studyloader_error_load_json', { error: e.message }));
     }
 }
 
@@ -887,18 +892,19 @@ async function _installStudyFileQuietly(file, fileName) {
       return;
     }
 
-    // Store images in IDB
+    // Store images in IDB.
+    // IDBUnavailable is re-thrown here rather than calling showPickerError —
+    // _installStudyFileQuietly runs during installDefaultStudiesIfNeeded() at
+    // startup, before renderStudyPicker() has ever run, so #studyPickerError
+    // is never in the DOM at this point. Any IDBUnavailable error propagates
+    // to the caller's catch block (installDefaultStudiesIfNeeded), which shows
+    // a toast and logs to console — the appropriate surface for a startup failure.
     const imageNames = ['cover', 'publisher', 'author'];
     for (const name of imageNames) {
       const entry = zip.file(`images/${name}.webp`);
       if (entry) {
         const blob = await entry.async('blob');
-        try {
-          await StudyIDB.setImage(`${studyId}_${name}`, blob);
-        } catch (err) {
-            if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
-            throw err;
-        }
+        await StudyIDB.setImage(`${studyId}_${name}`, blob);
       }
     }
 
@@ -909,27 +915,14 @@ async function _installStudyFileQuietly(file, fileName) {
           const entry = zip.file(`images/${el.elementId}.webp`);
           if (entry) {
             const blob = await entry.async('blob');
-            try {
-              await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
-            } catch (err) {
-              if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
-              throw err;
-            }
+            await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
           }
         }
       }
     }
 
     // Persist study data and register
-    try {
-      await StudyIDB.set(`study_content_${studyId}`, data);
-    } catch (err) {
-      if (err.name === 'IDBUnavailable') {
-        showPickerError(t('error_idb_unavailable'));
-        return;
-      }
-      throw err;
-    }
+    await StudyIDB.set(`study_content_${studyId}`, data);
     const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     if (!registry.includes(studyId)) {
       registry.push(studyId);
@@ -948,15 +941,8 @@ async function _installStudyFileQuietly(file, fileName) {
       return;
     }
 
-    try {
-      await StudyIDB.set(`study_content_${studyId}`, data);
-    } catch (err) {
-      if (err.name === 'IDBUnavailable') {
-        showPickerError(t('error_idb_unavailable'));
-        return;
-      }
-      throw err;
-    }
+    // IDBUnavailable re-thrown to caller — see note above.
+    await StudyIDB.set(`study_content_${studyId}`, data);
 
     const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     if (!registry.includes(studyId)) {
@@ -1119,16 +1105,35 @@ function showPickerError(msg) {
   if (el) {
     el.textContent = msg;
     el.style.display = 'block';
-  } else {
-    // studyPickerError only exists when renderStudyPicker() has run.
-    // When a file arrives via an Android intent while a study is already
-    // loaded, that element won't be in the DOM — fall back to a toast so
-    // the error is never swallowed silently.
-    if (typeof showToast === 'function') {
-      showToast({ message: '⚠️ ' + msg, isManual: true });
-    } else {
-      alert(msg);
-    }
+    return;
+  }
+
+  // studyPickerError only exists when renderStudyPicker() has run.
+  // When a file arrives via an Android intent while a study is already loaded,
+  // or during early startup before the picker renders, that element won't be
+  // in the DOM. Try UI libraries in preference order, falling back to a static
+  // HTML injection that requires no library dependencies — matching the pattern
+  // used by _showIdbUnavailableError() in app-init.js.
+  if (typeof Swal !== 'undefined') {
+    Swal.fire({ icon: 'error', title: t('studyloader_error_title'), text: msg });
+    return;
+  }
+  if (typeof showToast === 'function') {
+    showToast({ message: '⚠️ ' + msg, isManual: true });
+    return;
+  }
+  // Last resort: inject a visible error directly into #mainContent.
+  // alert() is unreliable on Android WebView and must not be used here.
+  const content = document.getElementById('mainContent');
+  if (content) {
+    content.innerHTML = `
+      <div style="padding:40px 20px; text-align:center; font-family:sans-serif;">
+        <div style="font-size:3rem; margin-bottom:16px;">⚠️</div>
+        <h2 style="margin-bottom:12px;">Unable to load study</h2>
+        <p style="color:#888; max-width:320px; margin:0 auto; font-size:14px; line-height:1.5;">
+          ${msg.replace(/</g, '&lt;')}
+        </p>
+      </div>`;
   }
 }
 
