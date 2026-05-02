@@ -25,6 +25,18 @@ const RECENT_OPENED_KEY    = 'lib_recent_opened';    // newest-first, max 7
 const PINNED_KEY           = 'lib_pinned';           // ordered array
 const PINNED_ALL_KEY       = 'lib_pinned_all';       // ordered array (All tab)
 
+// ── COVER IMAGE CACHE ────────────────────────────────────────────────────────
+// Caches the base64 data URL for each study's cover image so that IDB reads
+// and FileReader.readAsDataURL() conversions only happen once per session.
+// Keyed by studyId. Call invalidateCoverCache(id) when a study's cover changes
+// or the study is deleted so the next render re-reads from IDB.
+const _coverCache = new Map();
+
+function invalidateCoverCache(id) {
+  if (id) _coverCache.delete(id);
+  else     _coverCache.clear();
+}
+
 function getRecentInstalled() {
   try { return JSON.parse(localStorage.getItem(RECENT_INSTALLED_KEY) || '[]'); }
   catch(_) { return []; }
@@ -66,9 +78,12 @@ function recordStudyInstalled(id) {
 function recordStudyOpened(id) {
   let list = getRecentOpened().filter(x => x !== id);
   list.unshift(id);
-  // Keep max 7, but never drop pinned studies from the list
+  // Keep max 7 non-pinned, but never drop pinned studies from the list.
+  // A hard ceiling of Math.max(20, pinned.length) prevents unbounded growth
+  // when many studies are pinned (all pinned studies are always retained).
   const pinned = getPinned();
-  const trimmed = list.filter(x => pinned.includes(x) || list.indexOf(x) < 7);
+  const cap     = Math.max(20, pinned.length);
+  const trimmed = list.filter(x => pinned.includes(x) || list.indexOf(x) < 7).slice(0, cap);
   saveRecentOpened(trimmed);
 }
 
@@ -317,13 +332,21 @@ async function renderLibrary() {
     const data = await StudyIDB.get(`study_content_${id}`);
     if (!data) continue;
     let coverSrc = '';
-    const coverBlob = await StudyIDB.getImage(`${id}_cover`);
-    if (coverBlob) {
-      coverSrc = await new Promise(resolve => {
-        const reader = new FileReader();
-        reader.onload = e => resolve(e.target.result);
-        reader.readAsDataURL(coverBlob);
-      });
+    if (_coverCache.has(id)) {
+      coverSrc = _coverCache.get(id);
+    } else {
+      const coverBlob = await StudyIDB.getImage(`${id}_cover`);
+      if (coverBlob) {
+        coverSrc = await new Promise(resolve => {
+          const reader = new FileReader();
+          reader.onload = e => resolve(e.target.result);
+          reader.readAsDataURL(coverBlob);
+        });
+        _coverCache.set(id, coverSrc);
+      } else {
+        // No cover blob — cache the empty string so we don't hit IDB again.
+        _coverCache.set(id, '');
+      }
     }
 
     const meta = data.studyMetadata || {};
@@ -457,7 +480,7 @@ async function renderLibrary() {
     return `
       ${riHtml}
       <div class="library-eyebrow">${t('renderlib_add_study')}</div>
-      <input type="file" id="studyPicker" accept=".estudy,.zip,application/zip,application/octet-stream,*/*" style="display:none" onchange="handleFileSelect(event)">
+      <input type="file" id="studyPicker" accept=".estudy,.zip,application/zip,application/octet-stream,*/*" multiple style="display:none" onchange="handleFileSelect(event)">
       <button class="import-btn" onclick="openDriveStudyFolder()">
         ${ICONS.download}&nbsp;${t('renderlib_download_estudy')}
       </button>
@@ -1370,9 +1393,9 @@ async function renderLibrary() {
   const _longLabels = _extraTabs === 0;
   const tabs = [
     { id: 'all',     label: _longLabels ? t('renderlib_tab_all_long') : t('renderlib_tab_all')  },
-    ...(showRecent  ? [{ id: 'recent',  label: t('renderlib_tab_recent') }] : []),
     ...(showShelves ? [{ id: 'shelves', label: t('renderlib_tab_shelves') }] : []),
     ...(showPaths   ? [{ id: 'paths',   label: t('renderlib_tab_paths') }] : []),
+    ...(showRecent  ? [{ id: 'recent',  label: t('renderlib_tab_recent') }] : []),
     { id: 'load',    label: _longLabels ? t('renderlib_tab_load_long') : t('renderlib_tab_load') },
   ];
 

@@ -457,7 +457,7 @@ function runSearchCore(query) {
 // renderChapter() to complete its DOM writes before scrollIntoView() is called.
 function searchNavigate(chIdx, cardId) {
   closeSearch();
-  goToChapter(chIdx);
+  Router.navigate({ page: 'chapter', idx: chIdx });
   if (cardId) {
     setTimeout(() => {
       const card = document.getElementById(cardId);

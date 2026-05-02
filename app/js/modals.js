@@ -70,13 +70,25 @@ function closeQaModal(event) {
 // Opens the "go deeper" modal for a question element.
 // Looks up the element by elementId and populates the modal with its
 // deeper.question text. The modal is read-only — no answer field.
-function openDeeperModal(elementId) {
+//
+// lang – the currently active study language code (e.g. 'ha', 'en'), passed
+//        by renderQuestion() via the button's onclick attribute. Used to resolve
+//        the correct language slot for the deeper question and label.
+//        Falls back gracefully to unnumbered fields for mono-lingual studies.
+function openDeeperModal(elementId, lang) {
   const ch = chapters[currentChapter];
   if (!ch) return;
   const el = (ch.elements || []).find(e => e.elementId === elementId);
   if (!el || !el.deeper) return;
+
+  // Build the slot map from studyMetadata so we can resolve numbered fields.
+  // For mono-lingual studies studyMetadata carries no languageN keys, so
+  // langMap will be empty and resolveText falls back to unnumbered fields.
+  const langMap    = buildLangMap(window.studyMetadata || {});
+  const activeLang = lang || window._activeStudyLang || 'en';
+
   const body = document.getElementById('deeperModalBody');
-  if (body) body.innerHTML = el.deeper.question || '';
+  if (body) body.innerHTML = resolveText(el.deeper, activeLang, 'question', langMap);
   document.getElementById('deeperModalOverlay').classList.add('open');
 }
 

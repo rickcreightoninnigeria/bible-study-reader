@@ -58,13 +58,13 @@ function _resetNonChapterPageState() {
 // Closes the menu drawer and renders the title page.
 function goToTitlePage() {
   closeMenu();
-  renderTitlePage();
+  Router.navigate({ page: 'title' });
 }
 
-// Closes the menu drawer and renders the copyright/licence page.
+// Closes the menu drawer and navigates to the copyright/licence page.
 function goToCopyright() {
   closeMenu();
-  renderAbout('copyright');
+  Router.navigate({ page: 'about', tabId: 'copyright' });
 }
 
 // Toggles the chapter menu drawer open/closed and updates the hamburger button.
@@ -103,20 +103,14 @@ function closeMenu() {
 }
 
 // Handles the ✕ Close button on non-chapter pages (settings, progress, library, etc.).
-// If a last position exists and rememberPosition is on, returns to that chapter
-// and scroll position. Otherwise falls back to the title page.
+// Now delegates to Router.back() so the History API stack stays consistent.
+// The router's popstate handler restores the correct previous view (chapter,
+// title page, or whatever was before) via _applyNavigation(). The cleanup
+// tasks (closeSearch, closeMenu, _resetNonChapterPageState) are performed by
+// the render functions that _applyNavigation() calls on arrival.
+//
+// Kept as a named function (rather than inlining Router.back() everywhere)
+// so that any call sites not yet migrated to Router.back() still work correctly.
 function closeNonChapterPage() {
-  // If Search is open on top, close it cleanly (resets its own button)
-  const so = document.getElementById('searchOverlay');
-  if (so && so.classList.contains('open')) closeSearch();
-  closeMenu();
-  _resetNonChapterPageState();
-
-  const pos = getLastPosition();
-  if (pos && appSettings.rememberPosition) {
-    goToChapter(pos.chapterIdx, pos.scrollY);
-    setTimeout(() => window.scrollTo(0, pos.scrollY), 100);
-  } else {
-    goToTitlePage();
-  }
+  Router.back();
 }

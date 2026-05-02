@@ -158,6 +158,63 @@ function resolveMetaField(obj, field, lang, langMap) {
 }
 
 
+// ── BIBLE TRANSLATION RESOLUTION ─────────────────────────────────────────────
+// resolveBibleTranslation(slotIndex, studyMetadata)
+//
+// Returns { label, lang } for a given bibleTranslationN slot, handling both
+// the old plain-string format and the new language-tagged object format.
+//
+// Old format (plain string):
+//   studyMetadata.bibleTranslation1 = "HAU79"
+//   → { label: "HAU79", lang: null }
+//
+// New format (language-tagged object):
+//   studyMetadata.bibleTranslation1 = { "ha": "HAU79" }
+//   → { label: "HAU79", lang: "ha" }
+//
+// Returns null if the slot does not exist.
+
+function resolveBibleTranslation(slotIndex, studyMetadata) {
+  const raw = studyMetadata[`bibleTranslation${slotIndex}`];
+  if (raw === undefined || raw === null || raw === '') return null;
+  if (typeof raw === 'string') return { label: raw, lang: null };
+  // Object format: exactly one key whose value is the label string.
+  const lang  = Object.keys(raw)[0] || null;
+  const label = lang ? raw[lang] : '';
+  if (!label) return null;
+  return { label, lang };
+}
+
+
+// resolveBibleRefForLang(el, lang, studyMetadata)
+//
+// Returns the localised book-name Bible reference (e.g. "Psalm 19:1") for the
+// active language, using the new bibleTranslationN language-tagged format.
+//
+// Rules:
+//   • Walk slots 1, 2, 3 … in order.
+//   • For each slot where resolveBibleTranslation returns a lang that matches
+//     the active language, return el[`bibleRef${slot}`].
+//   • The *first* matching slot wins (handles multiple translations per language).
+//   • If no slot matches (old plain-string format, or lang not present), fall
+//     back to el.bibleRef1 || el.bibleRef (canonical primary ref).
+//
+// This means mono-lingual studies (old format, lang: null on every slot) always
+// fall through to the bibleRef1 fallback, which is correct and unchanged behaviour.
+
+function resolveBibleRefForLang(el, lang, studyMetadata) {
+  for (let i = 1; ; i++) {
+    const slot = resolveBibleTranslation(i, studyMetadata);
+    if (slot === null) break;            // no more slots
+    if (slot.lang === lang) {
+      return el[`bibleRef${i}`] || el.bibleRef1 || el.bibleRef || '';
+    }
+  }
+  // Fallback: old plain-string format or lang not present in any slot.
+  return el.bibleRef1 || el.bibleRef || '';
+}
+
+
 // ── ACTIVE LANGUAGE RESOLUTION ────────────────────────────────────────────────
 // getActiveLang(availableLangs)
 //
@@ -307,12 +364,12 @@ function renderBiblePassage(ctx) {
   if (hasMetadataTranslations) {
     // ── v3 multilingual: labels from studyMetadata.bibleTranslationN ─────────
     for (let i = 1; ; i++) {
-      const label = studyMetadata[`bibleTranslation${i}`];
-      if (!label) break;                              // no more translation slots
+      const slot = resolveBibleTranslation(i, studyMetadata);
+      if (slot === null) break;                        // no more translation slots
       const text = el[`passageText${i}`] || '';
-      if (!text) continue;                            // this passage doesn't have slot i
+      if (!text) continue;                             // this passage doesn't have slot i
       translations.push({
-        label,
+        label: slot.label,
         text,
         url: el[`passageUrl${i}`] || '',
         ref: el[`bibleRef${i}`]   || el.bibleRef1 || '',
@@ -391,8 +448,11 @@ function renderQuestion(ctx) {
   const sampleAnswerAttr = sampleAnswerText ? ` data-sample-answer="${encodedSampleAnswer}"` : '';
   const questionHintAttr = questionHintText ? ` data-question-hint="${encodedQuestionHint}"` : '';
 
+  const deeperLabel = el.deeper
+    ? (resolveText(el.deeper, activeLang, 'label', langMap) || t('renderchapter_go_deeper'))
+    : '';
   const deeperBtn = el.deeper
-    ? ` <button class="deeper-btn" onclick="openDeeperModal('${cardId}')">(${el.deeper.label || t('renderchapter_go_deeper')} ${ICONS.triggerInfo})</button>`
+    ? ` <button class="deeper-btn" onclick="openDeeperModal('${cardId}', '${activeLang}')">(${deeperLabel} ${ICONS.triggerInfo})</button>`
     : '';
 
   const actionRow = `
@@ -417,7 +477,7 @@ function renderQuestion(ctx) {
       data-index="${el.elementId}"
       placeholder="${placeholder}"
       oninput="autoResize(this)"
-      onblur="saveAnswers(); localValidateAutoTrigger(this)"
+      onblur="saveAnswers(false); localValidateAutoTrigger(this)"
     >${val}</textarea>`;
 
   const cardOpen = `
@@ -446,16 +506,54 @@ function renderQuestion(ctx) {
   }
 
   // Standard question (including reflection and bible subtypes)
-  const ref          = el.linkedPassage || (isReflection ? t('renderchapter_reflection_label') : '');
-  const hasVerse     = verseData.hasOwnProperty(ref);
+  // Resolve the displayed ref for the active language.
+  // • Reflection questions → i18n label.
+  // • No linkedPassage    → empty string.
+  // • Old plain-string bibleTranslationN format → el.linkedPassage unchanged.
+  // • New language-tagged format → first slot whose lang matches activeLang,
+  //   looked up via the verseData entry that renderBiblePassage already built.
+  //   el.linkedPassage (= bibleRef1) is used only as the verseData key;
+  //   the visible label comes from the matching translation's .ref field.
+  const displayRef = (() => {
+    if (isReflection) return t('renderchapter_reflection_label');
+    if (!el.linkedPassage) return '';
+    const studyMetadata = window.studyMetadata || {};
+    // Detect whether any slot uses the new language-tagged object format.
+    const hasTaggedFormat = (() => {
+      for (let i = 1; ; i++) {
+        const raw = studyMetadata[`bibleTranslation${i}`];
+        if (raw === undefined || raw === null || raw === '') return false;
+        if (typeof raw === 'object') return true;
+      }
+      return false;
+    })();
+    if (!hasTaggedFormat) return el.linkedPassage;
+    // New format: scan slots for first one whose lang matches activeLang,
+    // then look up its ref from the verseData entry (keyed on bibleRef1).
+    const entry = verseData[el.linkedPassage];
+    if (!entry) return el.linkedPassage;
+    for (let i = 1; ; i++) {
+      const slot = resolveBibleTranslation(i, studyMetadata);
+      if (slot === null) break;
+      if (slot.lang === activeLang) {
+        const tr = entry.translations.find(t => t.label === slot.label);
+        if (tr && tr.ref) return tr.ref;
+      }
+    }
+    return el.linkedPassage;   // safe fallback
+  })();
+
+  const hasVerse     = verseData.hasOwnProperty(el.linkedPassage || '');
+  // data-ref stays as el.linkedPassage (the canonical verseData key = bibleRef1).
+  // The visible label uses displayRef so the book name is localised for activeLang.
   const refSpanAttrs = hasVerse
-    ? `data-ref="${ref.replace(/"/g, '&quot;')}" onclick="openVerseModal(this.dataset.ref)" style="cursor:pointer;"`
+    ? `data-ref="${(el.linkedPassage || '').replace(/"/g, '&quot;')}" onclick="openVerseModal(this.dataset.ref)" style="cursor:pointer;"`
     : '';
 
   return `${cardOpen}
       <div class="question-ref">
         <span ${refSpanAttrs}>
-          ${ref}${hasVerse ? ` <span class="passage-icon">${ICONS.triggerInfo}</span>` : ''}
+          ${displayRef}${hasVerse ? ` <span class="passage-icon">${ICONS.triggerInfo}</span>` : ''}
         </span>
         ${starBtn}
       </div>

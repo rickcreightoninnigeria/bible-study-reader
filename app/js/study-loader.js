@@ -26,6 +26,27 @@
 //   studyOnboardingSlides – main.js STATE section
 //   window.*           – state.js
 
+// ── BLOB URL LIFECYCLE ────────────────────────────────────────────────────────
+// Every blob URL created in this file is registered here so it can be revoked
+// when a new study is applied. Without revocation, switching studies accumulates
+// blob URLs in memory for the lifetime of the page — a significant leak on
+// Android WebView where RAM is limited.
+//
+// Usage: replace URL.createObjectURL(blob) with _createBlobUrl(blob) everywhere
+// in this file. Call _revokeAllBlobUrls() at the top of applyStudyData().
+const _activeBlobUrls = [];
+
+function _createBlobUrl(blob) {
+  const url = URL.createObjectURL(blob);
+  _activeBlobUrls.push(url);
+  return url;
+}
+
+function _revokeAllBlobUrls() {
+  _activeBlobUrls.forEach(url => URL.revokeObjectURL(url));
+  _activeBlobUrls.length = 0;
+}
+
 // ── ESTUDY VERSION CHECK ──────────────────────────────────────────────────────
 // Compares the estudyFileVersion declared in a study's metadata against the
 // version this app expects (window.appAboutData.estudyVersion).
@@ -113,13 +134,15 @@ async function activateStudy(id) {
 
     // 3. applyStudyData handles everything: chapters normalisation, image data,
     //    shortTitle → headerTitle, QA lookups, onboarding slides, and initApp().
-    applyStudyData(data);
-
-    // 4. Close the library after the study is loaded
-    closeNonChapterPage();
+    //    isStudySwitch:true makes initApp() push a new history entry (via
+    //    Router.navigate) rather than replace (Router.boot), so the library
+    //    entry stays on the stack and back returns to it.
+    applyStudyData(data, { isStudySwitch: true });
+    // No Router.back() — initApp() now owns the history entry for the new
+    // study view, pushed on top of the existing library entry.
 }
 
-async function openLibrary() {
+function openLibrary() {
   window.libLangFilter = 'all';
   closeMenu();
   _resetNonChapterPageState();
@@ -127,11 +150,14 @@ async function openLibrary() {
   window.activeTabPage = 'library';
   suspendStudyTheme();
   document.getElementById('mainContent').innerHTML = '';
-  await clearStudyUiLangOverride();
+  // Intentionally not awaited: renderLibrary() uses only app-locale renderlib_*
+  // keys which exist in every locale file, so it is safe to render immediately
+  // while the locale reload completes in the background. Awaiting here held the
+  // Router._navigating lock across multiple XHR fetches, causing any Back press
+  // during that window to be silently dropped, leaving sticky bars broken.
+  clearStudyUiLangOverride();
   const libBtn = document.getElementById('navLibBtn');
-  if (libBtn) { libBtn.innerHTML = ICONS.close; libBtn.onclick = () => closeNonChapterPage(); }
-  const saveBtn = document.getElementById('saveBtn');
-  if (saveBtn) saveBtn.parentElement.style.display = 'none';
+  if (libBtn) { libBtn.innerHTML = ICONS.close; libBtn.onclick = () => Router.back(); }
   document.getElementById('progressBar').style.width = '0%';
   document.getElementById('header-title').innerText = t('studyloader_header_library');
   renderLibrary();
@@ -151,11 +177,35 @@ function openDriveStudyFolder() {
 }
 
 async function handleFileSelect(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+    const files = Array.from(event.target.files || []);
+    if (!files.length) return;
     // Reset the input so selecting the same file again fires onchange
     event.target.value = '';
-    await loadAnyFile(file);
+    if (files.length === 1) {
+        await loadAnyFile(files[0]);
+        return;
+    }
+    // Multiple files: install all quietly, then open Library / All tab.
+    // Mirrors loadBundleFromFile() — no activation, single summary toast.
+    let installed = 0;
+    let failed = 0;
+    showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
+    for (const file of files) {
+        try {
+            await _installStudyFileQuietly(file);
+            installed++;
+        } catch (err) {
+            console.error(`Failed to install ${file.name}:`, err);
+            failed++;
+        }
+    }
+    Router.navigate({ page: 'library' });
+    switchLibTab('all');
+    if (failed === 0) {
+        showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
+    } else {
+        showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
+    }
 }
 
 async function deleteStudy(id, title) {
@@ -199,17 +249,21 @@ async function deleteStudy(id, title) {
 
     // 5. If this study is currently open, reset the UI and theme
     if (window.activeStudyId === id) {
-        window.activeStudyId = null;
-        window.chapters = [];
-        window.studyMetadata = {};
-        localStorage.removeItem('bsr_last_active_study');
-        resetTheme();
-        renderTitlePage();
+      window.activeStudyId = null;
+      window.chapters = [];
+      window.titlePageData = null;      // prevents stale title page render
+      window.studyMetadata = {};
+      localStorage.removeItem('bsr_last_active_study');
+      resetTheme();
+      // Don't navigate to 'title' here — the library navigate below handles it.
+      // Re-render the menu now so it reflects the empty state immediately.
+      renderMenu();                     // clears the stale chapter list
     }
 
-    // 5. Refresh the list
-    openLibrary();
-    if (typeof showToast === 'function') showToast({ message: t('studyloader_delete_success') });
+    // 6. Refresh the list
+    invalidateCoverCache(id);
+    Router.navigate({ page: 'library' });
+    if (typeof showToast === 'function') showToast({ message: t('studyloader_delete_success'), isManual: true });
     id = null;
 }
 
@@ -227,8 +281,8 @@ async function deleteStudy(id, title) {
 
 // Map of action label keywords → the engine function they should invoke.
 const ACTION_FN_MAP = {
-  'Settings':     () => renderSettings(),
-  'How to use':   () => renderHowToUse(),
+  'Settings':     () => Router.navigate({ page: 'settings' }),
+  'How to use':   () => Router.navigate({ page: 'howto' }),
 };
 
 function resolveActionFn(label) {
@@ -412,7 +466,11 @@ function restoreStudyTheme() {
   }
 }
 
-async function applyStudyData(data) {
+async function applyStudyData(data, { isStudySwitch = false } = {}) {
+  // Revoke any blob URLs created for the previous study before overwriting
+  // state. This prevents blob URLs accumulating in memory across study switches.
+  _revokeAllBlobUrls();
+
   // Record this study as recently opened every time it is applied — this covers
   // fresh loads, startup restore, and Android intent delivery, not just
   // activateStudy() (which only runs when switching between already-installed studies).
@@ -598,7 +656,7 @@ async function applyStudyData(data) {
 
   window.verseData = {}; // populated by renderChapter() from biblePassage elements
   
-  initApp();
+  initApp({ isStudySwitch });
 } // end applyStudyData
 
 // wrapper to parse string handed over from Android
@@ -641,8 +699,8 @@ async function loadStudyFromJson(jsonString) {
         if (window._appReady) {
             window.activeStudyId = studyId;
             checkEstudyVersion(data);
-            closeNonChapterPage();
-            applyStudyData(data);
+            Router.back();
+            applyStudyData(data, { isStudySwitch: true });
         } else {
             window.pendingStudyData = data;
             window.activeStudyId   = studyId;
@@ -779,7 +837,7 @@ async function installDefaultStudiesIfNeeded() {
 
   } catch (err) {
     console.error('[defaultStudies] installDefaultStudiesIfNeeded failed:', err);
-    showToast({ message: t('studyloader_default_studies_error') });
+    showToast({ message: t('studyloader_default_studies_error'), isManual: true });
     // Do NOT set the flag — allow a retry on next launch in case it was transient.
     // If the zip simply doesn't exist in a dev build, this will toast every launch;
     // set the flag manually in the console to suppress: 
@@ -909,7 +967,7 @@ async function loadBundleFromFile(outerZip, innerStudyFiles) {
   let installed = 0;
   let failed = 0;
 
-  showToast({ message: t('studyloader_bundle_installing', { count: total }) });
+  showToast({ message: t('studyloader_bundle_installing', { count: total }), isManual: true });
 
   for (const entry of innerStudyFiles) {
     try {
@@ -926,12 +984,12 @@ async function loadBundleFromFile(outerZip, innerStudyFiles) {
   // Open the library once so the user sees all newly installed studies together.
   // recordStudyInstalled is called here (not inside _installStudyFileQuietly)
   // so only user-initiated bundle imports appear in the Recently Installed list.
-  openLibrary();
+  Router.navigate({ page: 'library' });
 
   if (failed === 0) {
-    showToast({ message: t('studyloader_bundle_success', { count: installed }) });
+    showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
   } else {
-    showToast({ message: t('studyloader_bundle_partial', { installed, failed }) });
+    showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
   }
 }
 
@@ -1024,24 +1082,24 @@ async function loadStudyFromFile(file) {
           const entry = zip.file(`images/${name}.webp`);
           if (entry && data.imageData[name]) {
             const blob = await entry.async('blob');
-            data.imageData[name].src = URL.createObjectURL(blob);
+            data.imageData[name].src = _createBlobUrl(blob);
           }
         }
       }
 
       // 4. Apply to the running app
       checkEstudyVersion(data);
-      closeNonChapterPage();
+      Router.back();
       window.activeStudyId = studyId;
-      applyStudyData(data);
+      applyStudyData(data, { isStudySwitch: true });
 
     } else {
       // ── Legacy plain-JSON .estudy ─────────────────────────────────────────
       const text = await file.text();
       const data = JSON.parse(text);
       checkEstudyVersion(data);
-      closeNonChapterPage();
-      applyStudyData(data);
+      Router.back();
+      applyStudyData(data, { isStudySwitch: true });
     }
 
   } catch (err) {
@@ -1060,7 +1118,7 @@ function showPickerError(msg) {
     // loaded, that element won't be in the DOM — fall back to a toast so
     // the error is never swallowed silently.
     if (typeof showToast === 'function') {
-      showToast({ message: '⚠️ ' + msg });
+      showToast({ message: '⚠️ ' + msg, isManual: true });
     } else {
       alert(msg);
     }
@@ -1145,6 +1203,7 @@ function renderStudyPicker() {
         <input
           type="file"
           accept=".estudy,.zip,application/zip,application/octet-stream,*/*"
+          multiple
           style="display:none;"
           onchange="handlePickerFileChange(event)"
         />
@@ -1168,9 +1227,33 @@ function renderStudyPicker() {
 
 // Called by the file input's onchange event.
 async function handlePickerFileChange(event) {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
+  const files = Array.from(event.target.files || []);
+  if (!files.length) return;
   event.target.value = '';
-  await loadAnyFile(file);
+  if (files.length === 1) {
+    await loadAnyFile(files[0]);
+    return;
+  }
+  // Multiple files: install all quietly, then open Library / All tab.
+  // Mirrors loadBundleFromFile() — no activation, single summary toast.
+  let installed = 0;
+  let failed = 0;
+  showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
+  for (const file of files) {
+    try {
+      await _installStudyFileQuietly(file);
+      installed++;
+    } catch (err) {
+      console.error(`Failed to install ${file.name}:`, err);
+      failed++;
+    }
+  }
+  Router.navigate({ page: 'library' });
+  switchLibTab('all');
+  if (failed === 0) {
+    showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
+  } else {
+    showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
+  }
 }
 

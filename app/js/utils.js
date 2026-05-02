@@ -48,18 +48,30 @@ function getLastPosition() {
 async function returnToLastPosition() {
   const pos = getLastPosition();
   if (!pos) return;
-  await goToChapter(pos.chapterIdx);
+  await Router.navigate({ page: 'chapter', idx: pos.chapterIdx, scrollY: pos.scrollY });
   window.scrollTo(0, pos.scrollY);
 }
 
 // ── showToast TO SHOW TOASTS ──────────────────────────────────────────────────
+// Escapes a string for safe injection into innerHTML.
+// Covers the four characters that are meaningful in HTML contexts.
+// Use this wherever user-supplied or study-supplied strings are injected via
+// isHtml: true in showToast(), or any other innerHTML assignment.
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 /**
  * showToast(options)
  *
  * options:
  *   message    {string}  – text or HTML to display. Default: current toast text (no change).
  *   isHtml     {boolean} – if true, sets innerHTML instead of textContent. Default: false.
- *   isManual   {boolean} – if false, only shows when appSettings.autoSaveToast is on. Default: true.
+ *   isManual   {boolean} – if false, only shows when appSettings.autoSaveToast is on. Default: false.
  *   duration   {number}  – display time in ms. Default: auto-calculated from message length.
  *   elementId  {string}  – ID of the toast element to use. Default: 'toast'.
  *   resetText  {string}  – text to restore after hiding. Default: '✓ Answers saved'.
@@ -67,7 +79,7 @@ async function returnToLastPosition() {
 function showToast({
   message    = null,
   isHtml     = false,
-  isManual   = true,
+  isManual   = false,
   duration   = null,
   elementId  = 'toast',
   resetText  = t('utils_answers_saved')
@@ -96,13 +108,14 @@ function showToast({
 }
 
 function showCelebrationToast(ch) {
-  const flag = `bsr_${window.activeStudyId}_ch${ch.chapterNumber}_celebrated`;
+  const flag = storageKey(ch.chapterNumber, 'celebrated', 0);
   if (localStorage.getItem(flag)) return;
   localStorage.setItem(flag, '1');
 
   showToast({
-    message:   `⭐ ${ch.chapterTitle} ⭐<br><span class="celebration-toast-sub">${t('utils_celebration_sub', { number: ch.chapterNumber })}</span><br><button class="celebration-toast-share" onclick="shareAnswers(); document.getElementById('celebrationToast').classList.remove('show')">${t('utils_celebration_share')} ${ICONS.share}</button>`,
+    message:   `⭐ ${escapeHtml(ch.chapterTitle)} ⭐<br><span class="celebration-toast-sub">${t('utils_celebration_sub', { number: ch.chapterNumber })}</span><br><button class="celebration-toast-share" onclick="shareAnswers(); document.getElementById('celebrationToast').classList.remove('show')">${t('utils_celebration_share')} ${ICONS.share}</button>`,
     isHtml:    true,
+    isManual: true,
     duration:  10000,
     elementId: 'celebrationToast',
     resetText: ''   // celebration toast has no default text to restore
@@ -137,15 +150,14 @@ function initLongPressCopy() {
     }, LONG_PRESS_DURATION);
   }, { passive: true });
 
-  document.addEventListener('touchend', () => {
+  function clearLongPressTimer() {
     clearTimeout(longPressTimer);
     longPressTimer = null;
-  });
+  }
 
-  document.addEventListener('touchmove', () => {
-    clearTimeout(longPressTimer);
-    longPressTimer = null;
-  });
+  document.addEventListener('touchend',    clearLongPressTimer);
+  document.addEventListener('touchmove',   clearLongPressTimer);
+  document.addEventListener('touchcancel', clearLongPressTimer);
 }
 
 // Copies text to the clipboard using the modern Clipboard API where available,
@@ -190,4 +202,18 @@ function showCopyFeedback(field) {
     timer: 3000,
     timerProgressBar: true,
   });
+}
+
+// ── PLATFORM DETECTION ────────────────────────────────────────────────────────
+// Returns the platform the app is running on.
+// 'android' — wrapped in the Android WebView (window.Android bridge present)
+// 'ios'     — running on iOS Safari/WebView (reserved for future native wrapper)
+// 'web'     — all other browsers / desktop
+//
+// Use this instead of raw window.Android checks so platform logic is consistent
+// and easy to extend when iOS ships.
+function getPlatform() {
+  if (window.Android) return 'android';
+  if (/iP(hone|ad|od)/.test(navigator.userAgent)) return 'ios';
+  return 'web';
 }

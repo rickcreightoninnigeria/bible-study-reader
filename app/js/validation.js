@@ -65,6 +65,18 @@
 //     0            — disable the short-answer check entirely for this question
 //     Absent       — use the existing default (35% of sampleAnswer length, ≤ 6)
 //
+// skipBibleVerseCheck (optional, per question):
+//   Disables the passage-repetition check (step 4) for a specific question.
+//   Use when the correct answer is expected to quote the passage directly —
+//   e.g. "What does Paul say about X?" or "Copy out the memory verse."
+//
+//   Set as a boolean attribute on the .question-card element:
+//     data-skip-bible-verse-check="true"  →  step 4 is skipped
+//     Absent or any other value           →  step 4 runs as normal
+//
+//   Unlike shortAnswerThreshold, this is a simple boolean with no per-language
+//   variant — it applies to all languages for the question.
+//
 // ── SHARED DEPENDENCIES (globals) ────────────────────────────────────────────
 //   ICONS, showToast, chapters, currentChapter, storageKey,
 //   saveAnswers, window.studyAiData, window.leadersNotesData, verseData
@@ -346,7 +358,7 @@ async function _aiTutorSend(sendBtn, textOverride) {
     } else {
       toastMsg = t('validation_tutor_err_unknown');
     }
-    showToast({ message: toastMsg });
+    showToast({ message: toastMsg, isManual: true });
 
     // Roll back the user turn so the conversation stays clean for a retry.
     // The AI tutor catch block no longer falls back to local validate — that
@@ -469,7 +481,7 @@ function _persistConversation(textarea, history, elementId) {
 
   // Resize and save
   if (typeof autoResize === 'function') autoResize(textarea);
-  saveAnswers();
+  saveAnswers(false);
 }
 
 
@@ -630,7 +642,7 @@ function localValidateEligible(card) {
 // regardless of where on the screen the card started.
 function _localValidateShowFeedback(card, feedback) {
   card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  showToast({ message: feedback, duration: 10000, elementId: 'validate-toast' });
+  showToast({ message: feedback, duration: 10000, elementId: 'validate-toast', isManual: true });
 }
 
 // Called by the localValidate button injected into each eligible question card.
@@ -649,8 +661,9 @@ function openLocalValidateForCard(buttonEl) {
   const sampleAnswer          = card.dataset.sampleAnswer || null;
   const questionHint          = card.dataset.questionHint || null;
   const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
+  const skipBibleVerseCheck   = card.dataset.skipBibleVerseCheck === 'true';
 
-  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold);
+  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck);
 
   // feedback is always a non-null string (either a problem message or a
   // positive confirmation). Scroll card to centre first so the toast
@@ -687,8 +700,9 @@ function localValidateAutoTrigger(textareaEl) {
   const sampleAnswer          = card.dataset.sampleAnswer || null;
   const questionHint          = card.dataset.questionHint || null;
   const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
+  const skipBibleVerseCheck   = card.dataset.skipBibleVerseCheck === 'true';
 
-  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold);
+  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck);
   _localValidateShowFeedback(card, feedback);
 }
 
@@ -708,7 +722,7 @@ function localValidateAutoTrigger(textareaEl) {
 //                            '1', '2'…  → use as the minimum word count
 //                            null       → use built-in default logic
 
-function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold) {
+function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck = false) {
   const answer = userAnswer.trim();
 
   // ── Shared utilities ────────────────────────────────────────────────────────
@@ -780,23 +794,44 @@ function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHi
   }
 
   // ── 4. Answer repeats the linked Bible passage ──────────────────────────────
-  const refEl      = card && card.querySelector('.question-ref span[onclick]');
-  const passageRef = refEl
-    ? refEl.getAttribute('onclick').match(/openVerseModal\('(.+?)'\)/)?.[1]
-    : null;
-  const passageRaw = passageRef && typeof verseData !== 'undefined' && verseData[passageRef]
-    ? _stripHtml(verseData[passageRef].text || '')
-    : null;
-  if (passageRaw && passageRaw.length > 20) {
-    const pWords    = contentWords(passageRaw);
-    const aWordList = normAnswer.split(' ').filter(w => !STOPWORDS.has(w));
-    const overlap   = aWordList.filter(w => pWords.has(w)).length;
-    const ratio     = aWordList.length > 0 ? overlap / aWordList.length : 0;
-    if (ratio > 0.70) {
-      return withHint(
-        t('validation_lv_repeats_passage'),
-        t('validation_lv_repeats_passage')
-      );
+  // Skipped when skipBibleVerseCheck is true (author has flagged that a direct
+  // quote is the expected form of answer, e.g. "What does Paul say about X?").
+  if (!skipBibleVerseCheck) {
+    const refEl      = card && card.querySelector('.question-ref span[data-ref]');
+    const passageRef = refEl ? refEl.dataset.ref : null;
+    // Build the union of content words across all translations for this passage.
+    // Multilingual studies store multiple translations in the translations array
+    // (one per bibleTranslationN). Checking all of them means that pasting any
+    // translation — not just the first — is correctly caught.
+    const passageEntry   = passageRef && typeof verseData !== 'undefined' && verseData[passageRef];
+    const translations   = passageEntry?.translations || [];
+    const passageStrings = translations
+      .map(tr => _stripHtml(tr.text || '')
+        // Strip inline verse numbers (digits at a word boundary before text,
+        // e.g. "21For" → "For", "22adultery" → "adultery").
+        .replace(/\b\d+(?=[a-zA-Z])/g, ''))
+      .filter(s => s.length > 20);
+
+    if (passageStrings.length > 0) {
+      // Union of content words from every translation
+      const pWords    = new Set(passageStrings.flatMap(s => [...contentWords(s)]));
+      const aWordList = normAnswer.split(' ').filter(w => w.length > 1 && !STOPWORDS.has(w));
+      const overlap   = aWordList.filter(w => pWords.has(w)).length;
+
+      // Direction 1: what fraction of the answer's content words are from the passage?
+      // Catches answers that are mostly or entirely copied verse text.
+      const ratioAnswer = aWordList.length > 0 ? overlap / aWordList.length : 0;
+
+      // Direction 2: does the answer contain ANY content words not in ANY translation?
+      // Catches a pure copy of any translation with no original contribution.
+      const hasOriginalWords = aWordList.some(w => !pWords.has(w));
+
+      if (ratioAnswer > 0.70 || !hasOriginalWords) {
+        return withHint(
+          t('validation_lv_repeats_passage'),
+          t('validation_lv_repeats_passage')
+        );
+      }
     }
   }
 

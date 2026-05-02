@@ -11,9 +11,44 @@
 // resolved for the active study language. The Contents overlay carries no lang
 // bar — it silently follows window._activeStudyLang.
 
+// Toggles the ✓ checkmark on the Notes item in the chapter menu without
+// rebuilding the entire menu. Called from the globalNotesField oninput handler
+// in render-progress.js as a cheap alternative to renderMenu().
+// Guards against the item being absent (showPageNotes off, or menu not open).
+function updateNotesMenuIndicator(hasContent) {
+  const item = document.getElementById('menuItemNotes');
+  if (!item) return;
+  const existing = item.querySelector('.chapter-check');
+  if (hasContent && !existing) {
+    const span = document.createElement('span');
+    span.className = 'chapter-check';
+    span.textContent = '✓';
+    item.appendChild(span);
+  } else if (!hasContent && existing) {
+    existing.remove();
+  }
+}
+
 function renderMenu() {
   const list = document.getElementById('menuList');
+  if (!list) return;
+
   const currentStudyId = window.activeStudyId;
+
+  // Guard: if no study is loaded (e.g. after deleting the active study),
+  // render a minimal menu with only a Library link and bail out.
+  // This prevents stale chapter items from persisting in the menu after
+  // the globals have been cleared by deleteStudy().
+  if (!currentStudyId || !window.chapters?.length) {
+    const heading = document.getElementById('menuHeading');
+    if (heading) heading.textContent = t('main_menu_heading');
+    list.innerHTML = `
+      <div class="chapter-item" onclick="Router.navigate({ page: 'library' })">
+        <span class="chapter-num">${ICONS.library}</span>
+        <span class="chapter-name">${t('main_menu_no_study')}</span>
+      </div>`;
+    return;
+  }
 
   // Resolve active language for multilingual title/chapter display.
   // For mono-lingual studies langMap is {} and resolveMetaField falls through
@@ -22,7 +57,7 @@ function renderMenu() {
   const activeLang     = getActiveLang(availableLangs);
   const langMap        = buildLangMap(window.studyMetadata || {});
 
-  // 7. Dynamic heading: "Chapters of [shortTitle]"
+  // 1. Dynamic heading: "Chapters of [shortTitle]"
   const heading = document.getElementById('menuHeading');
   if (heading) {
     const meta       = window.titlePageData;
@@ -33,12 +68,12 @@ function renderMenu() {
   }
 
   let html = `
-    <div class="chapter-item" onclick="goToTitlePage()">
+    <div class="chapter-item" onclick="Router.navigate({ page: 'title' })">
       <span class="chapter-num">✦</span>
       <span class="chapter-name">${t('main_menu_title_page')}</span>
     </div>`;
 
-  // 8. My Progress and How to Use removed from Contents — they live in the top bar
+  // 2. My Progress and How to Use removed from Contents — they live in the top bar
 
   html += chapters.map((ch, i) => {
     const hasAnswers = Object.keys(localStorage).some(key =>
@@ -48,7 +83,7 @@ function renderMenu() {
     // chapterTitle1/2/3 for multilingual, chapterTitle for mono-lingual.
     const chTitle = (activeLang ? resolveMetaField(ch, 'chapterTitle', activeLang, langMap) : '') || ch.chapterTitle || '';
     return `
-      <div class="chapter-item" onclick="goToChapter(${i})">
+      <div class="chapter-item" onclick="Router.navigate({ page: 'chapter', idx: ${i} })">
         <span class="chapter-num">${String(ch.chapterNumber).padStart(2,'0')}</span>
         <span class="chapter-name">${chTitle}</span>
         ${hasAnswers ? '<span class="chapter-check">✓</span>' : ''}
@@ -58,7 +93,7 @@ function renderMenu() {
   if (appSettings.showPageNotes) {
     const hasNotesContent = !!localStorage.getItem(`bsr_${currentStudyId}_global_notes`);
     html += `
-    <div class="chapter-item" onclick="renderNotesPage()">
+    <div class="chapter-item" id="menuItemNotes" onclick="Router.navigate({ page: 'notes' })">
       <span class="chapter-num">✎</span>
       <span class="chapter-name">${t('main_menu_notes')}</span>
       ${hasNotesContent ? '<span class="chapter-check">✓</span>' : ''}
@@ -67,7 +102,7 @@ function renderMenu() {
 
   if (appSettings.showPageLeaders) {
     html += `
-    <div class="chapter-item" onclick="renderLeadersNotes()">
+    <div class="chapter-item" onclick="Router.navigate({ page: 'leaders' })">
       <span class="chapter-num">✦</span>
       <span class="chapter-name">${t('main_menu_leaders_notes')}</span>
     </div>`;
@@ -75,7 +110,7 @@ function renderMenu() {
 
   if (appSettings.showPageAbout) {
     html += `
-    <div class="chapter-item" onclick="renderAbout()">
+    <div class="chapter-item" onclick="Router.navigate({ page: 'about' })">
       <span class="chapter-num">✦</span>
       <span class="chapter-name">${t('main_menu_about')}</span>
     </div>`;
@@ -108,7 +143,7 @@ function renderTitlePage() {
         <div style="font-size:4rem; margin-bottom:20px;">${ICONS.library}</div>
         <h2 style="color:var(--text); margin-bottom:10px;">${t('main_no_study_heading')}</h2>
         <p style="color:var(--text-faint); margin-bottom:30px;">${t('main_no_study_body')}</p>
-        <button class="howto-share-btn" style="margin:0 auto; display:inline-flex;" onclick="openLibrary()"><span>${ICONS.library}</span>${t('main_no_study_btn')}</button>
+        <button class="howto-share-btn" style="margin:0 auto; display:inline-flex;" onclick="Router.navigate({ page: 'library' })"><span>${ICONS.library}</span>${t('main_no_study_btn')}</button>
       </div>`;
     return;
   }
@@ -150,14 +185,14 @@ function renderTitlePage() {
           <button class="title-page-start-btn" onclick="returnToLastPosition()">
             ${t('main_titlepage_continue', { chapter: chapters[pos.chapterIdx].chapterNumber })}
           </button>
-          <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="goToChapter(0)">${t('main_titlepage_start_beginning')}</button>
+          <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="Router.navigate({ page: 'chapter', idx: 0 })">${t('main_titlepage_start_beginning')}</button>
         ` : `
-          <button class="title-page-start-btn" onclick="goToChapter(0)">${t('main_titlepage_begin')}</button>
+          <button class="title-page-start-btn" onclick="Router.navigate({ page: 'chapter', idx: 0 })">${t('main_titlepage_begin')}</button>
         `}
-        <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="renderHowToUse()">${t('main_titlepage_howto')}</button>
+        <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="Router.navigate({ page: 'howto' })">${t('main_titlepage_howto')}</button>
         <div class="title-page-publisher">
           <span class="title-page-publisher-label">${t('main_titlepage_published_by')}</span>
-          <button class="title-page-publisher-logo" onclick="renderAbout('publisher')">
+          <button class="title-page-publisher-logo" onclick="Router.navigate({ page: 'about', tabId: 'publisher' })">
             <img src="${window.studyAboutData?.publisher?.image || ''}" alt="${window.studyAboutData?.publisher?.logoAlt || '[Publisher info]'}" class="publisher-logo-img" onerror="this.style.display='none'" />
             <span style="color:rgba(245,240,232,0.45); margin-left:4px;">${ICONS.triggerInfo}</span>
           </button>
@@ -168,17 +203,17 @@ function renderTitlePage() {
   window.scrollTo(0, 0);
   
   // Info trigger: title page — fires once globally across all studies
-  createInfoTrigger(
-    'title-page-intro',
-    {
-      title: '[Put infoTrigger title here]',
-      body:  '<p>[Put infoTrigger body text here]</p>'
-    },
-    {
-      placement:      'floating',
-      headingElement: document.getElementById('title-page-main')
-    }
-  );
+//  createInfoTrigger(
+//    'title-page-intro',
+//    {
+//      title: '[Put infoTrigger title here]',
+//      body:  '<p>[Put infoTrigger body text here]</p>'
+//    },
+//    {
+//      placement:      'floating',
+//      headingElement: document.getElementById('title-page-main')
+//    }
+//  );
 }
 
 // ── PROGRESS ─────────────────────────────────────────────────────────────────
@@ -206,7 +241,7 @@ function updateProgress() {
   if (pct === 100) showCelebrationToast(ch);
 }
 
-async function initApp() {
+async function initApp({ isStudySwitch = false } = {}) {
   // Called after study data is loaded into the engine.
   // Decides whether to restore a saved position or show the title page,
   // then shows study-specific onboarding on first open of this study.
@@ -220,15 +255,32 @@ async function initApp() {
   // Guard: discard the saved position if its chapter index is out of range
   // for the current study (e.g. switching from a longer study to a shorter one).
   const _launchPos = _savedPos && _savedPos.chapterIdx < window.chapters.length
-    ? _savedPos
-    : null;
+    ? _savedPos : null;
   if (!_launchPos) clearLastPosition();
 
   if (_launchPos) {
     await goToChapter(_launchPos.chapterIdx);
     setTimeout(() => window.scrollTo(0, _launchPos.scrollY), 100);
+    if (isStudySwitch) {
+      // Push a history entry for the new study view WITHOUT re-rendering.
+      // goToChapter() above has already rendered it. Using Router.navigate()
+      // would call _applyNavigation() → goToChapter() a second time, breaking
+      // sticky bars. Using bare history.pushState() bypasses the router's
+      // _lastPage tracking and can trigger a spurious popstate in some WebViews.
+      // pushWithoutRender() is the correct primitive: it pushes state, updates
+      // _lastPage, and never touches _navigating.
+      Router.pushWithoutRender({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
+    } else {
+      Router.boot({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
+    }
   } else {
     renderTitlePage();
+    if (isStudySwitch) {
+      // Same reasoning: renderTitlePage() already rendered — just push state.
+      Router.pushWithoutRender({ page: 'title' });
+    } else {
+      Router.boot({ page: 'title' });
+    }
   }
 
   renderMenu();
@@ -241,9 +293,15 @@ async function initApp() {
   }
 }
 
-// Track progress as user types
+// Track progress as user types.
+// Debounced at 200ms so querySelectorAll and the DOM write in updateProgress()
+// run at most once per 200ms burst of keystrokes rather than on every character.
+let _updateProgressTimer = null;
 document.addEventListener('input', e => {
-  if (e.target.classList.contains('answer-field')) updateProgress();
+  if (e.target.classList.contains('answer-field')) {
+    clearTimeout(_updateProgressTimer);
+    _updateProgressTimer = setTimeout(updateProgress, 200);
+  }
 });
 
 // Auto-save on blur (when the user taps away from an answer field).

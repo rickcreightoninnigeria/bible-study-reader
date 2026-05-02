@@ -20,15 +20,25 @@
     "language1"        :"en",
     "language2"        :"ha",
     "language3"        :"ff",
-    "bibleTranslation1":"NET",
-    "bibleTranslation2":"HAU79",
-    "bibleTranslation3":"HCL",
-    "bibleTranslation4":"SRK",
-    "bibleTranslation5":"FUV",
-    "createdAt"        :"2026-04-28T00:00:00Z",
-    "updatedAt"        :"2026-04-28T00:00:00Z",
-    "tags"             :["growth", "discipleship", "sanctification", "spiritual-formation"],
-    "shareMessage"     :"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation1":{
+      "en":"NET"
+    },
+    "bibleTranslation2":{
+      "ha":"HAU79"
+    },
+    "bibleTranslation3":{
+      "ha":"HCL"
+    },
+    "bibleTranslation4":{
+      "ha":"SRK"
+    },
+    "bibleTranslation5":{
+      "ff":"FUV"
+    },
+    "createdAt"   :"2026-04-28T00:00:00Z",
+    "updatedAt"   :"2026-04-28T00:00:00Z",
+    "tags"        :["growth", "discipleship", "sanctification", "spiritual-formation"],
+    "shareMessage":"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Terracotta study theme — warm ochre, burnt sienna, and hillside green palette. Grounded and vibrant, evoking African earth tones, harvest, and communal labour. Suited to studies on identity, calling, womanhood, or vocation. Warm and energising rather than restful.",

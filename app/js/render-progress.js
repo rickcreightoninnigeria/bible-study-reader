@@ -39,12 +39,14 @@ function getActivePathway() {
 // so the tab bar appears immediately after selection.
 function setActivePathway(l1Idx, l2Idx) {
   localStorage.setItem('bsr_activePathwayId', `${l1Idx}_${l2Idx}`);
+  Router.replaceState({ page: 'progress' });
   renderProgressOverview();
 }
 
 // Clears the active pathway and re-renders.
 function clearActivePathway() {
   localStorage.removeItem('bsr_activePathwayId');
+  Router.replaceState({ page: 'progress' });
   renderProgressOverview();
 }
 
@@ -250,7 +252,7 @@ function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overa
 
     return `
       <div class="progress-chapter-item prog-chapter-outer">
-        <div class="prog-chapter-inner" onclick="goToChapter(${ch.chapterNumber - 1})">
+        <div class="prog-chapter-inner" onclick="Router.navigate({ page: 'chapter', idx: ${ch.chapterNumber - 1} })">
           <div class="progress-chapter-ring">
             ${progressRingSvg(pct, 44, 4, chRingColor, chBgColor)}
           </div>
@@ -331,7 +333,7 @@ function _buildPathwayPanelHtml(pathway) {
         onclick="event.stopPropagation(); activateStudy('${s.studyId}')">→</button>`;
     } else {
       openBtn = `<button class="prog-pathway-open-btn" title="${t('progress_btn_find_library_title')}"
-        onclick="event.stopPropagation(); closeNonChapterPage(); openLibrary()">↗</button>`;
+        onclick="event.stopPropagation(); Router.navigate({ page: 'library' })">↗</button>`;
     }
 
     // Expandable per-study detail row (toggled by tapping the main row)
@@ -468,7 +470,7 @@ function renderProgressOverview() {
   const progressBtn = document.getElementById('navProgressBtn');
   if (progressBtn) {
     progressBtn.innerHTML = ICONS.close;
-    progressBtn.onclick = () => closeNonChapterPage();
+    progressBtn.onclick = () => Router.back();
   }
 
   const content = document.getElementById('mainContent');
@@ -530,9 +532,7 @@ function renderProgressOverview() {
       </div>` : ''}
 
       <div class="page-close-bar">
-        <button class="page-close-btn" onclick="closeNonChapterPage()">
-          <span>${ICONS.close}</span> ${t('progress_close_btn')}
-        </button>
+        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('progress_close_btn')}</button>
       </div>
 
       <div style="height:40px;"></div>
@@ -552,6 +552,7 @@ function renderNotesPage() {
   closeMenu();
   _resetNonChapterPageState();
   isNonChapterPage = true;
+  window.activeTabPage = 'notes';
   const content = document.getElementById('mainContent');
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
@@ -582,13 +583,13 @@ function renderNotesPage() {
           id="globalNotesField"
           class="answer-field"
           placeholder="${t('progress_notes_placeholder')}"
-          oninput="autoResize(this); localStorage.setItem(\`bsr_${currentStudyId}_global_notes\`, this.value); renderMenu();"
+          oninput="autoResize(this); localStorage.setItem(\`bsr_${currentStudyId}_global_notes\`, this.value); updateNotesMenuIndicator(!!this.value);"
         >${savedText}</textarea>
       </div>
       <div class="notes-autosave-label">${t('progress_notes_autosave_label')}</div>
 
       <div class="page-close-bar">
-        <button class="page-close-btn" onclick="closeNonChapterPage()"><span>${ICONS.close}</span> ${t('progress_close_btn')}</button>
+        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('progress_close_btn')}</button>
       </div>
       <div style="height: 40px;"></div>
     </div>

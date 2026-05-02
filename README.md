@@ -224,6 +224,7 @@ Used for everything except large study content. All app keys are prefixed with
 | `bsr_{studyId}_ch{N}_q_{sIdx}_{qIdx}` | User's answer to question `qIdx` in section `sIdx` of chapter `N` |
 | `bsr_{studyId}_ch{N}_r_{rIdx}` | User's answer to reflection question `rIdx` in chapter `N` |
 | `bsr_{studyId}_ch{N}_notes_0` | Free-text notes for chapter `N` |
+| `bsr_{studyId}_ch{N}_celebrated_0` | `"1"` once the chapter-completion celebration toast has fired; cleared with answers |
 | `bsr_{studyId}_ch{N}_likert_{elementId}_{stIdx}` | Likert scale response |
 | `bsr_{studyId}_star_ch{N}_{elementId}` | `"1"` if a question is starred |
 | `lastPosition_{studyId}` | `{ chapterIdx, scrollY }` — last reading position |
@@ -255,7 +256,22 @@ function defined in `i18n.js`. This means the app can be re-rendered in a
 different language without a page reload — `reloadLocaleAndRerender()` in
 `app-init.js` fetches the new locale files and re-renders the current view.
 
-### Supported languages (UI)
+The app has two separate language concepts that are easy to confuse:
+
+**Content languages** are the languages a `.estudy` file can be written in.
+Any BCP 47 code can appear in `studyMetadata.language`. The library's
+language filter bar builds itself automatically from the codes found in
+installed studies — no app changes are needed to support a new content
+language. `LANGUAGE_MAP` in `i18n.js` defines the flag, label, and badge
+for each code; a code missing from that map still works but displays no flag.
+
+**UI languages** are the languages the app's own interface can be displayed
+in, selectable in Settings → Language. These require a complete (or near-
+complete) translation of every UI string. Currently ~18 UI languages are
+supported; they are listed in the `groups` array inside `tabLanguage()` in
+`render-pages.js`.
+
+### Supported UI languages
 
 | Code | Language | Script |
 |------|----------|--------|
@@ -267,30 +283,72 @@ different language without a page reload — `reloadLocaleAndRerender()` in
 | `ff` | Fulfulde | Latin |
 | `sw` | Swahili | Latin |
 | `ig` | Igbo | Latin |
-| `ms` | Melayu | Latin |
+| `lg` | Luganda | Latin |
 | `yo` | Yorùbá | Latin |
+| `ms` | Melayu | Latin |
+| `my` | မြန်မာစာ (Burmese) | Myanmar |
+| `tl` | Tagalog | Latin |
 | `ne` | नेपाली (Nepali) | Devanagari |
 | `am` | አማርኛ (Amharic) | Ethiopic |
+| `ur` | اردو (Urdu) | Arabic (RTL) |
 | `ar` | العربية (Arabic) | Arabic (RTL) |
+| `zh-CN` | 简体中文 (Chinese simplified) | CJK |
 
-RTL layout is applied automatically: when the language is set to `ar`,
-`i18n.js` sets `dir="rtl"` on `<html>` and all CSS RTL overrides activate via
-attribute selectors.
+RTL layout is applied automatically: when the active language is in the
+`RTL_LANGUAGES` array in `i18n.js`, `dir="rtl"` is set on `<html>` and all
+CSS RTL overrides activate via attribute selectors. Arabic is the most
+complete RTL implementation and is the reference to test against.
 
 ### Locale file structure
 
-Each language has a folder at `js/locales/{lang}/` containing:
+Each UI language has a folder at `js/locales/{lang}/` containing:
 
 - **`ui_{lang}.json`** — every UI string, keyed by `{file_or_feature}_{description}`.
   English is the canonical reference; other languages mirror these keys exactly.
+  `app-init.js` falls back key-by-key to English for any key absent from the
+  locale file, so partial translations are safe to ship.
 - **`learningPathways_{lang}.json`** — translated pathway titles and descriptions.
 - **`libraryShelvesStructure_{lang}.json`** — translated shelf/section names.
-- **`appAboutData_{lang}.json`** — app "about" text, version strings, and
-  `estudyVersion` (the file format version this build expects).
+- **`appAboutData_{lang}.json`** — app "about" text and version strings.
 
-To add a new UI language, add the language code to `SUPPORTED_LANGUAGES` in
-`i18n.js`, create the locale folder with all four JSON files translated, and
-add an entry to `LANGUAGE_MAP` in `render-pages.js`.
+### Adding a new content language
+
+To make a new `.estudy` language display correctly in the library filter bar:
+
+1. Add an entry to `LANGUAGE_MAP` in `i18n.js` with `flag`, `label`, `group`,
+   and (if the flag is shared with another language already in the map) a `badge`.
+
+That's all. `SUPPORTED_LANGUAGES` is derived from `LANGUAGE_MAP` automatically.
+
+### Adding a new UI language
+
+1. **Create the locale folder and files.** Add `js/locales/{langCode}/`
+   containing the four JSON files listed above, modelled on `js/locales/en/`.
+   The locale loader constructs paths dynamically — no registration step needed
+   in `app-init.js`.
+
+2. **Add the code to the Settings picker.** In `tabLanguage()` in
+   `render-pages.js`, add the code to the appropriate group:
+
+```js
+   const groups = [
+     { key: 'europe', codes: ['en', 'fr', 'es', 'pt', 'de'] }, // ← example
+     { key: 'africa', codes: ['ha', 'ig', 'yo', 'ff', 'sw', 'am', 'lg'] },
+     { key: 'asia',   codes: ['ne', 'ms', 'my', 'ur', 'tl', 'ar', 'zh-CN'] },
+   ];
+```
+
+   The code must also exist in `LANGUAGE_MAP` in `i18n.js` (see step 1 of
+   *Adding a new content language* above).
+
+3. **Add fonts if needed.** If the script is not already covered, download
+   an appropriate Noto family from [Google Fonts](https://fonts.google.com),
+   place the `.ttf` files in `fonts/`, and add `@font-face` declarations plus
+   a `:lang({langCode})` override in `css/01-fonts.css`, following the existing
+   pattern for Arabic or Devanagari.
+
+4. **Check RTL.** If the language is right-to-left, add its code to
+   `RTL_LANGUAGES` in `i18n.js`.
 
 ---
 
