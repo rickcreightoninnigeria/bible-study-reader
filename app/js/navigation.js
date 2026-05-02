@@ -3,18 +3,20 @@
 // drawer, and returning from non-chapter pages (settings, progress, etc.).
 //
 // Dependencies (all available as globals before this file loads):
-//   ICONS              – icons.js
-//   appSettings        – settings.js
-//   currentChapter, isNonChapterPage, menuOpen – main.js STATE section
-//   touchstartX, touchendX – share-print.js (neutralised on page close)
+//   ICONS                          – icons.js
+//   appSettings                    – settings.js
+//   currentChapter, isNonChapterPage,
+//   menuOpen                       – state.js
+//   touchstartX, touchendX         – gestures.js (neutralised on page close)
 //   window.activeTabPage, window.activeTabId,
-//   window._titleBeforeMenu – state.js
-//   renderChapter, renderTitlePage,
-//   renderMenu         – main.js RENDER section (runtime calls only)
+//   window._titleBeforeMenu        – state.js
 //   saveLastPosition, getLastPosition – utils.js
-//   closeSearch        – search.js (runtime call only)
+//   closeSearch                    – search.js (runtime call only)
+//   renderChapter                  – render-chapter.js (runtime call only)
+//   renderTitlePage                – render-pages.js (runtime call only)
+//   renderMenu                     – render-progress.js (runtime call only)
 //   navProgressClick, navHowtoClick,
-//   navSettingsClick, navLibClick – onboarding.js (runtime calls only)
+//   navSettingsClick, navLibClick  – onboarding.js (runtime calls only)
 
 // Navigates to the chapter at idx: closes the menu, renders the chapter,
 // refreshes the menu checkmarks, and saves the position if that setting is on.
