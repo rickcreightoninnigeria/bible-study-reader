@@ -96,6 +96,105 @@ function navigateTab(page, direction) {
   if (page !== 'library') window.scrollTo(0, 0);
 }
 
+// ── RENDER TILE PAGE ─────────────────────────────────────────────────────────
+// Renders the title/cover page into #mainContent. If a last position exists
+// in localStorage, shows a "Continue" button alongside "Begin the Course".
+// The cover image has an onerror fallback to a CSS gradient + emoji if the
+// image file is missing (useful during development or if assets fail to load).
+//
+// Multilingual studies: title, subtitle, shortTitle and description are
+// resolved for the active study language via resolveMetaField(). The page
+// carries no language bar — it silently follows window._activeStudyLang,
+// which the chapter lang bar (or the leaders/how-to lang bars) sets.
+
+function renderTitlePage() {
+  isNonChapterPage = true;
+  restoreStudyTheme();
+  const content = document.getElementById('mainContent');
+  document.getElementById('progressBar').style.width = '0%';
+
+  // 1. Handle the "No Data" error state
+  const meta = window.titlePageData;
+  if (!meta) {
+    content.innerHTML = `
+      <div style="padding:40px 20px; text-align:center; font-family:var(--main-font-family);">
+        <div style="font-size:4rem; margin-bottom:20px;">${ICONS.library}</div>
+        <h2 style="color:var(--text); margin-bottom:10px;">${t('main_no_study_heading')}</h2>
+        <p style="color:var(--text-faint); margin-bottom:30px;">${t('main_no_study_body')}</p>
+        <button class="howto-share-btn" style="margin:0 auto; display:inline-flex;" onclick="Router.navigate({ page: 'library' })"><span>${ICONS.library}</span>${t('main_no_study_btn')}</button>
+      </div>`;
+    return;
+  }
+
+  // 2. Resolve active language and build the lang→slot map.
+  //    For mono-lingual studies langMap is {}, and resolveMetaField falls
+  //    through to the unnumbered field (meta.title, meta.subtitle, etc.).
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs);
+  const langMap        = buildLangMap(window.studyMetadata || {});
+
+  const title      = (activeLang ? resolveMetaField(meta, 'title',      activeLang, langMap) : '') || meta.title      || t('main_fallback_untitled');
+  const subtitle   = (activeLang ? resolveMetaField(meta, 'subtitle',   activeLang, langMap) : '') || meta.subtitle   || '';
+  const shortTitle = (activeLang ? resolveMetaField(meta, 'shortTitle', activeLang, langMap) : '') || meta.shortTitle || meta.title || '';
+  const description= (activeLang ? resolveMetaField(meta, 'description',activeLang, langMap) : '') || meta.description|| '';
+
+  // 3. Update nav bar title
+  const navTitle = document.getElementById('header-title');
+  if (navTitle) navTitle.innerText = shortTitle || t('main_fallback_study_title');
+
+  // 4. Resolve last position for Continue button
+  const savedPos = appSettings.rememberPosition && getLastPosition();
+  const pos = savedPos && savedPos.chapterIdx < chapters.length ? savedPos : null;
+
+  // 5. Render the title page using the established CSS classes
+  content.innerHTML = `
+    <div class="title-page">
+      ${meta.image?.src ? `<img class="title-page-image" src="${meta.image.src}" alt="${meta.image?.alt || ''}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
+      <div class="title-page-image-fallback" style="${meta.image?.src ? 'display:none' : 'display:flex'}">${meta.image?.fallbackEmoji || '📖'}</div>
+      <div class="title-page-body">
+        <div class="title-page-main">${title}</div>
+        <div class="title-page-sub">${subtitle}</div>
+        <div class="title-page-divider"></div>
+        <div class="title-page-desc">${description}</div>
+        <div class="title-page-author">${meta.authorLabel || t('main_fallback_author_label')}</div>
+        <div class="title-page-author-name">${meta.authorName || meta.author || ''}</div>
+        <div class="title-page-version">${meta.version || ''}</div>
+        ${pos ? `
+          <button class="title-page-start-btn" onclick="returnToLastPosition()">
+            ${t('main_titlepage_continue', { chapter: chapters[pos.chapterIdx].chapterNumber })}
+          </button>
+          <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="Router.navigate({ page: 'chapter', idx: 0 })">${t('main_titlepage_start_beginning')}</button>
+        ` : `
+          <button class="title-page-start-btn" onclick="Router.navigate({ page: 'chapter', idx: 0 })">${t('main_titlepage_begin')}</button>
+        `}
+        <button class="title-page-start-btn" style="margin-top:12px; background:transparent; border:1px solid rgba(184,146,42,0.5); color:var(--accent-light); font-size:15px;" onclick="Router.navigate({ page: 'howto' })">${t('main_titlepage_howto')}</button>
+        <div class="title-page-publisher">
+          <span class="title-page-publisher-label">${t('main_titlepage_published_by')}</span>
+          <button class="title-page-publisher-logo" onclick="Router.navigate({ page: 'about', tabId: 'publisher' })">
+            <img src="${window.studyAboutData?.publisher?.image || ''}" alt="${window.studyAboutData?.publisher?.logoAlt || '[Publisher info]'}" class="publisher-logo-img" onerror="this.style.display='none'" />
+            <span style="color:rgba(245,240,232,0.45); margin-left:4px;">${ICONS.triggerInfo}</span>
+          </button>
+        </div>
+      </div>
+    </div>`;
+
+  window.scrollTo(0, 0);
+  
+  // Info trigger: title page — fires once globally across all studies
+//  createInfoTrigger(
+//    'title-page-intro',
+//    {
+//      title: '[Put infoTrigger title here]',
+//      body:  '<p>[Put infoTrigger body text here]</p>'
+//    },
+//    {
+//      placement:      'floating',
+//      headingElement: document.getElementById('title-page-main')
+//    }
+//  );
+}
+
+// ── RENDER HOW TO USE PAGE ───────────────────────────────────────────────────
 // Renders the "How to Use This App" instructional page into #mainContent.
 // Accessible from the title page, the onboarding overlay, and the Contents menu.
 
@@ -624,175 +723,6 @@ async function renderHowToUse(tabId) {
   window.scrollTo(0, 0);
 }
 
-// Renders the Leaders' Notes page — pastoral guidance for group leaders,
-// with key teaching points and sensitivities for each chapter.
-// Intended for leaders/mentors; accessible from the Contents menu but not
-// highlighted in the main user flow.
-//
-// Multilingual studies: all content fields (subtitle, intro, keyPoints,
-// pastorals, watch) are resolved for the active language via resolveMetaField().
-// A lang bar (same visual pattern as the chapter lang bar) is shown when two or
-// more languages are available, and shares window._activeStudyLang with the
-// chapter pages and the How To Use Study tab.
-//
-// Mono-lingual studies: langMap is empty, resolveMetaField falls through to
-// unnumbered fields (d.intro, ch.keyPoints, etc.), behaviour is unchanged.
-const LEADERS_TABS = []; // populated dynamically — see renderLeadersNotes
-
-async function renderLeadersNotes(tabId) {
-  closeMenu();
-  _resetNonChapterPageState();
-  // Note: clearStudyUiLangOverride() is intentionally NOT called here.
-  // Leaders Notes carries its own lang bar and shares window._activeStudyLang
-  // with chapter pages. clearStudyUiLangOverride() is still called by
-  // renderSettings, renderAbout, and openLibrary.
-  isNonChapterPage = true;
-  window.activeTabPage = 'leaders';
-  restoreStudyTheme();
-  const content = document.getElementById('mainContent');
-  const saveBtn = document.getElementById('saveBtn');
-  if (saveBtn) saveBtn.parentElement.style.display = 'none';
-  document.getElementById('progressBar').style.width = '0%';
-  document.getElementById('header-title').innerText = t('renderpages_header_leaders');
-
-  const d = leadersNotesData;
-
-  // ── Language resolution ───────────────────────────────────────────────────
-  const availableLangs = detectAvailableLangs();
-  const activeLang     = getActiveLang(availableLangs) || 'en';
-  const langMap        = buildLangMap(window.studyMetadata || {});
-
-  // ── Lang bar HTML (hidden for mono-lingual studies) ───────────────────────
-  const langBarHtml = (() => {
-    if (availableLangs.length < 2) return '';
-
-    const flagCounts = {};
-    availableLangs.forEach(code => {
-      const f = LANGUAGE_MAP[code]?.flag;
-      if (f) flagCounts[f] = (flagCounts[f] || 0) + 1;
-    });
-
-    const buttons = availableLangs.map(code => {
-      const entry      = LANGUAGE_MAP[code];
-      const label      = entry?.label || code.toUpperCase();
-      const flagShared = entry && flagCounts[entry.flag] > 1;
-      const display    = ((flagShared || entry?.alwaysBadge) && entry?.badge)
-        ? renderLangBadge(entry)
-        : (entry?.flag || '🌐');
-      return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
-                       onclick="setPageStudyLang('${code}', () => { Router.replaceState({ page: 'leaders', tabId: window.activeTabId }); renderLeadersNotes(window.activeTabId); })"
-                       aria-label="${label}"
-                       title="${label}">${display}</button>`;
-    }).join('');
-
-    return `<div class="leaders-lang-bar">${buttons}</div>`;
-  })();
-
-  // ── Resolve intro — may be a string or an array of paragraph strings ──────
-  // Multilingual: d.intro1/d.intro2/… — mono-lingual: d.intro (string or array)
-  const rawIntro   = resolveMetaField(d, 'intro', activeLang, langMap);
-  const hasIntro   = !!(typeof rawIntro === 'string'
-    ? rawIntro.trim()
-    : (Array.isArray(rawIntro) ? rawIntro.join('').trim() : ''));
-
-  // Build tab definitions once and cache on the constant so navigateTab() can use it
-  LEADERS_TABS.length = 0;
-  if (hasIntro) LEADERS_TABS.push({ id: 'intro', label: 'Intro' });
-  (d.chapters || []).forEach(ch => LEADERS_TABS.push({ id: `ch_${ch.chapterNumber}`, label: String(ch.chapterNumber) }));
-
-  const activeTab = tabId || (LEADERS_TABS[0] && LEADERS_TABS[0].id) || 'intro';
-  window.activeTabId = activeTab;
-
-  const tabBarHtml = `
-    <div class="howto-tab-bar" id="leadersTabBar">
-      ${LEADERS_TABS.map(t => `
-        <button
-          class="howto-tab${t.id === activeTab ? ' active' : ''}"
-          onclick="Router.replaceState({ page: 'leaders', tabId: '${t.id}' }); renderLeadersNotes('${t.id}')"
-        >${t.label}</button>`).join('')}
-    </div>`;
-
-  let tabContent = '';
-  if (activeTab === 'intro' && hasIntro) {
-    const introHtml = typeof rawIntro === 'string'
-      ? rawIntro
-      : (rawIntro || []).map(p => `<p>${p}</p>`).join('\n');
-    tabContent = `
-      <div class="leaders-intro" style="margin:20px 16px;">
-        ${introHtml}
-      </div>`;
-  } else {
-    const chNum = activeTab.startsWith('ch_') ? parseInt(activeTab.slice(3), 10) : null;
-    const ch = (d.chapters || []).find(c => c.chapterNumber === chNum);
-    if (ch) {
-      // Resolve per-chapter fields for the active language.
-      // Multilingual: keyPoints1/2/…, pastorals1/2/…, watch1/2/…
-      // Mono-lingual: keyPoints, pastorals, watch (unnumbered — unchanged)
-      const keyPoints = resolveMetaField(ch, 'keyPoints', activeLang, langMap);
-      const pastorals = resolveMetaField(ch, 'pastorals', activeLang, langMap);
-      const watch     = resolveMetaField(ch, 'watch',     activeLang, langMap);
-
-      // Resolve the chapter title for the active language (matches Contents overlay).
-      const chapterTitle = resolveMetaField(ch, 'chapterTitle', activeLang, langMap)
-        || (window.chapters || []).find(c => c.chapterNumber === ch.chapterNumber)?.chapterTitle
-        || '';
-
-      // Note: the watch field in multilingual studies already includes the 👁️
-      // emoji prefix inside the JSON value. Mono-lingual studies that do not
-      // include it will have it prepended below for backwards compatibility.
-      const watchHtml = watch
-        ? (watch.startsWith('👁') ? watch : `👁️ ${watch}`)
-        : '';
-
-      tabContent = `
-        <div class="leaders-chapter" style="margin-top:16px;">
-          <div class="leaders-chapter-header">
-            <span class="leaders-chapter-number">${t('renderpages_leaders_chapter_label', { number: ch.chapterNumber })}</span>
-            <span class="leaders-chapter-title">${chapterTitle}</span>
-          </div>
-          <div class="leaders-chapter-body">
-            <div class="leaders-block">
-              <div class="leaders-block-label">${t('renderpages_leaders_keypoints_label')}</div>
-              ${keyPoints}
-            </div>
-            <div class="leaders-block">
-              <div class="leaders-block-label">${t('renderpages_leaders_pastorals_label')}</div>
-              ${pastorals}
-              ${watchHtml ? `<div class="leaders-watch">${watchHtml}</div>` : ''}
-            </div>
-          </div>
-        </div>`;
-    }
-  }
-
-  // Resolve the page subtitle for the active language.
-  // Multilingual: subtitle1/subtitle2/… — mono-lingual: subtitle (unchanged).
-  const subtitle = resolveMetaField(d, 'subtitle', activeLang, langMap);
-
-  content.innerHTML = `
-    <div class="leaders-page">
-      <div class="howto-header">
-        <div class="howto-eyebrow">${t('renderpages_leaders_eyebrow')}</div>
-        <div class="howto-title">${t('renderpages_leaders_title')}${subtitle ? ` — ${subtitle}` : ''}</div>
-      </div>
-
-      ${langBarHtml}
-
-      ${tabBarHtml}
-
-      <div id="leadersTabContent">
-        ${tabContent}
-      </div>
-
-      <div class="leaders-confidential">${t('renderpages_leaders_confidential')}</div>
-      <div class="page-close-bar">
-        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
-      </div>
-      <div style="height: 40px;"></div>
-    </div>
-  `;
-  window.scrollTo(0, 0);
-}
 
 // Shares a short promotional message about the app via the native share sheet,
 // Android bridge, or clipboard fallback. Called from the How To Use page.
@@ -821,123 +751,7 @@ function shareAppLink() {
   }
 }
 
-// Renders the About page with author bio and BeaconLight publisher info.
-// scrollToPublisher: if true, smoothly scrolls to the BeaconLight section
-// after render (used when the publisher logo on the title page is tapped).
-const ABOUT_TABS = [
-  { id: 'author',    label: () => t('renderpages_tab_author')    },
-  { id: 'publisher', label: () => t('renderpages_tab_publisher') },
-  { id: 'copyright', label: () => t('renderpages_tab_copyright') },
-];
-
-// Progress page has two tabs, but only renders them when a pathway is active.
-// navigateTab() guards against the no-pathway case before calling switchProgressTab().
-const PROGRESS_TABS = [
-  { id: 'study'   },
-  { id: 'pathway' },
-];
-
-async function renderAbout(tabId) {
-  closeMenu();
-  _resetNonChapterPageState();
-  await clearStudyUiLangOverride();
-  isNonChapterPage = true;
-  window.activeTabPage = 'about';
-  restoreStudyTheme();
-  const content = document.getElementById('mainContent');
-  const saveBtn = document.getElementById('saveBtn');
-  if (saveBtn) saveBtn.parentElement.style.display = 'none';
-  document.getElementById('progressBar').style.width = '0%';
-  document.getElementById('header-title').innerText = t('renderpages_header_about');
-
-  const activeTab = tabId || 'author';
-  window.activeTabId = activeTab;
-
-  const a = studyAboutData.author;
-  const p = studyAboutData.publisher;
-  const d = copyrightData;
-  const studyTitle = window.titlePageData?.title || '';
-
-  const tabBarHtml = `
-    <div class="howto-tab-bar" id="aboutTabBar">
-      ${ABOUT_TABS.map(t => `
-        <button
-          class="howto-tab${t.id === activeTab ? ' active' : ''}"
-          onclick="Router.replaceState({ page: 'about', tabId: '${t.id}' }); renderAbout('${t.id}')"
-        >${typeof t.label === 'function' ? t.label() : t.label}</button>`).join('')}
-    </div>`;
-
-  let tabContent = '';
-  if (activeTab === 'author') {
-    const authorParas = a.paras.map(t => `<p>${t}</p>`).join('\n');
-    tabContent = `
-      <div class="copyright-page" style="padding-top:16px;">
-        <div class="copyright-block">
-          <div class="copyright-block-label">${t('renderpages_about_author_label')}</div>
-          <div class="about-photo-wrap">
-            <img src="${a.image || ''}" alt="${a.imageAlt || 'Author photo'}"
-              class="about-photo" onerror="this.style.display='none'" />
-          </div>
-          ${authorParas}
-        </div>
-      </div>`;
-  } else if (activeTab === 'publisher') {
-    const publishParas = p.paras.map(t => `<p>${t}</p>`).join('\n');
-    tabContent = `
-      <div class="copyright-page" style="padding-top:16px;">
-        <div class="copyright-block">
-          <div class="copyright-block-label">${t('renderpages_about_publisher_label', { name: p.name })}</div>
-          <img src="${p.image || ''}" alt="${p.imageAlt || p.name || ''}" class="about-publisher-logo" onerror="this.style.display='none'" />
-          ${publishParas}
-          <p>Find out more at <a href="${p.url}" target="_blank">${p.url.replace('https://','')}</a></p>
-        </div>
-      </div>`;
-  } else if (activeTab === 'copyright') {
-    const noticesHtml = (d.notices || []).map(n => `<li>${n}</li>`).join('\n');
-    tabContent = `
-      <div class="copyright-page" style="padding-top:16px;">
-        <div class="copyright-block">
-          <div class="copyright-block-label">${t('renderpages_copyright_author_label')}</div>
-          <p>${d.authorLine}</p>
-          <p>${t('renderpages_copyright_licence_link')}</p>
-          <div class="cc-badge">⚖️ CC BY-SA 4.0</div>
-        </div>
-        <div class="copyright-block">
-          <div class="copyright-block-label">${t('renderpages_copyright_freeto_label')}</div>
-          <p>${t('renderpages_copyright_share_entry')}</p>
-          <p>${t('renderpages_copyright_adapt_entry')}</p>
-        </div>
-        <div class="copyright-block">
-          <div class="copyright-block-label">${t('renderpages_copyright_terms_label')}</div>
-          <p>${t('renderpages_copyright_attribution_entry')}</p>
-          <p>${t('renderpages_copyright_sharealike_entry')}</p>
-        </div>
-        ${noticesHtml ? `<div class="copyright-block"><div class="copyright-block-label">${t('renderpages_copyright_notices_label')}</div><ul>${noticesHtml}</ul></div>` : ''}
-      </div>`;
-  }
-
-  content.innerHTML = `
-    <div class="howto-page">
-      <div class="howto-header">
-        <div class="howto-eyebrow">${studyTitle}</div>
-        <div class="howto-title">${t('renderpages_about_title')}</div>
-      </div>
-
-      ${tabBarHtml}
-
-      <div id="aboutTabContent">
-        ${tabContent}
-      </div>
-
-      <div class="page-close-bar">
-        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
-      </div>
-      <div style="height: 40px;"></div>
-    </div>
-  `;
-  window.scrollTo(0, 0);
-}
-
+// ── RENDER SETTINGS PAGE ─────────────────────────────────────────────────────
 // Renders the Settings page into #mainContent. Builds the font size dot track
 // and all toggle/segment controls from current appSettings values.
 // The inner tog() helper generates a toggle switch HTML snippet for a given key,
@@ -1732,6 +1546,298 @@ async function renderSettings(tabId) {
     );
   }
 }
+
+// ── RENDER LEADERS' NOTES PAGE ───────────────────────────────────────────────
+// Renders the Leaders' Notes page — pastoral guidance for group leaders,
+// with key teaching points and sensitivities for each chapter.
+// Intended for leaders/mentors; accessible from the Contents menu but not
+// highlighted in the main user flow.
+//
+// Multilingual studies: all content fields (subtitle, intro, keyPoints,
+// pastorals, watch) are resolved for the active language via resolveMetaField().
+// A lang bar (same visual pattern as the chapter lang bar) is shown when two or
+// more languages are available, and shares window._activeStudyLang with the
+// chapter pages and the How To Use Study tab.
+//
+// Mono-lingual studies: langMap is empty, resolveMetaField falls through to
+// unnumbered fields (d.intro, ch.keyPoints, etc.), behaviour is unchanged.
+const LEADERS_TABS = []; // populated dynamically — see renderLeadersNotes
+
+async function renderLeadersNotes(tabId) {
+  closeMenu();
+  _resetNonChapterPageState();
+  // Note: clearStudyUiLangOverride() is intentionally NOT called here.
+  // Leaders Notes carries its own lang bar and shares window._activeStudyLang
+  // with chapter pages. clearStudyUiLangOverride() is still called by
+  // renderSettings, renderAbout, and openLibrary.
+  isNonChapterPage = true;
+  window.activeTabPage = 'leaders';
+  restoreStudyTheme();
+  const content = document.getElementById('mainContent');
+  const saveBtn = document.getElementById('saveBtn');
+  if (saveBtn) saveBtn.parentElement.style.display = 'none';
+  document.getElementById('progressBar').style.width = '0%';
+  document.getElementById('header-title').innerText = t('renderpages_header_leaders');
+
+  const d = leadersNotesData;
+
+  // ── Language resolution ───────────────────────────────────────────────────
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs) || 'en';
+  const langMap        = buildLangMap(window.studyMetadata || {});
+
+  // ── Lang bar HTML (hidden for mono-lingual studies) ───────────────────────
+  const langBarHtml = (() => {
+    if (availableLangs.length < 2) return '';
+
+    const flagCounts = {};
+    availableLangs.forEach(code => {
+      const f = LANGUAGE_MAP[code]?.flag;
+      if (f) flagCounts[f] = (flagCounts[f] || 0) + 1;
+    });
+
+    const buttons = availableLangs.map(code => {
+      const entry      = LANGUAGE_MAP[code];
+      const label      = entry?.label || code.toUpperCase();
+      const flagShared = entry && flagCounts[entry.flag] > 1;
+      const display    = ((flagShared || entry?.alwaysBadge) && entry?.badge)
+        ? renderLangBadge(entry)
+        : (entry?.flag || '🌐');
+      return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
+                       onclick="setPageStudyLang('${code}', () => { Router.replaceState({ page: 'leaders', tabId: window.activeTabId }); renderLeadersNotes(window.activeTabId); })"
+                       aria-label="${label}"
+                       title="${label}">${display}</button>`;
+    }).join('');
+
+    return `<div class="leaders-lang-bar">${buttons}</div>`;
+  })();
+
+  // ── Resolve intro — may be a string or an array of paragraph strings ──────
+  // Multilingual: d.intro1/d.intro2/… — mono-lingual: d.intro (string or array)
+  const rawIntro   = resolveMetaField(d, 'intro', activeLang, langMap);
+  const hasIntro   = !!(typeof rawIntro === 'string'
+    ? rawIntro.trim()
+    : (Array.isArray(rawIntro) ? rawIntro.join('').trim() : ''));
+
+  // Build tab definitions once and cache on the constant so navigateTab() can use it
+  LEADERS_TABS.length = 0;
+  if (hasIntro) LEADERS_TABS.push({ id: 'intro', label: 'Intro' });
+  (d.chapters || []).forEach(ch => LEADERS_TABS.push({ id: `ch_${ch.chapterNumber}`, label: String(ch.chapterNumber) }));
+
+  const activeTab = tabId || (LEADERS_TABS[0] && LEADERS_TABS[0].id) || 'intro';
+  window.activeTabId = activeTab;
+
+  const tabBarHtml = `
+    <div class="howto-tab-bar" id="leadersTabBar">
+      ${LEADERS_TABS.map(t => `
+        <button
+          class="howto-tab${t.id === activeTab ? ' active' : ''}"
+          onclick="Router.replaceState({ page: 'leaders', tabId: '${t.id}' }); renderLeadersNotes('${t.id}')"
+        >${t.label}</button>`).join('')}
+    </div>`;
+
+  let tabContent = '';
+  if (activeTab === 'intro' && hasIntro) {
+    const introHtml = typeof rawIntro === 'string'
+      ? rawIntro
+      : (rawIntro || []).map(p => `<p>${p}</p>`).join('\n');
+    tabContent = `
+      <div class="leaders-intro" style="margin:20px 16px;">
+        ${introHtml}
+      </div>`;
+  } else {
+    const chNum = activeTab.startsWith('ch_') ? parseInt(activeTab.slice(3), 10) : null;
+    const ch = (d.chapters || []).find(c => c.chapterNumber === chNum);
+    if (ch) {
+      // Resolve per-chapter fields for the active language.
+      // Multilingual: keyPoints1/2/…, pastorals1/2/…, watch1/2/…
+      // Mono-lingual: keyPoints, pastorals, watch (unnumbered — unchanged)
+      const keyPoints = resolveMetaField(ch, 'keyPoints', activeLang, langMap);
+      const pastorals = resolveMetaField(ch, 'pastorals', activeLang, langMap);
+      const watch     = resolveMetaField(ch, 'watch',     activeLang, langMap);
+
+      // Resolve the chapter title for the active language (matches Contents overlay).
+      const chapterTitle = resolveMetaField(ch, 'chapterTitle', activeLang, langMap)
+        || (window.chapters || []).find(c => c.chapterNumber === ch.chapterNumber)?.chapterTitle
+        || '';
+
+      // Note: the watch field in multilingual studies already includes the 👁️
+      // emoji prefix inside the JSON value. Mono-lingual studies that do not
+      // include it will have it prepended below for backwards compatibility.
+      const watchHtml = watch
+        ? (watch.startsWith('👁') ? watch : `👁️ ${watch}`)
+        : '';
+
+      tabContent = `
+        <div class="leaders-chapter" style="margin-top:16px;">
+          <div class="leaders-chapter-header">
+            <span class="leaders-chapter-number">${t('renderpages_leaders_chapter_label', { number: ch.chapterNumber })}</span>
+            <span class="leaders-chapter-title">${chapterTitle}</span>
+          </div>
+          <div class="leaders-chapter-body">
+            <div class="leaders-block">
+              <div class="leaders-block-label">${t('renderpages_leaders_keypoints_label')}</div>
+              ${keyPoints}
+            </div>
+            <div class="leaders-block">
+              <div class="leaders-block-label">${t('renderpages_leaders_pastorals_label')}</div>
+              ${pastorals}
+              ${watchHtml ? `<div class="leaders-watch">${watchHtml}</div>` : ''}
+            </div>
+          </div>
+        </div>`;
+    }
+  }
+
+  // Resolve the page subtitle for the active language.
+  // Multilingual: subtitle1/subtitle2/… — mono-lingual: subtitle (unchanged).
+  const subtitle = resolveMetaField(d, 'subtitle', activeLang, langMap);
+
+  content.innerHTML = `
+    <div class="leaders-page">
+      <div class="howto-header">
+        <div class="howto-eyebrow">${t('renderpages_leaders_eyebrow')}</div>
+        <div class="howto-title">${t('renderpages_leaders_title')}${subtitle ? ` — ${subtitle}` : ''}</div>
+      </div>
+
+      ${langBarHtml}
+
+      ${tabBarHtml}
+
+      <div id="leadersTabContent">
+        ${tabContent}
+      </div>
+
+      <div class="leaders-confidential">${t('renderpages_leaders_confidential')}</div>
+      <div class="page-close-bar">
+        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
+      </div>
+      <div style="height: 40px;"></div>
+    </div>
+  `;
+  window.scrollTo(0, 0);
+}
+
+
+// ── HELPER FUNCTIONS ─────────────────────────────────────────────────────────
+// Renders the About page with author bio and publisher info.
+// scrollToPublisher: if true, smoothly scrolls to the publisher section
+// after render (used when the publisher logo on the title page is tapped).
+const ABOUT_TABS = [
+  { id: 'author',    label: () => t('renderpages_tab_author')    },
+  { id: 'publisher', label: () => t('renderpages_tab_publisher') },
+  { id: 'copyright', label: () => t('renderpages_tab_copyright') },
+];
+
+// Progress page has two tabs, but only renders them when a pathway is active.
+// navigateTab() guards against the no-pathway case before calling switchProgressTab().
+const PROGRESS_TABS = [
+  { id: 'study'   },
+  { id: 'pathway' },
+];
+
+async function renderAbout(tabId) {
+  closeMenu();
+  _resetNonChapterPageState();
+  await clearStudyUiLangOverride();
+  isNonChapterPage = true;
+  window.activeTabPage = 'about';
+  restoreStudyTheme();
+  const content = document.getElementById('mainContent');
+  const saveBtn = document.getElementById('saveBtn');
+  if (saveBtn) saveBtn.parentElement.style.display = 'none';
+  document.getElementById('progressBar').style.width = '0%';
+  document.getElementById('header-title').innerText = t('renderpages_header_about');
+
+  const activeTab = tabId || 'author';
+  window.activeTabId = activeTab;
+
+  const a = studyAboutData.author;
+  const p = studyAboutData.publisher;
+  const d = copyrightData;
+  const studyTitle = window.titlePageData?.title || '';
+
+  const tabBarHtml = `
+    <div class="howto-tab-bar" id="aboutTabBar">
+      ${ABOUT_TABS.map(t => `
+        <button
+          class="howto-tab${t.id === activeTab ? ' active' : ''}"
+          onclick="Router.replaceState({ page: 'about', tabId: '${t.id}' }); renderAbout('${t.id}')"
+        >${typeof t.label === 'function' ? t.label() : t.label}</button>`).join('')}
+    </div>`;
+
+  let tabContent = '';
+  if (activeTab === 'author') {
+    const authorParas = a.paras.map(t => `<p>${t}</p>`).join('\n');
+    tabContent = `
+      <div class="copyright-page" style="padding-top:16px;">
+        <div class="copyright-block">
+          <div class="copyright-block-label">${t('renderpages_about_author_label')}</div>
+          <div class="about-photo-wrap">
+            <img src="${a.image || ''}" alt="${a.imageAlt || 'Author photo'}"
+              class="about-photo" onerror="this.style.display='none'" />
+          </div>
+          ${authorParas}
+        </div>
+      </div>`;
+  } else if (activeTab === 'publisher') {
+    const publishParas = p.paras.map(t => `<p>${t}</p>`).join('\n');
+    tabContent = `
+      <div class="copyright-page" style="padding-top:16px;">
+        <div class="copyright-block">
+          <div class="copyright-block-label">${t('renderpages_about_publisher_label', { name: p.name })}</div>
+          <img src="${p.image || ''}" alt="${p.imageAlt || p.name || ''}" class="about-publisher-logo" onerror="this.style.display='none'" />
+          ${publishParas}
+          <p>Find out more at <a href="${p.url}" target="_blank">${p.url.replace('https://','')}</a></p>
+        </div>
+      </div>`;
+  } else if (activeTab === 'copyright') {
+    const noticesHtml = (d.notices || []).map(n => `<li>${n}</li>`).join('\n');
+    tabContent = `
+      <div class="copyright-page" style="padding-top:16px;">
+        <div class="copyright-block">
+          <div class="copyright-block-label">${t('renderpages_copyright_author_label')}</div>
+          <p>${d.authorLine}</p>
+          <p>${t('renderpages_copyright_licence_link')}</p>
+          <div class="cc-badge">⚖️ CC BY-SA 4.0</div>
+        </div>
+        <div class="copyright-block">
+          <div class="copyright-block-label">${t('renderpages_copyright_freeto_label')}</div>
+          <p>${t('renderpages_copyright_share_entry')}</p>
+          <p>${t('renderpages_copyright_adapt_entry')}</p>
+        </div>
+        <div class="copyright-block">
+          <div class="copyright-block-label">${t('renderpages_copyright_terms_label')}</div>
+          <p>${t('renderpages_copyright_attribution_entry')}</p>
+          <p>${t('renderpages_copyright_sharealike_entry')}</p>
+        </div>
+        ${noticesHtml ? `<div class="copyright-block"><div class="copyright-block-label">${t('renderpages_copyright_notices_label')}</div><ul>${noticesHtml}</ul></div>` : ''}
+      </div>`;
+  }
+
+  content.innerHTML = `
+    <div class="howto-page">
+      <div class="howto-header">
+        <div class="howto-eyebrow">${studyTitle}</div>
+        <div class="howto-title">${t('renderpages_about_title')}</div>
+      </div>
+
+      ${tabBarHtml}
+
+      <div id="aboutTabContent">
+        ${tabContent}
+      </div>
+
+      <div class="page-close-bar">
+        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
+      </div>
+      <div style="height: 40px;"></div>
+    </div>
+  `;
+  window.scrollTo(0, 0);
+}
+
+
 
 // Converts a double-newline-delimited string into a series of <p> tags.
 // Used for intro, bridge, and closing text fields in the chapters data.

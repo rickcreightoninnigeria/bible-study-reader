@@ -4,8 +4,8 @@
 // that navigate away from a chapter, so the user can return to where they were.
 //
 // Dependencies (all available as globals before this file loads):
-//   currentChapter, isNonChapterPage – main.js STATE section
-//   goToChapter                      – main.js NAVIGATION section (runtime only)
+//   currentChapter, isNonChapterPage – state.js
+//   goToChapter                      – navigation.js (runtime only)
 
 // Returns the localStorage key for the current study's last position.
 // Falls back to 'lastPosition' if no study is active (should not normally happen).
@@ -52,7 +52,7 @@ async function returnToLastPosition() {
   window.scrollTo(0, pos.scrollY);
 }
 
-// ── showToast TO SHOW TOASTS ──────────────────────────────────────────────────
+// ── TOAST ─────────────────────────────────────────────────────────────────────
 // Escapes a string for safe injection into innerHTML.
 // Covers the four characters that are meaningful in HTML contexts.
 // Use this wherever user-supplied or study-supplied strings are injected via
@@ -127,8 +127,7 @@ function showCelebrationToast(ch) {
 // the clipboard, with brief visual feedback. Works alongside normal tap/scroll
 // behaviour: touchmove cancels the timer so scrolling never triggers a copy.
 //
-// Dependencies: none (uses only DOM APIs and showCopyFeedback / copyToClipboard
-// defined below; showToast was in save.js, but now in utils.js, & is loaded before main.js).
+// Dependencies: none (uses only DOM APIs and showCopyFeedback / copyToClipboard defined below).
 
 // Timer handle for the long-press detection.
 let longPressTimer = null;

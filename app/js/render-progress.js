@@ -611,3 +611,146 @@ function openNotesPageInfo() {
   document.getElementById('verseModalFooter').innerHTML = '';
   document.getElementById('verseModalOverlay').classList.add('open');
 }
+
+// ── RENDER MENU ──────────────────────────────────────────────────────────────
+// Rebuilds the chapter menu list with current progress checkmarks.
+// A ✓ checkmark is shown if the first question of a chapter has a saved answer.
+// NOTE: this check only tests question 0_0; a chapter where Q1 is unanswered
+// but others are answered will not show a checkmark. Consider using getChapterProgress().
+//
+// Multilingual studies: the menu heading shortTitle and each chapter title are
+// resolved for the active study language. The Contents overlay carries no lang
+// bar — it silently follows window._activeStudyLang.
+
+// Toggles the ✓ checkmark on the Notes item in the chapter menu without
+// rebuilding the entire menu. Called from the globalNotesField oninput handler
+// in render-progress.js as a cheap alternative to renderMenu().
+// Guards against the item being absent (showPageNotes off, or menu not open).
+function updateNotesMenuIndicator(hasContent) {
+  const item = document.getElementById('menuItemNotes');
+  if (!item) return;
+  const existing = item.querySelector('.chapter-check');
+  if (hasContent && !existing) {
+    const span = document.createElement('span');
+    span.className = 'chapter-check';
+    span.textContent = '✓';
+    item.appendChild(span);
+  } else if (!hasContent && existing) {
+    existing.remove();
+  }
+}
+
+function renderMenu() {
+  const list = document.getElementById('menuList');
+  if (!list) return;
+
+  const currentStudyId = window.activeStudyId;
+
+  // Guard: if no study is loaded (e.g. after deleting the active study),
+  // render a minimal menu with only a Library link and bail out.
+  // This prevents stale chapter items from persisting in the menu after
+  // the globals have been cleared by deleteStudy().
+  if (!currentStudyId || !window.chapters?.length) {
+    const heading = document.getElementById('menuHeading');
+    if (heading) heading.textContent = t('main_menu_heading');
+    list.innerHTML = `
+      <div class="chapter-item" onclick="Router.navigate({ page: 'library' })">
+        <span class="chapter-num">${ICONS.library}</span>
+        <span class="chapter-name">${t('main_menu_no_study')}</span>
+      </div>`;
+    return;
+  }
+
+  // Resolve active language for multilingual title/chapter display.
+  // For mono-lingual studies langMap is {} and resolveMetaField falls through
+  // to the unnumbered field, so nothing changes for existing studies.
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs);
+  const langMap        = buildLangMap(window.studyMetadata || {});
+
+  // 1. Dynamic heading: "Chapters of [shortTitle]"
+  const heading = document.getElementById('menuHeading');
+  if (heading) {
+    const meta       = window.titlePageData;
+    const shortTitle = meta
+      ? ((activeLang ? resolveMetaField(meta, 'shortTitle', activeLang, langMap) : '') || meta.shortTitle || meta.title || '')
+      : '';
+    heading.textContent = shortTitle ? t('main_menu_heading_with_title', { title: shortTitle }) : t('main_menu_heading');
+  }
+
+  let html = `
+    <div class="chapter-item" onclick="Router.navigate({ page: 'title' })">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">${t('main_menu_title_page')}</span>
+    </div>`;
+
+  // 2. My Progress and How to Use removed from Contents — they live in the top bar
+
+  html += chapters.map((ch, i) => {
+    const hasAnswers = Object.keys(localStorage).some(key =>
+      key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_q`) || key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_r`)
+    );
+    // Resolve the chapter title for the active language.
+    // chapterTitle1/2/3 for multilingual, chapterTitle for mono-lingual.
+    const chTitle = (activeLang ? resolveMetaField(ch, 'chapterTitle', activeLang, langMap) : '') || ch.chapterTitle || '';
+    return `
+      <div class="chapter-item" onclick="Router.navigate({ page: 'chapter', idx: ${i} })">
+        <span class="chapter-num">${String(ch.chapterNumber).padStart(2,'0')}</span>
+        <span class="chapter-name">${chTitle}</span>
+        ${hasAnswers ? '<span class="chapter-check">✓</span>' : ''}
+      </div>`;
+  }).join('');
+
+  if (appSettings.showPageNotes) {
+    const hasNotesContent = !!localStorage.getItem(`bsr_${currentStudyId}_global_notes`);
+    html += `
+    <div class="chapter-item" id="menuItemNotes" onclick="Router.navigate({ page: 'notes' })">
+      <span class="chapter-num">✎</span>
+      <span class="chapter-name">${t('main_menu_notes')}</span>
+      ${hasNotesContent ? '<span class="chapter-check">✓</span>' : ''}
+    </div>`;
+  }
+
+  if (appSettings.showPageLeaders) {
+    html += `
+    <div class="chapter-item" onclick="Router.navigate({ page: 'leaders' })">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">${t('main_menu_leaders_notes')}</span>
+    </div>`;
+  }
+
+  if (appSettings.showPageAbout) {
+    html += `
+    <div class="chapter-item" onclick="Router.navigate({ page: 'about' })">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">${t('main_menu_about')}</span>
+    </div>`;
+  }
+
+  list.innerHTML = html;
+}
+
+// ── PROGRESS ─────────────────────────────────────────────────────────────────
+
+// Updates the thin gold progress bar in the top nav to reflect what percentage
+// of the current chapter's answer fields have non-empty content.
+// Called on every keystroke (via the document 'input' listener) and after saving.
+
+function updateProgress() {
+  if (isNonChapterPage) return;
+  const ch = chapters[currentChapter];
+  const allFields = document.querySelectorAll('.answer-field');
+  if (!allFields.length) return;
+
+  // Exclude the notes field from progress tracking
+  const fields = Array.from(allFields).filter(f => f.dataset.type !== 'notes');
+  if (!fields.length) return;
+
+  let filled = 0;
+  fields.forEach(f => { if (f.value.trim().length > 0) filled++; });
+  const pct = Math.round((filled / fields.length) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+
+  // Trigger celebration toast on first completion of this chapter
+  if (pct === 100) showCelebrationToast(ch);
+}

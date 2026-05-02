@@ -258,6 +258,59 @@ function _showIdbUnavailableError() {
   }
 }
 
+// ── INITAPP ───────────────────────────────────────────────────────────────────
+  // Called after study data is loaded into the engine.
+  // Decides whether to restore a saved position or show the title page,
+  // then shows study-specific onboarding on first open of this study.
+
+async function initApp({ isStudySwitch = false } = {}) {
+  // Safety guard: if no study has been loaded yet, do nothing.
+  if (!window.chapters || !window.chapters.length) return;
+
+  initSettings();
+
+  const _savedPos = appSettings.rememberPosition && getLastPosition();
+  // Guard: discard the saved position if its chapter index is out of range
+  // for the current study (e.g. switching from a longer study to a shorter one).
+  const _launchPos = _savedPos && _savedPos.chapterIdx < window.chapters.length
+    ? _savedPos : null;
+  if (!_launchPos) clearLastPosition();
+
+  if (_launchPos) {
+    await goToChapter(_launchPos.chapterIdx);
+    setTimeout(() => window.scrollTo(0, _launchPos.scrollY), 100);
+    if (isStudySwitch) {
+      // Push a history entry for the new study view WITHOUT re-rendering.
+      // goToChapter() above has already rendered it. Using Router.navigate()
+      // would call _applyNavigation() → goToChapter() a second time, breaking
+      // sticky bars. Using bare history.pushState() bypasses the router's
+      // _lastPage tracking and can trigger a spurious popstate in some WebViews.
+      // pushWithoutRender() is the correct primitive: it pushes state, updates
+      // _lastPage, and never touches _navigating.
+      Router.pushWithoutRender({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
+    } else {
+      Router.boot({ page: 'chapter', idx: _launchPos.chapterIdx, scrollY: _launchPos.scrollY });
+    }
+  } else {
+    renderTitlePage();
+    if (isStudySwitch) {
+      // Same reasoning: renderTitlePage() already rendered — just push state.
+      Router.pushWithoutRender({ page: 'title' });
+    } else {
+      Router.boot({ page: 'title' });
+    }
+  }
+
+  renderMenu();
+  // Show app onboarding first; only show study onboarding if app onboarding
+  // did not fire (otherwise both overlays stack simultaneously in the DOM,
+  // with study onboarding on top, producing the wrong sequence).
+  const appOnboardingShown = showAppOnboardingIfNeeded();
+  if (!appOnboardingShown) {
+    showOnboardingIfNeeded();
+  }
+}
+
 // ── STARTUP ───────────────────────────────────────────────────────────────────
 // Named so that i18n.js / setLanguage() can reference it, but only the
 // DOMContentLoaded handler below actually calls it on first load.
