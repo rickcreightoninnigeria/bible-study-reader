@@ -381,29 +381,37 @@ function runSearchCore(query) {
       });
     });
 
-    // 3. Search reflection answers
-    const reflEls = (ch.elements || []).filter(
-      e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement
-    );
-    ch.reflection.forEach((rq, rIdx) => {
-      const eid = reflEls[rIdx] ? reflEls[rIdx].elementId : `r_${rIdx}`;
-      const key = storageKey(ch.chapterNumber, 'r', eid);
-      const savedAnswer = getCachedStorage(key);
-      if (savedAnswer) {
-        const norm = normalize(savedAnswer);
-        if (queries.some(q => norm.includes(q))) {
-          results.push({
-            chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle,
-            ref: t('search_reflection_ref', { num: rIdx + 1 }),
-            questionText: rq,
-            answer: savedAnswer,
-            type: 'answer',
-            cardId: eid,
-            score: scoreResult({ text: savedAnswer, type: 'answer', answer: savedAnswer }, queries, originalQuery)
-          });
+    // 3. Search reflection answers.
+    // Iterate directly over reflection elements so elementId is read from the
+    // element itself — exactly as renderQuestion() does when saving answers.
+    // The previous approach filtered elements into reflEls[] then used the
+    // ch.reflection[] loop index to index into reflEls[], which misaligned
+    // whenever repeatElement entries or non-reflection elements interleaved
+    // with reflection elements in ch.elements[].
+    (ch.elements || [])
+      .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
+      .forEach((el, rIdx) => {
+        const key = storageKey(ch.chapterNumber, 'r', el.elementId);
+        const savedAnswer = getCachedStorage(key);
+        if (savedAnswer) {
+          const norm = normalize(savedAnswer);
+          if (queries.some(q => norm.includes(q))) {
+            // Question text lives on the element (el.question for mono-lingual,
+            // el.question1/2/3 for multilingual). stripHtml guards against any
+            // inline HTML in the question string.
+            const questionText = stripHtml(el.question || el.question1 || '');
+            results.push({
+              chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle,
+              ref: t('search_reflection_ref', { num: rIdx + 1 }),
+              questionText,
+              answer: savedAnswer,
+              type: 'answer',
+              cardId: el.elementId,
+              score: scoreResult({ text: savedAnswer, type: 'answer', answer: savedAnswer }, queries, originalQuery)
+            });
+          }
         }
-      }
-    });
+      });
   });
 
   // Fuzzy fallback: if no results and the query is short, retry with the
