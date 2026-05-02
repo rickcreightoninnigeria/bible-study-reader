@@ -157,7 +157,6 @@ const Router = (() => {
 
         case 'chapter':
           await goToChapter(idx ?? 0, scrollY ?? 0);
-          if (scrollY) setTimeout(() => window.scrollTo(0, scrollY), 100);
           break;
 
         case 'library':
