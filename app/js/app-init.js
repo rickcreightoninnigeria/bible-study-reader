@@ -162,9 +162,18 @@ async function loadLocale(langCode) {
 // Called by setLanguage() in i18n.js when the user changes language in Settings.
 // Reloads all locale files for the new language and re-renders the current view.
 // Does NOT repeat one-time startup tasks (install default studies, onboarding…).
+
 async function reloadLocaleAndRerender(langCode) {
   applyLanguageToDom(langCode);
   await loadLocale(langCode);
+
+  // Sync the in-chapter language to the new UI language if the study
+  // supports it. If not, leave _activeStudyLang on its current value
+  // so the language bar stays on whichever language was already active.
+  const availableLangs = detectAvailableLangs();
+  if (availableLangs.includes(langCode)) {
+    window._activeStudyLang = langCode;
+  }
 
   // Patch the footer with the new locale's app title.
   const footerEl = document.getElementById('libraryVersionFooter');

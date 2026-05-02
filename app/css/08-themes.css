@@ -227,6 +227,69 @@
     margin-top: 16pt;
   }
 
+  /* ── Likert scale ──
+     The interactive radio-button widget is hidden entirely. In its place, a
+     print-friendly response summary is shown via .likert-print-row, which is
+     display:none on screen and display:table on print.
+
+     Each .likert-print-row contains:
+       .likert-print-statement — the statement text (left column)
+       .likert-print-response  — the selected option label (right column)
+
+     The response cell is populated by JS at print time in renderLikertPrintRows()
+     (called from a beforeprint listener wired in render-elements.js / modals.js).
+     If no response has been saved, the cell shows a faint em-dash placeholder.
+
+     .likert-scale itself is hidden so raw radio inputs never appear in print,
+     regardless of browser. page-break-inside: avoid is set on the wrapper card
+     so a scale is not split across pages. */
+  .likert-scale,
+  .likert-instructions,
+  .likert-header-row {
+    display: none !important;
+  }
+  .likert-print-summary {
+    display: block;
+    margin: 0 0 12pt 0;
+    page-break-inside: avoid;
+    border: 0.75pt solid #ccc;
+  }
+  .likert-print-title {
+    background: #2c2416 !important;
+    color: #d4a843 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 5pt 10pt;
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .likert-print-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 4pt 10pt;
+    font-size: 10pt;
+    border-top: 0.5pt solid #eee;
+    gap: 12pt;
+  }
+  .likert-print-row:first-of-type {
+    border-top: none;
+  }
+  .likert-print-statement {
+    flex: 1;
+    color: black;
+  }
+  .likert-print-response {
+    flex-shrink: 0;
+    font-style: italic;
+    color: #444;
+    text-align: right;
+  }
+  .likert-print-response.no-response {
+    color: #bbb;
+  }
+
   /* ── Page margins ── */
   @page {
     margin: 1.5cm 1.8cm;

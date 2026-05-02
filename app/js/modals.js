@@ -497,4 +497,56 @@ function closeInfoModal(event) {
 //    }
 //  );
 
+
+// ── LIKERT PRINT HELPERS ──────────────────────────────────────────────────────
+// Injects .likert-print-summary nodes before window.print() fires, so that
+// 08-themes.css @media print can display readable statement/response rows
+// instead of raw radio inputs.
+//
+// Strategy:
+//   beforeprint — for each .likert-card in the DOM, build a sibling
+//                 .likert-print-summary and insert it immediately after.
+//                 Reads the selected radio value from the live DOM (already
+//                 reflects localStorage via the checked attribute set by
+//                 renderLikertScale) and maps it to the scale label via the
+//                 data-scale attribute on .likert-info-btn.
+//   afterprint  — remove all injected nodes so the DOM is clean for screen use.
+//
+// Only standard (non-bipolar) scales are handled — bipolar is not yet
+// implemented in renderLikertScale() so no .likert-card exists for it.
+
+function _buildLikertPrintSummaries() {
+  document.querySelectorAll('.likert-card').forEach(card => {
+    // Read the scale label array from the data attribute set by renderLikertScale.
+    const scaleJson = card.querySelector('.likert-info-btn')?.dataset?.scale;
+    const scale     = scaleJson ? JSON.parse(scaleJson.replace(/&quot;/g, '"')) : [];
+
+    const rows = Array.from(card.querySelectorAll('.likert-row'));
+    if (!rows.length) return;
+
+    const rowsHtml = rows.map(row => {
+      const stmt    = row.querySelector('.likert-statement')?.textContent?.trim() || '';
+      const checked = row.querySelector('.likert-radio:checked');
+      const val     = checked ? parseInt(checked.value, 10) : -1;
+      const label   = (val >= 1 && val <= scale.length) ? scale[val - 1] : null;
+      return `<div class="likert-print-row">
+        <div class="likert-print-statement">${stmt}</div>
+        <div class="likert-print-response${label ? '' : ' no-response'}">${label || '—'}</div>
+      </div>`;
+    }).join('');
+
+    const summary = document.createElement('div');
+    summary.className            = 'likert-print-summary _likert-print-injected';
+    summary.innerHTML            = `<div class="likert-print-title">${t('modals_likert_print_heading')}</div>${rowsHtml}`;
+    card.insertAdjacentElement('afterend', summary);
+  });
+}
+
+function _removeLikertPrintSummaries() {
+  document.querySelectorAll('._likert-print-injected').forEach(el => el.remove());
+}
+
+window.addEventListener('beforeprint', _buildLikertPrintSummaries);
+window.addEventListener('afterprint',  _removeLikertPrintSummaries);
+
 // ──────────────────────────────────────────────────────────────────────────────

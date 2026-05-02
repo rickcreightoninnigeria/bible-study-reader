@@ -108,6 +108,8 @@ function navigateTab(page, direction) {
 // which the chapter lang bar (or the leaders/how-to lang bars) sets.
 
 function renderTitlePage() {
+  closeMenu();
+  _resetNonChapterPageState();
   isNonChapterPage = true;
   restoreStudyTheme();
   const content = document.getElementById('mainContent');

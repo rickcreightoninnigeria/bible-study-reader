@@ -116,24 +116,24 @@ function exportAllAnswers() {
       });
     });
 
-    // Reflection answers
-    if (ch.reflection && ch.reflection.length > 0) {
-      const reflEls = (ch.elements || []).filter(
-        e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement
-      );
+    // Reflection answers — iterates ch.elements directly so elementId is read
+    // from the element itself, matching the key renderQuestion() writes.
+    // Identical fix to the one applied in search.js.
+    {
       let reflectionReport = '';
       let hasReflections   = false;
-      ch.reflection.forEach((rq, rIdx) => {
-        const eid    = reflEls[rIdx] ? reflEls[rIdx].elementId : null;
-        const key    = eid ? storageKey(ch.chapterNumber, 'r', eid) : null;
-        const answer = key ? (localStorage.getItem(key) || '') : '';
-        if (answer.trim()) {
-          hasReflections    = true;
-          chapterHasAnswers = true;
-          reflectionReport += `${bold(t('shareprint_label_q'))} ${rq}\n`;
-          reflectionReport += `${bold(t('shareprint_label_a'))} ${answer.trim()}\n\n`;
-        }
-      });
+      (ch.elements || [])
+        .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
+        .forEach(el => {
+          const answer = localStorage.getItem(storageKey(ch.chapterNumber, 'r', el.elementId)) || '';
+          if (answer.trim()) {
+            hasReflections    = true;
+            chapterHasAnswers = true;
+            const qText = el.question || el.question1 || '';
+            reflectionReport += `${bold(t('shareprint_label_q'))} ${qText}\n`;
+            reflectionReport += `${bold(t('shareprint_label_a'))} ${answer.trim()}\n\n`;
+          }
+        });
       if (hasReflections) {
         chapterReport += bold(t('shareprint_reflection_short_heading')) + '\n\n';
         chapterReport += reflectionReport;
@@ -340,6 +340,34 @@ function buildPrintHead(title) {
     color: #666;
     margin: 16pt 0 4pt 0;
   }
+  .likert-block {
+    border: 0.5pt solid #ccc;
+    margin: 8pt 0;
+    page-break-inside: avoid;
+  }
+  .likert-block-title {
+    background: #2c2416;
+    color: #d4a843;
+    padding: 4pt 8pt;
+    font-size: 8pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .likert-block-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 4pt 8pt;
+    font-size: 10pt;
+    border-top: 0.5pt solid #eee;
+    gap: 12pt;
+  }
+  .likert-block-row:first-of-type { border-top: none; }
+  .likert-block-statement { flex: 1; color: black; }
+  .likert-block-response  { flex-shrink: 0; font-style: italic; color: #444; text-align: right; }
+  .likert-block-response.no-answer { color: #aaa; }
   @page { margin: 1.5cm 1.8cm; }
 </style>
 </head>`;
@@ -377,21 +405,51 @@ function buildChapterBody(ch) {
     body += `<div class="closing"><p>${ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
   }
 
-  // Reflection questions with saved answers
-  if (ch.reflection && ch.reflection.length > 0) {
-    body += `<div class="reflection-heading">${t('shareprint_print_reflection_heading')}</div>`;
-    const reflEls = (ch.elements || []).filter(
-      e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement
-    );
-    ch.reflection.forEach((rq, ri) => {
-      const eid    = reflEls[ri] ? reflEls[ri].elementId : null;
-      const answer = eid ? (localStorage.getItem(storageKey(ch.chapterNumber, 'r', eid)) || '') : '';
-      body += `<div class="question-block">
-        <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
-        <div class="question-text">${rq}</div>
-        <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() ? escapeHtml(answer.trim()) : t('shareprint_print_no_answer')}</div>
+  // Likert scale responses — rendered as statement/response rows.
+  // Only standard (non-bipolar) scales are included; bipolar is not yet
+  // implemented in renderLikertScale() so no responses exist for it.
+  // Stored value: 1-based integer string from likertKey(chNum, eid, stIdx).
+  // The label is resolved by indexing into el.scale (already locale-resolved
+  // before being stored on the element by renderChapter).
+  (ch.elements || [])
+    .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
+    .forEach(el => {
+      const scale      = el.scale      || [];
+      const statements = el.statements || [];
+      if (!statements.length) return;
+
+      const rowsHtml = statements.map((stmt, stIdx) => {
+        const raw      = localStorage.getItem(likertKey(ch.chapterNumber, el.elementId, stIdx));
+        const labelIdx = raw ? (parseInt(raw, 10) - 1) : -1;
+        const label    = (labelIdx >= 0 && labelIdx < scale.length) ? scale[labelIdx] : null;
+        return `<div class="likert-block-row">
+          <div class="likert-block-statement">${stmt}</div>
+          <div class="likert-block-response${label ? '' : ' no-answer'}">${label || t('shareprint_print_no_answer')}</div>
+        </div>`;
+      }).join('');
+
+      body += `<div class="likert-block">
+        <div class="likert-block-title">${t('shareprint_print_likert_heading')}</div>
+        ${rowsHtml}
       </div>`;
     });
+
+  // Reflection questions with saved answers.
+  // Iterates ch.elements directly so elementId is read from the element itself,
+  // matching the key renderQuestion() writes — identical fix to search.js.
+  if (ch.reflection && ch.reflection.length > 0) {
+    body += `<div class="reflection-heading">${t('shareprint_print_reflection_heading')}</div>`;
+    (ch.elements || [])
+      .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
+      .forEach((el, ri) => {
+        const answer = localStorage.getItem(storageKey(ch.chapterNumber, 'r', el.elementId)) || '';
+        const qText  = el.question || el.question1 || '';
+        body += `<div class="question-block">
+          <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
+          <div class="question-text">${qText}</div>
+          <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() ? escapeHtml(answer.trim()) : t('shareprint_print_no_answer')}</div>
+        </div>`;
+      });
   }
 
   // Notes — only included if non-empty
