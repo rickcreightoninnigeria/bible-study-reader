@@ -688,6 +688,8 @@
 
   "renderpages_shareapp_download_title": "Get the app",
   "renderpages_shareapp_download_body":  "The app is free to download on Google Play.",
-  "renderpages_shareapp_download_btn":   "Open in Google Play"
+  "renderpages_shareapp_download_btn":   "Open in Google Play",
+
+  "voice_transcript_saved_navigate_back": "Answer recorded — navigate back to see it"
   
 }
