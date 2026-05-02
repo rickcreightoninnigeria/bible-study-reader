@@ -564,25 +564,20 @@ async function renderHowToUse(tabId) {
             <span>📲</span> ${t('renderpages_shareapp_know_btn')}
           </button>
         </div>
+
         <div class="howto-block">
           <div class="howto-block-title">${t('renderpages_shareapp_download_title')}</div>
-          <p>${t('renderpages_shareapp_download_intro')}</p>
-          <ol style="margin: 8px 0 12px; padding-left: 20px; line-height: 1.7;">
-            <li>${t('renderpages_shareapp_download_step1')}</li>
-            <li>${t('renderpages_shareapp_download_step2')}</li>
-            <li>${t('renderpages_shareapp_download_step3')}</li>
-          </ol>
-          <p>${t('renderpages_shareapp_download_note')}</p><p>&nbsp;</p>
-          <button class="howto-share-btn" style="background: var(--text);"
+          <p>${t('renderpages_shareapp_download_body')}</p>
+          <button class="howto-share-btn"
             onclick="${(() => {
-              const apkId  = window.appAboutData?.apkUpdateFolder || '';
-              const apkUrl = `https://drive.google.com/drive/folders/${apkId}?usp=sharing`;
-              return `window.Android?.openUrl ? Android.openUrl('${apkUrl}') : window.open('${apkUrl}', '_blank')`;
+              const pkg       = window.appAboutData?.androidPackageId || '';
+              const playUrl   = `https://play.google.com/store/apps/details?id=${pkg}`;
+              const intentUrl = `market://details?id=${pkg}`;
+              return `window.Android?.openUrl ? Android.openUrl('${intentUrl}') : window.open('${playUrl}', '_blank')`;
             })()}">
             <span>⬇️</span> ${t('renderpages_shareapp_download_btn')}
           </button>
-        </div>
-      </div>`;
+        </div>`;
   }
 
   // Tab content dispatch
@@ -1280,7 +1275,28 @@ async function renderSettings(tabId) {
         </div>
       </div>` : '';
 
-    // ── App Version & Updates — App Version always shown; Updates = Intermediate+ ──
+    // ── App Version & Updates — always shown ──────────────────────────────────────
+    const platform = getPlatform();
+
+    const appStoreButton = (() => {
+      if (platform === 'android') {
+        const pkg        = window.appAboutData?.androidPackageId;
+        const playUrl    = 'https://play.google.com/store/apps/details?id=${pkg}';
+        const intentUrl  = 'market://details?id=${pkg}';
+        const onclick    = `window.Android?.openUrl ? Android.openUrl('${intentUrl}') : window.open('${playUrl}', '_blank')`;
+        return `<button class="howto-share-btn" style="margin:0 0 4px;" onclick="${onclick}">
+                  ${ICONS.download}&nbsp;${t('renderpages_settings_appupdates_btn_android')}
+                </button>`;
+      }
+      if (platform === 'ios') {
+        return `<button class="howto-share-btn" style="margin:0 0 4px; opacity:0.45; cursor:default;" disabled>
+                  ${ICONS.download}&nbsp;${t('renderpages_settings_appupdates_btn_ios')}
+                </button>`;
+      }
+      // 'web' — no store button; the app is Android/iOS only
+      return '';
+    })();
+
     const appVersionSection = `
       <div class="settings-section">
         <div class="settings-section-heading">${t('renderpages_settings_appversion_heading')}</div>
@@ -1294,30 +1310,21 @@ async function renderSettings(tabId) {
         </div>
       </div>
 
-      ${!basic ? `
       <div class="settings-section">
         <div class="settings-section-heading">${t('renderpages_settings_appupdates_heading')}</div>
         <div class="settings-block">
           <div class="settings-row">
             <div class="settings-row-text">
               <div class="settings-row-label">${t('renderpages_settings_appupdates_label')}</div>
-              <div class="settings-row-desc">
-                ${t('renderpages_settings_appupdates_body')}<p>&nbsp;</p>
-              </div>
+              <div class="settings-row-desc">${t('renderpages_settings_appupdates_body_' + platform)}</div>
             </div>
           </div>
+          ${appStoreButton ? `
           <div class="settings-row" style="flex-direction:column; align-items:stretch; gap:10px;">
-            <button class="howto-share-btn" style="margin: 0 0 4px;"
-              onclick="${(() => {
-                const apkId  = window.appAboutData?.apkUpdateFolder || '';
-                const apkUrl = `https://drive.google.com/drive/folders/${apkId}?usp=sharing`;
-                return `window.Android?.openUrl ? Android.openUrl('${apkUrl}') : window.open('${apkUrl}', '_blank')`;
-              })()}">
-              ${ICONS.download}&nbsp;${t('renderpages_settings_appupdates_btn')}
-            </button>
-          </div>
+            ${appStoreButton}
+          </div>` : ''}
         </div>
-      </div>` : ''}`;
+      </div>`;
 
     // ── Interface Mode — always at the bottom of the App tab ───────────────── 
     const interfaceModePopupHtml =
@@ -1330,7 +1337,6 @@ async function renderSettings(tabId) {
       `<li><em>Answer box size</em> — set how tall answer fields start</li>` +
       `<li><em>Optional pages</em> — turn on My Progress, Notes &amp; Comments, and Leaders’ Notes</li>` +
       `<li><em>Library tab</em> in Settings — control which Library tabs are visible</li>` +
-      `<li><em>App Updates</em> — download the latest version directly</li>` +
       `<li><em>Auto-save notification</em> — a brief confirmation when answers are auto-saved</li>` +
       `</ul>` +
       `<p><br><b>Advanced</b> adds everything else:</p>` +

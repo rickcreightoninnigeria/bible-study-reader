@@ -203,3 +203,17 @@ function showCopyFeedback(field) {
     timerProgressBar: true,
   });
 }
+
+// ── PLATFORM DETECTION ────────────────────────────────────────────────────────
+// Returns the platform the app is running on.
+// 'android' — wrapped in the Android WebView (window.Android bridge present)
+// 'ios'     — running on iOS Safari/WebView (reserved for future native wrapper)
+// 'web'     — all other browsers / desktop
+//
+// Use this instead of raw window.Android checks so platform logic is consistent
+// and easy to extend when iOS ships.
+function getPlatform() {
+  if (window.Android) return 'android';
+  if (/iP(hone|ad|od)/.test(navigator.userAgent)) return 'ios';
+  return 'web';
+}

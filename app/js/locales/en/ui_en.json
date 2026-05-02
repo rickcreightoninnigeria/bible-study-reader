@@ -330,13 +330,6 @@
   "renderpages_shareapp_know_title"                     :"Know someone who would benefit?",
   "renderpages_shareapp_know_body"                      :"If you think someone else would find this study helpful — a friend, a family member, someone in your church — you can share a link to the app using the button below.",
   "renderpages_shareapp_know_btn"                       :"Share this app",
-  "renderpages_shareapp_download_title"                 :"Download &amp; install the app",
-  "renderpages_shareapp_download_intro"                 :"You can also download the app directly and install it on an Android device. The file is a password-protected zip — here’s how to get it working:",
-  "renderpages_shareapp_download_step1"                 :"Tap the button below to download the zip file from Google Drive.",
-  "renderpages_shareapp_download_step2"                 :"Unzip it using the password: <b>1234</b>",
-  "renderpages_shareapp_download_step3"                 :"Open the <b>.apk</b> file to install.",
-  "renderpages_shareapp_download_note"                  :"(The reason for the password is that Google Drive flags .apk files; the password + zip bypasses this.)",
-  "renderpages_shareapp_download_btn"                   :"Download app (zip)",
   "renderpages_shareapp_share_title"                    :"Bible Study App",
   "renderpages_shareapp_copied_toast"                   :"✓ Link copied to clipboard",
   "___subsection: leaders notes page"                   :"── renderLeadersNotes ────────────────────────────────────────",
@@ -428,9 +421,6 @@
   "renderpages_settings_installed_version"              :"Installed version: {version}",
   "renderpages_settings_version_unknown"                :"Unknown",
   "renderpages_settings_appupdates_heading"             :"App Updates",
-  "renderpages_settings_appupdates_label"               :"Download the latest version",
-  "renderpages_settings_appupdates_body"                :"<p>This app is not yet available on Google Play (but it’s coming soon). In the meantime:</p><p><ul><li><b>Google Drive</b>: Updates can be downloaded directly from Google Drive.</li><li><b>Zipped</b>: Because Google Drive is cautious about APK files, the file is wrapped in a password-protected zip file.</li><li><b>Password</b>: The password is <b>1234</b>.</li></ul></p><p>To update:<br><br><ol><li>Tap the button below to download the zip.</li><li>Unzip it using the password: <b>1234</b></li><li>Open the APK to install.</li></ol><br></p><p>(The reason for the password is that Google Drive flags .apk files; the password + zip bypasses this.)</p>",
-  "renderpages_settings_appupdates_btn"                 :"Download Latest APK",
   "renderpages_settings_interfacemode_heading"          :"Interface Mode",
   "renderpages_settings_interfacemode_chooser_desc"     :"Choose how many features are visible. You can change this at any time.",
   "renderpages_settings_mode_basic"                     :"Basic",
@@ -687,5 +677,17 @@
   "router_exit_title":   "Leave the app?",
   "router_exit_body":    "Your answers are saved.",
   "router_exit_confirm": "Exit",
-  "router_exit_cancel":  "Stay"
+  "router_exit_cancel":  "Stay",
+
+  "renderpages_settings_appupdates_label"           : "Keep the app up to date for the latest studies and features.",
+  "renderpages_settings_appupdates_body_android"    : "Available on Google Play.",
+  "renderpages_settings_appupdates_body_ios"        : "Coming soon on the App Store.",
+  "renderpages_settings_appupdates_body_web"        : "This app is available for Android, with iOS coming soon.",
+  "renderpages_settings_appupdates_btn_android"     : "Open in Google Play",
+  "renderpages_settings_appupdates_btn_ios"         : "Coming soon on the App Store",
+
+  "renderpages_shareapp_download_title": "Get the app",
+  "renderpages_shareapp_download_body":  "The app is free to download on Google Play.",
+  "renderpages_shareapp_download_btn":   "Open in Google Play"
+  
 }
