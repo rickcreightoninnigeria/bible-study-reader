@@ -98,6 +98,12 @@ function detectAvailableLangs(ch) {
 // ── RENDER CHAPTER ────────────────────────────────────────────────────────────
 
 async function renderChapter(idx, scrollY = 0) {
+  // Blob URLs created for inline chapter images this render pass.
+  // Revoked after innerHTML is set so the browser has already used them.
+  // This prevents accumulation across chapter navigations without requiring
+  // the study-level _activeBlobUrls list (which only clears on study switch).
+  const _chapterBlobUrls = [];
+
   try {
     currentChapter   = idx;
     isNonChapterPage = false;
@@ -215,14 +221,16 @@ async function renderChapter(idx, scrollY = 0) {
         case 'image': {
           // Resolve the image src before calling the synchronous renderer.
           // Priority: IDB blob (zip-imported studies) → el.src → empty string.
+          // URL.createObjectURL() is used instead of FileReader.readAsDataURL()
+          // to avoid the ~33% base64 inflation. The blob URL is registered in
+          // _chapterBlobUrls and revoked immediately after innerHTML is written,
+          // once the browser has already resolved the src.
           const blob   = await StudyIDB.getImage(`${window.activeStudyId}_${resolved.elementId}`);
-          const imgSrc = blob
-            ? await new Promise(resolve => {
-                const reader = new FileReader();
-                reader.onload = e => resolve(e.target.result);
-                reader.readAsDataURL(blob);
-              })
-            : (resolved.src || '');
+          let imgSrc = resolved.src || '';
+          if (blob) {
+            imgSrc = URL.createObjectURL(blob);
+            _chapterBlobUrls.push(imgSrc);
+          }
           contentHtml += renderImage({ ...ctx, imgSrc });
           break;
         }
@@ -253,6 +261,13 @@ async function renderChapter(idx, scrollY = 0) {
 
     // ── Set innerHTML (single write) ──────────────────────────────────────────
     container.innerHTML = contentHtml;
+
+    // Revoke chapter image blob URLs now that the browser has resolved them
+    // from the innerHTML write above. Revoking here (rather than on load events)
+    // is safe because the browser retains the decoded image data internally;
+    // only the URL handle — not the image itself — is released.
+    _chapterBlobUrls.forEach(u => URL.revokeObjectURL(u));
+    _chapterBlobUrls.length = 0;
 
     // ── Post-render: language bar ─────────────────────────────────────────────
     // Populates #chapterLangBar with flag buttons for the available languages.

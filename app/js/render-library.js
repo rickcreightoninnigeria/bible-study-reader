@@ -26,15 +26,29 @@ const PINNED_KEY           = 'lib_pinned';           // ordered array
 const PINNED_ALL_KEY       = 'lib_pinned_all';       // ordered array (All tab)
 
 // ── COVER IMAGE CACHE ────────────────────────────────────────────────────────
-// Caches the base64 data URL for each study's cover image so that IDB reads
-// and FileReader.readAsDataURL() conversions only happen once per session.
-// Keyed by studyId. Call invalidateCoverCache(id) when a study's cover changes
-// or the study is deleted so the next render re-reads from IDB.
+// Caches a blob URL for each study's cover image so that IDB reads only happen
+// once per session. Blob URLs are ~33% smaller in memory than base64 data URLs
+// and keep the large encoded string out of the DOM.
+//
+// Keyed by studyId. invalidateCoverCache() revokes the blob URL before removing
+// the cache entry — skipping revocation would leak the handle for the lifetime
+// of the page, which is worse than the base64 approach on memory-constrained
+// Android WebViews.
+//
+// Call invalidateCoverCache(id) when a study is deleted or its cover changes.
 const _coverCache = new Map();
 
 function invalidateCoverCache(id) {
-  if (id) _coverCache.delete(id);
-  else     _coverCache.clear();
+  if (id) {
+    // Revoke the blob URL before evicting so the handle is not leaked.
+    const existing = _coverCache.get(id);
+    if (existing) URL.revokeObjectURL(existing);
+    _coverCache.delete(id);
+  } else {
+    // Full clear: revoke every cached blob URL first.
+    _coverCache.forEach(url => { if (url) URL.revokeObjectURL(url); });
+    _coverCache.clear();
+  }
 }
 
 function getRecentInstalled() {
@@ -337,11 +351,11 @@ async function renderLibrary() {
     } else {
       const coverBlob = await StudyIDB.getImage(`${id}_cover`);
       if (coverBlob) {
-        coverSrc = await new Promise(resolve => {
-          const reader = new FileReader();
-          reader.onload = e => resolve(e.target.result);
-          reader.readAsDataURL(coverBlob);
-        });
+        // URL.createObjectURL() is used instead of FileReader.readAsDataURL()
+        // throughout: blob URLs avoid the ~33% base64 inflation and keep the
+        // encoded string out of the DOM. The blob URL is revoked in
+        // invalidateCoverCache() when the study is deleted or the cache cleared.
+        coverSrc = URL.createObjectURL(coverBlob);
         _coverCache.set(id, coverSrc);
       } else {
         // No cover blob — cache the empty string so we don't hit IDB again.

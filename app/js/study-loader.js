@@ -614,16 +614,16 @@ async function applyStudyData(data, { isStudySwitch = false } = {}) {
   // 1. Prefer a blob URL already attached in-session (zip just loaded).
   // 2. Fall back to the IDB image store (survives page reloads).
   // 3. Fall back to legacy base64 embedded in data.imageData.
+  // URL.createObjectURL() is used instead of FileReader.readAsDataURL() to
+  // avoid the ~33% base64 inflation. The resulting blob URL is registered via
+  // _createBlobUrl() so _revokeAllBlobUrls() cleans it up on the next study
+  // switch (called at the top of applyStudyData()).
   let coverSrc = resolveImageSrc(data.imageData?.cover) || '';
   if (!coverSrc && _appliedId) {
     try {
       const coverBlob = await StudyIDB.getImage(`${_appliedId}_cover`);
       if (coverBlob) {
-        coverSrc = await new Promise(resolve => {
-          const reader = new FileReader();
-          reader.onload = e => resolve(e.target.result);
-          reader.readAsDataURL(coverBlob);
-        });
+        coverSrc = _createBlobUrl(coverBlob);
       }
     } catch (e) {
       console.warn('applyStudyData: could not load cover from IDB', e);
