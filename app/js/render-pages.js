@@ -76,23 +76,25 @@ async function setPageStudyLang(code, rerender) {
 // page:      'settings' | 'howto'
 // direction: +1 (swipe left → next tab) | -1 (swipe right → prev tab)
 function navigateTab(page, direction) {
-  const tabs = page === 'settings' ? getSettingsTabs()
-             : page === 'library'  ? (window._libTabs || [{ id: 'all' }, { id: 'recent' }, { id: 'load' }])
-             : page === 'leaders'  ? LEADERS_TABS
-             : page === 'about'    ? ABOUT_TABS
-             : page === 'progress' ? PROGRESS_TABS
-             :                       HOWTO_TABS;
+  const tabs = page === 'settings'  ? getSettingsTabs()
+             : page === 'library'   ? (window._libTabs || [{ id: 'all' }, { id: 'recent' }, { id: 'load' }])
+             : page === 'leaders'   ? LEADERS_TABS
+             : page === 'godeeper' ? GODEEPER_TABS
+             : page === 'about'     ? ABOUT_TABS
+             : page === 'progress'  ? PROGRESS_TABS
+             :                        HOWTO_TABS;
   const currentId = window.activeTabId || tabs[0].id;
   const idx       = tabs.findIndex(t => t.id === currentId);
   const newIdx    = Math.max(0, Math.min(tabs.length - 1, idx + direction));
   if (newIdx === idx) return;
   const newId = tabs[newIdx].id;
-  if      (page === 'settings') { Router.replaceState({ page: 'settings', tabId: newId }); renderSettings(newId); }
-  else if (page === 'library')  switchLibTab(newId);
-  else if (page === 'leaders')  { Router.replaceState({ page: 'leaders',  tabId: newId }); renderLeadersNotes(newId); }
-  else if (page === 'about')    { Router.replaceState({ page: 'about',    tabId: newId }); renderAbout(newId); }
-  else if (page === 'progress') { if (document.getElementById('progressTabBar')) switchProgressTab(newId); }
-  else                          { Router.replaceState({ page: 'howto',    tabId: newId }); renderHowToUse(newId); }
+  if      (page === 'settings')  { Router.replaceState({ page: 'settings',  tabId: newId }); renderSettings(newId); }
+  else if (page === 'library')   switchLibTab(newId);
+  else if (page === 'leaders')   { Router.replaceState({ page: 'leaders',   tabId: newId }); renderLeadersNotes(newId); }
+  else if (page === 'godeeper') { Router.replaceState({ page: 'godeeper', tabId: newId }); renderGoDeeper(newId); }
+  else if (page === 'about')     { Router.replaceState({ page: 'about',     tabId: newId }); renderAbout(newId); }
+  else if (page === 'progress')  { if (document.getElementById('progressTabBar')) switchProgressTab(newId); }
+  else                           { Router.replaceState({ page: 'howto',     tabId: newId }); renderHowToUse(newId); }
   if (page !== 'library') window.scrollTo(0, 0);
 }
 
@@ -1304,6 +1306,16 @@ async function renderSettings(tabId) {
             &#128424; ${t('renderpages_settings_printall_btn')}
           </button>
         </div>
+
+        <div class="settings-block" style="margin-bottom:10px;">
+          <div class="settings-row-label" style="margin-bottom:4px;">${t('renderpages_settings_printblank_label')}</div>
+          <div class="settings-row-desc" style="margin-bottom:12px; font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65;">
+            ${t('renderpages_settings_printblank_desc')}
+          </div>
+          <button class="howto-share-btn" style="background:var(--text);" onclick="printBlankStudy()">
+            &#128462; ${t('renderpages_settings_printblank_btn')}
+          </button>
+        </div>
       </div>
 
       ${adv ? `
@@ -1687,24 +1699,64 @@ async function renderLeadersNotes(tabId) {
     const chNum = activeTab.startsWith('ch_') ? parseInt(activeTab.slice(3), 10) : null;
     const ch = (d.chapters || []).find(c => c.chapterNumber === chNum);
     if (ch) {
-      // Resolve per-chapter fields for the active language.
-      // Multilingual: keyPoints1/2/…, pastorals1/2/…, watch1/2/…
-      // Mono-lingual: keyPoints, pastorals, watch (unnumbered — unchanged)
-      const keyPoints = resolveMetaField(ch, 'keyPoints', activeLang, langMap);
-      const pastorals = resolveMetaField(ch, 'pastorals', activeLang, langMap);
-      const watch     = resolveMetaField(ch, 'watch',     activeLang, langMap);
-
-      // Resolve the chapter title for the active language (matches Contents overlay).
-      const chapterTitle = resolveMetaField(ch, 'chapterTitle', activeLang, langMap)
+      // Resolve the chapter title for the active language.
+      // Supports both 'chapterTitle' (old field name) and 'title' (new field name),
+      // with a fallback to window.chapters for studies that omit it entirely.
+      const chapterTitle = resolveMetaField(ch, 'title', activeLang, langMap)
+        || resolveMetaField(ch, 'chapterTitle', activeLang, langMap)
         || (window.chapters || []).find(c => c.chapterNumber === ch.chapterNumber)?.chapterTitle
         || '';
 
-      // Note: the watch field in multilingual studies already includes the 👁️
-      // emoji prefix inside the JSON value. Mono-lingual studies that do not
-      // include it will have it prepended below for backwards compatibility.
-      const watchHtml = watch
-        ? (watch.startsWith('👁') ? watch : `👁️ ${watch}`)
-        : '';
+      // ── Discover content field base names in JSON insertion order ────────────────────
+      // Strip trailing digits from every key to get the base name, deduplicate
+      // while preserving first-seen order, then skip the structural fields that
+      // are rendered separately (chapterNumber, format, title/chapterTitle).
+      const SKIP = new Set(['chapterNumber', 'format', 'title', 'chapterTitle']);
+      const seen = new Set();
+      const contentFields = [];
+      for (const key of Object.keys(ch)) {
+        const base = key.replace(/\d+$/, '');
+        if (!SKIP.has(base) && !seen.has(base)) {
+          seen.add(base);
+          contentFields.push(base);
+        }
+      }
+
+      // ── Render each content field ─────────────────────────────────────────────────────
+      // resolveMetaField returns the object stored at the resolved slot
+      // (e.g. background1 for lang slot 1), which has shape:
+      //   { subtype: 'standard' | 'highlighted', header: string, body: string }
+      //
+      // subtype 'standard'    → leaders-block with optional header label above body
+      // subtype 'highlighted' → leaders-watch wrapper (no header rendered if empty)
+      const blocksHtml = contentFields.map(field => {
+        const resolved = resolveMetaField(ch, field, activeLang, langMap);
+        if (!resolved || typeof resolved !== 'object') return '';
+
+        const { subtype, header, body } = resolved;
+
+        if (subtype === 'highlighted') {
+          if (!body) return '';
+          const headerHtml = header
+            ? `<div class="leaders-block-label">${header}</div>`
+            : '';
+          return `
+          <div class="leaders-block">
+            ${headerHtml}
+            <div class="leaders-watch">${body}</div>
+          </div>`;
+        }
+
+        // Default: 'standard' (or any unrecognised subtype)
+        const headerHtml = header
+          ? `<div class="leaders-block-label">${header}</div>`
+          : '';
+        return `
+          <div class="leaders-block">
+            ${headerHtml}
+            ${body || ''}
+          </div>`;
+      }).join('\n');
 
       tabContent = `
         <div class="leaders-chapter" style="margin-top:16px;">
@@ -1713,15 +1765,7 @@ async function renderLeadersNotes(tabId) {
             <span class="leaders-chapter-title">${chapterTitle}</span>
           </div>
           <div class="leaders-chapter-body">
-            <div class="leaders-block">
-              <div class="leaders-block-label">${t('renderpages_leaders_keypoints_label')}</div>
-              ${keyPoints}
-            </div>
-            <div class="leaders-block">
-              <div class="leaders-block-label">${t('renderpages_leaders_pastorals_label')}</div>
-              ${pastorals}
-              ${watchHtml ? `<div class="leaders-watch">${watchHtml}</div>` : ''}
-            </div>
+            ${blocksHtml}
           </div>
         </div>`;
     }
@@ -1875,6 +1919,229 @@ async function renderAbout(tabId) {
   window.scrollTo(0, 0);
 }
 
+
+
+// ── RENDER GO DEEPER PAGE ────────────────────────────────────────────────────
+// Renders the optional "Go Deeper" page — supplementary prose content aimed at
+// general readers who want more background on each chapter.
+//
+// Data source: window.goDeeperData (absent → page never appears anywhere).
+// If present, an entry is added to the Contents menu (renderMenu in
+// render-progress.js) between Leaders' Notes and About, labelled with
+// titleMenuHeading resolved for the active language.
+//
+// Structure of goDeeperData:
+//   format          : "HTML"
+//   titleMenuHeading: string  (also used as the page's howto-title)
+//   intro           : { header: string, body: string | string[] }
+//                     — header becomes the Intro tab label
+//                     — body is rendered as <p> tags
+//                     Multilingual: intro1/intro2/… slots
+//   chapters        : [ { chapterNumber, format, title, key-N: { subtype, header, body } … } ]
+//                     Multilingual: title1/title2/…; key-N1/key-N2/… slots
+//
+// Subtypes:
+//   'standard'    → .go-deeper-block with optional header label
+//   'highlighted' → .go-deeper-block wrapping a .go-deeper-highlight callout
+//
+// Tab structure: Intro tab (if intro present) + one numbered tab per chapter.
+// If only one tab exists (intro-only or single chapter, no intro), no tab bar
+// is rendered — content is shown directly.
+//
+// Multilingual: shares window._activeStudyLang with chapter pages and
+// Leaders' Notes. A lang bar is shown when two or more languages are available.
+// clearStudyUiLangOverride() is intentionally NOT called here.
+
+const GODEEPER_TABS = []; // populated dynamically — see renderGoDeeper
+
+async function renderGoDeeper(tabId) {
+  closeMenu();
+  _resetNonChapterPageState();
+  isNonChapterPage = true;
+  window.activeTabPage = 'godeeper';
+  restoreStudyTheme();
+
+  const content = document.getElementById('mainContent');
+  const saveBtn = document.getElementById('saveBtn');
+  if (saveBtn) saveBtn.parentElement.style.display = 'none';
+  document.getElementById('progressBar').style.width = '0%';
+
+  const d = window.goDeeperData;
+  if (!d) return; // guard: nothing to render if data absent
+
+  // ── Language resolution ───────────────────────────────────────────────────
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs) || 'en';
+  const langMap        = buildLangMap(window.studyMetadata || {});
+
+  // ── Resolve page title (used in header and nav bar) ───────────────────────
+  const pageTitle = resolveMetaField(d, 'titleMenuHeading', activeLang, langMap)
+    || d.titleMenuHeading || '';
+  document.getElementById('header-title').innerText = pageTitle;
+
+  // ── Lang bar HTML (hidden for mono-lingual studies) ───────────────────────
+  const langBarHtml = (() => {
+    if (availableLangs.length < 2) return '';
+
+    const flagCounts = {};
+    availableLangs.forEach(code => {
+      const f = LANGUAGE_MAP[code]?.flag;
+      if (f) flagCounts[f] = (flagCounts[f] || 0) + 1;
+    });
+
+    const buttons = availableLangs.map(code => {
+      const entry      = LANGUAGE_MAP[code];
+      const label      = entry?.label || code.toUpperCase();
+      const flagShared = entry && flagCounts[entry.flag] > 1;
+      const display    = ((flagShared || entry?.alwaysBadge) && entry?.badge)
+        ? renderLangBadge(entry)
+        : (entry?.flag || '🌐');
+      return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
+                       onclick="setPageStudyLang('${code}', () => { Router.replaceState({ page: 'godeeper', tabId: window.activeTabId }); renderGoDeeper(window.activeTabId); })"
+                       aria-label="${label}"
+                       title="${label}">${display}</button>`;
+    }).join('');
+
+    return `<div class="leaders-lang-bar">${buttons}</div>`;
+  })();
+
+  // ── Resolve intro — { header, body } object (or null if absent) ───────────
+  // Multilingual: intro1/intro2/… slots; mono-lingual: intro (unnumbered).
+  // body may be a string or an array of paragraph strings.
+  const rawIntro     = resolveMetaField(d, 'intro', activeLang, langMap);
+  const hasIntro     = !!(rawIntro && typeof rawIntro === 'object' && (rawIntro.header || rawIntro.body));
+  const introHeader  = hasIntro ? (rawIntro.header || pageTitle) : '';
+
+  // ── Build tab definitions and cache on the constant for navigateTab() ─────
+  GODEEPER_TABS.length = 0;
+  if (hasIntro) GODEEPER_TABS.push({ id: 'intro', label: introHeader });
+  (d.chapters || []).forEach(ch =>
+    GODEEPER_TABS.push({ id: `ch_${ch.chapterNumber}`, label: String(ch.chapterNumber) })
+  );
+
+  const activeTab = tabId || (GODEEPER_TABS[0] && GODEEPER_TABS[0].id) || 'intro';
+  window.activeTabId = activeTab;
+
+  // ── Tab bar (omitted when only one tab exists) ────────────────────────────
+  const showTabBar  = GODEEPER_TABS.length > 1;
+  const tabBarHtml  = showTabBar ? `
+    <div class="howto-tab-bar" id="goDeepTabBar">
+      ${GODEEPER_TABS.map(tab => `
+        <button
+          class="howto-tab${tab.id === activeTab ? ' active' : ''}"
+          onclick="Router.replaceState({ page: 'godeeper', tabId: '${tab.id}' }); renderGoDeeper('${tab.id}')"
+        >${tab.label}</button>`).join('')}
+    </div>` : '';
+
+  // ── Tab content ───────────────────────────────────────────────────────────
+  let tabContent = '';
+
+  if (activeTab === 'intro' && hasIntro) {
+    // body: string or array of strings
+    const rawBody  = rawIntro.body;
+    const bodyHtml = Array.isArray(rawBody)
+      ? rawBody.map(p => `<p>${p}</p>`).join('\n')
+      : (typeof rawBody === 'string' ? rawBody : '');
+
+    tabContent = `
+      <div class="go-deeper-intro" style="margin: 20px 16px;">
+        ${bodyHtml}
+      </div>`;
+
+  } else {
+    // Chapter tab
+    const chNum = activeTab.startsWith('ch_') ? parseInt(activeTab.slice(3), 10) : null;
+    const ch    = (d.chapters || []).find(c => c.chapterNumber === chNum);
+
+    if (ch) {
+      // Resolve the chapter title for the active language.
+      const chapterTitle = resolveMetaField(ch, 'title', activeLang, langMap) || '';
+
+      // ── Discover content field base names in JSON insertion order ──────────
+      // Strip trailing digits, deduplicate (first-seen order), skip structural fields.
+      const SKIP = new Set(['chapterNumber', 'format', 'title']);
+      const seen = new Set();
+      const contentFields = [];
+      for (const key of Object.keys(ch)) {
+        const base = key.replace(/\d+$/, '');
+        if (!SKIP.has(base) && !seen.has(base)) {
+          seen.add(base);
+          contentFields.push(base);
+        }
+      }
+
+      // ── Render each content field ──────────────────────────────────────────
+      // resolveMetaField returns the object at the resolved slot:
+      //   { subtype: 'standard' | 'highlighted', header: string, body: string }
+      //
+      // subtype 'standard'    → .go-deeper-block with optional header label
+      // subtype 'highlighted' → .go-deeper-block wrapping .go-deeper-highlight
+      const blocksHtml = contentFields.map(field => {
+        const resolved = resolveMetaField(ch, field, activeLang, langMap);
+        if (!resolved || typeof resolved !== 'object') return '';
+
+        const { subtype, header, body } = resolved;
+
+        if (subtype === 'highlighted') {
+          if (!body) return '';
+          const headerHtml = header
+            ? `<div class="go-deeper-block-label">${header}</div>`
+            : '';
+          return `
+          <div class="go-deeper-block">
+            ${headerHtml}
+            <div class="go-deeper-highlight">${body}</div>
+          </div>`;
+        }
+
+        // Default: 'standard' (or any unrecognised subtype)
+        const headerHtml = header
+          ? `<div class="go-deeper-block-label">${header}</div>`
+          : '';
+        return `
+          <div class="go-deeper-block">
+            ${headerHtml}
+            ${body || ''}
+          </div>`;
+      }).join('\n');
+
+      tabContent = `
+        <div class="go-deeper-chapter" style="margin-top: 16px;">
+          <div class="leaders-chapter-header">
+            <span class="leaders-chapter-number">${t('renderpages_leaders_chapter_label', { number: ch.chapterNumber })}</span>
+            <span class="leaders-chapter-title">${chapterTitle}</span>
+          </div>
+          <div class="go-deeper-chapter-body">
+            ${blocksHtml}
+          </div>
+        </div>`;
+    }
+  }
+
+  // ── Full page render ───────────────────────────────────────────────────────
+  content.innerHTML = `
+    <div class="go-deeper-page">
+      <div class="howto-header">
+        <div class="howto-eyebrow">${t('renderpages_leaders_eyebrow')}</div>
+        <div class="howto-title">${pageTitle}</div>
+      </div>
+
+      ${langBarHtml}
+
+      ${tabBarHtml}
+
+      <div id="goDeeperTabContent">
+        ${tabContent}
+      </div>
+
+      <div class="page-close-bar">
+        <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
+      </div>
+      <div style="height: 40px;"></div>
+    </div>
+  `;
+  window.scrollTo(0, 0);
+}
 
 
 // Converts a double-newline-delimited string into a series of <p> tags.

@@ -16,20 +16,32 @@
     "author"           :"Jay Parsons",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Baptism" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Baptism" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language1"        :"en",
     "language2"        :"ha",
     "language3"        :"ff",
-    "bibleTranslation1":{"en": "NIV"},
-    "bibleTranslation2":{"en": "NET"},
-    "bibleTranslation3":{"ha": "HAU79"},
-    "bibleTranslation4":{"ha": "HCL"},
-    "bibleTranslation5":{"ha": "SRK"},
-    "bibleTranslation6":{"ff": "FUV"},
-    "createdAt"        :"2026-04-29T00:00:00Z",
-    "updatedAt"        :"2026-04-29T00:00:00Z",
-    "tags"             :["discipleship", "sacrament", "baptism"],
-    "shareMessage"     :"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation1":{
+      "en":"NIV"
+    },
+    "bibleTranslation2":{
+      "en":"NET"
+    },
+    "bibleTranslation3":{
+      "ha":"HAU79"
+    },
+    "bibleTranslation4":{
+      "ha":"HCL"
+    },
+    "bibleTranslation5":{
+      "ha":"SRK"
+    },
+    "bibleTranslation6":{
+      "ff":"FUV"
+    },
+    "createdAt"   :"2026-04-29T00:00:00Z",
+    "updatedAt"   :"2026-04-29T00:00:00Z",
+    "tags"        :["discipleship", "sacrament", "baptism"],
+    "shareMessage":"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Terracotta study theme — warm ochre, burnt sienna, and hillside green palette. Grounded and vibrant, evoking African earth tones, harvest, and communal labour. Suited to studies on identity, calling, womanhood, or vocation. Warm and energising rather than restful.",
@@ -137,11 +149,11 @@
         {
           "elementId"         :"ch00-el07",
           "type"              :"question",
-          "subtype": "header",
-          "format": "plainText",
-          "header1": "Pause for thought",
-          "header2": "",
-          "header3": "Tsayawa don Tunani",
+          "subtype"           :"header",
+          "format"            :"plainText",
+          "header1"           :"Pause for thought",
+          "header2"           :"",
+          "header3"           :"Tsayawa don Tunani",
           "question1"         :"Before you begin, take a moment to write down what you already think baptism is. Where has that idea come from — your upbringing, your church, something you’ve read or heard?",
           "question2"         :"",
           "question3"         :"",
@@ -155,11 +167,11 @@
         {
           "elementId"         :"ch00-el08",
           "type"              :"question",
-          "subtype": "header",
-          "format": "plainText",
-          "header1": "Pause for thought",
-          "header2": "",
-          "header3": "Tsayawa don Tunani",
+          "subtype"           :"header",
+          "format"            :"plainText",
+          "header1"           :"Pause for thought",
+          "header2"           :"",
+          "header3"           :"Tsayawa don Tunani",
           "question1"         :"What is the main question you are hoping this study will answer? What would it mean for you to finish it with clarity?",
           "question2"         :"",
           "question3"         :"",
@@ -169,12 +181,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Is there anything that makes you hesitant or nervous about the idea of being baptised — a person whose reaction you are worried about, a question you are afraid to ask, or a doubt you have not voiced yet? It is worth naming it honestly at the start.",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Is there anything that makes you hesitant or nervous about the idea of being baptised — a person whose reaction you are worried about, a question you are afraid to ask, or a doubt you have not voiced yet? It is worth naming it honestly at the start.",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -415,19 +427,19 @@
           "question1"         :"Peter tells the crowd that God has made Jesus — the one they crucified — both Lord and Messiah. The people are described as being “cut to the heart.” What do you think that means? What is it about Peter’s message that produces that reaction?",
           "question2"         :"",
           "question3"         :"",
-          "linkedPassage": "Acts 2:36–41",
+          "linkedPassage"     :"Acts 2:36–41",
           "answerType"        :"freeText",
           "required"          :false,
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Have you ever had a moment when something you heard or read about Jesus landed differently — not just as information, but as something that personally confronted or moved you? What was that like?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Have you ever had a moment when something you heard or read about Jesus landed differently — not just as information, but as something that personally confronted or moved you? What was that like?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -497,12 +509,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Is there anything that makes you hesitate to say plainly that you have personally accepted the gospel message — the news that Jesus died for your sins and rose again? If so, what is it?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Is there anything that makes you hesitate to say plainly that you have personally accepted the gospel message — the news that Jesus died for your sins and rose again? If so, what is it?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -556,12 +568,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"John, in our opening story, described a moment when his faith moved from his head to somewhere deeper — from knowing about Jesus to actually trusting him. Has anything like that happened for you? If you are not sure, what would it mean for that to happen?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"John, in our opening story, described a moment when his faith moved from his head to somewhere deeper — from knowing about Jesus to actually trusting him. Has anything like that happened for you? If you are not sure, what would it mean for that to happen?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -846,12 +858,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Have you experienced a genuine sense of your own sin — not just as a general acknowledgment, but as a personal weight? How did you respond to it, and what difference has Jesus’ forgiveness made to you?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Have you experienced a genuine sense of your own sin — not just as a general acknowledgment, but as a personal weight? How did you respond to it, and what difference has Jesus’ forgiveness made to you?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -906,12 +918,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Paul uses the phrase “united with him” (v5). What does it mean, in your own experience, to be united with Christ — not just to know about him, but to be joined to him in a living relationship? What difference does that union make day to day?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Paul uses the phrase “united with him” (v5). What does it mean, in your own experience, to be united with Christ — not just to know about him, but to be joined to him in a living relationship? What difference does that union make day to day?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -944,12 +956,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Paul does not say that sin becomes impossible for a Christian — he says it should no longer be our <em>master</em> (v14). Is there an area of your life where sin still feels more like a master than a defeated enemy? What does this passage say to you about that?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Paul does not say that sin becomes impossible for a Christian — he says it should no longer be our <em>master</em> (v14). Is there an area of your life where sin still feels more like a master than a defeated enemy? What does this passage say to you about that?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -1062,12 +1074,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Romans 6:4 says we are raised “in order that… we too may live a new life.” The point of baptism is not just the moment in the water — it is the life that follows. What does living a new life look like for you, practically, in your home, your relationships, your work?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Romans 6:4 says we are raised “in order that… we too may live a new life.” The point of baptism is not just the moment in the water — it is the life that follows. What does living a new life look like for you, practically, in your home, your relationships, your work?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -1332,12 +1344,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"In what areas of your life do you find it hardest to live as though Jesus has all authority — not just in church, but everywhere? What would it look like to take his authority seriously in those areas?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"In what areas of your life do you find it hardest to live as though Jesus has all authority — not just in church, but everywhere? What would it look like to take his authority seriously in those areas?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -1370,12 +1382,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Jesus says disciples are to come from “all nations.” What does it mean that baptism — this one act — is the shared entry point for Christians from every culture, language, and background on earth? How does that change the way you think about your own baptism?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Jesus says disciples are to come from “all nations.” What does it mean that baptism — this one act — is the shared entry point for Christians from every culture, language, and background on earth? How does that change the way you think about your own baptism?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -1466,12 +1478,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Paul says to “make every effort to keep the unity of the Spirit through the bond of peace” (v3). Unity is something to be kept, not created — it already exists because of the Spirit. Where in your church community do you see that unity being lived out well? Where is it being threatened?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Paul says to “make every effort to keep the unity of the Spirit through the bond of peace” (v3). Unity is something to be kept, not created — it already exists because of the Spirit. Where in your church community do you see that unity being lived out well? Where is it being threatened?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -1547,12 +1559,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"What would it mean for you to be genuinely committed to a local church — not just attending, but belonging, serving, and being known? What would you need to change, give up, or step into for that to be true?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"What would it mean for you to be genuinely committed to a local church — not just attending, but belonging, serving, and being known? What would you need to change, give up, or step into for that to be true?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -1806,12 +1818,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Is there a difference between being <em>ready</em> to be baptised and <em>understanding</em> baptism fully? Do you think you need to understand everything before you obey? What does the example of the New Testament Christians suggest?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Is there a difference between being <em>ready</em> to be baptised and <em>understanding</em> baptism fully? Do you think you need to understand everything before you obey? What does the example of the New Testament Christians suggest?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -1919,12 +1931,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Is there anyone you are nervous about inviting — someone whose reaction you are uncertain of, or who might not respond well? What is holding you back from inviting them, and what might it mean for them to be there?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Is there anyone you are nervous about inviting — someone whose reaction you are uncertain of, or who might not respond well? What is holding you back from inviting them, and what might it mean for them to be there?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -2064,12 +2076,12 @@
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
           "deeper"            :{
-            "label1"            :"Go deeper …",
-            "label2"            :"",
-            "label3"            :"",
-            "question1"         :"Read through what you have written. Is Jesus clearly at the centre — or does it sound more like a story about your own journey and growth? What would you change to make his work more visible in the telling?",
-            "question2"         :"",
-            "question3"         :""
+            "label1"   :"Go deeper …",
+            "label2"   :"",
+            "label3"   :"",
+            "question1":"Read through what you have written. Is Jesus clearly at the centre — or does it sound more like a story about your own journey and growth? What would you change to make his work more visible in the telling?",
+            "question2":"",
+            "question3":""
           },
           "bottomPadding":"normal"
         },
@@ -3179,6 +3191,7 @@
     ]
   },
   "leadersNotesData":{
+    "format"   :"HTML",
     "subtitle1":"Leaders’ Notes — Thinking About Baptism?",
     "subtitle2":"Bayanan Shugabanni — Yana Tunani Kan Baftisma?",
     "subtitle3":"Kuuje Ardiiɓe — Miijitoto Dow Batiismu?",
@@ -3209,84 +3222,299 @@
     "chapters":[
       {
         "chapterNumber":0,
-        "keyPoints1"   :"<p>This brief introductory chapter does two things: it <b>frames the purpose of the study</b> and it <b>surfaces existing assumptions</b> about baptism before the biblical content begins. Both matter.</p>\n<p>The opening narrative (Ruth) is designed to be immediately relatable — particularly for people who were baptised as infants and are now wondering whether that was sufficient. Use it to open up the group before diving into content.</p>\n<p>The two callouts on infant baptism and readiness set expectations honestly from the start: this study has a clear position, but it handles disagreement with respect.</p>",
-        "keyPoints2"   :"<p>Wannan gajeren babi na gabatarwa yana yin abubuwa biyu: <b>yana tsara manufar nazarin</b> kuma yana <b>fitar da zato da ake da su</b> game da baftisma kafin abun ciki na Littafi Mai Tsarki ya fara. Dukkansu suna da mahimmanci.</p>\n<p>Labarin buɗewa (Rut) an tsara shi ne don a iya danganta shi kai tsaye — musamman ga mutanen da aka yi musu baftisma tun suna jarirai kuma yanzu suna mamaki ko hakan ya ishe su. Yi amfani da shi don buɗe rukunin kafin a fara abun ciki.</p>\n<p>Bayanan biyu akan baftismar jariri da shirye-shirye suna saita tsammanin da gaskiya tun farko: wannan nazari yana da matsayi bayyananne, amma yana mu’amala da rashin jituwa da girmamawa.</p>",
-        "keyPoints3"   :"<p>Babi kese jaranke nde waɗa ko ɗiɗi: <b>hollude ko janngirde nde ɗon waɗa</b> e <b>ummugo miiji gollaaɗi</b> dow batiismu ɓako abbitaari Dewtaari fuɗɗoto. Fow njiɗi.</p>\n<p>Tindol fuɗɗorde (Rut) njiɗi naftoraade tele — ko waɗaa ngam yimɓe baatismaama ɗo ɓe njarii e nde ndaarta ko dey haaj. Ɗum waɗ ngam uddugo kawtal ngal ɓako naatde nder abbitaari.</p>\n<p>Binndi ɗiɗi dow batiisma jariŋŋaari e mbaadi ngam fuɗɗortoo ee nanngude miijoji goonga: janngirde nde woodii haala teeŋtunde, kono ɗum nannga jaayngol bee teddungal.</p>",
-        "pastorals1"   :"<p>This chapter asks participants to write down what they already think baptism is, and where that idea has come from. Be prepared for a wide range of answers — and for some answers that reveal significant misunderstanding (e.g. ’baptism is what makes you a Christian’, or ’I was done as a baby so I’m fine’).</p>\n<p>The question about what the person hopes the study will answer is a useful pastoral barometer. Listen carefully — the answer often reveals what is really at stake for that individual: family pressure, theological confusion, genuine readiness, or something else entirely.</p>\n<p>For group settings, the opening narrative about Ruth provides a gentle way in for people who feel awkward about the infant baptism question. You do not need to resolve the question in Chapter 0 — just acknowledge it and reassure participants that it will be addressed properly.</p>",
-        "pastorals2"   :"<p>Wannan babi yana tambayar mahalarta su rubuta abin da suke tsammanin baftisma shine, da kuma daga ina wannan ra’ayi ya fito. Ka shirya don keɓaɓɓun amsoshi iri-iri — da kuma wasu amsoshi da ke nuna babban rashin fahimta (misali ’baftisma shi ne wanda ke sa ka zama Kirista’, ko ’an yi mini tun ina jariri don haka na yi daidai’).</p>\n<p>Tambayar game da abin da mutumin yana fata nazarin zai amsa taimako ne na kiwo. Saurara da hankali — amsoshi na yawan bayyana abin da ke da muhimmanci ga wannan mutum: matsin lamba na iyali, rikitar da tauhidi, shirye-shirye na gaske, ko wani abu dabam.</p>\n<p>Ga yanayin rukuni, labarin buɗewa game da Rut yana ba da hanya mai laushi ga mutanen da ke jin kunyar tambayar baftismar jariri. Ba kwa buƙatar warware tambayar a Babi na 0 — kawai ka sani da ita kuma ka tabbatar wa mahalarta cewa za a magance ta yadda ya kamata.</p>",
-        "pastorals3"   :"<p>Babi nde ƴamatnoo nder kawtal ngal winndude ko ɓe nummata batiismu wonata, e ko miijo ɓuri umaade. Tiiɗon ngam jaabaaje toɗɗaaɗe — e jaabaaje ɓeen nanndude anndinowe (fii: ‘batiismu ko waɗata ma Kirista’, walla ’baatismaama ɗo njarii donngal’)</p>\n<p>Ƴameede dow ko neɗɗo on nummata janngirde nde jaabaata wonaa kisal-hoore naftoranirde. Nanngo faabi — jaabaaje ɓen keɓata ko ɗon teeŋta ngam neɗɗo on: baɗdi familiijo, hecce tinnditaare, mbaadi goonga, walla huunde woɗɗunde.</p>\n<p>Ngam kawte, tindol fuɗɗorde dow Rut hollude laawol seeɗa ngam yimɓe naannda bee ƴameede dow batiisma jariŋŋaari. Taa haaj warnitoyde ƴameede nder Babi 0 — nanngo ɗum e toɗɗin nder kawtal ngal ko ɗum jaabortoo goonga.</p>",
-        "watch1"       :"👁️ Watch for participants who arrive with their minds already made up — either ’I definitely need to be baptised’ or ’I was done as a baby and this is just a formality.’ Both postures can prevent genuine engagement with the material.",
-        "watch2"       :"👁️ Ka lura da mahalarta waɗanda suka zo da tunaninsu a shirye — ko ’Lalle ina buƙatar a yi mini baftisma’ ko ’An yi mini tun ina jariri kuma wannan biki ne kawai.’ Dukkan matsayin biyu na iya hana shiga gaske da kayan aikin.",
-        "watch3"       :"👁️ Ndarna gite ma dow nder kawtal ngal njooɗiɓe bee miiji mum’en tiiɗuɗi — walla ’Tiiɗii ina haaj baatismaama’ walla ’Baatismaama ɗo njarii kadi ɗum wonaa fow.’ Mbaadi ɗiɗi ɗee ngona naftoraade heddude e abbitaari.",
-        "format"       :"HTML"
+        "keyPoints1"   :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This brief introductory chapter does two things: it <b>frames the purpose of the study</b> and it <b>surfaces existing assumptions</b> about baptism before the biblical content begins. Both matter.</p>\n<p>The opening narrative (Ruth) is designed to be immediately relatable — particularly for people who were baptised as infants and are now wondering whether that was sufficient. Use it to open up the group before diving into content.</p>\n<p>The two callouts on infant baptism and readiness set expectations honestly from the start: this study has a clear position, but it handles disagreement with respect.</p>"
+        },
+        "keyPoints2":{
+          "subtype":"standard",
+          "header" :"Muhimman Abubuwan Koyarwa",
+          "body"   :"<p>Wannan gajeren babi na gabatarwa yana yin abubuwa biyu: <b>yana tsara manufar nazarin</b> kuma yana <b>fitar da zato da ake da su</b> game da baftisma kafin abun ciki na Littafi Mai Tsarki ya fara. Dukkansu suna da mahimmanci.</p>\n<p>Labarin buɗewa (Rut) an tsara shi ne don a iya danganta shi kai tsaye — musamman ga mutanen da aka yi musu baftisma tun suna jarirai kuma yanzu suna mamaki ko hakan ya ishe su. Yi amfani da shi don buɗe rukunin kafin a fara abun ciki.</p>\n<p>Bayanan biyu akan baftismar jariri da shirye-shirye suna saita tsammanin da gaskiya tun farko: wannan nazari yana da matsayi bayyananne, amma yana mu’amala da rashin jituwa da girmamawa.</p>"
+        },
+        "keyPoints3":{
+          "subtype":"standard",
+          "header" :"Toɓɓe janngirɗe teeŋtuɗe",
+          "body"   :"<p>Babi kese jaranke nde waɗa ko ɗiɗi: <b>hollude ko janngirde nde ɗon waɗa</b> e <b>ummugo miiji gollaaɗi</b> dow batiismu ɓako abbitaari Dewtaari fuɗɗoto. Fow njiɗi.</p>\n<p>Tindol fuɗɗorde (Rut) njiɗi naftoraade tele — ko waɗaa ngam yimɓe baatismaama ɗo ɓe njarii e nde ndaarta ko dey haaj. Ɗum waɗ ngam uddugo kawtal ngal ɓako naatde nder abbitaari.</p>\n<p>Binndi ɗiɗi dow batiisma jariŋŋaari e mbaadi ngam fuɗɗortoo ee nanngude miijoji goonga: janngirde nde woodii haala teeŋtunde, kono ɗum nannga jaayngol bee teddungal.</p>"
+        },
+        "pastorals1":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This chapter asks participants to write down what they already think baptism is, and where that idea has come from. Be prepared for a wide range of answers — and for some answers that reveal significant misunderstanding (e.g. ’baptism is what makes you a Christian’, or ’I was done as a baby so I’m fine’).</p>\n<p>The question about what the person hopes the study will answer is a useful pastoral barometer. Listen carefully — the answer often reveals what is really at stake for that individual: family pressure, theological confusion, genuine readiness, or something else entirely.</p>\n<p>For group settings, the opening narrative about Ruth provides a gentle way in for people who feel awkward about the infant baptism question. You do not need to resolve the question in Chapter 0 — just acknowledge it and reassure participants that it will be addressed properly.</p>"
+        },
+        "pastorals2":{
+          "subtype":"standard",
+          "header" :"Jin Daɗin Makiyaya",
+          "body"   :"<p>Wannan babi yana tambayar mahalarta su rubuta abin da suke tsammanin baftisma shine, da kuma daga ina wannan ra’ayi ya fito. Ka shirya don keɓaɓɓun amsoshi iri-iri — da kuma wasu amsoshi da ke nuna babban rashin fahimta (misali ’baftisma shi ne wanda ke sa ka zama Kirista’, ko ’an yi mini tun ina jariri don haka na yi daidai’).</p>\n<p>Tambayar game da abin da mutumin yana fata nazarin zai amsa taimako ne na kiwo. Saurara da hankali — amsoshi na yawan bayyana abin da ke da muhimmanci ga wannan mutum: matsin lamba na iyali, rikitar da tauhidi, shirye-shirye na gaske, ko wani abu dabam.</p>\n<p>Ga yanayin rukuni, labarin buɗewa game da Rut yana ba da hanya mai laushi ga mutanen da ke jin kunyar tambayar baftismar jariri. Ba kwa buƙatar warware tambayar a Babi na 0 — kawai ka sani da ita kuma ka tabbatar wa mahalarta cewa za a magance ta yadda ya kamata.</p>"
+        },
+        "pastorals3":{
+          "subtype":"standard",
+          "header" :"Senngooji durngol",
+          "body"   :"<p>Babi nde ƴamatnoo nder kawtal ngal winndude ko ɓe nummata batiismu wonata, e ko miijo ɓuri umaade. Tiiɗon ngam jaabaaje toɗɗaaɗe — e jaabaaje ɓeen nanndude anndinowe (fii: ‘batiismu ko waɗata ma Kirista’, walla ’baatismaama ɗo njarii donngal’)</p>\n<p>Ƴameede dow ko neɗɗo on nummata janngirde nde jaabaata wonaa kisal-hoore naftoranirde. Nanngo faabi — jaabaaje ɓen keɓata ko ɗon teeŋta ngam neɗɗo on: baɗdi familiijo, hecce tinnditaare, mbaadi goonga, walla huunde woɗɗunde.</p>\n<p>Ngam kawte, tindol fuɗɗorde dow Rut hollude laawol seeɗa ngam yimɓe naannda bee ƴameede dow batiisma jariŋŋaari. Taa haaj warnitoyde ƴameede nder Babi 0 — nanngo ɗum e toɗɗin nder kawtal ngal ko ɗum jaabortoo goonga.</p>"
+        },
+        "watch1":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for participants who arrive with their minds already made up — either ’I definitely need to be baptised’ or ’I was done as a baby and this is just a formality.’ Both postures can prevent genuine engagement with the material."
+        },
+        "watch2":{
+          "subtype":"highlighted",
+          "header" :"Abubuwan da ya kamata a kula da su",
+          "body"   :"👁️ Ka lura da mahalarta waɗanda suka zo da tunaninsu a shirye — ko ’Lalle ina buƙatar a yi mini baftisma’ ko ’An yi mini tun ina jariri kuma wannan biki ne kawai.’ Dukkan matsayin biyu na iya hana shiga gaske da kayan aikin."
+        },
+        "watch3":{
+          "subtype":"highlighted",
+          "header" :"Geɗe ɗe neɗɗo foti ndaarde",
+          "body"   :"👁️ Ndarna gite ma dow nder kawtal ngal njooɗiɓe bee miiji mum’en tiiɗuɗi — walla ’Tiiɗii ina haaj baatismaama’ walla ’Baatismaama ɗo njarii kadi ɗum wonaa fow.’ Mbaadi ɗiɗi ɗee ngona naftoraade heddude e abbitaari."
+        },
+        "format":"HTML"
       },
       {
         "chapterNumber":1,
-        "keyPoints1"   :"<p>This chapter asks the most foundational question of the entire study: <b>is the participant actually a Christian?</b> Everything else depends on the answer. Do not rush past it.</p>\n<p>The key distinction to draw out is between <b>inherited faith and personal faith</b>. Growing up in a Christian home, attending church, knowing Bible stories, being generally moral — none of these make a person a Christian. The chapter uses John’s story to press this gently but clearly.</p>\n<p>The Acts 2 passage establishes the <b>pattern of believe → repent → be baptised</b> that runs through the whole New Testament. Help participants see that this is not one denomination’s interpretation — it is the shape of the gospel response from the very beginning of the church.</p>\n<p>The Ethiopian official in Acts 8 is worth dwelling on — his urgency is instructive. Baptism is the normal, immediate, joyful first step of the Christian life, not a delayed ceremony.</p>",
-        "keyPoints2"   :"<p>Wannan babi yana tambayar tambayar da ta fi zama tushe ta dukkan nazarin: <b>shin mahalarcin Kirista ne da gaske?</b> Duk sauran abubuwa sun dogara da amsa. Kada ka yi hanzari a wucewa.</p>\n<p>Babban bambanci da za a fitar shine tsakanin <b>imani gado da imani na mutum ɗaya</b>. Girma a cikin gidan Kirista, zuwa coci, sanin labarun Littafi Mai Tsarki, kasancewa mai kyau gabaɗaya — waɗannan ba sa sa mutumin ya zama Kirista. Wannan babi yana amfani da labarin Yahaya don matsa wannan da kyau amma a fili.</p>\n<p>Wucin Ayyukan 2 yana kafa <b>tsarin yi imani → tuba → a yi baftisma</b> wanda ke gudana ta dukkan Sabon Alkawari. Taimaki mahalarta su ga cewa wannan ba fassarar ƙungiya ɗaya ba ne — ita ce sifar martanin bisharar daga farkon coci.</p>\n<p>Jami’in Habasha a Ayyukan 8 yana cancanta a zauna a kai — gaggawarsa tana koyarwa. Baftisma shine mataki na farko na al’ada, na kai tsaye, da farin ciki na rayuwar Kirista.</p>",
-        "keyPoints3"   :"<p>Babi nde ƴamatnoo ƴameede ɓurnde teeŋtugo nder janngirde nde fow: <b>ko nder kawtal ngal on Kirista goonga?</b> Ko fow woɗɗungo ɗon feccitii dow jaabawol. Taa henyu.</p>\n<p>Toɗɗinol teeŋtunol ngam ummugo wonaa feccol e tinndi <b>imaan ngenndiyanke e imaan neɗɗanke</b>. Jiɓineeɗo nder galle Kirista, naatde cokkal, anndugo tindol Dewtaari, wonde mo welɗo bana non — fow ngon waɗataa neɗɗo Kirista. Babi nde ɗon waɗugo tindol Yaaya ngam tawtoreede ɗum seeɗa kono teeŋtunde.</p>\n<p>Tindol Kuuje 2 tiiɗinii <b>mbaadi imanan → tuba → baatismaama</b> nde mooɓtinoo nder Dewtaari Kesiri fow. Mball nder kawtal ngal nanngo ko ɗum wonaa fassira kawtal gooto — ko sifaa jaabaawol bishaare fuɗɗorde e cokkal fuɗɗorde.</p>\n<p>Jami’iral Habashiya nder Kuuje 8 njiɗi njooɗeede dow mum — gaagaare mum ekkitinoore. Batiismu wonaa mataki fuɗɗorde buri naftoraade, tele, bee weltaare nder nguurndam Kirista.</p>",
-        "pastorals1"   :"<p>The question ’Are you a Christian?’ can land very differently depending on the participant’s background. For someone from a strongly Christian family, it may feel accusatory. For someone who came to faith recently and is still finding their footing, it may feel like an invitation to articulate something they have never put into words before. Calibrate your tone accordingly.</p>\n<p>Be alert to participants who give fluent, correct theological answers but show little personal connection to what they are saying. Knowing the right words about repentance and faith is not the same as having repented and believed. Gentle follow-up questions (‘When did that happen for you?’, ‘What did that feel like?’) can help surface what is real.</p>\n<p>The infant baptism callout in this chapter will need careful handling if any participants were baptised as infants. Acknowledge the tradition they come from with respect. Be clear about the position this study takes, but avoid making people feel that their family or church history has been invalidated. The goal is clarity, not confrontation.</p>\n<p>If a participant is genuinely unsure whether they are a Christian, do not rush them toward baptism. Baptism preparation may become, for them, a journey toward faith — and that is a good thing. Keep the church leader informed and involved.</p>",
-        "pastorals2"   :"<p>Tambayar ’Shin Kirista ne?’ na iya sauka daban-daban dangane da asalin mahalarcin. Ga wanda ya fito daga dangi mai ƙarfin Kirista, na iya ji kamar zargi ne. Ga wanda ya zo ga imani kwanan nan kuma har yanzu yana neman ƙafafunsa, na iya ji kamar gayyata ne don bayyana wani abu da bai taɓa sanya cikin kalmomi ba. Ka daidaita sautin ka bisa haka.</p>\n<p>Ka yi faɗakarwa ga mahalarta waɗanda ke ba da amsoshi na tauhidi masu gudana, daidai amma suna nuna ɗan haɗin kai tare da abin da suke faɗa. Sanin daidaitattun kalmomi game da tuba da imani ba ya kunshe da tuba da yarda. Tambayoyin bi da bi masu laushi (‘Yaushe hakan ya faru a gare ka?’, ‘Ya yaya hakan ya ji?’) na iya taimaka wajen fitar da abin da yake na gaske.</p>\n<p>Bayanan baftismar jariri a wannan babi zai buƙaci kulawa ta musamman idan wasu mahalarta an yi musu baftisma tun suna jarirai. Ka yarda da al’adar da suka fito daga gare ta da girmamawa. Ka bayyana matsayin da wannan nazari ya ɗauka, amma ka guji sa mutane su ji cewa an soke tarihin iyalinsu ko cocin su. Manufar shine bayyananiya, ba ƙaramar husuma ba.</p>\n<p>Idan mahalarcin bai tabbata ko Kirista ne ko ba, kada ka yi hanzari wajen turawa zuwa baftisma. Shirye-shiryen baftisma na iya zama, a gare su, tafiya zuwa ga imani — kuma wannan abu ne mai kyau. Ka ci gaba da sanar da shugaban coci kuma ya kasance ya shiga.</p>",
-        "pastorals3"   :"<p>Ƴameede ’Ko Kirista a?’ waɗataa tele dow asli neɗɗo nder kawtal ngal. Ngam neɗɗo ummiɗo nder galle Kirista tiiɗnde, maa nannga bana tudditaare. Ngam neɗɗo imanaaki ko ɗuuɗi ɗon laano kadi ndondi on, maa nannga bana weltagol ngam hollude ko ɓuri mawnugo ɓe mbaawaa hollude tele. Waɗ tinndi maa bana non.</p>\n<p>Ndarna gite ma dow nder kawtal ngal njanngata jaabaaje tinnditaare woɗɗe, tooŋŋe kono nandataa bee haajugo tele e ko ɓe mbii. Anndugo kelmoje tooŋŋe dow tuba e imaan wonaa bana wonde tubiima e imanamaa. Ƴameeje tawtoreede seeɗa (‘To hono laati ngon ngam maa?’, ‘Ko weli ma?’) mballa ummugo ko goonga.</p>\n<p>Binndi batiisma jariŋŋaari nder babi nde maa haaj naftoreede faabi ko nder kawtal ngal baatismaama ɗo njarii. Nannge aadaaji ummi ɓen bee teddungal. Yiit haala mbaadi janngirde nde ñaawtiri, kono taa waɗ yimɓe nannda ko tarihi familiijo maɓɓe walla cokkal mum’en batal. Ɗam-ɗam wonaa bitti, naa jaayngol tiiɗungol.</p>\n<p>Ko neɗɗo nder kawtal ngal ɓuri mawnugo ko o Kirista ɗoo, taa henyu ɓe ngam batiismu. Mbaadi batiismu maa waɗde, ngam ɓe, laawol ngam imaan — kadi ɗum huunde welɗe. Tiiɗon ko ardiiɗo cokkal anndinii e ɓe nder ɗum.</p>",
-        "watch1"       :"👁️ Watch for participants who can describe repentance accurately but show no sign of having personally repented — and for those who are so overwhelmed by the idea of public commitment that they are using doctrinal uncertainty as a cover for deeper fear.",
-        "watch2"       :"👁️ Ka lura da mahalarta waɗanda za su iya bayyana tuba da daidaito amma ba su nuna wata alama ta tuba da kansu ba — da kuma waɗanda ke da ɗimbin tsoro game da alƙawarin jama’a da ake amfani da rashin tabbas na akida a matsayin murfin tsoro mafi zurfi.",
-        "watch3"       :"👁️ Ndarna gite ma dow nder kawtal ngal njaɓɓi hollude tuba goonga kono nandataa e nanndugo ɓe tubiima — e ɓeen nandatnooɓe tiiɗi nder miijo tawtoreede tele waɗataɓe hecce tinnditaare bana mural ngam sunaare ɓurnde mawnugo.",
-        "format"       :"HTML"
+        "keyPoints1"   :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter asks the most foundational question of the entire study: <b>is the participant actually a Christian?</b> Everything else depends on the answer. Do not rush past it.</p>\n<p>The key distinction to draw out is between <b>inherited faith and personal faith</b>. Growing up in a Christian home, attending church, knowing Bible stories, being generally moral — none of these make a person a Christian. The chapter uses John’s story to press this gently but clearly.</p>\n<p>The Acts 2 passage establishes the <b>pattern of believe → repent → be baptised</b> that runs through the whole New Testament. Help participants see that this is not one denomination’s interpretation — it is the shape of the gospel response from the very beginning of the church.</p>\n<p>The Ethiopian official in Acts 8 is worth dwelling on — his urgency is instructive. Baptism is the normal, immediate, joyful first step of the Christian life, not a delayed ceremony.</p>"
+        },
+        "keyPoints2":{
+          "subtype":"standard",
+          "header" :"Muhimman Abubuwan Koyarwa",
+          "body"   :"<p>Wannan babi yana tambayar tambayar da ta fi zama tushe ta dukkan nazarin: <b>shin mahalarcin Kirista ne da gaske?</b> Duk sauran abubuwa sun dogara da amsa. Kada ka yi hanzari a wucewa.</p>\n<p>Babban bambanci da za a fitar shine tsakanin <b>imani gado da imani na mutum ɗaya</b>. Girma a cikin gidan Kirista, zuwa coci, sanin labarun Littafi Mai Tsarki, kasancewa mai kyau gabaɗaya — waɗannan ba sa sa mutumin ya zama Kirista. Wannan babi yana amfani da labarin Yahaya don matsa wannan da kyau amma a fili.</p>\n<p>Wucin Ayyukan 2 yana kafa <b>tsarin yi imani → tuba → a yi baftisma</b> wanda ke gudana ta dukkan Sabon Alkawari. Taimaki mahalarta su ga cewa wannan ba fassarar ƙungiya ɗaya ba ne — ita ce sifar martanin bisharar daga farkon coci.</p>\n<p>Jami’in Habasha a Ayyukan 8 yana cancanta a zauna a kai — gaggawarsa tana koyarwa. Baftisma shine mataki na farko na al’ada, na kai tsaye, da farin ciki na rayuwar Kirista.</p>"
+        },
+        "keyPoints3":{
+          "subtype":"standard",
+          "header" :"Toɓɓe janngirɗe teeŋtuɗe",
+          "body"   :"<p>Babi nde ƴamatnoo ƴameede ɓurnde teeŋtugo nder janngirde nde fow: <b>ko nder kawtal ngal on Kirista goonga?</b> Ko fow woɗɗungo ɗon feccitii dow jaabawol. Taa henyu.</p>\n<p>Toɗɗinol teeŋtunol ngam ummugo wonaa feccol e tinndi <b>imaan ngenndiyanke e imaan neɗɗanke</b>. Jiɓineeɗo nder galle Kirista, naatde cokkal, anndugo tindol Dewtaari, wonde mo welɗo bana non — fow ngon waɗataa neɗɗo Kirista. Babi nde ɗon waɗugo tindol Yaaya ngam tawtoreede ɗum seeɗa kono teeŋtunde.</p>\n<p>Tindol Kuuje 2 tiiɗinii <b>mbaadi imanan → tuba → baatismaama</b> nde mooɓtinoo nder Dewtaari Kesiri fow. Mball nder kawtal ngal nanngo ko ɗum wonaa fassira kawtal gooto — ko sifaa jaabaawol bishaare fuɗɗorde e cokkal fuɗɗorde.</p>\n<p>Jami’iral Habashiya nder Kuuje 8 njiɗi njooɗeede dow mum — gaagaare mum ekkitinoore. Batiismu wonaa mataki fuɗɗorde buri naftoraade, tele, bee weltaare nder nguurndam Kirista.</p>"
+        },
+        "pastorals1":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The question ’Are you a Christian?’ can land very differently depending on the participant’s background. For someone from a strongly Christian family, it may feel accusatory. For someone who came to faith recently and is still finding their footing, it may feel like an invitation to articulate something they have never put into words before. Calibrate your tone accordingly.</p>\n<p>Be alert to participants who give fluent, correct theological answers but show little personal connection to what they are saying. Knowing the right words about repentance and faith is not the same as having repented and believed. Gentle follow-up questions (‘When did that happen for you?’, ‘What did that feel like?’) can help surface what is real.</p>\n<p>The infant baptism callout in this chapter will need careful handling if any participants were baptised as infants. Acknowledge the tradition they come from with respect. Be clear about the position this study takes, but avoid making people feel that their family or church history has been invalidated. The goal is clarity, not confrontation.</p>\n<p>If a participant is genuinely unsure whether they are a Christian, do not rush them toward baptism. Baptism preparation may become, for them, a journey toward faith — and that is a good thing. Keep the church leader informed and involved.</p>"
+        },
+        "pastorals2":{
+          "subtype":"standard",
+          "header" :"Jin Daɗin Makiyaya",
+          "body"   :"<p>Tambayar ’Shin Kirista ne?’ na iya sauka daban-daban dangane da asalin mahalarcin. Ga wanda ya fito daga dangi mai ƙarfin Kirista, na iya ji kamar zargi ne. Ga wanda ya zo ga imani kwanan nan kuma har yanzu yana neman ƙafafunsa, na iya ji kamar gayyata ne don bayyana wani abu da bai taɓa sanya cikin kalmomi ba. Ka daidaita sautin ka bisa haka.</p>\n<p>Ka yi faɗakarwa ga mahalarta waɗanda ke ba da amsoshi na tauhidi masu gudana, daidai amma suna nuna ɗan haɗin kai tare da abin da suke faɗa. Sanin daidaitattun kalmomi game da tuba da imani ba ya kunshe da tuba da yarda. Tambayoyin bi da bi masu laushi (‘Yaushe hakan ya faru a gare ka?’, ‘Ya yaya hakan ya ji?’) na iya taimaka wajen fitar da abin da yake na gaske.</p>\n<p>Bayanan baftismar jariri a wannan babi zai buƙaci kulawa ta musamman idan wasu mahalarta an yi musu baftisma tun suna jarirai. Ka yarda da al’adar da suka fito daga gare ta da girmamawa. Ka bayyana matsayin da wannan nazari ya ɗauka, amma ka guji sa mutane su ji cewa an soke tarihin iyalinsu ko cocin su. Manufar shine bayyananiya, ba ƙaramar husuma ba.</p>\n<p>Idan mahalarcin bai tabbata ko Kirista ne ko ba, kada ka yi hanzari wajen turawa zuwa baftisma. Shirye-shiryen baftisma na iya zama, a gare su, tafiya zuwa ga imani — kuma wannan abu ne mai kyau. Ka ci gaba da sanar da shugaban coci kuma ya kasance ya shiga.</p>"
+        },
+        "pastorals3":{
+          "subtype":"standard",
+          "header" :"Senngooji durngol",
+          "body"   :"<p>Ƴameede ’Ko Kirista a?’ waɗataa tele dow asli neɗɗo nder kawtal ngal. Ngam neɗɗo ummiɗo nder galle Kirista tiiɗnde, maa nannga bana tudditaare. Ngam neɗɗo imanaaki ko ɗuuɗi ɗon laano kadi ndondi on, maa nannga bana weltagol ngam hollude ko ɓuri mawnugo ɓe mbaawaa hollude tele. Waɗ tinndi maa bana non.</p>\n<p>Ndarna gite ma dow nder kawtal ngal njanngata jaabaaje tinnditaare woɗɗe, tooŋŋe kono nandataa bee haajugo tele e ko ɓe mbii. Anndugo kelmoje tooŋŋe dow tuba e imaan wonaa bana wonde tubiima e imanamaa. Ƴameeje tawtoreede seeɗa (‘To hono laati ngon ngam maa?’, ‘Ko weli ma?’) mballa ummugo ko goonga.</p>\n<p>Binndi batiisma jariŋŋaari nder babi nde maa haaj naftoreede faabi ko nder kawtal ngal baatismaama ɗo njarii. Nannge aadaaji ummi ɓen bee teddungal. Yiit haala mbaadi janngirde nde ñaawtiri, kono taa waɗ yimɓe nannda ko tarihi familiijo maɓɓe walla cokkal mum’en batal. Ɗam-ɗam wonaa bitti, naa jaayngol tiiɗungol.</p>\n<p>Ko neɗɗo nder kawtal ngal ɓuri mawnugo ko o Kirista ɗoo, taa henyu ɓe ngam batiismu. Mbaadi batiismu maa waɗde, ngam ɓe, laawol ngam imaan — kadi ɗum huunde welɗe. Tiiɗon ko ardiiɗo cokkal anndinii e ɓe nder ɗum.</p>"
+        },
+        "watch1":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for participants who can describe repentance accurately but show no sign of having personally repented — and for those who are so overwhelmed by the idea of public commitment that they are using doctrinal uncertainty as a cover for deeper fear."
+        },
+        "watch2":{
+          "subtype":"highlighted",
+          "header" :"Abubuwan da ya kamata a kula da su",
+          "body"   :"👁️ Ka lura da mahalarta waɗanda za su iya bayyana tuba da daidaito amma ba su nuna wata alama ta tuba da kansu ba — da kuma waɗanda ke da ɗimbin tsoro game da alƙawarin jama’a da ake amfani da rashin tabbas na akida a matsayin murfin tsoro mafi zurfi."
+        },
+        "watch3":{
+          "subtype":"highlighted",
+          "header" :"Geɗe ɗe neɗɗo foti ndaarde",
+          "body"   :"👁️ Ndarna gite ma dow nder kawtal ngal njaɓɓi hollude tuba goonga kono nandataa e nanndugo ɓe tubiima — e ɓeen nandatnooɓe tiiɗi nder miijo tawtoreede tele waɗataɓe hecce tinnditaare bana mural ngam sunaare ɓurnde mawnugo."
+        },
+        "format":"HTML"
       },
       {
         "chapterNumber":2,
-        "keyPoints1"   :"<p>This chapter establishes the <b>three pictures of baptism</b>: a bath (washing from sin), a burial (the death of the old life), and a birth (resurrection into new life). These are not three separate ideas — they interlock and reinforce one another. Make sure participants can articulate all three before moving on.</p>\n<p>The foundational theological point is that <b>baptism does not make you a Christian — it declares what has already happened</b>. This matters enormously in a Nigerian context where there can be a cultural pull toward seeing ceremonies and rituals as having power in themselves. The wedding ring illustration is helpful here.</p>\n<p>Romans 6:1–14 is theologically dense. Do not feel you need to work through every verse in detail in a group setting. Focus on the core movement: <b>united with Christ in death → united with Christ in resurrection → therefore live differently</b>. The practical application in verses 12–13 is the payoff.</p>\n<p>The question of full immersion vs. sprinkling should be handled clearly but without creating unnecessary controversy. The Greek word, the pictures of burial and resurrection, and the practice of the early church all point toward immersion. State this clearly and move on.</p>",
-        "keyPoints2"   :"<p>Wannan babi yana kafa <b>hotuna uku na baftisma</b>: wanka (tsarkake daga zunubi), binne (mutuwar rayuwar tsoho), da haihuwa (tashin matattu zuwa sabuwar rayuwa). Waɗannan ba ra’ayoyi uku daban-daban ba ne — suna haɗuwa da ƙarfafa juna. Ka tabbatar da cewa mahalarta za su iya bayyana dukkan uku kafin su ci gaba.</p>\n<p>Babban mahimmin mahimmin tauhidi shine cewa <b>baftisma bai sa ka zama Kirista ba — yana bayyana abin da ya riga ya faru</p>. Wannan yana da muhimmanci sosai a yanayin Najeriya inda yana iya zama jarabar al’adu na ganin bikin da al’adun gargajiya a matsayin suna da iko a cikin kansu. Misalin zobe na aure yana taimaka a nan.</p>\n<p>Romawa 6:1–14 mai yawan tauhidi ne. Kada ka ji kamar kana buƙatar yin nazarin kowane aya a tsari a yanayin rukuni. Ka mai da hankali kan motsin tsakiya: <b>haɗuwa da Kiristi a mutuwa → haɗuwa da Kiristi a tashin matattu → don haka rayuwa daban</b>. Amfanin aikace-aikace a aya 12–13 shine sakamako.</p>\n<p>Tambayar nutsarwa cikakke da zubar da ruwa ya kamata a yi mu’amala da ita a fili amma ba tare da haifar da rikici marar buƙata ba. Kalmar Girkanci, hotuna na binne da tashin matattu, da al’adar cocin farko duk suna nuna ga nutsarwa. Ka bayyana wannan a fili kuma ka ci gaba.</p>",
-        "keyPoints3"   :"<p>Babi nde tiiɗinii <b>nanndinaje tati ngam batiismu</b>: wuddaare (ɓalnude dow juumre), laabude (mayde nguurndam gaa’o), e jiɓineede (ummugo nguurndam kesum). Ɗon wonaa miijo tati toɗɗaaɗi — ɗon naatni e ɓurtini goɗɗum. Tiiɗon ko nder kawtal ngal mbaawi hollude tati ɗon ɓako yahugo dow.</p>\n<p>Tinnditaare tinnditande teeŋtunde nden wonaa <b>batiismu waɗataa ma Kirista — ɗum hollitiima ko laatinooma</b>. Ɗum teeŋti ko o’ore nder Nijeriya ɓe nder miiji aadaaji ngona waɗde baawɗe nder ko’e maɓɓe. Nanndinande zobe nikka ɗon naftorante.</p>\n<p>Roomaŋkoobe 6:1–14 tiiɗi nder tinnditaare. Taa nannga ko haaj waɗugo dow aaya kala faabi nder kawtal. Tiiɗon dow fitirgol teeŋtungol: <b>naatteede bee Kirista nder mayde → naatteede bee Kirista nder ummugo → don waɗu nguurndam kesum</b>. Golle-gollanaango nder aayaaji 12–13 wonaa nafaare.</p>\n<p>Ƴameede nutsaraare fow kaa e bullaango maa haaj waɗde faabi kono de’irre taa umma jaayngol maayangol. Kelmol Girik ngol, nanndinaje laabude e ummugo, e aadaaji cokkal fuɗɗorde fow mbijii nutsaraare. Hol ɗum teeŋtude e yahu dow.</p>",
-        "pastorals1"   :"<p>The wedding ring illustration works well in most Nigerian contexts, but be sensitive to participants who may have complicated feelings about marriage. You can substitute another illustration if needed — a passport, an ID card, a certificate — any document that declares a status that already exists rather than creating it.</p>\n<p>The question ’What was your old self like?’ can be a very vulnerable moment for participants. Some will have come from backgrounds involving significant sin or pain. Others may feel their story is not dramatic enough to be worth telling. Both responses miss the point. The ’old self’ is simply the self that lived without Christ at the centre — that is true for everyone, whatever the specifics.</p>\n<p>Romans 6 makes the strong claim that the Christian’s old self has been ’crucified with Christ.’ Some participants may struggle with this — they still feel the pull of old habits, old patterns, old ways of thinking. Help them understand that the indicative (‘you have died to sin’) comes before the imperative (‘count yourselves dead to sin’). The reality precedes the application. Sin’s power is broken even when its pull is still felt.</p>\n<p>The ’What if I mess up afterwards?’ question is likely to surface here even if it appears formally in later chapters. Address it honestly: sin after baptism is expected, not disqualifying. What matters is what you do with it.</p>",
-        "pastorals2"   :"<p>Misalin zobe na aure yana aiki sosai a mafi yawan yanayin Najeriya, amma ka kasance mai kulawa ga mahalarta waɗanda na iya samun ji rikitarwa game da aure. Za ka iya maye gurbin wani misali idan ya cancanta — fasfo, katin shaida, takardar shaidar — kowane takarda da ke bayyana matsayin da ya riga wanzu maimakon ƙirƙirar shi.</p>\n<p>Tambayar ’Yaya tsohon kanka ya kasance?’ na iya zama lokaci mai rauni sosai ga mahalarta. Wasu za su fito daga baya da ya haɗa da zunubi mai girma ko zafi. Wasu na iya ji cewa labarin su bai yi ban mamaki ishe ya cancanta a faɗa ba. Martanin biyu suna rasa manufa. ’Tsohon kai’ kawai shine kai da ya rayu ba tare da Kiristi a tsakiya ba — hakan gaskiya ne ga kowa, duk abin da ke ciki.</p>\n<p>Romawa 6 yana yin iƙirari mai ƙarfi cewa tsohon kansa na Kirista ya ’rataye akan gicciye tare da Kiristi.’ Wasu mahalarta na iya yin gwagwarmaya da wannan — har yanzu suna jin jarabar tsoffin al’adu, tsoffin tsare-tsare, tsoffin hanyoyin tunani. Taimake su su fahimci cewa ma’anar ainihi (‘kun mutu ga zunubi’) ya zo kafin umarni (‘ku ɗauka kanku sun mutu ga zunubi’). Hakikar tana riga amfanin. Ana karya ikon zunubi ko da har yanzu ana ji jaraba.</p>\n<p>Tambayar ’Yaya idan na lalace bayan haka?’ mai yiwuwa za ta fito nan ma ko da ta bayyana a hukumance a babi masu zuwa. Ka magance ta da gaskiya: zunubi bayan baftisma ana tsammanin sa, ba yanke cancantar ba. Abin da ke da mahimmanci shine abin da ka yi da shi.</p>",
-        "pastorals3"   :"<p>Nanndinande zobe nikka naftorante ko o’ore nder Nijeriya, kono tiiɗon dow nder kawtal ngal nandatnooɓe miiji ɓurɗi ko dow nikka. Mbaawɗaa heɓde nanndinande woɗɗunde ko haaj — paasipoor, kaarta, saakitorde — takke kala hollitiinde mbaadi gollaaɗo naa waɗɗugo mum.</p>\n<p>Ƴameede ’Ko nder nawtoram gaa’am weli ma?’ waɗata e wakati naannde ko o’ore ngam nder kawtal ngal. Ɓeen feere njooɗata bee tarihi juumre mawnde walla njaari. Woɓɓe maa nanda ko tindol maɓɓe wonaa teeŋtude yo ɓe mbaawi hollude. Jaabaaje fow ɗon naatata. ’Hoore gaa’o’ ko tan hoore nguurndinoore bee Kirista nder nokkuure — ɗum goonga ngam fow, ko fuu waɗaa.</p>\n<p>Roomaŋkoobe 6 holtini tiiɗnugol ko hoore gaa’o Kirista ’laabtinooma bee Kirista.’ Nder kawtal ngal feere ngona e yiylaade ɗum — ɓe nannda tan jaɓɓugol aadaaji gaa’i, sifaaji gaa’i, miijoji gaa’i. Mball ɓe nanngo ko mbaadi goonga (‘muuɗon dow juumre’) aran ɓaawo umarnaare (‘miijton ko muuɗon dow juumre’). Goonga fuɗɗortoo golle. Baawɗe juumre keɓata ko ɓe nannda tan jaɓɓugol.</p>\n<p>Ƴameede ’Ko hono waɗoto ko yonaago batiismu?’ maa umma ɗo ko waɗaa nder babi dow. Jaabu tooŋŋe: juumre ɓaawo batiismu tawdetee, naa warte cancanal. Ko teeŋtata wonaa ko waɗaa bee mum.</p>",
-        "watch1"       :"👁️ Watch for participants who intellectually grasp the three pictures but have no personal connection to them — who can explain ’buried with Christ’ but cannot say what their old self actually was, or what is now different. The pictures should illuminate a real story, not just illustrate a doctrine.",
-        "watch2"       :"👁️ Ka lura da mahalarta waɗanda suke fahimtar hotuna uku ta hankali amma ba su da haɗin kai na mutum tare da su — waɗanda za su iya bayyana ’an binne tare da Kiristi’ amma ba za su iya faɗa ko tsohon kansunsu da gaske ya kasance ba, ko abin da yanzu ya bambanta. Hotuna ya kamata su haskaka labari na gaske, ba kawai misalin koyarwa ba.",
-        "watch3"       :"👁️ Ndarna gite ma dow nder kawtal ngal nanndinii nanndinaje tati kono nandataa bee haajugo tele dow ɓe — nannduɓe mbaawi hollude ’laabtinooma bee Kirista’ kono ngona waawi wolwugo ko hoore maɓɓe gaa’o waɗii, walla ko rewitii. Nanndinaje ɗon maa hollude tindol goonga, naa tan waɗde misali tinnditaare.",
-        "format"       :"HTML"
+        "keyPoints1"   :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter establishes the <b>three pictures of baptism</b>: a bath (washing from sin), a burial (the death of the old life), and a birth (resurrection into new life). These are not three separate ideas — they interlock and reinforce one another. Make sure participants can articulate all three before moving on.</p>\n<p>The foundational theological point is that <b>baptism does not make you a Christian — it declares what has already happened</b>. This matters enormously in a Nigerian context where there can be a cultural pull toward seeing ceremonies and rituals as having power in themselves. The wedding ring illustration is helpful here.</p>\n<p>Romans 6:1–14 is theologically dense. Do not feel you need to work through every verse in detail in a group setting. Focus on the core movement: <b>united with Christ in death → united with Christ in resurrection → therefore live differently</b>. The practical application in verses 12–13 is the payoff.</p>\n<p>The question of full immersion vs. sprinkling should be handled clearly but without creating unnecessary controversy. The Greek word, the pictures of burial and resurrection, and the practice of the early church all point toward immersion. State this clearly and move on.</p>"
+        },
+        "keyPoints2":{
+          "subtype":"standard",
+          "header" :"Muhimman Abubuwan Koyarwa",
+          "body"   :"<p>Wannan babi yana kafa <b>hotuna uku na baftisma</b>: wanka (tsarkake daga zunubi), binne (mutuwar rayuwar tsoho), da haihuwa (tashin matattu zuwa sabuwar rayuwa). Waɗannan ba ra’ayoyi uku daban-daban ba ne — suna haɗuwa da ƙarfafa juna. Ka tabbatar da cewa mahalarta za su iya bayyana dukkan uku kafin su ci gaba.</p>\n<p>Babban mahimmin mahimmin tauhidi shine cewa <b>baftisma bai sa ka zama Kirista ba — yana bayyana abin da ya riga ya faru</p>. Wannan yana da muhimmanci sosai a yanayin Najeriya inda yana iya zama jarabar al’adu na ganin bikin da al’adun gargajiya a matsayin suna da iko a cikin kansu. Misalin zobe na aure yana taimaka a nan.</p>\n<p>Romawa 6:1–14 mai yawan tauhidi ne. Kada ka ji kamar kana buƙatar yin nazarin kowane aya a tsari a yanayin rukuni. Ka mai da hankali kan motsin tsakiya: <b>haɗuwa da Kiristi a mutuwa → haɗuwa da Kiristi a tashin matattu → don haka rayuwa daban</b>. Amfanin aikace-aikace a aya 12–13 shine sakamako.</p>\n<p>Tambayar nutsarwa cikakke da zubar da ruwa ya kamata a yi mu’amala da ita a fili amma ba tare da haifar da rikici marar buƙata ba. Kalmar Girkanci, hotuna na binne da tashin matattu, da al’adar cocin farko duk suna nuna ga nutsarwa. Ka bayyana wannan a fili kuma ka ci gaba.</p>"
+        },
+        "keyPoints3":{
+          "subtype":"standard",
+          "header" :"Toɓɓe janngirɗe teeŋtuɗe",
+          "body"   :"<p>Babi nde tiiɗinii <b>nanndinaje tati ngam batiismu</b>: wuddaare (ɓalnude dow juumre), laabude (mayde nguurndam gaa’o), e jiɓineede (ummugo nguurndam kesum). Ɗon wonaa miijo tati toɗɗaaɗi — ɗon naatni e ɓurtini goɗɗum. Tiiɗon ko nder kawtal ngal mbaawi hollude tati ɗon ɓako yahugo dow.</p>\n<p>Tinnditaare tinnditande teeŋtunde nden wonaa <b>batiismu waɗataa ma Kirista — ɗum hollitiima ko laatinooma</b>. Ɗum teeŋti ko o’ore nder Nijeriya ɓe nder miiji aadaaji ngona waɗde baawɗe nder ko’e maɓɓe. Nanndinande zobe nikka ɗon naftorante.</p>\n<p>Roomaŋkoobe 6:1–14 tiiɗi nder tinnditaare. Taa nannga ko haaj waɗugo dow aaya kala faabi nder kawtal. Tiiɗon dow fitirgol teeŋtungol: <b>naatteede bee Kirista nder mayde → naatteede bee Kirista nder ummugo → don waɗu nguurndam kesum</b>. Golle-gollanaango nder aayaaji 12–13 wonaa nafaare.</p>\n<p>Ƴameede nutsaraare fow kaa e bullaango maa haaj waɗde faabi kono de’irre taa umma jaayngol maayangol. Kelmol Girik ngol, nanndinaje laabude e ummugo, e aadaaji cokkal fuɗɗorde fow mbijii nutsaraare. Hol ɗum teeŋtude e yahu dow.</p>"
+        },
+        "pastorals1":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The wedding ring illustration works well in most Nigerian contexts, but be sensitive to participants who may have complicated feelings about marriage. You can substitute another illustration if needed — a passport, an ID card, a certificate — any document that declares a status that already exists rather than creating it.</p>\n<p>The question ’What was your old self like?’ can be a very vulnerable moment for participants. Some will have come from backgrounds involving significant sin or pain. Others may feel their story is not dramatic enough to be worth telling. Both responses miss the point. The ’old self’ is simply the self that lived without Christ at the centre — that is true for everyone, whatever the specifics.</p>\n<p>Romans 6 makes the strong claim that the Christian’s old self has been ’crucified with Christ.’ Some participants may struggle with this — they still feel the pull of old habits, old patterns, old ways of thinking. Help them understand that the indicative (‘you have died to sin’) comes before the imperative (‘count yourselves dead to sin’). The reality precedes the application. Sin’s power is broken even when its pull is still felt.</p>\n<p>The ’What if I mess up afterwards?’ question is likely to surface here even if it appears formally in later chapters. Address it honestly: sin after baptism is expected, not disqualifying. What matters is what you do with it.</p>"
+        },
+        "pastorals2":{
+          "subtype":"standard",
+          "header" :"Jin Daɗin Makiyaya",
+          "body"   :"<p>Misalin zobe na aure yana aiki sosai a mafi yawan yanayin Najeriya, amma ka kasance mai kulawa ga mahalarta waɗanda na iya samun ji rikitarwa game da aure. Za ka iya maye gurbin wani misali idan ya cancanta — fasfo, katin shaida, takardar shaidar — kowane takarda da ke bayyana matsayin da ya riga wanzu maimakon ƙirƙirar shi.</p>\n<p>Tambayar ’Yaya tsohon kanka ya kasance?’ na iya zama lokaci mai rauni sosai ga mahalarta. Wasu za su fito daga baya da ya haɗa da zunubi mai girma ko zafi. Wasu na iya ji cewa labarin su bai yi ban mamaki ishe ya cancanta a faɗa ba. Martanin biyu suna rasa manufa. ’Tsohon kai’ kawai shine kai da ya rayu ba tare da Kiristi a tsakiya ba — hakan gaskiya ne ga kowa, duk abin da ke ciki.</p>\n<p>Romawa 6 yana yin iƙirari mai ƙarfi cewa tsohon kansa na Kirista ya ’rataye akan gicciye tare da Kiristi.’ Wasu mahalarta na iya yin gwagwarmaya da wannan — har yanzu suna jin jarabar tsoffin al’adu, tsoffin tsare-tsare, tsoffin hanyoyin tunani. Taimake su su fahimci cewa ma’anar ainihi (‘kun mutu ga zunubi’) ya zo kafin umarni (‘ku ɗauka kanku sun mutu ga zunubi’). Hakikar tana riga amfanin. Ana karya ikon zunubi ko da har yanzu ana ji jaraba.</p>\n<p>Tambayar ’Yaya idan na lalace bayan haka?’ mai yiwuwa za ta fito nan ma ko da ta bayyana a hukumance a babi masu zuwa. Ka magance ta da gaskiya: zunubi bayan baftisma ana tsammanin sa, ba yanke cancantar ba. Abin da ke da mahimmanci shine abin da ka yi da shi.</p>"
+        },
+        "pastorals3":{
+          "subtype":"standard",
+          "header" :"Senngooji durngol",
+          "body"   :"<p>Nanndinande zobe nikka naftorante ko o’ore nder Nijeriya, kono tiiɗon dow nder kawtal ngal nandatnooɓe miiji ɓurɗi ko dow nikka. Mbaawɗaa heɓde nanndinande woɗɗunde ko haaj — paasipoor, kaarta, saakitorde — takke kala hollitiinde mbaadi gollaaɗo naa waɗɗugo mum.</p>\n<p>Ƴameede ’Ko nder nawtoram gaa’am weli ma?’ waɗata e wakati naannde ko o’ore ngam nder kawtal ngal. Ɓeen feere njooɗata bee tarihi juumre mawnde walla njaari. Woɓɓe maa nanda ko tindol maɓɓe wonaa teeŋtude yo ɓe mbaawi hollude. Jaabaaje fow ɗon naatata. ’Hoore gaa’o’ ko tan hoore nguurndinoore bee Kirista nder nokkuure — ɗum goonga ngam fow, ko fuu waɗaa.</p>\n<p>Roomaŋkoobe 6 holtini tiiɗnugol ko hoore gaa’o Kirista ’laabtinooma bee Kirista.’ Nder kawtal ngal feere ngona e yiylaade ɗum — ɓe nannda tan jaɓɓugol aadaaji gaa’i, sifaaji gaa’i, miijoji gaa’i. Mball ɓe nanngo ko mbaadi goonga (‘muuɗon dow juumre’) aran ɓaawo umarnaare (‘miijton ko muuɗon dow juumre’). Goonga fuɗɗortoo golle. Baawɗe juumre keɓata ko ɓe nannda tan jaɓɓugol.</p>\n<p>Ƴameede ’Ko hono waɗoto ko yonaago batiismu?’ maa umma ɗo ko waɗaa nder babi dow. Jaabu tooŋŋe: juumre ɓaawo batiismu tawdetee, naa warte cancanal. Ko teeŋtata wonaa ko waɗaa bee mum.</p>"
+        },
+        "watch1":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for participants who intellectually grasp the three pictures but have no personal connection to them — who can explain ’buried with Christ’ but cannot say what their old self actually was, or what is now different. The pictures should illuminate a real story, not just illustrate a doctrine."
+        },
+        "watch2":{
+          "subtype":"highlighted",
+          "header" :"Abubuwan da ya kamata a kula da su",
+          "body"   :"👁️ Ka lura da mahalarta waɗanda suke fahimtar hotuna uku ta hankali amma ba su da haɗin kai na mutum tare da su — waɗanda za su iya bayyana ’an binne tare da Kiristi’ amma ba za su iya faɗa ko tsohon kansunsu da gaske ya kasance ba, ko abin da yanzu ya bambanta. Hotuna ya kamata su haskaka labari na gaske, ba kawai misalin koyarwa ba."
+        },
+        "watch3":{
+          "subtype":"highlighted",
+          "header" :"Geɗe ɗe neɗɗo foti ndaarde",
+          "body"   :"👁️ Ndarna gite ma dow nder kawtal ngal nanndinii nanndinaje tati kono nandataa bee haajugo tele dow ɓe — nannduɓe mbaawi hollude ’laabtinooma bee Kirista’ kono ngona waawi wolwugo ko hoore maɓɓe gaa’o waɗii, walla ko rewitii. Nanndinaje ɗon maa hollude tindol goonga, naa tan waɗde misali tinnditaare."
+        },
+        "format":"HTML"
       },
       {
         "chapterNumber":3,
-        "keyPoints1"   :"<p>This chapter introduces the dimension of baptism that is most often overlooked: <b>belonging</b>. Baptism is not only a personal declaration — it is an entry into a community. The two passages (Matthew 28 and Ephesians 4) together build the case that this community is both global and local.</p>\n<p>The Great Commission (Matthew 28:18–20) establishes that <b>baptism is inseparable from disciple-making</b>. It is not a standalone ceremony — it is the entry point of a discipled life. Making disciples involves baptising and teaching together. One without the other is incomplete.</p>\n<p>Ephesians 4’s ’one baptism’ is theologically significant: Paul places baptism alongside ’one Lord, one faith, one God’ as a foundation of Christian unity. This elevates baptism beyond a personal milestone to a shared mark of the global body of Christ.</p>\n<p>The local church emphasis at the end of the chapter is important and practical. Help participants identify <b>specifically</b> what their local church involvement looks like — not just ’I attend on Sundays’ but genuine belonging, serving, and being known.</p>",
-        "keyPoints2"   :"<p>Wannan babi yana gabatar da fanni na baftisma wanda aka fi yin watsi da shi: <b>mallakar</b>. Baftisma ba bayyanar mutum ɗaya kawai ba ne — shine shigar da al’umma. Wucegan biyu (Matta 28 da Afisawa 4) tare suna gina hujjar cewa wannan al’umma tana cikin duniya baki ɗaya da gida.</p>\n<p>Babban Umarni (Matta 28:18–20) yana kafa cewa <b>baftisma ba za a iya raba shi da samar da almajiri ba</b>. Ba bikin da yake tsaye shi kaɗai ba — shine ƙofar rayuwar almajiri. Yin almajiri ya haɗa da baftisma da koyarwa tare. Ɗaya ba tare da ɗayan ba ba cikakke ba ne.</p>\n<p>’Baftisma ɗaya’ na Afisawa 4 yana da muhimmin tauhidi: Bulus yana sanya baftisma tare da ’Ubangiji ɗaya, imani ɗaya, Allah ɗaya’ a matsayin tushen haɗin kai na Kirista. Wannan yana ɗaukaka baftisma sama da alamar mutum ɗaya zuwa alama ta baitulmalin jiki na duniya na Kiristi.</p>\n<p>Jaddadawar cocin gida a ƙarshen babi ya muhimmanci kuma yana da amfani. Taimaki mahalarta su gano <b>musamman</b> abin da haɗin kai na cocin gida na su ya yi kama — ba kawai ’Ina halartar Lahadi’ amma mallakar gaske, hidima, da a san su.</p>",
-        "keyPoints3"   :"<p>Babi nde naatna ɗertirgel batiismu nde ɓuri mawnugo yiylaade: <b>tawtoreede</b>. Batiismu wonaa tan hollugo neɗɗanke — ɗum naatneede kawtal. Tindol ɗiɗol (Mattaay 28 e Efesiŋkoobe 4) taaroo mbinndoo ko kawtal nde wonaa dowri e lesdi e gese.</p>\n<p>Umarnaare Mawnde (Mattaay 28:18–20) tiiɗinii ko <b>batiismu feccitaake e waɗugo almajiri</b>. Ɗum wonaa biɗto ɗon yontii — ɗum naatneede nguurndam almajiri. Waɗugo almajiri naatna baatismaango e ekkinde taaroo. Goɗɗo bee goɗɗo wonaa fow.</p>\n<p>’Batiismu gooto’ nder Efesiŋkoobe 4 tiiɗi nder tinnditaare: Buulus naatna batiismu bee ’Joomiraaɗo gooto, imaan gooto, Alla gooto’ bana asli teewtere Kirista’en. Ɗum ɓurtina batiismu dow taaroo e coŋngol baitulmaali yimɓe Kiristi fow.</p>\n<p>Teeŋtinde cokkal lesdi nder ɓaawo babi nde teeŋti e naftorante. Mball nder kawtal ngal ɓe finditoo <b>teeŋtude</b> ko tawtoreede cokkal lesdi maɓɓe weli — naa tan ’nde naatdata Alhamiisa’ kono tawtoreede goonga, gollorgo, e anndinaneede.</p>",
-        "pastorals1"   :"<p>Rachel’s story — the surprise of discovering that baptism was about belonging as much as declaring — resonates particularly well in Nigerian contexts where community and family solidarity are deeply valued. Use it to open up the question of who participants see themselves as belonging to, and what they are being invited into.</p>\n<p>The question about local church involvement can be uncomfortable for people who attend services without being genuinely embedded in a church community. Do not let participants get away with vague answers here. Press gently but specifically: ‘Who in your church knows you well? Where are you serving? Who would notice if you stopped coming?’</p>\n<p>The two bonus callouts in this chapter (public baptism and communion) are important but should not dominate discussion. They are best handled briefly in a group setting and more fully in one-to-one conversation if a specific participant needs to work through them.</p>\n<p>By the end of this chapter, participants should be moving toward a clear decision. If someone is still very undecided, it is worth pausing here — before the practical planning of Chapter 4 — to understand what is really holding them back.</p>",
-        "pastorals2"   :"<p>Labarin Rachel — mamaki na gano cewa baftisma ta shafi mallakar kamar bayyanar — yana yin sauti sosai a yanayin Najeriya inda ake kimanta haɗin kai na al’umma da iyali sosai. Yi amfani da shi don buɗe tambayar wane ne mahalarta ke ganin kansu a matsayin mallakar, da kuma abin da ake gayyatarsu a ciki.</p>\n<p>Tambayar haɗin kai na cocin gida na iya zama maras daɗi ga mutanen da ke halarta hidimomi ba tare da an binne su sosai a al’ummar coci ba. Kada ka bari mahalarta su sami amshi mara tabbas a nan. Ka matsa da laushi amma musamman: ‘Wane ne a cikin cocin ka ya san ka sosai? Ina kake hidima? Wane ne zai lura idan ka daina zuwa?’</p>\n<p>Bayanan biya na bonus a wannan babi (baftisma a bainar jama’a da tarayyar kari) suna da muhimmanci amma bai kamata su mamaye tattaunawa ba. A fi kyau a yi mu’amala da su a taƙaice a yanayin rukuni kuma cikakke a tattaunawa ɗaya-da-ɗaya idan wani mahalarcin musamman yana buƙatar yin nazarinsu.</p>\n<p>A ƙarshen wannan babi, mahalarta ya kamata su matsa zuwa ga shawarar bayyanana. Idan wani har yanzu bai yanke shawara sosai ba, ya cancanta a tsaya nan — kafin shirin aikace-aikace na Babi na 4 — don fahimtar abin da ke riƙe shi da gaske.</p>",
-        "pastorals3"   :"<p>Tindol Rachel — weltaare nder heɓugo ko batiismu wonaa tawtoreede bana hollugo — naftorante ko o’ore nder Nijeriya to kawtal e haɗde familiijo njiɗi ko o’ore. Ɗum waɗ ngam uddugo ƴameede ko nder kawtal ngal nandii ko ɓe tawtoroo e ko ɓe njaadetee naatde.</p>\n<p>Ƴameede dow tawtoreede cokkal lesdi waɗata e naannde ngam yimɓe naatdiiɓe ee nder kawtal kono ngon tawtoraaɓe goonga. Taa waɗ nder kawtal ngal ɓe heɓa jaabaaje miijaaje. Teeŋtinon seeɗa kono faabi: ‘Moy nder cokkal maa anndinii ma faabi? To a golloraa? Moy maa yiya ko a hawtii?’</p>\n<p>Binndi ɗiɗi goɗɗi nder babi nde (batiismu tele e haɗoowo tarayyar kari) teeŋti kono taa mbiiɗen dow wakkati ɗuuɗo. Ɓuri naftoraade jaabaade ɗum seeɗa nder kawtal e teeŋtunde nder haalde gooto-gooto ko neɗɗo feere nder kawtal ngal haaj waɗde ɗum.</p>\n<p>Ɓaawo babi nde, nder kawtal ngal maa fiɗtoyde ngam ñaawtaari teeŋtunde. Ko neɗɗo ɗon woɗɗi ko ñaawtaari, njiɗi toɗɗande ɗo — ɓako golle-gollanaango nder Babi 4 — ngam anndugo ko teeŋtata ɓe.</p>",
-        "watch1"       :"👁️ Watch for participants who grasp the global dimension of belonging (‘I’m part of the worldwide church’) but resist the local dimension (‘I don’t really need to be committed to a specific congregation’). The global cannot be experienced without the local.",
-        "watch2"       :"👁️ Ka lura da mahalarta waɗanda suke fahimtar fanni na duniya na mallakar (‘Ina cikin cocin duniya’) amma suna ƙin fanni na gida (‘Ba lalle ne in kasance da alƙawari ga tarayya ta musamman’). Ba za a iya samun duniyar ba tare da gida ba.",
-        "watch3"       :"👁️ Ndarna gite ma dow nder kawtal ngal nanndinii ɗertirgel dowri tawtoreede (‘Minen nder cokkal fow nder adunaaru’) kono mbaaɗa ɗertirgel lesdi (‘Ina haaj tawtoreede cokkal teeŋtungol’). Dowri maa yiylaade bee lesdi.",
-        "format"       :"HTML"
+        "keyPoints1"   :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter introduces the dimension of baptism that is most often overlooked: <b>belonging</b>. Baptism is not only a personal declaration — it is an entry into a community. The two passages (Matthew 28 and Ephesians 4) together build the case that this community is both global and local.</p>\n<p>The Great Commission (Matthew 28:18–20) establishes that <b>baptism is inseparable from disciple-making</b>. It is not a standalone ceremony — it is the entry point of a discipled life. Making disciples involves baptising and teaching together. One without the other is incomplete.</p>\n<p>Ephesians 4’s ’one baptism’ is theologically significant: Paul places baptism alongside ’one Lord, one faith, one God’ as a foundation of Christian unity. This elevates baptism beyond a personal milestone to a shared mark of the global body of Christ.</p>\n<p>The local church emphasis at the end of the chapter is important and practical. Help participants identify <b>specifically</b> what their local church involvement looks like — not just ’I attend on Sundays’ but genuine belonging, serving, and being known.</p>"
+        },
+        "keyPoints2":{
+          "subtype":"standard",
+          "header" :"Muhimman Abubuwan Koyarwa",
+          "body"   :"<p>Wannan babi yana gabatar da fanni na baftisma wanda aka fi yin watsi da shi: <b>mallakar</b>. Baftisma ba bayyanar mutum ɗaya kawai ba ne — shine shigar da al’umma. Wucegan biyu (Matta 28 da Afisawa 4) tare suna gina hujjar cewa wannan al’umma tana cikin duniya baki ɗaya da gida.</p>\n<p>Babban Umarni (Matta 28:18–20) yana kafa cewa <b>baftisma ba za a iya raba shi da samar da almajiri ba</b>. Ba bikin da yake tsaye shi kaɗai ba — shine ƙofar rayuwar almajiri. Yin almajiri ya haɗa da baftisma da koyarwa tare. Ɗaya ba tare da ɗayan ba ba cikakke ba ne.</p>\n<p>’Baftisma ɗaya’ na Afisawa 4 yana da muhimmin tauhidi: Bulus yana sanya baftisma tare da ’Ubangiji ɗaya, imani ɗaya, Allah ɗaya’ a matsayin tushen haɗin kai na Kirista. Wannan yana ɗaukaka baftisma sama da alamar mutum ɗaya zuwa alama ta baitulmalin jiki na duniya na Kiristi.</p>\n<p>Jaddadawar cocin gida a ƙarshen babi ya muhimmanci kuma yana da amfani. Taimaki mahalarta su gano <b>musamman</b> abin da haɗin kai na cocin gida na su ya yi kama — ba kawai ’Ina halartar Lahadi’ amma mallakar gaske, hidima, da a san su.</p>"
+        },
+        "keyPoints3":{
+          "subtype":"standard",
+          "header" :"Toɓɓe janngirɗe teeŋtuɗe",
+          "body"   :"<p>Babi nde naatna ɗertirgel batiismu nde ɓuri mawnugo yiylaade: <b>tawtoreede</b>. Batiismu wonaa tan hollugo neɗɗanke — ɗum naatneede kawtal. Tindol ɗiɗol (Mattaay 28 e Efesiŋkoobe 4) taaroo mbinndoo ko kawtal nde wonaa dowri e lesdi e gese.</p>\n<p>Umarnaare Mawnde (Mattaay 28:18–20) tiiɗinii ko <b>batiismu feccitaake e waɗugo almajiri</b>. Ɗum wonaa biɗto ɗon yontii — ɗum naatneede nguurndam almajiri. Waɗugo almajiri naatna baatismaango e ekkinde taaroo. Goɗɗo bee goɗɗo wonaa fow.</p>\n<p>’Batiismu gooto’ nder Efesiŋkoobe 4 tiiɗi nder tinnditaare: Buulus naatna batiismu bee ’Joomiraaɗo gooto, imaan gooto, Alla gooto’ bana asli teewtere Kirista’en. Ɗum ɓurtina batiismu dow taaroo e coŋngol baitulmaali yimɓe Kiristi fow.</p>\n<p>Teeŋtinde cokkal lesdi nder ɓaawo babi nde teeŋti e naftorante. Mball nder kawtal ngal ɓe finditoo <b>teeŋtude</b> ko tawtoreede cokkal lesdi maɓɓe weli — naa tan ’nde naatdata Alhamiisa’ kono tawtoreede goonga, gollorgo, e anndinaneede.</p>"
+        },
+        "pastorals1":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Rachel’s story — the surprise of discovering that baptism was about belonging as much as declaring — resonates particularly well in Nigerian contexts where community and family solidarity are deeply valued. Use it to open up the question of who participants see themselves as belonging to, and what they are being invited into.</p>\n<p>The question about local church involvement can be uncomfortable for people who attend services without being genuinely embedded in a church community. Do not let participants get away with vague answers here. Press gently but specifically: ‘Who in your church knows you well? Where are you serving? Who would notice if you stopped coming?’</p>\n<p>The two bonus callouts in this chapter (public baptism and communion) are important but should not dominate discussion. They are best handled briefly in a group setting and more fully in one-to-one conversation if a specific participant needs to work through them.</p>\n<p>By the end of this chapter, participants should be moving toward a clear decision. If someone is still very undecided, it is worth pausing here — before the practical planning of Chapter 4 — to understand what is really holding them back.</p>"
+        },
+        "pastorals2":{
+          "subtype":"standard",
+          "header" :"Jin Daɗin Makiyaya",
+          "body"   :"<p>Labarin Rachel — mamaki na gano cewa baftisma ta shafi mallakar kamar bayyanar — yana yin sauti sosai a yanayin Najeriya inda ake kimanta haɗin kai na al’umma da iyali sosai. Yi amfani da shi don buɗe tambayar wane ne mahalarta ke ganin kansu a matsayin mallakar, da kuma abin da ake gayyatarsu a ciki.</p>\n<p>Tambayar haɗin kai na cocin gida na iya zama maras daɗi ga mutanen da ke halarta hidimomi ba tare da an binne su sosai a al’ummar coci ba. Kada ka bari mahalarta su sami amshi mara tabbas a nan. Ka matsa da laushi amma musamman: ‘Wane ne a cikin cocin ka ya san ka sosai? Ina kake hidima? Wane ne zai lura idan ka daina zuwa?’</p>\n<p>Bayanan biya na bonus a wannan babi (baftisma a bainar jama’a da tarayyar kari) suna da muhimmanci amma bai kamata su mamaye tattaunawa ba. A fi kyau a yi mu’amala da su a taƙaice a yanayin rukuni kuma cikakke a tattaunawa ɗaya-da-ɗaya idan wani mahalarcin musamman yana buƙatar yin nazarinsu.</p>\n<p>A ƙarshen wannan babi, mahalarta ya kamata su matsa zuwa ga shawarar bayyanana. Idan wani har yanzu bai yanke shawara sosai ba, ya cancanta a tsaya nan — kafin shirin aikace-aikace na Babi na 4 — don fahimtar abin da ke riƙe shi da gaske.</p>"
+        },
+        "pastorals3":{
+          "subtype":"standard",
+          "header" :"Senngooji durngol",
+          "body"   :"<p>Tindol Rachel — weltaare nder heɓugo ko batiismu wonaa tawtoreede bana hollugo — naftorante ko o’ore nder Nijeriya to kawtal e haɗde familiijo njiɗi ko o’ore. Ɗum waɗ ngam uddugo ƴameede ko nder kawtal ngal nandii ko ɓe tawtoroo e ko ɓe njaadetee naatde.</p>\n<p>Ƴameede dow tawtoreede cokkal lesdi waɗata e naannde ngam yimɓe naatdiiɓe ee nder kawtal kono ngon tawtoraaɓe goonga. Taa waɗ nder kawtal ngal ɓe heɓa jaabaaje miijaaje. Teeŋtinon seeɗa kono faabi: ‘Moy nder cokkal maa anndinii ma faabi? To a golloraa? Moy maa yiya ko a hawtii?’</p>\n<p>Binndi ɗiɗi goɗɗi nder babi nde (batiismu tele e haɗoowo tarayyar kari) teeŋti kono taa mbiiɗen dow wakkati ɗuuɗo. Ɓuri naftoraade jaabaade ɗum seeɗa nder kawtal e teeŋtunde nder haalde gooto-gooto ko neɗɗo feere nder kawtal ngal haaj waɗde ɗum.</p>\n<p>Ɓaawo babi nde, nder kawtal ngal maa fiɗtoyde ngam ñaawtaari teeŋtunde. Ko neɗɗo ɗon woɗɗi ko ñaawtaari, njiɗi toɗɗande ɗo — ɓako golle-gollanaango nder Babi 4 — ngam anndugo ko teeŋtata ɓe.</p>"
+        },
+        "watch1":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for participants who grasp the global dimension of belonging (‘I’m part of the worldwide church’) but resist the local dimension (‘I don’t really need to be committed to a specific congregation’). The global cannot be experienced without the local."
+        },
+        "watch2":{
+          "subtype":"highlighted",
+          "header" :"Abubuwan da ya kamata a kula da su",
+          "body"   :"👁️ Ka lura da mahalarta waɗanda suke fahimtar fanni na duniya na mallakar (‘Ina cikin cocin duniya’) amma suna ƙin fanni na gida (‘Ba lalle ne in kasance da alƙawari ga tarayya ta musamman’). Ba za a iya samun duniyar ba tare da gida ba."
+        },
+        "watch3":{
+          "subtype":"highlighted",
+          "header" :"Geɗe ɗe neɗɗo foti ndaarde",
+          "body"   :"👁️ Ndarna gite ma dow nder kawtal ngal nanndinii ɗertirgel dowri tawtoreede (‘Minen nder cokkal fow nder adunaaru’) kono mbaaɗa ɗertirgel lesdi (‘Ina haaj tawtoreede cokkal teeŋtungol’). Dowri maa yiylaade bee lesdi."
+        },
+        "format":"HTML"
       },
       {
         "chapterNumber":4,
-        "keyPoints1"   :"<p>This is the most practical chapter of the study. Its primary purpose is to <b>move the participant from decision to preparation</b>. The key leadership task here is helping people fix a real date, with real plans, involving real people.</p>\n<p>The section on testimony preparation is the most significant content in the chapter. A well-prepared, honest, Jesus-centred testimony is one of the most powerful things a baptism service can offer the watching congregation and any guests who are not yet Christians. Invest significant time here.</p>\n<p>The three-part testimony shape (before / how / since) is deliberately simple. Some participants may feel their story is too ordinary or too messy to be worth telling. Push back on this directly: no story of someone being brought from death to life through Jesus is ordinary or too messy.</p>\n<p>The remaining bonus questions in this chapter (not good enough, mess it up, parents’ opposition, mockery) are the most pastorally sensitive of the study. Handle them with care, and be ready to follow up one-to-one if any of them land hard with a particular participant.</p>",
-        "keyPoints2"   :"<p>Wannan shine mafi amfanin babi na nazarin. Babban manufarsa ita ce <b>matsar da mahalarcin daga yanke shawara zuwa shirye-shirye</b>. Babban aikin jagoranci a nan yana taimaka wa mutane su gyara kwanan wata na gaske, tare da shirye-shiryen gaske, da haɗin mutane na gaske.</p>\n<p>Sashin shirye-shiryen shaida shine mafi muhimmancin abun ciki a cikin babi. Shaida mai shirye-shirye, gaskiya, mai mai da hankali ga Yesu ita ce ɗaya daga cikin mafi ƙarfin abubuwan da hidimar baftisma za ta iya bayarwa ga taron masu sauraro da kowane baƙi waɗanda ba Kiristoci ba tukuna. Ka zuba lokaci mai mahimmanci nan.</p>\n<p>Sifar shaida mai sassa uku (kafin / yadda / tun da) ta sauƙi a gangan. Wasu mahalarta na iya ji cewa labarin su na yau da kullun ko rikitarwa sosai ya cancanta a faɗa. Ka ƙin wannan kai tsaye: babu labari na wani da aka kawo daga mutuwa zuwa ga rayuwa ta wurin Yesu wanda yake na yau da kullun ko mai rikitarwa sosai.</p>\n<p>Tambayoyin bonus da suka rage a wannan babi (ba isasshen nagarta, lalace, ƙin iyaye, izgili) sune mafi kulawa na kiwo na nazarin. Yi mu’amala da su da kulawa, kuma ka kasance shirye don bin da ɗaya-da-ɗaya idan wani daga cikinsu ya tsaya da wuya tare da wani mahalarcin musamman.</p>",
-        "keyPoints3"   :"<p>Ɗam-ɗam babi ɓurngo golle-gollanaango nder janngirde nde. Ko ɗam-ɗam njiɗi ko <b>ƴamdude neɗɗo nder kawtal ngal dow ñaawtaari ngam mbaadi</b>. Kuugal ardiiɗo teeŋtungol ɗo wonaa mball yimɓe tiiɗinde raawangu goonga, bee golle-gollanaango goonga, tawndude yimɓe goonga.</p>\n<p>Ɗertirgel mbaadi shahaada nde teeŋtunde nder abbitaari nder babi nde. Shahaada mbadinoonde, goonga, nanndiinde Iisa nde wonaa huunde ɓurnde baawɗe nde hidimaa batiismu waɗda nder kawtal taawtoreewol e baraaɓe ko njooɗaaki tano Kirista. Naatnu wakati teeŋtungol ɗo.</p>\n<p>Sifaa shahaada tati (ɓaawo / no / tuma) seeɗi ko ɗum-ɗum. Nder kawtal ngal feere maa nanda ko tindol mum’en yimirtaaki walla ngonaa teeŋtude yo ɓe mbaawi hollude. Taa nanndu ɗum tele: tindol fuu neɗɗo naatnaaɗo dow mayde ngam nguurndam bee Iisa wonaa yimirtaaki walla teeŋtaaki.</p>\n<p>Ƴameeje bonus gollaaɗe nder babi nde (cancanal wonaa teeŋtungol, yonaago, baɗdi aynaaɓe, ɓernaaɓe) ngoni ɓurɗe heɓde ngam kisal nder janngirde nde. Waɗ bee faabi, e tiiɗon ngam tawtoreede gooto-gooto ko nder kawtal ngal feere tawde ɗum tiiɗi.</p>",
-        "pastorals1"   :"<p>Adam’s quiet, undramatic ’yes’ is deliberately chosen as the opening narrative for this chapter. In a Nigerian church context there can sometimes be pressure to have a dramatic conversion story or a highly emotional response. Adam’s story normalises the quiet, considered decision — which is just as valid.</p>\n<p>When helping participants prepare their testimony, watch for two opposite errors. The first is a testimony that is entirely about the participant — their feelings, their journey, their growth — with Jesus appearing only as a supporting character. The second is a testimony that is so theologically dense it loses the personal story entirely. Help participants find the balance: personal enough to be moving, Jesus-centred enough to be gospel.</p>\n<p>The practical planning questions (date, venue, outfit, songs) can feel trivial alongside the theological content of earlier chapters. Resist that impression. These details matter because they make the baptism real, help participants invite people, and reduce anxiety on the day. A participant who has thought through these details is a participant who is genuinely committed to going through with it.</p>\n<p>Be particularly attentive to participants who have significant family opposition. This is common in Nigerian contexts — particularly where a person is the first Christian in their family, or where they are being baptised as a believer having previously been identified with infant baptism in a different tradition. These situations need sensitive, wise, one-to-one pastoral care.</p>",
-        "pastorals2"   :"<p>An zabi ’ee’ mai shuru, mai sauƙi na Adam a gangan a matsayin labarin buɗewa na wannan babi. A yanayin cocin Najeriya a wani lokaci na iya zama matsi na samun labarin tuba mai ban mamaki ko martanin da ke da ɗimbin motsin rai. Labarin Adam yana sa yanke shawara mai shuru, mai tunani ya zama na yau da kullun — wanda ya fi inganci daidai.</p>\n<p>Lokacin taimaka wa mahalarta su shirya shaida su, ka kula da kurakuran biyu masu adawa. Na farko shine shaida wacce dukka ta shafi mahalarcin — ji su, tafiya su, girma su — tare da Yesu yana bayyana kawai a matsayin hali mai tallafi. Na biyu shine shaida mai yawan tauhidi haka ta rasa labarin mutum gaba ɗaya. Taimaki mahalarta su sami daidaito: na mutum ishe don motsa, mai mai da hankali ga Yesu ishe don zama bisharar.</p>\n<p>Tambayoyin shirye-shirye na aikace-aikace (ranar, wurin, tufafi, waƙoƙi) na iya ji kamar suna da ƙarancin muhimmanci tare da abun ciki na tauhidi na babi na farko. Ka ƙi wannan ra’ayi. Waɗannan bayanai suna da mahimmanci saboda suna sa baftisma ta kasance ta gaske, suna taimaka wa mahalarta su gayyaci mutane, kuma suna rage damuwa a ranar. Mahalarcin da ya yi tunani game da waɗannan bayanai mahalarcin ne wanda ke da alƙawari na gaske don ci gaba da shi.</p>\n<p>Ka kasance mai kulawa musamman ga mahalarta waɗanda ke da adawar iyali mai muhimmanci. Wannan na yau da kullun ne a yanayin Najeriya — musamman inda mutumin shine Kirista na farko a cikin danginsu, ko inda ake yi musu baftisma a matsayin mai imani bayan an gano su da baftismar jariri a al’ada dabam. Waɗannan yanayi suna buƙatar kulawa mai hankali, masu hikima, na kiwo ɗaya-da-ɗaya.</p>",
-        "pastorals3"   :"<p>’Iwo’ seeɗi, de’irde ngam Adam suɓtinaama ɗum-ɗum bana tindol fuɗɗorde ngam babi nde. Nder yonki cokkal Nijeriya nder wakkati feere waɗata baɗdi tindol mayde ban’de walla jaabaawol bee weltaare mawnde. Tindol Adam waɗata ñaawtaari seeɗi, miijitaari yimirte — nde ɓuri naftoraade tele dawi.</p>\n<p>Tuma a mballataa nder kawtal ngal ɓe mbaadon shahaada maɓɓe, ndarna gite ma dow juumre ɗiɗi ɗon adda. Fuɗɗannde wonaa shahaada fow dow neɗɗo nder kawtal ngal — nannaabe, laawol maɓɓe, ummugo maɓɓe — bee Iisa nanndiima tan bana haalande. Ɗimmande wonaa shahaada nde tiiɗi ko o’ore tinnditaare nde yowtii tindol neɗɗanke fow. Mball nder kawtal ngal heɓde feccol: neɗɗanke yo waɗa naftorante, nanndiinde Iisa yo waɗa bishaare.</p>\n<p>Ƴameeje golle-gollanaango (raawangu, nokkuure, dooki, jimɗe) maa nanda ko hinnditaake bee abbitaari tinnditaare babi ɗimmbii. Taa nanndu miijo ngon. Binndaɗe ɗee teeŋti sabu ɗon waɗa batiismu goonga, mball nder kawtal ngal ɓe mbilloo yimɓe, e heddude sunaare nder raawangu. Neɗɗo miijinooɗo dow binndaɗe ɗee wonaa neɗɗo tiiɗninooɗo goonga ngam waɗde ɗum.</p>\n<p>Tiiɗon teeŋtude dow nder kawtal ngal nandatnooɓe baɗdi familiijo mawnde. Ɗum yimirtaake nder Nijeriya — ko waɗaa ngam neɗɗo fuɗɗorde Kirista nder familiijo mum, walla to baatismaama bana jiɗɗo imanan baaɓe tawi ɓe gollodaanoo batiisma jariŋŋaari nder aadaaji woɗɗi. Ciiɗe ɗee njiɗi kisal seeɗi, anndindiniiɗo, gooto-gooto.</p>",
-        "watch1"       :"👁️ Watch for participants whose testimony draft is essentially a description of church attendance and good behaviour rather than a personal encounter with the gospel. Gently but clearly redirect: ‘That tells me what you did — help me understand what Jesus did.’",
-        "watch2"       :"👁️ Ka lura da mahalarta waɗanda rubutun shaida su shine a asashe bayanin halarta coci da kyakkyawan hali maimakon haduwar mutum da bisharar. Ka jagoranci da laushi amma a fili: ‘Wannan yana gaya mani abin da ka yi — taimake ni fahimtar abin da Yesu ya yi.’",
-        "watch3"       :"👁️ Ndarna gite ma dow nder kawtal ngal winndol shahaada maɓɓe ko teeŋtude hollirde naatde cokkal e wonde welɗo naa haɗde tele e bishaare. Ƴamd tiiɗnude kono faabi: ‘Ɗun hollata ko a waɗii — mball mi anndugo ko Iisa waɗii.’",
-        "format"       :"HTML"
+        "keyPoints1"   :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This is the most practical chapter of the study. Its primary purpose is to <b>move the participant from decision to preparation</b>. The key leadership task here is helping people fix a real date, with real plans, involving real people.</p>\n<p>The section on testimony preparation is the most significant content in the chapter. A well-prepared, honest, Jesus-centred testimony is one of the most powerful things a baptism service can offer the watching congregation and any guests who are not yet Christians. Invest significant time here.</p>\n<p>The three-part testimony shape (before / how / since) is deliberately simple. Some participants may feel their story is too ordinary or too messy to be worth telling. Push back on this directly: no story of someone being brought from death to life through Jesus is ordinary or too messy.</p>\n<p>The remaining bonus questions in this chapter (not good enough, mess it up, parents’ opposition, mockery) are the most pastorally sensitive of the study. Handle them with care, and be ready to follow up one-to-one if any of them land hard with a particular participant.</p>"
+        },
+        "keyPoints2":{
+          "subtype":"standard",
+          "header" :"Muhimman Abubuwan Koyarwa",
+          "body"   :"<p>Wannan shine mafi amfanin babi na nazarin. Babban manufarsa ita ce <b>matsar da mahalarcin daga yanke shawara zuwa shirye-shirye</b>. Babban aikin jagoranci a nan yana taimaka wa mutane su gyara kwanan wata na gaske, tare da shirye-shiryen gaske, da haɗin mutane na gaske.</p>\n<p>Sashin shirye-shiryen shaida shine mafi muhimmancin abun ciki a cikin babi. Shaida mai shirye-shirye, gaskiya, mai mai da hankali ga Yesu ita ce ɗaya daga cikin mafi ƙarfin abubuwan da hidimar baftisma za ta iya bayarwa ga taron masu sauraro da kowane baƙi waɗanda ba Kiristoci ba tukuna. Ka zuba lokaci mai mahimmanci nan.</p>\n<p>Sifar shaida mai sassa uku (kafin / yadda / tun da) ta sauƙi a gangan. Wasu mahalarta na iya ji cewa labarin su na yau da kullun ko rikitarwa sosai ya cancanta a faɗa. Ka ƙin wannan kai tsaye: babu labari na wani da aka kawo daga mutuwa zuwa ga rayuwa ta wurin Yesu wanda yake na yau da kullun ko mai rikitarwa sosai.</p>\n<p>Tambayoyin bonus da suka rage a wannan babi (ba isasshen nagarta, lalace, ƙin iyaye, izgili) sune mafi kulawa na kiwo na nazarin. Yi mu’amala da su da kulawa, kuma ka kasance shirye don bin da ɗaya-da-ɗaya idan wani daga cikinsu ya tsaya da wuya tare da wani mahalarcin musamman.</p>"
+        },
+        "keyPoints3":{
+          "subtype":"standard",
+          "header" :"Toɓɓe janngirɗe teeŋtuɗe",
+          "body"   :"<p>Ɗam-ɗam babi ɓurngo golle-gollanaango nder janngirde nde. Ko ɗam-ɗam njiɗi ko <b>ƴamdude neɗɗo nder kawtal ngal dow ñaawtaari ngam mbaadi</b>. Kuugal ardiiɗo teeŋtungol ɗo wonaa mball yimɓe tiiɗinde raawangu goonga, bee golle-gollanaango goonga, tawndude yimɓe goonga.</p>\n<p>Ɗertirgel mbaadi shahaada nde teeŋtunde nder abbitaari nder babi nde. Shahaada mbadinoonde, goonga, nanndiinde Iisa nde wonaa huunde ɓurnde baawɗe nde hidimaa batiismu waɗda nder kawtal taawtoreewol e baraaɓe ko njooɗaaki tano Kirista. Naatnu wakati teeŋtungol ɗo.</p>\n<p>Sifaa shahaada tati (ɓaawo / no / tuma) seeɗi ko ɗum-ɗum. Nder kawtal ngal feere maa nanda ko tindol mum’en yimirtaaki walla ngonaa teeŋtude yo ɓe mbaawi hollude. Taa nanndu ɗum tele: tindol fuu neɗɗo naatnaaɗo dow mayde ngam nguurndam bee Iisa wonaa yimirtaaki walla teeŋtaaki.</p>\n<p>Ƴameeje bonus gollaaɗe nder babi nde (cancanal wonaa teeŋtungol, yonaago, baɗdi aynaaɓe, ɓernaaɓe) ngoni ɓurɗe heɓde ngam kisal nder janngirde nde. Waɗ bee faabi, e tiiɗon ngam tawtoreede gooto-gooto ko nder kawtal ngal feere tawde ɗum tiiɗi.</p>"
+        },
+        "pastorals1":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Adam’s quiet, undramatic ’yes’ is deliberately chosen as the opening narrative for this chapter. In a Nigerian church context there can sometimes be pressure to have a dramatic conversion story or a highly emotional response. Adam’s story normalises the quiet, considered decision — which is just as valid.</p>\n<p>When helping participants prepare their testimony, watch for two opposite errors. The first is a testimony that is entirely about the participant — their feelings, their journey, their growth — with Jesus appearing only as a supporting character. The second is a testimony that is so theologically dense it loses the personal story entirely. Help participants find the balance: personal enough to be moving, Jesus-centred enough to be gospel.</p>\n<p>The practical planning questions (date, venue, outfit, songs) can feel trivial alongside the theological content of earlier chapters. Resist that impression. These details matter because they make the baptism real, help participants invite people, and reduce anxiety on the day. A participant who has thought through these details is a participant who is genuinely committed to going through with it.</p>\n<p>Be particularly attentive to participants who have significant family opposition. This is common in Nigerian contexts — particularly where a person is the first Christian in their family, or where they are being baptised as a believer having previously been identified with infant baptism in a different tradition. These situations need sensitive, wise, one-to-one pastoral care.</p>"
+        },
+        "pastorals2":{
+          "subtype":"standard",
+          "header" :"Jin Daɗin Makiyaya",
+          "body"   :"<p>An zabi ’ee’ mai shuru, mai sauƙi na Adam a gangan a matsayin labarin buɗewa na wannan babi. A yanayin cocin Najeriya a wani lokaci na iya zama matsi na samun labarin tuba mai ban mamaki ko martanin da ke da ɗimbin motsin rai. Labarin Adam yana sa yanke shawara mai shuru, mai tunani ya zama na yau da kullun — wanda ya fi inganci daidai.</p>\n<p>Lokacin taimaka wa mahalarta su shirya shaida su, ka kula da kurakuran biyu masu adawa. Na farko shine shaida wacce dukka ta shafi mahalarcin — ji su, tafiya su, girma su — tare da Yesu yana bayyana kawai a matsayin hali mai tallafi. Na biyu shine shaida mai yawan tauhidi haka ta rasa labarin mutum gaba ɗaya. Taimaki mahalarta su sami daidaito: na mutum ishe don motsa, mai mai da hankali ga Yesu ishe don zama bisharar.</p>\n<p>Tambayoyin shirye-shirye na aikace-aikace (ranar, wurin, tufafi, waƙoƙi) na iya ji kamar suna da ƙarancin muhimmanci tare da abun ciki na tauhidi na babi na farko. Ka ƙi wannan ra’ayi. Waɗannan bayanai suna da mahimmanci saboda suna sa baftisma ta kasance ta gaske, suna taimaka wa mahalarta su gayyaci mutane, kuma suna rage damuwa a ranar. Mahalarcin da ya yi tunani game da waɗannan bayanai mahalarcin ne wanda ke da alƙawari na gaske don ci gaba da shi.</p>\n<p>Ka kasance mai kulawa musamman ga mahalarta waɗanda ke da adawar iyali mai muhimmanci. Wannan na yau da kullun ne a yanayin Najeriya — musamman inda mutumin shine Kirista na farko a cikin danginsu, ko inda ake yi musu baftisma a matsayin mai imani bayan an gano su da baftismar jariri a al’ada dabam. Waɗannan yanayi suna buƙatar kulawa mai hankali, masu hikima, na kiwo ɗaya-da-ɗaya.</p>"
+        },
+        "pastorals3":{
+          "subtype":"standard",
+          "header" :"Senngooji durngol",
+          "body"   :"<p>’Iwo’ seeɗi, de’irde ngam Adam suɓtinaama ɗum-ɗum bana tindol fuɗɗorde ngam babi nde. Nder yonki cokkal Nijeriya nder wakkati feere waɗata baɗdi tindol mayde ban’de walla jaabaawol bee weltaare mawnde. Tindol Adam waɗata ñaawtaari seeɗi, miijitaari yimirte — nde ɓuri naftoraade tele dawi.</p>\n<p>Tuma a mballataa nder kawtal ngal ɓe mbaadon shahaada maɓɓe, ndarna gite ma dow juumre ɗiɗi ɗon adda. Fuɗɗannde wonaa shahaada fow dow neɗɗo nder kawtal ngal — nannaabe, laawol maɓɓe, ummugo maɓɓe — bee Iisa nanndiima tan bana haalande. Ɗimmande wonaa shahaada nde tiiɗi ko o’ore tinnditaare nde yowtii tindol neɗɗanke fow. Mball nder kawtal ngal heɓde feccol: neɗɗanke yo waɗa naftorante, nanndiinde Iisa yo waɗa bishaare.</p>\n<p>Ƴameeje golle-gollanaango (raawangu, nokkuure, dooki, jimɗe) maa nanda ko hinnditaake bee abbitaari tinnditaare babi ɗimmbii. Taa nanndu miijo ngon. Binndaɗe ɗee teeŋti sabu ɗon waɗa batiismu goonga, mball nder kawtal ngal ɓe mbilloo yimɓe, e heddude sunaare nder raawangu. Neɗɗo miijinooɗo dow binndaɗe ɗee wonaa neɗɗo tiiɗninooɗo goonga ngam waɗde ɗum.</p>\n<p>Tiiɗon teeŋtude dow nder kawtal ngal nandatnooɓe baɗdi familiijo mawnde. Ɗum yimirtaake nder Nijeriya — ko waɗaa ngam neɗɗo fuɗɗorde Kirista nder familiijo mum, walla to baatismaama bana jiɗɗo imanan baaɓe tawi ɓe gollodaanoo batiisma jariŋŋaari nder aadaaji woɗɗi. Ciiɗe ɗee njiɗi kisal seeɗi, anndindiniiɗo, gooto-gooto.</p>"
+        },
+        "watch1":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for participants whose testimony draft is essentially a description of church attendance and good behaviour rather than a personal encounter with the gospel. Gently but clearly redirect: ‘That tells me what you did — help me understand what Jesus did.’"
+        },
+        "watch2":{
+          "subtype":"highlighted",
+          "header" :"Abubuwan da ya kamata a kula da su",
+          "body"   :"👁️ Ka lura da mahalarta waɗanda rubutun shaida su shine a asashe bayanin halarta coci da kyakkyawan hali maimakon haduwar mutum da bisharar. Ka jagoranci da laushi amma a fili: ‘Wannan yana gaya mani abin da ka yi — taimake ni fahimtar abin da Yesu ya yi.’"
+        },
+        "watch3":{
+          "subtype":"highlighted",
+          "header" :"Geɗe ɗe neɗɗo foti ndaarde",
+          "body"   :"👁️ Ndarna gite ma dow nder kawtal ngal winndol shahaada maɓɓe ko teeŋtude hollirde naatde cokkal e wonde welɗo naa haɗde tele e bishaare. Ƴamd tiiɗnude kono faabi: ‘Ɗun hollata ko a waɗii — mball mi anndugo ko Iisa waɗii.’"
+        },
+        "format":"HTML"
       },
       {
         "chapterNumber":5,
-        "keyPoints1"   :"<p>This final chapter serves two very different purposes and should be approached accordingly. <b>Part 1</b> (the baptism planning notes) is essentially a practical preparation tool — its value lies in participants actually completing it, not just reading it. <b>Part 2</b> (the Q&A) is a reference section that participants may return to repeatedly, both before and after their baptism.</p>\n<p>The testimony planning fields in Part 1 are the most important content in the chapter. A participant who has written out all four sections (before / how / since / without him) and shown them to their church leader before the day is far better prepared than one who plans to speak off the cuff. Make completing this a non-negotiable part of preparation.</p>\n<p>Part 2 covers twelve questions. In a group setting, do not attempt to work through all twelve — they are a reference tool, not a curriculum. Identify which one or two questions are most relevant or pressing for your particular group or individual, and focus the discussion there. The rest can be read privately.</p>\n<p>The question on the Holy Spirit (Q1) deserves particular attention in Nigerian church contexts where charismatic theology is prevalent. Be clear and confident: the Holy Spirit is received at the moment of faith, not in a subsequent experience. This is not a denial of gifts or experience — it is a clarification of when the Spirit comes to indwell the believer.</p>",
-        "keyPoints2"   :"<p>Wannan babi na ƙarshe yana hidima ga manufofi biyu mabambanta sosai kuma ya kamata a gabatar da shi bisa haka. <b>Kashi na 1</b> (bayanan shirye-shiryen baftisma) a asashe kayan aiki ne na shirye-shirye na aikace-aikace — darajarsa tana cikin mahalarta da ke kammala shi da gaske, ba kawai karanta shi ba. <b>Kashi na 2</b> (amsa tambayoyi) bangare ne na tunani wanda mahalarta za su iya komawa a kai lokuta da yawa, kafin da kuma bayan baftisma su.</p>\n<p>Filayen shirye-shiryen shaida a Kashi na 1 sune mafi muhimmancin abun ciki a cikin babi. Mahalarcin da ya rubuta sassa huɗu duka (kafin / yadda / tun da / ba tare da shi ba) kuma ya nuna su ga shugabansa na coci kafin ranar an fi shirye-shirye sosai fiye da wanda ya shirya yin magana ba tare da shirye-shirye ba. Ka sa kammalar wannan wani bangare na shirye-shirye na ba za a iya musantawa ba.</p>\n<p>Kashi na 2 ya rufe tambayoyi goma sha biyu. A yanayin rukuni, kada ka yi ƙoƙari zuwa ga kowane sha biyu — su kayan tunani ne, ba manhaja ba. Ka gano wace tambaya ɗaya ko biyu sune mafi dacewa ko matsin lamba ga rukunin ku musamman ko mutum ɗaya, kuma ka mai da hankali kan tattaunawa a nan. Sauran za a iya karanta su a sirri.</p>\n<p>Tambayar game da Ruhun Sama (Q1) ta cancanta kulawa ta musamman a yanayin cocin Najeriya inda tauhidi mai farin jini ya zama ruwan dare. Ka kasance a fili kuma ka kasance da tabbas: ana karɓar Ruhun Sama a lokacin imani, ba a cikin kwarewar baya ba. Wannan ba shi ne musun kyaututtuka ko kwarewa ba — shine bayyanawa lokacin da Ruhu ya zo zauna a cikin mai imani.</p>",
-        "keyPoints3"   :"<p>Babi ɓaawo ngon gollorto golle ɗiɗi toɗɗaaɗe ko o’ore kadi maa waɗde bana non. <b>Ɗertirgel 1</b> (binndi golle-gollanaango batiismu) wonaa kiiɓororgal golle-gollanaango teeŋtungol — nafaa mum laata nder kawtal ngal kammindol ɗum goonga, naa tan janngol mum. <b>Ɗertirgel 2</b> (jaabaaje ƴameeje) wonaa ɗertirgel tunginol nder kawtal ngal ngal maa tawo laata e nder waktuuji ɗuuɗi, ɓaawo e ɓaawo batiismu maɓɓe.</p>\n<p>Binndi mbaadi shahaada nder Ɗertirgel 1 ngoni abbitaari ɓurnde teeŋtugo nder babi nde. Neɗɗo nder kawtal ngal winndunooɗo ɗertirgel nay fow (ɓaawo / no / tuma / bee de’irre mum) e holitnooɗo ɓe ngam ardiiɗo mum cokkal ɓako raawangu mbaadi ɓurnde teeŋtude faa naa waɗnooɗo ngam wolwugo bee de’irre. Waɗ kammude ɗum huunde maa haɗde e mbaadi.</p>\n<p>Ɗertirgel 2 moɓtii ƴameeje sappo e ɗiɗi. Nder kawtal, taa feewnu ngam fow sappo e ɗiɗi — ngoni kiiɓororgal tunginol, naa manhaja. Finditoo ƴameede gooto walla ɗiɗi ɓurɗe naftoraade walla teeŋtugo ngam kawtal maa teeŋtungol walla neɗɗo teeŋtungol, e tiiɗon dow haalde ɗo. Goɗɗe mbaawi janngaade nder sirru.</p>\n<p>Ƴameede dow Ruuhu Seniiɗo (Y1) haaj kulol teeŋtungol nder yonki cokkal Nijeriya to tinnditaare karismatik wondi. Wonde teeŋtungol e tiiɗningol: Ruuhu Seniiɗo heɓetee nder waktu imaan, naa nder kewkewe ɓaawo. Ɗum wonaa dartinde jaalataale walla kewkewe — ɗum tinndinirde to Ruuhu naata nder jiɗɗo imanan.</p>",
-        "pastorals1"   :"<p>Part 1 works best as a one-to-one exercise rather than a group activity. The testimony sections in particular are personal enough that participants benefit from privacy when writing — and from a one-to-one conversation with their church leader when reviewing what they have written. If you are working in a group, consider giving participants time to work on Part 1 individually before the session, and then using the group time to review and encourage rather than to write from scratch.</p>\n<p>For the Q&A in Part 2, the pastorally most sensitive questions are likely to be Q2 (infant baptism), Q6 (messing up after baptism), Q10 (parental opposition), and Q11 (whether there is a good reason not to be baptised). Be ready to give extended time to any of these if a participant raises them personally — the written answers are a starting point, not a complete pastoral response.</p>\n<p>The Holy Spirit question (Q1) may generate strong reactions in contexts where a ’second blessing’ theology is taught or assumed. Be clear and confident in your response, but avoid being dismissive of people’s genuine spiritual experiences. The point is not that they have not experienced the Spirit — it is that they received him at the moment of faith, even if their awareness of his work has grown over time.</p>\n<p>The final reflection questions at the end of Part 2 — particularly the invitation to write a personal prayer — are significant. Do not rush past them. A participant who can write an honest prayer about their baptism has done something real. Take time to acknowledge it.</p>\n<p>After completing this chapter, the next step is practical: fixing the date and beginning the visible preparations. Make sure this conversation happens clearly before the participant leaves the session.</p>",
-        "pastorals2"   :"<p>Kashi na 1 yana aiki mafi kyau a matsayin aikin ɗaya-da-ɗaya maimakon aiki na rukuni. Sassan shaida musamman na mutum ishe cewa mahalarta suna amfana daga keɓantaccen lokacin rubutu — da kuma tattaunawa ɗaya-da-ɗaya tare da shugabansa na coci lokacin duba abin da suka rubuta. Idan kuna aiki a rukuni, yi la’akari da ba mahalarta lokaci don aiki akan Kashi na 1 ɗayan ɗaya kafin zaman, sannan ka yi amfani da lokacin rukuni don duba da ƙarfafawa maimakon rubuta daga ƙasa.</p>\n<p>Ga Amsa Tambayoyi a Kashi na 2, tambayoyin mafi kulawa na kiwo mai yiwuwa sune Q2 (baftismar jariri), Q6 (lalacewa bayan baftisma), Q10 (ƙin iyaye), da Q11 (ko akwai dalili mai kyau don kar a yi baftisma). Ka kasance shirye don ba wa kowane daga cikinsu lokaci mai faɗi idan mahalarcin ya ɗaga su da kansu — amsoshin da aka rubuta suna farawa ne, ba cikakken martanin kiwo ba.</p>\n<p>Tambayar Ruhun Sama (Q1) na iya haifar da amsoshi masu ƙarfi a yanayin da ake koyar da tauhidi ’albarkar biyu’ ko ake ɗaukar shi a gaba. Ka kasance a fili kuma ka kasance da tabbas a amsar ka, amma ka guji raina kwarewa ta ruhaniya ta gaske na mutane. Manufar ba ita ce cewa ba su sami Ruhu ba — shine cewa sun karɓe shi a lokacin imani, ko da yake sanin aikin sa ya girma a tsawon lokaci.</p>\n<p>Tambayoyin tunani na ƙarshe a ƙarshen Kashi na 2 — musamman gayyatar rubuta addu’a ta mutum — suna da muhimmanci. Kada ka yi hanzari a wucewa. Mahalarcin da zai iya rubuta addu’a mai gaskiya game da baftismarsa ya yi wani abu na gaske. Ka ɗauki lokaci don yardawa da shi.</p>\n<p>Bayan kammala wannan babi, mataki na gaba yana da amfani: gyaran kwanan wata da farawa shirye-shirye masu ganuwa. Ka tabbatar da cewa wannan tattaunawa ta faru a fili kafin mahalarcin ya bar zaman.</p>",
-        "pastorals3"   :"<p>Ɗertirgel 1 naftorante ko golle gooto-gooto naa kawtal. Ɗertirgel shahaada ko waɗaa ngam neɗɗanke haa nder kawtal ngal naftorata sirru tuma winndude — e haalde gooto-gooto bee ardiiɗo mum cokkal tuma ndaarta ko ɓe winndii. Ko waɗata nder kawtal, miijton waɗde ngam nder kawtal ngal Ɗertirgel 1 gooto-gooto ɓako zuwana, haa kawtal ɗon waɗu ɓaawo ngam ndaarta e ɓurtinde naa winndugo fuɗɗorde.</p>\n<p>Ngam Jaabaaje Ƴameeje nder Ɗertirgel 2, ƴameeje ɓurɗe naannde kisal maa waɗde Y2 (batiisma jariŋŋaari), Y6 (yonaago ɓaawo batiismu), Y10 (baɗdi aynaaɓe), e Y11 (ko woodaa dalil naftoraniiɗo ngam de’ireede batiismu). Tiiɗon ngam waɗde waktu dow yii ɗe ko nder kawtal ngal neɗɗo umma ɗum tele — jaabaaje winndaaɗe ngon fuɗɗornde, naa jaabaawol kisal fow.</p>\n<p>Ƴameede dow Ruuhu Seniiɗo (Y1) waɗata e jaabaaje tiiɗuɗe nder yonki to tinnditaare ’albaraka ɗimmonde’ ekkitineeɗo. Wonde teeŋtungol e tiiɗningol nder jaabaawol maa, kono taa cela kewkewe ruuhaniije goonga yimɓe. Ɗam-ɗam wonaa ko ɓe nannditaako Ruuhu — ɗum wonaa ɓe heɓii mo nder waktu imaan, ko waɗaa anndol kuugal mum ummi e waktu.</p>\n<p>Ƴameeje miijitol ɓaawo nder ɓaawo Ɗertirgel 2 — ko waɗaa ngam winndol du’aawu neɗɗanke — teeŋti. Taa henyu. Neɗɗo nder kawtal ngal mbaawi winndude du’aawu goonga dow batiisma mum waɗii huunde goonga. Heɓ waktu ngam tinndinugo ɗum.</p>\n<p>Ɓaawo kammude babi nde, golle teeŋtunde ɗon ngoni golle-gollanaango: tiiɗinde raawangu e fuɗɗude mbaadi yiylaade. Tiiɗon ko haalde ngon laati teeŋtude ɓako neɗɗo nder kawtal ngal yaltude zuwana.</p>",
-        "watch1"       :"👁️ Watch for participants who complete Part 1 superficially — a vague date, a half-written testimony, a short guest list. Superficial preparation usually signals either unreadiness or unresolved anxiety. Either way, it deserves a follow-up conversation before the baptism proceeds.",
-        "watch2"       :"👁️ Ka lura da mahalarta waɗanda suka kammala Kashi na 1 a saman saman — kwanan wata mara tabbas, shaida da aka rubuta da rabin, jerin baƙi gajere. Shirye-shiryen saman saman yawanci yana nuna ko rashin shirye-shirye ko damuwar da ba a warware ba. Ko yadda yake, ya cancanta tattaunawa ta bi kafin baftisma ta ci gaba.",
-        "watch3"       :"👁️ Ndarna gite ma dow nder kawtal ngal nder kawtal ngal kammindooji Ɗertirgel 1 ɗun seeɗi — raawangu miijaangol, shahaada demi-winndaandi, liste baraaɓe seeɗi. Mbaadi haakirii wakkati feere hollitiima mbaadi wonaa tano walla sunaare gollaaɗo. Ko fuu waɗaa, haaji haalde ɓaawo ɓako batiismu waɗde.",
-        "format"       :"HTML"
+        "keyPoints1"   :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This final chapter serves two very different purposes and should be approached accordingly. <b>Part 1</b> (the baptism planning notes) is essentially a practical preparation tool — its value lies in participants actually completing it, not just reading it. <b>Part 2</b> (the Q&A) is a reference section that participants may return to repeatedly, both before and after their baptism.</p>\n<p>The testimony planning fields in Part 1 are the most important content in the chapter. A participant who has written out all four sections (before / how / since / without him) and shown them to their church leader before the day is far better prepared than one who plans to speak off the cuff. Make completing this a non-negotiable part of preparation.</p>\n<p>Part 2 covers twelve questions. In a group setting, do not attempt to work through all twelve — they are a reference tool, not a curriculum. Identify which one or two questions are most relevant or pressing for your particular group or individual, and focus the discussion there. The rest can be read privately.</p>\n<p>The question on the Holy Spirit (Q1) deserves particular attention in Nigerian church contexts where charismatic theology is prevalent. Be clear and confident: the Holy Spirit is received at the moment of faith, not in a subsequent experience. This is not a denial of gifts or experience — it is a clarification of when the Spirit comes to indwell the believer.</p>"
+        },
+        "keyPoints2":{
+          "subtype":"standard",
+          "header" :"Muhimman Abubuwan Koyarwa",
+          "body"   :"<p>Wannan babi na ƙarshe yana hidima ga manufofi biyu mabambanta sosai kuma ya kamata a gabatar da shi bisa haka. <b>Kashi na 1</b> (bayanan shirye-shiryen baftisma) a asashe kayan aiki ne na shirye-shirye na aikace-aikace — darajarsa tana cikin mahalarta da ke kammala shi da gaske, ba kawai karanta shi ba. <b>Kashi na 2</b> (amsa tambayoyi) bangare ne na tunani wanda mahalarta za su iya komawa a kai lokuta da yawa, kafin da kuma bayan baftisma su.</p>\n<p>Filayen shirye-shiryen shaida a Kashi na 1 sune mafi muhimmancin abun ciki a cikin babi. Mahalarcin da ya rubuta sassa huɗu duka (kafin / yadda / tun da / ba tare da shi ba) kuma ya nuna su ga shugabansa na coci kafin ranar an fi shirye-shirye sosai fiye da wanda ya shirya yin magana ba tare da shirye-shirye ba. Ka sa kammalar wannan wani bangare na shirye-shirye na ba za a iya musantawa ba.</p>\n<p>Kashi na 2 ya rufe tambayoyi goma sha biyu. A yanayin rukuni, kada ka yi ƙoƙari zuwa ga kowane sha biyu — su kayan tunani ne, ba manhaja ba. Ka gano wace tambaya ɗaya ko biyu sune mafi dacewa ko matsin lamba ga rukunin ku musamman ko mutum ɗaya, kuma ka mai da hankali kan tattaunawa a nan. Sauran za a iya karanta su a sirri.</p>\n<p>Tambayar game da Ruhun Sama (Q1) ta cancanta kulawa ta musamman a yanayin cocin Najeriya inda tauhidi mai farin jini ya zama ruwan dare. Ka kasance a fili kuma ka kasance da tabbas: ana karɓar Ruhun Sama a lokacin imani, ba a cikin kwarewar baya ba. Wannan ba shi ne musun kyaututtuka ko kwarewa ba — shine bayyanawa lokacin da Ruhu ya zo zauna a cikin mai imani.</p>"
+        },
+        "keyPoints3":{
+          "subtype":"standard",
+          "header" :"Toɓɓe janngirɗe teeŋtuɗe",
+          "body"   :"<p>Babi ɓaawo ngon gollorto golle ɗiɗi toɗɗaaɗe ko o’ore kadi maa waɗde bana non. <b>Ɗertirgel 1</b> (binndi golle-gollanaango batiismu) wonaa kiiɓororgal golle-gollanaango teeŋtungol — nafaa mum laata nder kawtal ngal kammindol ɗum goonga, naa tan janngol mum. <b>Ɗertirgel 2</b> (jaabaaje ƴameeje) wonaa ɗertirgel tunginol nder kawtal ngal ngal maa tawo laata e nder waktuuji ɗuuɗi, ɓaawo e ɓaawo batiismu maɓɓe.</p>\n<p>Binndi mbaadi shahaada nder Ɗertirgel 1 ngoni abbitaari ɓurnde teeŋtugo nder babi nde. Neɗɗo nder kawtal ngal winndunooɗo ɗertirgel nay fow (ɓaawo / no / tuma / bee de’irre mum) e holitnooɗo ɓe ngam ardiiɗo mum cokkal ɓako raawangu mbaadi ɓurnde teeŋtude faa naa waɗnooɗo ngam wolwugo bee de’irre. Waɗ kammude ɗum huunde maa haɗde e mbaadi.</p>\n<p>Ɗertirgel 2 moɓtii ƴameeje sappo e ɗiɗi. Nder kawtal, taa feewnu ngam fow sappo e ɗiɗi — ngoni kiiɓororgal tunginol, naa manhaja. Finditoo ƴameede gooto walla ɗiɗi ɓurɗe naftoraade walla teeŋtugo ngam kawtal maa teeŋtungol walla neɗɗo teeŋtungol, e tiiɗon dow haalde ɗo. Goɗɗe mbaawi janngaade nder sirru.</p>\n<p>Ƴameede dow Ruuhu Seniiɗo (Y1) haaj kulol teeŋtungol nder yonki cokkal Nijeriya to tinnditaare karismatik wondi. Wonde teeŋtungol e tiiɗningol: Ruuhu Seniiɗo heɓetee nder waktu imaan, naa nder kewkewe ɓaawo. Ɗum wonaa dartinde jaalataale walla kewkewe — ɗum tinndinirde to Ruuhu naata nder jiɗɗo imanan.</p>"
+        },
+        "pastorals1":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Part 1 works best as a one-to-one exercise rather than a group activity. The testimony sections in particular are personal enough that participants benefit from privacy when writing — and from a one-to-one conversation with their church leader when reviewing what they have written. If you are working in a group, consider giving participants time to work on Part 1 individually before the session, and then using the group time to review and encourage rather than to write from scratch.</p>\n<p>For the Q&A in Part 2, the pastorally most sensitive questions are likely to be Q2 (infant baptism), Q6 (messing up after baptism), Q10 (parental opposition), and Q11 (whether there is a good reason not to be baptised). Be ready to give extended time to any of these if a participant raises them personally — the written answers are a starting point, not a complete pastoral response.</p>\n<p>The Holy Spirit question (Q1) may generate strong reactions in contexts where a ’second blessing’ theology is taught or assumed. Be clear and confident in your response, but avoid being dismissive of people’s genuine spiritual experiences. The point is not that they have not experienced the Spirit — it is that they received him at the moment of faith, even if their awareness of his work has grown over time.</p>\n<p>The final reflection questions at the end of Part 2 — particularly the invitation to write a personal prayer — are significant. Do not rush past them. A participant who can write an honest prayer about their baptism has done something real. Take time to acknowledge it.</p>\n<p>After completing this chapter, the next step is practical: fixing the date and beginning the visible preparations. Make sure this conversation happens clearly before the participant leaves the session.</p>"
+        },
+        "pastorals2":{
+          "subtype":"standard",
+          "header" :"Jin Daɗin Makiyaya",
+          "body"   :"<p>Kashi na 1 yana aiki mafi kyau a matsayin aikin ɗaya-da-ɗaya maimakon aiki na rukuni. Sassan shaida musamman na mutum ishe cewa mahalarta suna amfana daga keɓantaccen lokacin rubutu — da kuma tattaunawa ɗaya-da-ɗaya tare da shugabansa na coci lokacin duba abin da suka rubuta. Idan kuna aiki a rukuni, yi la’akari da ba mahalarta lokaci don aiki akan Kashi na 1 ɗayan ɗaya kafin zaman, sannan ka yi amfani da lokacin rukuni don duba da ƙarfafawa maimakon rubuta daga ƙasa.</p>\n<p>Ga Amsa Tambayoyi a Kashi na 2, tambayoyin mafi kulawa na kiwo mai yiwuwa sune Q2 (baftismar jariri), Q6 (lalacewa bayan baftisma), Q10 (ƙin iyaye), da Q11 (ko akwai dalili mai kyau don kar a yi baftisma). Ka kasance shirye don ba wa kowane daga cikinsu lokaci mai faɗi idan mahalarcin ya ɗaga su da kansu — amsoshin da aka rubuta suna farawa ne, ba cikakken martanin kiwo ba.</p>\n<p>Tambayar Ruhun Sama (Q1) na iya haifar da amsoshi masu ƙarfi a yanayin da ake koyar da tauhidi ’albarkar biyu’ ko ake ɗaukar shi a gaba. Ka kasance a fili kuma ka kasance da tabbas a amsar ka, amma ka guji raina kwarewa ta ruhaniya ta gaske na mutane. Manufar ba ita ce cewa ba su sami Ruhu ba — shine cewa sun karɓe shi a lokacin imani, ko da yake sanin aikin sa ya girma a tsawon lokaci.</p>\n<p>Tambayoyin tunani na ƙarshe a ƙarshen Kashi na 2 — musamman gayyatar rubuta addu’a ta mutum — suna da muhimmanci. Kada ka yi hanzari a wucewa. Mahalarcin da zai iya rubuta addu’a mai gaskiya game da baftismarsa ya yi wani abu na gaske. Ka ɗauki lokaci don yardawa da shi.</p>\n<p>Bayan kammala wannan babi, mataki na gaba yana da amfani: gyaran kwanan wata da farawa shirye-shirye masu ganuwa. Ka tabbatar da cewa wannan tattaunawa ta faru a fili kafin mahalarcin ya bar zaman.</p>"
+        },
+        "pastorals3":{
+          "subtype":"standard",
+          "header" :"Senngooji durngol",
+          "body"   :"<p>Ɗertirgel 1 naftorante ko golle gooto-gooto naa kawtal. Ɗertirgel shahaada ko waɗaa ngam neɗɗanke haa nder kawtal ngal naftorata sirru tuma winndude — e haalde gooto-gooto bee ardiiɗo mum cokkal tuma ndaarta ko ɓe winndii. Ko waɗata nder kawtal, miijton waɗde ngam nder kawtal ngal Ɗertirgel 1 gooto-gooto ɓako zuwana, haa kawtal ɗon waɗu ɓaawo ngam ndaarta e ɓurtinde naa winndugo fuɗɗorde.</p>\n<p>Ngam Jaabaaje Ƴameeje nder Ɗertirgel 2, ƴameeje ɓurɗe naannde kisal maa waɗde Y2 (batiisma jariŋŋaari), Y6 (yonaago ɓaawo batiismu), Y10 (baɗdi aynaaɓe), e Y11 (ko woodaa dalil naftoraniiɗo ngam de’ireede batiismu). Tiiɗon ngam waɗde waktu dow yii ɗe ko nder kawtal ngal neɗɗo umma ɗum tele — jaabaaje winndaaɗe ngon fuɗɗornde, naa jaabaawol kisal fow.</p>\n<p>Ƴameede dow Ruuhu Seniiɗo (Y1) waɗata e jaabaaje tiiɗuɗe nder yonki to tinnditaare ’albaraka ɗimmonde’ ekkitineeɗo. Wonde teeŋtungol e tiiɗningol nder jaabaawol maa, kono taa cela kewkewe ruuhaniije goonga yimɓe. Ɗam-ɗam wonaa ko ɓe nannditaako Ruuhu — ɗum wonaa ɓe heɓii mo nder waktu imaan, ko waɗaa anndol kuugal mum ummi e waktu.</p>\n<p>Ƴameeje miijitol ɓaawo nder ɓaawo Ɗertirgel 2 — ko waɗaa ngam winndol du’aawu neɗɗanke — teeŋti. Taa henyu. Neɗɗo nder kawtal ngal mbaawi winndude du’aawu goonga dow batiisma mum waɗii huunde goonga. Heɓ waktu ngam tinndinugo ɗum.</p>\n<p>Ɓaawo kammude babi nde, golle teeŋtunde ɗon ngoni golle-gollanaango: tiiɗinde raawangu e fuɗɗude mbaadi yiylaade. Tiiɗon ko haalde ngon laati teeŋtude ɓako neɗɗo nder kawtal ngal yaltude zuwana.</p>"
+        },
+        "watch1":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for participants who complete Part 1 superficially — a vague date, a half-written testimony, a short guest list. Superficial preparation usually signals either unreadiness or unresolved anxiety. Either way, it deserves a follow-up conversation before the baptism proceeds."
+        },
+        "watch2":{
+          "subtype":"highlighted",
+          "header" :"Abubuwan da ya kamata a kula da su",
+          "body"   :"👁️ Ka lura da mahalarta waɗanda suka kammala Kashi na 1 a saman saman — kwanan wata mara tabbas, shaida da aka rubuta da rabin, jerin baƙi gajere. Shirye-shiryen saman saman yawanci yana nuna ko rashin shirye-shirye ko damuwar da ba a warware ba. Ko yadda yake, ya cancanta tattaunawa ta bi kafin baftisma ta ci gaba."
+        },
+        "watch3":{
+          "subtype":"highlighted",
+          "header" :"Geɗe ɗe neɗɗo foti ndaarde",
+          "body"   :"👁️ Ndarna gite ma dow nder kawtal ngal nder kawtal ngal kammindooji Ɗertirgel 1 ɗun seeɗi — raawangu miijaangol, shahaada demi-winndaandi, liste baraaɓe seeɗi. Mbaadi haakirii wakkati feere hollitiima mbaadi wonaa tano walla sunaare gollaaɗo. Ko fuu waɗaa, haaji haalde ɓaawo ɓako batiismu waɗde."
+        },
+        "format":"HTML"
       }
-    ],
-    "format":"HTML"
+    ]
   },
   "studyAboutData":{
     "author":{

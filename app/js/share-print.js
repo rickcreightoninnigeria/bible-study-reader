@@ -559,3 +559,154 @@ ${chaptersHTML}
 
   dispatchPrint(html, t('shareprint_print_fallback_all'));
 }
+
+// ── BLANK STUDY PRINT ─────────────────────────────────────────────────────────
+
+// Returns the inner body HTML for a single chapter with all answer fields left
+// blank — no localStorage lookups, no saved content. Used by printBlankStudy()
+// to produce a clean, unanswered version of the study ready for printing on paper.
+//
+// Structure mirrors buildChapterBody() exactly, with these differences:
+//   • Question answer boxes are always empty (white, no placeholder text).
+//   • Likert response cells are blank (same row layout, no text).
+//   • Reflection answer boxes are always empty.
+//   • Notes section is omitted entirely (it's a personal annotations space).
+function buildBlankChapterBody(ch) {
+  let body = '';
+
+  // Intro
+  if (ch.intro) {
+    body += `<div class="intro"><p>${ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+  }
+
+  // Sections: bridge text then questions with blank answer boxes
+  ch.sections.forEach(sec => {
+    if (sec.bridge) {
+      body += `<div class="bridge">${sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>')}</div>`;
+    }
+    sec.questions.forEach(q => {
+      body += `<div class="question-block">
+        <div class="question-ref">${q.ref}</div>
+        <div class="question-text">${q.text}</div>
+        <div class="answer blank-answer"></div>
+      </div>`;
+    });
+  });
+
+  // Closing passage
+  if (ch.closing) {
+    body += `<div class="closing"><p>${ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+  }
+
+  // Likert scales — same row layout as buildChapterBody() but response cell is blank
+  (ch.elements || [])
+    .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
+    .forEach(el => {
+      const statements = el.statements || [];
+      if (!statements.length) return;
+
+      const rowsHtml = statements.map(stmt => `<div class="likert-block-row">
+          <div class="likert-block-statement">${stmt}</div>
+          <div class="likert-block-response blank-answer" style="min-width:60pt;"></div>
+        </div>`).join('');
+
+      body += `<div class="likert-block">
+        <div class="likert-block-title">${t('shareprint_print_likert_heading')}</div>
+        ${rowsHtml}
+      </div>`;
+    });
+
+  // Reflection questions with blank answer boxes
+  if (ch.reflection && ch.reflection.length > 0) {
+    body += `<div class="reflection-heading">${t('shareprint_print_reflection_heading')}</div>`;
+    (ch.elements || [])
+      .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
+      .forEach((el, ri) => {
+        const qText = el.question || el.question1 || '';
+        body += `<div class="question-block">
+          <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
+          <div class="question-text">${qText}</div>
+          <div class="answer blank-answer"></div>
+        </div>`;
+      });
+  }
+
+  // Notes omitted intentionally — this is a clean unanswered document.
+
+  return body;
+}
+
+// Generates a print-ready HTML document of the entire study with all answer
+// fields left blank. Includes the title page and all chapters. Excludes the
+// Notes & Comments page, Leaders Notes, and About page.
+//
+// Called from the "Print Blank Study" card in Settings → Study tab.
+function printBlankStudy() {
+  const meta = window.titlePageData || {};
+
+  // ── Cover page ──────────────────────────────────────────────────────────────
+  // Mirrors the on-screen title page: image, title, subtitle, description,
+  // author label/name, and version. The image is included via its src URL so
+  // it renders in the print document exactly as it does on screen.
+  const coverImageHtml = meta.image?.src
+    ? `<img src="${meta.image.src}" alt="${meta.image?.alt || ''}"
+           style="max-width:100%; max-height:160pt; object-fit:cover; display:block; margin:0 auto 20pt;"
+           onerror="this.style.display='none'" />`
+    : meta.image?.fallbackEmoji
+      ? `<div style="font-size:48pt; margin-bottom:16pt;">${meta.image.fallbackEmoji}</div>`
+      : '';
+
+  const authorLabel = meta.authorLabel || '';
+  const authorName  = meta.authorName  || meta.author || '';
+  const version     = meta.version     || '';
+  const subtitle    = meta.subtitle    || '';
+  const description = meta.description || '';
+
+  const cover = `<div class="cover" style="page-break-after:always;">
+  ${coverImageHtml}
+  <div class="eyebrow">${t('shareprint_print_cover_eyebrow')}</div>
+  <h1>${meta.title || ''}</h1>
+  ${subtitle    ? `<div style="font-size:13pt; color:#4a3f30; margin-top:4pt; font-style:italic;">${subtitle}</div>` : ''}
+  ${description ? `<div style="font-size:10pt; color:#666; margin-top:12pt; max-width:340pt; margin-left:auto; margin-right:auto; line-height:1.6;">${description}</div>` : ''}
+  ${authorLabel ? `<div style="font-size:8pt; letter-spacing:0.1em; text-transform:uppercase; color:#8c6420; margin-top:20pt;">${authorLabel}</div>` : ''}
+  ${authorName  ? `<div style="font-size:12pt; color:#1c1710; margin-top:4pt;">${authorName}</div>` : ''}
+  ${version     ? `<div style="font-size:8pt; color:#999; margin-top:8pt;">${version}</div>` : ''}
+</div>`;
+
+  // ── All chapters — no content gate; every chapter is always included ────────
+  let chaptersHTML = '';
+  chapters.forEach(ch => {
+    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
+${buildBlankChapterBody(ch)}`;
+  });
+
+  // Notes & Comments, Leaders Notes, and About are intentionally excluded.
+
+  const docTitle = `${meta.title || t('shareprint_default_study_title')} — ${t('shareprint_blank_doc_title_suffix')}`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+${buildPrintHead(docTitle)}
+<style>
+  /* Blank answer box: white fill, slightly taller to invite handwriting */
+  .blank-answer {
+    background: #fff !important;
+    min-height: 48pt !important;
+    border-top: 0.5pt solid #ddd;
+  }
+  /* Blank Likert response cell: white, right-aligned, with a subtle underline
+     to give a clear writing target without looking like an answer is expected */
+  .likert-block-response.blank-answer {
+    min-height: 0 !important;
+    border-top: none;
+    border-bottom: 0.5pt solid #bbb;
+    padding-bottom: 2pt;
+  }
+</style>
+<body>
+${cover}
+${chaptersHTML}
+</body></html>`;
+
+  dispatchPrint(html, `${meta.title || t('shareprint_default_study_title')} — ${t('shareprint_blank_doc_title_suffix')}`);
+}

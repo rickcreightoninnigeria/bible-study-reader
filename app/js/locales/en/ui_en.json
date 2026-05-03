@@ -690,6 +690,14 @@
   "renderpages_shareapp_download_body":  "The app is free to download on Google Play.",
   "renderpages_shareapp_download_btn":   "Open in Google Play",
 
-  "voice_transcript_saved_navigate_back": "Answer recorded — navigate back to see it"
+  "voice_transcript_saved_navigate_back": "Answer recorded — navigate back to see it",
+
+  "renderpages_settings_printblank_label": "Print Blank Study",
+  "renderpages_settings_printblank_desc": "Generate a PDF of the entire study with blank answer boxes — ready to print on paper. All questions are included. Your saved answers are not.",
+  "renderpages_settings_printblank_btn": "Print Blank Study",
+  "shareprint_blank_doc_title_suffix": "Blank Study",
+
+  "studyloader_version_updating": "Updating {title} to v{version}…",
+  "studyloader_version_downgrade_blocked": "This is an older version — keeping the current one"
   
 }

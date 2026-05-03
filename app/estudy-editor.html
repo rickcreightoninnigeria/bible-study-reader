@@ -279,6 +279,19 @@
     font-family: 'JetBrains Mono', monospace;
   }
   .nav-item.active .nav-progress { color: #7a7068; }
+  .nav-section-label {
+    padding: 10px 14px 3px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4a443c;
+  }
+  .nav-divider {
+    height: 1px;
+    background: #2c2722;
+    margin: 6px 0;
+  }
 
   /* ══ CONTENT AREA ════════════════════════════════════ */
   #content-wrap {
@@ -677,12 +690,26 @@ function loadFile(event) {
   if (!file) return;
   const reader = new FileReader();
   reader.onload = e => {
+    let raw = e.target.result;
+    // Attempt graceful repair of common JSON issues before parsing
     try {
-      studyData = JSON.parse(e.target.result);
-    } catch(err) {
-      alert('Invalid JSON: ' + err.message);
-      event.target.value = '';
-      return;
+      studyData = JSON.parse(raw);
+    } catch(firstErr) {
+      // Try common fixes: missing comma before property after string value,
+      // and trailing comma inside objects
+      try {
+        let fixed = raw;
+        // Fix missing commas between adjacent properties
+        fixed = fixed.replace(/"(\s*\n\s*)"(?=[a-zA-Z_])/g, '",$1"');
+        // Fix trailing commas before closing brace
+        fixed = fixed.replace(/,(\s*\})/g, '$1');
+        studyData = JSON.parse(fixed);
+        console.warn('JSON was repaired before parsing. Check source file for syntax errors.');
+      } catch(err) {
+        alert('Could not parse JSON file: ' + firstErr.message + '\n\nTried auto-repair but failed: ' + err.message);
+        event.target.value = '';
+        return;
+      }
     }
     filename = file.name;
     document.getElementById('tb-filename').textContent = file.name;
@@ -722,12 +749,21 @@ function buildSetupPanel() {
 
   // Collect languages and bible translations
   const langs = [];
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 9; i++) {
     if (meta[`language${i}`]) langs.push({ n: i, code: meta[`language${i}`] });
   }
   const bibleTrans = [];
-  for (let i = 1; i <= 9; i++) {
-    if (meta[`bibleTranslation${i}`]) bibleTrans.push({ n: i, id: meta[`bibleTranslation${i}`] });
+  for (let i = 1; i <= 12; i++) {
+    const bt = meta[`bibleTranslation${i}`];
+    if (!bt) continue;
+    // New schema: { "en": "NET" }  Old schema: "NET"
+    if (typeof bt === 'object') {
+      const langCode = Object.keys(bt)[0];
+      const transId  = Object.values(bt)[0];
+      bibleTrans.push({ n: i, id: transId, langCode });
+    } else {
+      bibleTrans.push({ n: i, id: bt, langCode: '' });
+    }
   }
 
   // Default: first lang = orig, last lang = trans; all bible translations checked
@@ -767,7 +803,7 @@ function buildSetupPanel() {
           <label class="transl-chip checked" id="chip-${b.n}">
             <input type="checkbox" value="${b.n}" checked onchange="toggleChip(${b.n}, this.checked)">
             <span class="chip-check">✓</span>
-            <span class="chip-id">${b.id}</span>
+            <span class="chip-id">${b.id}${b.langCode ? ' <span style="opacity:0.6;font-size:0.65rem">('+b.langCode+')</span>' : ''}</span>
           </label>`).join('')}
       </div>
     </div>
@@ -814,21 +850,62 @@ function beginReview() {
 
 // ═══════════════════════════════════════════════════════════
 // SIDEBAR
+// nav sections: chapters first, then extra sections
 // ═══════════════════════════════════════════════════════════
+
+// Extra sections shown after chapters
+const EXTRA_SECTIONS = [
+  { key: 'onboarding',  label: 'Onboarding Slides' },
+  { key: 'howToUse',    label: 'How to Use' },
+  { key: 'leaders',     label: "Leader's Notes" },
+];
+
 function buildSidebar() {
   const list = document.getElementById('nav-list');
   list.innerHTML = '';
+
+  // ── Chapters ──
+  const chLabel = document.createElement('div');
+  chLabel.className = 'nav-section-label';
+  chLabel.textContent = 'Chapters';
+  list.appendChild(chLabel);
+
   studyData.chapters.forEach((ch, i) => {
     const btn = document.createElement('button');
     btn.className = 'nav-item';
+    btn.dataset.navtype = 'chapter';
     btn.dataset.idx = i;
-    btn.onclick = () => navigateTo(i);
-    updateNavBtn(btn, ch, i);
+    btn.onclick = () => navigateTo({ type: 'chapter', idx: i });
+    updateChapterNavBtn(btn, ch, i);
+    list.appendChild(btn);
+  });
+
+  // ── Extra sections ──
+  const divider = document.createElement('div');
+  divider.className = 'nav-divider';
+  list.appendChild(divider);
+  const exLabel = document.createElement('div');
+  exLabel.className = 'nav-section-label';
+  exLabel.textContent = 'Other Sections';
+  list.appendChild(exLabel);
+
+  EXTRA_SECTIONS.forEach(sec => {
+    // Only show if data exists
+    if (sec.key === 'onboarding' && !studyData.studyOnboardingSlides?.length) return;
+    if (sec.key === 'howToUse'   && !studyData.howToUseData?.sections?.length) return;
+    if (sec.key === 'leaders'    && !studyData.leadersNotesData) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'nav-item';
+    btn.dataset.navtype = 'extra';
+    btn.dataset.sectionkey = sec.key;
+    btn.textContent = sec.label;
+    btn.onclick = () => navigateTo({ type: 'extra', key: sec.key, label: sec.label });
     list.appendChild(btn);
   });
 }
 
-function updateNavBtn(btn, ch, i) {
+function updateChapterNavBtn(btn, ch, i) {
   const title = ch[`chapterTitle${config.transLang}`] || ch[`chapterTitle${config.origLang}`] || `Chapter ${ch.chapterNumber}`;
   const progress = getChapterProgress(i);
   btn.innerHTML = `Ch ${ch.chapterNumber} · ${title} <span class="nav-progress">${progress}</span>`;
@@ -849,13 +926,26 @@ function getChapterProgress(chIdx) {
 
 // ═══════════════════════════════════════════════════════════
 // NAVIGATION
+// nav = { type: 'chapter', idx } | { type: 'extra', key, label }
 // ═══════════════════════════════════════════════════════════
-function navigateTo(chIdx) {
-  currentChIdx = chIdx;
+function navigateTo(nav) {
+  // Support legacy numeric call from beginReview
+  if (typeof nav === 'number') nav = { type: 'chapter', idx: nav };
+
   document.querySelectorAll('.nav-item').forEach(b => {
-    b.classList.toggle('active', parseInt(b.dataset.idx) === chIdx);
+    if (nav.type === 'chapter') {
+      b.classList.toggle('active', b.dataset.navtype === 'chapter' && parseInt(b.dataset.idx) === nav.idx);
+    } else {
+      b.classList.toggle('active', b.dataset.navtype === 'extra' && b.dataset.sectionkey === nav.key);
+    }
   });
-  renderChapter(chIdx);
+
+  if (nav.type === 'chapter') {
+    currentChIdx = nav.idx;
+    renderChapter(nav.idx);
+  } else {
+    renderExtraSection(nav.key, nav.label);
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -966,6 +1056,180 @@ function renderChapter(chIdx) {
       case 'callout':     area.appendChild(makeCalloutCard(el, chIdx, oN, tN)); break;
       case 'likertScale': area.appendChild(makeLikertCard(el, chIdx, oN, tN)); break;
     }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// EXTRA SECTION RENDERERS
+// ═══════════════════════════════════════════════════════════
+
+function renderExtraSection(key, label) {
+  document.getElementById('content-title').textContent = label;
+  document.getElementById('content-sub').textContent =
+    `Original: language${config.origLang} · Translation: language${config.transLang}`;
+  const area = document.getElementById('content-area');
+  area.innerHTML = '';
+
+  // Column headers
+  const headers = document.createElement('div');
+  headers.className = 'col-headers';
+  headers.innerHTML = `
+    <div class="col-hdr">Original (language${config.origLang})</div>
+    <div class="col-hdr">Translation (language${config.transLang})</div>
+    <div class="col-hdr right">Review</div>
+  `;
+  area.appendChild(headers);
+
+  switch (key) {
+    case 'onboarding': renderOnboarding(area); break;
+    case 'howToUse':   renderHowToUse(area);   break;
+    case 'leaders':    renderLeaders(area);     break;
+  }
+}
+
+// ── Shared: make a pseudo-element object for non-chapter items ──
+// We reuse the existing makeFieldRow/card system by giving items a synthetic elId
+function makeExtraCard(elId, tagClass, tagLabel, fields, sectionKey) {
+  // fields: [{ origVal, origHtml, transKey, transVal, transHtml, label }]
+  const card = document.createElement('div');
+  card.className = 'el-card';
+  card.appendChild(makeTypeBar(tagClass, tagLabel, elId));
+
+  const fakeEl = { elementId: elId };
+  // Use sectionKey as chIdx substitute so state keys are unique
+  const chIdx = `extra_${sectionKey}`;
+
+  fields.forEach(f => {
+    if (f.origVal === undefined && f.transVal === undefined) return;
+    const row = makeFieldRow(f.origVal, f.origHtml || false, f.transKey, f.transVal, f.transHtml || false, fakeEl, chIdx);
+    if (f.label) {
+      const keyLabel = document.createElement('span');
+      keyLabel.className = 'field-key';
+      keyLabel.textContent = f.label;
+      row.children[0].prepend(keyLabel.cloneNode(true));
+      row.children[1].prepend(keyLabel);
+    }
+    card.appendChild(row);
+  });
+
+  appendCollapsedBar(card, `${elId}`, chIdx);
+  return card;
+}
+
+// ── ONBOARDING ──
+function renderOnboarding(area) {
+  const oN = config.origLang, tN = config.transLang;
+  const slides = studyData.studyOnboardingSlides || [];
+  slides.forEach((slide, si) => {
+    const div = document.createElement('div');
+    div.className = 'sec-divider';
+    div.innerHTML = `<span>Slide ${si + 1}</span>`;
+    area.appendChild(div);
+
+    const fields = ['eyebrow','heading','body','bodyAfter','action'].flatMap(base => {
+      const ok = slide[`${base}${oN}`], tv = slide[`${base}${tN}`];
+      if (ok === undefined && tv === undefined) return [];
+      return [{ origVal: ok, transKey: `${base}${tN}`, transVal: tv,
+                transHtml: base === 'body' || base === 'bodyAfter', label: base }];
+    });
+
+    area.appendChild(makeExtraCard(`onboarding_slide${si}`, 'tag-text', `Onboarding Slide ${si + 1}`, fields, 'onboarding'));
+  });
+}
+
+// ── HOW TO USE ──
+function renderHowToUse(area) {
+  const oN = config.origLang, tN = config.transLang;
+  const sections = studyData.howToUseData?.sections || [];
+  sections.forEach((sec, si) => {
+    const divEl = document.createElement('div');
+    divEl.className = 'sec-divider';
+    divEl.innerHTML = `<span>Section ${si + 1}</span>`;
+    area.appendChild(divEl);
+
+    // Section heading
+    area.appendChild(makeExtraCard(
+      `howto_sec${si}_heading`, 'tag-heading', 'Section Heading',
+      [{ origVal: sec[`heading${oN}`], transKey: `heading${tN}`, transVal: sec[`heading${tN}`], label: 'Heading' }],
+      'howToUse'
+    ));
+
+    // Blocks
+    (sec.blocks || []).forEach((block, bi) => {
+      const isHtml = block.format === 'HTML';
+      const fields = [
+        { origVal: block[`title${oN}`], transKey: `title${tN}`, transVal: block[`title${tN}`], label: 'Title' },
+        { origVal: block[`body${oN}`],  transKey: `body${tN}`,  transVal: block[`body${tN}`],
+          origHtml: isHtml, transHtml: isHtml, label: 'Body' },
+      ];
+      area.appendChild(makeExtraCard(
+        `howto_sec${si}_block${bi}`, 'tag-text', `Block ${bi + 1}`, fields, 'howToUse'
+      ));
+    });
+  });
+}
+
+// ── LEADER'S NOTES ──
+function renderLeaders(area) {
+  const oN = config.origLang, tN = config.transLang;
+  const ld = studyData.leadersNotesData;
+  const isHtml = ld.format === 'HTML';
+
+  // Subtitle
+  if (ld[`subtitle${oN}`] !== undefined || ld[`subtitle${tN}`] !== undefined) {
+    area.appendChild(makeExtraCard(
+      'leaders_subtitle', 'tag-heading', 'Subtitle',
+      [{ origVal: ld[`subtitle${oN}`], transKey: `subtitle${tN}`, transVal: ld[`subtitle${tN}`], label: 'Subtitle' }],
+      'leaders'
+    ));
+  }
+
+  // Intro paragraphs (arrays)
+  const introOrig  = ld[`intro${oN}`] || [];
+  const introTrans = ld[`intro${tN}`] || [];
+  const introLen   = Math.max(introOrig.length, introTrans.length);
+  if (introLen) {
+    const divEl = document.createElement('div');
+    divEl.className = 'sec-divider';
+    divEl.innerHTML = '<span>Intro Paragraphs</span>';
+    area.appendChild(divEl);
+
+    for (let pi = 0; pi < introLen; pi++) {
+      area.appendChild(makeExtraCard(
+        `leaders_intro_p${pi}`, 'tag-text', `Intro Paragraph ${pi + 1}`,
+        [{
+          origVal: introOrig[pi] || '', transKey: `intro${tN}_p${pi}`,
+          transVal: introTrans[pi] || '', origHtml: isHtml, transHtml: isHtml, label: 'Paragraph'
+        }],
+        'leaders'
+      ));
+    }
+  }
+
+  // Per-chapter notes
+  const chapters = ld.chapters || [];
+  chapters.forEach((ch, ci) => {
+    const divEl = document.createElement('div');
+    divEl.className = 'sec-divider';
+    divEl.innerHTML = `<span>Chapter ${ch.chapterNumber} Notes</span>`;
+    area.appendChild(divEl);
+
+    ['keyPoints','pastorals','watch'].forEach(base => {
+      const origObj  = ch[`${base}${oN}`];
+      const transObj = ch[`${base}${tN}`];
+      if (!origObj && !transObj) return;
+
+      const fields = [
+        { origVal: origObj?.header,  transKey: `${base}${tN}_header`,
+          transVal: transObj?.header || '', label: 'Header' },
+        { origVal: origObj?.body,    transKey: `${base}${tN}_body`,
+          transVal: transObj?.body || '', origHtml: isHtml, transHtml: isHtml, label: 'Body' },
+      ];
+      area.appendChild(makeExtraCard(
+        `leaders_ch${ch.chapterNumber}_${base}`, 'tag-callout',
+        `${base.charAt(0).toUpperCase() + base.slice(1)}`, fields, 'leaders'
+      ));
+    });
   });
 }
 
@@ -1267,7 +1531,10 @@ function makeBibleCard(el, chIdx) {
     const head = document.createElement('div');
     head.className = 'bible-transl-head';
     const meta = studyData.studyMetadata;
-    const transId = meta[`bibleTranslation${n}`] || `#${n}`;
+    const btRaw = meta[`bibleTranslation${n}`];
+    const transId = btRaw
+      ? (typeof btRaw === 'object' ? Object.values(btRaw)[0] + ' (' + Object.keys(btRaw)[0] + ')' : btRaw)
+      : `#${n}`;
     head.innerHTML = `<span class="bible-transl-id">${transId}</span><span class="bible-transl-ref">${el[refKey] || ''}</span>`;
     block.appendChild(head);
 
@@ -1458,7 +1725,7 @@ function makeLikertCard(el, chIdx, oN, tN) {
 // ═══════════════════════════════════════════════════════════
 function updateNavProgress(chIdx) {
   const btn = document.querySelector(`.nav-item[data-idx="${chIdx}"]`);
-  if (btn) updateNavBtn(btn, studyData.chapters[chIdx], chIdx);
+  if (btn) updateChapterNavBtn(btn, studyData.chapters[chIdx], chIdx);
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1479,7 +1746,6 @@ function markClean() {
 // ═══════════════════════════════════════════════════════════
 function buildOutputData() {
   const output = JSON.parse(JSON.stringify(studyData));
-  // Remove api key
   if (output.studyAiData) delete output.studyAiData.apiKey;
 
   Object.entries(reviewState).forEach(([k, v]) => {
@@ -1487,15 +1753,73 @@ function buildOutputData() {
     const parts = k.split('__');
     if (parts.length !== 3) return;
     const [chIdxStr, elId, fieldKey] = parts;
-    const chIdx = parseInt(chIdxStr);
-    const ch = output.chapters[chIdx];
-    if (!ch) return;
-    const el = ch.elements.find(e => e.elementId === elId);
-    if (!el) return;
-    el[fieldKey] = v.correction;
+
+    if (chIdxStr.startsWith('extra_')) {
+      // Extra section corrections
+      applyExtraCorrection(output, elId, fieldKey, v.correction);
+    } else {
+      // Chapter corrections
+      const chIdx = parseInt(chIdxStr);
+      const ch = output.chapters[chIdx];
+      if (!ch) return;
+      const el = ch.elements.find(e => e.elementId === elId);
+      if (!el) return;
+      el[fieldKey] = v.correction;
+    }
   });
 
   return output;
+}
+
+function applyExtraCorrection(output, elId, fieldKey, correction) {
+  const tN = config.transLang;
+
+  // Onboarding slides: elId = 'onboarding_slide0'
+  if (elId.startsWith('onboarding_slide')) {
+    const si = parseInt(elId.replace('onboarding_slide',''));
+    const slide = output.studyOnboardingSlides?.[si];
+    if (slide) slide[fieldKey] = correction;
+    return;
+  }
+
+  // HowToUse blocks: elId = 'howto_sec0_block1' or 'howto_sec0_heading'
+  if (elId.startsWith('howto_')) {
+    const parts = elId.split('_');
+    const si = parseInt(parts[1].replace('sec',''));
+    const sec = output.howToUseData?.sections?.[si];
+    if (!sec) return;
+    if (parts[2] === 'heading') { sec[fieldKey] = correction; return; }
+    const bi = parseInt(parts[2].replace('block',''));
+    const block = sec.blocks?.[bi];
+    if (block) block[fieldKey] = correction;
+    return;
+  }
+
+  // Leaders subtitle: elId = 'leaders_subtitle'
+  if (elId === 'leaders_subtitle') {
+    if (output.leadersNotesData) output.leadersNotesData[`subtitle${tN}`] = correction;
+    return;
+  }
+
+  // Leaders intro paragraph: elId = 'leaders_intro_p2', fieldKey = 'intro3_p2'
+  if (elId.startsWith('leaders_intro_p')) {
+    const pi = parseInt(elId.replace('leaders_intro_p',''));
+    const arr = output.leadersNotesData?.[`intro${tN}`];
+    if (arr) arr[pi] = correction;
+    return;
+  }
+
+  // Leaders chapter notes: elId = 'leaders_ch1_keyPoints', fieldKey = 'keyPoints3_header' or 'keyPoints3_body'
+  if (elId.startsWith('leaders_ch')) {
+    const m = elId.match(/leaders_ch(\d+)_(\w+)/);
+    if (!m) return;
+    const chNum = parseInt(m[1]);
+    const base  = m[2];
+    const subfield = fieldKey.endsWith('_header') ? 'header' : 'body';
+    const ldCh = output.leadersNotesData?.chapters?.find(c => c.chapterNumber === chNum);
+    if (ldCh?.[`${base}${tN}`]) ldCh[`${base}${tN}`][subfield] = correction;
+    return;
+  }
 }
 
 // ═══════════════════════════════════════════════════════════

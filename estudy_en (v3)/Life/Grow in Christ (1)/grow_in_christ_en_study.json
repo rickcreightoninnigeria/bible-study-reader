@@ -10,10 +10,13 @@
     "estudyFileVersion":3,
     "studyVersion"     :1,
     "language"         :"en",
-    "createdAt"        :"2026-04-13T00:00:00Z",
-    "updatedAt"        :"2026-04-13T00:00:00Z",
-    "tags"             :["growth", "discipleship", "sanctification", "spiritual-formation"],
-    "shareMessage"     :"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-13T00:00:00Z",
+    "updatedAt"   :"2026-04-13T00:00:00Z",
+    "tags"        :["growth", "discipleship", "sanctification", "spiritual-formation"],
+    "shareMessage":"Check out this Bible study app — “Grow in Christ”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Green study theme — muted sage and forest palette. Organic and grounded, evoking growth, new life, and the natural world. Suited to studies on renewal, creation, or spiritual formation. Restful rather than urgent.",
@@ -3184,6 +3187,7 @@
   },
   "leadersNotesData":{
     "subtitle":"Grow in Christ",
+    "format"  :"HTML",
     "intro"   :[
       "These notes are designed to help group leaders and mentors get the most out of each chapter – both for the people they are leading and for themselves. They are not a substitute for working through the material yourself first. The best leaders are those who have worked through the questions personally before they help others doing the same.",
       "<strong>Create a safe space for honesty.</strong> The questions in this study are designed to prompt real reflection, not just correct answers. Your job is to make the group feel safe enough to say what they actually think, not what they think a Christian is supposed to say.",
@@ -3193,55 +3197,138 @@
     "chapters":[
       {
         "chapterNumber":1,
-        "keyPoints"    :"<p>This opening chapter establishes the <b>framework for the whole study</b>: the Christian life begins and continues with repentance and faith. Neither can be left behind.</p>\n<p>The ‘Growth Graph’ concept is central. Use it to get the group to locate themselves honestly — are they on a Graph 3 trajectory (uneven but growing) or a Graph 4 (stalled)? This is not a trick question; the honest answer is the useful one.</p>\n<p>Draw out the link between <b>sin and darkness</b> (1 John 1:5–7): the things we keep hidden tend to grow. Repentance is not just a one-off act at conversion — it is the ongoing posture of the Christian life.</p>",
-        "pastorals"    :"<p>Some people in the group may feel stuck and ashamed about it. The chapter’s tone is not condemnatory — it is hopeful. Graph 4 can become Graph 5. Make sure that message lands clearly.</p>\n<p>Others may be tempted to tick ‘Graph 3’ automatically without real reflection. Encourage honest self-assessment; the growth graph exercise only works if people engage with it genuinely.</p>\n<p>Watch for people who are embarrassed about ongoing sin (1 John 1:8–9). The chapter addresses this directly: pretending we have no struggles breeds hypocrisy and stalls growth. Help the group see that acknowledging sin to God — and to safe others — is the path forward, not a sign of failure.</p>",
-        "watch"        :"👁️ Watch for people who equate spiritual maturity with having fewer struggles. The chapter argues the opposite: mature Christians are more honest about their struggles, not less.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This opening chapter establishes the <b>framework for the whole study</b>: the Christian life begins and continues with repentance and faith. Neither can be left behind.</p>\n<p>The ’Growth Graph’ concept is central. Use it to get the group to locate themselves honestly — are they on a Graph 3 trajectory (uneven but growing) or a Graph 4 (stalled)? This is not a trick question; the honest answer is the useful one.</p>\n<p>Draw out the link between <b>sin and darkness</b> (1 John 1:5–7): the things we keep hidden tend to grow. Repentance is not just a one-off act at conversion — it is the ongoing posture of the Christian life.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some people in the group may feel stuck and ashamed about it. The chapter’s tone is not condemnatory — it is hopeful. Graph 4 can become Graph 5. Make sure that message lands clearly.</p>\n<p>Others may be tempted to tick ’Graph 3’ automatically without real reflection. Encourage honest self-assessment; the growth graph exercise only works if people engage with it genuinely.</p>\n<p>Watch for people who are embarrassed about ongoing sin (1 John 1:8–9). The chapter addresses this directly: pretending we have no struggles breeds hypocrisy and stalls growth. Help the group see that acknowledging sin to God — and to safe others — is the path forward, not a sign of failure.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who equate spiritual maturity with having fewer struggles. The chapter argues the opposite: mature Christians are more honest about their struggles, not less."
+        }
       },
       {
         "chapterNumber":2,
-        "keyPoints"    :"<p>This chapter explores what it means to <b>grow in Jesus</b>: in obedience, in grace, and in knowledge of Christ. These three are not alternatives — they belong together.</p>\n<p>The septic tank illustration is deliberately provocative. Use it to press the question: do we actually want to be saved from sin, or just from its consequences? Salvation and discipleship must go together (Matthew 28:19–20).</p>\n<p>The section on <b>grace and godliness</b> (Titus 2:12; Romans 5:6–8, 10) is theologically important. Christ didn’t save us because we learned to obey Him. We obey because He has already saved us. This ordering matters enormously for how people approach the Christian life.</p>",
-        "pastorals"    :"<p>Paul’s story at the start will resonate with many in the group — the cooling-off pattern is very common. Normalise it, but don’t leave it there: the point is that it doesn’t have to stay that way.</p>\n<p>Some may struggle with the idea that God’s love doesn’t depend on their performance. This is deeply counter-intuitive for many people. Take time with Romans 5:6–8 — Christ died for us while we were still sinners, not once we had sorted ourselves out.</p>\n<p>The Heart Check Likert scale at the end is designed to surface honest self-awareness. Encourage people to answer it privately and truthfully before any group discussion.</p>",
-        "watch"        :"👁️ Watch for people who hear ‘grace’ and conclude that obedience doesn’t matter. The chapter is clear that grace produces godliness (Titus 2:12), not a licence to coast.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter explores what it means to <b>grow in Jesus</b>: in obedience, in grace, and in knowledge of Christ. These three are not alternatives — they belong together.</p>\n<p>The septic tank illustration is deliberately provocative. Use it to press the question: do we actually want to be saved from sin, or just from its consequences? Salvation and discipleship must go together (Matthew 28:19–20).</p>\n<p>The section on <b>grace and godliness</b> (Titus 2:12; Romans 5:6–8, 10) is theologically important. Christ didn’t save us because we learned to obey Him. We obey because He has already saved us. This ordering matters enormously for how people approach the Christian life.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Paul’s story at the start will resonate with many in the group — the cooling-off pattern is very common. Normalise it, but don’t leave it there: the point is that it doesn’t have to stay that way.</p>\n<p>Some may struggle with the idea that God’s love doesn’t depend on their performance. This is deeply counter-intuitive for many people. Take time with Romans 5:6–8 — Christ died for us while we were still sinners, not once we had sorted ourselves out.</p>\n<p>The Heart Check Likert scale at the end is designed to surface honest self-awareness. Encourage people to answer it privately and truthfully before any group discussion.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who hear ’grace’ and conclude that obedience doesn’t matter. The chapter is clear that grace produces godliness (Titus 2:12), not a licence to coast."
+        }
       },
       {
         "chapterNumber":3,
-        "keyPoints"    :"<p>This chapter presses the distinction between <b>ageing and maturing</b>. Time passes automatically; growth does not. Some people have been Christians for decades and are still stuck at an early stage of maturity — and that is not what God intends.</p>\n<p>The passages from Colossians, Psalm 1, and Mark 4 together build a picture of what <b>roots</b> look like in practice: staying rooted in Christ (Col 2:6–7), meditating on God’s Word (Ps 1:2–3), and not allowing the thorns of life to choke growth (Mark 4:7).</p>\n<p>The <b>Gospel-Growth Plan</b> section is the practical centrepiece of the chapter. It asks people to identify one specific, personal growth area — not a vague aspiration but a concrete target. This is worth significant discussion time.</p>",
-        "pastorals"    :"<p>People may find it uncomfortable to be asked to name a specific growth area. Some will default to something safe and general. Gently push for something real — the exercise only has value if it’s honest.</p>\n<p>Be sensitive to the fact that some growth areas (addiction, secret sin, relationship breakdown) may be deeply painful to acknowledge, even privately. The app format gives people privacy; use that as a feature, not a limitation.</p>\n<p>The amazing destiny passage (Philippians 3:20–21) is meant to be genuinely motivating. Don’t rush past it — growth is not mere duty; it is moving towards something glorious.</p>",
-        "watch"        :"👁️ Watch for people who choose a Gospel-growth area that is really about someone else (‘my marriage’, ‘my family’). The plan should be personal and individual.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter presses the distinction between <b>ageing and maturing</b>. Time passes automatically; growth does not. Some people have been Christians for decades and are still stuck at an early stage of maturity — and that is not what God intends.</p>\n<p>The passages from Colossians, Psalm 1, and Mark 4 together build a picture of what <b>roots</b> look like in practice: staying rooted in Christ (Col 2:6–7), meditating on God’s Word (Ps 1:2–3), and not allowing the thorns of life to choke growth (Mark 4:7).</p>\n<p>The <b>Gospel-Growth Plan</b> section is the practical centrepiece of the chapter. It asks people to identify one specific, personal growth area — not a vague aspiration but a concrete target. This is worth significant discussion time.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>People may find it uncomfortable to be asked to name a specific growth area. Some will default to something safe and general. Gently push for something real — the exercise only has value if it’s honest.</p>\n<p>Be sensitive to the fact that some growth areas (addiction, secret sin, relationship breakdown) may be deeply painful to acknowledge, even privately. The app format gives people privacy; use that as a feature, not a limitation.</p>\n<p>The amazing destiny passage (Philippians 3:20–21) is meant to be genuinely motivating. Don’t rush past it — growth is not mere duty; it is moving towards something glorious.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who choose a Gospel-growth area that is really about someone else (‘my marriage’, ‘my family’). The plan should be personal and individual."
+        }
       },
       {
         "chapterNumber":4,
-        "keyPoints"    :"<p>This chapter introduces <b>sin as a predator</b>. John Owen’s quote — ‘Be killing sin or it will be killing you’ — frames everything that follows. Sin is not a minor inconvenience; it is actively destructive.</p>\n<p>The study of Genesis 3 repays careful attention. The serpent’s tactics — questioning God’s word, distorting His commands, promising what He hasn’t promised — are still in use today. Help the group see how these tactics work in their own experience of temptation.</p>\n<p>The section on <b>sin spreading</b> (Genesis 4) shows how quickly sin escalates: from one act of disobedience to fratricide within a generation. The weed-seed illustration makes the point well — small sins are not harmless; they grow.</p>",
-        "pastorals"    :"<p>Thomas’s story at the start is deliberately confronting. Some in the group may have their own version of it. The aim is not to shock, but to be honest that sin’s effects can be devastating — and that there is a way back.</p>\n<p>The question ‘In your life, who is doing better at killing who?’ is intentionally direct. Give people space to sit with that question before moving on. Silence here is often productive.</p>\n<p>Watch for people who minimise their sin by comparing it to others’. The half-truth dynamic (Genesis 3) is worth pressing: the most dangerous lies have some truth mixed in.</p>",
-        "watch"        :"👁️ Watch for people who have carried hidden sin for a long time and may feel that their situation is beyond hope. The hints of grace in Genesis 3:15 and 3:21 are there for a reason — God has not given up on His purposes of blessing.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter introduces <b>sin as a predator</b>. John Owen’s quote — ‘Be killing sin or it will be killing you’ — frames everything that follows. Sin is not a minor inconvenience; it is actively destructive.</p>\n<p>The study of Genesis 3 repays careful attention. The serpent’s tactics — questioning God’s word, distorting His commands, promising what He hasn’t promised — are still in use today. Help the group see how these tactics work in their own experience of temptation.</p>\n<p>The section on <b>sin spreading</b> (Genesis 4) shows how quickly sin escalates: from one act of disobedience to fratricide within a generation. The weed-seed illustration makes the point well — small sins are not harmless; they grow.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Thomas’s story at the start is deliberately confronting. Some in the group may have their own version of it. The aim is not to shock, but to be honest that sin’s effects can be devastating — and that there is a way back.</p>\n<p>The question ’In your life, who is doing better at killing who?’ is intentionally direct. Give people space to sit with that question before moving on. Silence here is often productive.</p>\n<p>Watch for people who minimise their sin by comparing it to others’. The half-truth dynamic (Genesis 3) is worth pressing: the most dangerous lies have some truth mixed in.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who have carried hidden sin for a long time and may feel that their situation is beyond hope. The hints of grace in Genesis 3:15 and 3:21 are there for a reason — God has not given up on His purposes of blessing."
+        }
       },
       {
         "chapterNumber":5,
-        "keyPoints"    :"<p>This chapter explores <b>sin as refusal</b> — refusal of God’s knowledge, His authority, His goodness, and ultimately of God Himself. Reinhold Niebuhr’s opening quote frames sin as the refusal to accept our creaturely limits.</p>\n<p>The sequence of passages builds a cumulative picture of what sin refuses: knowledge (Romans 1:18–23), God’s authority (Romans 5:14; Ezekiel 2:3–5), gratitude (Romans 1:21b), relationship (Leviticus 26:40), and finally God Himself (Romans 1:25).</p>\n<p>The contrast with Mark 12:30 is important: the opposite of refusing God is <b>loving Him with everything</b>. Use this to move the discussion from diagnosis to aspiration.</p>\n<p>The closing bridge text on <b>sin hierarchies</b> is worth dwelling on — Christians often tolerate invisible sins (pride, greed, envy) while policing visible ones. Jesus didn’t operate that way.</p>",
-        "pastorals"    :"<p>This chapter is theologically dense. Don’t feel you need to cover every passage in a group setting — pick the two or three that are most relevant to where your group is.</p>\n<p>The question ‘Which of these types of refusals are you most at risk of?’ is very personal. It may produce either very honest answers or very guarded ones. Either response is revealing.</p>\n<p>The Pharisee dynamic in the closing bridge (Mark 2:15–17) is important pastorally: some group members may be very good at external religion while harbouring deep interior refusals. Handle with care.</p>",
-        "watch"        :"👁️ Watch for people who identify easily with the ‘refusal of authority’ examples but are blind to their own refusal of gratitude or relationship with God. Both are forms of the same thing.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter explores <b>sin as refusal</b> — refusal of God’s knowledge, His authority, His goodness, and ultimately of God Himself. Reinhold Niebuhr’s opening quote frames sin as the refusal to accept our creaturely limits.</p>\n<p>The sequence of passages builds a cumulative picture of what sin refuses: knowledge (Romans 1:18–23), God’s authority (Romans 5:14; Ezekiel 2:3–5), gratitude (Romans 1:21b), relationship (Leviticus 26:40), and finally God Himself (Romans 1:25).</p>\n<p>The contrast with Mark 12:30 is important: the opposite of refusing God is <b>loving Him with everything</b>. Use this to move the discussion from diagnosis to aspiration.</p>\n<p>The closing bridge text on <b>sin hierarchies</b> is worth dwelling on — Christians often tolerate invisible sins (pride, greed, envy) while policing visible ones. Jesus didn’t operate that way.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This chapter is theologically dense. Don’t feel you need to cover every passage in a group setting — pick the two or three that are most relevant to where your group is.</p>\n<p>The question ’Which of these types of refusals are you most at risk of?’ is very personal. It may produce either very honest answers or very guarded ones. Either response is revealing.</p>\n<p>The Pharisee dynamic in the closing bridge (Mark 2:15–17) is important pastorally: some group members may be very good at external religion while harbouring deep interior refusals. Handle with care.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who identify easily with the ’refusal of authority’ examples but are blind to their own refusal of gratitude or relationship with God. Both are forms of the same thing."
+        }
       },
       {
         "chapterNumber":6,
-        "keyPoints"    :"<p>This chapter turns from the diagnosis of sin to the <b>Father’s love</b>. The parable of the lost son (Luke 15:11–32) is the primary text, explored through the lens of its three main characters.</p>\n<p>The younger son represents the person who has walked away from God openly. His journey — from demanding his inheritance to feeding pigs to ‘coming to his senses’ — maps onto many people’s experience of sin and its consequences.</p>\n<p>The father’s response is the theological heart of the chapter: he sees his son ‘while he was still a long way off’, runs to him, and restores him fully. This is not a grudging acceptance — it is extravagant welcome. The robe, the ring, the fattened calf: full restoration, not probation.</p>\n<p>The <b>bipolar Likert scale</b> at the start — measuring how the group perceives God’s attitude towards them — sets up a before/after comparison with chapter 7. It’s worth completing carefully.</p>",
-        "pastorals"    :"<p>Some in the group will identify painfully with the younger son. Be ready for that. The chapter’s message is one of hope: the father hasn’t given up, and neither has God.</p>\n<p>The distinction between leaving through the ‘front door’ and leaving through the ‘back door’ is pastorally significant. Some people in church settings have never actually come home to God — they’ve just stayed in the vicinity. Handle this gently but honestly.</p>\n<p>The question ‘Do you mostly feel at home with God, or more distant?’ is a key pastoral barometer. Don’t rush past it.</p>",
-        "watch"        :"👁️ Watch for people who have a deeply negative view of God — as distant, judgmental, or indifferent. The parable is specifically designed to correct that picture. Let it do its work.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter turns from the diagnosis of sin to the <b>Father’s love</b>. The parable of the lost son (Luke 15:11–32) is the primary text, explored through the lens of its three main characters.</p>\n<p>The younger son represents the person who has walked away from God openly. His journey — from demanding his inheritance to feeding pigs to ’coming to his senses’ — maps onto many people’s experience of sin and its consequences.</p>\n<p>The father’s response is the theological heart of the chapter: he sees his son ’while he was still a long way off’, runs to him, and restores him fully. This is not a grudging acceptance — it is extravagant welcome. The robe, the ring, the fattened calf: full restoration, not probation.</p>\n<p>The <b>bipolar Likert scale</b> at the start — measuring how the group perceives God’s attitude towards them — sets up a before/after comparison with chapter 7. It’s worth completing carefully.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some in the group will identify painfully with the younger son. Be ready for that. The chapter’s message is one of hope: the father hasn’t given up, and neither has God.</p>\n<p>The distinction between leaving through the ’front door’ and leaving through the ’back door’ is pastorally significant. Some people in church settings have never actually come home to God — they’ve just stayed in the vicinity. Handle this gently but honestly.</p>\n<p>The question ’Do you mostly feel at home with God, or more distant?’ is a key pastoral barometer. Don’t rush past it.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who have a deeply negative view of God — as distant, judgmental, or indifferent. The parable is specifically designed to correct that picture. Let it do its work."
+        }
       },
       {
         "chapterNumber":7,
-        "keyPoints"    :"<p>This chapter completes the parable by focusing on <b>the older son and the listening audience</b>. Jesus originally told the parable to the Pharisees — people who were religious but distant from God in a different way.</p>\n<p>The older son’s problem is not irreligion but a <b>transactional view of his relationship with the father</b>. He thinks he has earned love through obedience. He is miles from his father emotionally even while living in his house. This is a searching challenge for churchgoing people.</p>\n<p>The ‘tower block’ illustration challenges the common assumption that salvation is about being good enough. Titus 3:5 and Galatians 2:16 make clear that no one is justified by works — God cuts the building vertically, not horizontally.</p>\n<p>The repeated <b>bipolar Likert scale</b> at the end allows people to compare their perception of God’s attitude towards them before and after engaging with the parable. This can be a powerful moment of reflection.</p>",
-        "pastorals"    :"<p>The older son dynamic is often harder to surface in a group than the younger son dynamic. People who identify with the older son are often high-functioning, respectable, and resistant to the idea that they might be ‘outside the party’.</p>\n<p>The questions ‘Am I more like the younger son or the older one?’ and ‘Am I inside the party or outside?’ are the most important in the chapter. Give them real time and real space.</p>\n<p>The closing comparison of the two Likert scales (from chapters 6 and 7) is an opportunity for a genuinely moving moment — if people have engaged honestly, they may find that the parable has shifted something in how they see God. Be attentive to that.</p>",
-        "watch"        :"👁️ Watch for people who give intellectual assent to the gospel (‘yes, I know God loves me’) without any emotional reality to it. The parable is designed to move people, not just inform them.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter completes the parable by focusing on <b>the older son and the listening audience</b>. Jesus originally told the parable to the Pharisees — people who were religious but distant from God in a different way.</p>\n<p>The older son’s problem is not irreligion but a <b>transactional view of his relationship with the father</b>. He thinks he has earned love through obedience. He is miles from his father emotionally even while living in his house. This is a searching challenge for churchgoing people.</p>\n<p>The ’tower block’ illustration challenges the common assumption that salvation is about being good enough. Titus 3:5 and Galatians 2:16 make clear that no one is justified by works — God cuts the building vertically, not horizontally.</p>\n<p>The repeated <b>bipolar Likert scale</b> at the end allows people to compare their perception of God’s attitude towards them before and after engaging with the parable. This can be a powerful moment of reflection.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The older son dynamic is often harder to surface in a group than the younger son dynamic. People who identify with the older son are often high-functioning, respectable, and resistant to the idea that they might be ’outside the party’.</p>\n<p>The questions ’Am I more like the younger son or the older one?’ and ’Am I inside the party or outside?’ are the most important in the chapter. Give them real time and real space.</p>\n<p>The closing comparison of the two Likert scales (from chapters 6 and 7) is an opportunity for a genuinely moving moment — if people have engaged honestly, they may find that the parable has shifted something in how they see God. Be attentive to that.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who give intellectual assent to the gospel (‘yes, I know God loves me’) without any emotional reality to it. The parable is designed to move people, not just inform them."
+        }
       }
-    ],
-    "format":"HTML"
+    ]
   },
   "studyAboutData":{
     "author":{

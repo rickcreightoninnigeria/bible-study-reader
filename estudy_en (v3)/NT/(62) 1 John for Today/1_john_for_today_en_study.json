@@ -8,12 +8,15 @@
     "author"           :"Julie Rowbory",
     "libraryShelves"   :[{ "Shelf": "New Testament", "Section": "General Letters & Revelation", "Subsection": "1 John" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language"         :"en",
-    "createdAt"        :"2026-04-10T00:00:00Z",
-    "updatedAt"        :"2026-04-10T00:00:00Z",
-    "tags"             :["new testament", "1 john"],
-    "shareMessage"     :"Check out this Bible study app — “Bible Study Reader”.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-10T00:00:00Z",
+    "updatedAt"   :"2026-04-10T00:00:00Z",
+    "tags"        :["new testament", "1 john"],
+    "shareMessage":"Check out this Bible study app — “Bible Study Reader”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"1 John study theme — soft gold and ivory palette. Gentle, luminous, and reassuring, reflecting themes of light, truth, love, and confident assurance in faith.",
@@ -2983,41 +2986,101 @@
         "chapterNumber":1,
         "format"       :"HTML",
         "title"        :"Introduction to 1 John",
-        "keyPoints"    :"<p>The structure of 1 John is <b>complex but not unstructured</b>. Different scholars see two halves, a chiasm, and other patterns — and more than one may be present simultaneously. It is probably safest to acknowledge the complexity rather than impose a single grid.</p><br><p>A key structural marker: <b>1:1–2:13 is dominated by present tense verbs</b>, while <b>2:14–5:21 is dominated by aorist verbs</b>. This is very clear in the Greek. The first section also uses <b>light/darkness imagery</b>; the second section is full of <b>’world’ language</b>. The passage 2:12–14 appears to function as a pivot between the two halves.</p><br><p>The letter reads at points like a <b>sermon on Jesus’ farewell discourse</b> in John’s Gospel — there are extensive echoes throughout. Helping your group see those connections will enrich their reading.</p><br><p>The <b>purpose statement in 5:13</b> (‘so that you may know that you have eternal life’) is the interpretive key to the whole letter. Everything John writes is in service of that goal: reassurance, not anxiety.</p>",
-        "pastorals"    :"<p>The so-called ’three tests’ approach (belief, love, obedience to commands) is widely used but can be <b>pastorally unhelpful</b> if applied as a personal checklist, because applying them introspectively can lead to despair rather than assurance — the opposite of John’s aim.</p><br><p>A more helpful framing: the tests are best used <em>externally</em>, to evaluate the claims of <em>false teachers</em> who were unsettling the believers. That reorientation will help your group engage the letter more fruitfully throughout the series.</p>",
-        "watch"        :"👁️ Watch for people who come into this series already anxious about their standing before God. The letter is meant to be medicine, not a further burden. Establish early on that John’s goal is to give assurance, not undermine it."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The structure of 1 John is <b>complex but not unstructured</b>. Different scholars see two halves, a chiasm, and other patterns — and more than one may be present simultaneously. It is probably safest to acknowledge the complexity rather than impose a single grid.</p><br><p>A key structural marker: <b>1:1–2:13 is dominated by present tense verbs</b>, while <b>2:14–5:21 is dominated by aorist verbs</b>. This is very clear in the Greek. The first section also uses <b>light/darkness imagery</b>; the second section is full of <b>’world’ language</b>. The passage 2:12–14 appears to function as a pivot between the two halves.</p><br><p>The letter reads at points like a <b>sermon on Jesus’ farewell discourse</b> in John’s Gospel — there are extensive echoes throughout. Helping your group see those connections will enrich their reading.</p><br><p>The <b>purpose statement in 5:13</b> (‘so that you may know that you have eternal life’) is the interpretive key to the whole letter. Everything John writes is in service of that goal: reassurance, not anxiety.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The so-called ’three tests’ approach (belief, love, obedience to commands) is widely used but can be <b>pastorally unhelpful</b> if applied as a personal checklist, because applying them introspectively can lead to despair rather than assurance — the opposite of John’s aim.</p><br><p>A more helpful framing: the tests are best used <em>externally</em>, to evaluate the claims of <em>false teachers</em> who were unsettling the believers. That reorientation will help your group engage the letter more fruitfully throughout the series.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who come into this series already anxious about their standing before God. The letter is meant to be medicine, not a further burden. Establish early on that John’s goal is to give assurance, not undermine it."
+        }
       },
       {
         "chapterNumber":2,
         "format"       :"HTML",
         "title"        :"1 John 2:12–27 — Antichrists and Assurance",
-        "keyPoints"    :"<p>We don’t know precisely what the ’antichrists’ were teaching, but their effect was to <b>destabilise the believers’ confidence</b>. They likely claimed some form of spiritual superiority. John writes to counteract that.</p><br><p>The concept of ’Antichrist’ was not John’s invention — <b>it was a familiar idea in Jewish apocalyptic literature</b> of the period. John applies it to the false teachers who had left the community (v.19).</p><br><p>The <b>’tests’ function diagnostically here</b>: when you encounter someone claiming spiritual authority, ask — what do they say about Jesus? How do they treat fellow believers? How do they relate to sin? These questions expose the false teacher, not the anxious believer.</p><br><p>Structurally, note the <b>tense shift</b>: everything up to 2:13 is present-tense dominated (light/darkness imagery); from 2:14 onwards the aorist tense dominates (world language). This passage sits at the hinge of the letter.</p>",
-        "pastorals"    :"<p>The most effective false teachers are often <b>plausible, spiritual, and experienced</b>. Help your group think carefully about subtle distortions, not just outright denial. Does this teacher’s message centre on Jesus and his cross? Or does it offer something extra — a programme, a method, a higher spirituality — alongside or instead of the cross?</p><br><p>The reassurance of this passage is direct: <em>your sins have been forgiven, you know the Father, you have the anointing</em>. Don’t let the warning about antichrists overshadow the warmth of what John says to the believers themselves.</p>",
-        "watch"        :"👁️ Watch for subtle false teaching that doesn’t deny the cross outright but quietly displaces it — teaching that adds requirements for spiritual maturity, focuses on leaders or methods rather than Christ, or suggests that other believers are spiritually compromised."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>We don’t know precisely what the ’antichrists’ were teaching, but their effect was to <b>destabilise the believers’ confidence</b>. They likely claimed some form of spiritual superiority. John writes to counteract that.</p><br><p>The concept of ’Antichrist’ was not John’s invention — <b>it was a familiar idea in Jewish apocalyptic literature</b> of the period. John applies it to the false teachers who had left the community (v.19).</p><br><p>The <b>’tests’ function diagnostically here</b>: when you encounter someone claiming spiritual authority, ask — what do they say about Jesus? How do they treat fellow believers? How do they relate to sin? These questions expose the false teacher, not the anxious believer.</p><br><p>Structurally, note the <b>tense shift</b>: everything up to 2:13 is present-tense dominated (light/darkness imagery); from 2:14 onwards the aorist tense dominates (world language). This passage sits at the hinge of the letter.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The most effective false teachers are often <b>plausible, spiritual, and experienced</b>. Help your group think carefully about subtle distortions, not just outright denial. Does this teacher’s message centre on Jesus and his cross? Or does it offer something extra — a programme, a method, a higher spirituality — alongside or instead of the cross?</p><br><p>The reassurance of this passage is direct: <em>your sins have been forgiven, you know the Father, you have the anointing</em>. Don’t let the warning about antichrists overshadow the warmth of what John says to the believers themselves.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for subtle false teaching that doesn’t deny the cross outright but quietly displaces it — teaching that adds requirements for spiritual maturity, focuses on leaders or methods rather than Christ, or suggests that other believers are spiritually compromised."
+        }
       },
       {
         "chapterNumber":3,
         "format"       :"HTML",
         "title"        :"1 John 2:28–3:10 — Children of God",
-        "keyPoints"    :"<p>This section is likely the third in a sequence beginning at 2:15: first, don’t love the world; second, loving the world is tempting because of the antichrists; third, it is hard because <b>God’s children aren’t yet what they will be</b>. The tension between present identity and future glory is central.</p><br><p>The most challenging verses are <b>3:4–6 and 3:9</b>, which seem to say that those who are born of God do not sin — apparently contradicting chapter 1. These must be read in light of the whole letter, not in isolation.</p><br><p>Two approaches help: (1) the <b>’habitual sin’ reading</b> (John Stott) — the true believer does not make a practice of sin; (2) the <b>’specific sin’ reading</b> — John uses ’sin’ elsewhere (John 15:22; 16:8; 6:28; 1 John 5:16–17) to refer specifically to the sin of rejecting Jesus. On this reading, 3:9 refers to the particular sin of departing from apostolic teaching and denying Christ, not to sin in general.</p>",
-        "pastorals"    :"<p>Neither solution to 3:9 is perfect, but <b>both are better than taking the verse in isolation</b>. The most important pastoral move is to read these verses in the context of the whole book — especially chapter 1 — and to keep John’s stated purpose (reassurance) at the centre.</p><br><p>Be alert to anyone who uses these verses to move toward a <b>sinless perfectionism</b>. Equally, be alert to anyone so troubled by the apparent standard that they conclude they cannot be a Christian at all. Both need to be gently redirected to the full picture John paints.</p>",
-        "watch"        :"👁️ Watch for the temptation to land too firmly on one interpretation of 3:9 and present it as settled. Acknowledging the genuine difficulty here, while keeping the pastoral goal clear, is more honest and more helpful."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This section is likely the third in a sequence beginning at 2:15: first, don’t love the world; second, loving the world is tempting because of the antichrists; third, it is hard because <b>God’s children aren’t yet what they will be</b>. The tension between present identity and future glory is central.</p><br><p>The most challenging verses are <b>3:4–6 and 3:9</b>, which seem to say that those who are born of God do not sin — apparently contradicting chapter 1. These must be read in light of the whole letter, not in isolation.</p><br><p>Two approaches help: (1) the <b>’habitual sin’ reading</b> (John Stott) — the true believer does not make a practice of sin; (2) the <b>’specific sin’ reading</b> — John uses ’sin’ elsewhere (John 15:22; 16:8; 6:28; 1 John 5:16–17) to refer specifically to the sin of rejecting Jesus. On this reading, 3:9 refers to the particular sin of departing from apostolic teaching and denying Christ, not to sin in general.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Neither solution to 3:9 is perfect, but <b>both are better than taking the verse in isolation</b>. The most important pastoral move is to read these verses in the context of the whole book — especially chapter 1 — and to keep John’s stated purpose (reassurance) at the centre.</p><br><p>Be alert to anyone who uses these verses to move toward a <b>sinless perfectionism</b>. Equally, be alert to anyone so troubled by the apparent standard that they conclude they cannot be a Christian at all. Both need to be gently redirected to the full picture John paints.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the temptation to land too firmly on one interpretation of 3:9 and present it as settled. Acknowledging the genuine difficulty here, while keeping the pastoral goal clear, is more honest and more helpful."
+        }
       },
       {
         "chapterNumber":4,
         "format"       :"HTML",
         "title"        :"1 John 3:11–4:6 — Love and Discernment",
-        "keyPoints"    :"<p>The call to love one another is grounded not in feelings but in the <b>concrete example of Christ</b> (3:16). Love is defined by action, not emotion.</p><br><p>On confidence before God (3:19–22): note that the basis for assurance here is <b>not how well we are loving</b>, but simply <em>whether</em> we are showing love for the people of God. The bar is directional, not perfectionist.</p><br><p>The <b>test for spirits</b> in 4:1–6 returns to the letter’s core diagnostic: every spirit that confesses that Jesus Christ has come in the flesh is from God. The Christological question remains the primary one.</p>",
-        "pastorals"    :"<p>For those with a sensitive conscience, 3:20 (‘God is greater than our heart’) is an important pastoral word: <b>God’s knowledge of us is more reliable than our own self-assessment</b>. This cuts against both complacency and excessive self-doubt.</p><br><p>On spotting false teaching: again, the distortion is often subtle. Does this teaching require something extra? Does it focus on a person, leader, or method rather than the cross? Are the teachers characterised by doing what is right and loving the brothers?</p>",
-        "watch"        :"👁️ Watch for those who use the command to love as a source of anxiety (‘Am I loving enough?’) rather than as a description of the direction of their life. Gently reframe: the question is not perfection, but orientation."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The call to love one another is grounded not in feelings but in the <b>concrete example of Christ</b> (3:16). Love is defined by action, not emotion.</p><br><p>On confidence before God (3:19–22): note that the basis for assurance here is <b>not how well we are loving</b>, but simply <em>whether</em> we are showing love for the people of God. The bar is directional, not perfectionist.</p><br><p>The <b>test for spirits</b> in 4:1–6 returns to the letter’s core diagnostic: every spirit that confesses that Jesus Christ has come in the flesh is from God. The Christological question remains the primary one.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>For those with a sensitive conscience, 3:20 (‘God is greater than our heart’) is an important pastoral word: <b>God’s knowledge of us is more reliable than our own self-assessment</b>. This cuts against both complacency and excessive self-doubt.</p><br><p>On spotting false teaching: again, the distortion is often subtle. Does this teaching require something extra? Does it focus on a person, leader, or method rather than the cross? Are the teachers characterised by doing what is right and loving the brothers?</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for those who use the command to love as a source of anxiety (‘Am I loving enough?’) rather than as a description of the direction of their life. Gently reframe: the question is not perfection, but orientation."
+        }
       },
       {
         "chapterNumber":5,
         "format"       :"HTML",
         "title"        :"1 John 4:7–5:5 — God is Love",
-        "keyPoints"    :"<p>This passage contains some of 1 John’s most quoted verses, which means they are also among its most <b>frequently read out of context</b>. Keep returning to the situation John is addressing and his overall aim of reassurance.</p><br><p>Love in this passage is <b>defined by what God has done</b>, not by emotional experience. ’God is love’ (4:8, 16) is a statement about God’s character as revealed in the sending of his Son — not a general claim that love equals God, or that anyone who loves is therefore in God.</p><br><p>Most of the <b>’command’ language in 1 John appears in a love context</b>, suggesting it is being used in the same technical sense as Jesus’ ’new command’ in John 13:34. The repetition of ’God sent his Son’ grounds the whole section.</p>",
-        "pastorals"    :"<p>Be careful not to allow 4:16 to become a proof text for the idea that <b>God is in whoever loves in a general sense</b>, regardless of whether they confess Jesus. John is writing to believers about their love for one another within the community of faith, not making a universal claim about all human love.</p><br><p>The connection between love and the absence of fear (4:18) is deeply pastoral. Many in your group may be operating with a <b>fear-based faith</b>. This passage invites them into something more like the security of a child who knows they are loved.</p>",
-        "watch"        :"👁️ Watch for the person who finds ’God is love’ easy to affirm but struggles to feel it. The passage is full of objective grounds for confidence — don’t rush past them to application before the group has actually sat with what God has done."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This passage contains some of 1 John’s most quoted verses, which means they are also among its most <b>frequently read out of context</b>. Keep returning to the situation John is addressing and his overall aim of reassurance.</p><br><p>Love in this passage is <b>defined by what God has done</b>, not by emotional experience. ’God is love’ (4:8, 16) is a statement about God’s character as revealed in the sending of his Son — not a general claim that love equals God, or that anyone who loves is therefore in God.</p><br><p>Most of the <b>’command’ language in 1 John appears in a love context</b>, suggesting it is being used in the same technical sense as Jesus’ ’new command’ in John 13:34. The repetition of ’God sent his Son’ grounds the whole section.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Be careful not to allow 4:16 to become a proof text for the idea that <b>God is in whoever loves in a general sense</b>, regardless of whether they confess Jesus. John is writing to believers about their love for one another within the community of faith, not making a universal claim about all human love.</p><br><p>The connection between love and the absence of fear (4:18) is deeply pastoral. Many in your group may be operating with a <b>fear-based faith</b>. This passage invites them into something more like the security of a child who knows they are loved.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who finds ’God is love’ easy to affirm but struggles to feel it. The passage is full of objective grounds for confidence — don’t rush past them to application before the group has actually sat with what God has done."
+        }
       }
     ]
   },

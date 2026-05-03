@@ -8,12 +8,15 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Evil and the Fall", "Subsection": "Temptation" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Overcoming Sin" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language"         :"en",
-    "createdAt"        :"2026-04-02T00:00:00Z",
-    "updatedAt"        :"2026-04-02T00:00:00Z",
-    "tags"             :["addiction", "discipleship", "christianity"],
-    "shareMessage"     :"Check out this Bible study app — “Find Rest for your Soul: Escaping addictive behaviour by finding a better joy”.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-02T00:00:00Z",
+    "updatedAt"   :"2026-04-02T00:00:00Z",
+    "tags"        :["addiction", "discipleship", "christianity"],
+    "shareMessage":"Check out this Bible study app — “Find Rest for your Soul: Escaping addictive behaviour by finding a better joy”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Aged iron and rust palette. Inspired by the padlock cover image: dark oxidised metal, warm rust, and muted forest green. Conveys weight, bondage, and the possibility of release. Serious and earthy rather than bright.",
@@ -5995,81 +5998,201 @@
         "chapterNumber":1,
         "format"       :"HTML",
         "title"        :"The Heart Behind Addiction",
-        "keyPoints"    :"<p>The session establishes the <b>worship framework</b> as the organising lens for the whole series. Addictive behaviour is not primarily a habit or willpower problem; it is a <b>worship problem</b> – something has taken God’s place at the centre of the heart.</p>\n<p>Draw out the contrast between conventional explanations (triggers, biology, history, the devil) and the biblical account (James 1:13-14, Mark 7:21-23). Each contains truth but locates the problem outside the self.</p>\n<p>Introduce the <b>false promises framework</b>: addictions work by making real promises about real needs. The needs are God-given; the problem is where we go to meet them. This thread runs through all ten sessions.</p>",
-        "pastorals"    :"<p>Some in the group may be carrying active addiction. The opening illustration (David) is designed to be broadly recognisable without triggering premature confession. Don’t push for disclosure in a first session.</p>\n<p>The worship framework can feel confronting to people who have been using therapeutic or medical language about their struggle. Honour the truth in those frameworks while showing why the biblical account goes deeper.</p>\n<p>The ‘there is hope’ closing section is important. Don’t end the session on the diagnosis without pointing forward to the promise.</p>",
-        "watch"        :"Watch for people who recognise the pattern intellectually but are reluctant to apply it personally. The individual reflection exercise is designed for this – encourage people to take it seriously."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The session establishes the <b>worship framework</b> as the organising lens for the whole series. Addictive behaviour is not primarily a habit or willpower problem; it is a <b>worship problem</b> – something has taken God’s place at the centre of the heart.</p>\n<p>Draw out the contrast between conventional explanations (triggers, biology, history, the devil) and the biblical account (James 1:13-14, Mark 7:21-23). Each contains truth but locates the problem outside the self.</p>\n<p>Introduce the <b>false promises framework</b>: addictions work by making real promises about real needs. The needs are God-given; the problem is where we go to meet them. This thread runs through all ten sessions.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some in the group may be carrying active addiction. The opening illustration (David) is designed to be broadly recognisable without triggering premature confession. Don’t push for disclosure in a first session.</p>\n<p>The worship framework can feel confronting to people who have been using therapeutic or medical language about their struggle. Honour the truth in those frameworks while showing why the biblical account goes deeper.</p>\n<p>The ’there is hope’ closing section is important. Don’t end the session on the diagnosis without pointing forward to the promise.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who recognise the pattern intellectually but are reluctant to apply it personally. The individual reflection exercise is designed for this – encourage people to take it seriously."
+        }
       },
       {
         "chapterNumber":2,
         "format"       :"HTML",
         "title"        :"Respect &amp; Rescue: ‘You are Enough’",
-        "keyPoints"    :"<p>Two versions of the same hunger: the <b>Respect dynamic</b> (drivenness, performance, fear of being found inadequate) and the <b>Rescue dynamic</b> (searching for unconditional acceptance). The gospel answers with <b>justification</b> (a permanent, not-earned verdict) and <b>adoption</b> (welcomed as a child, not merely acquitted).</p>\n<p>The <b>fear of the Lord</b> section is important and often missed: the antidote to the fear of man is not the absence of all fear, but a better and more liberating one. When God’s verdict is the one that counts – and that verdict is entirely favourable in Christ – the tyranny of others’ opinions loses its grip.</p>",
-        "pastorals"    :"<p>Sarah’s story (busyness as addiction) will land with high-achieving people who do not think of themselves as having an addiction. Be ready for a moment of recognition and the discomfort that follows.</p>\n<p>The Rescue dynamic resonates most with people carrying deep shame. The language of counterfeit grace – ‘receives us as we are and leaves us exactly as we are’ – is important for them. Handle gently.</p>",
-        "watch"        :"Watch for the elder-brother type – the person who is clearly performing for approval but cannot yet see it. The Luke 15 prodigal story, used later in the series, will be important for them."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>Two versions of the same hunger: the <b>Respect dynamic</b> (drivenness, performance, fear of being found inadequate) and the <b>Rescue dynamic</b> (searching for unconditional acceptance). The gospel answers with <b>justification</b> (a permanent, not-earned verdict) and <b>adoption</b> (welcomed as a child, not merely acquitted).</p>\n<p>The <b>fear of the Lord</b> section is important and often missed: the antidote to the fear of man is not the absence of all fear, but a better and more liberating one. When God’s verdict is the one that counts – and that verdict is entirely favourable in Christ – the tyranny of others’ opinions loses its grip.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Sarah’s story (busyness as addiction) will land with high-achieving people who do not think of themselves as having an addiction. Be ready for a moment of recognition and the discomfort that follows.</p>\n<p>The Rescue dynamic resonates most with people carrying deep shame. The language of counterfeit grace – ‘receives us as we are and leaves us exactly as we are’ – is important for them. Handle gently.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the elder-brother type – the person who is clearly performing for approval but cannot yet see it. The Luke 15 prodigal story, used later in the series, will be important for them."
+        }
       },
       {
         "chapterNumber":3,
         "format"       :"HTML",
         "title"        :"Relationship: ‘You are Wanted’",
-        "keyPoints"    :"<p>The longing for intimacy is God-given and good. The problem is seeking it in places that simulate intimacy without delivering it – and that make the isolation worse.</p>\n<p>The <b>idol of control</b> section is key: many addictive behaviours offer relational experience without vulnerability – intimacy on entirely safe terms. The gospel answer: a relationship in which we are <b>fully known and fully loved</b> (Romans 8:38-39), embodied and extended in the community of the Church (James 5:16).</p>",
-        "pastorals"    :"<p>Be careful not to let the discussion narrow to pornography – the relationship dynamic operates across many different behaviours.</p>\n<p>James 5:16 (confession to another person) may challenge people who have never practised this. Don’t push for premature disclosure, but take time on why confessing to another person matters – not as a mechanism of forgiveness but as a healing act of humility.</p>",
-        "watch"        :"Watch for people who find the idea of being ‘fully known’ terrifying rather than comforting. That terror is itself data about where the addiction is operating. Leave space for it."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The longing for intimacy is God-given and good. The problem is seeking it in places that simulate intimacy without delivering it – and that make the isolation worse.</p>\n<p>The <b>idol of control</b> section is key: many addictive behaviours offer relational experience without vulnerability – intimacy on entirely safe terms. The gospel answer: a relationship in which we are <b>fully known and fully loved</b> (Romans 8:38-39), embodied and extended in the community of the Church (James 5:16).</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Be careful not to let the discussion narrow to pornography – the relationship dynamic operates across many different behaviours.</p>\n<p>James 5:16 (confession to another person) may challenge people who have never practised this. Don’t push for premature disclosure, but take time on why confessing to another person matters – not as a mechanism of forgiveness but as a healing act of humility.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who find the idea of being ’fully known’ terrifying rather than comforting. That terror is itself data about where the addiction is operating. Leave space for it."
+        }
       },
       {
         "chapterNumber":4,
         "format"       :"HTML",
         "title"        :"Relief &amp; Rhythm",
-        "keyPoints"    :"<p><b>Relief</b>: addiction as anaesthetic for pain. The key move is from <em>escape</em> to <em>lament</em>. Both turn away from pressure, but escape turns away from God too; lament turns toward God in the pressure. The Psalms model lament, not escape.</p>\n<p><b>Rhythm</b>: addiction as structure and identity for people whose lives lack purpose or belonging. Removing the behaviour without replacing the rhythm leaves a vacuum. The gospel offers a new identity (1 Peter 2:9-10) and a new rhythm through the practices of the Christian life.</p>",
-        "pastorals"    :"<p>Anne’s story involves bereavement. Be sensitive to anyone carrying grief – the anaesthetic dynamic will be very close to home, and they may feel judged rather than helped. Make clear this material is not designed to add guilt to grief.</p>\n<p>The <b>lament</b> material may be unfamiliar to many evangelicals. You may need to explain and model it.</p>",
-        "watch"        :"Watch for people carrying pain they have never brought to God – who have been using behaviour to manage it instead. This session may open a significant conversation. Follow up individually."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p><b>Relief</b>: addiction as anaesthetic for pain. The key move is from <em>escape</em> to <em>lament</em>. Both turn away from pressure, but escape turns away from God too; lament turns toward God in the pressure. The Psalms model lament, not escape.</p>\n<p><b>Rhythm</b>: addiction as structure and identity for people whose lives lack purpose or belonging. Removing the behaviour without replacing the rhythm leaves a vacuum. The gospel offers a new identity (1 Peter 2:9-10) and a new rhythm through the practices of the Christian life.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Anne’s story involves bereavement. Be sensitive to anyone carrying grief – the anaesthetic dynamic will be very close to home, and they may feel judged rather than helped. Make clear this material is not designed to add guilt to grief.</p>\n<p>The <b>lament</b> material may be unfamiliar to many evangelicals. You may need to explain and model it.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people carrying pain they have never brought to God – who have been using behaviour to manage it instead. This session may open a significant conversation. Follow up individually."
+        }
       },
       {
         "chapterNumber":5,
         "format"       :"HTML",
         "title"        :"Refuge: ‘You are Safe Here’",
-        "keyPoints"    :"<p>The longing for refuge is legitimate – God commands sabbath and Jesus himself sought regular withdrawal. The problem is seeking refuge in a place that offers the <em>feeling</em> of safety without its reality.</p>\n<p>Key distinction: <b>escape</b> (turns away from pressure and from God) vs genuine <b>rest</b> (turns toward God in the pressure, casting the weight rather than hiding from it). Recovery requires building real sabbath, not just removing the escape.</p>",
-        "pastorals"    :"<p>The chapter names people in high-responsibility roles as particularly vulnerable – this may apply to leaders in your group. Handle with self-awareness.</p>\n<p>Be alert to people redirecting to ‘worse’ addictions to avoid examining their own socially acceptable escapes (TV, reading, social media).</p>",
-        "watch"        :"Watch for people who have never genuinely rested – always busy, always productive. For them the invitation to sabbath may feel threatening. It may be the most important thing in this session for them."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The longing for refuge is legitimate – God commands sabbath and Jesus himself sought regular withdrawal. The problem is seeking refuge in a place that offers the <em>feeling</em> of safety without its reality.</p>\n<p>Key distinction: <b>escape</b> (turns away from pressure and from God) vs genuine <b>rest</b> (turns toward God in the pressure, casting the weight rather than hiding from it). Recovery requires building real sabbath, not just removing the escape.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The chapter names people in high-responsibility roles as particularly vulnerable – this may apply to leaders in your group. Handle with self-awareness.</p>\n<p>Be alert to people redirecting to ’worse’ addictions to avoid examining their own socially acceptable escapes (TV, reading, social media).</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who have never genuinely rested – always busy, always productive. For them the invitation to sabbath may feel threatening. It may be the most important thing in this session for them."
+        }
       },
       {
         "chapterNumber":6,
         "format"       :"HTML",
         "title"        :"Reward: ‘You Deserve This’",
-        "keyPoints"    :"<p>Two versions: <b>entitlement</b> (I’ve earned this) and <b>boredom</b> (easier pleasure is more immediately accessible). Both reflect a failure of faith – a vision of God too small to compete with the counterfeit.</p>\n<p>The <b>Moses example</b> (Hebrews 11:24-26) is the heart of the session. Moses does not suppress desire; he redirects it toward a truer and more lasting object. Faith does not work against desire; it satisfies it more deeply.</p>",
-        "pastorals"    :"<p>The entitlement dynamic can feel accusatory. James and Claire are designed to be sympathetic – the question is not whether the reward seems reasonable but whether it is real.</p>\n<p>Watch for quiet resentment at God from those who have made genuine sacrifices and feel the return has not come. The elder-brother dynamic begins here.</p>",
-        "watch"        :"Watch for people who find Psalm 16:11 (eternal pleasures at God’s right hand) unconvincing or distant. That gap is exactly where the false promise still holds power. Name it honestly."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>Two versions: <b>entitlement</b> (I’ve earned this) and <b>boredom</b> (easier pleasure is more immediately accessible). Both reflect a failure of faith – a vision of God too small to compete with the counterfeit.</p>\n<p>The <b>Moses example</b> (Hebrews 11:24-26) is the heart of the session. Moses does not suppress desire; he redirects it toward a truer and more lasting object. Faith does not work against desire; it satisfies it more deeply.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The entitlement dynamic can feel accusatory. James and Claire are designed to be sympathetic – the question is not whether the reward seems reasonable but whether it is real.</p>\n<p>Watch for quiet resentment at God from those who have made genuine sacrifices and feel the return has not come. The elder-brother dynamic begins here.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who find Psalm 16:11 (eternal pleasures at God’s right hand) unconvincing or distant. That gap is exactly where the false promise still holds power. Name it honestly."
+        }
       },
       {
         "chapterNumber":7,
         "format"       :"HTML",
         "title"        :"Revenge &amp; Redemption",
-        "keyPoints"    :"<p><b>Revenge</b>: addiction as protest, as taking back what feels owed, as acting out a grievance. The <b>elder brother</b> (Luke 15:29-32) was standing outside a feast always open to him, blind to the vastness of what he already had.</p>\n<p><b>Penance</b>: addiction as self-atonement, because ordinary forgiveness feels insufficient. Hebrews 10:12 is the answer: <em>the priest sat down</em>. The work is finished. There is nothing to add. Self-atonement, however soaked in shame, contains a hidden pride – it refuses the sufficiency of Christ’s work.</p>\n<p>The <b>guilt/shame distinction</b>: guilt is resolved by forgiveness; shame requires a deeper word – not merely acquittal but adoption.</p>",
-        "pastorals"    :"<p>The Revenge dynamic may surface real anger at God – driven underground because it felt dangerous to name. The Psalms give permission. Create space.</p>\n<p>Rachel’s story (using a hated behaviour as self-punishment) is not uncommon but rarely discussed. Some may recognise themselves. Significant pastoral territory – follow up individually.</p>",
-        "watch"        :"Watch for the person who has never been able to receive forgiveness – for whom the Gospel feels true for others but not for them. They need the priest-has-sat-down truth most urgently."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p><b>Revenge</b>: addiction as protest, as taking back what feels owed, as acting out a grievance. The <b>elder brother</b> (Luke 15:29-32) was standing outside a feast always open to him, blind to the vastness of what he already had.</p>\n<p><b>Penance</b>: addiction as self-atonement, because ordinary forgiveness feels insufficient. Hebrews 10:12 is the answer: <em>the priest sat down</em>. The work is finished. There is nothing to add. Self-atonement, however soaked in shame, contains a hidden pride – it refuses the sufficiency of Christ’s work.</p>\n<p>The <b>guilt/shame distinction</b>: guilt is resolved by forgiveness; shame requires a deeper word – not merely acquittal but adoption.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The Revenge dynamic may surface real anger at God – driven underground because it felt dangerous to name. The Psalms give permission. Create space.</p>\n<p>Rachel’s story (using a hated behaviour as self-punishment) is not uncommon but rarely discussed. Some may recognise themselves. Significant pastoral territory – follow up individually.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who has never been able to receive forgiveness – for whom the Gospel feels true for others but not for them. They need the priest-has-sat-down truth most urgently."
+        }
       },
       {
         "chapterNumber":8,
         "format"       :"HTML",
         "title"        :"The Gospel Offers More: Foundations for Change",
-        "keyPoints"    :"<p>Why doesn’t understanding the framework automatically produce change? Because the will follows desire, and desire is not changed by argument alone.</p>\n<p>Three foundations: (1) <b>What the Gospel actually is</b> – not thin forgiveness but reconciliation, adoption, union with Christ. (2) <b>Faith as the mechanism</b> – working through desire, not against it; satisfying the thirst for joy more deeply than sin can. (3) <b>The Holy Spirit</b> as agent of transformation, working through the means of grace.</p>\n<p>The <b>non-linearity of change</b> must be named honestly: relapse is common, progress is uneven, the response to relapse is repentance not despair.</p>",
-        "pastorals"    :"<p>The opening scenario (understanding everything, still stuck) creates identification before the teaching. Many will recognise themselves. This session is not designed to add guilt to frustration but to give a more accurate diagnosis.</p>\n<p>People who have been working hard at the means of grace and still feel stuck need honesty about the timeframe and encouragement about what God is doing unseen.</p>",
-        "watch"        :"Watch for those using ‘results are God’s’ as permission for passivity. The means-of-grace section directly addresses this – use it."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>Why doesn’t understanding the framework automatically produce change? Because the will follows desire, and desire is not changed by argument alone.</p>\n<p>Three foundations: (1) <b>What the Gospel actually is</b> – not thin forgiveness but reconciliation, adoption, union with Christ. (2) <b>Faith as the mechanism</b> – working through desire, not against it; satisfying the thirst for joy more deeply than sin can. (3) <b>The Holy Spirit</b> as agent of transformation, working through the means of grace.</p>\n<p>The <b>non-linearity of change</b> must be named honestly: relapse is common, progress is uneven, the response to relapse is repentance not despair.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The opening scenario (understanding everything, still stuck) creates identification before the teaching. Many will recognise themselves. This session is not designed to add guilt to frustration but to give a more accurate diagnosis.</p>\n<p>People who have been working hard at the means of grace and still feel stuck need honesty about the timeframe and encouragement about what God is doing unseen.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for those using ’results are God’s’ as permission for passivity. The means-of-grace section directly addresses this – use it."
+        }
       },
       {
         "chapterNumber":9,
         "format"       :"HTML",
         "title"        :"Walk in the Light: Community, Accountability, &amp; the Long Haul",
-        "keyPoints"    :"<p>Theological foundations must become concrete structures. <b>Accountability</b> defined specifically: a named person who knows the real shape of the struggle, asks hard questions, and responds to failure with ‘let’s bring this to Christ’. Moralistic accountability drives behaviour underground; grace-based accountability creates safety for honesty.</p>\n<p><b>Practical structures</b> (filters, environmental management, restructuring dangerous hours) are wisdom, not spiritual weakness. There is no virtue in unnecessary exposure.</p>",
-        "pastorals"    :"<p>Some may have no one who knows the truth. Be ready for people to take a step during or after this session. Follow up.</p>\n<p>The relapse material needs honesty: silence has driven many into isolation and despair. The Gospel’s answer is repentance and return, not despair and self-atonement.</p>",
-        "watch"        :"Watch for those taking ‘results are God’s’ as a reason for passivity about their discipleship structures. The session directly addresses this – use it."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>Theological foundations must become concrete structures. <b>Accountability</b> defined specifically: a named person who knows the real shape of the struggle, asks hard questions, and responds to failure with ’let’s bring this to Christ’. Moralistic accountability drives behaviour underground; grace-based accountability creates safety for honesty.</p>\n<p><b>Practical structures</b> (filters, environmental management, restructuring dangerous hours) are wisdom, not spiritual weakness. There is no virtue in unnecessary exposure.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some may have no one who knows the truth. Be ready for people to take a step during or after this session. Follow up.</p>\n<p>The relapse material needs honesty: silence has driven many into isolation and despair. The Gospel’s answer is repentance and return, not despair and self-atonement.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for those taking ’results are God’s’ as a reason for passivity about their discipleship structures. The session directly addresses this – use it."
+        }
       },
       {
         "chapterNumber":10,
         "format"       :"HTML",
         "title"        :"Freed by a Better Joy",
-        "keyPoints"    :"<p>A gathering-up and a sending-out. The central claim: there is a joy so full, so true, and so lasting that the counterfeits eventually lose not just their power but their appeal. The question pressed is not ‘have you stopped?’ but ‘what are you <em>for</em>?’ Freedom from is always in service of freedom for.</p>",
-        "pastorals"    :"<p>Some will end this series more free than when they started. Others will feel they have understood much but changed little. Both need this session, but for different reasons: the first need vision; the second need patience and permission to press on.</p>\n<p>End with genuine warmth. Offer to follow up individually with anyone for whom the series has opened something significant.</p>",
-        "watch"        :"Watch for anyone ending the series more aware of their struggle but without clear next steps. Make sure they leave with a specific person to talk to."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>A gathering-up and a sending-out. The central claim: there is a joy so full, so true, and so lasting that the counterfeits eventually lose not just their power but their appeal. The question pressed is not ’have you stopped?’ but ’what are you <em>for</em>?’ Freedom from is always in service of freedom for.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some will end this series more free than when they started. Others will feel they have understood much but changed little. Both need this session, but for different reasons: the first need vision; the second need patience and permission to press on.</p>\n<p>End with genuine warmth. Offer to follow up individually with anyone for whom the series has opened something significant.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for anyone ending the series more aware of their struggle but without clear next steps. Make sure they leave with a specific person to talk to."
+        }
       }
     ]
   },

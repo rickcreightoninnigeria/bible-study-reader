@@ -719,6 +719,16 @@ function renderMenu() {
     </div>`;
   }
 
+  if (window.goDeeperData) {
+    const goDeepLabel = resolveMetaField(window.goDeeperData, 'titleMenuHeading', activeLang, langMap)
+      || window.goDeeperData.titleMenuHeading || 'Go Deeper';
+    html += `
+    <div class="chapter-item" onclick="Router.navigate({ page: 'godeeper' })">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">${goDeepLabel}</span>
+    </div>`;
+  }
+
   if (appSettings.showPageAbout) {
     html += `
     <div class="chapter-item" onclick="Router.navigate({ page: 'about' })">

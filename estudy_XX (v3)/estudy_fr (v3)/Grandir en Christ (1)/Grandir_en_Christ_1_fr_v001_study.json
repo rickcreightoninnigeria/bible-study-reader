@@ -8,12 +8,15 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Sanctification" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Growth in Grace" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language"         :"fr",
-    "createdAt"        :"2026-04-13T00:00:00Z",
-    "updatedAt"        :"2026-04-13T00:00:00Z",
-    "tags"             :["growth", "discipleship", "sanctification", "spiritual-formation"],
-    "shareMessage"     :"Découvrez cette application d’étude biblique — « Grandir en Christ ».\n\nBientôt disponible sur Google Play et l’App Store."
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-13T00:00:00Z",
+    "updatedAt"   :"2026-04-13T00:00:00Z",
+    "tags"        :["growth", "discipleship", "sanctification", "spiritual-formation"],
+    "shareMessage":"Découvrez cette application d’étude biblique — « Grandir en Christ ».\n\nBientôt disponible sur Google Play et l’App Store."
   },
   "theme":{
     "theme-annotation":"Thème d’étude vert — palette discrète de sauge et de forêt. Organique et terreux, évoquant la croissance, la vie nouvelle et le monde naturel. Adapté aux études sur le renouveau, la création ou la formation spirituelle. Apaisant plutôt qu’urgent.",
@@ -3154,6 +3157,7 @@
   },
   "leadersNotesData":{
     "subtitle":"Grandir en Christ",
+    "format"  :"HTML",
     "intro"   :[
       "Ces notes sont conçues pour aider les responsables de groupe et les mentors à tirer le meilleur parti de chaque chapitre – tant pour les personnes qu’ils dirigent que pour eux-mêmes. Elles ne remplacent pas le travail personnel sur le contenu au préalable. Les meilleurs responsables sont ceux qui ont travaillé sur les questions personnellement avant d’aider les autres à faire de même.",
       "<strong>Créez un espace sécurisant pour l’honnêteté.</strong> Les questions de cette étude sont conçues pour susciter une réflexion réelle, et non de simples réponses correctes. Votre rôle est de faire en sorte que le groupe se sente suffisamment en sécurité pour dire ce qu’il pense réellement, et non ce qu’il pense qu’un chrétien est censé dire.",
@@ -3163,55 +3167,138 @@
     "chapters":[
       {
         "chapterNumber":1,
-        "keyPoints"    :"<p>Ce chapitre d’ouverture établit le <b>cadre de toute l’étude</b> : la vie chrétienne commence et se poursuit par la repentance et la foi. Aucune des deux ne peut être laissée de côté.</p>\n<p>Le concept du « Graphique de Croissance » est central. Utilisez-le pour amener le groupe à se situer honnêtement — sont-ils sur une trajectoire de Graphique 3 (irrégulière mais en croissance) ou de Graphique 4 (stagnante) ? Ce n’est pas une question piège ; la réponse honnête est la seule utile.</p>\n<p>Mettez en évidence le lien entre <b>le péché et les ténèbres</b> (1 Jean 1:5–7) : les choses que nous gardons cachées ont tendance à croître. La repentance n’est pas seulement un acte ponctuel lors de la conversion — c’est la posture continue de la vie chrétienne.</p>",
-        "pastorals"    :"<p>Certaines personnes du groupe peuvent se sentir bloquées et en avoir honte. Le ton du chapitre n’est pas condamnateur — il est plein d’espoir. Le Graphique 4 peut devenir un Graphique 5. Assurez-vous que ce message soit clairement reçu.</p>\n<p>D’autres pourraient être tentés de cocher « Graphique 3 » automatiquement sans réelle réflexion. Encouragez une auto-évaluation honnête ; l’exercice du graphique de croissance ne fonctionne que si les gens s’y engagent sincèrement.</p>\n<p>Surveillez les personnes qui sont embarrassées par un péché persistant (1 Jean 1:8–9). Le chapitre traite cela directement : prétendre que nous n’avons pas de luttes engendre l’hypocrisie et freine la croissance. Aidez le groupe à voir que reconnaître son péché devant Dieu — et devant des tiers de confiance — est la voie à suivre, et non un signe d’échec.</p>",
-        "watch"        :"👁️ Surveillez les personnes qui assimilent la maturité spirituelle au fait d’avoir moins de luttes. Le chapitre soutient le contraire : les chrétiens matures sont plus honnêtes quant à leurs luttes, pas moins.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Points clés de l’enseignement",
+          "body"   :"<p>Ce chapitre d’ouverture établit le <b>cadre de toute l’étude</b> : la vie chrétienne commence et se poursuit par la repentance et la foi. Aucune des deux ne peut être laissée de côté.</p>\n<p>Le concept du « Graphique de Croissance » est central. Utilisez-le pour amener le groupe à se situer honnêtement — sont-ils sur une trajectoire de Graphique 3 (irrégulière mais en croissance) ou de Graphique 4 (stagnante) ? Ce n’est pas une question piège ; la réponse honnête est la seule utile.</p>\n<p>Mettez en évidence le lien entre <b>le péché et les ténèbres</b> (1 Jean 1:5–7) : les choses que nous gardons cachées ont tendance à croître. La repentance n’est pas seulement un acte ponctuel lors de la conversion — c’est la posture continue de la vie chrétienne.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Sensibilité pastorale",
+          "body"   :"<p>Certaines personnes du groupe peuvent se sentir bloquées et en avoir honte. Le ton du chapitre n’est pas condamnateur — il est plein d’espoir. Le Graphique 4 peut devenir un Graphique 5. Assurez-vous que ce message soit clairement reçu.</p>\n<p>D’autres pourraient être tentés de cocher « Graphique 3 » automatiquement sans réelle réflexion. Encouragez une auto-évaluation honnête ; l’exercice du graphique de croissance ne fonctionne que si les gens s’y engagent sincèrement.</p>\n<p>Surveillez les personnes qui sont embarrassées par un péché persistant (1 Jean 1:8–9). Le chapitre traite cela directement : prétendre que nous n’avons pas de luttes engendre l’hypocrisie et freine la croissance. Aidez le groupe à voir que reconnaître son péché devant Dieu — et devant des tiers de confiance — est la voie à suivre, et non un signe d’échec.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Éléments à surveiller",
+          "body"   :"👁️ Surveillez les personnes qui assimilent la maturité spirituelle au fait d’avoir moins de luttes. Le chapitre soutient le contraire : les chrétiens matures sont plus honnêtes quant à leurs luttes, pas moins."
+        }
       },
       {
         "chapterNumber":2,
-        "keyPoints"    :"<p>Ce chapitre explore ce que signifie <b>grandir en Jésus</b> : dans l’obéissance, dans la grâce et dans la connaissance de Christ. Ces trois aspects ne sont pas des alternatives — ils vont ensemble.</p>\n<p>L’illustration de la fosse septique est délibérément provocatrice. Utilisez-la pour poser la question : voulons-nous réellement être sauvés du péché, ou simplement de ses conséquences ? Le salut et le discipulat doivent aller de pair (Matthieu 28:19–20).</p>\n<p>La section sur <b>la grâce et la piété</b> (Tite 2:12 ; Romains 5:6–8, 10) est théologiquement importante. Christ ne nous a pas sauvés parce que nous avons appris à Lui obéir. Nous obéissons parce qu’Il nous a déjà sauvés. Cet ordre est d’une importance capitale pour la manière dont les gens abordent la vie chrétienne.</p>",
-        "pastorals"    :"<p>L’histoire de Paul au début trouvera un écho chez beaucoup dans le groupe — le schéma du refroidissement est très courant. Normalisez-le, mais ne vous en arrêtez pas là : le point est que cela ne doit pas forcément rester ainsi.</p>\n<p>Certains peuvent avoir du mal avec l’idée que l’amour de Dieu ne dépend pas de leurs performances. C’est profondément contre-intuitif pour beaucoup. Prenez du temps avec Romains 5:6–8 — Christ est mort pour nous alors que nous étions encore pécheurs, et non une fois que nous nous étions amendés.</p>\n<p>L’échelle de Likert « Examen du Cœur » à la fin est conçue pour faire émerger une conscience de soi honnête. Encouragez les gens à y répondre en privé et avec vérité avant toute discussion de groupe.</p>",
-        "watch"        :"👁️ Surveillez les personnes qui entendent « grâce » et en concluent que l’obéissance n’a pas d’importance. Le chapitre est clair sur le fait que la grâce produit la piété (Tite 2:12), et n’est pas un permis pour se laisser aller.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Points clés de l’enseignement",
+          "body"   :"<p>Ce chapitre explore ce que signifie <b>grandir en Jésus</b> : dans l’obéissance, dans la grâce et dans la connaissance de Christ. Ces trois aspects ne sont pas des alternatives — ils vont ensemble.</p>\n<p>L’illustration de la fosse septique est délibérément provocatrice. Utilisez-la pour poser la question : voulons-nous réellement être sauvés du péché, ou simplement de ses conséquences ? Le salut et le discipulat doivent aller de pair (Matthieu 28:19–20).</p>\n<p>La section sur <b>la grâce et la piété</b> (Tite 2:12 ; Romains 5:6–8, 10) est théologiquement importante. Christ ne nous a pas sauvés parce que nous avons appris à Lui obéir. Nous obéissons parce qu’Il nous a déjà sauvés. Cet ordre est d’une importance capitale pour la manière dont les gens abordent la vie chrétienne.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Sensibilité pastorale",
+          "body"   :"<p>L’histoire de Paul au début trouvera un écho chez beaucoup dans le groupe — le schéma du refroidissement est très courant. Normalisez-le, mais ne vous en arrêtez pas là : le point est que cela ne doit pas forcément rester ainsi.</p>\n<p>Certains peuvent avoir du mal avec l’idée que l’amour de Dieu ne dépend pas de leurs performances. C’est profondément contre-intuitif pour beaucoup. Prenez du temps avec Romains 5:6–8 — Christ est mort pour nous alors que nous étions encore pécheurs, et non une fois que nous nous étions amendés.</p>\n<p>L’échelle de Likert « Examen du Cœur » à la fin est conçue pour faire émerger une conscience de soi honnête. Encouragez les gens à y répondre en privé et avec vérité avant toute discussion de groupe.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Éléments à surveiller",
+          "body"   :"👁️ Surveillez les personnes qui entendent « grâce » et en concluent que l’obéissance n’a pas d’importance. Le chapitre est clair sur le fait que la grâce produit la piété (Tite 2:12), et n’est pas un permis pour se laisser aller."
+        }
       },
       {
         "chapterNumber":3,
-        "keyPoints"    :"<p>Ce chapitre souligne la distinction entre <b>vieillir et mûrir</b>. Le temps passe automatiquement ; la croissance non. Certaines personnes sont chrétiennes depuis des décennies et sont toujours bloquées à un stade précoce de maturité — et ce n’est pas ce que Dieu veut.</p>\n<p>Les passages de Colossiens, du Psaume 1 et de Marc 4 construisent ensemble une image de ce à quoi ressemblent les <b>racines</b> en pratique : rester enraciné en Christ (Col 2:6–7), méditer la Parole de Dieu (Ps 1:2–3) et ne pas laisser les épines de la vie étouffer la croissance (Marc 4:7).</p>\n<p>La section <b>Plan de Croissance-Évangile</b> est la pièce maîtresse pratique du chapitre. Elle demande aux gens d’identifier un domaine de croissance spécifique et personnel — pas une aspiration vague, mais une cible concrète. Cela mérite un temps de discussion important.</p>",
-        "pastorals"    :"<p>Les gens peuvent trouver inconfortable qu’on leur demande de nommer un domaine de croissance spécifique. Certains se rabattront sur quelque chose de sûr et général. Poussez doucement vers quelque chose de réel — l’exercice n’a de valeur que s’il est honnête.</p>\n<p>Soyez sensible au fait que certains domaines de croissance (addiction, péché secret, rupture relationnelle) peuvent être profondément douloureux à reconnaître, même en privé. Le format de l’application offre de la confidentialité ; utilisez cela comme un avantage, pas comme une limite.</p>\n<p>Le passage sur la destinée extraordinaire (Philippiens 3:20–21) est censé être véritablement motivant. Ne le survolez pas — la croissance n’est pas un simple devoir ; c’est s’avancer vers quelque chose de glorieux.</p>",
-        "watch"        :"👁️ Surveillez les personnes qui choisissent un domaine de croissance qui concerne en réalité quelqu’un d’autre (« mon mariage », « ma famille »). Le plan doit être personnel et individuel.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Points clés de l’enseignement",
+          "body"   :"<p>Ce chapitre souligne la distinction entre <b>vieillir et mûrir</b>. Le temps passe automatiquement ; la croissance non. Certaines personnes sont chrétiennes depuis des décennies et sont toujours bloquées à un stade précoce de maturité — et ce n’est pas ce que Dieu veut.</p>\n<p>Les passages de Colossiens, du Psaume 1 et de Marc 4 construisent ensemble une image de ce à quoi ressemblent les <b>racines</b> en pratique : rester enraciné en Christ (Col 2:6–7), méditer la Parole de Dieu (Ps 1:2–3) et ne pas laisser les épines de la vie étouffer la croissance (Marc 4:7).</p>\n<p>La section <b>Plan de Croissance-Évangile</b> est la pièce maîtresse pratique du chapitre. Elle demande aux gens d’identifier un domaine de croissance spécifique et personnel — pas une aspiration vague, mais une cible concrète. Cela mérite un temps de discussion important.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Sensibilité pastorale",
+          "body"   :"<p>Les gens peuvent trouver inconfortable qu’on leur demande de nommer un domaine de croissance spécifique. Certains se rabattront sur quelque chose de sûr et général. Poussez doucement vers quelque chose de réel — l’exercice n’a de valeur que s’il est honnête.</p>\n<p>Soyez sensible au fait que certains domaines de croissance (addiction, péché secret, rupture relationnelle) peuvent être profondément douloureux à reconnaître, même en privé. Le format de l’application offre de la confidentialité ; utilisez cela comme un avantage, pas comme une limite.</p>\n<p>Le passage sur la destinée extraordinaire (Philippiens 3:20–21) est censé être véritablement motivant. Ne le survolez pas — la croissance n’est pas un simple devoir ; c’est s’avancer vers quelque chose de glorieux.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Éléments à surveiller",
+          "body"   :"👁️ Surveillez les personnes qui choisissent un domaine de croissance qui concerne en réalité quelqu’un d’autre (« mon mariage », « ma famille »). Le plan doit être personnel et individuel."
+        }
       },
       {
         "chapterNumber":4,
-        "keyPoints"    :"<p>Ce chapitre présente <b>le péché comme un prédateur</b>. La citation de John Owen — « Tuez le péché ou c’est lui qui vous tuera » — cadre tout ce qui suit. Le péché n’est pas un inconvénient mineur ; il est activement destructeur.</p>\n<p>L’étude de Genèse 3 mérite une attention particulière. Les tactiques du serpent — remettre en question la parole de Dieu, déformer Ses commandements, promettre ce qu’Il n’a pas promis — sont toujours d’actualité. Aidez le groupe à voir comment ces tactiques fonctionnent dans leur propre expérience de la tentation.</p>\n<p>La section sur <b>la propagation du péché</b> (Genèse 4) montre avec quelle rapidité le péché s’intensifie : d’un acte de désobéissance au fratricide en une génération. L’illustration de la graine de mauvaise herbe souligne bien le point — les petits péchés ne sont pas inoffensifs ; ils grandissent.</p>",
-        "pastorals"    :"<p>L’histoire de Thomas au début est délibérément percutante. Certains dans le groupe peuvent avoir leur propre version de cette histoire. Le but n’est pas de choquer, mais d’être honnête sur le fait que les effets du péché peuvent être dévastateurs — et qu’il y a un chemin de retour.</p>\n<p>La question « Dans votre vie, qui réussit le mieux à tuer l’autre ? » est intentionnellement directe. Laissez aux gens l’espace nécessaire pour réfléchir à cette question avant de continuer. Le silence ici est souvent productif.</p>\n<p>Surveillez les personnes qui minimisent leur péché en le comparant à celui des autres. La dynamique de la demi-vérité (Genèse 3) mérite d’être soulignée : les mensonges les plus dangereux contiennent une part de vérité.</p>",
-        "watch"        :"👁️ Surveillez les personnes qui portent un péché caché depuis longtemps et qui peuvent avoir l’impression que leur situation est désespérée. Les indices de grâce dans Genèse 3:15 et 3:21 sont là pour une raison — Dieu n’a pas renoncé à Ses projets de bénédiction.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Points clés de l’enseignement",
+          "body"   :"<p>Ce chapitre présente <b>le péché comme un prédateur</b>. La citation de John Owen — « Tuez le péché ou c’est lui qui vous tuera » — cadre tout ce qui suit. Le péché n’est pas un inconvénient mineur ; il est activement destructeur.</p>\n<p>L’étude de Genèse 3 mérite une attention particulière. Les tactiques du serpent — remettre en question la parole de Dieu, déformer Ses commandements, promettre ce qu’Il n’a pas promis — sont toujours d’actualité. Aidez le groupe à voir comment ces tactiques fonctionnent dans leur propre expérience de la tentation.</p>\n<p>La section sur <b>la propagation du péché</b> (Genèse 4) montre avec quelle rapidité le péché s’intensifie : d’un acte de désobéissance au fratricide en une génération. L’illustration de la graine de mauvaise herbe souligne bien le point — les petits péchés ne sont pas inoffensifs ; ils grandissent.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Sensibilité pastorale",
+          "body"   :"<p>L’histoire de Thomas au début est délibérément percutante. Certains dans le groupe peuvent avoir leur propre version de cette histoire. Le but n’est pas de choquer, mais d’être honnête sur le fait que les effets du péché peuvent être dévastateurs — et qu’il y a un chemin de retour.</p>\n<p>La question « Dans votre vie, qui réussit le mieux à tuer l’autre ? » est intentionnellement directe. Laissez aux gens l’espace nécessaire pour réfléchir à cette question avant de continuer. Le silence ici est souvent productif.</p>\n<p>Surveillez les personnes qui minimisent leur péché en le comparant à celui des autres. La dynamique de la demi-vérité (Genèse 3) mérite d’être soulignée : les mensonges les plus dangereux contiennent une part de vérité.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Éléments à surveiller",
+          "body"   :"👁️ Surveillez les personnes qui portent un péché caché depuis longtemps et qui peuvent avoir l’impression que leur situation est désespérée. Les indices de grâce dans Genèse 3:15 et 3:21 sont là pour une raison — Dieu n’a pas renoncé à Ses projets de bénédiction."
+        }
       },
       {
         "chapterNumber":5,
-        "keyPoints"    :"<p>Ce chapitre explore <b>le péché comme un refus</b> — refus de la connaissance de Dieu, de Son autorité, de Sa bonté, et finalement de Dieu Lui-même. La citation d’ouverture de Reinhold Niebuhr définit le péché comme le refus d’accepter nos limites de créatures.</p>\n<p>La séquence des passages construit une image cumulative de ce que le péché refuse : la connaissance (Romains 1:18–23), l’autorité de Dieu (Romains 5:14 ; Ézéchiel 2:3–5), la gratitude (Romains 1:21b), la relation (Lévitique 26:40), et enfin Dieu Lui-même (Romains 1:25).</p>\n<p>Le contraste avec Marc 12:30 est important : l’opposé du refus de Dieu est de <b>L’aimer de tout son être</b>. Utilisez cela pour faire passer la discussion du diagnostic à l’aspiration.</p>\n<p>Le texte de transition final sur les <b>hiérarchies de péchés</b> mérite qu’on s’y attarde — les chrétiens tolèrent souvent les péchés invisibles (orgueil, cupidité, envie) tout en surveillant les péchés visibles. Jésus ne fonctionnait pas ainsi.</p>",
-        "pastorals"    :"<p>Ce chapitre est théologiquement dense. Ne vous sentez pas obligé de couvrir chaque passage en groupe — choisissez les deux ou trois les plus pertinents pour votre groupe.</p>\n<p>La question « De quel type de refus êtes-vous le plus à risque ? » est très personnelle. Elle peut produire soit des réponses très honnêtes, soit des réponses très réservées. Les deux réactions sont révélatrices.</p>\n<p>La dynamique du Pharisien dans le texte final (Marc 2:15–17) est importante sur le plan pastoral : certains membres du groupe peuvent être très bons dans la religion extérieure tout en nourrissant de profonds refus intérieurs. À manipuler avec précaution.</p>",
-        "watch"        :"👁️ Surveillez les personnes qui s’identifient facilement aux exemples de « refus d’autorité » mais qui sont aveugles à leur propre refus de gratitude ou de relation avec Dieu. Les deux sont des formes de la même chose.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Points clés de l’enseignement",
+          "body"   :"<p>Ce chapitre explore <b>le péché comme un refus</b> — refus de la connaissance de Dieu, de Son autorité, de Sa bonté, et finalement de Dieu Lui-même. La citation d’ouverture de Reinhold Niebuhr définit le péché comme le refus d’accepter nos limites de créatures.</p>\n<p>La séquence des passages construit une image cumulative de ce que le péché refuse : la connaissance (Romains 1:18–23), l’autorité de Dieu (Romains 5:14 ; Ézéchiel 2:3–5), la gratitude (Romains 1:21b), la relation (Lévitique 26:40), et enfin Dieu Lui-même (Romains 1:25).</p>\n<p>Le contraste avec Marc 12:30 est important : l’opposé du refus de Dieu est de <b>L’aimer de tout son être</b>. Utilisez cela pour faire passer la discussion du diagnostic à l’aspiration.</p>\n<p>Le texte de transition final sur les <b>hiérarchies de péchés</b> mérite qu’on s’y attarde — les chrétiens tolèrent souvent les péchés invisibles (orgueil, cupidité, envie) tout en surveillant les péchés visibles. Jésus ne fonctionnait pas ainsi.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Sensibilité pastorale",
+          "body"   :"<p>Ce chapitre est théologiquement dense. Ne vous sentez pas obligé de couvrir chaque passage en groupe — choisissez les deux ou trois les plus pertinents pour votre groupe.</p>\n<p>La question « De quel type de refus êtes-vous le plus à risque ? » est très personnelle. Elle peut produire soit des réponses très honnêtes, soit des réponses très réservées. Les deux réactions sont révélatrices.</p>\n<p>La dynamique du Pharisien dans le texte final (Marc 2:15–17) est importante sur le plan pastoral : certains membres du groupe peuvent être très bons dans la religion extérieure tout en nourrissant de profonds refus intérieurs. À manipuler avec précaution.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Éléments à surveiller",
+          "body"   :"👁️ Surveillez les personnes qui s’identifient facilement aux exemples de « refus d’autorité » mais qui sont aveugles à leur propre refus de gratitude ou de relation avec Dieu. Les deux sont des formes de la même chose."
+        }
       },
       {
         "chapterNumber":6,
-        "keyPoints"    :"<p>Ce chapitre passe du diagnostic du péché à l’<b>amour du Père</b>. La parabole du fils perdu (Luc 15:11–32) est le texte principal, exploré à travers ses trois personnages principaux.</p>\n<p>Le fils cadet représente la personne qui s’est éloignée ouvertement de Dieu. Son parcours — de la demande de son héritage à la garde des cochons puis au fait de « rentrer en lui-même » — correspond à l’expérience que beaucoup font du péché et de ses conséquences.</p>\n<p>La réponse du père est le cœur théologique du chapitre : il voit son fils « alors qu’il était encore loin », court vers lui et le restaure pleinement. Ce n’est pas une acceptation à contrecœur — c’est un accueil extravagant. La robe, l’anneau, le veau gras : une restauration totale, pas une mise à l’épreuve.</p>\n<p>L’échelle de Likert bipolaire au début — mesurant comment le groupe perçoit l’attitude de Dieu envers lui — permet d’établir une comparaison avant/après avec le chapitre 7. Elle mérite d’être remplie avec soin.</p>",
-        "pastorals"    :"<p>Certains dans le groupe s’identifieront douloureusement au fils cadet. Soyez prêt à cela. Le message du chapitre est un message d’espoir : le père n’a pas abandonné, et Dieu non plus.</p>\n<p>La distinction entre partir par la « porte de devant » et partir par la « porte de derrière » est pastoralement significative. Certaines personnes dans les milieux ecclésiaux ne sont jamais vraiment revenues à la maison vers Dieu — elles sont juste restées dans les environs. Abordez cela avec douceur mais honnêteté.</p>\n<p>La question « Vous sentez-vous principalement chez vous avec Dieu, ou plutôt distant ? » est un baromètre pastoral clé. Ne la survolez pas.</p>",
-        "watch"        :"👁️ Surveillez les personnes qui ont une vision profondément négative de Dieu — comme distant, porté au jugement ou indifférent. La parabole est spécifiquement conçue pour corriger cette image. Laissez-la faire son œuvre.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Points clés de l’enseignement",
+          "body"   :"<p>Ce chapitre passe du diagnostic du péché à l’<b>amour du Père</b>. La parabole du fils perdu (Luc 15:11–32) est le texte principal, exploré à travers ses trois personnages principaux.</p>\n<p>Le fils cadet représente la personne qui s’est éloignée ouvertement de Dieu. Son parcours — de la demande de son héritage à la garde des cochons puis au fait de « rentrer en lui-même » — correspond à l’expérience que beaucoup font du péché et de ses conséquences.</p>\n<p>La réponse du père est le cœur théologique du chapitre : il voit son fils « alors qu’il était encore loin », court vers lui et le restaure pleinement. Ce n’est pas une acceptation à contrecœur — c’est un accueil extravagant. La robe, l’anneau, le veau gras : une restauration totale, pas une mise à l’épreuve.</p>\n<p>L’échelle de Likert bipolaire au début — mesurant comment le groupe perçoit l’attitude de Dieu envers lui — permet d’établir une comparaison avant/après avec le chapitre 7. Elle mérite d’être remplie avec soin.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Sensibilité pastorale",
+          "body"   :"<p>Certains dans le groupe s’identifieront douloureusement au fils cadet. Soyez prêt à cela. Le message du chapitre est un message d’espoir : le père n’a pas abandonné, et Dieu non plus.</p>\n<p>La distinction entre partir par la « porte de devant » et partir par la « porte de derrière » est pastoralement significative. Certaines personnes dans les milieux ecclésiaux ne sont jamais vraiment revenues à la maison vers Dieu — elles sont juste restées dans les environs. Abordez cela avec douceur mais honnêteté.</p>\n<p>La question « Vous sentez-vous principalement chez vous avec Dieu, ou plutôt distant ? » est un baromètre pastoral clé. Ne la survolez pas.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Éléments à surveiller",
+          "body"   :"👁️ Surveillez les personnes qui ont une vision profondément négative de Dieu — comme distant, porté au jugement ou indifférent. La parabole est spécifiquement conçue pour corriger cette image. Laissez-la faire son œuvre."
+        }
       },
       {
         "chapterNumber":7,
-        "keyPoints"    :"<p>Ce chapitre complète la parabole en se concentrant sur <b>le fils aîné et l’auditoire</b>. Jésus a initialement raconté cette parabole aux Pharisiens — des personnes religieuses mais distantes de Dieu d’une manière différente.</p>\n<p>Le problème du fils aîné n’est pas l’irréligion mais une <b>vision transactionnelle de sa relation avec le père</b>. Il pense avoir mérité l’amour par son obéissance. Il est à des kilomètres de son père émotionnellement, même en vivant dans sa maison. C’est un défi profond pour les habitués des églises.</p>\n<p>L’illustration de « l’immeuble » remet en question l’idée reçue selon laquelle le salut consiste à être assez bon. Tite 3:5 et Galates 2:16 indiquent clairement que personne n’est justifié par les œuvres — Dieu coupe l’édifice verticalement, pas horizontalement.</p>\n<p>La répétition de l’échelle de Likert bipolaire à la fin permet aux gens de comparer leur perception de l’attitude de Dieu envers eux avant et après s’être plongés dans la parabole. Cela peut être un moment de réflexion puissant.</p>",
-        "pastorals"    :"<p>La dynamique du fils aîné est souvent plus difficile à faire émerger dans un groupe que celle du fils cadet. Les personnes qui s’identifient au fils aîné sont souvent performantes, respectables et résistantes à l’idée qu’elles pourraient être « en dehors de la fête ».</p>\n<p>Les questions « Suis-je plus semblable au fils cadet ou à l’aîné ? » et « Suis-je à l’intérieur de la fête ou dehors ? » sont les plus importantes du chapitre. Consacrez-leur du temps et de l’espace réels.</p>\n<p>La comparaison finale des deux échelles de Likert (des chapitres 6 et 7) est l’occasion d’un moment véritablement émouvant — si les gens se sont engagés honnêtement, ils peuvent découvrir que la parabole a modifié quelque chose dans leur vision de Dieu. Soyez attentif à cela.</p>",
-        "watch"        :"👁️ Surveillez les personnes qui donnent un assentiment intellectuel à l’Évangile (« oui, je sais que Dieu m’aime ») sans aucune réalité émotionnelle. La parabole est conçue pour toucher les gens, pas seulement pour les informer.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Points clés de l’enseignement",
+          "body"   :"<p>Ce chapitre complète la parabole en se concentrant sur <b>le fils aîné et l’auditoire</b>. Jésus a initialement raconté cette parabole aux Pharisiens — des personnes religieuses mais distantes de Dieu d’une manière différente.</p>\n<p>Le problème du fils aîné n’est pas l’irréligion mais une <b>vision transactionnelle de sa relation avec le père</b>. Il pense avoir mérité l’amour par son obéissance. Il est à des kilomètres de son père émotionnellement, même en vivant dans sa maison. C’est un défi profond pour les habitués des églises.</p>\n<p>L’illustration de « l’immeuble » remet en question l’idée reçue selon laquelle le salut consiste à être assez bon. Tite 3:5 et Galates 2:16 indiquent clairement que personne n’est justifié par les œuvres — Dieu coupe l’édifice verticalement, pas horizontalement.</p>\n<p>La répétition de l’échelle de Likert bipolaire à la fin permet aux gens de comparer leur perception de l’attitude de Dieu envers eux avant et après s’être plongés dans la parabole. Cela peut être un moment de réflexion puissant.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Sensibilité pastorale",
+          "body"   :"<p>La dynamique du fils aîné est souvent plus difficile à faire émerger dans un groupe que celle du fils cadet. Les personnes qui s’identifient au fils aîné sont souvent performantes, respectables et résistantes à l’idée qu’elles pourraient être « en dehors de la fête ».</p>\n<p>Les questions « Suis-je plus semblable au fils cadet ou à l’aîné ? » et « Suis-je à l’intérieur de la fête ou dehors ? » sont les plus importantes du chapitre. Consacrez-leur du temps et de l’espace réels.</p>\n<p>La comparaison finale des deux échelles de Likert (des chapitres 6 et 7) est l’occasion d’un moment véritablement émouvant — si les gens se sont engagés honnêtement, ils peuvent découvrir que la parabole a modifié quelque chose dans leur vision de Dieu. Soyez attentif à cela.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Éléments à surveiller",
+          "body"   :"👁️ Surveillez les personnes qui donnent un assentiment intellectuel à l’Évangile (« oui, je sais que Dieu m’aime ») sans aucune réalité émotionnelle. La parabole est conçue pour toucher les gens, pas seulement pour les informer."
+        }
       }
-    ],
-    "format":"HTML"
+    ]
   },
   "studyAboutData":{
     "author":{

@@ -37,6 +37,10 @@ Licensed **CC BY-SA 4.0** — Rick Creighton, 2026.
   manual Save button also available.
 - **Progress tracking** — per-chapter completion rings and a full Progress
   Overview page; starred/bookmarked questions panel.
+- **Go Deeper page** — optional supplementary prose page for readers who want
+  more background. Structured as an intro tab and one tab per chapter; supports
+  standard and highlighted callout blocks. Appears in the Contents menu
+  automatically when `goDeeperData` is present in the `.estudy` file.
 - **Full-text search** — searches questions, bridge text, and the user's own
   saved answers, with debouncing, synonym expansion, and fuzzy matching.
 - **Text-to-speech** — Web Speech API with chunked long-text queuing; Android
@@ -148,7 +152,7 @@ earlier files have already declared.
 | 20 | `render-library.js` | `renderLibrary()`, `recordStudyOpened()`, `recordStudyInstalled()`, library history helpers | `idb.js`, `icons.js`, `settings.js`, `utils.js` |
 | 21 | `study-loader.js` | `applyStudyData()`, `loadAnyFile()`, `loadStudyFromJson()`, `loadStudyFromBase64()`, `activateStudy()`, `deleteStudy()`, `openLibrary()` | Most of the above |
 | 22 | `app-init.js` | `startApp()`, `reloadLocaleAndRerender()` | Everything above |
-| 23 | `render-pages.js` | `renderHowToUse()`, `renderSettings()` (augments settings.js), `renderLeadersNotes()`, `renderAbout()`, `navigateTab()` | `icons.js`, `settings.js`, `onboarding.js`, `navigation.js` |
+| 23 | `render-pages.js` | `renderHowToUse()`, `renderSettings()` (augments settings.js), `renderLeadersNotes()`, `renderGoDeeper()`, `renderAbout()`, `navigateTab()` | `icons.js`, `settings.js`, `onboarding.js`, `navigation.js` |
 | 24 | `render-chapter.js` | `renderChapter()` | Almost everything |
 | 25 | `main.js` | `renderMenu()`, `renderTitlePage()`, `updateProgress()`, `initApp()` | Everything |
 
@@ -205,7 +209,8 @@ Key top-level fields at a glance:
 | `studyOnboardingSlides` | Optional first-run slides shown when the study is opened for the first time |
 | `studyAiData` | Optional AI Tutor configuration: API key (plain or obfuscated), system prompt, model |
 | `howToUseData` | Optional study-specific content injected into the How To page |
-| `leadersNotesData` | Optional leaders' notes page content |
+| `leadersNotesData` | Optional leaders' notes page content (leaders/mentors only) |
+| `goDeeperData` | Optional supplementary prose page for general readers |
 | `copyrightData` | Copyright and licence text |
 
 ---

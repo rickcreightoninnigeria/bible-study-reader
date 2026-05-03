@@ -28,11 +28,12 @@ the full file format so you can author one from scratch.
 8. [`studyAiData`](#studyaidata)
 9. [`howToUseData`](#howtousedata)
 10. [`leadersNotesData`](#leadersnotedata)
-11. [`studyAboutData`](#studyaboutdata)
-12. [`copyrightData`](#copyrightdata)
-13. [Bundle ZIPs](#bundle-zips)
-14. [Validation and version checking](#validation-and-version-checking)
-15. [Minimal working example](#minimal-working-example)
+11. [`goDeeperData`](#godeeperdata)
+12. [`studyAboutData`](#studyaboutdata)
+13. [`copyrightData`](#copyrightdata)
+14. [Bundle ZIPs](#bundle-zips)
+15. [Validation and version checking](#validation-and-version-checking)
+16. [Minimal working example](#minimal-working-example)
 
 ---
 
@@ -78,6 +79,7 @@ are available offline.
   "studyAiData":          { ... },   // optional
   "howToUseData":         { ... },   // optional
   "leadersNotesData":     { ... },   // optional
+  "goDeeperData":         { ... },   // optional
   "studyAboutData":       { ... },   // optional
   "copyrightData":        { ... }    // optional
 }
@@ -85,7 +87,8 @@ are available offline.
 
 All top-level keys are optional except `studyMetadata` and `chapters`. Omitting
 an optional key simply means that section of the app is not shown (e.g. no
-Leaders' Notes page if `leadersNotesData` is absent).
+Leaders' Notes page if `leadersNotesData` is absent, no Go Deeper page if
+`goDeeperData` is absent).
 
 ---
 
@@ -633,35 +636,280 @@ HTML.
 
 ## `leadersNotesData`
 
-Optional. Provides content for the Leaders' Notes page (visible only when the
-`showPageLeaders` setting is enabled). This page is intended for study group
-leaders — the app marks it as confidential.
+Optional. Provides content for the Leaders' Notes page — pastoral guidance
+intended for study group leaders or mentors. The page is only accessible from
+the Contents menu when the `showPageLeaders` setting is enabled, and it carries
+a "confidential" notice at the bottom.
+
+The page renders as a set of tabs: an **Intro** tab (if `intro` is present)
+followed by one numbered tab per chapter entry.
+
+### Content blocks and subtypes
+
+Within each chapter, content is expressed as named key objects. Each key maps
+to a block with a `subtype`, an optional `header` label, and a `body`:
 
 ```json
 "leadersNotesData": {
-  "intro": "<p>These notes are for the group leader...</p>",
+  "subtitle": "Leader guidance for group facilitators",
+  "intro": "<p>These notes are for the group leader only...</p>",
   "chapters": [
     {
       "chapterNumber": 1,
       "title":         "Who Needs the Gospel?",
-      "keyPoints":     "<p>The key theological point is Paul's universal diagnosis...</p>",
-      "pastorals":     "<p>Some in the group may find the idea of universal sinfulness confronting...</p>",
-      "watch":         "Watch for members who conflate 'wrath of God' with anger or punishment."
+      "background": {
+        "subtype": "standard",
+        "header":  "Background",
+        "body":    "<p>Paul's universal diagnosis in Romans 1–3 is the theological foundation...</p>"
+      },
+      "keyPoints": {
+        "subtype": "standard",
+        "header":  "Key points to draw out",
+        "body":    "<p>Emphasise that 'the wrath of God' is not petulant anger but...</p>"
+      },
+      "pastorals": {
+        "subtype": "standard",
+        "header":  "Pastoral notes",
+        "body":    "<p>Some members may find the idea of universal sinfulness confronting...</p>"
+      },
+      "watch": {
+        "subtype": "highlighted",
+        "header":  "Watch for",
+        "body":    "Members who conflate 'wrath of God' with anger or punishment."
+      }
     }
   ]
 }
 ```
 
+#### Top-level fields
+
 | Field | Notes |
 |-------|-------|
-| `intro` | Introductory text shown on the Intro tab. Can be a string of HTML or an array of paragraph strings. |
-| `chapters[]` | One object per chapter. `chapterNumber` must match a chapter in `chapters[]`. |
-| `chapters[].keyPoints` | HTML. Key theological points for the leader to communicate. |
-| `chapters[].pastorals` | HTML. Pastoral notes — things to watch for in the group. |
-| `chapters[].watch` | Plain text. A "watch out for" note highlighted with a 👁️ icon. |
+| `subtitle` | Optional. Shown in the page header after a dash: "Leaders' Notes — *subtitle*". |
+| `intro` | Optional. Content for the Intro tab. Can be a plain HTML string or an array of paragraph strings. Multilingual: use `intro1`, `intro2`, … slots. |
+| `chapters[]` | One object per chapter covered. `chapterNumber` must match a chapter in `chapters[]`. |
 
-The `keyPoints` and `pastorals` text from leaders' notes is also used by the
-AI Tutor to build context for its feedback — if the AI Tutor is enabled.
+#### Chapter fields
+
+| Field | Notes |
+|-------|-------|
+| `chapterNumber` | **Required.** Must match a `chapterNumber` in the main `chapters[]` array. |
+| `title` | Optional. Chapter title shown in the tab header. Falls back to the matching chapter's `chapterTitle` if absent. Multilingual: `title1`, `title2`, … |
+| *(content keys)* | Any number of named content block keys (e.g. `background`, `keyPoints`, `pastorals`, `watch`). The renderer discovers them automatically in JSON insertion order and renders each one in sequence. |
+
+#### Content block fields
+
+Each named content key maps to an object with these fields:
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `subtype` | **Yes** | `"standard"` — body text with an optional header label above it. `"highlighted"` — body wrapped in a visually distinct callout box (`.leaders-watch` CSS class), suitable for warnings or watch-points. If `body` is empty, the block is skipped entirely. |
+| `header` | No | Label rendered above the body. For `"highlighted"` blocks, omit to produce an unlabelled callout. |
+| `body` | No | HTML content. For `"standard"` blocks this is rendered directly. For `"highlighted"` blocks it is wrapped in the callout box. |
+
+#### Key naming
+
+Key names are author-defined — `background`, `keyPoints`, `pastorals`, and
+`watch` are conventions, not requirements. Use any names that make sense for
+your study. The renderer processes all keys in JSON insertion order, skipping
+`chapterNumber`, `format`, `title`, and `chapterTitle`.
+
+You can have as many or as few content blocks per chapter as you need. A
+chapter with only a `watch` block is valid; a chapter with ten blocks is
+equally valid.
+
+#### Multilingual Leaders' Notes
+
+The same slot-suffix convention used elsewhere applies here. The `intro` and
+each content block resolve via `resolveMetaField()`:
+
+```json
+"intro1": "<p>Hausa intro text...</p>",
+"intro2": "<p>Fulfulde intro text...</p>",
+"chapters": [
+  {
+    "chapterNumber": 1,
+    "title1": "Hausa chapter title",
+    "title2": "Fulfulde chapter title",
+    "keyPoints1": {
+      "subtype": "standard",
+      "header":  "Hausa header",
+      "body":    "<p>Hausa body text...</p>"
+    },
+    "keyPoints2": {
+      "subtype": "standard",
+      "header":  "Fulfulde header",
+      "body":    "<p>Fulfulde body text...</p>"
+    }
+  }
+]
+```
+
+The lang bar on the Leaders' Notes page shares `window._activeStudyLang` with
+the chapter pages, so switching language on any page carries over.
+
+> **Note:** The `keyPoints` and `pastorals` content from `leadersNotesData` is
+> also passed to the AI Tutor as context for its Socratic feedback — if
+> `studyAiData` is present and the AI Tutor is enabled.
+
+---
+
+## `goDeeperData`
+
+Optional. Provides content for the **Go Deeper** page — supplementary prose
+aimed at general readers who want more background on the study content. Unlike
+Leaders' Notes, this page carries no confidential marker and requires no
+setting to be enabled: it appears automatically in the Contents menu whenever
+`goDeeperData` is present in the file.
+
+The Contents menu entry label is taken from `titleMenuHeading`. The page
+renders as a set of tabs: an **intro** tab (if `intro` is present) followed by
+one numbered tab per chapter entry. If only one tab would be produced (e.g. an
+intro-only study with no chapters), the tab bar is omitted and the content is
+shown directly.
+
+### Structure
+
+```json
+"goDeeperData": {
+  "format":           "HTML",
+  "titleMenuHeading": "Going Deeper",
+  "intro": {
+    "header": "Introduction",
+    "body": [
+      "<p>This section is for readers who want to explore the background...</p>",
+      "<p>Each chapter tab below contains additional commentary...</p>"
+    ]
+  },
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "format":        "HTML",
+      "title":         "Who Needs the Gospel?",
+      "background": {
+        "subtype": "standard",
+        "header":  "Historical background",
+        "body":    "<p>Rome in the first century was a city of stark contrasts...</p>"
+      },
+      "context": {
+        "subtype": "standard",
+        "header":  "Literary context",
+        "body":    "<p>Romans 1:18–3:20 forms a single sustained argument...</p>"
+      },
+      "keyQuote": {
+        "subtype": "highlighted",
+        "header":  "Worth noting",
+        "body":    "Paul's phrase 'the righteousness of God' carries a rich OT background that most readers miss."
+      }
+    }
+  ]
+}
+```
+
+#### Top-level fields
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `format` | No | `"HTML"` — indicates that `body` fields contain HTML. Included by convention; the renderer always treats `body` as HTML. |
+| `titleMenuHeading` | **Yes** | The label used in the Contents menu and as the page header title. Multilingual: use `titleMenuHeading1`, `titleMenuHeading2`, … slots. |
+| `intro` | No | Content for the intro tab. See [Intro object](#intro-object) below. If absent, no intro tab is shown. Multilingual: use `intro1`, `intro2`, … slots. |
+| `chapters[]` | No | Array of chapter content objects. If absent or empty, the page shows only the intro (without a tab bar). |
+
+#### Intro object
+
+The `intro` value is an object with two fields:
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `header` | **Yes** | The tab label for the intro tab. Also used as the section heading. |
+| `body` | **Yes** | The intro content. Can be a plain HTML string or an **array of HTML paragraph strings** (each array entry is wrapped in `<p>` tags). |
+
+#### Chapter fields
+
+| Field | Notes |
+|-------|-------|
+| `chapterNumber` | **Required.** Must match a `chapterNumber` in the main `chapters[]` array. The tab label is this number. |
+| `format` | No | `"HTML"` by convention. |
+| `title` | Optional. Chapter title shown in the tab's chapter header. Multilingual: `title1`, `title2`, … |
+| *(content keys)* | Any number of named content block keys (e.g. `background`, `context`, `keyQuote`). Rendered in JSON insertion order. |
+
+#### Content block fields
+
+Each named content key maps to a block with these fields:
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `subtype` | **Yes** | `"standard"` — renders as a prose block (`.go-deeper-block`) with an optional header label. `"highlighted"` — wraps the body in a visually distinct callout box (`.go-deeper-highlight`). Blocks with an empty `body` are skipped entirely. |
+| `header` | No | Label rendered above the body using the `.go-deeper-block-label` class. For `"highlighted"` blocks, omit to produce an unlabelled callout. |
+| `body` | No | HTML string. Rendered directly into the block. |
+
+#### Key naming
+
+Key names are author-defined — `background`, `context`, and `keyQuote` above
+are examples, not requirements. Use any names that make the content clear to
+you as the author. The renderer discovers all keys automatically in JSON
+insertion order, skipping `chapterNumber`, `format`, and `title`.
+
+#### Multilingual Go Deeper
+
+The slot-suffix convention applies to all fields. `titleMenuHeading`,
+`intro`, chapter `title`, and each content block all resolve via
+`resolveMetaField()`:
+
+```json
+"goDeeperData": {
+  "titleMenuHeading1": "Going Deeper (Hausa)",
+  "titleMenuHeading2": "Going Deeper (Fulfulde)",
+  "intro1": {
+    "header": "Gabatarwa",
+    "body":   ["<p>Wannan ɓangare ne...</p>"]
+  },
+  "intro2": {
+    "header": "Fassarade",
+    "body":   ["<p>Ndee tippudi ko...</p>"]
+  },
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "title1": "Wane ne Yake Buƙatar Bisharar?",
+      "title2": "Homo Woni Heɓata Labaru Moƴƴi?",
+      "background1": {
+        "subtype": "standard",
+        "header":  "Tarihin Baya",
+        "body":    "<p>Hausa background text...</p>"
+      },
+      "background2": {
+        "subtype": "standard",
+        "header":  "Asli",
+        "body":    "<p>Fulfulde background text...</p>"
+      }
+    }
+  ]
+}
+```
+
+The lang bar on the Go Deeper page shares `window._activeStudyLang` with the
+chapter pages and Leaders' Notes, so a language switch on any page carries over.
+
+#### CSS classes to style
+
+The Go Deeper page introduces its own CSS classes, distinct from Leaders'
+Notes, so you can style them independently in `07-pages.css`:
+
+| Class | Used for |
+|-------|----------|
+| `.go-deeper-page` | Outer page wrapper |
+| `.go-deeper-intro` | Intro tab content wrapper |
+| `.go-deeper-chapter` | Per-chapter tab content wrapper |
+| `.go-deeper-chapter-body` | Container for all blocks within a chapter tab |
+| `.go-deeper-block` | Individual content block (standard and highlighted) |
+| `.go-deeper-block-label` | Header label above a block's body |
+| `.go-deeper-highlight` | Callout box for `"highlighted"` subtype blocks |
+
+The chapter tab header (chapter number + title) reuses `.leaders-chapter-header`,
+`.leaders-chapter-number`, and `.leaders-chapter-title` from the Leaders' Notes
+styles, since the structural layout is identical.
 
 ---
 

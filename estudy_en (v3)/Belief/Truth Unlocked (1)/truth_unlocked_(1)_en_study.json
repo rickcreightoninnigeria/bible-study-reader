@@ -8,12 +8,15 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Overview", "Subsection": "Foundations" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language"         :"en",
-    "createdAt"        :"2026-04-07T00:00:00Z",
-    "updatedAt"        :"2026-04-07T00:00:00Z",
-    "tags"             :["god", "theology", "bible", "salvation"],
-    "shareMessage"     :"Check out this Bible Study Reader app.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-07T00:00:00Z",
+    "updatedAt"   :"2026-04-07T00:00:00Z",
+    "tags"        :["god", "theology", "bible", "salvation"],
+    "shareMessage":"Check out this Bible Study Reader app.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Blue-dominant study theme — deep royal blue palette with subdued gold accent. Blue is the dominant colour throughout surfaces, borders, text, and interactive elements. Gold appears only as a quiet highlight. Authoritative and clear.",
@@ -3889,65 +3892,161 @@
       "<strong>Don’t rush the silences.</strong> Some of the best moments in a group study happen after a question lands and nobody speaks for a few seconds. Resist the urge to fill every silence.",
       "<strong>Watch for the person who goes quiet.</strong> Sometimes the most significant thing happening in the room is with the person who says the least. Check in with them afterwards."
     ],
+    "format"  :"HTML",
     "chapters":[
       {
         "chapterNumber":1,
-        "keyPoints"    :"<p>This chapter establishes the study’s foundation: that we do not have to guess what God is like, because He has revealed Himself. The key movements are (1) the existence of God as evidenced by creation and Scripture, (2) the character of God — holy, eternal, unchanging, omnipresent, and loving — and (3) the decisive demonstration of His love in sending His Son.</p>\n<p>The final section on <b>how we know God loves us</b> (Romans 5:8; 1 John 4:9–10) is particularly important: God’s love is not an abstract sentiment but a concrete act, taken before we deserved it or asked for it.</p>",
-        "pastorals"    :"<p>Many people come to a study like this carrying an image of God that is distant, demanding, or simply vague. The opening question — ‘What is God really like?’ — is worth spending time on. Don’t rush past it to get to the Bible passages.</p>\n<p>The passage from Psalm 139:7–10 (God’s omnipresence) can be unsettling for some and comforting for others. Both reactions are worth exploring. The question asks the group to name which it is for them — take that seriously.</p>",
-        "watch"        :"👁️ Watch for people who intellectually accept God’s existence but have never personally connected that with God’s love for them. The move from ‘God exists’ to ‘God loves me’ is not automatic, and this chapter tries to make it.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter establishes the study’s foundation: that we do not have to guess what God is like, because He has revealed Himself. The key movements are (1) the existence of God as evidenced by creation and Scripture, (2) the character of God — holy, eternal, unchanging, omnipresent, and loving — and (3) the decisive demonstration of His love in sending His Son.</p>\n<p>The final section on <b>how we know God loves us</b> (Romans 5:8; 1 John 4:9–10) is particularly important: God’s love is not an abstract sentiment but a concrete act, taken before we deserved it or asked for it.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Many people come to a study like this carrying an image of God that is distant, demanding, or simply vague. The opening question — ‘What is God really like?’ — is worth spending time on. Don’t rush past it to get to the Bible passages.</p>\n<p>The passage from Psalm 139:7–10 (God’s omnipresence) can be unsettling for some and comforting for others. Both reactions are worth exploring. The question asks the group to name which it is for them — take that seriously.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who intellectually accept God’s existence but have never personally connected that with God’s love for them. The move from ’God exists’ to ’God loves me’ is not automatic, and this chapter tries to make it."
+        }
       },
       {
         "chapterNumber":2,
-        "keyPoints"    :"<p>This chapter makes two essential and complementary claims about Jesus: that He is <b>truly human</b> and <b>truly God</b>. Both matter. His humanity means He genuinely understands our experience. His deity means His death has infinite weight and His words carry ultimate authority.</p>\n<p>The Common Misunderstanding callout on ‘Son of God’ addresses a very widespread confusion: that the title implies Jesus is somehow less than God. Ensure the group understands that in its Biblical context it means the opposite.</p>\n<p>Hebrews 4:15 — that Jesus was tempted in every way, yet without sin — is both a proof of His humanity and a source of comfort. It should not be rushed past.</p>",
-        "pastorals"    :"<p>Some in the group may have friends or family of other faiths who honour Jesus as a prophet or teacher but reject His divinity. The material in this chapter gives them something to think through carefully, not as ammunition for arguments, but as an invitation to look at the evidence more closely.</p>\n<p>The miracle passages (calming the storm, raising Lazarus) can prompt questions about whether miracles are credible. Acknowledge the question honestly: the chapter is not trying to prove miracles philosophically, but to show what the eyewitnesses recorded and what that implies about who Jesus is.</p>",
-        "watch"        :"👁️ Watch for people who are comfortable with Jesus as a moral example or spiritual teacher, but resist the claim that He is God. This chapter is designed to press that question gently but clearly.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter makes two essential and complementary claims about Jesus: that He is <b>truly human</b> and <b>truly God</b>. Both matter. His humanity means He genuinely understands our experience. His deity means His death has infinite weight and His words carry ultimate authority.</p>\n<p>The Common Misunderstanding callout on ’Son of God’ addresses a very widespread confusion: that the title implies Jesus is somehow less than God. Ensure the group understands that in its Biblical context it means the opposite.</p>\n<p>Hebrews 4:15 — that Jesus was tempted in every way, yet without sin — is both a proof of His humanity and a source of comfort. It should not be rushed past.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some in the group may have friends or family of other faiths who honour Jesus as a prophet or teacher but reject His divinity. The material in this chapter gives them something to think through carefully, not as ammunition for arguments, but as an invitation to look at the evidence more closely.</p>\n<p>The miracle passages (calming the storm, raising Lazarus) can prompt questions about whether miracles are credible. Acknowledge the question honestly: the chapter is not trying to prove miracles philosophically, but to show what the eyewitnesses recorded and what that implies about who Jesus is.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who are comfortable with Jesus as a moral example or spiritual teacher, but resist the claim that He is God. This chapter is designed to press that question gently but clearly."
+        }
       },
       {
         "chapterNumber":3,
-        "keyPoints"    :"<p>The Holy Spirit is often the least understood person of the Trinity. This chapter establishes three things: (1) the Spirit is a <b>person</b>, not a force or feeling; (2) He is given to <b>every</b> believer, not just some; and (3) His ultimate purpose is to <b>glorify Christ</b> (John 16:14).</p>\n<p>The distinction between <b>gifts</b> (1 Corinthians 12) and <b>fruit</b> (Galatians 5) is worth dwelling on. Gifts are distributed sovereignly by the Spirit for the benefit of others; fruit is the character produced over time in every believer by the Spirit’s work.</p>\n<p>The Common Misunderstanding callout on ‘the Trinity’ addresses one of the most common sources of confusion in Christian theology. Be prepared for this to open wider questions.</p>",
-        "pastorals"    :"<p>Different people in the group may come from very different backgrounds when it comes to the Spirit: some may have had charismatic experiences they are unsure about; others may be sceptical of anything experiential. The chapter tries to hold the ground carefully — affirming the Spirit’s genuine and present work, without prescribing what that must look or feel like.</p>\n<p>The reflection question about spiritual gifts can be particularly fruitful in a group setting. People often discover gifts they hadn’t named, or are encouraged by others who can see gifts in them that they can’t see in themselves.</p>",
-        "watch"        :"👁️ Watch for people who equate the Spirit’s work entirely with dramatic visible manifestations, or conversely those who are so cautious that they effectively discount Him altogether. The chapter aims to hold a Biblical centre.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The Holy Spirit is often the least understood person of the Trinity. This chapter establishes three things: (1) the Spirit is a <b>person</b>, not a force or feeling; (2) He is given to <b>every</b> believer, not just some; and (3) His ultimate purpose is to <b>glorify Christ</b> (John 16:14).</p>\n<p>The distinction between <b>gifts</b> (1 Corinthians 12) and <b>fruit</b> (Galatians 5) is worth dwelling on. Gifts are distributed sovereignly by the Spirit for the benefit of others; fruit is the character produced over time in every believer by the Spirit’s work.</p>\n<p>The Common Misunderstanding callout on ’the Trinity’ addresses one of the most common sources of confusion in Christian theology. Be prepared for this to open wider questions.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Different people in the group may come from very different backgrounds when it comes to the Spirit: some may have had charismatic experiences they are unsure about; others may be sceptical of anything experiential. The chapter tries to hold the ground carefully — affirming the Spirit’s genuine and present work, without prescribing what that must look or feel like.</p>\n<p>The reflection question about spiritual gifts can be particularly fruitful in a group setting. People often discover gifts they hadn’t named, or are encouraged by others who can see gifts in them that they can’t see in themselves.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who equate the Spirit’s work entirely with dramatic visible manifestations, or conversely those who are so cautious that they effectively discount Him altogether. The chapter aims to hold a Biblical centre."
+        }
       },
       {
         "chapterNumber":4,
-        "keyPoints"    :"<p>This chapter covers the Biblical account of creation: who was involved (all three persons of the Trinity), what was made, how it was made (by God’s word alone), and why — for God’s glory, and for relationship with Him.</p>\n<p>The unique dignity of human beings made <b>in the image of God</b> (Genesis 1:27) is central. It distinguishes us from the rest of creation and grounds both our value and our responsibility. The two stewardship passages (Genesis 1:26; 2:15) point to creation care as a genuine theological concern, not a secular add-on.</p>\n<p>The Genesis 1 reading callout gives the group a chance to read the full creation account together — worth encouraging even if time is short, as the cumulative effect of the repeated ‘it was good’ and the climactic ‘very good’ carries its own weight.</p>",
-        "pastorals"    :"<p>Some in the group may be anxious about how to relate the Genesis account to modern science. It is fine to acknowledge that Christians hold a range of views on this, and that the study is not taking a position on the mechanism or timescale of creation — only on the theological claims the text makes. Focus on those.</p>\n<p>The reflection question — ‘What does it mean to you to know you are made in God’s image?’ — can be surprisingly moving for people who have rarely been told that their life has inherent worth and dignity.</p>",
-        "watch"        :"👁️ Watch for the assumption that creation’s goodness is a naive claim in the face of suffering and brokenness. The chapter doesn’t ignore that — it’s precisely the contrast between what God made and what sin has done to it that the next chapter explores.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter covers the Biblical account of creation: who was involved (all three persons of the Trinity), what was made, how it was made (by God’s word alone), and why — for God’s glory, and for relationship with Him.</p>\n<p>The unique dignity of human beings made <b>in the image of God</b> (Genesis 1:27) is central. It distinguishes us from the rest of creation and grounds both our value and our responsibility. The two stewardship passages (Genesis 1:26; 2:15) point to creation care as a genuine theological concern, not a secular add-on.</p>\n<p>The Genesis 1 reading callout gives the group a chance to read the full creation account together — worth encouraging even if time is short, as the cumulative effect of the repeated ’it was good’ and the climactic ’very good’ carries its own weight.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some in the group may be anxious about how to relate the Genesis account to modern science. It is fine to acknowledge that Christians hold a range of views on this, and that the study is not taking a position on the mechanism or timescale of creation — only on the theological claims the text makes. Focus on those.</p>\n<p>The reflection question — ‘What does it mean to you to know you are made in God’s image?’ — can be surprisingly moving for people who have rarely been told that their life has inherent worth and dignity.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the assumption that creation’s goodness is a naive claim in the face of suffering and brokenness. The chapter doesn’t ignore that — it’s precisely the contrast between what God made and what sin has done to it that the next chapter explores."
+        }
       },
       {
         "chapterNumber":5,
-        "keyPoints"    :"<p>This chapter is the hinge of the study: moving from the goodness of creation to the reality of what has gone wrong. It covers the <b>origin</b> of sin (Genesis 2–3), its <b>nature</b> (rebellion, not just bad behaviour — Mark 7:14–23), its <b>universality</b> (Romans 3:9–12, 23), and its <b>consequences</b> (Romans 6:23).</p>\n<p>The Common Misunderstanding callout on ‘sin’ is one of the most important in the study. The everyday reduction of sin to a list of very bad actions is exactly what prevents people from taking seriously that they themselves are sinners. The Biblical definition — self at the centre rather than God — needs time to land.</p>\n<p>The closing bridge paragraph is deliberately honest: the picture is bleak. Don’t soften it. The good news of the following chapters only has force if this chapter has done its work.</p>",
-        "pastorals"    :"<p>This is often the chapter where people most want to push back. Expect it. The claim that everyone has sinned without exception will feel unfair or extreme to some. Take Romans 3:9–12 seriously and let the text speak — Paul anticipates the objection and addresses it directly.</p>\n<p>Romans 7:21–25 — Paul’s description of his own internal conflict — is often personally resonant. Give people space to reflect on whether they recognise it in their own experience.</p>",
-        "watch"        :"👁️ Watch for people who hear the chapter as an attack on their character rather than a diagnosis of the human condition. The point is not that they are especially bad, but that all of us face the same problem.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter is the hinge of the study: moving from the goodness of creation to the reality of what has gone wrong. It covers the <b>origin</b> of sin (Genesis 2–3), its <b>nature</b> (rebellion, not just bad behaviour — Mark 7:14–23), its <b>universality</b> (Romans 3:9–12, 23), and its <b>consequences</b> (Romans 6:23).</p>\n<p>The Common Misunderstanding callout on ’sin’ is one of the most important in the study. The everyday reduction of sin to a list of very bad actions is exactly what prevents people from taking seriously that they themselves are sinners. The Biblical definition — self at the centre rather than God — needs time to land.</p>\n<p>The closing bridge paragraph is deliberately honest: the picture is bleak. Don’t soften it. The good news of the following chapters only has force if this chapter has done its work.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This is often the chapter where people most want to push back. Expect it. The claim that everyone has sinned without exception will feel unfair or extreme to some. Take Romans 3:9–12 seriously and let the text speak — Paul anticipates the objection and addresses it directly.</p>\n<p>Romans 7:21–25 — Paul’s description of his own internal conflict — is often personally resonant. Give people space to reflect on whether they recognise it in their own experience.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who hear the chapter as an attack on their character rather than a diagnosis of the human condition. The point is not that they are especially bad, but that all of us face the same problem."
+        }
       },
       {
         "chapterNumber":6,
-        "keyPoints"    :"<p>This is where the good news begins. The chapter establishes that God’s response to sin is not condemnation but rescue — and that rescue came at the highest possible cost. The key theological concept is <b>substitutionary atonement</b>: Jesus taking the penalty for our sin in our place (2 Corinthians 5:21; Galatians 3:13; 1 Peter 2:24).</p>\n<p>Matthew 27:46 — the cry of dereliction — deserves careful attention. It is not a cry of despair but a theological event: the Son bearing the Father’s judgement on sin. The bridge paragraph after the atonement verses makes this explicit.</p>\n<p>The Common Misunderstanding callout on ‘salvation’ reframes the word as rescue — which is its plain meaning and often much more accessible than the religious register in which it is usually heard.</p>",
-        "pastorals"    :"<p>The section on those who do not believe (John 3:18; 2 Thessalonians 1:5–10) will likely be the most difficult for the group emotionally. Don’t skip it or rush it. The question — ‘How does this sit with you?’ — is intentionally open-ended. Let people be honest.</p>\n<p>Some may find the idea of substitutionary atonement morally troubling (‘How can it be just for one person to take another’s punishment?’). This is worth addressing: the answer lies in the fact that it is God Himself, in the person of His Son, who bears the penalty — not an arbitrary third party.</p>",
-        "watch"        :"👁️ Watch for people who hear ‘Jesus died for us’ as a familiar phrase they have never really stopped to think about. This chapter is designed to make them stop and think about exactly what that means.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This is where the good news begins. The chapter establishes that God’s response to sin is not condemnation but rescue — and that rescue came at the highest possible cost. The key theological concept is <b>substitutionary atonement</b>: Jesus taking the penalty for our sin in our place (2 Corinthians 5:21; Galatians 3:13; 1 Peter 2:24).</p>\n<p>Matthew 27:46 — the cry of dereliction — deserves careful attention. It is not a cry of despair but a theological event: the Son bearing the Father’s judgement on sin. The bridge paragraph after the atonement verses makes this explicit.</p>\n<p>The Common Misunderstanding callout on ’salvation’ reframes the word as rescue — which is its plain meaning and often much more accessible than the religious register in which it is usually heard.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The section on those who do not believe (John 3:18; 2 Thessalonians 1:5–10) will likely be the most difficult for the group emotionally. Don’t skip it or rush it. The question — ‘How does this sit with you?’ — is intentionally open-ended. Let people be honest.</p>\n<p>Some may find the idea of substitutionary atonement morally troubling (‘How can it be just for one person to take another’s punishment?’). This is worth addressing: the answer lies in the fact that it is God Himself, in the person of His Son, who bears the penalty — not an arbitrary third party.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who hear ’Jesus died for us’ as a familiar phrase they have never really stopped to think about. This chapter is designed to make them stop and think about exactly what that means."
+        }
       },
       {
         "chapterNumber":7,
-        "keyPoints"    :"<p>The resurrection is not an optional extra to the Christian faith — Paul makes this explicit in 1 Corinthians 15:14–19. This chapter covers the <b>evidence</b> for the resurrection (empty tomb, post-resurrection appearances, over 500 witnesses), its <b>significance</b> (death defeated, future resurrection guaranteed), and its <b>continuing implications</b> (Jesus reigning, interceding, and returning).</p>\n<p>The bridge paragraph on Jesus’ present ministry (‘He is our great High Priest, and He never stops’) addresses a common assumption: that Jesus finished his work at the cross and ascension. Hebrews 7:25 corrects this — His intercession is continuous and present.</p>\n<p>John 14:2–3 closes the chapter on the forward-looking promise of Christ’s return and the believer’s eternal home with Him. Don’t lose this in the apologetic material earlier in the chapter.</p>",
-        "pastorals"    :"<p>The resurrection is the point at which many people feel the Christian claim becomes hardest to accept. Acknowledge this honestly. The chapter does not try to prove the resurrection philosophically but to present the historical evidence the New Testament offers and ask what best explains it.</p>\n<p>The reflection question — ‘Which verse gives you the greatest comfort or strength?’ — is a good way to close. It moves from the apologetic register of the chapter into something more personal and devotional.</p>",
-        "watch"        :"👁️ Watch for people who treat the resurrection as a metaphor (Jesus ‘lives on’ in memory or influence). The passages in this chapter — particularly Luke 24:36–43 and 1 Corinthians 15:5–8 — are insisting on a physical, bodily, historical event.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The resurrection is not an optional extra to the Christian faith — Paul makes this explicit in 1 Corinthians 15:14–19. This chapter covers the <b>evidence</b> for the resurrection (empty tomb, post-resurrection appearances, over 500 witnesses), its <b>significance</b> (death defeated, future resurrection guaranteed), and its <b>continuing implications</b> (Jesus reigning, interceding, and returning).</p>\n<p>The bridge paragraph on Jesus’ present ministry (‘He is our great High Priest, and He never stops’) addresses a common assumption: that Jesus finished his work at the cross and ascension. Hebrews 7:25 corrects this — His intercession is continuous and present.</p>\n<p>John 14:2–3 closes the chapter on the forward-looking promise of Christ’s return and the believer’s eternal home with Him. Don’t lose this in the apologetic material earlier in the chapter.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The resurrection is the point at which many people feel the Christian claim becomes hardest to accept. Acknowledge this honestly. The chapter does not try to prove the resurrection philosophically but to present the historical evidence the New Testament offers and ask what best explains it.</p>\n<p>The reflection question — ‘Which verse gives you the greatest comfort or strength?’ — is a good way to close. It moves from the apologetic register of the chapter into something more personal and devotional.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who treat the resurrection as a metaphor (Jesus ’lives on’ in memory or influence). The passages in this chapter — particularly Luke 24:36–43 and 1 Corinthians 15:5–8 — are insisting on a physical, bodily, historical event."
+        }
       },
       {
         "chapterNumber":8,
-        "keyPoints"    :"<p>This final chapter asks the question the whole study has been building toward: <b>how do we respond?</b> The two responses the Bible calls for are repentance and faith — and the chapter is careful to hold them together as two sides of the same turning, not two separate steps.</p>\n<p>The Common Misunderstanding callout on ‘grace’ is crucial here. Salvation is entirely God’s gift (Ephesians 2:8–9) — not a reward for effort, goodness, or religious activity. This must be clear before the call to repentance is heard correctly, or repentance itself becomes a work we perform to earn God’s favour.</p>\n<p>The closing section on changed living (Romans 6:15, 18) makes clear that grace is not a licence to continue in sin. Those who have been freed from sin have become servants of righteousness. The Christian life is not a static event but an ongoing reorientation.</p>",
-        "pastorals"    :"<p>This is the chapter most likely to prompt a personal response. Be alert to people who are ready to make a commitment but don’t know how to do it, or who feel they have too much to give up. Be ready to talk personally with individuals after the group session.</p>\n<p>The distinction between repentance as genuine inward change (not just regret or reform) and faith as active trust (not just intellectual assent) is important and worth drawing out carefully. Both can be counterfeited, and both can be misunderstood.</p>",
-        "watch"        :"👁️ Watch for people who hear the call to repentance and conclude that they must clean up their life before they can come to God. The order in the gospel is the opposite: come as you are, and God will begin the transformation from there.",
-        "format"       :"HTML"
+        "format"       :"HTML",
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This final chapter asks the question the whole study has been building toward: <b>how do we respond?</b> The two responses the Bible calls for are repentance and faith — and the chapter is careful to hold them together as two sides of the same turning, not two separate steps.</p>\n<p>The Common Misunderstanding callout on ’grace’ is crucial here. Salvation is entirely God’s gift (Ephesians 2:8–9) — not a reward for effort, goodness, or religious activity. This must be clear before the call to repentance is heard correctly, or repentance itself becomes a work we perform to earn God’s favour.</p>\n<p>The closing section on changed living (Romans 6:15, 18) makes clear that grace is not a licence to continue in sin. Those who have been freed from sin have become servants of righteousness. The Christian life is not a static event but an ongoing reorientation.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This is the chapter most likely to prompt a personal response. Be alert to people who are ready to make a commitment but don’t know how to do it, or who feel they have too much to give up. Be ready to talk personally with individuals after the group session.</p>\n<p>The distinction between repentance as genuine inward change (not just regret or reform) and faith as active trust (not just intellectual assent) is important and worth drawing out carefully. Both can be counterfeited, and both can be misunderstood.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who hear the call to repentance and conclude that they must clean up their life before they can come to God. The order in the gospel is the opposite: come as you are, and God will begin the transformation from there."
+        }
       }
-    ],
-    "format":"HTML"
+    ]
   },
   "studyAboutData":{
     "author":{

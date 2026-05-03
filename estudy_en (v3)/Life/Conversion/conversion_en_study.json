@@ -10,10 +10,13 @@
     "estudyFileVersion":3,
     "studyVersion"     :1,
     "language"         :"en",
-    "createdAt"        :"2026-04-02T00:00:00Z",
-    "updatedAt"        :"2026-04-02T00:00:00Z",
-    "tags"             :["conversion", "discipleship", "christianity"],
-    "shareMessage"     :"Check out this Bible study app — “Conversion: New not (just) Nice”.<br><br>Available soon on Google Play and the App Store."
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-02T00:00:00Z",
+    "updatedAt"   :"2026-04-02T00:00:00Z",
+    "tags"        :["conversion", "discipleship", "christianity"],
+    "shareMessage":"Check out this Bible study app — “Conversion: New not (just) Nice”.<br><br>Available soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Nice — warm parchment and ink palette. Inspired by aged paper, calligraphy, and the tactile feel of a well-used study Bible. Earthy sepia tones with gold accent suggest careful scholarship and contemplative reading. Serious but inviting.",
@@ -4144,73 +4147,181 @@
         "chapterNumber":1,
         "format"       :"HTML",
         "title"        :"Why Conversion Matters",
-        "keyPoints"    :"<p>The opening chapter establishes the <b>radical nature</b> of conversion. It’s not just about becoming a ‘nicer’ person or adding religious habits to an existing life. It’s about being made new from the inside out.</p><br><p>Draw out the contrast between Simon the Pharisee (who looked godly but wasn’t) and Zacchaeus (who looked ungodly but was made new). This helps the group see that conversion is God’s work, not ours.</p><br><p>The concept of <b>new birth</b> (John 3:1-7) is central. Use it to show that we don’t just need a moral tune-up; we need a completely new life that only God can provide.</p>",
-        "pastorals"    :"<p>Some in your group may have been ‘in church’ for years but never truly experienced conversion. The Simon/Zacchaeus contrast can be very unsettling for them. Be gentle but clear: the gospel is for the ‘nice’ person just as much as for the ‘bad’ person.</p><br><p>Others may feel they aren’t ‘good enough’ to be converted. Emphasise that Zacchaeus didn’t clean up his life <i>before</i> Jesus went to his house. Conversion is the start of the change, not the reward for it.</p>",
-        "watch"        :"👁️ Watch for people who define conversion solely in terms of a specific emotional experience or a date on a calendar. While those are fine, the biblical emphasis is on the <i>reality</i> of the change, not just the <i>moment</i> of it."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The opening chapter establishes the <b>radical nature</b> of conversion. It’s not just about becoming a ’nicer’ person or adding religious habits to an existing life. It’s about being made new from the inside out.</p><br><p>Draw out the contrast between Simon the Pharisee (who looked godly but wasn’t) and Zacchaeus (who looked ungodly but was made new). This helps the group see that conversion is God’s work, not ours.</p><br><p>The concept of <b>new birth</b> (John 3:1-7) is central. Use it to show that we don’t just need a moral tune-up; we need a completely new life that only God can provide.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some in your group may have been ’in church’ for years but never truly experienced conversion. The Simon/Zacchaeus contrast can be very unsettling for them. Be gentle but clear: the gospel is for the ’nice’ person just as much as for the ’bad’ person.</p><br><p>Others may feel they aren’t ’good enough’ to be converted. Emphasise that Zacchaeus didn’t clean up his life <i>before</i> Jesus went to his house. Conversion is the start of the change, not the reward for it.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who define conversion solely in terms of a specific emotional experience or a date on a calendar. While those are fine, the biblical emphasis is on the <i>reality</i> of the change, not just the <i>moment</i> of it."
+        }
       },
       {
         "chapterNumber":2,
         "format"       :"HTML",
         "title"        :"Our Greatest Problem",
-        "keyPoints"    :"<p>This is the ‘bad news’ chapter that makes the ‘good news’ meaningful. Unless we understand the <b>depth of the problem</b>, conversion will always seem like an overreaction.</p><br><p>Focus on the biblical diagnosis: we aren’t just ‘struggling’ or ‘confused’ — we are spiritually <b>dead</b> (Ephesians 2:1-3). Dead people can’t help themselves; they need a miracle.</p><br><p>Help the group see that <b>sin is personal</b> rebellion against God (Psalm 51:4). It’s not just breaking rules; it’s a broken relationship with our Creator.</p>",
-        "pastorals"    :"<p>This chapter can feel heavy. Some may feel crushed by the weight of the diagnosis. Your role is to ensure they see the diagnosis as a <i>necessary step</i> toward the cure. Don’t let the session end without pointing to the hope mentioned in the closing.</p><br><p>Be aware of those who have a very low view of themselves. They may hear ‘you are the problem’ as a confirmation of their own self-hatred. Distinguish between <i>legal guilt/spiritual death</i> (the biblical diagnosis) and <i>worthlessness</i> (the enemy’s lie).</p>",
-        "watch"        :"👁️ Watch for those who want to blame their sin on circumstances, upbringing, or other people. Gently bring them back to Jeremiah 17:9 — the problem is internal."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This is the ’bad news’ chapter that makes the ’good news’ meaningful. Unless we understand the <b>depth of the problem</b>, conversion will always seem like an overreaction.</p><br><p>Focus on the biblical diagnosis: we aren’t just ’struggling’ or ’confused’ — we are spiritually <b>dead</b> (Ephesians 2:1-3). Dead people can’t help themselves; they need a miracle.</p><br><p>Help the group see that <b>sin is personal</b> rebellion against God (Psalm 51:4). It’s not just breaking rules; it’s a broken relationship with our Creator.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This chapter can feel heavy. Some may feel crushed by the weight of the diagnosis. Your role is to ensure they see the diagnosis as a <i>necessary step</i> toward the cure. Don’t let the session end without pointing to the hope mentioned in the closing.</p><br><p>Be aware of those who have a very low view of themselves. They may hear ’you are the problem’ as a confirmation of their own self-hatred. Distinguish between <i>legal guilt/spiritual death</i> (the biblical diagnosis) and <i>worthlessness</i> (the enemy’s lie).</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for those who want to blame their sin on circumstances, upbringing, or other people. Gently bring them back to Jeremiah 17:9 — the problem is internal."
+        }
       },
       {
         "chapterNumber":3,
         "format"       :"HTML",
         "title"        :"God, who is Rich in Mercy",
-        "keyPoints"    :"<p>The focus shifts entirely to <b>God’s initiative</b>. Conversion happens because God moved first. This provides the ultimate ground for humility (we didn’t earn it) and confidence (God won’t lose us).</p><br><p>Emphasise <b>substitution</b> (2 Corinthians 5:21). The reason God can be ‘rich in mercy’ to us is because Christ took the ‘richness of wrath’ that we deserved. This is the heart of the gospel.</p><br><p>The ‘Joy’ illustration helps show that God’s reaching out often precedes our awareness of it. It’s a great way to talk about <b>prevenient grace</b> without using technical terms.</p>",
-        "pastorals"    :"<p>For those who feel they have to ‘do something’ to stay in God’s good books, this chapter is incredibly liberating. Watch for the ‘relief’ that comes when people realize the work is finished.</p><br><p>However, some may find the idea of <i>God</i> choosing us (John 6:37, 44) difficult or even offensive. Don’t get bogged down in deep theological debates about election; keep the focus on the <i>comfort</i> and <i>humility</i> it produces.</p>",
-        "watch"        :"👁️ Watch for the person who says ‘this is too easy.’ They might be missing the cost Christ paid. Reiterate that while grace is free for us, it was infinitely expensive for him."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The focus shifts entirely to <b>God’s initiative</b>. Conversion happens because God moved first. This provides the ultimate ground for humility (we didn’t earn it) and confidence (God won’t lose us).</p><br><p>Emphasise <b>substitution</b> (2 Corinthians 5:21). The reason God can be ’rich in mercy’ to us is because Christ took the ’richness of wrath’ that we deserved. This is the heart of the gospel.</p><br><p>The ’Joy’ illustration helps show that God’s reaching out often precedes our awareness of it. It’s a great way to talk about <b>prevenient grace</b> without using technical terms.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>For those who feel they have to ’do something’ to stay in God’s good books, this chapter is incredibly liberating. Watch for the ’relief’ that comes when people realize the work is finished.</p><br><p>However, some may find the idea of <i>God</i> choosing us (John 6:37, 44) difficult or even offensive. Don’t get bogged down in deep theological debates about election; keep the focus on the <i>comfort</i> and <i>humility</i> it produces.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who says ’this is too easy.’ They might be missing the cost Christ paid. Reiterate that while grace is free for us, it was infinitely expensive for him."
+        }
       },
       {
         "chapterNumber":4,
         "format"       :"HTML",
         "title"        :"Repentance & Faith",
-        "keyPoints"    :"<p>These are the <b>two sides of the same coin</b>. You can’t have one without the other. Repentance is turning <i>from</i>; Faith is turning <i>to</i>.</p><br><p>Distinguish between <b>godly grief and worldly grief</b> (2 Corinthians 7:9-10). Worldly grief is about the <i>consequences</i> of sin; godly grief is about the <i>offence</i> of sin against God.</p><br><p>Clarify that faith isn’t about the <i>strength</i> of our belief, but the <i>object</i> of our belief. A weak hand holding a strong rope is still safe.</p>",
-        "pastorals"    :"<p>Some people struggle with <b>perpetual repentance</b> — they keep repenting for the same thing without ever moving into the <i>rest</i> of faith. They need to hear that repentance is a <i>turn</i>, not a treadmill.</p><br><p>Others may have ‘easy believism’ where they claim faith but have never actually turned from sin. The James 2-style emphasis (though not in this chapter’s verses, it’s the underlying theme) is important here: real faith <i>produces</i> change.</p>",
-        "watch"        :"👁️ Watch for the ‘Tom’ in your group (from the intro) — the person who is sorry but hasn’t actually made the call. Encourage a specific, practical response."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>These are the <b>two sides of the same coin</b>. You can’t have one without the other. Repentance is turning <i>from</i>; Faith is turning <i>to</i>.</p><br><p>Distinguish between <b>godly grief and worldly grief</b> (2 Corinthians 7:9-10). Worldly grief is about the <i>consequences</i> of sin; godly grief is about the <i>offence</i> of sin against God.</p><br><p>Clarify that faith isn’t about the <i>strength</i> of our belief, but the <i>object</i> of our belief. A weak hand holding a strong rope is still safe.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Some people struggle with <b>perpetual repentance</b> — they keep repenting for the same thing without ever moving into the <i>rest</i> of faith. They need to hear that repentance is a <i>turn</i>, not a treadmill.</p><br><p>Others may have ’easy believism’ where they claim faith but have never actually turned from sin. The James 2-style emphasis (though not in this chapter’s verses, it’s the underlying theme) is important here: real faith <i>produces</i> change.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the ’Tom’ in your group (from the intro) — the person who is sorry but hasn’t actually made the call. Encourage a specific, practical response."
+        }
       },
       {
         "chapterNumber":5,
         "format"       :"HTML",
         "title"        :"New Birth",
-        "keyPoints"    :"<p>This chapter deepens the understanding of <b>regeneration</b>. It’s the ‘engine room’ of conversion. God doesn’t just give us a new record (justification); he gives us a <b>new heart</b> (Ezekiel 36:26).</p><br><p>The <b>Ezekiel 37 (Dry Bones)</b> passage is a powerful visual of the Spirit’s work. It reinforces that we are entirely dependent on God for spiritual life.</p><br><p>Help the group see that <b>new desires</b> are the primary evidence of new birth. We start to love what we once hated and hate what we once loved.</p>",
-        "pastorals"    :"<p>This is a great chapter for those who feel ‘stuck’ in their Christian life. If they have new life, the growth is inevitable, even if it’s slow. Encourage them to look for the <i>signs</i> of life (new desires, new love for God’s word) rather than just a perfect performance.</p><br><p>Watch for the person who feels they <i>don’t</i> have these new desires. Use it as an opportunity to pray for the Spirit’s work, rather than just telling them to try harder.</p>",
-        "watch"        :"👁️ Watch for those who get frustrated that they aren’t ‘perfect’ yet. Remind them that a baby is fully alive from day one, but it still has a lot of growing to do."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter deepens the understanding of <b>regeneration</b>. It’s the ’engine room’ of conversion. God doesn’t just give us a new record (justification); he gives us a <b>new heart</b> (Ezekiel 36:26).</p><br><p>The <b>Ezekiel 37 (Dry Bones)</b> passage is a powerful visual of the Spirit’s work. It reinforces that we are entirely dependent on God for spiritual life.</p><br><p>Help the group see that <b>new desires</b> are the primary evidence of new birth. We start to love what we once hated and hate what we once loved.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This is a great chapter for those who feel ’stuck’ in their Christian life. If they have new life, the growth is inevitable, even if it’s slow. Encourage them to look for the <i>signs</i> of life (new desires, new love for God’s word) rather than just a perfect performance.</p><br><p>Watch for the person who feels they <i>don’t</i> have these new desires. Use it as an opportunity to pray for the Spirit’s work, rather than just telling them to try harder.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for those who get frustrated that they aren’t ’perfect’ yet. Remind them that a baby is fully alive from day one, but it still has a lot of growing to do."
+        }
       },
       {
         "chapterNumber":6,
         "format"       :"HTML",
         "title"        :"Conversion & the Family of God",
-        "keyPoints"    :"<p>This session challenges the <b>privatisation</b> of faith. Conversion isn’t just about me and God; it’s about me, God, and the <b>body of Christ</b>.</p><br><p>The <b>body/stone</b> imagery (1 Cor 12, 1 Peter 2) shows that our individual identity is now wrapped up in a communal one. We belong to each other.</p><br><p>Address the <b>responsibility</b> we have to one another. Church isn’t a building we visit; it’s a family we belong to, which includes mutual accountability (Hebrews 10:24-25).</p>",
-        "pastorals"    :"<p>Many people have ‘church baggage.’ They’ve been hurt, bored, or disillusioned by the local church. Acknowledge the messiness of church while holding onto the biblical vision. Don’t let ‘the church is perfect’ be the message; the message is ‘the church is <i>God’s family</i>, and he loves it.’</p><br><p>For the ‘loner’ Christian, this chapter can be very challenging. Be prepared to talk through <i>why</i> we find belonging so hard (vulnerability, cost, time).</p>",
-        "watch"        :"👁️ Watch for the ‘Marcus’ in your group — the one who is content to stay private. The goal is to move them toward <i>visible, committed belonging</i>."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This session challenges the <b>privatisation</b> of faith. Conversion isn’t just about me and God; it’s about me, God, and the <b>body of Christ</b>.</p><br><p>The <b>body/stone</b> imagery (1 Cor 12, 1 Peter 2) shows that our individual identity is now wrapped up in a communal one. We belong to each other.</p><br><p>Address the <b>responsibility</b> we have to one another. Church isn’t a building we visit; it’s a family we belong to, which includes mutual accountability (Hebrews 10:24-25).</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Many people have ’church baggage.’ They’ve been hurt, bored, or disillusioned by the local church. Acknowledge the messiness of church while holding onto the biblical vision. Don’t let ’the church is perfect’ be the message; the message is ’the church is <i>God’s family</i>, and he loves it.’</p><br><p>For the ’loner’ Christian, this chapter can be very challenging. Be prepared to talk through <i>why</i> we find belonging so hard (vulnerability, cost, time).</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the ’Marcus’ in your group — the one who is content to stay private. The goal is to move them toward <i>visible, committed belonging</i>."
+        }
       },
       {
         "chapterNumber":7,
         "format"       :"HTML",
         "title"        :"The Fruit of Conversion",
-        "keyPoints"    :"<p>This chapter deals with <b>sanctification</b>. Conversion isn’t just a past event; it’s a present reality that produces <b>fruit</b> (Galatians 5:22-23).</p><br><p>The <b>conflict</b> in Galatians 5:16-17 is crucial. Being a Christian doesn’t mean the struggle with sin ends; it means the <i>rule</i> of sin ends. The struggle is actually a sign of life.</p><br><p>Emphasise <b>love as the motive</b> for obedience (John 14:21). We don’t obey to get God to love us; we obey because he <i>already does</i>.</p>",
-        "pastorals"    :"<p>There is a fine line here between encouraging holiness and falling back into legalism. Keep pointing back to the <i>Spirit</i> as the source of the fruit. We don’t ‘manufacture’ fruit; we ‘bear’ it as we stay connected to Christ.</p><br><p>Be ready to comfort the person who feels they have very little fruit. Help them look for the ‘small’ fruit — a moment of patience, a quickness to repent — that they might be overlooking.</p>",
-        "watch"        :"👁️ Watch for the person who uses ‘I’m not perfect’ as an excuse for not pursuing holiness. The goal is <i>growth</i>, not just being comfortable with sin."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This chapter deals with <b>sanctification</b>. Conversion isn’t just a past event; it’s a present reality that produces <b>fruit</b> (Galatians 5:22-23).</p><br><p>The <b>conflict</b> in Galatians 5:16-17 is crucial. Being a Christian doesn’t mean the struggle with sin ends; it means the <i>rule</i> of sin ends. The struggle is actually a sign of life.</p><br><p>Emphasise <b>love as the motive</b> for obedience (John 14:21). We don’t obey to get God to love us; we obey because he <i>already does</i>.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>There is a fine line here between encouraging holiness and falling back into legalism. Keep pointing back to the <i>Spirit</i> as the source of the fruit. We don’t ’manufacture’ fruit; we ’bear’ it as we stay connected to Christ.</p><br><p>Be ready to comfort the person who feels they have very little fruit. Help them look for the ’small’ fruit — a moment of patience, a quickness to repent — that they might be overlooking.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who uses ’I’m not perfect’ as an excuse for not pursuing holiness. The goal is <i>growth</i>, not just being comfortable with sin."
+        }
       },
       {
         "chapterNumber":8,
         "format"       :"HTML",
         "title"        :"Assurance & False Conversions",
-        "keyPoints"    :"<p>This is a <b>dual-track</b> chapter: comfort for the true believer and warning for the self-deceived.</p><br><p><b>Assurance</b> is grounded in the objective work of Christ (Hebrews 10:11-14) and confirmed by the subjective work of the Spirit and a changed life (Romans 8:15-16, 1 John 2:3-5).</p><br><p>The <b>warning passages</b> (Matthew 7:21-23, Titus 1:16) are not meant to make the true believer anxious, but to wake up the person who has a ‘dead faith.’</p>",
-        "pastorals"    :"<p>This can be the most sensitive chapter of all. You will likely have people on both sides: the anxious person who needs <i>comfort</i>, and the complacent person who needs a <i>wake-up call</i>. Your job is to try to give each person what they need.</p><br><p>If someone is deeply unsettled by this chapter, spend time with them afterwards. Help them look at their life for <i>signs of life</i> (even tiny ones) rather than perfection.</p>",
-        "watch"        :"👁️ Watch for the person who is <i>too</i> sure of themselves but shows no fruit — they need the warning. And watch for the person who is <i>never</i> sure despite clear fruit — they need the comfort."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This is a <b>dual-track</b> chapter: comfort for the true believer and warning for the self-deceived.</p><br><p><b>Assurance</b> is grounded in the objective work of Christ (Hebrews 10:11-14) and confirmed by the subjective work of the Spirit and a changed life (Romans 8:15-16, 1 John 2:3-5).</p><br><p>The <b>warning passages</b> (Matthew 7:21-23, Titus 1:16) are not meant to make the true believer anxious, but to wake up the person who has a ’dead faith.’</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This can be the most sensitive chapter of all. You will likely have people on both sides: the anxious person who needs <i>comfort</i>, and the complacent person who needs a <i>wake-up call</i>. Your job is to try to give each person what they need.</p><br><p>If someone is deeply unsettled by this chapter, spend time with them afterwards. Help them look at their life for <i>signs of life</i> (even tiny ones) rather than perfection.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who is <i>too</i> sure of themselves but shows no fruit — they need the warning. And watch for the person who is <i>never</i> sure despite clear fruit — they need the comfort."
+        }
       },
       {
         "chapterNumber":9,
         "format"       :"HTML",
         "title"        :"Evangelism: Summon, Don’t Sell",
-        "keyPoints"    :"<p>The final chapter reframes <b>evangelism</b> away from ‘salesmanship’ and toward <b>faithful proclamation</b>.</p><br><p>The liberating point: conversion is God’s work, so the pressure is off the evangelist. We cannot open hearts or produce new birth. We speak clearly and leave the outcome with God.</p><br><p>Focus on the <b>content</b> (Christ alone) and the <b>manner</b> (gentleness, patience, clarity) of our sharing.</p>",
-        "pastorals"    :"<p>Watch for people from church cultures where high-pressure evangelism was normalised. This chapter’s emphasis on honest, non-manipulative proclamation may come as significant relief – and may also require some gentle reprocessing of past experiences.</p><br><p>Also watch for those so relieved by ‘results are God’s’ that they use it as a reason never to speak at all. The closing challenge – ‘Who is the person God has put in front of you?’ – gently closes that escape route.</p>",
-        "watch"        :"👁️ The final question asks people to name a specific person. Try to make sure the group actually answers it – not as a performance but as a genuine act of prayerful attention. It may be the most practically significant moment of the whole nine sessions."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The final chapter reframes <b>evangelism</b> away from ’salesmanship’ and toward <b>faithful proclamation</b>.</p><br><p>The liberating point: conversion is God’s work, so the pressure is off the evangelist. We cannot open hearts or produce new birth. We speak clearly and leave the outcome with God.</p><br><p>Focus on the <b>content</b> (Christ alone) and the <b>manner</b> (gentleness, patience, clarity) of our sharing.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Watch for people from church cultures where high-pressure evangelism was normalised. This chapter’s emphasis on honest, non-manipulative proclamation may come as significant relief – and may also require some gentle reprocessing of past experiences.</p><br><p>Also watch for those so relieved by ’results are God’s’ that they use it as a reason never to speak at all. The closing challenge – ‘Who is the person God has put in front of you?’ – gently closes that escape route.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ The final question asks people to name a specific person. Try to make sure the group actually answers it – not as a performance but as a genuine act of prayerful attention. It may be the most practically significant moment of the whole nine sessions."
+        }
       }
     ]
   },

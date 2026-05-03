@@ -685,6 +685,35 @@ async function loadStudyFromJson(jsonString) {
             return;
         }
 
+        // Version check (user-initiated path — Android intent delivery is always
+        // user-initiated: the user tapped "Open with" or shared a file).
+        const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
+        if (_versionDecision === 'downgrade-blocked') {
+            showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+            return;
+        }
+        if (_versionDecision === 'skip') {
+            // Same version already installed — just activate it.
+            if (window._appReady) {
+                window.activeStudyId = studyId;
+                const existing = await StudyIDB.get(`study_content_${studyId}`);
+                if (existing) { Router.back(); applyStudyData(existing, { isStudySwitch: true }); }
+            } else {
+                window.activeStudyId = studyId;
+            }
+            return;
+        }
+        // 'install': show update toast if upgrading an existing install.
+        const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
+        const _installedVer = _getInstalledStudyVersion(studyId);
+        const _studyTitle   = data.studyMetadata?.title || studyId;
+        if (_installedVer > 0 && _incomingVer > _installedVer) {
+            showToast({
+                message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
+                isManual: true,
+            });
+        }
+
         try {
           await StudyIDB.set(`study_content_${studyId}`, data);
         } catch (err) {
@@ -702,6 +731,8 @@ async function loadStudyFromJson(jsonString) {
         }
         localStorage.setItem('bsr_last_active_study', studyId);
         recordStudyInstalled(studyId); // ← track in Recently Installed
+        // Record the installed studyVersion so future loads can compare against it.
+        if (_incomingVer > 0) _setInstalledStudyVersion(studyId, _incomingVer);
 
         // If the app is already initialised (DOMContentLoaded has fired),
         // apply immediately. Otherwise stash for startApp() to pick up.
@@ -857,6 +888,53 @@ async function installDefaultStudiesIfNeeded() {
   }
 }
 
+// ── STUDY VERSION HELPERS ─────────────────────────────────────────────────────
+// Per-study version tracking used to guard manual-load paths against accidental
+// downgrades. Keys live in localStorage under 'bsr_studyver_{studyId}'.
+//
+// Only the manual-load paths (loadStudyFromFile, loadStudyFromJson) need this —
+// the bundled install path (installDefaultStudiesIfNeeded) is already gated by
+// the app-version flag 'default_studies_installed', which changes on every app
+// update, so the bundle is always re-evaluated and newer studies always win.
+//
+// studyVersion values are treated as floats (1, 1.01, 2, etc.).
+// Studies that carry no studyVersion field are treated as version 0, which means
+// any incoming file with an explicit version will always replace them.
+
+function _getInstalledStudyVersion(studyId) {
+  const stored = localStorage.getItem(`bsr_studyver_${studyId}`);
+  return stored !== null ? parseFloat(stored) : 0;
+}
+
+function _setInstalledStudyVersion(studyId, version) {
+  localStorage.setItem(`bsr_studyver_${studyId}`, String(version));
+}
+
+// Compares the incoming study's version against what is already installed.
+// Returns one of three string tokens:
+//   'install'          — incoming is newer (or same version with no existing install);
+//                        proceed with installation.
+//   'skip'             — incoming is the same version or older and the caller is
+//                        a silent/bundled path; skip without any UI.
+//   'downgrade-blocked'— incoming is strictly older and the caller is user-initiated;
+//                        show a toast and abort.
+//
+// isUserInitiated: true  → manual file-picker or Android intent open
+//                  false → installDefaultStudiesIfNeeded bundle (never calls this,
+//                          but passing false makes the helper safe to reuse later)
+function _shouldInstallStudy(incomingData, { isUserInitiated = false } = {}) {
+  const studyId         = incomingData.studyMetadata?.studyId;
+  const incomingVersion = parseFloat(incomingData.studyMetadata?.studyVersion) || 0;
+  const installedVersion = studyId ? _getInstalledStudyVersion(studyId) : 0;
+
+  if (incomingVersion > installedVersion) return 'install';
+  if (incomingVersion < installedVersion) return isUserInitiated ? 'downgrade-blocked' : 'skip';
+  // Equal versions: treat as 'install' only if nothing was previously recorded
+  // (installedVersion === 0 means the study was installed before this versioning
+  // system existed — always allow it to write the version record).
+  return installedVersion === 0 ? 'install' : 'skip';
+}
+
 // Installs a single .estudy File object into IDB and the registry without
 // activating it or touching the UI.  Used by installDefaultStudiesIfNeeded()
 // so the default studies land silently in the background.
@@ -889,6 +967,14 @@ async function _installStudyFileQuietly(file, fileName) {
     const studyId    = data.studyMetadata?.studyId;
     if (!studyId) {
       console.warn('[defaultStudies] Skipping', file.name, '— missing studyMetadata.studyId');
+      return;
+    }
+
+    // Version check: skip silently if an equal-or-newer version is already installed.
+    // isUserInitiated is false here — this path is only reached from the bundled
+    // installer, which uses the app-version flag as its primary gate.
+    if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
+      console.log('[defaultStudies] Skipping', studyId, '— installed version is current or newer');
       return;
     }
 
@@ -928,6 +1014,9 @@ async function _installStudyFileQuietly(file, fileName) {
       registry.push(studyId);
       localStorage.setItem('study_registry', JSON.stringify(registry));
     }
+    // Record the installed studyVersion so future installs can compare against it.
+    const installedVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
+    if (installedVer > 0) _setInstalledStudyVersion(studyId, installedVer);
     // recordStudyInstalled is intentionally omitted — these are pre-installed,
     // not user-installed, and shouldn't pollute the Recently Installed list.
 
@@ -941,6 +1030,12 @@ async function _installStudyFileQuietly(file, fileName) {
       return;
     }
 
+    // Version check: skip silently if an equal-or-newer version is already installed.
+    if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
+      console.log('[defaultStudies] Skipping plain-JSON', studyId, '— installed version is current or newer');
+      return;
+    }
+
     // IDBUnavailable re-thrown to caller — see note above.
     await StudyIDB.set(`study_content_${studyId}`, data);
 
@@ -949,6 +1044,9 @@ async function _installStudyFileQuietly(file, fileName) {
       registry.push(studyId);
       localStorage.setItem('study_registry', JSON.stringify(registry));
     }
+    // Record the installed studyVersion so future installs can compare against it.
+    const installedVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
+    if (installedVer > 0) _setInstalledStudyVersion(studyId, installedVer);
   }
 }
 
@@ -1018,6 +1116,32 @@ async function loadStudyFromFile(file) {
         return;
       }
 
+      // Version check (user-initiated path).
+      const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
+      if (_versionDecision === 'downgrade-blocked') {
+        showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+        return;
+      }
+      if (_versionDecision === 'skip') {
+        // Same version already installed — open it as normal without re-writing.
+        Router.back();
+        window.activeStudyId = studyId;
+        const existing = await StudyIDB.get(`study_content_${studyId}`);
+        if (existing) applyStudyData(existing, { isStudySwitch: true });
+        return;
+      }
+      // 'install': incoming is newer — show an update toast if upgrading an
+      // existing install (installedVersion > 0), then proceed.
+      const _incomingVer   = parseFloat(data.studyMetadata?.studyVersion) || 0;
+      const _installedVer  = _getInstalledStudyVersion(studyId);
+      const _studyTitle    = data.studyMetadata?.title || studyId;
+      if (_installedVer > 0 && _incomingVer > _installedVer) {
+        showToast({
+          message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
+          isManual: true,
+        });
+      }
+
       // 2. Extract any image assets and store them as Blobs in IDB
       const imageNames = ['cover', 'publisher', 'author'];
       for (const name of imageNames) {
@@ -1068,6 +1192,9 @@ async function loadStudyFromFile(file) {
       }
       localStorage.setItem('bsr_last_active_study', studyId);
       recordStudyInstalled(studyId); // ← track in Recently Installed
+      // Record the installed studyVersion so future loads can compare against it.
+      const _newVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
+      if (_newVer > 0) _setInstalledStudyVersion(studyId, _newVer);
 
       // Attach blob URLs to imageData so applyImageData can find them
       if (data.imageData) {
@@ -1090,6 +1217,36 @@ async function loadStudyFromFile(file) {
       // ── Legacy plain-JSON .estudy ─────────────────────────────────────────
       const text = await file.text();
       const data = JSON.parse(text);
+      const _plainStudyId = data.studyMetadata?.studyId;
+
+      if (_plainStudyId) {
+        // Version check (user-initiated path).
+        const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
+        if (_versionDecision === 'downgrade-blocked') {
+          showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+          return;
+        }
+        if (_versionDecision === 'skip') {
+          Router.back();
+          window.activeStudyId = _plainStudyId;
+          const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
+          if (existing) applyStudyData(existing, { isStudySwitch: true });
+          return;
+        }
+        // 'install': show update toast if upgrading an existing install.
+        const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
+        const _installedVer = _getInstalledStudyVersion(_plainStudyId);
+        const _studyTitle   = data.studyMetadata?.title || _plainStudyId;
+        if (_installedVer > 0 && _incomingVer > _installedVer) {
+          showToast({
+            message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
+            isManual: true,
+          });
+        }
+        // Record version (plain-JSON installs don't go through IDB.set below — do it here).
+        if (_incomingVer > 0) _setInstalledStudyVersion(_plainStudyId, _incomingVer);
+      }
+
       checkEstudyVersion(data);
       Router.back();
       applyStudyData(data, { isStudySwitch: true });

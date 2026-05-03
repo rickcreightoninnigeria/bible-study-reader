@@ -64,7 +64,7 @@ function getUpgradeOnboardingSlides() {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>Back:</b> bugfixes to the handling of back button and navigation history</li><li><b>Navigation bars:</b> bugfixes to the ‘sticky’ language bar</li></ul>',
+      body:    '<ul><li><b>Leaders’ Notes:</b> update to how they are displayed</li><li><b>Estudy files:</b> corresponding updates to each one</li></ul>',
     },
   ];
 }

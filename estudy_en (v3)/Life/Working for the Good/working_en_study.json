@@ -8,12 +8,15 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Creation & Humanity", "Subsection": "Purpose" }, { "Shelf": "Life", "Section": "Work & Vocation", "Subsection": "Work Life" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language"         :"en",
-    "createdAt"        :"2026-04-06T00:00:00Z",
-    "updatedAt"        :"2026-04-06T00:00:00Z",
-    "tags"             :["work", "vocation", "calling", "discipleship", "worship", "everyday faith", "identity", "generosity", "rest", "justice"],
-    "shareMessage"     :"Check out this Bible study app — “Working for the Good: Faith, Love, and Worship in our Everyday Labour”.\n\nAvailable soon on Google Play and the App Store."
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-06T00:00:00Z",
+    "updatedAt"   :"2026-04-06T00:00:00Z",
+    "tags"        :["work", "vocation", "calling", "discipleship", "worship", "everyday faith", "identity", "generosity", "rest", "justice"],
+    "shareMessage":"Check out this Bible study app — “Working for the Good: Faith, Love, and Worship in our Everyday Labour”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
     "theme-annotation":"Warm labour theme — earthy parchment and terracotta palette. Pulled from the tones of worn wood, dusty stone, and deep rust. Grounded and dignified, evoking ordinary work as something weighty and good. Suited to studies on vocation, creation, and everyday faithfulness.",
@@ -3411,65 +3414,161 @@
         "chapterNumber":1,
         "format"       :"HTML",
         "title"        :"When Work Feels Empty",
-        "keyPoints"    :"<p>This session establishes the <b>theological framework</b> for the whole series: work is part of God’s good creation (Genesis 2), distorted by sin (Genesis 3), but redeemed in Christ (Colossians 3:23–24). All eight sessions build on this foundation.</p><p>The key move is from seeing work as a <b>spiritually neutral necessity</b> to seeing it as a potential act of <b>worship and love</b>. David’s story (financial officer feeling his work ‘doesn’t count for Jesus’) will resonate widely — including with people in ministry roles who are just as prone to misplacing their identity.</p><p>The Ephesians 2:8–10 passage is crucial: we do not work <em>in order to become</em> someone; we work <em>out of who we already are</em> in Christ. Ground the whole session in that identity.</p>",
-        "pastorals"    :"<p>Be sensitive to group members who may be in genuinely difficult or unfulfilling work situations. The aim of this session is not to make people feel guilty for not ‘worshipping enough’ at their desks, but to reframe the question entirely: <em>who are you before you start work?</em></p><p>Some people feel trapped in work they did not choose or cannot leave. Do not push applications that assume free career choice. Focus instead on identity and attitude rather than circumstance.</p>",
-        "watch"        :"Watch for the person who has been secretly considering leaving their job for ‘full-time ministry’. This session directly addresses that impulse — gently, not dismissively. Make sure the group hears that ordinary work matters to God, without implying that vocational ministry does not."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This session establishes the <b>theological framework</b> for the whole series: work is part of God’s good creation (Genesis 2), distorted by sin (Genesis 3), but redeemed in Christ (Colossians 3:23–24). All eight sessions build on this foundation.</p><p>The key move is from seeing work as a <b>spiritually neutral necessity</b> to seeing it as a potential act of <b>worship and love</b>. David’s story (financial officer feeling his work ’doesn’t count for Jesus’) will resonate widely — including with people in ministry roles who are just as prone to misplacing their identity.</p><p>The Ephesians 2:8–10 passage is crucial: we do not work <em>in order to become</em> someone; we work <em>out of who we already are</em> in Christ. Ground the whole session in that identity.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Be sensitive to group members who may be in genuinely difficult or unfulfilling work situations. The aim of this session is not to make people feel guilty for not ’worshipping enough’ at their desks, but to reframe the question entirely: <em>who are you before you start work?</em></p><p>Some people feel trapped in work they did not choose or cannot leave. Do not push applications that assume free career choice. Focus instead on identity and attitude rather than circumstance.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who has been secretly considering leaving their job for ’full-time ministry’. This session directly addresses that impulse — gently, not dismissively. Make sure the group hears that ordinary work matters to God, without implying that vocational ministry does not."
+        }
       },
       {
         "chapterNumber":2,
         "format"       :"HTML",
         "title"        :"Work as Love Made Visible",
-        "keyPoints"    :"<p>The central claim of this session is that <b>work is one of the primary ways we love others</b>. The helpful distinction is between loving <em>many people in a few ways</em> (through work tasks and skills) and loving <em>a few people in many ways</em> (through personal relationships).</p><p>Draw out the implication of Genesis 1:26 — that we are made in the image of a <b>relational, collaborative God</b>, and that work is therefore inherently relational and not merely productive.</p><p>Mark 10:42–45 redefines greatness as service. This challenges both the ambition that drives people to overwork and the false humility that leads people to dismiss their work as too small to matter.</p>",
-        "pastorals"    :"<p>Judith’s story (stay-at-home parent feeling invisible) is important. Make sure unpaid and domestic work is explicitly affirmed as real work throughout this session. Some of the most significant loving-through-work happens in contexts that receive no economic recognition.</p><p>Ben’s story (IT worker feeling disconnected from ministry) is common. The question ‘who benefits from your work?’ can be surprisingly powerful for people in technical or support roles who have never mapped their own impact.</p>",
-        "watch"        :"Watch for people who confuse ‘loving others through work’ with ‘evangelising at work’. Both matter, but they are not the same thing. This session is about the intrinsic value of the work itself as love — not only its instrumental value as an opportunity for gospel witness."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The central claim of this session is that <b>work is one of the primary ways we love others</b>. The helpful distinction is between loving <em>many people in a few ways</em> (through work tasks and skills) and loving <em>a few people in many ways</em> (through personal relationships).</p><p>Draw out the implication of Genesis 1:26 — that we are made in the image of a <b>relational, collaborative God</b>, and that work is therefore inherently relational and not merely productive.</p><p>Mark 10:42–45 redefines greatness as service. This challenges both the ambition that drives people to overwork and the false humility that leads people to dismiss their work as too small to matter.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Judith’s story (stay-at-home parent feeling invisible) is important. Make sure unpaid and domestic work is explicitly affirmed as real work throughout this session. Some of the most significant loving-through-work happens in contexts that receive no economic recognition.</p><p>Ben’s story (IT worker feeling disconnected from ministry) is common. The question ’who benefits from your work?’ can be surprisingly powerful for people in technical or support roles who have never mapped their own impact.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for people who confuse ’loving others through work’ with ’evangelising at work’. Both matter, but they are not the same thing. This session is about the intrinsic value of the work itself as love — not only its instrumental value as an opportunity for gospel witness."
+        }
       },
       {
         "chapterNumber":3,
         "format"       :"HTML",
         "title"        :"Work is Good in Itself",
-        "keyPoints"    :"<p>This session deepens the creation theology of Chapter 1. Work is not merely <em>permitted</em> by God; it is part of his design for human flourishing. Daniel’s story (‘just making boxes’) gives the group permission to voice the nagging sense that their work is too ordinary to matter.</p><p>The important move is from <b>three categories of work</b>: work that reflects creation (cultivating, building, teaching), work that responds to the Fall (healing, restraining evil, repairing), and work that points to redemption (proclaiming, showing mercy). All three glorify God when done faithfully — and most real jobs contain elements of more than one.</p><p>Romans 12:1 and the ‘living sacrifice’ language is the theological anchor: all of life — including work — can be offered to God as worship.</p>",
-        "pastorals"    :"<p>People in unglamorous, repetitive, or low-status work particularly need this session. Be concrete about examples: a factory worker, a cleaner, a data entry clerk. The gospel’s answer to ‘I’m just making boxes’ is not ‘find a more spiritual job’ but ‘this is how God sustains his world, and you are part of it.’</p><p>The Revelation 21 passage can feel abstract. Help the group connect the hope of new creation to their actual work: the skills, creativity, and care invested in faithful work are not wasted — they have a kind of eternal weight, even if we do not understand exactly how.</p>",
-        "watch"        :"Watch for the temptation to spiritualise work in a way that devalues its actual content. The point is not that making boxes becomes spiritual by adding a Bible verse to it — it is that the making of useful things for human life is already a participation in God’s care for his world."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This session deepens the creation theology of Chapter 1. Work is not merely <em>permitted</em> by God; it is part of his design for human flourishing. Daniel’s story (‘just making boxes’) gives the group permission to voice the nagging sense that their work is too ordinary to matter.</p><p>The important move is from <b>three categories of work</b>: work that reflects creation (cultivating, building, teaching), work that responds to the Fall (healing, restraining evil, repairing), and work that points to redemption (proclaiming, showing mercy). All three glorify God when done faithfully — and most real jobs contain elements of more than one.</p><p>Romans 12:1 and the ’living sacrifice’ language is the theological anchor: all of life — including work — can be offered to God as worship.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>People in unglamorous, repetitive, or low-status work particularly need this session. Be concrete about examples: a factory worker, a cleaner, a data entry clerk. The gospel’s answer to ’I’m just making boxes’ is not ’find a more spiritual job’ but ’this is how God sustains his world, and you are part of it.’</p><p>The Revelation 21 passage can feel abstract. Help the group connect the hope of new creation to their actual work: the skills, creativity, and care invested in faithful work are not wasted — they have a kind of eternal weight, even if we do not understand exactly how.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the temptation to spiritualise work in a way that devalues its actual content. The point is not that making boxes becomes spiritual by adding a Bible verse to it — it is that the making of useful things for human life is already a participation in God’s care for his world."
+        }
       },
       {
         "chapterNumber":4,
         "format"       :"HTML",
         "title"        :"The Fruit of Work",
-        "keyPoints"    :"<p>This session tackles the fruit of work: income, influence, skill, and relationships — and what we do with them. Lydia’s story introduces the subtle danger that <b>success can pull us away from God</b> just as surely as failure can.</p><p>The key theological moves are: (1) all fruit ultimately comes from God’s provision (Deuteronomy 8:17–18); (2) wealth is stored work, designed to serve love rather than self-protection (1 Timothy 6:17–19); (3) generosity is not optional but the natural overflow of knowing God’s grace (2 Corinthians 8–9).</p><p>The four types of fruit — <b>provision, service, formation, witness</b> — give the group a richer vocabulary than simply ‘salary’. Encourage people to think about all four in relation to their own work.</p>",
-        "pastorals"    :"<p>Be sensitive to those in genuine financial difficulty. The application of generosity must be handled carefully — it is not about giving from scarcity in a way that damages families, but about the orientation of the heart.</p><p>The Luke 12:15–21 parable (the rich fool) can land hard on high earners. Handle it honestly but not as an attack. The question Jesus presses is not ‘how much do you earn?’ but ‘what does your life consist of?’ — which is as searching for the poor as for the wealthy.</p>",
-        "watch"        :"Watch for group members who equate material success with spiritual blessing, and those who equate material struggle with spiritual failure. Both tendencies distort the gospel. The session steers between them by grounding all fruit in grace, not merit."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This session tackles the fruit of work: income, influence, skill, and relationships — and what we do with them. Lydia’s story introduces the subtle danger that <b>success can pull us away from God</b> just as surely as failure can.</p><p>The key theological moves are: (1) all fruit ultimately comes from God’s provision (Deuteronomy 8:17–18); (2) wealth is stored work, designed to serve love rather than self-protection (1 Timothy 6:17–19); (3) generosity is not optional but the natural overflow of knowing God’s grace (2 Corinthians 8–9).</p><p>The four types of fruit — <b>provision, service, formation, witness</b> — give the group a richer vocabulary than simply ’salary’. Encourage people to think about all four in relation to their own work.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Be sensitive to those in genuine financial difficulty. The application of generosity must be handled carefully — it is not about giving from scarcity in a way that damages families, but about the orientation of the heart.</p><p>The Luke 12:15–21 parable (the rich fool) can land hard on high earners. Handle it honestly but not as an attack. The question Jesus presses is not ’how much do you earn?’ but ’what does your life consist of?’ — which is as searching for the poor as for the wealthy.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for group members who equate material success with spiritual blessing, and those who equate material struggle with spiritual failure. Both tendencies distort the gospel. The session steers between them by grounding all fruit in grace, not merit."
+        }
       },
       {
         "chapterNumber":5,
         "format"       :"HTML",
         "title"        :"The Context of Work",
-        "keyPoints"    :"<p>Work is never done in isolation — it is always embedded in systems, organisations, and power structures. Samuel’s story (the accountant facing pressure to stay silent about financial manipulation) raises the question of <b>ethical integrity in complex organisations</b>.</p><p>Daniel 6 is the key case study: a believer who served faithfully within a pagan system, maintained his integrity at personal cost, and refused to allow the system to define his loyalties. He worked <em>within</em> a broken system without being <em>controlled</em> by it.</p><p>Jeremiah 29:4–7 — ‘seek the welfare of the city’ — provides a positive vision: we are not called merely to survive our workplaces but to bless them.</p>",
-        "pastorals"    :"<p>This session may surface significant pain. Some group members may be in genuinely unjust or compromised workplaces and feel trapped. Be careful not to imply that staying in a difficult context is always right, or that leaving is always a failure of nerve.</p><p>The question of when to speak up, when to stay, and when to step away (Psalm 15:1–5) requires wisdom that cannot be given in the abstract. If someone is facing a specific ethical dilemma, offer to speak with them separately rather than trying to resolve it in the group discussion.</p>",
-        "watch"        :"Watch for two opposite errors: the person who is too quick to separate from a difficult workplace (leaving rather than being salt and light), and the person who has rationalised going along with something genuinely wrong. Both need this session, but for different reasons."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>Work is never done in isolation — it is always embedded in systems, organisations, and power structures. Samuel’s story (the accountant facing pressure to stay silent about financial manipulation) raises the question of <b>ethical integrity in complex organisations</b>.</p><p>Daniel 6 is the key case study: a believer who served faithfully within a pagan system, maintained his integrity at personal cost, and refused to allow the system to define his loyalties. He worked <em>within</em> a broken system without being <em>controlled</em> by it.</p><p>Jeremiah 29:4–7 — ‘seek the welfare of the city’ — provides a positive vision: we are not called merely to survive our workplaces but to bless them.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This session may surface significant pain. Some group members may be in genuinely unjust or compromised workplaces and feel trapped. Be careful not to imply that staying in a difficult context is always right, or that leaving is always a failure of nerve.</p><p>The question of when to speak up, when to stay, and when to step away (Psalm 15:1–5) requires wisdom that cannot be given in the abstract. If someone is facing a specific ethical dilemma, offer to speak with them separately rather than trying to resolve it in the group discussion.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for two opposite errors: the person who is too quick to separate from a difficult workplace (leaving rather than being salt and light), and the person who has rationalised going along with something genuinely wrong. Both need this session, but for different reasons."
+        }
       },
       {
         "chapterNumber":6,
         "format"       :"HTML",
         "title"        :"Work and Hope",
-        "keyPoints"    :"<p>Naomi’s story (the exhausted nurse) introduces the theme of <b>work and weariness</b> — and the urgent need for a theology of rest. The session connects rest, Sabbath, and the hope of new creation.</p><p>Three theological anchors: (1) God built rest into creation before sin (Genesis 2:1–3) — rest is not laziness but an imitation of God and an act of trust; (2) the Sabbath connects our identity as God’s people, not slaves (Exodus 20 and Deuteronomy 5); (3) 1 Corinthians 15:58 grounds present faithfulness in resurrection hope — our work is <em>not in vain</em>.</p><p>Matthew 11:28–30 is the pastoral heart of the session. Jesus does not promise less work — he promises a new way of working, with him, under his yoke.</p>",
-        "pastorals"    :"<p>Be alert to genuine burnout in the group. This session is not primarily a call to try harder to rest — it is a call to receive rest as a gift and to trust God enough to stop. For someone running on empty, the most important thing may simply be to hear that their exhaustion is seen and taken seriously.</p><p>The four practical practices at the end of the session (Sabbath rhythm, boundaries, gratitude, dependence) are suggestions, not a programme. Help the group identify one concrete step rather than feeling overwhelmed by a list.</p>",
-        "watch"        :"Watch for the person who cannot rest — whose overwork has become a form of self-justification or control. For them, Sabbath is not a minor lifestyle adjustment but a profound act of trust. The session’s answer to their anxiety is the resurrection: Jesus rose, so our work — however unfinished — is held in his hands."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>Naomi’s story (the exhausted nurse) introduces the theme of <b>work and weariness</b> — and the urgent need for a theology of rest. The session connects rest, Sabbath, and the hope of new creation.</p><p>Three theological anchors: (1) God built rest into creation before sin (Genesis 2:1–3) — rest is not laziness but an imitation of God and an act of trust; (2) the Sabbath connects our identity as God’s people, not slaves (Exodus 20 and Deuteronomy 5); (3) 1 Corinthians 15:58 grounds present faithfulness in resurrection hope — our work is <em>not in vain</em>.</p><p>Matthew 11:28–30 is the pastoral heart of the session. Jesus does not promise less work — he promises a new way of working, with him, under his yoke.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Be alert to genuine burnout in the group. This session is not primarily a call to try harder to rest — it is a call to receive rest as a gift and to trust God enough to stop. For someone running on empty, the most important thing may simply be to hear that their exhaustion is seen and taken seriously.</p><p>The four practical practices at the end of the session (Sabbath rhythm, boundaries, gratitude, dependence) are suggestions, not a programme. Help the group identify one concrete step rather than feeling overwhelmed by a list.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who cannot rest — whose overwork has become a form of self-justification or control. For them, Sabbath is not a minor lifestyle adjustment but a profound act of trust. The session’s answer to their anxiety is the resurrection: Jesus rose, so our work — however unfinished — is held in his hands."
+        }
       },
       {
         "chapterNumber":7,
         "format"       :"HTML",
         "title"        :"The Worker",
-        "keyPoints"    :"<p>This session turns from the nature and context of work to the <b>identity of the worker</b>. Michael’s story (the architect whose worth rises and falls with project outcomes) names a dynamic that affects almost everyone in the group, whatever they do.</p><p>The key theological move is from Ephesians 2:8–10: <em>we are God’s workmanship</em> — our identity is given, not achieved. We do not work to become someone; we work because of who we already are in Christ.</p><p>Philippians 2:5–8 provides the counter-model: Jesus, who had every right to status, voluntarily took the form of a servant. True greatness — and true freedom from the anxiety of comparison — is found in following his pattern.</p>",
-        "pastorals"    :"<p>This session may feel uncomfortably close to home for high-achievers in the group. The language of idolatry (‘our careers tell us who we are’) can feel accusatory. Be careful to name it as a universal tendency, not a personal failure.</p><p>Psalm 127:1–2 is a significant comfort: the Father provides for his beloved even while they sleep. This is not an invitation to laziness but a profound statement about where our security lies. Some in the group may need to hear this more than anything else.</p>",
-        "watch"        :"Watch for the person who intellectually affirms identity in Christ but emotionally still measures themselves by their performance. Understanding the gospel and being formed by it are different things. The Heart Check questions at the end of this session are designed to expose that gap — make sure the group takes them seriously."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>This session turns from the nature and context of work to the <b>identity of the worker</b>. Michael’s story (the architect whose worth rises and falls with project outcomes) names a dynamic that affects almost everyone in the group, whatever they do.</p><p>The key theological move is from Ephesians 2:8–10: <em>we are God’s workmanship</em> — our identity is given, not achieved. We do not work to become someone; we work because of who we already are in Christ.</p><p>Philippians 2:5–8 provides the counter-model: Jesus, who had every right to status, voluntarily took the form of a servant. True greatness — and true freedom from the anxiety of comparison — is found in following his pattern.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>This session may feel uncomfortably close to home for high-achievers in the group. The language of idolatry (‘our careers tell us who we are’) can feel accusatory. Be careful to name it as a universal tendency, not a personal failure.</p><p>Psalm 127:1–2 is a significant comfort: the Father provides for his beloved even while they sleep. This is not an invitation to laziness but a profound statement about where our security lies. Some in the group may need to hear this more than anything else.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person who intellectually affirms identity in Christ but emotionally still measures themselves by their performance. Understanding the gospel and being formed by it are different things. The Heart Check questions at the end of this session are designed to expose that gap — make sure the group takes them seriously."
+        }
       },
       {
         "chapterNumber":8,
         "format"       :"HTML",
         "title"        :"Finding Good Work",
-        "keyPoints"    :"<p>The final session brings the series to a practical conclusion: how do Christians discern and choose good work? Anna’s dilemma (two jobs, no obvious ‘right answer’) is deliberately unresolved — because the point is not that God always provides a clear signal, but that he provides wisdom, community, and freedom.</p><p>Four marks of good work: it <b>serves others</b>, <b>fits your gifts</b>, <b>aligns with God’s purposes</b>, and <b>can be done in faith</b>. These are not a checklist for a perfect job — they are a framework for faithful discernment.</p><p>1 Corinthians 7:17–24 corrects the idea that our primary calling is to find the right job. Our primary calling is to follow Jesus wherever we are. Secondary callings (work, family, community) are contexts for that primary calling, not replacements for it.</p>",
-        "pastorals"    :"<p>Be sensitive to people who feel stuck — in the wrong career, the wrong organisation, or with no clear path forward. The session’s message is one of freedom (‘God’s will is a wide field, not a tightrope’) but that freedom can feel hollow to someone who genuinely cannot see a way forward. Point them toward community and wise counsel, not just principles.</p><p>This is a good session to close by inviting the group to pray for one another’s specific work situations — naming their jobs, their decisions, and their struggles before God together.</p>",
-        "watch"        :"Watch for the person leaving the series more aware of the gap between where they are and where they want to be, but without a concrete next step. Help everyone identify one specific action: a conversation to have, a decision to revisit, a prayer to pray, or a person to meet with. The series should end with movement, not just insight."
+        "keyPoints"    :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p>The final session brings the series to a practical conclusion: how do Christians discern and choose good work? Anna’s dilemma (two jobs, no obvious ’right answer’) is deliberately unresolved — because the point is not that God always provides a clear signal, but that he provides wisdom, community, and freedom.</p><p>Four marks of good work: it <b>serves others</b>, <b>fits your gifts</b>, <b>aligns with God’s purposes</b>, and <b>can be done in faith</b>. These are not a checklist for a perfect job — they are a framework for faithful discernment.</p><p>1 Corinthians 7:17–24 corrects the idea that our primary calling is to find the right job. Our primary calling is to follow Jesus wherever we are. Secondary callings (work, family, community) are contexts for that primary calling, not replacements for it.</p>"
+        },
+        "pastorals":{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>Be sensitive to people who feel stuck — in the wrong career, the wrong organisation, or with no clear path forward. The session’s message is one of freedom (‘God’s will is a wide field, not a tightrope’) but that freedom can feel hollow to someone who genuinely cannot see a way forward. Point them toward community and wise counsel, not just principles.</p><p>This is a good session to close by inviting the group to pray for one another’s specific work situations — naming their jobs, their decisions, and their struggles before God together.</p>"
+        },
+        "watch":{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for the person leaving the series more aware of the gap between where they are and where they want to be, but without a concrete next step. Help everyone identify one specific action: a conversation to have, a decision to revisit, a prayer to pray, or a person to meet with. The series should end with movement, not just insight."
+        }
       }
     ]
   },
