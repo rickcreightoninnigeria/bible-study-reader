@@ -698,6 +698,8 @@
   "shareprint_blank_doc_title_suffix": "Blank Study",
 
   "studyloader_version_updating": "Updating {title} to v{version}…",
-  "studyloader_version_downgrade_blocked": "This is an older version — keeping the current one"
+  "studyloader_version_downgrade_blocked": "This is an older version — keeping the current one",
+
+  "renderpages_shareapp_share_message": "I've been using this Bible study app and I think you'd love it! 📖\n\nIt's a free Android app for working through Bible study courses — reading passages, answering questions, and tracking your progress as you go.\n\nYou can download it here:\n{url}"
   
 }

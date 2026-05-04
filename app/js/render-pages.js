@@ -733,22 +733,15 @@ async function renderHowToUse(tabId) {
 // Clipboard fallback uses copyToClipboard() → navigator.clipboard.writeText()
 // with execCommand as a last resort via fallbackCopy().
 function shareAppLink() {
-  const apkId  = window.appAboutData?.apkUpdateFolder || '';
-  const apkUrl = `https://drive.google.com/drive/folders/${apkId}?usp=sharing`;
-  const message =
-    'I\'ve been using this Bible study app and I think you\'d love it! 📖\n\n' +
-    'It\'s a free Android app for working through Bible study courses — reading passages, ' +
-    'answering questions, and tracking your progress as you go.\n\n' +
-    'You can download it here:\n' +
-    `${apkUrl}`;
+  const pkg      = window.appAboutData?.androidPackageId || '';
+  const playUrl  = pkg ? `https://play.google.com/store/apps/details?id=${pkg}` : '';
+
+  const message  = t('renderpages_shareapp_share_message', { url: playUrl });
 
   if (window.Android && window.Android.share) {
     window.Android.share(message);
   } else if (navigator.share) {
-    navigator.share({
-      title: t('renderpages_shareapp_share_title'),
-      text: message
-    });
+    navigator.share({ title: t('renderpages_shareapp_share_title'), text: message });
   } else {
     copyToClipboard(message);
     showToast({ message: t('renderpages_shareapp_copied_toast'), isManual: true });
