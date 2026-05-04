@@ -1282,7 +1282,7 @@ async function renderSettings(tabId) {
               <span class="tutorial-trigger-icon">${tutorialIcon('sharing')}</span>
             </button>
           </div>
-          <div class="settings-row-desc" style="margin-bottom:12px; font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65;">
+          <div class="settings-row-desc">
             ${t('renderpages_settings_shareall_desc')}
           </div>
           <button class="howto-share-btn settings-export-btn" onclick="exportAllAnswers()">
@@ -1292,20 +1292,20 @@ async function renderSettings(tabId) {
 
         <div class="settings-block" style="margin-bottom:10px;">
           <div class="settings-row-label" style="margin-bottom:4px;">${t('renderpages_settings_printall_label')}</div>
-          <div class="settings-row-desc" style="margin-bottom:12px; font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65;">
+          <div class="settings-row-desc">
             ${t('renderpages_settings_printall_desc')}
           </div>
-          <button class="howto-share-btn" style="background:var(--text);" onclick="printAllChapters()">
+          <button class="howto-share-btn settings-export-btn" onclick="printAllChapters()">
             &#128424; ${t('renderpages_settings_printall_btn')}
           </button>
         </div>
 
         <div class="settings-block" style="margin-bottom:10px;">
           <div class="settings-row-label" style="margin-bottom:4px;">${t('renderpages_settings_printblank_label')}</div>
-          <div class="settings-row-desc" style="margin-bottom:12px; font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65;">
+          <div class="settings-row-desc">
             ${t('renderpages_settings_printblank_desc')}
           </div>
-          <button class="howto-share-btn" style="background:var(--text);" onclick="printBlankStudy()">
+          <button class="howto-share-btn settings-export-btn" onclick="printBlankStudy()">
             &#128462; ${t('renderpages_settings_printblank_btn')}
           </button>
         </div>
@@ -1318,7 +1318,7 @@ async function renderSettings(tabId) {
 
         <div class="settings-block" style="margin-bottom:10px;">
           <div class="settings-row-label" style="margin-bottom:4px;">${t('renderpages_settings_resetsettings_label')}</div>
-          <div class="settings-row-desc" style="margin-bottom:12px; font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65;">
+          <div class="settings-row-desc">
             ${t('renderpages_settings_resetsettings_desc')}
           </div>
           <button class="settings-danger-btn" onclick="resetToDefaults()">
@@ -1326,39 +1326,24 @@ async function renderSettings(tabId) {
           </button>
         </div>
 
-        <div class="settings-block">
-          <div style="background:#fdf3f0; border:1px solid var(--emphasis); border-radius:8px; padding:14px 16px; margin-bottom:16px;">
-            <div style="font-family:var(--font-stack-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--emphasis); margin-bottom:8px; font-weight:bold;">
-              &#9888; ${t('renderpages_settings_warning_label')}
-            </div>
-            <div style="font-family:var(--main-font-family); font-size:0.875rem; color:var(--emphasis); line-height:1.65;">
-              ${t('renderpages_settings_clearwarning_text')}
-            </div>
+        <div class="settings-warn-box">
+          <div class="settings-warn-box-label">
+            &#9888; ${t('renderpages_settings_warning_label')}
           </div>
-          <div style="font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65; margin-bottom:14px;">
-            ${t('renderpages_settings_clearwarning_suggestion')}
+          <div class="settings-warn-box-body">
+            ${t('renderpages_settings_clearwarning_text')}
           </div>
-          <button class="settings-danger-btn" onclick="confirmClearAnswers()">
-            &#128465; ${t('renderpages_settings_clearanswers_btn')}
-          </button>
         </div>
 
-        <div class="settings-block">
-          <div style="background:#fdf3f0; border:1px solid var(--emphasis); border-radius:8px; padding:14px 16px; margin-bottom:16px;">
-            <div style="font-family:var(--font-stack-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--emphasis); margin-bottom:8px; font-weight:bold;">
-              &#9888;&#9888; ${t('renderpages_settings_nuclear_warning_label')}
-            </div>
-            <div style="font-family:var(--main-font-family); font-size:0.875rem; color:var(--emphasis); line-height:1.65;">
-              ${t('renderpages_settings_nuclear_warning_text')}
-            </div>
+        <div class="settings-warn-box">
+          <div class="settings-warn-box-label">
+            &#9888;&#9888; ${t('renderpages_settings_nuclear_warning_label')}
           </div>
-          <div style="font-family:var(--main-font-family); font-size:0.844rem; color:var(--text-secondary); line-height:1.65; margin-bottom:14px;">
-            ${t('renderpages_settings_nuclear_desc')}
+          <div class="settings-warn-box-body">
+            ${t('renderpages_settings_nuclear_warning_text')}
           </div>
-          <button class="settings-danger-btn" onclick="resetAllData()">
-            &#128683; ${t('renderpages_settings_nuclear_btn')}
-          </button>
         </div>
+
       </div>` : ''}`;
   }
 

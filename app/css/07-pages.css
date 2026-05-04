@@ -754,13 +754,14 @@
   font-size: 11px;         /* UI chrome — stays px */
   letter-spacing: 0.06em;
   color: var(--text);
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .settings-row-desc {
   font-family: var(--main-font-family);
-  font-size: 0.8125rem;    /* was 13px — scales */
+  font-size: 0.8125rem;
   color: var(--text-faint);
-  line-height: 1.5;
+  line-height: 1.65;
+  margin-bottom: 12px;
 }
 .settings-row-desc ul,
 .settings-row-desc ol {
@@ -855,9 +856,9 @@
 /* Danger / destructive action button */
 .settings-danger-btn {
   width: 100%;
-  background: none;
   border: 1px solid var(--emphasis);
-  color: var(--emphasis);
+  background: var(--emphasis);
+  color: var(--card-bg);
   border-radius: 8px;
   padding: 12px;
   font-family: var(--font-stack-mono);
@@ -867,8 +868,34 @@
   transition: background 0.2s, color 0.2s;
 }
 .settings-danger-btn:hover {
-  background: var(--emphasis);
-  color: var(--card-bg);
+  background: var(--emphasis-light);
+  font-weight: bold;
+}
+
+/* Warning/danger callout boxes in Settings > Study reset section */
+.settings-warn-box {
+  background: #fdf3f0;
+  border: 1px solid var(--emphasis);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.settings-warn-box-label {
+  font-family: var(--font-stack-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--emphasis);
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.settings-warn-box-body {
+  font-family: var(--main-font-family);
+  font-size: 0.875rem;
+  color: var(--emphasis);
+  line-height: 1.65;
 }
 
 /* Font size shortcut buttons */
@@ -2883,6 +2910,22 @@ body.dark-mode .settings-export-btn {
   background: var(--success);
   color: var(--surface);
   border: none;
+}
+body.dark-mode .settings-row-desc { 
+  color: var(--dm-text-mid); 
+}
+
+body.dark-mode .settings-warn-box {
+  background: var(--dm-raised);
+  border-color: var(--dm-border);
+}
+
+body.dark-mode .settings-warn-box-label {
+  color: var(--dm-text);
+}
+
+body.dark-mode .settings-warn-box-body {
+  color: var(--accent-light);
 }
 
 /* ── Settings — language picker ── */
