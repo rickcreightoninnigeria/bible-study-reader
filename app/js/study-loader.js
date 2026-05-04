@@ -400,14 +400,14 @@ function _buildSectionsFromElements(elements) {
 
 // Assigns all globals from a parsed JSON data object and (re-)starts the app.
 // ── THEME ─────────────────────────────────────────────────────────────────────
-// The 19 CSS custom properties that make up a study's colour scheme.
+// The 21 CSS custom properties that make up a study's colour scheme.
 // Keys match the property names in the .estudy "theme" block exactly.
 const THEME_PROPS = [
   'surface', 'surface-mid', 'text', 'text-secondary', 'text-faint',
   'emphasis', 'emphasis-light', 'success', 'accent', 'accent-light',
   'border', 'shadow', 'card-bg',
   'dm-base', 'dm-surface', 'dm-raised', 'dm-sunken', 'dm-border',
-  'dm-text', 'dm-text-mid', 'dm-text-faint',
+  'dm-text', 'dm-text-mid', 'dm-text-faint',   // ← dm-text-mid and dm-text-faint were missing
 ];
 
 // Applies a study's theme block to the document's CSS custom properties.
@@ -697,11 +697,13 @@ async function loadStudyFromJson(jsonString) {
             if (window._appReady) {
                 window.activeStudyId = studyId;
                 const existing = await StudyIDB.get(`study_content_${studyId}`);
-                if (existing) { Router.back(); applyStudyData(existing, { isStudySwitch: true }); }
+                if (existing) { applyStudyData(existing, { isStudySwitch: true }); return; }
+                // IDB is empty despite version record (e.g. user cleared site data).
+                // Fall through to reinstall rather than silently doing nothing.
             } else {
                 window.activeStudyId = studyId;
+                return;
             }
-            return;
         }
         // 'install': show update toast if upgrading an existing install.
         const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
@@ -731,7 +733,8 @@ async function loadStudyFromJson(jsonString) {
         }
         localStorage.setItem('bsr_last_active_study', studyId);
         recordStudyInstalled(studyId); // ← track in Recently Installed
-        // Record the installed studyVersion so future loads can compare against it.
+        // Record the installed studyVersion only after IDB write succeeds, so
+        // localStorage and IDB cannot get out of sync if the write fails.
         if (_incomingVer > 0) _setInstalledStudyVersion(studyId, _incomingVer);
 
         // If the app is already initialised (DOMContentLoaded has fired),
@@ -739,7 +742,6 @@ async function loadStudyFromJson(jsonString) {
         if (window._appReady) {
             window.activeStudyId = studyId;
             checkEstudyVersion(data);
-            Router.back();
             applyStudyData(data, { isStudySwitch: true });
         } else {
             window.pendingStudyData = data;
@@ -1124,11 +1126,11 @@ async function loadStudyFromFile(file) {
       }
       if (_versionDecision === 'skip') {
         // Same version already installed — open it as normal without re-writing.
-        Router.back();
         window.activeStudyId = studyId;
         const existing = await StudyIDB.get(`study_content_${studyId}`);
-        if (existing) applyStudyData(existing, { isStudySwitch: true });
-        return;
+        if (existing) { applyStudyData(existing, { isStudySwitch: true }); return; }
+        // IDB is empty despite version record (e.g. user cleared site data).
+        // Fall through to reinstall rather than silently doing nothing.
       }
       // 'install': incoming is newer — show an update toast if upgrading an
       // existing install (installedVersion > 0), then proceed.
@@ -1209,7 +1211,6 @@ async function loadStudyFromFile(file) {
 
       // 4. Apply to the running app
       checkEstudyVersion(data);
-      Router.back();
       window.activeStudyId = studyId;
       applyStudyData(data, { isStudySwitch: true });
 
@@ -1227,11 +1228,11 @@ async function loadStudyFromFile(file) {
           return;
         }
         if (_versionDecision === 'skip') {
-          Router.back();
           window.activeStudyId = _plainStudyId;
           const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
-          if (existing) applyStudyData(existing, { isStudySwitch: true });
-          return;
+          if (existing) { applyStudyData(existing, { isStudySwitch: true }); return; }
+          // IDB is empty despite version record (e.g. user cleared site data).
+          // Fall through to reinstall rather than silently doing nothing.
         }
         // 'install': show update toast if upgrading an existing install.
         const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
@@ -1248,7 +1249,6 @@ async function loadStudyFromFile(file) {
       }
 
       checkEstudyVersion(data);
-      Router.back();
       applyStudyData(data, { isStudySwitch: true });
     }
 

@@ -262,12 +262,32 @@ async function renderChapter(idx, scrollY = 0) {
     // ── Set innerHTML (single write) ──────────────────────────────────────────
     container.innerHTML = contentHtml;
 
-    // Revoke chapter image blob URLs now that the browser has resolved them
-    // from the innerHTML write above. Revoking here (rather than on load events)
-    // is safe because the browser retains the decoded image data internally;
-    // only the URL handle — not the image itself — is released.
-    _chapterBlobUrls.forEach(u => URL.revokeObjectURL(u));
-    _chapterBlobUrls.length = 0;
+    // Revoke chapter image blob URLs only after the browser has actually fetched
+    // them. Setting innerHTML queues image loads asynchronously, so revoking
+    // synchronously here would invalidate the URLs before the browser can fetch
+    // them (causing ERR_FILE_NOT_FOUND). Instead, wait for each image's
+    // load/error event before revoking its URL.
+    const urlsToRevoke = _chapterBlobUrls.splice(0);
+    const imgs = container.querySelectorAll('img');
+    let pending = 0;
+    imgs.forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && src.startsWith('blob:') && urlsToRevoke.includes(src)) {
+        pending++;
+        const revoke = () => {
+          URL.revokeObjectURL(src);
+          pending--;
+        };
+        img.addEventListener('load',  revoke, { once: true });
+        img.addEventListener('error', revoke, { once: true });
+      }
+    });
+    // Revoke any blob URLs that didn't match an img element (safety net).
+    urlsToRevoke.forEach(u => {
+      if (!Array.from(imgs).some(img => img.getAttribute('src') === u)) {
+        URL.revokeObjectURL(u);
+      }
+    });
 
     // ── Post-render: language bar ─────────────────────────────────────────────
     // Populates #chapterLangBar with flag buttons for the available languages.

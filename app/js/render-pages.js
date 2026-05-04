@@ -1666,9 +1666,10 @@ async function renderLeadersNotes(tabId) {
 
   let tabContent = '';
   if (activeTab === 'intro' && hasIntro) {
+    const introFormat = d.format;
     const introHtml = typeof rawIntro === 'string'
-      ? rawIntro
-      : (rawIntro || []).map(p => `<p>${p}</p>`).join('\n');
+      ? renderFormatted(rawIntro, introFormat)
+      : renderFormattedArray(rawIntro, introFormat);
     tabContent = `
       <div class="leaders-intro" style="margin:20px 16px;">
         ${introHtml}
@@ -1707,6 +1708,10 @@ async function renderLeadersNotes(tabId) {
       //
       // subtype 'standard'    → leaders-block with optional header label above body
       // subtype 'highlighted' → leaders-watch wrapper (no header rendered if empty)
+      //
+      // Body text is rendered via renderFormatted(), using the chapter-level format
+      // with a fallback to the top-level leadersNotesData format.
+      const blockFormat = ch.format || d.format;
       const blocksHtml = contentFields.map(field => {
         const resolved = resolveMetaField(ch, field, activeLang, langMap);
         if (!resolved || typeof resolved !== 'object') return '';
@@ -1721,7 +1726,7 @@ async function renderLeadersNotes(tabId) {
           return `
           <div class="leaders-block">
             ${headerHtml}
-            <div class="leaders-watch">${body}</div>
+            <div class="leaders-watch">${renderFormatted(body, blockFormat)}</div>
           </div>`;
         }
 
@@ -1732,7 +1737,7 @@ async function renderLeadersNotes(tabId) {
         return `
           <div class="leaders-block">
             ${headerHtml}
-            ${body || ''}
+            ${renderFormatted(body, blockFormat)}
           </div>`;
       }).join('\n');
 
@@ -2015,11 +2020,11 @@ async function renderGoDeeper(tabId) {
   let tabContent = '';
 
   if (activeTab === 'intro' && hasIntro) {
-    // body: string or array of strings
+    // body: string or array of strings; rendered via format-text.js helpers.
     const rawBody  = rawIntro.body;
     const bodyHtml = Array.isArray(rawBody)
-      ? rawBody.map(p => `<p>${p}</p>`).join('\n')
-      : (typeof rawBody === 'string' ? rawBody : '');
+      ? renderFormattedArray(rawBody, d.format)
+      : renderFormatted(rawBody || '', d.format);
 
     tabContent = `
       <div class="go-deeper-intro" style="margin: 20px 16px;">
@@ -2054,6 +2059,10 @@ async function renderGoDeeper(tabId) {
       //
       // subtype 'standard'    → .go-deeper-block with optional header label
       // subtype 'highlighted' → .go-deeper-block wrapping .go-deeper-highlight
+      //
+      // Body text is rendered via renderFormatted(), using the chapter-level format
+      // with a fallback to the top-level goDeeperData format.
+      const blockFormat = ch.format || d.format;
       const blocksHtml = contentFields.map(field => {
         const resolved = resolveMetaField(ch, field, activeLang, langMap);
         if (!resolved || typeof resolved !== 'object') return '';
@@ -2068,7 +2077,7 @@ async function renderGoDeeper(tabId) {
           return `
           <div class="go-deeper-block">
             ${headerHtml}
-            <div class="go-deeper-highlight">${body}</div>
+            <div class="go-deeper-highlight">${renderFormatted(body, blockFormat)}</div>
           </div>`;
         }
 
@@ -2079,7 +2088,7 @@ async function renderGoDeeper(tabId) {
         return `
           <div class="go-deeper-block">
             ${headerHtml}
-            ${body || ''}
+            ${renderFormatted(body, blockFormat)}
           </div>`;
       }).join('\n');
 
@@ -2122,8 +2131,4 @@ async function renderGoDeeper(tabId) {
 }
 
 
-// Converts a double-newline-delimited string into a series of <p> tags.
-// Used for intro, bridge, and closing text fields in the chapters data.
-function renderParas(text) {
-  return text.split('\n\n').map(p => `<p>${p}</p>`).join('');
-}
+

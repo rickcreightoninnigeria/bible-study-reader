@@ -64,7 +64,7 @@ function getUpgradeOnboardingSlides() {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>Leaders’ Notes:</b> update to how they are displayed</li><li><b>Estudy files:</b> corresponding updates to each one</li></ul>',
+      body:    '<ul><li><b>Bipolar Likert scales:</b> improved handling</li><li><b>Estudy loading:</b> fixed bug</li></ul>',
     },
   ];
 }

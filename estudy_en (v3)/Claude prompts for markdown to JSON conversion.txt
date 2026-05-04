@@ -256,3 +256,8 @@ When you are done,  output the updated JSON for download.
 
 Before you start, ask any questions you need to for clarification, and make any suggestions. Let me review these before you begin.
 
+===========================================================
+
+Convert the attached .md file into a JSON chapter section, using the JSON template attached (and paying attention to the guiding comments within the .md file). 
+Populate the English text into text1, question1, eyebrow1, etc.  Hause will go in "...2"  fields later, and Fulfulde will go in "...3" fields. Leave the 2/3 fields empty for now.
+Ask any questions and make new suggestions for me to review before going further.

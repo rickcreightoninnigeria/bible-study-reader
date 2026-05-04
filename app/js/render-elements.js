@@ -49,7 +49,8 @@
 //   startVoiceInput                  – voice.js
 //   autoResize                       – utils.js
 //   saveAnswers                      – save.js
-//   renderParas                      – utils.js
+//   renderFormatted, renderParas,
+//   renderFormattedArray             – format-text.js
 
 
 // ── LANGUAGE RESOLUTION ───────────────────────────────────────────────────────
@@ -281,9 +282,10 @@ function renderText(ctx) {
   const { el, noPad, activeLang, langMap } = ctx;
 
   // resolveText returns the raw text for the active language.
-  // Format conversion (HTML passthrough vs. paragraph wrapping) is applied below.
+  // Format conversion (HTML passthrough, markdown rendering, or paragraph
+  // wrapping) is handled centrally by renderFormatted() in format-text.js.
   const rawText     = resolveText(el, activeLang, 'text', langMap);
-  const html        = el.format === 'HTML' ? rawText : renderParas(rawText);
+  const html        = renderFormatted(rawText, el.format);
   const encodedHtml = html.replace(/"/g, '&quot;');
   const speakTitle  = t('renderchapter_speak_btn_title');
 
@@ -487,10 +489,8 @@ function renderQuestion(ctx) {
 
   if (isHeader) {
     // Header subtype: custom label in the ref bar instead of a scripture ref.
-    // Supports plain text or HTML (resolved via el.format).
-    const headerHtml = el.format === 'HTML'
-      ? (el.header || '')
-      : (el.header || '').replace(/</g, '&lt;');
+    // Supports plain text, HTML, and markdown (resolved via el.format).
+    const headerHtml = renderFormatted(el.header || '', el.format);
 
     return `${cardOpen}
         <div class="question-ref question-ref-split">
@@ -591,8 +591,10 @@ function renderImage(ctx) {
         : `width:${widthPct}%; margin-left:auto; margin-right:auto;`; // center
 
   // Caption: markdown not yet supported — treat as plainText unless format is HTML
+  // Caption: rendered via renderFormatted() so HTML, markdown, and plainText
+  // are all supported.
   const captionHtml = caption
-    ? (el.format === 'HTML' ? caption : `<p class="chapter-image-caption">${caption}</p>`)
+    ? renderFormatted(caption, el.format)
     : '';
 
   return `

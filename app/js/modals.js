@@ -123,17 +123,20 @@ function qaCalloutHtml(id) {
 // el    – the element object from the study JSON (type: 'likertScale')
 // chNum – the chapter number (for localStorage key scoping)
 //
-// Expected el properties:
+// Expected el properties (standard):
 //   elementId   – stable ID for localStorage keys
 //   scaleNumber – number of options (determines how many radio buttons per row)
 //   scale       – array of label strings, length === scaleNumber
 //   statements  – array of statement strings
 //   instruction – instruction text shown in the popup
 //   popupTitle  – title shown in the popup's title bar
+//
+// Additional properties for bipolar (subtype: 'bipolar'):
+//   statementPairs – array of { left, right } objects instead of statements
 function renderLikertScale(el, chNum) {
+  const isBipolar  = el.subtype === 'bipolar';
   const n          = el.scaleNumber || (el.scale ? el.scale.length : 5);
   const scale      = el.scale || [];
-  const statements = el.statements || [];
   const eid        = el.elementId || '';
 
   // Number header labels (1 … N)
@@ -141,11 +144,11 @@ function renderLikertScale(el, chNum) {
     `<div class="likert-number-label">${i + 1}</div>`
   ).join('');
 
-  // One row per statement
-  const rowsHtml = statements.map((stmt, stIdx) => {
-    const savedVal   = localStorage.getItem(likertKey(chNum, eid, stIdx));
-    const radiosHtml = Array.from({ length: n }, (_, optIdx) => {
-      const val    = optIdx + 1;  // 1-based, matching the column headers
+  // Build radio buttons for a given row index — shared by both subtypes
+  function buildRadios(stIdx) {
+    const savedVal = localStorage.getItem(likertKey(chNum, eid, stIdx));
+    return Array.from({ length: n }, (_, optIdx) => {
+      const val    = optIdx + 1;
       const checked = savedVal === String(val) ? 'checked' : '';
       const keyStr  = likertKey(chNum, eid, stIdx);
       return `<input
@@ -157,13 +160,28 @@ function renderLikertScale(el, chNum) {
         onchange="localStorage.setItem('${keyStr}', this.value); updateProgress();"
       />`;
     }).join('');
+  }
 
-    return `
+  // One row per statement / statement pair
+  let rowsHtml;
+  if (isBipolar) {
+    const pairs = el.statementPairs || [];
+    rowsHtml = pairs.map((pair, stIdx) => `
+      <div class="likert-row likert-row--bipolar">
+        <div class="likert-statement likert-statement--left">${pair.left}</div>
+        <div class="likert-options">${buildRadios(stIdx)}</div>
+        <div class="likert-statement likert-statement--right">${pair.right}</div>
+      </div>`
+    ).join('');
+  } else {
+    const statements = el.statements || [];
+    rowsHtml = statements.map((stmt, stIdx) => `
       <div class="likert-row">
         <div class="likert-statement">${stmt}</div>
-        <div class="likert-options">${radiosHtml}</div>
-      </div>`;
-  }).join('');
+        <div class="likert-options">${buildRadios(stIdx)}</div>
+      </div>`
+    ).join('');
+  }
 
   // Safely escape title and instruction for single-quoted onclick args.
   // Scale is stored as a data attribute (JSON) to avoid double-quote

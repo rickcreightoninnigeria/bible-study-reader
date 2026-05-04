@@ -290,6 +290,33 @@
     color: #bbb;
   }
 
+  .likert-print-row--bipolar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: center;
+    gap: 6pt;
+    padding: 4pt 10pt;
+    font-size: 10pt;
+    border-top: 0.5pt solid #eee;
+  }
+ 
+  .likert-print-row--bipolar:first-of-type {
+    border-top: none;
+  }
+ 
+  .likert-print-statement--left {
+    text-align: right;
+    color: black;
+    flex: unset;
+  }
+ 
+  .likert-print-statement--right {
+    text-align: left;
+    color: black;
+    flex: unset;
+  }
+
+
   /* ── Page margins ── */
   @page {
     margin: 1.5cm 1.8cm;
