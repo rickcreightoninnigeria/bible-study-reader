@@ -43,28 +43,59 @@ function renderParas(text) {
   return text.split('\n\n').map(p => `<p>${p}</p>`).join('');
 }
 
+// ── expandFootnoteMarkers(text, footnotes) ────────────────────────────────────
+// Pre-pass that replaces [[fn:N]] markers in text with superscript buttons
+// that open openFootnoteModal(). Called by renderFormatted() when a footnotes
+// array is supplied. Runs before markdown-it so the markers are not escaped.
+//
+// @param {string}   text      - Raw content string containing [[fn:N]] markers.
+// @param {Array}    footnotes - Array of { id: number, body: string } objects.
+// @returns {string} Text with markers replaced by <sup><button>…</button></sup>.
+function expandFootnoteMarkers(text, footnotes) {
+  if (!footnotes || !footnotes.length) return text;
+  return text.replace(/\[\[fn:(\d+)\]\]/g, (_, n) => {
+    const num = parseInt(n, 10);
+    const fn  = footnotes.find(f => f.id === num);
+    if (!fn) return `<sup>${n}</sup>`;
+    // Escape single quotes and double quotes in the body for safe inline onclick.
+    const safeBody = fn.body
+      .replace(/\\/g, '\\\\')
+      .replace(/'/g,  "\\'")
+      .replace(/"/g,  '&quot;');
+    return `<sup><button class="footnote-btn" onclick="openFootnoteModal('Note\u00a0${n}', '${safeBody}')">${n}</button></sup>`;
+  });
+}
 
-// ── renderFormatted(text, format) ────────────────────────────────────────────
+// ── renderFormatted(text, format, footnotes) ─────────────────────────────────
 // Master formatting entry point. Accepts a raw string and a format identifier
 // and returns an HTML string ready for innerHTML injection.
 //
+// If a footnotes array is supplied, [[fn:N]] markers in the text are expanded
+// into superscript buttons (via expandFootnoteMarkers()) before formatting.
+// This pre-pass runs before markdown-it so the markers are never escaped.
+//
 // Parameters:
-//   text   {string}  The raw content string. Returns '' if falsy.
-//   format {string}  The format identifier from the JSON ('HTML', 'markdown',
-//                    'plainText', etc.). Case-insensitive. Defaults to
-//                    'plainText' if absent or unrecognised.
+//   text      {string}  The raw content string. Returns '' if falsy.
+//   format    {string}  The format identifier from the JSON ('HTML', 'markdown',
+//                       'plainText', etc.). Case-insensitive. Defaults to
+//                       'plainText' if absent or unrecognised.
+//   footnotes {Array=}  Optional. Array of { id: number, body: string } objects
+//                       from the chapter's footnotes field. Omit (or pass null)
+//                       for callers that have no footnotes — existing behaviour
+//                       is unchanged.
 //
 // Usage:
 //   renderFormatted(el.text, el.format)
-//   renderFormatted(body, ch.format || d.format)   // leaders notes / go-deeper
-function renderFormatted(text, format) {
+//   renderFormatted(body, ch.format || d.format)              // leaders notes / go-deeper (no footnotes)
+//   renderFormatted(body, blockFormat, ch.footnotes)          // go-deeper blocks with footnotes
+function renderFormatted(text, format, footnotes) {
   if (!text) return '';
+  const processed = footnotes ? expandFootnoteMarkers(text, footnotes) : text;
   const fmt = (format || 'plainText').toLowerCase();
-  if (fmt === 'html')     return text;
-  if (fmt === 'markdown') return _md.render(text);
-  return renderParas(text);
+  if (fmt === 'html')     return processed;
+  if (fmt === 'markdown') return _md.render(processed);
+  return renderParas(processed);
 }
-
 
 // ── renderFormattedArray(items, format) ──────────────────────────────────────
 // Renders an array of strings where each item is an independent paragraph.

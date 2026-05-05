@@ -1,0 +1,232 @@
+{
+  "studyMetadata":{
+    "studyId"          :"exploring_deuteronomy_v001",
+    "title"            :"Exploring Deuteronomy",
+    "subtitle"         :"Bible Study",
+    "shortTitle"       :"Deuteronomy",
+    "description"      :"",
+    "author"           :"Julie Rowbory",
+    "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Law", "Subsection": "Deuteronomy" }],
+    "estudyFileVersion":3,
+    "studyVersion"     :1,
+    "language"         :"en",
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-05-04T00:00:00Z",
+    "updatedAt"   :"2026-05-04T00:00:00Z",
+    "tags"        :["old testament", "deuteronomy"],
+    "shareMessage":"Check out this Bible study app — “Bible Study Reader”.\n\nAvailable soon on Google Play and the App Store."
+  },
+  "theme":{
+    "theme-annotation":"1 John study theme — soft gold and ivory palette. Gentle, luminous, and reassuring, reflecting themes of light, truth, love, and confident assurance in faith.",
+    "surface"         :"#fffdf7",
+    "surface-mid"     :"#f4f0e3",
+    "text"            :"#2a2416",
+    "text-secondary"  :"#5a5133",
+    "text-faint"      :"#8c7f57",
+    "emphasis"        :"#b38b2a",
+    "emphasis-light"  :"#d4aa3f",
+    "success"         :"#4a7a5a",
+    "accent"          :"#c9a43a",
+    "accent-light"    :"#e3c96a",
+    "border"          :"#e6d9a8",
+    "shadow"          :"rgba(42,36,22,0.10)",
+    "card-bg"         :"#ffffff",
+    "dm-base"         :"#12100a",
+    "dm-surface"      :"#2a2416",
+    "dm-raised"       :"#3a321f",
+    "dm-sunken"       :"#1f1a10",
+    "dm-border"       :"#4a4026",
+    "dm-text"         :"#f4f0e3",
+    "dm-text-mid"     :"#d9cc9a",
+    "dm-text-faint"   :"#7a6e45"
+  },
+  "chapters":[
+  ],
+  "studyOnboardingSlides":[
+    {
+      "icon"   :"📖",
+      "eyebrow":"Welcome",
+      "heading":"1 John for Today",
+      "body"   :"A six-session Bible study on the book of 1 John.\n\nWork through each chapter at your own pace, or use it with a group.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"✍️",
+      "eyebrow":"How it works",
+      "heading":"Read, reflect, write",
+      "body"   :"Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>ⓘ</b> beside any Bible reference to read the passage without leaving the app.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"💾",
+      "eyebrow":"Your answers",
+      "heading":"Saved on your device",
+      "body"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"⚙️",
+      "eyebrow":"Make it yours",
+      "heading":"Adjust to your preference",
+      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "action" :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
+      "format"   :"HTML"
+    },
+    {
+      "icon"   :"👋",
+      "eyebrow":"Before you begin",
+      "heading":"How to use this app",
+      "body"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
+      "action" :{
+        "label":"Go to the ‘How to use’ page →",
+        "fn"   :null
+      },
+      "bodyAfter":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+      "format"   :"HTML"
+    }
+  ],
+  "howToUseData":{
+    "sections":[
+      {
+        "heading":"Who Is This Study For?",
+        "blocks" :[
+          {
+            "title":"People who struggle with assurance",
+            "body" :"If you find yourself wondering whether you are really a Christian — whether your faith is genuine, whether God truly accepts you, whether you really belong to him — this letter was written for you. 1 John is not a test designed to produce anxiety. John states his purpose plainly at the end: ‘I have written these things to you who believe in the name of the Son of God so that you may know that you have eternal life’ (5:13). The goal is confidence, not doubt."
+          },
+          {
+            "title":"People unsettled by false teaching",
+            "body" :"John wrote into a specific crisis: people had left the community, and their departure had shaken those who remained. If you have ever been confused by confident-sounding teaching that seemed to undermine what you believed, or by Christians who seemed more certain and more impressive but whose message felt subtly different, this letter speaks directly to that experience."
+          },
+          {
+            "title":"People who want to go deeper in 1 John",
+            "body" :"The letter is only five chapters long, but it is theologically rich and structurally complex. This study moves through it carefully, paying attention to what John actually says in context rather than lifting out familiar verses in isolation. Whether you are new to 1 John or have read it many times, working through it closely is likely to surface things you have not noticed before."
+          }
+        ]
+      },
+      {
+        "heading":"Individual or Group Study?",
+        "blocks" :[
+          {
+            "title":"On your own",
+            "body" :"This study works well as a personal study. Each session begins with a prompt to read the relevant passage — take that seriously, since the questions are designed to reward close attention to John’s actual words. Write your answers as you go, and give the reflection questions at the end real time. 1 John rewards slow, attentive reading more than speed."
+          },
+          {
+            "title":"In a group",
+            "body" :"The study works well in a small group setting. The most rewarding approach is usually for each person to work through the session individually first, writing their answers, and then for the group to come together to compare what they found. The themes of light, love, and assurance generate rich discussion — and because John’s letter was written to a community, reading it together has a particular fittingness."
+          },
+          {
+            "title":"Read the whole letter first",
+            "body" :"1 John is short enough to read in one sitting — about twenty minutes. The first chapter of this study includes the full text, and you are encouraged to read or listen to all five chapters before beginning. Seeing the whole letter at once makes each individual session significantly richer, and helps you see how John’s recurring themes build and interweave."
+          }
+        ]
+      },
+      {
+        "heading":"Group Leaders & Mentors",
+        "blocks" :[
+          {
+            "title":"Working with a leader or mentor",
+            "body" :"<p>If someone has recommended this study to you — a pastor, a small group leader, or a trusted friend — that relationship matters. 1 John raises personal questions about assurance, love, and what genuine faith looks like in practice. Having someone to think those questions through with can make the difference between the letter producing its intended comfort and it becoming a source of unnecessary anxiety.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for a much richer conversation.</p>"
+          }
+        ]
+      },
+      {
+        "heading":"A Note on the Questions",
+        "blocks" :[
+          {
+            "title":"Two kinds of questions",
+            "body" :"Each session has two kinds of questions. The <b>Bible questions</b> follow the passage closely — asking you to look carefully at what John actually says, in context. The <b>reflection questions</b> at the end turn the same material toward you personally, asking what John’s message means for your own faith and life. Both kinds matter: the Bible questions build the foundation; the reflection questions are where the letter does its pastoral work."
+          },
+          {
+            "title":"Keeping John’s purpose in view",
+            "body" :"Some verses in 1 John can feel challenging or even alarming when read in isolation — especially those about sin, love, and what it means to ’remain’ in God. As you work through the questions, keep John’s stated purpose in mind: he is writing to give assurance to believers, not to undermine it. When a verse feels difficult, the first question to ask is: how does this fit with what John is trying to achieve?"
+          },
+          {
+            "title":"The ’tests’ in 1 John",
+            "body" :"You may have encountered approaches to 1 John that present it as a series of ’tests’ — of belief, love, and obedience — to apply to yourself. This study takes a different approach. Those same markers are best understood as tools for evaluating the <em>false teachers</em> who had unsettled John’s readers, not as a personal checklist for assessing your own standing. That reorientation makes a significant difference to how the letter reads."
+          }
+        ]
+      }
+    ]
+  },
+  "leadersNotesData": {
+  },
+  "studyAboutData":{
+    "author":{
+      "url"  :"",
+      "paras":[
+        "Julie Rowbory grew up in Northern Ireland and was educated at the University of Cambridge, where she obtained an MA and then an MPhil in history. She has worked as a Latin and history teacher, taught English in Asia and lived in East Africa. She is married to David, with whom she has four daughters. They divide their time between Scotland and West Africa."
+      ],
+      "format":"plainText"
+    },
+    "publisher":{
+      "name" :"self-published",
+      "url"  :"https://julierowbory.com/bio/",
+      "paras":[
+        "This study is self-published by Julie Rowbory"
+      ],
+      "format":"plainText"
+    }
+  },
+  "copyrightData":{
+    "licence":{
+      "spdxId"  :"CC-BY-SA-4.0",
+      "name"    :"Creative Commons Attribution-ShareAlike 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format",
+        "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+      ],
+      "conditions":[
+        "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made",
+        "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+      ],
+      "format":"plainText"
+    },
+    "copyright":{
+      "holder"   :"Julie Rowbory",
+      "year"     :2026,
+      "statement":"Julie Rowbory, 2026. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License."
+    },
+    "bibleTranslation":{
+      "name"     :"NET Bible",
+      "version"  :"NET Bible® (New English Translation)",
+      "copyright":"©1996, 2019 Biblical Studies Press, L.L.C.",
+      "url"      :"https://netbible.com",
+      "usedWith" :"permission"
+    },
+    "notices":[
+      "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
+      "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
+      "In preparing this edition, Claude was used for editorial feedback and redrafting suggestions – particularly in relation to opening illustrations, closing summaries, and reflection questions. Claude also helped with a certain amount of vibe coding. All content decisions, theological judgements, and final wording are the author’s responsibility.",
+      "The Scriptures quoted are from the NET Bible® http://netbible.com copyright ©1996, 2019 used with permission from Biblical Studies Press, L.L.C. All rights reserved."
+    ],
+    "format":"HTML"
+  },
+  "imageData":{
+    "cover":{
+      "alt"       :"Golden sunrise over open Bible",
+      "fallback"  :"❤️",
+      "provenance":"Created by Chatgpt, 2026-04-10, 2245"
+    },
+    "publisher":{
+      "alt"     :"Julie Rowbory",
+      "fallback":"🧑‍🦱"
+    },
+    "author":{
+      "alt"       :"Julie Rowbory",
+      "fallback"  :"🧑‍🦱",
+      "provenance":"offline photo"
+    }
+  },
+  "studyAiData":{
+    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘1 John for Today’ — exploring the New Testament book of 1 John.",
+    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
+  }
+}

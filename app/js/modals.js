@@ -474,6 +474,8 @@ function openInfoModal(infoId, content, triggerBtn) {
  */
 function closeInfoModal(event) {
   if (event && event.target !== document.getElementById('info-modal-overlay')) return;
+  const row = document.getElementById('infoModalShowAgainRow');
+  if (row) row.style.display = '';   // restore for normal openInfoModal calls
 
   const showAgain = document.getElementById('infoModalShowAgain').checked;
 
@@ -486,6 +488,28 @@ function closeInfoModal(event) {
 
   _currentInfoTriggerBtn = null;
   document.getElementById('info-modal-overlay').classList.remove('open');
+}
+
+// ── FOOTNOTE MODAL ────────────────────────────────────────────────────────────
+// A lightweight variant of openInfoModal for inline footnotes in Go Deeper text.
+// Reuses the shared #info-modal-overlay DOM but suppresses the "Show this again"
+// row — footnotes must always be accessible and must never be permanently hidden.
+//
+// @param {string} title    - Short label, e.g. 'Note 1'
+// @param {string} bodyHtml - The footnote text (may contain markdown-rendered HTML)
+function openFootnoteModal(title, bodyHtml) {
+  document.getElementById('info-modal-title').textContent = title;
+  document.getElementById('info-modal-body').innerHTML    = bodyHtml;
+
+  // Hide the "Show this again" row — not appropriate for footnotes.
+  const row = document.getElementById('infoModalShowAgainRow');
+  if (row) row.style.display = 'none';
+
+  // Null out the trigger reference so closeInfoModal()'s "remove button" path
+  // is never taken (there is no trigger button to remove for footnotes).
+  _currentInfoTriggerBtn = null;
+
+  document.getElementById('info-modal-overlay').classList.add('open');
 }
 
 // USAGE EXAMPLES FOR INFO TRIGGERS

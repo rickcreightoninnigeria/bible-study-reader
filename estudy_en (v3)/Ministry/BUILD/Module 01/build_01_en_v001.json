@@ -1,0 +1,1952 @@
+{
+  "studyMetadata":{
+    "studyId"          :"build_module_one_v001",
+    "title"            :"BUILD 01: 2 Timothy & the Pastoral Epistles",
+    "subtitle"         :"Preaching the Gospel & Godly Leadership",
+    "shortTitle"       :"BUILD 1",
+    "description"      :"A fifteen-unit church leadership training module exploring 2 Timothy and the Pastoral Epistles, developing skills in Bible handling, preaching, theological reflection, and gospel-centred ministry.",
+    "author"           :"Canon Dr Jem Hovil with Canon Stephen Ssenyonjo Kewaza",
+    "libraryShelves"   :[{ "Shelf": "New Testament", "Section": "Epistles", "Subsection": "Pastoral Epistles" }],
+    "estudyFileVersion":3,
+    "studyVersion"     :1,
+    "language"         :"en",
+    "bibleTranslation" :{
+      "en":"NIV"
+    },
+    "createdAt"   :"2026-05-05T00:00:00Z",
+    "updatedAt"   :"2026-05-05T00:00:00Z",
+    "tags"        :["new testament", "2 timothy", "pastoral epistles", "leadership", "preaching", "church", "africa", "build"],
+    "shareMessage":"Check out this Bible study app — "Bible Study Reader".\n\nAvailable soon on Google Play and the App Store."
+  },
+  "theme":{
+    "theme-annotation":"BUILD Module One — rich earth tones reflecting the African grassroots context: deep greens, warm ochres, and confident blues evoking growth, rootedness, and faithful gospel ministry.",
+    "surface"         :"#f7f5ef",
+    "surface-mid"     :"#ede8d8",
+    "text"            :"#1e2a1a",
+    "text-secondary"  :"#3d5c35",
+    "text-faint"      :"#7a8f6a",
+    "emphasis"        :"#2e6b3e",
+    "emphasis-light"  :"#4a9a5a",
+    "success"         :"#3a7a4a",
+    "accent"          :"#b87b2a",
+    "accent-light"    :"#d4a050",
+    "border"          :"#c8d4b0",
+    "shadow"          :"rgba(30,42,26,0.10)",
+    "card-bg"         :"#ffffff",
+    "dm-base"         :"#0e150b",
+    "dm-surface"      :"#1e2a1a",
+    "dm-raised"       :"#2e3e28",
+    "dm-sunken"       :"#151e11",
+    "dm-border"       :"#3a5030",
+    "dm-text"         :"#e8eede",
+    "dm-text-mid"     :"#b8ceaa",
+    "dm-text-faint"   :"#6a8a5a"
+  },
+  "chapters":[
+    {
+      "chapterNumber": 3,
+      "chapterTitle": "Understanding 1 and 2 Timothy (Tools)",
+      "elements": [
+
+        {
+          "elementId": "ch03-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "In Unit 2 we learnt four steps for understanding a Bible book. In this unit we unpack those steps in detail and apply them to 1 Timothy — giving us a tool we can use to understand any Bible book. Towards the end of the unit we will also look briefly at 2 Timothy by comparing and contrasting it with 1 Timothy.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el02",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Unit Outcomes",
+          "term": "By the end of this unit you will be able to…",
+          "question": "1. Present the small, practical steps for understanding a book of the Bible\n2. Use a set of questions to discover the setting of a Bible book\n3. List the main themes of a Bible book\n4. Summarise the situation and message of 1 Timothy\n5. Compare and contrast 1 and 2 Timothy",
+          "answer": "<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
+          "buttonText": "See outcomes ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el03",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "The Four Steps",
+          "term": "Four steps for understanding any Bible book",
+          "question": "Step 1: Establish the original CONTEXT of the book\nStep 2: Discover the CONTENT of the book\nStep 3: Make the CONNECTIONS with our context\nStep 4: Teach the CONTENT of the book today",
+          "answer": "<p><strong>Step 1 — Context</strong> breaks down into three questions: Where does the book fit in the Bible's story? What situation was it written for? What style of writing is it?</p><p><strong>Step 2 — Content</strong> asks: What is the structure? What are the main themes? What is the message and purpose?</p><p><strong>Step 3 — Connections</strong> asks: What links are there between their situation and ours today?</p><p><strong>Step 4 — Teaching</strong> asks: What main points would you make? How would you raise these issues with your listeners?</p>",
+          "buttonText": "Expand the steps ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el04",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "3.1 Step 1: Establishing the Original Context",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el05",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Establishing the original context involves three aspects. Remember these three words: <b>story</b>, <b>situation</b>, and <b>style</b>.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el06",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "3.1.1 Story",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el07",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "The word 'story' is shorthand for 'the story of the Bible as a whole'. The most important question to ask first is: where does this book fit in the Bible's overall plot? In particular, was it written before or after Jesus Christ came into the world? This shapes everything about how we read and apply it.<br><br>Consider these questions as you place any book on the Bible's timeline:<ul><li>Is it in the Old Testament or New Testament?</li><li>Is it about God's promises or the fulfilment of those promises?</li><li>Is it looking forward to the work of Christ, or looking back to what he has done?</li><li>Is it expecting the cross and resurrection, or explaining it?</li></ul>",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el08",
+          "type": "image",
+          "src": "",
+          "alt": "Diagram showing the cross at the centre of the Bible's timeline: Old Testament (Promise, Looking forward, Expectation) on the left; New Testament (Fulfilment, Looking back, Explanation) on the right.",
+          "fallback": "✝️",
+          "align": "full",
+          "width": "100",
+          "caption": "The cross as the hinge of the Bible's story",
+          "format": "plainText",
+          "base64": "",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el09",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "1 Timothy was written after Christ's coming. It is a New Testament letter written in a time of fulfilment — it looks <em>back</em> to the completed work of Christ, explains the gospel and its implications for the churches, and handles the Old Testament promises in the light of what Christ has done.<br><br>This also helps us make connections with our own situation today. We too are in the last days, waiting for Christ's return. We share the same Spirit and the same gospel. That is why these letters are so directly applicable to us.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el10",
+          "type": "question",
+          "format": "plainText",
+          "question": "In your own words, why does it matter whether a Bible book was written before or after Christ came?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about how the 'promise / fulfilment' distinction affects the way we read and apply a passage…",
+          "bottomPadding": "normal",
+          "sampleAnswer": "It matters because a passage written before Christ came is looking forward in hope and expectation to what God will do. A passage written after Christ came is looking back and explaining what God has done. The first group requires us to ask 'how does Christ fulfil this?' while the second group can be applied more directly to those of us who also live on this side of the cross. Getting this right stops us from misreading the Old Testament as if Christ had not yet come, or misreading the New Testament as if the cross were still in the future.",
+          "questionHint": "Think about the difference between reading a letter written before a wedding and one written after it. The tone, focus, and way you apply the contents would be quite different."
+        },
+
+        {
+          "elementId": "ch03-el11",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "3.1.2 Situation",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el12",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "It is very important to discover the situation that the book was written for — its historical setting. Understanding this brings the words and phrases to life. But where do we find that information?<br><br>The good news is that the most important resource for understanding the Bible <em>is the Bible itself</em>. This is based on the doctrine of the 'sufficiency of Scripture': the Bible provides all the information we need to understand what it says about our salvation.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el13",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Three places to find background information — within the Bible",
+          "term": "The Bible interprets the Bible",
+          "question": "Where should you look when you want to understand the setting of a Bible letter?",
+          "answer": "<p><strong>1. Other parts of the Bible</strong> shed light on the setting of a book. The New Testament repeatedly refers to the Old Testament (e.g. 1 Timothy 5:18 quotes Deuteronomy 25:4 and Luke 10:7). The book of Acts often contains important background for understanding the epistles.</p><p><strong>2. Related Bible books</strong> provide useful information too. Reading the other Pastoral Epistles — 2 Timothy and Titus — gives insights into the situation reflected in 1 Timothy.</p><p><strong>3. The Bible book itself</strong> provides the information we need. We can read 1 Timothy carefully and discover its own situation by asking the right questions.</p>",
+          "buttonText": "See the three sources ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el14",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "To discover the setting of a letter, you need to put on a detective's hat. Ask five key questions — <b>Who? Where? What? Why? When?</b> — and look for evidence in the text itself.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el15",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Applying the Five Questions to 1 Timothy",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el16",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Read 1 Timothy at some point to familiarise yourself with the whole book. For now we will focus on the beginning of the letter and the key passages below.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el17",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Timothy 1:1-7",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>From Paul, an apostle of Christ Jesus by the command of God our Savior and of Christ Jesus our hope, <sup>2</sup>to Timothy, my genuine child in the faith. Grace, mercy, and peace from God the Father and Christ Jesus our Lord.<br><sup>3</sup>As I urged you when I was leaving for Macedonia, stay on in Ephesus to instruct certain people not to spread false teachings, <sup>4</sup>nor to occupy themselves with myths and endless genealogies. Such things promote useless speculation rather than God's redemptive plan that operates through faith. <sup>5</sup>But the goal of our instruction is love that comes from a pure heart, a good conscience, and a sincere faith. <sup>6</sup>Some have strayed from these and turned away to empty discussion. <sup>7</sup>They want to be teachers of the law, but they do not understand what they are saying or the things they insist on so confidently.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el18",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Timothy 1:18-20",
+          "translation": "NET",
+          "passageText": "<sup>18</sup>I am giving you this instruction, Timothy my child, in keeping with the prophecies once spoken about you, in order that with such encouragement you may fight the good fight. <sup>19</sup>To do this you must hold firmly to faith and a good conscience, which some have rejected and so have suffered shipwreck in regard to the faith. <sup>20</sup>Among these are Hymenaeus and Alexander, whom I handed over to Satan to be taught not to blaspheme.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el19",
+          "type": "question",
+          "format": "plainText",
+          "question": "WHO is addressing whom in 1 Timothy? Which different people and groups are involved?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at 1 Tim 1:1-7 and 1:18-20. Also read 1 Tim 4:6. Who is writing? Who is receiving it? Who else is mentioned?",
+          "bottomPadding": "normal",
+          "linkedPassage": "1 Timothy 1:1-7",
+          "sampleAnswer": "Paul is writing (1:1) — describing himself as an apostle of Christ Jesus. He is writing to Timothy, whom he calls 'my genuine child in the faith' (1:2) and 'Timothy my child' (1:18). Timothy appears to be Paul's trusted co-worker who has been left in Ephesus. The letter also mentions 'certain people' who are spreading false teachings (1:3), and names two individuals — Hymenaeus and Alexander — who have rejected faith and a good conscience (1:20). In 4:6, Paul calls Timothy 'a good servant of Christ Jesus', suggesting Timothy is a church leader or pastor in Ephesus.",
+          "questionHint": "Count the different named individuals and unnamed groups. Who is Paul worried about, and who is he encouraging?"
+        },
+
+        {
+          "elementId": "ch03-el20",
+          "type": "question",
+          "format": "plainText",
+          "question": "WHERE is the letter being written to, and are there any clues about where Paul is writing from?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at 1 Tim 1:3 for the destination. Are there any indications of where Paul might be?",
+          "bottomPadding": "normal",
+          "linkedPassage": "1 Timothy 1:1-7",
+          "sampleAnswer": "The letter is being written to Ephesus — Paul tells Timothy to 'stay on in Ephesus' (1:3). This is confirmed when we look at Acts, which records Paul's significant ministry in Ephesus (Acts 19–20) and his farewell to the Ephesian elders. Paul mentions that he is 'leaving for Macedonia' (1:3), so he is probably writing from Macedonia or en route there. This matches what we know of Paul's movements after his release from his first Roman imprisonment.",
+          "questionHint": "1 Timothy 1:3 mentions two places. Which one is Timothy staying in, and which one is Paul heading to?"
+        },
+
+        {
+          "elementId": "ch03-el21",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Timothy 3:14-16",
+          "translation": "NET",
+          "passageText": "<sup>14</sup>I hope to come to you soon, but I am writing these things to you in case I am delayed, <sup>15</sup>so that you will know how people ought to conduct themselves in the household of God, because it is the church of the living God, the support and bulwark of the truth. <sup>16</sup>And beyond all question, the mystery of godliness is great: He was revealed in the flesh, vindicated by the Spirit, seen by angels, proclaimed among Gentiles, believed on in the world, taken up in glory.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Timothy+3&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el22",
+          "type": "question",
+          "format": "plainText",
+          "question": "WHAT is the main message of 1 Timothy? What key themes emerge from 1:3-20 and 3:1-16?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at 1 Tim 1:3-20 and 3:1-16. What subjects does Paul keep coming back to?",
+          "bottomPadding": "normal",
+          "linkedPassage": "1 Timothy 3:14-16",
+          "sampleAnswer": "Several key themes emerge: (1) The danger of false teaching — Paul is deeply concerned about 'certain people' spreading myths, endless genealogies, and teaching contrary to the gospel (1:3-7). (2) The importance of sound doctrine and the gospel — Paul repeatedly contrasts false teaching with 'the trustworthy message' (1:15) and 'the mystery of godliness' (3:16). (3) Godly conduct in the church — chapter 3 focuses on the qualifications for overseers and deacons, showing that how the church lives matters enormously. (4) The church as 'the household of God' and 'the support and bulwark of the truth' (3:15) — guarding the truth is the church's calling.",
+          "questionHint": "Look for the things Paul seems most worried about (false teaching) and the things he most wants Timothy to protect and promote (sound doctrine, godly conduct)."
+        },
+
+        {
+          "elementId": "ch03-el23",
+          "type": "question",
+          "format": "plainText",
+          "question": "WHY is Paul writing 1 Timothy? What is the purpose of the letter?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look especially at 1 Tim 1:3 and 3:14-15. What does Paul say he is trying to achieve?",
+          "bottomPadding": "normal",
+          "linkedPassage": "1 Timothy 3:14-16",
+          "sampleAnswer": "Paul's purpose is twofold. First, negatively: to stop the spread of false teaching in Ephesus (1:3 — 'instruct certain people not to spread false teachings'). Second, positively: so that Timothy and the church will know 'how people ought to conduct themselves in the household of God' (3:15). Paul is writing a kind of 'church manual' — not primarily about organisational structure, but about how the gospel shapes the life of a Christian community. He wants the church to be a faithful guardian of the truth (3:15).",
+          "questionHint": "Does Paul give a single clear purpose statement? Look at 3:15 — he almost gives you the purpose of the letter in one sentence."
+        },
+
+        {
+          "elementId": "ch03-el24",
+          "type": "question",
+          "format": "plainText",
+          "question": "WHEN was 1 Timothy written? Where does it fit in the story of the New Testament and in relation to the other Pastoral Epistles?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about where 1 Timothy sits in relation to Paul's life and letters, and in relation to 2 Timothy and Titus…",
+          "bottomPadding": "normal",
+          "linkedPassage": "1 Timothy 1:1-7",
+          "sampleAnswer": "1 Timothy was most likely written after Paul's release from his first Roman imprisonment (Acts 28), during a period of renewed missionary activity not recorded in Acts. This places it late in Paul's life and ministry. It was probably written before 2 Timothy, which reflects a more desperate situation (Paul in prison again, expecting death). Together with Titus, these three letters are known as the Pastoral Epistles. What matters most is not the precise date but recognising that 1 Timothy is a post-resurrection, post-Pentecost letter written in the last days — the same era we live in today.",
+          "questionHint": "You don't need an exact date. Focus on: Is it Old or New Testament? Before or after the cross? How does it relate to 2 Timothy — which letter feels more urgent?"
+        },
+
+        {
+          "elementId": "ch03-el25",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "3.1.3 Style",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el26",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Different Bible books are written in different styles or genres (types of writing). A letter follows different rules to a poem; a story follows different rules to a proverb. 1 Timothy is a letter — an <em>epistle</em>. Letters are always written from someone, to someone, with a message, and for a purpose. They are also <em>occasional</em>: written on a particular occasion for a particular reason, which is why understanding the situation is so important.<br><br>It is also worth asking: <em>how</em> was it written? What is the tone and feel? Is Paul concerned, urgent, tender, firm? These emotional cues shape how we read the content.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el27",
+          "type": "question",
+          "format": "plainText",
+          "question": "What is the tone and feel of 1 Timothy 1:1-20? Is Paul concerned, angry, encouraged, urgent — or a mixture? What does this tell you about how seriously he takes the situation?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Read 1 Tim 1:1-20 and pay attention to the emotional temperature of the letter…",
+          "bottomPadding": "normal",
+          "linkedPassage": "1 Timothy 1:1-7",
+          "sampleAnswer": "The tone is a mixture of deep concern, warmth, and urgency. Paul is clearly worried about the false teachers and their damaging influence (1:3-7, 18-20) — the language of 'fight the good fight' (1:18) and 'shipwreck in regard to the faith' (1:19) signals real danger. At the same time, his tone towards Timothy is warm and fatherly — 'Timothy my child' (1:18). He also breaks into a doxology of praise to God (1:17), showing that even in a difficult situation, his heart is full of worship. The overall feel is urgent but not panicked — Paul is serious about the crisis, but confident in the gospel.",
+          "questionHint": "Notice the different registers: Paul's language about the false teachers, his language to Timothy personally, and his spontaneous burst of praise in 1:17. What do these different tones reveal?"
+        },
+
+        {
+          "elementId": "ch03-el28",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "3.2 Step 2: Discovering the Content of 1 Timothy",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el29",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Having established the context, we now look more carefully at the content of 1 Timothy. Discovering the general content of a book before looking at individual texts is important — like surveying a landscape before examining individual features. If you were preaching through the book, this survey would yield fruit for a whole series of sermons.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el30",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Timothy 3:1-7",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>This saying is trustworthy: 'If someone aspires to the office of overseer, he desires a good work.' <sup>2</sup>The overseer then must be above reproach, the husband of one wife, temperate, self-controlled, respectable, hospitable, an able teacher, <sup>3</sup>not a drunkard, not violent, but gentle, not contentious, free from the love of money. <sup>4</sup>He must manage his own household well and keep his children in control without losing his dignity. <sup>5</sup>But if someone does not know how to manage his own household, how will he care for the church of God? <sup>6</sup>He must not be a recent convert or he may become arrogant and fall into the punishment that the devil experienced. <sup>7</sup>And he must be well thought of by those outside the faith, so that he may not fall into disgrace and the trap of the devil.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Timothy+3&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el31",
+          "type": "question",
+          "format": "plainText",
+          "question": "Based on what you have seen so far in 1 Timothy, what is the book mainly about? List the main things Paul is saying to Timothy and the church.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about the themes running through the passages you have read — what does Paul keep coming back to?",
+          "bottomPadding": "normal",
+          "linkedPassage": "1 Timothy 3:1-7",
+          "sampleAnswer": "The main themes of 1 Timothy include: (1) Guarding against false teaching — this is the presenting crisis and runs through the whole letter. (2) The gospel — Paul is passionate about 'the glorious gospel of the blessed God' (1:11) and the 'mystery of godliness' (3:16). (3) Prayer and worship — chapter 2 calls the church to pray for all people and for those in authority. (4) Godly leadership — chapter 3 sets out the qualifications for overseers and deacons, focusing on character and sound doctrine. (5) How to live as the household of God — the church's conduct must reflect its identity as 'the support and bulwark of the truth' (3:15).",
+          "questionHint": "Try to organise your answer under 3-5 headings rather than listing every detail. What are the big themes rather than individual points?"
+        },
+
+        {
+          "elementId": "ch03-el32",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "3.3 Step 3: Making the Connections with Our Context",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el33",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "We have already begun to make connections by seeing where 1 Timothy fits in the story of the Bible. We can build on that by noting the similarities and differences between their situation and ours.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el34",
+          "type": "question",
+          "format": "plainText",
+          "question": "What similarities and connections do you see between the situation in 1 Timothy and your own situation, congregation, or the world you live and work in?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about false teaching, the need for godly leadership, prayer for those in authority, guarding the gospel…",
+          "bottomPadding": "normal",
+          "sampleAnswer": "There are many direct connections. False teaching is not a first-century problem alone — every church today faces pressure from ideas that distort the gospel, whether from inside or outside. The need for godly, qualified leadership is just as urgent today as it was in Ephesus. Paul's call to pray for those in authority (2:1-2) speaks directly to every Christian community that lives under government. The vision of the church as 'the household of God' and 'the bulwark of the truth' gives every local church today a clear identity and a serious responsibility.",
+          "questionHint": "Think about the pressures your own church or Christian community faces. Do any of them rhyme with what Paul is addressing in Ephesus?"
+        },
+
+        {
+          "elementId": "ch03-el35",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "3.4 Step 4: Teaching the Content of 1 Timothy Today",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el36",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "We will explore this step further in Unit 13. But begin to think now about how you might teach some of the content of 1 Timothy in your own context.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el37",
+          "type": "question",
+          "format": "plainText",
+          "question": "What main points might you make if you were to preach or teach from 1 Timothy? How might you raise these issues with your listeners?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about what your congregation most needs to hear from 1 Timothy, and how you would introduce the big themes…",
+          "bottomPadding": "normal",
+          "sampleAnswer": "A series through 1 Timothy could open with the urgency of guarding sound doctrine against false teaching — showing that this is not optional but the church's God-given calling. Subsequent talks could address the character of Christian leaders, the priority of prayer for the world, and how the gospel shapes every aspect of church life. The key is to help listeners see that 1 Timothy is not a dry church manual but a passionate letter from a father-figure to a son in the faith, driven by love for the gospel and for God's people.",
+          "questionHint": "Start with the theme you think is most urgent for your own church context. What does your congregation most need to hear from this letter right now?"
+        },
+
+        {
+          "elementId": "ch03-el38",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "3.5 Understanding 2 Timothy",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el39",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Our understanding of 1 Timothy helps us understand 2 Timothy. The two letters have a close relationship — like two brothers. We will apply Steps 1 and 2 to 2 Timothy, comparing and contrasting it with 1 Timothy. If you have time, read through 2 Timothy as a whole. If time is limited, focus on the specific verses referenced below.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el40",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Context: What does 2 Timothy share with 1 Timothy?",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el41",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:1-2",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>From Paul, an apostle of Christ Jesus by the will of God, to further the promise of life in Christ Jesus, <sup>2</sup>to Timothy, my dear child. Grace, mercy, and peace from God the Father and Christ Jesus our Lord.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el42",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 2:17-18",
+          "translation": "NET",
+          "passageText": "<sup>17</sup>And their teaching will spread like gangrene. Hymenaeus and Philetus are in this group. <sup>18</sup>They have strayed from the truth by saying that the resurrection has already occurred, and they are undermining some people's faith.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+2&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el43",
+          "type": "question",
+          "format": "plainText",
+          "question": "What similarities does 2 Timothy share with 1 Timothy in terms of context? Look at 2 Tim 1:1-2 and 2:17-18, and note any other parallels you observe.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Compare who is writing, who is receiving it, and what problems are present in both letters…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:1-2",
+          "sampleAnswer": "Both letters share the same sender (Paul, an apostle of Christ Jesus) and the same recipient (Timothy, Paul's 'child in the faith'). Both open with the same grace greeting. Both letters also deal with false teachers: Hymenaeus appears in both (1 Tim 1:20 and 2 Tim 2:17), and the problem of teaching that undermines sound doctrine runs through both letters. The concern for Timothy as a pastor-leader guarding the truth is central to both.",
+          "questionHint": "Start with the opening verses — who writes, who receives, what greeting is given? Then look at 2:17-18 — does any name ring a bell from 1 Timothy?"
+        },
+
+        {
+          "elementId": "ch03-el44",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Context: How does 2 Timothy differ from 1 Timothy?",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el45",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:16-17",
+          "translation": "NET",
+          "passageText": "<sup>16</sup>May the Lord grant mercy to the family of Onesiphorus, because he often refreshed me and was not ashamed of my imprisonment. <sup>17</sup>But when he arrived in Rome, he eagerly searched for me and found me.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el46",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 4:6-8",
+          "translation": "NET",
+          "passageText": "<sup>6</sup>For I am already being poured out as an offering, and the time for me to depart is at hand. <sup>7</sup>I have competed well; I have finished the race; I have kept the faith! <sup>8</sup>Finally the crown of righteousness is reserved for me. The Lord, the righteous Judge, will award it to me in that day — and not to me only, but also to all who have set their affection on his appearing.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+4&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el47",
+          "type": "question",
+          "format": "plainText",
+          "question": "What differences does 2 Timothy have compared to 1 Timothy in terms of context? Look at 2 Tim 1:16-17 and 4:6-8, and note what has changed in Paul's situation.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about where Paul is, what his circumstances are, and how the tone has shifted compared to 1 Timothy…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 4:6-8",
+          "sampleAnswer": "The differences are significant. In 2 Timothy, Paul is imprisoned in Rome (1:16-17) — and this time it seems much more serious than his first imprisonment. He is clearly anticipating his own death: 'the time for me to depart is at hand' (4:6). The tone is more urgent and tender — this reads like a final letter from a father to a son. While 1 Timothy gives instructions for ongoing church life, 2 Timothy is a last will and testament, a charge to Timothy to carry on the gospel work after Paul is gone. The isolation is also more acute — 'everyone in the province of Asia has deserted me' (1:15).",
+          "questionHint": "What does 'poured out as an offering' (4:6) suggest about Paul's situation? Compare that to the relatively open and active ministry implied in 1 Timothy."
+        },
+
+        {
+          "elementId": "ch03-el48",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Content: Similarities between 1 and 2 Timothy",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el49",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:6",
+          "translation": "NET",
+          "passageText": "<sup>6</sup>Because of this I remind you to rekindle God's gift that you possess through the laying on of my hands.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el50",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 2:1-2",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>So you, my child, be strong in the grace that is in Christ Jesus. <sup>2</sup>And what you have heard from me through many witnesses, entrust to faithful people who will be competent to teach others as well.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+2&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el51",
+          "type": "question",
+          "format": "plainText",
+          "question": "What themes does 2 Timothy share with 1 Timothy in terms of content? Look at 2 Tim 1:6 and 2:1-2, and note the priorities that appear in both letters.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What does Paul keep emphasising in both letters? Think about leadership, the gospel, and faithfulness…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 2:1-2",
+          "sampleAnswer": "Both letters share a deep concern for faithful leadership and the passing on of sound teaching. In 2 Tim 1:6 Paul urges Timothy to 'rekindle' his God-given gift — a concern for Timothy's personal faithfulness that echoes 1 Tim 4:14-16. In 2:1-2, Paul's concern for the transmission of the gospel to 'faithful people who will be competent to teach others' is a direct parallel to 1 Timothy's vision of a church that guards and teaches the truth. The gospel itself — what has been 'entrusted' — is central to both letters.",
+          "questionHint": "What is the 'good deposit' or entrusted truth that Paul keeps coming back to in both letters? Why does its faithful transmission matter so much to him?"
+        },
+
+        {
+          "elementId": "ch03-el52",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Content: Differences between 1 and 2 Timothy",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el53",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:13-14",
+          "translation": "NET",
+          "passageText": "<sup>13</sup>Hold to the standard of sound words that you heard from me and do so with the faith and love that are in Christ Jesus. <sup>14</sup>Protect that good thing entrusted to you, through the Holy Spirit who lives within us.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el54",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 3:12",
+          "translation": "NET",
+          "passageText": "<sup>12</sup>Now in fact all who want to live godly lives in Christ Jesus will be persecuted.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+3&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch03-el55",
+          "type": "question",
+          "format": "plainText",
+          "question": "What differences are there between 1 and 2 Timothy in terms of content? Look at 2 Tim 1:13-14 and 3:12, and note what is emphasised differently in 2 Timothy.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What concerns or themes appear in 2 Timothy that feel different in tone or emphasis from 1 Timothy?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:13-14",
+          "sampleAnswer": "While 1 Timothy focuses on organising church life and countering false teaching in a relatively stable situation, 2 Timothy is more urgent and personal. The emphasis on suffering and persecution is much stronger in 2 Timothy — 'all who want to live godly lives in Christ Jesus will be persecuted' (3:12) and Paul speaks of his own chains and suffering repeatedly. The call to 'guard the good deposit' (1:13-14) is more intense — it is no longer just about correcting teachers in Ephesus, but about surviving a worsening crisis without Paul present. 2 Timothy also has a stronger personal and emotional register — Paul's loneliness and longing for Timothy's presence (4:9, 21) are unique to this letter.",
+          "questionHint": "What word appears in 2 Timothy that you don't hear as much in 1 Timothy? Think about what Paul expects faithful Christians to experience."
+        },
+
+        {
+          "elementId": "ch03-el56",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "3.6 Conclusion",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el57",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "We have applied the four steps of understanding the Bible to 1 and 2 Timothy. We have discovered that in a situation where false teachers are damaging the church, these letters focus on protecting God's people and the need for true teachers of God's message — the gospel. This message becomes more urgent in 2 Timothy as Paul faces the end of his life and ministry.<br><br>Traditionally these three letters (1 Timothy, 2 Timothy, and Titus) have been called 'The Pastoral Epistles'. But that title has sometimes led to a narrow reading — as if they are mainly about church organisation and structure.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el58",
+          "type": "question",
+          "format": "plainText",
+          "question": "How has this unit challenged the traditional understanding of 1 and 2 Timothy as primarily letters about church organisation? What is their deeper concern?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What have you discovered that goes beyond 'church management' or 'leadership structure'?",
+          "bottomPadding": "normal",
+          "sampleAnswer": "The unit shows that 1 and 2 Timothy are not primarily organisational handbooks. They are urgent, gospel-driven letters written in a crisis. The structures Paul discusses (overseers, deacons, etc.) are in service of a deeper goal: protecting the gospel and building a community that lives by it and passes it on. The real heart of the letters is the gospel itself — 'the mystery of godliness' (1 Tim 3:16) and 'the good deposit' (2 Tim 1:14). Church organisation is a means to that end, not an end in itself.",
+          "questionHint": "Think about what Paul seems most passionate about in these letters. Is it getting the structures right — or is it something deeper that the structures are meant to serve?"
+        },
+
+        {
+          "elementId": "ch03-el59",
+          "type": "question",
+          "format": "plainText",
+          "question": "What alternative title to 'The Pastoral Epistles' might better capture the true purpose of 1 Timothy, 2 Timothy, and Titus?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about what these three letters are really about — what one phrase captures their shared purpose?",
+          "bottomPadding": "normal",
+          "sampleAnswer": "Several alternatives suggest themselves: 'The Gospel Epistles' (since they are fundamentally about protecting and proclaiming the gospel); 'The Church and the Gospel Letters' (since they address how gospel communities should live and lead); or 'Letters for Gospel Workers' (since they equip specific leaders for gospel ministry in difficult situations). The key is that any title should reflect the gospel-urgency of the letters rather than just their concern for church order.",
+          "questionHint": "What single word or phrase captures what Paul cares most about in these letters? Try to build a title around that word or phrase."
+        },
+
+        {
+          "elementId": "ch03-el60",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Reflection Questions",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el61",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which of the four steps for understanding a Bible book do you find most natural, and which do you find most challenging? Why?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el62",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Has studying the context of 1 Timothy changed how you read any particular passage in it? If so, which one and how?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el63",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "What is one thing from 1 or 2 Timothy that you want to take away and apply in your own ministry or church this week?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch03-el64",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "In this unit we have developed and applied a set of tools for understanding any book of the Bible. By asking where a book fits in the Bible's story, what situation it was written for, and what style it uses, we open up its content — and find that its message connects directly with our own. 1 Timothy and 2 Timothy are not museum pieces. They are urgent, gospel-driven letters for churches in every age that want to guard the truth and grow in Christ.",
+          "bottomPadding": "normal"
+        }
+
+      ]
+    },
+    {
+      "chapterNumber": 4,
+      "chapterTitle": "How to Encounter a Bible Passage (Tools)",
+      "elements": [
+
+        {
+          "elementId": "ch04-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "Units 2 and 3 taught principles for understanding the Bible and applied them to 1 and 2 Timothy. A central principle was this: <em>we must discover what God has said in the past before we can declare it today.</em> This unit focuses on that discovery. We will learn the first steps of a process called 'Scripture Sculpture' — a series of steps that take us from reading a Bible passage to preaching it. The first four steps are taught here. The final steps, which move from understanding to teaching, are covered in Unit 13.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el02",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Unit Outcomes",
+          "term": "By the end of this unit you will be able to…",
+          "question": "1. Explain how Unit 3 relates to Unit 4\n2. List the first four steps of the Scripture Sculpture process\n3. Begin to use the four steps for encountering a Bible passage\n4. Respond to God's word in 2 Timothy 1:6-7",
+          "answer": "<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
+          "buttonText": "See outcomes ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el03",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "4.1 Introducing 'Scripture Sculpture'",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el04",
+          "type": "question",
+          "format": "plainText",
+          "question": "What do you understand by the word 'sculpture'? What does a sculptor do, and what does their craft involve?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about what sculptors make and how they work — carving wood, shaping clay, working with stone…",
+          "bottomPadding": "normal",
+          "sampleAnswer": "Sculpture is an art and a craft. A sculptor takes a raw material — wood, clay, stone or metal — and works it carefully to bring out a beautiful or meaningful form. The sculptor does not invent the material; they work with what is already there, using tools and skill to reveal what is within it. The process takes patience, attention to detail, and a clear vision of what the finished work should look like.",
+          "questionHint": "Think about the difference between a sculptor and a painter. A painter adds to a blank surface; a sculptor works with — and within — what is already there."
+        },
+
+        {
+          "elementId": "ch04-el05",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Ramesh Richard, who developed the Scripture Sculpture method, explains the name like this: <em>'The Bible is what God has made. Sermons are what we make with what God has made.'</em> Like a sculptor working with wood or stone, the craft of teaching the Bible means taking what God has given and using it to shape every aspect of our preparation and preaching.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el06",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 2:15",
+          "translation": "NET",
+          "passageText": "<sup>15</sup>Make every effort to present yourself before God as a proven worker who does not need to be ashamed, teaching the message of truth accurately.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+2&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch04-el07",
+          "type": "question",
+          "format": "plainText",
+          "question": "What picture does Paul use in 2 Timothy 2:15, and what does it suggest about how we should handle the Bible?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about the image of a 'proven worker' — what kind of work is Paul describing, and what does it require?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 2:15",
+          "sampleAnswer": "Paul uses the image of a skilled worker — someone who has been tested and approved, who handles their material with precision and care. The phrase 'teaching the message of truth accurately' carries the idea of cutting or dividing something cleanly and correctly. Just as a good craftsman works with the grain and structure of the wood rather than against it, a good Bible teacher works with the shape and structure of the Scriptures. The goal is not to impose our ideas onto the text but to let the text's own form and argument speak clearly.",
+          "questionHint": "The word translated 'accurately' in the NET carries the idea of cutting straight — like a carpenter making a clean joint. What does that imply about how careless or sloppy Bible handling looks to God?"
+        },
+
+        {
+          "elementId": "ch04-el08",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "It is also clear that preaching and prayer belong together. In all our preparation we must obey Paul's command to 'pray continually' (1 Thess. 5:17). Prayer is not one step among others — it is the atmosphere in which every step takes place.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el09",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "4.2 Four Steps for Encountering a Passage of the Bible",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el10",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "The Scripture Sculpture process uses a powerful image: a living carving of a person, with flesh and bones, a heart and a brain. This is fitting because God's word is a living word that comes to us and speaks to us. The four steps build on each other from the ground up. Begin at the bottom — with prayer and reading — and work upwards.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el11",
+          "type": "image",
+          "src": "",
+          "alt": "Diagram of the four Scripture Sculpture steps stacked vertically: Start (Pray and Read the Passage) at the bottom, then Step 1 Flesh (Study the Details), Step 2 Skeleton (Outline the Structure), Step 3 Heart (Identify the Message), and Step 4 Brain (Understand the Purpose) at the top. Arrows point upward between each step.",
+          "fallback": "🧱",
+          "align": "full",
+          "width": "100",
+          "caption": "The four steps of Scripture Sculpture — building from prayer and reading upward to purpose",
+          "format": "plainText",
+          "base64": "",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el12",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Four Steps for Encountering a Passage — in Detail",
+          "term": "Scripture Sculpture: the first four steps",
+          "question": "What does each step involve, and what will you be able to do at the end of it?",
+          "answer": "<p><strong>Step 1: FLESH — Study the DETAILS of the text</strong><br>At the end of this step you will be familiar with the key components of the passage. You need to: (a) Set the text in context; (b) See the details; (c) Seek the meaning; (d) Summarise the findings.</p><p><strong>Step 2: SKELETON — Outline the STRUCTURE of the text</strong><br>At the end of this step you will be able to outline the structure of the passage and see how the author makes his point. You need to: (a) Note the various 'bones' in the passage; (b) Create an outline, having identified the 'big bones'.</p><p><strong>Step 3: HEART — Identify the MESSAGE of the text</strong><br>At the end of this step you will be able to write out the author's main point in one or two sentences. You need to: (a) State the theme of the passage; (b) Capture the message of the passage.</p><p><strong>Step 4: BRAIN — Understand the PURPOSE of the text</strong><br>At the end of this step you will be able to explain the purpose of the passage and will begin to make connections for teaching it today. You need to: (a) State the purpose of the passage; (b) Make connections for teaching it today.</p>",
+          "buttonText": "See all four steps ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el13",
+          "type": "question",
+          "format": "plainText",
+          "question": "In your own words, how do the four steps build on each other? Why do you think the process starts with 'flesh' (details) rather than jumping straight to the 'heart' (message)?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about what happens if you try to find the message of a passage without first studying its details carefully…",
+          "bottomPadding": "normal",
+          "sampleAnswer": "The steps build on each other because understanding a passage is a progressive process. You cannot reliably identify the message (heart) of a passage if you have not first observed its details carefully (flesh) and traced its structure (skeleton). Starting with the details prevents us from jumping to conclusions or reading our own ideas into the text. The flesh grounds us in what is actually there; the skeleton shows us how the pieces relate; the heart emerges naturally from that careful observation rather than being imposed from outside. Moving from details to structure to message to purpose mirrors the way genuine understanding develops.",
+          "questionHint": "Think about what might go wrong if someone tried to preach a passage after only skimming it once. What would they likely miss, and what might they get wrong?"
+        },
+
+        {
+          "elementId": "ch04-el14",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "4.3 The Four Steps Applied to 2 Timothy 1:6-7",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el15",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:6-7",
+          "translation": "NET",
+          "passageText": "<sup>6</sup>Because of this I remind you to rekindle God's gift that you possess through the laying on of my hands. <sup>7</sup>For the Spirit God gave us does not make us timid but gives us power, love, and self-control.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch04-el16",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Before going any further, read the passage carefully — more than once. Read it slowly. Read it aloud if you can. Scripture Sculpture always begins with patient, prayerful reading.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el17",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Step 1: FLESH — Study the Details",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el18",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1a) Set the Text in Context",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el19",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Keep the general information about 2 Timothy from Unit 3 in mind. A passage can only be properly understood in the context of the book as a whole — trying to understand a passage without knowing its book is like trying to get to know a family member without knowing their wider family. Use the same three words from Unit 3: <b>story</b>, <b>situation</b>, and <b>style</b>.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el20",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:3-8",
+          "translation": "NET",
+          "passageText": "<sup>3</sup>I am thankful to God, whom I have served with a clear conscience as my ancestors did, when I remember you in my prayers as I do constantly night and day. <sup>4</sup>As I remember your tears, I long to see you, so that I may be filled with joy. <sup>5</sup>I recall your sincere faith that was alive first in your grandmother Lois and your mother Eunice, and I am confident that it is in you too.<br><sup>6</sup>Because of this I remind you to rekindle God's gift that you possess through the laying on of my hands. <sup>7</sup>For the Spirit God gave us does not make us timid but gives us power, love, and self-control. <sup>8</sup>So do not be ashamed of the testimony about our Lord or of me, a prisoner for his sake, but by God's power accept your share of suffering for the gospel.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch04-el21",
+          "type": "question",
+          "format": "plainText",
+          "question": "STORY: Where does 2 Tim 1:6-7 come in the argument of the book? What comes immediately before and after it, and how does that help you understand these two verses?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at what comes before (vv. 3-5) and after (v. 8). What is Paul building up to, and what does v. 6 follow on from?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:3-8",
+          "sampleAnswer": "Verses 3-5 establish Paul's confidence in the reality of Timothy's faith — a sincere faith that was alive first in his grandmother Lois and his mother Eunice. Verse 6 then opens with 'Because of this' — meaning Paul's appeal to rekindle God's gift flows directly from his confidence in Timothy's genuine faith. The appeal is not to someone who might not be a Christian; it is to someone whose faith Paul is sure of. Verse 8 then draws the consequence: 'So do not be ashamed...' — verses 6-7 are therefore the grounds for the command in verse 8. Understanding this flow shows that the call to rekindle gifts is not about earning God's favour but about acting on what God has already given.",
+          "questionHint": "The phrase 'Because of this' in v. 6 is a key link word. What does it connect back to, and what does it connect forward to?"
+        },
+
+        {
+          "elementId": "ch04-el22",
+          "type": "question",
+          "format": "plainText",
+          "question": "SITUATION: What do you notice about 2 Tim 1:6-7 in relation to what you already know about the situation in 2 Timothy — the people, problems, and places involved?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about what you learnt in Unit 3 about Paul's situation and Timothy's situation. How does that context illuminate these two verses?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:3-8",
+          "sampleAnswer": "From Unit 3 we know that Paul is writing from prison, facing death, and that many have deserted him. Timothy is a younger leader who must carry on the gospel work without Paul present. In that context, the call to 'rekindle God's gift' and the reminder that the Spirit gives power rather than timidity takes on great urgency. Timothy is not being called to step up in easy circumstances — he is being called to courage in a situation where fear would be a very natural response. The contrast between 'timid' and 'power, love, and self-control' speaks directly to the real pressures Timothy is facing.",
+          "questionHint": "Why might Timothy have been particularly tempted towards timidity at this moment in his ministry? What was happening around him that could have caused fear or hesitation?"
+        },
+
+        {
+          "elementId": "ch04-el23",
+          "type": "question",
+          "format": "plainText",
+          "question": "STYLE: What do you notice about 2 Tim 1:6-8 that shows it is part of a letter? What features of letter-writing do you see?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about the personal tone, the direct address, the way Paul builds an argument — what marks this out as a letter rather than a sermon or a law code?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:3-8",
+          "sampleAnswer": "Several features mark this as a personal letter. Paul uses direct personal address ('I remind you', 'you possess', 'do not be ashamed') — he is speaking to one named person in a specific situation. The tone is warm and fatherly, not formal or impersonal. The passage builds a personal argument: 'I know your faith is real (vv. 3-5), therefore I remind you to act on it (v. 6), here is why you can (v. 7), and here is what I am asking you to do (v. 8).' Letters are 'occasional' — written for a particular occasion — and the urgency of this letter reflects the very particular and pressing occasion: Paul's imprisonment and approaching death.",
+          "questionHint": "Compare this passage with, say, a passage from Leviticus or Proverbs. What is different about the way Paul speaks? What makes a letter feel different from a law or a proverb?"
+        },
+
+        {
+          "elementId": "ch04-el24",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1b) See the Details of the Text",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el25",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Now look closely at the words of 2 Tim 1:6-7 themselves. You are looking for three kinds of detail:<br><br><b>1. Repeated and related words and phrases</b> — words or ideas that appear more than once, or that cluster together around a theme.<br><b>2. Other important, complicated, or unusual words and phrases</b> — anything that stands out, surprises you, or needs explaining.<br><b>3. Connections and links between words and phrases</b> — logical connectors like 'for', 'therefore', 'but', 'because', 'so'; and contrasts like 'not… but…'.<br><br>In a paper-based setting you would mark these with different colours — green for repeated words, red for important or unusual words, blue for links and connections. In this study, use the questions below to capture the same observations in writing. Be selective: if you mark everything, you have marked nothing.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el26",
+          "type": "question",
+          "format": "plainText",
+          "question": "LIST the important words, phrases, and relationships you notice in 2 Tim 1:6-7. What stands out as you read carefully? Include repeated words, unusual phrases, and any linking or contrasting words.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "List the words and phrases — one per line if that helps. Don't explain them yet, just notice and list them…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "'Because of this' (linking word — looks back)\n'I remind you' (personal, direct command)\n'rekindle' / 'fan into flame' (the main thing Paul calls Timothy to do)\n'God's gift' / 'God gave' / 'gives' (repeated idea of gift from God)\n'laying on of my hands' (unusual phrase — needs explaining)\n'For' (v. 7 — introduces a reason or explanation)\n'Spirit' (who is the subject of v. 7)\n'timid' and 'power' (contrasting words)\n'does not… but…' (contrast structure)\n'power, love, and self-control' (a trio — each word deserves attention)",
+          "questionHint": "Read slowly and read more than once. Try reading it aloud. What words would you naturally want to underline or circle? Don't evaluate yet — just list what you see."
+        },
+
+        {
+          "elementId": "ch04-el27",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1c) Seek the Meaning from the Details",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el28",
+          "type": "question",
+          "format": "plainText",
+          "question": "EXPLAIN the words, phrases, and relationships you listed. What do they mean in their context — both in today's language and in the original setting of the passage? What is their significance in the argument Paul is building?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Work through your list from the previous question. For each word or phrase: what does it mean? Why does it matter here?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "'Because of this' — links back to v. 5: Paul's confidence in Timothy's sincere faith is the basis for the appeal that follows.\n'I remind you' — Paul is not teaching Timothy something new; he is calling him back to something he already knows but needs to act on again.\n'Rekindle' / 'fan into flame' — the image is of a fire that has died down and needs to be stirred back to life. The gift has not gone, but Timothy needs to actively renew it.\n'God's gift' / 'God gave' / 'gives' — the repetition emphasises that the initiative is God's; Timothy is responding to what God has already given, not generating something himself.\n'Laying on of my hands' — a public act of commissioning and recognition; 1 Tim 4:14 shows it involved the whole eldership. This gives Timothy confidence: others have publicly affirmed his calling.\n'For' — introduces the reason for the command in v. 6: because of the character of the Spirit, Timothy can and must rekindle his gifts.\n'Timid' vs 'power, love, and self-control' — the contrast is total. God's Spirit does not produce cowardice; he produces exactly what Timothy needs to fulfil his calling. Each quality in the trio balances the others: power without love becomes harsh; love without self-control becomes sentimental; self-control without power becomes cold.",
+          "questionHint": "For each item on your list, ask: What does this word or phrase actually mean? What would be lost if it were removed? How does it connect to the words around it?"
+        },
+
+        {
+          "elementId": "ch04-el29",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1d) Summarise Your Findings",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el30",
+          "type": "question",
+          "format": "plainText",
+          "question": "Drawing on your work so far, summarise your main findings from Step 1. What are the most important ideas you want to carry forward into the next steps?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What are the two or three most important things you have discovered about this passage so far?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "Three main ideas emerge from the initial study:\n1. Paul is confident that Timothy's faith in Christ is genuine (from the context in vv. 3-5). This confidence is the foundation for everything that follows.\n2. Because of that confidence, Paul reminds Timothy to rekindle his gifts — to actively renew his passion and engagement with the ministry God has given him. The gifts are real; Timothy must not let them lie dormant.\n3. The greatest resource for this renewal is God's Holy Spirit, who has been given to Timothy (and to all believers). The Spirit does not produce timidity — he produces power, love, and self-control. These three qualities are precisely what Timothy needs for his situation.",
+          "questionHint": "Imagine you had to explain to someone else the three most important things this passage is saying. What would you choose? Your summary should be something you could carry into the next steps as a foundation."
+        },
+
+        {
+          "elementId": "ch04-el31",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Step 2: SKELETON — Outline the Structure",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el32",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "You are now aiming to discover how Paul has structured his writing — his flow of thought — so that you can understand the message it carries. The clues are in the details you have already noted. Look especially at two things: the <b>links</b> (logical connectors that show how ideas relate) and the <b>themes</b> (the way the main ideas are arranged).",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el33",
+          "type": "question",
+          "format": "plainText",
+          "question": "LINKS: What important linking words contribute to the structure of 2 Tim 1:6-7? How do they hold the passage together and show the logic of Paul's argument?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at 'because of this', 'for', 'not… but…' — what does each link connect, and what does that tell you about the structure?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "'Because of this' (v. 6) — links the appeal back to v. 5. The command to rekindle gifts is grounded in Paul's confidence in Timothy's sincere faith. The logic is: 'Your faith is real, therefore act on it.'\n'For' (v. 7) — introduces a further reason for the command in v. 6. Timothy should rekindle his gifts not only because his faith is genuine, but also because of the character of the Spirit who has been given to him.\n'Not… but…' (v. 7) — creates a direct contrast between what the Spirit does not do (produce timidity) and what he does do (give power, love, and self-control). This contrast is the heart of the reason Paul gives.",
+          "questionHint": "Linking words are the joints of the skeleton — they hold the bones together and show how one part connects to another. What would the passage look like if you removed all the linking words? What would be lost?"
+        },
+
+        {
+          "elementId": "ch04-el34",
+          "type": "question",
+          "format": "plainText",
+          "question": "THEMES: How are the main ideas arranged in 2 Tim 1:6-7? Can you identify the major movements or sections in these two verses?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Try to divide the passage into its main parts. What is Paul doing in v. 6a? In v. 6b? In v. 7?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "The passage moves through three main ideas:\n1. An introduction (v. 6a: 'Because of this I remind you') — Paul establishes the basis for his appeal: he is reminding Timothy of something rooted in the confidence already expressed in v. 5.\n2. A command (v. 6b: 'to rekindle God's gift… through the laying on of my hands') — Timothy is called to action: rekindle the gift. The reference to the laying on of hands adds a note of confidence — this was a public, witnessed act of commissioning.\n3. A reason (v. 7: 'For the Spirit God gave us…') — Paul explains why Timothy can and must obey: the Spirit he has received is not a spirit of timidity but of power, love, and self-control.",
+          "questionHint": "Try to label each section with a single phrase that captures its function in the argument: is it introducing, commanding, explaining, contrasting, or concluding?"
+        },
+
+        {
+          "elementId": "ch04-el35",
+          "type": "question",
+          "format": "plainText",
+          "question": "OUTLINE: Having identified the 'big bones', write a simple structural outline of 2 Tim 1:6-7. What are the main sections and how would you label them?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Write your outline in 2-3 numbered points. Each point should capture one main section of the passage and explain what Paul is doing there…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "1. The introduction to confidence in God and his gifts (v. 6a): Timothy can be confident in his faith because Paul has already assured him it is sincere (v. 5).\n2. The command to renew confidence in God and his gifts (v. 6b): Timothy can be confident that he has the God-given gifts for ministry — therefore he must rekindle them.\n3. The reason to renew confidence in God and his gifts (v. 7): God's Spirit is powerful, loving, and self-controlled — and we have the presence of this confidence-building Spirit in our lives.",
+          "questionHint": "A good outline is simple enough to remember. Aim for 2-3 points. Each point should describe what Paul is doing, not just what he is saying."
+        },
+
+        {
+          "elementId": "ch04-el36",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Step 3: HEART — Identify the Message",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el37",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "A simple way to identify the message of a passage is to note two things: the author's <b>theme</b> (what he is talking about) and the <b>message</b> (what he is saying about that theme). The Bible is 'God preaching' to his people — so a biblical message is more than information. It tells us something important and practical.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el38",
+          "type": "question",
+          "format": "plainText",
+          "question": "THEME: What is the main thing Paul is talking about in 2 Tim 1:6-7? State the theme of the passage as simply and clearly as you can — ideally in a short phrase.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Try to capture the theme in 3-6 words — the one thing this passage keeps coming back to…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "The theme is: renewing confidence in God and his gifts for ministry.",
+          "questionHint": "The theme is not the message — it is the subject the message is about. If the message were a sentence, the theme would be its subject. What is the subject of this passage?"
+        },
+
+        {
+          "elementId": "ch04-el39",
+          "type": "question",
+          "format": "plainText",
+          "question": "MESSAGE: What is Paul saying about that theme? Complete this sentence in a way that captures the main point of the passage: 'Paul tells Timothy that…'",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Complete the sentence: 'Paul tells Timothy that…' — aim for one or two clear sentences, without technical words, that even a child could understand.",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "Paul tells Timothy to renew his confidence in God and his gifts for ministry — because God's Spirit, who has been given to him, produces not timidity but power, love, and self-control.",
+          "questionHint": "The message should flow naturally from the theme. It completes the thought: the theme says 'what about?'; the message says 'what about it?'. Try to say it in a way a non-theologian would understand."
+        },
+
+        {
+          "elementId": "ch04-el40",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Step 4: BRAIN — Understand the Purpose",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el41",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "The purpose statement answers a different question from the message statement. The message says <em>what</em> is being said; the purpose says <em>why</em> it is being said. Both are essential when it comes to making connections for teaching today.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el42",
+          "type": "question",
+          "format": "plainText",
+          "question": "PURPOSE: Why is Paul making this point to Timothy? What is he trying to achieve by saying this, in this situation, at this moment?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about Timothy's situation — what does he need, and why does Paul think this particular reminder will help him?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "Paul is telling Timothy to renew his confidence in God and his gifts because Timothy is facing an urgent and demanding task — one that he cannot overcome with his own abilities and strength. Paul is in prison; many have deserted him; Timothy must carry on the gospel work largely alone. In that situation, fear and timidity are real dangers. Paul's purpose is to remind Timothy that the resources he needs are not human resources — they come from God's Spirit, who has already been given to him. The purpose is to prevent Timothy from shrinking back and to strengthen him for courageous gospel ministry.",
+          "questionHint": "The purpose explains why this message was needed — what problem or danger it addresses. What would have happened if Paul had not written these two verses?"
+        },
+
+        {
+          "elementId": "ch04-el43",
+          "type": "question",
+          "format": "plainText",
+          "question": "CONNECTIONS: What connections do you see between the purpose of 2 Tim 1:6-7 and your own situation and congregation today? Capture your answer as a statement or question that brings the passage into the present.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What do you and your people need to hear from this passage? Why do they need to hear it now?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-7",
+          "sampleAnswer": "One connecting question might be: 'In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?' Like Timothy, many church leaders and Christians today face situations that could produce fear — opposition, isolation, a sense of inadequacy, the weight of difficult circumstances. The message of 2 Tim 1:6-7 is not just for Timothy in a first-century prison; it is for every believer who is tempted to shrink back rather than step forward in God's strength. The Spirit who was given to Timothy has been given to us too.",
+          "questionHint": "Think about the people in your church or community. Who is most at risk of the kind of timidity Paul is addressing? What would it mean for them to 'rekindle' their gifts?"
+        },
+
+        {
+          "elementId": "ch04-el44",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "4.4 Pulling It All Together",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el45",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "The two callouts below pull together all four steps of the Scripture Sculpture process as applied to 2 Tim 1:6-7. These are worked examples — model answers that show what careful, prayerful engagement with the passage can produce. Compare them with your own answers above.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el46",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Worked Example",
+          "term": "Step 1: FLESH — Study the Details of 2 Tim 1:6-7",
+          "question": "Tap to see the full worked example for Step 1.",
+          "answer": "<p><strong>a) Set the passage in context</strong></p><p><em>Story:</em> Verses 3-5 emphasise the reality of Timothy's faith. Verse 6 begins with 'Because of this…' — Paul's confidence in Timothy's faith is the basis for his appeal to 'rekindle God's gift.' Verse 8 then draws the consequence: 'So do not be ashamed…' Verses 6-7 must therefore give Timothy reason for courage and confidence.</p><p><em>Situation:</em> The passage communicates the close, personal nature of Paul and Timothy's relationship, and shows that Timothy needs encouragement in a demanding situation.</p><p><em>Style:</em> A section of a letter, which builds a clear personal argument — it explains and applies the gospel to a specific person in a specific crisis.</p><p><strong>b) See the details</strong></p><p>'For this reason…' / 'remind' (links with 'remember', 'recalling', 'reminded' in previous verses) / 'rekindle' (the main thing Paul calls Timothy to do) / 'God's gift', 'God gave', 'gives' (repeated) / 'laying on of hands' (complex, needs explaining) / 'For' (introduces explanation) / 'Spirit' / 'timid' and 'power' (contrasting words) / 'does not… but…' (contrast) / 'power, love, and self-control' (important trio)</p><p><strong>c) Seek the meaning</strong></p><p>'For this reason' — links back: 'based on what I have said about your faith…' / 'remind' — Paul has been remembering things; Timothy needs to remember something important too / 'rekindle' — Timothy must renew his passion and reignite the gifts he has / 'God's gift / gave / gives' — Paul encourages Timothy that God has given him all he needs / 'laying on of hands' — 1 Tim 4:14 ties the gifts to a public act of commissioning with witnesses / 'Spirit' — God's empowering presence / 'timid' vs 'power' — personal weakness contrasted with the Spirit's strength / 'not… but…' — underlines the contrast / 'power, love, and self-control' — the Spirit has these qualities and brings them to Timothy; each needs the other two.</p><p><strong>d) Summary of findings</strong></p><p>Paul is convinced that Timothy's faith in Christ is genuine. Because of this confidence Paul reminds Timothy to do something important: he must renew his confidence in God and his gifts. The greatest gift of all is God's Holy Spirit — he is powerful, loving, and self-controlled.</p>",
+          "buttonText": "See Step 1 worked example ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el47",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Worked Example",
+          "term": "Steps 2–4: SKELETON, HEART, BRAIN — 2 Tim 1:6-7",
+          "question": "Tap to see the full worked examples for Steps 2, 3, and 4.",
+          "answer": "<p><strong>Step 2: SKELETON — Outline the Structure</strong></p><p><em>Links:</em> 'Because of this' links the passage to v. 5 — the confidence Timothy can have in his own God-given faith. 'For' (v. 7) links back to v. 6 — Timothy is to rekindle his gifts not only because of the confidence he can have in his own faith, but also because of the character of God's Holy Spirit who has been given to him. 'Not… but…' creates the contrast at the heart of v. 7.</p><p><em>Themes:</em> Verse 6 opens with an introduction ('Because of this'), rooted in Paul's confidence in Timothy's sincere faith. It continues with a command ('rekindle God's gift') and adds a note of confidence ('through the laying on of my hands' — a public, witnessed event). Verse 7 gives a further reason for Timothy to use his gifts with confidence rather than fear.</p><p><em>Outline (the 'big bones'):</em><br>1. Introduction to confidence in God and his gifts: Timothy can be confident in his faith (v. 6a).<br>2. Command to renew confidence in God and his gifts: Timothy must rekindle his God-given gifts for ministry (v. 6b).<br>3. Reason to renew confidence in God and his gifts: God's Spirit produces power, love, and self-control — not timidity (v. 7).</p><p><strong>Step 3: HEART — Identify the Message</strong></p><p><em>Theme:</em> Renewing confidence in God and his gifts for ministry.</p><p><em>Message:</em> Paul tells Timothy to renew his confidence in God and his gifts for ministry — because the Spirit God has given produces power, love, and self-control, not timidity.</p><p><strong>Step 4: BRAIN — Understand the Purpose</strong></p><p><em>Purpose:</em> Paul tells Timothy to renew his confidence in God and his gifts because he is facing an urgent and demanding task — one he cannot overcome with his own abilities and strength.</p><p><em>Connection for today:</em> In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?</p>",
+          "buttonText": "See Steps 2–4 worked examples ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el48",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "4.5 Responding to 2 Timothy 1:6-7",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el49",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "We will learn more about how to preach and teach from Bible passages in Unit 13 — which will use 2 Tim 1:6-7 as its worked example. But it is important that we respond to the passages we encounter before we think about teaching them. The three questions below invite you to do that.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el50",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "How did the message of 2 Tim 1:6-7 speak to you personally? What did you learn, or what did you need to be reminded of?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el51",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "How did the purpose of the passage help you to apply God's word to your own life? What change might this passage make to your thinking or living?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el52",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "In your own words, state the message you would share with others from this passage. What is the main thing you want people to understand?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch04-el53",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "In this unit we have learnt the first four steps of Scripture Sculpture and applied them to 2 Timothy 1:6-7. These steps — flesh, skeleton, heart, and brain — give us a disciplined, prayerful way of encountering any passage of Scripture: starting with careful observation of the details, moving through structure and message, and arriving at a clear understanding of the passage's purpose. These same steps will be used throughout the BUILD curriculum as we constantly move from understanding texts to teaching them.",
+          "bottomPadding": "normal"
+        }
+
+      ]
+    },
+    {
+      "chapterNumber": 5,
+      "chapterTitle": "2 Timothy 1:8-12 (Encounter)",
+      "elements": [
+
+        {
+          "elementId": "ch05-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "In this unit you will apply the four steps from Unit 4 to a new passage from 2 Timothy — 1:8-12. You are now the one doing the work. Keep referring back to the four steps as you go, and take your time with each one. You might want to work through this on your own, with a friend, or in a small group.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el02",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Unit Outcomes",
+          "term": "By the end of this unit you will be able to…",
+          "question": "1. Follow and apply the four steps of Encountering a Bible Passage to a passage from 2 Timothy yourself\n2. Share the message of 2 Timothy 1:8-12 with a group of people today",
+          "answer": "<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
+          "buttonText": "See outcomes ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el03",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "The Passage: 2 Timothy 1:8-12",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el04",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Before you begin the four steps, read the passage carefully — more than once. Read it slowly. If you are working in a group, take it in turns to read it aloud between each step and listen for different things each time. Scripture Sculpture always begins with patient, prayerful reading.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el05",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:8-12",
+          "translation": "NET",
+          "passageText": "<sup>8</sup>So do not be ashamed of the testimony about our Lord or of me, a prisoner for his sake, but by God's power accept your share of suffering for the gospel. <sup>9</sup>He has saved us and called us with a holy calling, not based on our works but on his own purpose and grace, granted to us in Christ Jesus before time began. <sup>10</sup>But now this has been revealed through the appearing of our Savior Christ Jesus, who abolished death and brought life and immortality to light through the gospel! <sup>11</sup>For this gospel I was appointed a preacher and apostle and teacher. <sup>12</sup>Because of this, in fact, I suffer as I do. But I am not ashamed, because I know the one in whom my faith is set and I am convinced that he is able to protect what has been entrusted to me until that day.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el06",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Step 1: FLESH — Study the Details",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el07",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1a) Set the Text in Context",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el08",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 1:6-14",
+          "translation": "NET",
+          "passageText": "<sup>6</sup>Because of this I remind you to rekindle God's gift that you possess through the laying on of my hands. <sup>7</sup>For the Spirit God gave us does not make us timid but gives us power, love, and self-control. <sup>8</sup>So do not be ashamed of the testimony about our Lord or of me, a prisoner for his sake, but by God's power accept your share of suffering for the gospel. <sup>9</sup>He has saved us and called us with a holy calling, not based on our works but on his own purpose and grace, granted to us in Christ Jesus before time began. <sup>10</sup>But now this has been revealed through the appearing of our Savior Christ Jesus, who abolished death and brought life and immortality to light through the gospel! <sup>11</sup>For this gospel I was appointed a preacher and apostle and teacher. <sup>12</sup>Because of this, in fact, I suffer as I do. But I am not ashamed, because I know the one in whom my faith is set and I am convinced that he is able to protect what has been entrusted to me until that day. <sup>13</sup>Hold to the standard of sound words that you heard from me and do so with the faith and love that are in Christ Jesus. <sup>14</sup>Protect that good thing entrusted to you, through the Holy Spirit who lives within us.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch05-el09",
+          "type": "question",
+          "format": "plainText",
+          "question": "STORY: Where does 2 Tim 1:8-12 come in the argument of the book? What comes immediately before and after it, and how does knowing that help you understand these verses?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at what comes before (vv. 6-7) and after (vv. 13-14). What has Paul just said, and where is he heading?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-14",
+          "sampleAnswer": "Verses 6-7 (which we studied in Unit 4) contain Paul's appeal to Timothy to rekindle God's gift, grounded in the fact that the Spirit produces power, love, and self-control — not timidity. Verse 8 then opens with 'So' — drawing a direct conclusion from what has just been said: because the Spirit gives power rather than timidity, Timothy must not be ashamed. The passage therefore flows naturally from the previous unit's encouragement into a specific, demanding application: share in suffering for the gospel. After our passage, vv. 13-14 draw the consequences: hold to sound teaching and guard the good deposit. The passage sits at the heart of a sustained appeal from Paul to Timothy to stand firm and not shrink back.",
+          "questionHint": "The word 'So' at the start of v. 8 is a key connector. What does it draw a conclusion from? And what does the passage flow into in vv. 13-14?"
+        },
+
+        {
+          "elementId": "ch05-el10",
+          "type": "question",
+          "format": "plainText",
+          "question": "SITUATION: What do you notice about 2 Tim 1:8-12 in relation to what you already know about the situation in 2 Timothy — the people, problems, and places involved?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about Paul's imprisonment, Timothy's task, and the pressures on the early church. How does the situation shape what Paul says here?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-14",
+          "sampleAnswer": "The situation is reflected directly in the language. Paul mentions that he is a prisoner (v. 8) and explicitly says he is suffering (v. 12). Yet he insists he is 'not ashamed' — which tells us that shame and fear of suffering were real temptations in this situation. For Timothy, being associated with an imprisoned, potentially disgraced apostle carried social and personal risk. Paul's reference to his own example ('I suffer as I do... but I am not ashamed') is deliberate: he is modelling what he is asking Timothy to do. The situation makes the appeal both urgent and personal.",
+          "questionHint": "Why might Timothy have been tempted to be 'ashamed' of Paul? What did it cost, socially and personally, to be associated with a prisoner in the Roman world?"
+        },
+
+        {
+          "elementId": "ch05-el11",
+          "type": "question",
+          "format": "plainText",
+          "question": "STYLE: What features of this passage show that it is part of a personal letter? What do you notice about Paul's tone and the way he builds his argument?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about the personal address, the use of 'I' and 'we', the emotional register, and the way Paul moves from command to gospel to personal testimony…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:6-14",
+          "sampleAnswer": "The passage is unmistakably a personal letter. Paul moves fluidly between direct address ('do not be ashamed', 'accept your share of suffering'), shared confession ('He has saved us and called us'), and personal testimony ('I was appointed... I suffer as I do... I am not ashamed... I know the one in whom my faith is set'). The tone is warm, urgent, and deeply personal — this is not abstract theology but a father writing to a son in a crisis. Paul also demonstrates the very courage he is calling for: he testifies openly to his own suffering and his own confidence in God, making himself an example of the gospel he is commending.",
+          "questionHint": "Count how many times Paul uses 'I', 'we', and 'us' in vv. 8-12. What does the blend of personal testimony and shared gospel confession tell you about how Paul uses his own experience as part of his argument?"
+        },
+
+        {
+          "elementId": "ch05-el12",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1b) See the Details of the Text",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el13",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Read 2 Tim 1:8-12 again carefully. Look for: <b>repeated and related words and phrases</b>; <b>important, complicated, or unusual words and phrases</b>; and <b>connections and links</b> between words and phrases (words like 'so', 'but', 'for', 'because', 'not… but…'). Be selective — list what genuinely stands out.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el14",
+          "type": "question",
+          "format": "plainText",
+          "question": "LIST the important words, phrases, and relationships you notice in 2 Tim 1:8-12. What stands out as you read carefully?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "List words and phrases — one per line if that helps. Don't explain them yet, just notice and list them…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "'So' (v. 8 — connecting word, draws conclusion from vv. 6-7)\n'do not be ashamed' (v. 8 — key command; echoed in v. 12 'I am not ashamed')\n'testimony about our Lord' / 'gospel' (vv. 8, 10, 11 — repeated theme)\n'prisoner' / 'suffering' (vv. 8, 12 — repeated, personal)\n'by God's power' (v. 8 — the means of endurance)\n'He has saved us and called us' (v. 9 — gospel summary)\n'not based on our works but on his own purpose and grace' (v. 9 — key contrast)\n'before time began' (v. 9 — striking phrase about the eternal origin of grace)\n'But now' (v. 10 — turning point: from eternity to history)\n'appearing of our Saviour, Christ Jesus' (v. 10 — the incarnation)\n'abolished death' / 'brought life and immortality to light' (v. 10 — dramatic contrast)\n'gospel' (vv. 8, 10, 11 — three times)\n'preacher and apostle and teacher' (v. 11 — Paul's triple role)\n'For this gospel I was appointed' (v. 11 — links Paul's suffering to the gospel)\n'I know the one in whom my faith is set' (v. 12 — confidence)\n'convinced that he is able to protect what has been entrusted to me' (v. 12 — trust)\n'that day' (v. 12 — eschatological horizon)",
+          "questionHint": "Try reading the passage three times, each time looking for a different category: first for repeated words, then for unusual or important phrases, then for linking and contrasting words. What do you see each time?"
+        },
+
+        {
+          "elementId": "ch05-el15",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1c) Seek the Meaning from the Details",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el16",
+          "type": "question",
+          "format": "plainText",
+          "question": "EXPLAIN the words, phrases, and relationships you listed. What do they mean in their context — both in today's language and in the original setting? What is their significance in the argument Paul is building?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Work through your list from the previous question. For each word or phrase: what does it mean, and why does it matter here?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "'So' — draws the consequence from Unit 4's passage: because the Spirit gives power not timidity, the conclusion is 'do not be ashamed'.\n'Do not be ashamed' / 'I am not ashamed' — shame was a powerful social force in the Roman world. Being associated with a prisoner could bring disgrace. Paul commands Timothy not to yield to that pressure, and models it himself.\n'By God's power' — the means of endurance is not Timothy's own strength but God's. This echoes v. 7: the Spirit gives power.\n'He has saved us and called us' (v. 9) — a compressed gospel summary. Salvation is presented as both a past act ('has saved') and an ongoing calling.\n'Not based on our works but on his own purpose and grace' — the contrast is total: salvation rests entirely on God's initiative, not human merit. This is foundational to why suffering for the gospel makes sense — it is God's gospel, not ours.\n'Before time began' — grace was planned in eternity, before creation. This gives the gospel cosmic weight and permanence.\n'But now' (v. 10) — a hinge phrase. What was planned in eternity has now broken into history through the incarnation.\n'Abolished death' / 'brought life and immortality to light' — vivid, dramatic language. Death has been defeated; what was hidden is now revealed. The gospel does not merely improve life — it conquers death.\n'Gospel' (three times) — the repetition is deliberate. The gospel is the reason for Paul's appointment, his suffering, and his confidence.\n'Preacher and apostle and teacher' — three roles, each emphasising a different dimension of gospel ministry: proclamation, authoritative witness, and instruction.\n'I know the one in whom my faith is set' — personal, relational confidence in God himself, not merely in a set of beliefs.\n'That day' — the day of Christ's return and final judgement. Paul's horizon is eschatological: he endures in the present because he is confident about the future.",
+          "questionHint": "For the most important phrases, ask: What would be lost if this phrase were not here? What does it add to the argument? Try to explain each phrase in plain language that someone with no theological training could understand."
+        },
+
+        {
+          "elementId": "ch05-el17",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "1d) Summarise Your Findings",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el18",
+          "type": "question",
+          "format": "plainText",
+          "question": "Drawing on your work so far, summarise your main findings from Step 1. What are the most important ideas you want to carry forward into the next steps?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What are the two or three most important things you have discovered about this passage so far?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "Three main ideas emerge:\n1. The command not to be ashamed — Timothy is called to accept his share of suffering for the gospel, by God's power, not his own. Paul models this himself: he is suffering but not ashamed.\n2. The gospel itself is the foundation and the reason — vv. 9-10 provide a compressed but rich summary of the gospel: a grace planned before time, revealed in Christ, who abolished death and brought life to light. This gospel is what makes suffering worthwhile.\n3. Paul's personal confidence is the pastoral heart of the passage — 'I know the one in whom my faith is set.' Paul's endurance is not grounded in circumstances or in his own strength, but in his knowledge of and trust in God himself, who will guard what has been entrusted until the last day.",
+          "questionHint": "Imagine you had to explain to someone else the two or three most important things this passage is about. What would you choose? Your summary should be something you can carry into Steps 2-4 as a foundation."
+        },
+
+        {
+          "elementId": "ch05-el19",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Step 2: SKELETON — Outline the Structure",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el20",
+          "type": "question",
+          "format": "plainText",
+          "question": "LINKS: What important linking words contribute to the structure of 2 Tim 1:8-12? How do they show the logic of Paul's argument?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at 'so', 'but', 'for', 'because', 'not… but…' — what does each link connect, and what does that tell you about the structure?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "'So' (v. 8) — links back to vv. 6-7. The command not to be ashamed is the conclusion drawn from the Spirit's character (power, not timidity).\n'Not based on our works but on his own purpose and grace' (v. 9) — a contrast that is central to the argument: salvation is entirely God's initiative. This makes the gospel worth suffering for.\n'But now' (v. 10) — a pivotal hinge between eternity (v. 9, 'before time began') and history (v. 10, 'through the appearing of Christ Jesus'). It marks the turning point of the gospel story.\n'For this gospel' (v. 11) — links Paul's appointment and suffering directly to the gospel just described. His suffering makes sense only because of the gospel.\n'Because of this' (v. 12) — links Paul's suffering back to his appointment in v. 11. The suffering is a consequence of faithful gospel ministry.\n'But I am not ashamed, because' (v. 12) — introduces the reason for Paul's confidence in the face of suffering: his knowledge of and trust in God.",
+          "questionHint": "The linking words form the joints of the skeleton — they hold the argument together. Try tracing the logic: what follows from what? Each connector should reveal a step in Paul's reasoning."
+        },
+
+        {
+          "elementId": "ch05-el21",
+          "type": "question",
+          "format": "plainText",
+          "question": "THEMES: How are the main ideas arranged in 2 Tim 1:8-12? Can you identify the major movements or sections in these verses?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Try to divide the passage into its main parts. What is Paul doing in v. 8? In vv. 9-10? In v. 11? In v. 12?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "The passage moves through four main sections:\n1. The command (v. 8): Do not be ashamed — join in suffering for the gospel, by God's power.\n2. The gospel foundation (vv. 9-10): The reason suffering for the gospel is worthwhile — God's grace, planned in eternity, revealed in Christ who abolished death and brought life to light.\n3. Paul's appointment (v. 11): Paul's role as preacher, apostle, and teacher directly connects him to this gospel — and therefore to suffering for it.\n4. Paul's confidence (v. 12): Despite suffering, Paul is not ashamed — because he knows and trusts God, who is able to guard what has been entrusted until the last day.",
+          "questionHint": "Try labelling each section with a single phrase that captures its function: is it commanding, explaining, grounding, testifying? What is Paul doing in each part?"
+        },
+
+        {
+          "elementId": "ch05-el22",
+          "type": "question",
+          "format": "plainText",
+          "question": "OUTLINE: Having identified the 'big bones', write a simple structural outline of 2 Tim 1:8-12. What are the main sections and how would you label them?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Write your outline in 3-4 numbered points. Each point should capture one main section of the passage and explain what Paul is doing there…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "1. The command to courage (v. 8): Timothy must not be ashamed of the gospel or of Paul — he must accept his share of suffering, by God's power.\n2. The gospel that makes courage possible (vv. 9-10): God's grace, purposed before time and revealed in Christ, who abolished death and brought life to light through the gospel.\n3. The appointment that makes suffering inevitable (v. 11): Paul was appointed as preacher, apostle, and teacher of this gospel — and that appointment is why he suffers.\n4. The confidence that makes shame impossible (v. 12): Paul knows the one he trusts, and is convinced that God will guard what has been entrusted to him until the last day.",
+          "questionHint": "A good outline is simple enough to remember and preach from. Aim for 3-4 points. Each point should both describe what Paul is doing and hint at what it means for the listener."
+        },
+
+        {
+          "elementId": "ch05-el23",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Step 3: HEART — Identify the Message",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el24",
+          "type": "question",
+          "format": "plainText",
+          "question": "THEME: What is the main thing Paul is talking about in 2 Tim 1:8-12? State the theme of the passage as simply and clearly as you can — ideally in a short phrase.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Try to capture the theme in 3-6 words — the one subject this passage keeps coming back to…",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "The theme is: not being ashamed of the gospel in the face of suffering.",
+          "questionHint": "The theme is the subject, not the message. If you had to say what the passage is 'about' in a single phrase — before explaining what it says about it — what would that phrase be?"
+        },
+
+        {
+          "elementId": "ch05-el25",
+          "type": "question",
+          "format": "plainText",
+          "question": "MESSAGE: What is Paul saying about that theme? Complete this sentence: 'Paul tells Timothy that…' Aim for one or two clear sentences, without technical language, that even a child could understand.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Complete the sentence: 'Paul tells Timothy that…'",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "Paul tells Timothy that he should not be ashamed of the gospel or of suffering for it — because the gospel is the good news of a grace planned by God before time began, revealed in Christ who destroyed death, and because Paul himself has found that trusting God in suffering leads not to shame but to unshakeable confidence.",
+          "questionHint": "The message should complete the theme: the theme says 'what about?'; the message says 'what about it?' Try to say it simply — no jargon, no technical terms. Could a ten-year-old understand your sentence?"
+        },
+
+        {
+          "elementId": "ch05-el26",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "Step 4: BRAIN — Understand the Purpose",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el27",
+          "type": "question",
+          "format": "plainText",
+          "question": "PURPOSE: Why is Paul making this point to Timothy? What is he trying to achieve by saying this, in this situation, at this moment?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about what Timothy needs and what danger Paul is guarding against. What would happen if Timothy did not hear this message?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "Paul is writing to prevent Timothy from being paralysed by shame or fear in the face of suffering and opposition. Timothy is associated with an imprisoned apostle in a hostile world, and the temptation to distance himself from Paul and the gospel would have been real and powerful. Paul's purpose is twofold: to call Timothy to courage (the command not to be ashamed), and to ground that courage in something solid — the gospel itself (vv. 9-10) and Paul's own example of trust in God (v. 12). Without this message, Timothy might have retreated into silence or compromise. With it, he has both a command and a foundation for obedience.",
+          "questionHint": "The purpose answers 'why?' — not 'what is being said?' but 'what is the saying meant to achieve?' What danger is Paul trying to help Timothy avoid, and what response is he trying to evoke?"
+        },
+
+        {
+          "elementId": "ch05-el28",
+          "type": "question",
+          "format": "plainText",
+          "question": "CONNECTIONS: What connections do you see between the purpose of 2 Tim 1:8-12 and your own situation and congregation today? Capture your answer as a statement or question that brings the passage into the present.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What do you and your people need to hear from this passage? Why do they need to hear it now?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 1:8-12",
+          "sampleAnswer": "A connecting question might be: 'When the gospel brings suffering or shame, where does your confidence come from?' Like Timothy, Christians and church leaders today face situations where identifying with the gospel — and with those who suffer for it — carries a social, professional, or personal cost. The temptation to be ashamed, to soften the message, or to avoid association with unpopular aspects of the gospel is as real today as it was in the first century. The passage calls us to the same thing it called Timothy: not courage in ourselves, but confidence in the God who planned this gospel in eternity, revealed it in Christ, and can guard everything entrusted to him until the last day.",
+          "questionHint": "Think about the specific pressures your congregation faces. Where are they most tempted to be 'ashamed' — at work, in their families, in public? How does the gospel foundation in vv. 9-10 speak to that specific pressure?"
+        },
+
+        {
+          "elementId": "ch05-el29",
+          "type": "heading",
+          "subtype": "reflection",
+          "level": "2",
+          "format": "plainText",
+          "text": "Responding to 2 Timothy 1:8-12",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el30",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "How did the message of 2 Tim 1:8-12 speak to you personally? What did you learn, or what did you need to be reminded of?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el31",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "How did the purpose of the passage help you to apply God's word to your own life? What change might this passage make to your thinking or living?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el32",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "In your own words, state the message you would share with others from this passage. What is the main thing you want people to understand?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch05-el33",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "Well done for working through the four steps on your own. The more you practise them — with different passages and in different contexts — the more natural they will become. In Unit 13 we will return to 2 Tim 1:6-7 and learn how to move from encountering a passage to preaching and teaching it. Keep the habit of patient, prayerful reading: it is the foundation of everything that follows.",
+          "bottomPadding": "normal"
+        }
+
+      ]
+    }
+  ],
+  "studyOnboardingSlides":[
+    {
+      "icon"   :"📖",
+      "eyebrow":"Welcome",
+      "heading":"BUILD Module One",
+      "body"   :"A fifteen-unit church leadership training module on 2 Timothy and the Pastoral Epistles.\n\nWork through each unit with your trainer and BUILD group.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"✍️",
+      "eyebrow":"How it works",
+      "heading":"Encounter, Reflect, Act",
+      "body"   :"Each unit follows one of four types: <b>Tools</b> for skills, <b>Encounter</b> for Bible passages, <b>Reflection</b> for wisdom, and <b>Action</b> for practical training.\n\nTap <b>ⓘ</b> beside any Bible reference to read the passage without leaving the app.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"💾",
+      "eyebrow":"Your answers",
+      "heading":"Saved on your device",
+      "body"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each unit to send your answers to your trainer or group leader.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"⚙️",
+      "eyebrow":"Make it yours",
+      "heading":"Adjust to your preference",
+      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "action" :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any unit.",
+      "format"   :"HTML"
+    },
+    {
+      "icon"   :"👋",
+      "eyebrow":"Before you begin",
+      "heading":"How to use this app",
+      "body"   :"If you want a full guide to getting the most from this app and this study — whether on your own or in a group — you can tap the button below.",
+      "action" :{
+        "label":"Go to the 'How to use' page →",
+        "fn"   :null
+      },
+      "bodyAfter":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+      "format"   :"HTML"
+    }
+  ],
+  "howToUseData":{
+    "sections":[
+      {
+        "heading":"Who Is This Study For?",
+        "blocks" :[
+          {
+            "title":"Local church leaders and workers",
+            "body" :"BUILD is designed for grassroots church leaders — whether volunteers, part-time, or full-time. If you lead within a local congregation, teach God's word, or care for God's people, this course was made for you."
+          },
+          {
+            "title":"People who want to handle the Bible well",
+            "body" :"The Pastoral Epistles call leaders to 'correctly handle the word of truth' (2 Tim 2:15). This module teaches you practical, repeatable tools for understanding and teaching any passage of Scripture."
+          },
+          {
+            "title":"Those who want to share and preach the gospel faithfully",
+            "body" :"From personal testimony to expository preaching, Module One equips you to proclaim the good news clearly and confidently in your context."
+          }
+        ]
+      },
+      {
+        "heading":"Individual or Group Study?",
+        "blocks" :[
+          {
+            "title":"In a BUILD group",
+            "body" :"This module is designed primarily for use in a local BUILD training group, led by a trained BUILD trainer. The interactive exercises, discussions, and worksheets work best when participants engage together."
+          },
+          {
+            "title":"On your own",
+            "body" :"Units can also be worked through individually. Give particular attention to the reflection questions and Bible passage worksheets. Return to your trainer or group to discuss your findings."
+          },
+          {
+            "title":"Read the letters first",
+            "body" :"Before beginning, read through 1 Timothy, 2 Timothy, and Titus in one sitting if possible. Seeing the whole of the Pastoral Epistles at once will make every individual unit significantly richer."
+          }
+        ]
+      },
+      {
+        "heading":"Trainers and Group Leaders",
+        "blocks" :[
+          {
+            "title":"Working with a trainer",
+            "body" :"<p>Your BUILD trainer has been equipped to guide you through the materials. Many units include exercises designed for group discussion and pair work that your trainer will facilitate.</p><p>At the end of each unit, the <b>Share</b> button lets you send your written answers directly to your trainer — via WhatsApp, email, or any other app on your phone.</p>"
+          }
+        ]
+      },
+      {
+        "heading":"A Note on the Units",
+        "blocks" :[
+          {
+            "title":"Four types of learning unit",
+            "body" :"Module One contains four kinds of unit: <b>Tools</b> units build knowledge and skills for handling the Bible; <b>Encounter</b> units apply those tools to specific passages; <b>Reflection</b> units develop theological wisdom; and <b>Action</b> units provide practical training in preaching, sharing the gospel, and leadership."
+          },
+          {
+            "title":"Scripture Sculpture",
+            "body" :"A central skill taught in this module is 'Scripture Sculpture' — a seven-step process moving from encountering a Bible passage (Steps 1–4) to preaching it (Steps 5–7). This process is introduced in Unit 4 and completed in Unit 13, and is used throughout the entire BUILD curriculum."
+          },
+          {
+            "title":"The ERA model",
+            "body" :"Reflection units use the ERA model: Encounter, Reflection, Action. This cycle — introduced in Unit 9 — helps leaders move from experiencing situations in God's world and God's word, through careful reflection, to faithful and informed action."
+          }
+        ]
+      }
+    ]
+  },
+  "leadersNotesData": {
+  },
+  "studyAboutData":{
+    "author":{
+      "url"  :"",
+      "paras":[
+        "The BUILD curriculum was primarily compiled by Canon Dr Jem Hovil with Canon Stephen Ssenyonjo Kewaza. The materials capture the input and perspectives of many individuals from Uganda, South Sudan, Rwanda, Tanzania, Kenya, Burundi, and Congo.",
+        "The bulk of the curriculum development work was carried out through ten participatory workshops hosted by Uganda Martyrs Seminary, Namugongo, from 2009 to 2014, based on earlier research that included 573 survey responses.",
+        "Special mention goes to Mr Daniel Mukiibi Muwanguzi in Uganda and Canon Capt Benjamin Kibara Wathituni in Kenya, who were instrumental in shaping and accrediting the training in their respective countries."
+      ],
+      "format":"plainText"
+    },
+    "publisher":{
+      "name" :"BUILD — Church of Uganda & BUILD Partners",
+      "url"  :"",
+      "paras":[
+        "BUILD stands for 'Biblical Understanding for In-service Leadership Development'. It grew out of the Church of Uganda's response to its training needs and is now used by churches across East Africa and beyond."
+      ],
+      "format":"plainText"
+    }
+  },
+  "copyrightData":{
+    "licence":{
+      "spdxId"  :"CC-BY-NC-ND-4.0",
+      "name"    :"Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format"
+      ],
+      "conditions":[
+        "Attribution: you must give appropriate credit and provide a link to the licence",
+        "NonCommercial: you may not use the material for commercial purposes",
+        "NoDerivatives: if you remix, transform, or build upon the material, you may not distribute the modified material"
+      ],
+      "format":"plainText"
+    },
+    "copyright":{
+      "holder"   :"BUILD — Church of Uganda & BUILD Partners",
+      "year"     :2024,
+      "statement":"2 Timothy & the Pastoral Epistles: Preaching the Gospel & Godly Leadership (Manual for Trainers, BUILD COU & BUILD Partners). Licensed under a Creative Commons attribution, non-commercial, no derivatives license."
+    },
+    "bibleTranslation":{
+      "name"     :"NIV",
+      "version"  :"Holy Bible, New International Version®, NIV®",
+      "copyright":"Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc™",
+      "url"      :"https://www.biblica.com",
+      "usedWith" :"permission"
+    },
+    "notices":[
+      "Scripture quotations marked (NIV®) are taken from the Holy Bible, New International Version®. NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc™. Used with permission. All rights reserved.",
+      "The BUILD curriculum was developed for grassroots church leadership training across Africa's Great Lakes Region and beyond. BUILD is used by the Church of Uganda and partner churches in similar contexts."
+    ],
+    "format":"HTML"
+  },
+  "imageData":{
+    "cover":{
+      "alt"     :"Open Bible with African landscape at sunrise",
+      "fallback":"📖"
+    },
+    "publisher":{
+      "alt"     :"BUILD — Church of Uganda",
+      "fallback":"⛪"
+    },
+    "author":{
+      "alt"     :"Canon Dr Jem Hovil",
+      "fallback":"🧑‍🏫"
+    }
+  },
+  "studyAiData":{
+    "aiMentorPrompt":"You are a warm, encouraging mentor for the BUILD Bible study programme — a church leadership training course focused on 2 Timothy and the Pastoral Epistles. Your role is to help local church leaders in East Africa and similar contexts grow in their understanding of the gospel, their skills in handling the Bible, and their ability to lead and preach faithfully. Draw on the BUILD values: Biblical, Understanding, In-service, Leadership, Development.",
+    "apiKey"        :""
+  }
+}

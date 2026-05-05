@@ -4,7 +4,7 @@
     "title"            :"Exploring isaiah",
     "subtitle"         :"Bible Study",
     "shortTitle"       :"Isaiah",
-    "description"      :"Isaiah is one of the longest and most theologically rich books in the Old Testament. It spans judgment and comfort, exile and return, the failure of kings and the coming of the perfect King. At its heart is a question that echoes across every chapter: <em>In whom will you trust?</em><blockquote>'Do you not know? Have you not heard? The Lord is the everlasting God, the Creator of the ends of the earth.' (Isaiah 40:28)</blockquote>These leaders notes are designed to help you guide a group through Isaiah's great themes — from the opening accusations of chapter 1 to the vision of new creation in chapters 65–66. They assume you are leading an expository study: staying close to the text, letting it set the agenda, and trusting that careful reading of Isaiah will do its own powerful work.",
+    "description"      :"Isaiah is one of the longest and most theologically rich books in the Old Testament. It spans judgment and comfort, exile and return, the failure of kings and the coming of the perfect King. At its heart is a question that echoes across every chapter: <em>In whom will you trust?</em><blockquote>’Do you not know? Have you not heard? The Lord is the everlasting God, the Creator of the ends of the earth.’ (Isaiah 40:28)</blockquote>These leaders notes are designed to help you guide a group through Isaiah’s great themes — from the opening accusations of chapter 1 to the vision of new creation in chapters 65–66. They assume you are leading an expository study: staying close to the text, letting it set the agenda, and trusting that careful reading of Isaiah will do its own powerful work.",
     "author"           :"Julie Rowbory",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Isaiah" }],
     "estudyFileVersion":3,
@@ -42,8 +42,7 @@
     "dm-text-mid"     :"#b8bbd4",
     "dm-text-faint"   :"#6a6d8a"
   },
-  "chapters":[
-  ],
+  "chapters"             :[],
   "studyOnboardingSlides":[
     {
       "icon"   :"📖",
@@ -157,18 +156,18 @@
   },
   "leadersNotesData":{
     "format":"HTML",
-    "intro":[
+    "intro" :[
       "These notes are written for leaders guiding a group through an expository study of Isaiah. The study covers all 66 chapters across a substantial number of sessions — so it is a significant commitment. That depth is worth it. Isaiah is not a book to skim. Its themes build across chapters, its imagery recurs and deepens, and the payoff for patient, careful reading is considerable.",
       "<strong>Isaiah is structured, not random.</strong> The book falls broadly into two halves (chs 1–39 and 40–66), with chapters 36–39 forming a historical bridge. The first half focuses on judgment — on Israel, Judah, and the surrounding nations — with glimpses of hope. The second half opens with the great consolation of chapter 40 and moves steadily toward the vision of new creation in chapters 65–66. Within that, chapters 1–5 serve as an overture, and chapters 6–12 introduce the theme of the King. The Servant Songs (42, 49, 50, 52–53) are the theological heartbeat of the second half. Keep this map in mind as you lead — knowing where you are in the structure helps you help your group see the bigger picture.",
-      "<strong>The background and historical notes in each session are for you, not necessarily for the group.</strong> Isaiah's ministry spans the reigns of Uzziah, Jotham, Ahaz, and Hezekiah (roughly 740–700 BC), and the historical and political context matters for understanding what Isaiah was saying and to whom. You don't need to deliver this as a lecture — but knowing it will help you answer questions confidently and redirect the group when they get lost in unfamiliar names and places.",
-      "<strong>Let the big idea do its work before moving to application.</strong> Each session has a 'Big Idea' statement. These are not chapter summaries — they are the theological claim the passage is making. Spend time helping the group grasp and feel the weight of that claim before asking how it applies. Application that arrives too early tends to be superficial. Application that comes after genuine engagement with the text tends to be transformative.",
-      "<strong>Cross-references to the New Testament are real and important — but don't rush there.</strong> Isaiah is one of the most quoted Old Testament books in the New Testament, and the connections (especially in the Servant Songs and chapters 40–55) are theologically profound. But Isaiah's first task was to speak to his own generation. Help your group hear that voice first. The New Testament connections will mean far more when they are introduced after the Old Testament text has done its own work.",
+      "<strong>The background and historical notes in each session are for you, not necessarily for the group.</strong> Isaiah’s ministry spans the reigns of Uzziah, Jotham, Ahaz, and Hezekiah (roughly 740–700 BC), and the historical and political context matters for understanding what Isaiah was saying and to whom. You don’t need to deliver this as a lecture — but knowing it will help you answer questions confidently and redirect the group when they get lost in unfamiliar names and places.",
+      "<strong>Let the big idea do its work before moving to application.</strong> Each session has a ’Big Idea’ statement. These are not chapter summaries — they are the theological claim the passage is making. Spend time helping the group grasp and feel the weight of that claim before asking how it applies. Application that arrives too early tends to be superficial. Application that comes after genuine engagement with the text tends to be transformative.",
+      "<strong>Cross-references to the New Testament are real and important — but don’t rush there.</strong> Isaiah is one of the most quoted Old Testament books in the New Testament, and the connections (especially in the Servant Songs and chapters 40–55) are theologically profound. But Isaiah’s first task was to speak to his own generation. Help your group hear that voice first. The New Testament connections will mean far more when they are introduced after the Old Testament text has done its own work.",
       "<strong>Encourage your group to read ahead.</strong> These are long passages — sometimes multiple chapters at a time. Groups that have read the passage before the session will engage far more richly than those coming to it cold. Even a brief skim is better than nothing. The notes suggest reading assignments where appropriate.",
-      "<strong>Watch for these recurring themes across the study:</strong> (1) The danger of trusting in the wrong things — other nations, military power, political alliances, idols, or mere humans. (2) The holiness and absolute sovereignty of the Lord. (3) The Lord's use of pagan nations as instruments of his judgment, and his subsequent judgment of those nations. (4) The remnant — a faithful few who survive and inherit the promises. (5) The coming King and Servant — who begins to take shape from chapter 7 onwards and comes into sharp focus in chapters 52–53. (6) The gathering of the nations into the people of God. Keep these threads visible as you lead."
+      "<strong>Watch for these recurring themes across the study:</strong> (1) The danger of trusting in the wrong things — other nations, military power, political alliances, idols, or mere humans. (2) The holiness and absolute sovereignty of the Lord. (3) The Lord’s use of pagan nations as instruments of his judgment, and his subsequent judgment of those nations. (4) The remnant — a faithful few who survive and inherit the promises. (5) The coming King and Servant — who begins to take shape from chapter 7 onwards and comes into sharp focus in chapters 52–53. (6) The gathering of the nations into the people of God. Keep these threads visible as you lead."
     ],
     "bookOverview":{
-      "format":"HTML",
-      "header":"About Isaiah",
+      "format"  :"HTML",
+      "header"  :"About Isaiah",
       "sections":[
         {
           "title":"The prophet and his time",
@@ -176,15 +175,15 @@
         },
         {
           "title":"The structure of the book",
-          "body" :"<p>Isaiah divides broadly into two halves:</p><p><strong>Chapters 1–39</strong> are dominated by oracles of judgment — against Judah and Jerusalem (1–12), against surrounding nations (13–23), with a cosmic 'apocalypse' in 24–27 and a closing historical section (36–39). Even within this predominantly dark section, there are stunning flashes of hope: the vision of the nations streaming to God's mountain (2:1–5), the promise of Immanuel (7:14), the child of 9:6–7, the shoot from Jesse's stump (11:1), and the servant's mission (42:1–4).</p><p><strong>Chapters 40–66</strong> open with the great consolation oracle ('Comfort, comfort my people,' 40:1) and are addressed primarily to the exiles in Babylon — though this is a future Isaiah is seeing prophetically, not one he himself experienced. These chapters emphasise the incomparable greatness of the Lord, the emptiness of idols, the coming of Cyrus as the Lord's instrument of return (44–45), the four Servant Songs (42, 49, 50, 52–53), and the final vision of new creation (65–66).</p><p><strong>Chapters 36–39</strong> form a historical hinge, drawing on 2 Kings 18–20, describing the Assyrian crisis under Hezekiah and Hezekiah's illness — and closing with the ominous Babylonian embassy that points forward to the exile.</p>"
+          "body" :"<p>Isaiah divides broadly into two halves:</p><p><strong>Chapters 1–39</strong> are dominated by oracles of judgment — against Judah and Jerusalem (1–12), against surrounding nations (13–23), with a cosmic ’apocalypse’ in 24–27 and a closing historical section (36–39). Even within this predominantly dark section, there are stunning flashes of hope: the vision of the nations streaming to God’s mountain (2:1–5), the promise of Immanuel (7:14), the child of 9:6–7, the shoot from Jesse’s stump (11:1), and the servant’s mission (42:1–4).</p><p><strong>Chapters 40–66</strong> open with the great consolation oracle (‘Comfort, comfort my people,‘ 40:1) and are addressed primarily to the exiles in Babylon — though this is a future Isaiah is seeing prophetically, not one he himself experienced. These chapters emphasise the incomparable greatness of the Lord, the emptiness of idols, the coming of Cyrus as the Lord’s instrument of return (44–45), the four Servant Songs (42, 49, 50, 52–53), and the final vision of new creation (65–66).</p><p><strong>Chapters 36–39</strong> form a historical hinge, drawing on 2 Kings 18–20, describing the Assyrian crisis under Hezekiah and Hezekiah’s illness — and closing with the ominous Babylonian embassy that points forward to the exile.</p>"
         },
         {
           "title":"Key themes",
-          "body" :"<p><strong>The holiness of the Lord.</strong> The foundational vision of chapter 6 — 'Holy, holy, holy is the Lord Almighty' — sets the theological tone for the whole book. Isaiah's favourite title for God is 'the Holy One of Israel,' appearing over 25 times. The Lord's holiness is the reason judgment is inevitable and the reason grace is astonishing.</p><p><strong>Trust and idolatry.</strong> The central question of Isaiah is: in whom will you trust? The people are constantly tempted to trust in Egypt, Assyria, political alliances, their own military strength, or handmade idols — anything but the Lord. Isaiah exposes these false securities with devastating irony, especially in chapters 40–48.</p><p><strong>Judgment and restoration.</strong> Isaiah holds both with extraordinary tension. The same Lord who declares devastating judgment on his people promises to comfort, restore, and gather them. Judgment is never the last word — but it is always a real word. The 'remnant' theme (a faithful few who survive) holds these together.</p><p><strong>The coming King and Servant.</strong> Beginning with Immanuel in chapter 7, Isaiah traces a developing portrait of a coming deliverer: the child of 9:6–7, the Branch of 11:1, the Servant of 42, 49, 50, and 52–53. The Servant Songs reach their climax in the substitutionary suffering of 52:13–53:12, one of the most astonishing texts in the whole Old Testament.</p><p><strong>The nations.</strong> Isaiah has a remarkably universal horizon. The nations are under God's judgment, but they are also the object of his saving purposes. The vision of the nations streaming to God's mountain (2:1–5), the inclusion of Egypt and Assyria alongside Israel (19:24–25), and the Servant bringing justice to the nations (42:1–4) all point forward to the global scope of the gospel.</p>"
+          "body" :"<p><strong>The holiness of the Lord.</strong> The foundational vision of chapter 6 — ‘Holy, holy, holy is the Lord Almighty’ — sets the theological tone for the whole book. Isaiah’s favourite title for God is ’the Holy One of Israel,‘ appearing over 25 times. The Lord’s holiness is the reason judgment is inevitable and the reason grace is astonishing.</p><p><strong>Trust and idolatry.</strong> The central question of Isaiah is: in whom will you trust? The people are constantly tempted to trust in Egypt, Assyria, political alliances, their own military strength, or handmade idols — anything but the Lord. Isaiah exposes these false securities with devastating irony, especially in chapters 40–48.</p><p><strong>Judgment and restoration.</strong> Isaiah holds both with extraordinary tension. The same Lord who declares devastating judgment on his people promises to comfort, restore, and gather them. Judgment is never the last word — but it is always a real word. The ’remnant’ theme (a faithful few who survive) holds these together.</p><p><strong>The coming King and Servant.</strong> Beginning with Immanuel in chapter 7, Isaiah traces a developing portrait of a coming deliverer: the child of 9:6–7, the Branch of 11:1, the Servant of 42, 49, 50, and 52–53. The Servant Songs reach their climax in the substitutionary suffering of 52:13–53:12, one of the most astonishing texts in the whole Old Testament.</p><p><strong>The nations.</strong> Isaiah has a remarkably universal horizon. The nations are under God’s judgment, but they are also the object of his saving purposes. The vision of the nations streaming to God’s mountain (2:1–5), the inclusion of Egypt and Assyria alongside Israel (19:24–25), and the Servant bringing justice to the nations (42:1–4) all point forward to the global scope of the gospel.</p>"
         },
         {
           "title":"A note on authorship",
-          "body" :"<p>Some scholars argue that Isaiah 40–66 was written by a different author (or authors) after the Babylonian exile — on the grounds that it addresses exiles and names Cyrus as the Lord's instrument over a century before Cyrus lived (44:28; 45:1). Others argue the unity of the book, the consistent theological themes, and the testimony of the New Testament (which attributes both halves to 'Isaiah') support single authorship — and that the predictive specificity of the Cyrus prophecy is, on a canonical reading, precisely the point: the Lord knows the end from the beginning (41:22–23; 46:10).</p><p>You do not need to resolve this debate to lead the study well. What matters for our purposes is to read the text as it stands — attentive to both its historical rootedness and its remarkable prophetic reach. The notes use 'Isaiah' throughout to refer to the book as a unified whole.</p>"
+          "body" :"<p>Some scholars argue that Isaiah 40–66 was written by a different author (or authors) after the Babylonian exile — on the grounds that it addresses exiles and names Cyrus as the Lord’s instrument over a century before Cyrus lived (44:28; 45:1). Others argue the unity of the book, the consistent theological themes, and the testimony of the New Testament (which attributes both halves to ’Isaiah’) support single authorship — and that the predictive specificity of the Cyrus prophecy is, on a canonical reading, precisely the point: the Lord knows the end from the beginning (41:22–23; 46:10).</p><p>You do not need to resolve this debate to lead the study well. What matters for our purposes is to read the text as it stands — attentive to both its historical rootedness and its remarkable prophetic reach. The notes use ’Isaiah’ throughout to refer to the book as a unified whole.</p>"
         }
       ]
     },
@@ -192,33 +191,33 @@
       {
         "chapterNumber":1,
         "format"       :"HTML",
-        "title"        :"Isaiah 1 — The Lord Exposes His People's Sin",
-        "bigIdea"      :"The Lord exposes his people's sin and promises both judgment and restoration.",
+        "title"        :"Isaiah 1 — The Lord Exposes His People’s Sin",
+        "bigIdea"      :"The Lord exposes his people’s sin and promises both judgment and restoration.",
         "passage"      :"Isaiah 1",
         "background"   :{
           "subtype":"standard",
           "header" :"Background",
-          "body"   :"<p>Chapter 1 functions as an <strong>overture</strong> to the whole book of Isaiah. Many of the themes introduced here — the Lord's indictment of his people, the futility of empty religion, the call to justice, the offer of cleansing, the promise of judgment and restoration — will recur throughout chapters 1–66. It is worth slowing down here and allowing the group to feel the weight of the opening before pressing on.</p><p><strong>Isaiah's time (v1).</strong> Isaiah ministered during the reigns of Uzziah (also called Azariah), Jotham, Ahaz, and Hezekiah — kings of Judah, roughly 740–700 BC. The northern kingdom of Israel was a separate entity during this period and fell to Assyria in 722 BC. Isaiah's prophetic focus is specifically on <strong>Judah and Jerusalem</strong>.</p><p>If you haven't done so already, it is worth encouraging your group to spend some time before the next session skimming through <strong>2 Kings 15–20</strong> and <strong>2 Chronicles 26–32</strong> — the historical background to Isaiah's ministry. Key things to draw out: even under 'good' kings, the people were not wholeheartedly worshipping the Lord; idolatry persisted; Assyria was a massive and growing military threat; and the temptation to appease foreign powers rather than trust the Lord was constant.</p><p><strong>The covenant framework.</strong> The accusations in this chapter cannot be understood apart from the covenant relationship the Lord has with Israel. Israel is the Lord's 'son' (v2), brought up and cared for — like a parent's child. Their rebellion is therefore not just moral failure but a personal betrayal of an intimate relationship. The covenant curses of Deuteronomy 28 (referenced in question 6) form the legal backdrop: the Lord had warned his people explicitly that this is what unfaithfulness would look like.</p><p><strong>The Sodom and Gomorrah comparison (vv9–10).</strong> This is deliberately shocking. In v9, the people are <em>like</em> Sodom — they have been left with only a remnant of survivors, otherwise they would have been obliterated. But in v10, the Lord addresses them <em>as</em> Sodom — because their wickedness has made them functionally indistinguishable. The juxtaposition is jarring by design.</p><p><strong>Religion without justice (vv11–17).</strong> The Lord's rejection of the people's sacrifices and festivals is one of the most striking passages in the whole Old Testament. The point is not that sacrifice was wrong — the Lord had commanded it — but that sacrifice divorced from obedience and justice is not worship. It is self-deception. This prophetic critique runs through Amos, Micah, Hosea, and Jeremiah, and Jesus picks it up in the Sermon on the Mount and the cleansing of the temple.</p><p><strong>The offer of cleansing (vv18–20).</strong> After the devastating indictment, this offer is startling. The Lord does not simply condemn — he calls. 'Come now, let us reason together.' The possibility of complete cleansing is held open. But the condition is real: willingness and obedience.</p>"
+          "body"   :"<p>Chapter 1 functions as an <strong>overture</strong> to the whole book of Isaiah. Many of the themes introduced here — the Lord’s indictment of his people, the futility of empty religion, the call to justice, the offer of cleansing, the promise of judgment and restoration — will recur throughout chapters 1–66. It is worth slowing down here and allowing the group to feel the weight of the opening before pressing on.</p><p><strong>Isaiah’s time (v1).</strong> Isaiah ministered during the reigns of Uzziah (also called Azariah), Jotham, Ahaz, and Hezekiah — kings of Judah, roughly 740–700 BC. The northern kingdom of Israel was a separate entity during this period and fell to Assyria in 722 BC. Isaiah’s prophetic focus is specifically on <strong>Judah and Jerusalem</strong>.</p><p>If you haven’t done so already, it is worth encouraging your group to spend some time before the next session skimming through <strong>2 Kings 15–20</strong> and <strong>2 Chronicles 26–32</strong> — the historical background to Isaiah’s ministry. Key things to draw out: even under ’good’ kings, the people were not wholeheartedly worshipping the Lord; idolatry persisted; Assyria was a massive and growing military threat; and the temptation to appease foreign powers rather than trust the Lord was constant.</p><p><strong>The covenant framework.</strong> The accusations in this chapter cannot be understood apart from the covenant relationship the Lord has with Israel. Israel is the Lord’s ’son’ (v2), brought up and cared for — like a parent’s child. Their rebellion is therefore not just moral failure but a personal betrayal of an intimate relationship. The covenant curses of Deuteronomy 28 (referenced in question 6) form the legal backdrop: the Lord had warned his people explicitly that this is what unfaithfulness would look like.</p><p><strong>The Sodom and Gomorrah comparison (vv9–10).</strong> This is deliberately shocking. In v9, the people are <em>like</em> Sodom — they have been left with only a remnant of survivors, otherwise they would have been obliterated. But in v10, the Lord addresses them <em>as</em> Sodom — because their wickedness has made them functionally indistinguishable. The juxtaposition is jarring by design.</p><p><strong>Religion without justice (vv11–17).</strong> The Lord’s rejection of the people’s sacrifices and festivals is one of the most striking passages in the whole Old Testament. The point is not that sacrifice was wrong — the Lord had commanded it — but that sacrifice divorced from obedience and justice is not worship. It is self-deception. This prophetic critique runs through Amos, Micah, Hosea, and Jeremiah, and Jesus picks it up in the Sermon on the Mount and the cleansing of the temple.</p><p><strong>The offer of cleansing (vv18–20).</strong> After the devastating indictment, this offer is startling. The Lord does not simply condemn — he calls. ’Come now, let us reason together.’ The possibility of complete cleansing is held open. But the condition is real: willingness and obedience.</p>"
         },
-        "keyPoints"   :{
+        "keyPoints":{
           "subtype":"standard",
           "header" :"Key Teaching Points",
-          "body"   :"<p><strong>The Lord is the one speaking.</strong> The chapter opens with the Lord calling heaven and earth as witnesses against his people (v2). This is a legal and covenantal framework — the Lord is not simply venting frustration but making a formal indictment. It gives the whole chapter a solemn, weighty tone. Don't rush past the drama of the opening.</p><p><strong>Sin is a relational betrayal, not just rule-breaking.</strong> The Lord's grief in vv2–3 is not primarily legal but personal. 'Children I have reared and brought up — they have rebelled against me.' Even animals know their master better than Israel knows the Lord. This relational framing is crucial: the problem is not primarily that Israel has broken rules but that they have rejected the one who loves them.</p><p><strong>External religion can coexist with deep corruption.</strong> The people in vv11–15 are very religious. They sacrifice, pray, observe festivals, and appear before the Lord. But their hands are 'full of blood' (v15) — they are pursuing injustice, exploiting the vulnerable, and living in fundamental contradiction to what they profess. This is one of the most uncomfortable passages in Isaiah precisely because it diagnoses a form of religion that can look entirely normal from the outside.</p><p><strong>True religion shows in social justice.</strong> What the Lord actually wants (vv16–17) is not more or better sacrifice — it is right action: 'Seek justice, defend the oppressed, take up the cause of the fatherless, plead the case of the widow.' This is not an alternative to faith but its fruit. The group may need to sit with this — especially if they are used to thinking of faith primarily in terms of personal devotion.</p><p><strong>The Lord both judges and restores.</strong> The chapter holds both promises together. Judgment is coming — the city that was 'faithful' has become a 'prostitute' (v21), and the Lord will purge it. But beyond the purging lies restoration: 'Afterward you will be called the City of Righteousness, the Faithful City' (v26). This pattern of judgment-then-restoration is the backbone of the whole book.</p>"
+          "body"   :"<p><strong>The Lord is the one speaking.</strong> The chapter opens with the Lord calling heaven and earth as witnesses against his people (v2). This is a legal and covenantal framework — the Lord is not simply venting frustration but making a formal indictment. It gives the whole chapter a solemn, weighty tone. Don’t rush past the drama of the opening.</p><p><strong>Sin is a relational betrayal, not just rule-breaking.</strong> The Lord’s grief in vv2–3 is not primarily legal but personal. ’Children I have reared and brought up — they have rebelled against me.’ Even animals know their master better than Israel knows the Lord. This relational framing is crucial: the problem is not primarily that Israel has broken rules but that they have rejected the one who loves them.</p><p><strong>External religion can coexist with deep corruption.</strong> The people in vv11–15 are very religious. They sacrifice, pray, observe festivals, and appear before the Lord. But their hands are ’full of blood’ (v15) — they are pursuing injustice, exploiting the vulnerable, and living in fundamental contradiction to what they profess. This is one of the most uncomfortable passages in Isaiah precisely because it diagnoses a form of religion that can look entirely normal from the outside.</p><p><strong>True religion shows in social justice.</strong> What the Lord actually wants (vv16–17) is not more or better sacrifice — it is right action: ‘Seek justice, defend the oppressed, take up the cause of the fatherless, plead the case of the widow.’ This is not an alternative to faith but its fruit. The group may need to sit with this — especially if they are used to thinking of faith primarily in terms of personal devotion.</p><p><strong>The Lord both judges and restores.</strong> The chapter holds both promises together. Judgment is coming — the city that was ’faithful’ has become a ’prostitute’ (v21), and the Lord will purge it. But beyond the purging lies restoration: ‘Afterward you will be called the City of Righteousness, the Faithful City’ (v26). This pattern of judgment-then-restoration is the backbone of the whole book.</p>"
         },
-        "exegetical"  :{
+        "exegetical":{
           "subtype":"standard",
           "header" :"Exegetical Notes",
-          "body"   :"<p><strong>'The ox knows its owner, the donkey its master's manger' (v3).</strong> The comparison is humiliating. Domesticated animals, not known for intelligence, recognise their owners and know where their food comes from. Israel does not even reach this basic level of recognition toward the Lord who has fed and raised them. The point is not subtle — it is meant to shock.</p><p><strong>'Brood of evildoers' (v4).</strong> The word translated 'brood' (NIV) carries strongly negative connotations — it describes offspring who share the character of their corrupt parents. The sin is presented as deeply ingrained, not occasional.</p><p><strong>The wounds of vv5–6.</strong> The imagery is of someone beaten for rebellion who stubbornly gets up to rebel again, covered in untreated wounds. The stubbornness is as striking as the wounds: they are not repenting, not treating their wounds, not changing course — they are continuing in the same rebellion despite the evidence of its consequences all around them.</p><p><strong>Deuteronomy 28 and the covenant curses (v7–9).</strong> The language of vv7–9 directly echoes Deuteronomy 28:30–33, 49–57 — the covenant curses for disobedience. Desolate land, cities burned, foreigners devouring the harvest — these are not random misfortunes but the specific consequences the Lord warned about centuries before. Isaiah is pointing his hearers back to what they already knew but had forgotten.</p><p><strong>'Your hands are full of blood' (v15).</strong> This phrase appears right in the middle of the list of rejected religious observances, and it is meant to stop the reader short. The 'blood' most likely refers not to violence per se but to the social injustice detailed in vv16–23 — exploitation of the vulnerable, corruption of the legal system, neglect of the widow and orphan. Hands raised in prayer carry the guilt of those they have wronged.</p><p><strong>'Though your sins are like scarlet... white as snow' (v18).</strong> The contrast is absolute: the deepest, most visible stain against the most complete purity. This is a remarkable offer — total cleansing, not partial improvement. The condition ('if you are willing and obedient') is real, but the promise is equally real.</p><p><strong>The dross and alloy imagery (vv22–25).</strong> The Lord describes his purification as a metallurgical process — removing dross and alloy to restore pure silver. Judgment is not arbitrary destruction but purposeful refining. This is pastoral as well as forensic: the Lord's anger is in the service of his restoration project, not opposed to it.</p>"
+          "body"   :"<p><strong>’The ox knows its owner, the donkey its master’s manger’ (v3).</strong> The comparison is humiliating. Domesticated animals, not known for intelligence, recognise their owners and know where their food comes from. Israel does not even reach this basic level of recognition toward the Lord who has fed and raised them. The point is not subtle — it is meant to shock.</p><p><strong>’Brood of evildoers’ (v4).</strong> The word translated ’brood’ (NIV) carries strongly negative connotations — it describes offspring who share the character of their corrupt parents. The sin is presented as deeply ingrained, not occasional.</p><p><strong>The wounds of vv5–6.</strong> The imagery is of someone beaten for rebellion who stubbornly gets up to rebel again, covered in untreated wounds. The stubbornness is as striking as the wounds: they are not repenting, not treating their wounds, not changing course — they are continuing in the same rebellion despite the evidence of its consequences all around them.</p><p><strong>Deuteronomy 28 and the covenant curses (v7–9).</strong> The language of vv7–9 directly echoes Deuteronomy 28:30–33, 49–57 — the covenant curses for disobedience. Desolate land, cities burned, foreigners devouring the harvest — these are not random misfortunes but the specific consequences the Lord warned about centuries before. Isaiah is pointing his hearers back to what they already knew but had forgotten.</p><p><strong>’Your hands are full of blood’ (v15).</strong> This phrase appears right in the middle of the list of rejected religious observances, and it is meant to stop the reader short. The ’blood’ most likely refers not to violence per se but to the social injustice detailed in vv16–23 — exploitation of the vulnerable, corruption of the legal system, neglect of the widow and orphan. Hands raised in prayer carry the guilt of those they have wronged.</p><p><strong>’Though your sins are like scarlet... white as snow’ (v18).</strong> The contrast is absolute: the deepest, most visible stain against the most complete purity. This is a remarkable offer — total cleansing, not partial improvement. The condition (‘if you are willing and obedient’) is real, but the promise is equally real.</p><p><strong>The dross and alloy imagery (vv22–25).</strong> The Lord describes his purification as a metallurgical process — removing dross and alloy to restore pure silver. Judgment is not arbitrary destruction but purposeful refining. This is pastoral as well as forensic: the Lord’s anger is in the service of his restoration project, not opposed to it.</p>"
         },
-        "pastorals"   :{
+        "pastorals":{
           "subtype":"standard",
           "header" :"Pastoral Sensitivities",
-          "body"   :"<p>The exposure of <strong>empty religion</strong> in this chapter is one of the most uncomfortable things a church group can encounter — because it describes people who are going to church, praying, and following religious routines while their hearts and lives are fundamentally unaligned with God. Some in your group may find this passage personally confronting. That discomfort is appropriate — don't smooth it over prematurely. But do make sure the group hears both the indictment <em>and</em> the offer of v18. The Lord is not simply condemning; he is calling.</p><p>The emphasis on <strong>justice for the vulnerable</strong> (v17) may be challenging in different ways for different people. Some will find it uncomfortably specific — 'defend the oppressed, take up the cause of the fatherless, plead the case of the widow' is concrete language. Others may want to reduce it to a general virtue. Help the group engage with what these words might actually look like in their context, without turning the session into a political debate.</p><p>The <strong>New Testament application</strong> (question 15) is important but should come <em>after</em> the group has engaged seriously with the Old Testament passage on its own terms. The promises of chapter 1 find their fullest fulfilment in Christ — who takes the judgment, enables the cleansing, and builds the Faithful City. But rush there too early and you lose the weight of the original text.</p>"
+          "body"   :"<p>The exposure of <strong>empty religion</strong> in this chapter is one of the most uncomfortable things a church group can encounter — because it describes people who are going to church, praying, and following religious routines while their hearts and lives are fundamentally unaligned with God. Some in your group may find this passage personally confronting. That discomfort is appropriate — don’t smooth it over prematurely. But do make sure the group hears both the indictment <em>and</em> the offer of v18. The Lord is not simply condemning; he is calling.</p><p>The emphasis on <strong>justice for the vulnerable</strong> (v17) may be challenging in different ways for different people. Some will find it uncomfortably specific — ‘defend the oppressed, take up the cause of the fatherless, plead the case of the widow’ is concrete language. Others may want to reduce it to a general virtue. Help the group engage with what these words might actually look like in their context, without turning the session into a political debate.</p><p>The <strong>New Testament application</strong> (question 15) is important but should come <em>after</em> the group has engaged seriously with the Old Testament passage on its own terms. The promises of chapter 1 find their fullest fulfilment in Christ — who takes the judgment, enables the cleansing, and builds the Faithful City. But rush there too early and you lose the weight of the original text.</p>"
         },
-        "watch"       :{
+        "watch":{
           "subtype":"highlighted",
           "header" :"Things to watch for",
-          "body"   :"👁️ Watch for a tendency to locate the empty religion of vv11–15 safely in the ancient past ('those Jews') rather than asking what its equivalent looks like today. The diagnosis — religious practice without justice, worship without corresponding life — is entirely portable. Keep the group's gaze moving from the text to the present."
+          "body"   :"👁️ Watch for a tendency to locate the empty religion of vv11–15 safely in the ancient past (‘those Jews’) rather than asking what its equivalent looks like today. The diagnosis — religious practice without justice, worship without corresponding life — is entirely portable. Keep the group’s gaze moving from the text to the present."
         },
         "questions":[
           {
@@ -232,106 +231,826 @@
             "questionNumber":2,
             "verses"        :"(2 Kings 15–20; 2 Chronicles 26–32)",
             "header"        :"Isaiah and his time",
-            "question"      :"Divide into groups and spend a few minutes skimming through 2 Kings 15–20 and 2 Chronicles 26–32. (Have one group look at Kings and the other at Chronicles.) What were some of the main events and issues of Isaiah's time?",
-            "answer"        :"There is a lot to draw out here. Some of the main things: even during the reigns of 'good' kings, the people were not wholeheartedly worshipping the Lord and idolatry persisted. Assyria is a massive and growing political threat, and there is constant temptation to appease the Assyrians through diplomacy rather than trusting the Lord. During this period the northern kingdom of Israel is overwhelmed by Assyria and disappears from the pages of history. Encourage everyone to re-read these passages in their own time before the next session.",
-            "leaderNote"    :"This question works well as a group exercise — splitting Kings and Chronicles between two subgroups makes for a more energetic comparison. Don't let it take more than 5–7 minutes before drawing the findings together."
+            "question"      :"Divide into groups and spend a few minutes skimming through 2 Kings 15–20 and 2 Chronicles 26–32. (Have one group look at Kings and the other at Chronicles.) What were some of the main events and issues of Isaiah’s time?",
+            "answer"        :"There is a lot to draw out here. Some of the main things: even during the reigns of ’good’ kings, the people were not wholeheartedly worshipping the Lord and idolatry persisted. Assyria is a massive and growing political threat, and there is constant temptation to appease the Assyrians through diplomacy rather than trusting the Lord. During this period the northern kingdom of Israel is overwhelmed by Assyria and disappears from the pages of history. Encourage everyone to re-read these passages in their own time before the next session.",
+            "leaderNote"    :"This question works well as a group exercise — splitting Kings and Chronicles between two subgroups makes for a more energetic comparison. Don’t let it take more than 5–7 minutes before drawing the findings together."
           },
           {
             "questionNumber":3,
             "verses"        :"1:2–3",
-            "header"        :"God's people are rebels",
-            "question"      :"What is so unnatural about Israel's relationship to the Lord? (vv2–3)",
-            "answer"        :"The people are the Lord's children, brought up by him like a loving parent. The natural and expected state of things would be that they love, respect, and obey him as a child would their father — but they have rebelled. Even animals know their masters better than Israel knows the Lord. This is meant to be shocking: the comparison to ox and donkey is deliberately humiliating."
+            "header"        :"God’s people are rebels",
+            "question"      :"What is so unnatural about Israel’s relationship to the Lord? (vv2–3)",
+            "answer"        :"The people are the Lord’s children, brought up by him like a loving parent. The natural and expected state of things would be that they love, respect, and obey him as a child would their father — but they have rebelled. Even animals know their masters better than Israel knows the Lord. This is meant to be shocking: the comparison to ox and donkey is deliberately humiliating."
           },
           {
             "questionNumber":4,
             "verses"        :"1:4",
-            "header"        :"God's people are rebels",
+            "header"        :"God’s people are rebels",
             "question"      :"How is Israel described here? What hints do we get as to their main sin? (v4)",
-            "answer"        :"Sinful, laden with guilt, evildoers, corrupt. The word translated 'brood' carries strongly negative connotations — offspring who share the character of their corrupt parents. The main sin is their <strong>rejection of the Lord</strong> — notably, this is stated three times in different ways within the same verse."
+            "answer"        :"Sinful, laden with guilt, evildoers, corrupt. The word translated ’brood’ carries strongly negative connotations — offspring who share the character of their corrupt parents. The main sin is their <strong>rejection of the Lord</strong> — notably, this is stated three times in different ways within the same verse."
           },
           {
             "questionNumber":5,
             "verses"        :"1:5–6",
-            "header"        :"God's people are under the covenant curse",
-            "question"      :"What imagery is being used in vv5–6? What does it say about Israel's attitude?",
-            "answer"        :"The imagery seems to be of someone who has been severely beaten for rebellion but keeps stubbornly getting up to rebel again — completely covered in wounds that have not even been treated. The rebellion is entirely unnecessary, yet they stagger to their feet to repeat it even though they will be beaten again. Israel's attitude is one of <strong>complete stubbornness and refusal to repent</strong>."
+            "header"        :"God’s people are under the covenant curse",
+            "question"      :"What imagery is being used in vv5–6? What does it say about Israel’s attitude?",
+            "answer"        :"The imagery seems to be of someone who has been severely beaten for rebellion but keeps stubbornly getting up to rebel again — completely covered in wounds that have not even been treated. The rebellion is entirely unnecessary, yet they stagger to their feet to repeat it even though they will be beaten again. Israel’s attitude is one of <strong>complete stubbornness and refusal to repent</strong>."
           },
           {
             "questionNumber":6,
             "verses"        :"1:7–9",
-            "header"        :"God's people are under the covenant curse",
+            "header"        :"God’s people are under the covenant curse",
             "question"      :"Think back to Deuteronomy 28. How does that help us understand the state of things in Isaiah 1:7–9? What historical events does it seem to be referring to?",
-            "answer"        :"The people have rebelled against the Lord and turned away from him, and so have fallen under the <strong>covenant curses</strong> warned about in Deuteronomy 28 — desolate land, cities burned, foreigners devouring the harvest. Instead of people, land, and blessing, they are left with a remnant, desolation, and their land overrun by strangers. During Uzziah/Azariah's reign the northern kingdom of Israel was overrun by Assyria and its people scattered, never to return. The people of Judah are now a remnant of God's people.",
-            "leaderNote"    :"It's worth spending a moment here establishing the covenant framework if the group is unfamiliar with it — the curses and blessings of Deuteronomy 28 are the legal backdrop that makes this passage fully intelligible. Isaiah is not just diagnosing a bad situation; he is interpreting it theologically."
+            "answer"        :"The people have rebelled against the Lord and turned away from him, and so have fallen under the <strong>covenant curses</strong> warned about in Deuteronomy 28 — desolate land, cities burned, foreigners devouring the harvest. Instead of people, land, and blessing, they are left with a remnant, desolation, and their land overrun by strangers. During Uzziah/Azariah’s reign the northern kingdom of Israel was overrun by Assyria and its people scattered, never to return. The people of Judah are now a remnant of God’s people.",
+            "leaderNote"    :"It’s worth spending a moment here establishing the covenant framework if the group is unfamiliar with it — the curses and blessings of Deuteronomy 28 are the legal backdrop that makes this passage fully intelligible. Isaiah is not just diagnosing a bad situation; he is interpreting it theologically."
           },
           {
             "questionNumber":7,
             "verses"        :"1:9",
-            "header"        :"God's people are under the covenant curse",
+            "header"        :"God’s people are under the covenant curse",
             "question"      :"What distinguishes the people of God from Sodom and Gomorrah here?",
-            "answer"        :"They have been left with some survivors. Otherwise they would have been obliterated like Sodom and Gomorrah — total destruction with no remnant. The 'remnant' theme is introduced here and will run throughout Isaiah."
+            "answer"        :"They have been left with some survivors. Otherwise they would have been obliterated like Sodom and Gomorrah — total destruction with no remnant. The ’remnant’ theme is introduced here and will run throughout Isaiah."
           },
           {
             "questionNumber":8,
             "verses"        :"1:10",
-            "header"        :"God's people are like Sodom and Gomorrah",
+            "header"        :"God’s people are like Sodom and Gomorrah",
             "question"      :"Why is v10 such a shock coming directly after v9?",
-            "answer"        :"In v9, they are <em>not</em> like Sodom and Gomorrah — they still have survivors. But in v10 the Lord addresses them directly as 'rulers of Sodom' and 'people of Gomorrah'. Sodom and Gomorrah represent utter wickedness and rebellion, so it is shocking for the people of God to be addressed in those terms. The contrast between the two verses is jarring and deliberate."
+            "answer"        :"In v9, they are <em>not</em> like Sodom and Gomorrah — they still have survivors. But in v10 the Lord addresses them directly as ’rulers of Sodom’ and ’people of Gomorrah’. Sodom and Gomorrah represent utter wickedness and rebellion, so it is shocking for the people of God to be addressed in those terms. The contrast between the two verses is jarring and deliberate."
           },
           {
             "questionNumber":9,
             "verses"        :"1:11–15",
-            "header"        :"God's people are like Sodom and Gomorrah",
-            "question"      :"God's people are clearly very religious in vv11–15. What religious practices are they engaging in, and what does God say he thinks about them?",
-            "answer"        :"<em>Their practices:</em> sacrifices, burnt offerings, appearing before the Lord, incense, religious festivals, Sabbaths, prayer.<br><br><em>The Lord's response:</em> he has had enough; he takes no pleasure in them; they are meaningless, detestable, worthless; he cannot bear them; he hates them; they are burdensome; he is weary of them; he hides his eyes from them and does not listen to their prayers. The accumulation of rejections is meant to land with full force — don't summarise too quickly."
+            "header"        :"God’s people are like Sodom and Gomorrah",
+            "question"      :"God’s people are clearly very religious in vv11–15. What religious practices are they engaging in, and what does God say he thinks about them?",
+            "answer"        :"<em>Their practices:</em> sacrifices, burnt offerings, appearing before the Lord, incense, religious festivals, Sabbaths, prayer.<br><br><em>The Lord’s response:</em> he has had enough; he takes no pleasure in them; they are meaningless, detestable, worthless; he cannot bear them; he hates them; they are burdensome; he is weary of them; he hides his eyes from them and does not listen to their prayers. The accumulation of rejections is meant to land with full force — don’t summarise too quickly."
           },
           {
             "questionNumber":10,
             "verses"        :"1:15",
-            "header"        :"God's people are like Sodom and Gomorrah",
+            "header"        :"God’s people are like Sodom and Gomorrah",
             "question"      :"Why is their religion meaningless to the Lord? (v15)",
-            "answer"        :"'Your hands are full of blood.' Their lives outside the sanctuary contradict everything they do inside it. Pause on this — it is meant to shock. The image of hands raised in prayer that are also stained with the blood of injustice is one of the most arresting in the whole chapter."
+            "answer"        :"‘Your hands are full of blood.’ Their lives outside the sanctuary contradict everything they do inside it. Pause on this — it is meant to shock. The image of hands raised in prayer that are also stained with the blood of injustice is one of the most arresting in the whole chapter."
           },
           {
             "questionNumber":11,
             "verses"        :"1:16–23",
-            "header"        :"God's people are like Sodom and Gomorrah",
+            "header"        :"God’s people are like Sodom and Gomorrah",
             "question"      :"What is Israel doing that shows the true state of their hearts before the Lord? (vv16–23) What true religion does the Lord want them to demonstrate?",
-            "answer"        :"They are pursuing evil deeds, wealth through corruption, and the oppression of the poor. They have turned away from righteousness and 'prostituted' themselves (here referring to social injustice — the same image is used elsewhere of idolatry). This is why their worship is empty and detestable.<br><br>What the Lord calls them to do (v17): seek justice, defend the oppressed, take up the cause of the fatherless, plead the case of the widow. These are concrete, relational, costly actions — not additional religious observances."
+            "answer"        :"They are pursuing evil deeds, wealth through corruption, and the oppression of the poor. They have turned away from righteousness and ’prostituted’ themselves (here referring to social injustice — the same image is used elsewhere of idolatry). This is why their worship is empty and detestable.<br><br>What the Lord calls them to do (v17): seek justice, defend the oppressed, take up the cause of the fatherless, plead the case of the widow. These are concrete, relational, costly actions — not additional religious observances."
           },
           {
             "questionNumber":12,
             "verses"        :"1:18–20",
             "header"        :"A purging is coming: destruction and restoration",
             "question"      :"What does the Lord offer Judah in vv18–20? What choice is before them?",
-            "answer"        :"Utter renewal and complete cleansing of their sins — 'though your sins are like scarlet, they shall be as white as snow.' This is a remarkable, unconditional offer. But it requires willingness and obedience. If they rebel, they will be destroyed. The choice is real and the stakes could not be higher."
+            "answer"        :"Utter renewal and complete cleansing of their sins — ‘though your sins are like scarlet, they shall be as white as snow.’ This is a remarkable, unconditional offer. But it requires willingness and obedience. If they rebel, they will be destroyed. The choice is real and the stakes could not be higher."
           },
           {
             "questionNumber":13,
             "verses"        :"1:24–31",
             "header"        :"A purging is coming: destruction and restoration",
             "question"      :"What future does the Lord present Judah with? What warning is given and what hope is offered? How does the imagery help us understand the point?",
-            "answer"        :"The Lord will destroy his enemies and purge his people. Purging — like the smelting of metal to remove dross (vv25–26) — is painful but purposeful: the goal is restoration, not mere punishment. The Lord will work to make Jerusalem again 'the City of Righteousness, the Faithful City' (v26 — a direct contrast to v21). But the wicked will be destroyed like dry plants burned up. He will deliver the penitent and break those who forsake him. <strong>Judgment and restoration are both real</strong>."
+            "answer"        :"The Lord will destroy his enemies and purge his people. Purging — like the smelting of metal to remove dross (vv25–26) — is painful but purposeful: the goal is restoration, not mere punishment. The Lord will work to make Jerusalem again ’the City of Righteousness, the Faithful City’ (v26 — a direct contrast to v21). But the wicked will be destroyed like dry plants burned up. He will deliver the penitent and break those who forsake him. <strong>Judgment and restoration are both real</strong>."
           },
           {
             "questionNumber":14,
             "verses"        :"1:1–31",
             "header"        :"Application",
-            "question"      :"What does this passage teach us about how the people of God can measure the state of their hearts? What was the real sign of Israel's attitude? What is the real sign of true faith and humility in the people of God today? How does true faith show itself?",
-            "answer"        :"The real sign of Israel's attitude was not what they did in the sanctuary but how they treated the vulnerable — the oppressed, the orphan, the widow. External religion can run on autopilot while the heart drifts entirely. True faith shows itself not in religious activity alone but in the alignment of worship with life — justice, honesty, care for the vulnerable. This is a diagnostic question, not a rhetorical one: help the group take it personally.",
-            "leaderNote"    :"This application question benefits from concrete, specific discussion. Don't let it stay theoretical. Ask: what would 'defending the oppressed' and 'pleading the case of the widow' look like specifically in our context? What might 'hands full of blood' look like for us?"
+            "question"      :"What does this passage teach us about how the people of God can measure the state of their hearts? What was the real sign of Israel’s attitude? What is the real sign of true faith and humility in the people of God today? How does true faith show itself?",
+            "answer"        :"The real sign of Israel’s attitude was not what they did in the sanctuary but how they treated the vulnerable — the oppressed, the orphan, the widow. External religion can run on autopilot while the heart drifts entirely. True faith shows itself not in religious activity alone but in the alignment of worship with life — justice, honesty, care for the vulnerable. This is a diagnostic question, not a rhetorical one: help the group take it personally.",
+            "leaderNote"    :"This application question benefits from concrete, specific discussion. Don’t let it stay theoretical. Ask: what would ’defending the oppressed’ and ’pleading the case of the widow’ look like specifically in our context? What might ’hands full of blood’ look like for us?"
           },
           {
             "questionNumber":15,
             "verses"        :"1:18–20, 24–31",
             "header"        :"Application",
-            "question"      :"What did the people of God need for real change to occur? How did the Lord promise to do that? How do we see this play out in the life of God's people and in our lives? How are the promises of this passage fulfilled in the New Testament?",
-            "answer"        :"The people needed both cleansing (forgiveness of sin) and purging (refining judgment to remove the corrupting elements from within the community). The Lord promised to do this himself — through the refining process of judgment and through the restoration that follows. In the New Testament, this is ultimately fulfilled in Christ: he takes the judgment, provides the cleansing (1 John 1:7), and builds the true 'City of Righteousness' — the church, and ultimately the new creation. The 'faithful city' of Isaiah 1:26 finds its fulfilment in the New Jerusalem of Revelation 21.",
-            "leaderNote"    :"The New Testament connection is real and rich, but make sure the group has sat with the Old Testament text first. The weight of Christ's atoning work means more when the group has felt the full force of the indictment — and the wonder of v18 ('though your sins are like scarlet, they shall be as white as snow') — before moving to its fulfilment."
+            "question"      :"What did the people of God need for real change to occur? How did the Lord promise to do that? How do we see this play out in the life of God’s people and in our lives? How are the promises of this passage fulfilled in the New Testament?",
+            "answer"        :"The people needed both cleansing (forgiveness of sin) and purging (refining judgment to remove the corrupting elements from within the community). The Lord promised to do this himself — through the refining process of judgment and through the restoration that follows. In the New Testament, this is ultimately fulfilled in Christ: he takes the judgment, provides the cleansing (1 John 1:7), and builds the true ’City of Righteousness’ — the church, and ultimately the new creation. The ’faithful city’ of Isaiah 1:26 finds its fulfilment in the New Jerusalem of Revelation 21.",
+            "leaderNote"    :"The New Testament connection is real and rich, but make sure the group has sat with the Old Testament text first. The weight of Christ’s atoning work means more when the group has felt the full force of the indictment — and the wonder of v18 (‘though your sins are like scarlet, they shall be as white as snow’) — before moving to its fulfilment."
+          }
+        ]
+      },
+      {
+        "chapterNumber": 2,
+        "format": "HTML",
+        "title": "Isaiah 2–4 — The Lord Will Shake the Earth",
+        "bigIdea": "The Lord will shake the earth with his fearful presence, so trust in his cleansing work through his Branch and walk in his ways as we await a glorious future in his presence.",
+        "passage": "Isaiah 2–4",
+        "background": {
+          "subtype": "standard",
+          "header": "Background",
+          "body": "<p>Chapters 2–4 continue the introductory section (chs 1–5). They function as a triptych: a glorious vision of the future (2:1–5), a terrifying picture of coming judgment (2:6–4:1), and then a return to hope through the Branch (4:2–6). The <strong>bookend structure</strong> is deliberate — the vision of glory at the start and end frames the dark middle, making the point that judgment is not the final word.</p><p><strong>The parallel with Micah 4:1–5.</strong> The opening vision (2:1–5) is almost identical to Micah 4:1–5. Both prophets were active in Jerusalem at roughly the same time. Alec Motyer argues the language fits better with Isaiah and that Micah was quoting. What is clear is that the Lord wanted this message heard with emphasis: the vision of the nations streaming to Zion is a foundational promise, not a footnote.</p><p><strong>The court scene of chapter 3.</strong> Chapter 3 is best understood as a <strong>courtroom drama</strong>: the Lord sits as judge, the leaders and elders are in the dock, and the charge is the ruin of his vineyard. The notes suggest approaching chapter 3 thematically around this metaphor rather than linearly.</p><p><strong>The Branch of the Lord (4:2).</strong> This is the first appearance of one of Isaiah’s key messianic titles. The ‘Branch’ reappears in Isaiah 11:1 and is picked up by Jeremiah (23:5–6; 33:15–16) as a title for the coming Davidic king who rules in righteousness. The juxtaposition with the stripping of the proud women in chapter 3 is deliberate: true beauty and glory come not from worldly wealth but from the Branch of the Lord.</p><p><strong>The glory-cloud of 4:5–6.</strong> The imagery deliberately echoes the Exodus (Exodus 13:21–22). But here the scope is vastly expanded: rather than the glory being concentrated on the ark or tabernacle, it covers all of Mount Zion and all who dwell there. The Lord’s presence as the ultimate security of his people finds its fulfilment in Revelation 21.</p>"
+        },
+        "keyPoints": {
+          "subtype": "standard",
+          "header": "Key Teaching Points",
+          "body": "<p><strong>The glorious future is for all nations, not just Israel.</strong> The vision of 2:1–5 is strikingly universal. Help the group feel the breathtaking scope before moving into the darkness that follows.</p><p><strong>The present reality is the exact opposite of the future promise.</strong> The Lord has ‘abandoned his people’ (2:6) because they are full of idolatry, obsession with wealth and military power, and superstition. Everything they are ‘full of’ (v8) is empty.</p><p><strong>The Lord’s judgment is the humbling of everything that exalts itself.</strong> The threefold refrain — ‘flee from the fearful presence of the Lord’ (vv10, 19, 21) — and the double declaration that ‘the Lord alone will be exalted in that day’ (vv11, 17) make the central point unmissable: the Lord will not share his glory with anything or anyone.</p><p><strong>The Branch of 4:2 is the answer to the bankruptcy of chapter 3.</strong> Chapter 3 depicts corrupt leaders, proud oppressive women, and a people stripped of everything they trusted. Into that vacuum comes the Branch — true leadership, true beauty, true glory.</p><p><strong>Security is found only in the Lord’s presence.</strong> The session ends (4:5–6) not with a programme but with a presence: the Lord himself as cloud and fire, shelter and shade, refuge and hiding place.</p>"
+        },
+        "exegetical": {
+          "subtype": "standard",
+          "header": "Exegetical Notes",
+          "body": "<p><strong>‘In the last days’ (2:2).</strong> This introduces a prophetic horizon that is both near and far. The NT applies this to the time inaugurated by Christ’s coming (Acts 2:17; Hebrews 1:2). The vision of Isaiah 2:1–5 is already being fulfilled as the nations are drawn to Jesus.</p><p><strong>The idols of silver and gold (2:20).</strong> The image of people throwing their idols to the moles and bats is sharply ironic. Both creatures live underground or in caves — exactly where the idolaters themselves are hiding from the Lord. The gods they made are going to the same dark holes as their makers.</p><p><strong>‘Stop trusting in mere mortals’ (2:22).</strong> This functions as the practical conclusion to 2:6–22 and is worth highlighting as the ‘so what’ of the passage. The problem throughout has been misplaced trust; the answer is to redirect that trust to the Lord.</p><p><strong>The vineyard metaphor (3:14).</strong> The Lord accuses the leaders of ruining his ‘vineyard’ — a metaphor for the people of God developed fully in chapter 5 and picked up by Jesus in the Parable of the Tenants (Matthew 21:33–46).</p><p><strong>The Branch (4:2).</strong> The Hebrew <em>tsemach</em> (Branch/shoot) carries connotations of organic growth from humble origins. Jeremiah uses the same title: ‘I will raise up for David a righteous Branch’ (23:5). True glory grows from a different root than human pride.</p>"
+        },
+        "pastorals": {
+          "subtype": "standard",
+          "header": "Pastoral Sensitivities",
+          "body": "<p>The judgment section (2:6–4:1) is long and dense. Keep returning to the <strong>central thread</strong>: the Lord’s judgment falls on everything that exalts itself above him. The specific examples are illustrations of the same underlying pride — help the group trace the theme rather than getting bogged down in every detail.</p><p>The stripping of the proud women in 3:16–4:1 can feel uncomfortable in mixed groups. The key point is that the juxtaposition with grinding the faces of the poor (3:15) is not accidental: their luxury has been sustained by oppression. The pastoral goal is not to make women feel targeted but to help everyone engage with the passage’s diagnosis of the relationship between luxury and injustice.</p>"
+        },
+        "watch": {
+          "subtype": "highlighted",
+          "header": "Things to watch for",
+          "body": "👁️ Watch for the group spending so long on the judgment material (2:6–4:1) that they run out of time for 4:2–6. The Branch and the glory-cloud are the resolution the whole session has been building toward. If time is short, prioritise questions 12–15."
+        },
+        "questions": [
+          {
+            "questionNumber": 1,
+            "verses": "1:26–27; 2:1–5",
+            "header": "2:1–5: The nations stream to the mountain of the Lord",
+            "question": "What was the hint of future hope we saw in chapter 1? How does the prophecy at the beginning of chapter 2 elaborate on that?",
+            "answer": "Despite the warnings of judgment in chapter 1, the Lord promises restoration (1:26–27). Chapter 2 then opens with a glorious picture of all the nations flooding into God’s presence and walking in his light. Where chapter 1 ended with a purged and restored city, chapter 2 zooms out to show this restoration has a universal scope."
+          },
+          {
+            "questionNumber": 2,
+            "verses": "2:1–5",
+            "header": "2:1–5: The nations stream to the mountain of the Lord",
+            "question": "What will this glorious future be like? What are the main features?",
+            "answer": "God’s place will be exalted above everywhere else on earth; all nations will stream into his presence and learn the ways of God; the word of the Lord will go out throughout the whole world; the Lord will bring about universal peace — swords into ploughshares, spears into pruning hooks. This future is not simply for Israel but for <strong>the whole world</strong>. The passage is picked up again in Isaiah 60 and 66:20 and finds its ultimate fulfilment in Revelation 21:22–27.",
+            "leaderNote": "Some groups may ask whether this refers to the Millennium. The main point is the stunning contrast between this glorious future and the grim reality of 2:6–22 — it is not necessary to resolve the eschatological debate to feel that contrast."
+          },
+          {
+            "questionNumber": 3,
+            "verses": "2:6",
+            "header": "2:6–22: The fearful presence of the Lord in judgment",
+            "question": "How is the current reality different from the future? (v6a)",
+            "answer": "The Lord has <strong>abandoned his people</strong>. The contrast with the vision of vv1–5 could not be starker. This abandonment follows from their rejection of him detailed in vv6b–8."
+          },
+          {
+            "questionNumber": 4,
+            "verses": "2:6–8",
+            "header": "2:6–22: The fearful presence of the Lord in judgment",
+            "question": "Why has the Lord abandoned his people? (vv6b–8)",
+            "answer": "Superstition and worldly wisdom from other nations; obsession with wealth; reliance on military strength; full of idolatry. Everything they are ‘full of’ is empty. Note the sarcastic reference to idols in v8 — they are worshipping objects they made themselves. Verse 22 is the corrective: they need to put their trust in the right place."
+          },
+          {
+            "questionNumber": 5,
+            "verses": "2:9–21",
+            "header": "2:6–22: The fearful presence of the Lord in judgment",
+            "question": "What is the Lord going to do about their sin? What will his judgment be like? Look out for repetition to see what is emphasised.",
+            "answer": "The Lord will humble the proud and bring down everything that seems impressive. He will destroy idolatry. It will be terrifying. <strong>Key repetitions:</strong> the threefold call to hide from ‘the fearful presence of the Lord and the splendour of his majesty’ (vv10, 19, 21); the Lord alone will be exalted ‘on that day’ (vv11, 17). The Lord will not share worship with anything. The judgment begins with God’s people and spreads to the whole world."
+          },
+          {
+            "questionNumber": 6,
+            "verses": "2:9–21",
+            "header": "2:6–22: The fearful presence of the Lord in judgment",
+            "question": "Who will be judged? What do you think this is referring to?",
+            "answer": "It starts with the Lord’s people but ends with the whole earth — ‘when he rises to shake the earth’ (vv19, 21). Partial fulfilment in the Exile; ultimate fulfilment in the last judgment — cf. Revelation 6:15 where this passage seems to be echoed."
+          },
+          {
+            "questionNumber": 7,
+            "verses": "2:18–20",
+            "header": "2:6–22: The fearful presence of the Lord in judgment",
+            "question": "What will happen to all the idols ‘in that day’?",
+            "answer": "They will utterly disappear (v18) and people will throw them to the moles and bats (v20) — the same dark underground places where the idolaters themselves are hiding. The irony is deliberate. The Lord alone will be exalted."
+          },
+          {
+            "questionNumber": 8,
+            "verses": "2:22",
+            "header": "2:6–22: The fearful presence of the Lord in judgment",
+            "question": "Why is v22 the obvious response to this warning of judgment?",
+            "answer": "It brings us back to what Judah was doing wrong from the start: trusting in the wrong things. All those things — idols, military strength, wealth, human wisdom — will be destroyed ‘in that day’. They cannot save anyone from the fearful presence of the Lord. Only the Lord should be feared."
+          },
+          {
+            "questionNumber": 9,
+            "verses": "3:13–15",
+            "header": "3:1–4:1: The Lord takes his sinful people to court",
+            "question": "Central to this section is a court scene. Who is in the dock and what is the charge? (vv13–15)",
+            "answer": "The people, elders, and leaders of Judah. The charge: they have ruined the Lord’s ‘vineyard’ — a metaphor for the people of God (ch5; Jesus in the Gospels). Specifically: they have plundered the poor and crushed the people.",
+            "leaderNote": "It helps to establish the courtroom metaphor first (question 9) and then work backwards through the evidence (question 10) before the verdict (question 11), rather than reading the chapter linearly."
+          },
+          {
+            "questionNumber": 10,
+            "verses": "3:5–12, 3:16",
+            "header": "3:1–4:1: The Lord takes his sinful people to court",
+            "question": "What evidence for the prosecution is presented? (vv5–12; 16)",
+            "answer": "Oppression (vv5, 12); society turned upside down (vv5, 12); lack of real leadership (vv6–7, 12); flagrant, arrogant sin that openly defies the Lord (vv8–9, 16 — note the verbs: ‘defying’, ‘parade’, ‘do not hide’, ‘strutting’). Sin that has stopped being ashamed of itself."
+          },
+          {
+            "questionNumber": 11,
+            "verses": "3:1–4; 3:17–4:1",
+            "header": "3:1–4:1: The Lord takes his sinful people to court",
+            "question": "What will the Lord do to bring them to their senses? (vv1–4; 17–4:1)",
+            "answer": "He will strip them of everything they are relying on: food and water; military, social, and religious leaders — all the humans they have been warned not to trust. All the wealth and status symbols will be gone. Note that the charges against the proud women come immediately after the charge of grinding the faces of the poor (v15) — their luxury has been sustained by oppression, and the Lord will strip it all away."
+          },
+          {
+            "questionNumber": 12,
+            "verses": "4:2–6",
+            "header": "4:2–6: The Branch of the Lord restores God’s City",
+            "question": "What hope is offered to the condemned people of God?",
+            "answer": "Restoration, survival, holiness, cleansing, and the protective presence of the Lord. After the total stripping of chapter 3, the promises of 4:2–6 are startling in their richness."
+          },
+          {
+            "questionNumber": 13,
+            "verses": "4:2–4",
+            "header": "4:2–6: The Branch of the Lord restores God’s City",
+            "question": "How will this come about?",
+            "answer": "The Lord himself will wash and cleanse through judgment and fire. He will save a remnant and give them his presence. The cleansing is painful but purposeful — the goal is holiness and restoration, not mere destruction."
+          },
+          {
+            "questionNumber": 14,
+            "verses": "4:2",
+            "header": "4:2–6: The Branch of the Lord restores God’s City",
+            "question": "What is the significance of the ‘Branch of the Lord’ in v2? How does it relate to what has just gone before in chapter 3?",
+            "answer": "A <strong>messianic title</strong> for Jesus, picked up in Isaiah 11:1 and Jeremiah 23:5–6; 33:15–16. The Branch provides true and righteous leadership where the corrupt leaders of chapter 3 ruined the vineyard. True beauty and glory come from the Branch — not from the superficial wealth and status so devastatingly stripped away in chapter 3."
+          },
+          {
+            "questionNumber": 15,
+            "verses": "4:5–6",
+            "header": "4:2–6: The Branch of the Lord restores God’s City",
+            "question": "The Lord has stripped away the security of his people in chapter 3. Where will the survivors find their security?",
+            "answer": "In the presence of the Lord — cloud and fire, shelter and shade, refuge and hiding place. The imagery deliberately echoes the Exodus (Exodus 13:21–22). But now the Lord’s glory covers all of Mount Zion and everyone who dwells there — not just the ark or tabernacle. This is where their security will be, not in the false securities of chapter 3."
+          },
+          {
+            "questionNumber": 16,
+            "verses": "2:1–4:6",
+            "header": "Application",
+            "question": "For those who first heard Isaiah’s message, what would this have meant and what response was being asked of them?",
+            "answer": "A light is being shone on their sin — trusting idols, superstition, and mere humans — and they are called to trust the Lord. A call to walk in his light. Recognition that beyond the judgment lies cleansing and restoration. In the face of the Assyrian threat there is a secure future hope in the Lord. One day the Branch will come to cleanse and restore his people and bring them into his eternal presence."
+          },
+          {
+            "questionNumber": 17,
+            "verses": "2:1–4:6",
+            "header": "Application",
+            "question": "What difference does it make reading this passage on this side of the Cross?",
+            "answer": "The work of restoration has begun as all nations are drawn to Jesus, the ultimate temple of God. We know that the Branch cleanses and makes holy through his death. But a day of judgment is still coming. How do we live in the light of that? How do we walk in the light of the glorious future we will have in the presence of God?"
+          },
+          {
+            "questionNumber": 18,
+            "verses": "2:22; 2:6–8; 3:1–16",
+            "header": "Application",
+            "question": "When are we tempted to ‘trust in mere humans’? What difference does it make to know that one day the earth will be shaken by ‘the fearful presence of the Lord’? When do we harbour the attitudes of 2:6–8 and chapter 3? What will it mean for us to walk in the light of the Lord?",
+            "answer": "Open application — draw out modern equivalents: trusting political leaders, economic security, military power, status symbols. Our only true beauty and glory is in the Messiah/Branch (4:2–4) and our only security is in the presence of the Lord (4:5–6). Human sin cannot thwart his plans.",
+            "leaderNote": "Alec Motyer’s summary is worth sharing: ‘Our only beauty and pride is in the Messiah/Branch (4:2–4) and our only security and refuge is in the presence of the Lord (4:5–6).’"
+          }
+        ]
+      },
+      {
+        "chapterNumber": 3,
+        "format": "HTML",
+        "title": "Isaiah 5–6 — The Lord’s Holiness Demonstrated in Judgment",
+        "bigIdea": "The Lord’s holiness will be demonstrated as he judges those who spurn his grace, but he offers forgiveness and will save a remnant.",
+        "passage": "Isaiah 5–6",
+        "background": {
+          "subtype": "standard",
+          "header": "Background",
+          "body": "<p>Chapter 5 closes the introductory section (chs 1–5) and chapter 6 opens the next major section (chs 6–12), which has the theme of the King. The two chapters work together powerfully: chapter 5 ends in utter darkness with the Assyrian armies whistled into action; chapter 6 blazes in with the glory of the true King on his throne.</p><p><strong>The vineyard song (5:1–7).</strong> The song begins as a friend’s lament before its shocking conclusion in v7. The vineyard is a well-established metaphor for the people of God (cf. Psalm 80; Isaiah 3:14; 27:2–6; Jeremiah 2:21). What makes v7 so devastating is the deliberate Hebrew wordplay: the Lord looked for <em>mishpat</em> (justice) but found <em>mispach</em> (bloodshed); for <em>tsedaqah</em> (righteousness) but heard <em>tse’aqah</em> (a cry of distress). The language is almost identical but the reality is the exact opposite.</p><p><strong>The seven woes (5:8–6:7).</strong> Isaiah presents six woes against the people in 5:8–23, each followed by a ‘therefore’ of judgment. There is also a chiastic structure to the woes according to Alec Motyer — matching pairs: acquisition of land (v8) with acquisition of money (v22–23); self-indulgence (v11–12) with self-importance (v21); sin pursued (v18–19) with sin justified (v20). The seventh ‘woe’ is Isaiah’s own in 6:5 — his is the woe of a sinful man confronted with the holiness of God, where the whole sequence has been building.</p><p><strong>Isaiah’s call (chapter 6).</strong> The vision comes in chapter 6 rather than at the beginning of the book — deliberately. We understand the glory of the King better against the backdrop of chapters 1–5, and we understand the hardening of the people better having seen their stubborn sin in detail. The year of King Uzziah’s death (740 BC) was significant: Uzziah had been a relatively good king who became proud and was struck with leprosy (2 Chronicles 26). His death would have unsettled Judah. Isaiah sees instead the throne of the true King, high and exalted.</p><p><strong>The hardening commission (6:9–10).</strong> This is picked up extensively in the NT (Mark 4:12; John 12:40; Acts 28:26–27; Romans 11:8) and applied to the response to Jesus’s ministry. The word of God does not simply inform — it either softens or hardens, depending on the condition of the hearer’s heart.</p>"
+        },
+        "keyPoints": {
+          "subtype": "standard",
+          "header": "Key Teaching Points",
+          "body": "<p><strong>The Lord has done everything possible for his vineyard.</strong> ‘What more could have been done for my vineyard?’ (v4) is rhetorical — and devastating. The only explanation for the ‘stink fruit’ is the wilful rebellion of the people.</p><p><strong>The woes expose a society that has inverted everything.</strong> The sins in 5:8–23 share a common thread: the replacement of God’s order with human self-will. Each woe is a symptom of a society that has abandoned the Lord at its structural core.</p><p><strong>The punishment fits the crime.</strong> The acquisitive find their land barren; the pleasure-seeking die of hunger; those who called on the Lord to hurry find his judgment swift as wildfire. The Lord’s judgment is the logical outworking of what the people have chosen.</p><p><strong>Isaiah’s ‘woe’ in 6:5 is the seventh in the sequence — and the most personal.</strong> After six woes against the people, the seventh is Isaiah’s own self-condemnation before the holy God. He is not above them — he is ‘a man of unclean lips among a people of unclean lips.’ And if the Lord can cleanse Isaiah, he can cleanse the people.</p><p><strong>The holiness of the Lord is the foundation of everything.</strong> The triple ‘Holy, holy, holy’ (6:3) is the Hebrew superlative. His glory fills not just the temple but the whole earth. Help the group feel the weight of this vision before moving to the commission and hardening questions.</p><p><strong>The stump and the seed (6:13).</strong> Even the hardening commission ends with hope. Despite the coming destruction, there is a holy seed in the stump. Death and judgment do not have the last word. The ‘stump’ will recur in 11:1 with Messianic implications.</p>"
+        },
+        "exegetical": {
+          "subtype": "standard",
+          "header": "Exegetical Notes",
+          "body": "<p><strong>‘What more could have been done for my vineyard?’ (5:4).</strong> One of the most searching questions in Isaiah. The Lord presents himself as having done everything possible and received nothing in return. The logic is airtight: if God has done everything and the result is still failure, the fault lies entirely with the vineyard.</p><p><strong>The Assyrians as the Lord’s instrument (5:26–30).</strong> The image of the Lord ‘whistling’ for the Assyrians (cf. also 7:18) presents them as a well-trained hunting animal that comes instantly at his call. They are terrifying but entirely under the Lord’s control. This is pastoral as much as theological.</p><p><strong>‘Holy, holy, holy’ (6:3).</strong> The Hebrew superlative achieved through triple repetition. ‘Holy, holy, holy’ expresses absolute, unqualified, matchless holiness. This is one of only two places in the Bible where an attribute of God is tripled (the other is Revelation 4:8, which quotes this passage directly).</p><p><strong>‘Woe to me!’ (6:5).</strong> Isaiah uses the same word (<em>oi</em>) he has used six times against the people. He is not in prophetic superiority over them — he is in the same dock. ‘I am a man of unclean lips among a people of unclean lips’: he shares their guilt.</p><p><strong>The burning coal (6:6–7).</strong> The seraph takes a coal from the altar — the place of sacrifice and atonement. The means of cleansing is the altar, where sin is dealt with through sacrifice. This anticipates the atoning work of Christ.</p><p><strong>The hardening (6:9–10) in the NT.</strong> Jesus quotes this to explain his use of parables (Mark 4:12). John applies it to unbelief after Jesus’s miracles (John 12:40). Paul applies it to Jewish unbelief and the turning to the Gentiles (Acts 28:26–27). The consistent pattern: hearing without responding hardens the heart already turning away.</p>"
+        },
+        "pastorals": {
+          "subtype": "standard",
+          "header": "Pastoral Sensitivities",
+          "body": "<p>The handout exercise (question 6) can take significant time. If time is short, it is better to work through fewer woes carefully than to rush through all six. The goal is to see the pattern rather than catalogue every detail.</p><p>The vision of the Lord’s holiness in chapter 6 can be deeply moving or confronting. Give the group time to respond to the vision before pressing to the commission and hardening questions. The pastoral sequence is: glory → self-awareness → cleansing → commissioning. Don’t short-circuit it.</p><p>The hardening commission (question 13) is theologically difficult. Handle it carefully. The warning — that the word of God can harden as well as soften — should be applied as an invitation to respond, not as a reason for fatalism.</p>"
+        },
+        "watch": {
+          "subtype": "highlighted",
+          "header": "Things to watch for",
+          "body": "👁️ Watch for the group getting absorbed in the handout exercise and losing the forest for the trees. Keep the central diagnosis visible — a society that has turned from the Lord to pursue its own agenda — and make sure you allow time for the vision of chapter 6, where the real theological payoff lies."
+        },
+        "handout": {
+          "subtype": "standard",
+          "header": "Session Handout: Isaiah 5–6",
+          "body": "<p>The handout asks the group to work through the woes of Isaiah 5:8–25 systematically. The completed version (for leader reference) is below. Note the chiastic structure: the first woe matches the sixth, the second the fifth, the third the fourth.</p><table><tr><th>Woe</th><th>The Offence</th><th>Therefore</th><th>The Lord’s Response</th></tr><tr><td>5:8–10</td><td>Acquisition of land (against the covenant law of inalienable inheritance). So greedy they are happy to live alone.</td><td>5:9–10, 15–17</td><td>Their houses, fields and vineyards will be desolate. They will acquire land but it will be left to sheep.</td></tr><tr><td>5:11–12</td><td>Self-indulgence. Obsessed with pleasure, they disregard the Lord and dull their minds.</td><td>5:13–14</td><td>They eat and drink to excess but will die of hunger and thirst. They revel and feast and will be devoured by Death.</td></tr><tr><td>5:18–19</td><td>Sin pursued. So attached to sin they are like beasts harnessed to a cart. They defy the Lord rather than responding in faith.</td><td>5:24</td><td>Judgment as swift as wildfire. They called on the Holy One but spurned him.</td></tr><tr><td>5:20</td><td>Sin justified. They totally distort the nature of good and evil.</td><td>5:24–25</td><td>The Lord’s burning anger, shaking the earth, striking down his people.</td></tr><tr><td>5:21</td><td>Self-importance. They delight in their own wisdom rather than the ways of the Lord.</td><td>5:24–25</td><td>The Lord’s burning anger, shaking the earth, striking down his people.</td></tr><tr><td>5:22–23</td><td>Acquisition of money through bribes and perversion of justice.</td><td>5:24–25</td><td>The Lord’s burning anger, shaking the earth, striking down his people.</td></tr><tr><td>6:5</td><td>Isaiah is overwhelmed by his own sin before the holy God. He is a man of unclean lips, no different from the people.</td><td>6:6–7</td><td>The Lord takes away Isaiah’s guilt and atones for his sin.</td></tr></table>"
+        },
+        "questions": [
+          {
+            "questionNumber": 1,
+            "verses": "5:1–7",
+            "header": "5:1–7: A love song gone wrong",
+            "question": "Chapter 5 starts in the form of a love song. Who are the lovers?",
+            "answer": "The Lord and Israel. The vineyard is a well-established metaphor for the people of God (Psalm 80; Isaiah 3:14; 27:2–6; Jeremiah 2:21). The original hearers would have recognised the genre and expected a song about a friend’s vineyard — before the shocking identification in v7."
+          },
+          {
+            "questionNumber": 2,
+            "verses": "5:1–2",
+            "header": "5:1–7: A love song gone wrong",
+            "question": "What has the Lord done for his vineyard?",
+            "answer": "Everything he could possibly have done: planted it in fertile soil; prepared the land well; planted the best vines; built a watchtower; prepared a winepress. There is no failure on the Lord’s part — the outcome can only be explained by the vineyard itself."
+          },
+          {
+            "questionNumber": 3,
+            "verses": "5:2",
+            "header": "5:1–7: A love song gone wrong",
+            "question": "What fruit did the vineyard produce?",
+            "answer": "Only bad fruit. The Hebrew is literally ‘stink fruit’ — not just substandard but actively repulsive."
+          },
+          {
+            "questionNumber": 4,
+            "verses": "5:3–6",
+            "header": "5:1–7: A love song gone wrong",
+            "question": "The Lord calls the people of Jerusalem and Judah to arbitrate. What is the Lord going to do?",
+            "answer": "He is going to remove the vineyard’s protection (v5) and leave it barren and parched (v6). Everything the Lord has given it will be taken away — destroyed, trampled, overrun with weeds. The original hearers would have felt the logic closing in before the identification of v7."
+          },
+          {
+            "questionNumber": 5,
+            "verses": "5:7",
+            "header": "5:1–7: A love song gone wrong",
+            "question": "What is the shock of v7? What attitude had Israel/Judah displayed that led to this point?",
+            "answer": "They were complacent in their status as the people of God (cf. 1:10–15) — but the Lord is removing his covenant blessings. He had lavished every grace and given them everything they needed, but they have rejected him. The deliberate Hebrew wordplay — justice/<em>mishpat</em> vs bloodshed/<em>mispach</em>; righteousness/<em>tsedaqah</em> vs a cry of distress/<em>tse’aqah</em> — makes the contrast almost audible."
+          },
+          {
+            "questionNumber": 6,
+            "verses": "5:8–25",
+            "header": "5:8–25: Woe to the people of God",
+            "question": "In groups, work through the woes of Isaiah 5:8–25 using the handout. What is the nature of each offence? Is there any pattern? How does the Lord’s response relate to the offence?",
+            "answer": "See the Handout section for full details. The pattern across all the woes is a society that has put itself at the centre — acquiring what it wants, pursuing pleasure, redefining good and evil, trusting its own wisdom. The Lord’s responses often ‘fit’ the offence. Note the chiastic structure: the first woe (acquisition of land) pairs with the sixth (acquisition of money through injustice).",
+            "leaderNote": "Don’t feel you need to cover every woe in equal depth. Three or four worked through carefully is better than six rushed. The key insight to land is the common thread: a society that has dethroned God and enthroned self."
+          },
+          {
+            "questionNumber": 7,
+            "verses": "5:26–30",
+            "header": "5:26–30: The Lord whistles to unleash his judgment",
+            "question": "How is the Lord going to execute his judgment? What does the word ‘whistles’ imply?",
+            "answer": "He will use pagan nations — the Assyrians — as his instrument of discipline. The image of whistling is like calling a well-trained dog that immediately comes to heel. The Lord is in charge; the Assyrians, though terrifying, are entirely under his control."
+          },
+          {
+            "questionNumber": 8,
+            "verses": "5:26–30",
+            "header": "5:26–30: The Lord whistles to unleash his judgment",
+            "question": "What will the Lord’s judgment be like?",
+            "answer": "The Assyrians are a terrifying, unstoppable military force who will maul Israel like lions. The land will be left in distress and darkness. Earthquake and storm are often associated with the presence of the Lord in judgment (cf. Exodus 19:18–19)."
+          },
+          {
+            "questionNumber": 9,
+            "verses": "6:1–4",
+            "header": "6:1–6: The Glory of the King",
+            "question": "What is the impact of having Isaiah’s call here, after chapters 1–5?",
+            "answer": "Chapter 5 has ended in darkness. Now Isaiah sees the throne of the true King, high and exalted. Uzziah had died (a relatively good king who became proud) and Ahaz was a bad king. But in the darkest moment the vision blazes in: there is a King on the throne, and his name is not Uzziah or Ahaz."
+          },
+          {
+            "questionNumber": 10,
+            "verses": "6:1–4",
+            "header": "6:1–6: The Glory of the King",
+            "question": "What is emphasised about the Lord’s nature and character in vv1–4?",
+            "answer": "He is the King, high and exalted. The train of his robe fills the temple. All the terrifying heavenly creatures worship him. The triple ‘Holy’ is the Hebrew superlative — supreme, absolute, matchless holiness. His glory fills not only the temple but the whole earth. The shaking doorposts and smoke are appropriate physical responses to this overwhelming presence."
+          },
+          {
+            "questionNumber": 11,
+            "verses": "6:5–7",
+            "header": "6:5–7: The Sinfulness of the Prophet",
+            "question": "What impact does the presence of the Lord have on Isaiah? How does he respond?",
+            "answer": "He is overwhelmed by his own sinfulness and his people’s when face to face with the holy God. He uses the same word of condemnation — ‘Woe!’ — that he has pronounced six times against the people. He is not above them; he is one of them: ‘a man of unclean lips among a people of unclean lips.’"
+          },
+          {
+            "questionNumber": 12,
+            "verses": "6:6–7",
+            "header": "6:5–7: The Sinfulness of the Prophet",
+            "question": "What does the Lord do? What implication does this have for the people of God as a whole?",
+            "answer": "The seraph touches Isaiah’s lips with a burning coal from the altar. The Lord takes away his guilt and atones for his sin. Isaiah was unclean among an unclean people — which implies forgiveness is possible for the people too. The means of cleansing is the altar: sacrifice and atonement. A powerful pointer toward what Christ will ultimately provide."
+          },
+          {
+            "questionNumber": 13,
+            "verses": "6:8–10",
+            "header": "6:8–10: The Hardness of the People",
+            "question": "What commission does the Lord give Isaiah? What will be the result of his ministry?",
+            "answer": "To go and speak to the people. But the result will be that they are hardened — deaf, blind, unwilling to repent — leading to judgment. The word of God does not leave people where they are: it either softens or hardens. This is not God causing hardening maliciously, but the word confirming the response of hearts already turning away."
+          },
+          {
+            "questionNumber": 14,
+            "verses": "6:11–13",
+            "header": "6:11–13: The Triumph of God’s Grace",
+            "question": "What hope are we left with?",
+            "answer": "Despite utter destruction, the Lord will save a remnant — and that remnant leads ultimately to the Messiah. The ‘stump’ imagery is key: despite Judah being cut down, a stump remains. Cf. 11:1 for the Messianic implications. Death and judgment do not have the last word; the grace of God does."
+          },
+          {
+            "questionNumber": 15,
+            "verses": "5:1–6:13",
+            "header": "Application",
+            "question": "What response did these chapters call from Judah? What do they demand of us today?",
+            "answer": "<em>For Judah:</em> recognise the grace of God — ‘what more could have been done?’; repent of greed, self-indulgence, and self-importance; fear the Lord more than the Assyrians; recognise their own sinfulness and the glorious holiness of the Lord; hope in the Messiah from the stump.<br><br><em>For us:</em> the holiness of the Lord confronts us with our own sin. We, like Isaiah, are people of unclean lips. But the coal from the altar points us to Christ. The warning about hardening is real — we cannot hear the word of God and remain unmoved.",
+            "leaderNote": "John 15:1–17 is helpful for applying the vineyard imagery. Note also Jesus’s Parable of the Tenants (Matthew 21:33–46; Mark 12:1–12; Luke 20:9–19). For the hardening and its NT application, see Mark 4:12; Acts 28:26–27; 2 Corinthians 2:15–16."
+          }
+        ]
+      },
+      {
+        "chapterNumber": 4,
+        "format": "HTML",
+        "title": "Isaiah 7:1–9:7 — Trust in the Lord Alone, for Immanuel is Coming",
+        "bigIdea": "Trust in the Lord alone, for Immanuel — God’s for ever king — will bring judgment and eternal light, peace, and righteousness.",
+        "passage": "Isaiah 7:1–9:7",
+        "background": {
+          "subtype": "standard",
+          "header": "Background",
+          "body": "<p>This session sits at the heart of chapters 6–12, the section focused on the theme of the King. It begins with a specific historical crisis — the Syro-Ephraimite War of 735 BC — and uses it as the occasion for one of Isaiah’s most theologically significant prophecies.</p><p><strong>The Syro-Ephraimite crisis (7:1–2).</strong> Rezin king of Aram (Syria) and Pekah king of Israel (Ephraim, the northern kingdom) had formed an anti-Assyrian coalition and were attacking Jerusalem, apparently trying to force Ahaz to join them or replace him with a compliant king. Ahaz was terrified (v2). His strategy was to buy Assyrian protection (2 Kings 16) — which the Lord explicitly tells him not to do.</p><p><strong>Ahaz versus Isaiah.</strong> The contrast between Ahaz and Isaiah is the theological spine of this section. Ahaz refuses the sign, refuses to trust, and turns to Assyria. Isaiah and his family stand as a ‘remnant’ of true faith in the middle of faithless Judah. The names of Isaiah’s sons function as living prophetic messages: Shear-Jashub (‘a remnant will return’) and Maher-Shalal-Hash-Baz (‘quick to the plunder, swift to the spoil’).</p><p><strong>The double fulfilment of Immanuel (7:14).</strong> The sign has a near fulfilment in events of Isaiah’s own day (see 8:1–4: before the child is old enough to know right from wrong, the Syro-Ephraimite threat will be gone) and an ultimate fulfilment in Jesus (Matthew 1:22–23). ‘Immanuel — God with us’ is the key: the presence of God with his people in a time of crisis.</p><p><strong>The child of 9:6–7.</strong> The poem of 9:1–7 is one of the most majestic in Isaiah. Its four titles for the coming king — Wonderful Counsellor, Mighty God, Everlasting Father, Prince of Peace — go far beyond anything that could be said of an ordinary Davidic king. The identification of the child as ‘Mighty God’ (a title used of the Lord himself in Isaiah 10:21) makes the divine claim explicit. This child fulfils the promise to David of an eternal kingdom (2 Samuel 7:12–16).</p>"
+        },
+        "keyPoints": {
+          "subtype": "standard",
+          "header": "Key Teaching Points",
+          "body": "<p><strong>The Lord’s extraordinary invitation to trust is met by Ahaz’s polite refusal.</strong> Ahaz wraps his rejection in pious language but his actions reveal the truth: he has already decided to trust Assyria (2 Kings 16:7–8). The offer of any sign he chooses is extraordinary grace — and his refusal is one of the most revealing moments of unbelief in the Old Testament.</p><p><strong>Immanuel is the Lord’s answer to Ahaz’s unbelief.</strong> The sign simultaneously brings judgment (the land will be devastated before the child is grown) and hope (God is present, God is acting, the threat will pass).</p><p><strong>Isaiah himself models the faith Ahaz refuses.</strong> In 8:12–18, Isaiah fears the Lord rather than the Assyrians and trusts the Lord’s word rather than seeking guidance from mediums. Isaiah and his children are ‘signs and symbols in Israel from the Lord’ (8:18) — a living demonstration that it is possible to trust the Lord in crisis.</p><p><strong>The light of 9:1–7 follows the darkness of 8:19–22.</strong> The sequence is deliberate: chapter 8 ends in utter darkness; then 9:1: ‘the people walking in darkness have seen a great light.’ The contrast is total. And the light comes through a birth.</p><p><strong>The child’s titles in 9:6 demand more than a human king.</strong> ‘Mighty God’ and ‘Everlasting Father’ cannot be applied to a mere human being. The New Testament’s identification of Jesus as this child is not a reinterpretation but a recognition.</p>"
+        },
+        "exegetical": {
+          "subtype": "standard",
+          "header": "Exegetical Notes",
+          "body": "<p><strong>‘The upper pool of the aqueduct’ (7:3).</strong> The same location appears in 36:2 (the Assyrian field commander confronting Hezekiah’s officials). The repetition is likely deliberate — reminding the reader of the earlier offer of trust and the contrasting responses of Ahaz and Hezekiah.</p><p><strong>‘Curds and honey’ (7:15, 22).</strong> A sign of poverty and desolation — the sparse diet of a land devastated and left to wild cattle. Not a sign of blessing but of judgment.</p><p><strong>‘The gently flowing waters of Shiloah’ (8:6).</strong> Jerusalem’s modest, reliable water supply — a picture of the Lord’s quiet, faithful provision. The people have rejected this in favour of the ‘flooding’ of the Assyrian empire, and thereby invited the very flood they were trying to avoid.</p><p><strong>The stone/rock of stumbling (8:14).</strong> The Lord himself will be a sanctuary for those who fear him but a stone of stumbling for those who do not. Picked up in Romans 9:33 and 1 Peter 2:8 as applying to Jesus.</p><p><strong>Galilee of the nations (9:1).</strong> The regions mentioned were most exposed to Assyrian attack and most despised as ‘mixed’ territory. That salvation should begin here rather than in Jerusalem is a deliberate reversal. Matthew 4:12–17 identifies Jesus’s Galilean ministry as the fulfilment of this prophecy.</p>"
+        },
+        "pastorals": {
+          "subtype": "standard",
+          "header": "Pastoral Sensitivities",
+          "body": "<p>The Immanuel prophecy (7:14) is familiar from Christmas readings. The challenge is to help the group engage with the <strong>original context</strong> before moving to the fulfilment. The sign was given to Ahaz in a moment of political crisis and his refusal to trust the Lord, despite an extraordinary offer, is the pastoral heart of the session. Don’t rush past Ahaz to get to Matthew 1.</p><p>The titles of 9:6 are well-known to Christians and can be handled too quickly as a result. Spend time on each title, particularly ‘Mighty God’ and ‘Everlasting Father’, and help the group feel their weight.</p>"
+        },
+        "watch": {
+          "subtype": "highlighted",
+          "header": "Things to watch for",
+          "body": "👁️ Watch for the group moving too quickly to Matthew 1 and away from the weight of the original context. The Immanuel sign was given to a king who refused to trust — and who paid the consequences. That is as much part of the passage’s message as the joy of 9:6–7."
+        },
+        "questions": [
+          {
+            "questionNumber": 1,
+            "verses": "7:1–2",
+            "header": "7:1–17: Who do you trust?",
+            "question": "What problem is Ahaz and the people of Judah facing (v1)? How are they responding to it? (v2)",
+            "answer": "An alliance of Aram and Israel (Ephraim) has come against Jerusalem — the Syro-Ephraimite War, approximately 735 BC. The people are utterly terrified: hearts shaking like trees in the wind. Ahaz appears to have been seeking Assyrian protection rather than trusting the Lord."
+          },
+          {
+            "questionNumber": 2,
+            "verses": "7:2–9",
+            "header": "7:1–17: Who do you trust?",
+            "question": "What kind of king was Ahaz? (See 2 Kings 16; 2 Chronicles 28.) How does the Lord show him grace at his point of crisis? (vv2–9)",
+            "answer": "Ahaz was a bad king who promoted idolatry and did not trust the Lord. Despite this, the Lord graciously sends Isaiah with encouragement. He sends Isaiah along with Shear-Jashub — whose name (‘a remnant will return’) is itself an encouragement that the Lord will not utterly abandon his people. The Lord asks Ahaz to remain calm, noting his enemies are ‘just smouldering stubs of firewood’ — nothing before the Lord."
+          },
+          {
+            "questionNumber": 3,
+            "verses": "7:3–9",
+            "header": "7:1–17: Who do you trust?",
+            "question": "What message does the Lord give Isaiah for Ahaz?",
+            "answer": "‘Be careful, keep calm, and don’t be afraid. Do not lose heart’ (v4). The Lord assures Ahaz the plans of Rezin and Pekah will fail. The condition is faith: ‘If you do not stand firm in your faith, you will not stand at all’ (v9). The Lord even offers Ahaz a confirming sign of any kind he chooses — an extraordinary offer of grace to an unbelieving king."
+          },
+          {
+            "questionNumber": 4,
+            "verses": "7:10–12",
+            "header": "7:1–17: Who do you trust?",
+            "question": "What response does the Lord ask of Ahaz and what response does Ahaz make? (Cf. also 2 Kings 16.)",
+            "answer": "The Lord asks Ahaz to trust him and offers any sign he chooses. Ahaz refuses — cloaked in pious language (‘I will not put the Lord to the test’) but revealing the true state of his heart. 2 Kings 16 shows he had already decided: he sent silver and gold from the temple to Tiglath-Pileser and invited him to act on his behalf. The piety is a mask over unbelief."
+          },
+          {
+            "questionNumber": 5,
+            "verses": "7:13–16",
+            "header": "7:1–17: Who do you trust?",
+            "question": "The Lord responds to Ahaz’s lack of trust by giving his own sign. What is it and what does it refer to?",
+            "answer": "The sign of Immanuel: a virgin will conceive and give birth to a son called ‘God with us’. The near fulfilment: before the child is old enough to know right from wrong, the Syro-Ephraimite threat will be gone (v16; cf. 8:1–4). The ultimate fulfilment: Matthew 1:22–23 identifies Jesus as the Immanuel of Isaiah’s prophecy.",
+            "leaderNote": "The Hebrew word <em>almah</em> means ‘young woman of marriageable age’ and strongly implies but doesn’t exclusively specify virginity. The LXX used <em>parthenos</em> (virgin) and Matthew follows this. The double fulfilment — near and ultimate — is the key to interpreting the passage rightly."
+          },
+          {
+            "questionNumber": 6,
+            "verses": "7:17–25",
+            "header": "7:17–25: That day will bring judgment",
+            "question": "How will the Lord respond to his people’s sin and lack of faith?",
+            "answer": "He will judge them by sending the king of Assyria. Ahaz turned to trust Assyria, but the Assyrians are actually under the Lord’s control — used to bring judgment on his disobedient people. The very tool Ahaz runs to becomes the instrument of judgment against him."
+          },
+          {
+            "questionNumber": 7,
+            "verses": "7:18–25",
+            "header": "7:17–25: That day will bring judgment",
+            "question": "Isaiah speaks of God’s judgment with four references to ‘in that day’. What will ‘that day’ bring? (vv18–25)",
+            "answer": "Overwhelming, humiliation, impoverishment, agricultural ruin. Note again the Lord ‘whistling’ for the Assyrians (like 5:26) — they are at his beck and call, using them to judge his own people."
+          },
+          {
+            "questionNumber": 8,
+            "verses": "8:1–4",
+            "header": "8:1–4: Partial fulfilment of the Immanuel sign",
+            "question": "How do 8:1–4 expand on and partially fulfil the sign promised in 7:14–15? (Note any repetition of words or ideas.)",
+            "answer": "‘Before the boy knows how to say “My father” or “My mother”’ (v4) — the idea is that judgment will come while the baby is still very young, as in 7:16. This partly fulfils the sign the Lord gave. The name Maher-Shalal-Hash-Baz (‘quick to the plunder, swift to the spoil’) emphasises the speed of judgment."
+          },
+          {
+            "questionNumber": 9,
+            "verses": "8:5–8",
+            "header": "8:5–8: How will the Lord respond to his people’s rejection?",
+            "question": "How will the Lord respond to his people’s rejection of him?",
+            "answer": "They have rejected the ‘gently flowing waters of Shiloah’ — the Lord’s quiet, faithful provision — in favour of the flooding Assyrian empire. So the Lord will send the Assyrians to almost overwhelm them: the imagery is of a flood barely below the chin. They have invited the flood they were trying to avoid."
+          },
+          {
+            "questionNumber": 10,
+            "verses": "8:8",
+            "header": "8:5–8: Immanuel in comfort and judgment",
+            "question": "Why do you think v8 ends with addressing ‘Immanuel’?",
+            "answer": "Even the land being overwhelmed by the Assyrian flood is addressed as ‘Immanuel’ — God with us. The promise of 7:14 is present even in the midst of judgment. The land being overrun is still God’s land. Judgment is not the final word: the presence of God with his people is not cancelled by their punishment."
+          },
+          {
+            "questionNumber": 11,
+            "verses": "8:9–18",
+            "header": "8:9–18: Immanuel in comfort and judgment",
+            "question": "How is Isaiah himself to respond to the military threat? How is he a contrast to Ahaz and Judah? (vv9–18)",
+            "answer": "Where Ahaz dreaded Rezin and Remaliah, Isaiah is to fear the Lord. He is to trust the Lord (v17) and with his family be signs for Israel (v18). The Lord is either a sanctuary or a stumbling block — for Ahaz he will cause stumbling, but for Isaiah he is a holy place. Isaiah is a ‘remnant’ of the true people of God."
+          },
+          {
+            "questionNumber": 12,
+            "verses": "8:19–22",
+            "header": "8:19–22: Where are the people tempted to turn?",
+            "question": "Where are the people tempted to turn for comfort and what will it lead to? (vv19–22)",
+            "answer": "Turning to mediums and spiritists rather than the living God (v19). But they will find only distress and utter darkness (vv21–22). Only the word of the Lord can bring light. Those who reject his word are left with no word — and no light."
+          },
+          {
+            "questionNumber": 13,
+            "verses": "9:1–7",
+            "header": "9:1–7: The child who is God’s chosen King brings light in darkness",
+            "question": "How is the Lord going to burst into the darkness? What is the significance of the place names in v1? (Cf. Matthew 4:12–17.)",
+            "answer": "He is going to come with light — the contrast between 8:22 and 9:1 is total. The places named (Zebulun and Naphtali, Galilee of the nations) were most exposed to Assyrian attack and most despised as ‘mixed’ territory. Matthew 4:12–17 identifies Jesus’s Galilean ministry as the fulfilment of this prophecy. The great light dawns precisely where the darkness was deepest."
+          },
+          {
+            "questionNumber": 14,
+            "verses": "9:2–5",
+            "header": "9:1–7: The child who is God’s chosen King brings light in darkness",
+            "question": "What is the Lord going to do?",
+            "answer": "He is going to bring light, blessing, joy, freedom from oppression and from war. The images accumulate — harvest joy, dividing plunder, burning of soldiers’ boots and bloodstained garments. Pause to let the group feel the cumulative richness before moving to v6."
+          },
+          {
+            "questionNumber": 15,
+            "verses": "9:6",
+            "header": "9:1–7: The child who is God’s chosen King brings light in darkness",
+            "question": "What is the surprise of v6? How does it connect to and expand upon 7:14?",
+            "answer": "All this — the light, joy, freedom, peace — will come through the birth of a child. And the birth of the child was the promised sign of the presence of God (Immanuel) among his people. Not a great military leader but a child. The sign of 7:14 is expanded: Immanuel has a throne."
+          },
+          {
+            "questionNumber": 16,
+            "verses": "9:6–7",
+            "header": "9:1–7: The child who is God’s chosen King brings light in darkness",
+            "question": "What do vv6–7 tell us about the child? What will he be like and what will he bring?",
+            "answer": "<strong>Wonderful Counsellor</strong> — surpassing wisdom.<br><strong>Mighty God</strong> — a title used of the Lord himself (cf. Isaiah 10:21); the child is divine.<br><strong>Everlasting Father</strong> — eternal fatherly care for his people.<br><strong>Prince of Peace</strong> — rules in <em>shalom</em>.<br><br>He will rule for ever on David’s throne (fulfilling 2 Samuel 7:12–16), characterised by justice and righteousness. The Lord will accomplish this."
+          },
+          {
+            "questionNumber": 17,
+            "verses": "7:14; 9:1–7",
+            "header": "Application",
+            "question": "What did the sign of Immanuel mean for the people of Isaiah’s day? How did it respond to both their sin and their fear? Now think about how it was fulfilled in Jesus. How does the original context help us understand the coming of Jesus better?",
+            "answer": "The sign came in a moment of political crisis and unbelief, offered to a king who refused to trust the Lord. God with us answers both Ahaz’s fear (his enemies are nothing before the Lord) and his sin (God has not abandoned his people). The fulfilment in Jesus is the answer to the deepest human crisis: not merely the Assyrians but sin and death. Understanding the original context — a sign given in darkness, pointing to a presence that will not abandon — makes the incarnation more profound, not less."
+          },
+          {
+            "questionNumber": 18,
+            "verses": "7:1–9:7",
+            "header": "Application",
+            "question": "How did Ahaz and Isaiah respond differently to the Lord and his word? What does this teach us about the nature of faith and the temptation to reject the Lord? (Look again at 8:12–15 and its NT applications.) What does it look like for us to put our faith in the Lord like Isaiah?",
+            "answer": "Ahaz faced the same Lord and the same crisis as Isaiah — but chose to manage the situation in his own way. Isaiah chose to fear the Lord rather than the Assyrians. The NT applications of 8:14 (Romans 9:33; 1 Peter 2:8) show the Lord remains a stone of stumbling or cornerstone depending on how one responds. Faith like Isaiah’s: taking the Lord’s word seriously, refusing security in what the world offers, willing to stand out from the crowd."
+          },
+          {
+            "questionNumber": 19,
+            "verses": "9:1–7",
+            "header": "Application",
+            "question": "Spend time reflecting on 9:1–7. What has the coming of Immanuel achieved? What difference does Jesus make? We don’t yet see all of this in completion, so what difference do these verses make for how we live now?",
+            "answer": "Open reflection question. The government is on his shoulders — not ours. The light has come; darkness does not have the last word. The joy is not yet complete but it is real and coming. The titles of v6 tell us who bears the weight of history. We live in the tension between the dawning of the light and its full brightness.",
+            "leaderNote": "Allow time for this final question — opportunity for genuine worship, not just intellectual discussion. The titles of 9:6 are worth dwelling on one at a time. Don’t rush to the end of the session here."
+          }
+        ]
+      },
+      {
+        "chapterNumber": 5,
+        "format": "HTML",
+        "title": "Isaiah 9:8–10:34 — Assyria is Only the Lord’s Tool",
+        "bigIdea": "Assyria is only the Lord’s tool and will one day come under his judgment, so submit to the Lord’s discipline and return to him.",
+        "passage": "Isaiah 9:8–10:34",
+        "background": {
+          "subtype": "standard",
+          "header": "Background",
+          "body": "<p>This session covers 9:8–10:34 and should be read alongside chapter 11, which is studied in the following session. The notes suggest reading all the way to the end of chapter 11 before the session so the Messianic promise of 11:1–16 is in view even as the group works through the darkness of 9:8–10:34.</p><p><strong>The fourfold refrain (9:8–10:4).</strong> The section is structured around a repeated refrain: ‘Yet for all this, his anger is not turned away, his hand is still upraised.’ This divides the passage into four distinct indictments, each describing a different aspect of Israel’s sin and the corresponding judgment. The cumulative effect is important — Israel’s sin is stubborn and God’s response is patient but unrelenting.</p><p><strong>The Assyrian paradox (10:5–19).</strong> One of the most theologically sophisticated passages in Isaiah. The Assyrians are simultaneously the Lord’s instrument of judgment and themselves guilty of pride and overreach. The Lord has ‘sent’ them (v6) but the Assyrians’ intentions are entirely their own (v7) — they are not aware they are serving his purposes. The axe and woodsman metaphor (v15) makes the point starkly. This paradox — human agency fully exercised within divine sovereignty — is one of the deepest theological threads in Isaiah and Scripture as a whole.</p><p><strong>The remnant returns (10:20–34).</strong> Shear-Jashub (‘a remnant will return’ — the name of Isaiah’s son in 7:3) is explicitly echoed in 10:21–22. The promise has been hanging in the air since chapter 7 and here it is fulfilled, at least in promise: there will be survivors who truly trust in the Lord.</p><p><strong>Midian and Egypt (10:26).</strong> The references to Gideon’s victory over Midian (Judges 7) and the deliverance from Egypt (Exodus 14) are typological, not nostalgic. Both were victories against overwhelming odds, entirely the Lord’s doing. The Lord has done this before and can do it again: Assyria may seem unstoppable, but the Lord is King.</p>"
+        },
+        "keyPoints": {
+          "subtype": "standard",
+          "header": "Key Teaching Points",
+          "body": "<p><strong>The fourfold refrain creates a cumulative sense of both sin and patience.</strong> ‘His hand is still upraised’ — the Lord has not yet struck, but judgment is coming. Each section shows Israel digging deeper into rebellion while the Lord’s discipline fails to provoke repentance.</p><p><strong>The Lord uses pagan powers to discipline his people — but he does not endorse them.</strong> The Assyrians do what they want — conquering, plundering, building empire. The Lord is using what they do for his purposes. Their pride, which leads them to think they operate independently of any god, is precisely what will bring them under judgment. The axe cannot claim to be greater than the woodsman.</p><p><strong>Pride is the common thread between Israel and Assyria.</strong> Israel’s sin in 9:8–10:4 is repeatedly characterised by arrogance — ‘We will rebuild with dressed stone’ (9:10): self-confident recovery rather than repentance. The Assyrians’ sin (10:7–14) is the same: ‘By the strength of my hand I have done this’ (10:13). Both are claiming for themselves what belongs to God alone.</p><p><strong>The remnant promise is alive even in the darkest passages.</strong> Shear-Jashub has been hanging in the air since 7:3. Now in 10:20–22 it is fulfilled in promise: a remnant will return. They will stop relying on human powers and truly trust in the Lord.</p><p><strong>Why chapter 11 matters after 9:8–10:34.</strong> The darkness is real and sustained. Chapter 11 is the answer. Don’t end the session without pointing ahead — the stump of 6:13 and the cutting down of 10:33–34 are the necessary prelude to the shoot of 11:1.</p>"
+        },
+        "exegetical": {
+          "subtype": "standard",
+          "header": "Exegetical Notes",
+          "body": "<p><strong>9:10: ‘We will rebuild with dressed stone.’</strong> The response to discipline is not repentance but defiant self-improvement. The means of their false security (allies, enemies) become the instruments of judgment.</p><p><strong>9:13–17: Unrepentant leadership.</strong> ‘The people have not returned to him who struck them’ (v13). The leaders are specifically indicted for misleading the people. Poor leadership is both judgment on the people and itself a sin.</p><p><strong>9:18–21: Wickedness consuming itself.</strong> The self-consuming nature of sin is graphically described: they turn on each other and on Judah. Sin does not simply damage others — it ultimately destroys the sinner.</p><p><strong>10:1–4: Injustice and the reversal of roles.</strong> Those who made others vulnerable will themselves become vulnerable. The question of v3 — ‘Where will you flee for help?’ — is devastating.</p><p><strong>10:5: ‘Woe to the Assyrian, the rod of my anger.’</strong> A startling statement. The Lord himself calls Assyria his ‘rod’ and ‘club’. This is not an endorsement of Assyrian policy but a statement of divine sovereignty: even pagan empire-building serves the Lord’s purposes without the empire-builders knowing it.</p><p><strong>10:15: The axe metaphor.</strong> ‘Does the axe raise itself above the person who swings it?’ One of the clearest expressions of divine sovereignty and human accountability held together in Isaiah. The Assyrians think they are agents of history; they are the tools. The Lord is the woodsman.</p><p><strong>10:26: Midian and Egypt.</strong> Gideon’s rout of the Midianites (Judges 7:19–25) and the crossing of the Red Sea (Exodus 14:15–31) were victories against overwhelming odds where only the Lord could be credited. When the Lord acts, military superiority is irrelevant.</p>"
+        },
+        "pastorals": {
+          "subtype": "standard",
+          "header": "Pastoral Sensitivities",
+          "body": "<p>The fourfold ‘his hand is still upraised’ can feel relentless and hopeless if the group doesn’t keep the remnant promise in view. The Lord’s anger is real, his patience is long, and the remnant will return. The sustained darkness makes the light of chapter 11 more brilliant.</p><p>The Assyrian paradox (human agency within divine sovereignty) is theologically rich but can be confusing. Don’t try to resolve the tension — it is one of the most consistent patterns in Scripture (cf. Genesis 50:20; Acts 2:23). The goal is to help the group hold both truths simultaneously: the Assyrians are fully responsible for their pride, <em>and</em> the Lord is using them for his purposes.</p><p>The question about seemingly unstoppable powers today is one of the most pastorally relevant in this session. The point is not to identify modern Assyrias with confidence but to trust the Lord’s sovereignty even when human power seems overwhelming.</p>"
+        },
+        "watch": {
+          "subtype": "highlighted",
+          "header": "Things to watch for",
+          "body": "👁️ Watch for the group getting stuck in the detail of the four indictments and losing the shape of the whole. Aim to land the main insight from each section and keep moving. Save time for the Assyrian paradox (10:5–19), which is the theological heart of the session."
+        },
+        "questions": [
+          {
+            "questionNumber": 1,
+            "verses": "9:8–10:4",
+            "header": "9:8–10:4: The Lord’s hand is still upraised",
+            "question": "This section is in four parts, each ending with ‘Yet for all this, his anger is not turned away, his hand is still upraised.’ In groups, go through each part and discuss what Israel’s sin is, how the Lord will judge them, and how his judgment fits their sin.",
+            "answer": "<strong>9:8–12:</strong> Pride and arrogance — self-confident rebuilding rather than repentance. The Lord uses their allies and enemies (in whom they trust) to destroy them.<br><br><strong>9:13–17:</strong> Unrepentant in the face of judgment; ungodly leaders and lying prophets. The Lord takes no pleasure in them and does not pity them — all parts of society are guilty, including the leaders who should know better.<br><br><strong>9:18–21:</strong> Wickedness so rife it is consuming everything. The Lord’s judgment is the real fire beneath it. They turn even on each other.<br><br><strong>10:1–4:</strong> Unjust laws and oppression of the vulnerable. The Lord will make them vulnerable in turn — they will have nowhere to flee.",
+            "leaderNote": "Works well as a group exercise: four sub-groups, one per section, 5–7 minutes, then bring together. The key insight to draw out: each judgment fits the sin — a form of poetic justice reflecting the Lord’s character as both holy and fair."
+          },
+          {
+            "questionNumber": 2,
+            "verses": "10:5–6",
+            "header": "10:5–19: Does the axe raise itself above the person who swings it?",
+            "question": "How does the Lord see Assyria? What is Assyria’s divine purpose? (vv5–6)",
+            "answer": "Assyria is nothing more than the Lord’s tool of discipline — a ‘rod’ and a ‘club’. He is the one dispatching the Assyrians. Their power over Israel is entirely derived from and dependent on the Lord’s commission."
+          },
+          {
+            "questionNumber": 3,
+            "verses": "10:7–14",
+            "header": "10:5–19: Does the axe raise itself above the person who swings it?",
+            "question": "How are the Assyrians’ intentions different from the Lord’s? How do the Assyrians see themselves? (vv7–14) Why is their pride such a big problem? (v15)",
+            "answer": "The Assyrians intend to destroy many nations and make themselves great. They are hugely self-confident, pointing to their long list of conquered nations as proof (vv9–11, 13–14). But this pride is precisely the problem (v15): the axe does not get to claim credit for what the woodsman does. The tool that claims to be greater than its user has confused itself about the nature of reality."
+          },
+          {
+            "questionNumber": 4,
+            "verses": "10:12, 16–19",
+            "header": "10:5–19: Does the axe raise itself above the person who swings it?",
+            "question": "What will the Lord do? (vv12, 16–19)",
+            "answer": "The Lord will punish the king of Assyria for his wilful pride (v12), after finishing using them to discipline Jerusalem. He will consume them and make them weak and few (vv16–19). The reversal is pointed: they seemed all-powerful and uncountable, but the Lord will bring them low. This actually happened historically when the Assyrian army was destroyed outside Jerusalem (37:36)."
+          },
+          {
+            "questionNumber": 5,
+            "verses": "10:20–22",
+            "header": "10:20–34: A remnant will return",
+            "question": "What will be the result of the Lord’s judgment on Israel?",
+            "answer": "Devastating destruction, but a small remnant will return to the Lord. They will stop relying on human powers — specifically Assyria, the very thing they had been running to — and truly trust in the Lord. The name Shear-Jashub (‘a remnant will return’ — Isaiah’s son in 7:3) is echoed explicitly in vv21–22. There is hope beyond judgment."
+          },
+          {
+            "questionNumber": 6,
+            "verses": "10:24, 28–34",
+            "header": "10:20–34: A remnant will return",
+            "question": "What is the experience of God’s people with the Assyrians? (vv24, 28–34)",
+            "answer": "They are afraid and oppressed as the Lord uses the Assyrians to judge Israel. Verses 28–34 give a terrifying march southward toward Jerusalem, town by town — a sense of mounting dread graphically narrated."
+          },
+          {
+            "questionNumber": 7,
+            "verses": "10:25–27",
+            "header": "10:20–34: A remnant will return",
+            "question": "How does the Lord change their perspective on their situation? (vv25–27)",
+            "answer": "The Lord puts a limit on it. His anger against his people will be finished, and he will then punish the Assyrians. He will remove the burden of Assyrian rule. The very yoke that seemed permanent will be broken."
+          },
+          {
+            "questionNumber": 8,
+            "verses": "10:26",
+            "header": "10:20–34: A remnant will return",
+            "question": "What is the significance of referring to Midian and Egypt in v26?",
+            "answer": "Both were victories against great odds — Gideon’s rout of the Midianites (Judges 7:19–25) and the crossing of the Red Sea (Exodus 14:15–31). In both cases only the Lord could take the credit. The point: Assyria might seem unstoppable but the Lord is King, and he has done this before."
+          },
+          {
+            "questionNumber": 9,
+            "verses": "9:8–10:4",
+            "header": "Application",
+            "question": "What does today’s passage teach us about what the Lord values in his people?",
+            "answer": "He values repentance, humility, and genuine trust — and is grieved by stubborn self-confidence that treats his discipline as an inconvenience to manage rather than a call to return. The fourfold refrain is not a picture of a God who enjoys judgment but of a God whose patience is being tested by a people who refuse to return."
+          },
+          {
+            "questionNumber": 10,
+            "verses": "10:20–27",
+            "header": "Application",
+            "question": "What does today’s passage teach us about the Lord’s promises?",
+            "answer": "Even in the darkest judgment, the remnant promise holds. Shear-Jashub has been waiting since 7:3 and here it is fulfilled. The Lord does not abandon his purposes even when his people abandon him. His promises outlast their failures."
+          },
+          {
+            "questionNumber": 11,
+            "verses": "10:5–19",
+            "header": "Application",
+            "question": "What does today’s passage teach us about the Lord’s sovereignty? How does this help us think about seemingly unstoppable and scary powers today?",
+            "answer": "The most powerful empire of the ancient world is, in the Lord’s hands, just a rod. The Assyrians do not know they are serving his purposes; that does not change the fact that they are. This gives the people of God a radically different perspective on terrifying human powers: not denial of their danger, but confidence that they operate within the Lord’s purposes and cannot ultimately prevail against his plans."
+          },
+          {
+            "questionNumber": 12,
+            "verses": "10:33–34; 11:1",
+            "header": "Application",
+            "question": "Why do you think chapter 11 is so significant after what we have seen in chapters 9–10?",
+            "answer": "Chapters 9–10 have described the cutting down of Israel, Assyria, and all proud powers. Chapter 10 ends with the Lord himself lopping off the tall trees (vv33–34). Then 11:1: ‘A shoot will come up from the stump of Jesse.’ Out of total apparent death comes new life. The Branch does not come from the impressive cedars of human power but from the humblest point possible: a stump. This is the shape of the gospel.",
+            "leaderNote": "If the group is reading ahead to chapter 11, use this question to preview the next session. The shoot from the stump of Jesse is the answer to everything chapters 9–10 have described."
+          }
+        ]
+      },
+      {
+        "chapterNumber": 6,
+        "format": "HTML",
+        "title": "Isaiah 11–12 — Praise the Lord for His Righteous Branch",
+        "bigIdea": "Praise the Lord because his righteous Branch will rule in peace and gather his people home.",
+        "passage": "Isaiah 11–12",
+        "background": {
+          "subtype": "standard",
+          "header": "Background",
+          "body": "<p>Chapters 11–12 form the climax of the first major section of Isaiah (chs 6–12, the ‘Book of the King’) and function as a resolution of everything that has preceded. The darkness of chapters 9–10 finds its answer not in political success or military reversal but in the coming of the Branch from Jesse’s stump.</p><p><strong>The Branch (11:1).</strong> The Hebrew <em>choter</em> (shoot) and <em>netser</em> (Branch) convey new life emerging from apparent death. The stump of Jesse — not of David the king but of Jesse his father, the original family before the royal line — suggests a return to the very roots, a new beginning from the most basic point. This echoes the cutting down of 6:13 and 10:33–34.</p><p><strong>The Spirit (11:2).</strong> The seven-fold description of the Spirit is one of the richest pneumatological texts in the OT. In Jewish tradition these seven gifts are associated with the Messianic age. Isaiah 42:1 and 61:1 return to the Spirit resting on the Servant/Anointed One. The NT identifies Jesus’s baptism as the fulfilment of this anointing (Matthew 3:16–17; Luke 4:18).</p><p><strong>The new creation (11:6–9).</strong> The vision of predator and prey at peace deliberately echoes and reverses the Fall. The passage is closely linked to Isaiah 65:17–25 and Revelation 21–22.</p><p><strong>The second Exodus (11:10–16).</strong> The gathering of the scattered people of God from the four corners of the earth is described as a new Exodus, vastly expanded: not just Israel from Egypt but scattered exiles from Assyria, Egypt, Cush, Elam, Babylonia, Hamath, and the islands of the sea. The NT applies this to the gathering of the nations through Christ.</p><p><strong>The song of chapter 12.</strong> Chapter 12 is a short psalm of thanksgiving — two stanzas that bookend the first major section of Isaiah. It echoes the Song of the Sea (Exodus 15) and looks ahead to the songs of the redeemed in Revelation 5:9 and 15:3. The right response to everything in chapters 1–11 is praise.</p>"
+        },
+        "keyPoints": {
+          "subtype": "standard",
+          "header": "Key Teaching Points",
+          "body": "<p><strong>The Branch is the opposite of Assyria in every way.</strong> Chapter 10 described Assyria as lofty, tall, arrogant, and destructive. The Branch comes from a stump, is filled with the Spirit, and judges by righteousness not appearances. Everything Assyria is, the Branch is not; everything Assyria lacks, the Branch has.</p><p><strong>The Spirit equips the Branch for everything the leaders of Israel lacked.</strong> The catalogue of 11:2–3 reads like a systematic answer to everything wrong with Israel’s leadership in chapters 1–10: wisdom where there was folly, understanding where there was blindness, knowledge and fear of the Lord where there was pride and idolatry.</p><p><strong>The Branch’s rule overturns the Fall.</strong> The vision of 11:6–9 is a theological statement about the scope of redemption: not just political restoration but the healing of creation itself. The root of all evil is ignorance of the Lord; the earth being filled with his knowledge (v9) addresses the root.</p><p><strong>The gathering is for all nations, not just Israel.</strong> The nations themselves will rally to the Branch (v10). This is the fulfilment of the promise of 2:1–5 that opened this section. The study has come full circle.</p><p><strong>The right response is praise.</strong> Chapter 12 gives the group the words. Don’t rush past it — it is the conclusion and the response, and it deserves to be read aloud.</p>"
+        },
+        "exegetical": {
+          "subtype": "standard",
+          "header": "Exegetical Notes",
+          "body": "<p><strong>‘Jesse’ rather than ‘David’ (11:1).</strong> By the time of the Messiah’s coming, the royal Davidic line will have been so reduced that it is back to Jesse — the original family before the glory days. The Messiah does not come from a lineage at the height of its power but from a stump. This is the theology of the cross in seed form.</p><p><strong>‘He will not judge by what he sees with his eyes’ (11:3).</strong> A direct contrast to the leaders of Israel who have judged by appearances — favouring the rich, oppressing the poor, calling good evil. The Branch’s justice is based on truth, not social status or political expediency.</p><p><strong>‘The wolf will live with the lamb’ (11:6).</strong> Functions on multiple levels. Literally: the reversal of natural hostility. Politically: the great predator nations and vulnerable prey will no longer relate in those terms. The categories of power and weakness will be transformed under the Branch’s rule.</p><p><strong>‘The root of Jesse’ (11:10).</strong> Slightly different from the ‘shoot from the stump of Jesse’ in v1 — here the root itself that the nations seek. Paul quotes this in Romans 15:12 as the basis for the Gentile mission: ‘The Root of Jesse will spring up, one who will arise to rule over the nations; in him the Gentiles will hope.’</p><p><strong>‘The wells of salvation’ (12:3).</strong> Water drawn freely from a source that does not run dry. John 4:14 (the woman at the well) and John 7:37–38 (streams of living water) both draw on this imagery. Salvation is not a scarce resource but an inexhaustible spring.</p>"
+        },
+        "pastorals": {
+          "subtype": "standard",
+          "header": "Pastoral Sensitivities",
+          "body": "<p>This is one of the most joyful sessions in the whole study. After the sustained darkness of chapters 9–10, the group has earned the right to dwell in chapters 11–12 with delight. Some of the best responses to passages like 11:6–9 and 12:1–6 are simply silence, reading aloud together, or quiet prayer.</p><p>The new creation imagery of 11:6–9 can raise questions about whether this is literal or figurative. It is not necessary to resolve this — the theological point is clear regardless: the Branch’s redemption extends to the whole created order. Help the group feel the breadth of that vision.</p><p>The application questions at the end ask the group to reflect on the whole of chapters 1–12. This is a good opportunity to step back and see the arc: from the devastating indictment of chapter 1 to the song of praise in chapter 12. Allow time for that bigger reflection.</p>"
+        },
+        "watch": {
+          "subtype": "highlighted",
+          "header": "Things to watch for",
+          "body": "👁️ Watch for the group treating chapter 12 as an epilogue rather than a conclusion. It is the right response to everything in chapters 1–11 — the answer to ‘so what do we do with all of this?’ is praise and proclamation. If time is short, make sure chapter 12 gets its own space."
+        },
+        "questions": [
+          {
+            "questionNumber": 1,
+            "verses": "11:1–5; 10:33–34",
+            "header": "11:1–5: The Branch’s character",
+            "question": "How does the Branch contrast with the way the Assyrians are described in chapter 10?",
+            "answer": "The Assyrians are lofty, tall, impressive trees that the Lord cuts down (10:33–34). The Branch comes from a stump: humble, apparently lifeless, the least promising origin imaginable. Everything the Assyrians claimed for themselves — power, wisdom, victory — the Branch actually possesses, but through the Spirit rather than through pride."
+          },
+          {
+            "questionNumber": 2,
+            "verses": "11:1–5",
+            "header": "11:1–5: The Branch’s character",
+            "question": "What will the Branch be like? How is he different from Assyria and from the leaders of Israel and Judah?",
+            "answer": "From David’s line (Jesse); full of the Spirit of the Lord; wisdom and understanding; counsel and might; knowledge and fear of the Lord — delighting in the fear of the Lord; judging righteously not superficially; bringing justice to the poor; striking down the wicked; characterised by righteousness and faithfulness. Every quality is the direct opposite of what the Assyrians claimed and what Israel’s leaders demonstrated in chapters 1–10."
+          },
+          {
+            "questionNumber": 3,
+            "verses": "11:1–5",
+            "header": "11:1–5: The Branch’s character",
+            "question": "How are vv1–5 fulfilled in Jesus?",
+            "answer": "Jesus is the Davidic Messiah, anointed with the Spirit at his baptism (Matthew 3:16–17; cf. Luke 4:18, quoting Isaiah 61:1). Everything about his ministry — his wisdom in teaching, his righteous judgment, his care for the poor, his confrontation of the wicked — can be described in the categories of these verses. Invite the group to give specific NT examples for each characteristic."
+          },
+          {
+            "questionNumber": 4,
+            "verses": "11:6–9",
+            "header": "11:6–9: The Branch’s rule",
+            "question": "What will the rule of the Branch be like?",
+            "answer": "Characterised by the global peace and harmony of creation: wolf and lamb, leopard and goat, calf and lion at peace. A little child will lead them. Nothing will harm or destroy on the Lord’s holy mountain because the earth will be filled with the knowledge of the Lord as the waters cover the sea."
+          },
+          {
+            "questionNumber": 5,
+            "verses": "11:6–9",
+            "header": "11:6–9: The Branch’s rule",
+            "question": "How does the Branch’s rule fit into the overall story of salvation history?",
+            "answer": "This is the ultimate overturning of the Fall. The enmity, pain, and death that came into creation in Genesis 3 are reversed. It points forward to Revelation 21 — the new creation where there is no more death, mourning, crying, or pain. The Branch’s reign is the healing of everything that went wrong at the beginning."
+          },
+          {
+            "questionNumber": 6,
+            "verses": "11:10–16",
+            "header": "11:10–16: The Branch’s people",
+            "question": "What will the Branch do for the Lord’s people?",
+            "answer": "Gather them from across the earth — from Assyria, Egypt, Cush, Elam, Babylonia, and the islands of the sea — and destroy any opposition. It will be like a new and greater Exodus: the Lord will dry up the gulf of the Egyptian sea and provide a highway for the remnant."
+          },
+          {
+            "questionNumber": 7,
+            "verses": "11:10–16",
+            "header": "11:10–16: The Branch’s people",
+            "question": "How does this point us forward to the ministry of Jesus?",
+            "answer": "Christ gathers the people of God from across all nations. Note that the Branch gathers not just scattered Israelite exiles but the nations themselves (v10 — ‘the nations will rally to him’). This points forward to the work of Jesus when people from every language, tribe, and nation will be gathered to him, and nothing will be able to stop him building his church.",
+            "leaderNote": "Paul quotes v10 in Romans 15:12 to justify his Gentile mission. It is worth pointing the group to this — it shows that the universal scope of the Branch’s gathering is not a NT invention but the fulfilment of what Isaiah promised."
+          },
+          {
+            "questionNumber": 8,
+            "verses": "12:1–6",
+            "header": "12:1–6: The song of the people of God",
+            "question": "How are the people of God to respond to all this?",
+            "answer": "With praise and proclamation. The song of chapter 12 is both a response to what the Lord has done and a commission to tell others about it. ‘Give praise to the Lord, proclaim his name; make known among the nations what he has done’ (v4)."
+          },
+          {
+            "questionNumber": 9,
+            "verses": "12:1–6",
+            "header": "12:1–6: The song of the people of God",
+            "question": "What is to be the focus of their praise and proclamation?",
+            "answer": "The salvation of the Lord. His anger turned away. His protection. The joyful proclamation of glorious things he has done for his people — not as private spiritual experience but as news to be made known among the nations. The image of drawing water from the wells of salvation (v3) speaks of abundance freely received: salvation is not scarce but an inexhaustible source."
+          },
+          {
+            "questionNumber": 10,
+            "verses": "1:1–12:6",
+            "header": "Application",
+            "question": "This ends the first main section in Isaiah. How has what we have learned help us understand the ministry of Jesus better? How does it help us understand the story of salvation history?",
+            "answer": "Open reflection question — invite the group to name what has struck them most from the first six sessions. The arc from chapter 1 (devastating indictment) through the Immanuel promise (ch7), the darkness of chapters 9–10, to the Branch and the song of chapter 12 is itself a miniature of the whole gospel story: diagnosis, promise, darkness, fulfilment, praise.",
+            "leaderNote": "A good moment to step back from detailed exegesis and invite broader reflection. What has changed in how the group reads the OT? What understanding of Jesus has deepened? What have they learned about the character of God? Allow at least 5–7 minutes."
+          },
+          {
+            "questionNumber": 11,
+            "verses": "11:1–12:6",
+            "header": "Application",
+            "question": "How can we now look differently at our world? What difference does it make to see what the Branch will do ‘on that day’?",
+            "answer": "Knowing that the Branch’s rule will ultimately cover the earth as the waters cover the sea gives the people of God a radically different perspective on the darkness and brokenness of the present. We live between the first coming of the Branch and his final coming. That in-between position shapes everything about how we face the present."
+          },
+          {
+            "questionNumber": 12,
+            "verses": "12:1–6",
+            "header": "Application",
+            "question": "How can we respond in praise and proclamation to the Lord?",
+            "answer": "Open application question. The pattern of chapter 12: receive the Lord’s salvation → respond in praise → proclaim to others. Help the group think concretely about what ‘making known among the nations what he has done’ looks like in their specific context.",
+            "leaderNote": "Consider closing the session by reading chapter 12 aloud together — perhaps alternating verses or reading responsively. After six sessions of sustained engagement with judgment and hope, the song of chapter 12 deserves to be heard as a song, not just studied as a text."
           }
         ]
       }
+
     ]
   },
   "studyAboutData":{

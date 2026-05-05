@@ -2042,7 +2042,7 @@ async function renderGoDeeper(tabId) {
 
       // ── Discover content field base names in JSON insertion order ──────────
       // Strip trailing digits, deduplicate (first-seen order), skip structural fields.
-      const SKIP = new Set(['chapterNumber', 'format', 'title']);
+      const SKIP = new Set(['chapterNumber', 'format', 'title', 'footnotes']);
       const seen = new Set();
       const contentFields = [];
       for (const key of Object.keys(ch)) {
@@ -2077,7 +2077,7 @@ async function renderGoDeeper(tabId) {
           return `
           <div class="go-deeper-block">
             ${headerHtml}
-            <div class="go-deeper-highlight">${renderFormatted(body, blockFormat)}</div>
+            <div class="go-deeper-highlight">${renderFormatted(body, blockFormat, ch.footnotes)}</div>
           </div>`;
         }
 
@@ -2088,7 +2088,7 @@ async function renderGoDeeper(tabId) {
         return `
           <div class="go-deeper-block">
             ${headerHtml}
-            ${renderFormatted(body, blockFormat)}
+            ${renderFormatted(body, blockFormat, ch.footnotes)}
           </div>`;
       }).join('\n');
 

@@ -64,7 +64,7 @@ function getUpgradeOnboardingSlides() {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>Markdown:</b> markdown now supported in estudies</li><li><b>Back:</b> bugfix re: going Back across multiple estudies</li></ul>',
+      body:    '<ul><li><b>??:</b> ???</li><li><b>??:</b> ???</li></ul>',
     },
   ];
 }

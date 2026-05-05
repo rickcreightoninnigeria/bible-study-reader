@@ -1,0 +1,229 @@
+{
+  "studyMetadata":{
+    "studyId"          :"introducing_genesis_v001",
+    "title"            :"Introducing Genesis",
+    "subtitle"         :"Bible Study",
+    "shortTitle"       :"Genesis",
+    "description"      :"Most people, at some point, ask the big questions. <em>Where did everything come from? Does my life have any meaning? Is there a God – and if so, what is He like?</em> Genesis doesn’t ease into these questions slowly. It answers them from its very first sentence.<blockquote>‘In the beginning, God created the heavens and the earth.’ (Genesis 1:1)</blockquote>Before anything else existed – before people, before the world – God was already there. He is not part of creation. He does not depend on anything. Everything begins with Him.",
+    "author"           :"Rick Creighton",
+    "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Law", "Subsection": "Genesis" }, { "Shelf": "Beliefs", "Section": "Creation & Humanity", "Subsection": "Creation" }],
+    "estudyFileVersion":3,
+    "studyVersion"     :1.01,
+    "language"         :"en",
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-04-08T00:00:00Z",
+    "updatedAt"   :"2026-04-08T00:00:00Z",
+    "tags"        :["old testament", "genesis", "creation"],
+    "shareMessage":"Check out this Bible study app — “Bible Study Reader”.\n\nAvailable soon on Google Play and the App Store."
+  },
+  "theme":{
+    "theme-annotation":"Genesis study theme — warm earth and dawn palette. Evokes beginnings, creation, soil, and first light. Grounded yet hopeful, reflecting origins, covenant promises, and the unfolding of God’s purposes.",
+    "surface"         :"#f4efe7",
+    "surface-mid"     :"#e6dccb",
+    "text"            :"#2b2118",
+    "text-secondary"  :"#5a4632",
+    "text-faint"      :"#8a735c",
+    "emphasis"        :"#8c4a1f",
+    "emphasis-light"  :"#c06b2d",
+    "success"         :"#6a7f3f",
+    "accent"          :"#b07a3a",
+    "accent-light"    :"#d4a25a",
+    "border"          :"#d6c3a3",
+    "shadow"          :"rgba(43,33,24,0.12)",
+    "card-bg"         :"#ffffff",
+    "dm-base"         :"#14100c",
+    "dm-surface"      :"#2b2118",
+    "dm-raised"       :"#3a2e22",
+    "dm-sunken"       :"#221a13",
+    "dm-border"       :"#4a3a2b",
+    "dm-text"         :"#e6dccb",
+    "dm-text-mid"     :"#cbb89a",
+    "dm-text-faint"   :"#7a6652"
+  },
+  "chapters":[
+  ],
+  "studyOnboardingSlides":[
+    {
+      "icon"   :"📖",
+      "eyebrow":"Welcome",
+      "heading":"Introducing Genesis",
+      "body"   :"A seven-session Bible study on the book of Genesis.\n\nWork through each chapter at your own pace, or use it with a group.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"✍️",
+      "eyebrow":"How it works",
+      "heading":"Read, reflect, write",
+      "body"   :"Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>ⓘ</b> beside any Bible reference to read the passage without leaving the app.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"💾",
+      "eyebrow":"Your answers",
+      "heading":"Saved on your device",
+      "body"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"⚙️",
+      "eyebrow":"Make it yours",
+      "heading":"Adjust to your preference",
+      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "action" :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
+      "format"   :"HTML"
+    },
+    {
+      "icon"   :"👋",
+      "eyebrow":"Before you begin",
+      "heading":"How to use this app",
+      "body"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
+      "action" :{
+        "label":"Go to the ‘How to use’ page →",
+        "fn"   :null
+      },
+      "bodyAfter":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+      "format"   :"HTML"
+    }
+  ],
+  "howToUseData":{
+    "sections":[
+      {
+        "heading":"Who Is This Study For?",
+        "blocks" :[
+          {
+            "title":"People asking the big questions",
+            "body" :"Genesis opens with the questions most people ask at some point: Where did everything come from? Does my life have any meaning? Is there a God — and if so, what is He like? If you are genuinely wrestling with those questions, this study is designed for you. It doesn’t assume you have already answered them. It works through what Genesis actually says and invites you to think carefully about it."
+          },
+          {
+            "title":"Newer Christians wanting a foundation",
+            "body" :"Genesis 1-12 is not just the beginning of the Bible — it is the foundation on which the rest of the Bible is built. If you are relatively new to the Christian faith and want to understand why sin matters, why the world is the way it is, and how God’s plan to rescue it began, this study covers that ground carefully and directly."
+          },
+          {
+            "title":"People discipling others",
+            "body" :"If you are walking alongside someone else — as a mentor, a small group leader, or a friend — this study gives you a structured way to work through the foundations together. The eight chapters move from creation to the call of Abram, tracing the shape of God’s story from the very beginning."
+          }
+        ]
+      },
+      {
+        "heading":"Individual or Group Study?",
+        "blocks" :[
+          {
+            "title":"On your own",
+            "body" :"This study works well as a personal study. Work through each chapter at your own pace, read the Bible passages, write your answers, and spend time with the reflection questions at the end. There is no right speed — some chapters may take twenty minutes, others longer if a question stops you in your tracks."
+          },
+          {
+            "title":"In a group",
+            "body" :"The study also works well in a small group. You could read the passages and discuss the questions together from scratch. Alternatively — and this is often the most rewarding approach — each person works through the chapter individually first, writes their answers, and then the group meets to discuss what they found. Either way works. The questions are designed to prompt genuine reflection, not just right answers."
+          }
+        ]
+      },
+      {
+        "heading":"Group Leaders & Mentors",
+        "blocks" :[
+          {
+            "title":"Working with a leader or mentor",
+            "body" :"<p>It can make a real difference to have someone guiding you through the study — a group leader, a pastor, or a more experienced Christian who can help you think through your answers and questions.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
+          }
+        ]
+      },
+      {
+        "heading":"A Note on the Questions",
+        "blocks" :[
+          {
+            "title":"Two kinds of questions",
+            "body" :"Each chapter has two kinds of questions. The <b>Bible questions</b> are tied to specific passages — asking you to look carefully at what the text actually says. The <b>reflection questions</b> at the end are more personal — asking what the passage means for you specifically, and what you want to carry into your week."
+          },
+          {
+            "title":"The passages are included",
+            "body" :"Every Bible question is linked to a specific passage, which is shown in the study so you can read it directly. For longer readings — especially the full chapter passages at the start of each session — you can tap the <b>Read passage</b> button to open the full text. The translation used throughout is the NET Bible."
+          }
+        ]
+      }
+    ]
+  },
+  "leadersNotesData":{
+  },
+  "studyAboutData":{
+    "author":{
+      "url"  :"",
+      "paras":[
+        "Rick Creighton grew up in Northern Ireland and studied maths at Oxford and then taught maths at a secondary school in England. After that, he studied theology at Moore Theological College in Sydney and London School of Theology.",
+        "He served as a church pastor in England for ten years, before moving to Nigeria in 2012, where he has been teaching at ECWA Theological Seminary Kagoro and Jos ECWA Theological Seminary. He has been involved with BeaconLight Training since 2003.",
+        "Rick is married to Alanna. They have three children: Asha, Conor, and Jack."
+      ],
+      "format":"plainText"
+    },
+    "publisher":{
+      "name" :"BeaconLight",
+      "url"  :"https://www.beaconlight.co.uk",
+      "paras":[
+        "BeaconLight is a non-denominational Christian training organisation based in the UK, founded in 1995. Its aim is to equip Christians worldwide with practically-applied Biblical gospel ministry tools — resources designed to help people both equip themselves and equip others.",
+        "BeaconLight’s resources include CrossCheck, which enables Christians to explain their faith and lead others to Jesus, and Word@Work, a verse-by-verse applied devotional commentary of the whole New Testament. BeaconLight also provides printed Biblical resources to prisons, seafarers, police, and the armed services.",
+        "BeaconLight believes that Christian ministry should be free of charge, and all its online materials are available without registration or payment. The ministry is funded entirely by donations.",
+        "BeaconLight is a member of the Evangelical Alliance and Global Connections, and is a registered charity in England and Wales (Charity No. 1047046)."
+      ],
+      "format":"plainText"
+    }
+  },
+  "copyrightData":{
+    "licence":{
+      "spdxId"  :"CC-BY-SA-4.0",
+      "name"    :"Creative Commons Attribution-ShareAlike 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format",
+        "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+      ],
+      "conditions":[
+        "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made",
+        "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+      ],
+      "format":"plainText"
+    },
+    "copyright":{
+      "holder"   :"Rick Creighton",
+      "year"     :2026,
+      "statement":"Rick Creighton, 2026. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License."
+    },
+    "bibleTranslation":{
+      "name"     :"NET Bible",
+      "version"  :"NET Bible® (New English Translation)",
+      "copyright":"©1996, 2019 Biblical Studies Press, L.L.C.",
+      "url"      :"https://netbible.com",
+      "usedWith" :"permission"
+    },
+    "notices":[
+      "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
+      "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
+      "In preparing this edition, the author made use of Claude, ChatGPT, and Grammarly for editorial feedback and redrafting suggestions – particularly in relation to opening illustrations, closing summaries, and reflection questions. Claude also helped with a certain amount of vibe coding. All content decisions, theological judgements, and final wording are the author’s responsibility.",
+      "The Scriptures quoted are from the NET Bible® http://netbible.com copyright ©1996, 2019 used with permission from Biblical Studies Press, L.L.C. All rights reserved."
+    ],
+    "format":"HTML"
+  },
+  "imageData":{
+    "cover":{
+      "alt"       :"Serene landscape at sunrise",
+      "fallback"  :"🌈",
+      "provenance":"Created by Chatgpt, 2026-04-10, 2210"
+    },
+    "publisher":{
+      "alt"     :"🔆BeaconLight — biblical truth to share",
+      "fallback":"🔆BeaconLight"
+    },
+    "author":{
+      "alt"       :"Rick Creighton",
+      "fallback"  :"👨‍🌾",
+      "provenance":"offline photo"
+    }
+  },
+  "studyAiData":{
+    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Introducing Genesis’ — exploring the Old Testament book of Genesis.",
+    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
+  }
+}

@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Sanctification" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Growth in Grace" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -477,6 +477,8 @@
         {
           "elementId"        :"ch02-el02",
           "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"Pause for thought",
           "format"           :"plainText",
           "question"         :"What do you think of these quotations? (Do you like them or not, and why?)",
           "answerType"       :"freeText",
@@ -1229,6 +1231,8 @@
         {
           "elementId"        :"ch04-el02",
           "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"Pause for thought",
           "format"           :"plainText",
           "question"         :"What do you think of this quotation? (Do you like it or not, and why?)",
           "answerType"       :"freeText",

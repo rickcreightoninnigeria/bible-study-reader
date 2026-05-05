@@ -1,0 +1,942 @@
+{
+  "studyMetadata":{
+    "studyId"          :"travelling_with_jonah_v001",
+    "title"            :"Travelling with Jonah",
+    "subtitle"         :"A Double Journey",
+    "shortTitle"       :"Jonah",
+    "description"      :"Jonah is an unusual book. If you are familiar with the Bible, it is probably one you feel fairly at home with — one you know quite well (or parts of quite well). The part about 'the whale' is usually familiar territory. But there is a lot more to the book than just fish.<blockquote>'Do not be like Jonah.' — the message in a sentence</blockquote>The story is not as straightforward as it looks at first glance. There are surprises, reversals and irony. Our hero does not look quite so heroic by the end — and some of the 'villains' almost turn out to be heroes. We will journey through Jonah twice: forwards from chapter 1 to 4, then backwards from 4 to 1.",
+    "author"           :"Rick Creighton",
+    "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
+    "estudyFileVersion":3,
+    "studyVersion"     :1.01,
+    "language"         :"en",
+    "bibleTranslation" :{
+      "en":"NIV"
+    },
+    "createdAt"   :"2026-05-05T00:00:00Z",
+    "updatedAt"   :"2026-05-05T00:00:00Z",
+    "tags"        :["old testament", "jonah", "minor prophets", "repentance", "compassion", "mercy", "judgment", "mission"],
+    "shareMessage":"Check out this Bible study app — ‘Bible Study Reader’.\n\nAvailable soon on Google Play and the App Store."
+  },
+  "theme":{
+    "theme-annotation":"Travelling with Jonah — deep sea blues and storm-grey tones, warmed by desert ochres and Nineveh earth, evoking the journey from rebellion to compassion, from the depths of the sea to the burning east wind.",
+    "surface"         :"#f2f4f7",
+    "surface-mid"     :"#dde2ea",
+    "text"            :"#1a2230",
+    "text-secondary"  :"#3a4f6a",
+    "text-faint"      :"#6a7f96",
+    "emphasis"        :"#1e5080",
+    "emphasis-light"  :"#2e78b8",
+    "success"         :"#3a7a5a",
+    "accent"          :"#b07a2a",
+    "accent-light"    :"#d4a040",
+    "border"          :"#c0ccd8",
+    "shadow"          :"rgba(26,34,48,0.12)",
+    "card-bg"         :"#ffffff",
+    "dm-base"         :"#0a0e15",
+    "dm-surface"      :"#1a2230",
+    "dm-raised"       :"#243040",
+    "dm-sunken"       :"#121820",
+    "dm-border"       :"#2e4055",
+    "dm-text"         :"#dde2ea",
+    "dm-text-mid"     :"#a8b8cc",
+    "dm-text-faint"   :"#5a6e85"
+  },
+  "chapters":[
+  ],
+  "studyOnboardingSlides":[
+    {
+      "icon"   :"🐋",
+      "eyebrow":"Welcome",
+      "heading":"Travelling with Jonah",
+      "body"   :"A seven-session Bible study on the book of Jonah — 'a double journey'.\n\nWork through each chapter at your own pace, or use it with a group.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"✍️",
+      "eyebrow":"How it works",
+      "heading":"Read, reflect, write",
+      "body"   :"Each chapter has questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>ⓘ</b> beside any Bible reference to read the passage without leaving the app.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"🔄",
+      "eyebrow":"A double journey",
+      "heading":"Forwards, then backwards",
+      "body"   :"We journey through Jonah <b>twice</b>: first forwards from chapter 1 to 4, then backwards from 4 to 1.\n\nThe ending changes everything. You'll understand the beginning in a completely new way.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"💾",
+      "eyebrow":"Your answers",
+      "heading":"Saved on your device",
+      "body"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"⚙️",
+      "eyebrow":"Make it yours",
+      "heading":"Adjust to your preference",
+      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "action" :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
+      "format"   :"HTML"
+    },
+    {
+      "icon"   :"👋",
+      "eyebrow":"Before you begin",
+      "heading":"How to use this app",
+      "body"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
+      "action" :{
+        "label":"Go to the 'How to use' page →",
+        "fn"   :null
+      },
+      "bodyAfter":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+      "format"   :"HTML"
+    }
+  ],
+  "howToUseData":{
+    "sections":[
+      {
+        "heading":"Who Is This Study For?",
+        "blocks" :[
+          {
+            "title":"People who feel they know Jonah already",
+            "body" :"Most people feel fairly at home with Jonah — the whale is classic Sunday school material. But there is a lot more to the book than fish. The ending is deliberately unsettling. This study is designed to take you beyond the familiar to what the book is actually about: God's sovereignty, human stubbornness, repentance, and the extraordinary compassion of God."
+          },
+          {
+            "title":"People asking questions about sin, judgment, and mercy",
+            "body" :"Jonah is a story about how God responds to wickedness — and how his prophet should. It raises urgent questions about repentance, what it means to truly fear God, and whether we really share God's compassion for the world around us."
+          },
+          {
+            "title":"People discipling others",
+            "body" :"If you are walking alongside someone as a mentor, small group leader, or friend, this study gives you a structured way to work through one of the Bible's most provocative books together. The 'Pause for Thought' moments and reflection questions at the end of each chapter are designed to generate real, honest conversation."
+          }
+        ]
+      },
+      {
+        "heading":"Individual or Group Study?",
+        "blocks" :[
+          {
+            "title":"On your own",
+            "body" :"This study works well as a personal study. Work through each chapter at your own pace, read the Bible passages, write your answers, and give real time to the 'Pause for Thought' and reflection questions at the end. Jonah rewards slow, attentive reading."
+          },
+          {
+            "title":"In a group",
+            "body" :"The study also works well in a small group. The most rewarding approach is usually for each person to work through the chapter individually first, write their answers, and then come together to compare what they found. The themes of repentance, compassion, and what it means to truly fear God generate rich discussion."
+          },
+          {
+            "title":"Read the whole book first",
+            "body" :"Jonah is only four short chapters — it takes less than fifteen minutes to read. Before beginning the study, read or listen to the whole book in one sitting. This matters especially for Jonah because the ending (chapter 4) reshapes the meaning of everything that came before."
+          }
+        ]
+      },
+      {
+        "heading":"Group Leaders & Mentors",
+        "blocks" :[
+          {
+            "title":"Working with a leader or mentor",
+            "body" :"<p>It can make a real difference to have someone guiding you through the study — a group leader, a pastor, or a more experienced Christian who can help you think through your answers and questions.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for much richer conversation.</p>"
+          }
+        ]
+      },
+      {
+        "heading":"A Note on the Questions",
+        "blocks" :[
+          {
+            "title":"Two kinds of questions",
+            "body" :"Each chapter has two kinds of questions. The <b>Bible questions</b> are tied to specific passages — asking you to look carefully at what the text actually says, in context. The <b>reflection questions</b> at the end are more personal — asking what Jonah means for you specifically, and what you want to carry into your week."
+          },
+          {
+            "title":"'Pause for Thought' moments",
+            "body" :"Scattered through each chapter are short 'Pause for Thought' prompts. These are not rhetorical — they are worth genuinely stopping for, even briefly, before reading on. Jonah is a book that holds up a mirror to the reader. The 'Pause for Thought' moments are where that happens most directly."
+          },
+          {
+            "title":"'Making Connections'",
+            "body" :"Several chapters include a 'Making Connections' section, drawing a line from something in Jonah to the New Testament — particularly to Jesus' death and resurrection. These connections are part of the fabric of the book, not extras: Jesus himself compared his death and resurrection to Jonah's time in the fish."
+          }
+        ]
+      }
+    ]
+  },
+
+
+
+
+"goDeeperData": {
+  "format": "markdown",
+  "titleMenuHeading": "Travelling with Jonah",
+
+  "intro": {
+    "header": "About this book",
+    "body": [
+      "This is a companion reader to the *Travelling with Jonah* small-group study. Each chapter tab offers the full text of the corresponding book chapter — background, commentary, illustrations, and pastoral application — so you can read, reflect, and go deeper at your own pace.",
+      "Footnotes appear as small superscript buttons inline in the text. Tap one to read the note, then tap anywhere outside to dismiss it."
+    ]
+  },
+
+  "chapters": [
+    {
+      "chapterNumber": 0,
+      "format": "markdown",
+      "title": "A Double Journey?",
+
+      "footnotes": [
+        {
+          "id": 1,
+          "body": "I will not address the biological question of exactly what type of sea beast swallowed Jonah, and so I will refer to it interchangeably as a 'fish' and 'whale' throughout."
+        },
+        {
+          "id": 2,
+          "body": "Jonah 3:4, *'Forty more days and Nineveh will be overturned'* — only 8 words in the NIV. In Hebrew it is even more succinct — only 4 words!"
+        },
+        {
+          "id": 3,
+          "body": "This is not entirely unusual. In the Hebrew Bible, what we call the books of 'the prophets' are called 'the Latter Prophets' — and most of the books we think of as history (Joshua, Judges, 1 & 2 Samuel, 1 & 2 Kings) are called 'the Former Prophets'. They are all counted within 'The Prophets'. That is because all these books are concerned with God's word entering human history. Some tell us the words of the message; others tell us the circumstances it was spoken into. Jonah, however, is still unusual — it is the only predominantly narrative book in the Latter Prophets."
+        }
+      ],
+
+      "opening": {
+        "subtype": "standard",
+        "header": "",
+        "body": "Jonah is an unusual book. If you are familiar with the Bible, then it is probably one that you feel fairly at home with — one you know quite well (or parts of quite well). The part about 'the whale'[[fn:1]] is usually familiar territory — it is classic Sunday school material. But there is a lot more to the book than just fish.\n\nIn fact, the book of Jonah is unlike any of the other prophets in the Bible. We only have eight words of actual prophecy in the whole book, and we do not get to them until chapter 3.[[fn:2]] The book is not so much a prophecy as a story.[[fn:3]]"
+      },
+
+      "focus": {
+        "subtype": "standard",
+        "header": "",
+        "body": "Even so, the fact that it is included among the prophets does give us a clue about the story's focus. It's about God's word entering human history — why that is important, what impact it has, how we should respond to it. But the content of that word is not expanded in great detail. When we come to Jonah's actual prophecy, we will see that it is not complicated or difficult. The message is simple. What's complicated and difficult is the way various people in the story respond. And in particular, the way Jonah responds.\n\nIt is a story with plenty to show us about Jonah's attitude to those who do not know God. And plenty to show us about God himself, and his purposes for this world. But as the story unfolds, it also holds up a mirror for us. We will see things that are thought-provoking and encouraging — as well as things that are challenging and perhaps uncomfortably close to home."
+      },
+
+      "surprises": {
+        "subtype": "standard",
+        "header": "",
+        "body": "The story is not as straightforward as it looks at first glance. There are surprises, reversals, and irony. It does start off straightforwardly (chapter 1), and seems to be going in one direction. But then it has a sting in its tail (chapter 4) — and this 'sting' makes us reconsider the meaning of the whole book. Our hero does not look quite so heroic by the end — and some of the 'villains' almost turn out to be heroes."
+      },
+
+      "twoJourneys": {
+        "subtype": "highlighted",
+        "header": "",
+        "body": "Because of this, we will journey through Jonah **twice**. Our first journey will be *forwards* — we will start at chapter one, and work straight through to chapter four. Our second journey will be *backwards* — having seen how the tale ends in chapter four, we will work backwards and retrace our steps through chapters three, two and one. In one sense we will end up back where we started, but in another sense it will be quite different …"
+      }
+    },
+    {
+  "chapterNumber": 1,
+  "format": "markdown",
+  "title": "Running Scared (?)",
+
+  "footnotes": [
+    {
+      "id": 5,
+      "body": "This is a detail of the bottom panel of the Balawat gates of Shalmaneser III, on view at the British Museum. Accession number: ANE 121651. (A reconstruction of the Balawat gates is featured on the front cover.) © The Trustees of the British Museum."
+    },
+    {
+      "id": 6,
+      "body": "Cf. I.H. Marshall et al (eds), *New Bible Dictionary* (Leicester: IVP, 1996³), 1153."
+    },
+    {
+      "id": 7,
+      "body": "In Hebrew it says 'YHWH' (or 'Yahweh'), which is God's special, covenant name (see Exodus 3:15). In English, 'Yahweh' is usually translated as 'The Lord,' with small capitals."
+    }
+  ],
+
+  "newsOfTheWorld": {
+    "subtype": "standard",
+    "header": "Jonah's News of the World",
+    "body": "Most of the action in Jonah centres around an Assyrian city called Nineveh. Not many of us who read the book of Jonah will have visited Nineveh. And even if we went to the modern-day site, it is in ruins. We would not come away knowing much about what it was like in Jonah's day. So let's begin with the geography.\n\nNineveh is off to the north east of Israel. That might look like a long way away — and in one sense it was: it would have taken Jonah some weeks to get there on foot. Something like trying to walk from London to Poland. But even so, Nineveh would have felt far more threatening than that distance suggests, because Nineveh was one of the main cities of Assyria — and Assyria was the superpower of the day.\n\nAssyria's sphere of control was enormous. They overran both Israel and Judah in the end, destroying the northern kingdom and making a mess of the southern one (see 2 Kings 17–19). These Assyrians were wild and brutal — brilliant warriors, but vicious. They *enjoyed* inflicting war crimes on the people they defeated."
+  },
+
+  "bibleBg": {
+    "subtype": "highlighted",
+    "header": "Bible Background",
+    "body": "Originally Israel was one nation, ruled by King David. After Solomon died it split in two. The smaller, southern half — which kept the kings descended from David — was called Judah. The larger, northern half split off on its own and kept the name Israel. Jonah lived in the northern kingdom, Israel.\n\n*1 Kings 12* tells the story of the division. *2 Kings 14:25* tells us Jonah was based in the north."
+  },
+
+  "warCrimes": {
+    "subtype": "standard",
+    "header": "",
+    "body": "An Assyrian king had metal-work decorating his palace gate as a not-so-subtle proclamation of what it is like to be conquered by Assyria — some survivors having their hands and feet cut off and being impaled on stakes, decapitated heads arranged as ornaments, the head of the defeated enemy king displayed as a trophy.[[fn:5]] The image was meant to send one clear, unmistakeable message to all their neighbours: *'Do not mess with us, if you know what's good for you.'*\n\nThe relationship between Israel and Assyria was not warm and friendly. They were near neighbours — and getting steadily nearer as Assyria's empire grew — but they hated each other. And this is the nation that Jonah was called to preach to."
+  },
+
+  "scene1": {
+    "subtype": "standard",
+    "header": "Scene 1 — Call and Response",
+    "body": "> *The word of the Lord came to Jonah son of Amittai: 'Go to the great city of Nineveh and preach against it, because its wickedness has come up before me.' But Jonah ran away from the Lord and headed for Tarshish. He went down to Joppa, where he found a ship bound for that port. After paying the fare, he went aboard and sailed for Tarshish to flee from the Lord.* (Jonah 1:1–3)\n\nThat is an abrupt start. God calls Jonah, clear and simple — and Jonah runs away, clear and simple. God calls him to go north-east to Nineveh. Instead Jonah heads south to Joppa and catches a boat heading as far west as he can — to Tarshish, probably modern-day Spain,[[fn:6]] completely the opposite direction.\n\nSo what is he doing? At this point we can only guess. Verse 3 simply tells us he ran away; it does not tell us why. We have to wait until chapter 4 to find out, because Jonah does not explain himself until then. The most natural provisional guess: Jonah was scared. Preaching a message of judgment to a foreign city of 120,000 people is daunting at the best of times. It is all the more daunting when those people have a well-earned reputation for what they do to their enemies."
+  },
+
+  "callout1": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Daunting at best"
+  },
+
+  "scene2": {
+    "subtype": "standard",
+    "header": "Scene 2 — Storm and Response",
+    "body": "> *Then the Lord sent a great wind on the sea, and such a violent storm arose that the ship threatened to break up. All the sailors were afraid and each cried out to his own god. And they threw the cargo into the sea to lighten the ship. But Jonah had gone below deck, where he lay down and fell into a deep sleep. The captain went to him and said, 'How can you sleep? Get up and call on your god! Maybe he will take notice of us, and we will not perish.'* (1:4–6)\n\nJonah buys a ticket and jumps on a boat for Spain. You can imagine him frantic and tense, then gradually relaxing as the coast of Israel disappears behind him. That relaxed confidence is about to be shattered. God sends a storm.\n\nThis is not a modern ocean liner. It is a little wooden ship — creaky planks held together with rope and tar — being pounded to pieces by waves. The wind is ripping the sails apart; it is so loud the sailors can hardly hear themselves shouting. When a storm is this bad, you expect people to be afraid."
+  },
+
+  "callout2": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Pounded to pieces"
+  },
+
+  "scene2b": {
+    "subtype": "standard",
+    "header": "",
+    "body": "But Jonah is not doing what you would expect. He is down below, fast asleep.\n\nThe captain is not happy: 'How can you be sleeping?! Get up and call on your God — maybe he will listen to you and we won't all die.' That is ironic. The Lord's prophet needs a pagan to tell him to pray.\n\nNothing works, so the sailors cast lots to find out who is responsible. The lot falls on Jonah. He tells them he is running away from Yahweh — the Lord, the God of heaven who made the sea.[[fn:7]] He has apparently already mentioned this to them earlier in the voyage, though without explaining who Yahweh actually is. So as far as these sailors are concerned, Yahweh is just some lord or other, somebody's boss. No big deal — until now."
+  },
+
+  "callout3": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Don't even think about God!"
+  },
+
+  "mirror": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Jonah might hold up an uncomfortable mirror to us here. If we openly disobey God, that will show through in how we act — we are not so keen to think about him, pray to him, or talk about him much with others. It does not just damage us: it robs the people around us of a chance to hear about the Lord who saves."
+  },
+
+  "scene3": {
+    "subtype": "standard",
+    "header": "Scene 3 — Crunch Time",
+    "body": "> *The sea was getting rougher and rougher. So they asked him, 'What should we do to you to make the sea calm down for us?' 'Pick me up and throw me into the sea,' he replied, 'and it will become calm. I know that it is my fault that this great storm has come upon you.'* (1:11–12)\n\nJonah says that the only way to calm the storm is to throw him overboard. The sailors do not want to do that — they are decent men — and given what they now know about Yahweh, that is understandable. They try to row back to land to save his life. Another irony: these rough pagan sailors are working like mad to save Jonah's life, when it is Jonah — the so-called prophet — who put them all in danger.\n\nIt does not work. The storm only intensifies. So eventually they pray to the Lord, throw Jonah overboard, and the sea goes calm. At this the men greatly feared the Lord, offering sacrifice and making vows to him."
+  },
+
+  "callout4": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Man overboard!"
+  },
+
+  "backtofrontList": {
+    "subtype": "standard",
+    "header": "Back-to-Front Contrasts",
+    "body": "There is a striking string of reversals between the prophet Jonah and the pagan sailors:\n\n- The pagan captain has to tell Jonah the prophet to pray.\n- The sailors work desperately to save Jonah's life when he has put theirs in danger — while he sleeps, or stands silently.\n- The sailors understand the seriousness of Jonah's disobedience far better than he does. 'What have you *done*?!' they ask. Jonah has no answer.\n- The sailors begin to worship the true God while Jonah is still running away from him.\n\nThe only good responses in this whole chapter come from the sailors. They fear the Lord, sacrifice, and make vows. Of Jonah we hear no prayer, no worship, no apology, no repentance — nothing. It is almost as though he would rather drown than turn around and do what God has called him to do."
+  },
+
+  "callout5": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Back-to-front contrasts"
+  },
+
+  "takehome": {
+    "subtype": "standard",
+    "header": "",
+    "body": "There is one take-home message right there. If we are people who know God and want to follow him, let's do a better job of it than Jonah did. The sailors knew next to nothing about God, but they made every effort to do the right thing. Jonah knew so much more, but he did not live it out. Let's not make his mistake."
+  },
+
+  "pauseForThought": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "Are you running away from anything that God wants you to do?"
+  },
+
+  "sovereignty": {
+    "subtype": "standard",
+    "header": "God in Control",
+    "body": "> *But the Lord provided a great fish to swallow Jonah, and Jonah was inside the fish three days and three nights.* (1:17)\n\nJonah may have given up. Maybe he is even willing to drown, so long as he does not have to go to Nineveh. But God has not given up. He is not finished with Jonah yet.\n\nAll through this chapter we see God in control of everything — the storm, the whale, even the casting of the lot. The technical word is *sovereignty*. God is sovereign: totally, completely in control."
+  },
+
+  "callout6": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Nothing catches God by surprise"
+  },
+
+  "sovereignty2": {
+    "subtype": "standard",
+    "header": "",
+    "body": "That is great news. It means that when things are in a mess, the mess will not have the last word. There is nothing that catches our God by surprise — whether it is the big things in life or the tiny things. He controls the path of the biggest storm and the casting of the smallest lot.\n\nEven when we create the mess ourselves, God can still turn it around. Jonah made no real effort to point these sailors towards the saving God — he was an absolute failure as a prophet. But God still used him to teach these sailors to fear the Lord. God is so thoroughly in control that he can bring good out of it even when we try to mess things up completely."
+  },
+
+  "imageGallery": {
+    "subtype": "image-gallery",
+    "header": "Images",
+    "images": [
+      {
+        "src": "images/ch01-map-world.webp",
+        "alt": "Map of the ancient Near East showing Israel and Nineveh",
+        "caption": "Image 1: Jonah's world — Israel sits left of centre; Nineveh lies far to the north-east"
+      },
+      {
+        "src": "images/ch01-map-empire.webp",
+        "alt": "Map showing the extent of the Assyrian Empire at its peak",
+        "caption": "Image 2: The Assyrian Empire at its biggest — Israel and Judah are swallowed within it"
+      },
+      {
+        "src": "images/ch01-balawat-gates.webp",
+        "alt": "Detail from the Balawat gates showing Assyrian war crimes",
+        "caption": "Image 3: Assyrian war crimes — a detail from the Balawat gates, British Museum"
+      },
+      {
+        "src": "images/ch01-map-jonah-runs.webp",
+        "alt": "Map showing Jonah's route away from Nineveh towards Tarshish",
+        "caption": "Image 4: Jonah runs — God calls him north-east; he heads south-west"
+      }
+    ]
+  }
+},
+
+{
+  "chapterNumber": 2,
+  "format": "markdown",
+  "title": "The God who Saves",
+
+  "footnotes": [
+    {
+      "id": 9,
+      "body": "Lieutenant General Lewis 'Chesty' Puller, U.S. Marine Corps."
+    }
+  ],
+
+  "opening": {
+    "subtype": "standard",
+    "header": "",
+    "body": "Have you ever made a mistake and ended up in an enormous mess? Nearly everyone has, so we can probably all identify with where Jonah finds himself — to some extent. Very few people will ever have been in quite the mess that Jonah is in. He has barely escaped drowning, and only because a sea monster eats him first. Jonah is stuck inside a whale.\n\nThe bulk of chapter 2 is a sorrowful prayer that Jonah prays to the Lord. It touches on several themes that are worth drawing out carefully."
+  },
+
+  "sorrowSection": {
+    "subtype": "standard",
+    "header": "Sorrow Realises There is a Problem",
+    "body": "> *You hurled me into the deep, into the very heart of the seas, and the currents swirled about me; all your waves and breakers swept over me.* (2:3)\n\n> *The engulfing waters threatened me, the deep surrounded me; seaweed was wrapped around my head. To the roots of the mountains I sank down; the earth beneath barred me in for ever.* (2:5–6)\n\nImagine him there: tangled up with seaweed, plummeting through the water, lungs bursting, mouth full of bitter sea water, seconds from death. That is not a good situation — but at least Jonah recognises it. In his case, things were so bad that he could not pretend any more. He is forced to face the fact that he is in desperate trouble and needs help."
+  },
+
+  "callout1": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "When you are out of your depth, you need help"
+  },
+
+  "needHelp": {
+    "subtype": "standard",
+    "header": "",
+    "body": "The lesson is almost ridiculously obvious. When you are out of your depth, you need help. The greater the trouble, the greater the help you need.\n\nJonah should have asked God for help long before this — he should never have run away in the first place. But even after he ran, and the storm began pounding the boat, he still had the opportunity to ask for mercy. He could have called out to God there and then. Instead he slept through it. It seems he would rather be stubborn and drowned than humble and repentant.\n\nIt is easy to criticise Jonah from the comfort of dry land. But Jesus' lesson about specks and planks applies (Matthew 7:3–5): before judging Jonah, we should check ourselves. Think back to occasions when you have landed yourself in trouble through your own fault. How do you tend to react? Most of us are tempted to make Jonah's mistake — maybe not always, but at least some of the time."
+  },
+
+  "ostrich": {
+    "subtype": "highlighted",
+    "header": "The Ostrich Trick",
+    "body": "We begin to get ourselves in a mess, but we try to pretend it is not happening — or we think that if we just ignore it, it will go away. That is what Jonah did by sleeping through the storm. But like most messes, it did not go away; it only got worse. Jonah may have been in denial, but the storm was not.\n\nIt is like the proverbial ostrich: if it buries its head in the sand when a lion is stalking it, the lion does not disappear — the ostrich just cannot see it. The sand may be warm and comfortable, but this solution only gets to be tried once.\n\nIgnoring the messes we make is not the godly way to respond. The godly response is to own up — primarily to God, and often to other people too. We tend not to like doing that. But the ostrich method does not work. One lesson we ought to learn from Jonah is to face up to our failings rather than pretend they are not there."
+  },
+
+  "pft1": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "Have I made any 'messes' that I need to face up to?"
+  },
+
+  "callingGod": {
+    "subtype": "standard",
+    "header": "Calling to God for Help",
+    "body": "There was a wartime proverb: 'There are no atheists in foxholes.'[[fn:9]] We could say the same about Jonah's situation: there are no atheists in the middle of a tempest. It takes the threat of imminent drowning to shake Jonah out of his ostrich attitude. And by then, his situation is so dire that the only one who could possibly help him is God.\n\n> *In my distress I called to the Lord, and he answered me. From the depths of the grave I called for help, and you listened to my cry. … When my life was ebbing away, I remembered you, Lord, and my prayer rose to you, to your holy temple.* (2:2, 7)\n\nJonah realises he cannot save himself — there is nobody but God who can. So, to God he calls.\n\nIf God really is God, then no situation in this world is ever entirely hopeless. Maybe no one else can do anything about it. But if God is God, it is never pointless to ask him. Jonah's situation is about as hopeless as it gets: overboard, far out at sea, in a violent storm, sinking through seaweed towards the sea floor, lungs bursting. Apart from God, he is dead in seconds. But there is a God — and he is more than able to save."
+  },
+
+  "godWhoSaves": {
+    "subtype": "standard",
+    "header": "The God who Saves",
+    "body": "> *In my distress I called to the Lord, and he answered me. … I said, 'I have been banished from your sight; yet I will look again towards your holy temple.' … But you brought my life up from the pit, O Lord my God.* (2:2, 4, 6)\n\nNowhere is beyond God's reach. Jonah feels like his plummet has taken him to the very depths of the grave — but even calling from there, the Lord can listen and answer. We may never have been in a situation as hopeless as Jonah's. But sometimes things *feel* hopeless; sometimes it feels like there is no way out. Jonah's experience points us to the way out."
+  },
+
+  "callout2": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Where is your focus?"
+  },
+
+  "pft2": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "Are you facing trouble at the moment? Have you called out to God for help?"
+  },
+
+  "focus": {
+    "subtype": "standard",
+    "header": "",
+    "body": "The thing that makes the difference is: what are we focusing on? If you have a decent-sized problem and you focus on it, it will seem to get bigger and bigger. But if you focus on the Lord our God, the problem will seem small by comparison. Jonah has got himself into far more of a mess than any of us will ever face. If God can deal with that — without even breaking sweat — he can deal with our situations too, however daunting they feel. When you are in trouble, remember God and call out to him.\n\nWhen bad things happen, it is not because God has somehow lost the plot — not because things are out of his control, not because Satan has been particularly clever that day. God is still in control, even when disaster happens. Jonah himself recognises this (2:3). Now, this is not saying that every time something bad happens, God is directly punishing us. Sometimes that is true — it was true in Jonah's case — but most of the time life does not work like that. God has made a real world with real people who make real decisions and have to live with them. The problem with our world is that it is fundamentally broken. One day God will put everything right when Jesus returns. But until then, everything is broken — at least a little, sometimes very."
+  },
+
+  "callout3": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Beauty from the wreckage"
+  },
+
+  "wreckage": {
+    "subtype": "standard",
+    "header": "",
+    "body": "But God is still in control. No matter how bad it gets, God is so tremendously in control that he can bring good things out of the broken pieces of our world. The brokenness may not go away — not this side of the New Creation — but beauty can still emerge from the wreckage.\n\n> *'Those who cling to worthless idols forfeit the grace that could be theirs. But I, with a song of thanksgiving, will sacrifice to you. What I have vowed I will make good. Salvation comes from the Lord.'* (2:8–9)\n\nThere is a touch of irony in verse 8, given what happened in chapter 1: the sailors turned away from idols to the Lord, while Jonah clung to his stubborn rejection of the Lord. Nonetheless, what Jonah says is true. God is a gracious God. He loves to show his kindness to us — but so often our world turns its back on God and forfeits that grace. And it is not just 'the world out there'. Even when we have come to know God, we sometimes still try to shut him out, and end up making our lives far harder than they need to be."
+  },
+
+  "thankfulness": {
+    "subtype": "standard",
+    "header": "Jonah's Thankfulness",
+    "body": "God does not operate like a fairy-godmother or a genie-in-a-bottle. He is not there for our convenience."
+  },
+
+  "callout4": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "It is not God's job to give us a trouble-free life"
+  },
+
+  "thankfulness2": {
+    "subtype": "standard",
+    "header": "",
+    "body": "God's top priority for us is not to help us live a trouble-free life. His top priority is that we should live a *godly* life. Sin has deeply infected us all, and so our priorities are often upside-down. The times when we are most likely to forget about God are often precisely the times when things are going beautifully well — the times when we forget to say 'Thank you.'\n\nFor all his faults, at least Jonah is doing well on this front. When the fish swallows him, he offers up a prayer of thankfulness. For once, Jonah does something godly. Being swallowed by a fish cannot be enjoyable. Most of us, if God 'helped' by sending a great big brute of a fish to swallow us, might not be as clear-sighted. We might think: *'Well, I'm alive, I suppose — but is this really any better than drowning? It's dark, smelly, slimy, and lonely. Is this the best you can do, Lord?'*\n\nJonah was wilfully rebellious and disobedient. He deserved to drown, but God saved him anyway — in two stages: first the fish, then dry land. This gave Jonah time to reflect, repent, and learn. The fish may not have been luxurious, but Jonah saw that it was *gracious*, and gave thanks for it. God responded to Jonah's thankfulness by taking the deliverance a step further."
+  },
+
+  "pft3": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "What was the last thing you thanked God for?\n\nAre there other things you could thank him for?"
+  },
+
+  "patience": {
+    "subtype": "standard",
+    "header": "",
+    "body": "God is wonderfully forgiving, and his desire is always for us to grow in our relationship with him. Jonah's example shows us that God sometimes helps in stages — even though we usually do not deserve any help at all. It should encourage us to be grateful to God when help does come, even when it is not the kind of help we were expecting or hoping for. Often we are impatient and want everything sorted immediately. But often patience is one of the qualities God wants to teach us — and that itself is something we can be thankful for."
+  },
+
+  "knowingAndLiving": {
+    "subtype": "standard",
+    "header": "Knowing the Truth and Living It",
+    "body": "Think about verse 9 — the great high note that Jonah finishes his prayer with: *'Salvation comes from the Lord.'* Jonah knew that was true before this whole incident started. But now he knows it even more — he has experienced it vividly and powerfully. He has tasted God's grace all over again.\n\nThere is a huge difference between knowing the truth and *living* the truth. Everything Jonah says inside the fish — it was all true long before he set foot on that ship. But even though he knew it, he did not live it. Even though he knew all that about God, that did not stop him running away.\n\nSo what will happen now? Will Jonah live up to what he knows? God's grace has saved him, and his experience of it is fresh and vivid. Maybe now he is ready to go to Nineveh."
+  },
+
+  "makingConnections": {
+    "subtype": "highlighted",
+    "header": "Making Connections",
+    "body": "It is not just Jonah who makes this mistake. We can know the truth about what God has done for us in Jesus, and still not live it out. We can know that we have been saved from our sin, and yet not show it in our lives. Jesus himself warns us against this:\n\n> *'Everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock … But everyone who hears these words of mine and does not put them into practice is like a foolish man who built his house on sand.'* (Matthew 7:24–27)\n\nSo here is a question worth sitting with: Am I living up to the knowledge I have? Am I hearing Jesus' words and building on them — or am I just hearing?"
+  }
+},
+
+{
+  "chapterNumber": 3,
+  "format": "markdown",
+  "title": "A Second Chance?",
+
+  "footnotes": [
+    {
+      "id": 11,
+      "body": "Cf. Luke Tattersall, 'Jonah — the Reluctant Evangelist', *Perspective* (www.perspective.org.au, accessed 16/5/2006)."
+    },
+    {
+      "id": 12,
+      "body": "Heinrich Heine. en.wikiquote.org/wiki/Heinrich_Heine (accessed 20th July 2009)."
+    }
+  ],
+
+  "opening": {
+    "subtype": "standard",
+    "header": "",
+    "body": "Have you ever felt like you wanted a second chance at something? Second chances can be wonderful — especially when the problem was created by your own moral failures. Life does not always give you a second chance, but sometimes it does, and when it does, it is worth grabbing hold of it with both hands."
+  },
+
+  "pft1": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "What do you wish you could have a second chance at?"
+  },
+
+  "scene1": {
+    "subtype": "standard",
+    "header": "Scene 1 — Jonah's Second Chance",
+    "body": "> *Then the word of the Lord came to Jonah a second time: 'Go to the great city of Nineveh and proclaim to it the message I give you.' Jonah obeyed the word of the Lord and went to Nineveh.* (3:1–3)\n\nThis is almost an exact repeat of the opening of chapter 1. God has not washed his hands of Jonah. He has not said, 'You messed up — you are obviously no use for anything. I have saved you, but I am not going to trust you with anything again.' It would have been understandable if God had done that. Maybe Jonah would even have preferred it. But that is not what God does."
+  },
+
+  "callout1": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "The God of a thousand chances"
+  },
+
+  "thousandChances": {
+    "subtype": "standard",
+    "header": "",
+    "body": "God gives Jonah a second chance. And that is good news for us too, because there will be times when we mess up as well. If God only gave people one chance, we would all have used that up already. God is not a 'one-chance' God. He is not even merely a 'second-chance' God. God is hugely generous and gives us many, many chances. That is what 'God is gracious' means.\n\nJonah has his second chance, and this time he takes it. He obeys God and sets out for Nineveh. Probably all the original fears and doubts are still there — but this time he is not going to act on them. His time inside the fish has seen to that. There is nothing quite like a life-threatening experience on a boat, and three days inside a whale, to modify your behaviour.\n\nNineveh is quite a long way inland, and Jonah had been travelling by sea in the opposite direction. Depending on where he was vomited up on the beach, it could have taken him three or four weeks to travel overland. Perhaps that is just as well — if you have ever had to gut a fish, you will have an idea of what you would expect to find inside one. It would have taken Jonah a while to shake off the smell."
+  },
+
+  "scene2": {
+    "subtype": "standard",
+    "header": "Scene 2 — A Three-Day-Visit City",
+    "body": "> *Now Nineveh was a very important city — a visit required three days. On the first day, Jonah started into the city.* (3:3–4)\n\nNineveh is a big, important, impressive city. 'A visit required three days' probably means that a full preaching visit — like Jonah's — would take that long. If he wants everyone to hear his message, he has to physically walk to many different suburbs, get up on a soapbox, and deliver it. There are no newspapers or TVs or radios. It is a big place: a three-day-visit city."
+  },
+
+  "callout2": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "The Big Smoke"
+  },
+
+  "shortSermon": {
+    "subtype": "standard",
+    "header": "",
+    "body": "And what about Jonah's message? After the best part of a month to prepare, you might expect a brilliantly crafted sermon — gripping, well-illustrated, punchy and polished. Verse 4 gives us the message he delivered: *'Forty more days and Nineveh will be destroyed.'*[[fn:11]] It is not one of the great sermon masterpieces of all time. It is sort of … short. And to the point. But it is the message God gave Jonah to preach, and it is what the Ninevites needed to hear."
+  },
+
+  "pft2": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "How would you feel if you knew you would have to answer to God in 40 days' time?\n\nWhat would you do?"
+  },
+
+  "scene3": {
+    "subtype": "standard",
+    "header": "Scene 3 — Nineveh Takes its Second Chance",
+    "body": "> *The Ninevites believed God. They declared a fast, and all of them, from the greatest to the least, put on sackcloth.* (3:5)\n\nThe Ninevites waste no time. It is almost as if they fall over themselves to respond from Day 1 onwards. There is a lot packed into that one phrase: 'they believed God.' They believe in the God Jonah proclaims. They believe God is right to pronounce this judgment — they recognise that they deserve to be condemned. And they believe God means what he says. To say someone 'believes God' means they take God at his word. That is exactly what the Ninevites do."
+  },
+
+  "callout3": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Taking God at his word"
+  },
+
+  "sinMeansRebellion": {
+    "subtype": "standard",
+    "header": "",
+    "body": "The Ninevites had committed some especially clear and terrible sins — their war crimes were the stuff of nightmares. But sin itself is something more fundamental. *Sin means rebellion.* God made this world, he made the Ninevites, and he made you and me. God has things to say about how we ought to live in his world. Sin is all about us saying, 'Well God, it's nice that you think we should do such-and-such, but actually we think we will do this other thing instead.' Sin is about living in God's world without paying him any real attention at all.\n\nThe Ninevites have been acting like that towards God, and through Jonah's preaching they realise it. They realise how offensive it is to God, how angry he is with them, and they are cut to the heart. This remorse spreads through the whole city — even to the king:"
+  },
+
+  "callout4": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Sin means rebellion"
+  },
+
+  "kingDecree": {
+    "subtype": "standard",
+    "header": "",
+    "body": "> *When the news reached the king of Nineveh, he rose from his throne, took off his royal robes, covered himself with sackcloth and sat down in the dust. Then he issued a proclamation: 'Do not let any man or beast, herd or flock, taste anything; do not let them eat or drink. But let man and beast be covered with sackcloth. Let everyone call urgently on God. Let them give up their evil ways and their violence. Who knows? God may yet relent and with compassion turn from his fierce anger so that we will not perish.'* (3:6–9)\n\nFrom top to bottom, from king to cattle, the whole city of Nineveh is in mourning. They go through a three-stage process — three S-words: **sin, sorrow, and sackcloth**. First, they admit to God that they are sinful. Second, they express their sorrow at their sinfulness. Third, their sorrow translates into action — the fasting and the sackcloth. That is how we know their reaction is real: we know they have seen their sin because they are upset by it, and we know they are upset because it changes how they behave.\n\nAnyone reading this book has probably had second, third, and fourth chances to respond to God — maybe even hundreds of chances. This passage gives us another one. The process the Ninevites went through is the same process we need to go through:\n\n1. **Admit our sin to God.** If we do not think we are sinful, we will not think we need to be forgiven — and so we probably would not see any need to turn to God.\n2. **Be sorry about it.** We need to realise sin is a bad thing. Plenty of people are willing to admit they are sinful but have no sorrow about it. They just do not care. Becoming a Christian involves realising that sin is wrong, *and caring that it is wrong*.\n3. **Respond to God — ask him to forgive us.** Nowadays sackcloth and fasting are not the actions God is particularly interested in."
+  },
+
+  "callout5": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "One action"
+  },
+
+  "oneAction": {
+    "subtype": "standard",
+    "header": "",
+    "body": "The one action God wants from us is this: **trust in his Son.** Of course, lots more actions will flow out of trusting him. But when it comes to whether or not you are a Christian, they are not the make-or-break issue. Trusting Jesus Christ is.\n\nIt is worth each of us stopping to ask: have I gone through that process? Because if you have not, this passage gives you another chance to respond to God today. The thing is, if you turn down too many second chances, you can become quite good at it — and that is dangerous, because one day the chances will run out."
+  },
+
+  "pft3": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "Have you recognised your own sin?\n\nDo you care that it is wrong?\n\nHave you turned to God for forgiveness?"
+  },
+
+  "scene4": {
+    "subtype": "standard",
+    "header": "Scene 4 — God Has Compassion on Nineveh",
+    "body": "> *When God saw what they did and how they turned from their evil ways, he had compassion and did not bring upon them the destruction he had threatened.* (3:10)\n\nGod is not under any obligation to have compassion on Nineveh. They deserve his condemnation. If he had destroyed the whole city, he would have been perfectly justified — even the king acknowledges that their ways are evil. But God has compassion, and he relents.\n\nGod's compassion is visible throughout the whole book. After all, if God had simply wanted to punish the Ninevites there would have been no need to send Jonah in the first place. The very fact that he gave them forty days' grace shows his willingness to forgive if they would respond. Jonah is God's 'Final Warning' — in big red letters. The king understands that: *'Who knows? God may yet relent.'*\n\nJonah only tells the Ninevites one sentence — he does not explicitly spell out God's willingness to relent. But the king realises it is implicit in the very fact that God sent Jonah with this message at all. And other parts of the Bible make it explicit:"
+  },
+
+  "jeremiah": {
+    "subtype": "standard",
+    "header": "",
+    "body": "> *'If at any time I announce that a nation or kingdom is to be uprooted, torn down and destroyed, and if that nation I warned repents of its evil, then I will relent and not inflict on it the disaster I had planned.'* (Jeremiah 18:7–8)"
+  },
+
+  "callout6": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "God is no computer"
+  },
+
+  "godNoComputer": {
+    "subtype": "standard",
+    "header": "",
+    "body": "God is not some computer that responds blindly and automatically. He cares about how we respond to him and takes it very seriously. No matter how bad someone is, God does not want to see them destroyed. He would far rather see them turn to him and live. If someone repents and turns to God and asks his forgiveness, they can be confident that God will forgive them. That is what God is like — he loves to show compassion to people, he loves to forgive those who turn to him from wickedness."
+  },
+
+  "makingConnections": {
+    "subtype": "highlighted",
+    "header": "Making Connections",
+    "body": "*'Acquitting the guilty and condemning the innocent — the Lord detests them both.'* (Proverbs 17:15)\n\nIt is a big deal to acquit the guilty, and a big deal to condemn the innocent. We call such things a miscarriage of justice — or, more bluntly, a crime. Yet God has done both in Jesus: condemned the one who is perfectly innocent, and acquitted those who are guilty — precisely in order to demonstrate his justice:\n\n> *'God presented him as a sacrifice of atonement … He did this to demonstrate his justice … so as to be just and the one who justifies those who have faith in Jesus.'* (Romans 3:25–26)\n\nWe can slip into taking God's forgiveness for granted. But actually it is amazingly good news — and amazingly costly news. Many remarkable things happen in Jonah's story: the storm, Jonah surviving in the whale, 120,000 people responding to his message. But the most amazing thing of all is that God forgives these vicious Ninevites. He has compassion on them.\n\nWe often think forgiveness is easy for God. There was a famous atheist who, on his death-bed, was asked what he would say if he discovered there really was a God after all. He said: *'Oh, God will forgive me. That is what he does.'*[[fn:12]] If forgiveness were as casual as that, it would not be forgiveness at all — it would be apathy. Imagine one of these Ninevite warlords arriving at the gates of heaven and God saying: *'Sure, come on in — so you impaled a few thousand people on poles. What is that between friends?'* There is something deeply offensive about that idea, because it ends up saying that evil does not matter, that sin does not matter.\n\nGod cannot turn a blind eye to evil and still be God. He has to punish evil; it has to be paid for. What the Ninevites do not know — and what Jonah himself does not really know — is that God himself was going to pay the price for their evil. That is what Jesus came into the world to do. He took our sin on himself and died in our place, so that we could be forgiven.\n\nForgiveness is not easy or cheap for God. It is supremely costly — it cost the life of his one and only Son. The reason God can give us so many chances to turn from sin is that Jesus has bought those chances with his blood. That is wonderfully good news, but it is also wonderfully serious news. The Ninevites had only a one-sentence message to go on, and they took it seriously. Let's be sure we take the message of Jesus seriously too."
+  }
+},
+
+{
+  "chapterNumber": 4,
+  "format": "markdown",
+  "title": "The Wrong Sort of God",
+
+  "footnotes": [
+    {
+      "id": 15,
+      "body": "These paragraphs are based on Douglas Stuart, *Jonah*, Word Biblical Commentary (Nashville: Thomas Nelson, 1987), 506."
+    },
+    {
+      "id": 16,
+      "body": "Cf. Stuart, *Jonah*, 508, especially regarding the Plants & Cattle comments."
+    },
+    {
+      "id": 17,
+      "body": "These applications loosely follow Luke Tattersall's. Cf. www.perspective.org.au (accessed 16/5/2006)."
+    }
+  ],
+
+  "opening": {
+    "subtype": "standard",
+    "header": "",
+    "body": "If I watch a film to relax, I usually want a story with a happy ending. There can be all sorts of tragic events in the middle, but so long as everything is wrapped up nicely at the end, I go home satisfied. We are not supposed to read the book of Jonah that way — the ending makes that perfectly clear. Chapter 4 is deliberately unsettling. If we wanted a happy ending we would need to rip off the whole last chapter. If we had stopped at the end of chapter 3, we would have had a perfectly lovely, tidy, happy ending. But the book of Jonah does not stop there."
+  },
+
+  "scene1": {
+    "subtype": "standard",
+    "header": "Scene 1 — Aiming to Fail",
+    "body": "Read the last verse of chapter 3 straight into the first verse of chapter 4:\n\n> *When God saw what they did and how they turned from their evil ways, he had compassion and did not bring upon them the destruction he had threatened. But Jonah was greatly displeased and became angry.* (3:10–4:1)\n\nIf you were reading Jonah for the first time, you might well think: 'What on earth is going on?! Jonah has preached a message, and it has been enormously successful. Thousands of people have turned to God, destruction has been averted. So why is Jonah so upset?'\n\nThe answer is simple: Jonah did not want success. He wanted his message to fail completely. He did not want any of the Ninevites to turn to God. He wanted them to be destroyed — every last one of them."
+  },
+
+  "callout1": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Success or failure?"
+  },
+
+  "wrongGod": {
+    "subtype": "standard",
+    "header": "The Wrong Sort of God",
+    "body": "It is only now that we learn why Jonah ran away at the very start of the story. He was not afraid of the Ninevites. He was afraid that God might have mercy on them if they repented.\n\n> *He prayed to the Lord, 'O Lord, is this not what I said when I was still at home? That is why I was so quick to flee to Tarshish. I knew that you are a gracious and compassionate God, slow to anger and abounding in love, a God who relents from sending calamity.'* (4:2)\n\nJonah cannot stand the Ninevites. But it is worse than that — to a shocking extent, Jonah cannot even stand *God*. He complains that God is just the wrong sort of God. God is 'gracious' and 'compassionate', of all things. He is 'slow to anger' and 'abounding in love' — where is the sense in that? He is a God who 'relents' from sending calamity. How on earth do you know where you stand with a God like that? He keeps holding back his condemnation, he relents from sending disaster on horrible people who deserve it!"
+  },
+
+  "callout2": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Where do you stand with a God like that!"
+  },
+
+  "angryEnoughToDie": {
+    "subtype": "standard",
+    "header": "",
+    "body": "Jonah takes these wonderful things about God — things we would normally give thanks for — and complains about them. In fact he is furious about them; so angry he has had enough of life:\n\n> *'Now, O Lord, take away my life, for it is better for me to die than to live.' But the Lord replied, 'Have you any right to be angry?'* (4:3–4)\n\nGod and Jonah are looking at exactly the same events and coming out with completely opposite reactions. God is pleased; Jonah is angry enough to die. Jonah's feelings are so messed up that he would almost rather die than serve this patient, forgiving Lord — the God who will not restrict his grace to Israel alone, the God who has time for these wretched Ninevites.\n\nAny time we find our feelings in a mess like that — where we feel the opposite way to how God has said he feels about something — it should give us enormous pause for thought. If I feel one way and God feels the exact opposite, one of us has feelings that are out of joint. And it is a fairly safe bet it is not God."
+  },
+
+  "feelingsSection": {
+    "subtype": "standard",
+    "header": "Feeling the Wrong Thing",
+    "body": "Our world often tells us that feelings are always good things: 'Don't repress what you feel, express it. If you feel it, then it is true for you, it is good for you, and you shouldn't deny it.'"
+  },
+
+  "callout3": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Thoughts, words, deeds — and feelings"
+  },
+
+  "feelingsSection2": {
+    "subtype": "standard",
+    "header": "",
+    "body": "As Christians we are normally fairly aware that our thoughts can be right or wrong, sinful or godly — and so can our words, and so can our deeds. But sometimes we forget that the same is true of feelings.\n\nWe are all tempted to think: 'I feel angry about this and you shouldn't have angered me. I feel hurt about this and you shouldn't have hurt me.' Often that may be right. If someone burgles my house, I might well feel upset and angry, and those feelings would be appropriate — because stealing is wrong.\n\nBut it is not always right. If I was caught lying or cheating, and you rebuked me — gently but firmly — I might well feel upset and hurt and angry with you. But this time my feelings would be wrong and sinful, and I would need to repent of them. It is no good saying, 'You have upset me by pointing out that I lied, and you shouldn't have done that.' Actually, you were right to point it out. I was wrong to lie, and I am also wrong to be upset at you for telling me the truth.\n\nJonah's feelings here are wrong, and he needs to get them sorted. The feeling most at the surface is anger, which makes it all the more ugly — and all the more easy to recognise as wrong. But if you probed Jonah he would probably say he had a whole bundle of other feelings going on too: hurt, let down, betrayed by God. He is probably feeling many things — and needs to repent of most of them.\n\nGod makes him face up to that by asking him a question: 'Have you any right to be angry?' What can Jonah say to that? After all, God has poured out his compassion and grace on Jonah in enormous ways in this story. Jonah should already be dead in a watery grave. If Jonah has experienced God's free mercy in his own life, how can he complain about God freely showing mercy to others? There is nothing Jonah can say, because he has no right at all. So he says nothing."
+  },
+
+  "scene2": {
+    "subtype": "standard",
+    "header": "Scene 2 — Let's Make it Simple",
+    "body": "The book does not leave it there. The rest of chapter 4 gives us an illustration to drive the point home — almost like a children's talk, an 'object lesson'. God brings along an object, talks about it, and uses it to illustrate something.\n\n> *Jonah went out and sat down at a place east of the city. There he made himself a shelter, sat in its shade and waited to see what would happen to the city.* (4:5)\n\nJonah has not quite given up hope. It was a forty-day warning, after all — maybe there is still a chance the city will be destroyed. He is probably hoping for something Sodom and Gomorrah style. So he finds some wasteland east of the city, makes a shelter, and settles down to wait."
+  },
+
+  "callout4": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Maybe there is still 'hope' …"
+  },
+
+  "heat": {
+    "subtype": "standard",
+    "header": "",
+    "body": "That part of the world is hot. The sun is intense — blazing down from a bright blue sky with deep shadows below. Nice enough for sunbathing if you have plenty of iced water and a swimming pool nearby, but if you are sitting out in that heat all day, you would be very glad of some shade to fend off sunstroke.\n\nJonah has tried to find shade, and his shade is about to get better:\n\n> *Then the Lord God provided a vine and made it grow up over Jonah to give shade for his head to ease his discomfort, and Jonah was very happy about the vine.* (4:6)\n\nThis is the first time in the story that Jonah has been *very happy* about anything. But it does not last:\n\n> *But at dawn the next day God provided a worm, which chewed the vine so that it withered. When the sun rose, God provided a scorching east wind, and the sun blazed on Jonah's head so that he grew faint. He wanted to die, and said, 'It would be better for me to die than to live.' But God said to Jonah, 'Do you have a right to be angry about the vine?'* (4:7–9)\n\nThere is that question again. This time Jonah is spitting mad, so he blurts out an answer:\n\n> *'I do,' he said. 'I am angry enough to die.' But the Lord said, 'You have been concerned about this vine, though you did not tend it or make it grow. It sprang up overnight and died overnight. But Nineveh has more than a hundred and twenty thousand people who cannot tell their right hand from their left, and many cattle as well. Should I not be concerned about that great city?'* (4:9–11)"
+  },
+
+  "callout5": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "No answers"
+  },
+
+  "twoQuestions": {
+    "subtype": "standard",
+    "header": "",
+    "body": "God seems to like asking Jonah questions, but Jonah does not seem to like answering them: *'What right have you to be angry?'* and *'Should I not be concerned about that great city?'* These two questions are the key to the whole book of Jonah.\n\nStart with the first one — the right to be angry. It is asking: what right do we have to demand that God should favour us and not others? God focuses it down to the issue of the plant, which leaves the door wide open for Jonah to condemn himself by his own words — and he does, in spectacular fashion.\n\nJonah insists in the strongest terms that the vine matters to him. It was a comfort and a delight. Now that it is dead, he is furious — angry enough to want to be dead himself. Of his own free will, Jonah declares that a plant is worthy of the gift of life, that its destruction is horribly wrong, and that he is outraged by it.[[fn:15]]\n\nA plant. All this over a plant. A 'here today, gone tomorrow' plant. Not an animal or a person, not a family or a community, far less a whole city. And yet the Lord is only doing for Nineveh what Jonah has just insisted ought to be done for a plant — showing concern for it. God poses the question: *Is it possible, Jonah, that a city might be worth at least some of the concern you are showing over this plant?*[[fn:16]]"
+  },
+
+  "callout6": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Your city vs your plant-pot"
+  },
+
+  "ourWorld": {
+    "subtype": "standard",
+    "header": "",
+    "body": "That is something to make us sit up and think about our own world. How concerned are we for the cities around us? Do we see them as cities that God has concern for? Do we show as much concern for them as we do for our pot-plants or pets?\n\nOn one level, the message of Jonah could be summed up as a warning: *Don't be like Jonah.* Throughout the book, Jonah has been very ready to receive mercy and blessing himself — but stubbornly opposed to his enemies receiving anything. We should not be like that, especially as we have been shown even more mercy than Jonah.\n\nThis trap is most obvious when we are dealing with people who are against us — individually in day-to-day life, or corporately: people against our nation, our class, our faith, people who oppose or disagree with us. But Jesus calls us to forgive our enemies and pray for them. If we follow Jonah's line, we might find ourselves praying *against* our enemies, even delighting when they face misfortunes. Jonah thought he had the right to do that. He could not have been more wrong."
+  },
+
+  "callout7": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Compassion"
+  },
+
+  "compassionCall": {
+    "subtype": "standard",
+    "header": "",
+    "body": "God had compassion on the city of Nineveh — and so should Jonah. God has compassion on our world now — and so should we. Jonah's most obvious mistake is responding to hostility with hostility. But there are subtler ways of failing to share God's compassion. It is easy to care more about the pot-plant in our sitting room than the city on our doorstep.\n\nIf someone does not know God, if they are not trusting Jesus, then they face a sobering long-term future. God is the ultimate source of love and hope and joy — everything good in the world. To walk away from him is ultimately to walk away from all of that too. To be cut off from him for eternity is a tragic loss. To reject him and then face his judgment is sombre."
+  },
+
+  "pft1": {
+    "subtype": "highlighted",
+    "header": "Pause for Thought",
+    "body": "What is your 'long-term future,' beyond this life?\n\nHow does that shape the way you live now?"
+  },
+
+  "passion": {
+    "subtype": "standard",
+    "header": "Learning to Be Passionate for Our World",
+    "body": "God's attitude towards everyone is one of concern, compassion, mercy, and love — towards bloodthirsty Ninevites, muggers, drug-dealers, and everyone else. We are called to be like Jonah's God, not like Jonah himself. Here are some ways to grow in that direction:[[fn:17]]\n\n**Remember God's grace to us in Jesus.** Jonah knew about God's compassion — he had experienced it himself — but it had not really sunk in. He did not realise how little he deserved God's compassion, and so he did not learn from it. When you come across something genuinely good, the natural thing to do is share it. If we truly understand God's grace, we will not want to hoard it for ourselves."
+  },
+
+  "callout8": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "It is natural to share"
+  },
+
+  "passion2": {
+    "subtype": "standard",
+    "header": "",
+    "body": "**Pray.** Pray for individuals specifically, and for whole communities and cities. We are not all supposed to be prophets to pagan cities or evangelists like Billy Graham — there are other ways to be concerned for our world's relationship to God, and prayer is one of the most important. Pray for people you know who do not follow Jesus. Pray boldly: that they might come to know God, experience his love, trust him, and find joy in him.\n\n**Support gospel proclamation.** Does your local church have connections with missionaries or evangelists? If so, there will be opportunities to support them with money and prayer. Consider also inviting people who are not Christians to events where they can hear the gospel explained."
+  },
+
+  "callout9": {
+    "subtype": "highlighted",
+    "header": "",
+    "body": "Profound issues, informed choices"
+  },
+
+  "passion3": {
+    "subtype": "standard",
+    "header": "",
+    "body": "Lots of people reject the Christian message without ever having heard what it actually says. That is tragic, because the issues involved are profound. We should do what we can to give people a decent chance to make an informed decision. Not everyone will be interested, but some will — and we will not know who, unless we ask.\n\n**Be ready to tell others.** It is not always easy to explain the gospel. Sometimes we might be shy or scared. That is okay — lots of us are shy and scared about all sorts of things. What is not so okay is not caring about people, or being careless of them. It matters how people respond to God. God wants everyone to respond well — to share in the joy of knowing him, loving him and being loved by him. God wants us to have a heart like his: a heart that cares about eternity, a heart that beats with compassion for our world."
+  },
+
+  "makingConnections": {
+    "subtype": "highlighted",
+    "header": "Making Connections",
+    "body": "We live on the other side of the coming of Jesus. That means we can know what it is to be forgiven through his death — and we have all the more reason to forgive others. Jesus' teaching on this is really strong. He calls us to keep on forgiving people, regardless of what they are like or what they do. When Jesus calls us to forgive someone, there is no get-out clause.\n\nThat is because *forgiveness* is not the same as *reconciliation*. Reconciliation involves rebuilding a relationship, and that is a two-way process. If the other person remains hostile, there is a limit to what you can do. You can leave the possibility open, but you cannot re-form a relationship unilaterally.\n\nIf the Ninevites had not repented — if they still wanted to impale Jonah on a pole — there would have been no way he could have built a warm brotherly relationship with them. But he could still have forgiven them. Reconciliation and relationship are two-way things and depend on both sides. Forgiveness does not. It is about us letting go of our grievances — God will sort out the rights and wrongs, not us. Jesus calls us to forgive our enemies and pray for their welfare (Matthew 5:43–48)."
+  },
+
+  "imageGallery": {
+    "subtype": "image-gallery",
+    "header": "Images",
+    "images": [
+      {
+        "src": "images/ch04-nineveh-walls.webp",
+        "alt": "Reconstructed walls of ancient Nineveh under a bright blue sky",
+        "caption": "Image 5: Near the site of ancient Nineveh — reconstructed city walls showing the heat and aridity of the landscape"
+      }
+    ]
+  }
+},
+
+
+
+
+  ]
+},
+
+
+
+
+  "leadersNotesData":{
+  },
+  "studyAboutData":{
+    "author":{
+      "url"  :"",
+      "paras":[
+        "Rick Creighton grew up in Northern Ireland and studied maths at Oxford and then taught maths at a secondary school in England. After that, he studied theology at Moore Theological College in Sydney and London School of Theology.",
+        "He served as a church pastor in England for ten years, before moving to Nigeria in 2012, where he has been teaching at ECWA Theological Seminary Kagoro and Jos ECWA Theological Seminary. He has been involved with BeaconLight Training since 2003.",
+        "Travelling with Jonah began as a series of sermons on Jonah. Rick is married to Alanna. They have three children: Asha, Conor, and Jack."
+      ],
+      "format":"plainText"
+    },
+    "publisher":{
+      "name" :"BeaconLight",
+      "url"  :"https://www.beaconlight.co.uk",
+      "paras":[
+        "BeaconLight is a non-denominational Christian training organisation based in the UK, founded in 1995. Its aim is to equip Christians worldwide with practically-applied Biblical gospel ministry tools — resources designed to help people both equip themselves and equip others.",
+        "BeaconLight's resources include CrossCheck, which enables Christians to explain their faith and lead others to Jesus, and Word@Work, a verse-by-verse applied devotional commentary of the whole New Testament. BeaconLight also provides printed Biblical resources to prisons, seafarers, police, and the armed services.",
+        "BeaconLight believes that Christian ministry should be free of charge, and all its online materials are available without registration or payment. The ministry is funded entirely by donations.",
+        "BeaconLight is a member of the Evangelical Alliance and Global Connections, and is a registered charity in England and Wales (Charity No. 1047046).",
+        "Travelling with Jonah is available in both paperback and free e-book formats from www.beaconlight.co.uk."
+      ],
+      "format":"plainText"
+    }
+  },
+  "copyrightData":{
+    "licence":{
+      "spdxId"  :"CC-BY-SA-4.0",
+      "name"    :"Creative Commons Attribution-ShareAlike 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format",
+        "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+      ],
+      "conditions":[
+        "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made",
+        "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+      ],
+      "format":"plainText"
+    },
+    "copyright":{
+      "holder"   :"Richard Creighton",
+      "year"     :2009,
+      "statement":"Richard Creighton, 2009. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License."
+    },
+    "bibleTranslation":{
+      "name"     :"NIV",
+      "version"  :"Holy Bible, New International Version®, NIV®",
+      "copyright":"Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc™",
+      "url"      :"https://www.biblica.com",
+      "usedWith" :"permission"
+    },
+    "notices":[
+      "Unless otherwise indicated, Scripture quotations are from THE HOLY BIBLE, NEW INTERNATIONAL VERSION®, NIV® Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. NIV quotations are not covered by the Creative Commons License, but are used under the NIV's own copyright permissions.",
+      "The author's own translations of Scripture are marked with an asterisk (*).",
+      "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
+      "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
+      "Front cover photograph of the original book: reconstruction of the Balawat gates of Shalmaneser III; © The Trustees of the British Museum."
+    ],
+    "format":"HTML"
+  },
+  "imageData":{
+    "cover":{
+      "alt"     :"Storm-tossed sea with a small wooden ship",
+      "fallback":"🐋"
+    },
+    "publisher":{
+      "alt"     :"🔆BeaconLight — biblical truth to share",
+      "fallback":"🔆BeaconLight"
+    },
+    "author":{
+      "alt"     :"Rick Creighton",
+      "fallback":"👨‍🏫"
+    }
+  },
+  "studyAiData":{
+    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study called 'Travelling with Jonah: a double journey' — exploring the Old Testament book of Jonah. The study journeys through Jonah twice: first forwards (chapters 1–4), then backwards (chapters 4–1). Key themes include God's sovereignty, repentance vs remorse, the difference between worldly and godly sorrow, the extraordinary compassion of God, and what it means to truly fear the Lord. The study draws connections between Jonah and the death and resurrection of Jesus.",
+    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
+  }
+}
+ 
