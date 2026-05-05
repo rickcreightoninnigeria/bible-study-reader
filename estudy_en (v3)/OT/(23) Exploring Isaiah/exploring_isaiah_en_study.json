@@ -1,0 +1,409 @@
+{
+  "studyMetadata":{
+    "studyId"          :"exploring_isaiah_v001",
+    "title"            :"Exploring isaiah",
+    "subtitle"         :"Bible Study",
+    "shortTitle"       :"Isaiah",
+    "description"      :"Isaiah is one of the longest and most theologically rich books in the Old Testament. It spans judgment and comfort, exile and return, the failure of kings and the coming of the perfect King. At its heart is a question that echoes across every chapter: <em>In whom will you trust?</em><blockquote>'Do you not know? Have you not heard? The Lord is the everlasting God, the Creator of the ends of the earth.' (Isaiah 40:28)</blockquote>These leaders notes are designed to help you guide a group through Isaiah's great themes — from the opening accusations of chapter 1 to the vision of new creation in chapters 65–66. They assume you are leading an expository study: staying close to the text, letting it set the agenda, and trusting that careful reading of Isaiah will do its own powerful work.",
+    "author"           :"Julie Rowbory",
+    "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Isaiah" }],
+    "estudyFileVersion":3,
+    "studyVersion"     :1,
+    "language"         :"en",
+    "bibleTranslation" :{
+      "en":"NET"
+    },
+    "createdAt"   :"2026-05-04T00:00:00Z",
+    "updatedAt"   :"2026-05-04T00:00:00Z",
+    "tags"        :["old testament", "isaiah"],
+    "shareMessage":"Check out this Bible study app — “Bible Study Reader”.\n\nAvailable soon on Google Play and the App Store."
+  },
+  "theme":{
+    "theme-annotation":"Isaiah study theme — deep blue and burnished gold palette. Evokes the throne room vision of chapter 6, the tension between judgment and hope, and the blazing holiness of the Lord. Weighty, luminous, and expectant.",
+    "surface"         :"#f3f4f8",
+    "surface-mid"     :"#e4e6ef",
+    "text"            :"#1a1c2e",
+    "text-secondary"  :"#3d4060",
+    "text-faint"      :"#7a7d99",
+    "emphasis"        :"#2e4a8c",
+    "emphasis-light"  :"#4a6bbf",
+    "success"         :"#3a7a55",
+    "accent"          :"#b8922a",
+    "accent-light"    :"#d4af4a",
+    "border"          :"#c8cade",
+    "shadow"          :"rgba(26,28,46,0.12)",
+    "card-bg"         :"#ffffff",
+    "dm-base"         :"#0e0f1a",
+    "dm-surface"      :"#1a1c2e",
+    "dm-raised"       :"#252740",
+    "dm-sunken"       :"#141522",
+    "dm-border"       :"#353760",
+    "dm-text"         :"#e4e6ef",
+    "dm-text-mid"     :"#b8bbd4",
+    "dm-text-faint"   :"#6a6d8a"
+  },
+  "chapters":[
+  ],
+  "studyOnboardingSlides":[
+    {
+      "icon"   :"📖",
+      "eyebrow":"Welcome",
+      "heading":"Exploring Isaiah",
+      "body"   :"A multi-session Bible study on the book of Isaiah.\n\nWork through each chapter at your own pace, or use it with a group.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"✍️",
+      "eyebrow":"How it works",
+      "heading":"Read, reflect, write",
+      "body"   :"Each chapter has Bible questions tied to specific passages, and personal reflection questions at the end.\n\nTap <b>ⓘ</b> beside any Bible reference to read the passage without leaving the app.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"💾",
+      "eyebrow":"Your answers",
+      "heading":"Saved on your device",
+      "body"   :"Your answers are saved automatically as you type, and stored on this device.\n\nUse the <b>Share</b> button at the bottom of each chapter to send your answers to a group leader or mentor.",
+      "format" :"HTML"
+    },
+    {
+      "icon"   :"⚙️",
+      "eyebrow":"Make it yours",
+      "heading":"Adjust to your preference",
+      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "action" :{
+        "label":"⚙ Settings",
+        "fn"   :null
+      },
+      "bodyAfter":"Tap the <b>⚙</b> icon in the top corner to open Settings any time to change text size or switch to dark mode.\n\nTap <b>☰</b> (contents) to jump to any chapter.",
+      "format"   :"HTML"
+    },
+    {
+      "icon"   :"👋",
+      "eyebrow":"Before you begin",
+      "heading":"How to use this app",
+      "body"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
+      "action" :{
+        "label":"Go to the ‘How to use’ page →",
+        "fn"   :null
+      },
+      "bodyAfter":"You can also find it any time via the <b>?</b> icon in the top navigation bar.",
+      "format"   :"HTML"
+    }
+  ],
+  "howToUseData":{
+    "sections":[
+      {
+        "heading":"Who Is This Study For?",
+        "blocks" :[
+          {
+            "title":"People who struggle with assurance",
+            "body" :"If you find yourself wondering whether you are really a Christian — whether your faith is genuine, whether God truly accepts you, whether you really belong to him — this letter was written for you. 1 John is not a test designed to produce anxiety. John states his purpose plainly at the end: ‘I have written these things to you who believe in the name of the Son of God so that you may know that you have eternal life’ (5:13). The goal is confidence, not doubt."
+          },
+          {
+            "title":"People unsettled by false teaching",
+            "body" :"John wrote into a specific crisis: people had left the community, and their departure had shaken those who remained. If you have ever been confused by confident-sounding teaching that seemed to undermine what you believed, or by Christians who seemed more certain and more impressive but whose message felt subtly different, this letter speaks directly to that experience."
+          },
+          {
+            "title":"People who want to go deeper in 1 John",
+            "body" :"The letter is only five chapters long, but it is theologically rich and structurally complex. This study moves through it carefully, paying attention to what John actually says in context rather than lifting out familiar verses in isolation. Whether you are new to 1 John or have read it many times, working through it closely is likely to surface things you have not noticed before."
+          }
+        ]
+      },
+      {
+        "heading":"Individual or Group Study?",
+        "blocks" :[
+          {
+            "title":"On your own",
+            "body" :"This study works well as a personal study. Each session begins with a prompt to read the relevant passage — take that seriously, since the questions are designed to reward close attention to John’s actual words. Write your answers as you go, and give the reflection questions at the end real time. 1 John rewards slow, attentive reading more than speed."
+          },
+          {
+            "title":"In a group",
+            "body" :"The study works well in a small group setting. The most rewarding approach is usually for each person to work through the session individually first, writing their answers, and then for the group to come together to compare what they found. The themes of light, love, and assurance generate rich discussion — and because John’s letter was written to a community, reading it together has a particular fittingness."
+          },
+          {
+            "title":"Read the whole letter first",
+            "body" :"1 John is short enough to read in one sitting — about twenty minutes. The first chapter of this study includes the full text, and you are encouraged to read or listen to all five chapters before beginning. Seeing the whole letter at once makes each individual session significantly richer, and helps you see how John’s recurring themes build and interweave."
+          }
+        ]
+      },
+      {
+        "heading":"Group Leaders & Mentors",
+        "blocks" :[
+          {
+            "title":"Working with a leader or mentor",
+            "body" :"<p>If someone has recommended this study to you — a pastor, a small group leader, or a trusted friend — that relationship matters. 1 John raises personal questions about assurance, love, and what genuine faith looks like in practice. Having someone to think those questions through with can make the difference between the letter producing its intended comfort and it becoming a source of unnecessary anxiety.</p><p>At the end of each chapter, the <b>Share</b> button lets you send your written answers directly to your leader or mentor — via WhatsApp, email, or any other app on your phone. This gives them a window into your thinking before you meet, and makes for a much richer conversation.</p>"
+          }
+        ]
+      },
+      {
+        "heading":"A Note on the Questions",
+        "blocks" :[
+          {
+            "title":"Two kinds of questions",
+            "body" :"Each session has two kinds of questions. The <b>Bible questions</b> follow the passage closely — asking you to look carefully at what John actually says, in context. The <b>reflection questions</b> at the end turn the same material toward you personally, asking what John’s message means for your own faith and life. Both kinds matter: the Bible questions build the foundation; the reflection questions are where the letter does its pastoral work."
+          },
+          {
+            "title":"Keeping John’s purpose in view",
+            "body" :"Some verses in 1 John can feel challenging or even alarming when read in isolation — especially those about sin, love, and what it means to ’remain’ in God. As you work through the questions, keep John’s stated purpose in mind: he is writing to give assurance to believers, not to undermine it. When a verse feels difficult, the first question to ask is: how does this fit with what John is trying to achieve?"
+          },
+          {
+            "title":"The ’tests’ in 1 John",
+            "body" :"You may have encountered approaches to 1 John that present it as a series of ’tests’ — of belief, love, and obedience — to apply to yourself. This study takes a different approach. Those same markers are best understood as tools for evaluating the <em>false teachers</em> who had unsettled John’s readers, not as a personal checklist for assessing your own standing. That reorientation makes a significant difference to how the letter reads."
+          }
+        ]
+      }
+    ]
+  },
+  "leadersNotesData":{
+    "format":"HTML",
+    "intro":[
+      "These notes are written for leaders guiding a group through an expository study of Isaiah. The study covers all 66 chapters across a substantial number of sessions — so it is a significant commitment. That depth is worth it. Isaiah is not a book to skim. Its themes build across chapters, its imagery recurs and deepens, and the payoff for patient, careful reading is considerable.",
+      "<strong>Isaiah is structured, not random.</strong> The book falls broadly into two halves (chs 1–39 and 40–66), with chapters 36–39 forming a historical bridge. The first half focuses on judgment — on Israel, Judah, and the surrounding nations — with glimpses of hope. The second half opens with the great consolation of chapter 40 and moves steadily toward the vision of new creation in chapters 65–66. Within that, chapters 1–5 serve as an overture, and chapters 6–12 introduce the theme of the King. The Servant Songs (42, 49, 50, 52–53) are the theological heartbeat of the second half. Keep this map in mind as you lead — knowing where you are in the structure helps you help your group see the bigger picture.",
+      "<strong>The background and historical notes in each session are for you, not necessarily for the group.</strong> Isaiah's ministry spans the reigns of Uzziah, Jotham, Ahaz, and Hezekiah (roughly 740–700 BC), and the historical and political context matters for understanding what Isaiah was saying and to whom. You don't need to deliver this as a lecture — but knowing it will help you answer questions confidently and redirect the group when they get lost in unfamiliar names and places.",
+      "<strong>Let the big idea do its work before moving to application.</strong> Each session has a 'Big Idea' statement. These are not chapter summaries — they are the theological claim the passage is making. Spend time helping the group grasp and feel the weight of that claim before asking how it applies. Application that arrives too early tends to be superficial. Application that comes after genuine engagement with the text tends to be transformative.",
+      "<strong>Cross-references to the New Testament are real and important — but don't rush there.</strong> Isaiah is one of the most quoted Old Testament books in the New Testament, and the connections (especially in the Servant Songs and chapters 40–55) are theologically profound. But Isaiah's first task was to speak to his own generation. Help your group hear that voice first. The New Testament connections will mean far more when they are introduced after the Old Testament text has done its own work.",
+      "<strong>Encourage your group to read ahead.</strong> These are long passages — sometimes multiple chapters at a time. Groups that have read the passage before the session will engage far more richly than those coming to it cold. Even a brief skim is better than nothing. The notes suggest reading assignments where appropriate.",
+      "<strong>Watch for these recurring themes across the study:</strong> (1) The danger of trusting in the wrong things — other nations, military power, political alliances, idols, or mere humans. (2) The holiness and absolute sovereignty of the Lord. (3) The Lord's use of pagan nations as instruments of his judgment, and his subsequent judgment of those nations. (4) The remnant — a faithful few who survive and inherit the promises. (5) The coming King and Servant — who begins to take shape from chapter 7 onwards and comes into sharp focus in chapters 52–53. (6) The gathering of the nations into the people of God. Keep these threads visible as you lead."
+    ],
+    "bookOverview":{
+      "format":"HTML",
+      "header":"About Isaiah",
+      "sections":[
+        {
+          "title":"The prophet and his time",
+          "body" :"<p>Isaiah son of Amoz ministered in Jerusalem during the reigns of <strong>Uzziah, Jotham, Ahaz, and Hezekiah</strong> (1:1) — a period of roughly 40 years spanning approximately 740–700 BC. This was a time of enormous political upheaval. The <strong>Assyrian Empire</strong> was the dominant superpower of the ancient Near East, expanding aggressively under kings such as Tiglath-Pileser III, Sargon II, and Sennacherib. The northern kingdom of Israel fell to Assyria in 722 BC and was effectively wiped off the map — a traumatic event that looms large throughout Isaiah 1–39. Judah survived, but only just, and the temptation to seek safety through political alliances rather than trust in the Lord was constant and powerful.</p><p>Isaiah himself appears to have had access to the royal court (cf. chs 7, 37–38) and was clearly a man of education and eloquence. The range of literary forms in the book — oracles, laments, hymns, historical narrative, apocalyptic vision — reflects a writer of extraordinary versatility. According to tradition, he was martyred under the wicked king Manasseh.</p>"
+        },
+        {
+          "title":"The structure of the book",
+          "body" :"<p>Isaiah divides broadly into two halves:</p><p><strong>Chapters 1–39</strong> are dominated by oracles of judgment — against Judah and Jerusalem (1–12), against surrounding nations (13–23), with a cosmic 'apocalypse' in 24–27 and a closing historical section (36–39). Even within this predominantly dark section, there are stunning flashes of hope: the vision of the nations streaming to God's mountain (2:1–5), the promise of Immanuel (7:14), the child of 9:6–7, the shoot from Jesse's stump (11:1), and the servant's mission (42:1–4).</p><p><strong>Chapters 40–66</strong> open with the great consolation oracle ('Comfort, comfort my people,' 40:1) and are addressed primarily to the exiles in Babylon — though this is a future Isaiah is seeing prophetically, not one he himself experienced. These chapters emphasise the incomparable greatness of the Lord, the emptiness of idols, the coming of Cyrus as the Lord's instrument of return (44–45), the four Servant Songs (42, 49, 50, 52–53), and the final vision of new creation (65–66).</p><p><strong>Chapters 36–39</strong> form a historical hinge, drawing on 2 Kings 18–20, describing the Assyrian crisis under Hezekiah and Hezekiah's illness — and closing with the ominous Babylonian embassy that points forward to the exile.</p>"
+        },
+        {
+          "title":"Key themes",
+          "body" :"<p><strong>The holiness of the Lord.</strong> The foundational vision of chapter 6 — 'Holy, holy, holy is the Lord Almighty' — sets the theological tone for the whole book. Isaiah's favourite title for God is 'the Holy One of Israel,' appearing over 25 times. The Lord's holiness is the reason judgment is inevitable and the reason grace is astonishing.</p><p><strong>Trust and idolatry.</strong> The central question of Isaiah is: in whom will you trust? The people are constantly tempted to trust in Egypt, Assyria, political alliances, their own military strength, or handmade idols — anything but the Lord. Isaiah exposes these false securities with devastating irony, especially in chapters 40–48.</p><p><strong>Judgment and restoration.</strong> Isaiah holds both with extraordinary tension. The same Lord who declares devastating judgment on his people promises to comfort, restore, and gather them. Judgment is never the last word — but it is always a real word. The 'remnant' theme (a faithful few who survive) holds these together.</p><p><strong>The coming King and Servant.</strong> Beginning with Immanuel in chapter 7, Isaiah traces a developing portrait of a coming deliverer: the child of 9:6–7, the Branch of 11:1, the Servant of 42, 49, 50, and 52–53. The Servant Songs reach their climax in the substitutionary suffering of 52:13–53:12, one of the most astonishing texts in the whole Old Testament.</p><p><strong>The nations.</strong> Isaiah has a remarkably universal horizon. The nations are under God's judgment, but they are also the object of his saving purposes. The vision of the nations streaming to God's mountain (2:1–5), the inclusion of Egypt and Assyria alongside Israel (19:24–25), and the Servant bringing justice to the nations (42:1–4) all point forward to the global scope of the gospel.</p>"
+        },
+        {
+          "title":"A note on authorship",
+          "body" :"<p>Some scholars argue that Isaiah 40–66 was written by a different author (or authors) after the Babylonian exile — on the grounds that it addresses exiles and names Cyrus as the Lord's instrument over a century before Cyrus lived (44:28; 45:1). Others argue the unity of the book, the consistent theological themes, and the testimony of the New Testament (which attributes both halves to 'Isaiah') support single authorship — and that the predictive specificity of the Cyrus prophecy is, on a canonical reading, precisely the point: the Lord knows the end from the beginning (41:22–23; 46:10).</p><p>You do not need to resolve this debate to lead the study well. What matters for our purposes is to read the text as it stands — attentive to both its historical rootedness and its remarkable prophetic reach. The notes use 'Isaiah' throughout to refer to the book as a unified whole.</p>"
+        }
+      ]
+    },
+    "chapters":[
+      {
+        "chapterNumber":1,
+        "format"       :"HTML",
+        "title"        :"Isaiah 1 — The Lord Exposes His People's Sin",
+        "bigIdea"      :"The Lord exposes his people's sin and promises both judgment and restoration.",
+        "passage"      :"Isaiah 1",
+        "background"   :{
+          "subtype":"standard",
+          "header" :"Background",
+          "body"   :"<p>Chapter 1 functions as an <strong>overture</strong> to the whole book of Isaiah. Many of the themes introduced here — the Lord's indictment of his people, the futility of empty religion, the call to justice, the offer of cleansing, the promise of judgment and restoration — will recur throughout chapters 1–66. It is worth slowing down here and allowing the group to feel the weight of the opening before pressing on.</p><p><strong>Isaiah's time (v1).</strong> Isaiah ministered during the reigns of Uzziah (also called Azariah), Jotham, Ahaz, and Hezekiah — kings of Judah, roughly 740–700 BC. The northern kingdom of Israel was a separate entity during this period and fell to Assyria in 722 BC. Isaiah's prophetic focus is specifically on <strong>Judah and Jerusalem</strong>.</p><p>If you haven't done so already, it is worth encouraging your group to spend some time before the next session skimming through <strong>2 Kings 15–20</strong> and <strong>2 Chronicles 26–32</strong> — the historical background to Isaiah's ministry. Key things to draw out: even under 'good' kings, the people were not wholeheartedly worshipping the Lord; idolatry persisted; Assyria was a massive and growing military threat; and the temptation to appease foreign powers rather than trust the Lord was constant.</p><p><strong>The covenant framework.</strong> The accusations in this chapter cannot be understood apart from the covenant relationship the Lord has with Israel. Israel is the Lord's 'son' (v2), brought up and cared for — like a parent's child. Their rebellion is therefore not just moral failure but a personal betrayal of an intimate relationship. The covenant curses of Deuteronomy 28 (referenced in question 6) form the legal backdrop: the Lord had warned his people explicitly that this is what unfaithfulness would look like.</p><p><strong>The Sodom and Gomorrah comparison (vv9–10).</strong> This is deliberately shocking. In v9, the people are <em>like</em> Sodom — they have been left with only a remnant of survivors, otherwise they would have been obliterated. But in v10, the Lord addresses them <em>as</em> Sodom — because their wickedness has made them functionally indistinguishable. The juxtaposition is jarring by design.</p><p><strong>Religion without justice (vv11–17).</strong> The Lord's rejection of the people's sacrifices and festivals is one of the most striking passages in the whole Old Testament. The point is not that sacrifice was wrong — the Lord had commanded it — but that sacrifice divorced from obedience and justice is not worship. It is self-deception. This prophetic critique runs through Amos, Micah, Hosea, and Jeremiah, and Jesus picks it up in the Sermon on the Mount and the cleansing of the temple.</p><p><strong>The offer of cleansing (vv18–20).</strong> After the devastating indictment, this offer is startling. The Lord does not simply condemn — he calls. 'Come now, let us reason together.' The possibility of complete cleansing is held open. But the condition is real: willingness and obedience.</p>"
+        },
+        "keyPoints"   :{
+          "subtype":"standard",
+          "header" :"Key Teaching Points",
+          "body"   :"<p><strong>The Lord is the one speaking.</strong> The chapter opens with the Lord calling heaven and earth as witnesses against his people (v2). This is a legal and covenantal framework — the Lord is not simply venting frustration but making a formal indictment. It gives the whole chapter a solemn, weighty tone. Don't rush past the drama of the opening.</p><p><strong>Sin is a relational betrayal, not just rule-breaking.</strong> The Lord's grief in vv2–3 is not primarily legal but personal. 'Children I have reared and brought up — they have rebelled against me.' Even animals know their master better than Israel knows the Lord. This relational framing is crucial: the problem is not primarily that Israel has broken rules but that they have rejected the one who loves them.</p><p><strong>External religion can coexist with deep corruption.</strong> The people in vv11–15 are very religious. They sacrifice, pray, observe festivals, and appear before the Lord. But their hands are 'full of blood' (v15) — they are pursuing injustice, exploiting the vulnerable, and living in fundamental contradiction to what they profess. This is one of the most uncomfortable passages in Isaiah precisely because it diagnoses a form of religion that can look entirely normal from the outside.</p><p><strong>True religion shows in social justice.</strong> What the Lord actually wants (vv16–17) is not more or better sacrifice — it is right action: 'Seek justice, defend the oppressed, take up the cause of the fatherless, plead the case of the widow.' This is not an alternative to faith but its fruit. The group may need to sit with this — especially if they are used to thinking of faith primarily in terms of personal devotion.</p><p><strong>The Lord both judges and restores.</strong> The chapter holds both promises together. Judgment is coming — the city that was 'faithful' has become a 'prostitute' (v21), and the Lord will purge it. But beyond the purging lies restoration: 'Afterward you will be called the City of Righteousness, the Faithful City' (v26). This pattern of judgment-then-restoration is the backbone of the whole book.</p>"
+        },
+        "exegetical"  :{
+          "subtype":"standard",
+          "header" :"Exegetical Notes",
+          "body"   :"<p><strong>'The ox knows its owner, the donkey its master's manger' (v3).</strong> The comparison is humiliating. Domesticated animals, not known for intelligence, recognise their owners and know where their food comes from. Israel does not even reach this basic level of recognition toward the Lord who has fed and raised them. The point is not subtle — it is meant to shock.</p><p><strong>'Brood of evildoers' (v4).</strong> The word translated 'brood' (NIV) carries strongly negative connotations — it describes offspring who share the character of their corrupt parents. The sin is presented as deeply ingrained, not occasional.</p><p><strong>The wounds of vv5–6.</strong> The imagery is of someone beaten for rebellion who stubbornly gets up to rebel again, covered in untreated wounds. The stubbornness is as striking as the wounds: they are not repenting, not treating their wounds, not changing course — they are continuing in the same rebellion despite the evidence of its consequences all around them.</p><p><strong>Deuteronomy 28 and the covenant curses (v7–9).</strong> The language of vv7–9 directly echoes Deuteronomy 28:30–33, 49–57 — the covenant curses for disobedience. Desolate land, cities burned, foreigners devouring the harvest — these are not random misfortunes but the specific consequences the Lord warned about centuries before. Isaiah is pointing his hearers back to what they already knew but had forgotten.</p><p><strong>'Your hands are full of blood' (v15).</strong> This phrase appears right in the middle of the list of rejected religious observances, and it is meant to stop the reader short. The 'blood' most likely refers not to violence per se but to the social injustice detailed in vv16–23 — exploitation of the vulnerable, corruption of the legal system, neglect of the widow and orphan. Hands raised in prayer carry the guilt of those they have wronged.</p><p><strong>'Though your sins are like scarlet... white as snow' (v18).</strong> The contrast is absolute: the deepest, most visible stain against the most complete purity. This is a remarkable offer — total cleansing, not partial improvement. The condition ('if you are willing and obedient') is real, but the promise is equally real.</p><p><strong>The dross and alloy imagery (vv22–25).</strong> The Lord describes his purification as a metallurgical process — removing dross and alloy to restore pure silver. Judgment is not arbitrary destruction but purposeful refining. This is pastoral as well as forensic: the Lord's anger is in the service of his restoration project, not opposed to it.</p>"
+        },
+        "pastorals"   :{
+          "subtype":"standard",
+          "header" :"Pastoral Sensitivities",
+          "body"   :"<p>The exposure of <strong>empty religion</strong> in this chapter is one of the most uncomfortable things a church group can encounter — because it describes people who are going to church, praying, and following religious routines while their hearts and lives are fundamentally unaligned with God. Some in your group may find this passage personally confronting. That discomfort is appropriate — don't smooth it over prematurely. But do make sure the group hears both the indictment <em>and</em> the offer of v18. The Lord is not simply condemning; he is calling.</p><p>The emphasis on <strong>justice for the vulnerable</strong> (v17) may be challenging in different ways for different people. Some will find it uncomfortably specific — 'defend the oppressed, take up the cause of the fatherless, plead the case of the widow' is concrete language. Others may want to reduce it to a general virtue. Help the group engage with what these words might actually look like in their context, without turning the session into a political debate.</p><p>The <strong>New Testament application</strong> (question 15) is important but should come <em>after</em> the group has engaged seriously with the Old Testament passage on its own terms. The promises of chapter 1 find their fullest fulfilment in Christ — who takes the judgment, enables the cleansing, and builds the Faithful City. But rush there too early and you lose the weight of the original text.</p>"
+        },
+        "watch"       :{
+          "subtype":"highlighted",
+          "header" :"Things to watch for",
+          "body"   :"👁️ Watch for a tendency to locate the empty religion of vv11–15 safely in the ancient past ('those Jews') rather than asking what its equivalent looks like today. The diagnosis — religious practice without justice, worship without corresponding life — is entirely portable. Keep the group's gaze moving from the text to the present."
+        },
+        "questions":[
+          {
+            "questionNumber":1,
+            "verses"        :"1:1",
+            "header"        :"Isaiah and his time",
+            "question"      :"What does the opening verse tell us about Isaiah, his time, and his main prophetic ministry?",
+            "answer"        :"His prophetic focus is on <strong>Judah and Jerusalem</strong>. He ministers during the reigns of Uzziah (Azariah), Jotham, Ahaz, and Hezekiah — spanning roughly 740–700 BC. See the Background section for a fuller picture of this period and its political context."
+          },
+          {
+            "questionNumber":2,
+            "verses"        :"(2 Kings 15–20; 2 Chronicles 26–32)",
+            "header"        :"Isaiah and his time",
+            "question"      :"Divide into groups and spend a few minutes skimming through 2 Kings 15–20 and 2 Chronicles 26–32. (Have one group look at Kings and the other at Chronicles.) What were some of the main events and issues of Isaiah's time?",
+            "answer"        :"There is a lot to draw out here. Some of the main things: even during the reigns of 'good' kings, the people were not wholeheartedly worshipping the Lord and idolatry persisted. Assyria is a massive and growing political threat, and there is constant temptation to appease the Assyrians through diplomacy rather than trusting the Lord. During this period the northern kingdom of Israel is overwhelmed by Assyria and disappears from the pages of history. Encourage everyone to re-read these passages in their own time before the next session.",
+            "leaderNote"    :"This question works well as a group exercise — splitting Kings and Chronicles between two subgroups makes for a more energetic comparison. Don't let it take more than 5–7 minutes before drawing the findings together."
+          },
+          {
+            "questionNumber":3,
+            "verses"        :"1:2–3",
+            "header"        :"God's people are rebels",
+            "question"      :"What is so unnatural about Israel's relationship to the Lord? (vv2–3)",
+            "answer"        :"The people are the Lord's children, brought up by him like a loving parent. The natural and expected state of things would be that they love, respect, and obey him as a child would their father — but they have rebelled. Even animals know their masters better than Israel knows the Lord. This is meant to be shocking: the comparison to ox and donkey is deliberately humiliating."
+          },
+          {
+            "questionNumber":4,
+            "verses"        :"1:4",
+            "header"        :"God's people are rebels",
+            "question"      :"How is Israel described here? What hints do we get as to their main sin? (v4)",
+            "answer"        :"Sinful, laden with guilt, evildoers, corrupt. The word translated 'brood' carries strongly negative connotations — offspring who share the character of their corrupt parents. The main sin is their <strong>rejection of the Lord</strong> — notably, this is stated three times in different ways within the same verse."
+          },
+          {
+            "questionNumber":5,
+            "verses"        :"1:5–6",
+            "header"        :"God's people are under the covenant curse",
+            "question"      :"What imagery is being used in vv5–6? What does it say about Israel's attitude?",
+            "answer"        :"The imagery seems to be of someone who has been severely beaten for rebellion but keeps stubbornly getting up to rebel again — completely covered in wounds that have not even been treated. The rebellion is entirely unnecessary, yet they stagger to their feet to repeat it even though they will be beaten again. Israel's attitude is one of <strong>complete stubbornness and refusal to repent</strong>."
+          },
+          {
+            "questionNumber":6,
+            "verses"        :"1:7–9",
+            "header"        :"God's people are under the covenant curse",
+            "question"      :"Think back to Deuteronomy 28. How does that help us understand the state of things in Isaiah 1:7–9? What historical events does it seem to be referring to?",
+            "answer"        :"The people have rebelled against the Lord and turned away from him, and so have fallen under the <strong>covenant curses</strong> warned about in Deuteronomy 28 — desolate land, cities burned, foreigners devouring the harvest. Instead of people, land, and blessing, they are left with a remnant, desolation, and their land overrun by strangers. During Uzziah/Azariah's reign the northern kingdom of Israel was overrun by Assyria and its people scattered, never to return. The people of Judah are now a remnant of God's people.",
+            "leaderNote"    :"It's worth spending a moment here establishing the covenant framework if the group is unfamiliar with it — the curses and blessings of Deuteronomy 28 are the legal backdrop that makes this passage fully intelligible. Isaiah is not just diagnosing a bad situation; he is interpreting it theologically."
+          },
+          {
+            "questionNumber":7,
+            "verses"        :"1:9",
+            "header"        :"God's people are under the covenant curse",
+            "question"      :"What distinguishes the people of God from Sodom and Gomorrah here?",
+            "answer"        :"They have been left with some survivors. Otherwise they would have been obliterated like Sodom and Gomorrah — total destruction with no remnant. The 'remnant' theme is introduced here and will run throughout Isaiah."
+          },
+          {
+            "questionNumber":8,
+            "verses"        :"1:10",
+            "header"        :"God's people are like Sodom and Gomorrah",
+            "question"      :"Why is v10 such a shock coming directly after v9?",
+            "answer"        :"In v9, they are <em>not</em> like Sodom and Gomorrah — they still have survivors. But in v10 the Lord addresses them directly as 'rulers of Sodom' and 'people of Gomorrah'. Sodom and Gomorrah represent utter wickedness and rebellion, so it is shocking for the people of God to be addressed in those terms. The contrast between the two verses is jarring and deliberate."
+          },
+          {
+            "questionNumber":9,
+            "verses"        :"1:11–15",
+            "header"        :"God's people are like Sodom and Gomorrah",
+            "question"      :"God's people are clearly very religious in vv11–15. What religious practices are they engaging in, and what does God say he thinks about them?",
+            "answer"        :"<em>Their practices:</em> sacrifices, burnt offerings, appearing before the Lord, incense, religious festivals, Sabbaths, prayer.<br><br><em>The Lord's response:</em> he has had enough; he takes no pleasure in them; they are meaningless, detestable, worthless; he cannot bear them; he hates them; they are burdensome; he is weary of them; he hides his eyes from them and does not listen to their prayers. The accumulation of rejections is meant to land with full force — don't summarise too quickly."
+          },
+          {
+            "questionNumber":10,
+            "verses"        :"1:15",
+            "header"        :"God's people are like Sodom and Gomorrah",
+            "question"      :"Why is their religion meaningless to the Lord? (v15)",
+            "answer"        :"'Your hands are full of blood.' Their lives outside the sanctuary contradict everything they do inside it. Pause on this — it is meant to shock. The image of hands raised in prayer that are also stained with the blood of injustice is one of the most arresting in the whole chapter."
+          },
+          {
+            "questionNumber":11,
+            "verses"        :"1:16–23",
+            "header"        :"God's people are like Sodom and Gomorrah",
+            "question"      :"What is Israel doing that shows the true state of their hearts before the Lord? (vv16–23) What true religion does the Lord want them to demonstrate?",
+            "answer"        :"They are pursuing evil deeds, wealth through corruption, and the oppression of the poor. They have turned away from righteousness and 'prostituted' themselves (here referring to social injustice — the same image is used elsewhere of idolatry). This is why their worship is empty and detestable.<br><br>What the Lord calls them to do (v17): seek justice, defend the oppressed, take up the cause of the fatherless, plead the case of the widow. These are concrete, relational, costly actions — not additional religious observances."
+          },
+          {
+            "questionNumber":12,
+            "verses"        :"1:18–20",
+            "header"        :"A purging is coming: destruction and restoration",
+            "question"      :"What does the Lord offer Judah in vv18–20? What choice is before them?",
+            "answer"        :"Utter renewal and complete cleansing of their sins — 'though your sins are like scarlet, they shall be as white as snow.' This is a remarkable, unconditional offer. But it requires willingness and obedience. If they rebel, they will be destroyed. The choice is real and the stakes could not be higher."
+          },
+          {
+            "questionNumber":13,
+            "verses"        :"1:24–31",
+            "header"        :"A purging is coming: destruction and restoration",
+            "question"      :"What future does the Lord present Judah with? What warning is given and what hope is offered? How does the imagery help us understand the point?",
+            "answer"        :"The Lord will destroy his enemies and purge his people. Purging — like the smelting of metal to remove dross (vv25–26) — is painful but purposeful: the goal is restoration, not mere punishment. The Lord will work to make Jerusalem again 'the City of Righteousness, the Faithful City' (v26 — a direct contrast to v21). But the wicked will be destroyed like dry plants burned up. He will deliver the penitent and break those who forsake him. <strong>Judgment and restoration are both real</strong>."
+          },
+          {
+            "questionNumber":14,
+            "verses"        :"1:1–31",
+            "header"        :"Application",
+            "question"      :"What does this passage teach us about how the people of God can measure the state of their hearts? What was the real sign of Israel's attitude? What is the real sign of true faith and humility in the people of God today? How does true faith show itself?",
+            "answer"        :"The real sign of Israel's attitude was not what they did in the sanctuary but how they treated the vulnerable — the oppressed, the orphan, the widow. External religion can run on autopilot while the heart drifts entirely. True faith shows itself not in religious activity alone but in the alignment of worship with life — justice, honesty, care for the vulnerable. This is a diagnostic question, not a rhetorical one: help the group take it personally.",
+            "leaderNote"    :"This application question benefits from concrete, specific discussion. Don't let it stay theoretical. Ask: what would 'defending the oppressed' and 'pleading the case of the widow' look like specifically in our context? What might 'hands full of blood' look like for us?"
+          },
+          {
+            "questionNumber":15,
+            "verses"        :"1:18–20, 24–31",
+            "header"        :"Application",
+            "question"      :"What did the people of God need for real change to occur? How did the Lord promise to do that? How do we see this play out in the life of God's people and in our lives? How are the promises of this passage fulfilled in the New Testament?",
+            "answer"        :"The people needed both cleansing (forgiveness of sin) and purging (refining judgment to remove the corrupting elements from within the community). The Lord promised to do this himself — through the refining process of judgment and through the restoration that follows. In the New Testament, this is ultimately fulfilled in Christ: he takes the judgment, provides the cleansing (1 John 1:7), and builds the true 'City of Righteousness' — the church, and ultimately the new creation. The 'faithful city' of Isaiah 1:26 finds its fulfilment in the New Jerusalem of Revelation 21.",
+            "leaderNote"    :"The New Testament connection is real and rich, but make sure the group has sat with the Old Testament text first. The weight of Christ's atoning work means more when the group has felt the full force of the indictment — and the wonder of v18 ('though your sins are like scarlet, they shall be as white as snow') — before moving to its fulfilment."
+          }
+        ]
+      }
+    ]
+  },
+  "studyAboutData":{
+    "author":{
+      "url"  :"",
+      "paras":[
+        "Julie Rowbory grew up in Northern Ireland and was educated at the University of Cambridge, where she obtained an MA and then an MPhil in history. She has worked as a Latin and history teacher, taught English in Asia and lived in East Africa. She is married to David, with whom she has four daughters. They divide their time between Scotland and West Africa."
+      ],
+      "format":"plainText"
+    },
+    "publisher":{
+      "name" :"self-published",
+      "url"  :"https://julierowbory.com/bio/",
+      "paras":[
+        "This study is self-published by Julie Rowbory"
+      ],
+      "format":"plainText"
+    }
+  },
+  "copyrightData":{
+    "licence":{
+      "spdxId"  :"CC-BY-SA-4.0",
+      "name"    :"Creative Commons Attribution-ShareAlike 4.0 International",
+      "url"     :"https://creativecommons.org/licenses/by-sa/4.0/",
+      "freedoms":[
+        "Share: copy and redistribute the material in any medium or format",
+        "Adapt: remix, transform, and build upon the material for any purpose, even commercially"
+      ],
+      "conditions":[
+        "Attribution: you must give appropriate credit, provide a link to the licence, and indicate if changes were made",
+        "ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original"
+      ],
+      "format":"plainText"
+    },
+    "copyright":{
+      "holder"   :"Julie Rowbory",
+      "year"     :2026,
+      "statement":"Julie Rowbory, 2026. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License."
+    },
+    "bibleTranslation":{
+      "name"     :"NET Bible",
+      "version"  :"NET Bible® (New English Translation)",
+      "copyright":"©1996, 2019 Biblical Studies Press, L.L.C.",
+      "url"      :"https://netbible.com",
+      "usedWith" :"permission"
+    },
+    "notices":[
+      "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
+      "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
+      "In preparing this edition, Claude was used for editorial feedback and redrafting suggestions – particularly in relation to opening illustrations, closing summaries, and reflection questions. Claude also helped with a certain amount of vibe coding. All content decisions, theological judgements, and final wording are the author’s responsibility.",
+      "The Scriptures quoted are from the NET Bible® http://netbible.com copyright ©1996, 2019 used with permission from Biblical Studies Press, L.L.C. All rights reserved."
+    ],
+    "format":"HTML"
+  },
+  "imageData":{
+    "cover":{
+      "alt"       :"Golden sunrise over open Bible",
+      "fallback"  :"❤️",
+      "provenance":"Created by Chatgpt, 2026-04-10, 2245"
+    },
+    "publisher":{
+      "alt"     :"Julie Rowbory",
+      "fallback":"🧑‍🦱"
+    },
+    "author":{
+      "alt"       :"Julie Rowbory",
+      "fallback"  :"🧑‍🦱",
+      "provenance":"offline photo"
+    }
+  },
+  "studyAiData":{
+    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘1 John for Today’ — exploring the New Testament book of 1 John.",
+    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
+  }
+}

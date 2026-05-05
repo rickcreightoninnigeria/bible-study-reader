@@ -82,6 +82,40 @@ const Router = (() => {
   // render is still in progress).
   let _navigating = false;
 
+  // ── Shadow stack (debug) ─────────────────────────────────────────────────────
+  // The History API only exposes the current entry — there is no way to read
+  // the full stack. We maintain a parallel JS array so logStack() can print it
+  // without touching history.go() (which Chrome throttles aggressively).
+  // Invariant: _shadowStack[_shadowIdx] always mirrors history.state.
+  let _shadowStack = [];
+  let _shadowIdx   = -1;
+
+  function _shadowPush(state) {
+    _shadowStack = _shadowStack.slice(0, _shadowIdx + 1);
+    _shadowStack.push(state);
+    _shadowIdx = _shadowStack.length - 1;
+  }
+  function _shadowReplace(state) {
+    if (_shadowIdx < 0) { _shadowPush(state); return; }
+    _shadowStack[_shadowIdx] = state;
+  }
+  function _shadowPop(poppedState) {
+    for (let i = _shadowIdx - 1; i >= 0; i--) {
+      const s = _shadowStack[i];
+      if (s && s.page === poppedState.page
+            && s.idx   === poppedState.idx
+            && s.tabId === poppedState.tabId) { _shadowIdx = i; return; }
+    }
+    for (let i = _shadowIdx + 1; i < _shadowStack.length; i++) {
+      const s = _shadowStack[i];
+      if (s && s.page === poppedState.page
+            && s.idx   === poppedState.idx
+            && s.tabId === poppedState.tabId) { _shadowIdx = i; return; }
+    }
+    _shadowStack = [poppedState];
+    _shadowIdx   = 0;
+  }
+
   // ── Page ordering for slide-direction heuristic ─────────────────────────────
   // Pages later in this list slide in from the right (forward); earlier pages
   // slide in from the left (back). Non-chapter pages are treated as "deeper"
@@ -101,14 +135,18 @@ const Router = (() => {
   //   idx:     number          (chapter only)
   //   tabId:   string | null   (settings / howto / leaders / about)
   //   scrollY: number
+  //   studyId: string | null   (the active study when this entry was pushed,
+  //                             restored before rendering on popstate so Back
+  //                             always returns to the correct study's content)
   // }
 
   function _makeState(destination) {
     return {
       page:    destination.page,
-      idx:     destination.idx    ?? null,
-      tabId:   destination.tabId  ?? null,
+      idx:     destination.idx     ?? null,
+      tabId:   destination.tabId   ?? null,
       scrollY: destination.scrollY ?? 0,
+      studyId: destination.studyId ?? window.activeStudyId ?? null,
     };
   }
 
@@ -119,7 +157,27 @@ const Router = (() => {
     _navigating = true;
 
     try {
-      const { page, idx, tabId, scrollY } = state;
+      const { page, idx, tabId, scrollY, studyId } = state;
+
+      // On a back/forward navigation, restore the study that was active when
+      // this history entry was created — before calling any render function.
+      // Only needed on popstate (isPop=true); forward navigation is intentional
+      // so we leave the current study alone.
+      if (isPop && studyId && studyId !== window.activeStudyId) {
+        // Load the study data silently (no version dialogs, no onboarding)
+        // and apply it. applyStudyData re-initialises window.chapters and all
+        // derived state so the subsequent render calls work on the right study.
+        try {
+          const data = await StudyIDB.get(`study_content_${studyId}`);
+          if (data) {
+            window.activeStudyId = studyId;
+            localStorage.setItem('bsr_last_active_study', studyId);
+            await applyStudyData(data, { isStudySwitch: true, silent: true });
+          }
+        } catch (err) {
+          console.warn('[Router] Could not restore study', studyId, err);
+        }
+      }
 
       // Determine slide direction from page depth comparison.
       // On a pop we invert: popping to a shallower page slides left.
@@ -262,6 +320,7 @@ const Router = (() => {
       return;
     }
 
+    _shadowPop(e.state);
     await _applyNavigation(e.state, /* isPop = */ true);
   });
 
@@ -287,6 +346,7 @@ const Router = (() => {
   async function navigate(destination) {
     const state = _makeState(destination);
     history.pushState(state, '');
+    _shadowPush(state);
     await _applyNavigation(state, /* isPop = */ false);
   }
 
@@ -314,6 +374,7 @@ const Router = (() => {
   function boot(initialState) {
     const state = _makeState(initialState);
     history.replaceState(state, '');
+    _shadowReplace(state);
     _lastPage = state.page;
   }
 
@@ -327,7 +388,7 @@ const Router = (() => {
   function replaceState(destination) {
     const state = _makeState(destination);
     history.replaceState(state, '');
-    // Update lastPage so slide direction is computed correctly on the next push.
+    _shadowReplace(state);
     _lastPage = state.page;
   }
 
@@ -343,10 +404,48 @@ const Router = (() => {
   function pushWithoutRender(destination) {
     const state = _makeState(destination);
     history.pushState(state, '');
+    _shadowPush(state);
     _lastPage = state.page;
   }
 
-  return { navigate, back, boot, replaceState, pushWithoutRender };
+  // ── Debug ───────────────────────────────────────────────────────────────────
+
+  /**
+   * Router.logStack()
+   * Print the full history stack to the console — synchronous, instant.
+   * Reads from the internal shadow stack; no history.go() calls.
+   * Usage: evaluate this Expression in console:
+   *     Router.logStack()
+   */
+  function logStack() {
+    const n   = _shadowStack.length;
+    const cur = _shadowIdx;
+    const label = s => {
+      if (!s) return '(null)';
+      const parts = [`page=${s.page}`];
+      if (s.idx    != null) parts.push(`idx=${s.idx}`);
+      if (s.tabId  != null) parts.push(`tabId=${s.tabId}`);
+      if (s.scrollY)        parts.push(`scrollY=${s.scrollY}`);
+      if (s.studyId)        parts.push(`study=${s.studyId}`);
+      return parts.join('  ');
+    };
+    if (n === 0) {
+      console.log('%c[Router stack — empty (boot not yet called)]', 'color:#f0c040');
+      return;
+    }
+    console.group(
+      `%c[Router stack — ${n} entr${n === 1 ? 'y' : 'ies'}, current=${cur}]`,
+      'font-weight:bold; color:#4a9eff'
+    );
+    _shadowStack.forEach((s, i) => {
+      const here  = i === cur ? '  ◀ YOU ARE HERE' : '';
+      const style = i === cur ? 'color:#f0c040; font-weight:bold' : 'color:inherit';
+      console.log(`%c  [${i}] ${label(s)}${here}`, style);
+    });
+    console.groupEnd();
+  }
+
+  return { navigate, back, boot, replaceState, pushWithoutRender, logStack };
 
 })();
 

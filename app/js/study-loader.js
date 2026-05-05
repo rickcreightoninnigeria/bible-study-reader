@@ -473,7 +473,7 @@ function restoreStudyTheme() {
   }
 }
 
-async function applyStudyData(data, { isStudySwitch = false } = {}) {
+async function applyStudyData(data, { isStudySwitch = false, silent = false } = {}) {
   // Revoke any blob URLs created for the previous study before overwriting
   // state. This prevents blob URLs accumulating in memory across study switches.
   _revokeAllBlobUrls();
@@ -662,8 +662,13 @@ async function applyStudyData(data, { isStudySwitch = false } = {}) {
   document.documentElement._suspendedTheme = {};  // clear any stale suspension theme data
 
   window.verseData = {}; // populated by renderChapter() from biblePassage elements
-  
-  initApp({ isStudySwitch });
+
+  // silent=true is used by the router when restoring a study on Back navigation.
+  // The router calls the render function itself immediately after, so we must
+  // NOT call initApp() here — it would double-render and push a spurious history entry.
+  if (!silent) {
+    initApp({ isStudySwitch });
+  }
 } // end applyStudyData
 
 // wrapper to parse string handed over from Android
