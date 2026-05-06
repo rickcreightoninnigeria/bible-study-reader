@@ -70,6 +70,32 @@
 //   Swal                                      – sweetalert2.all.min.js
 //   t()                                       – i18n.js
 
+
+// ── MODAL INTERCEPT ─────────────────────────────────────────────────────────
+// Closes the topmost open modal/popup, if any.
+// Called by the popstate listener when Back is pressed and a modal is open.
+// The listener calls history.forward() after this to undo the navigation,
+// since this WebView reports the destination state in e.state rather than the
+// popped entry's state — making sentinel-based detection unreliable.
+// Returns true if a modal was closed, false if nothing was open.
+// Kept as a named function so it can also be wired to a keyboard Escape handler.
+function _closeAnyOpenModal() {
+  const modals = [
+    { id: 'verseModalOverlay',  close: () => closeVerseModal() },
+    { id: 'qaModalOverlay',     close: () => closeQaModal() },
+    { id: 'deeperModalOverlay', close: () => closeDeeperModal() },
+    { id: 'likertPopupOverlay', close: () => closeLikertPopup() },
+    { id: 'info-modal-overlay', close: () => closeInfoModal() },
+  ];
+  for (const { id, close } of modals) {
+    if (document.getElementById(id)?.classList.contains('open')) {
+      close();
+      return true;
+    }
+  }
+  return false;
+}
+
 const Router = (() => {
 
   // ── Internal state ──────────────────────────────────────────────────────────
@@ -297,13 +323,25 @@ const Router = (() => {
 
   // ── popstate listener ───────────────────────────────────────────────────────
 
-  window.addEventListener('popstate', async (e) => {
-    // If the search overlay is open, close it and re-push the state we just
-    // popped — the overlay closing is not a navigation, just a UI dismiss.
+    window.addEventListener('popstate', async (e) => {
+    // If the search overlay is open, close it and undo the navigation —
+    // the overlay closing is not a navigation, just a UI dismiss.
     const searchOverlay = document.getElementById('searchOverlay');
     if (searchOverlay?.classList.contains('open')) {
       closeSearch();
-      history.pushState(e.state, '');  // restore the entry we just popped
+      history.forward();
+      _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
+      return;
+    }
+
+    // If a modal is open, Back should close it rather than navigate.
+    // history.forward() undoes the popstate navigation; _shadowIdx is
+    // incremented to keep the shadow stack in sync with the real history.
+    // We cannot rely on e.state?.page === '_modal' because this WebView
+    // reports the destination state in e.state, not the popped entry's state.
+    if (_closeAnyOpenModal()) {
+      history.forward();
+      _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
       return;
     }
 
