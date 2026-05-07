@@ -1,14 +1,21 @@
 """
 populate_passages.py
-Populates passageText1, passageText2, and passageText4 in a BeaconLight .estudy JSON
-by scraping www.bible.com (slots 1 & 4) and live.bible.is (slot 2).
+Populates passageText fields in a BeaconLight .estudy JSON by scraping bible.com.
+
+All passageUrlN values are expected to be bible.com URLs. Any URL that is not
+from bible.com is silently skipped.
+
+Slots are discovered dynamically per element: a slot N (1–10) is active when
+the element contains both passageUrlN and passageTextN keys. If passageTextN
+is already non-empty it is skipped, so the script is safe to re-run.
+
+The verse spec (which verses to extract) is read from whichever bibleRefN
+field is available on the element. The book name is ignored — only the
+chapter:verse portion is used — so non-English book names work fine.
 
 Usage:
     pip install requests beautifulsoup4
     python populate_passages.py input.json output.json
-
-The script is safe to re-run: it skips any slot that already has text,
-so you can run it in batches or retry after failures.
 """
 
 import json
@@ -21,7 +28,15 @@ import requests
 from bs4 import BeautifulSoup
 
 # ---------------------------------------------------------------------------
-# Helpers
+# Constants
+# ---------------------------------------------------------------------------
+
+SLOT_UPPER_BOUND = 10   # scan passageText1 … passageText10
+DELAY            = 1.5  # seconds between requests – be polite
+BIBLE_COM_HOST   = "bible.com"
+
+# ---------------------------------------------------------------------------
+# HTTP session
 # ---------------------------------------------------------------------------
 
 SESSION = requests.Session()
@@ -34,32 +49,38 @@ SESSION.headers.update({
     "Accept-Language": "en-US,en;q=0.9",
 })
 
-DELAY = 1.5  # seconds between requests – be polite
+# ---------------------------------------------------------------------------
+# Verse-spec parser
+# ---------------------------------------------------------------------------
 
-
-def parse_verse_spec(ref_english: str) -> tuple[int | None, int | None, list[int]]:
+def parse_verse_spec(ref: str) -> tuple[int | None, list[int]]:
     """
-    Parse an English bibleRef like 'Romans 3:9-12, 23' into
-    (chapter, start_verse, all_verse_numbers).
+    Extract (chapter, [verse, ...]) from any bibleRef string, regardless of
+    the language of the book name.
 
-    Returns (chapter, start_verse, [v1, v2, ...]) where all_verse_numbers
-    is the complete flat list of verses to collect.
-    Returns (None, None, []) on failure.
+    Examples that all parse correctly:
+        'Mark 1:15'           -> (1, [15])
+        'Markus 1:15'         -> (1, [15])
+        'Romans 3:9-12, 23'   -> (3, [9, 10, 11, 12, 23])
+        '1 Yahaya 1:8-9'      -> (1, [8, 9])
+        'Kolosiyawa 2:6-7'    -> (2, [6, 7])
+        'Amsal 9:10'          -> (9, [10])
+        'Yakobus 3:2'         -> (3, [2])
+
+    Only the 'digits:rest' portion is used; the book name is discarded.
+    Returns (None, []) on failure.
     """
-    # Strip book name – everything after the last space-digit boundary
-    m = re.search(r'(\d+):(.+)$', ref_english)
+    m = re.search(r'(\d+):(.+)$', ref)
     if not m:
-        return None, None, []
+        return None, []
 
-    chapter = int(m.group(1))
+    chapter    = int(m.group(1))
     verse_part = m.group(2).strip()
 
     verses = []
-    # Split on comma, then handle ranges
     for segment in verse_part.split(','):
         segment = segment.strip()
-        # Strip trailing letters like 'b' in '7:25b' or '1:2b'
-        segment = re.sub(r'[a-zA-Z]$', '', segment).strip()
+        segment = re.sub(r'[a-zA-Z]+$', '', segment).strip()   # strip trailing 'b', 'a', etc.
         if '-' in segment:
             parts = segment.split('-')
             try:
@@ -74,27 +95,35 @@ def parse_verse_spec(ref_english: str) -> tuple[int | None, int | None, list[int
                 pass
 
     if not verses:
-        return None, None, []
+        return None, []
 
-    return chapter, verses[0], sorted(set(verses))
+    return chapter, sorted(set(verses))
 
 
 # ---------------------------------------------------------------------------
-# bible.com scraper (slots 1 and 4)
+# bible.com scraper
 # ---------------------------------------------------------------------------
 
-def scrape_bible_com(page_url: str, bibleref_english: str) -> str:
-    """
-    Fetch a chapter page from bible.com and return the HTML for the
-    specific verses named in bibleref_english.
+def is_bible_com_url(url: str) -> bool:
+    """Return True if the URL belongs to bible.com."""
+    return BIBLE_COM_HOST in url
 
-    bible.com renders verse text in <span> elements with data-usfm attributes
-    like 'ROM.3.9'. We collect the relevant verse spans and return them
-    joined as a single HTML string, preserving <sup> verse numbers.
+
+def scrape_bible_com(page_url: str, ref: str) -> str:
     """
-    chapter, start_verse, verse_list = parse_verse_spec(bibleref_english)
+    Fetch a chapter page from bible.com and return HTML for the specific
+    verses named in ref.
+
+    bible.com renders verse text in <span data-usfm="BOK.CH.V"> elements.
+    We match by chapter and verse number only, so the book code does not
+    need to be known in advance.
+
+    Returns an HTML string with inline <sup>N</sup> verse numbers, or ""
+    on failure.
+    """
+    chapter, verse_list = parse_verse_spec(ref)
     if not verse_list:
-        print(f"    [WARN] Could not parse verse spec from: {bibleref_english!r}")
+        print(f"    [WARN] Could not parse verse spec from: {ref!r}")
         return ""
 
     try:
@@ -106,17 +135,10 @@ def scrape_bible_com(page_url: str, bibleref_english: str) -> str:
 
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    # bible.com wraps each verse in a <span data-usfm="BOK.CH.V">
-    # The verse text itself is in child spans with class "content" or similar.
-    # We collect all matching verse spans in order.
-
     collected_parts = []
 
     for verse_num in verse_list:
-        # Try to find the verse span – usfm attribute format: "BOK.CH.V"
-        # The book code is embedded in the URL (e.g. ROM, JHN, PSA)
-        # We don't need to know the book code because we just search by chapter+verse
-        # pattern: data-usfm ends with ".CH.V" (the number portion)
+        # data-usfm format is "BOK.CH.V" — match on the .CH.V suffix only
         pattern = re.compile(rf'\.\s*{chapter}\s*\.\s*{verse_num}\s*$')
 
         verse_span = None
@@ -126,18 +148,16 @@ def scrape_bible_com(page_url: str, bibleref_english: str) -> str:
                 break
 
         if verse_span is None:
-            print(f"    [WARN] Verse {verse_num} not found in {page_url}")
+            print(f"    [WARN] Verse {chapter}:{verse_num} not found in {page_url}")
             continue
 
-        # Extract text content, preserving structure:
-        # Add superscript verse number then the text
+        # Walk descendants: emit <sup>N</sup> for superscripts, plain text otherwise
         verse_text = ""
         for child in verse_span.descendants:
             if hasattr(child, 'name'):
                 if child.name == 'sup':
                     verse_text += f"<sup>{child.get_text()}</sup>"
             else:
-                # text node – skip if it's inside a sup we already handled
                 parent_names = [p.name for p in child.parents if hasattr(p, 'name')]
                 if 'sup' not in parent_names:
                     t = str(child)
@@ -150,8 +170,7 @@ def scrape_bible_com(page_url: str, bibleref_english: str) -> str:
     result = " ".join(collected_parts).strip()
 
     if not result:
-        # Fallback: grab all visible text from the chapter page matching verses
-        print(f"    [WARN] Span-based extraction empty for {bibleref_english!r}, trying fallback")
+        print(f"    [WARN] Span-based extraction empty for {ref!r}, trying fallback")
         result = _bible_com_fallback(soup, chapter, verse_list)
 
     return result
@@ -159,12 +178,12 @@ def scrape_bible_com(page_url: str, bibleref_english: str) -> str:
 
 def _bible_com_fallback(soup: BeautifulSoup, chapter: int, verse_list: list[int]) -> str:
     """
-    Fallback: look for any element containing verse numbers as text
-    near verse content. Returns plain concatenated text.
+    Fallback: locate verse numbers in <sup> or <span> elements and return
+    their surrounding text. Used when the primary span-based extraction
+    finds nothing.
     """
     parts = []
     for verse_num in verse_list:
-        # Search for <sup> or other elements with just the verse number
         for sup in soup.find_all(['sup', 'span'], string=str(verse_num)):
             parent = sup.find_parent()
             if parent:
@@ -176,20 +195,23 @@ def _bible_com_fallback(soup: BeautifulSoup, chapter: int, verse_list: list[int]
 
 
 # ---------------------------------------------------------------------------
-# live.bible.is scraper (slot 2)
+# DEAD CODE – live.bible.is scraper
+#
+# Retained for reference in case live.bible.is URLs are needed in future.
+# All current passageUrlN values point to bible.com; this function is never
+# called by the main processing loop.
 # ---------------------------------------------------------------------------
 
-def scrape_bible_is(page_url: str, bibleref_english: str) -> str:
+def scrape_bible_is(page_url: str, ref: str) -> str:           # noqa: U100
     """
-    Fetch a chapter page from live.bible.is and return HTML for the
-    specific verses.
+    (Unused) Fetch verses from live.bible.is.
 
-    live.bible.is renders verses as <p> or <span> elements. The verse
-    numbers appear in <sup> or dedicated span elements.
+    live.bible.is is JavaScript-rendered; requests/BeautifulSoup cannot
+    retrieve its content reliably. A Selenium or Playwright implementation
+    would be required to make this functional.
     """
-    chapter, start_verse, verse_list = parse_verse_spec(bibleref_english)
+    chapter, verse_list = parse_verse_spec(ref)
     if not verse_list:
-        print(f"    [WARN] Could not parse verse spec from: {bibleref_english!r}")
         return ""
 
     try:
@@ -200,11 +222,6 @@ def scrape_bible_is(page_url: str, bibleref_english: str) -> str:
         return ""
 
     soup = BeautifulSoup(resp.text, "html.parser")
-
-    # live.bible.is structure varies but verses are commonly in elements with
-    # id="V{N}" or data-id containing the verse number, or <sup class="v"> markers.
-    # Strategy: find verse markers and collect text until the next marker.
-
     collected_parts = []
 
     # Approach 1: elements with id="V{N}"
@@ -217,23 +234,24 @@ def scrape_bible_is(page_url: str, bibleref_english: str) -> str:
     if collected_parts:
         return " ".join(collected_parts).strip()
 
-    # Approach 2: look for <sup> verse numbers and grab sibling/parent text
+    # Approach 2: <sup> verse-number markers
     for verse_num in verse_list:
         sups = soup.find_all("sup", string=re.compile(rf'^\s*{verse_num}\s*$'))
         for sup in sups:
             parent = sup.find_parent()
             if parent:
-                # Get text after the sup
                 text_parts = []
-                found_sup = False
+                found_sup  = False
                 for child in parent.children:
                     if child == sup:
                         found_sup = True
                         continue
                     if found_sup:
                         if hasattr(child, 'name') and child.name == 'sup':
-                            break  # next verse
-                        text_parts.append(child.get_text() if hasattr(child, 'get_text') else str(child))
+                            break
+                        text_parts.append(
+                            child.get_text() if hasattr(child, 'get_text') else str(child)
+                        )
                 verse_text = "".join(text_parts).strip()
                 if verse_text:
                     collected_parts.append(f"<sup>{verse_num}</sup>{verse_text}")
@@ -242,20 +260,52 @@ def scrape_bible_is(page_url: str, bibleref_english: str) -> str:
     if collected_parts:
         return " ".join(collected_parts).strip()
 
-    # Approach 3: plain text dump, find verse numbers as anchors
     print(f"    [WARN] All structured approaches failed for {page_url}, returning empty")
     return ""
 
 
 # ---------------------------------------------------------------------------
-# Tree walker and main population logic
+# Slot discovery
 # ---------------------------------------------------------------------------
 
-def find_and_update_passages(obj: dict | list, stats: dict, net_index: int | None) -> None:
+def active_slots(obj: dict) -> list[int]:
+    """
+    Return the list of slot numbers (1–SLOT_UPPER_BOUND) for which the
+    element has both a passageUrlN key and a passageTextN key.
+    Ordering is ascending by slot number.
+    """
+    slots = []
+    for n in range(1, SLOT_UPPER_BOUND + 1):
+        if f"passageUrl{n}" in obj and f"passageText{n}" in obj:
+            slots.append(n)
+    return slots
+
+
+# ---------------------------------------------------------------------------
+# Verse-ref discovery
+# ---------------------------------------------------------------------------
+
+def find_any_ref(obj: dict) -> str:
+    """
+    Return the first non-empty bibleRefN value found in the element.
+    We only need the chapter:verse portion, so any language works.
+    """
+    for n in range(1, SLOT_UPPER_BOUND + 1):
+        val = obj.get(f"bibleRef{n}", "").strip()
+        if val:
+            return val
+    return ""
+
+
+# ---------------------------------------------------------------------------
+# Tree walker
+# ---------------------------------------------------------------------------
+
+def find_and_update_passages(obj: dict | list, stats: dict) -> None:
     """Walk the JSON tree in-place, populating empty passageText fields."""
     if isinstance(obj, list):
         for item in obj:
-            find_and_update_passages(item, stats, net_index)
+            find_and_update_passages(item, stats)
         return
 
     if not isinstance(obj, dict):
@@ -264,47 +314,35 @@ def find_and_update_passages(obj: dict | list, stats: dict, net_index: int | Non
     if obj.get("type") == "biblePassage":
         element_id = obj.get("elementId", "?")
 
-        # Use whichever bibleRef slot holds the NET (English) translation.
-        # Fall back to scanning for the first ASCII-letter ref if NET index
-        # could not be determined from studyMetadata.
-        if net_index is not None:
-            ref_en = obj.get(f"bibleRef{net_index}", "")
-        else:
-            ref_en = ""
-            for key in sorted(obj.keys()):
-                if key.startswith("bibleRef") and key[len("bibleRef"):].isdigit():
-                    val = obj.get(key, "")
-                    if val and val[0].isascii() and val[0].isalpha():
-                        ref_en = val
-                        break
-
-        if not ref_en:
-            print(f"  [{element_id}] No English reference found, skipping element")
+        ref = find_any_ref(obj)
+        if not ref:
+            print(f"  [{element_id}] No bibleRef found, skipping element")
+            stats["no_url"] += 1
             return
 
-        # NOTE: slot 2 (live.bible.is / CLV) is disabled because the site is
-        # JavaScript-rendered and requests/BeautifulSoup cannot retrieve its content.
-        # To re-enable it, add (2, scrape_bible_is) back into the list below and
-        # replace the scraper with a Selenium/Playwright-based implementation.
-        # The scrape_bible_is() function above is preserved and ready to be wired in.
-        for slot, scrape_fn in [(1, scrape_bible_com), (3, scrape_bible_com), (4, scrape_bible_com)]:
+        for slot in active_slots(obj):
             text_key = f"passageText{slot}"
-            url_key = f"passageUrl{slot}"
+            url_key  = f"passageUrl{slot}"
 
+            # Skip if already populated
             existing = obj.get(text_key, "")
             if existing and existing.strip():
-                # Already populated – skip
                 stats["skipped"] += 1
                 continue
 
-            url = obj.get(url_key, "")
-            if not url:
-                print(f"  [{element_id}] slot{slot}: no URL, skipping")
+            url = obj.get(url_key, "").strip()
+
+            # Skip non-bible.com URLs silently
+            if not url or not is_bible_com_url(url):
+                if url:
+                    print(f"  [{element_id}] slot{slot}: not a bible.com URL, skipping ({url})")
+                else:
+                    print(f"  [{element_id}] slot{slot}: empty URL, skipping")
                 stats["no_url"] += 1
                 continue
 
             print(f"  [{element_id}] slot{slot}: scraping {url}")
-            text = scrape_fn(url, ref_en)
+            text = scrape_bible_com(url, ref)
 
             if text:
                 obj[text_key] = text
@@ -319,7 +357,7 @@ def find_and_update_passages(obj: dict | list, stats: dict, net_index: int | Non
         return  # don't recurse into child keys of a passage element
 
     for value in obj.values():
-        find_and_update_passages(value, stats, net_index)
+        find_and_update_passages(value, stats)
 
 
 # ---------------------------------------------------------------------------
@@ -331,7 +369,7 @@ def main():
         print("Usage: python populate_passages.py input.json output.json")
         sys.exit(1)
 
-    input_path = sys.argv[1]
+    input_path  = sys.argv[1]
     output_path = sys.argv[2]
 
     print(f"Loading {input_path}...")
@@ -339,30 +377,16 @@ def main():
         data = json.load(f)
 
     data_copy = copy.deepcopy(data)
-
-    stats = {"populated": 0, "skipped": 0, "failed": 0, "no_url": 0}
-
-    # Find which bibleTranslationN slot is NET so we can read the English ref.
-    meta = data_copy.get("studyMetadata", {})
-    net_index = None
-    for key, value in meta.items():
-        m = re.match(r'^bibleTranslation(\d+)$', key)
-        if m and isinstance(value, str) and value.upper() == "NET":
-            net_index = int(m.group(1))
-            break
-    if net_index is not None:
-        print(f"NET translation found at bibleRef{net_index} / bibleTranslation{net_index}")
-    else:
-        print("WARNING: No NET translation found in studyMetadata; will guess English ref by scanning")
+    stats     = {"populated": 0, "skipped": 0, "failed": 0, "no_url": 0}
 
     print("\nProcessing biblePassage elements...\n")
-    find_and_update_passages(data_copy, stats, net_index)
+    find_and_update_passages(data_copy, stats)
 
     print(f"\n--- Done ---")
     print(f"  Populated : {stats['populated']}")
     print(f"  Skipped   : {stats['skipped']} (already had text)")
     print(f"  Failed    : {stats['failed']} (empty result)")
-    print(f"  No URL    : {stats['no_url']}")
+    print(f"  No URL    : {stats['no_url']} (missing, non-bible.com, or no bibleRef)")
 
     print(f"\nWriting {output_path}...")
     with open(output_path, "w", encoding="utf-8") as f:

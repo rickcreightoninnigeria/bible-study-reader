@@ -64,7 +64,7 @@ function getUpgradeOnboardingSlides() {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>??:</b> ???</li><li><b>??:</b> ???</li></ul>',
+      body:    '<ul><li><b>Back button:</b> bugfixes</li><li><b>Estudy:</b> format updates</li></ul>',
     },
   ];
 }

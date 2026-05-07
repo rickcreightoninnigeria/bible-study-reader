@@ -1670,6 +1670,1687 @@
           "bottomPadding"    :"normal"
         }
       ]
+    },
+    {
+      "chapterNumber":7,
+      "chapterTitle" :"Deuteronomy 9:1-10:11: You Will Not Enter the Land Because You Are Better -- Rely on Your Mediator",
+      "elements"     :[
+        {
+          "elementId"    :"ch07-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Chapter 9 completes the triad of chapters 7-9 -- the three expansions of the Shema’s call to wholehearted love. Not compromising with the world around you (ch 7). Not forgetting God in prosperity (ch 8). And now, the most searching of all: not imagining that you deserve what God gives you.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, watch for the specific wrong thinking Moses is heading off -- and for the remarkable figure of Moses himself, who stands between an angry God and a guilty people, and pleads from God’s own character rather than the people’s.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 9:1-10:11",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>9:1</sup>Listen, Israel: Today you are about to cross the Jordan to go in and dispossess nations greater and stronger than you, with large cities and walls reaching to the sky. <sup>2</sup>The people there are strong and tall -- they are the Anakites! You know about them and have heard it said, ‘Who is able to stand before the Anakites?’ <sup>3</sup>But be sure of this: The Lord your God is going before you like a raging fire. He will destroy them and he will subdue them before you; you will dispossess them and destroy them quickly, just as the Lord has told you. <sup>4</sup>When the Lord your God drives them out before you, do not think to yourself, ‘Because of my own righteousness the Lord has brought me in to possess this land.’ It is because of the wickedness of these nations that the Lord is driving them out before you. <sup>5</sup>It is not because of your righteousness or your good conscience that you are going in to possess their land. Instead, it is because of their wickedness that the Lord your God is driving them out before you, in order to fulfill the promise he swore to your ancestors, to Abraham, Isaac, and Jacob. <sup>6</sup>Understand, then, that it is not because of your righteousness that the Lord your God is giving you this good land to possess, for you are a stubborn people!</p><p><sup>7</sup>Remember -- do not forget! -- how you provoked the Lord your God in the desert. From the day you left Egypt until now you have been constantly rebelling against him. <sup>8</sup>At Horeb you provoked him and he was angry enough to destroy you. <sup>9</sup>When I went up the mountain to receive the stone tablets, the tablets of the covenant that the Lord had made with you, I remained on the mountain forty days and forty nights, eating and drinking nothing. <sup>10</sup>Then the Lord gave me two stone tablets, written by his own finger, containing all the words that he had spoken to you at the mountain from the middle of the fire at the time of the assembly. <sup>11</sup>At the end of forty days and nights the Lord gave me the two stone tablets, the tablets of the covenant. <sup>12</sup>The Lord told me, ‘Get up! Go down from here quickly because your people whom you led out of Egypt have sinned. They have quickly turned from the way I commanded them -- they have made an idol for themselves!’ <sup>13</sup>The Lord also told me, ‘I have been watching this people and they are a stubborn people indeed! <sup>14</sup>Leave me alone so that I can destroy them and wipe out their very name from under the sky! I will make a nation stronger and more numerous than they are.’</p><p><sup>15</sup>So I turned and went down the mountain while it was ablaze. The two tablets of the covenant were in my hands. <sup>16</sup>I saw that you had sinned against the Lord your God and had made a metal calf idol -- you had quickly turned from the way the Lord had commanded you! <sup>17</sup>I grabbed the two tablets and threw them down, breaking them to pieces before your very eyes. <sup>18</sup>Then I lay flat on my face before the Lord for forty days and forty nights; I ate and drank nothing because of all the sin you had committed and the evil you had done in the sight of the Lord, provoking his anger. <sup>19</sup>I was terrified of the fierce anger of the Lord, which was directed against you, because he was about to destroy you, but the Lord listened to me that time too. <sup>20</sup>The Lord was also angry enough with Aaron to kill him, but at that time I also prayed on Aaron’s behalf.</p><p><sup>25</sup>I lay flat on my face before the Lord for forty days and forty nights; I did so because the Lord said he was going to destroy you. <sup>26</sup>I prayed to the Lord and said, ‘Lord God, do not destroy your people, your valued property that you have redeemed through your greatness and that you have brought out of Egypt by your strength. <sup>27</sup>Remember your servants Abraham, Isaac, and Jacob; ignore the stubbornness, wickedness, and sin of this people. <sup>28</sup>Otherwise the people of the land from which you brought us will say, the Lord brought them out not to give them good land but to kill them in the desert and wipe them off the face of the earth. <sup>29</sup>But they are your people, your valued property, whom you brought out by your great strength and power.’</p><p><sup>10:1</sup>At that time the Lord told me, ‘Cut two more stone tablets like the first ones, make a wooden ark, and come up to me on the mountain. <sup>2</sup>I will write on the tablets the same words that were on the first tablets you broke, and you must put them in the ark.’ <sup>3</sup>So I made an ark of acacia wood and cut two stone tablets like the first ones, and then climbed up the mountain with the two tablets in my hands. <sup>4</sup>The Lord wrote on those tablets the same things he had written originally, the ten commandments that he had spoken to you on the mountain from the middle of the fire at the time of the assembly, and the Lord gave them to me. <sup>5</sup>Then I turned, went down the mountain, and put the tablets in the ark I had made -- and they are still there, just as the Lord commanded me. <sup>10</sup>As for me, I stayed at the mountain forty days and forty nights, just as I had done the first time. The Lord listened to me that time too and decided not to destroy you. <sup>11</sup>Then the Lord told me, ‘Get up, go ahead of the people so that they may go and possess the land I swore to give to their ancestors.’</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch07-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"Before looking at the details, what is the emotional tone of this passage? What do you notice about how Moses speaks to the people here compared with previous chapters?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"9:1-6: Not Because of Your Righteousness",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 9:1-6",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Listen, Israel: Today you are about to cross the Jordan to go in and dispossess nations greater and stronger than you, with large cities and walls reaching to the sky. <sup>2</sup>The people there are strong and tall -- they are the Anakites! You know about them and have heard it said, ‘Who is able to stand before the Anakites?’ <sup>3</sup>But be sure of this: The Lord your God is going before you like a raging fire. He will destroy them and he will subdue them before you; you will dispossess them and destroy them quickly, just as the Lord has told you. <sup>4</sup>When the Lord your God drives them out before you, do not think to yourself, ‘Because of my own righteousness the Lord has brought me in to possess this land.’ It is because of the wickedness of these nations that the Lord is driving them out before you. <sup>5</sup>It is not because of your righteousness or your good conscience that you are going in to possess their land. Instead, it is because of their wickedness that the Lord your God is driving them out before you, in order to fulfill the promise he swore to your ancestors, to Abraham, Isaac, and Jacob. <sup>6</sup>Understand, then, that it is not because of your righteousness that the Lord your God is giving you this good land to possess, for you are a stubborn people!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+9&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch07-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses gives two grounds for why the land is being given: the wickedness of the Canaanites, and God’s promise to the patriarchs. What wrong thinking is he explicitly ruling out -- and why does he bother to rule it out?",
+          "linkedPassage"    :"Deuteronomy 9:1-6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses rules out the thought ’because of my own righteousness the Lord has brought me in.’ He states this negatively three times in just three verses -- a rhetorical hammering that suggests he knows exactly what temptation lies ahead. The Israelites are about to defeat powerful nations and take their land. The natural human tendency is to read success as vindication: God must have been pleased with us. Moses closes that door before it opens. The grounds for the gift are entirely outside Israel -- in the Canaanites’ wickedness and in God’s faithfulness to promises made long before this generation existed. This matters practically: a people who think they are being blessed because of their righteousness will become proud, complacent, and careless. A people who know they are being blessed despite being a ’stubborn people’ will be more likely to hold onto the God whose grace is the only basis for their standing.",
+          "questionHint"     :"Moses says ’it is not because of your righteousness’ three times in vv4-6. Why the repetition? What does he know about his listeners that makes him press this so hard?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"9:7-21: Remember Your Rebellion",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 9:7-21",
+          "translation"  :"NET",
+          "passageText"  :"<sup>7</sup>Remember -- do not forget! -- how you provoked the Lord your God in the desert. From the day you left Egypt until now you have been constantly rebelling against him. <sup>8</sup>At Horeb you provoked him and he was angry enough to destroy you. <sup>9</sup>When I went up the mountain to receive the stone tablets, the tablets of the covenant that the Lord had made with you, I remained on the mountain forty days and forty nights, eating and drinking nothing. <sup>10</sup>Then the Lord gave me two stone tablets, written by his own finger. <sup>11</sup>At the end of forty days and nights the Lord gave me the two stone tablets, the tablets of the covenant. <sup>12</sup>The Lord told me, ‘Get up! Go down from here quickly because your people whom you led out of Egypt have sinned. They have quickly turned from the way I commanded them -- they have made an idol for themselves!’ <sup>13</sup>The Lord also told me, ‘I have been watching this people and they are a stubborn people indeed! <sup>14</sup>Leave me alone so that I can destroy them and wipe out their very name from under the sky! I will make a nation stronger and more numerous than they are.’ <sup>15</sup>So I turned and went down the mountain while it was ablaze. The two tablets of the covenant were in my hands. <sup>16</sup>I saw that you had sinned against the Lord your God and had made a metal calf idol -- you had quickly turned from the way the Lord had commanded you! <sup>17</sup>I grabbed the two tablets and threw them down, breaking them to pieces before your very eyes. <sup>18</sup>Then I lay flat on my face before the Lord for forty days and forty nights; I ate and drank nothing because of all the sin you had committed and the evil you had done in the sight of the Lord, provoking his anger. <sup>19</sup>I was terrified of the fierce anger of the Lord, which was directed against you, because he was about to destroy you, but the Lord listened to me that time too.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+9&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch07-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What makes the timing of the golden calf so shocking? Moses is precise: this happened while he was on the mountain receiving the law. What does that tell us about the depth of Israel’s problem?",
+          "linkedPassage"    :"Deuteronomy 9:7-21",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The timing is devastating. Moses has been on the mountain for forty days receiving the tablets of the covenant -- the very expression of God’s relationship with his people -- while at the base of the mountain those same people have made a golden calf and are worshipping it. This was not a failure that came after a long period of spiritual complacency; it happened at the very moment of covenant establishment. The mountain is blazing with fire; God’s own finger is writing his law; and the people’s backs are turned. Moses emphasises that they had ’quickly turned’ -- the speed of the departure is as sobering as its occurrence. This is not a failure of knowledge or opportunity. It is a diagnosis of something wrong at the root -- a heart that cannot sustain loyalty to the God it has just watched descend in fire. The stubborn people are stubborn all the way down.",
+          "questionHint"     :"Moses says they ’quickly turned’ -- the word quickly appears twice in this section. Why does speed matter here? What does the rapidity of the failure reveal about the nature of the problem?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Moses fasted for forty days twice -- once receiving the law, once interceding after the golden calf. The New Testament records that Jesus also fasted for forty days in the wilderness before facing temptation. What might the parallel suggest about Jesus in relation to Israel’s failure? How does Jesus’ response in Matthew 4 contrast with Israel’s pattern throughout the wilderness?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"9:25-10:11: Rebellious People Need a Mediator",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 9:25-10:5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>9:25</sup>I lay flat on my face before the Lord for forty days and forty nights; I did so because the Lord said he was going to destroy you. <sup>26</sup>I prayed to the Lord and said, ‘Lord God, do not destroy your people, your valued property that you have redeemed through your greatness and that you have brought out of Egypt by your strength. <sup>27</sup>Remember your servants Abraham, Isaac, and Jacob; ignore the stubbornness, wickedness, and sin of this people. <sup>28</sup>Otherwise the people of the land from which you brought us will say, the Lord brought them out not to give them good land but to kill them in the desert and wipe them off the face of the earth. <sup>29</sup>But they are your people, your valued property, whom you brought out by your great strength and power.’ <sup>10:1</sup>At that time the Lord told me, ‘Cut two more stone tablets like the first ones, make a wooden ark, and come up to me on the mountain. <sup>2</sup>I will write on the tablets the same words that were on the first tablets you broke, and you must put them in the ark.’ <sup>3</sup>So I made an ark of acacia wood and cut two stone tablets like the first ones, and then climbed up the mountain with the two tablets in my hands. <sup>4</sup>The Lord wrote on those tablets the same things he had written originally, the ten commandments that he had spoken to you on the mountain from the middle of the fire at the time of the assembly, and the Lord gave them to me. <sup>5</sup>Then I turned, went down the mountain, and put the tablets in the ark I had made -- and they are still there, just as the Lord commanded me.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+9&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch07-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Read Moses’ intercession in 9:26-29 carefully. What is the basis of his appeal to God? Notice especially what he does not argue.",
+          "linkedPassage"    :"Deuteronomy 9:25-10:5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses’ intercession is remarkable for what it does not contain. He does not argue that the people are good, that they deserve another chance, or that their sin was understandable. He has just spent the previous verses cataloguing how stubborn and wicked they are. Instead, he argues entirely from God’s own character and commitments: they are your people, your valued property, whom you redeemed; remember Abraham, Isaac, and Jacob; think of what the surrounding nations will say about you if you destroy them. The whole appeal is theocentric -- Moses is not presenting Israel’s case but God’s own purposes and reputation as the grounds for mercy. This is intercession rooted in God’s character rather than in human merit. And crucially, it works: the Lord decides not to destroy them and reissues the covenant in full.",
+          "questionHint"     :"Moses could have argued ’they made a mistake, please forgive them.’ Instead he argues from three different angles in vv26-29 -- all of them about God, not about the people. What are those three angles? Why does intercession not rest on Israel’s character at all?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Hebrews 7:25 and Romans 8:34. How does the New Testament describe Christ’s ongoing intercession for believers? What do you see that is similar to Moses’ intercession here -- and what is different about what Christ does?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch07-el14",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What does God do in response to Moses’ prayer in 10:1-5? What is significant about the fact that he does not give Israel a lesser or modified version of the covenant?",
+          "linkedPassage"    :"Deuteronomy 9:25-10:5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"God’s response is extraordinary: he reissues the covenant in full. He does not give Israel a modified, reduced, or probationary version of the relationship after their catastrophic failure. He instructs Moses to cut new tablets exactly like the first, writes on them the same words he had written before, and places them in the ark. Nothing is taken away; nothing is downgraded. The response to Israel’s worst failure is full restoration -- grace not just once but twice, and the second time with the full content of the first. This is the shape of grace throughout Scripture: God does not offer his people a lesser relationship after they have sinned. He restores completely. The ark carrying the same tablets as before is a physical token that the covenant stands, undiminished, after what the people did.",
+          "questionHint"     :"God could have given Israel a simplified covenant after the golden calf -- something easier to keep, with lower expectations. Instead he writes the same words as before. What does that tell you about the kind of God he is?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el15",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el16",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 9:4-6",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>When the Lord your God drives them out before you, do not think to yourself, ‘Because of my own righteousness the Lord has brought me in to possess this land.’ It is because of the wickedness of these nations that the Lord is driving them out before you. <sup>5</sup>It is not because of your righteousness or your good conscience that you are going in to possess their land. Instead, it is because of their wickedness that the Lord your God is driving them out before you, in order to fulfill the promise he swore to your ancestors, to Abraham, Isaac, and Jacob. <sup>6</sup>Understand, then, that it is not because of your righteousness that the Lord your God is giving you this good land to possess, for you are a stubborn people!",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+9&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch07-el17",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"When do we compare ourselves to people we think of as ’more sinful’ and use that comparison to feel secure before God? What does the New Testament say about our righteousness -- and what does it offer instead?",
+          "linkedPassage"    :"Deuteronomy 9:4-6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The move Moses forbids -- ’because of my righteousness’ -- is one of the most deeply human spiritual instincts. We tend to gauge our standing before God by comparison with others: at least I am not as bad as that person; at least I have not done what they have done. Moses closes that door explicitly: the wickedness of the Canaanites does not make Israel righteous. Their neighbours’ failure is not their credential. The New Testament is equally direct: Romans 3:10 declares there is no one righteous, not even one. The comparison game always flatters us because we choose our comparators carefully. What the New Testament offers instead is not a better comparison but a different category altogether: the righteousness of Christ, received by faith, which is not earned or graded but given. Our standing before God is not ’better than average’ -- it is ’clothed in Christ.’ That is simultaneously more humbling and more secure than anything comparison can produce.",
+          "questionHint"     :"Moses is addressing people who are about to experience a great victory and will be tempted to read it as God’s endorsement of their character. Where in your own life are you tempted to read God’s blessing as evidence of your righteousness rather than his grace?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 9:26-27",
+          "translation"  :"NET",
+          "passageText"  :"<sup>26</sup>I prayed to the Lord and said, ‘Lord God, do not destroy your people, your valued property that you have redeemed through your greatness and that you have brought out of Egypt by your strength. <sup>27</sup>Remember your servants Abraham, Isaac, and Jacob; ignore the stubbornness, wickedness, and sin of this people.’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+9&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch07-el19",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Moses intercedes for a people he knows are guilty, on the basis of who God is rather than who they are. How does this shape the way we pray for ourselves and for others -- especially when the sin is obvious and the guilt is real?",
+          "linkedPassage"    :"Deuteronomy 9:26-27",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"Moses’ prayer is a model for every prayer offered in the face of obvious guilt -- our own or another’s. He does not minimise the sin or pretend the people are better than they are; he has been brutally honest about their stubbornness throughout the chapter. But he prays not from their credentials but from God’s: your people, your valued property, your covenant, your reputation. This is how we can pray for ourselves when we are most aware of our own failure -- not by pretending to a righteousness we do not have, but by coming on the basis of what God has already done and what he has already promised. And it is how we can pray for others whose sin seems to disqualify them from hope: not arguing that they deserve a hearing, but appealing to the God whose commitment to his people is not contingent on their behaviour. The grounds of prayer, Moses shows us, are always God’s character, never human merit.",
+          "questionHint"     :"Notice that Moses prays specifically for a people whose sin he has just described in graphic detail -- he does not soften it before praying. What does that suggest about how honest we can be in prayer, and whether guilt disqualifies us from coming to God?",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":8,
+      "chapterTitle" :"Deuteronomy 10:12-11:32: What Does the Lord Ask of You?",
+      "elements"     :[
+        {
+          "elementId"    :"ch08-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Moses has established the theological foundations: the Commandments, the Shema, and the three threats to wholehearted love. Now, in this transitional passage before the detailed legal code begins, he draws the threads together into a single sweeping question: what does the Lord actually ask of you?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch08-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, notice both the comprehensiveness of God’s demand and the character of the God who makes it -- including his surprising attention to those whom the world overlooks.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch08-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 10:12-11:32",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>10:12</sup>Now, Israel, what does the Lord your God require of you? Simply to revere the Lord your God, to follow all his directions, to love him, to serve the Lord your God with all your heart and mind, <sup>13</sup>and to keep the Lord’s commandments and statutes that I am giving you today, for your own good. <sup>14</sup>Look, the heavens, even the highest heaven, the earth and everything in it all belong to the Lord your God. <sup>15</sup>However, only the Lord took delight in your ancestors and loved them -- he chose you, their descendants, from all peoples, as is the case today. <sup>16</sup>Therefore, circumcise your hearts and stop being so stubborn. <sup>17</sup>For the Lord your God is God of gods and Lord of lords, the great, mighty, and awesome God who is unbiased and takes no bribe, <sup>18</sup>who justly treats the orphan and widow, and who loves resident foreigners, giving them food and clothing. <sup>19</sup>So you must love the resident foreigner because you were foreigners in the land of Egypt. <sup>20</sup>Revere the Lord your God, serve him, be loyal to him, and take oaths only in his name. <sup>21</sup>He is the one you should praise; he is your God, the one who has done these great and awesome things for you that you have seen. <sup>22</sup>When your ancestors went to Egypt, there were only seventy of them. But now the Lord your God has made you as numerous as the stars of the sky.</p><p><sup>11:1</sup>You must love the Lord your God and keep his mandate, his statutes, his ordinances, and his commandments at all times. <sup>2</sup>Bear in mind today that I am not speaking to your children who have not known or experienced the discipline of the Lord your God -- his greatness, his strength, his power, <sup>3</sup>his signs, and his deeds that he performed in Egypt against Pharaoh king of Egypt and his whole land, <sup>4</sup>and what he did to the Egyptian army, its horses and chariots, by causing the Red Sea to overflow them while they were chasing you -- bringing about their total destruction. <sup>5</sup>Remember what he did to you in the desert until you arrived here. <sup>7</sup>Your own eyes have seen all the great deeds of the Lord! <sup>8</sup>Keep all the commandments I am giving you today so that you may be strong and go in and take possession of the land where you are headed. <sup>10</sup>For the land where you are headed is not like the land of Egypt from which you came, a place where you planted seed and which you irrigated by hand like a vegetable garden. <sup>11</sup>Instead, the land you are crossing the Jordan to possess is one of hills and valleys, a land that drinks in the rain that comes from the sky. <sup>12</sup>It is a land the Lord your God looks after and on which he keeps his eye from the beginning to the end of the year.</p><p><sup>18</sup>Fix these words of mine in your mind and heart and tie them on your hands as a reminder. They should be in front of your eyes. <sup>19</sup>Teach them to your children and speak of them as you sit in your house, as you walk along the road, as you lie down, and as you get up. <sup>20</sup>Write them on the doorframes of your houses and on your gates, <sup>21</sup>so that your days and your children’s days may multiply in the land the Lord swore to give to your ancestors, like the days of heaven on earth.</p><p><sup>26</sup>Take note that I am setting before you today a blessing and a curse -- <sup>27</sup>the blessing if you take to heart the commandments of the Lord your God that I am giving you today, <sup>28</sup>and the curse if you do not take to heart the commandments of the Lord your God, but turn from the way I am commanding you today and follow other gods you do not know. <sup>32</sup>Be certain to keep all the statutes and ordinances that I am about to give you today.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch08-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"Moses opens with a direct question: ‘What does the Lord your God require of you?’ Before looking at his answer, what would you have said if someone asked you that question?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch08-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"10:12-22: Fear the Lord and Hold Fast to Him",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch08-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 10:12-22",
+          "translation"  :"NET",
+          "passageText"  :"<sup>12</sup>Now, Israel, what does the Lord your God require of you? Simply to revere the Lord your God, to follow all his directions, to love him, to serve the Lord your God with all your heart and mind, <sup>13</sup>and to keep the Lord’s commandments and statutes that I am giving you today, for your own good. <sup>14</sup>Look, the heavens, even the highest heaven, the earth and everything in it all belong to the Lord your God. <sup>15</sup>However, only the Lord took delight in your ancestors and loved them -- he chose you, their descendants, from all peoples, as is the case today. <sup>16</sup>Therefore, circumcise your hearts and stop being so stubborn. <sup>17</sup>For the Lord your God is God of gods and Lord of lords, the great, mighty, and awesome God who is unbiased and takes no bribe, <sup>18</sup>who justly treats the orphan and widow, and who loves resident foreigners, giving them food and clothing. <sup>19</sup>So you must love the resident foreigner because you were foreigners in the land of Egypt. <sup>20</sup>Revere the Lord your God, serve him, be loyal to him, and take oaths only in his name. <sup>21</sup>He is the one you should praise; he is your God, the one who has done these great and awesome things for you that you have seen. <sup>22</sup>When your ancestors went to Egypt, there were only seventy of them. But now the Lord your God has made you as numerous as the stars of the sky.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+10&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch08-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses gives a fivefold answer in vv12-13: revere, follow, love, serve, keep. What does each add -- and what is the single integrated life they describe together?",
+          "linkedPassage"    :"Deuteronomy 10:12-22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The five verbs are not five separate departments of religious activity -- they are facets of a single whole-of-life orientation toward the Lord. To revere the Lord means having no greater authority in your life; his opinion and will count most. To follow his directions means whole-of-life responsiveness, not compartmentalised obedience. To love him is the Shema again -- the heart of everything. To serve him with all your heart and mind is wholehearted engagement rather than passive acknowledgement. To keep his commandments is the practical expression of love and reverence. The five are mutually reinforcing: genuine reverence produces the desire to follow his ways; love expresses itself in service; service is shaped by keeping his commands. They cannot be meaningfully separated without distorting each. Moses is describing not a checklist but a person -- someone whose entire orientation has been set toward the Lord.",
+          "questionHint"     :"Try reading vv12-13 without the word ’and’ between the items -- as if the five things are one continuous description rather than five separate tasks. Does that change how you read the demand? What single picture emerges?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch08-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Look at the juxtaposition Moses creates in vv14-18 between the greatness of God (v14) and who God pays particular attention to (vv17-18). What does this pairing reveal about his character?",
+          "linkedPassage"    :"Deuteronomy 10:12-22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The juxtaposition is deliberate and striking. Moses first establishes the scale of God’s sovereignty: ‘the heavens, even the highest heaven, the earth and everything in it all belong to the Lord your God.’ This is the God of absolute cosmic authority. And then, immediately: he is the God who ’justly treats the orphan and widow, and who loves resident foreigners, giving them food and clothing.’ The greatest God is the God who pays attention to those whom everyone else overlooks. These are not in tension; the greatness of God is expressed precisely in his attention to the overlooked. The God who owns everything specifically attends to those who have nothing. This is a profound counter to any version of power that exploits the vulnerable -- and it grounds the command in v19 directly: you must love the foreigner because God loves the foreigner, and because you yourselves were once foreigners in Egypt.",
+          "questionHint"     :"God is described as ’God of gods and Lord of lords’ in v17 -- the highest possible language of sovereignty. What is the effect of following that immediately with ’who justly treats the orphan and widow’? What kind of God does this combination describe?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch08-el09",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"11:1-21: Love the Lord and Fix His Word in Your Heart",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch08-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 11:1-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>You must love the Lord your God and keep his mandate, his statutes, his ordinances, and his commandments at all times. <sup>2</sup>Bear in mind today that I am not speaking to your children who have not known or experienced the discipline of the Lord your God -- his greatness, his strength, his power, <sup>3</sup>his signs, and his deeds that he performed in Egypt against Pharaoh king of Egypt and his whole land, <sup>4</sup>and what he did to the Egyptian army, its horses and chariots, by causing the Red Sea to overflow them while they were chasing you -- bringing about their total destruction. <sup>5</sup>Remember what he did to you in the desert until you arrived here. <sup>7</sup>Your own eyes have seen all the great deeds of the Lord! <sup>8</sup>Keep all the commandments I am giving you today so that you may be strong and go in and take possession of the land where you are headed. <sup>10</sup>For the land where you are headed is not like the land of Egypt from which you came, a place where you planted seed and which you irrigated by hand like a vegetable garden. <sup>11</sup>Instead, the land you are crossing the Jordan to possess is one of hills and valleys, a land that drinks in the rain that comes from the sky. <sup>12</sup>It is a land the Lord your God looks after and on which he keeps his eye from the beginning to the end of the year.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+11&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch08-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"In 11:2-7 Moses emphasises ’your own eyes have seen all the great deeds of the Lord.’ How is love for the Lord connected to memory and personal experience here? And what does the contrast between Egypt (v10) and Canaan (vv11-12) add to the call to trust and obey?",
+          "linkedPassage"    :"Deuteronomy 11:1-12",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses is making a pointed distinction: he is speaking to people who have personally witnessed God’s acts -- the exodus, the sea, the defeat of Pharaoh, the discipline in the wilderness. Their children have not seen these things. This eyewitness experience is the ground of their love, and love is the ground of their obedience. Moses is not asking for blind rule-following; he is asking for a response to a God they have personally encountered. The contrast between Egypt and Canaan in vv10-12 deepens the call to trust. Egypt was a land of human technique -- you irrigated it yourself, by hand, like a vegetable garden. Canaan is a land of divine provision -- it drinks the rain from the sky, and ’the Lord your God looks after it...from the beginning to the end of the year.’ To enter Canaan is to enter a land that requires dependence, not only skill. Every year, the rain either comes or it does not -- and Israel cannot irrigate their way out of drought. The land itself is a school of trust.",
+          "questionHint"     :"Moses says Egypt was irrigated ’by hand’ like a vegetable garden -- human effort controlled the water supply. Canaan depends on rain from heaven, which the Lord sends or withholds. What spiritual lesson is built into the very geography of the Promised Land?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch08-el12",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"11:26-32: Make Your Choice",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch08-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 11:26-28",
+          "translation"  :"NET",
+          "passageText"  :"<sup>26</sup>Take note that I am setting before you today a blessing and a curse -- <sup>27</sup>the blessing if you take to heart the commandments of the Lord your God that I am giving you today, <sup>28</sup>and the curse if you do not take to heart the commandments of the Lord your God, but turn from the way I am commanding you today and follow other gods you do not know.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+11&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch08-el14",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses ends this transitional section with a stark binary: blessing or curse, obedience or disobedience. He makes the right choice seem obvious. Why might he need to spend many more chapters unpacking what should be a simple decision?",
+          "linkedPassage"    :"Deuteronomy 11:26-28",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The starkness is deliberate and pastoral. Moses is not trying to create anxiety but to remove the appearance of complexity that might otherwise give his listeners an excuse for inaction. There are only two paths, and he has made the character of the God who stands behind the blessing path as clear as he possibly can. The choice should be obvious. The problem is that humans are remarkably good at making the obvious choice look complicated when it is costly. The remaining chapters of the second sermon are not there because obedience is conceptually difficult to understand. They are there because obedience turns out to be difficult to practise in specific situations -- with money, with sexuality, with justice, with the treatment of the poor, with the temptation to worship in the ways of surrounding cultures. The simplicity of the binary and the complexity of the application belong together: the principle is clear; the practice requires a detailed, life-encompassing guide.",
+          "questionHint"     :"Moses makes the choice sound simple -- blessing if you obey, curse if you do not. If it truly is that obvious, why does he need to spend chapters 12-28 spelling it out? What does that gap between principle and practice reveal about the human heart?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch08-el15",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch08-el16",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 10:17-19",
+          "translation"  :"NET",
+          "passageText"  :"<sup>17</sup>For the Lord your God is God of gods and Lord of lords, the great, mighty, and awesome God who is unbiased and takes no bribe, <sup>18</sup>who justly treats the orphan and widow, and who loves resident foreigners, giving them food and clothing. <sup>19</sup>So you must love the resident foreigner because you were foreigners in the land of Egypt.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+10&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch08-el17",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"God’s character is described as supremely great and simultaneously attentive to the orphan, widow, and foreigner. What does the Lord ask of us in light of this? Who are the overlooked and vulnerable in your context, and what would reflecting God’s own attention to them look like in practice?",
+          "linkedPassage"    :"Deuteronomy 10:17-19",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The logic of vv17-19 moves from theology to ethics with striking directness: because this is who God is, this is how you must live. The greatest God attends to the orphan, the widow, and the foreigner -- and therefore his people must too. In any community, the equivalent of the Old Testament’s orphan, widow, and foreigner are those without the social networks, economic resources, or belonging that most people take for granted. They might be recent immigrants navigating an unfamiliar culture; elderly people who have outlived their social circle; single parents carrying responsibilities designed for two; people whose poverty or illness or difference makes them invisible in a community organised around the comfortable. Moses’ logic is the same in every context: you were once vulnerable yourselves -- Egypt is the memory -- and the Lord attended to you. Now attend to others. The specific form changes; the principle does not.",
+          "questionHint"     :"The command in v19 is grounded in memory: ‘you were foreigners in Egypt.’ How does your own experience of vulnerability, marginalisation, or being an outsider shape the way you relate to others in similar situations? What memory might fuel this kind of love?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch08-el18",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 10:16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>16</sup>Therefore, circumcise your hearts and stop being so stubborn.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+10&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch08-el19",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"‘Circumcise your hearts’ is Moses’ image for the inward responsiveness to God that all the commands require. What does it mean to have a circumcised heart -- and what is the New Testament promise about how that actually becomes possible?",
+          "linkedPassage"    :"Deuteronomy 10:16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"Circumcision was the sign of the covenant -- the external mark of belonging to God’s people. Moses uses it metaphorically here to point to the inward reality that the external sign was always meant to signify: a heart that is genuinely responsive to God rather than merely formally identified with his people. ’Stiff-necked’ is the opposite -- stubborn resistance to God’s direction, the refusal to be led. A circumcised heart is soft, receptive, genuinely open to what God says. The demand is real and the command is active -- ’circumcise your hearts’ is something they are called to do. But Deuteronomy 30:6 will later promise that ultimately only God can perform this operation: ‘the Lord your God will circumcise your hearts.’ The New Testament declares that promise fulfilled in Christ through the Spirit (Romans 2:29; Colossians 2:11). What the law demands and cannot produce, the Spirit gives. This is the deepest mercy in the whole legal code: God commands from us what he himself promises to supply.",
+          "questionHint"     :"If ’stiff-necked’ means stubborn resistance to being led, what does a circumcised heart look like in practice -- in the moment when God’s word asks something difficult of you? What is the difference between a hard heart and a soft one in that moment?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Deuteronomy 30:6, Jeremiah 31:33, and Ezekiel 36:26-27. How do these passages develop the promise implied in 10:16? What do they say God will do about the heart problem that the law cannot fix from the outside?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":9,
+      "chapterTitle" :"Deuteronomy 12: Worship the Lord in His Place and in His Way",
+      "elements"     :[
+        {
+          "elementId"    :"ch09-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"With chapter 12, Moses’ second sermon shifts into its longest and most detailed section: the legal code of chapters 12-26. These are not bureaucratic regulations but the flesh on the bones of what loving God with everything actually looks like in daily life. Chapter 12 sets the foundation by addressing the most basic question of all: how is God to be worshipped?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch09-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, pay attention to the positive vision of worship Moses describes -- it is not austere or individualistic. And notice the foundational principle underneath the specific instructions that runs through the whole chapter.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch09-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 12",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>1</sup>These are the statutes and ordinances you must be careful to obey as long as you live in the land the Lord, the God of your ancestors, has given you to possess. <sup>2</sup>You must completely destroy all the places where the nations you are about to dispossess worship their gods, whether on the high mountains, on the hills, or under every green tree. <sup>3</sup>You must tear down their altars, shatter their sacred pillars, burn up their Asherah poles, and cut down the images of their gods; you must eliminate the very memory of them from that place. <sup>4</sup>You must not worship the Lord your God the way they worship. <sup>5</sup>Instead, you must seek only the place he chooses from all your tribes to establish his name as his place of residence, and you must go there. <sup>6</sup>You must bring there your burnt offerings and sacrifices, your tithes and contributions, your votive and freewill offerings, and the firstborn of your herds and flocks. <sup>7</sup>You must eat there before the Lord your God and rejoice in all the output of your labor, you and your households, in which the Lord your God has blessed you. <sup>8</sup>You must not do like we are doing here today, with everyone doing whatever seems right in their own opinion, <sup>9</sup>for you have not yet come to the final resting place and inheritance the Lord your God is giving you.</p><p><sup>13</sup>Be careful not to offer your burnt offerings in any place you might see. <sup>14</sup>Rather, only in the place the Lord will choose in one of your tribal territories -- that is where you must offer burnt offerings and do all I am commanding you. <sup>15</sup>On the other hand, you may slaughter and eat meat within any of your villages, as much as you desire, according to the blessing the Lord your God has given you. <sup>17</sup>Moreover, you must not eat within your villages the tithe of your grain, new wine, or olive oil, nor the firstborn of your herds or flocks, nor any of your votive offerings. <sup>18</sup>Instead, you must eat these before the Lord your God in the place he will choose, you and your son, your daughter, your male and female slaves, and the Levite who is in your villages. And you must rejoice before the Lord your God in all the output of your labor. <sup>19</sup>Be sure you do not neglect the Levite as long as you live in your land.</p><p><sup>29</sup>When the Lord your God eliminates the nations from the place where you are headed and you dispossess them, you will settle down in their land. <sup>30</sup>After they have been destroyed before you, be careful not to be ensnared like them. Do not investigate the gods of these nations and say, ‘How do these nations serve their gods? We also want to do the same.’ <sup>31</sup>You must not do the same to the Lord your God! For everything that is abhorrent to him, everything he hates, they have done for their gods -- they have even burned their sons and daughters in the fire to their gods. <sup>32</sup>Be careful to do everything I am commanding you; do not add to it or subtract from it.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch09-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"What is your initial reaction to a chapter about where and how to worship? Does it seem overly restrictive, or is there something else going on that you notice?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch09-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"12:1-14: Worship the Lord in His Way",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch09-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 12:1-14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>These are the statutes and ordinances you must be careful to obey as long as you live in the land the Lord, the God of your ancestors, has given you to possess. <sup>2</sup>You must completely destroy all the places where the nations you are about to dispossess worship their gods, whether on the high mountains, on the hills, or under every green tree. <sup>3</sup>You must tear down their altars, shatter their sacred pillars, burn up their Asherah poles, and cut down the images of their gods; you must eliminate the very memory of them from that place. <sup>4</sup>You must not worship the Lord your God the way they worship. <sup>5</sup>Instead, you must seek only the place he chooses from all your tribes to establish his name as his place of residence, and you must go there. <sup>6</sup>You must bring there your burnt offerings and sacrifices, your tithes and contributions, your votive and freewill offerings, and the firstborn of your herds and flocks. <sup>7</sup>You must eat there before the Lord your God and rejoice in all the output of your labor, you and your households, in which the Lord your God has blessed you. <sup>8</sup>You must not do like we are doing here today, with everyone doing whatever seems right in their own opinion. <sup>13</sup>Be careful not to offer your burnt offerings in any place you might see. <sup>14</sup>Rather, only in the place the Lord will choose in one of your tribal territories -- that is where you must offer burnt offerings and do all I am commanding you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+12&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch09-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How are the Israelites not to worship, and what are they to do instead? The phrase ’the place the Lord will choose’ appears six times in this chapter. What principle does that repetition establish about who is in charge of worship?",
+          "linkedPassage"    :"Deuteronomy 12:1-14",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"They are not to worship the Lord in the ways the Canaanite nations worship their gods -- at scattered high places, under green trees, wherever seems convenient or traditional. They must not copy the methods, locations, or spirit of surrounding religious practice. The positive command is to worship at the single place the Lord will choose -- a location not of their selection but of his. The sixfold repetition of this phrase is not redundancy but rhetorical emphasis on a single foundational principle: God defines the terms of his own worship. The worshipper does not get to choose how, where, or in what form. This is not arbitrary restrictiveness; it is a statement about the nature of the God being worshipped. He is not a projection of human religious instincts. Worship shaped by the worshipper’s preferences rather than the Lord’s revelation is, in the end, worship of something the worshipper has made. The command in v8 is particularly striking: ‘do not do like we are doing here today, with everyone doing whatever seems right in their own opinion.’ Religious individualism is not neutral; it is a problem.",
+          "questionHint"     :"The command in v8 is telling: ‘do not do like we are doing here today, with everyone doing whatever seems right in their own opinion.’ What is wrong with everyone doing what seems right in their own eyes in the context of worship? Why does that matter to God?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch09-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is the positive picture of worship Moses describes in v7 and v18? What does this tell us about what genuine worship of the Lord is meant to feel like?",
+          "linkedPassage"    :"Deuteronomy 12:1-14",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The picture in v7 is communal, joyful, and abundant: ‘You must eat there before the Lord your God and rejoice in all the output of your labor, you and your households, in which the Lord your God has blessed you.’ This is not a grim, individualistic, duty-driven religious exercise. It is a feast -- eating, rejoicing, doing it together with your whole household. Verse 18 expands the circle further: the Levite -- the person in the community who has no land of their own -- is explicitly included at the table. This positive vision is easy to miss amid the warnings about Canaanite worship, but it is just as important. Moses is not describing a religion of restrictions; he is describing a community gathered in joy before a generous God, bringing what he has given them and celebrating his blessing together. The restrictions in this chapter exist to protect this -- to prevent the joyful feast from being corrupted by the methods and assumptions of a very different kind of religion.",
+          "questionHint"     :"Look at the verb Moses uses in v7 for how Israel is to approach worship: ‘rejoice.’ How does that word change your picture of what this chapter is about? Is rejoicing optional or central to what Moses is describing?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch09-el09",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"12:29-32: Do Not Worship Like the Nations",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch09-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 12:29-32",
+          "translation"  :"NET",
+          "passageText"  :"<sup>29</sup>When the Lord your God eliminates the nations from the place where you are headed and you dispossess them, you will settle down in their land. <sup>30</sup>After they have been destroyed before you, be careful not to be ensnared like them. Do not investigate the gods of these nations and say, ‘How do these nations serve their gods? We also want to do the same.’ <sup>31</sup>You must not do the same to the Lord your God! For everything that is abhorrent to him, everything he hates, they have done for their gods -- they have even burned their sons and daughters in the fire to their gods. <sup>32</sup>Be careful to do everything I am commanding you; do not add to it or subtract from it.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+12&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch09-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses closes the chapter with a warning not even to investigate how other nations worship their gods. Why such a strong prohibition against mere curiosity -- and what does v31 reveal about where self-determined worship ultimately leads?",
+          "linkedPassage"    :"Deuteronomy 12:29-32",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses closes the door on curiosity as well as imitation: ‘Do not investigate the gods of these nations and say, how do these nations serve their gods? We also want to do the same.’ The warning against mere enquiry reflects a realistic understanding of how spiritual corruption spreads. We cannot observe how other people worship their gods without being shaped by what we see. Familiarity breeds assimilation. And v31 provides the ultimate argument: child sacrifice. This is offered not as a claim that all Canaanite worship is immediately equivalent to child sacrifice, but to show that worship shaped by human preference rather than divine revelation has no limiting principle. If you determine the terms of your own worship, there is nothing to stop that worship from eventually consuming what is most precious. The final verse returns to the foundation: do everything the Lord commands. Add nothing; subtract nothing. The symmetry of these two prohibitions is important -- both addition and subtraction are distortions of the God who has spoken.",
+          "questionHint"     :"Moses warns against even being curious about how other nations worship. What does that tell us about the power of what we allow ourselves to investigate or become familiar with? Is the warning paranoid, or does it reflect something realistic about how influence works?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch09-el12",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch09-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 12:4-5",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>You must not worship the Lord your God the way they worship. <sup>5</sup>Instead, you must seek only the place he chooses from all your tribes to establish his name as his place of residence, and you must go there.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+12&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch09-el14",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The principle of chapter 12 is that God defines the terms of his own worship -- we come to him on his terms, not ours. How does the New Testament fulfil and transform this? Where is ’the place the Lord has chosen’ for us to meet him today?",
+          "linkedPassage"    :"Deuteronomy 12:4-5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The New Testament does not abolish chapter 12’s principle -- it relocates and radicalises it. Jesus himself is the new temple, the place where God and humanity meet (John 2:19-21; 1:14). When Jesus tells the Samaritan woman that a time is coming when people will worship the Father ’neither on this mountain nor in Jerusalem’ but ’in spirit and in truth’ (John 4:21-23), he is not saying that place no longer matters. He is saying the place is now a person -- himself. Worship in spirit and in truth is worship through Christ and in conformity with the reality he embodies. We cannot approach God except through him (John 14:6). The principle that God defines the terms of access to himself remains fully in force -- it has simply been fulfilled in a way that surpasses anything the physical sanctuary in Deuteronomy could contain. There is still one place; it is just a person rather than a location.",
+          "questionHint"     :"John 1:14 says Jesus ’tabernacled among us’ -- using the same language as the tabernacle in Israel. How does that help you understand what Jesus means when he says ’I am the way, the truth, and the life -- no one comes to the Father except through me’?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read John 2:19-21, John 4:21-24, and John 14:6. How does John show Jesus fulfilling what the one place of worship in Deuteronomy 12 was pointing toward? What does this mean for how we understand both Christian worship and our access to God?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch09-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 12:7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>7</sup>You must eat there before the Lord your God and rejoice in all the output of your labor, you and your households, in which the Lord your God has blessed you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+12&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch09-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The worship Moses describes is communal, joyful, and explicitly includes the Levite -- the person in the community without resources of their own. What would it look like for our gathered worship to reflect this same spirit?",
+          "linkedPassage"    :"Deuteronomy 12:7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The vision of worship in v7 challenges any version of gathered worship that is individualistic, joyless, or exclusive. It is a feast, not a duty. It happens before God and in the presence of your whole household. It is marked by rejoicing over what the Lord has given. And from v18, the Levite -- the person with no land-based income -- is deliberately included. This suggests that the shape of our gathered worship should be assessed not just by the quality of the music or the preaching but by who is at the table. Are the economically vulnerable included and genuinely welcome? Does the gathering feel like a feast -- something worth coming to -- or merely like an obligation? Is there genuine joy, or only the performance of it? And practically: are there people in our community who are the modern equivalent of the Levite -- those who lack the social and material resources most people bring to church -- who need to be actively included rather than passively welcomed?",
+          "questionHint"     :"Verse 18 specifically names the Levite as someone who must be included in the rejoicing. Why might Moses need to name that explicitly -- is there a reason that person might otherwise be left out? And what does their presence at the feast say about what the gathering is ultimately for?",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":10,
+      "chapterTitle" :"Deuteronomy 13:1-14:21: Loyalty to the Lord -- Purge Evil and Be Holy",
+      "elements"     :[
+        {
+          "elementId"    :"ch10-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Chapter 12 established how God is to be worshipped. Chapters 13-14 address the threats to that worship from within the community. Chapter 13 is among the most demanding passages in Deuteronomy -- dealing with false teachers, intimate relationships, and the cancer-like spread of idolatry. Chapter 14 then turns to the daily, embodied distinctiveness that marks the people as belonging to the Lord.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch10-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read chapter 13, resist the urge to move past the discomfort too quickly. Moses intends you to feel the weight of what he is describing. The severity is not cruelty -- it is a measure of how seriously idolatry must be taken.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch10-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 13:1-14:21",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>13:1</sup>Suppose a prophet or one who foretells by dreams should appear among you and show you a sign or wonder, <sup>2</sup>and the sign or wonder should come to pass concerning what he said to you, namely, ‘Let us follow other gods’ -- gods whom you have not previously known -- ’and let us serve them.’ <sup>3</sup>You must not listen to the words of that prophet or dreamer, for the Lord your God is testing you to see if you love him with all your mind and being. <sup>4</sup>You must follow the Lord your God and revere only him; and you must observe his commandments, obey him, serve him, and remain loyal to him. <sup>5</sup>The prophet or dreamer must be executed because he encouraged rebellion against the Lord your God who brought you from the land of Egypt, redeemed you from that place of slavery, and tried to lead you from the path the Lord your God commanded you to walk. In this way you will purge the evil from your midst.</p><p><sup>6</sup>Suppose your own full brother, your son, your daughter, your beloved wife, or your closest friend should seduce you secretly by saying, ‘Let us go and serve other gods’ -- <sup>7</sup>gods that neither you nor your ancestors have known, those of the surrounding peoples, whether near you or far from you, from one end of the earth to the other. <sup>8</sup>You must not give in to him or even listen to him; do not feel sorry for him or spare him or protect him. <sup>9</sup>Instead, you must kill him without fail; you yourself must be the first to act and then the rest of the people will join in. <sup>10</sup>You must stone him to death because he tried to seduce you from the Lord your God who delivered you from the land of Egypt, that place of slavery. <sup>11</sup>Then all Israel will hear and be afraid, and they will no longer do such evil as this in your midst.</p><p><sup>12</sup>Suppose you should hear in one of your cities that the Lord your God is giving you that some wicked people from among you have gone out and brought the inhabitants of their city to ruin by saying, ‘Let us go and serve other gods.’ <sup>13</sup>You must investigate thoroughly and inquire carefully. If it is indeed true and well established that such a disgraceful thing has happened among you, <sup>14</sup>you must certainly strike down the inhabitants of that city with the sword; place it and everything in it under divine judgment, including the livestock, with the sword.</p><p><sup>14:1</sup>You are children of the Lord your God. Do not cut yourselves or shave your forehead bald for the dead, <sup>2</sup>because you are a people holy to the Lord your God. He has chosen you to be his people, his prized possession, from all the peoples on the face of the earth. <sup>3</sup>You must not eat any detestable thing. <sup>4</sup>These are the animals you may eat: ox, sheep, goat, <sup>5</sup>deer, gazelle, roe deer, wild goat, ibex, antelope, and mountain sheep. <sup>6</sup>Any animal that has hooves divided into two parts and that chews the cud you may eat. <sup>7</sup>But these are the ones you may not eat from among those that chew the cud or have divided hooves: the camel, the hare, or the rock badger. <sup>8</sup>Also the pig is unclean for you, because it has divided hooves but does not chew the cud. <sup>21</sup>You may not eat anything that has died of natural causes. You may give it to the resident foreigner who is living among you and he may eat it, or you may sell it to a foreigner. For you are a people holy to the Lord your God.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch10-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"Before you begin...",
+          "format"           :"plainText",
+          "question"         :"Has anyone in the group experienced what they would describe as ’false teaching’ -- teaching that drew someone away from the Lord? What was it like, and how did you recognise it?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch10-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"13:1-11: Purge the Evil from Among You",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch10-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 13:1-11",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Suppose a prophet or one who foretells by dreams should appear among you and show you a sign or wonder, <sup>2</sup>and the sign or wonder should come to pass concerning what he said to you, namely, ‘Let us follow other gods’ -- gods whom you have not previously known -- ’and let us serve them.’ <sup>3</sup>You must not listen to the words of that prophet or dreamer, for the Lord your God is testing you to see if you love him with all your mind and being. <sup>4</sup>You must follow the Lord your God and revere only him; and you must observe his commandments, obey him, serve him, and remain loyal to him. <sup>5</sup>The prophet or dreamer must be executed because he encouraged rebellion against the Lord your God who brought you from the land of Egypt, redeemed you from that place of slavery, and tried to lead you from the path the Lord your God commanded you to walk. In this way you will purge the evil from your midst. <sup>6</sup>Suppose your own full brother, your son, your daughter, your beloved wife, or your closest friend should seduce you secretly by saying, ‘Let us go and serve other gods’ -- <sup>7</sup>gods that neither you nor your ancestors have known, those of the surrounding peoples, whether near you or far from you, from one end of the earth to the other. <sup>8</sup>You must not give in to him or even listen to him; do not feel sorry for him or spare him or protect him. <sup>9</sup>Instead, you must kill him without fail; you yourself must be the first to act and then the rest of the people will join in. <sup>10</sup>You must stone him to death because he tried to seduce you from the Lord your God who delivered you from the land of Egypt, that place of slavery. <sup>11</sup>Then all Israel will hear and be afraid, and they will no longer do such evil as this in your midst.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+13&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch10-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Chapter 13 presents three escalating scenarios of enticement into idolatry. What are they -- and in each case, what is the key test? Notice it is not about the credentials of the one speaking but about what they say.",
+          "linkedPassage"    :"Deuteronomy 13:1-11",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The three scenarios escalate in terms of relational proximity: a prophet or dreamer (vv1-5); a close family member or intimate friend (vv6-11); and an entire town (vv12-18). The source of the temptation moves from a public religious figure to a private intimate to an entire community -- mapping the way spiritual corruption actually spreads. In each case the key test is the message, not the messenger. The prophet in vv1-5 may perform genuine signs and wonders -- and they may come true -- but if the message leads away from the Lord, he is to be rejected. God may even allow the sign to occur as a test of loyalty (v3). This is a profound and challenging principle: impressive spiritual credentials, miraculous phenomena, and even apparent supernatural confirmation cannot override the question ’where does this lead -- toward the Lord or away from him?’ The test is theological, not phenomenological.",
+          "questionHint"     :"Moses says in v3 that God may allow a prophet’s sign to come true as a test of whether you love him with all your heart. What does it mean that impressive signs cannot be the ultimate criterion for truth? What is?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch10-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The language used in v6 for the family members involved is deliberately tender. Then the commands that follow are devastating. What is Moses trying to make his listeners feel -- and what does the extremity of the command reveal about the nature of idolatry?",
+          "linkedPassage"    :"Deuteronomy 13:1-11",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses is trying to produce horror -- and that is the pastoral intent. He does not want his listeners to hear this passage and think ’yes, obviously, deal with false teachers easily.’ He wants them to feel the weight of what is being asked: imagine that the person leading you astray is not a stranger or an obvious deceiver but the person you love most. Your wife. Your closest friend. The person whose soul is bound to yours. Now Moses says: even then. Do not listen. Do not show mercy. The shock is the point. If Moses can make his hearers feel ’I would never want to be in that position -- may it never be me or my family,‘ then he has succeeded. The severity is not a description of cold-heartedness; it is a measure of what idolatry costs. The New Testament does not replicate the specific form of this response, but it does not soften the theological seriousness: Galatians 1:8-9 pronounces the same verdict in different language.",
+          "questionHint"     :"Moses chooses the most emotionally charged relationships possible -- wife, son, daughter, closest friend. If he had only described the threat from strangers or obvious enemies, what would have been lost? What does the intimacy of the threat reveal about how idolatry actually works?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Galatians 1:8-9 and 1 Corinthians 5:1-13. How does the New Testament apply the same principle -- that false teaching and unrepentant sin must not be tolerated in the community of God’s people? What is the same, and what is different about the form of the response?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch10-el09",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"14:1-21: Be a People Holy to the Lord",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch10-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 14:1-3",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>You are children of the Lord your God. Do not cut yourselves or shave your forehead bald for the dead, <sup>2</sup>because you are a people holy to the Lord your God. He has chosen you to be his people, his prized possession, from all the peoples on the face of the earth. <sup>3</sup>You must not eat any detestable thing.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+14&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch10-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The food laws in chapter 14 begin with ’you are children of the Lord your God’ and ’a people holy to him, his prized possession.’ What is the connection between those identity statements and the regulations that follow?",
+          "linkedPassage"    :"Deuteronomy 14:1-3",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The food laws are framed by identity rather than arbitrary requirement. The reason Israel keeps these regulations is not that certain animals are inherently unclean or that these foods are physically harmful. It is because they are holy -- set apart -- belonging to the Lord. Their daily dietary choices are a regular, embodied expression of belonging: they are noticeably, practically different from the nations around them, not just in formal religious gatherings but at every meal table. The declaration ’you are children of the Lord your God’ in v1 is the theological ground from which everything flows: children reflect their Father’s character and live by his household’s customs, not by the customs of every other household around them. This is holiness as identity rather than holiness as performance -- they do not keep these rules in order to become holy; they keep them because they already are. Obedience flows from identity.",
+          "questionHint"     :"Moses gives the same reason for the food laws as for many other commands in Deuteronomy: ‘you are a people holy to the Lord, his prized possession.’ How does rooting obedience in who you are rather than in what you must do to qualify change what obedience feels like?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch10-el12",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch10-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 13:3-4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>You must not listen to the words of that prophet or dreamer, for the Lord your God is testing you to see if you love him with all your mind and being. <sup>4</sup>You must follow the Lord your God and revere only him; and you must observe his commandments, obey him, serve him, and remain loyal to him.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+13&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch10-el14",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The Lord still takes false teaching seriously. What messages, teachers, or voices in your context might quietly lead people away from wholehearted love for Jesus -- even while claiming spiritual authority or producing impressive results?",
+          "linkedPassage"    :"Deuteronomy 13:3-4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The most dangerous false teaching is rarely the obvious kind. Outright denial of Christ is easy to identify and reject. What is harder to detect is teaching that does not deny the cross but quietly displaces it: teaching that adds requirements for spiritual maturity beyond faith in Christ; teaching that focuses on a leader, a method, or a spiritual experience in a way that subtly replaces Christ as the centre; teaching that offers a spirituality built around what God can do for you rather than who he is and what he has already done. Moses’ test is not ’is this person impressive?’ or even ’does this produce results?’ It is ’where does this lead -- toward the Lord or away from him?’ That is the question to keep asking of every voice that seeks our loyalty, including the cultural voices that are not explicitly religious but function as alternative centres of meaning and value.",
+          "questionHint"     :"Moses’ test for a false teacher is their message, not their credentials. What would it look like to apply that test to the voices that most influence the people in your community -- whether inside or outside the church?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch10-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 14:2",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>because you are a people holy to the Lord your God. He has chosen you to be his people, his prized possession, from all the peoples on the face of the earth.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+14&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch10-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The food laws no longer apply to us as Christians (Acts 10 is clear about that), but the principle they served remains: God’s people are to be visibly distinctive in daily life. What does that kind of daily distinctiveness look like for you? Where is the call to holiness most practical and most costly?",
+          "linkedPassage"    :"Deuteronomy 14:2",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"When Peter receives the vision of the sheet in Acts 10, God declares all foods clean -- and immediately uses that to send Peter to a Gentile’s house. The food laws are fulfilled and their specific application ends. But the holiness they served -- being a people visibly marked by belonging to God -- is intensified in the New Testament, not abolished. For us, daily distinctiveness looks less like dietary choice and more like: how we handle money and debt; how we speak about people who are absent; how we relate to sexuality and our bodies; how honest we are in contexts where dishonesty would cost us nothing; how we treat those who serve us. The call is not to perform religiosity but to have the character of people who know they belong to the Lord -- which shapes every department of ordinary life. The question is where the cost of that distinctiveness is currently greatest for you: where is the pressure to conform most intense, and what would it mean to hold the line there?",
+          "questionHint"     :"If the food laws were about daily, embodied distinctiveness -- marking God’s people as belonging to him at every meal -- what is the equivalent for us? What are the daily, ordinary practices or choices that mark out a person as someone who belongs to the Lord rather than to the surrounding culture?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read 1 Peter 2:9-12. How does Peter apply the Deuteronomy 14 language of ’a people holy to the Lord, his prized possession’ to New Testament believers? What does he say the purpose of that holiness is in the sight of the surrounding world?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":11,
+      "chapterTitle" :"Deuteronomy 14:22-16:17: Trust in the Generous Lord Results in Radical Generosity",
+      "elements"     :[
+        {
+          "elementId"    :"ch11-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"After the warnings of chapters 12-14 about false worship and the danger of idolatry, Moses now turns to something that might seem more practical: money, debt, and feasting. But these chapters are not a detour from theology -- they are theology in action. The question they press is simple: do you actually trust that God will keep providing? Your answer shows up not in what you believe but in what you do with what you have.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch11-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, watch for the consistent thread connecting every law in this section: God has been lavishly generous toward you, and that generosity is meant to flow through you toward others.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch11-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 14:22-16:17",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>14:22</sup>You must be certain to tithe all the produce of your seed that comes from the field year after year. <sup>23</sup>In the presence of the Lord your God you must eat from the tithe of your grain, your new wine, your olive oil, and the firstborn of your herds and flocks in the place he chooses to locate his name, so that you may learn to revere the Lord your God always. <sup>24</sup>But if the place where the Lord your God chooses to locate his name is too far for you and you are not able to transport the tithe that he blesses you with, <sup>25</sup>then you may convert it to silver, wrap up the silver in your hand, and go to the place the Lord your God chooses. <sup>26</sup>You may spend the silver on whatever you want -- oxen, sheep, wine, beer, or whatever you desire -- and you and your household may eat there and rejoice before the Lord your God. <sup>27</sup>But do not forget the Levite in your villages, for he has no allotment or inheritance like yours.</p><p><sup>28</sup>At the end of every three years you must bring all the tithe of your produce, in that very year, and you must store it up in your villages. <sup>29</sup>Then the Levite, because he has no allotment or inheritance like yours, the resident foreigner, the orphan, and the widow of your villages, may come and eat their fill so that the Lord your God may bless you in all the work of your hands.</p><p><sup>15:1</sup>At the end of seven years you must cancel debts. <sup>2</sup>This is the nature of the cancellation: every creditor must remit what he has loaned to another person; he must not force payment from his fellow Israelite, for it is called the Lord’s cancellation of debts. <sup>4</sup>However, there should not be any poor among you, for the Lord will surely bless you in the land that he is giving you as an inheritance, <sup>5</sup>if you carefully obey the Lord your God and are cautious to keep all these commandments I am giving you today. <sup>7</sup>If a fellow Israelite is poor in one of your villages in the land that the Lord your God is giving you, do not harden your heart or shut your hand against your poor brother. <sup>8</sup>Instead, you must open your hand wide to him and freely lend him whatever he needs. <sup>9</sup>Be careful lest you entertain the wicked thought that the seventh year, the year of cancellation of debts, is near, and your eye becomes hostile toward your poor brother and you do not lend him anything; he will cry out to the Lord against you and you will be guilty of sin. <sup>10</sup>You must give to him without any regrets, for because of this the Lord your God will bless you in all your work and in everything you undertake. <sup>11</sup>There will never cease to be some poor people in the land; therefore I am commanding you to make sure you open your hand wide to your fellow Israelites who are poor and needy in your land.</p><p><sup>12</sup>If your fellow Hebrew, whether male or female, is sold to you and serves you for six years, then in the seventh year you must let him go free. <sup>13</sup>If you let him go free, you must not send him away empty-handed. <sup>14</sup>You must supply him generously from your flock, your threshing floor, and your winepress -- as the Lord your God has blessed you, you must give to him. <sup>15</sup>Remember that you were a slave in the land of Egypt and the Lord your God redeemed you; therefore, I am commanding you to do this today.</p><p><sup>19</sup>You must set apart for the Lord your God every firstborn male born to your herds and flocks. You must not work the firstborn of your ox nor shear the firstborn of your flock. <sup>20</sup>You and your household must eat it before the Lord your God year after year in the place the Lord chooses.</p><p><sup>16:1</sup>Observe the month of Abib and keep the Passover of the Lord your God, for in that month he brought you out of Egypt by night. <sup>2</sup>You must sacrifice the Passover animal from your flock or herd to the Lord your God in the place where he chooses to locate his name. <sup>9</sup>You must count seven weeks; you must begin to count them from the time you begin to harvest the standing grain. <sup>10</sup>Then you must celebrate the Feast of Weeks before the Lord your God with the contribution of a freewill offering that you will give in proportion to how he has blessed you. <sup>11</sup>You must rejoice before the Lord your God, you, your son, your daughter, your male and female slaves, the Levite in your villages, the resident foreigner, the orphan, and the widow among you, in the place where the Lord your God chooses to locate his name. <sup>13</sup>You must celebrate the Feast of Temporary Shelters for seven days, at the time of the grain harvest and the grape harvest. <sup>14</sup>You must rejoice during your festival, you, your son, your daughter, your male and female slaves, the Levite, the resident foreigner, the orphan, and the widow who are in your villages. <sup>15</sup>For seven days you must celebrate a festival before the Lord your God in the place he chooses, for the Lord your God will bless you in all your productivity and in whatever you do, so your joy will be complete. <sup>16</sup>Three times a year all your males must appear before the Lord your God in the place he chooses: at the Feast of Unleavened Bread, the Feast of Weeks, and the Feast of Temporary Shelters. They must not appear before the Lord empty-handed. <sup>17</sup>Each of you must give as you are able, according to the blessing of the Lord your God that he has given you.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch11-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"What is your instinctive reaction to a passage that deals with money, debt cancellation, freeing slaves, and festivals? What assumptions do you bring about what a passage like this has to do with faith?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch11-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"14:22-15:23: Radical Generosity",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch11-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 14:22-15:11",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14:22</sup>You must be certain to tithe all the produce of your seed that comes from the field year after year. <sup>23</sup>In the presence of the Lord your God you must eat from the tithe of your grain, your new wine, your olive oil, and the firstborn of your herds and flocks in the place he chooses to locate his name, so that you may learn to revere the Lord your God always. <sup>28</sup>At the end of every three years you must bring all the tithe of your produce, in that very year, and you must store it up in your villages. <sup>29</sup>Then the Levite, because he has no allotment or inheritance like yours, the resident foreigner, the orphan, and the widow of your villages, may come and eat their fill so that the Lord your God may bless you in all the work of your hands. <sup>15:1</sup>At the end of seven years you must cancel debts. <sup>2</sup>This is the nature of the cancellation: every creditor must remit what he has loaned to another person; he must not force payment from his fellow Israelite, for it is called the Lord’s cancellation of debts. <sup>7</sup>If a fellow Israelite is poor in one of your villages in the land that the Lord your God is giving you, do not harden your heart or shut your hand against your poor brother. <sup>8</sup>Instead, you must open your hand wide to him and freely lend him whatever he needs. <sup>9</sup>Be careful lest you entertain the wicked thought that the seventh year, the year of cancellation of debts, is near, and your eye becomes hostile toward your poor brother and you do not lend him anything; he will cry out to the Lord against you and you will be guilty of sin. <sup>10</sup>You must give to him without any regrets, for because of this the Lord your God will bless you in all your work and in everything you undertake. <sup>11</sup>There will never cease to be some poor people in the land; therefore I am commanding you to make sure you open your hand wide to your fellow Israelites who are poor and needy in your land.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+14&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch11-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"For each law in this section -- the tithe, the third-year tithe, the sabbatical year debt cancellation -- ask: what is being commanded, who benefits, and how does keeping this command express trust in God rather than anxiety about the future?",
+          "linkedPassage"    :"Deuteronomy 14:22-15:11",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The tithe (14:22-27): a tenth of all produce is brought to the place of worship and eaten there as a feast before the Lord. The beneficiary is the worshipper themselves, who learns to revere God always -- and the Levite who must not be forgotten. Trust expressed: the giver acknowledges that the harvest belongs to the Lord and trusts he will provide even after a tenth is given away. The third-year tithe (14:28-29): every three years the tithe stays local to feed the Levite, foreigner, orphan, and widow. Trust expressed: the giver trusts the Lord’s provision for the next three years even while redistributing locally. The sabbatical year debt cancellation (15:1-11): every seventh year, debts among Israelites are cancelled entirely. Trust expressed: the lender trusts that the Lord will provide for their needs even if the debt is never repaid. Moses specifically addresses the temptation in v9 -- the wicked thought that the seventh year is near, so why lend? -- and calls it sin. The law is designed so that generosity requires genuine trust, not just surplus.",
+          "questionHint"     :"Moses specifically warns in v9 against a ’wicked thought’ -- calculating that the seventh year is near and therefore closing your hand. What does calling that thought ’wicked’ reveal about the spiritual significance of financial decisions? Why is withholding in that situation not just prudent but sinful?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch11-el08",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 15:12-15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>12</sup>If your fellow Hebrew, whether male or female, is sold to you and serves you for six years, then in the seventh year you must let him go free. <sup>13</sup>If you let him go free, you must not send him away empty-handed. <sup>14</sup>You must supply him generously from your flock, your threshing floor, and your winepress -- as the Lord your God has blessed you, you must give to him. <sup>15</sup>Remember that you were a slave in the land of Egypt and the Lord your God redeemed you; therefore, I am commanding you to do this today.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+15&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch11-el09",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The law about freeing Hebrew slaves in vv12-15 grounds its command in memory: ‘remember that you were a slave in Egypt and the Lord your God redeemed you.’ This is the logic of the whole section. How does the memory of our own need and God’s generosity toward us function as the engine of generosity toward others?",
+          "linkedPassage"    :"Deuteronomy 15:12-15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The command to free slaves generously -- not just releasing them but equipping them from your flock, threshing floor, and winepress -- is rooted in something the owner already knows from their own experience: what it is like to need liberation, and to receive it without deserving it. Israel was enslaved. They did not earn their freedom from Egypt. The Lord redeemed them. That memory is meant to be the wellspring from which generosity flows -- not guilt, not obligation, not the fear of what others will think, but genuine gratitude for an undeserved rescue that now shapes how you treat the undeserving person in front of you. This is the pattern throughout the section: God was lavish toward you when you had nothing; now be lavish toward the person who has nothing. The logic is not ’pay it forward’ as a moral system. It is ’you know what this costs and what it means to receive it -- so give it.’ 2 Corinthians 8:9 makes the same argument about Christian generosity: ‘though he was rich, yet for your sake he became poor, so that you by his poverty might become rich.’",
+          "questionHint"     :"Moses could have grounded the law about freeing slaves in fairness, or in economic wisdom, or in social stability. Instead he grounds it in memory: ‘you were a slave.’ Why is personal experiential memory a more powerful motivation for generosity than principle or duty?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read 2 Corinthians 8:1-9 and 9:6-8. How does Paul apply the Deuteronomy logic -- God’s generosity toward us as the ground of our generosity toward others -- in the context of the New Testament collection for the Jerusalem church? What does he add that goes beyond what Deuteronomy says?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch11-el10",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"16:1-17: Rejoice in the Lord’s Blessings",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch11-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 16:1-17",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Observe the month of Abib and keep the Passover of the Lord your God, for in that month he brought you out of Egypt by night. <sup>9</sup>You must count seven weeks; you must begin to count them from the time you begin to harvest the standing grain. <sup>10</sup>Then you must celebrate the Feast of Weeks before the Lord your God with the contribution of a freewill offering that you will give in proportion to how he has blessed you. <sup>11</sup>You must rejoice before the Lord your God, you, your son, your daughter, your male and female slaves, the Levite in your villages, the resident foreigner, the orphan, and the widow among you, in the place where the Lord your God chooses to locate his name. <sup>13</sup>You must celebrate the Feast of Temporary Shelters for seven days, at the time of the grain harvest and the grape harvest. <sup>14</sup>You must rejoice during your festival, you, your son, your daughter, your male and female slaves, the Levite, the resident foreigner, the orphan, and the widow who are in your villages. <sup>16</sup>Three times a year all your males must appear before the Lord your God in the place he chooses: at the Feast of Unleavened Bread, the Feast of Weeks, and the Feast of Temporary Shelters. They must not appear before the Lord empty-handed. <sup>17</sup>Each of you must give as you are able, according to the blessing of the Lord your God that he has given you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+16&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch11-el12",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What do the three annual festivals have in common? What are they designed to produce -- and who is specifically named as included in the rejoicing?",
+          "linkedPassage"    :"Deuteronomy 16:1-17",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"All three festivals -- Passover/Unleavened Bread, Weeks, and Temporary Shelters -- share the same basic shape: they remember what God has done, and they respond with rejoicing. Passover remembers rescue from Egypt. Weeks celebrates the harvest as God’s blessing. Temporary Shelters recalls the wilderness provision and gives thanks for the harvest abundance. Each one is designed to produce gratitude rooted in memory -- which is, as we have seen throughout this section, the engine of all godly generosity. What is striking about the inclusion list is its comprehensiveness and deliberateness. Moses names: sons, daughters, male and female slaves, Levites, resident foreigners, orphans, and widows. The festival is not for the prosperous household gathered privately; it is a communal feast that specifically includes those who have least. The rejoicing is communal and inclusive by design. And the final principle of v17 -- give as you are able, according to how the Lord has blessed you -- is proportional and responsive rather than fixed and mechanical: generosity calibrated to grace received.",
+          "questionHint"     :"Moses uses the word ’rejoice’ repeatedly across all three festival descriptions. Is rejoicing presented as optional or as part of the command? What does it say about the character of the God being worshipped that he commands his people to celebrate?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch11-el13",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch11-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 15:7-10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>7</sup>If a fellow Israelite is poor in one of your villages in the land that the Lord your God is giving you, do not harden your heart or shut your hand against your poor brother. <sup>8</sup>Instead, you must open your hand wide to him and freely lend him whatever he needs. <sup>9</sup>Be careful lest you entertain the wicked thought that the seventh year, the year of cancellation of debts, is near, and your eye becomes hostile toward your poor brother and you do not lend him anything; he will cry out to the Lord against you and you will be guilty of sin. <sup>10</sup>You must give to him without any regrets, for because of this the Lord your God will bless you in all your work and in everything you undertake.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+15&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch11-el15",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Moses says to give ’without any regrets’ -- literally, without a grudging heart. How would you honestly describe your relationship with generosity? Where does the calculation of v9 -- ’the seventh year is near, so why bother?’ -- show up in your own instincts about money and giving?",
+          "linkedPassage"    :"Deuteronomy 15:7-10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The thought Moses calls ’wicked’ in v9 is actually very reasonable by normal economic logic: if you lend money and the seventh year is near, you will never see it back. Why extend credit to someone when you know it will cost you? Moses names this calculation -- and calls it sin -- because it reveals a heart that has stopped trusting God as the source of provision and started treating its own resources as the ultimate security. The truth of v10 is the counter: those who give generously are those who will be blessed in all their work. Generosity and blessing are connected not because generosity is a transaction but because generosity is the posture of those who trust God, and trust in God is what enables flourishing. The honest questions for us are personal ones: where do I notice the instinct to calculate before giving? Where do I give only what I can afford to lose, and call that generosity? Where does my giving require genuine trust rather than comfortable surplus?",
+          "questionHint"     :"Moses does not just command giving -- he addresses the internal thought that prevents it. What does his attention to the inner life of the potential giver tell us about what God is most interested in when it comes to our money?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch11-el16",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 16:11",
+          "translation"  :"NET",
+          "passageText"  :"<sup>11</sup>You must rejoice before the Lord your God, you, your son, your daughter, your male and female slaves, the Levite in your villages, the resident foreigner, the orphan, and the widow among you, in the place where the Lord your God chooses to locate his name.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+16&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch11-el17",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The feast of v11 explicitly includes the Levite, the foreigner, the orphan, and the widow -- those without economic security. Who are the equivalent people in your community, and what would it look like to ensure they are genuinely included in the joy of belonging to the people of God?",
+          "linkedPassage"    :"Deuteronomy 16:11",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"Moses does not leave the inclusion of the vulnerable to good intentions -- he names them and commands their presence. The Levite has no land and depends on others’ giving. The foreigner has no family network or legal protections. The orphan and widow have no breadwinner. All of these are explicitly invited to the feast. The question for any community is whether this is true in practice rather than just in principle. Inclusion that is formal rather than substantive -- technically welcome but practically marginalised by cost, language, culture, or the unspoken social codes of the group -- is not the inclusion Moses describes. The equivalent people in most communities are those for whom the cost of participation is highest and the sense of belonging is thinnest: those whose poverty makes regular involvement financially out of reach, those whose background or culture makes them feel like guests rather than hosts, those whose life situation is messy or shameful by the community’s unspoken standards. The feast that includes them on equal terms is a theological statement about the kind of God being worshipped.",
+          "questionHint"     :"Moses is specific rather than general -- he does not say ’include the needy’ but names categories of people. Why does the specificity matter? What happens when inclusion stays general and never becomes particular?",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":12,
+      "chapterTitle" :"Deuteronomy 16:18-18:22: God’s People and Their Leaders Must Live Under God’s Word",
+      "elements"     :[
+        {
+          "elementId"    :"ch12-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This section addresses something that might seem administrative but turns out to be deeply theological: who leads the people of God, and how? Judges, kings, priests, prophets -- all four offices are addressed in turn. And in each case, the answer to ’how should they lead?’ is the same: under God’s word, not above it.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch12-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, notice the remarkable restraints Moses places on the king -- one of the most counter-cultural passages in the ancient world. And watch for the climactic promise of the prophet to come.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch12-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 16:18-18:22",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>16:18</sup>You must appoint judges and civil servants for all your tribes in every town that the Lord your God is giving you, and they must judge the people fairly. <sup>19</sup>Do not pervert justice or show partiality. Do not accept a bribe, for bribes blind the eyes of the wise and distort the words of the righteous. <sup>20</sup>You must pursue justice, and only justice, so that you may live and possess the land the Lord your God is giving you.</p><p><sup>17:8</sup>If a matter is too difficult for you to judge -- bloodshed, legal rights, or personal injury -- matters of controversy in your villages -- you must leave there and go up to the place the Lord your God chooses. <sup>9</sup>You must go to the Levitical priests and the judge who is in office in those days and seek a ruling; they will render a verdict. <sup>10</sup>You must do whatever they tell you from that place the Lord chooses, and you must be careful to do exactly as they instruct you. <sup>12</sup>Anyone who is so arrogant that he does not listen to the priest who stands there to serve the Lord your God, or to the judge, that person must die -- you must purge the evil from Israel.</p><p><sup>17:14</sup>When you come to the land the Lord your God is giving you and take it over and live in it and then say, ‘I will appoint a king over me like all the nations surrounding me,‘ <sup>15</sup>you must appoint a king over you whom the Lord your God chooses. From among your fellow citizens you must appoint a king over you -- you may not designate a foreigner who is not one of your fellow citizens. <sup>16</sup>Moreover, he must not accumulate horses for himself or allow the people to return to Egypt to get more horses, for the Lord told you, ‘You must never go back that way again.’ <sup>17</sup>Furthermore, he must not marry many wives lest his heart turn aside, and he must not accumulate much silver and gold. <sup>18</sup>When he sits on his royal throne he must write for himself a copy of this law on a scroll given to him by the Levitical priests. <sup>19</sup>It must be with him constantly and he must read it all his life, so that he may learn to revere the Lord his God and observe all the words of this law and these statutes and carry them out. <sup>20</sup>Then he will not exalt himself above his fellow citizens or turn from the commandment to the right or to the left, and he and his descendants will reign for many years in the midst of Israel.</p><p><sup>18:9</sup>When you come to the land the Lord your God is giving you, you must not learn the abhorrent practices of those nations. <sup>10</sup>There must never be found among you anyone who sacrifices his son or daughter in the fire, or who practices divination, or an omen reader, or a soothsayer, or a sorcerer, <sup>15</sup>The Lord your God will raise up for you a prophet like me from among you -- from your fellow Israelites; you must listen to him. <sup>16</sup>This accords with what happened at Horeb in the day of the assembly when you asked the Lord your God, ‘Please do not make us hear the voice of the Lord our God any more or see this great fire any more lest we die.’ <sup>17</sup>The Lord said to me, ‘What they have said is correct. <sup>18</sup>I will raise up a prophet like you for them from among their fellow Israelites. I will put my words in his mouth and he will speak to them whatever I command. <sup>19</sup>And if anyone does not listen to my words that he speaks in my name, I will personally call him to account. <sup>20</sup>But if any prophet presumptuously speaks a word in my name that I did not command him to speak, or speaks in the name of other gods, that prophet must die.’ <sup>21</sup>Now if you say to yourselves, ‘How can we tell that a message is not from the Lord?’ -- <sup>22</sup>whenever a prophet speaks in the Lord’s name and the prediction is not fulfilled, then the Lord has not spoken it; the prophet has presumed to speak it, so you need not fear him.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch12-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"The passage covers judges, kings, priests, and prophets. Before looking at the details, what single principle do you think might unite all four? What does this passage say about the relationship between leadership and God’s word?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch12-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"16:18-17:13: Justice Among the People of God",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch12-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 16:18-20",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>You must appoint judges and civil servants for all your tribes in every town that the Lord your God is giving you, and they must judge the people fairly. <sup>19</sup>Do not pervert justice or show partiality. Do not accept a bribe, for bribes blind the eyes of the wise and distort the words of the righteous. <sup>20</sup>You must pursue justice, and only justice, so that you may live and possess the land the Lord your God is giving you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+16&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch12-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What characterises the judges Moses requires? Notice in v20 that justice is to be ’pursued’ -- an active, relentless verb. What does it say about justice that it must be pursued rather than simply administered?",
+          "linkedPassage"    :"Deuteronomy 16:18-20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses requires judges who judge fairly, who do not pervert justice, who show no partiality, and who accept no bribe -- grounding the prohibition on bribes in a psychological observation: ‘bribes blind the eyes of the wise and distort the words of the righteous.’ It is not just that bribery is corrupt; it is that it actually impairs the judgment of people who would otherwise judge well. The requirement to ’pursue justice, and only justice’ in v20 uses a hunting verb -- the same word used elsewhere for chasing an enemy. Justice is not something that happens automatically when systems are set up; it requires active, energetic, sustained effort. It can always be diverted, corrupted, or evaded. The community bears responsibility not just to have systems of justice but to pursue it relentlessly. This is a communal obligation, not just a judicial one -- the people are responsible for appointing just judges.",
+          "questionHint"     :"Moses says the purpose of pursuing justice is ’so that you may live and possess the land.’ Justice and flourishing in the land are connected. What does that link suggest about the relationship between how a community treats its most vulnerable members and its overall wellbeing?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch12-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"17:14-20: The King Under the Law",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch12-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 17:14-20",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>When you come to the land the Lord your God is giving you and take it over and live in it and then say, ‘I will appoint a king over me like all the nations surrounding me,‘ <sup>15</sup>you must appoint a king over you whom the Lord your God chooses. From among your fellow citizens you must appoint a king over you -- you may not designate a foreigner who is not one of your fellow citizens. <sup>16</sup>Moreover, he must not accumulate horses for himself or allow the people to return to Egypt to get more horses, for the Lord told you, ‘You must never go back that way again.’ <sup>17</sup>Furthermore, he must not marry many wives lest his heart turn aside, and he must not accumulate much silver and gold. <sup>18</sup>When he sits on his royal throne he must write for himself a copy of this law on a scroll given to him by the Levitical priests. <sup>19</sup>It must be with him constantly and he must read it all his life, so that he may learn to revere the Lord his God and observe all the words of this law and these statutes and carry them out. <sup>20</sup>Then he will not exalt himself above his fellow citizens or turn from the commandment to the right or to the left, and he and his descendants will reign for many years in the midst of Israel.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+17&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch12-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The law of the king in vv14-20 is extraordinary for its ancient context. Every other Near Eastern law code assumes the king is above the law. What does Moses require instead -- and what are the three specific prohibitions designed to protect against?",
+          "linkedPassage"    :"Deuteronomy 17:14-20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses requires the exact opposite of what every other ancient king assumed as his right. The king must write out the law himself, keep it with him constantly, read it all his life, and not consider himself better than his fellow citizens. He is not above the law but its most diligent student. The three prohibitions target the three classic routes to royal autonomy. No accumulating horses -- the horses would come from Egypt, rebuilding dependence on the very power that enslaved Israel and suggesting that military strength rather than the Lord is the real security. No multiplying wives -- political marriages to foreign women brought their gods with them, as Solomon’s history devastatingly illustrated. No accumulating silver and gold -- personal wealth creates the independence and self-sufficiency that leads a king to stop depending on the Lord. What unites all three prohibitions is the danger of the king placing his security in something other than the Lord and his word. The king who writes out the law himself is the king who cannot later claim ignorance of it -- or exemption from it.",
+          "questionHint"     :"Moses requires the king to write out a personal copy of the law himself and read it all his life. What is the effect of personally copying something out rather than just having a copy? Why might that discipline specifically be required of someone with the most power?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read 1 Kings 10:14-11:6. How did Solomon violate every one of the three prohibitions in Deuteronomy 17:16-17? What does his story tell us about what happens when a leader places himself above the law Moses describes?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch12-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"18:9-22: The Prophet Greater than Moses",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch12-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 18:15-22",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>The Lord your God will raise up for you a prophet like me from among you -- from your fellow Israelites; you must listen to him. <sup>16</sup>This accords with what happened at Horeb in the day of the assembly when you asked the Lord your God, ‘Please do not make us hear the voice of the Lord our God any more or see this great fire any more lest we die.’ <sup>17</sup>The Lord said to me, ‘What they have said is correct. <sup>18</sup>I will raise up a prophet like you for them from among their fellow Israelites. I will put my words in his mouth and he will speak to them whatever I command. <sup>19</sup>And if anyone does not listen to my words that he speaks in my name, I will personally call him to account. <sup>20</sup>But if any prophet presumptuously speaks a word in my name that I did not command him to speak, or speaks in the name of other gods, that prophet must die.’ <sup>21</sup>Now if you say to yourselves, ‘How can we tell that a message is not from the Lord?’ -- <sup>22</sup>whenever a prophet speaks in the Lord’s name and the prediction is not fulfilled, then the Lord has not spoken it; the prophet has presumed to speak it, so you need not fear him.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+18&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch12-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses promises a prophet ’like me’ -- rooted in the same moment when the people begged for a mediator at Horeb. What does ’like me’ imply about what this prophet will do, and why does the New Testament identify Jesus as the fulfilment of this promise?",
+          "linkedPassage"    :"Deuteronomy 18:15-22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The phrase ’like me’ points to Moses’ distinctive role: he stood between God and the people, receiving God’s word when they could not bear to hear it directly, and delivering it to them. The prophet like Moses will do the same -- God will put his very words in his mouth. The promise is grounded in the Horeb moment of 5:23-27: the people could not stand in the direct presence of the speaking God, and they asked for a mediator. God commended that request. Now he promises to provide the ultimate mediator. The New Testament applies this promise explicitly to Jesus in Acts 3:22 and 7:37. Jesus is the prophet like Moses -- but in a way that exceeds Moses. Moses received God’s words and passed them on; Jesus does not merely relay God’s words but is himself the Word (John 1:1). Moses stood between God and the people; Jesus is both God and the people’s representative simultaneously. The promise in v19 -- ’if anyone does not listen to my words that he speaks in my name, I will personally call him to account’ -- gives this prophet a gravity that makes listening to him not optional but a matter of ultimate consequence.",
+          "questionHint"     :"Moses says the prophet will be ’like me’ but also that God will put his words directly in the prophet’s mouth. Where does Moses get his words from, and what would it mean for a prophet to speak with that same direct divine authority? How does Jesus both fulfil and exceed that pattern?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch12-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch12-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 17:18-20",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>When he sits on his royal throne he must write for himself a copy of this law on a scroll given to him by the Levitical priests. <sup>19</sup>It must be with him constantly and he must read it all his life, so that he may learn to revere the Lord his God and observe all the words of this law and these statutes and carry them out. <sup>20</sup>Then he will not exalt himself above his fellow citizens or turn from the commandment to the right or to the left, and he and his descendants will reign for many years in the midst of Israel.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+17&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch12-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The king is to keep the law with him constantly and read it all his life -- precisely because power creates the temptation to place yourself above God’s word. How does power -- in whatever form it takes in your own life -- tempt you to exempt yourself from the demands of Scripture?",
+          "linkedPassage"    :"Deuteronomy 17:18-20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The law of the king applies to everyone who holds any form of authority -- and most of us hold some. Power’s most insidious spiritual effect is the gradual sense that the normal rules are for other people. The person with financial power begins to treat money as their own creation rather than God’s gift. The person with institutional authority begins to interpret Scripture in ways that conveniently support their decisions. The person with expertise begins to act as though their competence exempts them from the humility that less confident people need. The king writing out the law personally is a discipline designed to resist precisely this: you cannot claim the rules are for others when you have spent weeks writing them in your own hand. For us, the equivalent is something like the deliberate practice of letting Scripture address us where we are most powerful rather than only where we are most vulnerable. Where in your life does your own authority, expertise, or security make it tempting to treat God’s word as applicable to others more than to you?",
+          "questionHint"     :"Moses says the king must write out the law so that ’he will not exalt himself above his fellow citizens.’ What is the connection between immersion in Scripture and the prevention of pride? Why does knowing God’s word specifically produce humility rather than just information?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch12-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 18:18-19",
+          "translation"  :"NET",
+          "passageText"  :"<sup>18</sup>I will raise up a prophet like you for them from among their fellow Israelites. I will put my words in his mouth and he will speak to them whatever I command. <sup>19</sup>And if anyone does not listen to my words that he speaks in my name, I will personally call him to account.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+18&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch12-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Jesus is the prophet greater than Moses -- the one who does not merely carry God’s words but is himself the Word. What does it mean for us to ’listen to him’ today? And where is the temptation to hear his words but not let them land?",
+          "linkedPassage"    :"Deuteronomy 18:18-19",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"Listening to the prophet like Moses means something different now that the promise has been fulfilled in Christ. We listen to Jesus through the words he spoke and that have been preserved for us in the Gospels. We listen through the apostolic interpretation of his ministry in the epistles and Acts -- which Jesus himself authorised (‘whoever listens to you listens to me’, Luke 10:16). We listen through the Spirit who leads us into all truth (John 16:13). And we listen through the community of believers who together hold the word and apply it to one another’s lives. The danger v19 names is serious: not listening to the words God’s prophet speaks carries personal accountability before God himself. The temptation in practice is rarely outright rejection. It tends to look more like selective listening -- engaging with the parts of Jesus’ teaching that affirm what we already do and instinctively filtering out the parts that would require something costly. Where is the word of Jesus most actively resisted in your own life right now?",
+          "questionHint"     :"The warning in v19 is striking: God will ’personally call to account’ anyone who does not listen to his prophet. What does the weight of that warning tell you about the seriousness of listening -- or failing to listen -- to Christ today?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Acts 3:17-26 and Hebrews 3:1-6. How do the writers of Acts and Hebrews apply the promise of the prophet like Moses to Jesus? What specifically do they say Jesus does that Moses could not?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":13,
+      "chapterTitle" :"Deuteronomy 19:1-22:8: Trust the Lord, Protect the Vulnerable, Punish the Guilty",
+      "elements"     :[
+        {
+          "elementId"    :"ch13-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This large section of the legal code deals with the sanctity of human life in all its complexity: cities of refuge for accidental killing, false witnesses, warfare, the protection of captive women, the rebellious son, and even the care of a bird’s nest. Taken together, these laws paint a picture of a God who values human life with extraordinary precision -- and who calls his people to reflect that same careful, non-casual attention to one another.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch13-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, look past the historical and cultural distance of specific laws to the consistent value underneath them all: every human being is made in God’s image and deserves to be treated with the same care that implies.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch13-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 19:1-22:8",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>19:1</sup>When the Lord your God eliminates the nations whose land he is giving you and you dispossess them and live in their cities and houses, <sup>2</sup>you must set apart three cities for yourselves in the middle of your land that the Lord your God is giving you to possess. <sup>3</sup>Prepare a road for yourself and divide the land your God is giving you into three parts so that anyone who kills another person can flee there. <sup>4</sup>Now this is the law pertaining to the one who flees there to live: someone who strikes another person without premeditation and without prior hatred. <sup>5</sup>For example, suppose someone goes with his fellow citizen to the forest to cut wood and bends over to chop down the tree, and the ax head flies loose from the handle and hits his fellow citizen and he dies. That person may flee to one of these cities and live. <sup>6</sup>Otherwise the blood avenger may chase after the killer in the heat of his anger, catch him because the distance is too great, and strike him dead -- though he does not deserve to die since he did not hate the other person before. <sup>11</sup>If, however, a person hates his fellow citizen, lies in wait for him, attacks him, and kills him, and then flees to one of these cities, <sup>12</sup>the elders of his own city must send for him and take him from there to hand him over to the blood avenger and he will die. <sup>15</sup>A single witness may not testify against another person for any trespass or sin that he commits. A matter may be established only by the testimony of two or three witnesses. <sup>16</sup>If a false witness testifies against another person and accuses him of a crime, <sup>17</sup>both parties to the controversy must stand before the Lord, before the priests and judges who will be in office in those days. <sup>18</sup>The judges must thoroughly investigate the matter, and if the witness is a false witness who has falsely accused his fellow Israelite, <sup>19</sup>you must do to him what he had intended to do to his fellow citizen. In this way you will purge the evil from your midst. <sup>21</sup>You must not show pity: life for life, eye for eye, tooth for tooth, hand for hand, foot for foot.</p><p><sup>20:1</sup>When you go to war against your enemies and see horses and chariots and people more numerous than you, do not be afraid of them, for the Lord your God, who brought you out of the land of Egypt, is with you. <sup>2</sup>When you approach the battle, the priest must come forward and address the army. <sup>3</sup>He will say to them, ‘Listen, Israel! Today you are moving into battle against your enemies. Do not be fainthearted. Do not fear and tremble or be terrified of them, <sup>4</sup>for the Lord your God goes with you to fight on your behalf against your enemies to give you victory.’</p><p><sup>21:1</sup>If a homicide victim is found lying in a field in the land the Lord your God is giving you, and no one knows who killed him, <sup>2</sup>your elders and judges must go out and measure the distance from the corpse to the nearby cities. <sup>3</sup>Then the elders of the city nearest to the corpse must take from the herd a heifer that has not been worked -- that has never pulled with the yoke. <sup>10</sup>When you go out to battle against your enemies and the Lord your God delivers them into your hands and you take captives, <sup>11</sup>if you see among the captives a beautiful woman and you desire her and want to marry her, <sup>12</sup>you may take her home to your house. She must shave her head, trim her nails, <sup>13</sup>and put aside the clothes she was wearing when captured. She must stay in your house and mourn for her father and mother for a full month; after that you may have sexual relations with her and be her husband and she will be your wife. <sup>14</sup>If you are not pleased with her, then you must let her go where she pleases. You certainly must not sell her for money; you must not take advantage of her, because you have dishonored her.</p><p><sup>22:1</sup>When you see your fellow Israelite’s ox or sheep going astray, do not ignore it -- you must return it without fail to your fellow Israelite. <sup>6</sup>If along the road you happen to come across a bird’s nest in a tree or on the ground, and the mother is sitting on the chicks or the eggs, you must not take the mother along with the young. <sup>7</sup>You must let the mother go, but you may take the young for yourself, so that things will go well with you and you will have a long life. <sup>8</sup>If you build a new house, you must construct a guardrail around your roof so that you do not bring guilt on your house if anyone should fall from it.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch13-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"This passage covers a very wide range of laws -- from cities of refuge to bird’s nests. Before diving in, what underlying value or concern do you think might connect all of them?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch13-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"19:1-21: Protect the Innocent and Punish the Guilty",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch13-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 19:1-21",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>When the Lord your God eliminates the nations whose land he is giving you and you dispossess them and live in their cities and houses, <sup>2</sup>you must set apart three cities for yourselves in the middle of your land. <sup>4</sup>Now this is the law pertaining to the one who flees there to live: someone who strikes another person without premeditation and without prior hatred. <sup>6</sup>Otherwise the blood avenger may chase after the killer in the heat of his anger, catch him because the distance is too great, and strike him dead -- though he does not deserve to die since he did not hate the other person before. <sup>11</sup>If, however, a person hates his fellow citizen, lies in wait for him, attacks him, and kills him, and then flees to one of these cities, <sup>12</sup>the elders of his own city must send for him and take him from there to hand him over to the blood avenger and he will die. <sup>15</sup>A single witness may not testify against another person for any trespass or sin that he commits. A matter may be established only by the testimony of two or three witnesses. <sup>16</sup>If a false witness testifies against another person and accuses him of a crime, <sup>18</sup>the judges must thoroughly investigate the matter, and if the witness is a false witness who has falsely accused his fellow Israelite, <sup>19</sup>you must do to him what he had intended to do to his fellow citizen. In this way you will purge the evil from your midst.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+19&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch13-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The cities of refuge protect the accidentally guilty while ensuring that deliberate murderers cannot hide behind them. The law on false witnesses requires the false witness to bear the penalty they tried to impose on the innocent. What character of God do both of these laws reflect simultaneously?",
+          "linkedPassage"    :"Deuteronomy 19:1-21",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Both laws reflect a God who cares about the precision of justice -- not just its general direction. The cities of refuge show a God who distinguishes between the person who kills by accident and the person who kills by intent, and who refuses to treat them the same. The blood avenger in the heat of anger is a real danger, and the innocent person who accidentally caused a death needs genuine protection. But the same system also refuses to allow deliberate murderers to claim the protection designed for the innocent. And the law on false witnesses shows the same precision from the other direction: judicial murder -- destroying an innocent person through lying -- is treated with the same gravity as physical murder. The false witness bears exactly the penalty they tried to impose. Both laws reflect a God who protects the innocent and punishes the guilty -- not approximately, not generally, but with careful attention to motive, circumstance, and consequence.",
+          "questionHint"     :"The lex talionis -- ’eye for eye, tooth for tooth’ -- sounds harsh to modern ears, but in its original context it was a principle of limitation and proportionality. What does that principle prevent? How is it actually a form of protection for the guilty as much as the innocent?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch13-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"20:1-21:14: Trust the Lord and Protect the Vulnerable",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch13-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 20:1-4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>When you go to war against your enemies and see horses and chariots and people more numerous than you, do not be afraid of them, for the Lord your God, who brought you out of the land of Egypt, is with you. <sup>2</sup>When you approach the battle, the priest must come forward and address the army. <sup>3</sup>He will say to them, ‘Listen, Israel! Today you are moving into battle against your enemies. Do not be fainthearted. Do not fear and tremble or be terrified of them, <sup>4</sup>for the Lord your God goes with you to fight on your behalf against your enemies to give you victory.’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+20&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch13-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The war regulations begin not with tactics but with a theological declaration: ‘the Lord your God goes with you to fight on your behalf.’ A priest addresses the army before battle, not a general. What does the structure of the war preparations reveal about where Israel’s confidence is meant to rest?",
+          "linkedPassage"    :"Deuteronomy 20:1-4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The structure of vv2-4 is itself theologically loaded: a priest speaks, not a general. The address is liturgical before it is tactical. The people are told to remember what God has done -- bringing them out of Egypt -- as the grounds for facing what is ahead. And the exemptions from service in vv5-8 (new house, new vineyard, new wife, afraid) are not military weakness but theological statement: God does not need a large, perfectly committed army. He can work with fewer soldiers, even frightened ones. The exemptions remove from the army those whose distractions might discourage others -- but they also make the point that Israel’s victories will not be explainable by their military prowess. If God grants them victory with the timid and the newly married included in the exemptions, the victory is clearly his. The battle belongs to the Lord -- and the structure of war preparation is designed to make that clear before a single weapon is raised.",
+          "questionHint"     :"The priest addresses the army before battle and grounds their courage in memory of Egypt. Why would looking backward -- at what God has already done -- be the right preparation for going forward into something frightening? What is the logic of faith-based courage?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch13-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"22:1-8: Value Life in All Its Dimensions",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch13-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 22:1-8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>When you see your fellow Israelite’s ox or sheep going astray, do not ignore it -- you must return it without fail to your fellow Israelite. <sup>2</sup>If your fellow Israelite does not live near you or you do not know who he is, you must take the animal to your own home and keep it until he claims it; then you must return it to him. <sup>4</sup>If you see your fellow Israelite’s donkey or ox fallen along the road, do not ignore it -- you must help him get the animal to its feet. <sup>6</sup>If along the road you happen to come across a bird’s nest in a tree or on the ground, and the mother is sitting on the chicks or the eggs, you must not take the mother along with the young. <sup>7</sup>You must let the mother go, but you may take the young for yourself, so that things will go well with you and you will have a long life. <sup>8</sup>If you build a new house, you must construct a guardrail around your roof so that you do not bring guilt on your house if anyone should fall from it.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+22&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch13-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The laws in 22:1-8 move from stray livestock to fallen donkeys to a bird’s nest to a rooftop guardrail. What single value runs through all of them -- and what does the inclusion of the bird’s nest suggest about the scope of God’s concern for his creation?",
+          "linkedPassage"    :"Deuteronomy 22:1-8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The single thread is care -- active, attentive care that refuses to look the other way. You must not ignore your neighbour’s stray ox; you must not ignore his fallen donkey; you must not ignore the danger your rooftop poses to a visitor. Each law prevents passive indifference -- the comfortable decision to treat someone else’s problem as not yours. The bird’s nest law is striking precisely because of its specificity and its apparent smallness. The mother bird may be taken but not while she is sitting on her eggs or chicks. This is not a pragmatic conservation measure; it is an expression of a God who has concern for creatures, for the continuation of life, for the small and apparently inconsequential. Paul quotes the related principle in 1 Corinthians 9:9 (‘do not muzzle an ox while it treads grain’) as a basis for supporting gospel workers -- showing that the principle behind even the animal laws extends outward. God’s concern reaches to the bird’s nest; his people must not be less attentive than he is.",
+          "questionHint"     :"The command about the bird’s nest comes with the same promise as the command to honour parents: ‘so that things will go well with you and you will have a long life.’ Why would a small, apparently trivial act of care for a bird be connected to that kind of blessing? What does it suggest about what God values?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch13-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch13-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 22:8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>8</sup>If you build a new house, you must construct a guardrail around your roof so that you do not bring guilt on your house if anyone should fall from it.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+22&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch13-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The guardrail law makes property owners responsible for the safety of those who visit their space. The bird’s nest law extends care even to animals. What does it look like, in your specific context, to take that level of attentive responsibility for those around you -- especially those who are most vulnerable?",
+          "linkedPassage"    :"Deuteronomy 22:8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The guardrail law is a small, practical, and easily overlooked command -- build a safety barrier around your flat roof so visitors do not fall. In the ancient world, roofs were living spaces. The law says: your property creates responsibilities, not just rights. You are accountable for what happens to people in the space you own or control. The contemporary translation of this is wide-ranging. It might mean the way employers structure working conditions to protect those who work for them. It might mean the way a church arranges its programmes and culture to protect children and vulnerable adults rather than assuming goodwill is sufficient safeguard. It might mean the way individuals consider the effect of their choices -- online, in conversation, in their use of influence -- on those who might be harmed by carelessness. The recurring theme of this section is that God’s people cannot be passive about the welfare of others. Looking the other way -- ignoring the stray ox, the fallen donkey, the unsafe roof, the vulnerable visitor -- is not neutrality. Moses calls it guilt.",
+          "questionHint"     :"Moses says that failing to build the guardrail brings ’guilt on your house.’ Guilt is not just the result of actively doing wrong -- it can result from failing to prevent harm you could have prevented. Where in your life might that kind of passive guilt be present?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch13-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 21:22-23",
+          "translation"  :"NET",
+          "passageText"  :"<sup>22</sup>If a person commits a sin punishable by death and is executed, and you hang him on a tree, <sup>23</sup>his body must not remain on the tree overnight; you must bury him that same day, for the one who is hung on a tree is cursed by God. You must not defile your land that the Lord your God is giving you as an inheritance.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+21&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch13-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Paul quotes Deuteronomy 21:23 in Galatians 3:13: ‘Christ redeemed us from the curse of the law by becoming a curse for us -- for it is written, cursed is everyone who is hung on a tree.’ What does this passage tell us about what Jesus was doing on the cross, and how does that change everything for us?",
+          "linkedPassage"    :"Deuteronomy 21:22-23",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"Deuteronomy 21:23 pronounces a curse on anyone hung on a tree -- exposure of a body after execution was a sign of divine rejection, the publicly visible mark of one who has been cut off from God’s blessing and protection. Paul looks at the cross and sees Jesus taking exactly that position: hung on a tree, bearing the curse, publicly exposed as one cut off. But Paul’s argument in Galatians 3:13 is that Jesus was not cursed for his own sin -- he had none. He was cursed for ours. The curse that our covenant-breaking deserved, that every failure to keep God’s law had accumulated, landed on him. He stepped into the place of divine rejection so that we would never have to occupy it. This is one of the most precise and devastating uses of Old Testament law in the New Testament: a regulation designed to mark out the condemned becomes the theological grammar for understanding the cross. The one who ’hung on a tree’ did so in order that the curse hanging over those who broke the covenant might be permanently removed from them and placed on him.",
+          "questionHint"     :"Paul’s quotation of this verse in Galatians 3 is a stunning reversal: the condemned man on the tree becomes the one who redeems those who deserved condemnation. What does it mean for your daily life that the curse you deserved has been borne by someone else?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Galatians 3:10-14 in full. Paul quotes both Deuteronomy 27:26 (the covenant curse for those who do not keep the whole law) and 21:23 (the curse of hanging on a tree). How does Paul use both quotations together to explain what Jesus accomplished at the cross? What does each quotation contribute to the argument?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":14,
+      "chapterTitle" :"Deuteronomy 22:9-23:14: Maintain the Boundaries That Keep God’s People Holy",
+      "elements"     :[
+        {
+          "elementId"    :"ch14-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This section of the legal code extends the concern for holiness into the most intimate and specific areas of life: sexual relationships, communal boundaries, and the holiness of the camp. Some of these laws will feel remote and strange. Others will feel uncomfortably contemporary. In all of them, Moses is pressing the same question: does your daily life reflect the character of the holy God to whom you belong?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch14-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, notice how consistently the laws move to protect those who are most vulnerable. And pay attention to the theological reason given for the regulations in 23:14 -- it changes everything.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch14-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 22:9-23:14",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>22:9</sup>You must not plant two types of seed in your vineyard; otherwise the entire yield, the seed you plant and the produce of the vineyard, will be defiled. <sup>10</sup>You must not plow with an ox and a donkey harnessed together. <sup>11</sup>You must not wear clothing made with wool and linen meshed together. <sup>12</sup>You must make tassels on the four corners of your cloak that you wear.</p><p><sup>13</sup>If a man marries a woman, has sexual relations with her, and then rejects her, <sup>14</sup>and accuses her of improper behavior and gives her a bad reputation by saying, ‘I married this woman but when I had sexual relations with her I discovered she was not a virgin,‘ <sup>15</sup>the young woman’s father and mother must produce the evidence of the young woman’s virginity before the city’s elders at the gate. <sup>17</sup>He has accused her of improper behavior by saying, ‘I discovered your daughter was not a virgin,‘ but this is the evidence of my daughter’s virginity.’ The cloth must be spread out before the city’s elders. <sup>18</sup>The city’s elders must then seize the man and punish him. <sup>19</sup>They must fine him one hundred shekels of silver and give them to the young woman’s father, because the man falsely accused a virgin of Israel. She will then become his wife and he may not divorce her as long as he lives. <sup>20</sup>But if the accusation is true and evidence of the young woman’s virginity is not found, <sup>21</sup>the men of her city must bring the young woman to the door of her father’s house and stone her to death, for she committed a disgraceful act in Israel by being promiscuous while living in her father’s house. In this way you will purge the evil from your midst.</p><p><sup>22</sup>If a man is caught having sexual relations with a married woman both the man who had relations with her and the woman must die; in this way you will purge the evil from Israel.</p><p><sup>25</sup>But if the man came across the engaged woman in the countryside and overpowered and raped her, then only the man who had sex with her must die. <sup>26</sup>You must not do anything to the young woman -- she has done nothing deserving of death. This case is the same as when a man attacks another man and murders him, <sup>27</sup>for he found her in the countryside and the engaged woman cried out, but there was no one to rescue her.</p><p><sup>23:1</sup>No man whose testicles have been crushed or whose penis has been cut off may enter the assembly of the Lord. <sup>3</sup>No Ammonite or Moabite may enter the assembly of the Lord; to the tenth generation none of their descendants shall ever do so, <sup>4</sup>for they did not meet you with food and water on the journey from Egypt and because they hired Balaam son of Beor from Pethor in Aram Naharaim to curse you. <sup>7</sup>You must not despise an Edomite, for he is your brother. You must not despise an Egyptian, for you lived as a stranger in his land. <sup>8</sup>Children born to them in the third generation may enter the assembly of the Lord.</p><p><sup>9</sup>When you go out as an army against your enemies, guard yourselves against anything impure. <sup>10</sup>If any man among you is ceremonially impure because of a nocturnal emission, he must go outside the camp; he must not come inside the camp. <sup>12</sup>You must have a place outside the camp to serve as a latrine. <sup>13</sup>You must have a spade among your other equipment and when you relieve yourself outside you must dig a hole with it and then turn and cover your excrement. <sup>14</sup>For the Lord your God walks about in the middle of your camp to deliver you and defeat your enemies for you. Therefore your camp must be holy, so that he does not see anything indecent among you and turn away from you.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch14-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"Some of these laws will feel very strange and others surprisingly familiar. Before working through the details, what is your initial reaction to the range of topics covered here -- from mixed seeds and fabrics to sexual ethics to camp hygiene?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch14-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"22:9-12: Maintain the Natural Order",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch14-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 22:9-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>9</sup>You must not plant two types of seed in your vineyard; otherwise the entire yield, the seed you plant and the produce of the vineyard, will be defiled. <sup>10</sup>You must not plow with an ox and a donkey harnessed together. <sup>11</sup>You must not wear clothing made with wool and linen meshed together. <sup>12</sup>You must make tassels on the four corners of your cloak that you wear.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+22&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch14-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The prohibitions against mixing different kinds -- seeds, animals, fabrics -- open a section that moves immediately into sexual ethics. What principle might connect these apparently unrelated laws, and what are they preparing the reader to think about?",
+          "linkedPassage"    :"Deuteronomy 22:9-12",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The mixing prohibitions reflect the same principle that runs through the creation narrative: God has established distinct categories and kinds, and confusing or mixing them is a failure to honour the order the Creator has built into the world. Mixing seeds defiles the whole yield; mixing animals in the yoke is inefficient and unfair to both; mixing fabrics confuses categories of material. Whether or not these specific prohibitions function as direct ethical norms for us today, they establish a framework for what follows: just as different kinds must not be confused in creation, so the distinctions God has established in human sexuality must not be confused or violated. The laws are not arbitrary; they reflect a God who cares about order, distinction, and the integrity of what he has made. They prepare the reader to approach the sexual ethics of vv13-29 not as a series of isolated rules but as an expression of the same principle: respecting the distinctions and relationships God has established rather than transgressing them.",
+          "questionHint"     :"The mixing laws feel strange to us today. But what is the underlying logic -- what does mixing different kinds violate? And can you see how that same logic applies to what follows in the sexual ethics of vv13-29?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch14-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"22:13-30: Keep Relationships Pure",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch14-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 22:13-27",
+          "translation"  :"NET",
+          "passageText"  :"<sup>13</sup>If a man marries a woman, has sexual relations with her, and then rejects her, <sup>14</sup>and accuses her of improper behavior by saying, ‘I married this woman but when I had sexual relations with her I discovered she was not a virgin,‘ <sup>18</sup>The city’s elders must then seize the man and punish him. <sup>19</sup>They must fine him one hundred shekels of silver and give them to the young woman’s father, because the man falsely accused a virgin of Israel. She will then become his wife and he may not divorce her as long as he lives. <sup>22</sup>If a man is caught having sexual relations with a married woman both the man who had relations with her and the woman must die; in this way you will purge the evil from Israel. <sup>25</sup>But if the man came across the engaged woman in the countryside and overpowered and raped her, then only the man who had sex with her must die. <sup>26</sup>You must not do anything to the young woman -- she has done nothing deserving of death. This case is the same as when a man attacks another man and murders him, <sup>27</sup>for he found her in the countryside and the engaged woman cried out, but there was no one to rescue her.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+22&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch14-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The sexual laws in this section deal with false accusation, adultery, and rape. In each case, who bears the primary legal responsibility and who is being protected? What consistent direction do the laws move in?",
+          "linkedPassage"    :"Deuteronomy 22:13-27",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The consistent direction of these laws is toward the protection of the more vulnerable party. The man who falsely accuses his wife of not being a virgin -- attempting to use the legal system to destroy her reputation and escape the marriage -- is publicly punished and permanently bound to the marriage (economic security for her in a culture where a divorced woman had very limited options). The rape victim in the countryside is explicitly and directly exonerated: ‘you must not do anything to the young woman -- she has done nothing deserving of death.’ The comparison to a man attacking another man and murdering him places rape in the category of violent crime against an innocent victim, not sexual sin on the victim’s part. This is not an obvious or inevitable reading in any ancient culture. Moses is consistently pushing against the instinct to blame the vulnerable party and toward placing the weight of responsibility on the person with more power. That direction is worth noticing and naming.",
+          "questionHint"     :"The rape victim in the countryside is explicitly declared innocent -- ’she has done nothing deserving of death.’ The comparison to murder is striking. What does classifying rape alongside murder rather than alongside sexual immorality reveal about how God views violence against the vulnerable?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"These sexual laws deal with cases that still arise in every culture: false accusation, adultery, sexual violence. The specific legal penalties do not transfer directly to our context -- but the underlying values do. What are those values, and how do you see them (or fail to see them) reflected in how your own culture and community handle these situations?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch14-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"23:1-14: Keep the People of God Pure",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch14-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 23:1-14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>3</sup>No Ammonite or Moabite may enter the assembly of the Lord; to the tenth generation none of their descendants shall ever do so, <sup>4</sup>for they did not meet you with food and water on the journey from Egypt and because they hired Balaam son of Beor from Pethor in Aram Naharaim to curse you. <sup>7</sup>You must not despise an Edomite, for he is your brother. You must not despise an Egyptian, for you lived as a stranger in his land. <sup>8</sup>Children born to them in the third generation may enter the assembly of the Lord. <sup>14</sup>For the Lord your God walks about in the middle of your camp to deliver you and defeat your enemies for you. Therefore your camp must be holy, so that he does not see anything indecent among you and turn away from you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+23&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch14-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Verse 14 gives the theological ground for all the purity regulations of the camp: ‘the Lord your God walks about in the middle of your camp.’ How does this reason change how you read the practical regulations around it?",
+          "linkedPassage"    :"Deuteronomy 23:1-14",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Verse 14 is the interpretive key to the whole section. The regulations about bodily waste and ritual impurity in the camp are not hygiene instructions or cultural customs -- they are theological statements. The God who ’walks about in the middle of your camp’ is holy, and the space he inhabits must reflect his holiness. Even the most mundane, physical, seemingly undignified aspects of daily life -- where the latrine is, what you do with bodily waste -- fall under the category of honouring his presence. This is a profound claim: there is no part of ordinary life that is too small or too physical to be brought under the reality that God is present. The New Testament equivalent is equally striking: Paul writes in 1 Corinthians 6:19-20 that the Christian’s body is a temple of the Holy Spirit who is in you -- the same logic applied personally. Where God is present, holiness is appropriate in every dimension, not just the explicitly religious ones.",
+          "questionHint"     :"The reason for even the sanitation laws is ’the Lord your God walks about in the middle of your camp.’ What does it say about God that his presence extends to the most physical and ordinary aspects of daily life -- not just to formal worship?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch14-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch14-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 23:14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>For the Lord your God walks about in the middle of your camp to deliver you and defeat your enemies for you. Therefore your camp must be holy, so that he does not see anything indecent among you and turn away from you.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+23&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch14-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Paul writes in 1 Corinthians 6:19-20 that your body is a temple of the Holy Spirit. The same logic as Deuteronomy 23:14 -- God’s presence requires holiness -- now applies to the individual believer. What difference does the awareness of God’s presence in the ordinary moments of your life make in practice?",
+          "linkedPassage"    :"Deuteronomy 23:14",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The awareness that God is present -- not occasionally, in formal worship, but consistently, ‘walking about in the middle of your camp’ -- is one of the most practically transforming truths in Scripture. Brother Lawrence famously practised the presence of God in washing dishes and doing kitchen work, and found that the awareness of God there was as real as in formal prayer. The same awareness would change: the conversations we have when we think no one important is listening; the things we look at, read, or listen to when we are alone; the internal monologue we maintain about ourselves and others; the way we treat people who have no power to reward or punish us. The question Moses would press is not ’are you behaving well in church?’ but ’is your camp holy?’ -- meaning the whole of your ordinary, daily, physical existence. Where does the awareness of God’s presence feel most absent from your day? And what would it change if it were more consistently present?",
+          "questionHint"     :"The awareness that God ’walks about in the middle of your camp’ is meant to change behaviour in the most mundane situations. What are the places in your daily life where you are least aware of God’s presence -- and what would change if that awareness were more consistent?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch14-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 23:7-8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>7</sup>You must not despise an Edomite, for he is your brother. You must not despise an Egyptian, for you lived as a stranger in his land. <sup>8</sup>Children born to them in the third generation may enter the assembly of the Lord.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+23&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch14-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The exclusions from the assembly in 23:1-8 are not the final word of Scripture. The story of Ruth the Moabite, the prophecy of Isaiah 56:3-8, and the declaration of Galatians 3:28 all point toward an ever-widening circle of inclusion through Christ. Who might be on the edges of the community of faith in your context -- people who feel excluded by culture, history, or shame -- and what would it look like to actively welcome them in?",
+          "linkedPassage"    :"Deuteronomy 23:7-8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The trajectory of Scripture from Deuteronomy 23 is one of widening inclusion through Christ. Ruth the Moabite -- from the permanently excluded category of v3 -- is welcomed into Israel, marries Boaz, and becomes the ancestor of David and ultimately of Jesus. Isaiah 56 explicitly promises that foreigners and eunuchs who belong to the Lord will be given a place in his house better than sons and daughters. And in Christ, Paul declares, there is neither Jew nor Gentile, slave nor free, male nor female. The barriers that marked the boundaries of the old assembly have been broken down by the cross. The question this trajectory raises for every community of believers is: who is functionally excluded -- not by formal policy but by culture, cost, social distance, or the unspoken expectations of the group? Who looks at our community and concludes, without being told, that people like them do not belong here? And what would it cost us to actively close that gap rather than leaving it to initiative from those who already feel marginal?",
+          "questionHint"     :"The exclusions in 23:1-8 are historically and covenantally specific. But the trajectory of Scripture moves toward inclusion through Christ. Where does your own community have a gap between the formal welcome it offers and the actual experience of those who are most different from the majority?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Isaiah 56:3-8 and Galatians 3:26-29. How do these passages develop the trajectory begun in Deuteronomy 23:7-8 -- where some outsiders can eventually join the assembly? What does the New Testament say has happened to the barriers of the old assembly in Christ?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        }
+      ]
     }
   ],
   "studyOnboardingSlides":[

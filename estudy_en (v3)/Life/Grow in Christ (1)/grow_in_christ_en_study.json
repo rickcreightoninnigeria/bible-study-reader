@@ -33,6 +33,7 @@
     "border"          :"#b0cc9a",
     "shadow"          :"rgba(15,31,15,0.12)",
     "card-bg"         :"#ffffff",
+    "validate"        :"#2a5f7c",
     "dm-base"         :"#080e08",
     "dm-surface"      :"#0f1f0f",
     "dm-raised"       :"#1a2e1a",
