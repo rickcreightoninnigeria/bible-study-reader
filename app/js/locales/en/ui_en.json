@@ -689,17 +689,18 @@
   "renderpages_shareapp_download_title": "Get the app",
   "renderpages_shareapp_download_body":  "The app is free to download on Google Play.",
   "renderpages_shareapp_download_btn":   "Open in Google Play",
-
-  "voice_transcript_saved_navigate_back": "Answer recorded — navigate back to see it",
+  "renderpages_shareapp_share_message": "I've been using this Bible study app and I think you'd love it! 📖\n\nIt's a free Android app for working through Bible study courses — reading passages, answering questions, and tracking your progress as you go.\n\nYou can download it here:\n{url}",
 
   "renderpages_settings_printblank_label": "Print Blank Study",
   "renderpages_settings_printblank_desc": "Generate a PDF of the entire study with blank answer boxes — ready to print on paper. All questions are included. Your saved answers are not.",
   "renderpages_settings_printblank_btn": "Print Blank Study",
+
   "shareprint_blank_doc_title_suffix": "Blank Study",
+  "shareprint_print_likert_heading": "‘Agree/Disagree’-Style Questions",
 
   "studyloader_version_updating": "Updating {title} to v{version}…",
   "studyloader_version_downgrade_blocked": "This is an older version — keeping the current one",
 
-  "renderpages_shareapp_share_message": "I've been using this Bible study app and I think you'd love it! 📖\n\nIt's a free Android app for working through Bible study courses — reading passages, answering questions, and tracking your progress as you go.\n\nYou can download it here:\n{url}"
+  "voice_transcript_saved_navigate_back": "Answer recorded — navigate back to see it"
   
 }

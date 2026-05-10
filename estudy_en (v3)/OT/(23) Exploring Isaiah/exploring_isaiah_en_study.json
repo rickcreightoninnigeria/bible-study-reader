@@ -42,7 +42,1464 @@
     "dm-text-mid"     :"#b8bbd4",
     "dm-text-faint"   :"#6a6d8a"
   },
-  "chapters"             :[],
+  "chapters":[
+    {
+      "chapterNumber":1,
+      "chapterTitle" :"Isaiah 1 — The Lord Exposes His People’s Sin",
+      "elements"     :[
+        {
+          "elementId"    :"ch01-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<b>Big idea:</b> The Lord exposes his people’s sin and promises both judgment and restoration.<br><br>Chapter 1 is the overture to the whole book — a formal indictment of God’s people that introduces themes which will echo through all 66 chapters. The Lord calls heaven and earth as witnesses. His people have everything they need yet have turned away from the one who loves them. But the chapter does not end in condemnation: it ends with a remarkable offer.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Read the passage",
+          "term"         :"Isaiah 1",
+          "question"     :"Read Isaiah 1 before working through the questions below.",
+          "buttonText"   :"Open in Bible Gateway ↗",
+          "answer"       :"<p style=’text-align:right;font-size:0.85em;’><a href=’https://www.biblegateway.com/passage/?search=Isaiah+1&version=NIV’>Read Isaiah 1 (NIV) ↗</a></p>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Isaiah and his time (v1)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch01-el04",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What does the opening verse tell us about Isaiah, his time, and his main prophetic ministry?",
+          "linkedPassage"    :"Isaiah 1:1",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el05",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Divide into groups and spend a few minutes skimming through 2 Kings 15–20 and 2 Chronicles 26–32. What were some of the main events and issues of Isaiah’s time?",
+          "linkedPassage"    :"2 Kings 15–20; 2 Chronicles 26–32",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch01-el06",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"God’s people are rebels (vv2–4)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch01-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is so unnatural about Israel’s relationship to the Lord? (vv2–3)",
+          "linkedPassage"    :"Isaiah 1:2–3",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How is Israel described in v4? What hints do we get as to their main sin?",
+          "linkedPassage"    :"Isaiah 1:4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch01-el09",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"God’s people are under the covenant curse (vv5–9)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch01-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What imagery is being used in vv5–6? What does it say about Israel’s attitude?",
+          "linkedPassage"    :"Isaiah 1:5–6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"HTML",
+          "question"         :"Think back to Deuteronomy 28. How does that help us understand the state of things in Isaiah 1:7–9? What historical events does it seem to be referring to?",
+          "linkedPassage"    :"Isaiah 1:7–9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el12",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What distinguishes the people of God from Sodom and Gomorrah in v9?",
+          "linkedPassage"    :"Isaiah 1:9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch01-el13",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"God’s people are like Sodom and Gomorrah (vv10–23)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch01-el14",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Why is v10 such a shock coming directly after v9?",
+          "linkedPassage"    :"Isaiah 1:10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el15",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"God’s people are clearly very religious in vv11–15. What religious practices are they engaging in, and what does God say he thinks about them?",
+          "linkedPassage"    :"Isaiah 1:11–15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el16",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Why is their religion meaningless to the Lord? (v15)",
+          "linkedPassage"    :"Isaiah 1:15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el17",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is Israel doing that shows the true state of their hearts before the Lord? (vv16–23) What true religion does the Lord want them to demonstrate?",
+          "linkedPassage"    :"Isaiah 1:16–23",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch01-el18",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A purging is coming: destruction and restoration (vv18–31)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch01-el19",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What does the Lord offer Judah in vv18–20? What choice is before them?",
+          "linkedPassage"    :"Isaiah 1:18–20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el20",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What future does the Lord present Judah with? What warning is given and what hope is offered? How does the imagery help us understand the point?",
+          "linkedPassage"    :"Isaiah 1:24–31",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch01-el21",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Reflection",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch01-el22",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What does this passage teach us about how the people of God can measure the state of their hearts? What was the real sign of Israel’s attitude? What is the real sign of true faith and humility in the people of God today? How does true faith show itself?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch01-el23",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What did the people of God need for real change to occur? How did the Lord promise to do that? How do we see this play out in the life of God’s people and in our lives? How are the promises of this passage fulfilled in the New Testament?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":2,
+      "chapterTitle" :"Isaiah 2–4 — The Lord Will Shake the Earth",
+      "elements"     :[
+        {
+          "elementId"    :"ch02-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<b>Big idea:</b> The Lord will shake the earth with his fearful presence, so trust in his cleansing work through his Branch and walk in his ways as we await a glorious future in his presence.<br><br>These chapters work as a triptych: a breathtaking vision of the future (2:1–5), a terrifying picture of coming judgment (2:6–4:1), and then the hope of the Branch (4:2–6). The vision of glory at the start and end frames the dark middle — judgment is not the final word.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch02-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Read the passage",
+          "term"         :"Isaiah 2–4",
+          "question"     :"Read Isaiah 2–4 before working through the questions below.",
+          "buttonText"   :"Open in Bible Gateway ↗",
+          "answer"       :"<p style=’text-align:right;font-size:0.85em;’><a href=’https://www.biblegateway.com/passage/?search=Isaiah+2&version=NIV’>Read Isaiah 2–4 (NIV) ↗</a></p>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch02-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The nations stream to the mountain of the Lord (2:1–5)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch02-el04",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What was the hint of future hope we saw in chapter 1? How does the prophecy at the beginning of chapter 2 elaborate on that?",
+          "linkedPassage"    :"Isaiah 1:26–27; 2:1–5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el05",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will this glorious future be like? What are the main features?",
+          "linkedPassage"    :"Isaiah 2:1–5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch02-el06",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The fearful presence of the Lord in judgment (2:6–22)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch02-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How is the current reality different from the future? (v6a)",
+          "linkedPassage"    :"Isaiah 2:6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Why has the Lord abandoned his people? (vv6b–8)",
+          "linkedPassage"    :"Isaiah 2:6–8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el09",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is the Lord going to do about their sin? What will his judgment be like? Look out for repetition to see what is emphasised.",
+          "linkedPassage"    :"Isaiah 2:9–21",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will happen to all the idols ‘in that day’? (vv18–20) Why is v22 the obvious response to this warning?",
+          "linkedPassage"    :"Isaiah 2:18–22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch02-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Lord takes his sinful people to court (3:1–4:1)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch02-el12",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Central to this section is a court scene. Who is in the dock and what is the charge? (3:13–15)",
+          "linkedPassage"    :"Isaiah 3:13–15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What evidence for the prosecution is presented? (3:5–12; 16)",
+          "linkedPassage"    :"Isaiah 3:5–12, 16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el14",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will the Lord do to bring them to their senses? (3:1–4; 17–4:1)",
+          "linkedPassage"    :"Isaiah 3:1–4; 3:17–4:1",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch02-el15",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Branch of the Lord restores God’s City (4:2–6)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch02-el16",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What hope is offered to the condemned people of God? How will this come about? (4:2–4)",
+          "linkedPassage"    :"Isaiah 4:2–6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el17",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is the significance of the ‘Branch of the Lord’ in 4:2? How does it relate to what has just gone before in chapter 3?",
+          "linkedPassage"    :"Isaiah 4:2",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el18",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The Lord has stripped away the security of his people in chapter 3. Where will the survivors find their security? (4:5–6)",
+          "linkedPassage"    :"Isaiah 4:5–6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch02-el19",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Reflection",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch02-el20",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"For those who first heard Isaiah’s message, what would this have meant and what response was being asked of them? What difference does it make reading this passage on this side of the Cross?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch02-el21",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"When are we tempted to ‘trust in mere humans’? What difference does it make to know that one day the earth will be shaken by ‘the fearful presence of the Lord’? What will it mean for us to walk in the light of the Lord?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":3,
+      "chapterTitle" :"Isaiah 5–6 — The Lord’s Holiness Demonstrated in Judgment",
+      "elements"     :[
+        {
+          "elementId"    :"ch03-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<b>Big idea:</b> The Lord’s holiness will be demonstrated as he judges those who spurn his grace, but he offers forgiveness and will save a remnant.<br><br>Chapter 5 closes the introductory section of Isaiah and chapter 6 opens the next major section — the theme of the King. The two chapters work together powerfully: chapter 5 ends in utter darkness with the Assyrian armies whistled into action; chapter 6 blazes in with the glory of the true King on his throne.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch03-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Read the passage",
+          "term"         :"Isaiah 5–6",
+          "question"     :"Read Isaiah 5–6 before working through the questions below.",
+          "buttonText"   :"Open in Bible Gateway ↗",
+          "answer"       :"<p style=’text-align:right;font-size:0.85em;’><a href=’https://www.biblegateway.com/passage/?search=Isaiah+5&version=NIV’>Read Isaiah 5–6 (NIV) ↗</a></p>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch03-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A love song gone wrong (5:1–7)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch03-el04",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Chapter 5 starts in the form of a love song. Who are the lovers?",
+          "linkedPassage"    :"Isaiah 5:1–7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch03-el05",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What has the Lord done for his vineyard, and what fruit did it produce?",
+          "linkedPassage"    :"Isaiah 5:1–2",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch03-el06",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is the Lord going to do? (vv3–6) What is the shock of v7?",
+          "linkedPassage"    :"Isaiah 5:3–7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch03-el07",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Woe to the people of God (5:8–25)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch03-el08",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Isaiah presents six woes against the people in 5:8–23, each followed by a ‘therefore’ of judgment. Work through the table below in groups — identifying the offence and the Lord’s response for each woe.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch03-el09",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Session Handout",
+          "term"         :"The Woes of Isaiah 5:8–25",
+          "question"     :"Go through Isaiah 5:8–25 in your group. For each woe, summarise the offence and the Lord’s response. Is there any connection between the nature of the offence and the nature of the judgment?",
+          "answer"       :"<table style=’width:100%;border-collapse:collapse;font-size:0.9em;’><tr style=’background:#f0f0f0;’><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>Woe (verses)</th><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>The Offence</th><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>Therefore (verses)</th><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>The Lord’s Response</th></tr><tr><td style=’padding:6px;border:1px solid #ccc;’>5:8–10</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:9–10, 15–17</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr style=’background:#fafafa;’><td style=’padding:6px;border:1px solid #ccc;’>5:11–12</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:13–14</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr><td style=’padding:6px;border:1px solid #ccc;’>5:18–19</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr style=’background:#fafafa;’><td style=’padding:6px;border:1px solid #ccc;’>5:20</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24–25</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr><td style=’padding:6px;border:1px solid #ccc;’>5:21</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24–25</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr style=’background:#fafafa;’><td style=’padding:6px;border:1px solid #ccc;’>5:22–23</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24–25</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr></table>",
+          "buttonText"   :"Show table ▼",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch03-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How is the Lord going to execute his judgment on his people? What does the word ‘whistles’ (5:26) imply about who is really in control?",
+          "linkedPassage"    :"Isaiah 5:26–30",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch03-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Glory of the King (6:1–13)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch03-el12",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is the impact of having Isaiah’s call here, after the darkness of chapters 1–5?",
+          "linkedPassage"    :"Isaiah 6:1–4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch03-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is emphasised about the Lord’s nature and character in vv1–4?",
+          "linkedPassage"    :"Isaiah 6:1–4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch03-el14",
+          "type"         :"callout",
+          "subtype"      :"misunderstanding",
+          "format"       :"HTML",
+          "eyebrow"      :"Worth pausing on",
+          "term"         :"Holy, holy, holy",
+          "question"     :"The triple ‘holy’ is not just emphasis — it is the Hebrew superlative. What does it mean that God is not just holy, but supremely, absolutely, matchlessly holy? How does that change how you read the rest of chapter 6?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch03-el15",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What impact does the presence of the Lord have on Isaiah? (v5) What does the Lord do in response? (vv6–7) What implication does this have for the people of God as a whole?",
+          "linkedPassage"    :"Isaiah 6:5–7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch03-el16",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What commission does the Lord give Isaiah? (vv8–10) What will be the result of his ministry?",
+          "linkedPassage"    :"Isaiah 6:8–10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch03-el17",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What hope are we left with at the end of chapter 6? (vv11–13)",
+          "linkedPassage"    :"Isaiah 6:11–13",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch03-el18",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Reflection",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch03-el19",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What response did these chapters call from Judah? What does Isaiah 6 demand of us today? How does the holiness of the Lord change how you see your own sin — and the offer of the burning coal?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch03-el20",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What grace has the Lord shown us? What does it mean for us to produce ‘good grapes’? How might we fall prey to the sins of 5:8–26?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":4,
+      "chapterTitle" :"Isaiah 7:1–9:7 — Trust in the Lord Alone, for Immanuel is Coming",
+      "elements"     :[
+        {
+          "elementId"    :"ch04-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<b>Big idea:</b> Trust in the Lord alone, for Immanuel — God’s for ever king — will bring judgment and eternal light, peace, and righteousness.<br><br>This session sits at the heart of chapters 6–12. It begins with a specific historical crisis — two enemy kings marching on Jerusalem — and the very different responses of two men: King Ahaz, who refuses to trust the Lord and turns to Assyria instead; and the prophet Isaiah, who fears the Lord rather than the Assyrians. Into Ahaz’s unbelief, the Lord speaks one of the most remarkable signs in the whole Old Testament.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch04-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Read the passage",
+          "term"         :"Isaiah 7:1–9:7",
+          "question"     :"Read Isaiah 7:1–9:7 before working through the questions below.",
+          "buttonText"   :"Open in Bible Gateway ↗",
+          "answer"       :"<p style=’text-align:right;font-size:0.85em;’><a href=’https://www.biblegateway.com/passage/?search=Isaiah+7&version=NIV’>Read Isaiah 7–9 (NIV) ↗</a></p>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch04-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Who do you trust? (7:1–17)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch04-el04",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What problem is Ahaz and the people of Judah facing (v1)? How are they responding to it? (v2)",
+          "linkedPassage"    :"Isaiah 7:1–2",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el05",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What kind of king was Ahaz? (See 2 Kings 16; 2 Chronicles 28.) How does the Lord show him grace at his point of crisis? (vv2–9)",
+          "linkedPassage"    :"Isaiah 7:2–9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el06",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What response does the Lord ask of Ahaz? What response does Ahaz make? (vv10–12; cf. 2 Kings 16)",
+          "linkedPassage"    :"Isaiah 7:10–12",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The Lord responds to Ahaz’s lack of trust by giving his own sign. What is it and what does it refer to? (vv13–16) How does Matthew 1:22–23 help us understand the full significance of this sign?",
+          "linkedPassage"    :"Isaiah 7:13–16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch04-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"That day will bring judgment (7:17–8:22)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch04-el09",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How will the Lord respond to his people’s sin and lack of faith? (7:17–25)",
+          "linkedPassage"    :"Isaiah 7:17–25",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How do 8:1–4 expand on and partially fulfil the sign promised in 7:14–15?",
+          "linkedPassage"    :"Isaiah 8:1–4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How is Isaiah himself to respond to the military threat? How is he a contrast to Ahaz and Judah? (8:9–18)",
+          "linkedPassage"    :"Isaiah 8:9–18",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el12",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Where are the people tempted to turn for comfort and what will it lead to? (8:19–22)",
+          "linkedPassage"    :"Isaiah 8:19–22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch04-el13",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The child who is God’s chosen King brings light in darkness (9:1–7)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch04-el14",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How is the Lord going to burst into the darkness? What is the significance of the place names in 9:1? (Cf. Matthew 4:12–17.)",
+          "linkedPassage"    :"Isaiah 9:1–7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el15",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is the surprise of 9:6? What do vv6–7 tell us about the child? What will he be like and what will he bring?",
+          "linkedPassage"    :"Isaiah 9:6–7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch04-el16",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Reflection",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch04-el17",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"How did Ahaz and Isaiah respond differently to the Lord and his word? What does this teach us about the nature of faith and the temptation to reject the Lord? What does it look like for us to put our faith in the Lord like Isaiah?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch04-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Spend time reflecting on 9:1–7. What has the coming of Immanuel achieved? What difference does Jesus make? We don’t see all of this in completion yet — so what difference do these verses make for how we live now?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":5,
+      "chapterTitle" :"Isaiah 9:8–10:34 — Assyria is Only the Lord’s Tool",
+      "elements"     :[
+        {
+          "elementId"    :"ch05-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<b>Big idea:</b> Assyria is only the Lord’s tool and will one day come under his judgment, so submit to the Lord’s discipline and return to him.<br><br>This session covers 9:8–10:34. As you read, look out for a phrase that is repeated four times — it structures the whole first section. And keep an eye on the Assyrians: they are terrifying, but they are not what they think they are.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch05-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Read the passage",
+          "term"         :"Isaiah 9:8–10:34",
+          "question"     :"Read Isaiah 9:8–10:34 before working through the questions below. It is also worth reading on to the end of chapter 11.",
+          "buttonText"   :"Open in Bible Gateway ↗",
+          "answer"       :"<p style=’text-align:right;font-size:0.85em;’><a href=’https://www.biblegateway.com/passage/?search=Isaiah+9&version=NIV’>Read Isaiah 9–11 (NIV) ↗</a></p>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch05-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Lord’s hand is still upraised (9:8–10:4)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch05-el04",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"HTML",
+          "question"         :"This section is in four parts, each ending with <em>‘Yet for all this, his anger is not turned away, his hand is still upraised.’</em> In groups, go through each part and discuss: what is Israel’s sin, how will the Lord judge them, and how does his judgment fit their sin?",
+          "linkedPassage"    :"Isaiah 9:8–10:4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch05-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Does the axe raise itself above the person who swings it? (10:5–19)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch05-el06",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How does the Lord see Assyria? What is Assyria’s divine purpose? (vv5–6)",
+          "linkedPassage"    :"Isaiah 10:5–6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch05-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How are the Assyrians’ intentions different from the Lord’s? How do the Assyrians see themselves? (vv7–14) Why is their pride such a big problem? (v15)",
+          "linkedPassage"    :"Isaiah 10:7–15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch05-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will the Lord do? (vv12, 16–19)",
+          "linkedPassage"    :"Isaiah 10:12, 16–19",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch05-el09",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"A remnant will return (10:20–34)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch05-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will be the result of the Lord’s judgment on Israel? (vv20–22)",
+          "linkedPassage"    :"Isaiah 10:20–22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch05-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How does the Lord change their perspective on their situation? (vv25–27) What is the significance of referring to Midian and Egypt in v26?",
+          "linkedPassage"    :"Isaiah 10:25–27",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch05-el12",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Reflection",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch05-el13",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"What does today’s passage teach us about the Lord’s sovereignty? How does this help us think about seemingly unstoppable and scary powers today?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch05-el14",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Why do you think chapter 11 is so significant after what we have seen in chapters 9–10? What does it mean that the shoot comes from a <em>stump</em>?",
+          "linkedPassage"    :"Isaiah 10:33–34; 11:1",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":6,
+      "chapterTitle" :"Isaiah 11–12 — Praise the Lord for His Righteous Branch",
+      "elements"     :[
+        {
+          "elementId"    :"ch06-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<b>Big idea:</b> Praise the Lord because his righteous Branch will rule in peace and gather his people home.<br><br>Chapters 11–12 form the climax of the first major section of Isaiah. After the cutting down of all proud power in chapters 9–10, chapter 11 opens with one of the most hopeful images in the whole Bible: a tiny shoot emerging from a dead stump. The session ends with a song of praise — the right response to everything chapters 1–11 have shown us.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch06-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Read the passage",
+          "term"         :"Isaiah 11–12",
+          "question"     :"Read Isaiah 11–12 before working through the questions below.",
+          "buttonText"   :"Open in Bible Gateway ↗",
+          "answer"       :"<p style=’text-align:right;font-size:0.85em;’><a href=’https://www.biblegateway.com/passage/?search=Isaiah+11&version=NIV’>Read Isaiah 11–12 (NIV) ↗</a></p>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch06-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Branch’s character (11:1–5)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch06-el04",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How does the Branch contrast with the way the Assyrians are described in chapter 10? (Cf. 10:33–34; 11:1)",
+          "linkedPassage"    :"Isaiah 11:1–5; 10:33–34",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch06-el05",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will the Branch be like? How is he different from Assyria and from the leaders of Israel and Judah?",
+          "linkedPassage"    :"Isaiah 11:1–5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch06-el06",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How are vv1–5 fulfilled in Jesus?",
+          "linkedPassage"    :"Isaiah 11:1–5",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch06-el07",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Branch’s rule (11:6–9)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch06-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will the rule of the Branch be like? (vv6–9)",
+          "linkedPassage"    :"Isaiah 11:6–9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch06-el09",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How does the Branch’s rule fit into the overall story of salvation history? Where does it come from and where does it lead?",
+          "linkedPassage"    :"Isaiah 11:6–9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch06-el10",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Branch’s people (11:10–16)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch06-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will the Branch do for the Lord’s people? (vv10–16) How does this point us forward to the ministry of Jesus?",
+          "linkedPassage"    :"Isaiah 11:10–16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch06-el12",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The song of the people of God (12:1–6)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch06-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How are the people of God to respond to all this? (12:1–6) What is to be the focus of their praise and proclamation?",
+          "linkedPassage"    :"Isaiah 12:1–6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch06-el14",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Reflection",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch06-el15",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"This ends the first main section in Isaiah. How has what we have learned helped us understand the ministry of Jesus better? How does it help us understand the story of salvation history better?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch06-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"How can we respond in praise and proclamation to the Lord? What would it look like in your own context to ‘make known among the nations what he has done’?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":7,
+      "chapterTitle" :"Isaiah 13–14 — The Day of the Lord on Babylon",
+      "elements"     :[
+        {
+          "elementId"    :"ch07-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"<b>Big idea:</b> The day is coming when the Lord will judge the earth and its arrogant kings and will show compassion to his people, so find refuge in the Lord.<br><br>We now enter a section of oracles against the surrounding nations (chapters 13–23). This might seem like a detour — but it isn’t. The Lord is Lord of the whole earth, not just of Israel. Every power that oppresses his people will answer to him. And these chapters were a source of enormous comfort to God’s people as they faced the prospect of exile.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Read the passage",
+          "term"         :"Isaiah 13–14",
+          "question"     :"Read Isaiah 13–14 before working through the questions below.",
+          "buttonText"   :"Open in Bible Gateway ↗",
+          "answer"       :"<p style=’text-align:right;font-size:0.85em;’><a href=’https://www.biblegateway.com/passage/?search=Isaiah+13&version=NIV’>Read Isaiah 13–14 (NIV) ↗</a></p>",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Day of the Lord (13:1–16)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch07-el04",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What will the ‘Day of the Lord’ be like?",
+          "linkedPassage"    :"Isaiah 13:1–16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch07-el05",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What clues are there that the judgment described here goes further than simply judgment on Babylon?",
+          "linkedPassage"    :"Isaiah 13:1–16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch07-el06",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What reasons are given for the Lord’s judgment here? (v11)",
+          "linkedPassage"    :"Isaiah 13:11",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el07",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The fall of Babylon (13:17–22)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch07-el08",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How is the Lord going to use the Medes? (vv17–22) What does this tell us about the Lord’s sovereignty over world history?",
+          "linkedPassage"    :"Isaiah 13:17–22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el09",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The Day of Relief (14:1–27)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch07-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How is the Lord’s judgment going to be a good thing for his people? (14:1–2)",
+          "linkedPassage"    :"Isaiah 14:1–2",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch07-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Glance through chapter 14 and pick out everything we see about how Babylon has behaved. What has characterised them?",
+          "linkedPassage"    :"Isaiah 14:4–21",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch07-el12",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What is the future of Babylon’s mighty kings and their empire? (14:4–21)",
+          "linkedPassage"    :"Isaiah 14:4–21",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch07-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"How do vv26–27 help us apply Isaiah’s prophecy against Babylon more broadly?",
+          "linkedPassage"    :"Isaiah 14:26–27",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"The fall of the Philistines (14:28–32)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch07-el15",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"What warning does Isaiah give the Philistines? Where does this leave God’s people? (v32)",
+          "linkedPassage"    :"Isaiah 14:28–32",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your answer…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch07-el16",
+          "type"         :"heading",
+          "subtype"      :"reflection",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Reflection",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch07-el17",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Where do we see ‘Babylonian’ behaviour today — powerful human society united against the Lord? What difference does it make to know that the Day of the Lord will come, not just for individual nations but for the whole world?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"        :"ch07-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The closing verse of chapter 14 says that ‘the afflicted of his people will find refuge in him.’ Where are you looking for refuge? What does it look like to find your security in the Lord rather than in the powers of this world?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    }
+  ],
   "studyOnboardingSlides":[
     {
       "icon"   :"📖",

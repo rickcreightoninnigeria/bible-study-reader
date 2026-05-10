@@ -536,16 +536,15 @@ function printAllChapters() {
     if (notesVal && notesVal.trim()) hasContent = true;
     if (!hasContent) return;
 
-    const langMap = buildLangMap(window.studyMetadata || {});
-const activeLang = window._activeStudyLang || 'en';
+    const langMap    = buildLangMap(window.studyMetadata || {});
+    const activeLang = window._activeStudyLang || 'en';
+    const slot       = langMap[activeLang];
+    const chapterTitle = (slot ? ch[`chapterTitle${slot}`] : null)
+      || ch.chapterTitle1 || ch.chapterTitle || '';
 
-chapters.forEach(ch => {
-  const slot = langMap[activeLang];
-  const chapterTitle = (slot ? ch[`chapterTitle${slot}`] : null)
-    || ch.chapterTitle1 || ch.chapterTitle || '';
-  chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: chapterTitle })}</h2>
-${buildBlankChapterBody(ch, activeLang, langMap)}`;
-});
+    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: chapterTitle })}</h2>
+${buildChapterBody(ch)}`;
+  });
 
   // Notes & Comments page — only included if the feature is enabled AND non-empty
   const currentStudyId = window.activeStudyId;
@@ -721,10 +720,15 @@ function printBlankStudy() {
 </div>`;
 
   // ── All chapters — no content gate; every chapter is always included ────────
+  const langMap    = buildLangMap(window.studyMetadata || {});
+  const activeLang = window._activeStudyLang || 'en';
   let chaptersHTML = '';
   chapters.forEach(ch => {
-    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
-${buildBlankChapterBody(ch)}`;
+    const slot = langMap[activeLang];
+    const chapterTitle = (slot ? ch[`chapterTitle${slot}`] : null)
+      || ch.chapterTitle1 || ch.chapterTitle || '';
+    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: chapterTitle })}</h2>
+${buildBlankChapterBody(ch, activeLang, langMap)}`;
   });
 
   // Notes & Comments, Leaders Notes, and About are intentionally excluded.
@@ -751,7 +755,7 @@ ${buildPrintHead(docTitle)}
   }
 
 .section-heading {
-  font-family: ${headingFontStack};
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   font-size: 11pt;
   font-weight: 600;
   color: #2c2416;

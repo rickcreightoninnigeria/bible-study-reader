@@ -3351,6 +3351,1019 @@
           "bottomPadding":"normal"
         }
       ]
+    },
+    {
+      "chapterNumber":15,
+      "chapterTitle" :"Deuteronomy 23:16-25:19: Do Justice and Love Mercy",
+      "elements"     :[
+        {
+          "elementId"    :"ch15-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"This section of the legal code covers a wide sweep of social and economic life -- asylum for escaped slaves, honest weights and measures, the rights of workers and debtors, care for the widow and orphan, and even the treatment of a working ox. What might look like miscellaneous legislation turns out to share a single spine: in every domain of ordinary life, the people of God are to reflect the character of a God who sees the vulnerable, values truth, and measures justice with precision.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch15-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, keep asking: what is being stolen in each case, and from whom? The section is largely an elaboration of the eighth commandment -- but the concept of theft turns out to be far broader than taking someone’s possessions.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch15-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 23:16-25:19",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>23:15</sup>You must not return an escaped slave to his master when he has run away to you. <sup>16</sup>He may live among you in any place he chooses, in whichever of your villages he prefers; you must not oppress him.</p><p><sup>19</sup>You must not charge interest on a loan to your fellow Israelite, whether on money, food, or anything else that has been loaned with interest. <sup>20</sup>You may lend with interest to a foreigner, but not to your fellow Israelite; if you keep this command the Lord your God will bless you in all you undertake in the land you are about to enter and possess.</p><p><sup>24:5</sup>When a man is newly married he must not go out with the army or be given any other official responsibility; he must be free to stay home for one year to bring joy to the wife he has married.</p><p><sup>24:6</sup>One must not take a hand mill or even an upper millstone as security on a loan, because that would be taking the person’s livelihood as security.</p><p><sup>24:10</sup>When you make any kind of loan to your neighbor, you must not enter his house to claim what he is offering as security. <sup>11</sup>You must stand outside and the person to whom you are making the loan will bring out the security to you. <sup>12</sup>If the person is poor you must not use what he gives you as security for a pillow. <sup>13</sup>You must by all means return it to him at sunset so he may sleep in his outer garment and bless you for it; it will be considered a just deed by the Lord your God.</p><p><sup>14</sup>You must not oppress a poor and needy hired worker, whether one of your fellow Israelites or a foreigner residing in your land and villages. <sup>15</sup>You must pay his wages that same day before the sun sets, for he is poor and his life depends on it. Otherwise he may cry out to the Lord against you, and you will be guilty of sin.</p><p><sup>16</sup>Fathers must not be put to death for what their children do, nor children for what their fathers do; each person must be put to death for his own sin.</p><p><sup>17</sup>You must not pervert justice due a resident foreigner or an orphan, and you must not take a widow’s garment as security for a loan. <sup>18</sup>Remember that you were a slave in Egypt and that the Lord your God redeemed you from there; therefore I am commanding you to do this.</p><p><sup>19</sup>Whenever you reap your harvest in your field and leave some grain there by accident, you must not return to get it; it should go to the resident foreigner, orphan, and widow so that the Lord your God may bless you in all the work you do. <sup>20</sup>When you beat your olive tree you must not repeat the procedure; what remains will be for the resident foreigner, orphan, and widow. <sup>21</sup>When you harvest your vineyard you must not do so a second time; what remains will be for the resident foreigner, orphan, and widow. <sup>22</sup>Remember that you were a slave in the land of Egypt; therefore, I am commanding you to do this.</p><p><sup>25:4</sup>You must not muzzle your ox when it is treading grain.</p><p><sup>13</sup>You must not have in your bag different weights, one heavy and one light. <sup>14</sup>You must not have in your house different measuring containers, one large and one small. <sup>15</sup>You must have accurate and correct weights and accurate and correct measuring containers so that your life may be long in the land the Lord your God is giving you. <sup>16</sup>For anyone who acts dishonestly in these ways is abhorrent to the Lord your God.</p><p><sup>17</sup>Remember what the Amalekites did to you on the way as you came out of Egypt -- <sup>18</sup>how they met you on the road and killed all your stragglers when you were exhausted and tired; they did not fear God. <sup>19</sup>Therefore, when the Lord your God gives you rest from all the enemies who surround you in the land he is giving you to possess as an inheritance, you must erase the memory of the Amalekites; do not forget!</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch15-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"Before working through the specific laws, what is your overall impression of who these laws are designed to protect? Who keeps appearing as the intended beneficiary?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch15-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"23:15-24:7: What is Being Stolen?",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch15-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 23:15-24:7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>23:15</sup>You must not return an escaped slave to his master when he has run away to you. <sup>16</sup>He may live among you in any place he chooses, in whichever of your villages he prefers; you must not oppress him. <sup>19</sup>You must not charge interest on a loan to your fellow Israelite, whether on money, food, or anything else that has been loaned with interest. <sup>24:5</sup>When a man is newly married he must not go out with the army or be given any other official responsibility; he must be free to stay home for one year to bring joy to the wife he has married. <sup>6</sup>One must not take a hand mill or even an upper millstone as security on a loan, because that would be taking the person’s livelihood as security. <sup>7</sup>If a man is caught kidnapping a fellow Israelite and treating him as a slave or selling him, that kidnapper must die. In this way you will purge the evil from your midst.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+23&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch15-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Go through each law in this section and ask: what is being stolen, and from whom? Start with the escaped slave (23:15-16), then interest on loans (23:19), the newlywed’s year (24:5), the millstone (24:6), and kidnapping (24:7). Notice that kidnapping receives the death penalty -- what does that tell us about how God values human freedom?",
+          "linkedPassage"    :"Deuteronomy 23:15-24:7",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Each law targets a different form of theft. The asylum law (23:15-16) prevents the stolen freedom of the escaped slave from being returned to their oppressor -- and it is extraordinary in its ancient context, directly inverting every other Near Eastern law code which required the return of escaped slaves. Interest on loans (23:19) steals from the poor by profiting from their need -- turning their distress into your gain. The newlywed’s year (24:5) prevents the state from stealing the early years of a marriage, recognising that the joy of newly married life is worth protecting even at a cost to military readiness. The millstone (24:6) prevents a creditor from stealing a person’s ability to produce food -- taking the instrument of their daily survival as security would effectively destroy them. And kidnapping (24:7) receives the death penalty -- the strongest possible signal about how seriously God views the theft of a person’s freedom. This is no accident: Israel was a nation of former slaves. To enslave a fellow Israelite is to do to your brother exactly what Egypt did to you.",
+          "questionHint"     :"The asylum law for escaped slaves (23:15-16) was radical in its ancient context -- every other law code required returning escaped slaves. What does this law reveal about what kind of society God is building? And why might this particular inversion of cultural norms matter so much?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch15-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"24:10-22: Remember That You Were a Slave",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch15-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 24:10-22",
+          "translation"  :"NET",
+          "passageText"  :"<sup>10</sup>When you make any kind of loan to your neighbor, you must not enter his house to claim what he is offering as security. <sup>11</sup>You must stand outside and the person to whom you are making the loan will bring out the security to you. <sup>12</sup>If the person is poor you must not use what he gives you as security for a pillow. <sup>13</sup>You must by all means return it to him at sunset so he may sleep in his outer garment and bless you for it; it will be considered a just deed by the Lord your God. <sup>14</sup>You must not oppress a poor and needy hired worker, whether one of your fellow Israelites or a foreigner residing in your land and villages. <sup>15</sup>You must pay his wages that same day before the sun sets, for he is poor and his life depends on it. Otherwise he may cry out to the Lord against you, and you will be guilty of sin. <sup>16</sup>Fathers must not be put to death for what their children do, nor children for what their fathers do; each person must be put to death for his own sin. <sup>17</sup>You must not pervert justice due a resident foreigner or an orphan, and you must not take a widow’s garment as security for a loan. <sup>18</sup>Remember that you were a slave in Egypt and that the Lord your God redeemed you from there; therefore I am commanding you to do this. <sup>19</sup>Whenever you reap your harvest in your field and leave some grain there by accident, you must not return to get it; it should go to the resident foreigner, orphan, and widow so that the Lord your God may bless you in all the work you do. <sup>22</sup>Remember that you were a slave in the land of Egypt; therefore, I am commanding you to do this.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+24&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch15-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The phrase ’remember that you were a slave in Egypt’ appears twice in this section (vv18 and 22), grounding the treatment of workers, foreigners, orphans, and widows in Israel’s own experience of vulnerability. How does personal memory of need function as the motivation for justice -- and is that a more or less powerful motivation than abstract principle?",
+          "linkedPassage"    :"Deuteronomy 24:10-22",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses keeps returning to the exodus as the engine of ethical obligation, and his logic is deeply personal rather than abstract. He does not say ’be kind to the poor because kindness is a virtue’ or ’give gleanings because the economy will function better if you do.’ He says: you know what this is like. You were the vulnerable, exploited stranger. You cried out and were heard. Now someone else is in that position, and the Lord who heard your cry is watching whether you hear theirs. Personal experiential memory is a more powerful motivation than abstract principle precisely because it is embodied -- it has weight, texture, and the specific memory of what it felt like to depend on someone else’s mercy. Abstract principles can be argued with, refined, or set aside when inconvenient. The memory of slavery cannot be renegotiated.",
+          "questionHint"     :"Moses says ’remember that you were a slave’ -- not ’remember that slavery is bad’ or ’remember that the poor deserve help.’ The focus is on your own experience. What is the difference between arguing from principle and arguing from memory? Why might Moses prefer the latter?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read James 5:1-6 and Luke 10:25-37. How do these New Testament passages apply the same logic -- that injustice toward the vulnerable is a serious matter before God -- in their own contexts? What does each passage add to the picture?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch15-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"25:4-16: Honest Weights and Measures",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch15-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 25:4-16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>You must not muzzle your ox when it is treading grain. <sup>13</sup>You must not have in your bag different weights, one heavy and one light. <sup>14</sup>You must not have in your house different measuring containers, one large and one small. <sup>15</sup>You must have accurate and correct weights and accurate and correct measuring containers so that your life may be long in the land the Lord your God is giving you. <sup>16</sup>For anyone who acts dishonestly in these ways is abhorrent to the Lord your God.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+25&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch15-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Dishonest weights are described as ’abhorrent to the Lord your God’ -- the same word used elsewhere for the worst forms of idolatry. Why would commercial dishonesty be placed in that category? What does it reveal about the God who gives this law?",
+          "linkedPassage"    :"Deuteronomy 25:4-16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The word ’abhorrent’ (to’evah) is not mild legal language -- it is the same word used for the worst forms of idolatry and sexual perversion in Deuteronomy. Placing commercial dishonesty in that category is a deliberate statement about the seriousness of economic deception. Using different weights for buying and selling is a small, easily concealed act -- buying with a heavy weight to get more for your money, selling with a light one to give less. But it involves deliberately deceiving the person you are trading with every time you transact. It is systemic lying in the ordinary flow of commercial life. The language of abhorrence reveals a God for whom truth and fairness in the marketplace are not secondary concerns -- they are matters of his own character. He is the God of justice and truth, and every act of commercial dishonesty is an implicit claim that he does not see, does not care, or that the relationship of trust with a trading partner does not matter.",
+          "questionHint"     :"Moses places dishonest weights alongside idolatry in the category of ’abhorrent to the Lord.’ What does it suggest about God that he cares this much about what happens in the marketplace? Is economic honesty a spiritual matter or merely an ethical one?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch15-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch15-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 24:14-15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>14</sup>You must not oppress a poor and needy hired worker, whether one of your fellow Israelites or a foreigner residing in your land and villages. <sup>15</sup>You must pay his wages that same day before the sun sets, for he is poor and his life depends on it. Otherwise he may cry out to the Lord against you, and you will be guilty of sin.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+24&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch15-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Moses says that if you withhold wages, the worker ’may cry out to the Lord against you, and you will be guilty of sin.’ God hears the cry of the economically exploited. Where in your own working life, financial decisions, or use of money might this passage have something direct to say?",
+          "linkedPassage"    :"Deuteronomy 24:14-15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The wage law is precise and practical: pay on the same day, before sunset, because the worker is poor and their life depends on it. Moses knows the power differential: the employer can delay, argue, disappear, or simply not prioritise. The worker, who has already given their labour, has no leverage. And Moses says: the Lord hears their cry. This is not a soft encouragement toward generosity -- it is a direct statement that withholding wages is a sin and that God is paying attention. In our context this might press on: whether we pay those who work for us promptly and fully; whether we benefit from supply chains or services that depend on exploited labour without asking questions; whether we use the power of being a customer, employer, or landlord to delay obligations we could meet today; whether our giving -- to individuals in need or to organisations that serve them -- is prompt or perpetually deferred. The partition between ’financial’ and ’spiritual’ does not exist in this passage.",
+          "questionHint"     :"Moses says the Lord hears the cry of the worker whose wages are withheld. What does it mean for your own financial decisions that God is paying attention not just to formal religious acts but to how money moves through your hands?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch15-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 25:15-16",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>You must have accurate and correct weights and accurate and correct measuring containers so that your life may be long in the land the Lord your God is giving you. <sup>16</sup>For anyone who acts dishonestly in these ways is abhorrent to the Lord your God.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+25&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch15-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Honest weights and measures -- accurate, consistent, not adjusted to suit the transaction -- are a test of character applied every time you buy or sell. In what areas of your life is the equivalent of ’different weights in your bag’ most likely to appear? Where is the temptation to present yourself or your work differently depending on who is watching?",
+          "linkedPassage"    :"Deuteronomy 25:15-16",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The dishonest weights law targets a particular form of deception: using one standard when it benefits you and another when it doesn’t. In commercial life this is obvious -- but the principle reaches into every area where we present ourselves or our work to others. It includes: claiming credit for work that was collaborative; presenting your qualifications or experience more impressively in some contexts than others; the gap between how you describe your work to a client and what you actually deliver; how you speak about the same situation depending on who you are speaking to; whether your generosity is genuine or performative depending on who can see it. The test of honest weights is consistency -- the same measure whether you are buying or selling, whether you are watched or not, whether the person in front of you has power over you or not. That kind of consistency is what integrity means, and Moses places it in the category of the Lord’s own abhorrence when it is absent.",
+          "questionHint"     :"The dishonest merchant uses a heavy weight when buying (to get more) and a light weight when selling (to give less). The common thread is adjusting the standard to suit yourself. Where in your own life do you most naturally adjust the standard depending on who benefits?",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":16,
+      "chapterTitle" :"Deuteronomy 26-28: Worship, Obey, and Heed the Warning of the Covenant Curses",
+      "elements"     :[
+        {
+          "elementId"    :"ch16-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Chapters 26-28 form the conclusion of Moses’ second sermon -- the longest and most detailed of his three addresses. Chapter 26 provides the liturgical bookend: the legal code that opened with the call to worship in the right place and way (ch 12) now closes with an act of worship that locates Israel’s whole life within the story of what God has done. Then chapters 27-28 set out the stakes with an almost terrifying clarity: obedience leads to blessing, and disobedience to curse. The imbalance between the two -- fourteen verses of blessing, fifty-four of curse -- is deliberate and pastoral.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch16-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read chapter 28, resist the temptation to rush past the curses. Moses intends the weight of them to land. And hold on for the New Testament answer to what that weight means.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch16-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 26-28",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>26:1</sup>When you enter the land that the Lord your God is giving you as an inheritance and take it over and live in it, <sup>2</sup>you must take the first of all the ground produce you harvest from the land the Lord your God is giving you and put it in a basket. Then go to the place where the Lord your God chooses to locate his name. <sup>3</sup>You must go to the priest who is in office at that time and say to him, ‘I declare today to the Lord your God that I have come into the land that the Lord swore to our ancestors to give us.’ <sup>4</sup>The priest will then take the basket from you and set it before the altar of the Lord your God. <sup>5</sup>You must then say before the Lord your God, ‘My ancestor was a wandering Aramean. He went down to Egypt and lived there as a foreigner with a household few in number, but there he became a great, powerful, and numerous people. <sup>6</sup>The Egyptians treated us badly and oppressed us and made us perform hard labor. <sup>7</sup>We cried to the Lord, the God of our ancestors, and he heard us and saw our poverty, oppression, and hardship. <sup>8</sup>The Lord brought us out of Egypt with tremendous strength and power, with great awe-inspiring signs and wonders. <sup>9</sup>He brought us to this place and gave us this land, a land flowing with milk and honey. <sup>10</sup>So now, look! I have brought the first of the ground produce that you, Lord, have given me.’ You must then set it down before the Lord your God and worship him.</p><p><sup>16</sup>Today the Lord your God is commanding you to keep these statutes and ordinances, so you must be careful to do them with all your heart and soul. <sup>17</sup>Today you have declared the Lord to be your God, and that you will walk in his ways, keep his statutes, commandments, and ordinances, and obey him. <sup>18</sup>Today the Lord has declared you to be his special people as he promised you, so that you must keep all his commandments. <sup>19</sup>He will elevate you above all the nations he has made and you will receive praise, fame, and honor. You will be a people holy to the Lord your God, as he has said.</p><p><sup>27:9</sup>Then Moses and the Levitical priests said to all Israel, ‘Be quiet and pay attention, Israel. Today you have become the people of the Lord your God. <sup>10</sup>You must obey him and keep his commandments and statutes that I am giving you today.’</p><p><sup>28:1</sup>If you indeed obey the Lord your God and are careful to keep all his commandments I am giving you today, the Lord your God will elevate you above all the nations of the earth. <sup>2</sup>All these blessings will come upon you and reach you if you obey the Lord your God: <sup>3</sup>You will be blessed in the city and blessed in the field. <sup>6</sup>You will be blessed when you come in and blessed when you go out. <sup>15</sup>But if you ignore the Lord your God and do not carefully keep all his commandments and statutes I am giving you today, then all these curses will come upon you and overtake you: <sup>16</sup>You will be cursed in the city and cursed in the field. <sup>20</sup>The Lord will send on you a curse, turmoil, and frustration in everything you undertake until you are destroyed and quickly perish because of the evil of your deeds, in that you have forsaken me. <sup>45</sup>All these curses will fall on you, pursue you, and overtake you until you are destroyed, because you would not obey the Lord your God and keep his commandments and statutes that he gave you. <sup>47</sup>Because you have not served the Lord your God joyfully and wholeheartedly out of the abundance of everything you have, <sup>48</sup>instead you will serve your enemies whom the Lord will send against you, in hunger, thirst, nakedness, and poverty. He will place an iron yoke on your neck until he has destroyed you. <sup>58</sup>If you do not keep all the words of this law which are written in this scroll so that you may revere this glorious and awe-inspiring name, the Lord your God, <sup>62</sup>you will be left few in number, though you were once as numerous as the stars of the sky, because you did not obey the Lord your God. <sup>63</sup>This is what will happen: just as the Lord delighted to do good for you and make you numerous, so also he will take delight in devastating and destroying you. You will be uprooted from the land you are about to possess.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch16-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"The first thing the Israelite must do when they enter the land is bring their firstfruits and recite a story. Before looking at the details, what impression does that make on you? Why might the act of entering God’s gift begin with words rather than with silence?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch16-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"26:1-19: Worship and Obey with Joy and Remembrance",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch16-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 26:1-11",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>When you enter the land that the Lord your God is giving you as an inheritance and take it over and live in it, <sup>2</sup>you must take the first of all the ground produce you harvest from the land the Lord your God is giving you and put it in a basket. Then go to the place where the Lord your God chooses to locate his name. <sup>5</sup>You must then say before the Lord your God, ‘My ancestor was a wandering Aramean. He went down to Egypt and lived there as a foreigner with a household few in number, but there he became a great, powerful, and numerous people. <sup>6</sup>The Egyptians treated us badly and oppressed us and made us perform hard labor. <sup>7</sup>We cried to the Lord, the God of our ancestors, and he heard us and saw our poverty, oppression, and hardship. <sup>8</sup>The Lord brought us out of Egypt with tremendous strength and power, with great awe-inspiring signs and wonders. <sup>9</sup>He brought us to this place and gave us this land, a land flowing with milk and honey. <sup>10</sup>So now, look! I have brought the first of the ground produce that you, Lord, have given me.’ You must then set it down before the Lord your God and worship him.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+26&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch16-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The firstfruits liturgy in vv5-10 is a condensed salvation history recited in the first person: ‘My ancestor was a wandering Aramean.’ What is the effect of this formula -- and why does it begin with vulnerability and smallness rather than with achievement or strength?",
+          "linkedPassage"    :"Deuteronomy 26:1-11",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The formula is carefully constructed to position the worshipper. It begins not with ’God chose us’ or ’we are a great people’ but with ’my ancestor was a wandering Aramean’ -- rootless, landless, few in number, eventually enslaved. The story starts from nothing and from need. It then traces the whole arc of what God did: he heard their cry, brought them out with tremendous strength, and gave them this land. The act of bringing the firstfruits is explicitly located within that story: ‘I have brought the first of the ground produce that you, Lord, have given me.’ The produce is received, not earned. The land is a gift, not an achievement. By beginning with vulnerability, the liturgy prevents any reading of prosperity as self-generated. You cannot recite ’my ancestor was a wandering Aramean’ and then claim that the harvest is the product of your own skill and effort. Worship here is the embodied acknowledgement that everything came from God.",
+          "questionHint"     :"The worshipper says ’my ancestor was a wandering Aramean’ -- using first-person language for a story that happened generations before. What is the effect of making someone else’s history your own story? What does that do to the act of bringing the firstfruits?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch16-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"28:1-68: Be Careful to Avoid God’s Curse",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch16-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 28:1-6",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>If you indeed obey the Lord your God and are careful to keep all his commandments I am giving you today, the Lord your God will elevate you above all the nations of the earth. <sup>2</sup>All these blessings will come upon you and reach you if you obey the Lord your God: <sup>3</sup>You will be blessed in the city and blessed in the field. <sup>4</sup>Your children will be blessed, as well as the produce of your soil, the offspring of your livestock, the calves of your herds, and the lambs of your flocks. <sup>5</sup>Your basket and your kneading trough will be blessed. <sup>6</sup>You will be blessed when you come in and blessed when you go out.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+28&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"    :"ch16-el10",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 28:15-20",
+          "translation"  :"NET",
+          "passageText"  :"<sup>15</sup>But if you ignore the Lord your God and do not carefully keep all his commandments and statutes I am giving you today, then all these curses will come upon you and overtake you: <sup>16</sup>You will be cursed in the city and cursed in the field. <sup>17</sup>Your basket and your kneading trough will be cursed. <sup>18</sup>Your children will be cursed, as well as the produce of your soil, the calves of your herds, and the lambs of your flocks. <sup>19</sup>You will be cursed when you come in and cursed when you go out. <sup>20</sup>The Lord will send on you a curse, turmoil, and frustration in everything you undertake until you are destroyed and quickly perish because of the evil of your deeds, in that you have forsaken me.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+28&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch16-el11",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The curses in chapter 28 are the precise reversal of the blessings -- city for city, field for field, children for children. And they go on for fifty-four verses compared to fourteen of blessing. Why is this imbalance deliberate, and what does v47 reveal as the specific root of the curse that Moses most wants them to avoid?",
+          "linkedPassage"    :"Deuteronomy 28:15-20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The imbalance is pastoral, not theological: Moses is not saying God is more inclined to curse than to bless. He is saying that he knows his people, and he is making the consequences of disobedience as vivid and concrete as possible in the hope that the sheer weight of the description will motivate them to choose differently. The curses occupy ten times the space of the blessings because Moses is pleading, not predicting. And v47 is one of the most striking verses in the whole chapter: ‘because you have not served the Lord your God joyfully and wholeheartedly out of the abundance of everything you have.’ The root of the curse is not overt idolatry or dramatic rebellion. It is joyless, grudging, half-hearted service of God. Moses is saying: even if you go through the motions, if you do not do it from the heart, with delight and genuine love, it is already a form of departure from the Lord. The chapter is not only a warning about spectacular failure -- it is a warning about the death by a thousand accommodations.",
+          "questionHint"     :"Verse 47 says the curse will come because they did not serve the Lord ’joyfully and wholeheartedly out of the abundance of everything you have.’ What does it mean that joyless, half-hearted service is presented as itself a cause of judgment? What does that reveal about what God is looking for?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch16-el12",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch16-el13",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 26:5-9",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>’My ancestor was a wandering Aramean. He went down to Egypt and lived there as a foreigner with a household few in number, but there he became a great, powerful, and numerous people. <sup>6</sup>The Egyptians treated us badly and oppressed us and made us perform hard labor. <sup>7</sup>We cried to the Lord, the God of our ancestors, and he heard us and saw our poverty, oppression, and hardship. <sup>8</sup>The Lord brought us out of Egypt with tremendous strength and power, with great awe-inspiring signs and wonders. <sup>9</sup>He brought us to this place and gave us this land, a land flowing with milk and honey.’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+26&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch16-el14",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The firstfruits liturgy begins with the worshipper’s own poverty and need (‘a wandering Aramean... few in number... oppressed’) before it arrives at the gift. What is the equivalent confession for a Christian worshipper? What story of rescue must we tell before we can rightly receive what we have been given?",
+          "linkedPassage"    :"Deuteronomy 26:5-9",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The Christian equivalent of ’my ancestor was a wandering Aramean’ is a story that begins not with achievement or deserving but with lostness, darkness, and need. Paul’s version in Ephesians 2:1-10 follows exactly the same shape: ‘you were dead in your transgressions... gratifying the cravings of our sinful nature... by nature deserving of wrath’ -- and then ’but God, who is rich in mercy, made us alive with Christ.’ The firstfruits worshipper brings the produce and says: this came from a God who rescued me when I was nothing. The Christian brings themselves and everything they have and says: this came from a God who raised me when I was dead. Both liturgies ground the act of offering in the story of rescue rather than in the worshipper’s own goodness or effort. The question for us is whether that story is genuinely present when we give, when we worship, when we account for what we have -- or whether it has become a formality that no longer shapes how we see everything we possess.",
+          "questionHint"     :"The Israelite brings their firstfruits and says ’I was a wandering Aramean’ before they say ’here is my offering.’ What would it mean for the way you approach your own giving if you began with the equivalent statement -- an honest account of where you started and what God rescued you from?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch16-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 28:47-48",
+          "translation"  :"NET",
+          "passageText"  :"<sup>47</sup>Because you have not served the Lord your God joyfully and wholeheartedly out of the abundance of everything you have, <sup>48</sup>instead you will serve your enemies whom the Lord will send against you, in hunger, thirst, nakedness, and poverty.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+28&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch16-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Verse 47 warns against serving God without joy or wholeheartedness. Galatians 3:13-14 tells us that Christ has borne the curse of the law so that we might receive the blessing. How does knowing that the covenant curse has been borne for us change what our service of God can feel like -- and what does joyful, wholehearted service look like in practice?",
+          "linkedPassage"    :"Deuteronomy 28:47-48",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The diagnosis of v47 -- not serving God joyfully and wholeheartedly -- is one that most Christians will recognise as an accurate description of large portions of their spiritual experience. We go through the motions. We fulfil the obligations. We show up without delight. And Moses says that this half-heartedness is not neutral -- it is already a departure. The New Testament answer is not to try harder to generate joy but to look again at what Christ has done. Galatians 3:13-14 declares that Christ became a curse for us -- took on himself exactly the covenant curse that chapters 27-28 describe -- so that we might receive the blessing of Abraham by faith. The curse is not ours to bear. The fear that drives joyless, grudging service -- the fear that if we do not perform adequately we will face judgment -- is precisely what the cross addresses. Joyful service becomes possible when we understand that our standing before God does not depend on the quality of our service but on what Christ has already accomplished. The joy is not manufactured; it flows from genuinely believing what is true.",
+          "questionHint"     :"Verse 47 says the curse flows from serving God without joy. But manufactured joy is not the answer. Where does genuine, wholehearted joy in serving God actually come from -- and what makes it so elusive?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Galatians 3:10-14. Paul quotes both Deuteronomy 27:26 (the curse for not keeping the whole law) and 21:23 (the curse of hanging on a tree). How does he use these two quotations together to explain what Jesus accomplished? What is the connection between the covenant curses of Deuteronomy 28 and the cross?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":17,
+      "chapterTitle" :"Deuteronomy 29-30: Commit to the Covenant and Choose Life",
+      "elements"     :[
+        {
+          "elementId"    :"ch17-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Chapters 29-30 are Moses’ third and final sermon -- the climax of the book. After everything that has been said -- the warnings, the laws, the history, the curses -- Moses makes one last appeal. And at the centre of that appeal is a promise that resolves the tension running through the whole of Deuteronomy: the problem is not primarily the will but the heart, and that is precisely what God has promised to fix.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch17-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, watch for the movement from diagnosis (ch 29: the problem of spiritual blindness) to prescription (ch 30: the promise of circumcised hearts). Do not let the session end in the diagnosis.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch17-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 29-30",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>29:1</sup>These are the words of the covenant that the Lord commanded Moses to make with the Israelites in the land of Moab, in addition to the covenant he had made with them at Horeb.</p><p><sup>2</sup>Moses called all the Israelites together and said to them: ‘You have seen all that the Lord did in the land of Egypt to Pharaoh, all his servants, and his land. <sup>3</sup>Your eyes have seen those great signs and wonders. <sup>4</sup>But to this very day the Lord has not given you a mind that understands, eyes that see, or ears that hear! <sup>5</sup>I have led you through the desert for forty years. Your clothing has not worn out and your sandals have not worn off your feet. <sup>6</sup>You ate no bread and drank no wine or beer -- so that you might know that he is the Lord your God. <sup>9</sup>So keep the terms of this covenant and obey them so that you may be successful in everything you do.</p><p><sup>10</sup>You are all standing today before the Lord your God -- your leaders, your tribes, your elders, your officials, all the men of Israel, <sup>11</sup>your children, your wives, and the foreigners living in your encampment, those who chop wood and those who carry water -- <sup>12</sup>so that you may enter the covenant of the Lord your God that he is making with you today, ratified by an oath, <sup>13</sup>so that he may now establish you as his people and be your God as he promised you and as he swore to your ancestors Abraham, Isaac, and Jacob. <sup>14</sup>It is not with you alone that I am making this covenant and this oath, <sup>15</sup>but with whoever is standing here with us today before the Lord our God and with whoever is not with us here today.</p><p><sup>19</sup>When such a person hears the words of this oath, he will secretly bless himself and say, ‘I will have peace though I walk in my own stubborn way.’ This will destroy the watered ground along with the dry. <sup>20</sup>The Lord will not be willing to forgive him. Rather the Lord’s anger and his wrath will rage against that person and the entire curse written in this scroll will fall on him, and the Lord will obliterate his name from under heaven. <sup>29</sup>The secret things belong to the Lord our God, but those that are revealed belong to us and to our descendants forever, so that we might obey all the words of this law.</p><p><sup>30:1</sup>When all these things happen to you -- the blessing and the curse I have set before you -- and you reflect on them in all the nations where the Lord your God has exiled you, <sup>2</sup>and you and your children return to the Lord your God and obey him with your whole heart and soul according to all I am commanding you today, <sup>3</sup>the Lord your God will reverse your fortunes and have compassion on you. He will turn and gather you from all the peoples among whom he has scattered you. <sup>6</sup>The Lord your God will also cleanse your heart and the hearts of your descendants so that you may love him with all your mind and being and so that you may live.</p><p><sup>11</sup>This commandment I am giving you today is not too difficult for you, and it is not too remote. <sup>12</sup>It is not in heaven, as though one must say, ‘Who will go up to heaven to get it for us and proclaim it to us so we may obey it?’ <sup>13</sup>And it is not across the sea, as though one must say, ‘Who will cross over to the other side of the sea to get it for us and proclaim it to us so we may obey it?’ <sup>14</sup>For the thing is very near you -- it is in your mouth and in your mind so that you can do it.</p><p><sup>15</sup>Look! I have set before you today life and prosperity on the one hand, and death and disaster on the other. <sup>16</sup>What I am commanding you today is to love the Lord your God, to walk in his ways, and to keep his commandments, his statutes, and his ordinances. Then you will live and become numerous and the Lord your God will bless you in the land you are about to possess. <sup>19</sup>Today I invoke heaven and earth as a witness against you that I have set life and death, blessing and curse, before you. Therefore choose life so that you and your descendants may live! <sup>20</sup>I also call on you to love the Lord your God, obey him, and be loyal to him, for he gives you life and length of days so that you may live in the land he promised to give to your ancestors Abraham, Isaac, and Jacob.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch17-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"Chapter 29 opens with a striking confession: despite everything they have seen, the Lord has not yet given them eyes that see, ears that hear, or a mind that understands. Before working through the passage, what does that say about the human problem -- and about what kind of solution is needed?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch17-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"29:1-15: You Have Seen with Blind Eyes",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch17-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 29:2-15",
+          "translation"  :"NET",
+          "passageText"  :"<sup>2</sup>Moses called all the Israelites together and said to them: ‘You have seen all that the Lord did in the land of Egypt to Pharaoh, all his servants, and his land. <sup>3</sup>Your eyes have seen those great signs and wonders. <sup>4</sup>But to this very day the Lord has not given you a mind that understands, eyes that see, or ears that hear! <sup>10</sup>You are all standing today before the Lord your God -- your leaders, your tribes, your elders, your officials, all the men of Israel, <sup>11</sup>your children, your wives, and the foreigners living in your encampment, those who chop wood and those who carry water -- <sup>12</sup>so that you may enter the covenant of the Lord your God that he is making with you today, ratified by an oath, <sup>13</sup>so that he may now establish you as his people and be your God as he promised you and as he swore to your ancestors Abraham, Isaac, and Jacob. <sup>14</sup>It is not with you alone that I am making this covenant and this oath, <sup>15</sup>but with whoever is standing here with us today before the Lord our God and with whoever is not with us here today.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+29&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch17-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses says the people have seen everything God did -- and yet ’to this very day the Lord has not given you a mind that understands, eyes that see, or ears that hear.’ What does this diagnosis reveal about the nature of the human problem? Why is more information or more evidence not the answer?",
+          "linkedPassage"    :"Deuteronomy 29:2-15",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The diagnosis is devastating precisely because of what came before it. Moses has just said that their eyes have seen the great signs and wonders in Egypt. They personally witnessed the plagues, the exodus, the provision of manna and quail, the water from the rock, the defeat of Sihon and Og. And then: ‘the Lord has not given you a mind that understands, eyes that see, or ears that hear.’ The problem is not insufficient evidence. The problem is not lack of instruction -- Moses has been speaking for chapters. The problem is a deeper incapacity: the heart and mind are not oriented toward God, and more information cannot fix an orientation problem. This is the most searching diagnosis in Deuteronomy: the same events that should produce faith and loyalty have been witnessed and forgotten, witnessed and disbelieved, witnessed and replaced by fear and presumption. The cure required is not more evidence but a transformation of the very capacity to perceive and respond. Which is exactly what chapter 30 promises.",
+          "questionHint"     :"The people have seen everything and still do not understand. If more evidence is not the answer, what is the actual problem? And what kind of solution does a problem like that require?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch17-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"30:1-10: Return to the Lord and Have Your Hearts Renewed",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch17-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 30:1-10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>When all these things happen to you -- the blessing and the curse I have set before you -- and you reflect on them in all the nations where the Lord your God has exiled you, <sup>2</sup>and you and your children return to the Lord your God and obey him with your whole heart and soul according to all I am commanding you today, <sup>3</sup>the Lord your God will reverse your fortunes and have compassion on you. He will turn and gather you from all the peoples among whom he has scattered you. <sup>6</sup>The Lord your God will also cleanse your heart and the hearts of your descendants so that you may love him with all your mind and being and so that you may live. <sup>9</sup>The Lord your God will make you highly successful in all the work of your hands, in the fruit of your womb, the offspring of your animals, and the produce of your soil. For the Lord your God will once more rejoice over you and make you prosperous, just as he rejoiced over your ancestors.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+30&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch17-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Verse 6 is the theological climax of the whole book: ‘The Lord your God will also cleanse your heart and the hearts of your descendants so that you may love him with all your mind and being.’ How does this verse resolve the tension that has been building throughout Deuteronomy -- between what God commands and what Israel is capable of?",
+          "linkedPassage"    :"Deuteronomy 30:1-10",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The tension in Deuteronomy has been visible from the beginning. God commands wholehearted love (6:5) and perfect obedience, while every historical episode demonstrates Israel’s incapacity to deliver it. Chapter 29 diagnoses the root: they do not have the mind, eyes, or ears to perceive and respond rightly. Chapter 30:6 is the resolution -- and it is entirely God’s action. He will cleanse the heart. He will give them the capacity that the law required but could not produce. The command in 10:16 (‘circumcise your hearts’) becomes in 30:6 a promise (‘the Lord your God will circumcise your hearts’). What was a demand becomes a gift. The whole arc of Deuteronomy has been building toward this: not a people who try harder and eventually succeed, but a people who receive from God the very thing they need to obey. Jeremiah 31:31-34 and Ezekiel 36:26-27 develop the same promise; the New Testament declares it fulfilled in Christ through the Spirit.",
+          "questionHint"     :"In 10:16 Moses commanded ’circumcise your hearts.’ In 30:6 God promises ’I will circumcise your hearts.’ What is the difference between those two statements -- and what does the shift from command to promise reveal about what the human heart actually needs?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Jeremiah 31:31-34 and Ezekiel 36:26-27. How do these prophets develop the promise of Deuteronomy 30:6? And how does the New Testament, in Romans 8:1-4 and 2 Corinthians 3:3-6, declare these promises fulfilled? What does it mean that God himself gives the heart to obey?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch17-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"30:11-20: The Command is Near -- Choose Life",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch17-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 30:11-20",
+          "translation"  :"NET",
+          "passageText"  :"<sup>11</sup>This commandment I am giving you today is not too difficult for you, and it is not too remote. <sup>12</sup>It is not in heaven, as though one must say, ‘Who will go up to heaven to get it for us and proclaim it to us so we may obey it?’ <sup>13</sup>And it is not across the sea, as though one must say, ‘Who will cross over to the other side of the sea to get it for us and proclaim it to us so we may obey it?’ <sup>14</sup>For the thing is very near you -- it is in your mouth and in your mind so that you can do it. <sup>15</sup>Look! I have set before you today life and prosperity on the one hand, and death and disaster on the other. <sup>19</sup>Today I invoke heaven and earth as a witness against you that I have set life and death, blessing and curse, before you. Therefore choose life so that you and your descendants may live! <sup>20</sup>I also call on you to love the Lord your God, obey him, and be loyal to him, for he gives you life and length of days so that you may live in the land he promised to give to your ancestors Abraham, Isaac, and Jacob.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+30&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch17-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses says in vv11-14 that the commandment is ’not too difficult’ and ’very near’ -- in your mouth and mind. Paul quotes these verses in Romans 10:6-9 and applies them to the gospel. What does Paul’s use of this passage reveal about the relationship between Moses’ word and the word about Christ?",
+          "linkedPassage"    :"Deuteronomy 30:11-20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Paul’s quotation in Romans 10 is one of the most surprising uses of the Old Testament in the New. Moses says that the commandment is near -- not across the sea or up in heaven -- it is in your mouth and your heart. Paul takes this and applies it directly to the proclamation of Christ: ‘the word is near you, in your mouth and in your heart, that is, the word of faith which we are proclaiming’ (Romans 10:8). He then defines what that word is: confessing with your mouth that Jesus is Lord and believing in your heart that God raised him from the dead. Paul is not simply proof-texting -- he is making a theological claim: what Moses said of the law’s nearness and accessibility, the gospel has made even more radically true of Christ. The word that saves is not distant or inaccessible; it has come close in the person of Jesus and is proclaimed wherever the gospel is preached. The nearness of the command in Deuteronomy 30 has become the nearness of Christ himself.",
+          "questionHint"     :"Paul applies Moses’ words about the nearness of the commandment to the proclamation of Christ. What does that application suggest about the relationship between the law Moses gave and the gospel Paul preached? Is Paul replacing Moses, or completing him?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch17-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch17-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 30:6",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>The Lord your God will also cleanse your heart and the hearts of your descendants so that you may love him with all your mind and being and so that you may live.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+30&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch17-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Deuteronomy 30:6 promises that God himself will give his people the heart to love him. As a New Testament believer, you have received the Spirit who is the fulfilment of that promise. What difference does it make to know that the capacity for genuine love and obedience is a gift rather than an achievement you must generate?",
+          "linkedPassage"    :"Deuteronomy 30:6",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The promise of 30:6 addresses one of the most common and demoralising experiences in the Christian life: the gap between what we want to be and what we are; between the love for God we know we should feel and the dryness or distraction or even indifference we actually experience. The promise does not say ’try harder and you will get there.’ It says ’the Lord your God will cleanse your heart.’ The capacity for genuine love is not something we manufacture or sustain through discipline -- it is given. For New Testament believers, the Spirit is the giver of exactly this: the love of God poured into our hearts (Romans 5:5), the fruit of love as a Spirit-given reality rather than a human achievement (Galatians 5:22). This does not mean we are passive -- we still choose, pray, resist, pursue. But it means that when we find ourselves cold or distant, the answer is not more self-effort but a return to the one who promised to give what he requires. The gift is available; the asking is always in order.",
+          "questionHint"     :"If love for God is ultimately a gift from God rather than something we generate ourselves, what does that mean for how we respond when we feel spiritually dry or cold? What should we do with that experience?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch17-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 30:19-20",
+          "translation"  :"NET",
+          "passageText"  :"<sup>19</sup>Today I invoke heaven and earth as a witness against you that I have set life and death, blessing and curse, before you. Therefore choose life so that you and your descendants may live! <sup>20</sup>I also call on you to love the Lord your God, obey him, and be loyal to him, for he gives you life and length of days so that you may live in the land he promised to give to your ancestors Abraham, Isaac, and Jacob.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+30&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch17-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Moses ends with ’choose life’ -- and defines it as loving the Lord, obeying him, and being loyal to him. What does it mean in your particular life right now to choose life in that sense? And what does the promise of 30:6 mean for that choice?",
+          "linkedPassage"    :"Deuteronomy 30:19-20",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"Choosing life in Deuteronomy is not a single dramatic decision but a daily orientation -- a whole manner of existence shaped by love for and loyalty to the Lord. In practice it means: returning to him in prayer when we have drifted; choosing to read and sit with his word rather than fill every gap with noise; making decisions in relationships, at work, and with money that reflect the values of the kingdom rather than the assumptions of surrounding culture; continuing to gather with other believers and to serve the community even when it is costly or inconvenient; confessing sin and receiving forgiveness rather than managing guilt alone. The promise of 30:6 transforms the feel of this choice: because God has given us the Spirit to cleanse and orient our hearts, choosing life is not swimming upstream through sheer willpower. It is aligning ourselves with the direction the Spirit is already moving us -- which does not mean it is effortless, but it does mean it is not solitary.",
+          "questionHint"     :"Moses defines ’choosing life’ in v20 as loving the Lord, obeying him, and being loyal to him. What would choosing life look like in the most practical terms for you this week -- in a specific relationship, decision, or habit?",
+          "bottomPadding"    :"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":18,
+      "chapterTitle" :"Deuteronomy 31-32: The Lord Is Faithful When His People Are Faithless",
+      "elements"     :[
+        {
+          "elementId"    :"ch18-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Moses knows Israel will fail. He has said so explicitly (31:16-18), and the whole arc of his preaching has moved with this knowledge in the background. So before he dies, he gives Israel a song -- not as a celebration but as a witness. When they fall and the judgment comes, the song will testify that they knew. And the song itself will bear witness to the one thing that does not change: the faithfulness of the Lord.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch18-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read the Song of Moses, pay attention to the arc: from God’s perfection, through Israel’s apostasy, through judgment, to vindication and atonement. That arc is the shape of the whole Bible in miniature.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch18-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 31-32",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>31:1</sup>Then Moses went and spoke these words to all Israel. <sup>2</sup>He said to them, ‘I am now one hundred and twenty years old and am no longer able to get around well; moreover, the Lord has said to me, \"You will not cross the Jordan.\" <sup>6</sup>Be strong and courageous! Do not fear or tremble before them, for the Lord your God is the one who is going with you. He will not fail you or abandon you!’ <sup>7</sup>Then Moses called out to Joshua, and said to him in the sight of all Israel, ‘Be strong and courageous, for you will accompany these people to the land that the Lord has promised to give their ancestors, and you will give it to them as their inheritance. <sup>8</sup>The Lord is indeed going before you -- he will be with you; he will not fail you or abandon you. Do not be afraid or discouraged!’ <sup>14</sup>The Lord said to Moses, ‘The time of your death is near. Summon Joshua and present yourselves in the Tent of Meeting so that I may commission him.’ So Moses and Joshua presented themselves in the Tent of Meeting. <sup>16</sup>Then the Lord said to Moses, ‘You are about to die and then these people will begin to prostitute themselves with the foreign gods of the land into which they are going.</p><p><sup>32:1</sup>Listen, O heavens, and I will speak; hear, O earth, the words of my mouth. <sup>3</sup>For I will proclaim the name of the Lord; you must acknowledge the greatness of our God. <sup>4</sup>As a rock his work is perfect, for all his ways are just. He is a faithful God, without moral fault; he is just and upright. <sup>5</sup>They have acted corruptly toward him; this is their defect -- they are a perverse and deceitful generation. <sup>6</sup>Is this how you repay the Lord, you foolish, unwise people? Is he not your father, your creator? Has he not made you and established you?</p><p><sup>10</sup>The Lord found him in a wilderness, in an empty wasteland where animals howl. He continually guarded him and taught him; he continually protected him like the pupil of his eye, <sup>11</sup>like an eagle that stirs up its nest, that hovers over its young, that spreads out its wings and catches them, that carries them on its feathers. <sup>12</sup>The Lord alone was guiding him, no foreign god was with him. <sup>15</sup>But Israel grew fat and kicked -- you got fat, obese, stuffed! He abandoned the God who made him and despised the Rock of his salvation.</p><p><sup>39</sup>See now that I, indeed I, am he, and there is no other god besides me; I bring death and give life; I wound and I heal, and none can deliver from my hand. <sup>43</sup>Rejoice, O nations, with his people, for he will avenge his servants’ blood; he will return vengeance to his enemies, and make atonement for his land and people.</p><p><sup>44</sup>Moses went and recited all the words of this song to the people, he and Joshua son of Nun. <sup>46</sup>He said to them, ‘Take to heart all the words I am solemnly proclaiming to you today; you must command your children to observe carefully all the words of this law. <sup>47</sup>For this is not an idle word for you -- it is your life! By this word you will live long in the land you are crossing the Jordan to possess.’</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch18-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"The Song of Moses is described as a ’witness against’ Israel when they fall away. Before looking at the details, what strikes you about the decision to give a people a song about their own future failure? What is Moses hoping will happen when that song is sung in the dark?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch18-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"31:1-29: Reassurance and Warning",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch18-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 31:1-8",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Then Moses went and spoke these words to all Israel. <sup>2</sup>He said to them, ‘I am now one hundred and twenty years old and am no longer able to get around well; moreover, the Lord has said to me, \"You will not cross the Jordan.\" <sup>6</sup>Be strong and courageous! Do not fear or tremble before them, for the Lord your God is the one who is going with you. He will not fail you or abandon you!’ <sup>7</sup>Then Moses called out to Joshua, and said to him in the sight of all Israel, ‘Be strong and courageous, for you will accompany these people to the land that the Lord has promised to give their ancestors, and you will give it to them as their inheritance. <sup>8</sup>The Lord is indeed going before you -- he will be with you; he will not fail you or abandon you. Do not be afraid or discouraged!’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+31&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch18-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses commissions Joshua in the sight of all Israel, repeating three times the promise ’he will not fail you or abandon you.’ He does this even though he knows Israel will fail. What does it tell us about God’s character that his faithfulness to his people is declared at the very moment their future faithlessness is known?",
+          "linkedPassage"    :"Deuteronomy 31:1-8",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"Moses has just been told by God that Israel will prostitute themselves to foreign gods after his death (31:16). He knows. And yet his final words to Israel and to Joshua are not ’if you stay faithful, perhaps God will stay with you’ but ’he will not fail you or abandon you.’ The promise is unconditional in form even in the face of predicted failure. This is one of the deepest things the closing chapters of Deuteronomy say about God: his faithfulness is not contingent on ours. He does not commit to his people only when they perform adequately. He commits to them despite his foreknowledge of their failure. This is not a license for carelessness -- the warnings of chapters 27-29 are real. But it is the ground of hope: the God who knows everything we will do before we do it still says ’I will not fail you or abandon you.’ That promise, made at the edge of the Jordan and before Moses’ death, is the bedrock on which the rest of the story -- including the exile, the return, and ultimately Christ -- stands.",
+          "questionHint"     :"God tells Moses that Israel will fail after his death (v16), and then Moses tells Joshua ’he will not fail you or abandon you’ (v8). How can both statements be true simultaneously? What kind of faithfulness does that combination describe?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch18-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"32:1-43: The Song of Moses",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch18-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 32:1-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Listen, O heavens, and I will speak; hear, O earth, the words of my mouth. <sup>3</sup>For I will proclaim the name of the Lord; you must acknowledge the greatness of our God. <sup>4</sup>As a rock his work is perfect, for all his ways are just. He is a faithful God, without moral fault; he is just and upright. <sup>5</sup>They have acted corruptly toward him; this is their defect -- they are a perverse and deceitful generation. <sup>6</sup>Is this how you repay the Lord, you foolish, unwise people? Is he not your father, your creator? Has he not made you and established you? <sup>10</sup>The Lord found him in a wilderness, in an empty wasteland where animals howl. He continually guarded him and taught him; he continually protected him like the pupil of his eye, <sup>11</sup>like an eagle that stirs up its nest, that hovers over its young, that spreads out its wings and catches them, that carries them on its feathers. <sup>12</sup>The Lord alone was guiding him, no foreign god was with him.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+32&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch18-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The song opens with an extended description of God as ’the Rock’ -- perfect, just, faithful, without fault -- and then immediately contrasts Israel as ’perverse and deceitful.’ What is the theological and pastoral purpose of establishing God’s character so completely before the account of Israel’s failure?",
+          "linkedPassage"    :"Deuteronomy 32:1-12",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The song insists on establishing who God is before it describes what Israel has done -- and this is not accidental. ’The Rock’ appears five times in the song as the spine on which everything else hangs: God’s perfection, justice, faithfulness, and uprightness are constants that do not shift or waver when Israel does. By establishing this first, the song ensures that the account of Israel’s apostasy is read against a fixed background. The failure of Israel does not reflect a failure or changeability in God. It reflects a failure in Israel, against a God who was and remains perfectly faithful. This is both a theological claim (God’s character does not change) and a pastoral one: even when the song recounts God’s judgment of Israel, the reader knows that the Judge is perfectly just and that the relationship that was broken by Israel’s faithlessness was not broken by God’s. The eagle imagery of vv10-11 is particularly tender: the Lord found Israel in a wilderness wasteland and carried them on his own feathers. Israel’s apostasy is all the more shocking -- and God’s faithfulness all the more remarkable -- when set against that picture.",
+          "questionHint"     :"The song calls God ’the Rock’ (v4) -- stable, unchanging, the foundation that does not shift. Why does it matter that God’s character is fixed and constant when the song goes on to describe Israel’s faithlessness and God’s judgment? What does ’the Rock’ do for the reader in those later, darker sections?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch18-el11",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 32:39-43",
+          "translation"  :"NET",
+          "passageText"  :"<sup>39</sup>See now that I, indeed I, am he, and there is no other god besides me; I bring death and give life; I wound and I heal, and none can deliver from my hand. <sup>43</sup>Rejoice, O nations, with his people, for he will avenge his servants’ blood; he will return vengeance to his enemies, and make atonement for his land and people.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+32&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch18-el12",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The song ends in v43 with an unexpected call to rejoice -- among the nations, with God’s people -- over atonement made for the land and people. How is judgment a cause for rejoicing? And how does the New Testament’s use of this verse (Romans 15:10) shed light on what is happening here?",
+          "linkedPassage"    :"Deuteronomy 32:39-43",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The rejoicing of v43 is not the gleeful celebration of destruction -- it is the deep satisfaction of a universe where justice is finally done and atonement is made. God avenges his servants’ blood, punishes his enemies, and makes atonement for his land and people. Judgment and mercy belong together in that final verse: the same act that removes evil also restores relationship. A world without God’s judgment would be a world where the powerful exploitation of the innocent continues without accountability forever. The rejoicing is the rejoicing of those who know that wrong will not have the last word. Paul quotes v43 in Romans 15:10 in the context of the Gentiles praising God -- he is reading the song as anticipating the worldwide reach of God’s salvation through Christ, in which all nations join Israel in praise. The atonement of v43 is, for Paul, the atonement accomplished at the cross -- where God’s vengeance against sin and his mercy toward sinners converge in a single act.",
+          "questionHint"     :"The song calls on ’nations’ to rejoice with God’s people. In Deuteronomy’s original context, this is surprising -- why would the nations rejoice with Israel? Paul quotes this in Romans 15:10 in the context of Gentile inclusion. What does that quotation suggest about the song’s ultimate horizon?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch18-el13",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch18-el14",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 32:4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>4</sup>As a rock his work is perfect, for all his ways are just. He is a faithful God, without moral fault; he is just and upright.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+32&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch18-el15",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"The song describes God as ’the Rock’ -- the constant, unchanging foundation on which everything rests. Israel’s faithlessness does not alter his faithfulness. Where in your own experience of God do you most need to hear and hold onto that constancy? What would it mean to build your life on the Rock rather than on something that shifts?",
+          "linkedPassage"    :"Deuteronomy 32:4",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The image of God as the Rock addresses the particular anxiety that comes from knowing one’s own instability. Israel’s history in Deuteronomy is a catalogue of wavering faith, rebellious choices, and drifting loyalty -- and yet the song’s spine is the unchanging character of the Rock. For us, the equivalent anxiety is often: what happens to my relationship with God when I fail again? When the pattern of inconsistency in my own life accumulates enough evidence to suggest that I am simply not capable of the wholehearted love Moses calls for? The Rock is the answer: not a God who waits to see if you will perform adequately before committing, but a God whose faithfulness is the fixed point around which everything else orbits. Building on the Rock means returning to him -- not performing for him -- after every failure; treating his promises as more reliable than our own assessment of our spiritual condition; letting his constancy, not our consistency, be the ground of our confidence before him.",
+          "questionHint"     :"The song’s repeated use of ’the Rock’ describes a God who does not shift when everything around him shifts. Where in your own life are you most tempted to build on something less stable -- on your own performance, on circumstances, on other people’s assessments of you?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch18-el16",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 32:46-47",
+          "translation"  :"NET",
+          "passageText"  :"<sup>46</sup>He said to them, ‘Take to heart all the words I am solemnly proclaiming to you today; you must command your children to observe carefully all the words of this law. <sup>47</sup>For this is not an idle word for you -- it is your life! By this word you will live long in the land you are crossing the Jordan to possess.’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+32&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch18-el17",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Moses’ last instruction is ’take these words to heart -- this is not an idle word for you, it is your life.’ As you come to the end of this long study in Deuteronomy, what have you taken to heart? What has changed, or needs to change, in how you see God, yourself, or the way you live?",
+          "linkedPassage"    :"Deuteronomy 32:46-47",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"This is a question for each person to answer honestly from their own journey through the study. Some possible areas where Deuteronomy might have lodged something: a deepened sense of the costliness of idolatry -- the ways in which practical loyalties to things other than God quietly shape the direction of a life; a renewed understanding of the ground of covenant relationship as God’s choice and faithfulness rather than human performance; a more urgent sense of the connection between what we believe about God and what we do with money, power, sex, and justice; a greater appreciation for the communal and embodied dimensions of faith -- worship, generosity, care for the vulnerable as expressions of theological conviction rather than add-ons; and perhaps above all, the movement from the diagnosis of chapter 29 (blind eyes, deaf ears, uncomprehending mind) to the promise of 30:6 (the Lord will circumcise your heart) -- and the recognition that the fulfilment of that promise is the work of the Spirit who has been given to us.",
+          "questionHint"     :"Moses says ’this is your life’ -- not a supplement to life, not a guide to better living, but life itself. What aspect of what Deuteronomy has said about God, Israel, and the shape of faithful living feels most like that to you -- most like it is about the substance of what you live for?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"The Song of Moses is quoted extensively in the New Testament: in Romans 10:19, 12:19, 15:10; Philippians 2:14-15; and Revelation 15:3. Look up one or two of these and consider how the New Testament authors read this ancient poem. What do they find in it that is still alive and speaking?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber":19,
+      "chapterTitle" :"Deuteronomy 32:48-34:12: The People of God Are Secure in the Everlasting Arms",
+      "elements"     :[
+        {
+          "elementId"    :"ch19-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"The book of Deuteronomy closes as it opened: with Moses. But now the focus narrows to the man himself -- his last blessing, his death on Pisgah, and the epitaph that declares him the greatest prophet Israel ever had. It is a great ending. And yet it is also an incomplete ending. Moses was the greatest -- but he could not bring his people home. That incompleteness is itself a signpost.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch19-el02",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"As you read, notice the mood of chapter 33 -- which after everything is a blessing, not a curse. And notice what the final verse of the book leaves unresolved -- and where Scripture eventually resolves it.",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch19-el03",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "format"       :"HTML",
+          "eyebrow"      :"Bible Reading (NET translation)",
+          "term"         :"Read: Deuteronomy 32:48-34:12",
+          "question"     :"Read the passage before you begin...",
+          "answer"       :"<p><sup>32:48</sup>That very same day the Lord spoke to Moses: <sup>49</sup>’Go up to this mountain of the Abarim range, Mount Nebo, which is in the land of Moab, across from Jericho, and look at the land of Canaan that I am giving to the Israelites as their possession. <sup>50</sup>You will die on the mountain that you climb and will be gathered to your people, just as your brother Aaron died on Mount Hor and was gathered to his people. <sup>51</sup>This is because both of you broke faith with me before the Israelites at the waters of Meribah Kadesh in the wilderness of Zin -- you did not show me as holy in their midst. <sup>52</sup>You will see the land from a distance, but you will not enter the land I am giving to the Israelites.’</p><p><sup>33:1</sup>This is the blessing that Moses, the man of God, pronounced upon the Israelites before his death. <sup>2</sup>He said: ‘The Lord came from Sinai, he appeared to them from Seir, he shone from Mount Paran, and he came from Meribah Kadesh, with flaming fire at his right hand. <sup>3</sup>Surely he loves the peoples; all your holy ones are in your hand. They follow at your feet, they receive your words. <sup>26</sup>There is no one like God, O Jeshurun, who rides through the sky to help you, who rides through the clouds in his majesty. <sup>27</sup>The eternal God is a refuge, and his everlasting arms are underneath you; he has driven out enemies before you and has said, \"Destroy!\" <sup>28</sup>Israel lives securely, the fountain of Jacob alone, in a land of grain and new wine; indeed, their heavens rain down dew. <sup>29</sup>How blessed are you, Israel! Who is like you? You are a people saved by the Lord. He is your shields and your helper; he is your glorious sword. Your enemies will cringe before you, and you will trample their backs.’</p><p><sup>34:1</sup>Then Moses went up from the plains of Moab to Mount Nebo, to the summit of Pisgah, which is opposite Jericho. The Lord showed him all the land -- Gilead as far as Dan, <sup>2</sup>all of Naphtali, the land of Ephraim and Manasseh, all the land of Judah as far as the Mediterranean Sea, <sup>3</sup>the Negev, and the plain of the valley of Jericho -- the city of palms -- as far as Zoar. <sup>4</sup>Then the Lord said to him, ‘This is the land I promised to Abraham, Isaac, and Jacob when I said, \"I will give it to your descendants.\" I have let you see it with your own eyes, but you will not cross over there.’ <sup>5</sup>So Moses, the servant of the Lord, died there in the land of Moab as the Lord had said. <sup>6</sup>He buried him in a valley in the land of Moab near Beth Peor, and no one knows his burial place to this very day. <sup>7</sup>Moses was one hundred twenty years old when he died, but his eyes were not dim and his vitality had not diminished. <sup>8</sup>The Israelites mourned for Moses in the plains of Moab for thirty days; then the days of mourning for Moses ended. <sup>9</sup>Now Joshua son of Nun was full of the spirit of wisdom, for Moses had laid his hands on him; and the Israelites listened to him and did just what the Lord had commanded Moses. <sup>10</sup>No prophet has arisen since in Israel like Moses, whom the Lord knew face to face, <sup>11</sup>or who did all those signs and wonders the Lord sent him to do in the land of Egypt, against Pharaoh, all his servants, and all his land, <sup>12</sup>or who did all the mighty acts and great and fearful deeds that Moses did in the sight of all Israel.</p>",
+          "buttonText"   :"Read passage",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"        :"ch19-el04",
+          "type"             :"question",
+          "subtype"          :"header",
+          "header"           :"As we get started...",
+          "format"           :"plainText",
+          "question"         :"Moses sees the Promised Land from Pisgah, and then dies without entering it. Before looking at the details, sit with that image for a moment. What does it make you feel? What questions does it raise?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch19-el05",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"32:48-52: Moses the Sinner",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch19-el06",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 32:48-52",
+          "translation"  :"NET",
+          "passageText"  :"<sup>48</sup>That very same day the Lord spoke to Moses: <sup>49</sup>’Go up to this mountain of the Abarim range, Mount Nebo, which is in the land of Moab, across from Jericho, and look at the land of Canaan that I am giving to the Israelites as their possession. <sup>50</sup>You will die on the mountain that you climb and will be gathered to your people, just as your brother Aaron died on Mount Hor and was gathered to his people. <sup>51</sup>This is because both of you broke faith with me before the Israelites at the waters of Meribah Kadesh in the wilderness of Zin -- you did not show me as holy in their midst. <sup>52</sup>You will see the land from a distance, but you will not enter the land I am giving to the Israelites.’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+32&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch19-el07",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"In chapters 1-4 Moses attributed his exclusion from the land largely to the people’s sin (‘because of you’). Here in 32:51 the Lord says plainly ’you broke faith with me.’ Both are true. What does holding both together say about sin, leadership, and the reality that even the greatest human leaders cannot ultimately bring God’s people home?",
+          "linkedPassage"    :"Deuteronomy 32:48-52",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The two accounts are not contradictory -- they present the full picture. Moses sinned at Meribah. He also sinned in a context of being ground down by forty years of the people’s relentless grumbling and rebellion. Both are true: he bears his own failure and he bears consequences partly rooted in others’ sin. Holding both together is honest about what leadership costs -- it is never simply an individual matter, and a leader who is worn down by their community’s failures can still respond sinfully rather than faithfully. But the deeper theological point is this: even Moses, the greatest prophet Israel ever had, cannot bring the people home. His greatness is real and unrepeated (34:10-12), but it is not sufficient. The man who saw God face to face, who received the law, who interceded through forty-day fasts -- that man is buried in an unmarked grave east of the Jordan, having seen the inheritance without entering it. This is not a theological accident. It is a signpost: the leader the people need is one who will not merely see the promised land but enter it, and bring them in.",
+          "questionHint"     :"Moses was the greatest prophet Israel ever had -- and he could not enter the Promised Land. What does that limitation in the greatest human leader tell us about what kind of leader God’s people ultimately need?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch19-el08",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"33:1-29: Moses’ Last Blessing",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch19-el09",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 33:26-29",
+          "translation"  :"NET",
+          "passageText"  :"<sup>26</sup>There is no one like God, O Jeshurun, who rides through the sky to help you, who rides through the clouds in his majesty. <sup>27</sup>The eternal God is a refuge, and his everlasting arms are underneath you; he has driven out enemies before you and has said, ‘Destroy!’ <sup>28</sup>Israel lives securely, the fountain of Jacob alone, in a land of grain and new wine; indeed, their heavens rain down dew. <sup>29</sup>How blessed are you, Israel! Who is like you? You are a people saved by the Lord. He is your shields and your helper; he is your glorious sword. Your enemies will cringe before you, and you will trample their backs.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+33&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch19-el10",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"Moses’ last words to Israel are a blessing. After all the warnings, curses, and honest accounts of failure, he ends here: ‘the eternal God is a refuge, and his everlasting arms are underneath you.’ What is the effect of closing the book this way -- and what does it say about the last word God has for his people?",
+          "linkedPassage"    :"Deuteronomy 33:26-29",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The effect of ending with a blessing is profound. Moses has been relentlessly honest throughout -- about Israel’s failures, about the covenant curses, about his own exclusion, about the certainty of future apostasy. He has not spared his listeners. And yet his final words are not a warning or a conditional promise but an act of blessing: there is no one like God, who rides through the clouds to help you; the eternal God is a refuge; his everlasting arms are underneath you. The image of the everlasting arms is particularly striking -- not arms that hold from the side, or that reach down occasionally, but arms that are permanently underneath, the foundation on which everything rests. You cannot fall through the floor because the eternal God is the floor. After all the warnings and the history and the curses, Moses wants this to be the last sound in Israel’s ears: you are held by arms that existed before the world and will outlast it. Whatever comes -- and Moses knows what will come -- that is the ground on which his people stand.",
+          "questionHint"     :"Moses chose to end with a blessing rather than a final warning or a conditional promise. Why might that choice matter? What does it say about what Moses ultimately wants Israel to carry away from everything he has said?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch19-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"34:1-12: The Death of Moses",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch19-el12",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 34:1-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>Then Moses went up from the plains of Moab to Mount Nebo, to the summit of Pisgah, which is opposite Jericho. The Lord showed him all the land -- Gilead as far as Dan, <sup>2</sup>all of Naphtali, the land of Ephraim and Manasseh, all the land of Judah as far as the Mediterranean Sea, <sup>3</sup>the Negev, and the plain of the valley of Jericho -- the city of palms -- as far as Zoar. <sup>4</sup>Then the Lord said to him, ‘This is the land I promised to Abraham, Isaac, and Jacob when I said, \"I will give it to your descendants.\" I have let you see it with your own eyes, but you will not cross over there.’ <sup>5</sup>So Moses, the servant of the Lord, died there in the land of Moab as the Lord had said. <sup>6</sup>He buried him in a valley in the land of Moab near Beth Peor, and no one knows his burial place to this very day. <sup>7</sup>Moses was one hundred twenty years old when he died, but his eyes were not dim and his vitality had not diminished. <sup>10</sup>No prophet has arisen since in Israel like Moses, whom the Lord knew face to face, <sup>11</sup>or who did all those signs and wonders the Lord sent him to do in the land of Egypt, against Pharaoh, all his servants, and all his land, <sup>12</sup>or who did all the mighty acts and great and fearful deeds that Moses did in the sight of all Israel.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+34&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch19-el13",
+          "type"             :"question",
+          "subtype"          :"standard",
+          "format"           :"plainText",
+          "question"         :"The book closes with the verdict: ‘No prophet has arisen since in Israel like Moses, whom the Lord knew face to face.’ This is both a tribute and a cliff-hanger -- because Deuteronomy 18:15 promised a prophet like Moses who was yet to come. Where does Scripture eventually resolve that promise, and what does Moses’ inability to enter the land point toward?",
+          "linkedPassage"    :"Deuteronomy 34:1-12",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"The final verse of Deuteronomy is simultaneously an epitaph and an anticipation. ’No prophet has arisen since in Israel like Moses’ -- the superlative is meant to land with full weight. Moses is unrepeated. And yet Deuteronomy 18:15 has already promised a prophet ’like me’ who the Lord will raise up. The closing verse holds both: Moses is the greatest, and he is not enough. The prophet like Moses is still awaited. The New Testament’s answer arrives in Acts 3:22, where Peter quotes Deuteronomy 18:15 directly and applies it to Jesus. But the most striking resolution comes in Matthew 17:1-13, at the transfiguration: Moses -- who saw the Promised Land from Pisgah but could not enter -- stands on a mountain in the land, in the presence of the one who is both greater than Moses and the fulfilment of everything Moses pointed toward. Moses does reach the land. He arrives with Elijah, in the company of the one who does not merely receive God’s word like Moses but is himself the Word. Jesus is the prophet greater than Moses, the priest greater than Aaron, the king greater than David -- and the one who does not merely see the eternal inheritance but enters it, and leads his people in.",
+          "questionHint"     :"The book closes with ’no prophet has arisen since in Israel like Moses.’ The same book promised a prophet like Moses who was yet to come. How does the New Testament answer the question this ending raises -- and what does the transfiguration in Matthew 17 specifically contribute to that answer?",
+          "deeper"           :{
+            "label"            :"Go deeper...",
+            "question"         :"Read Matthew 17:1-8 and Hebrews 3:1-6. How does Jesus fulfil what Moses pointed toward -- as prophet, as the one who brings God’s people into the inheritance, and as the one whose glory surpasses Moses’? What specifically does Hebrews say Jesus is able to do that Moses was not?",
+            "answerType"       :"freeText",
+            "required"         :false,
+            "answerPlaceholder":"Your reflection..."
+          },
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch19-el14",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"Application",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch19-el15",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 33:27",
+          "translation"  :"NET",
+          "passageText"  :"<sup>27</sup>The eternal God is a refuge, and his everlasting arms are underneath you; he has driven out enemies before you and has said, ‘Destroy!’",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+33&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch19-el16",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Moses’ final image for the people of God is ’his everlasting arms are underneath you’ -- held from below, not from above; sustained from the foundation, not rescued occasionally. What does that image mean for you in your particular circumstances right now? Where do you most need to know that the eternal God is the ground you stand on?",
+          "linkedPassage"    :"Deuteronomy 33:27",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The image of everlasting arms underneath is different from the image of arms that catch you when you fall, or that hold you from the side. Arms underneath are the foundation -- the thing that makes standing possible in the first place. You do not feel them as an intervention; you only notice what happens when they are absent, which for God’s people they never are. For those who are in a period of acute difficulty -- grief, illness, professional collapse, relational breakdown -- this image is medicine: the chaos happening around you does not mean the foundation has given way. For those in a period of apparent stability -- when life is going well and God feels distant or unnecessary -- the same image is a corrective: your stability is not your own production; the arms are underneath whether you are aware of them or not. Moses gives this image to a people he knows will fail and be judged and be scattered. He gives it precisely because he knows what is coming. The everlasting arms are not the promise that nothing bad will happen -- they are the promise that nothing will happen that reaches all the way to the bottom.",
+          "questionHint"     :"Arms underneath you are not the same as arms that occasionally rescue you from above. What is the difference -- and why does it matter for how you think about God’s presence in times of difficulty versus times of apparent stability?",
+          "bottomPadding"    :"normal"
+        },
+        {
+          "elementId"    :"ch19-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Deuteronomy 34:10-12",
+          "translation"  :"NET",
+          "passageText"  :"<sup>10</sup>No prophet has arisen since in Israel like Moses, whom the Lord knew face to face, <sup>11</sup>or who did all those signs and wonders the Lord sent him to do in the land of Egypt, against Pharaoh, all his servants, and all his land, <sup>12</sup>or who did all the mighty acts and great and fearful deeds that Moses did in the sight of all Israel.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Deuteronomy+34&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"        :"ch19-el18",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Moses was the greatest prophet Israel ever had -- and he could not bring his people home. We have the one who is greater than Moses: the prophet, priest, and king who did enter the land, who does bring his people home, and who holds them in everlasting arms. As we close this study of Deuteronomy, what difference does it make to you that the leader Moses could only anticipate is the one you have?",
+          "linkedPassage"    :"Deuteronomy 34:10-12",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection...",
+          "sampleAnswer"     :"The whole book of Deuteronomy has been building toward a gap that Moses himself could not fill. He gave the law but could not produce the heart to keep it. He interceded for a rebellious people but could not atone for their sin. He led them to the edge of the inheritance but could not bring them in. Everything Moses did and said was real and significant and unrepeated -- and it was also incomplete. The promise of Deuteronomy 18:15 (‘a prophet like me’) hangs at the end of the book as an open question. Jesus is the answer to that question. He is the prophet who speaks not just God’s words but is himself the Word. He is the priest who offered not an animal but himself, once for all. He is the king who rules not by accumulating horses and wives and gold but by laying down his life and taking it up again. And he is the one who has gone ahead into the true Promised Land -- the renewed creation, the eternal rest -- and who will not leave his people outside it. The difference it makes is total: we do not follow Moses east of the Jordan, looking at what we cannot reach. We follow the one who has already crossed the Jordan, already entered the inheritance, and who holds us in arms that will not let us go.",
+          "questionHint"     :"Moses pointed forward to someone greater without being able to name him. You know who that person is. How does reading Deuteronomy -- with all its demands, warnings, blessings, and curses -- change when you read it as a book that is always pointing toward Christ?",
+          "bottomPadding"    :"normal"
+        }
+      ]
     }
   ],
   "studyOnboardingSlides":[

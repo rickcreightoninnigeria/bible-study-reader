@@ -69,8 +69,8 @@
     {
       "chapterNumber":1,
       "chapterTitle1":"Called, Not Appointed",
-      "chapterTitle2":"",
-      "chapterTitle3":"",
+      "chapterTitle2":"An kira, Ba a Naɗa ba",
+      "chapterTitle3":"Noddaama, Toɗɗaaka",
       "elements"     :[
         {
           "elementId"    :"ch01-el01",
@@ -735,8 +735,8 @@
     {
       "chapterNumber":2,
       "chapterTitle1":"Known and Loved",
-      "chapterTitle2":"",
-      "chapterTitle3":"",
+      "chapterTitle2":"Sananne kuma Ana Sona",
+      "chapterTitle3":"Anndaa e Yiɗaade",
       "elements"     :[
         {
           "elementId"    :"ch02-el01",
@@ -1375,9 +1375,9 @@
     },
     {
       "chapterNumber":3,
-      "chapterTitle1":"",
-      "chapterTitle2":"",
-      "chapterTitle3":"One Flesh",
+      "chapterTitle1":"One Flesh",
+      "chapterTitle2":"Nama Ɗaya",
+      "chapterTitle3":"Terɗe Goote",
       "elements"     :[
         {
           "elementId"    :"ch03-el01",
@@ -2024,9 +2024,9 @@
     },
     {
       "chapterNumber":4,
-      "chapterTitle1":"",
-      "chapterTitle2":"",
-      "chapterTitle3":"Called, Not Appointed — Session 4: The Hidden Life",
+      "chapterTitle1":"The Hidden Life",
+      "chapterTitle2":"Rayuwar da Ba a Boye Ba",
+      "chapterTitle3":"Nguurndam Suuɗɗam",
       "elements"     :[
         {
           "elementId"    :"ch04-el01",
@@ -2665,9 +2665,9 @@
     },
     {
       "chapterNumber":5,
-      "chapterTitle1":"Called, Not Appointed",
-      "chapterTitle2":"",
-      "chapterTitle3":"",
+      "chapterTitle1":"When It’s Hard",
+      "chapterTitle2":"Lokacin da Yana da Wuya",
+      "chapterTitle3":"Nde Ko Saɗti",
       "elements"     :[
         {
           "elementId"    :"ch05-el01",
@@ -3332,8 +3332,8 @@
     {
       "chapterNumber":6,
       "chapterTitle1":"Rest and Rootedness",
-      "chapterTitle2":"",
-      "chapterTitle3":"",
+      "chapterTitle2":"Hutu da Tushewa",
+      "chapterTitle3":"Fooftere e Rootde",
       "elements"     :[
         {
           "elementId"    :"ch06-el01",

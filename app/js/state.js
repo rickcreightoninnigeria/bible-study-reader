@@ -58,6 +58,10 @@ window.studyOnboardingSlides = [];
 // The 'bsr_' prefix namespaces all app keys so they can be bulk-deleted safely.
 function storageKey(chapterNum, type, index) {
   const currentStudyId = window.activeStudyId;
+  if (!currentStudyId) {
+    console.warn('storageKey() called with no activeStudyId — falling back to "unknown". This should not happen; check bug #29.');
+    return `bsr_unknown_ch${chapterNum}_${type}_${index}`;
+  }
   return `bsr_${currentStudyId}_ch${chapterNum}_${type}_${index}`;
 }
 
@@ -66,6 +70,10 @@ function storageKey(chapterNum, type, index) {
 //   e.g.  bsr_grow_in_christ_1_ch2_likert_el_42_0
 // Keyed by elementId so the key is stable regardless of element position.
 function likertKey(chapterNum, elementId, stIdx) {
-  const currentStudyId = window.activeStudyId || 'mmdd';
+  const currentStudyId = window.activeStudyId;
+  if (!currentStudyId) {
+    console.warn('likertKey() called with no activeStudyId — falling back to "unknown". This should not happen; check bug #29.');
+    return `bsr_unknown_ch${chapterNum}_likert_${elementId}_${stIdx}`;
+  }
   return `bsr_${currentStudyId}_ch${chapterNum}_likert_${elementId}_${stIdx}`;
 }
