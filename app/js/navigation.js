@@ -35,6 +35,12 @@ async function goToChapter(idx, scrollY = 0) {
 // Also neutralises any in-flight swipe from the closing gesture by equalising
 // touchstartX and touchendX so handleGesture() computes a delta of zero.
 function _resetNonChapterPageState() {
+  // Close search overlay first if it happens to be open, so its button icon,
+  // header title, and isNonChapterPage flag are all cleaned up by closeSearch()
+  // before we overwrite isNonChapterPage below. Mirrors the guard in toggleMenu().
+  const so = document.getElementById('searchOverlay');
+  if (so && so.classList.contains('open')) closeSearch();
+
   const page = window.activeTabPage;
   if (page === 'progress') {
     const btn = document.getElementById('navProgressBtn');
