@@ -557,6 +557,7 @@ app-level onboarding.
     "heading": "Questions and answers",
     "body":    "Each chapter contains passage-based questions. Tap the verse reference to read the passage.",
     "action": {
+      "id":    "settings",
       "label": "Open Settings",
       "fn":    null
     }
@@ -570,7 +571,7 @@ app-level onboarding.
 | `eyebrow` | No | Small uppercase label. |
 | `heading` | **Yes** | Slide title. |
 | `body` | No | Body text. |
-| `action` | No | Optional button at the bottom. `label` is the button text. `fn` must be `null` in the JSON file — the app resolves it at runtime using keyword matching on `label`. Currently recognised keywords: `"Settings"` → opens the Settings page; `"How to use"` → opens the How To Use page. |
+| `action` | No | Optional button at the bottom. `label` is the button text (cosmetic only — may be translated freely). `id` identifies which screen the button opens; `fn` must always be `null` in the JSON file — the app resolves it at runtime from `id`. Supported `id` values: `"settings"` → opens the Settings page; `"howto"` → opens the How To Use page. |
 
 ---
 

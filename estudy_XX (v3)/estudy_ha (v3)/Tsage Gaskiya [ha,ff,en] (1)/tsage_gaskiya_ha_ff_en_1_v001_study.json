@@ -6150,6 +6150,7 @@
       "body2"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      So a sɓii binde mawngo yah e laawol e saituuji jooni\n    </div>",
       "body3"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
       "action"  :{
+        "id"   :"settings",
         "label":"⚙ Settings",
         "fn"   :null
       },
@@ -6170,6 +6171,7 @@
       "body2"   :"So a yiɗi kaɓirɗe famɗude ko waɗi e mbiyundi nguu e jokkondiral nguu – ko e yiyngel maa maa e jam’iyya – a waawi hiɓde biyol ngol les.",
       "body3"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
       "action"  :{
+        "id"   :"howto",
         "label":"Go to the ’How to use’ page →",
         "fn"   :null
       },

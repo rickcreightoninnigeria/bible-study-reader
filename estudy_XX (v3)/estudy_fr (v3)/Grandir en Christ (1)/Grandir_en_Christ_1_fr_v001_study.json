@@ -3072,6 +3072,7 @@
       "heading":"Ajustez selon vos préférences",
       "body"   :"<div style=’font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;’>\n      Si vous avez besoin d’un texte plus grand, allez directement aux paramètres maintenant\n    </div>",
       "action" :{
+        "id"   :"settings",
         "label":"⚙ Paramètres",
         "fn"   :null
       },
@@ -3084,6 +3085,7 @@
       "heading":"Comment utiliser cette application",
       "body"   :"Si vous souhaitez un guide complet pour tirer le meilleur parti de cette application et de cette étude – que ce soit seul ou en groupe – vous pouvez appuyer sur le bouton ci-dessous.",
       "action" :{
+        "id"   :"howto",
         "label":"Aller à la page « Comment utiliser » →",
         "fn"   :null
       },

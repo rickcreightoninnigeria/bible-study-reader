@@ -4057,6 +4057,7 @@
       "body2"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      Idan kana buƙatar babban rubutu je zuwa saituna yanzu\n    </div>",
       "body3"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      To a yiɗi winndu mawnundu yahu to saituna jonta\n    </div>",
       "action"  :{
+        "id"    :"settings",
         "label1":"⚙ Settings",
         "label2":"⚙ Saituna",
         "label3":"⚙ Saituna",
@@ -4079,6 +4080,7 @@
       "body2"   :"Idan kana son cikakken jagora kan yadda za ka sami fa’ida sosai daga wannan nazarin — ko kai kaɗai ne ko tare da rukunin mata — taɓa maballin da ke ƙasa.",
       "body3"   :"To a yiɗi jagoramol timmungol dow no a heɓirta nafa nder janngirde nde — koo a gooto ma koo bee kawtal rewɓe — mem buton wonɗo les ɗon.",
       "action"  :{
+        "id"    :"howto",
         "label1":"Go to the ’How to use’ page →",
         "label2":"Je zuwa shafin ’Yadda ake amfani’ →",
         "label3":"Yahu to hello ’No huutorta’ →",

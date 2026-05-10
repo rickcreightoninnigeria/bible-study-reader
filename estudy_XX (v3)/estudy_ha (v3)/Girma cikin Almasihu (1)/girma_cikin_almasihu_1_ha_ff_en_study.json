@@ -4934,6 +4934,7 @@
       "body2"   :"",
       "body3"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
       "action"  :{
+        "id"    :"settings",
         "label1":"",
         "label2":"",
         "label3":"⚙ Settings",
@@ -4954,6 +4955,7 @@
       "body2"   :"",
       "body3"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
       "action"  :{
+        "id"    :"howto",
         "label1":"",
         "label2":"",
         "label3":"Go to the ‘How to use’ page →",

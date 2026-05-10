@@ -2051,6 +2051,7 @@
       "heading":"Adjust to your preference",
       "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\"><br>      If you need bigger text go straight to settings now<br>    </div>",
       "action" :{
+        "id"   :"settings",
         "label":"⚙ Settings",
         "fn"   :null
       },
@@ -2063,6 +2064,7 @@
       "heading":"How to use this app",
       "body"   :"If you want a full guide to getting the most from this app and this study – whether on your own or in a group – you can tap the button below.",
       "action" :{
+        "id"   :"howto",
         "label":"Go to the ‘How to use’ page →",
         "fn"   :null
       },

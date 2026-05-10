@@ -2309,6 +2309,7 @@
       "heading":"Daidaita zuwa abin da kake so",
       "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\"><br>      Idan kana buƙatar babban rubutu je zuwa wurin saituna (settings) yanzu<br>    </div>",
       "action" :{
+        "id"   :"settings",
         "label":"⚙ Saituna",
         "fn"   :null
       },
@@ -2321,6 +2322,7 @@
       "heading":"Yadda ake amfani da wannan manhajjar",
       "body"   :"Idan kana son cikakken jagora kan yadda za ka fi amfana da wannan manhajjar da wannan nazarin – ko kai kaɗai ko a cikin rukuni – za ka iya taba maɓallin da ke ƙasa.",
       "action" :{
+        "id"   :"howto",
         "label":"Je zuwa shafin ‘Yadda ake amfani’ →",
         "fn"   :null
       },
