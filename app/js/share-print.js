@@ -80,11 +80,11 @@ function shareAnswers() {
 
 // ── EXPORT ALL ANSWERS ────────────────────────────────────────────────────────
 
-// Compiles answered questions from all chapters into a single export document
-// and shares/copies it. Chapters with no answers are silently skipped.
-// If no answers exist at all, shows a friendly "No answers yet" dialog instead
-// of sharing an empty document. Adds a datestamped footer to the export.
-function exportAllAnswers() {
+// Compiles answered questions from all chapters of the current study into a
+// single export document and shares/copies it. Chapters with no answers are
+// silently skipped. If no answers exist at all, shows a friendly "No answers
+// yet" dialog instead of sharing an empty document. Adds a datestamped footer.
+function exportStudyAnswers() {
   const meta = window.titlePageData || {};
   const fmt  = appSettings.shareFormat === 'plain';
   const bold = (s) => fmt ? s : `*${s}*`;
@@ -148,6 +148,29 @@ function exportAllAnswers() {
       chapterReport += bold(t('shareprint_notes_heading')) + '\n';
       chapterReport += notesAnswer.trim() + '\n\n';
     }
+
+    // Likert scale responses — one block per scale, statement → chosen label.
+    // Unanswered statements are included so the export reflects the full scale.
+    // Mirrors the structure used by buildChapterBody() for print output.
+    (ch.elements || [])
+      .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
+      .forEach(el => {
+        const scale      = el.scale      || [];
+        const statements = el.statements || [];
+        if (!statements.length) return;
+
+        let likertReport = '';
+        statements.forEach((stmt, stIdx) => {
+          const raw      = localStorage.getItem(likertKey(ch.chapterNumber, el.elementId, stIdx));
+          const labelIdx = raw ? (parseInt(raw, 10) - 1) : -1;
+          const label    = (labelIdx >= 0 && labelIdx < scale.length) ? scale[labelIdx] : t('shareprint_print_no_answer');
+          likertReport += `• ${stmt}: ${label}\n`;
+        });
+
+        chapterHasAnswers = true;
+        chapterReport += bold(t('shareprint_print_likert_heading')) + '\n';
+        chapterReport += likertReport + '\n';
+      });
 
     if (chapterHasAnswers) {
       report += chapterReport;
@@ -536,13 +559,7 @@ function printAllChapters() {
     if (notesVal && notesVal.trim()) hasContent = true;
     if (!hasContent) return;
 
-    const langMap    = buildLangMap(window.studyMetadata || {});
-    const activeLang = window._activeStudyLang || 'en';
-    const slot       = langMap[activeLang];
-    const chapterTitle = (slot ? ch[`chapterTitle${slot}`] : null)
-      || ch.chapterTitle1 || ch.chapterTitle || '';
-
-    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: chapterTitle })}</h2>
+    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
 ${buildChapterBody(ch)}`;
   });
 
@@ -577,107 +594,67 @@ ${chaptersHTML}
 //   • Likert response cells are blank (same row layout, no text).
 //   • Reflection answer boxes are always empty.
 //   • Notes section is omitted entirely (it's a personal annotations space).
-function buildBlankChapterBody(ch, activeLang, langMap) {
+function buildBlankChapterBody(ch) {
   let body = '';
-  const slot = langMap && activeLang ? langMap[activeLang] : null;
-  const rt = (el, field) => {
-    // resolveText equivalent: slot-indexed, fallback to slot 1, then unnumbered
-    if (slot !== undefined) return el[`${field}${slot}`] || el[`${field}1`] || el[field] || '';
-    return el[field] || el[`${field}1`] || '';
-  };
 
-  (ch.elements || []).forEach(el => {
-    if (el.repeatElement) return; // skip repeats
+  // Intro
+  if (ch.intro) {
+    body += `<div class="intro"><p>${ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+  }
 
-    switch (el.type) {
+  // Sections: bridge text then questions with blank answer boxes
+  ch.sections.forEach(sec => {
+    if (sec.bridge) {
+      body += `<div class="bridge">${sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>')}</div>`;
+    }
+    sec.questions.forEach(q => {
+      body += `<div class="question-block">
+        <div class="question-ref">${q.ref}</div>
+        <div class="question-text">${q.text}</div>
+        <div class="answer blank-answer"></div>
+      </div>`;
+    });
+  });
 
-      case 'text': {
-        const text = rt(el, 'text');
-        if (!text) break;
-        const cls = el.subtype === 'intro' ? 'intro'
-                  : el.subtype === 'closing' ? 'closing'
-                  : 'bridge';
-        body += `<div class="${cls}"><p>${text.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
-        break;
-      }
+  // Closing passage
+  if (ch.closing) {
+    body += `<div class="closing"><p>${ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+  }
 
-      case 'heading': {
-        const text = rt(el, 'text');
-        if (!text) break;
-        if (el.subtype === 'section') {
-          body += `<div class="section-heading">${text}</div>`;
-        } else if (el.subtype === 'subsection') {
-          body += `<div class="subsection-heading">${text}</div>`;
-        } else if (el.subtype === 'reflection') {
-          body += `<div class="reflection-heading">${text}</div>`;
-        }
-        break;
-      }
+  // Likert scales — same row layout as buildChapterBody() but response cell is blank
+  (ch.elements || [])
+    .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
+    .forEach(el => {
+      const statements = el.statements || [];
+      if (!statements.length) return;
 
-      case 'biblePassage': {
-        // Show the ref in the question-ref bar so it's visible
-        const ref = rt(el, 'bibleRef') || el.bibleRef1 || '';
-        if (ref) {
-          body += `<div class="question-ref" style="margin:6pt 0 2pt;">${ref}</div>`;
-        }
-        break;
-      }
+      const rowsHtml = statements.map(stmt => `<div class="likert-block-row">
+          <div class="likert-block-statement">${stmt}</div>
+          <div class="likert-block-response blank-answer" style="min-width:60pt;"></div>
+        </div>`).join('');
 
-      case 'question': {
-        if (el.subtype === 'header') {
-          // Header subtype: custom label, no blank answer box
-          const header = rt(el, 'header');
-          const qText  = rt(el, 'question');
-          if (header) body += `<div class="question-ref">${header}</div>`;
-          if (qText)  body += `<div class="question-text">${qText}</div>`;
-          body += `<div class="answer blank-answer"></div>`;
-          break;
-        }
-        const ref    = el.linkedPassage || '';
-        const qText  = rt(el, 'question');
+      body += `<div class="likert-block">
+        <div class="likert-block-title">${t('shareprint_print_likert_heading')}</div>
+        ${rowsHtml}
+      </div>`;
+    });
+
+  // Reflection questions with blank answer boxes
+  if (ch.reflection && ch.reflection.length > 0) {
+    body += `<div class="reflection-heading">${t('shareprint_print_reflection_heading')}</div>`;
+    (ch.elements || [])
+      .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
+      .forEach((el, ri) => {
+        const qText = el.question || el.question1 || '';
         body += `<div class="question-block">
-          <div class="question-ref">${ref}</div>
+          <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
           <div class="question-text">${qText}</div>
           <div class="answer blank-answer"></div>
         </div>`;
-        break;
-      }
+      });
+  }
 
-      case 'likertScale': {
-        if (el.subtype === 'bipolar') break; // not yet supported
-        // Resolve language-indexed statements and scale labels
-        const stmtKey  = slot ? `statements${slot}` : 'statements1';
-        const statements = el[stmtKey] || el.statements1 || el.statements || [];
-        if (!statements.length) break;
-
-        const rowsHtml = statements.map(stmt => `<div class="likert-block-row">
-            <div class="likert-block-statement">${stmt}</div>
-            <div class="likert-block-response blank-answer" style="min-width:60pt;"></div>
-          </div>`).join('');
-        body += `<div class="likert-block">
-          <div class="likert-block-title">${t('shareprint_print_likert_heading')}</div>
-          ${rowsHtml}
-        </div>`;
-        break;
-      }
-
-      case 'callout': {
-        // Render callout term/question so it's visible in the blank workbook
-        const term     = rt(el, 'term');
-        const question = rt(el, 'question');
-        if (term || question) {
-          body += `<div class="bridge">`;
-          if (term)     body += `<strong>${term}</strong> `;
-          if (question) body += question;
-          body += `</div>`;
-        }
-        break;
-      }
-
-      default:
-        break;
-    }
-  });
+  // Notes omitted intentionally — this is a clean unanswered document.
 
   return body;
 }
@@ -720,15 +697,10 @@ function printBlankStudy() {
 </div>`;
 
   // ── All chapters — no content gate; every chapter is always included ────────
-  const langMap    = buildLangMap(window.studyMetadata || {});
-  const activeLang = window._activeStudyLang || 'en';
   let chaptersHTML = '';
   chapters.forEach(ch => {
-    const slot = langMap[activeLang];
-    const chapterTitle = (slot ? ch[`chapterTitle${slot}`] : null)
-      || ch.chapterTitle1 || ch.chapterTitle || '';
-    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: chapterTitle })}</h2>
-${buildBlankChapterBody(ch, activeLang, langMap)}`;
+    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
+${buildBlankChapterBody(ch)}`;
   });
 
   // Notes & Comments, Leaders Notes, and About are intentionally excluded.
@@ -753,25 +725,6 @@ ${buildPrintHead(docTitle)}
     border-bottom: 0.5pt solid #bbb;
     padding-bottom: 2pt;
   }
-
-.section-heading {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: 11pt;
-  font-weight: 600;
-  color: #2c2416;
-  margin: 14pt 0 4pt 0;
-  border-bottom: 0.5pt solid #e0d8cc;
-  padding-bottom: 2pt;
-  page-break-after: avoid;
-}
-.subsection-heading {
-  font-size: 10pt;
-  font-weight: 600;
-  color: #4a3f30;
-  margin: 10pt 0 2pt 0;
-  page-break-after: avoid;
-}
-
 </style>
 <body>
 ${cover}
