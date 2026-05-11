@@ -352,8 +352,8 @@ the user's answer.
 | `question` | **Yes** | The question text. HTML is not interpreted here — use plain text. |
 | `linkedPassage` | No | Must match a `bibleRef` from a `biblePassage` element in this chapter. When set, the ref bar becomes tappable and opens the verse modal. Required for local answer validation to work. |
 | `answerPlaceholder` | No | Custom placeholder text inside the textarea. |
-| `sampleAnswer` | No | A model answer string used internally by the local answer validator. Never shown to the user. |
-| `questionHint` | No | A hint string available to the local validator. Never shown directly. |
+| `sampleAnswer` | No | A model answer string used by the local answer validator. Not displayed in the study UI, but written as a `data-sample-answer` attribute on the question card in the DOM. Any user who opens browser DevTools can read it. Do not include content you need to keep confidential — see [Model answers are client-visible](#model-answers-are-client-visible) below. |
+| `questionHint` | No | A hint string used by the local validator. Like `sampleAnswer`, it is written to the DOM as `data-question-hint` and is readable via DevTools. |
 | `shortAnswerThreshold` | No | Overrides the minimum word count used by the local answer validator's short-answer check for this question only. Use this when a genuinely short answer is the correct form of response. See [Short answer threshold](#short-answer-threshold) below. |
 | `deeper` | No | Adds a "(Go deeper)" button next to the question text that opens a modal with an additional question. `label` is the button text; `question` is the deeper question itself. |
 
@@ -433,6 +433,26 @@ For these, set `shortAnswerThreshold` to lower the floor or remove it entirely:
 ```
 
 > **Note:** `shortAnswerThreshold` values are written by the renderer to a `data-short-answer-threshold` attribute on the question card element and read from there by the validator. Study authors set the JSON field; the renderer handles the rest.
+
+---
+
+#### Model answers are client-visible
+
+Because all answer validation happens in the browser, `sampleAnswer` and `questionHint` values must be present in the page for the validator to read them. The renderer writes them as `data-sample-answer` and `data-question-hint` attributes on each question card element. They are not displayed in the study UI, but they are readable in plain text by anyone who opens browser DevTools and inspects the element.
+
+This is an inherent limitation of client-side validation — there is no way to use these fields for validation while also keeping them hidden from a determined user.
+
+**What this means in practice:**
+
+- A technically curious user can read your model answers without answering the questions.
+- This is unlikely to affect typical users, but study authors should be aware of it when deciding how much detail to put into `sampleAnswer`.
+- `questionHint` values are equally visible and carry the same caveat.
+
+**Guidance for study authors:**
+
+- If your model answer contains sensitive theological positions, grading rubrics you would prefer not to disclose, or content that loses value once seen, consider whether to include it, shorten it, or rephrase it as a keyword list rather than a full answer.
+- A `sampleAnswer` that captures the key themes (e.g. key words or a short phrase) is usually sufficient for the validator and less revealing than a full paragraph.
+- There is no obfuscation option for these fields. Unlike `apiKey`, where obfuscation buys a small amount of friction, obfuscating model answers would not meaningfully protect them while making the validator harder to maintain.
 
 ---
 

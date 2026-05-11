@@ -761,16 +761,30 @@ function renderMenu() {
 function updateProgress() {
   if (isNonChapterPage) return;
   const ch = chapters[currentChapter];
+
+  // ── Text answer fields (questions, reflections) ───────────────────────────
   const allFields = document.querySelectorAll('.answer-field');
-  if (!allFields.length) return;
-
-  // Exclude the notes field from progress tracking
   const fields = Array.from(allFields).filter(f => f.dataset.type !== 'notes');
-  if (!fields.length) return;
 
-  let filled = 0;
-  fields.forEach(f => { if (f.value.trim().length > 0) filled++; });
-  const pct = Math.round((filled / fields.length) * 100);
+  let filled = fields.filter(f => f.value.trim().length > 0).length;
+  let total  = fields.length;
+
+  // ── Likert radio groups ───────────────────────────────────────────────────
+  // Each statement is a separate named group: likert_{chNum}_{eid}_{stIdx}
+  // One answered statement = one checked radio in that name group.
+  // Collect unique group names from all .likert-radio inputs in the page.
+  const likertRadios = document.querySelectorAll('.likert-radio');
+  if (likertRadios.length) {
+    const groups = new Set(Array.from(likertRadios).map(r => r.name));
+    groups.forEach(name => {
+      total++;
+      if (document.querySelector(`.likert-radio[name="${name}"]:checked`)) filled++;
+    });
+  }
+
+  if (!total) return;
+
+  const pct = Math.round((filled / total) * 100);
   document.getElementById('progressBar').style.width = pct + '%';
 
   // Trigger celebration toast on first completion of this chapter
