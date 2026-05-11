@@ -157,7 +157,7 @@ function renderLikertScale(el, chNum) {
         name="likert_${chNum}_${eid}_${stIdx}"
         value="${val}"
         ${checked}
-        onchange="localStorage.setItem('${keyStr}', this.value); updateProgress();"
+        onchange="safeSetItem('${keyStr}', this.value); updateProgress();"
       />`;
     }).join('');
   }

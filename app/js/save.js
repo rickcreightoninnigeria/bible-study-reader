@@ -20,7 +20,7 @@ function saveAnswers(isManual = true) {
   fields.forEach(field => {
     const type  = field.dataset.type;
     const index = field.dataset.index;
-    localStorage.setItem(storageKey(ch.chapterNumber, type, index), field.value);
+    safeSetItem(storageKey(ch.chapterNumber, type, index), field.value);
   });
 
   // Clear the search cache so the next search sees the newly saved answers
@@ -52,7 +52,7 @@ document.addEventListener('blur', e => {
     const type = e.target.dataset.type;
     const index = e.target.dataset.index;
     if (type && index !== undefined) {
-      localStorage.setItem(storageKey(ch.chapterNumber, type, index), e.target.value);
+      safeSetItem(storageKey(ch.chapterNumber, type, index), e.target.value);
 
       // Vital: Clear the search cache so 'Auto-saved' text appears in searches.
       if (typeof storageCache !== 'undefined') storageCache.clear();

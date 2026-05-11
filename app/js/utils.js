@@ -67,6 +67,32 @@ function escapeHtml(str) {
 }
 
 /**
+ * safeSetItem(key, value)
+ *
+ * Wraps localStorage.setItem() with QuotaExceededError handling.
+ * Use this for any write that stores user-generated content (answers, notes)
+ * where silent data loss would be harmful.
+ *
+ * On failure, shows a persistent error toast so the user knows their answer
+ * was not saved. Returns true on success, false on failure.
+ */
+function safeSetItem(key, value) {
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch (e) {
+    if (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+      showToast({
+        message:  t('utils_quota_exceeded_error'),
+        isManual: true,
+        duration: 8000
+      });
+    }
+    return false;
+  }
+}
+
+/**
  * showToast(options)
  *
  * options:
