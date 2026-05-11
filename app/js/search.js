@@ -428,10 +428,12 @@ function runSearchCore(query) {
 
   if (results.length === 0) {
     const suggestion = getSuggestion(originalQuery);
+    const safeQuery      = escapeHtml(originalQuery);
+    const safeSuggestion = suggestion ? escapeHtml(suggestion) : '';
     resultsEl.innerHTML = `
       <div class="search-empty">
-        ${t('search_no_results', { query: originalQuery })}<br>
-        ${suggestion ? t('search_did_you_mean_inline', { suggestion }) : ''}
+        ${t('search_no_results', { query: safeQuery })}<br>
+        ${safeSuggestion ? t('search_did_you_mean_inline', { suggestion: safeSuggestion }) : ''}
       </div>`;
     return;
   }
@@ -440,7 +442,7 @@ function runSearchCore(query) {
   let html = '';
   const suggestion = getSuggestion(originalQuery);
   if (suggestion && suggestion !== normalize(originalQuery)) {
-    html += `<div class="search-section-label">${t('search_did_you_mean_label', { suggestion })}</div>`;
+    html += `<div class="search-section-label">${t('search_did_you_mean_label', { suggestion: escapeHtml(suggestion) })}</div>`;
   }
 
   results.slice(0, 50).forEach(r => {
@@ -448,7 +450,7 @@ function runSearchCore(query) {
     html += `
       <div class="search-result-item" onclick="searchNavigate(${r.chIdx}, ${cardArg})">
         <div class="search-result-meta">
-          ${t('search_result_meta', { chNum: r.chNum, chTitle: r.chTitle })}${r.ref ? ' · ' + r.ref : ''}
+          ${t('search_result_meta', { chNum: r.chNum, chTitle: escapeHtml(r.chTitle) })}${r.ref ? ' · ' + escapeHtml(r.ref) : ''}
         </div>
         <div class="search-result-text">
           ${highlightMatch(r.text || r.questionText, originalQuery)}
