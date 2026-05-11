@@ -67,32 +67,6 @@ function escapeHtml(str) {
 }
 
 /**
- * safeSetItem(key, value)
- *
- * Wraps localStorage.setItem() with QuotaExceededError handling.
- * Use this for any write that stores user-generated content (answers, notes)
- * where silent data loss would be harmful.
- *
- * On failure, shows a persistent error toast so the user knows their answer
- * was not saved. Returns true on success, false on failure.
- */
-function safeSetItem(key, value) {
-  try {
-    localStorage.setItem(key, value);
-    return true;
-  } catch (e) {
-    if (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
-      showToast({
-        message:  t('utils_quota_exceeded_error'),
-        isManual: true,
-        duration: 8000
-      });
-    }
-    return false;
-  }
-}
-
-/**
  * showToast(options)
  *
  * options:
@@ -197,10 +171,15 @@ function copyToClipboard(text) {
 }
 
 // Legacy clipboard copy using a temporarily appended off-screen textarea.
-// Used when navigator.clipboard is unavailable (e.g. non-HTTPS or older WebViews).
-// NOTE: document.execCommand('copy') is deprecated but remains the most reliable
-// fallback across older Android WebViews. Replace with navigator.clipboard
-// everywhere once minimum WebView version supports it.
+// Used only when navigator.clipboard.writeText is unavailable — i.e. non-HTTPS
+// contexts or Android WebView < 66 (released 2018). All modern WebViews and
+// browsers have supported navigator.clipboard since WebView 66 / Chrome 66.
+//
+// document.execCommand('copy') is deprecated and may be removed from future
+// browser/WebView releases. This fallback can be dropped once the app's minimum
+// supported WebView version is confirmed to be 66 or above. Until then it stays
+// as a silent safety net: copyToClipboard() only reaches here if the Clipboard
+// API is absent or its Promise rejects (e.g. permissions denied on non-HTTPS).
 function fallbackCopy(text) {
   const el = document.createElement('textarea');
   el.value = text;
