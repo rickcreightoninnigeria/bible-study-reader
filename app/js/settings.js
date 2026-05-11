@@ -40,6 +40,12 @@ const INTERMEDIATE_FIRST_DEFAULTS = {
   showPageProgress: true,
 };
 
+// NOTE: There is currently no equivalent object for Advanced mode.
+// If settings should be nudged when a user first enters Advanced (whether from
+// Basic or Intermediate), add an ADVANCED_FIRST_DEFAULTS object here and a
+// corresponding promotion block in setInterfaceMode() below, following the same
+// pattern as the Basic → Intermediate promotion.
+
 // Live settings object — always a merged copy of defaults + whatever is in localStorage.
 let appSettings = { ...SETTINGS_DEFAULTS };
 
@@ -86,6 +92,11 @@ function setInterfaceMode(newMode) {
       localStorage.setItem('intermediateDefaultsApplied', '1');
     }
   }
+
+  // NOTE: No first-promotion defaults exist for Advanced mode.
+  // If settings should be nudged on first entry into Advanced (from either
+  // Basic or Intermediate), add the logic here — see the ADVANCED_FIRST_DEFAULTS
+  // comment near the top of this file for the suggested pattern.
 
   saveSetting('interfaceMode', newMode);
 }
