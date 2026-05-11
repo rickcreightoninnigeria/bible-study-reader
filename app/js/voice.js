@@ -82,8 +82,23 @@ function startVoiceInput(btn) {
   showToast({ message: t('voice_error_no_api'), isManual: false });
 }
 
-// Called by the Android bridge (Kotlin side, via evaluateJavascript) or by the
-// Web Speech API onresult handler when a transcript is ready.
+// ── ANDROID BRIDGE ENTRY POINT ────────────────────────────────────────────────
+// window.receiveVoiceTranscript(transcript: string) → void
+//
+// Called by the Kotlin WebView layer via evaluateJavascript() once the Android
+// SpeechRecognizer has a final result. Also called internally by the Web Speech
+// API onresult handler (the non-Android path) so both paths share one code.
+//
+// Android bridge table entry:
+//   Function               Direction          Caller
+//   receiveVoiceTranscript  Android → JS     AndroidVoiceHelper.kt (evaluateJavascript)
+//
+// Pre-ready guard:
+//   If the Android bridge fires before app initialisation is complete
+//   (window._appReady is not yet true), the transcript is queued in
+//   window._pendingBridgeTranscript and flushed by app-init.js after
+//   window._appReady is set. This mirrors the pattern used by loadStudyFromJson
+//   and pendingStudyData.
 //
 // If the original textarea is still in the DOM, write directly to it (normal
 // path). If it has been removed by a chapter navigation that occurred while
@@ -91,6 +106,12 @@ function startVoiceInput(btn) {
 // append the transcript to the localStorage value for that field and show a
 // toast so the user knows their answer was not lost.
 function receiveVoiceTranscript(transcript) {
+  // Guard: app not yet initialised — queue and return.
+  // app-init.js flushes window._pendingBridgeTranscript after setting _appReady.
+  if (!window._appReady) {
+    window._pendingBridgeTranscript = transcript;
+    return;
+  }
   resetVoiceBtn();
 
   const textarea = window._voiceTarget;
@@ -134,6 +155,10 @@ function receiveVoiceTranscript(transcript) {
   window._voiceTarget            = null;
   window._pendingVoiceTranscript = null;
 }
+
+// Expose on window so the Android bridge can call it via evaluateJavascript.
+// Must be assigned after the function declaration above.
+window.receiveVoiceTranscript = receiveVoiceTranscript;
 
 // Resets the mic button to its idle state after recording ends.
 function resetVoiceBtn() {
