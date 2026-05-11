@@ -405,7 +405,7 @@ function _buildSectionsFromElements(elements) {
 const THEME_PROPS = [
   'surface', 'surface-mid', 'text', 'text-secondary', 'text-faint',
   'emphasis', 'emphasis-light', 'success', 'accent', 'accent-light',
-  'border', 'shadow', 'card-bg',
+  'border', 'shadow', 'card-bg', 'validate',
   'dm-base', 'dm-surface', 'dm-raised', 'dm-sunken', 'dm-border',
   'dm-text', 'dm-text-mid', 'dm-text-faint',
 ];
