@@ -434,6 +434,11 @@ function resetTheme() {
 // Pathway, etc.) always display in the default colour scheme.
 // restoreStudyTheme() reapplies them when returning to study-coloured pages.
 // Both are no-ops when no study theme is active.
+//
+// _suspendedTheme is a module-level variable (not a DOM node property) so it
+// is co-located with the functions that use it and visible to anyone reading
+// this file. It is reset to {} by applyStudyData() on every study load.
+let _suspendedTheme = {};
 
 function suspendStudyTheme() {
   const root = document.documentElement;
@@ -442,7 +447,7 @@ function suspendStudyTheme() {
   // empty object. This handles the case where suspendStudyTheme() is called
   // twice without an intervening restoreStudyTheme() (e.g. navigating from
   // Library to Settings via the nav button while a study theme is active).
-  if (root._suspendedTheme && Object.keys(root._suspendedTheme).length > 0) return;
+  if (Object.keys(_suspendedTheme).length > 0) return;
 
   const saved = {};
   THEME_PROPS.forEach(prop => {
@@ -452,18 +457,18 @@ function suspendStudyTheme() {
       root.style.removeProperty(`--${prop}`);
     }
   });
-  // Stash so restoreStudyTheme() can put them back
-  root._suspendedTheme = saved;
+  _suspendedTheme = saved;
 }
 
 function restoreStudyTheme() {
   const root = document.documentElement;
-  const saved = root._suspendedTheme || {};
-  if (Object.keys(saved).length > 0) {
-    // Re-apply the suspended theme properties
+  if (Object.keys(_suspendedTheme).length > 0) {
+    // Re-apply the suspended theme properties and clear the stash so the
+    // next suspendStudyTheme() call can save a fresh snapshot.
     THEME_PROPS.forEach(prop => {
-      if (saved[prop]) root.style.setProperty(`--${prop}`, saved[prop]);
+      if (_suspendedTheme[prop]) root.style.setProperty(`--${prop}`, _suspendedTheme[prop]);
     });
+    _suspendedTheme = {};
   } else {
     // Nothing was suspended — re-apply directly from the loaded study theme
     const theme = window._loadedStudyTheme;
@@ -657,7 +662,7 @@ async function applyStudyData(data, { isStudySwitch = false } = {}) {
   // Apply study theme (colour scheme) to CSS custom properties
   applyTheme(data.theme);
   window._loadedStudyTheme = data.theme || null;
-  document.documentElement._suspendedTheme = {};  // clear any stale suspension theme data
+  _suspendedTheme = {};  // clear any stale suspension state from the previous study
 
   window.verseData = {}; // populated by renderChapter() from biblePassage elements
   
