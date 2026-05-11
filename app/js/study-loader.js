@@ -45,6 +45,8 @@ function _createBlobUrl(blob) {
 function _revokeAllBlobUrls() {
   _activeBlobUrls.forEach(url => URL.revokeObjectURL(url));
   _activeBlobUrls.length = 0;
+  // Also clear the chapter image memo cache — its URLs have just been revoked.
+  clearImageBlobCache();
 }
 
 // ── ESTUDY VERSION CHECK ──────────────────────────────────────────────────────

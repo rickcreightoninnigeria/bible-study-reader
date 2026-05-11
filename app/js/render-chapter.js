@@ -97,13 +97,18 @@ function detectAvailableLangs(ch) {
 
 // ── RENDER CHAPTER ────────────────────────────────────────────────────────────
 
-async function renderChapter(idx, scrollY = 0) {
-  // Blob URLs created for inline chapter images this render pass.
-  // Revoked after innerHTML is set so the browser has already used them.
-  // This prevents accumulation across chapter navigations without requiring
-  // the study-level _activeBlobUrls list (which only clears on study switch).
-  const _chapterBlobUrls = [];
+// Memoises blob URLs for inline chapter images so IDB is only read once per
+// image per study session. Entries are object URLs registered via
+// _createBlobUrl() in study-loader.js, so they are revoked and this cache is
+// cleared by _revokeAllBlobUrls() whenever a new study is loaded.
+const _imageBlobCache = new Map();
 
+// Called by _revokeAllBlobUrls() in study-loader.js after revoking all URLs.
+function clearImageBlobCache() {
+  _imageBlobCache.clear();
+}
+
+async function renderChapter(idx, scrollY = 0) {
   try {
     currentChapter   = idx;
     isNonChapterPage = false;
@@ -221,15 +226,20 @@ async function renderChapter(idx, scrollY = 0) {
         case 'image': {
           // Resolve the image src before calling the synchronous renderer.
           // Priority: IDB blob (zip-imported studies) → el.src → empty string.
-          // URL.createObjectURL() is used instead of FileReader.readAsDataURL()
-          // to avoid the ~33% base64 inflation. The blob URL is registered in
-          // _chapterBlobUrls and revoked immediately after innerHTML is written,
-          // once the browser has already resolved the src.
-          const blob   = await StudyIDB.getImage(`${window.activeStudyId}_${resolved.elementId}`);
+          // Blob URLs are memoised in _imageBlobCache (keyed by elementId) so
+          // IDB is only read once per image per study session. URLs are
+          // registered via _createBlobUrl() and revoked (along with the cache)
+          // by _revokeAllBlobUrls() when a new study is loaded.
           let imgSrc = resolved.src || '';
-          if (blob) {
-            imgSrc = URL.createObjectURL(blob);
-            _chapterBlobUrls.push(imgSrc);
+          const cacheKey = `${window.activeStudyId}_${resolved.elementId}`;
+          if (_imageBlobCache.has(cacheKey)) {
+            imgSrc = _imageBlobCache.get(cacheKey);
+          } else {
+            const blob = await StudyIDB.getImage(cacheKey);
+            if (blob) {
+              imgSrc = _createBlobUrl(blob);
+              _imageBlobCache.set(cacheKey, imgSrc);
+            }
           }
           contentHtml += renderImage({ ...ctx, imgSrc });
           break;
@@ -261,33 +271,6 @@ async function renderChapter(idx, scrollY = 0) {
 
     // ── Set innerHTML (single write) ──────────────────────────────────────────
     container.innerHTML = contentHtml;
-
-    // Revoke chapter image blob URLs only after the browser has actually fetched
-    // them. Setting innerHTML queues image loads asynchronously, so revoking
-    // synchronously here would invalidate the URLs before the browser can fetch
-    // them (causing ERR_FILE_NOT_FOUND). Instead, wait for each image's
-    // load/error event before revoking its URL.
-    const urlsToRevoke = _chapterBlobUrls.splice(0);
-    const imgs = container.querySelectorAll('img');
-    let pending = 0;
-    imgs.forEach(img => {
-      const src = img.getAttribute('src');
-      if (src && src.startsWith('blob:') && urlsToRevoke.includes(src)) {
-        pending++;
-        const revoke = () => {
-          URL.revokeObjectURL(src);
-          pending--;
-        };
-        img.addEventListener('load',  revoke, { once: true });
-        img.addEventListener('error', revoke, { once: true });
-      }
-    });
-    // Revoke any blob URLs that didn't match an img element (safety net).
-    urlsToRevoke.forEach(u => {
-      if (!Array.from(imgs).some(img => img.getAttribute('src') === u)) {
-        URL.revokeObjectURL(u);
-      }
-    });
 
     // ── Post-render: language bar ─────────────────────────────────────────────
     // Populates #chapterLangBar with flag buttons for the available languages.
