@@ -1202,6 +1202,7 @@ async function renderLibrary() {
             <span class="lib-path-l2-label">${p2.titleLevel2}</span>
             ${l2DlBtn}
             <button class="lib-path-set-active-btn ${isSetActive ? 'is-set' : ''}"
+              data-pathway-key="${pathwayKey}"
               onclick="event.stopPropagation(); libPathSetActive('${pathwayKey}', this)"
               title="${isSetActive ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active')}">
               ${isSetActive ? ICONS.pathwayOn : ICONS.pathwayOff}
@@ -1354,7 +1355,7 @@ async function renderLibrary() {
     }
     // Refresh all set-active buttons in the current view so their state is correct
     document.querySelectorAll('.lib-path-set-active-btn').forEach(b => {
-      const k = b.getAttribute('onclick').match(/'([^']+)'/)?.[1];
+      const k = b.dataset.pathwayKey;
       const active = localStorage.getItem('bsr_activePathwayId') === k;
       b.classList.toggle('is-set', active);
       b.title     = active ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active');
