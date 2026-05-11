@@ -2997,6 +2997,12 @@ body.dark-mode .study-card-reorder-btn:hover:not(:disabled) {
   background: var(--dm-raised);
   border-color: var(--accent-light);
 }
+body.dark-mode .study-card-delete-btn {
+  color: var(--dm-text-faint);
+}
+body.dark-mode .study-card-delete-btn:hover {
+  color: #e05c4b !important;  /* brighter red — #c0392b is too dark on dm-raised */
+}
 
 /* ── Library — pin button ── */
 body.dark-mode .lib-pin-btn          { color: var(--dm-text-faint); }
@@ -3024,6 +3030,13 @@ body.dark-mode .lib-ri-cover-fallback,
 body.dark-mode .lib-shelf-cover-fallback { background: var(--dm-border); }
 body.dark-mode .lib-recent-section-label { color: var(--dm-text-faint); }
 body.dark-mode .lib-recent-section-label.pinned-label { color: var(--accent-light); }
+body.dark-mode .lib-ri-delete-btn {
+  color: var(--dm-text-faint);
+}
+body.dark-mode .lib-ri-delete-btn:hover {
+  color: #e05c4b;
+  opacity: 1;
+}
 
 /* ── Library — shelves ── */
 body.dark-mode .lib-shelf-header     { background: var(--dm-base); }
