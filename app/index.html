@@ -66,12 +66,14 @@
   <div class="nav-btn-group">
     <button class="nav-btn" id="navLibBtn"      onclick="navLibClick()"      title="Library">📚</button>
     <button class="nav-btn" id="navSearchBtn"   onclick="navSearchClick()"   title="Search">🔍</button>
+    <!-- display:none is intentional — visibility is controlled by updateNavButtons() in onboarding.js via appSettings.showPageProgress -->
     <button class="nav-btn" id="navProgressBtn" onclick="navProgressClick()" title="My Progress" style="display:none">📈</button>
   </div>
   <div class="nav-btn-group">
     <div class="nav-title"><span id="header-title"> </span></div>
   </div>
   <div class="nav-btn-group">
+    <!-- display:none is intentional — visibility is controlled by updateNavButtons() in onboarding.js via appSettings.showPageHowToUse -->
     <button class="nav-btn" id="navHowtoBtn"    onclick="navHowtoClick()"    title="How to Use" style="display:none">❓</button>
     <button class="nav-btn" id="navSettingsBtn" onclick="renderSettings()">⚙</button>
     <button class="nav-btn" onclick="toggleMenu()" id="menuBtn">☰</button>

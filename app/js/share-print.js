@@ -195,7 +195,7 @@ function exportStudyAnswers() {
     return;
   }
 
-  const date = new Date().toLocaleDateString('en-GB', {
+  const date = new Date().toLocaleDateString(resolveLanguage(), {
     day: 'numeric', month: 'long', year: 'numeric'
   });
   report += `==========================================\n`;
@@ -527,7 +527,7 @@ ${buildChapterBody(ch)}
 // output only reflects the user's actual work.
 function printAllChapters() {
   const meta        = window.titlePageData || {};
-  const datePrinted = new Date().toLocaleDateString('en-GB', {
+  const datePrinted = new Date().toLocaleDateString(resolveLanguage(), {
     day: 'numeric', month: 'long', year: 'numeric'
   });
 
