@@ -635,6 +635,20 @@ async function applyStudyData(data, { isStudySwitch = false } = {}) {
     }
   }
 
+  // ── Resolve publisher and author images ───────────────────────────────────
+  // Same three-step priority as cover. Blob URLs attached by loadStudyFromFile
+  // are used on first load; IDB is the fallback on reload.
+  for (const name of ['publisher', 'author']) {
+    if (data.imageData?.[name] && !resolveImageSrc(data.imageData[name]) && _appliedId) {
+      try {
+        const blob = await StudyIDB.getImage(`${_appliedId}_${name}`);
+        if (blob) data.imageData[name].src = _createBlobUrl(blob);
+      } catch (e) {
+        console.warn(`applyStudyData: could not load ${name} image from IDB`, e);
+      }
+    }
+  }
+
   window.titlePageData = {
     ...metadata,
     // Expose resolved plain fields so all title-page renderers work without
@@ -653,6 +667,13 @@ async function applyStudyData(data, { isStudySwitch = false } = {}) {
   window.leadersNotesData = data.leadersNotesData || {};
   window.studyAboutData   = data.studyAboutData   || {};
   window.studyAiData      = data.studyAiData      || {};
+
+  // ── Apply publisher and author images ─────────────────────────────────────
+  // Must run after window.titlePageData and window.studyAboutData are set,
+  // since applyImageData writes into both. Cover is already resolved above
+  // and set directly into titlePageData.image.src, so applyImageData's cover
+  // guard (only overwrites if src is present) will not clobber it.
+  if (data.imageData) applyImageData(data.imageData);
   
   window.copyrightData = {
     ...(data.copyrightData || {}),
