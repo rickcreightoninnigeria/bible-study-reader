@@ -313,6 +313,29 @@ function attachCardLongPress(card, id) {
 }
 
 async function renderLibrary() {
+  // ── Define popup helper immediately so shelf/section info buttons rendered
+  // below can call it safely, regardless of which tab's HTML is built first. ──
+  window.libPathOpenPopup = function(title, descHtml, event) {
+    if (event) { event.stopPropagation(); event.preventDefault(); }
+    descHtml = descHtml.replace(/\{\{ICONS\.(\w+)\}\}/g, (_, key) => ICONS[key] || '');
+    const existing = document.getElementById('libPathPopupOverlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lib-path-popup-overlay';
+    overlay.id = 'libPathPopupOverlay';
+    overlay.innerHTML = `
+      <div class="lib-path-popup">
+        <div class="lib-path-popup-header">
+          <div class="lib-path-popup-title">${title}</div>
+          <button class="lib-path-popup-close" onclick="document.getElementById('libPathPopupOverlay').remove()">${t('renderlib_popup_close')}</button>
+        </div>
+        <div class="lib-path-popup-body">${descHtml}</div>
+      </div>`;
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+    document.body.appendChild(overlay);
+  };
+
   // ── Resolve which tab should be active ──────────────────────────────────────
   const registry      = JSON.parse(localStorage.getItem('study_registry') || '[]');
   const studyCount    = registry.length;
@@ -839,7 +862,7 @@ async function renderLibrary() {
                 const subDesc = getSubsectionDesc(secName, subName);
                 const safeSub = subName.replace(/'/g, "\\'");
                 const safeSubDesc = (subDesc || '<p>No description available yet.</p>').replace(/'/g, "\\'");
-                emptySubHtml += `<div class="lib-subsection-label lib-subsection--empty">${subName}<button class="lib-subsection-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeSub}','${safeSubDesc}',null)">${ICONS.triggerInfo}</button></div>`;
+                emptySubHtml += `<div class="lib-subsection-label lib-subsection--empty">${subName}<button class="lib-subsection-info-btn" onclick="libPathOpenPopup('${safeSub}','${safeSubDesc}',null)">${ICONS.triggerInfo}</button></div>`;
               }
               const siIdx = secIdx++;
               const secBodyId = `libSecBody_${sIdx}_${siIdx}`;
@@ -850,7 +873,7 @@ async function renderLibrary() {
                        onclick="libToggleSection('${secBodyId}','${secChevId}',event)">
                     <span class="lib-section-chevron lib-section-chevron--empty" id="${secChevId}">${ICONS.triangleRight}</span>
                     <span class="lib-section-title">${secName}</span>
-                    <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
+                    <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="libPathOpenPopup('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
                   </div>
                   <div class="lib-section-body open" id="${secBodyId}">
                     ${emptySubHtml}
@@ -863,7 +886,7 @@ async function renderLibrary() {
                   <div class="lib-section-header lib-section-header--empty">
                     <span class="lib-section-chevron lib-section-chevron--empty">${ICONS.triangleRight}</span>
                     <span class="lib-section-title">${secName}</span>
-                    <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
+                    <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="libPathOpenPopup('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
                   </div>
                 </div>`;
             }
@@ -874,7 +897,7 @@ async function renderLibrary() {
                    onclick="libToggleShelf('${shelfBodyId}','${shelfChevId}',event)">
                 <span class="lib-shelf-header-icon">${ICONS.triangleRight}</span>
                 <span class="lib-shelf-title">${shelfName}</span>
-                <button class="lib-shelf-info-btn lib-shelf-empty-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeShelfName}','${safeShelfDesc}',null)">${ICONS.triggerInfo}</button>
+                <button class="lib-shelf-info-btn lib-shelf-empty-info-btn" onclick="libPathOpenPopup('${safeShelfName}','${safeShelfDesc}',null)">${ICONS.triggerInfo}</button>
               </div>
               <div class="lib-shelf-body" id="${shelfBodyId}">
                 ${emptySecHtml}
@@ -888,7 +911,7 @@ async function renderLibrary() {
             <div class="lib-shelf-header lib-shelf-header--empty">
               <span class="lib-shelf-header-icon">${ICONS.triangleRight}</span>
               <span class="lib-shelf-title">${shelfName}</span>
-              <button class="lib-shelf-info-btn lib-shelf-empty-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeShelfName}','${safeShelfDesc}',null)">${ICONS.triggerInfo}</button>
+              <button class="lib-shelf-info-btn lib-shelf-empty-info-btn" onclick="libPathOpenPopup('${safeShelfName}','${safeShelfDesc}',null)">${ICONS.triggerInfo}</button>
             </div>
           </div>`;
       }
@@ -989,7 +1012,7 @@ async function renderLibrary() {
             const subDesc = getSubsectionDesc(secName, subName);
             const safeSub = subName.replace(/'/g, "\\'");
             const safeSubDesc = (subDesc || '<p>No description available yet.</p>').replace(/'/g, "\\'");
-            emptySubHtml += `<div class="lib-subsection-label lib-subsection--empty">${subName}<button class="lib-subsection-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeSub}','${safeSubDesc}',null)">${ICONS.triggerInfo}</button></div>`;
+            emptySubHtml += `<div class="lib-subsection-label lib-subsection--empty">${subName}<button class="lib-subsection-info-btn" onclick="libPathOpenPopup('${safeSub}','${safeSubDesc}',null)">${ICONS.triggerInfo}</button></div>`;
           }
           const siIdx = secIdx++;
           const secBodyId = `libSecBody_${sIdx}_${siIdx}`;
@@ -1000,7 +1023,7 @@ async function renderLibrary() {
                    onclick="libToggleSection('${secBodyId}','${secChevId}',event)">
                 <span class="lib-section-chevron lib-section-chevron--empty" id="${secChevId}">${ICONS.triangleRight}</span>
                 <span class="lib-section-title">${secName}</span>
-                <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
+                <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="libPathOpenPopup('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
               </div>
               <div class="lib-section-body open" id="${secBodyId}">
                 ${emptySubHtml}
@@ -1012,7 +1035,7 @@ async function renderLibrary() {
               <div class="lib-section-header lib-section-header--empty">
                 <span class="lib-section-chevron lib-section-chevron--empty">${ICONS.triangleRight}</span>
                 <span class="lib-section-title">${secName}</span>
-                <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="(window.libPathOpenPopup||function(){alert('popup not ready')})('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
+                <button class="lib-shelf-section-info-btn lib-section-empty-info-btn" onclick="libPathOpenPopup('${safeSecName}','${safeSecDesc}',null)">${ICONS.triggerInfo}</button>
               </div>
             </div>`;
         }
@@ -1282,27 +1305,6 @@ async function renderLibrary() {
     btn.classList.toggle('open', !isOpen);
   };
 
-  window.libPathOpenPopup = function(title, descHtml, event) {
-    if (event) { event.stopPropagation(); event.preventDefault(); }
-    descHtml = descHtml.replace(/\{\{ICONS\.(\w+)\}\}/g, (_, key) => ICONS[key] || '');
-    const existing = document.getElementById('libPathPopupOverlay');
-    if (existing) existing.remove();
-
-    const overlay = document.createElement('div');
-    overlay.className = 'lib-path-popup-overlay';
-    overlay.id = 'libPathPopupOverlay';
-    overlay.innerHTML = `
-      <div class="lib-path-popup">
-        <div class="lib-path-popup-header">
-          <div class="lib-path-popup-title">${title}</div>
-          <button class="lib-path-popup-close" onclick="document.getElementById('libPathPopupOverlay').remove()">${t('renderlib_popup_close')}</button>
-        </div>
-        <div class="lib-path-popup-body">${descHtml}</div>
-      </div>`;
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
-    document.body.appendChild(overlay);
-  };
-  
   window.libPathOpenMoreInfo = function() {
     window.libPathOpenPopup(t('renderlib_paths_popup_title'), t('renderlib_paths_popup_body'), null);
   };
