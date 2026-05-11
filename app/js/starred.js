@@ -29,7 +29,7 @@ function toggleStar(chapterNum, elementId) {
   if (currently) {
     localStorage.removeItem(key);
   } else {
-    localStorage.setItem(key, '1');
+    safeSetItem(key, '1');
   }
 
   // Determine card and button IDs — reflection questions use elementId directly

@@ -38,7 +38,7 @@ function getActivePathway() {
 // Sets the active pathway in localStorage and re-renders the progress page
 // so the tab bar appears immediately after selection.
 function setActivePathway(l1Idx, l2Idx) {
-  localStorage.setItem('bsr_activePathwayId', `${l1Idx}_${l2Idx}`);
+  safeSetItem('bsr_activePathwayId', `${l1Idx}_${l2Idx}`);
   Router.replaceState({ page: 'progress' });
   renderProgressOverview();
 }
@@ -595,7 +595,7 @@ function renderNotesPage() {
           id="globalNotesField"
           class="answer-field"
           placeholder="${t('progress_notes_placeholder')}"
-          oninput="autoResize(this); localStorage.setItem(\`bsr_${currentStudyId}_global_notes\`, this.value); updateNotesMenuIndicator(!!this.value);"
+          oninput="autoResize(this); safeSetItem(\`bsr_${currentStudyId}_global_notes\`, this.value); updateNotesMenuIndicator(!!this.value);"
         >${savedText}</textarea>
       </div>
       <div class="notes-autosave-label">${t('progress_notes_autosave_label')}</div>

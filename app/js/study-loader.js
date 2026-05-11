@@ -125,7 +125,7 @@ async function activateStudy(id) {
     // 1. Record the active study before applyStudyData runs
     const previousStudyId = window.activeStudyId;
     window.activeStudyId = id;
-    localStorage.setItem('bsr_last_active_study', id);
+    safeSetItem('bsr_last_active_study', id);
     recordStudyOpened(id); // ← track in Recent tab
 
     // Position is stored per-study (lastPosition_{id}), so nothing needs
@@ -225,7 +225,7 @@ async function deleteStudy(id, title) {
     // 1. Remove from registry
     let registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     registry = registry.filter(item => item !== id);
-    localStorage.setItem('study_registry', JSON.stringify(registry));
+    safeSetItem('study_registry', JSON.stringify(registry));
 
     // 2. Remove the study content and all stored images from IDB.
     // removeImagesByPrefix catches both the fixed metadata images
@@ -753,9 +753,9 @@ async function loadStudyFromJson(jsonString) {
         let registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
         if (!registry.includes(studyId)) {
             registry.push(studyId);
-            localStorage.setItem('study_registry', JSON.stringify(registry));
+            safeSetItem('study_registry', JSON.stringify(registry));
         }
-        localStorage.setItem('bsr_last_active_study', studyId);
+        safeSetItem('bsr_last_active_study', studyId);
         recordStudyInstalled(studyId); // ← track in Recently Installed
         // Record the installed studyVersion so future loads can compare against it.
         if (_incomingVer > 0) _setInstalledStudyVersion(studyId, _incomingVer);
@@ -902,7 +902,7 @@ async function installDefaultStudiesIfNeeded() {
         }
     }
 
-    localStorage.setItem('default_studies_installed', currentVersion);
+    safeSetItem('default_studies_installed', currentVersion);
 
   } catch (err) {
     console.error('[defaultStudies] installDefaultStudiesIfNeeded failed:', err);
@@ -910,7 +910,7 @@ async function installDefaultStudiesIfNeeded() {
     // Do NOT set the flag — allow a retry on next launch in case it was transient.
     // If the zip simply doesn't exist in a dev build, this will toast every launch;
     // set the flag manually in the console to suppress: 
-    //   localStorage.setItem('default_studies_installed', currentVersion);
+    //   safeSetItem('default_studies_installed', currentVersion);
   }
 }
 
@@ -933,7 +933,7 @@ function _getInstalledStudyVersion(studyId) {
 }
 
 function _setInstalledStudyVersion(studyId, version) {
-  localStorage.setItem(`bsr_studyver_${studyId}`, String(version));
+  safeSetItem(`bsr_studyver_${studyId}`, String(version));
 }
 
 // Compares the incoming study's version against what is already installed.
@@ -1038,7 +1038,7 @@ async function _installStudyFileQuietly(file, fileName) {
     const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     if (!registry.includes(studyId)) {
       registry.push(studyId);
-      localStorage.setItem('study_registry', JSON.stringify(registry));
+      safeSetItem('study_registry', JSON.stringify(registry));
     }
     // Record the installed studyVersion so future installs can compare against it.
     const installedVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
@@ -1068,7 +1068,7 @@ async function _installStudyFileQuietly(file, fileName) {
     const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     if (!registry.includes(studyId)) {
       registry.push(studyId);
-      localStorage.setItem('study_registry', JSON.stringify(registry));
+      safeSetItem('study_registry', JSON.stringify(registry));
     }
     // Record the installed studyVersion so future installs can compare against it.
     const installedVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
@@ -1214,9 +1214,9 @@ async function loadStudyFromFile(file) {
       let registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
       if (!registry.includes(studyId)) {
         registry.push(studyId);
-        localStorage.setItem('study_registry', JSON.stringify(registry));
+        safeSetItem('study_registry', JSON.stringify(registry));
       }
-      localStorage.setItem('bsr_last_active_study', studyId);
+      safeSetItem('bsr_last_active_study', studyId);
       recordStudyInstalled(studyId); // ← track in Recently Installed
       // Record the installed studyVersion so future loads can compare against it.
       const _newVer = parseFloat(data.studyMetadata?.studyVersion) || 0;

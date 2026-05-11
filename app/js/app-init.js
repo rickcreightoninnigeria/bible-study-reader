@@ -245,7 +245,7 @@ async function cleanOrphanedRegistry() {
       timer: 4000,
       timerProgressBar: true,
     });
-    localStorage.setItem('study_registry', JSON.stringify(valid));
+    safeSetItem('study_registry', JSON.stringify(valid));
   }
 }
 
@@ -344,14 +344,6 @@ async function startApp() {
   // Signal to loadStudyFromJson that the app is now initialised.
   // Any call that arrived before this point will have set window.pendingStudyData.
   window._appReady = true;
-
-  // Flush any voice transcript that the Android bridge delivered before the app
-  // was ready. receiveVoiceTranscript() queues early calls here rather than
-  // dropping them. See voice.js for the full bridge documentation.
-  if (window._pendingBridgeTranscript) {
-    receiveVoiceTranscript(window._pendingBridgeTranscript);
-    window._pendingBridgeTranscript = null;
-  }
 
   // Install bundled default studies on first run (silent — no navigation side-effects).
   // Must run before the routing block below so studies are in the registry when

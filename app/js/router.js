@@ -197,7 +197,7 @@ const Router = (() => {
           const data = await StudyIDB.get(`study_content_${studyId}`);
           if (data) {
             window.activeStudyId = studyId;
-            localStorage.setItem('bsr_last_active_study', studyId);
+            safeSetItem('bsr_last_active_study', studyId);
             await applyStudyData(data, { isStudySwitch: true, silent: true });
           }
         } catch (err) {

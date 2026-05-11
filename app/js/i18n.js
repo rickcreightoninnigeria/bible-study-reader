@@ -191,7 +191,7 @@ function applyLanguageToDom(langCode) {
 // view. Does NOT repeat one-time startup tasks (onboarding, registry clean…).
 // reloadLocaleAndRerender() is defined in app-init.js.
 function setLanguage(langCode) {
-  localStorage.setItem('app_language', langCode);
+  safeSetItem('app_language', langCode);
   reloadLocaleAndRerender(langCode);
 }
 

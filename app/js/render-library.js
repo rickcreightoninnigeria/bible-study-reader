@@ -63,15 +63,15 @@ function getPinned() {
   try { return JSON.parse(localStorage.getItem(PINNED_KEY) || '[]'); }
   catch(_) { return []; }
 }
-function savePinned(arr)        { localStorage.setItem(PINNED_KEY,            JSON.stringify(arr)); }
-function saveRecentOpened(arr)  { localStorage.setItem(RECENT_OPENED_KEY,     JSON.stringify(arr)); }
-function saveRecentInstalled(arr){ localStorage.setItem(RECENT_INSTALLED_KEY, JSON.stringify(arr)); }
+function savePinned(arr)        { safeSetItem(PINNED_KEY,            JSON.stringify(arr)); }
+function saveRecentOpened(arr)  { safeSetItem(RECENT_OPENED_KEY,     JSON.stringify(arr)); }
+function saveRecentInstalled(arr){ safeSetItem(RECENT_INSTALLED_KEY, JSON.stringify(arr)); }
 
 function getPinnedAll() {
   try { return JSON.parse(localStorage.getItem(PINNED_ALL_KEY) || '[]'); }
   catch(_) { return []; }
 }
-function savePinnedAll(arr) { localStorage.setItem(PINNED_ALL_KEY, JSON.stringify(arr)); }
+function savePinnedAll(arr) { safeSetItem(PINNED_ALL_KEY, JSON.stringify(arr)); }
 
 function togglePinAll(id) {
   const pinned = getPinnedAll();
@@ -247,7 +247,7 @@ function moveStudy(id, direction) {
   const newIdx = idx + direction;
   if (newIdx < 0 || newIdx >= registry.length) return;
   [registry[idx], registry[newIdx]] = [registry[newIdx], registry[idx]];
-  localStorage.setItem('study_registry', JSON.stringify(registry));
+  safeSetItem('study_registry', JSON.stringify(registry));
   renderLibrary(); // re-render; enterReorderMode called inside to keep state
 }
 
@@ -1351,7 +1351,7 @@ async function renderLibrary() {
       // Toggle off
       localStorage.removeItem('bsr_activePathwayId');
     } else {
-      localStorage.setItem('bsr_activePathwayId', pathwayKey);
+      safeSetItem('bsr_activePathwayId', pathwayKey);
     }
     // Refresh all set-active buttons in the current view so their state is correct
     document.querySelectorAll('.lib-path-set-active-btn').forEach(b => {

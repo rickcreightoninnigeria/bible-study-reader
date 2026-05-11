@@ -637,7 +637,7 @@ function showSlideOverlay(config) {
   // navigated; don't also call returnTo.
   function dismiss(stayPut = false) {
     if (markSeen) {
-      localStorage.setItem('featureSeen_' + id, 'true');
+      safeSetItem('featureSeen_' + id, 'true');
       refreshTutorialTriggers(id);
     }
 
@@ -724,14 +724,14 @@ function showAppOnboarding() {
     fadeOut:      true,
     restoreScroll: false,
     onComplete: () => {
-      localStorage.setItem('app_onboarding_complete', 'true');
+      safeSetItem('app_onboarding_complete', 'true');
       window._libActiveTab = 'all';
       Router.replaceState({ page: 'library' });
       openLibrary();
       showOnboardingIfNeeded();
     },
     onSkip: () => {
-      localStorage.setItem('app_onboarding_complete', 'true');
+      safeSetItem('app_onboarding_complete', 'true');
       window._libActiveTab = 'all';
       Router.replaceState({ page: 'library' });
       openLibrary();
@@ -770,7 +770,7 @@ function showUpgradeOnboardingIfNeeded(version) {
   if (!slides || !slides.length) {
     // No slides defined for this version — mark seen silently so we never
     // re-check on subsequent launches of the same version.
-    localStorage.setItem(seenKey, 'true');
+    safeSetItem(seenKey, 'true');
     return false;
   }
 
@@ -781,8 +781,8 @@ function showUpgradeOnboardingIfNeeded(version) {
     finalLabel:    t('onboarding_close'),
     fadeOut:       true,
     restoreScroll: false,
-    onComplete: () => { localStorage.setItem(seenKey, 'true'); },
-    onSkip:     () => { localStorage.setItem(seenKey, 'true'); },
+    onComplete: () => { safeSetItem(seenKey, 'true'); },
+    onSkip:     () => { safeSetItem(seenKey, 'true'); },
   });
   return true;
 }
@@ -835,11 +835,11 @@ function showOnboardingIfNeeded() {
     skipLabel:    t('onboarding_skip_intro'),
     restoreScroll: false,
     onComplete: () => {
-      localStorage.setItem(`onboardingComplete_${window.activeStudyId}`, 'true');
+      safeSetItem(`onboardingComplete_${window.activeStudyId}`, 'true');
       Router.navigate({ page: 'title' });
     },
     onSkip: () => {
-      localStorage.setItem(`onboardingComplete_${window.activeStudyId}`, 'true');
+      safeSetItem(`onboardingComplete_${window.activeStudyId}`, 'true');
       Router.navigate({ page: 'title' });
     },
   });

@@ -122,7 +122,7 @@ document.addEventListener('visibilitychange', () => {
     const ch = chapters[currentChapter];
     if (ch) {
       document.querySelectorAll('.answer-field').forEach(field => {
-        localStorage.setItem(
+        safeSetItem(
           storageKey(ch.chapterNumber, field.dataset.type, field.dataset.index),
           field.value
         );

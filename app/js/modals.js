@@ -481,7 +481,7 @@ function closeInfoModal(event) {
 
   if (!showAgain && _currentInfoTriggerBtn) {
     const infoId = _currentInfoTriggerBtn._infoId;
-    localStorage.setItem(`bsr_infoSeen_${infoId}`, 'hidden');
+    safeSetItem(`bsr_infoSeen_${infoId}`, 'hidden');
     // Remove the button from the DOM entirely so no gap or placeholder remains.
     _currentInfoTriggerBtn.remove();
   }

@@ -727,8 +727,16 @@ body.dark-mode .likert-info-btn {
   color: var(--dm-text-faint);
 }
 body.dark-mode .likert-radio {
-  border-color: var(--dm-border);
+  /* Unchecked: step the border up two levels from --dm-border so the circle
+     outline is legible against the --dm-raised card background.            */
+  border-color: var(--dm-text-faint);
   background: var(--dm-sunken);
+}
+body.dark-mode .likert-radio:checked {
+  /* Use the lighter accent token — --accent (#8c6420) has insufficient
+     contrast on dark surfaces; --accent-light (#b8882e) clears AA.        */
+  background: var(--accent-light);
+  border-color: var(--accent-light);
 }
 body.dark-mode .likert-radio:hover:not(:checked) {
   border-color: var(--accent-light);
