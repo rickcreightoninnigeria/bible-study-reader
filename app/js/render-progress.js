@@ -55,19 +55,16 @@ function clearActivePathway() {
 // Does not require the study to be loaded — works entirely from storage keys.
 // Returns { answered, total } where total is the count of keys found (answered
 // + unanswered). This is a lightweight approximation: it counts storage slots
-// that exist. Returns { answered: 0, total: null } when no keys are found,
-// as a sentinel meaning "never opened" — distinguishable from { answered: 0,
-// total: 0 } which means the study was opened but has no question slots.
+// that exist, which means studies never opened will return { answered:0, total:0 }.
 function getStudyProgressForId(studyId) {
   const prefix = `bsr_${studyId}_`;
   let answered = 0;
-  let total    = null;
+  let total    = 0;
   for (let i = 0; i < localStorage.length; i++) {
     const k = localStorage.key(i);
     if (!k.startsWith(prefix)) continue;
-    // Only count question and reflection answer slots, not notes/settings
-    if (!/_(q|r)_/.test(k)) continue;
-    if (total === null) total = 0;
+    // Count question, reflection, and Likert answer slots, not notes/settings
+    if (!/_(q|r|likert)_/.test(k)) continue;
     total++;
     if ((localStorage.getItem(k) || '').trim()) answered++;
   }
@@ -110,6 +107,18 @@ function getChapterProgress(ch) {
       if (val.trim()) answered++;
     });
   }
+
+  // Count each Likert statement individually — a scale with N statements
+  // contributes N items to total, one per answered statement to answered.
+  (ch.elements || [])
+    .filter(e => e.type === 'likertScale' && !e.repeatElement)
+    .forEach(el => {
+      (el.statements || []).forEach((_, stIdx) => {
+        total++;
+        const val = localStorage.getItem(likertKey(ch.chapterNumber, el.elementId, stIdx)) || '';
+        if (val.trim()) answered++;
+      });
+    });
 
   return { total, answered, pct: total > 0 ? Math.round((answered / total) * 100) : 0 };
 }
@@ -198,7 +207,7 @@ window.switchProgressTab = function(tab) {
     let pAnswered = 0, pTotal = 0;
     (pathway.studyTitles || []).forEach(s => {
       const { answered, total } = getStudyProgressForId(s.studyId);
-      pAnswered += answered; pTotal += (total ?? 0);
+      pAnswered += answered; pTotal += total;
     });
     count.textContent = pTotal === 0
       ? t('progress_count_no_answers')
@@ -313,7 +322,7 @@ function _buildPathwayPanelHtml(pathway) {
     const inRegistry = registry.includes(s.studyId);
     const { answered, total } = getStudyProgressForId(s.studyId);
     pathwayAnswered += answered;
-    pathwayTotal    += (total ?? 0);
+    pathwayTotal    += total;
 
     const pct        = total > 0 ? Math.round((answered / total) * 100) : 0;
     const ringColor  = pct === 100 ? 'var(--success)' : pct > 0 ? 'var(--accent)' : 'var(--border)';
@@ -322,11 +331,10 @@ function _buildPathwayPanelHtml(pathway) {
 
     // Status label
     let statusLabel;
-    if (isDone)              statusLabel = `<span class="prog-pathway-status done">${t('progress_status_done')}</span>`;
-    else if (isActive)       statusLabel = `<span class="prog-pathway-status active-study">${t('progress_status_active')}</span>`;
-    else if (answered > 0)   statusLabel = `<span class="prog-pathway-status in-progress">${answered}/${total}</span>`;
-    else if (total === null)  statusLabel = `<span class="prog-pathway-status not-started">${inRegistry ? t('progress_status_not_started') : t('progress_status_not_installed')}</span>`;
-    else                     statusLabel = `<span class="prog-pathway-status not-started">${t('progress_status_not_started')}</span>`;
+    if (isDone)            statusLabel = `<span class="prog-pathway-status done">${t('progress_status_done')}</span>`;
+    else if (isActive)     statusLabel = `<span class="prog-pathway-status active-study">${t('progress_status_active')}</span>`;
+    else if (answered > 0) statusLabel = `<span class="prog-pathway-status in-progress">${answered}/${total}</span>`;
+    else                   statusLabel = `<span class="prog-pathway-status not-started">${t('progress_status_not_started')}</span>`;
 
     // Open/activate button — deliberate action, separated visually from row tap
     let openBtn;
@@ -361,7 +369,7 @@ function _buildPathwayPanelHtml(pathway) {
           </div>
         </div>
         <div class="prog-pathway-study-detail" id="${detailId}">
-          ${total === null || total === 0
+          ${total === 0
             ? `<div class="prog-pathway-detail-empty">
                 ${inRegistry
                   ? t('progress_detail_open_to_start')
