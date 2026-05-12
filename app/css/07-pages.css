@@ -3031,7 +3031,7 @@ body.dark-mode .lib-shelf-cover-fallback { background: var(--dm-border); }
 body.dark-mode .lib-recent-section-label { color: var(--dm-text-faint); }
 body.dark-mode .lib-recent-section-label.pinned-label { color: var(--accent-light); }
 body.dark-mode .lib-ri-delete-btn {
-  color: var(--dm-text-faint);
+  color: var(--dm-text-mid);
 }
 body.dark-mode .lib-ri-delete-btn:hover {
   color: #e05c4b;

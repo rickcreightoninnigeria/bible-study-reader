@@ -59,12 +59,13 @@ function getUpgradeOnboardingSlides() {
   // Return an empty array [] for versions that have no upgrade slides —
   // showUpgradeOnboardingIfNeeded() will silently skip, and
   // showUpgradeOnboarding() will show a "nothing to see" toast instead.
+  //    body:    '<ul><li><b>??:</b> ??</li><li><b>??:</b> ??</li></ul>',
   return [
     {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>??:</b> ??</li><li><b>??:</b> ??</li></ul>',
+      body:    '<ul><li><b>Bugfixes:</b> over a dozen minor bugfixes</li></ul>',
     },
   ];
 }
