@@ -2998,7 +2998,7 @@ body.dark-mode .study-card-reorder-btn:hover:not(:disabled) {
   border-color: var(--accent-light);
 }
 body.dark-mode .study-card-delete-btn {
-  color: var(--dm-text-faint);
+  color: var(--dm-text-mid);
 }
 body.dark-mode .study-card-delete-btn:hover {
   color: #e05c4b !important;  /* brighter red — #c0392b is too dark on dm-raised */
