@@ -68,8 +68,10 @@ window.studyOnboardingSlides = [];
 // likertFieldKey(elementId, stIdx)    – field name for a Likert statement answer
 //   e.g.  likertFieldKey('el_42', 0)  → 'likert_el_42_0'
 //
-// celebratedFieldKey()                – field name for the chapter-completion flag
-//   → 'celebrated'
+// celebratedIDBKey(studyId, chapterNum) – standalone IDB key for the chapter-completion flag
+//   Stored as a separate answers-store entry (not inside the chapter record) so
+//   it cannot be overwritten by saveAnswers() read-modify-write cycles.
+//   → `${studyId}_celebrated_ch${chapterNum}`
 //
 // starFieldKey(elementId)             – field name for a starred-question flag
 //   → 'star_{elementId}'
@@ -92,8 +94,8 @@ function likertFieldKey(elementId, stIdx) {
   return `likert_${elementId}_${stIdx}`;
 }
 
-function celebratedFieldKey() {
-  return 'celebrated';
+function celebratedIDBKey(studyId, chapterNum) {
+  return `${studyId}_celebrated_ch${chapterNum}`;
 }
 
 function starFieldKey(elementId) {

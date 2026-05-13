@@ -10,10 +10,13 @@
 //                answerFieldKey() / likertFieldKey() in state.js, e.g.:
 //                  { q_el_01: "my answer", r_el_02: "reflection",
 //                    notes_0: "chapter notes", likert_el_03_0: "3",
-//                    celebrated: "1", star_el_01: "1" }
-//                Two additional per-study (non-chapter) keys also live here:
-//                  {studyId}_global_notes  – study-level notes string
-//                  {studyId}_lastPosition  – JSON-stringified scroll position
+//                    star_el_01: "1" }
+//                Additional per-study (non-chapter) keys also live here:
+//                  {studyId}_global_notes          – study-level notes string
+//                  {studyId}_lastPosition          – JSON-stringified scroll position
+//                  {studyId}_celebrated_ch{N}      – chapter-completion flag ('1')
+//                    Stored separately (not in the chapter object) so it is
+//                    never overwritten by saveAnswers() read-modify-write cycles.
 //
 // Values are stored as parsed objects (no JSON.stringify/parse needed)
 // except for lastPosition, which is stored as a JSON string to match the

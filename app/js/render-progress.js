@@ -117,10 +117,16 @@ function _getChapterProgressFromRecord(ch, record) {
   }
 
   // Count each Likert statement individually.
+  // Both standard (el.statements) and bipolar (el.statementPairs) subtypes use
+  // the same likertFieldKey(elementId, stIdx) storage format, so both are counted
+  // the same way — the only difference is which array determines the row count.
   (ch.elements || [])
     .filter(e => e.type === 'likertScale' && !e.repeatElement)
     .forEach(el => {
-      (el.statements || []).forEach((_, stIdx) => {
+      const rows = el.subtype === 'bipolar'
+        ? (el.statementPairs || [])
+        : (el.statements    || []);
+      rows.forEach((_, stIdx) => {
         total++;
         const val = (record[likertFieldKey(el.elementId, stIdx)] || '').trim();
         if (val) answered++;
@@ -465,7 +471,7 @@ async function _buildPathwayStudyDetail(studyId, answered, total) {
     try {
       const record = await StudyIDB.getChapterAnswers(studyId, chNum);
       for (const [field, val] of Object.entries(record)) {
-        if (!/^(q_|r_)/.test(field)) continue;
+        if (!/^(q_|r_|likert_)/.test(field)) continue;
         chTotal++;
         if ((val || '').trim()) chAnswered++;
       }

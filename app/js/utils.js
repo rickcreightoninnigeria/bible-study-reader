@@ -132,34 +132,38 @@ function showToast({
 }
 
 // Shows the chapter-completion celebration toast the first time a chapter
-// reaches 100% completion. The "celebrated" flag is stored in the chapter's
-// IDB answer object so it persists across sessions.
+// reaches 100% completion. The "celebrated" flag is stored as a standalone
+// IDB key (${studyId}_celebrated_ch${N}) so it is never touched by the
+// saveAnswers() read-modify-write cycle on the chapter record, eliminating
+// the race condition where a concurrent save could overwrite the flag.
 //
-// Async because it must read the chapter record to check the flag before
-// writing it. Fire-and-forget from updateProgress() — callers do not await.
+// Uses getAnswerRaw/setAnswerRaw (no read-modify-write needed — the key holds
+// only the flag value). Fire-and-forget from updateProgress().
 async function showCelebrationToast(ch) {
   const studyId = window.activeStudyId;
   if (!studyId) return;
 
-  let record;
+  const flagKey = celebratedIDBKey(studyId, ch.chapterNumber);
+
+  // Already celebrated this chapter — don't show again.
+  let existing;
   try {
-    record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+    existing = await StudyIDB.getAnswerRaw(flagKey);
   } catch (e) {
     console.warn('[showCelebrationToast] IDB read failed.', e);
     return;
   }
+  if (existing) return;
 
-  // Already celebrated this chapter — don't show again.
-  if (record[celebratedFieldKey()]) return;
-
-  // Mark as celebrated before showing the toast so a rapid double-trigger
+  // Write the flag before showing the toast so a rapid double-trigger
   // (e.g. two quick saves to 100%) doesn't show it twice.
-  record[celebratedFieldKey()] = '1';
   try {
-    await StudyIDB.setChapterAnswers(studyId, ch.chapterNumber, record);
+    await StudyIDB.setAnswerRaw(flagKey, '1');
   } catch (e) {
     console.warn('[showCelebrationToast] IDB write failed.', e);
+    return;
   }
+
 
   showToast({
     message:   `⭐ ${escapeHtml(ch.chapterTitle)} ⭐<br><span class="celebration-toast-sub">${t('utils_celebration_sub', { number: ch.chapterNumber })}</span><br><button class="celebration-toast-share" onclick="shareAnswers(); document.getElementById('celebrationToast').classList.remove('show')">${t('utils_celebration_share')} ${ICONS.share}</button>`,
