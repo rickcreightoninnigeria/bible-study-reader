@@ -1,43 +1,82 @@
 // ── STARRED QUESTIONS ─────────────────────────────────────────────────────────
 // Manages the starring (bookmarking) of individual questions and reflection items.
-// Stars are persisted to localStorage under a key derived from study ID, chapter
-// number, and elementId. The starred summary panel at the top of each chapter
-// view is rebuilt whenever a star is toggled.
+// Stars are persisted to IndexedDB inside the per-chapter answer object, under
+// a field name produced by starFieldKey(elementId) from state.js.
+//
+// Because renderQuestion() is synchronous, the chapter answer object must be
+// pre-loaded by the orchestrator (renderChapter) and passed into ctx as
+// ctx.chapterAnswers. isStarredFromCache() is the synchronous read used during
+// rendering; isStarred() is the async version used outside of render.
 //
 // Dependencies (all available as globals before this file loads):
-//   window.activeStudyId – state.js
-//   chapters, currentChapter – main.js state block
-//   goToChapter – main.js navigation
+//   window.activeStudyId     – state.js
+//   starFieldKey             – state.js
+//   StudyIDB                 – idb.js
+//   chapters, currentChapter – state.js
+//   ICONS                    – icons.js
+//   t()                      – i18n.js
 
-// Returns the localStorage key for a starred question.
-// Format: bsr_{studyId}_star_ch{N}_{elementId}
-function starKey(chapterNum, elementId) {
-  const currentStudyId = window.activeStudyId;
-  return `bsr_${currentStudyId}_star_ch${chapterNum}_${elementId}`;
+// ── Synchronous read from a pre-loaded chapter answers object ─────────────────
+// Used by renderQuestion() during chapter rendering, where the chapter answer
+// object has already been fetched from IDB by the orchestrator and is available
+// as ctx.chapterAnswers.
+function isStarredFromCache(chapterAnswers, elementId) {
+  return (chapterAnswers || {})[starFieldKey(elementId)] === '1';
 }
+
+// ── Async reads / writes ───────────────────────────────────────────────────────
 
 // Returns true if the question identified by (chapterNum, elementId) is starred.
-function isStarred(chapterNum, elementId) {
-  return localStorage.getItem(starKey(chapterNum, elementId)) === '1';
+// Async — reads from IDB. Used outside of rendering (e.g. progress page,
+// starred summary refresh after toggle).
+async function isStarred(chapterNum, elementId) {
+  const studyId = window.activeStudyId;
+  if (!studyId) return false;
+  try {
+    const record = await StudyIDB.getChapterAnswers(studyId, chapterNum);
+    return record[starFieldKey(elementId)] === '1';
+  } catch (e) {
+    console.warn('[isStarred] IDB read failed.', e);
+    return false;
+  }
 }
 
-// Toggles the starred state of a question in localStorage, updates the card's
+// Toggles the starred state of a question in IDB, updates the card's
 // visual style and the star button icon, then rebuilds the starred summary panel.
-function toggleStar(chapterNum, elementId) {
-  const key = starKey(chapterNum, elementId);
-  const currently = localStorage.getItem(key) === '1';
-  if (currently) {
-    localStorage.removeItem(key);
-  } else {
-    safeSetItem(key, '1');
+// Fire-and-forget async — callers (inline onclick handlers) do not await.
+async function toggleStar(chapterNum, elementId) {
+  const studyId = window.activeStudyId;
+  if (!studyId) return;
+
+  let record;
+  try {
+    record = await StudyIDB.getChapterAnswers(studyId, chapterNum);
+  } catch (e) {
+    console.warn('[toggleStar] IDB read failed.', e);
+    return;
   }
 
-  // Determine card and button IDs — reflection questions use elementId directly
+  const field     = starFieldKey(elementId);
+  const currently = record[field] === '1';
+
+  if (currently) {
+    delete record[field];
+  } else {
+    record[field] = '1';
+  }
+
+  try {
+    await StudyIDB.setChapterAnswers(studyId, chapterNum, record);
+  } catch (e) {
+    console.warn('[toggleStar] IDB write failed.', e);
+    return;
+  }
+
+  // Update the DOM immediately after the write succeeds.
   const cardId = elementId;
   const btnId  = `star_${elementId}`;
-
-  const card = document.getElementById(cardId);
-  const btn  = document.getElementById(btnId);
+  const card   = document.getElementById(cardId);
+  const btn    = document.getElementById(btnId);
 
   if (card) card.classList.toggle('starred-card', !currently);
   if (btn)  btn.innerHTML = currently ? ICONS.starEmpty : ICONS.starFilled;
@@ -45,14 +84,17 @@ function toggleStar(chapterNum, elementId) {
   refreshStarredSummary(chapterNum);
 }
 
+// ── Starred summary panel ──────────────────────────────────────────────────────
+
 // Rebuilds the starred summary panel at the top of the current chapter view.
-// Called after any star toggle to keep the panel in sync with localStorage.
-function refreshStarredSummary(chapterNum) {
-  const ch = chapters.find(c => c.num === chapterNum);
+// Called after any star toggle to keep the panel in sync with IDB.
+// Async because getStarredQuestions() must read from IDB.
+async function refreshStarredSummary(chapterNum) {
+  const ch = chapters.find(c => c.chapterNumber === chapterNum);
   if (!ch) return;
   const container = document.getElementById('starredSummaryContainer');
   if (!container) return;
-  const starred = getStarredQuestions(ch);
+  const starred = await getStarredQuestions(ch);
   if (starred.length === 0) {
     container.innerHTML = '';
     return;
@@ -64,7 +106,23 @@ function refreshStarredSummary(chapterNum) {
 // Each item has shape: { q, elementId, isReflection }
 // Covers both standard questions (from ch.sections) and reflection questions
 // (from ch.elements with subtype 'reflection').
-function getStarredQuestions(ch) {
+// Async — loads the chapter answer record from IDB once to check all star flags.
+async function getStarredQuestions(ch, preloadedRecord = null) {
+  const studyId = window.activeStudyId;
+  if (!studyId) return [];
+
+  let record;
+  if (preloadedRecord !== null) {
+    record = preloadedRecord;
+  } else {
+    try {
+      record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+    } catch (e) {
+      console.warn('[getStarredQuestions] IDB read failed.', e);
+      return [];
+    }
+  }
+
   const starred = [];
 
   // Standard questions — walk sections → questions
@@ -73,7 +131,7 @@ function getStarredQuestions(ch) {
       if (sec.questions && Array.isArray(sec.questions)) {
         sec.questions.forEach(q => {
           const eid = q.elementId;
-          if (eid && isStarred(ch.chapterNumber, eid)) {
+          if (eid && record[starFieldKey(eid)] === '1') {
             starred.push({ q, elementId: eid, isReflection: false });
           }
         });
@@ -87,7 +145,7 @@ function getStarredQuestions(ch) {
       e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement
     );
     reflEls.forEach((el, ri) => {
-      if (isStarred(ch.chapterNumber, el.elementId)) {
+      if (record[starFieldKey(el.elementId)] === '1') {
         starred.push({
           q: { ref: t('starred_reflection_ref', { number: ri + 1 }), text: el.question },
           elementId: el.elementId,

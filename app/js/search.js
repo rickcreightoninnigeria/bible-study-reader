@@ -6,18 +6,18 @@
 //
 // Dependencies (all available as globals before this file loads):
 //   ICONS                         – icons.js
-//   chapters                      – window.chapters (state.js)
-//   storageKey                    – main.js STATE section
-//   goToChapter                   – main.js NAVIGATION section
-//   closeMenu, saveLastPosition   – main.js (called at runtime only)
-//   isNonChapterPage              – main.js STATE section (local let)
+//   chapters                      – state.js
+//   answerFieldKey                – state.js
+//   StudyIDB                      – idb.js
+//   goToChapter                   – navigation.js
+//   closeMenu, saveLastPosition   – main.js / utils.js (called at runtime only)
+//   isNonChapterPage              – state.js
 //   window._titleBeforeSearch     – state.js
 //   window.activeTabPage          – state.js
+//   window.activeStudyId          – state.js
 
 // ── OPEN / CLOSE ──────────────────────────────────────────────────────────────
 
-// Opens the search overlay. Saves scroll position, sets isNonChapterPage, and
-// changes the Search button to ✕. Does not disturb any other button's state.
 function openSearch() {
   closeMenu();
   saveLastPosition();
@@ -33,8 +33,6 @@ function openSearch() {
   setTimeout(() => document.getElementById('searchInput').focus(), 100);
 }
 
-// Closes the search overlay and resets only the Search button.
-// Other nav buttons are unaffected — whatever was behind Search remains as-is.
 function closeSearch() {
   document.getElementById('searchOverlay').classList.remove('open');
   document.getElementById('searchInput').blur();
@@ -47,26 +45,19 @@ function closeSearch() {
   }
 }
 
-// Wraps all occurrences of 'query' in 'text' with <mark> tags for highlighting
-// in search results. Escapes regex special characters in the query first.
 function highlightMatch(text, query) {
-  // Always HTML-escape the input text first so that answer content containing
-  // '<', '>', or '&' cannot inject markup into the search results innerHTML.
   const safeText = escapeHtml(text);
   if (!query) return safeText;
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return safeText.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
 }
 
-// Strips all HTML tags from a string, returning plain text.
-// Used to make verse/question HTML safe to search and display as plain text.
 function stripHtml(html) {
   return html.replace(/<[^>]+>/g, '');
 }
 
 // ── DEBOUNCE ──────────────────────────────────────────────────────────────────
-// Prevents runSearchCore() from firing on every keystroke. The returned function
-// delays execution by 'delay' ms, resetting the timer if called again before it fires.
+
 function debounce(fn, delay = 250) {
   let timer;
   return function (...args) {
@@ -76,17 +67,12 @@ function debounce(fn, delay = 250) {
 }
 
 // debouncedRunSearch is wired to the search input's oninput event.
-// It wraps runSearchCore so the actual search only fires 250ms after the
-// user stops typing, avoiding redundant work on every keystroke.
+// runSearchCore is async; the debounced wrapper fires it and lets the
+// promise float — search results update the DOM when the await resolves.
 const debouncedRunSearch = debounce(runSearchCore, 250);
 
 // ── CONFIG ────────────────────────────────────────────────────────────────────
-// Theological keywords used for two purposes:
-//   1. Scoring: any result whose text contains one of these gets a bonus score.
-//   2. Fuzzy suggestion: if a query matches one of these within edit-distance 2,
-//      it is offered as a "Did you mean?" suggestion.
 
-// Theological keywords — expanded set covering doctrine, biblical books, figures, and liturgical terms.
 const THEO_KEYWORDS = [
   'conversion', 'repentance', 'faith', 'grace', 'sin', 'righteousness',
   'justification', 'new birth', 'born again', 'regeneration',
@@ -130,11 +116,7 @@ const THEO_KEYWORDS = [
   'amen', 'hosanna', 'maranatha', 'abba'
 ];
 
-// Synonym map: if the user's query exactly matches a key, the corresponding
-// array of synonyms is added to the query expansion so results for related
-// terms are also surfaced (e.g. searching "faith" also finds "belief", "trust").
 const SYNONYMS = {
-  // --- Core Soteriology ---
   'conversion': ['new birth', 'born again', 'regeneration', 'metanoia'],
   'repentance': ['turn', 'turning', 'remorse', 'change of mind'],
   'faith': ['belief', 'trust', 'confidence', 'assurance', 'pistis'],
@@ -142,32 +124,22 @@ const SYNONYMS = {
   'salvation': ['deliverance', 'rescue', 'soteria'],
   'gospel': ['good news', 'evangelion', 'kerygma'],
   'justification': ['declared righteous', 'acquittal'],
-
-  // --- The Nature of Sin ---
   'sin': ['iniquity', 'transgression', 'trespass', 'falling short', 'hamartia', 'debt'],
   'evil': ['wickedness', 'darkness', 'depravity'],
-
-  // --- Christology ---
   'christ': ['jesus', 'messiah', 'anointed one', 'son of man', 'lamb of God'],
   'lord': ['kyrios', 'master', 'sovereign'],
   'holy spirit': ['paraclete', 'comforter', 'advocate', 'spirit of truth', 'pneuma'],
   'god': ['father', 'creator', 'yahweh', 'elohim', 'the almighty'],
-
-  // --- Bible & Scripture ---
   'bible': ['scripture', 'word of god', 'holy writ', 'the text'],
   'old testament': ['tanakh', 'hebrew scriptures', 'the law and the prophets'],
   'new testament': ['greek scriptures', 'apostolic writings'],
   'covenant': ['testament', 'agreement', 'promise', 'berit'],
-
-  // --- Christian Life & Virtues ---
   'church': ['body of christ', 'ekklesia', 'congregation', 'assembly'],
   'worship': ['praise', 'adoration', 'liturgy', 'service'],
   'love': ['agape', 'charity', 'steadfast love', 'hesed'],
   'peace': ['shalom', 'tranquility', 'reconciliation'],
   'holiness': ['sanctification', 'purity', 'set apart'],
   'prayer': ['supplication', 'intercession', 'petition', 'communion with god'],
-
-  // --- End Times & Hope ---
   'heaven': ['paradise', 'new jerusalem', 'kingdom of god'],
   'hell': ['sheol', 'hades', 'gehenna', 'outer darkness'],
   'second coming': ['parousia', 'return of christ', 'last days'],
@@ -176,128 +148,104 @@ const SYNONYMS = {
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 
-// Lowercases text for case-insensitive comparison throughout the search pipeline.
 function normalize(text) {
   return text.toLowerCase();
 }
 
-/**
- * expandQuery:
- * Takes a query string and returns an array of unique terms to search for,
- * including synonyms from the SYNONYMS map.
- * For example, "faith" becomes ["faith", "belief", "trust", "assurance", "pistis"].
- */
 function expandQuery(query) {
   const words = normalize(query).split(/\s+/).filter(w => w.length > 0);
   const expanded = new Set();
-
   words.forEach(word => {
-    // Add the original word
     expanded.add(word);
-    // Add all synonyms if they exist in our map
     if (SYNONYMS[word]) {
       SYNONYMS[word].forEach(syn => expanded.add(syn.toLowerCase()));
     }
   });
-
   return Array.from(expanded);
 }
 
-// Computes the Levenshtein edit distance between strings a and b.
-// Used only by getSuggestion() for fuzzy keyword matching; not called
-// on every search result, so the O(m×n) cost is acceptable here.
 function levenshtein(a, b) {
   const m = Array.from({ length: b.length + 1 }, (_, i) => [i]);
   for (let j = 0; j <= a.length; j++) m[0][j] = j;
-
   for (let i = 1; i <= b.length; i++) {
     for (let j = 1; j <= a.length; j++) {
       m[i][j] = b[i-1] === a[j-1]
         ? m[i-1][j-1]
-        : Math.min(
-            m[i-1][j-1] + 1,
-            m[i][j-1] + 1,
-            m[i-1][j] + 1
-          );
+        : Math.min(m[i-1][j-1] + 1, m[i][j-1] + 1, m[i-1][j] + 1);
     }
   }
   return m[b.length][a.length];
 }
 
-// Returns the closest THEO_KEYWORDS entry to 'query' if the edit distance
-// is ≤ 2 (and the query is ≤ 12 chars), or null if no close match exists.
-// Used to power "Did you mean X?" suggestions in the results panel.
 function getSuggestion(query) {
   if (query.length > 12) return null;
-
   let best = null;
   let bestDist = Infinity;
-
   THEO_KEYWORDS.forEach(k => {
     const d = levenshtein(query, k);
-    if (d < bestDist && d <= 2) {
-      bestDist = d;
-      best = k;
-    }
+    if (d < bestDist && d <= 2) { bestDist = d; best = k; }
   });
-
   return best;
 }
 
-// In-memory cache of localStorage values read during a search pass.
-// Avoids repeated localStorage.getItem() calls for the same key within
-// a single runSearchCore() execution — a significant performance gain
-// when the user has many saved answers.
+// ── ANSWER CACHE ──────────────────────────────────────────────────────────────
+// In-memory cache of IDB chapter answer objects for the current search session.
+// Keyed by chapter number. Populated once per runSearchCore() call via
+// _loadAnswerCache(), then read synchronously during the search pass.
+// Cleared by saveAnswers() in save.js so the next search sees fresh data.
+//
+// The Map is exported as `storageCache` to preserve the existing clear() call
+// in save.js — no change needed there.
 const storageCache = new Map();
 
-// Returns the localStorage value for 'key', reading from the in-memory
-// cache first and falling back to localStorage on a miss.
-function getCachedStorage(key) {
-  if (storageCache.has(key)) return storageCache.get(key);
-  const val = localStorage.getItem(key) || '';
-  storageCache.set(key, val);
-  return val;
+// Loads all chapter answer objects for the active study into storageCache.
+// Keyed by chapter number (integer). Returns a Promise that resolves when all
+// reads are complete. Called once at the start of each runSearchCore() execution.
+async function _loadAnswerCache() {
+  storageCache.clear();
+  const studyId = window.activeStudyId;
+  if (!studyId) return;
+  await Promise.all(
+    chapters.map(async ch => {
+      try {
+        const record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+        storageCache.set(ch.chapterNumber, record);
+      } catch (e) {
+        storageCache.set(ch.chapterNumber, {});
+      }
+    })
+  );
+}
+
+// Returns the saved answer for a field within a chapter, reading from the
+// in-memory cache populated by _loadAnswerCache().
+function _getCachedAnswer(chapterNum, fieldKey) {
+  const record = storageCache.get(chapterNum);
+  return record ? (record[fieldKey] || '') : '';
 }
 
 // ── SCORING ───────────────────────────────────────────────────────────────────
-// Assigns a relevance score to a single result candidate.
-// Higher scores surface the result closer to the top of the list.
-// Scoring factors (cumulative):
-//   – Exact / prefix / substring match on the result text (+120/80/40)
-//   – Match on the Bible reference string (+100)
-//   – Result type bonus: answer (+80) > question (+60) > bridge (+25)
-//   – Theological keyword presence in text (+20 each)
-//   – Shorter text length bonus (rewards concise matches)
-//   – Having a saved answer (+25, encourages answer results)
 
 function scoreResult({ text, ref, type, answer }, queries, originalQuery) {
-  const t = normalize(text);
+  const tNorm = normalize(text);
   const normOriginal = normalize(originalQuery);
   let score = 0;
 
-  // 1. Match scoring with multiplier — boost the original (unexpanded) word
   queries.forEach(q => {
     let multiplier = (q === normOriginal) ? 1.5 : 1.0;
-
-    if (t === q)            score += (120 * multiplier);
-    else if (t.startsWith(q)) score += (80  * multiplier);
-    else if (t.includes(q))   score += (40  * multiplier);
-
+    if (tNorm === q)              score += (120 * multiplier);
+    else if (tNorm.startsWith(q)) score += (80  * multiplier);
+    else if (tNorm.includes(q))   score += (40  * multiplier);
     if (ref && normalize(ref).includes(q)) score += (100 * multiplier);
   });
 
-  // 2. Result type bonus (crucial for relevance ordering)
   if (type === 'question') score += 60;
   if (type === 'answer')   score += 80;
   if (type === 'bridge')   score += 25;
 
-  // 3. Theological keyword bonus — rewards theologically rich content
-  THEO_KEYWORDS.forEach(k => {
-    if (t.includes(k)) score += 20;
-  });
+  THEO_KEYWORDS.forEach(k => { if (tNorm.includes(k)) score += 20; });
 
-  // 4. Length and answer adjustments
-  score += Math.max(0, 50 - text.length / 10); // shorter text = higher boost
+  score += Math.max(0, 50 - text.length / 10);
   if (answer) score += 25;
 
   return score;
@@ -305,18 +253,11 @@ function scoreResult({ text, ref, type, answer }, queries, originalQuery) {
 
 // ── MAIN SEARCH CORE ──────────────────────────────────────────────────────────
 // Full-text search over all chapter content and saved answers.
+// Now async: loads all chapter answer objects from IDB once at the start,
+// then the search pass runs synchronously over the in-memory cache.
 // Called via debouncedRunSearch() (wired to the search input's oninput event).
-//
-// Search pools (in one pass over chapters[]):
-//   bridge text  – section explanatory paragraphs
-//   questions    – question text and Bible reference strings
-//   answers      – user's saved answers to questions and reflections
-//
-// After gathering candidates, results are scored and sorted. If no results are
-// found and the query is short, a fuzzy fallback re-runs the search using the
-// closest THEO_KEYWORDS suggestion.
 
-function runSearchCore(query) {
+async function runSearchCore(query) {
   const resultsEl = document.getElementById('searchResults');
   const originalQuery = query.trim();
 
@@ -326,12 +267,16 @@ function runSearchCore(query) {
     return;
   }
 
+  // Pre-load all chapter answer objects from IDB into storageCache.
+  // This is the single async step — everything after is synchronous.
+  await _loadAnswerCache();
+
   const queries = expandQuery(originalQuery);
   const results = [];
 
   chapters.forEach((ch, chIdx) => {
     ch.sections.forEach((sec, sIdx) => {
-      // 1. Search bridge text (explanatory paragraphs between questions)
+      // 1. Search bridge text
       if (sec.bridge) {
         const plain = stripHtml(sec.bridge);
         const norm = normalize(plain);
@@ -349,12 +294,11 @@ function runSearchCore(query) {
       // 2. Search questions and their saved answers
       sec.questions.forEach((question, qIdx) => {
         const qText = stripHtml(question.text);
-        const ref = question.ref;
-        const eid = question.elementId || `${sIdx}_${qIdx}`;
-        const key = storageKey(ch.chapterNumber, 'q', eid);
-        const savedAnswer = getCachedStorage(key);
+        const ref   = question.ref;
+        const eid   = question.elementId || `${sIdx}_${qIdx}`;
+        const savedAnswer = _getCachedAnswer(ch.chapterNumber, answerFieldKey('q', eid));
 
-        const combined = qText + ' ' + ref + ' ' + savedAnswer;
+        const combined     = qText + ' ' + ref + ' ' + savedAnswer;
         const normCombined = normalize(combined);
 
         if (queries.some(q => normCombined.includes(q))) {
@@ -384,24 +328,14 @@ function runSearchCore(query) {
       });
     });
 
-    // 3. Search reflection answers.
-    // Iterate directly over reflection elements so elementId is read from the
-    // element itself — exactly as renderQuestion() does when saving answers.
-    // The previous approach filtered elements into reflEls[] then used the
-    // ch.reflection[] loop index to index into reflEls[], which misaligned
-    // whenever repeatElement entries or non-reflection elements interleaved
-    // with reflection elements in ch.elements[].
+    // 3. Search reflection answers
     (ch.elements || [])
       .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
       .forEach((el, rIdx) => {
-        const key = storageKey(ch.chapterNumber, 'r', el.elementId);
-        const savedAnswer = getCachedStorage(key);
+        const savedAnswer = _getCachedAnswer(ch.chapterNumber, answerFieldKey('r', el.elementId));
         if (savedAnswer) {
           const norm = normalize(savedAnswer);
           if (queries.some(q => norm.includes(q))) {
-            // Question text lives on the element (el.question for mono-lingual,
-            // el.question1/2/3 for multilingual). stripHtml guards against any
-            // inline HTML in the question string.
             const questionText = stripHtml(el.question || el.question1 || '');
             results.push({
               chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle,
@@ -417,8 +351,7 @@ function runSearchCore(query) {
       });
   });
 
-  // Fuzzy fallback: if no results and the query is short, retry with the
-  // closest theological keyword match (e.g. "fait" → "faith")
+  // Fuzzy fallback
   if (results.length === 0 && originalQuery.length <= 10) {
     const suggestion = getSuggestion(originalQuery);
     if (suggestion && suggestion !== originalQuery) return runSearchCore(suggestion);
@@ -427,7 +360,7 @@ function runSearchCore(query) {
   results.sort((a, b) => b.score - a.score);
 
   if (results.length === 0) {
-    const suggestion = getSuggestion(originalQuery);
+    const suggestion   = getSuggestion(originalQuery);
     const safeQuery      = escapeHtml(originalQuery);
     const safeSuggestion = suggestion ? escapeHtml(suggestion) : '';
     resultsEl.innerHTML = `
@@ -438,7 +371,6 @@ function runSearchCore(query) {
     return;
   }
 
-  // Render results (capped at 50 to keep the list manageable)
   let html = '';
   const suggestion = getSuggestion(originalQuery);
   if (suggestion && suggestion !== normalize(originalQuery)) {
@@ -466,8 +398,7 @@ function runSearchCore(query) {
 }
 
 // Closes the search overlay, navigates to the given chapter index, then scrolls
-// to the specific card if cardId is provided. The 300ms timeout allows
-// renderChapter() to complete its DOM writes before scrollIntoView() is called.
+// to the specific card if cardId is provided.
 function searchNavigate(chIdx, cardId) {
   closeSearch();
   Router.navigate({ page: 'chapter', idx: chIdx });

@@ -1,12 +1,30 @@
 // ── IDB STORAGE ───────────────────────────────────────────────────────────────
-// Async wrapper around IndexedDB for storing large study JSON objects.
-// Only study_content_ keys live here; all other app data stays in localStorage.
-// Values are stored as parsed objects (no JSON.stringify/parse needed).
+// Async wrapper around IndexedDB for storing large study JSON objects,
+// cover images, and per-chapter user answers.
+//
+// Object stores
+//   'studies'  – study content JSON (keyed by study_content_{studyId})
+//   'images'   – cover/inline image Blobs (keyed by {studyId}_{imageId})
+//   'answers'  – per-chapter answer objects (keyed by {studyId}_ch{N})
+//                Each value is a plain object whose fields are produced by
+//                answerFieldKey() / likertFieldKey() in state.js, e.g.:
+//                  { q_el_01: "my answer", r_el_02: "reflection",
+//                    notes_0: "chapter notes", likert_el_03_0: "3",
+//                    celebrated: "1", star_el_01: "1" }
+//                Two additional per-study (non-chapter) keys also live here:
+//                  {studyId}_global_notes  – study-level notes string
+//                  {studyId}_lastPosition  – JSON-stringified scroll position
+//
+// Values are stored as parsed objects (no JSON.stringify/parse needed)
+// except for lastPosition, which is stored as a JSON string to match the
+// existing saveLastPosition / loadLastPosition contract.
+
 const StudyIDB = (() => {
-  const DB_NAME  = 'BibleStudyReader';
-  const DB_VER   = 2;                  // bumped from 1 → 2 to add images store
-  const STORE    = 'studies';
-  const IMG_STORE = 'images';
+  const DB_NAME    = 'BibleStudyReader';
+  const DB_VER     = 3;                  // bumped 2 → 3 to add answers store
+  const STORE      = 'studies';
+  const IMG_STORE  = 'images';
+  const ANS_STORE  = 'answers';
 
   // Set to a DOMException-like object if IDB is unavailable (e.g. Firefox private
   // browsing, restricted Android WebViews). All public methods check this first
@@ -44,6 +62,7 @@ const StudyIDB = (() => {
         const db = e.target.result;
         if (!db.objectStoreNames.contains(STORE))     db.createObjectStore(STORE);
         if (!db.objectStoreNames.contains(IMG_STORE)) db.createObjectStore(IMG_STORE);
+        if (!db.objectStoreNames.contains(ANS_STORE)) db.createObjectStore(ANS_STORE);
       };
       req.onsuccess = e => resolve(e.target.result);
       req.onerror   = e => {
@@ -137,17 +156,157 @@ const StudyIDB = (() => {
     });
   }
 
-  // Wipes all records from both object stores. Used by resetAllData().
+  // ── answers store (per-chapter answer objects) ────────────────────────────
+  //
+  // Chapter answers key:  `${studyId}_ch${chapterNum}`
+  // Global notes key:     `${studyId}_global_notes`
+  // Last position key:    `${studyId}_lastPosition`
+
+  // Returns the answer object for a single chapter, or {} if none exists yet.
+  async function getChapterAnswers(studyId, chapterNum) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const key = `${studyId}_ch${chapterNum}`;
+      const req = db.transaction(ANS_STORE, 'readonly').objectStore(ANS_STORE).get(key);
+      req.onsuccess = e => resolve(e.target.result ?? {});
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  // Writes the full answer object for a single chapter (overwrites existing).
+  async function setChapterAnswers(studyId, chapterNum, obj) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const key = `${studyId}_ch${chapterNum}`;
+      const req = db.transaction(ANS_STORE, 'readwrite').objectStore(ANS_STORE).put(obj, key);
+      req.onsuccess = () => resolve();
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  // Returns a raw IDB value by key from the answers store.
+  // Used for per-study keys (global_notes, lastPosition) that are not
+  // chapter-scoped.
+  async function getAnswerRaw(key) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const req = db.transaction(ANS_STORE, 'readonly').objectStore(ANS_STORE).get(key);
+      req.onsuccess = e => resolve(e.target.result ?? null);
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  // Writes a raw value by key into the answers store.
+  async function setAnswerRaw(key, value) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const req = db.transaction(ANS_STORE, 'readwrite').objectStore(ANS_STORE).put(value, key);
+      req.onsuccess = () => resolve();
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  // Deletes a raw key from the answers store.
+  async function deleteAnswerRaw(key) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const req = db.transaction(ANS_STORE, 'readwrite').objectStore(ANS_STORE).delete(key);
+      req.onsuccess = () => resolve();
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  // Deletes all answer records for a study: chapter objects, global_notes,
+  // and lastPosition. Used by confirmClearAnswers() and deleteStudy().
+  // Returns the list of deleted keys (useful for logging/debugging).
+  async function deleteStudyAnswers(studyId) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const tx    = db.transaction(ANS_STORE, 'readwrite');
+      const store = tx.objectStore(ANS_STORE);
+      const deleted = [];
+      const req   = store.openCursor();
+      req.onsuccess = e => {
+        const cursor = e.target.result;
+        if (!cursor) return; // iteration complete
+        if (cursor.key.startsWith(`${studyId}_`)) {
+          deleted.push(cursor.key);
+          cursor.delete();
+        }
+        cursor.continue();
+      };
+      req.onerror   = e => reject(e.target.error);
+      tx.oncomplete = () => resolve(deleted);
+      tx.onerror    = e => reject(e.target.error);
+    });
+  }
+
+  // Returns all answer-store keys that start with the given studyId prefix.
+  // Used by the progress scanner and the export path to enumerate chapter keys
+  // without loading their values.
+  async function getAllStudyAnswerKeys(studyId) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const tx    = db.transaction(ANS_STORE, 'readonly');
+      const store = tx.objectStore(ANS_STORE);
+      const keys  = [];
+      const req   = store.openCursor();
+      req.onsuccess = e => {
+        const cursor = e.target.result;
+        if (!cursor) return;
+        if (cursor.key.startsWith(`${studyId}_`)) keys.push(cursor.key);
+        cursor.continue();
+      };
+      req.onerror   = e => reject(e.target.error);
+      tx.oncomplete = () => resolve(keys);
+      tx.onerror    = e => reject(e.target.error);
+    });
+  }
+
+  // Returns every record in the answers store as { key, value } pairs.
+  // Used by the migration script to bulk-read all existing IDB answer data.
+  async function getAllAnswerEntries() {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const tx      = db.transaction(ANS_STORE, 'readonly');
+      const store   = tx.objectStore(ANS_STORE);
+      const entries = [];
+      const req     = store.openCursor();
+      req.onsuccess = e => {
+        const cursor = e.target.result;
+        if (!cursor) return;
+        entries.push({ key: cursor.key, value: cursor.value });
+        cursor.continue();
+      };
+      req.onerror   = e => reject(e.target.error);
+      tx.oncomplete = () => resolve(entries);
+      tx.onerror    = e => reject(e.target.error);
+    });
+  }
+
+  // Wipes all records from all three object stores. Used by resetAllData().
   async function clearAll() {
     const db = await open();
     return new Promise((resolve, reject) => {
-      const tx = db.transaction([STORE, IMG_STORE], 'readwrite');
+      const tx = db.transaction([STORE, IMG_STORE, ANS_STORE], 'readwrite');
       tx.objectStore(STORE).clear();
       tx.objectStore(IMG_STORE).clear();
+      tx.objectStore(ANS_STORE).clear();
       tx.oncomplete = () => resolve();
       tx.onerror    = e => reject(e.target.error);
     });
   }
 
-  return { get, set, remove, getImage, setImage, removeImage, removeImagesByPrefix, clearAll };
+  return {
+    // studies store
+    get, set, remove,
+    // images store
+    getImage, setImage, removeImage, removeImagesByPrefix,
+    // answers store
+    getChapterAnswers, setChapterAnswers,
+    getAnswerRaw, setAnswerRaw, deleteAnswerRaw,
+    deleteStudyAnswers, getAllStudyAnswerKeys, getAllAnswerEntries,
+    // global
+    clearAll,
+  };
 })();

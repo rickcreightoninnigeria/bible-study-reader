@@ -24,9 +24,9 @@
 //   loadLocale           – app-init.js
 //   ICONS                – icons.js
 //   appSettings          – settings.js
-//   chapters             – main.js STATE section
-//   currentChapter       – main.js STATE section
-//   storageKey           – main.js STATE section
+//   chapters             – state.js
+//   currentChapter       – state.js
+//   answerFieldKey       – state.js
 //   voiceInputAvailable  – voice.js
 //   startVoiceInput      – voice.js
 //   openNotesInfo        – modals.js
@@ -34,7 +34,7 @@
 //   saveAnswers          – save.js
 //   printChapter         – share-print.js
 //   shareAnswers         – share-print.js
-//   goToChapter          – main.js
+//   goToChapter          – navigation.js
 //   renderChapter        – render-chapter.js
 
 
@@ -64,16 +64,7 @@ async function clearStudyUiLangOverride() {
 // A sticky bar of flag/badge buttons, one per language present in the chapter.
 // Mirrors the pattern of the library's renderLangBar (render-library.js).
 //
-// The bar element (#chapterLangBar) is created once by the orchestrator in
-// render-chapter.js immediately after container.innerHTML = ''. This function
-// populates (or repopulates) that element's innerHTML on each render.
-//
-// If only one language is present the bar is hidden; the DOM node remains so
-// it can be shown immediately on the next render without a layout recalculation.
-//
-// langs      – ordered array of language codes present in the chapter
-//              (e.g. ['ha', 'en']). Derived by detectAvailableLangs() in
-//              render-chapter.js.
+// langs      – ordered array of language codes present in the chapter.
 // activeLang – the currently selected language code.
 
 function buildLangBar(langs, activeLang) {
@@ -90,9 +81,6 @@ function buildLangBar(langs, activeLang) {
   bar.style.display = 'flex';
   if (page) page.classList.add('chapter-page--with-lang-bar');
 
-  // Determine which flag emojis appear more than once among the present langs.
-  // When two or more present languages share a flag, use their badges instead
-  // so the user can tell them apart. Mirrors the library's renderLangBar logic.
   const flagCounts = {};
   langs.forEach(code => {
     const f = LANGUAGE_MAP[code]?.flag;
@@ -101,12 +89,11 @@ function buildLangBar(langs, activeLang) {
 
   const buttons = langs.map(code => {
     const entry = LANGUAGE_MAP[code];
-    // Graceful fallback for language codes not yet in LANGUAGE_MAP.
     const label      = entry?.label || code.toUpperCase();
     const flagShared = entry && flagCounts[entry.flag] > 1;
     const display    = ((flagShared || entry?.alwaysBadge) && entry?.badge)
-      ? renderLangBadge(entry)   // badge: always for alwaysBadge; shared-flag otherwise
-      : (entry?.flag || '🌐');   // flag: unambiguous when alone or no badge
+      ? renderLangBadge(entry)
+      : (entry?.flag || '🌐');
     return `<button class="lib-lang-btn${activeLang === code ? ' active' : ''}"
                      onclick="setStudyLang('${code}')"
                      aria-label="${label}"
@@ -118,43 +105,21 @@ function buildLangBar(langs, activeLang) {
 
 
 // ── SET STUDY LANGUAGE ────────────────────────────────────────────────────────
-// Called by the chapter lang bar buttons. Updates the session content-language
-// preference and, if the chosen language has UI support, also updates the
-// active UI locale for the session (without touching the user's saved
-// preference in localStorage).
-//
-// UI language behaviour:
-//   • If the chosen language is in SUPPORTED_LANGUAGES, load its locale and
-//     set it as the active UI language for this session.
-//   • If not, leave the UI locale unchanged — the user sees the study content
-//     in the new language but all UI chrome stays in the last supported language.
-//
-// window._activeStudyLang   – session content language (persists across chapters)
-// window._sessionUiLangOverride – session UI language override (null = inactive)
-//
-// A single renderChapter() call handles the re-render after any locale swap,
-// avoiding a double render.
 
 async function setStudyLang(code) {
   window._activeStudyLang = code;
 
   if (SUPPORTED_LANGUAGES.includes(code)) {
-    // This language has UI support — update the session UI locale.
     window._sessionUiLangOverride = code;
     applyLanguageToDom(code);
     await loadLocale(code);
   }
-  // If not UI-supported, _sessionUiLangOverride retains its previous value
-  // (the last supported language the user selected, or null if they started
-  // on an unsupported language), so the UI stays in whichever supported
-  // language was last active.
 
   renderChapter(currentChapter, window.scrollY);
 }
 
 
 // ── SAVE / SHARE BAR ──────────────────────────────────────────────────────────
-// Fixed bar at the bottom of the chapter with Save, Print, and Share buttons.
 
 function buildSaveBar(ch) {
   return `
@@ -173,12 +138,15 @@ function buildSaveBar(ch) {
 
 
 // ── NOTES FIELD ───────────────────────────────────────────────────────────────
-// Always-present free-text area at the foot of every chapter, preceded by a
-// section-break divider. Value is loaded from localStorage on render.
+// Always-present free-text area at the foot of every chapter.
+//
+// chapterAnswers – the pre-loaded IDB answer record for this chapter, fetched
+//                  once by the orchestrator (render-chapter.js) and passed in.
+//                  The notes value is stored under answerFieldKey('notes', 0).
+//                  Defaults to {} when no answers exist yet.
 
-function buildNotesField(ch) {
-  const notesKey = storageKey(ch.chapterNumber, 'notes', 0);
-  const notesVal = escapeHtml(localStorage.getItem(notesKey) || '');
+function buildNotesField(ch, chapterAnswers) {
+  const notesVal = escapeHtml((chapterAnswers || {})[answerFieldKey('notes', 0)] || '');
 
   return `
     <div class="section-break section-break-spaced">
@@ -203,19 +171,10 @@ function buildNotesField(ch) {
 
 
 // ── PREV / NEXT NAV BUTTONS ───────────────────────────────────────────────────
-// Rendered only when appSettings.showNavButtons is true.
-// Uses a flex spacer div when a direction is unavailable so the remaining
-// button stays correctly aligned.
-//
-// activeLang – the currently active study language code (e.g. 'ha')
-// langMap    – slot-index map e.g. { ha: 1, ff: 2, en: 3 }. Empty for mono-lingual.
 
 function buildNavButtons(idx, activeLang, langMap) {
   if (!appSettings.showNavButtons) return '';
 
-  // Resolve a chapter title for the active language.
-  // Multilingual: chapterTitle1/2/3 keyed by langMap slot.
-  // Mono-lingual: plain chapterTitle (unnumbered).
   function resolveChapterTitle(ch) {
     if (langMap && Object.keys(langMap).length > 0) {
       const slot = langMap[activeLang];

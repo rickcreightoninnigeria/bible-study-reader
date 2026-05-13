@@ -112,14 +112,12 @@ function updateSettingControl(key, value) {
 // dark-mode class on <body>, progress bar visibility, and answer field height.
 // Also injects a dynamic <style> tag so future-rendered answer fields
 // inherit the correct min-height without needing JS to run on each one.
-
 function applyAllSettings() {
-  // 1. Font Family (The "One-Place" Fix)
+  // 1. Font Family
   const fontChoice = appSettings.useSansSerif ? 'var(--font-stack-sans)' : 'var(--font-stack-serif)';
   document.documentElement.style.setProperty('--main-font-family', fontChoice);
 
   // 2. Font size
-  // Font size
   document.documentElement.style.fontSize = appSettings.fontSize + 'px';
 
   // 3. Dark mode
@@ -128,7 +126,7 @@ function applyAllSettings() {
   // 4. Progress bar
   const pb = document.getElementById('progressBar');
   if (pb) pb.style.display = appSettings.showProgressBar ? '' : 'none';
-  
+
   // 5. Answer field height
   const answerFields = document.querySelectorAll('.answer-field');
   answerFields.forEach(f => f.style.minHeight = getAnswerFieldMinHeight());
@@ -151,15 +149,15 @@ function applyAllSettings() {
 function setFontSize(px) {
   const clamped = Math.min(FONT_MAX, Math.max(FONT_MIN, px));
   saveSetting('fontSize', clamped);
-  
+
   // Apply to the whole app immediately
-  document.documentElement.style.fontSize = clamped + 'px'; 
-  
+  document.documentElement.style.fontSize = clamped + 'px';
+
   // If the settings page is open, update the label and dots
   const label = document.getElementById('settings-size-label');
   if (label) label.textContent = clamped + 'px';
-  
-  updateSettingsControls(); 
+
+  updateSettingsControls();
 }
 
 // Returns the minimum swipe distance (px) required to trigger chapter navigation,
@@ -169,33 +167,28 @@ function getSwipeThreshold() {
   return map[appSettings.swipeSensitivity] || 100;
 }
 
-// Refreshes the font size controls on the Settings page: updates the preview
-// text size, the size label, enables/disables the +/- buttons at the limits,
-// and highlights the active dot on the size track.
+// Refreshes the font size controls on the Settings page.
 function updateSettingsControls() {
   const preview = document.getElementById('settings-preview');
-  const label = document.getElementById('settings-size-label');
-  const minBtn = document.getElementById('settings-btn-minus');
-  const maxBtn = document.getElementById('settings-btn-plus');
-  const dots = document.querySelectorAll('.settings-size-dot');
+  const label   = document.getElementById('settings-size-label');
+  const minBtn  = document.getElementById('settings-btn-minus');
+  const maxBtn  = document.getElementById('settings-btn-plus');
+  const dots    = document.querySelectorAll('.settings-size-dot');
 
   if (preview) preview.style.fontSize = appSettings.fontSize + 'px';
-  if (label) label.textContent = appSettings.fontSize + 'px';
-  if (minBtn) minBtn.disabled = appSettings.fontSize <= FONT_MIN;
-  if (maxBtn) maxBtn.disabled = appSettings.fontSize >= FONT_MAX;
+  if (label)   label.textContent = appSettings.fontSize + 'px';
+  if (minBtn)  minBtn.disabled = appSettings.fontSize <= FONT_MIN;
+  if (maxBtn)  maxBtn.disabled = appSettings.fontSize >= FONT_MAX;
 
-  const steps = (FONT_MAX - FONT_MIN) / FONT_STEP;
+  const steps       = (FONT_MAX - FONT_MIN) / FONT_STEP;
   const currentStep = (appSettings.fontSize - FONT_MIN) / FONT_STEP;
   dots.forEach((dot, i) => dot.classList.toggle('active', i === currentStep));
 }
 
-// Shows a custom confirmation dialog before clearing all saved answers.
-// Uses a dynamically created overlay rather than the native confirm() dialog,
-// which is blocked on some mobile WebViews and cannot be styled.
-// On confirmation, deletes all localStorage keys with the 'bsr_' prefix,
-// resets the onboarding flag so the intro plays again on next launch,
-// and immediately shows the onboarding overlay.
-
+// Shows a custom confirmation dialog before clearing all saved answers for the
+// active study. On confirmation, deletes all IDB answer records for the study
+// via StudyIDB.deleteStudyAnswers(), then clears the last position and navigates
+// to the title page.
 function confirmClearAnswers() {
   Swal.fire({
     title:             t('settings_clear_answers_title'),
@@ -205,15 +198,16 @@ function confirmClearAnswers() {
     confirmButtonText: t('settings_clear_answers_confirm'),
     cancelButtonText:  t('settings_clear_answers_cancel'),
     reverseButtons: true,
-  }).then(result => {
+  }).then(async result => {
     if (!result.isConfirmed) return;
-    const keysToDelete = [];
+
     const currentStudyId = window.activeStudyId;
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith(`bsr_${currentStudyId}_`)) keysToDelete.push(key);
+    try {
+      await StudyIDB.deleteStudyAnswers(currentStudyId);
+    } catch (e) {
+      console.warn('[confirmClearAnswers] IDB delete failed.', e);
     }
-    keysToDelete.forEach(k => localStorage.removeItem(k));
+
     clearLastPosition();
     currentChapter = 0;
     showToast({ message: t('settings_clear_answers_toast'), isManual: true });
@@ -282,7 +276,7 @@ async function resetAllData() {
   // 1. Wipe all localStorage
   localStorage.clear();
 
-  // 2. Wipe all IndexedDB stores
+  // 2. Wipe all IndexedDB stores (studies, images, and answers)
   try {
     await StudyIDB.clearAll();
   } catch (e) {
