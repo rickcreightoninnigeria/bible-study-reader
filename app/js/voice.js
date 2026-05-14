@@ -88,8 +88,8 @@ function startVoiceInput(btn) {
 // If the original textarea is still in the DOM, write directly to it (normal
 // path). If it has been removed by a chapter navigation that occurred while
 // recording was in flight, fall back to the pending-transcript recovery path:
-// append the transcript to the localStorage value for that field and show a
-// toast so the user knows their answer was not lost.
+// write the transcript to IDB and show a toast so the user knows their answer
+// was not lost.
 function receiveVoiceTranscript(transcript) {
   resetVoiceBtn();
 

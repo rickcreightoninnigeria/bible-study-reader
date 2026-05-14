@@ -80,10 +80,6 @@ window.studyOnboardingSlides = [];
 // within it), use:
 //   chapterAnswersIDBKey(studyId, chapterNum)  → `${studyId}_ch${chapterNum}`
 //
-// The legacy storageKey() and likertKey() functions are retained below as
-// thin wrappers around the new helpers so that any call sites not yet
-// migrated continue to work identically during the transition.
-
 // ── New canonical field-key helpers ──────────────────────────────────────────
 
 function answerFieldKey(type, index) {
@@ -107,33 +103,3 @@ function chapterAnswersIDBKey(studyId, chapterNum) {
   return `${studyId}_ch${chapterNum}`;
 }
 
-// ── Legacy wrappers (kept for backward compatibility during migration) ────────
-// These return the same short field-name string that the new helpers produce,
-// because the old full localStorage key format
-//   bsr_{studyId}_ch{N}_{type}_{index}
-// is no longer used. Call sites that were reading these strings as localStorage
-// keys must be updated to use StudyIDB.getChapterAnswers() + answerFieldKey()
-// instead. The wrappers are left here so that un-migrated call sites fail
-// visibly (wrong key passed to localStorage.getItem returns null, the same as
-// an empty answer) rather than crashing.
-//
-// TODO: Remove these once all call sites have been updated.
-
-function storageKey(chapterNum, type, index) {
-  const currentStudyId = window.activeStudyId;
-  if (!currentStudyId) {
-    console.warn('storageKey() called with no activeStudyId — falling back to "unknown". This should not happen; check bug #29.');
-  }
-  // Return just the field-name portion; callers expecting a full localStorage
-  // key will receive a short string and produce null from localStorage.getItem,
-  // which is the same as "no answer saved" — a safe degradation.
-  return answerFieldKey(type, index);
-}
-
-function likertKey(chapterNum, elementId, stIdx) {
-  const currentStudyId = window.activeStudyId;
-  if (!currentStudyId) {
-    console.warn('likertKey() called with no activeStudyId — falling back to "unknown". This should not happen; check bug #29.');
-  }
-  return likertFieldKey(elementId, stIdx);
-}

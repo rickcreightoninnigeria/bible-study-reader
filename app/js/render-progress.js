@@ -96,8 +96,8 @@ function _getChapterProgressFromRecord(ch, record) {
   let total    = 0;
   let answered = 0;
 
-  ch.sections.forEach(sec => {
-    sec.questions.forEach(q => {
+  (ch.sections || []).forEach(sec => {
+    (sec.questions || []).forEach(q => {
       total++;
       const val = (record[answerFieldKey('q', q.elementId)] || '').trim();
       if (val) answered++;
@@ -668,11 +668,20 @@ async function renderNotesPage() {
   if (field) autoResize(field);
 }
 
-// Saves the global notes value to IDB. Fire-and-forget — called from the
-// oninput handler on the globalNotesField textarea.
+// Debounce timer for _saveGlobalNotes — prevents an IDB write on every
+// keystroke. Mirrors the pattern used for updateProgress in save.js.
+let _saveGlobalNotesTimer = null;
+
+// Saves the global notes value to IDB after a short debounce. Fire-and-forget
+// — called from the oninput handler on the globalNotesField textarea.
+// The debounce does not affect updateNotesMenuIndicator(), which is called
+// directly in the oninput attribute and updates instantly on every keystroke.
 function _saveGlobalNotes(value, studyId) {
-  StudyIDB.setAnswerRaw(`${studyId}_global_notes`, value)
-    .catch(e => console.warn('[_saveGlobalNotes] IDB write failed.', e));
+  clearTimeout(_saveGlobalNotesTimer);
+  _saveGlobalNotesTimer = setTimeout(() => {
+    StudyIDB.setAnswerRaw(`${studyId}_global_notes`, value)
+      .catch(e => console.warn('[_saveGlobalNotes] IDB write failed.', e));
+  }, 400);
 }
 
 // Opens the verse modal with "About this page" guidance for the Notes page.

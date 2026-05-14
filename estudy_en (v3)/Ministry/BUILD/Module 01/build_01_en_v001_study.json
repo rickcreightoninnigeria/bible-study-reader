@@ -5555,619 +5555,564 @@
       ]
     },
     {
-      "chapterNumber": 13,
-      "chapterTitle": "How to Preach a Bible Passage (Action)",
-      "elements": [
-
+      "chapterNumber":13,
+      "chapterTitle" :"How to Preach a Bible Passage (Action)",
+      "elements"     :[
         {
-          "elementId": "ch13-el01",
-          "type": "text",
-          "subtype": "intro",
-          "format": "HTML",
-          "text": "Throughout 2 Timothy, Paul emphasises the central place of the Bible and its gospel. It is essential that anyone who leads, teaches, and cares for a congregation is able to 'preach the Word' (2 Tim 4:2). This unit completes the Scripture Sculpture process begun in Unit 4 — moving from encountering a passage to preaching it. The steps taught here are essential to the BUILD curriculum and will be used throughout as we move constantly from understanding texts to teaching them.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el01",
+          "type"         :"text",
+          "subtype"      :"intro",
+          "format"       :"HTML",
+          "text"         :"Throughout 2 Timothy, Paul emphasises the central place of the Bible and its gospel. It is essential that anyone who leads, teaches, and cares for a congregation is able to ’preach the Word’ (2 Tim 4:2). This unit completes the Scripture Sculpture process begun in Unit 4 — moving from encountering a passage to preaching it. The steps taught here are essential to the BUILD curriculum and will be used throughout as we move constantly from understanding texts to teaching them.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el02",
-          "type": "callout",
-          "subtype": "general",
-          "eyebrow": "Unit Outcomes",
-          "term": "By the end of this unit you will be able to…",
-          "question": "1. Explain how Unit 13 relates to Unit 4\n2. Outline the steps of preaching a passage of Scripture\n3. Demonstrate how to follow the steps of preaching\n4. Evaluate sermons using some simple steps",
-          "answer": "<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
-          "buttonText": "See outcomes ➡",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el02",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "eyebrow"      :"Unit Outcomes",
+          "term"         :"By the end of this unit you will be able to…",
+          "question"     :"1. Explain how Unit 13 relates to Unit 4\n2. Outline the steps of preaching a passage of Scripture\n3. Demonstrate how to follow the steps of preaching\n4. Evaluate sermons using some simple steps",
+          "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
+          "buttonText"   :"See outcomes ➡",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el03",
-          "type": "heading",
-          "subtype": "section",
-          "level": "2",
-          "format": "plainText",
-          "text": "13.1 Introducing Expository Preaching",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el03",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"13.1 Introducing Expository Preaching",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el04",
-          "type": "question",
-          "format": "plainText",
-          "question": "What are the components of a strong and effective sermon? Think back to some of the best preaching you have heard — what made it powerful?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about specific sermons that stayed with you. What made them effective — the content, the delivery, the structure, the application, or something else?",
-          "bottomPadding": "normal",
-          "sampleAnswer": "Strong sermons tend to share several qualities: they are clearly grounded in a specific passage of Scripture and expound what that passage actually says; they have a single clear main point rather than many disconnected ideas; they show how the text connects to the listeners' real lives and challenges them to respond; they are delivered with genuine conviction and appropriate emotion; they keep Christ and the gospel at the centre even when the text is not obviously about salvation; and they are memorable — the listener can recall the main point days later. Effective sermons also tend to be appropriately illustrated, well-structured, and pitched at the right level for the audience.",
-          "questionHint": "Think about a specific sermon that has stayed with you for years. What was it about? What did the preacher do that made it effective? Try to identify 3-4 concrete qualities rather than vague impressions."
+          "elementId"        :"ch13-el04",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What are the components of a strong and effective sermon? Think back to some of the best preaching you have heard — what made it powerful?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about specific sermons that stayed with you. What made them effective — the content, the delivery, the structure, the application, or something else?",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Strong sermons tend to share several qualities: they are clearly grounded in a specific passage of Scripture and expound what that passage actually says; they have a single clear main point rather than many disconnected ideas; they show how the text connects to the listeners’ real lives and challenges them to respond; they are delivered with genuine conviction and appropriate emotion; they keep Christ and the gospel at the centre even when the text is not obviously about salvation; and they are memorable — the listener can recall the main point days later. Effective sermons also tend to be appropriately illustrated, well-structured, and pitched at the right level for the audience.",
+          "questionHint"     :"Think about a specific sermon that has stayed with you for years. What was it about? What did the preacher do that made it effective? Try to identify 3-4 concrete qualities rather than vague impressions."
         },
-
         {
-          "elementId": "ch13-el05",
-          "type": "question",
-          "format": "plainText",
-          "question": "What makes for a weak and poor sermon? Think back to some of the worst preaching you have heard — what went wrong?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about the kinds of sermons that felt unhelpful, confusing, or disconnected. What specifically went wrong?",
-          "bottomPadding": "normal",
-          "sampleAnswer": "Weak sermons tend to share common failures: the preacher uses a verse as a springboard for their own ideas rather than exposing what the passage actually says; there is no clear main point — the sermon wanders through many ideas without a unifying thread; there is little or no application — the sermon explains but never challenges the listener to respond; the language is full of jargon that the congregation does not understand; the sermon is too long and loses the congregation's attention; the delivery is monotonous — same pace, same volume, no variety; or the preacher seems unprepared and uncertain. Most fundamentally, weak sermons fail to let the Bible speak on its own terms — the preacher imposes their own message rather than exposing the text's message.",
-          "questionHint": "Think about the specific failures rather than vague impressions. Was it the content (wrong message), the structure (no clarity), the application (no challenge), or the delivery (poor communication)? Which of these do you most need to guard against in your own preaching?"
+          "elementId"        :"ch13-el05",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What makes for a weak and poor sermon? Think back to some of the worst preaching you have heard — what went wrong?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about the kinds of sermons that felt unhelpful, confusing, or disconnected. What specifically went wrong?",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Weak sermons tend to share common failures: the preacher uses a verse as a springboard for their own ideas rather than exposing what the passage actually says; there is no clear main point — the sermon wanders through many ideas without a unifying thread; there is little or no application — the sermon explains but never challenges the listener to respond; the language is full of jargon that the congregation does not understand; the sermon is too long and loses the congregation’s attention; the delivery is monotonous — same pace, same volume, no variety; or the preacher seems unprepared and uncertain. Most fundamentally, weak sermons fail to let the Bible speak on its own terms — the preacher imposes their own message rather than exposing the text’s message.",
+          "questionHint"     :"Think about the specific failures rather than vague impressions. Was it the content (wrong message), the structure (no clarity), the application (no challenge), or the delivery (poor communication)? Which of these do you most need to guard against in your own preaching?"
         },
-
         {
-          "elementId": "ch13-el06",
-          "type": "question",
-          "format": "plainText",
-          "question": "What different kinds or types of sermon have you encountered? What are the strengths and weaknesses of each? Which types do you think are most and least faithful to the nature of Scripture?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about topical sermons, narrative sermons, verse-by-verse sermons, evangelistic talks, and others you have encountered. What does each do well, and what does each risk?",
-          "bottomPadding": "normal",
-          "sampleAnswer": "Common sermon types include: topical preaching (a theme with several texts supporting it — strength: addresses felt needs directly; weakness: can impose a theme on texts rather than drawing it out); verse-by-verse expository preaching (working through a passage systematically — strength: ensures nothing is avoided; weakness: can become mechanical and miss the passage's overall message); narrative preaching (retelling a biblical story — strength: engaging and accessible; weakness: can become more story than gospel); evangelistic talks (designed primarily for non-Christians — strength: clear gospel content; weakness: can lack depth for believers). All of these have a place — but all must be grounded in the faithful exposition of Scripture, the gospel, and Jesus Christ at the centre.",
-          "questionHint": "Don't just evaluate the style — evaluate the theology. What view of Scripture does each type of preaching assume? Which types trust the Bible to do its own work, and which tend to impose the preacher's ideas on the text?"
+          "elementId"        :"ch13-el06",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What different kinds or types of sermon have you encountered? What are the strengths and weaknesses of each? Which types do you think are most and least faithful to the nature of Scripture?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about topical sermons, narrative sermons, verse-by-verse sermons, evangelistic talks, and others you have encountered. What does each do well, and what does each risk?",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Common sermon types include: topical preaching (a theme with several texts supporting it — strength: addresses felt needs directly; weakness: can impose a theme on texts rather than drawing it out); verse-by-verse expository preaching (working through a passage systematically — strength: ensures nothing is avoided; weakness: can become mechanical and miss the passage’s overall message); narrative preaching (retelling a biblical story — strength: engaging and accessible; weakness: can become more story than gospel); evangelistic talks (designed primarily for non-Christians — strength: clear gospel content; weakness: can lack depth for believers). All of these have a place — but all must be grounded in the faithful exposition of Scripture, the gospel, and Jesus Christ at the centre.",
+          "questionHint"     :"Don’t just evaluate the style — evaluate the theology. What view of Scripture does each type of preaching assume? Which types trust the Bible to do its own work, and which tend to impose the preacher’s ideas on the text?"
         },
-
         {
-          "elementId": "ch13-el07",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "Different types of preaching can all have a place in the life of the church. But the Pastoral Epistles make clear that all preaching must be the explanation and application of Scripture, the Gospel, and Jesus Christ at the centre. This means there is a foundational type of preaching — often called <b>expository preaching</b>.<br><br>Some people think expository preaching is a style — working through verses systematically. It may or may not involve that method. Expository preaching is not a style but an <em>approach</em>: the word 'expository' describes the foundation, basis, or underlying theory of preaching. The aim of expository preaching is to <em>expose</em> the message of a passage — to let the Bible speak freely on its own terms, rather than imposing our own message on it.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el07",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Different types of preaching can all have a place in the life of the church. But the Pastoral Epistles make clear that all preaching must be the explanation and application of Scripture, the Gospel, and Jesus Christ at the centre. This means there is a foundational type of preaching — often called <b>expository preaching</b>.<br><br>Some people think expository preaching is a style — working through verses systematically. It may or may not involve that method. Expository preaching is not a style but an <em>approach</em>: the word ’expository’ describes the foundation, basis, or underlying theory of preaching. The aim of expository preaching is to <em>expose</em> the message of a passage — to let the Bible speak freely on its own terms, rather than imposing our own message on it.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el08",
-          "type": "question",
-          "format": "plainText",
-          "question": "How many sermons have you heard in which the preacher takes a verse of Scripture and then uses it as an opportunity to say whatever they want to say? What is the problem with that approach — and how does it differ from expository preaching?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about what is actually happening when a preacher 'uses' a text rather than 'exposing' it. What is the congregation receiving — and who is really speaking?",
-          "bottomPadding": "normal",
-          "sampleAnswer": "This pattern — using a verse as a launching pad for the preacher's own ideas — is very common and very dangerous. The congregation thinks they are hearing God's word, but they are actually hearing the preacher's word with a biblical text attached as decoration. Over time this produces congregations who are shaped by their preacher's personality and preferences rather than by the full counsel of Scripture. It also means that difficult or uncomfortable passages are avoided because the preacher only preaches what they already want to say. By contrast, expository preaching submits the preacher to the passage — the preacher's job is to find out what the text is saying and then communicate that, even when it challenges the preacher's own assumptions. The preacher becomes a servant of the text, not its master.",
-          "questionHint": "Think about the authority question: when a preacher uses a text as a springboard for their own ideas, whose authority does the sermon carry — God's or the preacher's? And what happens to a congregation that is shaped by the preacher's ideas rather than by Scripture over a period of years?"
+          "elementId"        :"ch13-el08",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"How many sermons have you heard in which the preacher takes a verse of Scripture and then uses it as an opportunity to say whatever they want to say? What is the problem with that approach — and how does it differ from expository preaching?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about what is actually happening when a preacher ’uses’ a text rather than ’exposing’ it. What is the congregation receiving — and who is really speaking?",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"This pattern — using a verse as a launching pad for the preacher’s own ideas — is very common and very dangerous. The congregation thinks they are hearing God’s word, but they are actually hearing the preacher’s word with a biblical text attached as decoration. Over time this produces congregations who are shaped by their preacher’s personality and preferences rather than by the full counsel of Scripture. It also means that difficult or uncomfortable passages are avoided because the preacher only preaches what they already want to say. By contrast, expository preaching submits the preacher to the passage — the preacher’s job is to find out what the text is saying and then communicate that, even when it challenges the preacher’s own assumptions. The preacher becomes a servant of the text, not its master.",
+          "questionHint"     :"Think about the authority question: when a preacher uses a text as a springboard for their own ideas, whose authority does the sermon carry — God’s or the preacher’s? And what happens to a congregation that is shaped by the preacher’s ideas rather than by Scripture over a period of years?"
         },
-
         {
-          "elementId": "ch13-el09",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "Expository preaching follows the grain of Scripture — going with the wood rather than against it. Just as a master craftsman sees a design within the wood and works with it, a good expository preacher sees God's design within the passage and works with it. This makes preaching more exciting and rewarding, not less.<br><br>Expository preaching also follows the link between Scripture, Salvation, and the Saviour that we explored in Units 9-11: Scripture has Salvation as its subject and the Saviour as its focus. Expository preaching follows this pattern — which means it can simultaneously evangelise those who are not Christians and encourage those who are, because it constantly teaches the gospel that saves and builds up.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el09",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Expository preaching follows the grain of Scripture — going with the wood rather than against it. Just as a master craftsman sees a design within the wood and works with it, a good expository preacher sees God’s design within the passage and works with it. This makes preaching more exciting and rewarding, not less.<br><br>Expository preaching also follows the link between Scripture, Salvation, and the Saviour that we explored in Units 9-11: Scripture has Salvation as its subject and the Saviour as its focus. Expository preaching follows this pattern — which means it can simultaneously evangelise those who are not Christians and encourage those who are, because it constantly teaches the gospel that saves and builds up.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el10",
-          "type": "question",
-          "format": "plainText",
-          "question": "In your own words, explain what expository preaching is — and what it is not. Why is it more exciting and rewarding to preach with the grain of Scripture than against it?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Try to explain expository preaching to someone who has never heard the term — what does it require of the preacher, and what does it promise for the congregation?",
-          "bottomPadding": "normal",
-          "sampleAnswer": "Expository preaching is the approach to preaching that makes the meaning of a biblical passage the message of the sermon. It is not a style (you don't have to work verse by verse), but an approach: the preacher's job is to expose what God has said in the text and apply it faithfully to the listeners today. It is not topical preaching (choosing a theme and collecting texts), not devotional preaching (sharing personal reflections loosely connected to a verse), and not moralistic preaching (using Bible characters as role models without reference to the gospel). Preaching with the grain of Scripture is more rewarding because the Bible itself is alive and powerful — it is God-breathed (2 Tim 3:16). When you preach with the grain, God speaks through the text; when you preach against it, you are working with your own ideas and trusting in your own wisdom. The first is sustainable and transformative; the second is exhausting and ultimately thin.",
-          "questionHint": "Think about the sculpture metaphor: what happens when a sculptor works against the grain of the wood? It's harder, messier, and the result is less beautiful. Now apply that to preaching: what happens to a preacher who imposes their own message on every text — and what happens to one who learns to find and follow God's message within each passage?"
+          "elementId"        :"ch13-el10",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"In your own words, explain what expository preaching is — and what it is not. Why is it more exciting and rewarding to preach with the grain of Scripture than against it?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Try to explain expository preaching to someone who has never heard the term — what does it require of the preacher, and what does it promise for the congregation?",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Expository preaching is the approach to preaching that makes the meaning of a biblical passage the message of the sermon. It is not a style (you don’t have to work verse by verse), but an approach: the preacher’s job is to expose what God has said in the text and apply it faithfully to the listeners today. It is not topical preaching (choosing a theme and collecting texts), not devotional preaching (sharing personal reflections loosely connected to a verse), and not moralistic preaching (using Bible characters as role models without reference to the gospel). Preaching with the grain of Scripture is more rewarding because the Bible itself is alive and powerful — it is God-breathed (2 Tim 3:16). When you preach with the grain, God speaks through the text; when you preach against it, you are working with your own ideas and trusting in your own wisdom. The first is sustainable and transformative; the second is exhausting and ultimately thin.",
+          "questionHint"     :"Think about the sculpture metaphor: what happens when a sculptor works against the grain of the wood? It’s harder, messier, and the result is less beautiful. Now apply that to preaching: what happens to a preacher who imposes their own message on every text — and what happens to one who learns to find and follow God’s message within each passage?"
         },
-
         {
-          "elementId": "ch13-el11",
-          "type": "heading",
-          "subtype": "section",
-          "level": "2",
-          "format": "plainText",
-          "text": "13.2 Completing the Scripture Sculpture Process",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el11",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"13.2 Completing the Scripture Sculpture Process",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el12",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "In Unit 4 we learnt the first four steps of the Scripture Sculpture process — how to <em>encounter</em> a passage. In this unit we complete the process by learning how to <em>preach</em> that passage. The full seven-step process moves from PASSAGE (at the top) through the four encounter steps, across the bridge of Step 4, and down through the four preaching steps to SERMON.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el12",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"In Unit 4 we learnt the first four steps of the Scripture Sculpture process — how to <em>encounter</em> a passage. In this unit we complete the process by learning how to <em>preach</em> that passage. The full seven-step process moves from PASSAGE (at the top) through the four encounter steps, across the bridge of Step 4, and down through the four preaching steps to SERMON.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el13",
-          "type": "image",
-          "src": "",
-          "alt": "The full Scripture Sculpture seven-step diagram. On the left side, descending from PASSAGE: Step 1 FLESH (Study the Details of the text), Step 2 SKELETON (Outline the Structure of the text), Step 3 HEART (Identify the Message of the text), Step 4 BRAIN (Understand the Purpose of the text — Make the Connections). Step 4 acts as a bridge. On the right side, descending to PREACHING: Step 4 BRAIN (State the Purpose of the sermon), Step 5 HEART (Form the Message of the sermon), Step 6 SKELETON (Create the Structure of the sermon), Step 7 FLESH (Develop the Details of the sermon). The left side is shaded grey (already learned); the right side is new in this unit.",
-          "fallback": "🗿",
-          "align": "full",
-          "width": "100",
-          "caption": "The complete Scripture Sculpture process: from PASSAGE (top) through encounter to preaching (bottom)",
-          "format": "plainText",
-          "base64": "",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el13",
+          "type"         :"image",
+          "src"          :"",
+          "alt"          :"The full Scripture Sculpture seven-step diagram. On the left side, descending from PASSAGE: Step 1 FLESH (Study the Details of the text), Step 2 SKELETON (Outline the Structure of the text), Step 3 HEART (Identify the Message of the text), Step 4 BRAIN (Understand the Purpose of the text — Make the Connections). Step 4 acts as a bridge. On the right side, descending to PREACHING: Step 4 BRAIN (State the Purpose of the sermon), Step 5 HEART (Form the Message of the sermon), Step 6 SKELETON (Create the Structure of the sermon), Step 7 FLESH (Develop the Details of the sermon). The left side is shaded grey (already learned); the right side is new in this unit.",
+          "fallback"     :"🗿",
+          "align"        :"full",
+          "width"        :"100",
+          "caption"      :"The complete Scripture Sculpture process: from PASSAGE (top) through encounter to preaching (bottom)",
+          "format"       :"plainText",
+          "base64"       :"",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el14",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "Learn, memorise, and be able to explain the logic to someone else using these key words:<br><br><b>PASSAGE → flesh → skeleton → heart → brain → heart → skeleton → flesh → SERMON</b><br><br>The process is symmetrical: the encounter steps move inward from the surface of the text (flesh) to its core (brain); the preaching steps move outward from the core (brain) back to the surface of communication (flesh).",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el14",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Learn, memorise, and be able to explain the logic to someone else using these key words:<br><br><b>PASSAGE → flesh → skeleton → heart → brain → heart → skeleton → flesh → SERMON</b><br><br>The process is symmetrical: the encounter steps move inward from the surface of the text (flesh) to its core (brain); the preaching steps move outward from the core (brain) back to the surface of communication (flesh).",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el15",
-          "type": "question",
-          "format": "plainText",
-          "question": "In your own words, explain the logic of the full Scripture Sculpture process. Why does it go 'flesh → skeleton → heart → brain → heart → skeleton → flesh'? What does that symmetry tell us about the relationship between understanding a text and preaching it?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about why the process is symmetrical — and what it means that the sermon ends with 'flesh' just as the encounter begins with 'flesh'…",
-          "bottomPadding": "normal",
-          "sampleAnswer": "The symmetry is not accidental. When we encounter a passage, we move from the outside in: we start with the surface details of the text (flesh), trace its structure (skeleton), identify its message (heart), and arrive at its purpose (brain). Understanding moves from the visible to the essential — from details to deep meaning. When we preach, we reverse the process: we start with the purpose (brain), form the message (heart), create the structure (skeleton), and finally develop the specific words, illustrations, and applications (flesh). Preaching moves from the essential back to the visible — from deep meaning to specific communication. The brain (purpose/connections) is therefore the hinge of the whole process: it is both the deepest point of the encounter and the starting point of the sermon. This architecture ensures that preaching always flows from genuine understanding — you cannot jump to the sermon without first working through the encounter.",
-          "questionHint": "Think about what goes wrong when a preacher skips the encounter steps and goes straight to preparation. What will their sermon likely be missing? And what goes wrong when someone studies the passage thoroughly but never makes it to the preaching steps? What will be lost then?"
+          "elementId"        :"ch13-el15",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"In your own words, explain the logic of the full Scripture Sculpture process. Why does it go ’flesh → skeleton → heart → brain → heart → skeleton → flesh’? What does that symmetry tell us about the relationship between understanding a text and preaching it?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about why the process is symmetrical — and what it means that the sermon ends with ’flesh’ just as the encounter begins with ’flesh’…",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The symmetry is not accidental. When we encounter a passage, we move from the outside in: we start with the surface details of the text (flesh), trace its structure (skeleton), identify its message (heart), and arrive at its purpose (brain). Understanding moves from the visible to the essential — from details to deep meaning. When we preach, we reverse the process: we start with the purpose (brain), form the message (heart), create the structure (skeleton), and finally develop the specific words, illustrations, and applications (flesh). Preaching moves from the essential back to the visible — from deep meaning to specific communication. The brain (purpose/connections) is therefore the hinge of the whole process: it is both the deepest point of the encounter and the starting point of the sermon. This architecture ensures that preaching always flows from genuine understanding — you cannot jump to the sermon without first working through the encounter.",
+          "questionHint"     :"Think about what goes wrong when a preacher skips the encounter steps and goes straight to preparation. What will their sermon likely be missing? And what goes wrong when someone studies the passage thoroughly but never makes it to the preaching steps? What will be lost then?"
         },
-
         {
-          "elementId": "ch13-el16",
-          "type": "heading",
-          "subtype": "subsection",
-          "level": "3",
-          "format": "plainText",
-          "text": "13.2.2 Review: Our Encounter with 2 Timothy 1:6-7",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el16",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"13.2.2 Review: Our Encounter with 2 Timothy 1:6-7",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el17",
-          "type": "biblePassage",
-          "format": "HTML",
-          "bibleRef": "2 Timothy 1:6-7",
-          "translation": "NET",
-          "passageText": "<sup>6</sup>Because of this I remind you to rekindle God's gift that you possess through the laying on of my hands. <sup>7</sup>For the Spirit God gave us does not make us timid but gives us power, love, and self-control.",
-          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
-          "bottomPadding": "none"
+          "elementId"    :"ch13-el17",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"2 Timothy 1:6-7",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>Because of this I remind you to rekindle God’s gift that you possess through the laying on of my hands. <sup>7</sup>For the Spirit God gave us does not make us timid but gives us power, love, and self-control.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Timothy+1&version=NET",
+          "bottomPadding":"none"
         },
-
         {
-          "elementId": "ch13-el18",
-          "type": "callout",
-          "subtype": "general",
-          "eyebrow": "Review: Steps 1-4 on 2 Timothy 1:6-7",
-          "term": "What we discovered when we encountered this passage in Unit 4",
-          "question": "What did the four encounter steps reveal about 2 Timothy 1:6-7?",
-          "answer": "<p><strong>Step 1: FLESH — Details</strong><br>Paul is convinced that Timothy's faith in Christ is genuine. Because of this confidence Paul reminds Timothy to do something important: he must renew his confidence in God and his gifts. The greatest gift is God's Holy Spirit — powerful, loving, and self-controlled.</p><p><strong>Step 2: SKELETON — Structure</strong><br>1. Introduction to confidence in God and his gifts: Timothy can be confident in his faith (v. 6a) because Paul has assured him it is sincere (v. 5).<br>2. The command to renew confidence in God and his gifts: Timothy has God-given gifts for ministry — therefore he must rekindle them (v. 6b).<br>3. The reason to renew: God's Spirit is committed and resilient, and we have this confidence-building Spirit in our lives (v. 7).</p><p><strong>Step 3: HEART — Message</strong><br>Theme: Renewing confidence in God and his gifts for ministry.<br>Message: Paul tells Timothy to renew his confidence in God and his gifts for ministry.</p><p><strong>Step 4: BRAIN — Purpose and Connections</strong><br>Purpose of the text: Paul tells Timothy to renew his confidence because he is facing an urgent and demanding task — one he cannot overcome with his own abilities and strength.<br>Connection for today: In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?</p>",
-          "buttonText": "See the review ➡",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el18",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "eyebrow"      :"Review: Steps 1-4 on 2 Timothy 1:6-7",
+          "term"         :"What we discovered when we encountered this passage in Unit 4",
+          "question"     :"What did the four encounter steps reveal about 2 Timothy 1:6-7?",
+          "answer"       :"<p><strong>Step 1: FLESH — Details</strong><br>Paul is convinced that Timothy’s faith in Christ is genuine. Because of this confidence Paul reminds Timothy to do something important: he must renew his confidence in God and his gifts. The greatest gift is God’s Holy Spirit — powerful, loving, and self-controlled.</p><p><strong>Step 2: SKELETON — Structure</strong><br>1. Introduction to confidence in God and his gifts: Timothy can be confident in his faith (v. 6a) because Paul has assured him it is sincere (v. 5).<br>2. The command to renew confidence in God and his gifts: Timothy has God-given gifts for ministry — therefore he must rekindle them (v. 6b).<br>3. The reason to renew: God’s Spirit is committed and resilient, and we have this confidence-building Spirit in our lives (v. 7).</p><p><strong>Step 3: HEART — Message</strong><br>Theme: Renewing confidence in God and his gifts for ministry.<br>Message: Paul tells Timothy to renew his confidence in God and his gifts for ministry.</p><p><strong>Step 4: BRAIN — Purpose and Connections</strong><br>Purpose of the text: Paul tells Timothy to renew his confidence because he is facing an urgent and demanding task — one he cannot overcome with his own abilities and strength.<br>Connection for today: In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?</p>",
+          "buttonText"   :"See the review ➡",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el19",
-          "type": "callout",
-          "subtype": "general",
-          "eyebrow": "The Preaching Steps in Outline",
-          "term": "Steps 4-7: from Purpose to Sermon",
-          "question": "What does each of the four preaching steps involve, and what is the outcome of each?",
-          "answer": "<p><strong>Step 4: BRAIN — State the PURPOSE of the sermon</strong><br>Outcome: You can state and explain the purpose of the sermon.<br>Sub-steps: (a) Keep your listeners in mind. (b) Decide what God wants your people to know and obey. (c) State the purpose of the sermon.</p><p><strong>Step 5: HEART — Form the MESSAGE of the sermon</strong><br>Outcome: You can state the theme and message in one or two sentences.<br>Sub-steps: (a) State the theme. (b) Build on that and state the message. (c) Check that the message works for your people today.</p><p><strong>Step 6: SKELETON — Create the STRUCTURE of the sermon</strong><br>Outcome: You have a clear outline for the sermon.<br>Sub-steps: (a) Clarify the main points. (b) Create an introduction. (c) Develop the body. (d) Have an idea for the conclusion.</p><p><strong>Step 7: FLESH — Develop the DETAILS of the sermon</strong><br>Outcome: You can preach the sermon to your people.<br>Sub-steps: (a) Choose words carefully. (b) Create notes. (c) Use your voice well. (d) Take care with presentation. (e) Evaluate.</p>",
-          "buttonText": "See the four preaching steps ➡",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el19",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "eyebrow"      :"The Preaching Steps in Outline",
+          "term"         :"Steps 4-7: from Purpose to Sermon",
+          "question"     :"What does each of the four preaching steps involve, and what is the outcome of each?",
+          "answer"       :"<p><strong>Step 4: BRAIN — State the PURPOSE of the sermon</strong><br>Outcome: You can state and explain the purpose of the sermon.<br>Sub-steps: (a) Keep your listeners in mind. (b) Decide what God wants your people to know and obey. (c) State the purpose of the sermon.</p><p><strong>Step 5: HEART — Form the MESSAGE of the sermon</strong><br>Outcome: You can state the theme and message in one or two sentences.<br>Sub-steps: (a) State the theme. (b) Build on that and state the message. (c) Check that the message works for your people today.</p><p><strong>Step 6: SKELETON — Create the STRUCTURE of the sermon</strong><br>Outcome: You have a clear outline for the sermon.<br>Sub-steps: (a) Clarify the main points. (b) Create an introduction. (c) Develop the body. (d) Have an idea for the conclusion.</p><p><strong>Step 7: FLESH — Develop the DETAILS of the sermon</strong><br>Outcome: You can preach the sermon to your people.<br>Sub-steps: (a) Choose words carefully. (b) Create notes. (c) Use your voice well. (d) Take care with presentation. (e) Evaluate.</p>",
+          "buttonText"   :"See the four preaching steps ➡",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el20",
-          "type": "heading",
-          "subtype": "section",
-          "level": "2",
-          "format": "plainText",
-          "text": "13.3 The Steps of Preaching Applied to 2 Timothy 1:6-7",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el20",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"13.3 The Steps of Preaching Applied to 2 Timothy 1:6-7",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el21",
-          "type": "heading",
-          "subtype": "subsection",
-          "level": "3",
-          "format": "plainText",
-          "text": "Step 4: BRAIN — State the Purpose of the Sermon",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el21",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Step 4: BRAIN — State the Purpose of the Sermon",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el22",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "The purpose statement acts as a bridge between the text and today's congregation. Once you know why the text is in the Bible — what it is there to achieve — you can develop a purpose for your sermon. A clear purpose statement is essential: it helps you form the sermon's heart, shapes the introduction, guides what to include and leave out, directs the application and conclusion, provides a standard for evaluation, and gives you a sense of direction as you preach.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el22",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The purpose statement acts as a bridge between the text and today’s congregation. Once you know why the text is in the Bible — what it is there to achieve — you can develop a purpose for your sermon. A clear purpose statement is essential: it helps you form the sermon’s heart, shapes the introduction, guides what to include and leave out, directs the application and conclusion, provides a standard for evaluation, and gives you a sense of direction as you preach.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el23",
-          "type": "question",
-          "format": "plainText",
-          "question": "Who are your listeners for the sermon you are preparing from 2 Timothy 1:6-7? Describe them briefly — their situation, their needs, their struggles. What do you know about them that is relevant to this passage?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about a specific congregation or group you will preach to. Who are they? What are they facing? What pressures do they feel in their ministry or faith?",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "Responses here will vary by context — and that is exactly the point. This question cannot be answered in the abstract; it requires the preacher to know their people. Some questions to ask: Are my listeners church leaders who feel overwhelmed by the demands of ministry? Are they ordinary believers who feel inadequate or fearful about their faith? Are they people who have drifted from active service and need to be recalled to it? Are they young leaders who lack confidence in their calling? The passage speaks most directly to those who feel underequipped, timid, or discouraged — which means it will connect with almost any congregation if the preacher applies it to the specific fears and pressures their people face.",
-          "questionHint": "The more specific you can be about your listeners, the more powerful your application will be. Don't think about 'people in general' — think about the actual faces of people you will be looking at as you preach. What is weighing on them this week?"
+          "elementId"        :"ch13-el23",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Who are your listeners for the sermon you are preparing from 2 Timothy 1:6-7? Describe them briefly — their situation, their needs, their struggles. What do you know about them that is relevant to this passage?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about a specific congregation or group you will preach to. Who are they? What are they facing? What pressures do they feel in their ministry or faith?",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"Responses here will vary by context — and that is exactly the point. This question cannot be answered in the abstract; it requires the preacher to know their people. Some questions to ask: Are my listeners church leaders who feel overwhelmed by the demands of ministry? Are they ordinary believers who feel inadequate or fearful about their faith? Are they people who have drifted from active service and need to be recalled to it? Are they young leaders who lack confidence in their calling? The passage speaks most directly to those who feel underequipped, timid, or discouraged — which means it will connect with almost any congregation if the preacher applies it to the specific fears and pressures their people face.",
+          "questionHint"     :"The more specific you can be about your listeners, the more powerful your application will be. Don’t think about ’people in general’ — think about the actual faces of people you will be looking at as you preach. What is weighing on them this week?"
         },
-
         {
-          "elementId": "ch13-el24",
-          "type": "question",
-          "format": "plainText",
-          "question": "In the light of 2 Timothy 1:6-7, what does God want your listeners to KNOW — and what does he want them to OBEY? Complete these two statements, then combine them.\n\nGod wants my listeners to know this truth: …\nGod wants my listeners to obey that truth in these ways: …",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Work through both statements in turn, then combine them into a single statement of what God wants your listeners to know and do…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "God wants my listeners to KNOW this truth: that the Spirit God has given them is not a spirit of timidity but of power, love, and self-control — and that this Spirit, along with all the gifts he brings, is already present within them, ready to be rekindled and used.\n\nGod wants my listeners to OBEY that truth in these ways: by actively rekindling whatever gifts they have been given, by stepping out in ministry with confidence rather than holding back in fear, and by drawing on the Spirit's power rather than relying on their own strength.\n\nCombined: God wants my listeners to know that they already have everything they need for the ministry he has called them to — and to respond by rekindling their gifts and engaging in that ministry with the courage and confidence the Spirit provides.",
-          "questionHint": "Notice the two-part structure: knowing and obeying. Good application always moves from truth to response — from what is true to what that requires of us. The knowledge question and the obedience question together prevent both dead orthodoxy (knowing without doing) and activist ministry (doing without a theological foundation)."
+          "elementId"        :"ch13-el24",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"In the light of 2 Timothy 1:6-7, what does God want your listeners to KNOW — and what does he want them to OBEY? Complete these two statements, then combine them.\n\nGod wants my listeners to know this truth: …\nGod wants my listeners to obey that truth in these ways: …",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Work through both statements in turn, then combine them into a single statement of what God wants your listeners to know and do…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"God wants my listeners to KNOW this truth: that the Spirit God has given them is not a spirit of timidity but of power, love, and self-control — and that this Spirit, along with all the gifts he brings, is already present within them, ready to be rekindled and used.\n\nGod wants my listeners to OBEY that truth in these ways: by actively rekindling whatever gifts they have been given, by stepping out in ministry with confidence rather than holding back in fear, and by drawing on the Spirit’s power rather than relying on their own strength.\n\nCombined: God wants my listeners to know that they already have everything they need for the ministry he has called them to — and to respond by rekindling their gifts and engaging in that ministry with the courage and confidence the Spirit provides.",
+          "questionHint"     :"Notice the two-part structure: knowing and obeying. Good application always moves from truth to response — from what is true to what that requires of us. The knowledge question and the obedience question together prevent both dead orthodoxy (knowing without doing) and activist ministry (doing without a theological foundation)."
         },
-
         {
-          "elementId": "ch13-el25",
-          "type": "question",
-          "format": "plainText",
-          "question": "Write a single purpose statement for your sermon on 2 Timothy 1:6-7, beginning with the words: 'The purpose of my sermon is…'",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "The purpose of my sermon is…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "The purpose of my sermon is to call my listeners to rekindle the gifts and confidence God has already given them — by reminding them that the Spirit within them produces power, love, and self-control, not timidity — so that they will step forward in ministry rather than holding back in fear.\n\nNote: a good purpose statement is specific enough to guide the whole sermon but concise enough to remember. It should include both the truth (what you will communicate) and the intended response (what you want the listeners to do). If your purpose statement could apply to any sermon on any passage, it is too vague.",
-          "questionHint": "Test your purpose statement: could it apply to a sermon on a different passage? If so, make it more specific. Also test: does it tell you what you want your listeners to DO, not just what you want them to know? A purpose that only aims at knowledge without response is incomplete."
+          "elementId"        :"ch13-el25",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Write a single purpose statement for your sermon on 2 Timothy 1:6-7, beginning with the words: ‘The purpose of my sermon is…’",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"The purpose of my sermon is…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"The purpose of my sermon is to call my listeners to rekindle the gifts and confidence God has already given them — by reminding them that the Spirit within them produces power, love, and self-control, not timidity — so that they will step forward in ministry rather than holding back in fear.\n\nNote: a good purpose statement is specific enough to guide the whole sermon but concise enough to remember. It should include both the truth (what you will communicate) and the intended response (what you want the listeners to do). If your purpose statement could apply to any sermon on any passage, it is too vague.",
+          "questionHint"     :"Test your purpose statement: could it apply to a sermon on a different passage? If so, make it more specific. Also test: does it tell you what you want your listeners to DO, not just what you want them to know? A purpose that only aims at knowledge without response is incomplete."
         },
-
         {
-          "elementId": "ch13-el26",
-          "type": "heading",
-          "subtype": "subsection",
-          "level": "3",
-          "format": "plainText",
-          "text": "Step 5: HEART — Form the Message of the Sermon",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el26",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Step 5: HEART — Form the Message of the Sermon",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el27",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "The heart of the passage — its theme and message — together with the connections you have made, can now be used to form the heart of the sermon: the main point you will communicate. This is not simply a restatement of the passage's message; it is the message shaped and expressed for your specific audience today.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el27",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The heart of the passage — its theme and message — together with the connections you have made, can now be used to form the heart of the sermon: the main point you will communicate. This is not simply a restatement of the passage’s message; it is the message shaped and expressed for your specific audience today.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el28",
-          "type": "question",
-          "format": "plainText",
-          "question": "STATE THE THEME: Building on your purpose statement, what is the main thing you will be talking about in your sermon? State your sermon's theme — the subject — as a simple phrase or question. For example: 'How to keep going with gospel ministry' or 'How can we keep going with gospel ministry?'",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "State the theme of your sermon in a short phrase or question. This is the subject, not yet the message — what are you talking about?",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "Possible themes include: 'Rekindling your confidence in ministry', 'Where does courage for ministry come from?', 'The gift you already have', or 'When ministry feels overwhelming'. The theme should be close enough to the passage's own subject to be honest to the text, but phrased in a way that connects with the listeners' actual experience. A theme phrased as a question often works well because it creates an implicit expectation — the congregation leans forward because they want the answer.",
-          "questionHint": "The theme is the subject — not yet the answer. If the message is a complete sentence, the theme is the subject of that sentence. Test it: does your theme genuinely come from 2 Tim 1:6-7, or could it belong to any passage?"
+          "elementId"        :"ch13-el28",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"STATE THE THEME: Building on your purpose statement, what is the main thing you will be talking about in your sermon? State your sermon’s theme — the subject — as a simple phrase or question. For example: ‘How to keep going with gospel ministry’ or ’How can we keep going with gospel ministry?’",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"State the theme of your sermon in a short phrase or question. This is the subject, not yet the message — what are you talking about?",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"Possible themes include: ‘Rekindling your confidence in ministry’, ‘Where does courage for ministry come from?’, ‘The gift you already have’, or ’When ministry feels overwhelming’. The theme should be close enough to the passage’s own subject to be honest to the text, but phrased in a way that connects with the listeners’ actual experience. A theme phrased as a question often works well because it creates an implicit expectation — the congregation leans forward because they want the answer.",
+          "questionHint"     :"The theme is the subject — not yet the answer. If the message is a complete sentence, the theme is the subject of that sentence. Test it: does your theme genuinely come from 2 Tim 1:6-7, or could it belong to any passage?"
         },
-
         {
-          "elementId": "ch13-el29",
-          "type": "question",
-          "format": "plainText",
-          "question": "STATE THE MESSAGE: What will you say about that theme? Develop a sermon message — a main point — that is faithful to 2 Timothy 1:6-7 and expressed in a way that will connect with your specific listeners.",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "State your sermon's message in one or two sentences. This is the answer to the theme — what you are saying about the subject you are talking about…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "A possible message: 'When ministry feels overwhelming or impossible, the answer is not to find more strength within yourself but to rekindle the gifts and power that God's Spirit has already placed within you — because the Spirit he gives produces not timidity but power, love, and self-control.'\n\nA good sermon message is: simple enough to remember after the sermon is over; specific enough to come from this passage rather than any other; honest to the text's own language and logic; and expressed in plain language that the audience will understand without explanation.",
-          "questionHint": "Check your message against the passage: does it come from 2 Tim 1:6-7, or have you imported ideas from elsewhere? And check it against your audience: will they understand it without theological training? Could a teenager in your congregation grasp the main point?"
+          "elementId"        :"ch13-el29",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"STATE THE MESSAGE: What will you say about that theme? Develop a sermon message — a main point — that is faithful to 2 Timothy 1:6-7 and expressed in a way that will connect with your specific listeners.",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"State your sermon’s message in one or two sentences. This is the answer to the theme — what you are saying about the subject you are talking about…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"A possible message: ‘When ministry feels overwhelming or impossible, the answer is not to find more strength within yourself but to rekindle the gifts and power that God’s Spirit has already placed within you — because the Spirit he gives produces not timidity but power, love, and self-control.’\n\nA good sermon message is: simple enough to remember after the sermon is over; specific enough to come from this passage rather than any other; honest to the text’s own language and logic; and expressed in plain language that the audience will understand without explanation.",
+          "questionHint"     :"Check your message against the passage: does it come from 2 Tim 1:6-7, or have you imported ideas from elsewhere? And check it against your audience: will they understand it without theological training? Could a teenager in your congregation grasp the main point?"
         },
-
         {
-          "elementId": "ch13-el30",
-          "type": "question",
-          "format": "plainText",
-          "question": "CHECK THE MESSAGE: Does your message work for your specific people today? Is it simple, clear, and alive? Will it get to the heart of your listeners? Is it memorable? Rework and restate it if necessary.",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Read your message aloud. Does it sound like something a real person would say, or does it sound like a theological proposition? Revise it until it feels alive and connected to real life…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "Testing a sermon message: Imagine saying it to the face of someone in your congregation who most needs to hear this passage. Does it land? Does it speak to their actual situation? A message that is technically accurate but feels abstract or impersonal has not yet been fully shaped for the audience. Useful tests: (1) Can you say it in one breath? (2) Would a person with no theological training understand it? (3) Would they feel addressed — as if you are speaking to them, not about a topic? (4) Is there a verb in it — something it calls the listener to do or receive? If the answer to any of these is no, revise.",
-          "questionHint": "Read your message to someone outside your BUILD group — perhaps a member of your congregation who is not theologically trained. Do they understand it? Does it connect with their life? Their response will tell you more than your own judgment can."
+          "elementId"        :"ch13-el30",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"CHECK THE MESSAGE: Does your message work for your specific people today? Is it simple, clear, and alive? Will it get to the heart of your listeners? Is it memorable? Rework and restate it if necessary.",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Read your message aloud. Does it sound like something a real person would say, or does it sound like a theological proposition? Revise it until it feels alive and connected to real life…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"Testing a sermon message: Imagine saying it to the face of someone in your congregation who most needs to hear this passage. Does it land? Does it speak to their actual situation? A message that is technically accurate but feels abstract or impersonal has not yet been fully shaped for the audience. Useful tests: (1) Can you say it in one breath? (2) Would a person with no theological training understand it? (3) Would they feel addressed — as if you are speaking to them, not about a topic? (4) Is there a verb in it — something it calls the listener to do or receive? If the answer to any of these is no, revise.",
+          "questionHint"     :"Read your message to someone outside your BUILD group — perhaps a member of your congregation who is not theologically trained. Do they understand it? Does it connect with their life? Their response will tell you more than your own judgment can."
         },
-
         {
-          "elementId": "ch13-el31",
-          "type": "heading",
-          "subtype": "subsection",
-          "level": "3",
-          "format": "plainText",
-          "text": "Step 6: SKELETON — Create the Structure of the Sermon",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el31",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Step 6: SKELETON — Create the Structure of the Sermon",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el32",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "The structure of your sermon must serve its purpose, message, the explanation of the passage, and your audience. It can be informed by the passage's own structure — but the passage's structure was designed to communicate to its original audience, and it may or may not be the best form for your people today. Possible structural approaches include using the passage's main ideas as points, working from a central question to an answer, following a contrast in the text, or moving through a problem and its solution.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el32",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"The structure of your sermon must serve its purpose, message, the explanation of the passage, and your audience. It can be informed by the passage’s own structure — but the passage’s structure was designed to communicate to its original audience, and it may or may not be the best form for your people today. Possible structural approaches include using the passage’s main ideas as points, working from a central question to an answer, following a contrast in the text, or moving through a problem and its solution.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el33",
-          "type": "question",
-          "format": "plainText",
-          "question": "MAIN POINTS: How would you structure a sermon on 2 Timothy 1:6-7? What are the main sections — and how does the structure serve the message and purpose you have developed?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Write out your sermon outline — the main sections with brief labels. Aim for 2-4 main points. Show how each point serves the overall message…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "One possible sermon outline drawn from the passage's own structure:\n1. The confidence you can have (v. 6a + v. 5 context): Your faith is real — Paul is certain of it. The foundation for everything that follows is the genuine, sincere faith already present in Timothy (and in your listeners).\n2. The command you must obey (v. 6b): Rekindle it. The gifts are there — the fire may have died down — but the command is to fan it back into flame. This is active, not passive.\n3. The power you already possess (v. 7): Because the Spirit God gave us does not produce timidity but power, love, and self-control. The reason you can rekindle your gifts is the character of the Spirit who has been given to you.\n\nAlternative: structure it as a question and answer — 'Why do we hold back in ministry?' (the problem of timidity) → 'What has God already given us?' (the answer: the Spirit's power, love, self-control) → 'What are you going to do about it?' (the response: rekindle).",
-          "questionHint": "Test your structure: does each main point serve the message, or are some of them interesting detours? Remove any point that does not directly contribute to what you want the listeners to know and do. And ask: is the structure clear enough that a listener could follow it without notes?"
+          "elementId"        :"ch13-el33",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"MAIN POINTS: How would you structure a sermon on 2 Timothy 1:6-7? What are the main sections — and how does the structure serve the message and purpose you have developed?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Write out your sermon outline — the main sections with brief labels. Aim for 2-4 main points. Show how each point serves the overall message…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"One possible sermon outline drawn from the passage’s own structure:\n1. The confidence you can have (v. 6a + v. 5 context): Your faith is real — Paul is certain of it. The foundation for everything that follows is the genuine, sincere faith already present in Timothy (and in your listeners).\n2. The command you must obey (v. 6b): Rekindle it. The gifts are there — the fire may have died down — but the command is to fan it back into flame. This is active, not passive.\n3. The power you already possess (v. 7): Because the Spirit God gave us does not produce timidity but power, love, and self-control. The reason you can rekindle your gifts is the character of the Spirit who has been given to you.\n\nAlternative: structure it as a question and answer — ‘Why do we hold back in ministry?’ (the problem of timidity) → ’What has God already given us?’ (the answer: the Spirit’s power, love, self-control) → ’What are you going to do about it?’ (the response: rekindle).",
+          "questionHint"     :"Test your structure: does each main point serve the message, or are some of them interesting detours? Remove any point that does not directly contribute to what you want the listeners to know and do. And ask: is the structure clear enough that a listener could follow it without notes?"
         },
-
         {
-          "elementId": "ch13-el34",
-          "type": "question",
-          "format": "plainText",
-          "question": "INTRODUCTION: What introduction might work for your sermon on 2 Timothy 1:6-7? Describe your idea for an introduction — whether a story, a question, or another approach — and explain how it connects both to the listeners' world and to the passage.",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Describe your introduction idea. What will grab the listeners' attention? How will it lead them from their world into the world of the passage?",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "A good introduction for this passage might begin with the experience of feeling inadequate or overwhelmed in ministry — a moment when a leader felt they had nothing to give, or when they nearly gave up. This connects immediately to the listeners' experience and creates a question: what do you do when ministry feels impossible? The introduction then leads naturally to the passage: Paul is writing to Timothy at exactly such a moment — and his answer is not 'try harder' but 'rekindle what God has already given you.' Another approach: open with the question 'What does courage in ministry actually look like?' and let that question hang in the air before the passage begins to answer it. The brain of the sermon (the purpose statement) is the most useful guide here — the introduction should create the expectation that the purpose will satisfy.",
-          "questionHint": "The introduction has one job: to take listeners from wherever they are (distracted, preoccupied, tired) and create a genuine desire to hear what comes next. Test it: after your introduction, would a listener want to know the answer? If the introduction only sets up an intellectual question but doesn't touch the heart, it needs work."
+          "elementId"        :"ch13-el34",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"INTRODUCTION: What introduction might work for your sermon on 2 Timothy 1:6-7? Describe your idea for an introduction — whether a story, a question, or another approach — and explain how it connects both to the listeners’ world and to the passage.",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Describe your introduction idea. What will grab the listeners’ attention? How will it lead them from their world into the world of the passage?",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"A good introduction for this passage might begin with the experience of feeling inadequate or overwhelmed in ministry — a moment when a leader felt they had nothing to give, or when they nearly gave up. This connects immediately to the listeners’ experience and creates a question: what do you do when ministry feels impossible? The introduction then leads naturally to the passage: Paul is writing to Timothy at exactly such a moment — and his answer is not ’try harder’ but ’rekindle what God has already given you.’ Another approach: open with the question ’What does courage in ministry actually look like?’ and let that question hang in the air before the passage begins to answer it. The brain of the sermon (the purpose statement) is the most useful guide here — the introduction should create the expectation that the purpose will satisfy.",
+          "questionHint"     :"The introduction has one job: to take listeners from wherever they are (distracted, preoccupied, tired) and create a genuine desire to hear what comes next. Test it: after your introduction, would a listener want to know the answer? If the introduction only sets up an intellectual question but doesn’t touch the heart, it needs work."
         },
-
         {
-          "elementId": "ch13-el35",
-          "type": "question",
-          "format": "plainText",
-          "question": "BODY AND APPLICATION: How will you develop the body of your sermon? For each main point, think through: How will you state it clearly? How will you explain it simply? How will you illustrate it? How will you apply it to your listeners' lives — encouraging both repentance and faith, and engaging mind, heart, and will?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "For each main point: state → explain → illustrate → apply. Make sure your applications encourage repentance from wrong thinking/living AND faith in Christ — not just moral effort…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "Good application for this passage will move in two directions simultaneously: away from timidity (repentance from fear, self-reliance, and holding back) and toward active confidence in the Spirit (faith in what God has already given). Avoid applications that are purely motivational ('you can do it!') — they may energise but they don't point to Christ. The application must be rooted in the gospel: the Spirit has been given; his character is power, love, and self-control; therefore rekindle what he has already placed in you. Applications might include: naming specific fears or hesitations that leaders in the congregation face; identifying specific ministry contexts where they have been holding back; and inviting them to take one concrete step of faith this week — not in their own strength but in the Spirit's power. Applications that engage mind, heart, and will might include: a truth to believe (the Spirit's character), an emotion to feel (confidence rather than fear), and an action to take (one specific act of ministry this week).",
-          "questionHint": "The biblical pattern for transformation is repentance and faith — turning away from something wrong and turning toward Christ. Make sure your applications include both. What does repentance look like from 2 Tim 1:6-7? And what does faith look like? Name both specifically for your listeners."
+          "elementId"        :"ch13-el35",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"BODY AND APPLICATION: How will you develop the body of your sermon? For each main point, think through: How will you state it clearly? How will you explain it simply? How will you illustrate it? How will you apply it to your listeners’ lives — encouraging both repentance and faith, and engaging mind, heart, and will?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"For each main point: state → explain → illustrate → apply. Make sure your applications encourage repentance from wrong thinking/living AND faith in Christ — not just moral effort…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"Good application for this passage will move in two directions simultaneously: away from timidity (repentance from fear, self-reliance, and holding back) and toward active confidence in the Spirit (faith in what God has already given). Avoid applications that are purely motivational (‘you can do it!’) — they may energise but they don’t point to Christ. The application must be rooted in the gospel: the Spirit has been given; his character is power, love, and self-control; therefore rekindle what he has already placed in you. Applications might include: naming specific fears or hesitations that leaders in the congregation face; identifying specific ministry contexts where they have been holding back; and inviting them to take one concrete step of faith this week — not in their own strength but in the Spirit’s power. Applications that engage mind, heart, and will might include: a truth to believe (the Spirit’s character), an emotion to feel (confidence rather than fear), and an action to take (one specific act of ministry this week).",
+          "questionHint"     :"The biblical pattern for transformation is repentance and faith — turning away from something wrong and turning toward Christ. Make sure your applications include both. What does repentance look like from 2 Tim 1:6-7? And what does faith look like? Name both specifically for your listeners."
         },
-
         {
-          "elementId": "ch13-el36",
-          "type": "question",
-          "format": "plainText",
-          "question": "CONCLUSION: How would you conclude your sermon on 2 Timothy 1:6-7? Describe your idea for a conclusion and explain how it brings the sermon to a satisfying, memorable end.",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Describe your conclusion idea. It might reinforce the message, return to the introduction, lead to prayer, or offer a fresh twist that makes the main point unforgettable…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "A strong conclusion for this passage might return to the image of fire introduced by the word 'rekindle' in v. 6. A fire that has died down can be brought back to life — it does not need new fuel, just new breath and new stirring. The Spirit within us is that breath. The conclusion might invite the congregation to sit quietly and ask: what gift has God given me that I have allowed to die down? And then to pray — asking the Spirit to rekindle it. Another approach: end with a direct application to one specific person in the congregation's situation (described anonymously) who is facing exactly the kind of demanding, overwhelming task Paul describes — and show what it would look like for them to walk forward in the Spirit's power rather than holding back. A good conclusion takes the listener back into their world with the sermon's message in hand.",
-          "questionHint": "A conclusion should never introduce new ideas — it should bring the existing ideas to a landing. Ask: after my conclusion, will my listeners know exactly what they are meant to believe and do? And will the main point be the last thing ringing in their ears as they leave?"
+          "elementId"        :"ch13-el36",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"CONCLUSION: How would you conclude your sermon on 2 Timothy 1:6-7? Describe your idea for a conclusion and explain how it brings the sermon to a satisfying, memorable end.",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Describe your conclusion idea. It might reinforce the message, return to the introduction, lead to prayer, or offer a fresh twist that makes the main point unforgettable…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"A strong conclusion for this passage might return to the image of fire introduced by the word ’rekindle’ in v. 6. A fire that has died down can be brought back to life — it does not need new fuel, just new breath and new stirring. The Spirit within us is that breath. The conclusion might invite the congregation to sit quietly and ask: what gift has God given me that I have allowed to die down? And then to pray — asking the Spirit to rekindle it. Another approach: end with a direct application to one specific person in the congregation’s situation (described anonymously) who is facing exactly the kind of demanding, overwhelming task Paul describes — and show what it would look like for them to walk forward in the Spirit’s power rather than holding back. A good conclusion takes the listener back into their world with the sermon’s message in hand.",
+          "questionHint"     :"A conclusion should never introduce new ideas — it should bring the existing ideas to a landing. Ask: after my conclusion, will my listeners know exactly what they are meant to believe and do? And will the main point be the last thing ringing in their ears as they leave?"
         },
-
         {
-          "elementId": "ch13-el37",
-          "type": "heading",
-          "subtype": "subsection",
-          "level": "3",
-          "format": "plainText",
-          "text": "Step 7: FLESH — Develop the Details of the Sermon",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el37",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"Step 7: FLESH — Develop the Details of the Sermon",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el38",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "Now you can put flesh and skin on the bones — and create the sermon. Ask God to breathe his Spirit into the message and into you, his messenger. The details of a sermon include the specific words you choose, the notes you prepare, the way you use your voice, and the care you take with presentation.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el38",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Now you can put flesh and skin on the bones — and create the sermon. Ask God to breathe his Spirit into the message and into you, his messenger. The details of a sermon include the specific words you choose, the notes you prepare, the way you use your voice, and the care you take with presentation.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el39",
-          "type": "question",
-          "format": "plainText",
-          "question": "What kind of notes will you prepare for your sermon on 2 Timothy 1:6-7 — no notes, brief bullet points, a detailed outline, or a full manuscript? What are the strengths and weaknesses of each approach, and what works best for you?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about what kind of notes help you to preach well — and what kind of preparation gives you confidence without making you dependent on reading…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "There is no single right answer — different preachers work effectively with different approaches. No notes at all can work for those who are very familiar with their material and who communicate naturally, but it requires very thorough preparation and risks losing important content. A full manuscript gives security and precision but can result in reading rather than preaching — breaking eye contact and losing the congregation. Most experienced preachers work with a detailed outline or structured notes: enough to keep them on track and ensure key content is not lost, but not so detailed that they are reading. Whatever the format, the key principle is this: the shorter the talk, the more detailed the preparation needs to be. A five-minute talk requires more careful preparation, not less, than a forty-minute sermon.",
-          "questionHint": "Think about the worst sermon you have ever preached — was it because you were over-prepared or under-prepared? What would the right kind of notes have given you? And think about your communication style: do you tend to lose content when you speak freely, or do you tend to sound wooden when you read?"
+          "elementId"        :"ch13-el39",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"What kind of notes will you prepare for your sermon on 2 Timothy 1:6-7 — no notes, brief bullet points, a detailed outline, or a full manuscript? What are the strengths and weaknesses of each approach, and what works best for you?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about what kind of notes help you to preach well — and what kind of preparation gives you confidence without making you dependent on reading…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"There is no single right answer — different preachers work effectively with different approaches. No notes at all can work for those who are very familiar with their material and who communicate naturally, but it requires very thorough preparation and risks losing important content. A full manuscript gives security and precision but can result in reading rather than preaching — breaking eye contact and losing the congregation. Most experienced preachers work with a detailed outline or structured notes: enough to keep them on track and ensure key content is not lost, but not so detailed that they are reading. Whatever the format, the key principle is this: the shorter the talk, the more detailed the preparation needs to be. A five-minute talk requires more careful preparation, not less, than a forty-minute sermon.",
+          "questionHint"     :"Think about the worst sermon you have ever preached — was it because you were over-prepared or under-prepared? What would the right kind of notes have given you? And think about your communication style: do you tend to lose content when you speak freely, or do you tend to sound wooden when you read?"
         },
-
         {
-          "elementId": "ch13-el40",
-          "type": "callout",
-          "subtype": "general",
-          "eyebrow": "The Four Ps of Vocal Delivery",
-          "term": "Using your voice to communicate well",
-          "question": "What are the four dimensions of good vocal delivery in preaching?",
-          "answer": "<p>Good use of your voice is not about volume but about <strong>variety</strong>. Vary all four of these:</p><p><strong>Pitch</strong> — Vary the tone of your voice. A voice that stays at the same pitch throughout becomes monotonous and puts people to sleep.</p><p><strong>Pace</strong> — Vary the speed of your delivery. Slowing down signals importance; speeding up can create energy and momentum. Neither speed should be constant.</p><p><strong>Pause</strong> — Stop speaking for a moment or two to give space for thought. A well-placed pause is one of the most powerful tools in preaching — it allows what has been said to land before moving on. Most preachers use pauses far too rarely.</p><p><strong>Power</strong> — Vary the intensity and volume. Whispering can be as powerful as shouting — sometimes more so. A culture of constant shouting can actually hinder real communication and learning.</p>",
-          "buttonText": "See the four Ps ➡",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el40",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "eyebrow"      :"The Four Ps of Vocal Delivery",
+          "term"         :"Using your voice to communicate well",
+          "question"     :"What are the four dimensions of good vocal delivery in preaching?",
+          "answer"       :"<p>Good use of your voice is not about volume but about <strong>variety</strong>. Vary all four of these:</p><p><strong>Pitch</strong> — Vary the tone of your voice. A voice that stays at the same pitch throughout becomes monotonous and puts people to sleep.</p><p><strong>Pace</strong> — Vary the speed of your delivery. Slowing down signals importance; speeding up can create energy and momentum. Neither speed should be constant.</p><p><strong>Pause</strong> — Stop speaking for a moment or two to give space for thought. A well-placed pause is one of the most powerful tools in preaching — it allows what has been said to land before moving on. Most preachers use pauses far too rarely.</p><p><strong>Power</strong> — Vary the intensity and volume. Whispering can be as powerful as shouting — sometimes more so. A culture of constant shouting can actually hinder real communication and learning.</p>",
+          "buttonText"   :"See the four Ps ➡",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el41",
-          "type": "question",
-          "format": "plainText",
-          "question": "Which of the four Ps of vocal delivery do you find most natural — and which do you most need to develop? What practical step could you take to improve your weakest area?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Be honest about your own delivery. Which P do you use well, and which do you neglect? What would it look like to practise the one you find hardest?",
-          "bottomPadding": "normal",
-          "sampleAnswer": "Many preachers find Pause the hardest — the temptation is to fill every moment with words, and silence feels uncomfortable. But pauses are essential: they give the congregation time to process what has been said, they signal that something important has just been said, and they give the preacher time to breathe and collect their thoughts. A practical exercise: record one of your sermons and listen back, counting how many pauses you use and how long they are. Then deliberately insert three more pauses into your next sermon at the most important moments. The discomfort you feel in the silence is much less than the congregation's need for it.",
-          "questionHint": "Try recording yourself preaching for five minutes and listening back critically. What do you notice about your pitch, pace, pause, and power? Is there variety — or does it all sound the same? Ask someone you trust to listen and give honest feedback on your delivery."
+          "elementId"        :"ch13-el41",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Which of the four Ps of vocal delivery do you find most natural — and which do you most need to develop? What practical step could you take to improve your weakest area?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Be honest about your own delivery. Which P do you use well, and which do you neglect? What would it look like to practise the one you find hardest?",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Many preachers find Pause the hardest — the temptation is to fill every moment with words, and silence feels uncomfortable. But pauses are essential: they give the congregation time to process what has been said, they signal that something important has just been said, and they give the preacher time to breathe and collect their thoughts. A practical exercise: record one of your sermons and listen back, counting how many pauses you use and how long they are. Then deliberately insert three more pauses into your next sermon at the most important moments. The discomfort you feel in the silence is much less than the congregation’s need for it.",
+          "questionHint"     :"Try recording yourself preaching for five minutes and listening back critically. What do you notice about your pitch, pace, pause, and power? Is there variety — or does it all sound the same? Ask someone you trust to listen and give honest feedback on your delivery."
         },
-
         {
-          "elementId": "ch13-el42",
-          "type": "callout",
-          "subtype": "general",
-          "eyebrow": "Evaluating a Sermon: TRUE — RELEVANT — CLEAR",
-          "term": "Three questions for evaluating any sermon",
-          "question": "What are the three key questions for evaluating a sermon — your own or someone else's?",
-          "answer": "<p><strong>Was the sermon TRUE?</strong><br>Did the message come from the Bible? Was it true to the text and to the gospel? Was it God's word — or the preacher's word with a biblical text attached?</p><p><strong>Was the sermon RELEVANT?</strong><br>Was there a clear purpose? Were there specific applications for the listeners? Did it address their actual situation and call them to respond in concrete ways?</p><p><strong>Was the sermon CLEAR?</strong><br>Was there good explanation and a clear structure that was easy to follow? Was the communication effective — in words, delivery, and presentation?</p><p><em>Evaluate yourself first: before and during preparation, ask whether you are clear on what you are preaching, why you are preaching it, and how you are delivering it. If not, there is a problem.</em></p><p><em>Get others to evaluate you: invite constructive feedback after the sermon. Always begin with genuine encouragement. Consider giving specific feedback slightly later rather than immediately after preaching.</em></p>",
-          "buttonText": "See the evaluation framework ➡",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el42",
+          "type"         :"callout",
+          "subtype"      :"general",
+          "eyebrow"      :"Evaluating a Sermon: TRUE — RELEVANT — CLEAR",
+          "term"         :"Three questions for evaluating any sermon",
+          "question"     :"What are the three key questions for evaluating a sermon — your own or someone else’s?",
+          "answer"       :"<p><strong>Was the sermon TRUE?</strong><br>Did the message come from the Bible? Was it true to the text and to the gospel? Was it God’s word — or the preacher’s word with a biblical text attached?</p><p><strong>Was the sermon RELEVANT?</strong><br>Was there a clear purpose? Were there specific applications for the listeners? Did it address their actual situation and call them to respond in concrete ways?</p><p><strong>Was the sermon CLEAR?</strong><br>Was there good explanation and a clear structure that was easy to follow? Was the communication effective — in words, delivery, and presentation?</p><p><em>Evaluate yourself first: before and during preparation, ask whether you are clear on what you are preaching, why you are preaching it, and how you are delivering it. If not, there is a problem.</em></p><p><em>Get others to evaluate you: invite constructive feedback after the sermon. Always begin with genuine encouragement. Consider giving specific feedback slightly later rather than immediately after preaching.</em></p>",
+          "buttonText"   :"See the evaluation framework ➡",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el43",
-          "type": "question",
-          "format": "plainText",
-          "question": "Using the TRUE / RELEVANT / CLEAR framework, evaluate a sermon you have recently preached or heard. What did it do well, and what did it need to improve?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "TRUE: Was it faithful to the text and gospel?\nRELEVANT: Did it have a clear purpose and specific applications?\nCLEAR: Was the structure and communication easy to follow?",
-          "bottomPadding": "normal",
-          "sampleAnswer": "This question is designed to develop the habit of honest, structured evaluation rather than vague impressions. A useful exercise: apply all three questions to a sermon you recently preached — not heard — because it is harder to evaluate yourself than to evaluate others. TRUE: Did your main point actually come from the text, or did you impose it? RELEVANT: Did you have a specific purpose statement, and did your applications speak to your listeners' actual situation? CLEAR: Could your listeners have followed the structure without notes? Was your language accessible? The most important test is TRUE, because a sermon that is relevant and clear but untrue to the text is worse than useless — it trains the congregation to receive the preacher's word as God's word.",
-          "questionHint": "The hardest of the three to evaluate honestly is TRUE — because we tend to assume our own sermons are faithful to Scripture. Ask a trusted colleague to read your sermon notes and tell you: does the main point genuinely come from the text, or is the text serving the preacher's own message?"
+          "elementId"        :"ch13-el43",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Using the TRUE / RELEVANT / CLEAR framework, evaluate a sermon you have recently preached or heard. What did it do well, and what did it need to improve?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"TRUE: Was it faithful to the text and gospel?\nRELEVANT: Did it have a clear purpose and specific applications?\nCLEAR: Was the structure and communication easy to follow?",
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"This question is designed to develop the habit of honest, structured evaluation rather than vague impressions. A useful exercise: apply all three questions to a sermon you recently preached — not heard — because it is harder to evaluate yourself than to evaluate others. TRUE: Did your main point actually come from the text, or did you impose it? RELEVANT: Did you have a specific purpose statement, and did your applications speak to your listeners’ actual situation? CLEAR: Could your listeners have followed the structure without notes? Was your language accessible? The most important test is TRUE, because a sermon that is relevant and clear but untrue to the text is worse than useless — it trains the congregation to receive the preacher’s word as God’s word.",
+          "questionHint"     :"The hardest of the three to evaluate honestly is TRUE — because we tend to assume our own sermons are faithful to Scripture. Ask a trusted colleague to read your sermon notes and tell you: does the main point genuinely come from the text, or is the text serving the preacher’s own message?"
         },
-
         {
-          "elementId": "ch13-el44",
-          "type": "heading",
-          "subtype": "section",
-          "level": "2",
-          "format": "plainText",
-          "text": "13.4 Conclusion: Pulling It All Together",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el44",
+          "type"         :"heading",
+          "subtype"      :"section",
+          "level"        :"2",
+          "format"       :"plainText",
+          "text"         :"13.4 Conclusion: Pulling It All Together",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el45",
-          "type": "text",
-          "subtype": "bridge",
-          "format": "HTML",
-          "text": "Before using the pulling-it-all-together table for 2 Tim 1:6-7, we will look at one of the most powerful pictures of preaching in all of Scripture — Ezekiel 37:1-14. Ezekiel is a prophet called to preach to Israel, and this vision of Israel's resurrection by God after the Exile is, in the context of Scripture Sculpture, a vivid picture of flesh and skeleton, heart and brain, skin and bones coming together.<br><br>Without the breath of God — the Spirit of God — the bones remain bones. We need to pray throughout the process of preparing to preach and ask God the Holy Spirit, who inspired the Scriptures, to breathe new life into our preaching and through it into the lives of our listeners.",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el45",
+          "type"         :"text",
+          "subtype"      :"bridge",
+          "format"       :"HTML",
+          "text"         :"Before using the pulling-it-all-together table for 2 Tim 1:6-7, we will look at one of the most powerful pictures of preaching in all of Scripture — Ezekiel 37:1-14. Ezekiel is a prophet called to preach to Israel, and this vision of Israel’s resurrection by God after the Exile is, in the context of Scripture Sculpture, a vivid picture of flesh and skeleton, heart and brain, skin and bones coming together.<br><br>Without the breath of God — the Spirit of God — the bones remain bones. We need to pray throughout the process of preparing to preach and ask God the Holy Spirit, who inspired the Scriptures, to breathe new life into our preaching and through it into the lives of our listeners.",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el46",
-          "type": "biblePassage",
-          "format": "HTML",
-          "bibleRef": "Ezekiel 37:1-14",
-          "translation": "NET",
-          "passageText": "<sup>1</sup>The hand of the Lord was on me, and he brought me out by the Spirit of the Lord and set me in the middle of a valley; it was full of bones. <sup>2</sup>He led me back and forth among them, and I saw a great many bones on the floor of the valley, bones that were very dry. <sup>3</sup>He asked me, &ldquo;Son of man, can these bones live?&rdquo; I said, &ldquo;Sovereign Lord, you alone know.&rdquo; <sup>4</sup>Then he said to me, &ldquo;Prophesy to these bones and say to them, &lsquo;Dry bones, hear the word of the Lord! <sup>5</sup>This is what the Sovereign Lord says to these bones: I will make breath enter you, and you will come to life. <sup>6</sup>I will attach tendons to you and make flesh come upon you and cover you with skin; I will put breath in you, and you will come to life. Then you will know that I am the Lord.&rsquo;&rdquo;<br><sup>7</sup>So I prophesied as I was commanded. And as I was prophesying, there was a noise, a rattling sound, and the bones came together, bone to bone. <sup>8</sup>I looked, and tendons and flesh appeared on them and skin covered them, but there was no breath in them.<br><sup>9</sup>Then he said to me, &ldquo;Prophesy to the breath; prophesy, son of man, and say to it, &lsquo;This is what the Sovereign Lord says: Come, breath, from the four winds and breathe into these slain, that they may live.&rsquo;&rdquo; <sup>10</sup>So I prophesied as he commanded me, and breath entered them; they came to life and stood up on their feet &mdash; a vast army.<br><sup>11</sup>Then he said to me: &ldquo;Son of man, these bones are the people of Israel. They say, &lsquo;Our bones are dried up and our hope is gone; we are cut off.&rsquo; <sup>12</sup>Therefore prophesy and say to them: &lsquo;This is what the Sovereign Lord says: My people, I am going to open your graves and bring you up from them; I will bring you back to the land of Israel. <sup>13</sup>Then you, my people, will know that I am the Lord, when I open your graves and bring you up from them. <sup>14</sup>I will put my Spirit in you and you will live, and I will settle you in your own land. Then you will know that I the Lord have spoken, and I have done it, declares the Lord.&rsquo;&rdquo;",
-          
-          "passageUrl": "https://www.biblegateway.com/passage/?search=Ezekiel+37&version=NET",
-          "bottomPadding": "none"
+          "elementId"    :"ch13-el46",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Ezekiel 37:1-14",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>The hand of the Lord was on me, and he brought me out by the Spirit of the Lord and set me in the middle of a valley; it was full of bones. <sup>2</sup>He led me back and forth among them, and I saw a great many bones on the floor of the valley, bones that were very dry. <sup>3</sup>He asked me, &ldquo;Son of man, can these bones live?&rdquo; I said, &ldquo;Sovereign Lord, you alone know.&rdquo; <sup>4</sup>Then he said to me, &ldquo;Prophesy to these bones and say to them, &lsquo;Dry bones, hear the word of the Lord! <sup>5</sup>This is what the Sovereign Lord says to these bones: I will make breath enter you, and you will come to life. <sup>6</sup>I will attach tendons to you and make flesh come upon you and cover you with skin; I will put breath in you, and you will come to life. Then you will know that I am the Lord.&rsquo;&rdquo;<br><sup>7</sup>So I prophesied as I was commanded. And as I was prophesying, there was a noise, a rattling sound, and the bones came together, bone to bone. <sup>8</sup>I looked, and tendons and flesh appeared on them and skin covered them, but there was no breath in them.<br><sup>9</sup>Then he said to me, &ldquo;Prophesy to the breath; prophesy, son of man, and say to it, &lsquo;This is what the Sovereign Lord says: Come, breath, from the four winds and breathe into these slain, that they may live.&rsquo;&rdquo; <sup>10</sup>So I prophesied as he commanded me, and breath entered them; they came to life and stood up on their feet &mdash; a vast army.<br><sup>11</sup>Then he said to me: &ldquo;Son of man, these bones are the people of Israel. They say, &lsquo;Our bones are dried up and our hope is gone; we are cut off.&rsquo; <sup>12</sup>Therefore prophesy and say to them: &lsquo;This is what the Sovereign Lord says: My people, I am going to open your graves and bring you up from them; I will bring you back to the land of Israel. <sup>13</sup>Then you, my people, will know that I am the Lord, when I open your graves and bring you up from them. <sup>14</sup>I will put my Spirit in you and you will live, and I will settle you in your own land. Then you will know that I the Lord have spoken, and I have done it, declares the Lord.&rsquo;&rdquo;",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Ezekiel+37&version=NET",
+          "bottomPadding":"none"
         },
-
         {
-          "elementId": "ch13-el47",
-          "type": "question",
-          "format": "plainText",
-          "question": "In the context of preaching and Scripture Sculpture, what does Ezekiel 37:1-14 say to you about the role of the preacher — and about the role of the Holy Spirit? What happens when the structure is in place but the breath has not yet come?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Think about the moment in v. 8 — bones, tendons, flesh, and skin are all present, but there is no breath. What does that image say about a well-prepared sermon that lacks the Spirit's power?",
-          "bottomPadding": "normal",
-          "linkedPassage": "Ezekiel 37:1-14",
-          "sampleAnswer": "Ezekiel 37 is a profound image for preaching. The bones coming together is the work of preparation — structure, content, words, delivery. It is real and necessary work. But verse 8 is sobering: 'tendons and flesh appeared on them and skin covered them, but there was no breath in them.' A sermon can be beautifully structured, carefully worded, and faithfully delivered — and still be dead. It takes the breath of God's Spirit to bring the bones to life. This means that prayer is not optional or supplementary to sermon preparation — it is the most essential element of all. The preacher's job is to do the work of preparation faithfully, and then to pray that God will breathe his Spirit into both the message and the messenger. In the context of the Pastoral Epistles: Paul tells Timothy to guard the gospel 'with the help of the Holy Spirit who lives in us' (2 Tim 1:14). The same Spirit who inspired the Scriptures is the one who makes preaching from those Scriptures come alive.",
-          "questionHint": "Notice that God commands Ezekiel to prophesy — to do the work of proclamation — and then separately commands him to prophesy to the breath. What does this two-stage picture tell you about the relationship between human preparation and divine empowerment? Does God bypass the work, or does he breathe life through it?"
+          "elementId"        :"ch13-el47",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"In the context of preaching and Scripture Sculpture, what does Ezekiel 37:1-14 say to you about the role of the preacher — and about the role of the Holy Spirit? What happens when the structure is in place but the breath has not yet come?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Think about the moment in v. 8 — bones, tendons, flesh, and skin are all present, but there is no breath. What does that image say about a well-prepared sermon that lacks the Spirit’s power?",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"Ezekiel 37:1-14",
+          "sampleAnswer"     :"Ezekiel 37 is a profound image for preaching. The bones coming together is the work of preparation — structure, content, words, delivery. It is real and necessary work. But verse 8 is sobering: ‘tendons and flesh appeared on them and skin covered them, but there was no breath in them.’ A sermon can be beautifully structured, carefully worded, and faithfully delivered — and still be dead. It takes the breath of God’s Spirit to bring the bones to life. This means that prayer is not optional or supplementary to sermon preparation — it is the most essential element of all. The preacher’s job is to do the work of preparation faithfully, and then to pray that God will breathe his Spirit into both the message and the messenger. In the context of the Pastoral Epistles: Paul tells Timothy to guard the gospel ’with the help of the Holy Spirit who lives in us’ (2 Tim 1:14). The same Spirit who inspired the Scriptures is the one who makes preaching from those Scriptures come alive.",
+          "questionHint"     :"Notice that God commands Ezekiel to prophesy — to do the work of proclamation — and then separately commands him to prophesy to the breath. What does this two-stage picture tell you about the relationship between human preparation and divine empowerment? Does God bypass the work, or does he breathe life through it?"
         },
-
         {
-          "elementId": "ch13-el48",
-          "type": "heading",
-          "subtype": "subsection",
-          "level": "3",
-          "format": "plainText",
-          "text": "13.4.2 Pulling It All Together: Sermon on 2 Timothy 1:6-7",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el48",
+          "type"         :"heading",
+          "subtype"      :"subsection",
+          "level"        :"3",
+          "format"       :"plainText",
+          "text"         :"13.4.2 Pulling It All Together: Sermon on 2 Timothy 1:6-7",
+          "bottomPadding":"normal"
         },
-
         {
-          "elementId": "ch13-el49",
-          "type": "question",
-          "format": "plainText",
-          "question": "Pull together your complete sermon plan for 2 Timothy 1:6-7 using the four headings below. Draw on all the work you have done in this unit.\n\nSTEP 4 — PURPOSE STATEMENT:\nThe purpose of my sermon is…\n\nSTEP 5 — THEME AND MESSAGE:\nMy sermon's theme: …\nMy sermon's message: …\n\nSTEP 6 — STRUCTURE:\nIntroduction:\nMain point 1:\nMain point 2:\nMain point 3:\nConclusion:\n\nSTEP 7 — KEY DETAILS:\nKey words and phrases:\nIllustrations:\nApplications:\nNotes format:",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Work through all four headings in turn. This is your complete sermon plan — everything you need to preach 2 Timothy 1:6-7 faithfully and effectively…",
-          "bottomPadding": "normal",
-          "linkedPassage": "2 Timothy 1:6-7",
-          "sampleAnswer": "STEP 4 — PURPOSE STATEMENT:\nThe purpose of my sermon is to call my listeners to rekindle the gifts God has already given them — by showing them that the Spirit within them produces power, love, and self-control, not timidity — so that they will engage in ministry with courage rather than holding back in fear.\n\nSTEP 5 — THEME AND MESSAGE:\nTheme: Rekindling your confidence in ministry.\nMessage: When ministry feels overwhelming, the answer is not to find more strength within yourself but to rekindle the gifts and power that God's Spirit has already given you — because the Spirit produces power, love, and self-control, not timidity.\n\nSTEP 6 — STRUCTURE:\nIntroduction: A story or question about a moment when ministry felt impossible — and the temptation to hold back. Lead to the question: where does courage for ministry come from?\nMain point 1 (v. 6a + context): The confidence you already have — your faith is genuine, and Paul is sure of it.\nMain point 2 (v. 6b): The command you must obey — rekindle what God has given you. The fire may be low, but it is not out.\nMain point 3 (v. 7): The power you already possess — the Spirit who has been given to you produces power, love, and self-control.\nConclusion: Return to the image of fire — a fire that can be rekindled. Prayer for specific areas of ministry where listeners have been holding back.\n\nSTEP 7 — KEY DETAILS:\nKey phrases: 'rekindle', 'fan into flame', 'power, love, self-control' — explain each one clearly.\nIllustration: A dying fire that needs fresh breath and stirring — not new fuel.\nApplication: Name specific fears leaders face; invite one concrete step of ministry this week in the Spirit's strength.\nNotes format: Detailed outline with key phrases written out in full.",
-          "questionHint": "Use all the work from this unit — your purpose statement, theme, message, structure ideas, introduction, conclusion, and application thoughts — and bring them together in one place. This table is the template you will use for every sermon throughout the BUILD curriculum."
+          "elementId"        :"ch13-el49",
+          "type"             :"question",
+          "format"           :"plainText",
+          "question"         :"Pull together your complete sermon plan for 2 Timothy 1:6-7 using the four headings below. Draw on all the work you have done in this unit.\n\nSTEP 4 — PURPOSE STATEMENT:\nThe purpose of my sermon is…\n\nSTEP 5 — THEME AND MESSAGE:\nMy sermon’s theme: …\nMy sermon’s message: …\n\nSTEP 6 — STRUCTURE:\nIntroduction:\nMain point 1:\nMain point 2:\nMain point 3:\nConclusion:\n\nSTEP 7 — KEY DETAILS:\nKey words and phrases:\nIllustrations:\nApplications:\nNotes format:",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Work through all four headings in turn. This is your complete sermon plan — everything you need to preach 2 Timothy 1:6-7 faithfully and effectively…",
+          "bottomPadding"    :"normal",
+          "linkedPassage"    :"2 Timothy 1:6-7",
+          "sampleAnswer"     :"STEP 4 — PURPOSE STATEMENT:\nThe purpose of my sermon is to call my listeners to rekindle the gifts God has already given them — by showing them that the Spirit within them produces power, love, and self-control, not timidity — so that they will engage in ministry with courage rather than holding back in fear.\n\nSTEP 5 — THEME AND MESSAGE:\nTheme: Rekindling your confidence in ministry.\nMessage: When ministry feels overwhelming, the answer is not to find more strength within yourself but to rekindle the gifts and power that God’s Spirit has already given you — because the Spirit produces power, love, and self-control, not timidity.\n\nSTEP 6 — STRUCTURE:\nIntroduction: A story or question about a moment when ministry felt impossible — and the temptation to hold back. Lead to the question: where does courage for ministry come from?\nMain point 1 (v. 6a + context): The confidence you already have — your faith is genuine, and Paul is sure of it.\nMain point 2 (v. 6b): The command you must obey — rekindle what God has given you. The fire may be low, but it is not out.\nMain point 3 (v. 7): The power you already possess — the Spirit who has been given to you produces power, love, and self-control.\nConclusion: Return to the image of fire — a fire that can be rekindled. Prayer for specific areas of ministry where listeners have been holding back.\n\nSTEP 7 — KEY DETAILS:\nKey phrases: ‘rekindle’, ‘fan into flame’, ‘power, love, self-control’ — explain each one clearly.\nIllustration: A dying fire that needs fresh breath and stirring — not new fuel.\nApplication: Name specific fears leaders face; invite one concrete step of ministry this week in the Spirit’s strength.\nNotes format: Detailed outline with key phrases written out in full.",
+          "questionHint"     :"Use all the work from this unit — your purpose statement, theme, message, structure ideas, introduction, conclusion, and application thoughts — and bring them together in one place. This table is the template you will use for every sermon throughout the BUILD curriculum."
         },
-
         {
-          "elementId": "ch13-el50",
-          "type": "question",
-          "subtype": "reflection",
-          "format": "plainText",
-          "question": "Which step of the Scripture Sculpture preaching process (Steps 4-7) do you find most natural, and which do you find most challenging? What practical step will you take to develop your weakest area?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Your reflection…",
-          "bottomPadding": "normal"
+          "elementId"        :"ch13-el50",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"Which step of the Scripture Sculpture preaching process (Steps 4-7) do you find most natural, and which do you find most challenging? What practical step will you take to develop your weakest area?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
         },
-
         {
-          "elementId": "ch13-el51",
-          "type": "question",
-          "subtype": "reflection",
-          "format": "plainText",
-          "question": "How has this unit changed — or deepened — your understanding of what expository preaching is? What is the one thing you most want to carry into your next sermon?",
-          "answerType": "freeText",
-          "required": false,
-          "answerPlaceholder": "Your reflection…",
-          "bottomPadding": "normal"
+          "elementId"        :"ch13-el51",
+          "type"             :"question",
+          "subtype"          :"reflection",
+          "format"           :"plainText",
+          "question"         :"How has this unit changed — or deepened — your understanding of what expository preaching is? What is the one thing you most want to carry into your next sermon?",
+          "answerType"       :"freeText",
+          "required"         :false,
+          "answerPlaceholder":"Your reflection…",
+          "bottomPadding"    :"normal"
         },
-
         {
-          "elementId": "ch13-el52",
-          "type": "text",
-          "subtype": "closing",
-          "format": "HTML",
-          "text": "End this unit in prayer for one another. Ask God the Holy Spirit — who inspired the Scriptures — to breathe life into your preaching and through it into the lives of your listeners. The bones are coming together; the structure is taking shape; the message is forming. Now ask for breath.<br><br><em>'Guard the good deposit that was entrusted to you — guard it with the help of the Holy Spirit who lives in us.'</em> (2 Tim 1:14)",
-          "bottomPadding": "normal"
+          "elementId"    :"ch13-el52",
+          "type"         :"text",
+          "subtype"      :"closing",
+          "format"       :"HTML",
+          "text"         :"End this unit in prayer for one another. Ask God the Holy Spirit — who inspired the Scriptures — to breathe life into your preaching and through it into the lives of your listeners. The bones are coming together; the structure is taking shape; the message is forming. Now ask for breath.<br><br><em>’Guard the good deposit that was entrusted to you — guard it with the help of the Holy Spirit who lives in us.’</em> (2 Tim 1:14)",
+          "bottomPadding":"normal"
         }
-
       ]
     }
-
   ],
   "studyOnboardingSlides":[
     {

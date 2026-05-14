@@ -275,7 +275,7 @@ async function runSearchCore(query) {
   const results = [];
 
   chapters.forEach((ch, chIdx) => {
-    ch.sections.forEach((sec, sIdx) => {
+    (ch.sections || []).forEach((sec, sIdx) => {
       // 1. Search bridge text
       if (sec.bridge) {
         const plain = stripHtml(sec.bridge);
@@ -292,7 +292,7 @@ async function runSearchCore(query) {
       }
 
       // 2. Search questions and their saved answers
-      sec.questions.forEach((question, qIdx) => {
+      (sec.questions || []).forEach((question, qIdx) => {
         const qText = stripHtml(question.text);
         const ref   = question.ref;
         const eid   = question.elementId || `${sIdx}_${qIdx}`;

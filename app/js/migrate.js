@@ -18,6 +18,12 @@
 //   intact so the app degrades gracefully and the migration retries on next launch.
 // • Zero-answer studies: studies in the registry with no localStorage keys
 //   are skipped silently — nothing to migrate.
+// • Scope limited to registered studies: only study IDs present in
+//   study_registry are migrated. Orphaned answer data (from studies that were
+//   uninstalled but left keys behind) cannot be detected without knowing the
+//   study ID in advance — the bsr_{id}_* key format is ambiguous when the ID
+//   itself contains substrings that overlap with known key suffixes (e.g. '_ch').
+//   Orphaned keys are left in localStorage and do not affect app behaviour.
 //
 // Key patterns migrated
 // ─────────────────────
@@ -25,8 +31,12 @@
 //   bsr_{id}_ch{N}_{type}_{elementId}        → field  {type}_{elementId}
 //   bsr_{id}_ch{N}_likert_{elementId}_{stIdx}→ field  likert_{elementId}_{stIdx}
 //   bsr_{id}_ch{N}_notes_0                   → field  notes_0
-//   bsr_{id}_ch{N}_celebrated                → field  celebrated
 //   bsr_{id}_star_ch{N}_{elementId}          → field  star_{elementId}
+//
+// Chapter-completion flag (written as a standalone IDB key, not into the
+// chapter object, to match the post-migration storage layout used by
+// showCelebrationToast() which reads via StudyIDB.getAnswerRaw()):
+//   bsr_{id}_ch{N}_celebrated                → IDB key  {id}_celebrated_ch{N}
 //
 // Per-study raw keys (written directly into the answers store):
 //   bsr_{id}_global_notes                    → IDB key  {id}_global_notes
@@ -55,19 +65,26 @@ async function migrateAnswersToIDB() {
     registry = [];
   }
 
-  // Collect every study ID that has at least one bsr_{id}_* key in localStorage.
+  // Cross-check localStorage against the registry to confirm which registered
+  // studies actually have keys to migrate. Orphaned study data (from uninstalled
+  // studies) cannot be detected: the bsr_{id}_* format is ambiguous when the ID
+  // contains substrings like '_ch' that overlap with known key suffixes, so
+  // reverse-parsing an unknown ID is not reliably possible. Orphaned keys are
+  // left in localStorage harmlessly.
+  //
+  // Note: this scan only inspects bsr_* keys. A study whose only localStorage
+  // remnant is a lastPosition_{studyId} key (different prefix) would not be
+  // detected here and its position key would be left in localStorage. This is
+  // an acceptable edge case — position data is cosmetic and non-critical.
   const studyIdsFromKeys = new Set();
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
+  const allLSKeys = Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i));
+  for (const key of allLSKeys) {
     if (!key || !key.startsWith('bsr_')) continue;
     // Skip known non-study-answer keys that start with 'bsr_' but are app-level:
     //   bsr_activePathwayId, bsr_infoSeen_*
     if (key === 'bsr_activePathwayId') continue;
     if (key.startsWith('bsr_infoSeen_')) continue;
-    // Extract the study ID: bsr_{studyId}_...
-    // Study IDs may contain underscores, so we identify the boundary by checking
-    // whether the remainder after 'bsr_' contains a known suffix pattern.
-    // Strategy: try each registered study ID first, then fall back to pattern scan.
+    // Check if this key belongs to any registered study.
     const withoutPrefix = key.slice(4); // remove 'bsr_'
     for (const id of registry) {
       if (withoutPrefix.startsWith(id + '_')) {
@@ -77,11 +94,14 @@ async function migrateAnswersToIDB() {
     }
   }
 
-  // Union: registered studies + any orphaned studies found via key scan.
+  // Migrate all registered studies that have at least one localStorage key.
   const allStudyIds = new Set([...registry, ...studyIdsFromKeys]);
 
   if (allStudyIds.size === 0) {
-    // Nothing to migrate — mark done and return.
+    // Nothing to migrate — mark done and return. Setting the flag here is safe:
+    // there are no localStorage answer keys to lose, so there is nothing for a
+    // future retry to recover. IDB availability is not checked at this point
+    // because no IDB writes are needed.
     localStorage.setItem('bsr_idb_migration_done', '1');
     console.log('[migrate] No study answer data found in localStorage. Migration complete.');
     return;
@@ -99,8 +119,11 @@ async function migrateAnswersToIDB() {
     } catch (e) {
       console.error(`[migrate] Failed to migrate study '${studyId}':`, e);
       studiesFailed++;
-      // Leave this study's localStorage keys intact — migration will retry on
-      // next launch. Do not set the migration-done flag if any study failed.
+      // Leave this study's localStorage keys intact. The most likely cause is
+      // IDB being unavailable (e.g. Firefox private browsing, restricted WebView)
+      // — in that case every setChapterAnswers call will reject. Not setting the
+      // migration-done flag means the migration retries on the next launch, which
+      // is intentional: once IDB becomes available the data will be migrated.
     }
   }
 
@@ -129,8 +152,8 @@ async function _migrateStudy(studyId) {
   // Also collect the lastPosition key (different prefix pattern)
   const lastPositionLSKey = `lastPosition_${studyId}`;
 
-  for (let i = 0; i < localStorage.length; i++) {
-    const lsKey = localStorage.key(i);
+  const allLSKeys = Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i));
+  for (const lsKey of allLSKeys) {
     if (!lsKey) continue;
 
     // ── Per-study raw keys ─────────────────────────────────────────────────
@@ -146,6 +169,9 @@ async function _migrateStudy(studyId) {
     }
 
     // lastPosition: lastPosition_{studyId}
+    // IMPORTANT: this check must remain above the `if (!lsKey.startsWith(prefix))
+    // continue` guard below. lastPosition_{studyId} uses a different prefix from
+    // bsr_{studyId}_* and would be skipped by that guard if reached first.
     if (lsKey === lastPositionLSKey) {
       const val = localStorage.getItem(lsKey);
       if (val !== null) {
@@ -188,8 +214,12 @@ async function _migrateStudy(studyId) {
     _ensureChapter(chapterObjects, chNum);
 
     // celebrated: bsr_{id}_ch{N}_celebrated
+    // Written as a standalone IDB key (not into the chapter object) to match
+    // the post-migration layout: showCelebrationToast() reads via
+    // StudyIDB.getAnswerRaw(celebratedIDBKey(studyId, chNum)) and would never
+    // find the flag if it were stored inside the chapter record.
     if (rest === 'celebrated') {
-      chapterObjects[chNum]['celebrated'] = val;
+      rawIDBWrites.push({ key: `${studyId}_celebrated_ch${chNum}`, value: val });
       keysToRemove.push(lsKey);
       continue;
     }

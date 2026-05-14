@@ -34,6 +34,12 @@ const StudyIDB = (() => {
   // and reject immediately with a consistent error rather than throwing.
   let _unavailableError = null;
 
+  // Cached connection promise. Set on first successful open(); reused by all
+  // subsequent calls to avoid issuing a new indexedDB.open() on every API call.
+  // Reset to null on transient open failure so the next call retries. Not reset
+  // on _unavailableError (permanent IDB unavailability) — those should fast-fail.
+  let _dbPromise = null;
+
   // Warm up on first load — if IDB itself is inaccessible this will set
   // _unavailableError so that the first real call fails fast and cleanly.
   (() => {
@@ -51,7 +57,9 @@ const StudyIDB = (() => {
 
   function open() {
     if (_unavailableError) return Promise.reject(_unavailableError);
-    return new Promise((resolve, reject) => {
+    if (_dbPromise) return _dbPromise;
+
+    _dbPromise = new Promise((resolve, reject) => {
       let req;
       try {
         req = indexedDB.open(DB_NAME, DB_VER);
@@ -59,6 +67,7 @@ const StudyIDB = (() => {
         // indexedDB.open() itself can throw synchronously in some WebViews.
         _unavailableError = e;
         _unavailableError.name = 'IDBUnavailable';
+        _dbPromise = null;
         return reject(_unavailableError);
       }
       req.onupgradeneeded = e => {
@@ -67,14 +76,33 @@ const StudyIDB = (() => {
         if (!db.objectStoreNames.contains(IMG_STORE)) db.createObjectStore(IMG_STORE);
         if (!db.objectStoreNames.contains(ANS_STORE)) db.createObjectStore(ANS_STORE);
       };
-      req.onsuccess = e => resolve(e.target.result);
-      req.onerror   = e => {
+      req.onsuccess = e => {
+        const db = e.target.result;
+        // If another tab opens a newer DB version, close this connection so the
+        // upgrade can proceed. Clearing _dbPromise lets the next call re-open.
+        db.onversionchange = () => {
+          db.close();
+          _dbPromise = null;
+        };
+        resolve(db);
+      };
+      req.onerror = e => {
         // Firefox private browsing rejects the open request (not throws).
+        // Treat as permanent IDB unavailability.
         _unavailableError = e.target.error;
         _unavailableError.name = 'IDBUnavailable';
+        _dbPromise = null;
         reject(_unavailableError);
       };
+      req.onblocked = () => {
+        // A previous connection is blocking this version upgrade. Log and let
+        // the open request remain pending — don't reset _dbPromise here since
+        // the open may still succeed once the blocker closes.
+        console.warn('[StudyIDB] open blocked — another tab may be holding an older connection.');
+      };
     });
+
+    return _dbPromise;
   }
 
   // ── studies store (JSON objects) ───────────────────────────────────────────
