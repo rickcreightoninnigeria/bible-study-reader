@@ -7,7 +7,9 @@
 //   appSettings, getSwipeThreshold – settings.js
 //   chapters, currentChapter,
 //   isNonChapterPage               – state.js
-//   storageKey                     – state.js
+//   answerFieldKey                 – state.js
+//   StudyIDB                       – idb.js
+//   storageCache                   – search.js (cleared on save so next search sees new answers)
 //   saveLastPosition               – utils.js
 //   Router                         – router.js
 //   navigateTab                    – render-pages.js (runtime call only)
@@ -114,20 +116,47 @@ document.addEventListener('scroll', () => {
 // Save position and answers when the app goes to background (e.g. user switches apps).
 // visibilitychange fires more reliably than beforeunload on mobile WebViews.
 // Answers are saved silently (no toast, no UI update) — the priority is writing
-// to localStorage before the OS kills the process, which is the highest-risk
-// data-loss scenario on iOS WebView. The ch guard handles backgrounding on the
-// title page where currentChapter may be undefined.
+// to IDB before the OS kills the process, which is the highest-risk data-loss
+// scenario on mobile. The ch/studyId guards handle backgrounding on the title
+// page where currentChapter may be undefined or no study is loaded.
+//
+// The handler itself is synchronous (visibilitychange cannot be async), so the
+// IDB write runs as a fire-and-forget async IIFE — the same pattern used by the
+// blur auto-save in save.js. updateProgress() and UI renders are intentionally
+// omitted: the app is going to the background and the next foreground render
+// will reflect the saved state.
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'hidden') {
-    const ch = chapters[currentChapter];
-    if (ch) {
-      document.querySelectorAll('.answer-field').forEach(field => {
-        safeSetItem(
-          storageKey(ch.chapterNumber, field.dataset.type, field.dataset.index),
-          field.value
-        );
-      });
+  if (document.visibilityState !== 'hidden') return;
+
+  saveLastPosition();
+
+  const ch      = chapters[currentChapter];
+  const studyId = window.activeStudyId;
+  if (!ch || !studyId) return;
+
+  (async () => {
+    let record;
+    try {
+      record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+    } catch (e) {
+      console.warn('[visibilitychange] IDB read failed; falling back to empty object.', e);
+      record = {};
     }
-    saveLastPosition();
-  }
+
+    document.querySelectorAll('.answer-field').forEach(field => {
+      const type  = field.dataset.type;
+      const index = field.dataset.index;
+      if (type !== undefined && index !== undefined) {
+        record[answerFieldKey(type, index)] = field.value;
+      }
+    });
+
+    try {
+      await StudyIDB.setChapterAnswers(studyId, ch.chapterNumber, record);
+    } catch (e) {
+      console.warn('[visibilitychange] IDB write failed.', e);
+    }
+
+    if (typeof storageCache !== 'undefined') storageCache.clear();
+  })();
 });

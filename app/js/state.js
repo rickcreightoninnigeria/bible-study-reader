@@ -49,31 +49,57 @@ window.menuOpen             = false;
 window.isNonChapterPage     = false;
 window.studyOnboardingSlides = [];
 
-// ── Storage Key helpers ───────────────────────────────────────────────────────
-// Returns the localStorage key for a given answer field.
-// Format: bsr_{studyId}_ch{N}_{type}_{index}
-//   e.g.  bsr_grow_in_christ_1_ch3_q_1-2
-//   type  – 'q' (question), 'r' (reflection), 'notes'
+// ── Storage key helpers ───────────────────────────────────────────────────────
+//
+// ARCHITECTURE NOTE (Option C migration)
+// ───────────────────────────────────────
+// Answer data is now stored in IndexedDB (via StudyIDB) rather than
+// localStorage. Each chapter's answers live in a single IDB record keyed by
+//   `${studyId}_ch${chapterNum}`
+// whose value is a plain object. The helpers below produce the *field names*
+// used inside that object.
+//
+// answerFieldKey(type, index)         – field name for a question / reflection / notes cell
+//   type  – 'q' (question answer), 'r' (reflection answer), 'notes' (chapter notes)
 //   index – '{sIdx}_{qIdx}' for questions, rIdx for reflections, 0 for notes
-// The 'bsr_' prefix namespaces all app keys so they can be bulk-deleted safely.
-function storageKey(chapterNum, type, index) {
-  const currentStudyId = window.activeStudyId;
-  if (!currentStudyId) {
-    console.warn('storageKey() called with no activeStudyId — falling back to "unknown". This should not happen; check bug #29.');
-    return `bsr_unknown_ch${chapterNum}_${type}_${index}`;
-  }
-  return `bsr_${currentStudyId}_ch${chapterNum}_${type}_${index}`;
+//   e.g.  answerFieldKey('q', '1_2')  → 'q_1_2'
+//         answerFieldKey('notes', 0)  → 'notes_0'
+//
+// likertFieldKey(elementId, stIdx)    – field name for a Likert statement answer
+//   e.g.  likertFieldKey('el_42', 0)  → 'likert_el_42_0'
+//
+// celebratedIDBKey(studyId, chapterNum) – standalone IDB key for the chapter-completion flag
+//   Stored as a separate answers-store entry (not inside the chapter record) so
+//   it cannot be overwritten by saveAnswers() read-modify-write cycles.
+//   → `${studyId}_celebrated_ch${chapterNum}`
+//
+// starFieldKey(elementId)             – field name for a starred-question flag
+//   → 'star_{elementId}'
+//
+// For callers that still need to address the IDB record itself (not a field
+// within it), use:
+//   chapterAnswersIDBKey(studyId, chapterNum)  → `${studyId}_ch${chapterNum}`
+//
+// ── New canonical field-key helpers ──────────────────────────────────────────
+
+function answerFieldKey(type, index) {
+  return `${type}_${index}`;
 }
 
-// Returns the localStorage key for a single Likert statement answer.
-// Format: bsr_{studyId}_ch{N}_likert_{elementId}_{stIdx}
-//   e.g.  bsr_grow_in_christ_1_ch2_likert_el_42_0
-// Keyed by elementId so the key is stable regardless of element position.
-function likertKey(chapterNum, elementId, stIdx) {
-  const currentStudyId = window.activeStudyId;
-  if (!currentStudyId) {
-    console.warn('likertKey() called with no activeStudyId — falling back to "unknown". This should not happen; check bug #29.');
-    return `bsr_unknown_ch${chapterNum}_likert_${elementId}_${stIdx}`;
-  }
-  return `bsr_${currentStudyId}_ch${chapterNum}_likert_${elementId}_${stIdx}`;
+function likertFieldKey(elementId, stIdx) {
+  return `likert_${elementId}_${stIdx}`;
 }
+
+function celebratedIDBKey(studyId, chapterNum) {
+  return `${studyId}_celebrated_ch${chapterNum}`;
+}
+
+function starFieldKey(elementId) {
+  return `star_${elementId}`;
+}
+
+// Returns the IDB answers-store key for a chapter's answer record.
+function chapterAnswersIDBKey(studyId, chapterNum) {
+  return `${studyId}_ch${chapterNum}`;
+}
+

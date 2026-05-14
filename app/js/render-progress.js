@@ -1,12 +1,13 @@
 // ── PROGRESS OVERVIEW ─────────────────────────────────────────────────────────
 // Renders the My Progress page, the Notes & Comments page, and their helpers.
-// Progress is calculated from localStorage answers on the fly — no cached state.
+// Progress is calculated from IDB answers on the fly — no cached state.
 //
 // Dependencies (all available as globals before this file loads):
 //   ICONS                          – icons.js
 //   appSettings                    – settings.js
-//   chapters, isNonChapterPage     – main.js STATE section
-//   storageKey                     – main.js STATE section
+//   chapters, isNonChapterPage     – state.js
+//   answerFieldKey, likertFieldKey – state.js
+//   StudyIDB                       – idb.js
 //   window.activeTabPage,
 //   window.activeStudyId           – state.js
 //   closeMenu, _resetNonChapterPageState,
@@ -50,23 +51,28 @@ function clearActivePathway() {
   renderProgressOverview();
 }
 
-// Counts answered questions for an arbitrary studyId by scanning localStorage
-// keys of the form bsr_{studyId}_ch*_q_* and bsr_{studyId}_ch*_r_*.
-// Does not require the study to be loaded — works entirely from storage keys.
-// Returns { answered, total } where total is the count of keys found (answered
-// + unanswered). This is a lightweight approximation: it counts storage slots
-// that exist, which means studies never opened will return { answered:0, total:0 }.
-function getStudyProgressForId(studyId) {
-  const prefix = `bsr_${studyId}_`;
+// Counts answered questions for an arbitrary studyId by reading answer keys
+// from IDB. Does not require the study to be loaded.
+// Returns a Promise resolving to { answered, total }.
+async function getStudyProgressForId(studyId) {
   let answered = 0;
   let total    = 0;
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (!k.startsWith(prefix)) continue;
-    // Count question, reflection, and Likert answer slots, not notes/settings
-    if (!/_(q|r|likert)_/.test(k)) continue;
-    total++;
-    if ((localStorage.getItem(k) || '').trim()) answered++;
+  try {
+    const keys = await StudyIDB.getAllStudyAnswerKeys(studyId);
+    // Keys are like `${studyId}_ch${N}` — load each chapter object and count
+    const chapterKeys = keys.filter(k => /^.+_ch\d+$/.test(k));
+    for (const key of chapterKeys) {
+      const chNum = parseInt(key.match(/_ch(\d+)$/)[1], 10);
+      const record = await StudyIDB.getChapterAnswers(studyId, chNum);
+      for (const [field, val] of Object.entries(record)) {
+        // Count question (q_), reflection (r_), and Likert (likert_) fields only
+        if (!/^(q_|r_|likert_)/.test(field)) continue;
+        total++;
+        if ((val || '').trim()) answered++;
+      }
+    }
+  } catch (e) {
+    console.warn('[getStudyProgressForId] IDB read failed.', e);
   }
   return { answered, total };
 }
@@ -83,16 +89,18 @@ function getStudyPositionInPathway(pathway, studyId) {
 // ── EXISTING HELPERS ──────────────────────────────────────────────────────────
 
 // Returns progress stats for a single chapter: total questions, answered count,
-// and percentage. Used by renderProgressOverview() and the menu checkmarks.
-function getChapterProgress(ch) {
+// and percentage. Reads from the pre-loaded chapterAnswers object passed in —
+// no IDB call needed here since renderProgressOverview loads answers before calling.
+// When called from getChapterProgressFromIDB (below), answers are loaded there.
+function _getChapterProgressFromRecord(ch, record) {
   let total    = 0;
   let answered = 0;
 
-  ch.sections.forEach(sec => {
-    sec.questions.forEach(q => {
+  (ch.sections || []).forEach(sec => {
+    (sec.questions || []).forEach(q => {
       total++;
-      const val = localStorage.getItem(storageKey(ch.chapterNumber, 'q', q.elementId)) || '';
-      if (val.trim()) answered++;
+      const val = (record[answerFieldKey('q', q.elementId)] || '').trim();
+      if (val) answered++;
     });
   });
 
@@ -103,24 +111,44 @@ function getChapterProgress(ch) {
     ch.reflection.forEach((r, rIdx) => {
       total++;
       const eid = reflEls[rIdx] ? reflEls[rIdx].elementId : null;
-      const val = eid ? (localStorage.getItem(storageKey(ch.chapterNumber, 'r', eid)) || '') : '';
-      if (val.trim()) answered++;
+      const val = eid ? ((record[answerFieldKey('r', eid)] || '').trim()) : '';
+      if (val) answered++;
     });
   }
 
-  // Count each Likert statement individually — a scale with N statements
-  // contributes N items to total, one per answered statement to answered.
+  // Count each Likert statement individually.
+  // Both standard (el.statements) and bipolar (el.statementPairs) subtypes use
+  // the same likertFieldKey(elementId, stIdx) storage format, so both are counted
+  // the same way — the only difference is which array determines the row count.
   (ch.elements || [])
     .filter(e => e.type === 'likertScale' && !e.repeatElement)
     .forEach(el => {
-      (el.statements || []).forEach((_, stIdx) => {
+      const rows = el.subtype === 'bipolar'
+        ? (el.statementPairs || [])
+        : (el.statements    || []);
+      rows.forEach((_, stIdx) => {
         total++;
-        const val = localStorage.getItem(likertKey(ch.chapterNumber, el.elementId, stIdx)) || '';
-        if (val.trim()) answered++;
+        const val = (record[likertFieldKey(el.elementId, stIdx)] || '').trim();
+        if (val) answered++;
       });
     });
 
   return { total, answered, pct: total > 0 ? Math.round((answered / total) * 100) : 0 };
+}
+
+// Async wrapper: loads the chapter record from IDB, then delegates to
+// _getChapterProgressFromRecord. Used by renderProgressOverview when it needs
+// to compute stats for all chapters in one pass.
+async function getChapterProgress(ch) {
+  const studyId = window.activeStudyId;
+  if (!studyId) return { total: 0, answered: 0, pct: 0 };
+  let record = {};
+  try {
+    record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+  } catch (e) {
+    console.warn('[getChapterProgress] IDB read failed.', e);
+  }
+  return _getChapterProgressFromRecord(ch, record);
 }
 
 // Generates an SVG circular progress ring as an HTML string.
@@ -173,6 +201,8 @@ function _progressTabBarHtml(activeTab) {
 }
 
 // Switches between the two progress tabs without re-rendering the whole page.
+// getStudyProgressForId is now async, so the pathway answer count is computed
+// asynchronously and written to the DOM after it resolves.
 window.switchProgressTab = function(tab) {
   document.querySelectorAll('.progress-tab').forEach(btn => {
     btn.classList.toggle('active', btn.textContent.toLowerCase().includes(tab));
@@ -194,39 +224,40 @@ window.switchProgressTab = function(tab) {
     eyebrow.textContent = window.titlePageData?.title ?? t('progress_no_study_active');
     eyebrow.style.cursor = '';
     title.textContent   = t('progress_header_title_study');
-    // Restore the answer count text (stored on the element when first rendered)
     count.textContent   = count.dataset.studyText || '';
   } else {
-    // Pathway tab
+    // Pathway tab — answer count requires async IDB reads; show placeholder first
     const pathway = getActivePathway();
     if (!pathway) return;
     eyebrow.textContent = `${pathway._l1Title}: ${pathway.titleLevel2}`;
     title.textContent = t('progress_header_title_pathway');
-    // Compute pathway answer count
-    const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
-    let pAnswered = 0, pTotal = 0;
-    (pathway.studyTitles || []).forEach(s => {
-      const { answered, total } = getStudyProgressForId(s.studyId);
-      pAnswered += answered; pTotal += total;
-    });
-    count.textContent = pTotal === 0
-      ? t('progress_count_no_answers')
-      : pAnswered === pTotal
-        ? t('progress_count_pathway_all_done')
-        : t('progress_count_pathway_partial', { answered: pAnswered, total: pTotal });
+    count.textContent = '…';
+
+    (async () => {
+      let pAnswered = 0, pTotal = 0;
+      for (const s of (pathway.studyTitles || [])) {
+        const { answered, total } = await getStudyProgressForId(s.studyId);
+        pAnswered += answered; pTotal += total;
+      }
+      count.textContent = pTotal === 0
+        ? t('progress_count_no_answers')
+        : pAnswered === pTotal
+          ? t('progress_count_pathway_all_done')
+          : t('progress_count_pathway_partial', { answered: pAnswered, total: pTotal });
+    })();
   }
 };
 
 
 // ── ACTIVE STUDY TAB ──────────────────────────────────────────────────────────
 
-// Builds the HTML for the Active Study panel (the existing progress view).
-// pathway is the resolved pathway object or null.
-function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overallPct, pathway) {
+// Builds the HTML for the Active Study panel.
+// chapterStats entries now carry a pre-loaded `record` for starred question lookup.
+async function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overallPct, pathway) {
   const ringColor = overallPct === 100 ? 'var(--success)' : 'var(--accent)';
   const bgColor   = 'var(--border)';
 
-  // Pathway position pill — shown when the active study is part of the active pathway
+  // Pathway position pill
   let pathwayPill = '';
   if (pathway) {
     const pos   = getStudyPositionInPathway(pathway, window.activeStudyId);
@@ -240,12 +271,14 @@ function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overa
     }
   }
 
-  const chapterRows = chapterStats.map(({ ch, total, answered, pct }) => {
+  // Build chapter rows — getStarredQuestions is async, so we await per chapter.
+  const chapterRowsArr = await Promise.all(chapterStats.map(async ({ ch, total, answered, pct, record }) => {
     const chRingColor = pct === 100 ? 'var(--success)' : pct > 0 ? 'var(--accent)' : 'var(--border)';
     const chBgColor   = 'var(--border)';
     const isDone      = pct === 100;
 
-    const starredQs   = getStarredQuestions(ch);
+    // Pass the pre-loaded record to getStarredQuestions to avoid a second IDB read.
+    const starredQs   = await getStarredQuestions(ch, record);
     const starredHtml = starredQs.length > 0 ? `
       <div class="prog-star-section">
         <div onclick="toggleProgressStarred(${ch.chapterNumber})" class="prog-star-toggle">
@@ -278,7 +311,9 @@ function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overa
         </div>
         ${starredHtml}
       </div>`;
-  }).join('');
+  }));
+
+  const chapterRows = chapterRowsArr.join('');
 
   return `
     ${pathwayPill}
@@ -310,17 +345,17 @@ function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overa
 // ── ACTIVE PATHWAY TAB ────────────────────────────────────────────────────────
 
 // Builds the HTML for the Active Pathway panel.
-function _buildPathwayPanelHtml(pathway) {
+// getStudyProgressForId is now async, so the whole function is async.
+async function _buildPathwayPanelHtml(pathway) {
   const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
 
-  // Overall pathway stats
   let pathwayAnswered = 0;
   let pathwayTotal    = 0;
 
-  const studyRows = (pathway.studyTitles || []).map((s, idx) => {
+  const studyRowsArr = await Promise.all((pathway.studyTitles || []).map(async (s, idx) => {
     const isActive   = s.studyId === window.activeStudyId;
     const inRegistry = registry.includes(s.studyId);
-    const { answered, total } = getStudyProgressForId(s.studyId);
+    const { answered, total } = await getStudyProgressForId(s.studyId);
     pathwayAnswered += answered;
     pathwayTotal    += total;
 
@@ -329,14 +364,12 @@ function _buildPathwayPanelHtml(pathway) {
     const bgColor    = 'var(--border)';
     const isDone     = pct === 100;
 
-    // Status label
     let statusLabel;
     if (isDone)            statusLabel = `<span class="prog-pathway-status done">${t('progress_status_done')}</span>`;
     else if (isActive)     statusLabel = `<span class="prog-pathway-status active-study">${t('progress_status_active')}</span>`;
     else if (answered > 0) statusLabel = `<span class="prog-pathway-status in-progress">${answered}/${total}</span>`;
     else                   statusLabel = `<span class="prog-pathway-status not-started">${t('progress_status_not_started')}</span>`;
 
-    // Open/activate button — deliberate action, separated visually from row tap
     let openBtn;
     if (isActive) {
       openBtn = `<button class="prog-pathway-open-btn current" title="${t('progress_btn_current_study_title')}" disabled>★</button>`;
@@ -348,8 +381,14 @@ function _buildPathwayPanelHtml(pathway) {
         onclick="event.stopPropagation(); Router.navigate({ page: 'library' })">↗</button>`;
     }
 
-    // Expandable per-study detail row (toggled by tapping the main row)
     const detailId = `progPathStudy_${idx}`;
+    const detailHtml = total === 0
+      ? `<div class="prog-pathway-detail-empty">
+          ${inRegistry
+            ? t('progress_detail_open_to_start')
+            : t('progress_detail_not_installed')}
+         </div>`
+      : await _buildPathwayStudyDetail(s.studyId, answered, total);
 
     return `
       <div class="prog-pathway-study-item ${isActive ? 'is-active-study' : ''}">
@@ -369,18 +408,12 @@ function _buildPathwayPanelHtml(pathway) {
           </div>
         </div>
         <div class="prog-pathway-study-detail" id="${detailId}">
-          ${total === 0
-            ? `<div class="prog-pathway-detail-empty">
-                ${inRegistry
-                  ? t('progress_detail_open_to_start')
-                  : t('progress_detail_not_installed')}
-               </div>`
-            : _buildPathwayStudyDetail(s.studyId, answered, total)
-          }
+          ${detailHtml}
         </div>
       </div>`;
-  }).join('');
+  }));
 
+  const studyRows  = studyRowsArr.join('');
   const pathwayPct = pathwayTotal > 0 ? Math.round((pathwayAnswered / pathwayTotal) * 100) : 0;
   const ringColor  = pathwayPct === 100 ? 'var(--success)' : 'var(--accent)';
 
@@ -411,34 +444,39 @@ function _buildPathwayPanelHtml(pathway) {
     </div>`;
 }
 
-// Builds the detail rows shown when a pathway study is expanded.
-// Scans localStorage for chapter keys belonging to studyId.
-function _buildPathwayStudyDetail(studyId, answered, total) {
-  const prefix  = `bsr_${studyId}_`;
-  const chNums  = new Set();
-
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (!k.startsWith(prefix)) continue;
-    if (!/_(q|r)_/.test(k)) continue;
-    const match = k.match(/_ch(\d+)_/);
-    if (match) chNums.add(Number(match[1]));
+// Builds the per-chapter detail rows shown when a pathway study is expanded.
+// Reads chapter answer records from IDB for the given studyId.
+async function _buildPathwayStudyDetail(studyId, answered, total) {
+  let keys = [];
+  try {
+    keys = await StudyIDB.getAllStudyAnswerKeys(studyId);
+  } catch (e) {
+    console.warn('[_buildPathwayStudyDetail] IDB read failed.', e);
   }
+
+  // Extract chapter numbers from keys like `${studyId}_ch${N}`
+  const chNums = new Set();
+  keys.forEach(k => {
+    const match = k.match(/_ch(\d+)$/);
+    if (match) chNums.add(Number(match[1]));
+  });
 
   if (chNums.size === 0) {
     return `<div class="prog-pathway-detail-empty">${t('progress_detail_no_answers')}</div>`;
   }
 
-  const rows = [...chNums].sort((a, b) => a - b).map(chNum => {
-    const chPrefix   = `${prefix}ch${chNum}_`;
-    let chTotal      = 0;
-    let chAnswered   = 0;
-    for (let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i);
-      if (!k.startsWith(chPrefix)) continue;
-      if (!/_(q|r)_/.test(k)) continue;
-      chTotal++;
-      if ((localStorage.getItem(k) || '').trim()) chAnswered++;
+  const rowsArr = await Promise.all([...chNums].sort((a, b) => a - b).map(async chNum => {
+    let chTotal    = 0;
+    let chAnswered = 0;
+    try {
+      const record = await StudyIDB.getChapterAnswers(studyId, chNum);
+      for (const [field, val] of Object.entries(record)) {
+        if (!/^(q_|r_|likert_)/.test(field)) continue;
+        chTotal++;
+        if ((val || '').trim()) chAnswered++;
+      }
+    } catch (e) {
+      console.warn(`[_buildPathwayStudyDetail] IDB read failed for ch${chNum}.`, e);
     }
     const pct       = chTotal > 0 ? Math.round((chAnswered / chTotal) * 100) : 0;
     const ringColor = pct === 100 ? 'var(--success)' : pct > 0 ? 'var(--accent)' : 'var(--border)';
@@ -454,9 +492,9 @@ function _buildPathwayStudyDetail(studyId, answered, total) {
           ${isDone ? '✓' : chAnswered === 0 ? '—' : `${chAnswered}/${chTotal}`}
         </div>
       </div>`;
-  }).join('');
+  }));
 
-  return `<div class="prog-pathway-detail-list">${rows}</div>`;
+  return `<div class="prog-pathway-detail-list">${rowsArr.join('')}</div>`;
 }
 
 // Toggles the expand/collapse of a single study's detail block in the pathway tab.
@@ -472,7 +510,9 @@ window.toggleProgPathwayStudy = function(detailId) {
 // ── MAIN RENDER ───────────────────────────────────────────────────────────────
 
 // Renders the Progress Overview page into #mainContent.
-function renderProgressOverview() {
+// Now async because getChapterProgress, _buildStudyPanelHtml, and
+// _buildPathwayPanelHtml all need to await IDB reads.
+async function renderProgressOverview() {
   closeMenu();
   _resetNonChapterPageState();
   isNonChapterPage = true;
@@ -491,27 +531,33 @@ function renderProgressOverview() {
   document.getElementById('progressBar').style.width = '0%';
   document.getElementById('header-title').innerText = t('progress_header_title_study');
 
-  // Calculate overall totals
+  // Load all chapter answer records from IDB in parallel — one per chapter.
+  // Each record is stored alongside its stats so _buildStudyPanelHtml can
+  // pass it to getStarredQuestions without a second round of IDB reads.
+  const studyId = window.activeStudyId;
+  const chapterStats = await Promise.all(chapters.map(async ch => {
+    let record = {};
+    try {
+      record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+    } catch (e) {
+      console.warn(`[renderProgressOverview] IDB read failed for ch${ch.chapterNumber}.`, e);
+    }
+    const stats = _getChapterProgressFromRecord(ch, record);
+    return { ch, ...stats, record };
+  }));
+
   let overallTotal    = 0;
   let overallAnswered = 0;
-  const chapterStats  = chapters.map(ch => {
-    const stats = getChapterProgress(ch);
-    overallTotal    += stats.total;
-    overallAnswered += stats.answered;
-    return { ch, ...stats };
-  });
-  const overallPct = overallTotal > 0
-    ? Math.round((overallAnswered / overallTotal) * 100) : 0;
+  chapterStats.forEach(s => { overallTotal += s.total; overallAnswered += s.answered; });
+  const overallPct = overallTotal > 0 ? Math.round((overallAnswered / overallTotal) * 100) : 0;
 
   const pathway       = getActivePathway();
   const hasPathway    = !!pathway;
-  // Restore the last active tab, defaulting to 'study'
   const activeTab     = window._progressActiveTab || 'study';
 
-  const studyPanelHtml   = _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overallPct, pathway);
-  const pathwayPanelHtml = hasPathway ? _buildPathwayPanelHtml(pathway) : '';
+  const studyPanelHtml   = await _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal, overallPct, pathway);
+  const pathwayPanelHtml = hasPathway ? await _buildPathwayPanelHtml(pathway) : '';
 
-  // Pre-compute the answer count string (also stored in data-study-text for tab switching)
   const answerCountText = overallAnswered === 0
     ? t('progress_count_no_answers_start')
     : overallPct === 100
@@ -551,7 +597,6 @@ function renderProgressOverview() {
     </div>`;
 
   content.innerHTML = html;
-  // Sync header and theme to whichever tab is active
   switchProgressTab(activeTab);
   window.scrollTo(0, 0);
 }
@@ -560,7 +605,8 @@ function renderProgressOverview() {
 // ── NOTES PAGE ────────────────────────────────────────────────────────────────
 
 // Renders the optional global Notes & Comments page.
-function renderNotesPage() {
+// global_notes is now stored in IDB under the key `${studyId}_global_notes`.
+async function renderNotesPage() {
   closeMenu();
   _resetNonChapterPageState();
   isNonChapterPage = true;
@@ -572,7 +618,15 @@ function renderNotesPage() {
   document.getElementById('header-title').innerText = t('progress_notes_page_title');
 
   const currentStudyId = window.activeStudyId;
-  const savedText      = escapeHtml(localStorage.getItem(`bsr_${currentStudyId}_global_notes`) || '');
+
+  // Load saved global notes from IDB.
+  let savedText = '';
+  try {
+    const raw = await StudyIDB.getAnswerRaw(`${currentStudyId}_global_notes`);
+    savedText = escapeHtml(raw || '');
+  } catch (e) {
+    console.warn('[renderNotesPage] IDB read failed for global_notes.', e);
+  }
 
   content.innerHTML = `
     <div class="howto-page">
@@ -595,7 +649,7 @@ function renderNotesPage() {
           id="globalNotesField"
           class="answer-field"
           placeholder="${t('progress_notes_placeholder')}"
-          oninput="autoResize(this); safeSetItem(\`bsr_${currentStudyId}_global_notes\`, this.value); updateNotesMenuIndicator(!!this.value);"
+          oninput="autoResize(this); _saveGlobalNotes(this.value, '${currentStudyId}'); updateNotesMenuIndicator(!!this.value);"
         >${savedText}</textarea>
       </div>
       <div class="notes-autosave-label">${t('progress_notes_autosave_label')}</div>
@@ -614,6 +668,22 @@ function renderNotesPage() {
   if (field) autoResize(field);
 }
 
+// Debounce timer for _saveGlobalNotes — prevents an IDB write on every
+// keystroke. Mirrors the pattern used for updateProgress in save.js.
+let _saveGlobalNotesTimer = null;
+
+// Saves the global notes value to IDB after a short debounce. Fire-and-forget
+// — called from the oninput handler on the globalNotesField textarea.
+// The debounce does not affect updateNotesMenuIndicator(), which is called
+// directly in the oninput attribute and updates instantly on every keystroke.
+function _saveGlobalNotes(value, studyId) {
+  clearTimeout(_saveGlobalNotesTimer);
+  _saveGlobalNotesTimer = setTimeout(() => {
+    StudyIDB.setAnswerRaw(`${studyId}_global_notes`, value)
+      .catch(e => console.warn('[_saveGlobalNotes] IDB write failed.', e));
+  }, 400);
+}
+
 // Opens the verse modal with "About this page" guidance for the Notes page.
 function openNotesPageInfo() {
   const modalRef = document.getElementById('verseModalRef');
@@ -626,18 +696,12 @@ function openNotesPageInfo() {
 
 // ── RENDER MENU ──────────────────────────────────────────────────────────────
 // Rebuilds the chapter menu list with current progress checkmarks.
-// A ✓ checkmark is shown if the first question of a chapter has a saved answer.
-// NOTE: this check only tests question 0_0; a chapter where Q1 is unanswered
-// but others are answered will not show a checkmark. Consider using getChapterProgress().
+// A ✓ checkmark is shown if any question or reflection answer exists for the chapter.
 //
-// Multilingual studies: the menu heading shortTitle and each chapter title are
-// resolved for the active study language. The Contents overlay carries no lang
-// bar — it silently follows window._activeStudyLang.
+// Now async because chapter answer presence is read from IDB.
+// Fire-and-forget from save.js — callers do not await.
 
-// Toggles the ✓ checkmark on the Notes item in the chapter menu without
-// rebuilding the entire menu. Called from the globalNotesField oninput handler
-// in render-progress.js as a cheap alternative to renderMenu().
-// Guards against the item being absent (showPageNotes off, or menu not open).
+// Toggles the ✓ checkmark on the Notes item without rebuilding the entire menu.
 function updateNotesMenuIndicator(hasContent) {
   const item = document.getElementById('menuItemNotes');
   if (!item) return;
@@ -652,16 +716,12 @@ function updateNotesMenuIndicator(hasContent) {
   }
 }
 
-function renderMenu() {
+async function renderMenu() {
   const list = document.getElementById('menuList');
   if (!list) return;
 
   const currentStudyId = window.activeStudyId;
 
-  // Guard: if no study is loaded (e.g. after deleting the active study),
-  // render a minimal menu with only a Library link and bail out.
-  // This prevents stale chapter items from persisting in the menu after
-  // the globals have been cleared by deleteStudy().
   if (!currentStudyId || !window.chapters?.length) {
     const heading = document.getElementById('menuHeading');
     if (heading) heading.textContent = t('main_menu_heading');
@@ -673,14 +733,10 @@ function renderMenu() {
     return;
   }
 
-  // Resolve active language for multilingual title/chapter display.
-  // For mono-lingual studies langMap is {} and resolveMetaField falls through
-  // to the unnumbered field, so nothing changes for existing studies.
   const availableLangs = detectAvailableLangs();
   const activeLang     = getActiveLang(availableLangs);
   const langMap        = buildLangMap(window.studyMetadata || {});
 
-  // 1. Dynamic heading: "Chapters of [shortTitle]"
   const heading = document.getElementById('menuHeading');
   if (heading) {
     const meta       = window.titlePageData;
@@ -696,14 +752,16 @@ function renderMenu() {
       <span class="chapter-name">${t('main_menu_title_page')}</span>
     </div>`;
 
-  // 2. My Progress and How to Use removed from Contents — they live in the top bar
+  // Load all chapter answer records in parallel to check for checkmarks.
+  const chapterRecords = await Promise.all(
+    chapters.map(ch => StudyIDB.getChapterAnswers(currentStudyId, ch.chapterNumber).catch(() => ({})))
+  );
 
   html += chapters.map((ch, i) => {
-    const hasAnswers = Object.keys(localStorage).some(key =>
-      key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_q`) || key.startsWith(`bsr_${currentStudyId}_ch${ch.chapterNumber}_r`)
+    const record     = chapterRecords[i] || {};
+    const hasAnswers = Object.entries(record).some(([field, val]) =>
+      (field.startsWith('q_') || field.startsWith('r_')) && (val || '').trim()
     );
-    // Resolve the chapter title for the active language.
-    // chapterTitle1/2/3 for multilingual, chapterTitle for mono-lingual.
     const chTitle = (activeLang ? resolveMetaField(ch, 'chapterTitle', activeLang, langMap) : '') || ch.chapterTitle || '';
     return `
       <div class="chapter-item" onclick="Router.navigate({ page: 'chapter', idx: ${i} })">
@@ -714,7 +772,12 @@ function renderMenu() {
   }).join('');
 
   if (appSettings.showPageNotes) {
-    const hasNotesContent = !!localStorage.getItem(`bsr_${currentStudyId}_global_notes`);
+    // Check IDB for global notes presence.
+    let hasNotesContent = false;
+    try {
+      const raw = await StudyIDB.getAnswerRaw(`${currentStudyId}_global_notes`);
+      hasNotesContent = !!(raw && raw.trim());
+    } catch (e) { /* no notes saved yet */ }
     html += `
     <div class="chapter-item" id="menuItemNotes" onclick="Router.navigate({ page: 'notes' })">
       <span class="chapter-num">✎</span>
@@ -757,6 +820,7 @@ function renderMenu() {
 // Updates the thin gold progress bar in the top nav to reflect what percentage
 // of the current chapter's answer fields have non-empty content.
 // Called on every keystroke (via the document 'input' listener) and after saving.
+// Reads from the DOM (not IDB) so it stays synchronous and lightweight.
 
 function updateProgress() {
   if (isNonChapterPage) return;
@@ -770,9 +834,6 @@ function updateProgress() {
   let total  = fields.length;
 
   // ── Likert radio groups ───────────────────────────────────────────────────
-  // Each statement is a separate named group: likert_{chNum}_{eid}_{stIdx}
-  // One answered statement = one checked radio in that name group.
-  // Collect unique group names from all .likert-radio inputs in the page.
   const likertRadios = document.querySelectorAll('.likert-radio');
   if (likertRadios.length) {
     const groups = new Set(Array.from(likertRadios).map(r => r.name));
@@ -787,6 +848,7 @@ function updateProgress() {
   const pct = Math.round((filled / total) * 100);
   document.getElementById('progressBar').style.width = pct + '%';
 
-  // Trigger celebration toast on first completion of this chapter
+  // Trigger celebration toast on first completion of this chapter.
+  // showCelebrationToast is async (IDB read/write) — fire-and-forget.
   if (pct === 100) showCelebrationToast(ch);
 }

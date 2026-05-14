@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NIV"
@@ -49,6 +49,18 @@
       "elements"     :[
         {
           "elementId"    :"ch01-el01",
+          "type"         :"image",
+          "alt"          :"‘Storm on the sea’ (Bonaventura Peeters)",
+          "fallback"     :"⛵",
+          "align"        :"center",
+          "width"        :"93",
+          "caption"      :"‘Storm on the sea’ (Bonaventura Peeters)",
+          "format"       :"plainText",
+          "provenance"   :"Bonaventura Peeters the Elder, Public domain, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Bonaventura_Peeters_-_Storm_on_the_Sea_-_WGA17133.jpg (accessed 12/05/2026)",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el02",
           "type"         :"text",
           "subtype"      :"intro",
           "format"       :"HTML",
@@ -56,7 +68,19 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el02",
+          "elementId"    :"ch01-el03",
+          "type"         :"image",
+          "alt"          :"Map of Jonah’s world",
+          "fallback"     :"🗺️",
+          "align"        :"center",
+          "width"        :"93",
+          "caption"      :"Jonah’s world",
+          "format"       :"plainText",
+          "provenance"   :"public domain",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el04",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -67,7 +91,19 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el03",
+          "elementId"    :"ch01-el05",
+          "type"         :"image",
+          "alt"          :"Map of The Assyrian Empire (at its biggest)",
+          "fallback"     :"🗺️",
+          "align"        :"center",
+          "width"        :"93",
+          "caption"      :"The Assyrian Empire (at its biggest)",
+          "format"       :"plainText",
+          "provenance"   :"public domain",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el06",
           "type"         :"callout",
           "subtype"      :"general",
           "format"       :"HTML",
@@ -79,7 +115,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el04",
+          "elementId"    :"ch01-el07",
           "type"         :"text",
           "subtype"      :"bridge",
           "format"       :"HTML",
@@ -87,7 +123,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"        :"ch01-el05",
+          "elementId"        :"ch01-el08",
           "type"             :"question",
           "subtype"          :"header",
           "header"           :"As we get started…",
@@ -99,7 +135,7 @@
           "bottomPadding"    :"normal"
         },
         {
-          "elementId"    :"ch01-el06",
+          "elementId"    :"ch01-el09",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -108,7 +144,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el07",
+          "elementId"    :"ch01-el10",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:1-3",
@@ -118,7 +154,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el08",
+          "elementId"        :"ch01-el11",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -139,11 +175,23 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el09",
-          "repeatElement":"ch01-el07"
+          "elementId"    :"ch01-el12",
+          "type"         :"image",
+          "alt"          :"Image of Assyrian war crimes committed against prisoners",
+          "fallback"     :"🗡️",
+          "align"        :"center",
+          "width"        :"93",
+          "caption"      :"Assyrian war crimes",
+          "format"       :"plainText",
+          "provenance"   :"British Museum",
+          "bottomPadding":"normal"
         },
         {
-          "elementId"        :"ch01-el10",
+          "elementId"    :"ch01-el13",
+          "repeatElement":"ch01-el10"
+        },
+        {
+          "elementId"        :"ch01-el14",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -164,7 +212,19 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el11",
+          "elementId"    :"ch01-el15",
+          "type"         :"image",
+          "alt"          :"Map of the direction that Jonah runs",
+          "fallback"     :"🗺️",
+          "align"        :"center",
+          "width"        :"93",
+          "caption"      :"Jonah runs",
+          "format"       :"plainText",
+          "provenance"   :"public domain",
+          "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch01-el16",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -173,7 +233,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el12",
+          "elementId"    :"ch01-el17",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:4-10",
@@ -183,7 +243,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el13",
+          "elementId"        :"ch01-el18",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -204,7 +264,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el14",
+          "elementId"    :"ch01-el19",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -214,7 +274,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el15",
+          "elementId"    :"ch01-el20",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -224,11 +284,11 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el16",
-          "repeatElement":"ch01-el12"
+          "elementId"    :"ch01-el21",
+          "repeatElement":"ch01-el17"
         },
         {
-          "elementId"        :"ch01-el17",
+          "elementId"        :"ch01-el22",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -249,7 +309,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el18",
+          "elementId"    :"ch01-el23",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -259,7 +319,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el19",
+          "elementId"    :"ch01-el24",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -268,7 +328,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el20",
+          "elementId"    :"ch01-el25",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:11-16",
@@ -278,7 +338,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el21",
+          "elementId"        :"ch01-el26",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -299,11 +359,11 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el22",
-          "repeatElement":"ch01-el20"
+          "elementId"    :"ch01-el27",
+          "repeatElement":"ch01-el25"
         },
         {
-          "elementId"        :"ch01-el23",
+          "elementId"        :"ch01-el28",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -324,7 +384,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el24",
+          "elementId"    :"ch01-el29",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -334,7 +394,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el25",
+          "elementId"    :"ch01-el30",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -344,7 +404,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el26",
+          "elementId"    :"ch01-el31",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -353,7 +413,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el27",
+          "elementId"    :"ch01-el32",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:17",
@@ -363,7 +423,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el28",
+          "elementId"        :"ch01-el33",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -384,11 +444,11 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el29",
-          "repeatElement":"ch01-el27"
+          "elementId"    :"ch01-el34",
+          "repeatElement":"ch01-el32"
         },
         {
-          "elementId"        :"ch01-el30",
+          "elementId"        :"ch01-el35",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -409,7 +469,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el31",
+          "elementId"    :"ch01-el36",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -418,7 +478,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el32",
+          "elementId"    :"ch01-el37",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:1-3",
@@ -428,7 +488,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el33",
+          "elementId"        :"ch01-el38",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -449,7 +509,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el34",
+          "elementId"    :"ch01-el39",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:4-6",
@@ -459,7 +519,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el35",
+          "elementId"        :"ch01-el40",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -480,7 +540,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el36",
+          "elementId"    :"ch01-el41",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:15-17",
@@ -490,7 +550,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el37",
+          "elementId"        :"ch01-el42",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",

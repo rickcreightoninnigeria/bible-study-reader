@@ -11,7 +11,7 @@
 //   ICONS         – icons.js
 //   appSettings   – settings.js
 //   ttsAvailable, ttsSpeak, ttsStop – tts.js
-//   likertKey     – main.js (storageKey helpers)
+//   likertFieldKey – state.js (IDB field-key helpers)
 //   verseData, chapters, currentChapter – window globals / main.js
 //   resolveText, buildLangMap – render-elements.js (language resolution)
 //   window.studyMetadata      – study-loader.js (language slot map source)
@@ -120,11 +120,15 @@ function qaCalloutHtml(id) {
 }
 
 // Renders a Likert scale element into an HTML string.
-// el    – the element object from the study JSON (type: 'likertScale')
-// chNum – the chapter number (for localStorage key scoping)
+// el             – the element object from the study JSON (type: 'likertScale')
+// chNum          – the chapter number (used to scope radio input name attributes)
+// chapterAnswers – optional pre-loaded IDB answer record for this chapter.
+//                  When provided, saved values are read from it directly,
+//                  avoiding a redundant IDB fetch. Pass null (or omit) to render
+//                  with no pre-selected values.
 //
 // Expected el properties (standard):
-//   elementId   – stable ID for localStorage keys
+//   elementId   – stable ID used for IDB field keys
 //   scaleNumber – number of options (determines how many radio buttons per row)
 //   scale       – array of label strings, length === scaleNumber
 //   statements  – array of statement strings
@@ -133,7 +137,7 @@ function qaCalloutHtml(id) {
 //
 // Additional properties for bipolar (subtype: 'bipolar'):
 //   statementPairs – array of { left, right } objects instead of statements
-function renderLikertScale(el, chNum) {
+function renderLikertScale(el, chNum, chapterAnswers = null) {
   const isBipolar  = el.subtype === 'bipolar';
   const n          = el.scaleNumber || (el.scale ? el.scale.length : 5);
   const scale      = el.scale || [];
@@ -146,18 +150,18 @@ function renderLikertScale(el, chNum) {
 
   // Build radio buttons for a given row index — shared by both subtypes
   function buildRadios(stIdx) {
-    const savedVal = localStorage.getItem(likertKey(chNum, eid, stIdx));
+    const fieldKey = likertFieldKey(eid, stIdx);
+    const savedVal = chapterAnswers ? (chapterAnswers[fieldKey] || '') : '';
     return Array.from({ length: n }, (_, optIdx) => {
-      const val    = optIdx + 1;
+      const val     = optIdx + 1;
       const checked = savedVal === String(val) ? 'checked' : '';
-      const keyStr  = likertKey(chNum, eid, stIdx);
       return `<input
         type="radio"
         class="likert-radio"
         name="likert_${chNum}_${eid}_${stIdx}"
         value="${val}"
         ${checked}
-        onchange="safeSetItem('${keyStr}', this.value); updateProgress();"
+        onchange="saveLikertAnswer('${eid}', ${stIdx}, this.value)"
       />`;
     }).join('');
   }
@@ -549,7 +553,7 @@ function openFootnoteModal(title, bodyHtml) {
 //   beforeprint — for each .likert-card in the DOM, build a sibling
 //                 .likert-print-summary and insert it immediately after.
 //                 Reads the selected radio value from the live DOM (already
-//                 reflects localStorage via the checked attribute set by
+//                 reflects the IDB-loaded checked attribute set by
 //                 renderLikertScale) and maps it to the scale label via the
 //                 data-scale attribute on .likert-info-btn.
 //   afterprint  — remove all injected nodes so the DOM is clean for screen use.

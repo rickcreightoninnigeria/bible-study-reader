@@ -3,12 +3,15 @@
 // text reports, generating print-ready HTML documents, and dispatching to
 // the Android share/print bridge or Web Share API.
 //
-// Swipe, scroll, and visibilitychange listeners have moved to gestures.js.
+// All answer data is now read from IndexedDB via StudyIDB. Functions that need
+// answers from multiple chapters pre-load all records in parallel before
+// building output, then read synchronously from those objects.
 //
 // Dependencies (all available as globals before this file loads):
 //   appSettings                    – settings.js
 //   chapters, currentChapter       – state.js
-//   storageKey                     – state.js
+//   answerFieldKey, likertFieldKey – state.js
+//   StudyIDB                       – idb.js
 //   window.activeStudyId           – state.js
 //   window.titlePageData           – set by study-loader.js
 //   copyToClipboard                – utils.js
@@ -20,15 +23,14 @@
 
 // Compiles the current chapter's questions and answers into a formatted text
 // report and shares it via the native Web Share API, Android bridge, or clipboard.
-// Bold markers (*text*) are applied when shareFormat is 'formatted' (WhatsApp-style),
-// and omitted for 'plain' (email). Includes reflection answers and notes if present.
-// Clipboard fallback uses copyToClipboard() → navigator.clipboard.writeText()
-// with execCommand as a last resort via fallbackCopy().
-function shareAnswers() {
-  const ch   = chapters[currentChapter];
-  const meta = window.titlePageData || {};
-  const fmt  = appSettings.shareFormat === 'plain';
-  const bold = (s) => fmt ? s : `*${s}*`;
+// Question and reflection answers are read from the DOM (already rendered).
+// Notes are read from IDB since they are not a standard .answer-field.
+async function shareAnswers() {
+  const ch      = chapters[currentChapter];
+  const studyId = window.activeStudyId;
+  const meta    = window.titlePageData || {};
+  const fmt     = appSettings.shareFormat === 'plain';
+  const bold    = (s) => fmt ? s : `*${s}*`;
 
   let report = bold(`${meta.title || t('shareprint_default_study_title')}`) + '\n';
   report += bold(t('shareprint_answers_header', { title: ch.chapterTitle, number: ch.chapterNumber })) + '\n';
@@ -59,13 +61,18 @@ function shareAnswers() {
     });
   }
 
-  // Notes — appended to the share report only if the field has content
-  const notesKey = storageKey(ch.chapterNumber, 'notes', 0);
-  const notesVal = localStorage.getItem(notesKey) || '';
-  if (notesVal.trim()) {
-    report += bold(t('shareprint_notes_heading')) + '\n';
-    report += `------------------------------------------\n`;
-    report += notesVal.trim() + '\n\n';
+  // Notes — read from IDB since the notes field is not a standard answer-field
+  // in the DOM for share purposes (it may not be visible at share time).
+  try {
+    const record  = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+    const notesVal = (record[answerFieldKey('notes', 0)] || '').trim();
+    if (notesVal) {
+      report += bold(t('shareprint_notes_heading')) + '\n';
+      report += `------------------------------------------\n`;
+      report += notesVal + '\n\n';
+    }
+  } catch (e) {
+    console.warn('[shareAnswers] IDB read failed for notes.', e);
   }
 
   if (window.Android && window.Android.share) {
@@ -82,12 +89,22 @@ function shareAnswers() {
 
 // Compiles answered questions from all chapters of the current study into a
 // single export document and shares/copies it. Chapters with no answers are
-// silently skipped. If no answers exist at all, shows a friendly "No answers
-// yet" dialog instead of sharing an empty document. Adds a datestamped footer.
-function exportStudyAnswers() {
-  const meta = window.titlePageData || {};
-  const fmt  = appSettings.shareFormat === 'plain';
-  const bold = (s) => fmt ? s : `*${s}*`;
+// silently skipped. Pre-loads all chapter answer records from IDB in parallel
+// before building the report.
+async function exportStudyAnswers() {
+  const studyId = window.activeStudyId;
+  const meta    = window.titlePageData || {};
+  const fmt     = appSettings.shareFormat === 'plain';
+  const bold    = (s) => fmt ? s : `*${s}*`;
+
+  // Pre-load all chapter records in parallel.
+  const records = await _loadAllChapterRecords(studyId);
+
+  // Also load global notes.
+  let globalNotes = '';
+  try {
+    globalNotes = (await StudyIDB.getAnswerRaw(`${studyId}_global_notes`)) || '';
+  } catch (e) { /* no global notes */ }
 
   let report = bold(`${meta.title || t('shareprint_default_study_title')}`) + '\n';
   report += bold(t('shareprint_complete_answers_heading')) + '\n';
@@ -95,7 +112,8 @@ function exportStudyAnswers() {
 
   let hasAnyAnswers = false;
 
-  chapters.forEach(ch => {
+  chapters.forEach((ch, i) => {
+    const record = records[i] || {};
     let chapterReport    = '';
     let chapterHasAnswers = false;
 
@@ -105,33 +123,30 @@ function exportStudyAnswers() {
     // Question answers
     ch.sections.forEach(section => {
       section.questions.forEach(q => {
-        const key    = storageKey(ch.chapterNumber, 'q', q.elementId);
-        const answer = localStorage.getItem(key) || '';
-        if (answer.trim()) {
+        const answer = (record[answerFieldKey('q', q.elementId)] || '').trim();
+        if (answer) {
           chapterHasAnswers = true;
           chapterReport += `${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
           chapterReport += `${bold(t('shareprint_label_q'))} ${q.text}\n`;
-          chapterReport += `${bold(t('shareprint_label_a'))} ${answer.trim()}\n\n`;
+          chapterReport += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
         }
       });
     });
 
-    // Reflection answers — iterates ch.elements directly so elementId is read
-    // from the element itself, matching the key renderQuestion() writes.
-    // Identical fix to the one applied in search.js.
+    // Reflection answers
     {
       let reflectionReport = '';
       let hasReflections   = false;
       (ch.elements || [])
         .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
         .forEach(el => {
-          const answer = localStorage.getItem(storageKey(ch.chapterNumber, 'r', el.elementId)) || '';
-          if (answer.trim()) {
+          const answer = (record[answerFieldKey('r', el.elementId)] || '').trim();
+          if (answer) {
             hasReflections    = true;
             chapterHasAnswers = true;
             const qText = el.question || el.question1 || '';
             reflectionReport += `${bold(t('shareprint_label_q'))} ${qText}\n`;
-            reflectionReport += `${bold(t('shareprint_label_a'))} ${answer.trim()}\n\n`;
+            reflectionReport += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
           }
         });
       if (hasReflections) {
@@ -140,18 +155,15 @@ function exportStudyAnswers() {
       }
     }
 
-    // Notes — included in export only if the user wrote something
-    const notesKey    = storageKey(ch.chapterNumber, 'notes', 0);
-    const notesAnswer = localStorage.getItem(notesKey) || '';
-    if (notesAnswer.trim()) {
+    // Notes
+    const notesAnswer = (record[answerFieldKey('notes', 0)] || '').trim();
+    if (notesAnswer) {
       chapterHasAnswers = true;
       chapterReport += bold(t('shareprint_notes_heading')) + '\n';
-      chapterReport += notesAnswer.trim() + '\n\n';
+      chapterReport += notesAnswer + '\n\n';
     }
 
-    // Likert scale responses — one block per scale, statement → chosen label.
-    // Unanswered statements are included so the export reflects the full scale.
-    // Mirrors the structure used by buildChapterBody() for print output.
+    // Likert scale responses
     (ch.elements || [])
       .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
       .forEach(el => {
@@ -161,7 +173,7 @@ function exportStudyAnswers() {
 
         let likertReport = '';
         statements.forEach((stmt, stIdx) => {
-          const raw      = localStorage.getItem(likertKey(ch.chapterNumber, el.elementId, stIdx));
+          const raw      = record[likertFieldKey(el.elementId, stIdx)];
           const labelIdx = raw ? (parseInt(raw, 10) - 1) : -1;
           const label    = (labelIdx >= 0 && labelIdx < scale.length) ? scale[labelIdx] : t('shareprint_print_no_answer');
           likertReport += `• ${stmt}: ${label}\n`;
@@ -212,14 +224,7 @@ function exportStudyAnswers() {
 }
 
 // ── PRINT / EXPORT TO PDF ─────────────────────────────────────────────────────
-// ── PRINT HELPERS ─────────────────────────────────────────────────────────────
 
-// Returns the complete <head>…</head> block for a print document.
-// 'title' becomes the <title> element text.
-// All CSS shared by single-chapter and all-chapters print is defined here.
-// The h1 / h2 / .cover / .eyebrow rules are only used by printAllChapters but
-// are harmless in the single-chapter document, so one unified style block keeps
-// things simple and avoids duplication.
 function buildPrintHead(title) {
   const bodyFontStack    = appSettings.useSansSerif
     ? "'Inter', 'Helvetica Neue', Arial, sans-serif"
@@ -243,164 +248,56 @@ function buildPrintHead(title) {
 <style>
   ${fontFaceCSS}
 
-  body {
-    font-family: ${bodyFontStack};
-    font-size: 11pt;
-    color: black;
-    margin: 0;
-    padding: 0;
-  }
-  h1 {
-    font-family: ${headingFontStack};
-    font-size: 20pt;
-    font-style: italic;
-    font-weight: 400;
-    margin: 0 0 8pt 0;
-    color: #1c1710;
-  }
-  h2 {
-    font-family: ${headingFontStack};
-    font-size: 14pt;
-    font-style: italic;
-    font-weight: 400;
-    margin: 24pt 0 8pt 0;
-    color: #1c1710;
-    border-bottom: 0.5pt solid #c8bca8;
-    padding-bottom: 4pt;
-    page-break-after: avoid;
-  }
-  .cover {
-    text-align: center;
-    padding: 40pt 0 32pt;
-    border-bottom: 1pt solid #c8bca8;
-    margin-bottom: 24pt;
-  }
-  .eyebrow {
-    font-size: 8pt;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #8c6420;
-    margin-bottom: 8pt;
-  }
-  .chapter-header {
-    margin-bottom: 16pt;
-  }
-  .chapter-eyebrow {
-    font-size: 8pt;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #8c6420;
-    margin-bottom: 4pt;
-  }
-  .intro {
-    font-style: italic;
-    color: #4a3f30;
-    margin-bottom: 16pt;
-    padding: 8pt 12pt;
-    border-left: 2pt solid #c8bca8;
-  }
-  .bridge {
-    color: #4a3f30;
-    margin: 12pt 0;
-    font-size: 10pt;
-  }
-  .closing {
-    font-style: italic;
-    color: #4a3f30;
-    margin: 16pt 0;
-    padding: 8pt 12pt;
-    border-left: 2pt solid #c8bca8;
-  }
-  .question-block {
-    border: 0.5pt solid #ddd;
-    margin: 8pt 0;
-    page-break-inside: avoid;
-  }
-  .question-ref {
-    background: #2c2416;
-    color: #d4a843;
-    padding: 4pt 8pt;
-    font-size: 8pt;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .question-text {
-    padding: 6pt 8pt 3pt;
-    font-size: 10pt;
-  }
-  .answer {
-    padding: 6pt 8pt;
-    font-size: 10pt;
-    border-top: 0.5pt solid #ddd;
-    background: #f9f9f9;
-    min-height: 32pt;
-    white-space: pre-wrap;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .no-answer {
-    color: #aaa;
-    font-style: italic;
-  }
-  .reflection-heading {
-    font-family: ${headingFontStack};
-    background: #8b3a2a;
-    color: white;
-    padding: 5pt 8pt;
-    font-size: 10pt;
-    font-style: italic;
-    margin: 16pt 0 0 0;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    page-break-after: avoid;
-  }
-  .notes-heading {
-    font-size: 8pt;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #666;
-    margin: 16pt 0 4pt 0;
-  }
-  .likert-block {
-    border: 0.5pt solid #ccc;
-    margin: 8pt 0;
-    page-break-inside: avoid;
-  }
-  .likert-block-title {
-    background: #2c2416;
-    color: #d4a843;
-    padding: 4pt 8pt;
-    font-size: 8pt;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .likert-block-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 4pt 8pt;
-    font-size: 10pt;
-    border-top: 0.5pt solid #eee;
-    gap: 12pt;
-  }
+  body { font-family: ${bodyFontStack}; font-size: 11pt; color: black; margin: 0; padding: 0; }
+  h1 { font-family: ${headingFontStack}; font-size: 20pt; font-style: italic; font-weight: 400; margin: 0 0 8pt 0; color: #1c1710; }
+  h2 { font-family: ${headingFontStack}; font-size: 14pt; font-style: italic; font-weight: 400; margin: 24pt 0 8pt 0; color: #1c1710; border-bottom: 0.5pt solid #c8bca8; padding-bottom: 4pt; page-break-after: avoid; }
+  .cover { text-align: center; padding: 40pt 0 32pt; border-bottom: 1pt solid #c8bca8; margin-bottom: 24pt; }
+  .eyebrow { font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase; color: #8c6420; margin-bottom: 8pt; }
+  .chapter-header { margin-bottom: 16pt; }
+  .chapter-eyebrow { font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase; color: #8c6420; margin-bottom: 4pt; }
+  .intro { font-style: italic; color: #4a3f30; margin-bottom: 16pt; padding: 8pt 12pt; border-left: 2pt solid #c8bca8; }
+  .bridge { color: #4a3f30; margin: 12pt 0; font-size: 10pt; }
+  .closing { font-style: italic; color: #4a3f30; margin: 16pt 0; padding: 8pt 12pt; border-left: 2pt solid #c8bca8; }
+  .question-block { border: 0.5pt solid #ddd; margin: 8pt 0; page-break-inside: avoid; }
+  .question-ref { background: #2c2416; color: #d4a843; padding: 4pt 8pt; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .question-text { padding: 6pt 8pt 3pt; font-size: 10pt; }
+  .answer { padding: 6pt 8pt; font-size: 10pt; border-top: 0.5pt solid #ddd; background: #f9f9f9; min-height: 32pt; white-space: pre-wrap; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-answer { color: #aaa; font-style: italic; }
+  .reflection-heading { font-family: ${headingFontStack}; background: #8b3a2a; color: white; padding: 5pt 8pt; font-size: 10pt; font-style: italic; margin: 16pt 0 0 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-after: avoid; }
+  .notes-heading { font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 16pt 0 4pt 0; }
+  .likert-block { border: 0.5pt solid #ccc; margin: 8pt 0; page-break-inside: avoid; }
+  .likert-block-title { background: #2c2416; color: #d4a843; padding: 4pt 8pt; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .likert-block-row { display: flex; justify-content: space-between; align-items: baseline; padding: 4pt 8pt; font-size: 10pt; border-top: 0.5pt solid #eee; gap: 12pt; }
   .likert-block-row:first-of-type { border-top: none; }
   .likert-block-statement { flex: 1; color: black; }
-  .likert-block-response  { flex-shrink: 0; font-style: italic; color: #444; text-align: right; }
+  .likert-block-response { flex-shrink: 0; font-style: italic; color: #444; text-align: right; }
   .likert-block-response.no-answer { color: #aaa; }
   @page { margin: 1.5cm 1.8cm; }
 </style>
 </head>`;
 }
 
+// ── SHARED IDB HELPERS ────────────────────────────────────────────────────────
+
+// Pre-loads chapter answer records for all chapters of the given study from IDB
+// in parallel. Returns an array aligned with the chapters[] array — records[i]
+// corresponds to chapters[i]. Failures for individual chapters resolve to {}.
+async function _loadAllChapterRecords(studyId) {
+  return Promise.all(
+    chapters.map(ch =>
+      StudyIDB.getChapterAnswers(studyId, ch.chapterNumber).catch(() => ({}))
+    )
+  );
+}
+
+// ── BUILD CHAPTER BODY ────────────────────────────────────────────────────────
+
 // Returns the inner body HTML for a single chapter: intro, sections (bridge +
 // questions with saved answers), closing passage, reflection questions, and notes.
-// Does NOT include a chapter header — callers add their own wrapper so that
-// printChapter() and printAllChapters() can use different header styles.
-function buildChapterBody(ch) {
+// record – the pre-loaded IDB answer object for this chapter (from _loadAllChapterRecords).
+// Does NOT include a chapter header — callers add their own wrapper.
+function buildChapterBody(ch, record) {
+  record = record || {};
   let body = '';
 
   // Intro
@@ -414,11 +311,11 @@ function buildChapterBody(ch) {
       body += `<div class="bridge">${sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>')}</div>`;
     }
     sec.questions.forEach(q => {
-      const answer = localStorage.getItem(storageKey(ch.chapterNumber, 'q', q.elementId)) || '';
+      const answer = (record[answerFieldKey('q', q.elementId)] || '').trim();
       body += `<div class="question-block">
         <div class="question-ref">${q.ref}</div>
         <div class="question-text">${q.text}</div>
-        <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() ? escapeHtml(answer.trim()) : t('shareprint_print_no_answer')}</div>
+        <div class="answer ${answer ? '' : 'no-answer'}">${answer ? escapeHtml(answer) : t('shareprint_print_no_answer')}</div>
       </div>`;
     });
   });
@@ -428,12 +325,7 @@ function buildChapterBody(ch) {
     body += `<div class="closing"><p>${ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
   }
 
-  // Likert scale responses — rendered as statement/response rows.
-  // Only standard (non-bipolar) scales are included; bipolar is not yet
-  // implemented in renderLikertScale() so no responses exist for it.
-  // Stored value: 1-based integer string from likertKey(chNum, eid, stIdx).
-  // The label is resolved by indexing into el.scale (already locale-resolved
-  // before being stored on the element by renderChapter).
+  // Likert scale responses
   (ch.elements || [])
     .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
     .forEach(el => {
@@ -442,7 +334,7 @@ function buildChapterBody(ch) {
       if (!statements.length) return;
 
       const rowsHtml = statements.map((stmt, stIdx) => {
-        const raw      = localStorage.getItem(likertKey(ch.chapterNumber, el.elementId, stIdx));
+        const raw      = record[likertFieldKey(el.elementId, stIdx)];
         const labelIdx = raw ? (parseInt(raw, 10) - 1) : -1;
         const label    = (labelIdx >= 0 && labelIdx < scale.length) ? scale[labelIdx] : null;
         return `<div class="likert-block-row">
@@ -457,36 +349,32 @@ function buildChapterBody(ch) {
       </div>`;
     });
 
-  // Reflection questions with saved answers.
-  // Iterates ch.elements directly so elementId is read from the element itself,
-  // matching the key renderQuestion() writes — identical fix to search.js.
+  // Reflection questions with saved answers
   if (ch.reflection && ch.reflection.length > 0) {
     body += `<div class="reflection-heading">${t('shareprint_print_reflection_heading')}</div>`;
     (ch.elements || [])
       .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
       .forEach((el, ri) => {
-        const answer = localStorage.getItem(storageKey(ch.chapterNumber, 'r', el.elementId)) || '';
+        const answer = (record[answerFieldKey('r', el.elementId)] || '').trim();
         const qText  = el.question || el.question1 || '';
         body += `<div class="question-block">
           <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
           <div class="question-text">${qText}</div>
-          <div class="answer ${answer.trim() ? '' : 'no-answer'}">${answer.trim() ? escapeHtml(answer.trim()) : t('shareprint_print_no_answer')}</div>
+          <div class="answer ${answer ? '' : 'no-answer'}">${answer ? escapeHtml(answer) : t('shareprint_print_no_answer')}</div>
         </div>`;
       });
   }
 
   // Notes — only included if non-empty
-  const notesVal = localStorage.getItem(storageKey(ch.chapterNumber, 'notes', 0)) || '';
-  if (notesVal.trim()) {
+  const notesVal = (record[answerFieldKey('notes', 0)] || '').trim();
+  if (notesVal) {
     body += `<div class="notes-heading">${t('shareprint_print_notes_heading')}</div>
-      <div class="answer">${escapeHtml(notesVal.trim())}</div>`;
+      <div class="answer">${escapeHtml(notesVal)}</div>`;
   }
 
   return body;
 }
 
-// Sends a completed HTML document to the Android print bridge, with a fallback
-// to the share bridge if printing is not available on the device.
 function dispatchPrint(html, fallbackMsg) {
   if (window.Android && window.Android.printContent) {
     window.Android.printContent(html);
@@ -497,12 +385,19 @@ function dispatchPrint(html, fallbackMsg) {
 
 // ── PRINT FUNCTIONS ───────────────────────────────────────────────────────────
 
-// Prints the current chapter as a self-contained document. Uses the chapter's
-// own header style (eyebrow + large h1) rather than the multi-chapter h2 style
-// used by printAllChapters().
-function printChapter() {
-  const ch   = chapters[currentChapter];
-  const meta = window.titlePageData || {};
+// Prints the current chapter. Async because it must load the chapter record
+// from IDB before calling buildChapterBody().
+async function printChapter() {
+  const ch      = chapters[currentChapter];
+  const studyId = window.activeStudyId;
+  const meta    = window.titlePageData || {};
+
+  let record = {};
+  try {
+    record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+  } catch (e) {
+    console.warn('[printChapter] IDB read failed; printing with empty answers.', e);
+  }
 
   const chapterHeader = `<div class="chapter-header">
   <div class="chapter-eyebrow">${t('shareprint_print_chapter_eyebrow', { number: ch.chapterNumber, total: chapters.length, studyTitle: meta.title })}</div>
@@ -516,20 +411,26 @@ function printChapter() {
 ${buildPrintHead(docTitle)}
 <body>
 ${chapterHeader}
-${buildChapterBody(ch)}
+${buildChapterBody(ch, record)}
 </body></html>`;
 
   dispatchPrint(html, t('shareprint_print_fallback_chapter', { studyTitle: meta.title, number: ch.chapterNumber, chapterTitle: ch.chapterTitle }));
 }
 
-// Prints all chapters as a single document with a cover page. Chapters that
-// contain no saved answers, reflection answers, or notes are skipped so the
-// output only reflects the user's actual work.
-function printAllChapters() {
+// Prints all chapters as a single document. Pre-loads all chapter records and
+// global notes from IDB before building HTML.
+async function printAllChapters() {
+  const studyId     = window.activeStudyId;
   const meta        = window.titlePageData || {};
   const datePrinted = new Date().toLocaleDateString(resolveLanguage(), {
     day: 'numeric', month: 'long', year: 'numeric'
   });
+
+  // Pre-load all chapter records and global notes in parallel.
+  const [records, globalNotes] = await Promise.all([
+    _loadAllChapterRecords(studyId),
+    StudyIDB.getAnswerRaw(`${studyId}_global_notes`).catch(() => ''),
+  ]);
 
   const cover = `<div class="cover">
   <div class="eyebrow">${t('shareprint_print_cover_eyebrow')}</div>
@@ -538,34 +439,21 @@ function printAllChapters() {
 </div>`;
 
   let chaptersHTML = '';
-  chapters.forEach(ch => {
-    // Skip chapters that have no saved content
-    let hasContent = false;
-    ch.sections.forEach(sec => {
-      sec.questions.forEach(q => {
-        if (localStorage.getItem(storageKey(ch.chapterNumber, 'q', q.elementId))) hasContent = true;
-      });
-    });
-    if (ch.reflection) {
-      const reflEls = (ch.elements || []).filter(
-        e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement
-      );
-      ch.reflection.forEach((r, ri) => {
-        const eid = reflEls[ri] ? reflEls[ri].elementId : null;
-        if (eid && localStorage.getItem(storageKey(ch.chapterNumber, 'r', eid))) hasContent = true;
-      });
-    }
-    const notesVal = localStorage.getItem(storageKey(ch.chapterNumber, 'notes', 0));
-    if (notesVal && notesVal.trim()) hasContent = true;
+  chapters.forEach((ch, i) => {
+    const record = records[i] || {};
+
+    // Skip chapters that have no saved content.
+    const hasContent = Object.entries(record).some(([field, val]) =>
+      (field.startsWith('q_') || field.startsWith('r_') || field === answerFieldKey('notes', 0)) &&
+      (val || '').trim()
+    );
     if (!hasContent) return;
 
     chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
-${buildChapterBody(ch)}`;
+${buildChapterBody(ch, record)}`;
   });
 
-  // Notes & Comments page — only included if the feature is enabled AND non-empty
-  const currentStudyId = window.activeStudyId;
-  const globalNotes    = localStorage.getItem(`bsr_${currentStudyId}_global_notes`);
+  // Notes & Comments page
   if (appSettings.showPageNotes && globalNotes && globalNotes.trim()) {
     chaptersHTML += `
 <h2>${t('shareprint_print_notes_page_heading')}</h2>
@@ -584,25 +472,15 @@ ${chaptersHTML}
 }
 
 // ── BLANK STUDY PRINT ─────────────────────────────────────────────────────────
+// No answer reads needed — these functions are unchanged.
 
-// Returns the inner body HTML for a single chapter with all answer fields left
-// blank — no localStorage lookups, no saved content. Used by printBlankStudy()
-// to produce a clean, unanswered version of the study ready for printing on paper.
-//
-// Structure mirrors buildChapterBody() exactly, with these differences:
-//   • Question answer boxes are always empty (white, no placeholder text).
-//   • Likert response cells are blank (same row layout, no text).
-//   • Reflection answer boxes are always empty.
-//   • Notes section is omitted entirely (it's a personal annotations space).
 function buildBlankChapterBody(ch) {
   let body = '';
 
-  // Intro
   if (ch.intro) {
     body += `<div class="intro"><p>${ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
   }
 
-  // Sections: bridge text then questions with blank answer boxes
   ch.sections.forEach(sec => {
     if (sec.bridge) {
       body += `<div class="bridge">${sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>')}</div>`;
@@ -616,30 +494,25 @@ function buildBlankChapterBody(ch) {
     });
   });
 
-  // Closing passage
   if (ch.closing) {
     body += `<div class="closing"><p>${ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
   }
 
-  // Likert scales — same row layout as buildChapterBody() but response cell is blank
   (ch.elements || [])
     .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
     .forEach(el => {
       const statements = el.statements || [];
       if (!statements.length) return;
-
       const rowsHtml = statements.map(stmt => `<div class="likert-block-row">
           <div class="likert-block-statement">${stmt}</div>
           <div class="likert-block-response blank-answer" style="min-width:60pt;"></div>
         </div>`).join('');
-
       body += `<div class="likert-block">
         <div class="likert-block-title">${t('shareprint_print_likert_heading')}</div>
         ${rowsHtml}
       </div>`;
     });
 
-  // Reflection questions with blank answer boxes
   if (ch.reflection && ch.reflection.length > 0) {
     body += `<div class="reflection-heading">${t('shareprint_print_reflection_heading')}</div>`;
     (ch.elements || [])
@@ -654,23 +527,12 @@ function buildBlankChapterBody(ch) {
       });
   }
 
-  // Notes omitted intentionally — this is a clean unanswered document.
-
   return body;
 }
 
-// Generates a print-ready HTML document of the entire study with all answer
-// fields left blank. Includes the title page and all chapters. Excludes the
-// Notes & Comments page, Leaders Notes, and About page.
-//
-// Called from the "Print Blank Study" card in Settings → Study tab.
 function printBlankStudy() {
   const meta = window.titlePageData || {};
 
-  // ── Cover page ──────────────────────────────────────────────────────────────
-  // Mirrors the on-screen title page: image, title, subtitle, description,
-  // author label/name, and version. The image is included via its src URL so
-  // it renders in the print document exactly as it does on screen.
   const coverImageHtml = meta.image?.src
     ? `<img src="${meta.image.src}" alt="${meta.image?.alt || ''}"
            style="max-width:100%; max-height:160pt; object-fit:cover; display:block; margin:0 auto 20pt;"
@@ -696,14 +558,11 @@ function printBlankStudy() {
   ${version     ? `<div style="font-size:8pt; color:#999; margin-top:8pt;">${version}</div>` : ''}
 </div>`;
 
-  // ── All chapters — no content gate; every chapter is always included ────────
   let chaptersHTML = '';
   chapters.forEach(ch => {
     chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
 ${buildBlankChapterBody(ch)}`;
   });
-
-  // Notes & Comments, Leaders Notes, and About are intentionally excluded.
 
   const docTitle = `${meta.title || t('shareprint_default_study_title')} — ${t('shareprint_blank_doc_title_suffix')}`;
 
@@ -711,20 +570,8 @@ ${buildBlankChapterBody(ch)}`;
 <html lang="en">
 ${buildPrintHead(docTitle)}
 <style>
-  /* Blank answer box: white fill, slightly taller to invite handwriting */
-  .blank-answer {
-    background: #fff !important;
-    min-height: 48pt !important;
-    border-top: 0.5pt solid #ddd;
-  }
-  /* Blank Likert response cell: white, right-aligned, with a subtle underline
-     to give a clear writing target without looking like an answer is expected */
-  .likert-block-response.blank-answer {
-    min-height: 0 !important;
-    border-top: none;
-    border-bottom: 0.5pt solid #bbb;
-    padding-bottom: 2pt;
-  }
+  .blank-answer { background: #fff !important; min-height: 48pt !important; border-top: 0.5pt solid #ddd; }
+  .likert-block-response.blank-answer { min-height: 0 !important; border-top: none; border-bottom: 0.5pt solid #bbb; padding-bottom: 2pt; }
 </style>
 <body>
 ${cover}
