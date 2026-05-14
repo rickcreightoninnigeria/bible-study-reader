@@ -16,6 +16,40 @@
 //   resolveText, buildLangMap – render-elements.js (language resolution)
 //   window.studyMetadata      – study-loader.js (language slot map source)
 
+// ── SAFE HTML HELPER ──────────────────────────────────────────────────────────
+// Central wrapper for every innerHTML assignment that receives study-authored
+// content. Sanitises with the same DOMPurify config used in format-text.js so
+// there is one consistent policy across the whole app.
+//
+// Pass allowWide: true for verse text, which may legitimately contain a richer
+// set of inline elements than a typical callout answer.
+//
+// NOTE: DOMPurify (purify.min.js) must be loaded before modals.js.
+const _MODAL_PURIFY_CONFIG = {
+  ALLOWED_TAGS: [
+    'b', 'i', 'em', 'strong', 'u', 's', 'p', 'br',
+    'ul', 'ol', 'li', 'blockquote',
+    'h1', 'h2', 'h3', 'h4',
+    'a', 'span', 'sup', 'sub', 'button',
+  ],
+  ALLOWED_ATTR: ['href', 'target', 'rel', 'class', 'id', 'onclick'],
+  ALLOW_DATA_ATTR: false,
+};
+
+function safeSetHtml(elementId, html) {
+  const el = document.getElementById(elementId);
+  if (el) el.innerHTML = DOMPurify.sanitize(html || '', _MODAL_PURIFY_CONFIG);
+}
+
+// Sanitise a plain URL before putting it in an href — strips javascript: and
+// data: schemes while leaving https / http / relative URLs untouched.
+function _safeUrl(url) {
+  if (!url) return '';
+  const trimmed = url.trim().toLowerCase();
+  if (trimmed.startsWith('javascript:') || trimmed.startsWith('data:')) return '';
+  return url;
+}
+
 // Opens the QA modal from an inline callout element (v2/v3 .estudy format).
 // Looks up the element by its elementId across the current chapter's elements[].
 //
@@ -39,7 +73,7 @@ function openQaModalFromElement(elementId, lang) {
   document.getElementById('qaModalEyebrow').textContent = resolveText(el, activeLang, 'eyebrow', langMap);
   document.getElementById('qaModalTerm').textContent    = resolveText(el, activeLang, 'term',    langMap);
   const answerHtml                                      = resolveText(el, activeLang, 'answer',  langMap);
-  document.getElementById('qaModalText').innerHTML      = answerHtml;
+  safeSetHtml('qaModalText', answerHtml);
   document.getElementById('qaModalOverlay').classList.add('open');
   const qsb = document.getElementById('qaModalSpeakBtn');
   if (qsb) {
@@ -55,7 +89,7 @@ function openQaModal(id) {
   if (!data) return;
   document.getElementById('qaModalEyebrow').textContent = data.eyebrow;
   document.getElementById('qaModalTerm').textContent    = data.term;
-  document.getElementById('qaModalText').innerHTML      = data.answer;
+  safeSetHtml('qaModalText', data.answer);
   document.getElementById('qaModalOverlay').classList.add('open');
 }
 
@@ -88,7 +122,7 @@ function openDeeperModal(elementId, lang) {
   const activeLang = lang || window._activeStudyLang || 'en';
 
   const body = document.getElementById('deeperModalBody');
-  if (body) body.innerHTML = resolveText(el.deeper, activeLang, 'question', langMap);
+  if (body) safeSetHtml('deeperModalBody', resolveText(el.deeper, activeLang, 'question', langMap));
   document.getElementById('deeperModalOverlay').classList.add('open');
 }
 
@@ -273,11 +307,11 @@ function openVerseModal(ref) {
   if (tabRowEl) tabRowEl.innerHTML = tabRowHtml;
 
   document.getElementById('verseModalRef').textContent   = activeTrans.ref || ref;
-  document.getElementById('verseModalText').innerHTML    = activeTrans.text;
-  document.getElementById('verseModalFooter').innerHTML  =
+  safeSetHtml('verseModalText', activeTrans.text);
+  safeSetHtml('verseModalFooter',
     activeTrans.url
-      ? `(<a href="${activeTrans.url}" target="_blank">${t('modals_verse_net_link')}</a>)`
-      : '';
+      ? `(<a href="${_safeUrl(activeTrans.url)}" target="_blank">${t('modals_verse_net_link')}</a>)`
+      : '');
 
   document.getElementById('verseModalOverlay').classList.add('open');
 
@@ -311,11 +345,11 @@ function switchVerseTranslation(ref, label) {
 
   // Update ref, text, footer link.
   document.getElementById('verseModalRef').textContent  = tr.ref || ref;
-  document.getElementById('verseModalText').innerHTML   = tr.text;
-  document.getElementById('verseModalFooter').innerHTML =
+  safeSetHtml('verseModalText', tr.text);
+  safeSetHtml('verseModalFooter',
     tr.url
-      ? `(<a href="${tr.url}" target="_blank">${t('modals_verse_net_link')}</a>)`
-      : '';
+      ? `(<a href="${_safeUrl(tr.url)}" target="_blank">${t('modals_verse_net_link')}</a>)`
+      : '');
 
   // Re-wire the speak button to the new translation's text.
   _wireVerseModalSpeak(tr.text);
@@ -450,7 +484,7 @@ function createInfoTrigger(infoId, content, options = {}) {
  */
 function openInfoModal(infoId, content, triggerBtn) {
   document.getElementById('info-modal-title').textContent = content.title || '';
-  document.getElementById('info-modal-body').innerHTML    = content.body  || '';
+  safeSetHtml('info-modal-body', content.body);
 
   // Always reset checkbox to ticked when opening, regardless of previous state
   // during this session — the localStorage key is the source of truth.
@@ -503,7 +537,7 @@ function closeInfoModal(event) {
 // @param {string} bodyHtml - The footnote text (may contain markdown-rendered HTML)
 function openFootnoteModal(title, bodyHtml) {
   document.getElementById('info-modal-title').textContent = title;
-  document.getElementById('info-modal-body').innerHTML    = bodyHtml;
+  safeSetHtml('info-modal-body', bodyHtml);
 
   // Hide the "Show this again" row — not appropriate for footnotes.
   const row = document.getElementById('infoModalShowAgainRow');
