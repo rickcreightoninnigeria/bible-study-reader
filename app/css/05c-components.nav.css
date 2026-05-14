@@ -52,7 +52,7 @@
   letter-spacing: 0.05em;
   opacity: 0;
   transition: all 0.3s ease;
-  z-index: 200;
+  z-index: var(--z-toast);
   /* Multi-line support */
   white-space: normal;
   width: max-content;
@@ -93,7 +93,7 @@
   line-height: 1.5;
   opacity: 0;
   transition: all 0.3s ease;
-  z-index: 200;
+  z-index: var(--z-toast);
   white-space: nowrap;
   box-shadow: 0 4px 16px rgba(184,146,42,0.35);
 }
@@ -121,7 +121,7 @@
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 600;
+  z-index: var(--z-toast);
   width: calc(100% - 32px);
   max-width: 440px;
   background: var(--text);
@@ -249,7 +249,7 @@
   top: calc(52px + env(safe-area-inset-top));  /* flush below the fixed top nav */
   left: 0;
   right: 0;
-  z-index: 49;                                 /* below modals (z≥50) but above content */
+  z-index: calc(var(--z-subnav) - 1);          /* below modals (≥z-subnav) but above content */
   background: #1c1710;                         /* = var(--text) hardcoded as fallback */
   display: none;                               /* hidden by default; JS sets display:flex */
   align-items: center;
