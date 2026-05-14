@@ -88,8 +88,8 @@ function startVoiceInput(btn) {
 // If the original textarea is still in the DOM, write directly to it (normal
 // path). If it has been removed by a chapter navigation that occurred while
 // recording was in flight, fall back to the pending-transcript recovery path:
-// append the transcript to the localStorage value for that field and show a
-// toast so the user knows their answer was not lost.
+// write the transcript to IDB and show a toast so the user knows their answer
+// was not lost.
 function receiveVoiceTranscript(transcript) {
   resetVoiceBtn();
 
@@ -111,24 +111,44 @@ function receiveVoiceTranscript(transcript) {
 
   // ── Recovery path: textarea was removed by navigation ─────────────────────
   // The user navigated away while recording was in flight. Write the transcript
-  // to localStorage directly so it is picked up when renderChapter() next loads
-  // this field via localStorage.getItem(). This mirrors the key construction
-  // used by saveAnswers() and the blur auto-save handler in save.js:
-  //   storageKey(chapterNumber, type, index)
+  // to IDB via a read-modify-write so it is picked up when renderChapter() next
+  // loads this field. Uses the same async IIFE pattern as the blur auto-save
+  // handler in save.js. The toast fires only after a successful IDB write so
+  // the user is not told their answer was saved if the write failed.
   const pending = window._pendingVoiceTranscript;
   if (pending && pending.chapterNumber != null && pending.type && pending.index != null) {
-    const key     = storageKey(pending.chapterNumber, pending.type, pending.index);
-    const current = localStorage.getItem(key) || '';
-    safeSetItem(key, current ? current.trimEnd() + ' ' + transcript : transcript);
+    const studyId = window.activeStudyId;
+    if (studyId) {
+      (async () => {
+        let record;
+        try {
+          record = await StudyIDB.getChapterAnswers(studyId, pending.chapterNumber);
+        } catch (e) {
+          console.warn('[voice recovery] IDB read failed; falling back to empty object.', e);
+          record = {};
+        }
 
-    // Clear the search cache so the recovered answer appears in future searches,
-    // mirroring the cache-clear in saveAnswers() and the blur handler.
-    if (typeof storageCache !== 'undefined') storageCache.clear();
+        const fieldKey = answerFieldKey(pending.type, pending.index);
+        const current  = record[fieldKey] || '';
+        record[fieldKey] = current ? current.trimEnd() + ' ' + transcript : transcript;
 
-    // Inform the user their answer was saved even though they navigated away.
-    // i18n key: 'voice_transcript_saved_navigate_back'
-    // Suggested English value: "Answer recorded — navigate back to see it"
-    showToast({ message: t('voice_transcript_saved_navigate_back'), isManual: false });
+        try {
+          await StudyIDB.setChapterAnswers(studyId, pending.chapterNumber, record);
+        } catch (e) {
+          console.warn('[voice recovery] IDB write failed.', e);
+          return;
+        }
+
+        // Clear the search cache so the recovered answer appears in future searches,
+        // mirroring the cache-clear in saveAnswers() and the blur handler.
+        if (typeof storageCache !== 'undefined') storageCache.clear();
+
+        // Inform the user their answer was saved even though they navigated away.
+        // i18n key: 'voice_transcript_saved_navigate_back'
+        // Suggested English value: "Answer recorded — navigate back to see it"
+        showToast({ message: t('voice_transcript_saved_navigate_back'), isManual: false });
+      })();
+    }
   }
 
   window._voiceTarget            = null;

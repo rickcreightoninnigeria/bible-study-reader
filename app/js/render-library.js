@@ -304,12 +304,12 @@ function attachCardLongPress(card, id) {
   card.addEventListener('touchend', () => {
     clearTimeout(cardLongPressTimer);
     cardLongPressTimer = null;
-  });
+  }, { passive: true });
 
   card.addEventListener('touchmove', () => {
     clearTimeout(cardLongPressTimer);
     cardLongPressTimer = null;
-  });
+  }, { passive: true });
 }
 
 async function renderLibrary() {

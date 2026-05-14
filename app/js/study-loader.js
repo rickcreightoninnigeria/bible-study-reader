@@ -11,20 +11,20 @@
 //   – Study picker screen (renderStudyPicker, handlePickerFileChange)
 //
 // Dependencies (all available as globals before this file loads):
-//   StudyIDB           – idb.js
-//   ICONS              – icons.js
-//   appSettings        – settings.js
-//   showToast          – utils.js
+//   StudyIDB                  – idb.js
+//   ICONS                     – icons.js
+//   appSettings               – settings.js
+//   showToast                 – utils.js
 //   recordStudyOpened,
 //   recordStudyInstalled,
-//   removeStudyFromHistory – library.js
+//   removeStudyFromHistory    – library.js
 //   closeNonChapterPage,
 //   _resetNonChapterPageState – navigation.js
-//   renderLibrary      – library.js
-//   renderTitlePage    – main.js RENDER section
-//   initApp            – main.js PROGRESS section
-//   studyOnboardingSlides – main.js STATE section
-//   window.*           – state.js
+//   renderLibrary             – library.js
+//   renderTitlePage           – render-pages.js RENDER TILE PAGE section
+//   initApp                   – app-init.js INITAPP section
+//   studyOnboardingSlides     – onboarding.js
+//   window.*                  – state.js
 
 // ── BLOB URL LIFECYCLE ────────────────────────────────────────────────────────
 // Every blob URL created in this file is registered here so it can be revoked
@@ -139,7 +139,7 @@ async function activateStudy(id) {
     //    isStudySwitch:true makes initApp() push a new history entry (via
     //    Router.navigate) rather than replace (Router.boot), so the library
     //    entry stays on the stack and back returns to it.
-    applyStudyData(data, { isStudySwitch: true });
+    await applyStudyData(data, { isStudySwitch: true });
     // No Router.back() — initApp() now owns the history entry for the new
     // study view, pushed on top of the existing library entry.
 }
@@ -723,7 +723,7 @@ async function loadStudyFromJson(jsonString) {
             if (window._appReady) {
                 window.activeStudyId = studyId;
                 const existing = await StudyIDB.get(`study_content_${studyId}`);
-                if (existing) { Router.back(); applyStudyData(existing, { isStudySwitch: true }); }
+                if (existing) { Router.back(); await applyStudyData(existing, { isStudySwitch: true }); }
             } else {
                 window.activeStudyId = studyId;
             }
@@ -766,7 +766,7 @@ async function loadStudyFromJson(jsonString) {
             window.activeStudyId = studyId;
             checkEstudyVersion(data);
             Router.back();
-            applyStudyData(data, { isStudySwitch: true });
+            await applyStudyData(data, { isStudySwitch: true });
         } else {
             window.pendingStudyData = data;
             window.activeStudyId   = studyId;
@@ -1153,7 +1153,7 @@ async function loadStudyFromFile(file) {
         Router.back();
         window.activeStudyId = studyId;
         const existing = await StudyIDB.get(`study_content_${studyId}`);
-        if (existing) applyStudyData(existing, { isStudySwitch: true });
+        if (existing) await applyStudyData(existing, { isStudySwitch: true });
         return;
       }
       // 'install': incoming is newer — show an update toast if upgrading an
@@ -1237,7 +1237,7 @@ async function loadStudyFromFile(file) {
       checkEstudyVersion(data);
       Router.back();
       window.activeStudyId = studyId;
-      applyStudyData(data, { isStudySwitch: true });
+      await applyStudyData(data, { isStudySwitch: true });
 
     } else {
       // ── Legacy plain-JSON .estudy ─────────────────────────────────────────
@@ -1256,7 +1256,7 @@ async function loadStudyFromFile(file) {
           Router.back();
           window.activeStudyId = _plainStudyId;
           const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
-          if (existing) applyStudyData(existing, { isStudySwitch: true });
+          if (existing) await applyStudyData(existing, { isStudySwitch: true });
           return;
         }
         // 'install': show update toast if upgrading an existing install.
@@ -1275,7 +1275,7 @@ async function loadStudyFromFile(file) {
 
       checkEstudyVersion(data);
       Router.back();
-      applyStudyData(data, { isStudySwitch: true });
+      await applyStudyData(data, { isStudySwitch: true });
     }
 
   } catch (err) {

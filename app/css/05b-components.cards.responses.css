@@ -360,7 +360,7 @@
   position: fixed;
   inset: 0;
   background: rgba(44,36,22,0.55);
-  z-index: 300;
+  z-index: var(--z-modal);
   align-items: flex-end;
   justify-content: center;
 }

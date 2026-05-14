@@ -9,6 +9,7 @@
 //
 // Dependencies (all available as globals before this file loads):
 //   StudyIDB                   – idb.js
+//   migrateAnswersToIDB        – migrate.js
 //   appSettings, initSettings  – settings.js
 //   initLongPressCopy          – utils.js
 //   openLibrary                – study-loader.js
@@ -328,6 +329,29 @@ async function initApp({ isStudySwitch = false } = {}) {
 async function startApp() {
   initSettings();
   initLongPressCopy();
+
+  // ── ONE-TIME MIGRATION: localStorage → IndexedDB ───────────────────────────
+  // Moves all per-study answer data (questions, reflections, notes, Likert
+  // responses, starred flags, celebrated flags, and last position) from
+  // localStorage into the IDB 'answers' store introduced in DB version 3.
+  //
+  // Must run before any page is rendered so renderChapter() and
+  // renderProgressOverview() always find answer data in IDB, never localStorage.
+  //
+  // The migration is guarded by a 'bsr_idb_migration_done' flag and is safe
+  // to re-run: IDB writes are additive and localStorage keys are only removed
+  // after all IDB writes for a study succeed.
+  //
+  // WHEN TO REMOVE THIS CALL:
+  //   Once you are confident that no users remain on a pre-migration version
+  //   of the app (i.e. everyone has launched at least once after this update
+  //   was shipped), this call and migrate.js can be deleted. A reasonable
+  //   horizon is 2-3 app updates after the migration ships, or when analytics
+  //   show the 'bsr_idb_migration_done' flag is set for ~100% of active users.
+  //   Until then, the guard flag makes this a no-op for already-migrated users,
+  //   so there is no performance cost to leaving it in place.
+  await migrateAnswersToIDB();
+  // ── END MIGRATION ──────────────────────────────────────────────────────────
 
   // ── RESOLVE LANGUAGE AND LOAD LOCALE DATA ──────────────────────────────────
   const resolvedLang = resolveLanguage();

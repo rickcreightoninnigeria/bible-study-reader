@@ -14,7 +14,7 @@
 //   render-chapter-ui.js    – buildSaveBar, buildNotesField, buildNavButtons,
 //                             buildLangBar, setStudyLang
 //
-// Structure rendered (in order):
+// Structure rendered (in order):\
 //   .chapter-page wrapper    — plain block; holds lang bar div and receives
 //                              padding-top offset when the lang bar is visible
 //   1.  #chapterLangBar      — sticky lang switcher inside the wrapper;
@@ -52,9 +52,10 @@
 //   ICONS                            – icons.js
 //   appSettings                      – settings.js
 //   chapters, currentChapter,
-//   isNonChapterPage, verseData,
-//   storageKey                       – main.js STATE section
-//   updateProgress                   – main.js PROGRESS section
+//   isNonChapterPage, verseData      – state.js
+//   answerFieldKey                   – state.js
+//   StudyIDB                         – idb.js
+//   updateProgress                   – render-progress.js
 //   restoreStudyTheme                – main.js
 //   renderTitlePage                  – main.js
 //   openLibrary                      – study-loader.js
@@ -62,12 +63,12 @@
 //   buildStarredSummaryHtml          – starred.js
 //   localValidateEligible            – local-validate.js
 //   createInfoTrigger                – onboarding.js
-//   StudyIDB                         – idb.js
 //   Swal                             – sweetalert2 (vendor)
 //   window.activeStudyId,
 //   window.titlePageData,
-//   window.studyMetadata       – state.js / study-loader.js (language slot map source)
-//   buildLangBar, setStudyLang       – render-chapter-ui.js
+//   window.studyMetadata             – state.js / study-loader.js
+//   buildLangBar, setStudyLang,
+//   buildNotesField                  – render-chapter-ui.js
 
 
 // ── DETECT AVAILABLE LANGUAGES ────────────────────────────────────────────────
@@ -161,6 +162,21 @@ async function renderChapter(idx, scrollY = 0) {
       }
     });
 
+    // ── Pre-load chapter answer object from IDB ───────────────────────────────
+    // Fetched once here so every renderer in the elements loop below can read
+    // saved answer values and star flags synchronously from this plain object,
+    // rather than making individual async IDB calls.
+    // Defaults to {} when no answers have been saved yet for this chapter.
+    let chapterAnswers = {};
+    try {
+      chapterAnswers = await StudyIDB.getChapterAnswers(
+        window.activeStudyId,
+        ch.chapterNumber
+      );
+    } catch (e) {
+      console.warn('[renderChapter] Failed to load chapter answers from IDB; rendering with empty answers.', e);
+    }
+
     // ── Answer-row info popup ─────────────────────────────────────────────────
     // Built once per render and passed into renderQuestion() via ctx so that
     // render-elements.js carries no setup logic of its own. Also written to
@@ -199,9 +215,18 @@ async function renderChapter(idx, scrollY = 0) {
 
       const noPad = resolved.bottomPadding === 'none' ? ' style="margin-bottom:0"' : '';
 
-      // activeLang and langMap are threaded into every ctx so renderers can
-      // call resolveText() with the correct slot map for this study.
-      const ctx = { el: resolved, ch, noPad, answerRowInfoHtml, activeLang, langMap };
+      // chapterAnswers is threaded into every ctx so renderQuestion() and
+      // renderLikertScaleElement() can read saved values and star flags
+      // synchronously without making IDB calls inside the render loop.
+      const ctx = {
+        el: resolved,
+        ch,
+        noPad,
+        answerRowInfoHtml,
+        activeLang,
+        langMap,
+        chapterAnswers,
+      };
 
       switch (resolved.type) {
 
@@ -259,7 +284,9 @@ async function renderChapter(idx, scrollY = 0) {
     }
 
     // ── 5. Notes field ────────────────────────────────────────────────────────
-    contentHtml += buildNotesField(ch);
+    // chapterAnswers is passed so buildNotesField() can read the saved notes
+    // value synchronously from the pre-loaded object.
+    contentHtml += buildNotesField(ch, chapterAnswers);
 
     // ── 6. Prev/Next nav buttons ──────────────────────────────────────────────
     contentHtml += buildNavButtons(idx, activeLang, langMap);
@@ -278,7 +305,10 @@ async function renderChapter(idx, scrollY = 0) {
     buildLangBar(availableLangs, activeLang);
 
     // ── Post-render: starred summary ──────────────────────────────────────────
-    const starredQuestions = getStarredQuestions(ch);
+    // getStarredQuestions() is async (reads from IDB), so we await it here.
+    // chapterAnswers is already loaded — pass it directly to avoid a second
+    // IDB read. getStarredQuestions accepts an optional pre-loaded record.
+    const starredQuestions = await getStarredQuestions(ch, chapterAnswers);
     if (starredQuestions.length > 0) {
       const summaryContainer = document.getElementById('starredSummaryContainer');
       if (summaryContainer) {

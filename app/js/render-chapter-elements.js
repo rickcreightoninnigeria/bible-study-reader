@@ -8,17 +8,23 @@
 // (render-chapter.js) before calling renderImage().
 //
 // ctx shape (all renderers):
-//   ctx.el         {object}  The resolved element object from chapters[].elements[]
-//   ctx.ch         {object}  The chapter object (chapters[idx])
-//   ctx.noPad      {string}  Either ' style="margin-bottom:0"' or '' — derived from
-//                            el.bottomPadding by the orchestrator
-//   ctx.activeLang {string}  Active study language code (e.g. 'ha', 'en').
-//                            Set by the orchestrator from window._activeStudyLang,
-//                            falling back to the first language in studyMetadata.
-//   ctx.langMap    {object}  Slot-index map built from studyMetadata, e.g.
-//                            { ha: 1, ff: 2, en: 3 }. Empty object for
-//                            mono-lingual studies. Passed to resolveText() so
-//                            it can find el[field + N] without scanning elements.
+//   ctx.el             {object}  The resolved element object from chapters[].elements[]
+//   ctx.ch             {object}  The chapter object (chapters[idx])
+//   ctx.noPad          {string}  Either ' style="margin-bottom:0"' or '' — derived from
+//                                el.bottomPadding by the orchestrator
+//   ctx.activeLang     {string}  Active study language code (e.g. 'ha', 'en').
+//                                Set by the orchestrator from window._activeStudyLang,
+//                                falling back to the first language in studyMetadata.
+//   ctx.langMap        {object}  Slot-index map built from studyMetadata, e.g.
+//                                { ha: 1, ff: 2, en: 3 }. Empty object for
+//                                mono-lingual studies. Passed to resolveText() so
+//                                it can find el[field + N] without scanning elements.
+//   ctx.chapterAnswers {object}  Pre-loaded IDB answer record for this chapter,
+//                                fetched once by the orchestrator (render-chapter.js)
+//                                via StudyIDB.getChapterAnswers(). Used by
+//                                renderQuestion() to populate saved answer text
+//                                and starred state without any async calls.
+//                                Defaults to {} when no answers exist yet.
 //
 // ctx shape (renderQuestion only, additional):
 //   ctx.answerRowInfoHtml {object}  { title, body } — built once per render in
@@ -32,11 +38,11 @@
 //   t()                              – i18n.js
 //   ICONS                            – icons.js
 //   verseData                        – main.js STATE section  (read + written by renderBiblePassage)
-//   storageKey                       – main.js STATE section
+//   answerFieldKey                   – state.js
 //   ttsAvailable, ttsShouldShow,
 //   ttsStripHtml                     – tts.js
 //   voiceInputAvailable              – voice.js
-//   isStarred                        – starred.js
+//   isStarredFromCache               – starred.js
 //   openVerseModal, openQaModalFromElement,
 //   openDeeperModal, openInfoModal   – modals.js
 //   renderLikertScale                – modals.js
@@ -417,16 +423,24 @@ function renderBiblePassage(ctx) {
 // ── QUESTION ──────────────────────────────────────────────────────────────────
 // Renders both the 'header' subtype (custom label in the ref bar) and the
 // standard subtype (scripture ref, optionally tappable via verseData).
+//
+// Answer pre-population and star state are read synchronously from
+// ctx.chapterAnswers, which is fetched from IDB once by the orchestrator
+// (renderChapter) before the elements loop runs.
 
 function renderQuestion(ctx) {
-  const { el, ch, noPad, answerRowInfoHtml, activeLang, langMap } = ctx;
+  const { el, ch, noPad, answerRowInfoHtml, activeLang, langMap, chapterAnswers } = ctx;
 
   const isReflection = el.subtype === 'reflection';
   const isHeader     = el.subtype === 'header';
-  const key          = storageKey(ch.chapterNumber, isReflection ? 'r' : 'q', el.elementId);
-  const val          = escapeHtml(localStorage.getItem(key) || '');
-  const starred      = isStarred(ch.chapterNumber, el.elementId);
-  const cardId       = el.elementId;
+
+  // Read saved answer value from the pre-loaded chapter answers object.
+  const fieldKey = answerFieldKey(isReflection ? 'r' : 'q', el.elementId);
+  const val      = escapeHtml((chapterAnswers || {})[fieldKey] || '');
+
+  // Read star state from the pre-loaded chapter answers object.
+  const starred  = isStarredFromCache(chapterAnswers, el.elementId);
+  const cardId   = el.elementId;
 
   // Resolve the question text for the active language.
   const questionText = resolveText(el, activeLang, 'question', langMap);
@@ -479,7 +493,7 @@ function renderQuestion(ctx) {
       data-index="${el.elementId}"
       placeholder="${placeholder}"
       oninput="autoResize(this)"
-      onblur="saveAnswers(false); localValidateAutoTrigger(this)"
+      onblur="localValidateAutoTrigger(this)"
     >${val}</textarea>`;
 
   const cardOpen = `
@@ -566,7 +580,7 @@ function renderQuestion(ctx) {
 }
 
 
-// ── IMAGE ─────────────────────────────────────────────────────────────────────
+// ── IMAGE ───────────────────────────────────────────────────────────────────── "bluefish color-coding
 // imgSrc is pre-resolved by the orchestrator (render-chapter.js) via the async
 // StudyIDB.getImage() call. This function is fully synchronous.
 // Caption and alt text are not language-keyed in the current schema — they are
@@ -590,7 +604,6 @@ function renderImage(ctx) {
         ? `width:${widthPct}%; float:right; margin-left:16px;`
         : `width:${widthPct}%; margin-left:auto; margin-right:auto;`; // center
 
-  // Caption: markdown not yet supported — treat as plainText unless format is HTML
   // Caption: rendered via renderFormatted() so HTML, markdown, and plainText
   // are all supported.
   const captionHtml = caption
@@ -662,8 +675,12 @@ function renderCallout(ctx) {
 // ── LIKERT SCALE ──────────────────────────────────────────────────────────────
 // Thin ctx-signature wrapper around renderLikertScale() from modals.js,
 // for consistency with the other element renderers.
-
+//
+// chapterAnswers is passed as the third argument so renderLikertScale() can
+// pre-populate saved radio selections from the already-loaded IDB record,
+// avoiding a redundant IDB fetch.
+ 
 function renderLikertScaleElement(ctx) {
-  const { el, ch } = ctx;
-  return renderLikertScale(el, ch.chapterNumber);
+  const { el, ch, chapterAnswers } = ctx;
+  return renderLikertScale(el, ch.chapterNumber, chapterAnswers);
 }
