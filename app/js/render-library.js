@@ -497,7 +497,8 @@ async function renderLibrary() {
             </div>
             <button class="lib-ri-delete-btn"
               onclick="event.stopPropagation(); deleteStudy('${id}', '${safe}')"
-              title="${t('renderlib_delete_title', { title: safe })}">
+              title="${t('renderlib_delete_title', { title: safe })}"
+              aria-label="${t('renderlib_delete_title', { title: safe })}">
               ${ICONS.trash}
             </button>
           </div>`;
@@ -566,11 +567,13 @@ async function renderLibrary() {
              <button class="study-card-reorder-btn"
                ${isFirst ? 'disabled' : ''}
                onclick="event.stopPropagation(); moveStudy('${id}', -1)"
-               title="${t('renderlib_move_up')}">${ICONS.arrowUp}</button>
+               title="${t('renderlib_move_up')}"
+               aria-label="${t('renderlib_move_up')}">${ICONS.arrowUp}</button>
              <button class="study-card-reorder-btn"
                ${isLast ? 'disabled' : ''}
                onclick="event.stopPropagation(); moveStudy('${id}', 1)"
-               title="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
+               title="${t('renderlib_move_down')}"
+               aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
            </div>`
         : `<button class="study-card-delete-btn"
              onclick="event.stopPropagation(); deleteStudy('${id}', '${e.title.replace(/'/g, "\\'")}')"
@@ -670,11 +673,13 @@ async function renderLibrary() {
              <button class="study-card-reorder-btn"
                ${isFirst ? 'disabled' : ''}
                onclick="event.stopPropagation(); moveRecentStudy('${id}', -1)"
-               title="${t('renderlib_move_up')}">${ICONS.arrowUp}</button>
+               title="${t('renderlib_move_up')}"
+               aria-label="${t('renderlib_move_up')}">${ICONS.arrowUp}</button>
              <button class="study-card-reorder-btn"
                ${isLast ? 'disabled' : ''}
                onclick="event.stopPropagation(); moveRecentStudy('${id}', 1)"
-               title="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
+               title="${t('renderlib_move_down')}"
+               aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
            </div>`
         : `<button class="study-card-delete-btn"
              onclick="event.stopPropagation(); deleteStudy('${id}', '${e.title.replace(/'/g, "\\'")}')"
@@ -1144,13 +1149,14 @@ async function renderLibrary() {
         const dlBtn = showDlBtn
           ? `<button class="lib-path-l3-info-btn lib-path-l3-dl-btn"
                onclick="event.stopPropagation(); libPathDownload('${safeDlUrl}')"
-               title="${t('renderlib_download_study', { title: s.titleLevel3.replace(/'/g, "\\'")})}">
+               title="${t('renderlib_download_study', { title: s.titleLevel3.replace(/'/g, "\\'")})}" aria-label="${t('renderlib_download_study', { title: s.titleLevel3.replace(/'/g, "\\'")})}">
                ${ICONS.download}
              </button>`
           : alreadyInstalled
           ? `<button class="lib-path-l3-info-btn lib-path-l3-installed-btn"
                onclick="event.stopPropagation(); activateStudy('${s.studyId}')"
-               title="${t('renderlib_installed_open')}">
+               title="${t('renderlib_installed_open')}"
+               aria-label="${t('renderlib_installed_open')}">
                ${ICONS.chevronRight}
              </button>`
           : '';
@@ -1159,7 +1165,9 @@ async function renderLibrary() {
             <span class="lib-path-l3-title">${s.titleLevel3}</span>
             ${dlBtn}
             <button class="lib-path-l3-info-btn"
-              onclick="libPathOpenPopup('${s.titleLevel3.replace(/'/g,"\\'")}','${safeDesc}',event)">${ICONS.triggerInfo}</button>
+              onclick="libPathOpenPopup('${s.titleLevel3.replace(/'/g,"\\'")}','${safeDesc}',event)"
+              aria-label="${t('renderlib_pathway_info_btn')}"
+              title="${t('renderlib_pathway_info_btn')}">${ICONS.triggerInfo}</button>
           </div>`;
       }).join('');
 
@@ -1191,7 +1199,8 @@ async function renderLibrary() {
         const l2DlBtn = showL2Dl
           ? `<button class="lib-path-l2-info-btn lib-path-l2-dl-btn"
                onclick="event.stopPropagation(); libPathDownload('${safeL2DlUrl}')"
-               title="${t('renderlib_download_bundle')}">
+               title="${t('renderlib_download_bundle')}"
+               aria-label="${t('renderlib_download_bundle')}">
                ${ICONS.download}
              </button>`
           : '';
@@ -1204,11 +1213,14 @@ async function renderLibrary() {
             <button class="lib-path-set-active-btn ${isSetActive ? 'is-set' : ''}"
               data-pathway-key="${pathwayKey}"
               onclick="event.stopPropagation(); libPathSetActive('${pathwayKey}', this)"
-              title="${isSetActive ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active')}">
+              title="${isSetActive ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active')}"
+              aria-label="${isSetActive ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active')}">
               ${isSetActive ? ICONS.pathwayOn : ICONS.pathwayOff}
             </button>
             <button class="lib-path-l2-info-btn"
-              onclick="libPathOpenPopup('${safeName}','${safeDesc}',event)">${ICONS.triggerInfo}</button>
+              onclick="libPathOpenPopup('${safeName}','${safeDesc}',event)"
+              aria-label="${t('renderlib_pathway_info_btn')}"
+              title="${t('renderlib_pathway_info_btn')}">${ICONS.triggerInfo}</button>
           </div>
           <div class="lib-path-l2-children${showMode === 'one' ? ' open' : ''}" id="${childrenId}" style="padding-left:16px;">
             <div class="lib-path-l3-wrap">

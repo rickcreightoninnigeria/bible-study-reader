@@ -701,5 +701,11 @@
   "studyloader_version_updating": "Updating {title} to v{version}…",
   "studyloader_version_downgrade_blocked": "This is an older version — keeping the current one",
 
-  "voice_transcript_saved_navigate_back": "Answer recorded — navigate back to see it"
+  "voice_transcript_saved_navigate_back": "Answer recorded — navigate back to see it",
+
+  "renderchapter_star_btn_unstarred"                    :"Star this question",
+  "renderchapter_star_btn_starred"                      :"Unstar this question",
+  "renderchapter_notes_info_btn"                        :"About notes",
+  "renderpages_settings_interfacemode_info_btn"         :"About interface mode",
+  "renderlib_pathway_info_btn"                          :"About this study"
 }

@@ -372,12 +372,14 @@ async function _buildPathwayPanelHtml(pathway) {
 
     let openBtn;
     if (isActive) {
-      openBtn = `<button class="prog-pathway-open-btn current" title="${t('progress_btn_current_study_title')}" disabled>★</button>`;
+      openBtn = `<button class="prog-pathway-open-btn current" title="${t('progress_btn_current_study_title')}" aria-label="${t('progress_btn_current_study_title')}" disabled>★</button>`;
     } else if (inRegistry) {
       openBtn = `<button class="prog-pathway-open-btn" title="${t('progress_btn_open_study_title')}"
+        aria-label="${t('progress_btn_open_study_title')}"
         onclick="event.stopPropagation(); activateStudy('${s.studyId}')">→</button>`;
     } else {
       openBtn = `<button class="prog-pathway-open-btn" title="${t('progress_btn_find_library_title')}"
+        aria-label="${t('progress_btn_find_library_title')}"
         onclick="event.stopPropagation(); Router.navigate({ page: 'library' })">↗</button>`;
     }
 

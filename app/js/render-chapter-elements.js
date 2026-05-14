@@ -483,7 +483,8 @@ function renderQuestion(ctx) {
   const starBtn = `
     <button class="verse-btn star-btn"
       id="star_${cardId}"
-      onclick="toggleStar(${ch.chapterNumber}, '${cardId}')">
+      onclick="toggleStar(${ch.chapterNumber}, '${cardId}')"
+      aria-label="${starred ? t('renderchapter_star_btn_starred') : t('renderchapter_star_btn_unstarred')}">
       ${starred ? ICONS.starFilled : ICONS.starEmpty}
     </button>`;
 

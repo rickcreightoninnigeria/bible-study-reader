@@ -1183,7 +1183,7 @@ async function renderSettings(tabId) {
         <div class="settings-section-heading">
           ${t('renderpages_settings_interfacemode_heading')}
           <button class="info-trigger-btn" style="margin-left:6px;"
-            onclick="openInfoModal('interface-mode-intro', {title: t('renderpages_settings_interfacemode_heading'), body: window._interfaceModePopupHtml}, this)">${ICONS.triggerInfo}</button>
+            aria-label="${t('renderpages_settings_interfacemode_info_btn')}" title="${t('renderpages_settings_interfacemode_info_btn')}" onclick="openInfoModal('interface-mode-intro', {title: t('renderpages_settings_interfacemode_heading'), body: window._interfaceModePopupHtml}, this)">${ICONS.triggerInfo}</button>
           <button class="howto-tutorial-btn" data-tutorial-id="interface-mode"
                   onclick="showFeatureTutorial('interface-mode', () => { Router.replaceState({ page: 'settings', tabId: 'app' }); renderSettings('app'); })">
             <span class="tutorial-trigger-icon">${tutorialIcon('interface-mode')}</span>

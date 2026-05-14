@@ -157,7 +157,7 @@ function buildNotesField(ch, chapterAnswers) {
     <div class="question-card">
       <div class="question-ref question-ref-split">
         <span>${t('renderchapter_notes_heading')}</span>
-        <button class="verse-btn" onclick="openNotesInfo()">${ICONS.triggerInfo}</button>
+        <button class="verse-btn" onclick="openNotesInfo()" aria-label="${t('renderchapter_notes_info_btn')}" title="${t('renderchapter_notes_info_btn')}">${ICONS.triggerInfo}</button>
       </div>
       <textarea class="answer-field"
         data-type="notes"
