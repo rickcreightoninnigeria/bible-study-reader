@@ -65,7 +65,7 @@ function getUpgradeOnboardingSlides() {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>Bugfixes:</b> over a dozen minor bugfixes</li></ul>',
+      body:    '<ul><li><b>Storage:</b> a major behind-the-scenes update (moving to database storage)</li></ul>',
     },
   ];
 }
