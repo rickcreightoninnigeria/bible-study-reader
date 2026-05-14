@@ -165,7 +165,7 @@ function buildNotesField(ch, chapterAnswers) {
         placeholder="${t('renderchapter_notes_placeholder')}"
         oninput="autoResize(this)"
       >${notesVal}</textarea>
-      ${voiceInputAvailable() ? `<button class="mic-btn" onclick="startVoiceInput(this)">${ICONS.mic}</button>` : ''}
+      ${voiceInputAvailable() ? `<button class="mic-btn" onclick="startVoiceInput(this)" aria-label="${t('renderchapter_answer_tools_mic_label')}" title="${t('renderchapter_answer_tools_mic_label')}">${ICONS.mic}</button>` : ''}
     </div>`;
 }
 

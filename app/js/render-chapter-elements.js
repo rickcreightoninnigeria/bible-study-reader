@@ -299,21 +299,21 @@ function renderText(ctx) {
 
     case 'intro': {
       const speakBtn = ttsAvailable() && ttsShouldShow(ttsStripHtml(html).length)
-        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.intro-block').dataset.ttsRawHtml, this)" title="${speakTitle}">${ICONS.speak}</button>`
+        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.intro-block').dataset.ttsRawHtml, this)" title="${speakTitle}" aria-label="${speakTitle}">${ICONS.speak}</button>`
         : '';
       return `<div class="intro-block"${noPad} data-tts-raw-html="${encodedHtml}">${speakBtn}${html}</div>`;
     }
 
     case 'bridge': {
       const speakBtn = ttsAvailable() && ttsShouldShow(ttsStripHtml(html).length)
-        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.bridge-text').dataset.ttsRawHtml, this)" title="${speakTitle}">${ICONS.speak}</button>`
+        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.bridge-text').dataset.ttsRawHtml, this)" title="${speakTitle}" aria-label="${speakTitle}">${ICONS.speak}</button>`
         : '';
       return `<div class="bridge-text"${noPad} data-tts-raw-html="${encodedHtml}">${speakBtn}${html}</div>`;
     }
 
     case 'closing': {
       const speakBtn = ttsAvailable() && ttsShouldShow(ttsStripHtml(html).length)
-        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.bridge-text').dataset.ttsRawHtml, this)" title="${speakTitle}">${ICONS.speak}</button>`
+        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.bridge-text').dataset.ttsRawHtml, this)" title="${speakTitle}" aria-label="${speakTitle}">${ICONS.speak}</button>`
         : '';
       return `
         <div class="section-break">
@@ -326,7 +326,7 @@ function renderText(ctx) {
 
     default: {
       const speakBtn = ttsAvailable() && ttsShouldShow(ttsStripHtml(html).length)
-        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.bridge-text').dataset.ttsRawHtml, this)" title="${speakTitle}">${ICONS.speak}</button>`
+        ? `<button class="speak-btn" onclick="ttsSpeak(this.closest('.bridge-text').dataset.ttsRawHtml, this)" title="${speakTitle}" aria-label="${speakTitle}">${ICONS.speak}</button>`
         : '';
       return `<div class="bridge-text"${noPad} data-tts-raw-html="${encodedHtml}">${speakBtn}${html}</div>`;
     }
@@ -473,11 +473,11 @@ function renderQuestion(ctx) {
 
   const actionRow = `
     <div class="answer-action-row">
-      <button class="answer-info-btn" title="${t('renderchapter_answer_info_btn_title')}"
+      <button class="answer-info-btn" title="${t('renderchapter_answer_info_btn_title')}" aria-label="${t('renderchapter_answer_info_btn_title')}"
           onclick="openInfoModal('answer-action-row-info', window._answerRowInfoHtml, this)">${ICONS.triggerInfo}</button>
-      ${aiTutorAvailable() && showCheckAnswerButton() ? `<button class="check-answer-btn" title="${t('renderchapter_ask_ai_tutor')}" onclick="openAiTutorForCard(this)">${ICONS.checkAnswer}</button>` : ''}
-      <button class="local-validate-btn" title="${t('renderchapter_check_my_answer')}" onclick="openLocalValidateForCard(this)" ${val ? '' : 'disabled'}>${ICONS.localValidate}</button>
-      ${voiceInputAvailable() ? `<button class="mic-btn" onclick="startVoiceInput(this)">${ICONS.mic}</button>` : ''}
+      ${aiTutorAvailable() && showCheckAnswerButton() ? `<button class="check-answer-btn" title="${t('renderchapter_ask_ai_tutor')}" aria-label="${t('renderchapter_ask_ai_tutor')}" onclick="openAiTutorForCard(this)">${ICONS.checkAnswer}</button>` : ''}
+      <button class="local-validate-btn" title="${t('renderchapter_check_my_answer')}" aria-label="${t('renderchapter_check_my_answer')}" onclick="openLocalValidateForCard(this)" ${val ? '' : 'disabled'}>${ICONS.localValidate}</button>
+      ${voiceInputAvailable() ? `<button class="mic-btn" onclick="startVoiceInput(this)" aria-label="${t('renderchapter_answer_tools_mic_label')}" title="${t('renderchapter_answer_tools_mic_label')}">${ICONS.mic}</button>` : ''}
     </div>`;
 
   const starBtn = `
