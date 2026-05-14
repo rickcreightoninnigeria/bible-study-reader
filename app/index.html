@@ -9,8 +9,8 @@
   ─────────────
   This is a single-file mobile-first web app (HTML + CSS + JS in one file).
   It is designed to be delivered as a web page or wrapped in a WebView for
-  Android/iOS. All state (answers, settings, progress) is persisted to
-  localStorage under the 'nnj_' key prefix.
+  Android/iOS. Answer data is persisted to IndexedDB (via StudyIDB). App settings
+  and non-answer state remain in localStorage under the 'bsr_' key prefix.
 
   MAJOR SECTIONS (in order)
   ──────────────────────────
@@ -88,9 +88,9 @@
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast">✓ Answers saved</div>
-<div class="toast" id="validate-toast"></div>
-<div class="celebration-toast" id="celebrationToast"></div>
+<div class="toast" id="toast" aria-live="polite" role="status">✓ Answers saved</div>
+<div class="toast" id="validate-toast" aria-live="polite" role="status"></div>
+<div class="celebration-toast" id="celebrationToast" aria-live="polite" role="status"></div>
 
 <!-- MAIN -->
 <div class="content" id="mainContent"></div>
@@ -117,7 +117,7 @@
     <div class="verse-modal-ref">
       <span id="verseModalRef"></span>
       <div style="display:flex; align-items:center; gap:10px;">
-        <button class="speak-btn" id="verseModalSpeakBtn" onclick="ttsSpeak(document.getElementById('verseModalText').innerText, this)" title="Read aloud"></button>
+        <button class="speak-btn" id="verseModalSpeakBtn" onclick="ttsSpeak(document.getElementById('verseModalText').innerText, this)" title="Read aloud" aria-label="Read aloud"></button>
         <button class="verse-modal-close" onclick="closeVerseModal()"><span>✕</span></button>
       </div>
     </div>
@@ -136,7 +136,7 @@
     <div class="qa-modal-term">
       <span id="qaModalTerm"></span>
       <div style="display:flex; align-items:center; gap:10px;">
-        <button class="speak-btn" id="qaModalSpeakBtn" onclick="ttsSpeak(document.getElementById('qaModalText').innerText, this)" title="Read aloud"></button>
+        <button class="speak-btn" id="qaModalSpeakBtn" onclick="ttsSpeak(document.getElementById('qaModalText').innerText, this)" title="Read aloud" aria-label="Read aloud"></button>
         <button class="qa-modal-close" onclick="closeQaModal()"><span>✕</span></button>
       </div>
     </div>
@@ -197,6 +197,7 @@
 
 <script src="js/sweetalert2.all.min.js"></script>
 <script src="js/jszip.min.js"></script>
+<script src="js/purify.min.js"></script>
 <script src="js/markdown-it.min.js"></script>
 <script src="js/format-text.js"></script>
 <script src="js/state.js"></script>
