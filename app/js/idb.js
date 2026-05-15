@@ -88,7 +88,10 @@ const StudyIDB = (() => {
       };
       req.onerror = e => {
         // Firefox private browsing rejects the open request (not throws).
-        // Treat as permanent IDB unavailability.
+        // Treat as permanent IDB unavailability. Intentional: transient open
+        // failures are not retried — in a single-user Android WebView, IDB
+        // either works or it doesn't. Permanent failure enables a clean
+        // one-time error message rather than intermittent failures.
         _unavailableError = e.target.error;
         _unavailableError.name = 'IDBUnavailable';
         _dbPromise = null;

@@ -1,5 +1,6 @@
 /**
- * Tests for state.js key helper functions.
+* Paths are relative to testing/tests/ — source files are in ../../app/js/
+* Tests for state.js key helper functions.
  * Signatures verified against actual state.js source.
  */
 
