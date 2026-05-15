@@ -1335,6 +1335,15 @@ async function renderSettings(tabId) {
           </div>
         </div>
 
+        <div class="settings-block" style="margin-bottom:10px;">
+          <div class="settings-row-desc">
+            ${t('renderpages_settings_clearwarning_suggestion')}
+          </div>
+          <button class="settings-danger-btn" onclick="confirmClearAnswers()">
+            &#128465; ${t('renderpages_settings_clearanswers_btn')}
+          </button>
+        </div>
+
         <div class="settings-warn-box">
           <div class="settings-warn-box-label">
             &#9888;&#9888; ${t('renderpages_settings_nuclear_warning_label')}
@@ -1342,6 +1351,15 @@ async function renderSettings(tabId) {
           <div class="settings-warn-box-body">
             ${t('renderpages_settings_nuclear_warning_text')}
           </div>
+        </div>
+
+        <div class="settings-block" style="margin-bottom:10px;">
+          <div class="settings-row-desc">
+            ${t('renderpages_settings_nuclear_desc')}
+          </div>
+          <button class="settings-danger-btn" onclick="resetAllData()">
+            &#9762; ${t('renderpages_settings_nuclear_btn')}
+          </button>
         </div>
 
       </div>` : ''}`;
