@@ -279,7 +279,7 @@ async function initApp({ isStudySwitch = false } = {}) {
 
   initSettings();
 
-  const _savedPos = appSettings.rememberPosition && getLastPosition();
+  const _savedPos = appSettings.rememberPosition && await getLastPosition();
   // Guard: discard the saved position if its chapter index is out of range
   // for the current study (e.g. switching from a longer study to a shorter one).
   const _launchPos = _savedPos && _savedPos.chapterIdx < window.chapters.length
