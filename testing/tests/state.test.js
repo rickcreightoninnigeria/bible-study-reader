@@ -4,13 +4,27 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import {
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import vm from 'vm';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+function loadSandbox() {
+  const sandbox = { window: {}, console };
+  vm.createContext(sandbox);
+  vm.runInContext(readFileSync(join(__dirname, '../../app/js/state.js'), 'utf8'), sandbox);
+  return sandbox;
+}
+
+const {
   answerFieldKey,
   likertFieldKey,
   celebratedIDBKey,
   starFieldKey,
   chapterAnswersIDBKey,
-} from './state-exports.js';
+} = loadSandbox();
 
 // ─── answerFieldKey(type, index) ──────────────────────────────────────────────
 
@@ -52,9 +66,7 @@ describe('likertFieldKey', () => {
   });
 
   it('does not collide with answerFieldKey output', () => {
-    const likert = likertFieldKey('el_1', 0);
-    const answer = answerFieldKey('q', '1_0');
-    expect(likert).not.toBe(answer);
+    expect(likertFieldKey('el_1', 0)).not.toBe(answerFieldKey('q', '1_0'));
   });
 });
 
@@ -121,7 +133,6 @@ describe('no key collisions across helpers', () => {
       starFieldKey('el_1'),
       chapterAnswersIDBKey('baptism', 1),
     ];
-    const unique = new Set(keys);
-    expect(unique.size).toBe(keys.length);
+    expect(new Set(keys).size).toBe(keys.length);
   });
 });
