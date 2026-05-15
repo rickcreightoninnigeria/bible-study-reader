@@ -478,7 +478,7 @@ function restoreStudyTheme() {
   }
 }
 
-async function applyStudyData(data, { isStudySwitch = false } = {}) {
+async function applyStudyData(data, { isStudySwitch = false, silent = false } = {}) {
   // Revoke any blob URLs created for the previous study before overwriting
   // state. This prevents blob URLs accumulating in memory across study switches.
   _revokeAllBlobUrls();
@@ -689,7 +689,7 @@ async function applyStudyData(data, { isStudySwitch = false } = {}) {
 
   window.verseData = {}; // populated by renderChapter() from biblePassage elements
   
-  initApp({ isStudySwitch });
+  if (!silent) await initApp({ isStudySwitch });
 } // end applyStudyData
 
 // wrapper to parse string handed over from Android
