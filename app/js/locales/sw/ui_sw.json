@@ -301,7 +301,7 @@
   "renderpages_chapters_answercheck_label"              :"Ukaguzi wa jibu",
   "renderpages_chapters_answercheck_desc"               :"Gusa ikoni ya tiki kwenye kadi za maswali zinazostahili kwa ukaguzi wa haraka wa nje ya mtandao wa jibu lako. Haihitaji intaneti.",
   "renderpages_chapters_readaloud_label"                :"Soma kwa Sauti",
-  "renderpages_chapters_readaloud_desc"                 :"Ikoni ya spika kwenye fungo ndefu inaruhusu programu kuzisoma kwa sauti. Unaweza kurekebisha fungo zipi ionekane katika <button class=\"howto-inline-link\" onclick=\"renderSettings('app')\">Mipangilio</button>.",
+  "renderpages_chapters_readaloud_desc"                 :"Ikoni ya spika kwenye fungo ndefu inaruhusu programu kuzisoma kwa sauti. Unaweza kurekebisha fungo zipi ionekane katika <button class=\"howto-inline-link\" onclick=\"Router.navigate({ page: 'settings' })\">Mipangilio</button>.",
   "renderpages_chapters_navbtns_label"                  :"Vifungo vya Ifuatayo &amp; Iliyopita",
   "renderpages_chapters_navbtns_desc"                   :"Vifungo vya Nyuma na Ifuatayo chini ya kila sura. Unaweza pia kutelezesha kushoto/kulia ili kusogea kati ya sura.",
   "renderpages_chapters_other_label"                    :"Vipengele vingine",
