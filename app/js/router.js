@@ -147,7 +147,7 @@ const Router = (() => {
   // slide in from the left (back). Non-chapter pages are treated as "deeper"
   // than the title page but shallower than chapters.
   const PAGE_ORDER = ['title', 'library', 'progress', 'howto', 'settings',
-                      'leaders', 'about', 'notes', 'chapter'];
+                      'leaders', 'about', 'notes', 'godeeper', 'chapter'];
 
   function _pageDepth(page) {
     const i = PAGE_ORDER.indexOf(page);
@@ -269,6 +269,10 @@ const Router = (() => {
 
         case 'notes':
           renderNotesPage();
+          break;
+
+        case 'godeeper':
+          await renderGoDeeper(tabId ?? undefined);
           break;
 
         case '_exit_guard':
