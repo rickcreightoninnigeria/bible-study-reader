@@ -6,6 +6,7 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "fake-indexeddb": "^6.2.5",
     "vitest": "^2.0.0"
   }
 }

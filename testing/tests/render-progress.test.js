@@ -1,6 +1,8 @@
 /**
  * Tests for _getChapterProgressFromRecord() in render-progress.js.
  *
+ * Paths are relative to testing/tests/ — source files are in ../../app/js/
+ *
  * This function has had multiple bug fixes (bipolar Likert, sections null guard)
  * so it is a priority regression target.
  *

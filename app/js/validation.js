@@ -23,6 +23,10 @@
 //   To generate an obfuscated key, call aiTutorObfuscateKey(plainKey) from
 //   the browser console and paste the result into the study JSON.
 //
+//   ⚠ This obfuscation deters casual inspection only — it is NOT secure storage.
+//   See the "Key obfuscation" section below for full details and the recommended
+//   server-side proxy approach for real key protection.
+//
 // ── STRAND 2: LOCAL VALIDATE ──────────────────────────────────────────────────
 // A lightweight, fully offline answer check for bible-study question cards.
 //
@@ -149,10 +153,37 @@ const AI_TUTOR_FALLBACK_SYSTEM =
 // Scheme: XOR each character of the plain key against a repeating passphrase,
 // then base64-encode the result, then prepend the prefix "bsr1.".
 //
-// This is NOT cryptographic security — it is obfuscation only. The purpose is
-// to ensure that a key visible in a plain-text .estudy file is not immediately
-// usable by someone who casually inspects the file. Anyone who reads this source
-// code can reverse it; that is acceptable for the stated goal.
+// ⚠ SECURITY NOTICE — READ BEFORE USING IN PRODUCTION ⚠
+// ────────────────────────────────────────────────────────
+// This is NOT cryptographic security. It is shallow obfuscation only.
+//
+// Because this app runs entirely client-side, the passphrase (_AI_TUTOR_XOR_PASS),
+// the prefix ("bsr1."), and both _xorString/_decodeKey functions are all delivered
+// to the browser in plain text. Anyone who opens DevTools → Sources can:
+//   1. Read _AI_TUTOR_XOR_PASS directly from this file.
+//   2. Call aiTutorObfuscateKey() or _decodeKey() from the console to recover
+//      any key stored in a .estudy file in under 10 seconds.
+//
+// What this DOES provide:
+//   ✓ A key in a .estudy file is not immediately copy-pasteable.
+//   ✓ Deters casual inspection of shared study JSON files.
+//   ✓ Slightly raises the bar for non-technical users.
+//
+// What this does NOT provide:
+//   ✗ Any protection against a motivated user or developer.
+//   ✗ Any protection if DevTools access is possible (i.e. always, in a browser).
+//   ✗ Rate-limiting, usage quotas, or key revocation.
+//
+// FOR REAL KEY PROTECTION, use a server-side proxy:
+//   – Deploy a small server function (e.g. Firebase Function, Cloudflare Worker,
+//     Vercel Edge Function) that holds the API key in a server environment variable.
+//   – The client sends only the user's prompt to your proxy endpoint.
+//   – The proxy attaches the key, forwards to Gemini, and returns the response.
+//   – The key never leaves the server and is never visible in the browser.
+//   – This is the only approach that provides meaningful API key protection.
+//
+// This obfuscation scheme should not be described or marketed as "secure".
+// It is a convenience feature, not a security control.
 //
 // Passphrase is kept short and app-specific. Changing it would break all
 // previously obfuscated keys, so treat it as fixed once deployed.
@@ -200,6 +231,10 @@ function _resolveApiKey(stored) {
 //   → "bsr1.XXXXXXXXXXXXXXXXXX"
 //
 // Copy the output and paste it as the apiKey value in your study JSON.
+//
+// ⚠ NOTE: The result is obfuscated, not encrypted. Anyone with access to this
+// source file can decode it. See the "Key obfuscation" section above for the
+// full security notice and the recommended server-side proxy alternative.
 function aiTutorObfuscateKey(plainKey) {
   const xored   = _xorString(plainKey, _AI_TUTOR_XOR_PASS);
   const encoded = btoa(xored);
