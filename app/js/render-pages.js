@@ -146,8 +146,10 @@ function renderTitlePage() {
   const navTitle = document.getElementById('header-title');
   if (navTitle) navTitle.innerText = shortTitle || t('main_fallback_study_title');
 
-  // 4. Resolve last position for Continue button
-  const savedPos = appSettings.rememberPosition && getLastPosition();
+  // 4. Resolve last position for Continue button — read from sync cache
+  //    populated by applyStudyData(). getLastPosition() is async and cannot
+  //    be awaited here; the cache ensures we always have the value synchronously.
+  const savedPos = appSettings.rememberPosition ? window.lastPositionCache : null;
   const pos = savedPos && savedPos.chapterIdx < chapters.length ? savedPos : null;
 
   // 5. Render the title page using the established CSS classes

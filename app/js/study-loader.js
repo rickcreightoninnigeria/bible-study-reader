@@ -254,6 +254,8 @@ async function deleteStudy(id, title) {
       window.activeStudyId = null;
       window.chapters = [];
       window.titlePageData = null;      // prevents stale title page render
+      window.goDeeperData  = null;      // prevents stale go deeper menu entry
+      window.lastPositionCache = null;  // prevents stale continue button
       window.studyMetadata = {};
       localStorage.removeItem('bsr_last_active_study');
       resetTheme();
@@ -665,6 +667,7 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
 
   window.howToUseData     = data.howToUseData     || {};
   window.leadersNotesData = data.leadersNotesData || {};
+  window.goDeeperData     = data.goDeeperData     || null;
   window.studyAboutData   = data.studyAboutData   || {};
   window.studyAiData      = data.studyAiData      || {};
 
@@ -688,7 +691,19 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   _suspendedTheme = {};  // clear any stale suspension state from the previous study
 
   window.verseData = {}; // populated by renderChapter() from biblePassage elements
-  
+
+  // Populate the synchronous last-position cache so renderTitlePage() can read
+  // it without awaiting. Must run before initApp() which calls renderTitlePage().
+  window.lastPositionCache = null;
+  if (appSettings.rememberPosition && window.activeStudyId) {
+    try {
+      const raw = await StudyIDB.getAnswerRaw(`${window.activeStudyId}_lastPosition`);
+      window.lastPositionCache = raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      window.lastPositionCache = null;
+    }
+  }
+
   if (!silent) await initApp({ isStudySwitch });
 } // end applyStudyData
 

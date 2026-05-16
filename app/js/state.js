@@ -15,7 +15,9 @@ window.titlePageData     = null;
 window.studyAboutData    = {};
 window.howToUseData      = {};
 window.leadersNotesData  = {};
+window.goDeeperData      = null;
 window.copyrightData     = {};
+window.lastPositionCache = null;  // sync cache populated by applyStudyData(); read by renderTitlePage()
 window.verseData         = {};
 window.qaCallouts        = [];
 window.qaCalloutsById    = {};
@@ -43,7 +45,7 @@ window._voiceRecogniser   = null;
 window._appReady       = false;
 window.pendingStudyData = null;
 
-// ── Local UI state (previously in main.js) ────────────────────────────────────
+// ── Local UI state ─────────────────────────────────────────────────────────
 window.currentChapter       = 0;
 window.menuOpen             = false;
 window.isNonChapterPage     = false;
