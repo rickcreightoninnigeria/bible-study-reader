@@ -6,7 +6,7 @@
 // Dependencies (all available as globals before this file loads):
 //   ICONS                          – icons.js
 //   appSettings                    – settings.js
-//   isNonChapterPage               – main.js STATE section
+//   isNonChapterPage               – state.js
 //   chapters                       – window.chapters (state.js)
 //   window.activeTabPage,
 //   window.activeTabId,

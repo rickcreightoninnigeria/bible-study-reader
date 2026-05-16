@@ -254,6 +254,7 @@ async function deleteStudy(id, title) {
       window.activeStudyId = null;
       window.chapters = [];
       window.titlePageData = null;      // prevents stale title page render
+      window.goDeeperData  = null;      // prevents stale go deeper menu entry
       window.studyMetadata = {};
       localStorage.removeItem('bsr_last_active_study');
       resetTheme();
@@ -665,6 +666,7 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
 
   window.howToUseData     = data.howToUseData     || {};
   window.leadersNotesData = data.leadersNotesData || {};
+  window.goDeeperData     = data.goDeeperData     || null;
   window.studyAboutData   = data.studyAboutData   || {};
   window.studyAiData      = data.studyAiData      || {};
 

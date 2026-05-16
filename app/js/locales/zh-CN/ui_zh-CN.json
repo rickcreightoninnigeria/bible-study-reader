@@ -257,7 +257,7 @@
   " renderpages_chapters_answercheck_label": "答案检查",
   "renderpages_chapters_answercheck_desc": "点击符合条件的题目卡片上的勾选图标，即可快速离线检查答案——它会检查答案长度、相关性以及是否与文章内容相关。无需联网。在“自动”模式下，每次保存后都会自动运行；在“手动”（默认）模式下，您需要手动点击。您可以在“设置 → 应用 → 答案检查”中更改此设置。",
   " renderpages_chapters_readaloud_label": "朗读",
-  "renderpages_chapters_readaloud_desc": "较长段落上的扬声器图标可以让应用程序朗读这些段落。您可以在<button class=\"howto-inline-link\" onclick=\"renderSettings('app')\">设置</button>中调整显示扬声器图标的段落（使用设置的高级界面模式）。",
+  "renderpages_chapters_readaloud_desc": "较长段落上的扬声器图标可以让应用程序朗读这些段落。您可以在<button class=\"howto-inline-link\" onclick=\"Router.navigate({ page: 'settings' })\">设置</button>中调整显示扬声器图标的段落（使用设置的高级界面模式）。",
   " renderpages_chapters_navbtns_label": "下一页和上一页按钮",
   "renderpages_chapters_navbtns_desc": "每章底部都有“上一章”和“下一章”按钮。您也可以左右滑动来切换章节。",
   " renderpages_chapters_other_label": "其他功能",
