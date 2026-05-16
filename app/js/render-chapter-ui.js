@@ -192,10 +192,10 @@ function buildNavButtons(idx, activeLang, langMap) {
   return `
     <div class="chapter-nav">
       ${showBack
-        ? `<button class="chapter-nav-btn secondary" onclick="Router.navigate({ page: 'chapter', idx: ${idx - 1} })">← ${resolveChapterTitle(chapters[idx - 1])}</button>`
+        ? `<button class="chapter-nav-btn secondary" onclick="Router.navigate({ page: 'chapter', idx: ${idx - 1} })">← ${escapeHtml(resolveChapterTitle(chapters[idx - 1]))}</button>`
         : `<div style="flex:1"></div>`}
       ${showNext
-        ? `<button class="chapter-nav-btn" onclick="Router.navigate({ page: 'chapter', idx: ${idx + 1} })">→ ${resolveChapterTitle(chapters[idx + 1])}</button>`
+        ? `<button class="chapter-nav-btn" onclick="Router.navigate({ page: 'chapter', idx: ${idx + 1} })">→ ${escapeHtml(resolveChapterTitle(chapters[idx + 1]))}</button>`
         : `<div style="flex:1"></div>`}
     </div>`;
 }

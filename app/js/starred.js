@@ -165,8 +165,8 @@ function buildStarredSummaryHtml(ch, starred) {
     <div class="starred-summary-item"
       onclick="document.getElementById('${elementId}')
         .scrollIntoView({behavior:'smooth', block:'center'})">
-      <div class="starred-summary-ref">${q.ref}</div>
-      <div class="starred-summary-text">${q.text}</div>
+      <div class="starred-summary-ref">${escapeHtml(q.ref)}</div>
+      <div class="starred-summary-text">${escapeHtml(q.text)}</div>
     </div>`).join('');
 
   return `

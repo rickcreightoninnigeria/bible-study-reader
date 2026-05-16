@@ -12,7 +12,7 @@
 //   appSettings   – settings.js
 //   ttsAvailable, ttsSpeak, ttsStop – tts.js
 //   likertFieldKey – state.js (IDB field-key helpers)
-//   verseData, chapters, currentChapter – window globals / main.js
+//   verseData, chapters, currentChapter – window globals / state.js
 //   resolveText, buildLangMap – render-elements.js (language resolution)
 //   window.studyMetadata      – study-loader.js (language slot map source)
 
@@ -293,12 +293,13 @@ function openVerseModal(ref) {
   // Omitted entirely when only one translation is present (no tab row needed).
   const tabRowHtml = data.translations.length > 1
     ? `<div class="verse-trans-tab-row">${
-        data.translations.map(tr =>
-          `<button
+        data.translations.map(tr => {
+          const safeLabel = escapeHtml(tr.label);
+          return `<button
             class="verse-trans-btn${tr.label === activeTrans.label ? ' active' : ''}"
-            onclick="switchVerseTranslation('${ref}', '${tr.label}')"
-          >${tr.label}</button>`
-        ).join('')
+            onclick="switchVerseTranslation('${escapeHtml(ref)}', '${safeLabel}')"
+          >${safeLabel}</button>`;
+        }).join('')
       }</div>`
     : '';
 
