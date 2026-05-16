@@ -6,7 +6,7 @@
 // Dependencies (all available as globals before this file loads):
 //   ICONS                          – icons.js
 //   appSettings                    – settings.js
-//   isNonChapterPage               – main.js STATE section
+//   isNonChapterPage               – state.js
 //   chapters                       – window.chapters (state.js)
 //   window.activeTabPage,
 //   window.activeTabId,
@@ -93,7 +93,7 @@ function navigateTab(page, direction) {
   else if (page === 'leaders')   { Router.replaceState({ page: 'leaders',   tabId: newId }); renderLeadersNotes(newId); }
   else if (page === 'godeeper') { Router.replaceState({ page: 'godeeper', tabId: newId }); renderGoDeeper(newId); }
   else if (page === 'about')     { Router.replaceState({ page: 'about',     tabId: newId }); renderAbout(newId); }
-  else if (page === 'progress')  { if (document.getElementById('progressTabBar')) switchProgressTab(newId); }
+  else if (page === 'progress')  { Router.replaceState({ page: 'progress', tabId: newId }); if (document.getElementById('progressTabBar')) switchProgressTab(newId); }
   else                           { Router.replaceState({ page: 'howto',     tabId: newId }); renderHowToUse(newId); }
   if (page !== 'library') window.scrollTo(0, 0);
 }
