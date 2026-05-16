@@ -12,7 +12,7 @@
 //   window._libTabs, window.activeTabId – state.js
 //   activateStudy, deleteStudy,
 //   handleFileSelect, openDriveStudyFolder,
-//   showVersionWarning    – main.js (runtime calls only)
+//   showVersionWarning    – study-loader.js (runtime calls only)
 
 // ── LIBRARY HISTORY HELPERS ──────────────────────────────────────────────────
 // Recently installed: list of studyIds in install order (newest first), max 4.
@@ -487,13 +487,13 @@ async function renderLibrary() {
     if (riIds.length > 0) {
       const rows = riIds.map(id => {
         const e = studyCache[id];
-        const safe = e.title.replace(/'/g, "\\'");
+        const safe = escapeHtml(e.title);
         return `
           <div class="lib-recent-installed-card" onclick="activateStudy('${id}')">
             ${smallCoverHtml(e, 'lib-ri-cover', 'lib-ri-cover-fallback')}
             <div class="lib-ri-text">
-              <div class="lib-ri-title">${e.title}</div>
-              ${e.subtitle ? `<div class="lib-ri-meta">${e.subtitle}</div>` : ''}
+              <div class="lib-ri-title">${safe}</div>
+              ${e.subtitle ? `<div class="lib-ri-meta">${escapeHtml(e.subtitle)}</div>` : ''}
             </div>
             <button class="lib-ri-delete-btn"
               onclick="event.stopPropagation(); deleteStudy('${id}', '${safe}')"
@@ -576,7 +576,7 @@ async function renderLibrary() {
                aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
            </div>`
         : `<button class="study-card-delete-btn"
-             onclick="event.stopPropagation(); deleteStudy('${id}', '${e.title.replace(/'/g, "\\'")}')"
+             onclick="event.stopPropagation(); deleteStudy('${id}', '${escapeHtml(e.title)}')"
              style="background:none; border:none; padding:10px; font-size:18px; cursor:pointer; opacity:0.6; z-index:2; margin-left: 4px;">
              ${ICONS.trash}
            </button>`;
@@ -595,8 +595,8 @@ async function renderLibrary() {
       const coverHtml = e.coverSrc
         ? `<img class="study-card-cover" src="${e.coverSrc}" alt=""
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-           <div class="study-card-cover-fallback" style="display:none">${e.fallback}</div>`
-        : `<div class="study-card-cover-fallback">${e.fallback}</div>`;
+           <div class="study-card-cover-fallback" style="display:none">${escapeHtml(e.fallback)}</div>`
+        : `<div class="study-card-cover-fallback">${escapeHtml(e.fallback)}</div>`;
 
       card.innerHTML = `
         <button class="${pinClass}"
@@ -605,8 +605,8 @@ async function renderLibrary() {
         ${coverHtml}
 
         <div class="study-card-text" style="flex:1;">
-          <h3>${e.title}</h3>
-          ${e.subtitle ? `<div class="study-card-subtitle">${e.subtitle}</div>` : ''}
+          <h3>${escapeHtml(e.title)}</h3>
+          ${e.subtitle ? `<div class="study-card-subtitle">${escapeHtml(e.subtitle)}</div>` : ''}
           ${studyLangBadgesHtml(e.meta)}
         </div>
         ${reorderHtml}`;
@@ -682,7 +682,7 @@ async function renderLibrary() {
                aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
            </div>`
         : `<button class="study-card-delete-btn"
-             onclick="event.stopPropagation(); deleteStudy('${id}', '${e.title.replace(/'/g, "\\'")}')"
+             onclick="event.stopPropagation(); deleteStudy('${id}', '${escapeHtml(e.title)}')"
              style="background:none; border:none; padding:10px; font-size:18px; cursor:pointer; opacity:0.6; z-index:2; margin-left: 4px;">
              ${ICONS.trash}
            </button>`;
@@ -701,8 +701,8 @@ async function renderLibrary() {
       const coverHtml = e.coverSrc
         ? `<img class="study-card-cover" src="${e.coverSrc}" alt=""
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-           <div class="study-card-cover-fallback" style="display:none">${e.fallback}</div>`
-        : `<div class="study-card-cover-fallback">${e.fallback}</div>`;
+           <div class="study-card-cover-fallback" style="display:none">${escapeHtml(e.fallback)}</div>`
+        : `<div class="study-card-cover-fallback">${escapeHtml(e.fallback)}</div>`;
 
       card.innerHTML = `
         <button class="${pinClass}"
@@ -711,8 +711,8 @@ async function renderLibrary() {
         ${coverHtml}
 
         <div class="study-card-text" style="flex:1;">
-          <h3>${e.title}</h3>
-          ${e.subtitle ? `<div class="study-card-subtitle">${e.subtitle}</div>` : ''}
+          <h3>${escapeHtml(e.title)}</h3>
+          ${e.subtitle ? `<div class="study-card-subtitle">${escapeHtml(e.subtitle)}</div>` : ''}
           ${studyLangBadgesHtml(e.meta)}
         </div>
         ${reorderHtml}`;
@@ -801,11 +801,11 @@ async function renderLibrary() {
     function studyRowHtml(id) {
       const e = studyCache[id];
       if (!e) return '';
-      const safe = e.title.replace(/'/g, "\\'");
+      const safe = escapeHtml(e.title);
       return `
         <div class="lib-shelf-study-row" onclick="activateStudy('${id}')">
           ${smallCoverHtml(e, 'lib-shelf-cover', 'lib-shelf-cover-fallback')}
-          <span class="lib-shelf-study-title">${e.title}</span>
+          <span class="lib-shelf-study-title">${safe}</span>
           <span class="lib-shelf-chevron-sm">${ICONS.chevronRight}</span>
         </div>`;
     }
