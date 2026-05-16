@@ -31,7 +31,7 @@ function handleGesture() {
   const hasOpenClassOverlay = document.querySelector(
     '.modal-overlay, #qaModalOverlay.open, #deeperModalOverlay.open, ' +
     '#verseModalOverlay.open, #likertPopupOverlay.open, #searchOverlay.open, ' +
-    '#onboardingOverlay, #appOnboardingOverlay, #libPathPopupOverlay, ' +
+    '.onboarding-overlay, #libPathPopupOverlay, ' +
     '#versionWarningOverlay'
   );
   if (hasOpenClassOverlay) return;
