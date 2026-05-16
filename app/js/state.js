@@ -15,6 +15,7 @@ window.titlePageData     = null;
 window.studyAboutData    = {};
 window.howToUseData      = {};
 window.leadersNotesData  = {};
+window.goDeeperData      = null;
 window.copyrightData     = {};
 window.verseData         = {};
 window.qaCallouts        = [];
