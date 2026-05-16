@@ -10,7 +10,7 @@
 // Dependencies (all available as globals before this file loads):
 //   FONT_MAX, ICONS           – state.js / icons.js
 //   appSettings               – settings.js
-//   studyOnboardingSlides     – loaded from the .estudy file (main.js STATE section)
+//   studyOnboardingSlides     – window global / state.js
 //   openLibrary               – study-loader.js
 //   showOnboardingIfNeeded    – this file (called from dismissal fade-out)
 //   renderTitlePage, renderHowToUse, renderSettings,

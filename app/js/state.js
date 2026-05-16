@@ -44,7 +44,7 @@ window._voiceRecogniser   = null;
 window._appReady       = false;
 window.pendingStudyData = null;
 
-// ── Local UI state (previously in main.js) ────────────────────────────────────
+// ── Local UI state ─────────────────────────────────────────────────────────
 window.currentChapter       = 0;
 window.menuOpen             = false;
 window.isNonChapterPage     = false;

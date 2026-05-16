@@ -12,7 +12,7 @@
 //   appSettings   – settings.js
 //   ttsAvailable, ttsSpeak, ttsStop – tts.js
 //   likertFieldKey – state.js (IDB field-key helpers)
-//   verseData, chapters, currentChapter – window globals / main.js
+//   verseData, chapters, currentChapter – window globals / state.js
 //   resolveText, buildLangMap – render-elements.js (language resolution)
 //   window.studyMetadata      – study-loader.js (language slot map source)
 

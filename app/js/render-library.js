@@ -12,7 +12,7 @@
 //   window._libTabs, window.activeTabId – state.js
 //   activateStudy, deleteStudy,
 //   handleFileSelect, openDriveStudyFolder,
-//   showVersionWarning    – main.js (runtime calls only)
+//   showVersionWarning    – study-loader.js (runtime calls only)
 
 // ── LIBRARY HISTORY HELPERS ──────────────────────────────────────────────────
 // Recently installed: list of studyIds in install order (newest first), max 4.

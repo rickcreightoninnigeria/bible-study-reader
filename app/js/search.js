@@ -10,7 +10,7 @@
 //   answerFieldKey                – state.js
 //   StudyIDB                      – idb.js
 //   goToChapter                   – navigation.js
-//   closeMenu, saveLastPosition   – main.js / utils.js (called at runtime only)
+//   closeMenu, saveLastPosition   – navigation.js / utils.js (called at runtime only)
 //   isNonChapterPage              – state.js
 //   window._titleBeforeSearch     – state.js
 //   window.activeTabPage          – state.js

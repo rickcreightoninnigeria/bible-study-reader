@@ -56,8 +56,8 @@
 //   answerFieldKey                   – state.js
 //   StudyIDB                         – idb.js
 //   updateProgress                   – render-progress.js
-//   restoreStudyTheme                – main.js
-//   renderTitlePage                  – main.js
+//   restoreStudyTheme                – study-loader.js
+//   renderTitlePage                  – render-pages.js
 //   openLibrary                      – study-loader.js
 //   getStarredQuestions,
 //   buildStarredSummaryHtml          – starred.js
