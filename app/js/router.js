@@ -328,42 +328,42 @@ const Router = (() => {
   // ── popstate listener ───────────────────────────────────────────────────────
 
     window.addEventListener('popstate', async (e) => {
-    // If the search overlay is open, close it and undo the navigation —
-    // the overlay closing is not a navigation, just a UI dismiss.
-    const searchOverlay = document.getElementById('searchOverlay');
-    if (searchOverlay?.classList.contains('open')) {
-      closeSearch();
-      history.forward();
-      _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
-      return;
-    }
+      // If the search overlay is open, close it and undo the navigation —
+      // the overlay closing is not a navigation, just a UI dismiss.
+      const searchOverlay = document.getElementById('searchOverlay');
+      if (searchOverlay?.classList.contains('open')) {
+        closeSearch();
+        history.forward();
+        _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
+        return;
+      }
 
-    // If a modal is open, Back should close it rather than navigate.
-    // history.forward() undoes the popstate navigation; _shadowIdx is
-    // incremented to keep the shadow stack in sync with the real history.
-    // We cannot rely on e.state?.page === '_modal' because this WebView
-    // reports the destination state in e.state, not the popped entry's state.
-    if (_closeAnyOpenModal()) {
-      history.forward();
-      _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
-      return;
-    }
+      // If a modal is open, Back should close it rather than navigate.
+      // history.forward() undoes the popstate navigation; _shadowIdx is
+      // incremented to keep the shadow stack in sync with the real history.
+      // We cannot rely on e.state?.page === '_modal' because this WebView
+      // reports the destination state in e.state, not the popped entry's state.
+      if (_closeAnyOpenModal()) {
+        history.forward();
+        _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
+        return;
+      }
 
-    if (!e.state || e.state.page === null) {
-      // Stack is exhausted — user pressed back past the first entry.
-      _handleExitIntent();
-      return;
-    }
+      if (!e.state || e.state.page === null) {
+        // Stack is exhausted — user pressed back past the first entry.
+        _handleExitIntent();
+        return;
+      }
 
-    if (e.state.page === '_exit_guard') {
-      // The sentinel was popped (user pressed back again after dismissing the
-      // exit dialog). Show the dialog again.
-      _handleExitIntent();
-      return;
-    }
+      if (e.state.page === '_exit_guard') {
+        // The sentinel was popped (user pressed back again after dismissing the
+        // exit dialog). Show the dialog again.
+        _handleExitIntent();
+        return;
+      }
 
-    _shadowPop(e.state);
-    await _applyNavigation(e.state, /* isPop = */ true);
+      _shadowPop(e.state);
+      await _applyNavigation(e.state, /* isPop = */ true);
   });
 
   // ── Public API ──────────────────────────────────────────────────────────────
