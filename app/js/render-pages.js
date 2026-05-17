@@ -11,7 +11,7 @@
 //   window.activeTabPage,
 //   window.activeTabId,
 //   window._libTabs,
-//   window.appAboutData            – state.js
+//   window.appAboutData            – loaded asynchronously by _applyLocaleData() in app-init.js
 //   closeMenu, closeNonChapterPage,
 //   _resetNonChapterPageState      – navigation.js
 //   goToChapter                    – navigation.js
@@ -219,6 +219,8 @@ async function renderHowToUse(tabId) {
   const howtoBtn = document.getElementById('navHowtoBtn');
   if (howtoBtn) { howtoBtn.innerHTML = ICONS.close; howtoBtn.onclick = () => Router.back(); }
   const content = document.getElementById('mainContent');
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
@@ -768,6 +770,8 @@ async function renderSettings(tabId) {
   const settingsBtn = document.getElementById('navSettingsBtn');
   if (settingsBtn) { settingsBtn.innerHTML = ICONS.close; settingsBtn.onclick = () => Router.back(); }
   const content = document.getElementById('mainContent');
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
@@ -1622,6 +1626,8 @@ async function renderLeadersNotes(tabId) {
   window.activeTabPage = 'leaders';
   restoreStudyTheme();
   const content = document.getElementById('mainContent');
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
@@ -1824,6 +1830,8 @@ async function renderAbout(tabId) {
   window.activeTabPage = 'about';
   restoreStudyTheme();
   const content = document.getElementById('mainContent');
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
@@ -1960,6 +1968,8 @@ async function renderGoDeeper(tabId) {
   restoreStudyTheme();
 
   const content = document.getElementById('mainContent');
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
