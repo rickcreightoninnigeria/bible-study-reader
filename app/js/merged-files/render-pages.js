@@ -11,7 +11,7 @@
 //   window.activeTabPage,
 //   window.activeTabId,
 //   window._libTabs,
-//   window.appAboutData            – state.js
+//   window.appAboutData            – loaded asynchronously by _applyLocaleData() in app-init.js
 //   closeMenu, closeNonChapterPage,
 //   _resetNonChapterPageState      – navigation.js
 //   goToChapter                    – navigation.js

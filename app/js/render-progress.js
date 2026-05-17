@@ -528,6 +528,8 @@ async function renderProgressOverview() {
   }
 
   const content = document.getElementById('mainContent');
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
@@ -614,6 +616,8 @@ async function renderNotesPage() {
   isNonChapterPage = true;
   window.activeTabPage = 'notes';
   const content = document.getElementById('mainContent');
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
   document.getElementById('progressBar').style.width = '0%';
@@ -639,7 +643,7 @@ async function renderNotesPage() {
       </div>
 
       <div class="notes-info-wrap">
-        <div onclick="document.querySelector('#mainContent').__notesPageInfo()" class="notes-info-link">
+        <div onclick="openNotesPageInfo()" class="notes-info-link">
           <span class="notes-info-link-label">${t('progress_notes_about_link')}</span>
           <span class="notes-info-link-icon">${ICONS.triggerInfo}</span>
         </div>
@@ -651,7 +655,7 @@ async function renderNotesPage() {
           id="globalNotesField"
           class="answer-field"
           placeholder="${t('progress_notes_placeholder')}"
-          oninput="autoResize(this); _saveGlobalNotes(this.value, '${currentStudyId}'); updateNotesMenuIndicator(!!this.value);"
+          data-study-id="${escapeHtml(currentStudyId)}"
         >${savedText}</textarea>
       </div>
       <div class="notes-autosave-label">${t('progress_notes_autosave_label')}</div>
@@ -663,11 +667,20 @@ async function renderNotesPage() {
     </div>
   `;
 
-  document.querySelector('#mainContent').__notesPageInfo = openNotesPageInfo;
+  // openNotesPageInfo() is a named global — called directly from onclick above.
 
   window.scrollTo(0, 0);
   const field = document.getElementById('globalNotesField');
-  if (field) autoResize(field);
+  if (field) {
+    autoResize(field);
+    // Wire up oninput via a real listener — studyId is read from data attribute,
+    // never from an inline string, so no injection risk from unusual study IDs.
+    field.addEventListener('input', () => {
+      autoResize(field);
+      _saveGlobalNotes(field.value, field.dataset.studyId);
+      updateNotesMenuIndicator(!!field.value);
+    });
+  }
 }
 
 // Debounce timer for _saveGlobalNotes — prevents an IDB write on every

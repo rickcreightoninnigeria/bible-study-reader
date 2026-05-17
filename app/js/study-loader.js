@@ -1342,6 +1342,8 @@ function renderStudyPicker() {
   if (!content) return;
 
   // Hide save button if present
+  // WIP: intended for a future sticky/persistent save bar (id="saveBtn").
+  // buildSaveBar() currently renders inline only. Keep until feature decision made.
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) saveBtn.parentElement.style.display = 'none';
 
