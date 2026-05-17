@@ -655,7 +655,7 @@ async function renderNotesPage() {
           id="globalNotesField"
           class="answer-field"
           placeholder="${t('progress_notes_placeholder')}"
-          oninput="autoResize(this); _saveGlobalNotes(this.value, '${currentStudyId}'); updateNotesMenuIndicator(!!this.value);"
+          data-study-id="${escapeHtml(currentStudyId)}"
         >${savedText}</textarea>
       </div>
       <div class="notes-autosave-label">${t('progress_notes_autosave_label')}</div>
@@ -671,7 +671,16 @@ async function renderNotesPage() {
 
   window.scrollTo(0, 0);
   const field = document.getElementById('globalNotesField');
-  if (field) autoResize(field);
+  if (field) {
+    autoResize(field);
+    // Wire up oninput via a real listener — studyId is read from data attribute,
+    // never from an inline string, so no injection risk from unusual study IDs.
+    field.addEventListener('input', () => {
+      autoResize(field);
+      _saveGlobalNotes(field.value, field.dataset.studyId);
+      updateNotesMenuIndicator(!!field.value);
+    });
+  }
 }
 
 // Debounce timer for _saveGlobalNotes — prevents an IDB write on every
