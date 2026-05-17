@@ -130,14 +130,16 @@ document.addEventListener('blur', e => {
 //
 // Fire-and-forget async; no toast shown (consistent with other auto-saves when
 // appSettings.autoSaveToast is false, and Likert changes are always silent).
-async function saveLikertAnswer(elementId, stIdx, value) {
-  const ch      = chapters[currentChapter];
+async function saveLikertAnswer(elementId, stIdx, value, chapterNumber) {
+  // chapterNumber is passed in from the onchange attribute at render time,
+  // so it always refers to the chapter the element was rendered for —
+  // not whatever currentChapter happens to be at async execution time.
   const studyId = window.activeStudyId;
-  if (!ch || !studyId) return;
+  if (chapterNumber == null || !studyId) return;
 
   let record;
   try {
-    record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+    record = await StudyIDB.getChapterAnswers(studyId, chapterNumber);
   } catch (e) {
     console.warn('[saveLikertAnswer] IDB read failed; falling back to empty object.', e);
     record = {};
@@ -146,7 +148,7 @@ async function saveLikertAnswer(elementId, stIdx, value) {
   record[likertFieldKey(elementId, stIdx)] = value;
 
   try {
-    await StudyIDB.setChapterAnswers(studyId, ch.chapterNumber, record);
+    await StudyIDB.setChapterAnswers(studyId, chapterNumber, record);
   } catch (e) {
     console.warn('[saveLikertAnswer] IDB write failed.', e);
   }

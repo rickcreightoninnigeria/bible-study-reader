@@ -195,7 +195,7 @@ function renderLikertScale(el, chNum, chapterAnswers = null) {
         name="likert_${chNum}_${eid}_${stIdx}"
         value="${val}"
         ${checked}
-        onchange="saveLikertAnswer('${eid}', ${stIdx}, this.value)"
+        onchange="saveLikertAnswer('${eid}', ${stIdx}, this.value, ${chNum})"
       />`;
     }).join('');
   }
