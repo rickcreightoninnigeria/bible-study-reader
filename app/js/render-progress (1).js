@@ -643,7 +643,7 @@ async function renderNotesPage() {
       </div>
 
       <div class="notes-info-wrap">
-        <div onclick="document.querySelector('#mainContent').__notesPageInfo()" class="notes-info-link">
+        <div onclick="openNotesPageInfo()" class="notes-info-link">
           <span class="notes-info-link-label">${t('progress_notes_about_link')}</span>
           <span class="notes-info-link-icon">${ICONS.triggerInfo}</span>
         </div>
@@ -667,7 +667,7 @@ async function renderNotesPage() {
     </div>
   `;
 
-  document.querySelector('#mainContent').__notesPageInfo = openNotesPageInfo;
+  // openNotesPageInfo() is a named global — called directly from onclick above.
 
   window.scrollTo(0, 0);
   const field = document.getElementById('globalNotesField');
