@@ -7,6 +7,57 @@ function voiceInputAvailable() {
       || !!(window.SpeechRecognition || window.webkitSpeechRecognition);
 }
 
+// Maps the app's ISO 639 language codes to BCP-47 tags accepted by the
+// Web Speech API. Only languages where the short code differs from the tag
+// the browser expects need an entry — everything else is passed through as-is
+// (e.g. 'fr', 'de', 'pt', 'sw' are accepted directly by most browsers).
+//
+// Resolves in order:
+//   1. window._activeStudyLang  — the study's content language (most relevant
+//                                  for answering questions in that language)
+//   2. resolveLanguage()         — the user's UI language preference
+//   3. 'en-US'                   — safe fallback
+const _SPEECH_LANG_MAP = {
+  'zh-CN': 'zh-CN',
+  'zh-TW': 'zh-TW',
+  'pt-BR': 'pt-BR',
+  'en':    'en-US',
+  'ha':    'ha-NG',
+  'ig':    'ig-NG',
+  'yo':    'yo-NG',
+  'am':    'am-ET',
+  'ti':    'ti-ET',
+  'zu':    'zu-ZA',
+  'xh':    'xh-ZA',
+  'af':    'af-ZA',
+  'ms':    'ms-MY',
+  'id':    'id-ID',
+  'tl':    'fil-PH',
+  'my':    'my-MM',
+  'km':    'km-KH',
+  'lo':    'lo-LA',
+  'si':    'si-LK',
+  'ne':    'ne-NP',
+  'ur':    'ur-PK',
+  'ps':    'ps-AF',
+  'fa':    'fa-IR',
+  'ar':    'ar-SA',
+  'he':    'he-IL',
+  'ka':    'ka-GE',
+  'hy':    'hy-AM',
+  'az':    'az-AZ',
+  'kk':    'kk-KZ',
+  'uz':    'uz-UZ',
+  'uk':    'uk-UA',
+  'be':    'be-BY',
+  'mn':    'mn-MN',
+};
+
+function resolveSpeechLang() {
+  const code = window._activeStudyLang || (typeof resolveLanguage === 'function' ? resolveLanguage() : null) || 'en';
+  return _SPEECH_LANG_MAP[code] || code;
+}
+
 // Called by the mic button on any answer field.
 // Priority: Android native bridge → Web Speech API → keyboard fallback toast.
 //
@@ -52,7 +103,7 @@ function startVoiceInput(btn) {
     }
 
     const rec = new SR();
-    rec.lang            = 'en-US';
+    rec.lang            = resolveSpeechLang();
     rec.interimResults  = false;
     rec.maxAlternatives = 1;
 
