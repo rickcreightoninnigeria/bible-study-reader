@@ -400,11 +400,11 @@ async function printChapter() {
   }
 
   const chapterHeader = `<div class="chapter-header">
-  <div class="chapter-eyebrow">${t('shareprint_print_chapter_eyebrow', { number: ch.chapterNumber, total: chapters.length, studyTitle: meta.title })}</div>
-  <h1>${ch.chapterTitle}</h1>
+  <div class="chapter-eyebrow">${t('shareprint_print_chapter_eyebrow', { number: ch.chapterNumber, total: chapters.length, studyTitle: escapeHtml(meta.title) })}</div>
+  <h1>${escapeHtml(ch.chapterTitle)}</h1>
 </div>`;
 
-  const docTitle = t('shareprint_print_doc_title_chapter', { studyTitle: meta.title, number: ch.chapterNumber, chapterTitle: ch.chapterTitle });
+  const docTitle = t('shareprint_print_doc_title_chapter', { studyTitle: escapeHtml(meta.title), number: ch.chapterNumber, chapterTitle: escapeHtml(ch.chapterTitle) });
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -414,7 +414,7 @@ ${chapterHeader}
 ${buildChapterBody(ch, record)}
 </body></html>`;
 
-  dispatchPrint(html, t('shareprint_print_fallback_chapter', { studyTitle: meta.title, number: ch.chapterNumber, chapterTitle: ch.chapterTitle }));
+  dispatchPrint(html, t('shareprint_print_fallback_chapter', { studyTitle: escapeHtml(meta.title), number: ch.chapterNumber, chapterTitle: escapeHtml(ch.chapterTitle) }));
 }
 
 // Prints all chapters as a single document. Pre-loads all chapter records and
@@ -434,7 +434,7 @@ async function printAllChapters() {
 
   const cover = `<div class="cover">
   <div class="eyebrow">${t('shareprint_print_cover_eyebrow')}</div>
-  <h1>${meta.title}</h1>
+  <h1>${escapeHtml(meta.title)}</h1>
   <div style="font-size:9pt; color:#666; margin-top:6pt;">${t('shareprint_print_cover_date', { date: datePrinted })}</div>
 </div>`;
 
@@ -449,7 +449,7 @@ async function printAllChapters() {
     );
     if (!hasContent) return;
 
-    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
+    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: escapeHtml(ch.chapterTitle) })}</h2>
 ${buildChapterBody(ch, record)}`;
   });
 
@@ -462,7 +462,7 @@ ${buildChapterBody(ch, record)}`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
-${buildPrintHead(t('shareprint_print_doc_title_all', { studyTitle: meta.title }))}
+${buildPrintHead(t('shareprint_print_doc_title_all', { studyTitle: escapeHtml(meta.title) }))}
 <body>
 ${cover}
 ${chaptersHTML}
@@ -550,21 +550,21 @@ function printBlankStudy() {
   const cover = `<div class="cover" style="page-break-after:always;">
   ${coverImageHtml}
   <div class="eyebrow">${t('shareprint_print_cover_eyebrow')}</div>
-  <h1>${meta.title || ''}</h1>
-  ${subtitle    ? `<div style="font-size:13pt; color:#4a3f30; margin-top:4pt; font-style:italic;">${subtitle}</div>` : ''}
-  ${description ? `<div style="font-size:10pt; color:#666; margin-top:12pt; max-width:340pt; margin-left:auto; margin-right:auto; line-height:1.6;">${description}</div>` : ''}
-  ${authorLabel ? `<div style="font-size:8pt; letter-spacing:0.1em; text-transform:uppercase; color:#8c6420; margin-top:20pt;">${authorLabel}</div>` : ''}
-  ${authorName  ? `<div style="font-size:12pt; color:#1c1710; margin-top:4pt;">${authorName}</div>` : ''}
-  ${version     ? `<div style="font-size:8pt; color:#999; margin-top:8pt;">${version}</div>` : ''}
+  <h1>${escapeHtml(meta.title || '')}</h1>
+  ${subtitle    ? `<div style="font-size:13pt; color:#4a3f30; margin-top:4pt; font-style:italic;">${escapeHtml(subtitle)}</div>` : ''}
+  ${description ? `<div style="font-size:10pt; color:#666; margin-top:12pt; max-width:340pt; margin-left:auto; margin-right:auto; line-height:1.6;">${escapeHtml(description)}</div>` : ''}
+  ${authorLabel ? `<div style="font-size:8pt; letter-spacing:0.1em; text-transform:uppercase; color:#8c6420; margin-top:20pt;">${escapeHtml(authorLabel)}</div>` : ''}
+  ${authorName  ? `<div style="font-size:12pt; color:#1c1710; margin-top:4pt;">${escapeHtml(authorName)}</div>` : ''}
+  ${version     ? `<div style="font-size:8pt; color:#999; margin-top:8pt;">${escapeHtml(version)}</div>` : ''}
 </div>`;
 
   let chaptersHTML = '';
   chapters.forEach(ch => {
-    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: ch.chapterTitle })}</h2>
+    chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: escapeHtml(ch.chapterTitle) })}</h2>
 ${buildBlankChapterBody(ch)}`;
   });
 
-  const docTitle = `${meta.title || t('shareprint_default_study_title')} — ${t('shareprint_blank_doc_title_suffix')}`;
+  const docTitle = `${escapeHtml(meta.title || t('shareprint_default_study_title'))} — ${t('shareprint_blank_doc_title_suffix')}`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -578,5 +578,5 @@ ${cover}
 ${chaptersHTML}
 </body></html>`;
 
-  dispatchPrint(html, `${meta.title || t('shareprint_default_study_title')} — ${t('shareprint_blank_doc_title_suffix')}`);
+  dispatchPrint(html, `${escapeHtml(meta.title || t('shareprint_default_study_title'))} — ${t('shareprint_blank_doc_title_suffix')}`);
 }
