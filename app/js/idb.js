@@ -177,11 +177,14 @@ const StudyIDB = (() => {
     return new Promise((resolve, reject) => {
       const tx    = db.transaction(IMG_STORE, 'readwrite');
       const store = tx.objectStore(IMG_STORE);
-      const req   = store.openCursor();
+      // IDBKeyRange.bound restricts the cursor to keys in [prefix, prefix+'\uffff'],
+      // avoiding a full-table scan — O(log n + results) instead of O(n).
+      const range = IDBKeyRange.bound(prefix, prefix + '\uffff');
+      const req   = store.openCursor(range);
       req.onsuccess = e => {
         const cursor = e.target.result;
         if (!cursor) return; // iteration complete; tx will commit
-        if (cursor.key.startsWith(prefix)) cursor.delete();
+        cursor.delete();
         cursor.continue();
       };
       req.onerror  = e => reject(e.target.error);
@@ -259,14 +262,16 @@ const StudyIDB = (() => {
       const tx    = db.transaction(ANS_STORE, 'readwrite');
       const store = tx.objectStore(ANS_STORE);
       const deleted = [];
-      const req   = store.openCursor();
+      const prefix = `${studyId}_`;
+      // IDBKeyRange.bound restricts the cursor to keys in [prefix, prefix+'\uffff'],
+      // avoiding a full-table scan — O(log n + results) instead of O(n).
+      const range = IDBKeyRange.bound(prefix, prefix + '\uffff');
+      const req   = store.openCursor(range);
       req.onsuccess = e => {
         const cursor = e.target.result;
         if (!cursor) return; // iteration complete
-        if (cursor.key.startsWith(`${studyId}_`)) {
-          deleted.push(cursor.key);
-          cursor.delete();
-        }
+        deleted.push(cursor.key);
+        cursor.delete();
         cursor.continue();
       };
       req.onerror   = e => reject(e.target.error);
@@ -284,11 +289,15 @@ const StudyIDB = (() => {
       const tx    = db.transaction(ANS_STORE, 'readonly');
       const store = tx.objectStore(ANS_STORE);
       const keys  = [];
-      const req   = store.openCursor();
+      const prefix = `${studyId}_`;
+      // IDBKeyRange.bound restricts the cursor to keys in [prefix, prefix+'\uffff'],
+      // avoiding a full-table scan — O(log n + results) instead of O(n).
+      const range = IDBKeyRange.bound(prefix, prefix + '\uffff');
+      const req   = store.openCursor(range);
       req.onsuccess = e => {
         const cursor = e.target.result;
         if (!cursor) return;
-        if (cursor.key.startsWith(`${studyId}_`)) keys.push(cursor.key);
+        keys.push(cursor.key);
         cursor.continue();
       };
       req.onerror   = e => reject(e.target.error);
