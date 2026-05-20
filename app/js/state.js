@@ -17,6 +17,7 @@ window.howToUseData      = {};
 window.leadersNotesData  = {};
 window.goDeeperData      = null;
 window.copyrightData     = {};
+window.lastPositionCache = null;  // sync cache populated by applyStudyData(); read by renderTitlePage()
 window.verseData         = {};
 window.qaCallouts        = [];
 window.qaCalloutsById    = {};

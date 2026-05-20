@@ -195,7 +195,7 @@ function renderLikertScale(el, chNum, chapterAnswers = null) {
         name="likert_${chNum}_${eid}_${stIdx}"
         value="${val}"
         ${checked}
-        onchange="saveLikertAnswer('${eid}', ${stIdx}, this.value)"
+        onchange="saveLikertAnswer('${eid}', ${stIdx}, this.value, ${chNum})"
       />`;
     }).join('');
   }
@@ -293,12 +293,13 @@ function openVerseModal(ref) {
   // Omitted entirely when only one translation is present (no tab row needed).
   const tabRowHtml = data.translations.length > 1
     ? `<div class="verse-trans-tab-row">${
-        data.translations.map(tr =>
-          `<button
+        data.translations.map(tr => {
+          const safeLabel = escapeHtml(tr.label);
+          return `<button
             class="verse-trans-btn${tr.label === activeTrans.label ? ' active' : ''}"
-            onclick="switchVerseTranslation('${ref}', '${tr.label}')"
-          >${tr.label}</button>`
-        ).join('')
+            onclick="switchVerseTranslation('${escapeHtml(ref)}', '${safeLabel}')"
+          >${safeLabel}</button>`;
+        }).join('')
       }</div>`
     : '';
 

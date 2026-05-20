@@ -165,8 +165,8 @@ function buildStarredSummaryHtml(ch, starred) {
     <div class="starred-summary-item"
       onclick="document.getElementById('${elementId}')
         .scrollIntoView({behavior:'smooth', block:'center'})">
-      <div class="starred-summary-ref">${q.ref}</div>
-      <div class="starred-summary-text">${q.text}</div>
+      <div class="starred-summary-ref">${escapeHtml(q.ref)}</div>
+      <div class="starred-summary-text">${escapeHtml(q.text)}</div>
     </div>`).join('');
 
   return `
@@ -209,10 +209,11 @@ function toggleProgressStarred(chNum) {
 // Navigates to the given chapter and scrolls to the starred card identified
 // by cardId. The 300ms timeout allows renderChapter() to complete its DOM
 // writes before scrollIntoView() is called.
-function navigateToStarred(chIdx, cardId) {
-  Router.navigate({ page: 'chapter', idx: chIdx });
-  setTimeout(() => {
-    const card = document.getElementById(cardId);
-    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 300);
+async function navigateToStarred(chIdx, cardId) {
+  // Await navigation so renderChapter() is complete before we try to scroll.
+  // This replaces the brittle 300ms setTimeout which could silently miss the
+  // card on slow devices or when IDB reads take longer than expected.
+  await Router.navigate({ page: 'chapter', idx: chIdx });
+  const card = document.getElementById(cardId);
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }

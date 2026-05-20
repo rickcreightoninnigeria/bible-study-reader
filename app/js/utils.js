@@ -21,6 +21,8 @@ function saveLastPosition() {
     chapterIdx: currentChapter,
     scrollY: window.scrollY
   };
+  // Keep the sync cache up to date so renderTitlePage() sees the latest position.
+  window.lastPositionCache = pos;
   // Fire-and-forget — position loss on failure is acceptable.
   StudyIDB.setAnswerRaw(`${studyId}_lastPosition`, JSON.stringify(pos))
     .catch(e => console.warn('[saveLastPosition] IDB write failed.', e));
@@ -33,6 +35,7 @@ function saveLastPosition() {
 function clearLastPosition() {
   const studyId = window.activeStudyId;
   if (!studyId) return;
+  window.lastPositionCache = null;
   StudyIDB.deleteAnswerRaw(`${studyId}_lastPosition`)
     .catch(e => console.warn('[clearLastPosition] IDB delete failed.', e));
 }

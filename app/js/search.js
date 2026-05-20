@@ -378,9 +378,9 @@ async function runSearchCore(query) {
   }
 
   results.slice(0, 50).forEach(r => {
-    const cardArg = r.cardId ? `'${r.cardId}'` : 'null';
+    const cardAttr = r.cardId ? ` data-card-id="${escapeHtml(r.cardId)}"` : '';
     html += `
-      <div class="search-result-item" onclick="searchNavigate(${r.chIdx}, ${cardArg})">
+      <div class="search-result-item" data-ch-idx="${r.chIdx}"${cardAttr}>
         <div class="search-result-meta">
           ${t('search_result_meta', { chNum: r.chNum, chTitle: escapeHtml(r.chTitle) })}${r.ref ? ' · ' + escapeHtml(r.ref) : ''}
         </div>
@@ -395,6 +395,16 @@ async function runSearchCore(query) {
   });
 
   resultsEl.innerHTML = html;
+
+  // Delegated click listener — reads chIdx and cardId from data attributes,
+  // never from inline JS, so no injection risk from malicious elementId values.
+  resultsEl.querySelectorAll('.search-result-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const chIdx  = parseInt(el.dataset.chIdx, 10);
+      const cardId = el.dataset.cardId || null;
+      searchNavigate(chIdx, cardId);
+    });
+  });
 }
 
 // Closes the search overlay, navigates to the given chapter index, then scrolls
