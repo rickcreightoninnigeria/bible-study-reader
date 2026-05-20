@@ -37,7 +37,7 @@
 // Globals used (must be loaded before this file):
 //   t()                              – i18n.js
 //   ICONS                            – icons.js
-//   verseData                        – main.js STATE section  (read + written by renderBiblePassage)
+//   verseData                        – state.js  (read + written by renderBiblePassage)
 //   answerFieldKey                   – state.js
 //   ttsAvailable, ttsShouldShow,
 //   ttsStripHtml                     – tts.js

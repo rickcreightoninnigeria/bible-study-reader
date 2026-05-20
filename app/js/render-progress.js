@@ -17,7 +17,7 @@
 //   toggleProgressStarred          – starred.js
 //   autoResize                     – settings.js
 //   goToChapter                    – navigation.js
-//   activateStudy                  – main.js
+//   activateStudy                  – study-loader.js
 
 // ── PATHWAY HELPERS ───────────────────────────────────────────────────────────
 

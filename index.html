@@ -1,12 +1,260 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=./app/index.html">
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>If you are not redirected automatically, follow this 
-       <a href="./app/index.html">link to the Bible Study Reader</a>.
-    </p>
-  </body>
+<!--
+  ==========================================================================
+  Bible Study Reader (BSR)
+  A multi-session Bible study app — mobile-first, WebView-compatible.
+  Author: Rick Creighton, 2026. Licensed CC BY-SA 4.0.
+
+  ARCHITECTURE OVERVIEW
+  ─────────────────────
+  This is a multi-file web app. index.html is a static shell only — all
+  logic and styles are loaded from external files. It is designed to run
+  as a web page or wrapped in an Android/iOS WebView.
+
+  STORAGE
+  ───────
+  - Answer data, downloaded studies, and progress → IndexedDB (via StudyIDB)
+  - App settings and UI state                     → localStorage ('bsr_' key prefix)
+
+  CSS FILES (loaded in <head>, in order)
+  ──────────────────────────────────────
+  00-tokens.css              – Design tokens (CSS custom properties)
+  01-reset-base.css          – Reset and base element styles
+  02-layout.css              – Page layout, containers, grid
+  03-typography.css          – Font sizes, line heights, text styles
+  04-components.*.css        – Shared UI components (buttons, inputs, icons…)
+  05a-components.cards.css   – Study/library card components
+  05b-components.cards.responses.css – Answer/response card styles
+  05c-components.nav.css     – Navigation bar and drawer styles
+  06-pages.*.css             – Page-specific styles (chapter, library, settings…)
+  07-themes.css              – Light/dark/study theme overrides
+  08-animations.css          – Transitions and keyframe animations
+
+  JAVASCRIPT FILES (loaded at end of <body>, in order)
+  ─────────────────────────────────────────────────────
+  idb.js             – IndexedDB wrapper (StudyIDB): read/write answers & studies
+  state.js           – Global state variables (window.chapters, window.settings…)
+  settings.js        – Settings defaults, init, save, reset, clear functions
+  format-text.js     – Text formatting utilities (markdown-lite, verse refs…)
+  render-elements.js – Renders individual study elements (questions, passages…)
+  render-chapter-ui.js – Renders the chapter view and answer controls
+  render-pages.js    – Renders non-chapter pages (title, library, settings…)
+  render-progress.js – Progress ring, chapter menu progress indicators
+  render-library.js  – Library tab: installed studies, pathways, search
+  study-loader.js    – .estudy file parsing, applyStudyData(), IDB persistence
+  tts.js             – Text-to-speech (Android bridge + Web Speech API fallback)
+  voice.js           – Voice/language selection UI helpers
+  search.js          – Full-text search with scoring, synonyms, fuzzy matching
+  modals.js          – Verse modal, QA modal, notes info modal
+  router.js          – Client-side router: pushState, popstate, deep links
+  app-init.js        – Boot sequence: settings init, study restore, event listeners
+
+  HTML SHELL SECTIONS (this file)
+  ────────────────────────────────
+  <head>   – Meta tags, CSS links, preloaded font
+  <body>   – Static shell only:
+               · Top navigation bar (#topNav)
+               · Chapter/page menu drawer (#menuDrawer)
+               · Toast notification (#toast)
+               · Main content container (#mainContent)
+               · Verse modal (#verseModal)
+               · QA modal (#qaModal)
+               · Search overlay (#searchOverlay)
+             All dynamic content is injected by JS render functions.
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">  <!-- viewport-fit=cover ensures the nav bar fills the iPhone notch area -->
+  <title>Bible Study Reader</title>
+  
+  <!-- ───── Fonts ─────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/01-fonts.css">
+
+  <!-- ───── CSS ───────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/02-variables.css">
+  <link rel="stylesheet" href="css/03-base.css">
+  <link rel="stylesheet" href="css/04-chrome.css">
+  <link rel="stylesheet" href="css/05a-components.cards.display.css">
+  <link rel="stylesheet" href="css/05b-components.cards.responses.css?v=2">
+  <link rel="stylesheet" href="css/05c-components.nav.css">
+  <link rel="stylesheet" href="css/05d-components.starred.css">
+  <link rel="stylesheet" href="css/06-overlays.css">
+  <link rel="stylesheet" href="css/07-pages.css">
+  <link rel="stylesheet" href="css/08-themes.css">
+  <!-- ───── FAVICON ───────────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" href="images/favicon.svg">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <div class="nav-btn-group">
+    <button class="nav-btn" id="navLibBtn"      onclick="navLibClick()"      title="Library">📚</button>
+    <button class="nav-btn" id="navSearchBtn"   onclick="navSearchClick()"   title="Search">🔍</button>
+    <!-- display:none is intentional — visibility is controlled by updateNavButtons() in onboarding.js via appSettings.showPageProgress -->
+    <button class="nav-btn" id="navProgressBtn" onclick="navProgressClick()" title="My Progress" style="display:none">📈</button>
+  </div>
+  <div class="nav-btn-group">
+    <div class="nav-title"><span id="header-title"> </span></div>
+  </div>
+  <div class="nav-btn-group">
+    <!-- display:none is intentional — visibility is controlled by updateNavButtons() in onboarding.js via appSettings.showPageHowToUse -->
+    <button class="nav-btn" id="navHowtoBtn"    onclick="navHowtoClick()"    title="How to Use" style="display:none">❓</button>
+    <button class="nav-btn" id="navSettingsBtn" onclick="navSettingsClick()">⚙</button>
+    <button class="nav-btn" onclick="toggleMenu()" id="menuBtn">☰</button>
+  </div>
+  <div class="progress-bar" id="progressBar"></div>
+</nav>
+
+<!-- CHAPTER MENU -->
+<div class="chapter-menu" id="chapterMenu">
+  <div class="menu-heading" id="menuHeading">Chapters</div>
+  <div id="menuList"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" aria-live="polite" role="status">✓ Answers saved</div>
+<div class="toast" id="validate-toast" aria-live="polite" role="status"></div>
+<div class="celebration-toast" id="celebrationToast" aria-live="polite" role="status"></div>
+
+<!-- MAIN -->
+<div class="content" id="mainContent"></div>
+
+<!-- LIKERT POPUP -->
+<div class="likert-popup-overlay" id="likertPopupOverlay" onclick="closeLikertPopup(event)">
+  <div class="likert-popup" id="likertPopup">
+    <div class="likert-popup-titlebar">
+      <span id="likertPopupTitle"></span>
+      <button class="likert-popup-close" onclick="closeLikertPopup()"><span>✕</span></button>
+    </div>
+    <div class="likert-popup-instruction" id="likertPopupInstruction"></div>
+    <div class="likert-popup-key" id="likertPopupKey"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeLikertPopup()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE MODAL -->
+<div class="verse-modal-overlay" id="verseModalOverlay" onclick="closeVerseModal(event)">
+  <div class="verse-modal" id="verseModal">
+    <div id="verseModalTabRow"></div>
+    <div class="verse-modal-ref">
+      <span id="verseModalRef"></span>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="speak-btn" id="verseModalSpeakBtn" onclick="ttsSpeak(document.getElementById('verseModalText').innerText, this)" title="Read aloud" aria-label="Read aloud"></button>
+        <button class="verse-modal-close" onclick="closeVerseModal()"><span>✕</span></button>
+      </div>
+    </div>
+    <div class="verse-modal-text" id="verseModalText"></div>
+    <div class="verse-modal-footer" id="verseModalFooter"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeVerseModal()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- QA CALLOUT MODAL -->
+<div class="qa-modal-overlay" id="qaModalOverlay" onclick="closeQaModal(event)">
+  <div class="qa-modal" id="qaModal">
+    <div class="qa-modal-eyebrow" id="qaModalEyebrow"></div>
+    <div class="qa-modal-term">
+      <span id="qaModalTerm"></span>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="speak-btn" id="qaModalSpeakBtn" onclick="ttsSpeak(document.getElementById('qaModalText').innerText, this)" title="Read aloud" aria-label="Read aloud"></button>
+        <button class="qa-modal-close" onclick="closeQaModal()"><span>✕</span></button>
+      </div>
+    </div>
+    <div class="qa-modal-text" id="qaModalText"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeQaModal()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- DEEPER QUESTION MODAL -->
+<div class="deeper-modal-overlay" id="deeperModalOverlay" onclick="closeDeeperModal(event)">
+  <div class="deeper-modal" id="deeperModal">
+    <div class="deeper-modal-eyebrow">Going deeper</div>
+    <div class="deeper-modal-body" id="deeperModalBody"></div>
+    <div class="modal-close-footer">
+      <button class="modal-close-footer-btn" onclick="closeDeeperModal()"><span>✕</span> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Info trigger modal (first-time help popups) -->
+<div id="info-modal-overlay" onclick="closeInfoModal(event)">
+  <div class="info-modal">
+    <div id="info-modal-title" class="modal-title"></div>
+    <div id="info-modal-body" class="modal-body"></div>
+    <div class="info-modal-footer">
+      <div id="infoModalShowAgainRow">
+        <label class="info-modal-show-again">
+          <input type="checkbox" id="infoModalShowAgain" checked>
+          Show this again
+        </label>
+      </div>
+      <button class="modal-close-footer-btn" onclick="closeInfoModal()">Got it</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-header">
+    <input
+      class="search-input"
+      id="searchInput"
+      type="search"
+      placeholder="Search questions and answers…"
+      oninput="debouncedRunSearch(this.value)"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+    />
+    <button class="search-cancel-btn" onclick="closeSearch()">Cancel</button>
+  </div>
+  <div class="search-results" id="searchResults">
+    <div class="search-empty">Start typing to search questions,<br>passages, and your own saved answers.</div>
+  </div>
+</div>
+
+<script src="js/sweetalert2.all.min.js"></script>
+<script src="js/jszip.min.js"></script>
+<script src="js/purify.min.js"></script>
+<script src="js/markdown-it.min.js"></script>
+<script src="js/format-text.js"></script>
+<script src="js/state.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/idb.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/tts.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/starred.js"></script>
+<script src="js/search.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/router.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/gestures.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/share-print.js"></script>
+<script src="js/render-progress.js"></script>
+<script src="js/render-library.js"></script>
+<script src="js/study-loader.js"></script>
+<script src="js/migrate.js"></script>
+<script src="js/app-init.js"></script>
+<script src="js/render-pages.js"></script>
+<script src="js/render-chapter-elements.js"></script>
+<script src="js/render-chapter-ui.js"></script>
+<script src="js/render-chapter.js"></script>
+<script src="js/save.js"></script>
+
+</body>
 </html>

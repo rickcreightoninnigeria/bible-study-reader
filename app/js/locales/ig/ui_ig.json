@@ -301,7 +301,7 @@
   "renderpages_chapters_answercheck_label"              :"Nyocha azịza",
   "renderpages_chapters_answercheck_desc"               :"Pịa akara nleba anya na kaadị ajụjụ tozuru oke maka nyocha azịza gị ngwa ngwa n'anọghị n'ịntanetị. Ọ dịghị mkpa ịntanetị.",
   "renderpages_chapters_readaloud_label"                :"Gụọ n'olu",
-  "renderpages_chapters_readaloud_desc"                 :"Akara ngosi ọkà okwu n'amaokwu ndị dị ogologo na-eme ka ngwa ahụ gụọ ha n'olu. Ị nwere ike ịgbanwe amaokwu ọ na-apụta na <button class=\"howto-inline-link\" onclick=\"renderSettings('app')\">Ntọala</button>.",
+  "renderpages_chapters_readaloud_desc"                 :"Akara ngosi ọkà okwu n'amaokwu ndị dị ogologo na-eme ka ngwa ahụ gụọ ha n'olu. Ị nwere ike ịgbanwe amaokwu ọ na-apụta na <button class=\"howto-inline-link\" onclick=\"Router.navigate({ page: 'settings' })\">Ntọala</button>.",
   "renderpages_chapters_navbtns_label"                  :"Bọtịnụ Na-esote &amp; Nke gara aga",
   "renderpages_chapters_navbtns_desc"                   :"Bọtịnụ Azụ na Na-esote na ala nke isi ọ bụla. I nwekwara ike iswiper aka ekpe/aka nri ka ị na-aga n'etiti isi dị iche iche.",
   "renderpages_chapters_other_label"                    :"Njirimara ndị ọzọ",
