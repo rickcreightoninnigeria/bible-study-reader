@@ -103,6 +103,11 @@ function escapeHtml(str) {
  *   elementId  {string}  – ID of the toast element to use. Default: 'toast'.
  *   resetText  {string}  – text to restore after hiding. Default: '✓ Answers saved'.
  */
+// Per-toast pending hide-timer, keyed by element id — lets a click/tap away
+// (see the pointerdown listener below) cancel the wait and hide immediately,
+// instead of the toast lingering for its full duration.
+const _toastHideTimers = {};
+
 function showToast({
   message    = null,
   isHtml     = false,
@@ -126,13 +131,27 @@ function showToast({
   const ms       = duration ?? auto;
 
   toast.classList.add('show');
-  setTimeout(() => {
+
+  clearTimeout(_toastHideTimers[elementId]);
+  _toastHideTimers[elementId] = setTimeout(() => {
     toast.classList.remove('show');
     if (message !== null) {
       setTimeout(() => { toast.textContent = resetText; }, 300);
     }
   }, ms);
 }
+
+// Dismiss any visible toast the moment the user taps/clicks anywhere outside
+// it, rather than making them wait out its full auto-dismiss timer (up to
+// 10s for the validate toast). Uses the same .show removal the timeout above
+// already uses, so the hide looks identical — it just happens right away.
+document.addEventListener('pointerdown', e => {
+  document.querySelectorAll('.toast.show, .validate-toast.show').forEach(toast => {
+    if (toast.contains(e.target)) return;   // tap landed on the toast itself
+    clearTimeout(_toastHideTimers[toast.id]);
+    toast.classList.remove('show');
+  });
+}, true);
 
 // Shows the chapter-completion celebration toast the first time a chapter
 // reaches 100% completion. The "celebrated" flag is stored as a standalone
