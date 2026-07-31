@@ -670,6 +670,86 @@ function localValidateEligible(card) {
 }
 
 
+// ── "Still working on this answer" suppression ───────────────────────────────
+// A textarea blurs whenever the user taps anything else on screen — including
+// controls inside the *same* question card that have nothing to do with
+// leaving the answer (rereading the linked verse, opening the info popup,
+// starting voice input, tapping the star, switching translation tabs). Mobile
+// browsers dismiss the keyboard (and fire blur) on any outside tap, even
+// though the user hasn't finished composing.
+//
+// To tell "still working" taps apart from an actual "I'm done with this
+// answer" blur, we watch pointerdown (which always fires before blur) and, if
+// it lands on one of these in-card controls, set a short-lived flag.
+// localValidateAutoTrigger checks the flag and skips entirely when set —
+// no validation run, no scroll, no toast — leaving lvLastAnswer untouched so
+// the *next* genuine blur still validates normally.
+//
+// The flag auto-clears after 500ms as a safety net, so a stray pointerdown
+// that never actually causes this textarea's blur can't suppress some later,
+// unrelated auto-validate.
+const _LV_STILL_WORKING_SELECTOR =
+  '.question-ref [data-ref], .deeper-btn, .answer-info-btn, .mic-btn, ' +
+  '.local-validate-btn, .check-answer-btn, .verse-trans-btn, .star-btn';
+
+// PRIMARY FIX: a browser only blurs the currently focused field, on either
+// desktop or mobile, as the *default action* of the mousedown/tap that
+// targets something else. Canceling that default action on mousedown — the
+// standard technique editor toolbars use so their buttons don't steal focus
+// from the field being edited — stops the blur from happening at all. The
+// click still fires normally afterwards (only the focus-shift default is
+// canceled), so openVerseModal() etc. still run exactly as before. With no
+// blur, neither save.js's auto-save nor localValidateAutoTrigger below ever
+// run in the first place — nothing to suppress after the fact.
+document.addEventListener('mousedown', e => {
+  if (e.target.closest(_LV_STILL_WORKING_SELECTOR)) {
+    e.preventDefault();
+  }
+}, true);
+
+// FALLBACK: on the rare engine/webview where the above doesn't hold and blur
+// still fires anyway, this flag (set on pointerdown, ahead of any blur) lets
+// both localValidateAutoTrigger (below) and save.js's blur listener detect
+// and skip that blur's side effects. Self-clears after 500ms.
+
+let _lvSuppressNext = false;
+let _lvSuppressTimer = null;
+
+document.addEventListener('pointerdown', e => {
+  if (e.target.closest(_LV_STILL_WORKING_SELECTOR)) {
+    _lvSuppressNext = true;
+    clearTimeout(_lvSuppressTimer);
+    _lvSuppressTimer = setTimeout(() => { _lvSuppressNext = false; }, 500);
+  }
+}, true);
+
+// STRONGER FALLBACK: on platforms/webviews where the OS dismisses the
+// keyboard (and blurs the field) as part of touch handling itself — before
+// mousedown's preventDefault has any chance to matter — the mousedown fix
+// above can't stop the blur from happening. In that case, reclaim focus for
+// the same textarea right away, in the same tick the blur fired in. This
+// means the field never really stops being "the one being edited" for more
+// than an instant, regardless of which lower-level mechanism caused the
+// blur — so there is no real "user left the field" moment here for
+// localValidateAutoTrigger to (correctly) react to.
+document.addEventListener('blur', e => {
+  if (_lvSuppressNext && e.target.classList && e.target.classList.contains('answer-field')) {
+    const el = e.target;
+    setTimeout(() => el.focus(), 0);
+  }
+}, true);
+
+// Overlays that represent "the user is still engaged with this question,
+// not leaving it" — the verse modal, the deeper-answer modal, the Likert
+// info popup, the AI tutor modal, and the shared info modal (used by the
+// answer-info icon). If any of these is open when the deferred check below
+// runs, the blur that preceded it was caused by opening one of them, not by
+// the user actually moving on.
+const _LV_STILL_WORKING_OVERLAYS =
+  '#verseModalOverlay.open, #deeperModalOverlay.open, #likertPopupOverlay.open, ' +
+  '#qaModalOverlay.open, #info-modal-overlay.open';
+
+
 // ── Public entry point ────────────────────────────────────────────────────────
 
 // Scrolls the card to the centre of the viewport, then shows the toast.
@@ -706,9 +786,11 @@ function openLocalValidateForCard(buttonEl) {
   _localValidateShowFeedback(card, feedback);
 }
 
-// Called from the textarea's blur handler (in render-chapter.js) when
-// localValidate mode is 'auto'. Runs validation only if the answer has
-// changed since the last time validation ran on this card.
+// Called from the textarea's blur handler (onblur attribute in
+// render-chapter-elements.js) when localValidate mode is 'auto'. Runs
+// validation only if the answer has changed since the last time validation
+// ran on this card, AND only once we can confirm the user actually left the
+// field rather than just tapping something inside the same card.
 //
 // We store the last-validated answer text in a data attribute on the card
 // so we can diff on the next blur without any external state.
@@ -722,23 +804,43 @@ function localValidateAutoTrigger(textareaEl) {
   const lvBtn = card.querySelector('.local-validate-btn');
   if (!lvBtn) return;
 
-  const answer = textareaEl.value.trim();
-  if (!answer) return;                            // nothing to check
+  // A blur fires whenever focus leaves the field for ANY reason — including
+  // tapping the verse ref, info icon, mic, etc. inside the same card, which
+  // is not the user leaving the answer. We can't tell those apart at the
+  // instant blur fires, because the tap's own effect (e.g. openVerseModal()
+  // adding .open to the verse overlay) runs via the click event, which is
+  // dispatched immediately AFTER blur but still within the same synchronous
+  // browser-handled tap — before any timer can fire. So we defer this check
+  // to a short timeout: by the time it runs, that whole tap (blur → click →
+  // modal open, if any) has already finished, and we can reliably tell
+  // "still working" apart from "actually done" by looking at the result:
+  //   • the same field already has focus again (quick tap back in), or
+  //   • one of the still-working overlays is now open, or
+  //   • the fallback pointerdown flag is set
+  // — any of which means: not done yet, skip validating.
+  setTimeout(() => {
+    if (document.activeElement === textareaEl) return;
+    if (document.querySelector(_LV_STILL_WORKING_OVERLAYS)) return;
+    if (_lvSuppressNext) return;
 
-  const lastValidated = card.dataset.lvLastAnswer ?? null;
-  if (answer === lastValidated) return;           // answer unchanged — skip
+    const answer = textareaEl.value.trim();
+    if (!answer) return;                            // nothing to check
 
-  // Record the answer we are about to validate so next blur can diff
-  card.dataset.lvLastAnswer = answer;
+    const lastValidated = card.dataset.lvLastAnswer ?? null;
+    if (answer === lastValidated) return;           // answer unchanged — skip
 
-  const questionText          = _getQuestionText(card);
-  const sampleAnswer          = card.dataset.sampleAnswer || null;
-  const questionHint          = card.dataset.questionHint || null;
-  const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
-  const skipBibleVerseCheck   = card.dataset.skipBibleVerseCheck === 'true';
+    // Record the answer we are about to validate so next blur can diff
+    card.dataset.lvLastAnswer = answer;
 
-  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck);
-  _localValidateShowFeedback(card, feedback);
+    const questionText          = _getQuestionText(card);
+    const sampleAnswer          = card.dataset.sampleAnswer || null;
+    const questionHint          = card.dataset.questionHint || null;
+    const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
+    const skipBibleVerseCheck   = card.dataset.skipBibleVerseCheck === 'true';
+
+    const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck);
+    _localValidateShowFeedback(card, feedback);
+  }, 120);
 }
 
 // ── Core validation logic ─────────────────────────────────────────────────────

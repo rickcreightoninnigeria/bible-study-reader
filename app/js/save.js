@@ -81,6 +81,14 @@ document.addEventListener('input', e => {
 document.addEventListener('blur', e => {
   if (!e.target.classList.contains('answer-field')) return;
 
+  // Blur caused by tapping an in-card control (verse ref, info icon, mic,
+  // etc.) rather than actually leaving the answer — skip the save entirely.
+  // The flag is set in validation.js (shared with localValidateAutoTrigger's
+  // own check on this same blur) and self-clears after 500ms; the current
+  // in-progress text simply stays unsaved in the field until a genuine blur,
+  // the manual Save button, or the visibilitychange/pagehide flush below.
+  if (typeof _lvSuppressNext !== 'undefined' && _lvSuppressNext) return;
+
   const ch    = chapters[currentChapter];
   const type  = e.target.dataset.type;
   const index = e.target.dataset.index;
