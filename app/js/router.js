@@ -362,8 +362,50 @@ const Router = (() => {
         return;
       }
 
-      _shadowPop(e.state);
-      await _applyNavigation(e.state, /* isPop = */ true);
+      // ── Flattened Back behaviour ────────────────────────────────────────────
+      // Previously Back replayed the real navigation history step by step
+      // (Library → Chapter → Settings → Library → Chapter → Back would land
+      // on Settings, then Library, then Chapter, ...). Instead, Back should
+      // always return straight to the Library from anywhere, and only exit
+      // the app once the user is already there — regardless of how deep the
+      // real history stack actually is.
+      //
+      // We deliberately do NOT try to keep the underlying browser/WebView
+      // history stack "tidy" to match this (e.g. by truncating or undoing
+      // entries) — mixing history.back()/forward() with history.pushState()
+      // to correct position is fragile and can race across browsers. Instead
+      // we simply don't act on e.state's page here at all; _lastPage (this
+      // module's own record of what's actually on screen) tells us
+      // everything we need:
+      //   • already on Library  → treat Back as the user trying to leave
+      //     the app.
+      //   • anywhere else       → render Library, letting the real stack
+      //     accumulate underneath unseen. It's never relied on for
+      //     anything except detecting the rare case it's fully exhausted
+      //     (handled above), so its growth is harmless.
+      if (_lastPage === 'library') {
+        _handleExitIntent();
+        return;
+      }
+
+      await navigate({ page: 'library' });
+      return;
+    });
+
+  // ── Escape-key shortcut (desktop testing convenience) ───────────────────────
+  // Makes the Escape key behave exactly like the hardware/gesture Back button
+  // by triggering a real history.back() — routing through the exact same
+  // popstate logic above (close modal/search overlay first, then flatten to
+  // Library, then exit intent) rather than duplicating any of that here.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+
+    // If a SweetAlert2 dialog is open (including the exit-confirmation
+    // prompt itself), let its own Escape handling manage it — otherwise
+    // we'd race its dismissal against an extra, unwanted history.back().
+    if (document.body.classList.contains('swal2-shown')) return;
+
+    history.back();
   });
 
   // ── Public API ──────────────────────────────────────────────────────────────

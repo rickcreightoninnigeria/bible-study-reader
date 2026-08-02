@@ -738,7 +738,7 @@ async function loadStudyFromJson(jsonString) {
             if (window._appReady) {
                 window.activeStudyId = studyId;
                 const existing = await StudyIDB.get(`study_content_${studyId}`);
-                if (existing) { Router.back(); await applyStudyData(existing, { isStudySwitch: true }); }
+                if (existing) { await Router.navigate({ page: 'library' }); await applyStudyData(existing, { isStudySwitch: true }); }
             } else {
                 window.activeStudyId = studyId;
             }
@@ -780,7 +780,7 @@ async function loadStudyFromJson(jsonString) {
         if (window._appReady) {
             window.activeStudyId = studyId;
             checkEstudyVersion(data);
-            Router.back();
+            await Router.navigate({ page: 'library' });
             await applyStudyData(data, { isStudySwitch: true });
         } else {
             window.pendingStudyData = data;
@@ -1165,7 +1165,7 @@ async function loadStudyFromFile(file) {
       }
       if (_versionDecision === 'skip') {
         // Same version already installed — open it as normal without re-writing.
-        Router.back();
+        await Router.navigate({ page: 'library' });
         window.activeStudyId = studyId;
         const existing = await StudyIDB.get(`study_content_${studyId}`);
         if (existing) await applyStudyData(existing, { isStudySwitch: true });
@@ -1250,7 +1250,7 @@ async function loadStudyFromFile(file) {
 
       // 4. Apply to the running app
       checkEstudyVersion(data);
-      Router.back();
+      await Router.navigate({ page: 'library' });
       window.activeStudyId = studyId;
       await applyStudyData(data, { isStudySwitch: true });
 
@@ -1268,7 +1268,7 @@ async function loadStudyFromFile(file) {
           return;
         }
         if (_versionDecision === 'skip') {
-          Router.back();
+          await Router.navigate({ page: 'library' });
           window.activeStudyId = _plainStudyId;
           const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
           if (existing) await applyStudyData(existing, { isStudySwitch: true });
@@ -1289,7 +1289,7 @@ async function loadStudyFromFile(file) {
       }
 
       checkEstudyVersion(data);
-      Router.back();
+      await Router.navigate({ page: 'library' });
       await applyStudyData(data, { isStudySwitch: true });
     }
 
