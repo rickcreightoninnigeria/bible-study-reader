@@ -1,3 +1,29 @@
+// ── SWEETALERT2 DARK MODE ─────────────────────────────────────────────────────
+// SweetAlert2 ships its own dark theme, but only enables it automatically via
+// `@media (prefers-color-scheme: dark)` — it has no way to know about this
+// app's own manual dark-mode toggle (body.dark-mode, set in settings.js).
+// Without this patch, popups always render light unless the *OS itself* is
+// set to dark, regardless of what the app's theme is actually set to.
+//
+// Rather than passing `theme` at every one of the ~12 Swal.fire() call sites
+// across the app, patch Swal.fire() once here so every call automatically
+// picks up the current app theme. Runs before any call site executes since
+// sweetalert2.all.min.js loads earlier in index.html and this file loads
+// before any of the files that call Swal.fire().
+if (typeof Swal !== 'undefined' && typeof Swal.fire === 'function') {
+  const _originalSwalFire = Swal.fire.bind(Swal);
+  Swal.fire = function (...args) {
+    // Swal.fire() supports a single options-object call (used everywhere in
+    // this app) as well as legacy (title, text, icon) shorthand args, which
+    // have no slot for `theme` — only patch the object form, and only when
+    // the caller hasn't already specified its own theme.
+    if (args.length === 1 && args[0] && typeof args[0] === 'object' && args[0].theme === undefined) {
+      args[0].theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    }
+    return _originalSwalFire(...args);
+  };
+}
+
 // ── BOOKMARKS / LAST POSITION ─────────────────────────────────────────────────
 // Persists and restores the user's reading position (chapter index + scroll Y)
 // in IndexedDB. Called by openSearch(), openLibrary(), and other functions
@@ -108,6 +134,30 @@ function escapeHtml(str) {
 // instead of the toast lingering for its full duration.
 const _toastHideTimers = {};
 
+// Per-toast pending reset-text, keyed by element id. Set whenever a call
+// passes a custom `message`, so that whichever path actually hides the
+// toast (its own timeout below, or the early-dismiss pointerdown listener)
+// can restore the default text afterwards. Both paths MUST go through
+// _hideToast() so this restoration always happens — previously the reset
+// only lived inside the timeout callback, so tapping away early (the
+// pointerdown listener) skipped it, leaving a custom message like
+// "Study deleted" stuck as the toast's text indefinitely. The next call
+// that reused the current text (e.g. the auto-save toast, which passes no
+// message) then displayed that stale text instead of "Answers saved".
+const _toastResetText = {};
+
+function _hideToast(elementId) {
+  const toast = document.getElementById(elementId);
+  if (!toast) return;
+  clearTimeout(_toastHideTimers[elementId]);
+  toast.classList.remove('show');
+  if (Object.prototype.hasOwnProperty.call(_toastResetText, elementId)) {
+    const resetText = _toastResetText[elementId];
+    delete _toastResetText[elementId];
+    setTimeout(() => { toast.textContent = resetText; }, 300);
+  }
+}
+
 function showToast({
   message    = null,
   isHtml     = false,
@@ -124,6 +174,7 @@ function showToast({
   if (message !== null) {
     if (isHtml) toast.innerHTML = message;
     else        toast.textContent = message;
+    _toastResetText[elementId] = resetText;
   }
 
   const text     = toast.textContent;
@@ -133,23 +184,18 @@ function showToast({
   toast.classList.add('show');
 
   clearTimeout(_toastHideTimers[elementId]);
-  _toastHideTimers[elementId] = setTimeout(() => {
-    toast.classList.remove('show');
-    if (message !== null) {
-      setTimeout(() => { toast.textContent = resetText; }, 300);
-    }
-  }, ms);
+  _toastHideTimers[elementId] = setTimeout(() => _hideToast(elementId), ms);
 }
 
 // Dismiss any visible toast the moment the user taps/clicks anywhere outside
 // it, rather than making them wait out its full auto-dismiss timer (up to
-// 10s for the validate toast). Uses the same .show removal the timeout above
-// already uses, so the hide looks identical — it just happens right away.
+// 10s for the validate toast). Routed through _hideToast() (not a direct
+// classList.remove) so the pending reset-text restoration still happens —
+// see the note on _toastResetText above.
 document.addEventListener('pointerdown', e => {
   document.querySelectorAll('.toast.show, .validate-toast.show').forEach(toast => {
     if (toast.contains(e.target)) return;   // tap landed on the toast itself
-    clearTimeout(_toastHideTimers[toast.id]);
-    toast.classList.remove('show');
+    _hideToast(toast.id);
   });
 }, true);
 
