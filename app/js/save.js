@@ -34,15 +34,25 @@ async function saveAnswers(isManual = true) {
     record = {};
   }
 
-  // Overwrite only the fields that are visible in the DOM right now.
+  // Overwrite only the fields that are visible in the DOM right now and
+  // actually contain something. Blank fields are skipped rather than
+  // stomping the record with an empty string — same rationale as the
+  // blur auto-save below: clearing a field's stored answer should be a
+  // deliberate action, not a side effect of an empty field being present
+  // on screen when Save is tapped.
   const fields = document.querySelectorAll('.answer-field');
+  let anyNonBlank = false;
   fields.forEach(field => {
     const type  = field.dataset.type;
     const index = field.dataset.index;
-    if (type !== undefined && index !== undefined) {
+    if (type !== undefined && index !== undefined && field.value.trim() !== '') {
       record[answerFieldKey(type, index)] = field.value;
+      anyNonBlank = true;
     }
   });
+
+  // Nothing to save — skip the write and the toast entirely.
+  if (!anyNonBlank) return;
 
   try {
     await StudyIDB.setChapterAnswers(studyId, ch.chapterNumber, record);
@@ -98,6 +108,14 @@ document.addEventListener('blur', e => {
 
   const studyId = window.activeStudyId;
   if (!studyId) return;
+
+  // Skip entirely if the field is blank — nothing to persist, and the
+  // auto-save toast shouldn't fire just because the user tapped into and
+  // back out of an empty field. This intentionally does not clear an
+  // existing saved value: blurring a blank field is trivially different
+  // from deliberately erasing previously-saved text, and this way idle
+  // tapping around empty fields never triggers a write or a toast.
+  if (value.trim() === '') return;
 
   // Fire-and-forget async save for the single field that lost focus.
   (async () => {
