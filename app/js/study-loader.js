@@ -43,9 +43,30 @@ function _createBlobUrl(blob) {
 }
 
 function _revokeAllBlobUrls() {
-  _activeBlobUrls.forEach(url => URL.revokeObjectURL(url));
+  // Snapshot and clear the live list immediately so any blob URLs created
+  // later in this same applyStudyData() call (for the *new* study) aren't
+  // swept up by this revoke — only URLs from the outgoing study are targeted.
+  const urlsToRevoke = _activeBlobUrls.slice();
   _activeBlobUrls.length = 0;
-  // Also clear the chapter image memo cache — its URLs have just been revoked.
+
+  // Defer the actual revocation until after the browser has painted the new
+  // content. _revokeAllBlobUrls() runs at the very top of applyStudyData(),
+  // before the new title page / chapter DOM (with its own fresh blob URLs)
+  // has replaced the outgoing elements. Revoking synchronously here pulls
+  // the rug out from under <img> tags that are still in the DOM and may
+  // still be mid-decode/repaint, which surfaces as spurious
+  // "GET blob:... net::ERR_FILE_NOT_FOUND" console errors even though the
+  // app keeps working (the browser has already cached the decoded bitmap).
+  // A double rAF waits for a full paint cycle to complete before the old
+  // URLs are invalidated, which is enough time for the new render to have
+  // taken over the DOM.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      urlsToRevoke.forEach(url => URL.revokeObjectURL(url));
+    });
+  });
+
+  // Also clear the chapter image memo cache — its URLs are about to be revoked.
   clearImageBlobCache();
 }
 
