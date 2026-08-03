@@ -865,82 +865,13 @@ async function loadAnyFile(file) {
   }
 }
 
-// ── DEFAULT STUDIES INSTALLER ─────────────────────────────────────────────────
-// Fetches estudy/firstEstudies.zip on the very first run (flag:
-// 'default_studies_installed') and installs all .estudy files found inside it.
-// Runs silently — no progress toasts — so startup feels clean.
-// On any failure, shows a single toast and continues without throwing.
-//
-// Called from app-init.js before the startup routing decision, so studies are
-// present in the registry by the time the library is first rendered.
-async function installDefaultStudiesIfNeeded() {
-  const currentVersion = window.appAboutData?.appVersion || '0';
-  if (localStorage.getItem('default_studies_installed') === currentVersion) return;
-
-  try {
-    // Use XHR instead of fetch — fetch('file://...') is blocked in Android WebView.
-    // XHR with responseType='arraybuffer' works correctly under both file:// and
-    // custom-scheme WebView origins.
-    const arrayBuffer = await new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'estudy/firstEstudies.zip', true);
-      xhr.responseType = 'arraybuffer';
-      xhr.onload = () => {
-        if (xhr.status === 200 || xhr.status === 0) {
-          // status 0 is normal for successful file:// XHR requests
-          resolve(xhr.response);
-        } else {
-          reject(new Error(`XHR status ${xhr.status}`));
-        }
-      };
-      xhr.onerror = () => reject(new Error('XHR network error'));
-      xhr.send();
-    });
-    
-    const outerZip = await JSZip.loadAsync(arrayBuffer);
-
-    // Collect all .estudy entries inside the bundle zip
-    const innerEstudyFiles = Object.values(outerZip.files)
-      .filter(f => !f.dir && f.name.endsWith('.estudy'));
-
-    if (innerEstudyFiles.length === 0) {
-      console.warn('[defaultStudies] firstEstudies.zip contains no .estudy files');
-      return;
-    }
-
-    // Install each .estudy silently. Extract as ArrayBuffer directly from the
-    // outer zip and pass it straight to _installStudyFileQuietly — bypassing
-    // the File/Blob constructor round-trip that corrupts binary data in some
-    // Android WebViews.
-    for (const entry of innerEstudyFiles) {
-        try {
-            const arrayBuf = await entry.async('arraybuffer');
-            await _installStudyFileQuietly(arrayBuf, entry.name);
-        } catch (entryErr) {
-            console.error('[defaultStudies] Failed to install', entry.name, entryErr);
-        }
-    }
-
-    safeSetItem('default_studies_installed', currentVersion);
-
-  } catch (err) {
-    console.error('[defaultStudies] installDefaultStudiesIfNeeded failed:', err);
-    showToast({ message: t('studyloader_default_studies_error'), isManual: true });
-    // Do NOT set the flag — allow a retry on next launch in case it was transient.
-    // If the zip simply doesn't exist in a dev build, this will toast every launch;
-    // set the flag manually in the console to suppress: 
-    //   safeSetItem('default_studies_installed', currentVersion);
-  }
-}
-
 // ── STUDY VERSION HELPERS ─────────────────────────────────────────────────────
 // Per-study version tracking used to guard manual-load paths against accidental
 // downgrades. Keys live in localStorage under 'bsr_studyver_{studyId}'.
 //
 // Only the manual-load paths (loadStudyFromFile, loadStudyFromJson) need this —
-// the bundled install path (installDefaultStudiesIfNeeded) is already gated by
-// the app-version flag 'default_studies_installed', which changes on every app
-// update, so the bundle is always re-evaluated and newer studies always win.
+// bundle-zip installs (loadBundleFromFile) go through _installStudyFileQuietly,
+// which is always user-initiated and simply installs whatever's in the bundle.
 //
 // studyVersion values are treated as floats (1, 1.01, 2, etc.).
 // Studies that carry no studyVersion field are treated as version 0, which means
@@ -965,8 +896,9 @@ function _setInstalledStudyVersion(studyId, version) {
 //                        show a toast and abort.
 //
 // isUserInitiated: true  → manual file-picker or Android intent open
-//                  false → installDefaultStudiesIfNeeded bundle (never calls this,
-//                          but passing false makes the helper safe to reuse later)
+//                  false → default for any future silent/bundled caller
+//                          (nothing currently calls this with false, but
+//                          passing false keeps the helper safe to reuse)
 function _shouldInstallStudy(incomingData, { isUserInitiated = false } = {}) {
   const studyId         = incomingData.studyMetadata?.studyId;
   const incomingVersion = parseFloat(incomingData.studyMetadata?.studyVersion) || 0;
@@ -981,8 +913,8 @@ function _shouldInstallStudy(incomingData, { isUserInitiated = false } = {}) {
 }
 
 // Installs a single .estudy File object into IDB and the registry without
-// activating it or touching the UI.  Used by installDefaultStudiesIfNeeded()
-// so the default studies land silently in the background.
+// activating it or touching the UI.  Used by loadBundleFromFile() so each
+// study in a multi-study bundle zip installs quietly, with one summary toast.
 //
 // Supports both zip-format .estudy (study.json + images/) and legacy plain-JSON.
 async function _installStudyFileQuietly(file, fileName) {
@@ -1016,8 +948,9 @@ async function _installStudyFileQuietly(file, fileName) {
     }
 
     // Version check: skip silently if an equal-or-newer version is already installed.
-    // isUserInitiated is false here — this path is only reached from the bundled
-    // installer, which uses the app-version flag as its primary gate.
+    // isUserInitiated is false here — loadBundleFromFile() installs each study in
+    // a bundle quietly and shows one summary toast at the end rather than a
+    // per-study downgrade warning.
     if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
       console.log('[defaultStudies] Skipping', studyId, '— installed version is current or newer');
       return;
@@ -1025,11 +958,10 @@ async function _installStudyFileQuietly(file, fileName) {
 
     // Store images in IDB.
     // IDBUnavailable is re-thrown here rather than calling showPickerError —
-    // _installStudyFileQuietly runs during installDefaultStudiesIfNeeded() at
-    // startup, before renderStudyPicker() has ever run, so #studyPickerError
-    // is never in the DOM at this point. Any IDBUnavailable error propagates
-    // to the caller's catch block (installDefaultStudiesIfNeeded), which shows
-    // a toast and logs to console — the appropriate surface for a startup failure.
+    // _installStudyFileQuietly() may run before renderStudyPicker() has ever
+    // run, so #studyPickerError isn't guaranteed to be in the DOM. Any
+    // IDBUnavailable error propagates to the caller's catch block, which
+    // shows a toast and logs to console instead.
     const imageNames = ['cover', 'publisher', 'author'];
     for (const name of imageNames) {
       const entry = zip.file(`images/${name}.webp`);
