@@ -249,6 +249,7 @@ async function deleteStudy(id, title) {
         .filter(key => key.startsWith(prefix))
         .forEach(key => localStorage.removeItem(key));
 
+
     // 5. If this study is currently open, reset the UI and theme
     if (window.activeStudyId === id) {
       window.activeStudyId = null;
@@ -734,15 +735,18 @@ async function loadStudyFromJson(jsonString) {
             return;
         }
         if (_versionDecision === 'skip') {
-            // Same version already installed — just activate it.
-            if (window._appReady) {
+            // Same version already installed — just activate it, *provided the
+            // content is actually still there*. If the study was deleted (which
+            // intentionally leaves the version record in place), the IDB entry
+            // will be missing even though the version says "skip" — in that case
+            // fall through and reinstall from the incoming file instead of
+            // silently doing nothing.
+            const existing = await StudyIDB.get(`study_content_${studyId}`);
+            if (existing) {
                 window.activeStudyId = studyId;
-                const existing = await StudyIDB.get(`study_content_${studyId}`);
-                if (existing) { await Router.navigate({ page: 'library' }); await applyStudyData(existing, { isStudySwitch: true }); }
-            } else {
-                window.activeStudyId = studyId;
+                if (window._appReady) { await Router.navigate({ page: 'library' }); await applyStudyData(existing, { isStudySwitch: true }); }
+                return;
             }
-            return;
         }
         // 'install': show update toast if upgrading an existing install.
         const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
@@ -1164,12 +1168,19 @@ async function loadStudyFromFile(file) {
         return;
       }
       if (_versionDecision === 'skip') {
-        // Same version already installed — open it as normal without re-writing.
-        await Router.navigate({ page: 'library' });
-        window.activeStudyId = studyId;
+        // Same version already installed — open it as normal without re-writing,
+        // *provided the content is actually still there*. If the study was
+        // deleted (which intentionally leaves the version record in place),
+        // the IDB entry will be missing even though the version says "skip" —
+        // in that case fall through and reinstall from the incoming file
+        // instead of silently doing nothing.
         const existing = await StudyIDB.get(`study_content_${studyId}`);
-        if (existing) await applyStudyData(existing, { isStudySwitch: true });
-        return;
+        if (existing) {
+          await Router.navigate({ page: 'library' });
+          window.activeStudyId = studyId;
+          await applyStudyData(existing, { isStudySwitch: true });
+          return;
+        }
       }
       // 'install': incoming is newer — show an update toast if upgrading an
       // existing install (installedVersion > 0), then proceed.
@@ -1268,11 +1279,19 @@ async function loadStudyFromFile(file) {
           return;
         }
         if (_versionDecision === 'skip') {
-          await Router.navigate({ page: 'library' });
-          window.activeStudyId = _plainStudyId;
+          // Same version already installed — open it as normal without
+          // re-writing, *provided the content is actually still there*. If the
+          // study was deleted (which intentionally leaves the version record
+          // in place), the IDB entry will be missing even though the version
+          // says "skip" — in that case fall through and reinstall from the
+          // incoming file instead of silently doing nothing.
           const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
-          if (existing) await applyStudyData(existing, { isStudySwitch: true });
-          return;
+          if (existing) {
+            await Router.navigate({ page: 'library' });
+            window.activeStudyId = _plainStudyId;
+            await applyStudyData(existing, { isStudySwitch: true });
+            return;
+          }
         }
         // 'install': show update toast if upgrading an existing install.
         const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
