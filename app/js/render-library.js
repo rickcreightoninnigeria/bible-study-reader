@@ -364,10 +364,19 @@ async function renderLibrary() {
   // For multilingual studies, title/subtitle are resolved to the active language
   // (window._activeStudyLang), falling back to slot 1 if the active language is
   // not one of this study's languages. Mono-lingual studies use plain fields.
+  // Fetch every registered study's metadata in parallel rather than one IDB
+  // round-trip at a time — with N installed studies this cuts N sequential
+  // full-content-blob reads down to roughly one round-trip's worth of
+  // latency. Only meta/title/subtitle/etc. are kept afterward; the full
+  // parsed `data` object is used transiently below (fallback icon lookup)
+  // and is not read anywhere else in this file, so it's not retained in
+  // studyCache — holding on to every installed study's full content
+  // (chapters, questions, likert scales, ...) for the library screen's
+  // lifetime would be a needless memory footprint.
   const studyCache = {};
-  for (const id of registry) {
+  const studyEntries = await Promise.all(registry.map(async (id) => {
     const data = await StudyIDB.get(`study_content_${id}`);
-    if (!data) continue;
+    if (!data) return null;
     let coverSrc = '';
     if (_coverCache.has(id)) {
       coverSrc = _coverCache.get(id);
@@ -421,8 +430,7 @@ async function renderLibrary() {
       _langs.push(meta.language);
     }
 
-    studyCache[id] = {
-      data,
+    return [id, {
       meta,
       title:    _res('title', 'Untitled Study').trim(),
       subtitle: _res('subtitle', ''),
@@ -431,8 +439,9 @@ async function renderLibrary() {
       langs:    _langs,          // ordered array of all language codes for this study
       lang:     _langs[0] || '', // primary language (for legacy single-lang filter)
       coverSrc,
-    };
-  }
+    }];
+  }));
+  studyEntries.forEach(entry => { if (entry) studyCache[entry[0]] = entry[1]; });
 
   // ── Helper: small cover image HTML ──────────────────────────────────────────
   function smallCoverHtml(entry, wClass, fbClass) {

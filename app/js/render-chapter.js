@@ -162,6 +162,26 @@ async function renderChapter(idx, scrollY = 0) {
       }
     });
 
+    // ── Pre-fetch not-yet-cached inline images in parallel ────────────────────
+    // Collects every image element's cache key up front and fetches all of
+    // them at once, so the elements loop below can read exclusively from
+    // _imageBlobCache and stay fully synchronous. Previously each uncached
+    // image's blob was awaited one at a time inside the loop, adding a full
+    // sequential IDB round-trip per image to first-visit chapter navigation.
+    const _uncachedImageKeys = [];
+    (ch.elements || []).forEach(el => {
+      const resolved = el.repeatElement ? elementMap[el.repeatElement] : el;
+      if (!resolved || resolved.type !== 'image') return;
+      const cacheKey = `${window.activeStudyId}_${resolved.elementId}`;
+      if (!_imageBlobCache.has(cacheKey)) _uncachedImageKeys.push(cacheKey);
+    });
+    if (_uncachedImageKeys.length > 0) {
+      await Promise.all(_uncachedImageKeys.map(async cacheKey => {
+        const blob = await StudyIDB.getImage(cacheKey);
+        if (blob) _imageBlobCache.set(cacheKey, _createBlobUrl(blob));
+      }));
+    }
+
     // ── Pre-load chapter answer object from IDB ───────────────────────────────
     // Fetched once here so every renderer in the elements loop below can read
     // saved answer values and star flags synchronously from this plain object,
@@ -249,23 +269,14 @@ async function renderChapter(idx, scrollY = 0) {
           break;
 
         case 'image': {
-          // Resolve the image src before calling the synchronous renderer.
-          // Priority: IDB blob (zip-imported studies) → el.src → empty string.
+          // Resolve the image src. Priority: IDB blob (zip-imported studies,
+          // pre-fetched into _imageBlobCache above) → el.src → empty string.
           // Blob URLs are memoised in _imageBlobCache (keyed by elementId) so
           // IDB is only read once per image per study session. URLs are
           // registered via _createBlobUrl() and revoked (along with the cache)
           // by _revokeAllBlobUrls() when a new study is loaded.
-          let imgSrc = resolved.src || '';
           const cacheKey = `${window.activeStudyId}_${resolved.elementId}`;
-          if (_imageBlobCache.has(cacheKey)) {
-            imgSrc = _imageBlobCache.get(cacheKey);
-          } else {
-            const blob = await StudyIDB.getImage(cacheKey);
-            if (blob) {
-              imgSrc = _createBlobUrl(blob);
-              _imageBlobCache.set(cacheKey, imgSrc);
-            }
-          }
+          const imgSrc = _imageBlobCache.has(cacheKey) ? _imageBlobCache.get(cacheKey) : (resolved.src || '');
           contentHtml += renderImage({ ...ctx, imgSrc });
           break;
         }
