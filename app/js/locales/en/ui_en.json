@@ -548,6 +548,7 @@
   "settings_clear_answers_confirm"                      :"Clear answers",
   "settings_clear_answers_cancel"                       :"Cancel",
   "settings_clear_answers_toast"                        :"✓ All answers cleared",
+  "settings_clear_answers_error"                        :"Couldn't clear answers — please try again",
   "___subsection: resetToDefaults"                      :"── resetToDefaults() ────────────────────────────────────",
   "settings_reset_title"                                :"Reset to defaults?",
   "settings_reset_body"                                 :"This will reset all your settings (font size, dark mode, and other preferences) back to their original defaults. The onboarding introduction will also play again on next launch.<br><br>Your answers, notes, progress, and current reading position will <strong>not</strong> be affected.",
