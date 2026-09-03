@@ -248,13 +248,18 @@ async function deleteStudy(id, title) {
     registry = registry.filter(item => item !== id);
     safeSetItem('study_registry', JSON.stringify(registry));
 
-    // 2. Remove the study content and all stored images from IDB.
-    // removeImagesByPrefix catches both the fixed metadata images
-    // (cover, publisher, author) and any inline chapter images
-    // ({id}_{elementId}) that are not individually tracked.
+    // 2. Remove the study content, all stored images, and all answer data
+    // (chapter answers, likert responses, star flags, celebration flags,
+    // global notes, last position) from IDB. removeImagesByPrefix catches
+    // both the fixed metadata images (cover, publisher, author) and any
+    // inline chapter images ({id}_{elementId}) that are not individually
+    // tracked. Without deleteStudyAnswers(), a deleted study's answers stay
+    // orphaned in IDB forever and silently reappear if the same studyId is
+    // ever reinstalled.
     try {
       await StudyIDB.remove(`study_content_${id}`);
       await StudyIDB.removeImagesByPrefix(`${id}_`);
+      await StudyIDB.deleteStudyAnswers(id);
     } catch (err) {
       if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
       throw err;
@@ -1065,12 +1070,20 @@ async function _installStudyFileQuietly(file, fileName) {
       return;
     }
 
-    // Version check: skip silently if an equal-or-newer version is already installed.
+    // Version check: skip silently if an equal-or-newer version is already installed —
+    // *provided the content is actually still there*. deleteStudy() intentionally
+    // leaves the bsr_studyver_{id} version record in place, so a deleted-then-
+    // reprocessed bundled study would otherwise be skipped forever even though its
+    // IDB content is gone (mirrors the same check in loadStudyFromJson()).
     // isUserInitiated is false here — this path is only reached from the bundled
     // installer, which uses the app-version flag as its primary gate.
     if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
-      console.log('[defaultStudies] Skipping', studyId, '— installed version is current or newer');
-      return;
+      const existing = await StudyIDB.get(`study_content_${studyId}`);
+      if (existing) {
+        console.log('[defaultStudies] Skipping', studyId, '— installed version is current or newer');
+        return;
+      }
+      console.log('[defaultStudies] Version record says skip but content is missing for', studyId, '— reinstalling.');
     }
 
     // Store images in IDB.
@@ -1125,10 +1138,16 @@ async function _installStudyFileQuietly(file, fileName) {
       return;
     }
 
-    // Version check: skip silently if an equal-or-newer version is already installed.
+    // Version check: skip silently if an equal-or-newer version is already installed —
+    // *provided the content is actually still there* (see the zip-format branch above
+    // for why).
     if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
-      console.log('[defaultStudies] Skipping plain-JSON', studyId, '— installed version is current or newer');
-      return;
+      const existing = await StudyIDB.get(`study_content_${studyId}`);
+      if (existing) {
+        console.log('[defaultStudies] Skipping plain-JSON', studyId, '— installed version is current or newer');
+        return;
+      }
+      console.log('[defaultStudies] Version record says skip but content is missing for', studyId, '(plain-JSON) — reinstalling.');
     }
 
     // IDBUnavailable re-thrown to caller — see note above.
