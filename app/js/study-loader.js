@@ -559,22 +559,25 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   const _activeSlot   = _langMap[_activeLang] || 1;
   const _isMultilang  = Object.keys(_langMap).length > 0;
 
-  // ── Helper: resolve a numbered metadata field ──────────────────────────────
+  // ── Helper: resolve a numbered field on any plain object ───────────────────
   // Priority (multilingual):
-  //   1. metadata[field + activeSlot]   — active language
-  //   2. metadata[field + '1']          — slot-1 fallback
-  //   3. metadata[field]                — unnumbered (mono-lingual)
+  //   1. obj[field + activeSlot]   — active language
+  //   2. obj[field + '1']          — slot-1 fallback
+  //   3. obj[field]                — unnumbered (mono-lingual)
   //   4. fallback string
   // For mono-lingual studies (no languageN keys) falls straight through to
   // the unnumbered field, preserving full backward compatibility.
-  function _resolveMeta(field, fallback = '') {
+  // Used below for studyMetadata fields, onboarding slide fields, and slide
+  // action labels — all three previously wrote out this exact same algorithm
+  // separately.
+  function _resolveNumberedField(obj, field, fallback = '') {
     if (_isMultilang) {
-      return metadata[`${field}${_activeSlot}`]
-          || metadata[`${field}1`]
-          || metadata[field]
+      return obj[`${field}${_activeSlot}`]
+          || obj[`${field}1`]
+          || obj[field]
           || fallback;
     }
-    return metadata[field] || fallback;
+    return obj[field] || fallback;
   }
 
   // ── Normalise title / subtitle / shortTitle onto studyMetadata ────────────
@@ -583,8 +586,8 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   // so nothing else needs to know about the numbered schema.
   //
   // shortTitle priority: shortTitle1 > shortTitle (unnumbered) > title slot > 'Study'
-  const resolvedTitle    = _resolveMeta('title',    'Untitled Study');
-  const resolvedSubtitle = _resolveMeta('subtitle', '');
+  const resolvedTitle    = _resolveNumberedField(metadata, 'title',    'Untitled Study');
+  const resolvedSubtitle = _resolveNumberedField(metadata, 'subtitle', '');
   const resolvedShortTitle = (() => {
     // shortTitle1 always wins when present (multilingual canonical).
     if (_isMultilang && metadata.shortTitle1) {
@@ -606,37 +609,23 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   // and action.label as label1/label2/label3.
   // We resolve every field to a plain string here, at load time, so
   // showSlideOverlay() can stay format-agnostic (it always reads s.eyebrow etc).
-  // Mono-lingual slides already carry plain unnumbered fields — _resolveMeta
-  // logic is applied per-field so both shapes work transparently.
+  // Mono-lingual slides already carry plain unnumbered fields —
+  // _resolveNumberedField logic is applied per-field so both shapes work
+  // transparently.
   studyOnboardingSlides = (data.studyOnboardingSlides || []).map(slide => {
-    // Resolve each text field: numbered slot wins over unnumbered fallback.
-    function _resolveSlideField(field) {
-      if (_isMultilang) {
-        return slide[`${field}${_activeSlot}`]
-            || slide[`${field}1`]
-            || slide[field]
-            || '';
-      }
-      return slide[field] || '';
-    }
-
     const resolved = {
       ...slide,
-      eyebrow:   _resolveSlideField('eyebrow'),
-      heading:   _resolveSlideField('heading'),
-      body:      _resolveSlideField('body'),
-      bodyAfter: _resolveSlideField('bodyAfter'),
+      eyebrow:   _resolveNumberedField(slide, 'eyebrow'),
+      heading:   _resolveNumberedField(slide, 'heading'),
+      body:      _resolveNumberedField(slide, 'body'),
+      bodyAfter: _resolveNumberedField(slide, 'bodyAfter'),
     };
 
     // Resolve action if present.
     if (slide.action) {
       // label is now numbered (label1/label2/label3); fall back to plain label.
-      const resolvedLabel = _isMultilang
-        ? (slide.action[`label${_activeSlot}`] || slide.action.label1 || slide.action.label || '')
-        : (slide.action.label || '');
-
       resolved.action = {
-        label: resolvedLabel,
+        label: _resolveNumberedField(slide.action, 'label'),
         fn:    slide.action.fn === null ? resolveActionFn(slide.action) : slide.action.fn,
       };
     }

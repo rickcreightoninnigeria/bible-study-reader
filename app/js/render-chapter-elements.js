@@ -165,6 +165,28 @@ function resolveMetaField(obj, field, lang, langMap) {
 }
 
 
+// resolveTextWithFallback(el, lang, field, langMap, fallback)
+//
+// Like resolveText(), but for callers that also want to fall back to the
+// plain unnumbered field when the resolved language slot is missing —
+// not just slot 1. resolveText()'s own multilingual path deliberately stops
+// at slot 1 (existing callers rely on strict numbered-slot resolution), so
+// this variant lives separately rather than changing resolveText() itself.
+//
+// Used for chapter titles (buildNavButtons() in render-chapter-ui.js and the
+// chapter header in render-chapter.js both need this exact fallback chain),
+// and anywhere else that wants "numbered slot → slot 1 → unnumbered → fallback".
+
+function resolveTextWithFallback(el, lang, field, langMap, fallback = '') {
+  if (langMap && Object.keys(langMap).length > 0) {
+    const slot = langMap[lang];
+    if (slot !== undefined) return el[`${field}${slot}`] || el[`${field}1`] || el[field] || fallback;
+    return el[`${field}1`] || el[field] || fallback;
+  }
+  return el[field] || fallback;
+}
+
+
 // ── BIBLE TRANSLATION RESOLUTION ─────────────────────────────────────────────
 // resolveBibleTranslation(slotIndex, studyMetadata)
 //

@@ -553,24 +553,39 @@ function _getQuestionText(card) {
 }
 
 // Builds a compact context string from the chapter's leaders notes (if available).
+//
+// Multilingual studies store chapterTitle/keyPoints/pastorals as numbered
+// fields (chapterTitle1/2/3 etc.) — resolved here for the active language via
+// the same helpers render-pages.js's Leaders Notes page already uses for
+// keyPoints/pastorals, and render-chapter.js/render-chapter-ui.js already use
+// for chapter titles. Reading these fields unnumbered (the previous
+// behavior) is always undefined for a multilingual study, so this context
+// was silently empty in every AI Tutor prompt for any multilingual study.
 function _buildChapterContext(ch) {
   if (!ch) return 'No additional context available.';
 
   const lnd     = window.leadersNotesData || {};
   const chNotes = (lnd.chapters || []).find(c => c.chapterNumber === ch.chapterNumber);
 
+  const availableLangs = detectAvailableLangs();
+  const activeLang     = getActiveLang(availableLangs) || 'en';
+  const langMap        = buildLangMap(window.studyMetadata || {});
+
   const parts = [];
 
-  if (ch.chapterTitle) {
-    parts.push('Chapter: ' + ch.chapterTitle);
+  const chapterTitle = resolveTextWithFallback(ch, activeLang, 'chapterTitle', langMap);
+  if (chapterTitle) {
+    parts.push('Chapter: ' + chapterTitle);
   }
 
   if (chNotes) {
-    if (chNotes.keyPoints) {
-      parts.push('Key themes:\n' + _stripHtml(chNotes.keyPoints));
+    const keyPoints = resolveMetaField(chNotes, 'keyPoints', activeLang, langMap);
+    if (keyPoints) {
+      parts.push('Key themes:\n' + _stripHtml(keyPoints));
     }
-    if (chNotes.pastorals) {
-      parts.push('Pastoral context:\n' + _stripHtml(chNotes.pastorals));
+    const pastorals = resolveMetaField(chNotes, 'pastorals', activeLang, langMap);
+    if (pastorals) {
+      parts.push('Pastoral context:\n' + _stripHtml(pastorals));
     }
   }
 
