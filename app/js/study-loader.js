@@ -729,6 +729,30 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   if (!silent) await initApp({ isStudySwitch });
 } // end applyStudyData
 
+// Activates a study that has just been installed/verified-current if the app
+// has finished starting up, or defers it via window.pendingStudyData for
+// startApp() to pick up otherwise — the same pattern loadStudyFromJson() uses
+// (see below). Needed because loadStudyFromFile() — and transitively
+// loadStudyFromBase64()/loadAnyFile(), the Android bridge's file-open entry
+// point — can be invoked before DOMContentLoaded has fired. Without this
+// guard, applying the study immediately would render before locale/settings
+// have loaded (showing raw i18n keys), and startApp() would later re-apply
+// the same pendingStudyData-less study a second time via its own routing,
+// causing a redundant re-render. checkEstudyVersion() only runs on the
+// immediate-activation path — like loadStudyFromJson(), it's skipped on the
+// deferred path since it depends on window.appAboutData, which isn't loaded
+// yet either.
+async function _activateOrDeferStudy(studyId, data, { checkVersion = false } = {}) {
+  if (studyId) window.activeStudyId = studyId;
+  if (window._appReady) {
+    if (checkVersion) checkEstudyVersion(data);
+    await Router.navigate({ page: 'library' });
+    await applyStudyData(data, { isStudySwitch: true });
+  } else {
+    window.pendingStudyData = data;
+  }
+}
+
 // wrapper to parse string handed over from Android
 // Called by the Android WebView bridge when the user opens a .estudy file.
 // This may be called BEFORE or AFTER DOMContentLoaded fires, so we handle both:
@@ -1226,9 +1250,7 @@ async function loadStudyFromFile(file) {
         // instead of silently doing nothing.
         const existing = await StudyIDB.get(`study_content_${studyId}`);
         if (existing) {
-          await Router.navigate({ page: 'library' });
-          window.activeStudyId = studyId;
-          await applyStudyData(existing, { isStudySwitch: true });
+          await _activateOrDeferStudy(studyId, existing);
           return;
         }
       }
@@ -1307,10 +1329,7 @@ async function loadStudyFromFile(file) {
       // this study's own image URLs and then have applyStudyData's revoke step
       // immediately invalidate them — producing "blob:... net::ERR_FILE_NOT_FOUND"
       // on every single file load, deterministically.
-      checkEstudyVersion(data);
-      await Router.navigate({ page: 'library' });
-      window.activeStudyId = studyId;
-      await applyStudyData(data, { isStudySwitch: true });
+      await _activateOrDeferStudy(studyId, data, { checkVersion: true });
 
     } else {
       // ── Legacy plain-JSON .estudy ─────────────────────────────────────────
@@ -1334,9 +1353,7 @@ async function loadStudyFromFile(file) {
           // incoming file instead of silently doing nothing.
           const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
           if (existing) {
-            await Router.navigate({ page: 'library' });
-            window.activeStudyId = _plainStudyId;
-            await applyStudyData(existing, { isStudySwitch: true });
+            await _activateOrDeferStudy(_plainStudyId, existing);
             return;
           }
         }
@@ -1354,9 +1371,7 @@ async function loadStudyFromFile(file) {
         if (_incomingVer > 0) _setInstalledStudyVersion(_plainStudyId, _incomingVer);
       }
 
-      checkEstudyVersion(data);
-      await Router.navigate({ page: 'library' });
-      await applyStudyData(data, { isStudySwitch: true });
+      await _activateOrDeferStudy(_plainStudyId, data, { checkVersion: true });
     }
 
   } catch (err) {
