@@ -79,9 +79,13 @@ css/
   08-themes.css             Print / PDF export styles (@media print)
 
 js/
-  state.js                  All mutable globals (chapters, settings, nav state, storage-key helpers)
+  format-text.js            Converts stored text (HTML / markdown / plain) into sanitised display HTML
+  state.js                  All mutable globals (chapters, settings, nav state); IDB field-key helpers
+                             (answerFieldKey(), likertFieldKey(), chapterAnswersIDBKey(), etc.)
   i18n.js                   Language resolution, DOM direction, t() translation function
-  idb.js                    IndexedDB wrapper (StudyIDB) for large study blobs and cover images
+  idb.js                    IndexedDB wrapper (StudyIDB): study content, cover images, and per-chapter
+                             answers (answers/likert/stars/notes), including the serialized
+                             updateChapterAnswers() read-modify-write helper
   icons.js                  SVG icon sets (Rounded / Bold / Solid); applyIconTheme()
   settings.js               SETTINGS_DEFAULTS, appSettings object, initSettings(), renderSettings()
   tts.js                    Text-to-speech: Web Speech API + Android bridge, chunked long text
@@ -90,18 +94,29 @@ js/
   starred.js                Star/bookmark toggle, starred summary panel builder
   search.js                 Full-text search: open/close overlay, scoring, debounce, cache
   onboarding.js             Slide overlay engine: app onboarding, study onboarding, feature tutorials
+  router.js                 History-API-backed navigation router; bottom-nav click handlers
   utils.js                  Last-position save/restore, showToast(), autoResize, long-press copy
-  save.js                   saveAnswers() — writes answer fields to localStorage
   validation.js             AI Tutor (Socratic feedback) and local offline answer validation
-  share-print.js            Swipe gesture handler, scroll/visibility listeners
-  navigation.js             goToChapter(), goToTitlePage(), menu open/close, tab reset
-  render-progress.js        Progress Overview page, Notes page, pathway helpers
+  gestures.js               Swipe gesture navigation between chapters/tabs; scroll and
+                             visibilitychange listeners (backgrounding save, last position)
+  navigation.js             goToChapter(), menu open/close, tab reset
+  share-print.js            Answer export/share/print report generation; Android share/print bridge
+  render-progress.js        Progress Overview page, Notes page, pathway helpers, renderMenu(),
+                             updateProgress()
   render-library.js         Library page: tabs (Load / All / Recent / Shelves / Paths), reorder mode
   study-loader.js           .estudy version check, applyStudyData(), file loading router, Android entry points
-  app-init.js               DOMContentLoaded startup sequence; locale loader; reloadLocaleAndRerender()
-  render-pages.js           Non-chapter pages: How To, Settings, Leaders Notes, About, Copyright
+  migrate.js                One-time localStorage → IndexedDB answer-data migration (safe to remove
+                             once no users remain on a pre-migration version)
+  app-init.js               DOMContentLoaded startup sequence (startApp()); locale loader;
+                             reloadLocaleAndRerender()
+  render-pages.js           Non-chapter pages: How To, Settings, Leaders Notes, About, Copyright,
+                             renderTitlePage()
+  render-chapter-elements.js  Per-element-type chapter content renderers; language-slot resolution
+                             (buildLangMap(), resolveText(), resolveMetaField())
+  render-chapter-ui.js      Chapter chrome: save/share bar, notes field, prev/next nav buttons,
+                             language switcher bar
   render-chapter.js         Main renderChapter() — builds full chapter HTML from chapters[] data
-  main.js                   renderMenu(), renderTitlePage(), progress bar update, initApp()
+  save.js                   saveAnswers() — writes answer fields to IndexedDB
 
   locales/
     appAboutData_untranslated.json     Non-string App Data that doesn't need translated: version strings, estudyVersion
@@ -113,6 +128,8 @@ js/
 
   sweetalert2.all.min.js    Bundled SweetAlert2 v11.26.24 (MIT)
   jszip.min.js              Bundled JSZip v3.10.1 (MIT)
+  purify.min.js             Bundled DOMPurify v3.4.3 (Apache 2.0 / MPL 2.0) — HTML sanitisation
+  markdown-it.min.js        Bundled markdown-it — markdown → HTML parsing (used by format-text.js)
 
 fonts/                      
 images/
@@ -132,29 +149,36 @@ earlier files have already declared.
 |---|------|------------------------|------------|
 | 1 | `sweetalert2.all.min.js` | `Swal` / `Sweetalert2` | — |
 | 2 | `jszip.min.js` | `JSZip` | — |
-| 3 | `state.js` | `chapters`, `currentChapter`, `appSettings` shape, `storageKey()`, `likertKey()`, all `window.*` state | — |
-| 4 | `i18n.js` | `t()`, `resolveLanguage()`, `setLanguage()` | `state.js` |
-| 5 | `idb.js` | `StudyIDB` | — |
-| 6 | `icons.js` | `ICONS`, `applyIconTheme()` | `state.js` |
-| 7 | `settings.js` | `appSettings`, `initSettings()`, `saveSetting()`, `renderSettings()`, `autoResize()` | `state.js`, `icons.js` |
-| 8 | `tts.js` | `ttsAvailable()`, `ttsSpeak()`, `ttsStop()` | `settings.js` |
-| 9 | `voice.js` | `voiceInputAvailable()`, `startVoiceInput()` | `settings.js` |
-| 10 | `modals.js` | `openVerseModal()`, `openQaModal()`, `openDeeperModal()`, `renderLikertScale()`, info trigger system | `icons.js`, `settings.js`, `tts.js` |
-| 11 | `starred.js` | `isStarred()`, `toggleStar()`, `getStarredQuestions()`, `buildStarredSummaryHtml()` | `state.js` |
-| 12 | `search.js` | `openSearch()`, `closeSearch()`, `debouncedRunSearch()`, `storageCache` | `icons.js`, `state.js` |
-| 13 | `onboarding.js` | `showAppOnboarding()`, `showOnboardingIfNeeded()`, `showFeatureTutorial()`, `showSlideOverlay()` | `settings.js`, `icons.js` |
-| 14 | `utils.js` | `saveLastPosition()`, `getLastPosition()`, `showToast()`, `initLongPressCopy()` | `state.js` |
-| 15 | `save.js` | `saveAnswers()` | `state.js`, `search.js`, `utils.js` |
-| 16 | `validation.js` | `openAiTutorForCard()`, `openLocalValidateForCard()` | `state.js`, `icons.js`, `save.js` |
-| 17 | `share-print.js` | `touchstartX`, `touchendX`, `handleGesture()` | `settings.js`, `state.js` |
-| 18 | `navigation.js` | `goToChapter()`, `goToTitlePage()`, `closeMenu()`, `closeNonChapterPage()`, `_resetNonChapterPageState()` | `icons.js`, `settings.js`, `state.js` |
-| 19 | `render-progress.js` | `renderProgressOverview()`, `renderNotesPage()`, `getActivePathway()` | `icons.js`, `settings.js`, `state.js`, `starred.js`, `navigation.js` |
-| 20 | `render-library.js` | `renderLibrary()`, `recordStudyOpened()`, `recordStudyInstalled()`, library history helpers | `idb.js`, `icons.js`, `settings.js`, `utils.js` |
-| 21 | `study-loader.js` | `applyStudyData()`, `loadAnyFile()`, `loadStudyFromJson()`, `loadStudyFromBase64()`, `activateStudy()`, `deleteStudy()`, `openLibrary()` | Most of the above |
-| 22 | `app-init.js` | `startApp()`, `reloadLocaleAndRerender()` | Everything above |
-| 23 | `render-pages.js` | `renderHowToUse()`, `renderSettings()` (augments settings.js), `renderLeadersNotes()`, `renderGoDeeper()`, `renderAbout()`, `navigateTab()` | `icons.js`, `settings.js`, `onboarding.js`, `navigation.js` |
-| 24 | `render-chapter.js` | `renderChapter()` | Almost everything |
-| 25 | `main.js` | `renderMenu()`, `renderTitlePage()`, `updateProgress()`, `initApp()` | Everything |
+| 3 | `purify.min.js` | `DOMPurify` | — |
+| 4 | `markdown-it.min.js` | `markdownit` | — |
+| 5 | `format-text.js` | `renderFormatted()`, `renderParas()`, `renderFormattedArray()` | `purify.min.js`, `markdown-it.min.js` |
+| 6 | `state.js` | `chapters`, `currentChapter`, `appSettings` shape, `answerFieldKey()`, `likertFieldKey()`, `chapterAnswersIDBKey()`, `globalNotesIDBKey()`, `lastPositionIDBKey()`, `celebratedIDBKey()`, `starFieldKey()`, all `window.*` state | — |
+| 7 | `i18n.js` | `t()`, `resolveLanguage()`, `setLanguage()` | `state.js` |
+| 8 | `idb.js` | `StudyIDB` (including `updateChapterAnswers()`) | `state.js` |
+| 9 | `icons.js` | `ICONS`, `applyIconTheme()` | `state.js` |
+| 10 | `settings.js` | `appSettings`, `initSettings()`, `saveSetting()`, `renderSettings()`, `autoResize()` | `state.js`, `icons.js` |
+| 11 | `tts.js` | `ttsAvailable()`, `ttsSpeak()`, `ttsStop()` | `settings.js` |
+| 12 | `voice.js` | `voiceInputAvailable()`, `startVoiceInput()` | `settings.js` |
+| 13 | `modals.js` | `openVerseModal()`, `openQaModal()`, `openDeeperModal()`, `renderLikertScale()`, info trigger system | `icons.js`, `settings.js`, `tts.js` |
+| 14 | `starred.js` | `isStarred()`, `toggleStar()`, `getStarredQuestions()`, `buildStarredSummaryHtml()` | `state.js`, `idb.js` |
+| 15 | `search.js` | `openSearch()`, `closeSearch()`, `debouncedRunSearch()`, `debounce()`, `storageCache` | `icons.js`, `state.js` |
+| 16 | `onboarding.js` | `showAppOnboarding()`, `showOnboardingIfNeeded()`, `showFeatureTutorial()`, `showSlideOverlay()`, `navSearchClick()` | `settings.js`, `icons.js` |
+| 17 | `router.js` | `Router`, `navLibClick()`, `navProgressClick()`, `navHowtoClick()`, `navSettingsClick()` | `state.js` |
+| 18 | `utils.js` | `saveLastPosition()`, `getLastPosition()`, `showToast()`, `initLongPressCopy()`, `escapeHtml()` | `state.js`, `idb.js` |
+| 19 | `validation.js` | `openAiTutorForCard()`, `openLocalValidateForCard()` | `state.js`, `icons.js`, `utils.js` |
+| 20 | `gestures.js` | `touchstartX`, `touchendX`, `handleGesture()` | `settings.js`, `state.js`, `idb.js` |
+| 21 | `navigation.js` | `goToChapter()`, `closeMenu()`, `closeNonChapterPage()`, `_resetNonChapterPageState()` | `icons.js`, `settings.js`, `state.js` |
+| 22 | `share-print.js` | `shareAnswers()`, `exportStudyAnswers()`, `printAllChapters()` | `state.js`, `idb.js`, `utils.js` |
+| 23 | `render-progress.js` | `renderProgressOverview()`, `renderNotesPage()`, `renderMenu()`, `updateProgress()`, `getActivePathway()` | `icons.js`, `settings.js`, `state.js`, `starred.js`, `navigation.js` |
+| 24 | `render-library.js` | `renderLibrary()`, `recordStudyOpened()`, `recordStudyInstalled()`, library history helpers | `idb.js`, `icons.js`, `settings.js`, `utils.js` |
+| 25 | `study-loader.js` | `applyStudyData()`, `loadAnyFile()`, `loadStudyFromJson()`, `loadStudyFromBase64()`, `activateStudy()`, `deleteStudy()`, `openLibrary()` | Most of the above |
+| 26 | `migrate.js` | `migrateAnswersToIDB()` | `idb.js`, `state.js` |
+| 27 | `app-init.js` | `startApp()`, `reloadLocaleAndRerender()` | Everything above |
+| 28 | `render-pages.js` | `renderHowToUse()`, `renderSettings()` (augments settings.js), `renderLeadersNotes()`, `renderGoDeeper()`, `renderAbout()`, `renderTitlePage()`, `navigateTab()` | `icons.js`, `settings.js`, `onboarding.js`, `navigation.js` |
+| 29 | `render-chapter-elements.js` | Per-element renderers (`renderHeading()`, `renderQuestion()`, `renderImage()`, etc.), `buildLangMap()`, `resolveText()`, `resolveMetaField()`, `resolveTextWithFallback()`, `getActiveLang()` | Almost everything above |
+| 30 | `render-chapter-ui.js` | `buildSaveBar()`, `buildNotesField()`, `buildNavButtons()` | `render-chapter-elements.js` |
+| 31 | `render-chapter.js` | `renderChapter()`, `detectAvailableLangs()` | Almost everything |
+| 32 | `save.js` | `saveAnswers()` | `state.js`, `idb.js`, `search.js`, `utils.js` |
 
 ---
 
@@ -221,36 +245,53 @@ The app uses two persistence layers:
 
 ### localStorage
 
-Used for everything except large study content. All app keys are prefixed with
-`bsr_` for safe bulk deletion. Key patterns:
+Used for settings, language, library/registry metadata, and per-study version
+tracking — **not** for answer data (see IndexedDB below; answers moved there
+from localStorage in a past release, via the one-time migration in
+`migrate.js`). Key patterns:
 
 | Pattern | Contains |
 |---------|----------|
-| `bsr_{studyId}_ch{N}_q_{sIdx}_{qIdx}` | User's answer to question `qIdx` in section `sIdx` of chapter `N` |
-| `bsr_{studyId}_ch{N}_r_{rIdx}` | User's answer to reflection question `rIdx` in chapter `N` |
-| `bsr_{studyId}_ch{N}_notes_0` | Free-text notes for chapter `N` |
-| `bsr_{studyId}_ch{N}_celebrated_0` | `"1"` once the chapter-completion celebration toast has fired; cleared with answers |
-| `bsr_{studyId}_ch{N}_likert_{elementId}_{stIdx}` | Likert scale response |
-| `bsr_{studyId}_star_ch{N}_{elementId}` | `"1"` if a question is starred |
-| `lastPosition_{studyId}` | `{ chapterIdx, scrollY }` — last reading position |
 | `appSettings` | Serialised `appSettings` object |
 | `app_language` | User's chosen UI language code |
 | `app_onboarding_complete` | `"1"` once the app-level onboarding has been seen |
+| `study_registry` | JSON array of installed study IDs |
+| `bsr_last_active_study` | studyId to restore on next launch |
+| `bsr_studyver_{studyId}` | Last-installed version number for a study — survives deletion, so a deleted-then-reinstalled study can be told apart from a real downgrade |
 | `lib_recent_opened` | JSON array of recently opened study IDs (newest first, max 7) |
 | `lib_recent_installed` | JSON array of recently installed study IDs (newest first, max 4) |
 | `lib_pinned` | JSON array of pinned study IDs (Recent tab) |
 | `lib_pinned_all` | JSON array of pinned study IDs (All tab) |
 | `bsr_activePathwayId` | Active learning pathway key (`"{l1Idx}_{l2Idx}"`) |
+| `bsr_infoSeen_{infoId}` | `"hidden"` once a ⓘ info popup's "Show this again" has been unticked |
+| `bsr_idb_migration_done` | `"1"` once the one-time localStorage → IndexedDB answer migration has completed |
+| `default_studies_installed` | App version string — gates the bundled-studies installer to run once per app update |
 
 ### IndexedDB
 
 Managed by `StudyIDB` in `idb.js`. Database name: `BibleStudyReader`,
-version 2. Two object stores:
+version 3. Three object stores:
 
 - **`studies`** — stores the parsed study JSON object for each installed study,
-  keyed by `studyId`. This avoids the ~5 MB localStorage limit for large studies.
+  keyed by `study_content_{studyId}`. This avoids the ~5 MB localStorage limit
+  for large studies.
 - **`images`** — stores cover/publisher/author images as Blobs, keyed by
-  `{studyId}_cover`, `{studyId}_publisher`, `{studyId}_author`.
+  `{studyId}_cover`, `{studyId}_publisher`, `{studyId}_author`, plus inline
+  chapter images keyed by `{studyId}_{elementId}`.
+- **`answers`** — all per-study user data. One record per chapter, keyed by
+  `{studyId}_ch{N}` (built via `chapterAnswersIDBKey()`), whose value is a
+  plain object of field → answer produced by `answerFieldKey()` /
+  `likertFieldKey()` / `starFieldKey()` in `state.js` — e.g.
+  `{ q_el_01: "my answer", likert_el_03_0: "3", star_el_01: "1" }`. Plus two
+  per-study raw keys: `{studyId}_global_notes` and `{studyId}_lastPosition`
+  (built via `globalNotesIDBKey()` / `lastPositionIDBKey()`). Chapter-
+  completion flags are stored separately as `{studyId}_celebrated_ch{N}` so
+  they're never overwritten by a chapter-record read-modify-write cycle.
+
+  Every read-modify-write against a chapter's record — saving an answer,
+  toggling a star, recording a Likert response — goes through
+  `StudyIDB.updateChapterAnswers()`, which queues updates per chapter key so
+  concurrent writes to the same chapter don't race and silently drop one.
 
 ---
 
@@ -416,13 +457,15 @@ hidden from the UI.
 
 ## Third-party dependencies
 
-Both libraries are **bundled directly** in the `js/` folder. There is no
+All libraries are **bundled directly** in the `js/` folder. There is no
 package manager, no `node_modules`, and no build step.
 
 | Library | Version | Licence | File | Purpose |
 |---------|---------|---------|------|---------|
 | [SweetAlert2](https://sweetalert2.github.io) | 11.26.24 | MIT | `sweetalert2.all.min.js` | Confirm dialogs (delete study, clear answers, etc.) |
 | [JSZip](https://stuk.github.io/jszip/) | 3.10.1 | MIT | `jszip.min.js` | Reading bundled `.estudy` ZIP files |
+| [DOMPurify](https://github.com/cure53/DOMPurify) | 3.4.3 | Apache 2.0 / MPL 2.0 | `purify.min.js` | Sanitises all study-authored HTML before it's injected via `innerHTML` (`format-text.js`, `modals.js`, and elsewhere) |
+| [markdown-it](https://github.com/markdown-it/markdown-it) | 14.1.1 | MIT | `markdown-it.min.js` | Parses study content authored as markdown (`format-text.js`) |
 
 No other external scripts, no CDN calls at runtime.
 
