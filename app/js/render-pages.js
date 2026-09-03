@@ -1615,6 +1615,61 @@ async function renderSettings(tabId) {
 // unnumbered fields (d.intro, ch.keyPoints, etc.), behaviour is unchanged.
 const LEADERS_TABS = []; // populated dynamically — see renderLeadersNotes
 
+// Renders the "content blocks" for a chapter on the Leaders Notes / Go Deeper
+// pages: discovers every numbered content field on the chapter object (in
+// JSON insertion order, deduped by base name), resolves each for the active
+// language, and renders standard vs. highlighted blocks. Shared by
+// renderLeadersNotes() and renderGoDeeper() below — the two previously
+// carried near-identical copies of this, differing only in which structural
+// fields to skip and which CSS class names to use.
+//
+// resolveMetaField(ch, field, ...) returns the object at the resolved slot:
+//   { subtype: 'standard' | 'highlighted', header: string, body: string }
+//
+// skipFields     – Set of base field names to exclude (chapterNumber,
+//                  format, title, and — Leaders Notes only — the legacy
+//                  chapterTitle field name).
+// classPrefix    – 'leaders' or 'go-deeper' — builds {classPrefix}-block /
+//                  {classPrefix}-block-label.
+// highlightClass – the wrapper class for subtype:'highlighted' blocks
+//                  ('leaders-watch' or 'go-deeper-highlight').
+function _buildContentBlocksHtml(ch, activeLang, langMap, skipFields, classPrefix, highlightClass) {
+  const seen = new Set();
+  const contentFields = [];
+  for (const key of Object.keys(ch)) {
+    const base = key.replace(/\d+$/, '');
+    if (!skipFields.has(base) && !seen.has(base)) {
+      seen.add(base);
+      contentFields.push(base);
+    }
+  }
+
+  return contentFields.map(field => {
+    const resolved = resolveMetaField(ch, field, activeLang, langMap);
+    if (!resolved || typeof resolved !== 'object') return '';
+
+    const { subtype, header, body } = resolved;
+
+    if (subtype === 'highlighted') {
+      if (!body) return '';
+      const headerHtml = header ? `<div class="${classPrefix}-block-label">${header}</div>` : '';
+      return `
+          <div class="${classPrefix}-block">
+            ${headerHtml}
+            <div class="${highlightClass}">${body}</div>
+          </div>`;
+    }
+
+    // Default: 'standard' (or any unrecognised subtype)
+    const headerHtml = header ? `<div class="${classPrefix}-block-label">${header}</div>` : '';
+    return `
+          <div class="${classPrefix}-block">
+            ${headerHtml}
+            ${body || ''}
+          </div>`;
+  }).join('\n');
+}
+
 async function renderLeadersNotes(tabId) {
   closeMenu();
   _resetNonChapterPageState();
@@ -1711,56 +1766,10 @@ async function renderLeadersNotes(tabId) {
         || (window.chapters || []).find(c => c.chapterNumber === ch.chapterNumber)?.chapterTitle
         || '';
 
-      // ── Discover content field base names in JSON insertion order ────────────────────
-      // Strip trailing digits from every key to get the base name, deduplicate
-      // while preserving first-seen order, then skip the structural fields that
-      // are rendered separately (chapterNumber, format, title/chapterTitle).
+      // Skips the structural fields rendered separately (chapterNumber, format,
+      // title/chapterTitle — Leaders Notes supports both the old and new field names).
       const SKIP = new Set(['chapterNumber', 'format', 'title', 'chapterTitle']);
-      const seen = new Set();
-      const contentFields = [];
-      for (const key of Object.keys(ch)) {
-        const base = key.replace(/\d+$/, '');
-        if (!SKIP.has(base) && !seen.has(base)) {
-          seen.add(base);
-          contentFields.push(base);
-        }
-      }
-
-      // ── Render each content field ─────────────────────────────────────────────────────
-      // resolveMetaField returns the object stored at the resolved slot
-      // (e.g. background1 for lang slot 1), which has shape:
-      //   { subtype: 'standard' | 'highlighted', header: string, body: string }
-      //
-      // subtype 'standard'    → leaders-block with optional header label above body
-      // subtype 'highlighted' → leaders-watch wrapper (no header rendered if empty)
-      const blocksHtml = contentFields.map(field => {
-        const resolved = resolveMetaField(ch, field, activeLang, langMap);
-        if (!resolved || typeof resolved !== 'object') return '';
-
-        const { subtype, header, body } = resolved;
-
-        if (subtype === 'highlighted') {
-          if (!body) return '';
-          const headerHtml = header
-            ? `<div class="leaders-block-label">${header}</div>`
-            : '';
-          return `
-          <div class="leaders-block">
-            ${headerHtml}
-            <div class="leaders-watch">${body}</div>
-          </div>`;
-        }
-
-        // Default: 'standard' (or any unrecognised subtype)
-        const headerHtml = header
-          ? `<div class="leaders-block-label">${header}</div>`
-          : '';
-        return `
-          <div class="leaders-block">
-            ${headerHtml}
-            ${body || ''}
-          </div>`;
-      }).join('\n');
+      const blocksHtml = _buildContentBlocksHtml(ch, activeLang, langMap, SKIP, 'leaders', 'leaders-watch');
 
       tabContent = `
         <div class="leaders-chapter" style="margin-top:16px;">
@@ -2065,53 +2074,9 @@ async function renderGoDeeper(tabId) {
       // Resolve the chapter title for the active language.
       const chapterTitle = resolveMetaField(ch, 'title', activeLang, langMap) || '';
 
-      // ── Discover content field base names in JSON insertion order ──────────
-      // Strip trailing digits, deduplicate (first-seen order), skip structural fields.
+      // Skips the structural fields rendered separately (chapterNumber, format, title).
       const SKIP = new Set(['chapterNumber', 'format', 'title']);
-      const seen = new Set();
-      const contentFields = [];
-      for (const key of Object.keys(ch)) {
-        const base = key.replace(/\d+$/, '');
-        if (!SKIP.has(base) && !seen.has(base)) {
-          seen.add(base);
-          contentFields.push(base);
-        }
-      }
-
-      // ── Render each content field ──────────────────────────────────────────
-      // resolveMetaField returns the object at the resolved slot:
-      //   { subtype: 'standard' | 'highlighted', header: string, body: string }
-      //
-      // subtype 'standard'    → .go-deeper-block with optional header label
-      // subtype 'highlighted' → .go-deeper-block wrapping .go-deeper-highlight
-      const blocksHtml = contentFields.map(field => {
-        const resolved = resolveMetaField(ch, field, activeLang, langMap);
-        if (!resolved || typeof resolved !== 'object') return '';
-
-        const { subtype, header, body } = resolved;
-
-        if (subtype === 'highlighted') {
-          if (!body) return '';
-          const headerHtml = header
-            ? `<div class="go-deeper-block-label">${header}</div>`
-            : '';
-          return `
-          <div class="go-deeper-block">
-            ${headerHtml}
-            <div class="go-deeper-highlight">${body}</div>
-          </div>`;
-        }
-
-        // Default: 'standard' (or any unrecognised subtype)
-        const headerHtml = header
-          ? `<div class="go-deeper-block-label">${header}</div>`
-          : '';
-        return `
-          <div class="go-deeper-block">
-            ${headerHtml}
-            ${body || ''}
-          </div>`;
-      }).join('\n');
+      const blocksHtml = _buildContentBlocksHtml(ch, activeLang, langMap, SKIP, 'go-deeper', 'go-deeper-highlight');
 
       tabContent = `
         <div class="go-deeper-chapter" style="margin-top: 16px;">

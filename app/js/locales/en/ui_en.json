@@ -619,6 +619,7 @@
   "studyloader_bundle_success"                          :"Studies installed: {count} ✓",
   "studyloader_bundle_partial"                          :"Installed: {installed} · Failed: {failed}",
   "studyloader_default_studies_error"                   :"Default studies failed to load",
+  "error_idb_unavailable"                               :"This device's storage isn't available right now, so studies can't be loaded or saved. Try closing and reopening the app, or switching out of private/incognito browsing.",
   "___section: utils.js"                                :"🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴",
   "utils_answers_saved"                                 :"✓ Answers saved",
   "utils_celebration_sub"                               :"Chapter {number} complete. Keep up the good work!",

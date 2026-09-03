@@ -338,8 +338,12 @@ async function renderChapter(idx, scrollY = 0) {
       }
     });
 
-    // ── Post-render: chapter-eyebrow info trigger (chapter 1 only) ───────────
-    if (ch.chapterNumber === 1) {
+    // ── Post-render: chapter-eyebrow info trigger (first chapter only) ───────
+    // Compares against chapters[0].chapterNumber rather than a hardcoded 1 —
+    // a study's chapter numbering isn't guaranteed to start at 1 (the
+    // chapter-label computation above already treats chapters[0].chapterNumber
+    // as study-defined, not fixed).
+    if (ch.chapterNumber === chapters[0].chapterNumber) {
       createInfoTrigger(
         'chapter-eyebrow-intro',
         {
