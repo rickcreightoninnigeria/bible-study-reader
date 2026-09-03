@@ -1,5 +1,5 @@
 """
-populate_passages.py
+populate_passages_scrape_web.py
 Populates passageText fields in a BeaconLight .estudy JSON by scraping bible.com.
 
 All passageUrlN values are expected to be bible.com URLs. Any URL that is not
@@ -15,7 +15,7 @@ chapter:verse portion is used — so non-English book names work fine.
 
 Usage:
     pip install requests beautifulsoup4
-    python populate_passages.py input.json output.json
+    python3 populate_passages_scrape_web.py input.json output.json
 """
 
 import json
@@ -141,28 +141,43 @@ def scrape_bible_com(page_url: str, ref: str) -> str:
         # data-usfm format is "BOK.CH.V" — match on the .CH.V suffix only
         pattern = re.compile(rf'\.\s*{chapter}\s*\.\s*{verse_num}\s*$')
 
-        verse_span = None
-        for span in soup.find_all("span", attrs={"data-usfm": True}):
-            if pattern.search(span["data-usfm"]):
-                verse_span = span
-                break
+        # bible.com does NOT wrap a whole verse in a single span. The verse's
+        # text is split across multiple sibling <span data-usfm="..."> runs
+        # that all share the same data-usfm value (one run per formatting
+        # change — e.g. before/after a quotation mark, before small-caps
+        # "LORD", around a footnote marker, around an italicized supplied
+        # word). Collecting only the first match truncates the verse right
+        # at that first boundary, so we collect ALL matching spans, in
+        # document order, and skip any nested inside an already-collected
+        # span (to avoid double-counting text).
+        verse_spans = [
+            span for span in soup.find_all("span", attrs={"data-usfm": True})
+            if pattern.search(span["data-usfm"])
+        ]
 
-        if verse_span is None:
+        if not verse_spans:
             print(f"    [WARN] Verse {chapter}:{verse_num} not found in {page_url}")
             continue
 
-        # Walk descendants: emit <sup>N</sup> for superscripts, plain text otherwise
+        top_level_spans = []
+        for span in verse_spans:
+            if any(span in ancestor.descendants for ancestor in top_level_spans):
+                continue
+            top_level_spans.append(span)
+
         verse_text = ""
-        for child in verse_span.descendants:
-            if hasattr(child, 'name'):
-                if child.name == 'sup':
-                    verse_text += f"<sup>{child.get_text()}</sup>"
-            else:
-                parent_names = [p.name for p in child.parents if hasattr(p, 'name')]
-                if 'sup' not in parent_names:
-                    t = str(child)
-                    if t.strip():
-                        verse_text += t
+        for verse_span in top_level_spans:
+            # Walk descendants: emit <sup>N</sup> for superscripts, plain text otherwise
+            for child in verse_span.descendants:
+                if hasattr(child, 'name'):
+                    if child.name == 'sup':
+                        verse_text += f"<sup>{child.get_text()}</sup>"
+                else:
+                    parent_names = [p.name for p in child.parents if hasattr(p, 'name')]
+                    if 'sup' not in parent_names:
+                        t = str(child)
+                        if t.strip():
+                            verse_text += t
 
         if verse_text.strip():
             collected_parts.append(verse_text.strip())
@@ -270,11 +285,13 @@ def scrape_bible_is(page_url: str, ref: str) -> str:           # noqa: U100
 
 def active_slots(obj: dict) -> list[int]:
     """
-    Return the list of slot numbers (1–SLOT_UPPER_BOUND) for which the
-    element has both a passageUrlN key and a passageTextN key.
-    Ordering is ascending by slot number.
+    Return the list of slot numbers for which the element has both a
+    passageUrlN key and a passageTextN key. Slot 0 represents the plain
+    (unnumbered) passageUrl/passageText fields used by this schema.
     """
     slots = []
+    if "passageUrl" in obj and "passageText" in obj:
+        slots.append(0)
     for n in range(1, SLOT_UPPER_BOUND + 1):
         if f"passageUrl{n}" in obj and f"passageText{n}" in obj:
             slots.append(n)
@@ -286,10 +303,9 @@ def active_slots(obj: dict) -> list[int]:
 # ---------------------------------------------------------------------------
 
 def find_any_ref(obj: dict) -> str:
-    """
-    Return the first non-empty bibleRefN value found in the element.
-    We only need the chapter:verse portion, so any language works.
-    """
+    val = obj.get("bibleRef", "").strip()
+    if val:
+        return val
     for n in range(1, SLOT_UPPER_BOUND + 1):
         val = obj.get(f"bibleRef{n}", "").strip()
         if val:
@@ -321,8 +337,9 @@ def find_and_update_passages(obj: dict | list, stats: dict) -> None:
             return
 
         for slot in active_slots(obj):
-            text_key = f"passageText{slot}"
-            url_key  = f"passageUrl{slot}"
+            suffix   = "" if slot == 0 else str(slot)
+            text_key = f"passageText{suffix}"
+            url_key  = f"passageUrl{suffix}"
 
             # Skip if already populated
             existing = obj.get(text_key, "")
