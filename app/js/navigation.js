@@ -63,18 +63,6 @@ function _resetNonChapterPageState() {
   touchstartX = touchendX; // neutralise any in-flight swipe from the closing gesture
 }
 
-// Closes the menu drawer and renders the title page.
-function goToTitlePage() {
-  closeMenu();
-  Router.navigate({ page: 'title' });
-}
-
-// Closes the menu drawer and navigates to the copyright/licence page.
-function goToCopyright() {
-  closeMenu();
-  Router.navigate({ page: 'about', tabId: 'copyright' });
-}
-
 // Toggles the chapter menu drawer open/closed and updates the hamburger button.
 // Re-renders the menu list each time it opens to refresh progress checkmarks.
 // Closes the search overlay first if it happens to be open.

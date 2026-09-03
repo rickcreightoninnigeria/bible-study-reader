@@ -238,16 +238,37 @@ function setLibLangFilter(langCode) {
 let reorderActiveId = null;
 let cardLongPressTimer = null;
 
-// Swap study at position idx with its neighbour (direction: -1=up, +1=down),
-// persist to localStorage, and re-render the library.
+// Swap study at position idx with its neighbour WITHIN THE SAME pinned/unpinned
+// section (direction: -1=up, +1=down), persist to localStorage, and re-render
+// the library. Mirrors moveRecentStudy()'s subset-based approach above — a
+// bare swap of adjacent entries in the flat registry doesn't correspond to
+// the visual reorder within the Pinned/All sections whenever pinned studies
+// aren't contiguous in the registry (e.g. pin studies B and D out of
+// A,B,C,D: moving B down swapped registry positions 1 and 2 — B and C — so
+// the Pinned section, still [B, D] afterward, never visibly reordered).
 function moveStudy(id, direction) {
-  const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
-  const idx = registry.indexOf(id);
+  const registry  = JSON.parse(localStorage.getItem('study_registry') || '[]');
+  const pinnedAll = getPinnedAll();
+  const isPinned  = pinnedAll.includes(id);
+
+  // Build the sub-list of studies in the same section (pinned or unpinned)
+  const subList = registry.filter(x => isPinned ? pinnedAll.includes(x) : !pinnedAll.includes(x));
+  const idx = subList.indexOf(id);
   if (idx === -1) return;
   const newIdx = idx + direction;
-  if (newIdx < 0 || newIdx >= registry.length) return;
-  [registry[idx], registry[newIdx]] = [registry[newIdx], registry[idx]];
-  safeSetItem('study_registry', JSON.stringify(registry));
+  if (newIdx < 0 || newIdx >= subList.length) return;
+
+  // Swap within sub-list
+  [subList[idx], subList[newIdx]] = [subList[newIdx], subList[idx]];
+
+  // Reconstruct the full registry with corrected relative order
+  let si = 0;
+  const newRegistry = registry.map(x => {
+    const xPinned = pinnedAll.includes(x);
+    if (xPinned === isPinned) return subList[si++];
+    return x;
+  });
+  safeSetItem('study_registry', JSON.stringify(newRegistry));
   renderLibrary(); // re-render; enterReorderMode called inside to keep state
 }
 
@@ -310,6 +331,81 @@ function attachCardLongPress(card, id) {
     clearTimeout(cardLongPressTimer);
     cardLongPressTimer = null;
   }, { passive: true });
+}
+
+// Builds a single study card element for the Load/All or Recent tab's
+// pinned/unpinned sections. Shared by buildAllTab() and buildRecentTab()
+// inside renderLibrary() — the two previously carried near-identical ~60-line
+// copies of this, differing only in which move/pin functions they wired up.
+//
+// entry    – the studyCache[id] entry (title, subtitle, cover, etc.)
+// listIds  – the pinned or unpinned id list this card belongs to, used to
+//            compute whether the reorder arrows should be disabled at the
+//            ends of that list.
+// moveFn   – name of the global function to call for the reorder arrows,
+//            e.g. 'moveStudy' or 'moveRecentStudy'. Passed as a string since
+//            it's embedded directly into an onclick="" attribute.
+// toggleFn – name of the global function to call for the pin button, e.g.
+//            'togglePinAll' or 'togglePin'.
+function _buildStudyCard(id, entry, listIds, isPinned, moveFn, toggleFn) {
+  const e = entry;
+  const isReorderActive = (reorderActiveId === id);
+  const idxInList = listIds.indexOf(id);
+  const isFirst = idxInList === 0;
+  const isLast  = idxInList === listIds.length - 1;
+  const pinClass = isPinned ? 'lib-pin-btn pinned' : 'lib-pin-btn';
+
+  // Reorder arrows (long-press) or delete button
+  const reorderHtml = isReorderActive
+    ? `<div class="study-card-reorder-btns" onclick="event.stopPropagation()">
+         <button class="study-card-reorder-btn"
+           ${isFirst ? 'disabled' : ''}
+           onclick="event.stopPropagation(); ${moveFn}('${id}', -1)"
+           title="${t('renderlib_move_up')}"
+           aria-label="${t('renderlib_move_up')}">${ICONS.arrowUp}</button>
+         <button class="study-card-reorder-btn"
+           ${isLast ? 'disabled' : ''}
+           onclick="event.stopPropagation(); ${moveFn}('${id}', 1)"
+           title="${t('renderlib_move_down')}"
+           aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
+       </div>`
+    : `<button class="study-card-delete-btn"
+         onclick="event.stopPropagation(); deleteStudy('${id}', '${escapeHtml(e.title)}')"
+         style="background:none; border:none; padding:10px; font-size:18px; cursor:pointer; opacity:0.6; z-index:2; margin-left: 4px;">
+         ${ICONS.trash}
+       </button>`;
+
+  const card = document.createElement('div');
+  card.className = 'study-card' + (isReorderActive ? ' study-card--reorder-active' : '');
+  card.dataset.studyId = id;
+
+  card.onclick = () => {
+    if (card._suppressNextClick) { card._suppressNextClick = false; return; }
+    if (isReorderActive) return;
+    activateStudy(id);
+  };
+
+  const coverHtml = e.coverSrc
+    ? `<img class="study-card-cover" src="${e.coverSrc}" alt=""
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+       <div class="study-card-cover-fallback" style="display:none">${escapeHtml(e.fallback)}</div>`
+    : `<div class="study-card-cover-fallback">${escapeHtml(e.fallback)}</div>`;
+
+  card.innerHTML = `
+    <button class="${pinClass}"
+      onclick="event.stopPropagation(); ${toggleFn}('${id}')"
+      title="${isPinned ? t('renderlib_unpin') : t('renderlib_pin_to_top')}">${isPinned ? ICONS.pinFilled : ICONS.pin}</button>
+    ${coverHtml}
+
+    <div class="study-card-text" style="flex:1;">
+      <h3>${escapeHtml(e.title)}</h3>
+      ${e.subtitle ? `<div class="study-card-subtitle">${escapeHtml(e.subtitle)}</div>` : ''}
+      ${studyLangBadgesHtml(e.meta)}
+    </div>
+    ${reorderHtml}`;
+
+  attachCardLongPress(card, id);
+  return card;
 }
 
 async function renderLibrary() {
@@ -562,67 +658,8 @@ async function renderLibrary() {
     const pinnedIds   = registry.filter(id => pinnedAll.includes(id)  && studyCache[id] && studyMatchesLangFilter(studyCache[id]));
     const unpinnedIds = registry.filter(id => !pinnedAll.includes(id) && studyCache[id] && studyMatchesLangFilter(studyCache[id]));
 
-    function buildAllRow(id, listIds, isPinned) {
-      const e = studyCache[id];
-      const isReorderActive = (reorderActiveId === id);
-      const idxInList = listIds.indexOf(id);
-      const isFirst = idxInList === 0;
-      const isLast  = idxInList === listIds.length - 1;
-      const pinClass = isPinned ? 'lib-pin-btn pinned' : 'lib-pin-btn';
-
-      // Reorder arrows (long-press) or delete button
-      const reorderHtml = isReorderActive
-        ? `<div class="study-card-reorder-btns" onclick="event.stopPropagation()">
-             <button class="study-card-reorder-btn"
-               ${isFirst ? 'disabled' : ''}
-               onclick="event.stopPropagation(); moveStudy('${id}', -1)"
-               title="${t('renderlib_move_up')}"
-               aria-label="${t('renderlib_move_up')}">${ICONS.arrowUp}</button>
-             <button class="study-card-reorder-btn"
-               ${isLast ? 'disabled' : ''}
-               onclick="event.stopPropagation(); moveStudy('${id}', 1)"
-               title="${t('renderlib_move_down')}"
-               aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
-           </div>`
-        : `<button class="study-card-delete-btn"
-             onclick="event.stopPropagation(); deleteStudy('${id}', '${escapeHtml(e.title)}')"
-             style="background:none; border:none; padding:10px; font-size:18px; cursor:pointer; opacity:0.6; z-index:2; margin-left: 4px;">
-             ${ICONS.trash}
-           </button>`;
-
-      //"bluefish color-coding (6)
-      const card = document.createElement('div');
-      card.className = 'study-card' + (isReorderActive ? ' study-card--reorder-active' : '');
-      card.dataset.studyId = id;
-
-      card.onclick = () => {
-        if (card._suppressNextClick) { card._suppressNextClick = false; return; }
-        if (isReorderActive) return;
-        activateStudy(id);
-      };
-
-      const coverHtml = e.coverSrc
-        ? `<img class="study-card-cover" src="${e.coverSrc}" alt=""
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-           <div class="study-card-cover-fallback" style="display:none">${escapeHtml(e.fallback)}</div>`
-        : `<div class="study-card-cover-fallback">${escapeHtml(e.fallback)}</div>`;
-
-      card.innerHTML = `
-        <button class="${pinClass}"
-          onclick="event.stopPropagation(); togglePinAll('${id}')"
-          title="${isPinned ? t('renderlib_unpin') : t('renderlib_pin_to_top')}">${isPinned ? ICONS.pinFilled : ICONS.pin}</button>
-        ${coverHtml}
-
-        <div class="study-card-text" style="flex:1;">
-          <h3>${escapeHtml(e.title)}</h3>
-          ${e.subtitle ? `<div class="study-card-subtitle">${escapeHtml(e.subtitle)}</div>` : ''}
-          ${studyLangBadgesHtml(e.meta)}
-        </div>
-        ${reorderHtml}`;
-
-      attachCardLongPress(card, id);
-      return card;
-    }
+    const buildAllRow = (id, listIds, isPinned) =>
+      _buildStudyCard(id, studyCache[id], listIds, isPinned, 'moveStudy', 'togglePinAll');
 
     const frag = document.createDocumentFragment();
 
@@ -668,67 +705,8 @@ async function renderLibrary() {
     const pinnedIds   = opened.filter(id => pinned.includes(id));
     const unpinnedIds = opened.filter(id => !pinned.includes(id));
 
-    function buildRecentRow(id, listIds, isPinned) {
-      const e = studyCache[id];
-      const isReorderActive = (reorderActiveId === id);
-      const idxInList = listIds.indexOf(id);
-      const isFirst = idxInList === 0;
-      const isLast  = idxInList === listIds.length - 1;
-
-      const pinClass = isPinned ? 'lib-pin-btn pinned' : 'lib-pin-btn';
-
-      const reorderHtml = isReorderActive
-        ? `<div class="study-card-reorder-btns" onclick="event.stopPropagation()">
-             <button class="study-card-reorder-btn"
-               ${isFirst ? 'disabled' : ''}
-               onclick="event.stopPropagation(); moveRecentStudy('${id}', -1)"
-               title="${t('renderlib_move_up')}"
-               aria-label="${t('renderlib_move_up')}">${ICONS.arrowUp}</button>
-             <button class="study-card-reorder-btn"
-               ${isLast ? 'disabled' : ''}
-               onclick="event.stopPropagation(); moveRecentStudy('${id}', 1)"
-               title="${t('renderlib_move_down')}"
-               aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
-           </div>`
-        : `<button class="study-card-delete-btn"
-             onclick="event.stopPropagation(); deleteStudy('${id}', '${escapeHtml(e.title)}')"
-             style="background:none; border:none; padding:10px; font-size:18px; cursor:pointer; opacity:0.6; z-index:2; margin-left: 4px;">
-             ${ICONS.trash}
-           </button>`;
-
-      //"bluefish color-coding (5)
-      const card = document.createElement('div');
-      card.className = 'study-card' + (isReorderActive ? ' study-card--reorder-active' : '');
-      card.dataset.studyId = id;
-
-      card.onclick = () => {
-        if (card._suppressNextClick) { card._suppressNextClick = false; return; }
-        if (isReorderActive) return;
-        activateStudy(id);
-      };
-
-      const coverHtml = e.coverSrc
-        ? `<img class="study-card-cover" src="${e.coverSrc}" alt=""
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-           <div class="study-card-cover-fallback" style="display:none">${escapeHtml(e.fallback)}</div>`
-        : `<div class="study-card-cover-fallback">${escapeHtml(e.fallback)}</div>`;
-
-      card.innerHTML = `
-        <button class="${pinClass}"
-          onclick="event.stopPropagation(); togglePin('${id}')"
-          title="${isPinned ? t('renderlib_unpin') : t('renderlib_pin_to_top')}">${isPinned ? ICONS.pinFilled : ICONS.pin}</button>
-        ${coverHtml}
-
-        <div class="study-card-text" style="flex:1;">
-          <h3>${escapeHtml(e.title)}</h3>
-          ${e.subtitle ? `<div class="study-card-subtitle">${escapeHtml(e.subtitle)}</div>` : ''}
-          ${studyLangBadgesHtml(e.meta)}
-        </div>
-        ${reorderHtml}`;
-
-      attachCardLongPress(card, id);
-      return card;
-    }
+    const buildRecentRow = (id, listIds, isPinned) =>
+      _buildStudyCard(id, studyCache[id], listIds, isPinned, 'moveRecentStudy', 'togglePin');
 
     // Build DOM fragment
     const frag = document.createDocumentFragment();
