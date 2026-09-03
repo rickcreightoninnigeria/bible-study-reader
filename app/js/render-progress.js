@@ -36,14 +36,6 @@ function getActivePathway() {
   return { ...l2Item, _l1Title: l1Item.titleLevel1, _key: key };
 }
 
-// Sets the active pathway in localStorage and re-renders the progress page
-// so the tab bar appears immediately after selection.
-function setActivePathway(l1Idx, l2Idx) {
-  safeSetItem('bsr_activePathwayId', `${l1Idx}_${l2Idx}`);
-  Router.replaceState({ page: 'progress' });
-  renderProgressOverview();
-}
-
 // Clears the active pathway and re-renders.
 function clearActivePathway() {
   localStorage.removeItem('bsr_activePathwayId');

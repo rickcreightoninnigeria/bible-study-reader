@@ -920,16 +920,8 @@ function updateNavButtons() {
 // NAV CLICK HANDLERS
 // ══════════════════════════════════════════════════════════════════════════════
 
-function navLibClick() {
-  if (window.activeTabPage === 'library') { Router.back(); } else { Router.navigate({ page: 'library' }); }
-}
+// navLibClick/navProgressClick/navHowtoClick/navSettingsClick are defined in
+// router.js, not here — router.js loads after onboarding.js specifically so
+// its Router-aware versions are the ones that end up live (see the comment
+// there). Only navSearchClick has no router.js counterpart, so it stays.
 function navSearchClick()   { openSearch(); }
-function navProgressClick() {
-  if (window.activeTabPage === 'progress') { Router.back(); } else { Router.navigate({ page: 'progress' }); }
-}
-function navHowtoClick() {
-  if (window.activeTabPage === 'howto') { Router.back(); } else { Router.navigate({ page: 'howto' }); }
-}
-function navSettingsClick() {
-  if (window.activeTabPage === 'settings') { Router.back(); } else { Router.navigate({ page: 'settings' }); }
-}

@@ -269,12 +269,11 @@ function renderLikertScale(el, chNum, chapterAnswers = null) {
 //   • Clicking a tab updates the ref display, passage text, speak button, and
 //     external link — no modal close/reopen needed.
 
-function openVerseModal(ref) {
-  const raw = verseData[ref];
-  if (!raw) return;
-
-  // ── Normalise legacy v1 shape → v2 shape ─────────────────────────────────
-  const data = raw.translations
+// Normalises a verseData[ref] entry to the v2 { translations: [...] } shape.
+// Legacy v1 entries carry { text, netUrl, translation } directly instead.
+// Shared by openVerseModal and switchVerseTranslation.
+function _normalizeVerseData(raw, ref) {
+  return raw.translations
     ? raw
     : {
         translations: [{
@@ -284,7 +283,13 @@ function openVerseModal(ref) {
           ref:   ref,
         }],
       };
+}
 
+function openVerseModal(ref) {
+  const raw = verseData[ref];
+  if (!raw) return;
+
+  const data = _normalizeVerseData(raw, ref);
   if (!data.translations.length) return;
 
   // ── Resolve the active translation ────────────────────────────────────────
@@ -311,17 +316,9 @@ function openVerseModal(ref) {
   const tabRowEl = document.getElementById('verseModalTabRow');
   if (tabRowEl) tabRowEl.innerHTML = tabRowHtml;
 
-  document.getElementById('verseModalRef').textContent   = activeTrans.ref || ref;
-  safeSetHtml('verseModalText', activeTrans.text);
-  safeSetHtml('verseModalFooter',
-    activeTrans.url
-      ? `(<a href="${_safeUrl(activeTrans.url)}" target="_blank">${t('modals_verse_net_link')}</a>)`
-      : '');
+  _renderVerseTranslation(activeTrans, ref);
 
   document.getElementById('verseModalOverlay').classList.add('open');
-
-  // ── Wire speak button ─────────────────────────────────────────────────────
-  _wireVerseModalSpeak(activeTrans.text);
 }
 
 // Switches the active translation tab without closing/reopening the modal.
@@ -333,10 +330,7 @@ function switchVerseTranslation(ref, label) {
   const raw = verseData[ref];
   if (!raw) return;
 
-  const data = raw.translations
-    ? raw
-    : { translations: [{ label: raw.translation || 'NET', text: raw.text, url: raw.netUrl, ref }] };
-
+  const data = _normalizeVerseData(raw, ref);
   const tr = data.translations.find(t => t.label === label);
   if (!tr) return;
 
@@ -348,21 +342,25 @@ function switchVerseTranslation(ref, label) {
     btn.classList.toggle('active', btn.textContent.trim() === label);
   });
 
-  // Update ref, text, footer link.
-  document.getElementById('verseModalRef').textContent  = tr.ref || ref;
+  _renderVerseTranslation(tr, ref);
+}
+
+// Internal helper: populates the ref/text/footer link and re-wires the speak
+// button for a single translation. Shared by openVerseModal and
+// switchVerseTranslation so the _safeUrl() sanitization and footer-link
+// markup live in exactly one place.
+function _renderVerseTranslation(tr, ref) {
+  document.getElementById('verseModalRef').textContent = tr.ref || ref;
   safeSetHtml('verseModalText', tr.text);
   safeSetHtml('verseModalFooter',
     tr.url
       ? `(<a href="${_safeUrl(tr.url)}" target="_blank">${t('modals_verse_net_link')}</a>)`
       : '');
-
-  // Re-wire the speak button to the new translation's text.
   _wireVerseModalSpeak(tr.text);
 }
 
 // Internal helper: sets the speak button's visibility and onclick for the
-// currently displayed translation text. Extracted to avoid repetition between
-// openVerseModal and switchVerseTranslation.
+// currently displayed translation text.
 function _wireVerseModalSpeak(text) {
   const vsb = document.getElementById('verseModalSpeakBtn');
   if (!vsb) return;

@@ -534,31 +534,23 @@ const Router = (() => {
 })();
 
 
-// ── UPDATED nav click handlers (replace the versions in onboarding.js) ────────
+// ── Nav click handlers ──────────────────────────────────────────────────────
 //
-// The toggle logic is now:
-//   - If already on the page → history.back() (keeps the stack clean)
-//   - Otherwise → Router.navigate(...)
-//
-// These are reassigned here so they overwrite the originals once router.js
-// loads. Place router.js AFTER onboarding.js in your script load order.
+// Toggle logic: if already on the page → history.back() (keeps the stack
+// clean); otherwise → Router.navigate(...). One factory generates all four
+// named handlers instead of repeating the same toggle four times. Assigned
+// via window.* (rather than plain function declarations) so they're
+// reachable the same way as the equivalent pattern used elsewhere in this
+// codebase for anything called from an inline onclick="" attribute.
 
-function navLibClick() {
-  if (window.activeTabPage === 'library') { Router.back(); }
-  else { Router.navigate({ page: 'library' }); }
+function _makeNavClick(page) {
+  return function() {
+    if (window.activeTabPage === page) Router.back();
+    else Router.navigate({ page });
+  };
 }
 
-function navProgressClick() {
-  if (window.activeTabPage === 'progress') { Router.back(); }
-  else { Router.navigate({ page: 'progress' }); }
-}
-
-function navHowtoClick() {
-  if (window.activeTabPage === 'howto') { Router.back(); }
-  else { Router.navigate({ page: 'howto' }); }
-}
-
-function navSettingsClick() {
-  if (window.activeTabPage === 'settings') { Router.back(); }
-  else { Router.navigate({ page: 'settings' }); }
-}
+window.navLibClick      = _makeNavClick('library');
+window.navProgressClick = _makeNavClick('progress');
+window.navHowtoClick    = _makeNavClick('howto');
+window.navSettingsClick = _makeNavClick('settings');
