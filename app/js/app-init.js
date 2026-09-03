@@ -370,13 +370,26 @@ async function startApp() {
   window._appReady = true;
 
   // Case 0: Android delivered a .estudy file before DOMContentLoaded fired.
-  // pendingStudyData is already persisted to IDB by loadStudyFromJson,
-  // so we just need to apply it. Show app onboarding first if it hasn't been
-  // seen (so the user gets the intro before landing in the study).
+  // pendingStudyData is already persisted to IDB by loadStudyFromJson (or
+  // deferred the same way by loadStudyFromFile's _activateOrDeferStudy), so
+  // we just need to apply it. applyStudyData() calls initApp() internally
+  // (silent is not passed), which already shows app onboarding first and
+  // only falls back to study onboarding if it didn't fire — so there's no
+  // need to call showAppOnboardingIfNeeded() here too.
+  //
+  // This used to also call showAppOnboardingIfNeeded() directly *and* fire
+  // applyStudyData() without awaiting it. Since app_onboarding_complete is
+  // only set once the user finishes or skips the slides (not the moment
+  // they're shown), the unawaited applyStudyData() chain would reach
+  // initApp()'s own showAppOnboardingIfNeeded() call within milliseconds —
+  // almost always before the user finished slide 1 — and that second call
+  // would see the flag still unset and re-fire showAppOnboarding(), which
+  // tears down and rebuilds the same overlay from slide 1, resetting the
+  // user's progress through it.
   if (window.pendingStudyData) {
-    showAppOnboardingIfNeeded();
-    applyStudyData(window.pendingStudyData);
+    const data = window.pendingStudyData;
     window.pendingStudyData = null;
+    await applyStudyData(data);
     return;
   }
 
