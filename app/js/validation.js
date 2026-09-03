@@ -595,7 +595,7 @@ function _appendTurn(thread, role, text) {
   body.className = 'ai-tutor-turn-body';
   // Render double-newlines as paragraph breaks
   body.innerHTML = text.split(/\n\n+/).map(p =>
-    '<p>' + _escHtml(p.trim()) + '</p>'
+    '<p>' + escapeHtml(p.trim()) + '</p>'
   ).join('');
 
   div.appendChild(label);
@@ -1015,10 +1015,3 @@ function _stripHtml(html) {
   return (tmp.textContent || tmp.innerText || '').trim();
 }
 
-function _escHtml(str) {
-  return str
-    .replace(/&/g,  '&amp;')
-    .replace(/</g,  '&lt;')
-    .replace(/>/g,  '&gt;')
-    .replace(/"/g,  '&quot;');
-}

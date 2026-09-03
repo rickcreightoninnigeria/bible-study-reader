@@ -496,8 +496,11 @@ function openInfoModal(infoId, content, triggerBtn) {
   document.getElementById('infoModalShowAgain').checked = true;
 
   // Store context so closeInfoModal() can act on the right button and key.
-  _currentInfoTriggerBtn          = triggerBtn;
-  _currentInfoTriggerBtn._infoId  = infoId;
+  // triggerBtn is null when opened directly rather than from a ⓘ icon (e.g.
+  // openNotesInfo()) — closeInfoModal() already only reads _infoId when
+  // _currentInfoTriggerBtn is truthy, so there's nothing to store in that case.
+  _currentInfoTriggerBtn = triggerBtn;
+  if (_currentInfoTriggerBtn) _currentInfoTriggerBtn._infoId = infoId;
 
   document.getElementById('info-modal-overlay').classList.add('open');
 }

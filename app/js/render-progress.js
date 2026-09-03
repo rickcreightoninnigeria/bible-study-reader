@@ -687,30 +687,30 @@ async function renderNotesPage() {
   }
 }
 
-// Debounce timer for _saveGlobalNotes — prevents an IDB write on every
-// keystroke. Mirrors the pattern used for updateProgress in save.js.
-let _saveGlobalNotesTimer = null;
-
-// Saves the global notes value to IDB after a short debounce. Fire-and-forget
-// — called from the oninput handler on the globalNotesField textarea.
+// Saves the global notes value to IDB after a short debounce — prevents an
+// IDB write on every keystroke. Fire-and-forget — called from the oninput
+// handler on the globalNotesField textarea. Uses the shared debounce()
+// helper from search.js instead of a hand-rolled timer.
 // The debounce does not affect updateNotesMenuIndicator(), which is called
 // directly in the oninput attribute and updates instantly on every keystroke.
-function _saveGlobalNotes(value, studyId) {
-  clearTimeout(_saveGlobalNotesTimer);
-  _saveGlobalNotesTimer = setTimeout(() => {
-    StudyIDB.setAnswerRaw(globalNotesIDBKey(studyId), value)
-      .catch(e => console.warn('[_saveGlobalNotes] IDB write failed.', e));
-  }, 400);
-}
+const _saveGlobalNotes = debounce((value, studyId) => {
+  StudyIDB.setAnswerRaw(globalNotesIDBKey(studyId), value)
+    .catch(e => console.warn('[_saveGlobalNotes] IDB write failed.', e));
+}, 400);
 
-// Opens the verse modal with "About this page" guidance for the Notes page.
+// Opens the "About this page" info modal for the Notes page, via the shared
+// info-modal system (modals.js) — matches openNotesInfo()'s pattern for the
+// chapter-level Notes field info popup, rather than hijacking the verse
+// modal's DOM elements to show unrelated content.
 function openNotesPageInfo() {
-  const modalRef = document.getElementById('verseModalRef');
-  modalRef.textContent  = t('progress_notes_info_title');
-  modalRef.style.fontFamily = 'var(--font-stack-heading)';
-  document.getElementById('verseModalText').innerHTML = t('progress_notes_info_body');
-  document.getElementById('verseModalFooter').innerHTML = '';
-  document.getElementById('verseModalOverlay').classList.add('open');
+  openInfoModal(
+    'notes-page',
+    {
+      title: t('progress_notes_info_title'),
+      body:  t('progress_notes_info_body'),
+    },
+    null   // no trigger button — called directly, not from a ⓘ icon
+  );
 }
 
 // ── RENDER MENU ──────────────────────────────────────────────────────────────
