@@ -176,14 +176,7 @@ function buildNavButtons(idx, activeLang, langMap) {
   if (!appSettings.showNavButtons) return '';
 
   function resolveChapterTitle(ch) {
-    if (langMap && Object.keys(langMap).length > 0) {
-      const slot = langMap[activeLang];
-      if (slot !== undefined) {
-        return ch[`chapterTitle${slot}`] || ch[`chapterTitle1`] || ch.chapterTitle || '';
-      }
-      return ch[`chapterTitle1`] || ch.chapterTitle || '';
-    }
-    return ch.chapterTitle || '';
+    return resolveTextWithFallback(ch, activeLang, 'chapterTitle', langMap);
   }
 
   const showBack = idx > 0;

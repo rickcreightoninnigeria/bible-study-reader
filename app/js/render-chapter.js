@@ -145,14 +145,7 @@ async function renderChapter(idx, scrollY = 0) {
     // ── Resolve the chapter title for the active language ─────────────────────
     // Multilingual studies store chapterTitle1/chapterTitle2/chapterTitle3.
     // Mono-lingual studies store chapterTitle (unnumbered).
-    const chapterTitle = (() => {
-      if (langMap && Object.keys(langMap).length > 0) {
-        const slot = langMap[activeLang];
-        if (slot !== undefined) return ch[`chapterTitle${slot}`] || ch[`chapterTitle1`] || ch.chapterTitle || '';
-        return ch[`chapterTitle1`] || ch.chapterTitle || '';
-      }
-      return ch.chapterTitle || '';
-    })();
+    const chapterTitle = resolveTextWithFallback(ch, activeLang, 'chapterTitle', langMap);
 
     // ── elementId → element map for resolving repeatElement references ────────
     const elementMap = {};
