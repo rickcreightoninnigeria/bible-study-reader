@@ -221,11 +221,15 @@ function renderLikertScale(el, chNum, chapterAnswers = null) {
     ).join('');
   }
 
-  // Safely escape title and instruction for single-quoted onclick args.
-  // Scale is stored as a data attribute (JSON) to avoid double-quote
-  // collision with the surrounding HTML attribute delimiters.
-  const safeTitle = (el.popupTitle || '').replace(/'/g, "\\'");
-  const safeInstr = (el.instruction || '').replace(/'/g, "\\'");
+  // Safely escape title and instruction for use as single-quoted JS string
+  // literals inside the onclick attribute below. Two escapes are needed
+  // since they're nested inside each other: '/g -> \' keeps an embedded
+  // single quote from closing the JS string literal early, and "/g ->
+  // &quot; keeps an embedded double quote from closing the surrounding
+  // onclick="..." HTML attribute early (the same collision scaleJson
+  // below avoids for its own data attribute).
+  const safeTitle = (el.popupTitle || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  const safeInstr = (el.instruction || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
   const scaleJson = JSON.stringify(scale).replace(/"/g, '&quot;');
 
   return `

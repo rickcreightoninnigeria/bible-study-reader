@@ -36,25 +36,35 @@ async function shareAnswers() {
   report += bold(t('shareprint_answers_header', { title: ch.chapterTitle, number: ch.chapterNumber })) + '\n';
   report += `------------------------------------------\n\n`;
 
-  const qFields = document.querySelectorAll('.answer-field[data-type="q"]');
-  let qIndex = 0;
+  // Look up each field by its elementId (data-index) rather than by position
+  // in the NodeList — a question whose repeatElement reference doesn't
+  // resolve is skipped by the chapter renderer (render-chapter.js's element
+  // loop), which would silently shift every subsequent positional index and
+  // misattribute answers to the wrong question. ch.sections is built
+  // independently and always lists every question regardless of whether its
+  // field actually rendered.
   ch.sections.forEach(section => {
     section.questions.forEach(q => {
-      const field  = qFields[qIndex];
+      const field  = document.querySelector(`.answer-field[data-type="q"][data-index="${CSS.escape(q.elementId)}"]`);
       const answer = (field && field.value.trim()) ? field.value.trim() : t('shareprint_no_answer');
       report += `${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
       report += `${bold(t('shareprint_label_q'))} ${q.text}\n`;
       report += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
-      qIndex++;
     });
   });
 
   if (ch.reflection && ch.reflection.length > 0) {
     report += bold(t('shareprint_reflection_heading')) + '\n';
     report += `------------------------------------------\n`;
-    const rFields = document.querySelectorAll('.answer-field[data-type="r"]');
+    // ch.reflection is an array of question-text strings built positionally
+    // from the same filtered element list starred.js's getStarredQuestions()
+    // uses — reconstruct that list here to resolve each entry's elementId.
+    const reflEls = (ch.elements || []).filter(
+      e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement
+    );
     ch.reflection.forEach((qText, rIdx) => {
-      const field  = rFields[rIdx];
+      const eid    = reflEls[rIdx] ? reflEls[rIdx].elementId : null;
+      const field  = eid ? document.querySelector(`.answer-field[data-type="r"][data-index="${CSS.escape(eid)}"]`) : null;
       const answer = (field && field.value.trim()) ? field.value.trim() : t('shareprint_no_answer');
       report += `${bold(t('shareprint_label_q'))} ${qText}\n`;
       report += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;

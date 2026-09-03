@@ -206,6 +206,9 @@ function confirmClearAnswers() {
       await StudyIDB.deleteStudyAnswers(currentStudyId);
     } catch (e) {
       console.warn('[confirmClearAnswers] IDB delete failed.', e);
+      // Don't report success or navigate away — the answers are still there.
+      showToast({ message: t('settings_clear_answers_error'), isManual: true });
+      return;
     }
 
     clearLastPosition();

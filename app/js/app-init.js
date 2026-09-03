@@ -409,7 +409,7 @@ async function startApp() {
       const data = await StudyIDB.get(`study_content_${lastStudyId}`);
       if (data) {
         window.activeStudyId = lastStudyId;
-        applyStudyData(data);
+        await applyStudyData(data);
         // applyStudyData → initApp() handles position restore internally.
         return;
       }
