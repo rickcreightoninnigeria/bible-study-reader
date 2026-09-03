@@ -724,7 +724,7 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   window.lastPositionCache = null;
   if (appSettings.rememberPosition && window.activeStudyId) {
     try {
-      const raw = await StudyIDB.getAnswerRaw(`${window.activeStudyId}_lastPosition`);
+      const raw = await StudyIDB.getAnswerRaw(lastPositionIDBKey(window.activeStudyId));
       window.lastPositionCache = raw ? JSON.parse(raw) : null;
     } catch (e) {
       window.lastPositionCache = null;

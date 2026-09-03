@@ -50,7 +50,7 @@ function saveLastPosition() {
   // Keep the sync cache up to date so renderTitlePage() sees the latest position.
   window.lastPositionCache = pos;
   // Fire-and-forget — position loss on failure is acceptable.
-  StudyIDB.setAnswerRaw(`${studyId}_lastPosition`, JSON.stringify(pos))
+  StudyIDB.setAnswerRaw(lastPositionIDBKey(studyId), JSON.stringify(pos))
     .catch(e => console.warn('[saveLastPosition] IDB write failed.', e));
 }
 
@@ -62,7 +62,7 @@ function clearLastPosition() {
   const studyId = window.activeStudyId;
   if (!studyId) return;
   window.lastPositionCache = null;
-  StudyIDB.deleteAnswerRaw(`${studyId}_lastPosition`)
+  StudyIDB.deleteAnswerRaw(lastPositionIDBKey(studyId))
     .catch(e => console.warn('[clearLastPosition] IDB delete failed.', e));
 }
 
@@ -73,7 +73,7 @@ async function getLastPosition() {
   const studyId = window.activeStudyId;
   if (!studyId) return null;
   try {
-    const raw = await StudyIDB.getAnswerRaw(`${studyId}_lastPosition`);
+    const raw = await StudyIDB.getAnswerRaw(lastPositionIDBKey(studyId));
     return raw ? JSON.parse(raw) : null;
   } catch (e) {
     return null;

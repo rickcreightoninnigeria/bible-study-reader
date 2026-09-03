@@ -162,7 +162,7 @@ async function _migrateStudy(studyId) {
     if (lsKey === `${prefix}global_notes`) {
       const val = localStorage.getItem(lsKey);
       if (val !== null) {
-        rawIDBWrites.push({ key: `${studyId}_global_notes`, value: val });
+        rawIDBWrites.push({ key: globalNotesIDBKey(studyId), value: val });
         keysToRemove.push(lsKey);
       }
       continue;
@@ -175,7 +175,7 @@ async function _migrateStudy(studyId) {
     if (lsKey === lastPositionLSKey) {
       const val = localStorage.getItem(lsKey);
       if (val !== null) {
-        rawIDBWrites.push({ key: `${studyId}_lastPosition`, value: val });
+        rawIDBWrites.push({ key: lastPositionIDBKey(studyId), value: val });
         keysToRemove.push(lsKey);
       }
       continue;
