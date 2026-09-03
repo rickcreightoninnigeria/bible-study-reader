@@ -24,38 +24,24 @@ async function saveAnswers(isManual = true) {
   const ch      = chapters[currentChapter];
   if (!studyId || !ch) return;
 
-  // Read the existing chapter object first so we preserve any fields not
-  // currently visible (e.g. from a different element type or a prior save).
-  let record;
-  try {
-    record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
-  } catch (e) {
-    console.warn('[saveAnswers] IDB read failed; falling back to empty object.', e);
-    record = {};
-  }
+  // Collect the visible answer fields that actually contain something.
+  // Blank fields are skipped rather than stomping the record with an empty
+  // string — same rationale as the blur auto-save below: clearing a field's
+  // stored answer should be a deliberate action, not a side effect of an
+  // empty field being present on screen when Save is tapped.
+  const fields = Array.from(document.querySelectorAll('.answer-field')).filter(
+    field => field.dataset.type !== undefined && field.dataset.index !== undefined && field.value.trim() !== ''
+  );
 
-  // Overwrite only the fields that are visible in the DOM right now and
-  // actually contain something. Blank fields are skipped rather than
-  // stomping the record with an empty string — same rationale as the
-  // blur auto-save below: clearing a field's stored answer should be a
-  // deliberate action, not a side effect of an empty field being present
-  // on screen when Save is tapped.
-  const fields = document.querySelectorAll('.answer-field');
-  let anyNonBlank = false;
-  fields.forEach(field => {
-    const type  = field.dataset.type;
-    const index = field.dataset.index;
-    if (type !== undefined && index !== undefined && field.value.trim() !== '') {
-      record[answerFieldKey(type, index)] = field.value;
-      anyNonBlank = true;
-    }
-  });
-
-  // Nothing to save — skip the write and the toast entirely.
-  if (!anyNonBlank) return;
+  // Nothing to save — skip the read/write and the toast entirely.
+  if (fields.length === 0) return;
 
   try {
-    await StudyIDB.setChapterAnswers(studyId, ch.chapterNumber, record);
+    await StudyIDB.updateChapterAnswers(studyId, ch.chapterNumber, record => {
+      fields.forEach(field => {
+        record[answerFieldKey(field.dataset.type, field.dataset.index)] = field.value;
+      });
+    }, 'saveAnswers');
   } catch (e) {
     console.warn('[saveAnswers] IDB write failed.', e);
   }
@@ -119,18 +105,10 @@ document.addEventListener('blur', e => {
 
   // Fire-and-forget async save for the single field that lost focus.
   (async () => {
-    let record;
     try {
-      record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
-    } catch (e) {
-      console.warn('[blur auto-save] IDB read failed; falling back to empty object.', e);
-      record = {};
-    }
-
-    record[answerFieldKey(type, index)] = value;
-
-    try {
-      await StudyIDB.setChapterAnswers(studyId, ch.chapterNumber, record);
+      await StudyIDB.updateChapterAnswers(studyId, ch.chapterNumber, record => {
+        record[answerFieldKey(type, index)] = value;
+      }, 'blur auto-save');
     } catch (e) {
       console.warn('[blur auto-save] IDB write failed.', e);
     }
@@ -163,18 +141,10 @@ async function saveLikertAnswer(elementId, stIdx, value, chapterNumber) {
   const studyId = window.activeStudyId;
   if (chapterNumber == null || !studyId) return;
 
-  let record;
   try {
-    record = await StudyIDB.getChapterAnswers(studyId, chapterNumber);
-  } catch (e) {
-    console.warn('[saveLikertAnswer] IDB read failed; falling back to empty object.', e);
-    record = {};
-  }
-
-  record[likertFieldKey(elementId, stIdx)] = value;
-
-  try {
-    await StudyIDB.setChapterAnswers(studyId, chapterNumber, record);
+    await StudyIDB.updateChapterAnswers(studyId, chapterNumber, record => {
+      record[likertFieldKey(elementId, stIdx)] = value;
+    }, 'saveLikertAnswer');
   } catch (e) {
     console.warn('[saveLikertAnswer] IDB write failed.', e);
   }

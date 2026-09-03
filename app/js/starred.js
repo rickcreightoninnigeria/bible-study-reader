@@ -48,25 +48,18 @@ async function toggleStar(chapterNum, elementId) {
   const studyId = window.activeStudyId;
   if (!studyId) return;
 
-  let record;
-  try {
-    record = await StudyIDB.getChapterAnswers(studyId, chapterNum);
-  } catch (e) {
-    console.warn('[toggleStar] IDB read failed.', e);
-    return;
-  }
-
-  const field     = starFieldKey(elementId);
-  const currently = record[field] === '1';
-
-  if (currently) {
-    delete record[field];
-  } else {
-    record[field] = '1';
-  }
+  const field = starFieldKey(elementId);
+  let currently;
 
   try {
-    await StudyIDB.setChapterAnswers(studyId, chapterNum, record);
+    await StudyIDB.updateChapterAnswers(studyId, chapterNum, record => {
+      currently = record[field] === '1';
+      if (currently) {
+        delete record[field];
+      } else {
+        record[field] = '1';
+      }
+    }, 'toggleStar');
   } catch (e) {
     console.warn('[toggleStar] IDB write failed.', e);
     return;
