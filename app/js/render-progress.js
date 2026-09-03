@@ -628,7 +628,7 @@ async function renderNotesPage() {
   // Load saved global notes from IDB.
   let savedText = '';
   try {
-    const raw = await StudyIDB.getAnswerRaw(`${currentStudyId}_global_notes`);
+    const raw = await StudyIDB.getAnswerRaw(globalNotesIDBKey(currentStudyId));
     savedText = escapeHtml(raw || '');
   } catch (e) {
     console.warn('[renderNotesPage] IDB read failed for global_notes.', e);
@@ -694,7 +694,7 @@ let _saveGlobalNotesTimer = null;
 function _saveGlobalNotes(value, studyId) {
   clearTimeout(_saveGlobalNotesTimer);
   _saveGlobalNotesTimer = setTimeout(() => {
-    StudyIDB.setAnswerRaw(`${studyId}_global_notes`, value)
+    StudyIDB.setAnswerRaw(globalNotesIDBKey(studyId), value)
       .catch(e => console.warn('[_saveGlobalNotes] IDB write failed.', e));
   }, 400);
 }
@@ -790,7 +790,7 @@ async function renderMenu() {
     // Check IDB for global notes presence.
     let hasNotesContent = false;
     try {
-      const raw = await StudyIDB.getAnswerRaw(`${currentStudyId}_global_notes`);
+      const raw = await StudyIDB.getAnswerRaw(globalNotesIDBKey(currentStudyId));
       hasNotesContent = !!(raw && raw.trim());
     } catch (e) { /* no notes saved yet */ }
     html += `

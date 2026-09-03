@@ -105,3 +105,13 @@ function chapterAnswersIDBKey(studyId, chapterNum) {
   return `${studyId}_ch${chapterNum}`;
 }
 
+// Returns the IDB answers-store key for a study's global (non-chapter-scoped) notes.
+function globalNotesIDBKey(studyId) {
+  return `${studyId}_global_notes`;
+}
+
+// Returns the IDB answers-store key for a study's last reading position.
+function lastPositionIDBKey(studyId) {
+  return `${studyId}_lastPosition`;
+}
+

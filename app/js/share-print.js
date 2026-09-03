@@ -103,7 +103,7 @@ async function exportStudyAnswers() {
   // Also load global notes.
   let globalNotes = '';
   try {
-    globalNotes = (await StudyIDB.getAnswerRaw(`${studyId}_global_notes`)) || '';
+    globalNotes = (await StudyIDB.getAnswerRaw(globalNotesIDBKey(studyId))) || '';
   } catch (e) { /* no global notes */ }
 
   let report = bold(`${meta.title || t('shareprint_default_study_title')}`) + '\n';
@@ -429,7 +429,7 @@ async function printAllChapters() {
   // Pre-load all chapter records and global notes in parallel.
   const [records, globalNotes] = await Promise.all([
     _loadAllChapterRecords(studyId),
-    StudyIDB.getAnswerRaw(`${studyId}_global_notes`).catch(() => ''),
+    StudyIDB.getAnswerRaw(globalNotesIDBKey(studyId)).catch(() => ''),
   ]);
 
   const cover = `<div class="cover">

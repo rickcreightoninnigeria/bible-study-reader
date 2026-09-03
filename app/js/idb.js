@@ -195,15 +195,15 @@ const StudyIDB = (() => {
 
   // ── answers store (per-chapter answer objects) ────────────────────────────
   //
-  // Chapter answers key:  `${studyId}_ch${chapterNum}`
-  // Global notes key:     `${studyId}_global_notes`
-  // Last position key:    `${studyId}_lastPosition`
+  // Chapter answers key:  chapterAnswersIDBKey(studyId, chapterNum) — state.js
+  // Global notes key:     globalNotesIDBKey(studyId) — state.js
+  // Last position key:    lastPositionIDBKey(studyId) — state.js
 
   // Returns the answer object for a single chapter, or {} if none exists yet.
   async function getChapterAnswers(studyId, chapterNum) {
     const db = await open();
     return new Promise((resolve, reject) => {
-      const key = `${studyId}_ch${chapterNum}`;
+      const key = chapterAnswersIDBKey(studyId, chapterNum);
       const req = db.transaction(ANS_STORE, 'readonly').objectStore(ANS_STORE).get(key);
       req.onsuccess = e => resolve(e.target.result ?? {});
       req.onerror   = e => reject(e.target.error);
@@ -214,7 +214,7 @@ const StudyIDB = (() => {
   async function setChapterAnswers(studyId, chapterNum, obj) {
     const db = await open();
     return new Promise((resolve, reject) => {
-      const key = `${studyId}_ch${chapterNum}`;
+      const key = chapterAnswersIDBKey(studyId, chapterNum);
       const req = db.transaction(ANS_STORE, 'readwrite').objectStore(ANS_STORE).put(obj, key);
       req.onsuccess = () => resolve();
       req.onerror   = e => reject(e.target.error);
