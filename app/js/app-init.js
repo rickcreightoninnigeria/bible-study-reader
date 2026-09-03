@@ -223,17 +223,18 @@ function rerenderCurrentView() {
 // no corresponding data (e.g. from a partially-failed delete or stale state).
 async function cleanOrphanedRegistry() {
   const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
-  const valid = [];
-  for (const id of registry) {
-    let exists;
-    try {
-      exists = await StudyIDB.get(`study_content_${id}`);
-    } catch (err) {
-      if (err.name === 'IDBUnavailable') { _showIdbUnavailableError(); return; }
-      throw err;
-    }
-    if (exists) valid.push(id);
+  let results;
+  try {
+    // Runs on every startup before any routing decision — fetch every
+    // registry entry in parallel rather than one IDB round-trip at a time,
+    // so N installed studies costs roughly one round-trip's worth of
+    // latency instead of N, directly off the critical path to first paint.
+    results = await Promise.all(registry.map(id => StudyIDB.get(`study_content_${id}`)));
+  } catch (err) {
+    if (err.name === 'IDBUnavailable') { _showIdbUnavailableError(); return; }
+    throw err;
   }
+  const valid = registry.filter((id, i) => !!results[i]);
   if (valid.length !== registry.length) {
     console.warn('cleanOrphanedRegistry: removed', registry.length - valid.length, 'orphaned ID(s)');
     const removed = registry.length - valid.length;

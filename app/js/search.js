@@ -198,13 +198,26 @@ function getSuggestion(query) {
 // in save.js — no change needed there.
 const storageCache = new Map();
 
+// Which study storageCache currently holds data for — used to force a reload
+// on study switch even though switching studies doesn't itself clear the
+// cache (only the save paths above do, via storageCache.clear()).
+let _storageCacheStudyId = null;
+
 // Loads all chapter answer objects for the active study into storageCache.
 // Keyed by chapter number (integer). Returns a Promise that resolves when all
-// reads are complete. Called once at the start of each runSearchCore() execution.
+// reads are complete. Called at the start of each runSearchCore() execution,
+// but skips the reload entirely when the cache is already populated for the
+// active study — every save path clears storageCache when an answer changes,
+// so a non-empty, same-study cache is already current. Without this, every
+// debounced keystroke-pause while the user is still typing the same search
+// re-read every chapter's IDB record for no reason.
 async function _loadAnswerCache() {
-  storageCache.clear();
   const studyId = window.activeStudyId;
-  if (!studyId) return;
+  if (!studyId) { storageCache.clear(); _storageCacheStudyId = null; return; }
+  if (storageCache.size > 0 && _storageCacheStudyId === studyId) return;
+
+  storageCache.clear();
+  _storageCacheStudyId = studyId;
   await Promise.all(
     chapters.map(async ch => {
       try {

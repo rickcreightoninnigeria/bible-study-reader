@@ -51,18 +51,32 @@ function clearActivePathway() {
   renderProgressOverview();
 }
 
-// Counts answered questions for an arbitrary studyId by reading answer keys
-// from IDB. Does not require the study to be loaded.
-// Returns a Promise resolving to { answered, total }.
-async function getStudyProgressForId(studyId) {
-  let answered = 0;
-  let total    = 0;
+// Fetches every chapter's answer record for studyId once, in parallel, and
+// returns per-chapter counts: [{ chNum, total, answered }, ...] sorted by
+// chapter number. This is the single source both getStudyProgressForId()
+// (aggregate) and _buildPathwayStudyDetailHtml() (per-chapter breakdown)
+// build on, so a pathway study's chapters are only read from IDB once —
+// they used to be read once per function, once each, sequentially.
+// A single chapter's read failure doesn't abort the others; it just
+// contributes { total: 0, answered: 0 } for that chapter and logs a warning.
+async function _getStudyChapterCounts(studyId) {
+  let keys = [];
   try {
-    const keys = await StudyIDB.getAllStudyAnswerKeys(studyId);
-    // Keys are like `${studyId}_ch${N}` — load each chapter object and count
-    const chapterKeys = keys.filter(k => /^.+_ch\d+$/.test(k));
-    for (const key of chapterKeys) {
-      const chNum = parseInt(key.match(/_ch(\d+)$/)[1], 10);
+    keys = await StudyIDB.getAllStudyAnswerKeys(studyId);
+  } catch (e) {
+    console.warn('[_getStudyChapterCounts] IDB read failed.', e);
+    return [];
+  }
+
+  // Keys are like `${studyId}_ch${N}` — extract the chapter numbers.
+  const chNums = [...new Set(
+    keys.map(k => { const m = k.match(/_ch(\d+)$/); return m ? Number(m[1]) : null; })
+        .filter(n => n !== null)
+  )].sort((a, b) => a - b);
+
+  return Promise.all(chNums.map(async chNum => {
+    let total = 0, answered = 0;
+    try {
       const record = await StudyIDB.getChapterAnswers(studyId, chNum);
       for (const [field, val] of Object.entries(record)) {
         // Count question (q_), reflection (r_), and Likert (likert_) fields only
@@ -70,11 +84,22 @@ async function getStudyProgressForId(studyId) {
         total++;
         if ((val || '').trim()) answered++;
       }
+    } catch (e) {
+      console.warn(`[_getStudyChapterCounts] IDB read failed for ch${chNum}.`, e);
     }
-  } catch (e) {
-    console.warn('[getStudyProgressForId] IDB read failed.', e);
-  }
-  return { answered, total };
+    return { chNum, total, answered };
+  }));
+}
+
+// Counts answered questions for an arbitrary studyId by reading answer keys
+// from IDB. Does not require the study to be loaded.
+// Returns a Promise resolving to { answered, total }.
+async function getStudyProgressForId(studyId) {
+  const chapterCounts = await _getStudyChapterCounts(studyId);
+  return chapterCounts.reduce(
+    (acc, c) => ({ answered: acc.answered + c.answered, total: acc.total + c.total }),
+    { answered: 0, total: 0 }
+  );
 }
 
 // Returns the position (1-based) of studyId within the given pathway's
@@ -355,7 +380,11 @@ async function _buildPathwayPanelHtml(pathway) {
   const studyRowsArr = await Promise.all((pathway.studyTitles || []).map(async (s, idx) => {
     const isActive   = s.studyId === window.activeStudyId;
     const inRegistry = registry.includes(s.studyId);
-    const { answered, total } = await getStudyProgressForId(s.studyId);
+    const chapterCounts = await _getStudyChapterCounts(s.studyId);
+    const { answered, total } = chapterCounts.reduce(
+      (acc, c) => ({ answered: acc.answered + c.answered, total: acc.total + c.total }),
+      { answered: 0, total: 0 }
+    );
     pathwayAnswered += answered;
     pathwayTotal    += total;
 
@@ -390,7 +419,7 @@ async function _buildPathwayPanelHtml(pathway) {
             ? t('progress_detail_open_to_start')
             : t('progress_detail_not_installed')}
          </div>`
-      : await _buildPathwayStudyDetail(s.studyId, answered, total);
+      : _buildPathwayStudyDetailHtml(chapterCounts);
 
     return `
       <div class="prog-pathway-study-item ${isActive ? 'is-active-study' : ''}">
@@ -447,39 +476,14 @@ async function _buildPathwayPanelHtml(pathway) {
 }
 
 // Builds the per-chapter detail rows shown when a pathway study is expanded.
-// Reads chapter answer records from IDB for the given studyId.
-async function _buildPathwayStudyDetail(studyId, answered, total) {
-  let keys = [];
-  try {
-    keys = await StudyIDB.getAllStudyAnswerKeys(studyId);
-  } catch (e) {
-    console.warn('[_buildPathwayStudyDetail] IDB read failed.', e);
-  }
-
-  // Extract chapter numbers from keys like `${studyId}_ch${N}`
-  const chNums = new Set();
-  keys.forEach(k => {
-    const match = k.match(/_ch(\d+)$/);
-    if (match) chNums.add(Number(match[1]));
-  });
-
-  if (chNums.size === 0) {
+// Takes the chapter counts _buildPathwayPanelHtml() already fetched via
+// _getStudyChapterCounts() — no IDB reads of its own, and no longer async.
+function _buildPathwayStudyDetailHtml(chapterCounts) {
+  if (chapterCounts.length === 0) {
     return `<div class="prog-pathway-detail-empty">${t('progress_detail_no_answers')}</div>`;
   }
 
-  const rowsArr = await Promise.all([...chNums].sort((a, b) => a - b).map(async chNum => {
-    let chTotal    = 0;
-    let chAnswered = 0;
-    try {
-      const record = await StudyIDB.getChapterAnswers(studyId, chNum);
-      for (const [field, val] of Object.entries(record)) {
-        if (!/^(q_|r_|likert_)/.test(field)) continue;
-        chTotal++;
-        if ((val || '').trim()) chAnswered++;
-      }
-    } catch (e) {
-      console.warn(`[_buildPathwayStudyDetail] IDB read failed for ch${chNum}.`, e);
-    }
+  const rows = chapterCounts.map(({ chNum, total: chTotal, answered: chAnswered }) => {
     const pct       = chTotal > 0 ? Math.round((chAnswered / chTotal) * 100) : 0;
     const ringColor = pct === 100 ? 'var(--success)' : pct > 0 ? 'var(--accent)' : 'var(--border)';
     const isDone    = pct === 100;
@@ -494,9 +498,9 @@ async function _buildPathwayStudyDetail(studyId, answered, total) {
           ${isDone ? '✓' : chAnswered === 0 ? '—' : `${chAnswered}/${chTotal}`}
         </div>
       </div>`;
-  }));
+  }).join('');
 
-  return `<div class="prog-pathway-detail-list">${rowsArr.join('')}</div>`;
+  return `<div class="prog-pathway-detail-list">${rows}</div>`;
 }
 
 // Toggles the expand/collapse of a single study's detail block in the pathway tab.
