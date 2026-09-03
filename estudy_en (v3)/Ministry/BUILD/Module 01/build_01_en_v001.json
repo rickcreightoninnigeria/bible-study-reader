@@ -7401,7 +7401,501 @@
         }
 
       ]
+    },
+    {
+      "chapterNumber": 15,
+      "chapterTitle": "Leaders of Integrity (Action)",
+      "elements": [
+
+        {
+          "elementId": "ch15-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "The module closes with one of the great emphases of the Pastoral Epistles — and one that is central to the BUILD programme: integrity. This final unit draws together the gospel and godliness that have been woven through every unit, reviews what the module has taught about integrity, and ends with a commitment to live it out. 'Preaching the Gospel and Godly Leadership' is this module's subtitle — and integrity is where they meet.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el02",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Unit Outcomes",
+          "term": "By the end of this unit you will be able to…",
+          "question": "1. Define the meaning of the word integrity\n2. Illustrate the meaning and importance of integrity from Module One\n3. Repent of hypocrisy and commit to being a leader of integrity",
+          "answer": "<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
+          "buttonText": "See outcomes ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el03",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "15.1 The Gospel and Godliness",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "2 Timothy 2:15",
+          "translation": "NET",
+          "passageText": "<sup>15</sup>Make every effort to present yourself before God as a proven worker who does not need to be ashamed, teaching the message of truth accurately.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=2+Timothy+2&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch15-el05",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "The module's anchor verse makes the point with great clarity: the Pastoral Epistles are about the gospel and godliness together. The gospel and godliness belong together — leaders must know and teach the true gospel, and, strengthened by it, must live lives that illustrate the good news. Memorise this verse if you have not done so already.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el06",
+          "type": "question",
+          "format": "plainText",
+          "question": "In what ways does 2 Timothy 2:15 emphasise both what we believe (the gospel) and how we behave (godliness)? How do the two belong together in this single verse?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at each phrase in the verse. Which parts speak to belief and doctrine — and which to conduct and character? How do they relate to each other?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 2:15",
+          "sampleAnswer": "The verse holds both together inseparably. 'Teaching the message of truth accurately' speaks to the gospel — the content of what a leader proclaims must be faithful, precise, and true to Scripture. But 'present yourself before God as a proven worker who does not need to be ashamed' speaks to godliness — the leader's character and conduct must match what they teach. The phrase 'proven worker' implies that character is tested and demonstrated over time, not just claimed. And 'does not need to be ashamed' carries a double sense: not ashamed of the gospel (as in 2 Tim 1:8) and not ashamed before God because of inconsistency between message and life. The two dimensions — what we believe and how we behave — are not two separate requirements but one integrated calling. A leader who handles the word of truth accurately but lives dishonestly contradicts themselves; a leader who lives with integrity but teaches falsehood has nothing solid to live by. Both together constitute gospel leadership.",
+          "questionHint": "Look at the three phrases in the verse: 'present yourself before God as a proven worker', 'does not need to be ashamed', and 'teaching the message of truth accurately'. Which of these is primarily about conduct and character? Which is primarily about doctrine and proclamation? And what does their combination in a single sentence tell you?"
+        },
+
+        {
+          "elementId": "ch15-el07",
+          "type": "question",
+          "format": "plainText",
+          "question": "What words in the Pastoral Epistles can you think of that describe what leaders must be like — their character, conduct, and godliness? Make as full a list as you can, drawing on what you have encountered across the module.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think back through the units — the elder qualifications in 1 Tim 3 and Titus 1, the descriptions of Timothy's calling, the portraits of false teachers (by contrast). What character words appear repeatedly?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 2:15",
+          "sampleAnswer": "The Pastoral Epistles are rich in character vocabulary. Some of the most significant words and phrases include: blameless (1 Tim 3:2; Titus 1:6, 7), temperate / self-controlled (1 Tim 3:2; Titus 1:8; 2:2, 5, 6), respectable (1 Tim 3:2), hospitable (1 Tim 3:2; Titus 1:8), able to teach (1 Tim 3:2), not given to drunkenness (1 Tim 3:3; Titus 1:7), gentle (1 Tim 3:3), not quarrelsome (1 Tim 3:3), not a lover of money (1 Tim 3:3), upright (Titus 1:8), holy (Titus 1:8), devout (Titus 1:8), integrity (Titus 2:7), seriousness (Titus 2:7), soundness of speech (Titus 2:7), godliness (1 Tim 3:16; 4:7-8; 6:6), endurance (2 Tim 2:3; 3:10), faithfulness (2 Tim 2:2), purity of heart (2 Tim 2:22), righteousness (2 Tim 2:22), love (2 Tim 1:7; 2:22), and peace (2 Tim 2:22). Together they paint a comprehensive portrait of what gospel-shaped character looks like.",
+          "questionHint": "Work through the units systematically — the elder qualifications (Unit 14, from 1 Tim 3 and Titus 1), the descriptions of Paul's own conduct (Unit 5), the qualities opposed to false teaching (Units 3, 6), and the direct calls to Timothy's character (Units 4, 8, 12). How many different words can you find?"
+        },
+
+        {
+          "elementId": "ch15-el08",
+          "type": "question",
+          "format": "plainText",
+          "question": "How do you measure up to the character list you have just assembled — and how do other leaders around you measure up? Be honest.",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "This is a question for honest self-examination, not a performance review. Where are you genuinely strong — and where do you most need to grow?",
+          "bottomPadding": "normal",
+          "linkedPassage": "2 Timothy 2:15",
+          "sampleAnswer": "This question is designed to provoke genuine self-examination rather than a 'correct' answer. A useful approach: take the list you compiled and give yourself an honest score on each quality — not based on your best moments, but on your consistent pattern. Where are you consistently strong? Where are you consistently weak? Where is there a gap between the face you present publicly and the reality of your private life? The Pastoral Epistles are particularly concerned with consistency — the leader whose public teaching and private conduct are integrated. The purpose of honest self-assessment is not condemnation but growth: identifying where repentance is needed and where God's grace is most urgently required.",
+          "questionHint": "Try to be specific rather than general. Instead of 'I try to be godly', identify one specific quality from your list where you consistently fall short — and one where you have genuinely grown. Specificity is the sign of honest self-examination."
+        },
+
+        {
+          "elementId": "ch15-el09",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "15.2 The Meaning and Importance of Integrity",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el10",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Titus 2:1-10",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>But as for you, communicate the behavior that goes with sound teaching. <sup>2</sup>Older men are to be temperate, dignified, self-controlled, sound in faith, in love, and in endurance. <sup>3</sup>Older women, likewise, are to exhibit behavior that reflects holiness, not to be slanderers, not to be excessive drinkers, but to teach what is good. <sup>4</sup>In this way they will train the younger women to love their husbands, to love their children, <sup>5</sup>to be self-controlled, pure, fulfilling their duties at home, kind, and submissive to their own husbands, so that the message of God will not be discredited. <sup>6</sup>Encourage younger men likewise to be self-controlled, <sup>7</sup>showing yourself to be an example of good works in every way. In your teaching show integrity, dignity, <sup>8</sup>and a sound message that cannot be criticized, so that any opponent will be ashamed, because he has nothing bad to say about us. <sup>9</sup>Slaves are to be submissive to their own masters in everything, to do what is wanted and not to talk back, <sup>10</sup>not to pilfer, but to demonstrate complete loyalty, so that in everything they will make the teaching about God our Savior attractive.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Titus+2&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch15-el11",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "'Integrity' appears explicitly in Titus 2:7 — and its meaning is best understood by working outward from the word itself to ever-wider circles of context: from the phrase it sits in, to the sentence, to the paragraph, to the section, to the argument of the book. We have already learnt that we discover the meaning of a word by looking at the context it is used in.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el12",
+          "type": "question",
+          "format": "plainText",
+          "question": "1. PHRASE: What do you learn about integrity from the phrase it sits in?\n\n'In your teaching show integrity, dignity, and a sound message that cannot be criticized…' (Titus 2:7-8a)",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at the three things Paul lists together: integrity, dignity, and a sound message. What do they have in common? What does their combination tell you about what integrity means?",
+          "bottomPadding": "normal",
+          "linkedPassage": "Titus 2:1-10",
+          "sampleAnswer": "From the phrase alone, integrity is linked to two companion qualities: dignity (seriousness) and a sound message that cannot be criticised. This tells us that integrity is primarily about consistency and authenticity in teaching — not just what is taught but how it is taught, and whether the teacher's life matches the message. Integrity sits alongside seriousness (the teacher takes their task gravely) and soundness (the content is true and cannot be legitimately attacked). Together they describe a teacher whose manner, content, and character are all aligned. The word 'integrity' itself carries the sense of wholeness — the same root as 'integer' (a whole number) — suggesting that a person of integrity is not divided between a public face and a private reality.",
+          "questionHint": "What do integrity, dignity, and a sound message have in common? Are they about content, conduct, or both? And notice that all three apply 'in your teaching' — what does that imply about the relationship between how you live and how you teach?"
+        },
+
+        {
+          "elementId": "ch15-el13",
+          "type": "question",
+          "format": "plainText",
+          "question": "2. SENTENCE: What do you learn about integrity from the whole sentence it sits in?\n\n'In your teaching show integrity, dignity, and a sound message that cannot be criticized, so that any opponent will be ashamed, because he has nothing bad to say about us.' (Titus 2:7b-8)",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What does the purpose clause ('so that…') add to your understanding of integrity? What is integrity for — what does it achieve?",
+          "bottomPadding": "normal",
+          "linkedPassage": "Titus 2:1-10",
+          "sampleAnswer": "The full sentence shows that integrity has a strategic purpose: it silences opponents. A teacher of integrity gives their critics nothing to attack. The phrase 'because he has nothing bad to say about us' is striking — integrity is not just a private virtue but a public defence. When a teacher's life and teaching are genuinely integrated, the only way to attack them is to attack the message itself — and a sound message 'cannot be criticized.' This connects integrity directly to the protection of the gospel: a leader without integrity hands their opponents a weapon; a leader of integrity hands them nothing. Integrity is therefore both a personal virtue and a form of gospel advocacy.",
+          "questionHint": "Focus on the 'so that' — what is the intended outcome of showing integrity in teaching? And notice that the shame falls on the opponent, not the teacher. What does that reversal tell you about the relationship between integrity and the credibility of the gospel message?"
+        },
+
+        {
+          "elementId": "ch15-el14",
+          "type": "question",
+          "format": "plainText",
+          "question": "3. PARAGRAPH: What do you learn about integrity from the paragraph it sits in?\n\n'In everything set them an example of good works. In your teaching show integrity, dignity, and a sound message that cannot be criticized, so that any opponent will be ashamed, because he has nothing bad to say about us.' (Titus 2:7-8)",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "What does the first sentence — 'In everything set them an example of good works' — add to your understanding? How does the scope of 'in everything' shape what integrity means?",
+          "bottomPadding": "normal",
+          "linkedPassage": "Titus 2:1-10",
+          "sampleAnswer": "The paragraph opens with 'In everything set them an example of good works' — which dramatically expands the scope of integrity. It is not limited to the teaching moment; it covers the whole of life. 'In everything' means there is no area of life where a leader is off-duty, no private space where different standards apply. The word 'example' (Greek: typos — a pattern or template) is significant: Titus is not just to tell younger men to be self-controlled; he is to be a living pattern of it. Integrity is therefore embodied, not merely declared. The paragraph shows that the integrity of the teaching ministry (vv. 7b-8) flows from the integrity of the whole life (v. 7a). You cannot separate the two.",
+          "questionHint": "Notice that v. 7a ('in everything set them an example') comes before v. 7b ('in your teaching show integrity'). What does that ordering tell you about the relationship between how you live and how you teach? Which is the foundation of the other?"
+        },
+
+        {
+          "elementId": "ch15-el15",
+          "type": "question",
+          "format": "plainText",
+          "question": "4. SECTION: What do you learn about integrity from the wider section it sits in?\n\nLook at Titus 2:1-10 as a whole. How does the call to integrity in vv. 7-8 relate to Paul's teaching to the different groups in vv. 1-6 and 9-10?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look at what Paul says to older men, older women, younger women, younger men, and slaves. What common thread runs through all the groups — and how does integrity connect them?",
+          "bottomPadding": "normal",
+          "linkedPassage": "Titus 2:1-10",
+          "sampleAnswer": "The section applies the same basic pattern to every group: the gospel produces visible, community-wide transformation. Older men are to be temperate, dignified, self-controlled (v. 2). Older women are to exhibit holiness and to teach younger women (vv. 3-4). Younger women are to live in ways that do not discredit the gospel (v. 5). Younger men are to be self-controlled — with Titus as their example (vv. 6-8). Slaves are to demonstrate complete loyalty so that the gospel is made attractive (vv. 9-10). The thread running through all groups is the connection between conduct and the credibility of the gospel: v. 5 says 'so that the message of God will not be discredited'; v. 8 says 'so that any opponent will be ashamed'; v. 10 says 'so that they will make the teaching about God our Saviour attractive.' Integrity, in this section, is a community-wide responsibility — not just a requirement for leaders, but the calling of every member whose life either commends or contradicts the gospel.",
+          "questionHint": "Look for the 'so that' clauses in vv. 5, 8, and 10. What is the intended outcome of godly conduct in each case? What would happen to the gospel's public credibility if any of these groups lived contradictory lives?"
+        },
+
+        {
+          "elementId": "ch15-el16",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Titus 1:1-16",
+          "translation": "NET",
+          "passageText": "<sup>1</sup>From Paul, a slave of God and apostle of Jesus Christ, to further the faith of God's chosen ones and the knowledge of the truth that is in keeping with godliness, <sup>2</sup>in hope of eternal life, which God, who does not lie, promised before time began. <sup>3</sup>But now in his own time he has made his message evident through the preaching I was entrusted with according to the command of God our Savior.<br><sup>4</sup>To Titus, my genuine son in a common faith. Grace and peace from God the Father and Christ Jesus our Savior.<br><sup>5</sup>The reason I left you in Crete was to set in order the things that were left unfinished and to appoint elders in every town, as I directed you. <sup>6</sup>An elder must be blameless, the husband of one wife, with faithful children who cannot be charged with dissipation or rebellion. <sup>7</sup>For the overseer must be blameless as one entrusted with God's work, not arrogant, not prone to anger, not addicted to wine, not violent, not greedy for gain. <sup>8</sup>Instead he must be hospitable, devoted to what is good, sensible, upright, devout, and self-controlled. <sup>9</sup>He must hold firmly to the faithful message as it has been taught, so that he will be able to give exhortation in such healthy teaching and correct those who speak against it.<br><sup>10</sup>For there are many rebellious people, idle talkers, and deceivers, especially those with Jewish connections, <sup>11</sup>who must be silenced because they are upsetting whole families by teaching what they should not teach for the sake of dishonest gain. <sup>12</sup>A Cretan prophet of their own said, &ldquo;Cretans are always liars, evil beasts, lazy gluttons.&rdquo; <sup>13</sup>Such testimony is true. For this reason rebuke them sharply so that they will be healthy in the faith <sup>14</sup>and not pay attention to Jewish myths and commands of people who reject the truth. <sup>15</sup>To the pure, all things are pure, but to those who are corrupt and unbelieving, nothing is pure, but both their minds and consciences are corrupted. <sup>16</sup>They profess to know God but with their deeds they deny him, since they are detestable, disobedient, and unfit for any good work.",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Titus+1&version=NET",
+          "bottomPadding": "none"
+        },
+
+        {
+          "elementId": "ch15-el17",
+          "type": "question",
+          "format": "plainText",
+          "question": "5. BOOK: What do you learn about integrity from the argument of Titus so far (Titus 1:1-16)?\n\nWhat does the opening chapter of Titus — with its gospel foundation (vv. 1-4), elder qualifications (vv. 5-9), and description of false teachers (vv. 10-16) — add to your understanding of integrity?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Look especially at v. 1 ('the knowledge of the truth that is in keeping with godliness') and v. 16 ('they profess to know God but with their deeds they deny him'). What does the contrast between these two verses tell you about integrity?",
+          "bottomPadding": "normal",
+          "linkedPassage": "Titus 1:1-16",
+          "sampleAnswer": "The book's opening provides both the positive model and the negative contrast for integrity. Positively, v. 1 defines Paul's whole apostolic purpose in terms of 'the knowledge of the truth that is in keeping with godliness' — truth and godliness are inseparable from the very beginning. The gospel does not merely inform; it produces a way of life that corresponds to it. The elder qualifications in vv. 5-9 then embody this: the qualified elder is one whose personal life (vv. 6-8) and doctrinal grip (v. 9) are both trustworthy. Negatively, v. 16 provides the perfect definition of the opposite of integrity: 'They profess to know God but with their deeds they deny him.' This is the precise opposite of integrity — a life divided between profession and practice, between claim and conduct. Integrity is the integration of the two; hypocrisy is their separation. The false teachers of Titus 1 are the anti-model: they teach but their lives contradict their teaching.",
+          "questionHint": "Verse 16 is one of the most penetrating verses in the Pastoral Epistles: 'they profess to know God but with their deeds they deny him.' What is the opposite of that statement — and is the opposite a description of integrity? Use it to formulate your own definition of what integrity means."
+        },
+
+        {
+          "elementId": "ch15-el18",
+          "type": "question",
+          "format": "plainText",
+          "question": "SUM UP: Based on your five-level exploration of Titus 2:7-8, how would you define integrity — and why does it matter for gospel leadership?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Write your own definition of integrity, drawing on what you have discovered from the phrase, sentence, paragraph, section, and book. Then explain why it matters specifically for those who lead and teach.",
+          "bottomPadding": "normal",
+          "linkedPassage": "Titus 2:1-10",
+          "sampleAnswer": "Integrity is the quality of wholeness — the consistent alignment of what a leader believes, teaches, and lives. It is the absence of the gap between profession and practice, between what is proclaimed publicly and what is lived privately. For gospel leaders, integrity matters for several interlocking reasons: (1) It gives the teaching ministry credibility — a teacher without integrity hands their opponents a weapon, while a teacher of integrity gives them nothing to attack (v. 8). (2) It commends the gospel — the whole community's conduct either makes the gospel attractive or discredits it (vv. 5, 10). (3) It reflects the nature of the gospel itself — a gospel of grace that does not produce transformed living is a contradiction in terms (Titus 1:1). (4) Its absence is the defining mark of false teachers — who 'profess to know God but with their deeds deny him' (Titus 1:16). Integrity is therefore not merely a personal virtue but a gospel necessity.",
+          "questionHint": "Try to write your definition in two parts: first, what integrity is (a positive description); second, what its absence looks like (the negative contrast from Titus 1:16). Then add: why does it matter specifically for those who preach and teach the gospel?"
+        },
+
+        {
+          "elementId": "ch15-el19",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "15.3 Lessons on Integrity in Module One",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el20",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Because the gospel and godliness are central to the Pastoral Epistles, the idea of integrity has come up repeatedly throughout the module. Look back through each unit below and identify where integrity appeared — explicitly or implicitly — and what each unit added to your understanding of it.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el21",
+          "type": "question",
+          "format": "plainText",
+          "question": "Looking back through the module unit by unit, where does the idea of integrity appear — and what does each unit add to your understanding of it? Work through the list below and note what you find.\n\nUnit 1 — Introducing BUILD\nUnit 2 — How to Hear God's Voice Today\nUnit 3 — Understanding 1 and 2 Timothy\nUnit 4 — How to Encounter a Bible Passage\nUnit 5 — 2 Timothy 1:8-12 (Encounter)\nUnit 6 — What is the Gospel?\nUnit 7 — Sharing the Gospel\nUnit 8 — 2 Timothy 2:1-7 (Encounter)\nUnit 9 — Keeping the Gospel Central\nUnit 10 — 2 Timothy 3:14-17 (Encounter)\nUnit 11 — The Bible and Biblical Ministry\nUnit 12 — 2 Timothy 4:1-5 (Encounter)\nUnit 13 — How to Preach a Bible Passage\nUnit 14 — Titus 1:5-9 (Encounter)",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Work through the units. For each one, ask: where did integrity appear in this unit — explicitly in the passage or implicitly in the theme? What new dimension of integrity did it add?",
+          "bottomPadding": "normal",
+          "sampleAnswer": "Unit 1 — Introducing BUILD: Integrity is implicit in the BUILD values — 'Biblical Understanding for In-service Leadership Development' assumes a leader whose learning is integrated into life and ministry, not kept separate from it. The BUILD logo's Bible at the base signals that the foundation of ministry must be trustworthy.\n\nUnit 2 — How to Hear God's Voice Today: The commitment to hearing and being shaped by Scripture is itself an act of integrity — refusing to prefer our own voices or the voices of the culture over God's word.\n\nUnit 3 — Understanding 1 and 2 Timothy: The core purpose of both letters is to establish true gospel teaching in the face of false teachers. The false teachers are, in essence, people without integrity — teaching one thing while living another (2 Tim 3:5 — 'holding to the form of godliness but denying its power').\n\nUnit 4 — How to Encounter a Bible Passage: The Scripture Sculpture process itself is an act of integrity — submitting to the text rather than imposing our own ideas on it. The craftsman who goes with the grain of the wood rather than against it is a picture of intellectual integrity.\n\nUnit 5 — 2 Timothy 1:8-12: Paul's example of not being ashamed of the gospel even in prison (v. 12) is a portrait of integrity — his conduct matches his proclamation, even at personal cost.\n\nUnit 6 — What is the Gospel?: A clear and honest understanding of the gospel is the foundation of integrity — you cannot live in line with a message you have not properly understood. A distorted gospel produces a distorted life.\n\nUnit 7 — Sharing the Gospel: The testimony (Before-During-After) is an exercise in integrity — honest about the 'before', clear about what happened, realistic about the 'after'. Titus 2:1-10 appeared directly here, with its call for lives that make the gospel attractive.\n\nUnit 8 — 2 Timothy 2:1-7: The three images of soldier, athlete, and farmer all speak to integrity in different ways — the soldier who is not entangled in civilian affairs, the athlete who competes according to the rules, the farmer who works hard before receiving the harvest. Each is a picture of consistent, disciplined faithfulness.\n\nUnit 9 — Keeping the Gospel Central: The ERA model of theological reflection is designed to produce leaders who not only think well but act differently as a result. Reflection without action is a form of intellectual hypocrisy. The GOSPEL acrostic and the BUILD cycle both point toward integration of learning and living.\n\nUnit 10 — 2 Timothy 3:14-17: The command to 'continue in the things you have learned and are confident about' (v. 14) is a call to integrity across time — not just in moments of enthusiasm but as a sustained, lifelong pattern.\n\nUnit 11 — The Bible and Biblical Ministry: The distinction between public and private Bible study and prayer is directly about integrity — 'what we do publicly should be an expression of what we do privately.' The danger of feeding others from the word while starving yourself is a form of ministerial hypocrisy.\n\nUnit 12 — 2 Timothy 4:1-5: The charge to preach 'whether it is convenient or not' is a call to integrity under pressure — not softening the message when it becomes costly, not preaching to please rather than to transform.\n\nUnit 13 — How to Preach a Bible Passage: The TRUE/RELEVANT/CLEAR evaluation framework is an integrity tool for preaching — was the sermon faithful to the text (not the preacher's own agenda), relevant to the listeners (not abstract), and clear (not confusing)? Expository preaching itself is an act of integrity toward the text.\n\nUnit 14 — Titus 1:5-9: The elder qualifications are a comprehensive portrait of integrity — character, family, conduct, and doctrinal fidelity all integrated. The climax of v. 9 ('hold firmly to the faithful message') shows that doctrinal integrity is the foundation of the whole ministry of the word.",
+          "questionHint": "Don't try to say something profound about every unit — some will connect more directly than others. But look for both explicit mentions of integrity-related language and implicit connections: where did a unit call for consistency between belief and life, between public and private, between what is proclaimed and what is lived?"
+        },
+
+        {
+          "elementId": "ch15-el22",
+          "type": "heading",
+          "subtype": "section",
+          "level": "2",
+          "format": "plainText",
+          "text": "15.4 Conclusion: Being Leaders of Integrity",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el23",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Give time individually — and together if you are in a group — to committing yourselves to lives of integrity for the sake of God and the gospel. This will involve both <b>repentance</b> (turning away from hypocrisy and habits that undermine integrity) and <b>faith</b> (trusting in God's strength and the power of his Spirit to live lives that point to Christ and his kingdom). The verses below are offered as companions for that commitment.",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el24",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Scripture on Integrity",
+          "term": "A collection of verses on integrity from across the Bible",
+          "question": "What does the rest of Scripture say about integrity — and what does it promise to those who walk in it?",
+          "answer": "<p><em>&ldquo;As for you, if you walk before me in integrity of heart and uprightness, as David your father did, and do all I command and observe my decrees and laws…&rdquo;</em> (1 Kings 9:4)</p><p><em>&ldquo;…you test the heart and are pleased with integrity.&rdquo;</em> (1 Chronicles 29:17)</p><p><em>&ldquo;I put in charge of Jerusalem my brother Hanani… because he was a man of integrity and feared God more than most men do.&rdquo;</em> (Nehemiah 7:2)</p><p><em>&ldquo;[Job] is blameless and upright, a man who fears God and shuns evil. And he still maintains his integrity…&rdquo;</em> (Job 2:3)</p><p><em>&ldquo;Judge me, O Lord, according to my righteousness, according to my integrity, O Most High.&rdquo;</em> (Psalm 7:8)</p><p><em>&ldquo;May integrity and uprightness protect me, because my hope is in you.&rdquo;</em> (Psalm 25:21)</p><p><em>&ldquo;In my integrity you uphold me and set me in your presence forever.&rdquo;</em> (Psalm 41:12)</p><p><em>&ldquo;And David shepherded them with integrity of heart; with skilful hands he led them.&rdquo;</em> (Psalm 78:72)</p><p><em>&ldquo;The man of integrity walks securely, but he who takes crooked paths will be found out.&rdquo;</em> (Proverbs 10:9)</p><p><em>&ldquo;The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity.&rdquo;</em> (Proverbs 11:3)</p><p><em>&ldquo;Teacher, we know you are a man of integrity. You aren't swayed by men, because you pay no attention to who they are; but you teach the way of God in accordance with the truth.&rdquo;</em> (Mark 12:14)</p><p><em>&ldquo;In everything set them an example by doing what is good. In your teaching show integrity, seriousness…&rdquo;</em> (Titus 2:7)</p>",
+          "buttonText": "Read the verses ➡",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el25",
+          "type": "question",
+          "format": "plainText",
+          "question": "Which of the integrity verses in the callout above speaks most powerfully to you — and why? What does it add to your understanding of what integrity means and what it costs?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Choose one verse and reflect on it. What does it promise? What does it require? What does it reveal about what God thinks of integrity?",
+          "bottomPadding": "normal",
+          "linkedPassage": "Titus 2:1-10",
+          "sampleAnswer": "Responses will be personal. A few observations on some of the most striking verses: Psalm 78:72 — 'David shepherded them with integrity of heart; with skilful hands he led them' — holds together the inner and the outer dimensions of integrity: the heart (who you are) and the hands (what you do). Both are needed; neither is sufficient alone. Proverbs 11:3 — 'The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity' — shows that integrity is not just morally right but practically wise: it gives a clear, consistent direction to life. Mark 12:14 — the description of Jesus as 'a man of integrity' who 'teaches the way of God in accordance with the truth' — shows that integrity is the ultimate qualification of the ultimate teacher. Jesus is the model and the source of all true integrity.",
+          "questionHint": "Don't just note which verse you like — try to say why it strikes you. What does it reveal about God's character, or about the character he calls us to? And what does it add to your understanding that the Titus passage alone did not give you?"
+        },
+
+        {
+          "elementId": "ch15-el26",
+          "type": "heading",
+          "subtype": "subsection",
+          "level": "3",
+          "format": "plainText",
+          "text": "Review Questions for Module One",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el27",
+          "type": "question",
+          "format": "plainText",
+          "question": "Looking back through the titles of all fifteen units in the module, which units had the greatest impact on you — and why?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about which units changed your thinking, challenged your practice, or opened up Scripture in a new way. Name 2-3 and explain why they mattered most.",
+          "bottomPadding": "normal",
+          "sampleAnswer": "Responses will be personal and contextual — which is exactly as it should be. The purpose of this question is not to identify the 'correct' most important units but to encourage genuine reflection on what God has done through the module. A useful prompt: which unit do you find yourself thinking about when you are preparing to preach, or when you face a leadership challenge? Which passage encountered in the module has stayed with you most vividly? Which unit most directly challenged something you had been doing wrongly? The answer to those questions will reveal where the Spirit has been most at work.",
+          "questionHint": "Try to be specific rather than general. Instead of 'all the encounter units were helpful', name a specific passage and a specific discovery that has stayed with you. The more specific your answer, the more honest it is."
+        },
+
+        {
+          "elementId": "ch15-el28",
+          "type": "question",
+          "format": "plainText",
+          "question": "In what ways has your leadership been challenged and changed as a result of this module? Where can you see concrete evidence of growth?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about specific changes — in how you prepare to preach, how you think about the gospel, how you approach leadership, or how you handle Scripture. Where is there real, measurable change?",
+          "bottomPadding": "normal",
+          "sampleAnswer": "This question is designed to surface real evidence of change rather than general impressions of growth. Useful prompts: Have you changed how you prepare sermons or talks — using the Scripture Sculpture process? Have you changed what you look for when you read the Bible — using the flesh/skeleton/heart/brain framework? Have you shared the gospel differently — using the 3-2-1 method or a clearer testimony structure? Have you identified gaps in your character or conduct that you are now addressing? Have you become more honest about the difference between your public ministry and your private life? Concrete, specific answers to these questions are signs of real growth.",
+          "questionHint": "The best evidence of changed leadership is not what you think differently but what you do differently. Can you name a specific sermon, a specific pastoral conversation, or a specific leadership decision that you handled differently because of something you learnt in this module?"
+        },
+
+        {
+          "elementId": "ch15-el29",
+          "type": "question",
+          "format": "plainText",
+          "question": "In what ways has your church been influenced by teaching from this module that you have passed on? What have you shared — and what fruit have you seen?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Think about sermons preached, Bible studies led, conversations had, or leadership changes made as a result of what you have learnt. Where has the learning flowed from you to others?",
+          "bottomPadding": "normal",
+          "sampleAnswer": "This question tests whether the BUILD goal of multiplication is being achieved: not just individual learning but the passing on of what has been received to others (2 Tim 2:2). Prompts: Have you preached from any of the passages encountered in the module? Have you taught the gospel more clearly — using 3-2-1 or the GOSPEL acrostic — in evangelistic contexts? Have you used the ERA model in a leadership meeting or pastoral situation? Have you changed how you approach elder selection or leadership formation in your church? Have you introduced better Bible study habits — using the Scripture Sculpture steps — in a small group or teaching context? The fruit of the module should be visible not just in you but in those you lead.",
+          "questionHint": "Think about 2 Tim 2:2: 'Entrust what you heard me say… to faithful people who will be competent to teach others as well.' The BUILD programme is designed to produce multiplication, not just individual growth. Where has what you received been entrusted to others?"
+        },
+
+        {
+          "elementId": "ch15-el30",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "As you come to the end of Module One, what is the one commitment you want to make — a specific act of repentance, a specific step of faith, or a specific change in your ministry — that flows from what you have learnt about integrity?",
+          "answerType": "freeText",
+          "required": false,
+          "answerPlaceholder": "Make it specific. Name the commitment, name the action, and name when you will take it. A general intention is not a commitment…",
+          "bottomPadding": "normal"
+        },
+
+        {
+          "elementId": "ch15-el31",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "Module One is complete. You have worked through 2 Timothy and the Pastoral Epistles — encountering their passages, reflecting on their themes, and being equipped for gospel ministry and godly leadership. The anchor verse that has accompanied you throughout this module is both a commission and a promise:<br><br><em>'Make every effort to present yourself before God as a proven worker who does not need to be ashamed, teaching the message of truth accurately.'</em> (2 Timothy 2:15)<br><br>May the Lord make you a worker of whom he is not ashamed — in your handling of the word of truth and in the integrity of your life. And may he use you to build leaders, build churches, and build his kingdom, to the praise and glory of his name.",
+          "bottomPadding": "normal"
+        }
+
+      ]
+    },
+    {
+      "chapterNumber": 16,
+      "chapterTitle": "Contents of Upcoming Modules",
+      "elements": [
+        {
+          "elementId": "ch16-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "Module One is complete. The BUILD curriculum continues through nine further modules, each built around a Bible book, a group of related books, a theological theme, and a leadership issue. The full contents of Modules Two through Ten are listed below.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el02",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Two",
+          "term": "Genesis & the Pentateuch: Knowing God's Story & Leading by Faith",
+          "question": "What are the fifteen units of Module Two?",
+          "answer": "<p>1. The Pentateuch and the Bible's story (Tools)<br>2. Genesis 12:1-9 and God's salvation plan (Tools)<br>3. Understanding Bible stories (Tools)<br>4. Genesis 1:1-2:3 (Encounter)<br>5. God's world and our worldviews (Reflection)<br>6. Stewardship and sustainability (Action)<br>7. Genesis 11:1-9 (Encounter)<br>8. Sin and evil (Reflection)<br>9. Genesis 15 (Encounter)<br>10. God's covenants and our covenants (Reflection)<br>11. Exodus 3:1-12 (Encounter)<br>12. Jesus and the Old Testament (Reflection)<br>13. Encountering the Law (Tools)<br>14. Deuteronomy 5:6-21 (Encounter)<br>15. Leading by faith (Action)</p>",
+          "buttonText": "See Module Two units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el03",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Three",
+          "term": "Mark & the Gospels: The Servant King & Servant Leadership",
+          "question": "What are the fifteen units of Module Three?",
+          "answer": "<p>1. Introducing Mark and the Gospels (Tools)<br>2. Mark 2:1-12 (Encounter)<br>3. Understanding the kingdom of God (Reflection)<br>4. How to encounter parables (Tools)<br>5. Mark 4:26-33 (Encounter)<br>6. Proclaiming the kingdom of God (Action)<br>7. Matthew 5:1-12 (Encounter)<br>8. Poverty and prosperity (Reflection)<br>9. Matthew 6:5-15 (Encounter)<br>10. Praying for the kingdom of God (Action)<br>11. Mark 8:31-9:1 (Encounter)<br>12. The servant king and servant leadership (Reflection)<br>13. Mark 12:1-12 (Encounter)<br>14. The cross and the Lord's Supper (Reflection)<br>15. Making disciples (Action)</p>",
+          "buttonText": "See Module Three units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el04",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Four",
+          "term": "Nehemiah & the Historical Books: Building God's People & Strategic Leadership",
+          "question": "What are the fifteen units of Module Four?",
+          "answer": "<p>1. Building the Bible's story (Tools)<br>2. Encountering Ruth (Tools)<br>3. Nehemiah 1 (Encounter)<br>4. Intercession (Action)<br>5. Nehemiah 2:11-20 (Encounter)<br>6. Mobilising God's people (Action)<br>7. Nehemiah 4 (Encounter)<br>8. Facing opposition (Action)<br>9. Nehemiah 5 (Encounter)<br>10. Poverty alleviation (Action)<br>11. Nehemiah 8:1-12 (Encounter)<br>12. Expository preaching (Action)<br>13. Leading small groups (Action)<br>14. Building God's people (Reflection)<br>15. Strategic leadership (Action)</p>",
+          "buttonText": "See Module Four units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el05",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Five",
+          "term": "Acts & the New Testament Story: The Mission of the Church & Missional Leadership",
+          "question": "What are the fifteen units of Module Five?",
+          "answer": "<p>1. Encountering Acts and the NT Story (Tools)<br>2. Encountering Acts 2:1-13 (Encounter)<br>3. God's mission and our mission (Reflection)<br>4. Encountering Acts 2:42-47 (Encounter)<br>5. Mission shaped church (Action)<br>6. Encountering Acts 8:9-25 (Encounter)<br>7. The Holy Spirit and baptism (Reflection)<br>8. Deliverance and healing (Action)<br>9. Encountering Acts 15:36-41 (Encounter)<br>10. Handling conflict (Action)<br>11. Christian mission and local culture (Reflection)<br>12. Encountering Acts 17:16-34 (Encounter)<br>13. Christ's Lordship and other religions (Reflection)<br>14. Evangelistic speaking (Action)<br>15. Missional leadership (Action)</p>",
+          "buttonText": "See Module Five units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el06",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Six",
+          "term": "Psalms & Poetry: Worshipping the King & Wholehearted Leadership",
+          "question": "What are the fifteen units of Module Six?",
+          "answer": "<p>1. Encountering the Psalms and Poetry (Tools)<br>2. Psalm 23 (Encounter)<br>3. Guidance: How God leads his people (Reflection)<br>4. Psalm 51 (Encounter)<br>5. Wholehearted leadership (Reflection)<br>6. Kingship and Christ in the Psalms (Tools)<br>7. Psalm 73 (Encounter)<br>8. Reflection &amp; action, learning &amp; teaching (Tools)<br>9. Songs of suffering (Reflection)<br>10. Dying &amp; death, burial &amp; bereavement (Action)<br>11. Psalm 95 (Encounter)<br>12. Worshipping the King (Action)<br>13. Psalm 127 (Encounter)<br>14. The pastor's family and God's family (Action)<br>15. Learning from your church's story (Reflection)</p>",
+          "buttonText": "See Module Six units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el07",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Seven",
+          "term": "Ephesians & the Epistles: God's Plan for the Church & Local Church Leadership",
+          "question": "What are the fifteen units of Module Seven?",
+          "answer": "<p>1. Understanding Ephesians and the Epistles (Tools)<br>2. Ephesians 1:3-10 (Encounter)<br>3. Confidence in Christ (Reflection)<br>4. Ephesians 3:7-13 (Encounter)<br>5. God's plan for the church (Reflection)<br>6. Ephesians 4:11-16 (Encounter)<br>7. Transforming church leadership (Action)<br>8. Ephesians 4:29-32 (Encounter)<br>9. Building a new community (Action)<br>10. Ephesians 5:25-33 (Encounter)<br>11. Building Bible interpretation skills (Tools)<br>12. Gender, marriage and ministry (Reflection)<br>13. Understanding the Trinity (Reflection)<br>14. Ephesians 6:10-17 (Encounter)<br>15. Spiritual warfare (Action)</p>",
+          "buttonText": "See Module Seven units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el08",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Eight",
+          "term": "Proverbs & Wisdom: The Fear of the Lord & Practical Leadership",
+          "question": "What are the fifteen units of Module Eight?",
+          "answer": "<p>1. Introducing wisdom (Tools)<br>2. Encountering Proverbs (Tools)<br>3. Proverbs 3:1-12 (Encounter)<br>4. Wisdom for leadership I (Reflection)<br>5. Proverbs 5:15-23 (Encounter)<br>6. The Song, sex and sexuality (Reflection)<br>7. Issues facing the church: HIV and AIDS (Action)<br>8. Proverbs 11:23-27 and 13:7-11 (Encounter)<br>9. Wisdom with funds (Action)<br>10. Proverbs 20:5-12 (Encounter)<br>11. Wise counsel (Action)<br>12. Proverbs 27:11-22 (Encounter)<br>13. Working with children and young people (Action)<br>14. Ecclesiastes 3:1-8 (Encounter)<br>15. Wisdom for Leadership II (Action)</p>",
+          "buttonText": "See Module Eight units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el09",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Nine",
+          "term": "Isaiah & the Prophets: The Sovereign King & Prophetic Leadership",
+          "question": "What are the fifteen units of Module Nine?",
+          "answer": "<p>1. Encountering the Prophets (Tools)<br>2. Introducing Isaiah (Tools)<br>3. Isaiah 6 (Encounter)<br>4. Preaching the Prophets (Action)<br>5. Isaiah 12 (Encounter)<br>6. Prophecy today (Reflection)<br>7. Isaiah 40:1-11 (Encounter)<br>8. &ldquo;Here is your God!&rdquo; (Reflection)<br>9. Isaiah 53:1-6 (Encounter)<br>10. Isaiah, Christ and the New Testament (Reflection)<br>11. Isaiah 58:6-9 (Encounter)<br>12. Advocacy and the local church (Action)<br>13. Isaiah 61:1-4 (Encounter)<br>14. A great commission (Reflection)<br>15. Prophetic leadership (Action)</p>",
+          "buttonText": "See Module Nine units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el10",
+          "type": "callout",
+          "subtype": "general",
+          "eyebrow": "Module Ten",
+          "term": "Revelation & Apocalyptic: The Victorious Christ & Leaders that Endure",
+          "question": "What are the fifteen units of Module Ten?",
+          "answer": "<p>1. Introducing Revelation (Tools)<br>2. Exploring Revelation and Apocalyptic (Tools)<br>3. Revelation 1:12-18 (Encounter)<br>4. A leader's vision of Christ (Reflection)<br>5. Revelation 2:1-7 (Encounter)<br>6. A leader's vision of the church (Reflection)<br>7. Revelation 5:1-10 (Encounter)<br>8. Revelation 6:1-8 (Encounter)<br>9. A leader's vision of history (Reflection)<br>10. Persecution and martyrdom (Action)<br>11. Revelation 19:11-21 (Encounter)<br>12. A leader's vision of judgment (Reflection)<br>13. Revelation 21:1-8 (Encounter)<br>14. A leader's vision of heaven (Reflection)<br>15. Leaders that endure (Action)</p>",
+          "buttonText": "See Module Ten units ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch16-el11",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "The BUILD curriculum spans the full sweep of the Bible — from Genesis to Revelation — equipping leaders to know God's word, preach his gospel, and lead his people well. Each module builds on the last. May you continue to build — and may Jesus, who promised to build his church, use these materials to fulfil that promise in you, through you, and around you.",
+          "bottomPadding": "normal"
+        }
+      ]
     }
+
   ],
   "studyOnboardingSlides":[
     {

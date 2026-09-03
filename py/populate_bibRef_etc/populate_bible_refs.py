@@ -1,7 +1,27 @@
 """
-populate_bible_refs.py  –  v2.0
+populate_bible_refs.py  –  v2.1
 
-For each biblePassage element in a study JSON file:
+Handles two studyMetadata conventions:
+
+  • MULTILINGUAL — numbered fields: bibleTranslation1, bibleTranslation2, ...
+    and per-element bibleRef1/translation1/passageUrl1, bibleRef2/..., etc.
+    (unchanged from v2.0 — see below.)
+
+  • MONOLINGUAL  — a single unnumbered "bibleTranslation" field in
+    studyMetadata (a plain string like "NET", or a dict such as
+    {"en": "NET"}), and per-element bibleRef / translation / passageUrl /
+    passageText fields with no number suffix. In this mode there is only
+    one reference per element, so the script simply fills in passageUrl
+    (BibleGateway NET link) when it's empty and the translation is NET;
+    for a non-NET monolingual file it will substitute XXX/NNN placeholders
+    in an existing passageUrl using the same book/chapter lookups as below,
+    but cannot invent a URL pattern from scratch since there's no separate
+    English source field to cross-reference.
+
+Which mode is used is auto-detected per file from studyMetadata (presence
+of "bibleTranslation1" → multilingual, else "bibleTranslation" → monolingual).
+
+For each biblePassage element in a MULTILINGUAL study JSON file:
 
   1. Identify the NET translation slot N by scanning studyMetadata for the
      bibleTranslationN field whose value is "NET".  bibleRefN is the English
@@ -394,6 +414,38 @@ def translate_ref(book: str, chapter: str, verses: str, lookup: dict) -> str:
 # Metadata helpers
 # ---------------------------------------------------------------------------
 
+def is_multilingual(data: dict) -> bool:
+    """
+    True if studyMetadata uses the numbered bibleTranslationN convention
+    (bibleTranslation1, bibleTranslation2, ...).
+    False for the monolingual convention, where studyMetadata instead has a
+    single unnumbered "bibleTranslation" field and elements use unnumbered
+    field names (bibleRef, translation, passageUrl, passageText).
+    """
+    metadata = data.get("studyMetadata", {})
+    return "bibleTranslation1" in metadata
+
+
+def get_mono_translation_code(data: dict) -> str:
+    """
+    Extract the translation code for a monolingual file from
+    studyMetadata["bibleTranslation"], which may be either a plain string
+    ("NET") or a dict keyed by language code (e.g. {"en": "NET"}).
+    Returns "" if it cannot be determined.
+    """
+    metadata = data.get("studyMetadata", {})
+    value = metadata.get("bibleTranslation", "")
+    if isinstance(value, dict):
+        language = data.get("language")
+        if language and language in value:
+            return str(value[language]).upper()
+        # Fall back to the first (and normally only) value present.
+        for v in value.values():
+            return str(v).upper()
+        return ""
+    return str(value).upper()
+
+
 def find_net_slot(data: dict) -> int:
     """
     Inspect studyMetadata to find which bibleTranslationN slot holds "NET".
@@ -554,31 +606,103 @@ def process_element(
     return el
 
 
+def process_element_mono(el: dict, element_id: str, default_translation: str) -> dict:
+    """
+    Update a single biblePassage element in place for a MONOLINGUAL study
+    file (unnumbered bibleRef / translation / passageUrl fields) and return
+    it.
+
+    default_translation – translation code from studyMetadata, used as a
+                          fallback if the element itself has no "translation"
+                          field.
+    """
+    english_ref = el.get("bibleRef", "")
+    book, chapter, verses = parse_bible_ref(english_ref)
+
+    code = (el.get("translation") or default_translation or "").upper()
+    url_field = "passageUrl"
+    url = el.get(url_field, "")
+
+    if code == "NET":
+        # Source/English slot: only fill if currently empty.
+        if not url and book:
+            el[url_field] = build_net_url(book, chapter)
+        return el
+
+    # Non-NET monolingual file: there's no separate English source field to
+    # cross-reference, so we can only act on an existing URL that already
+    # contains XXX / NNN placeholders.
+    if not url or ("XXX" not in url and "NNN" not in url):
+        return el
+
+    language = TRANSLATIONCODE_TO_LANGUAGE.get(code)
+    if language is None:
+        print(f"  WARNING: Unknown translation code '{code}' "
+              f"(element {element_id}) — skipping {url_field}")
+        return el
+
+    if "XXX" in url:
+        if book:
+            book_code = ENGLISH_TO_3LETTER.get(book)
+            if book_code:
+                url = url.replace("XXX", book_code)
+            else:
+                print(f"  WARNING: No 3-letter code for book '{book}' "
+                      f"(element {element_id}, field {url_field})")
+        else:
+            print(f"  WARNING: Cannot replace XXX in {url_field} of element "
+                  f"{element_id} — source reference could not be parsed")
+
+    if "NNN" in url:
+        if chapter:
+            url = url.replace("NNN", chapter)
+        else:
+            print(f"  WARNING: Cannot replace NNN in {url_field} of element "
+                  f"{element_id} — source reference could not be parsed")
+
+    el[url_field] = url
+    return el
+
+
 def process_file(input_path: Path):
     print(f"\nProcessing: {input_path}")
 
     with input_path.open(encoding="utf-8") as f:
         data = json.load(f)
 
-    try:
-        net_slot = find_net_slot(data)
-    except ValueError as e:
-        print(f"  ERROR: {e}")
-        return
-
-    translation_slots = collect_translation_slots(data)
-    print(f"  Translation slots found: "
-          + ", ".join(f"{n}={code}" for n, code in sorted(translation_slots.items())))
-    print(f"  English (NET) source: bibleRef{net_slot} "
-          f"(bibleTranslation{net_slot} = 'NET')")
-
     passage_count = 0
-    for chapter in data.get("chapters", []):
-        for el in chapter.get("elements", []):
-            if el.get("type") == "biblePassage":
-                element_id = el.get("elementId", "unknown")
-                process_element(el, element_id, net_slot, translation_slots)
-                passage_count += 1
+
+    if is_multilingual(data):
+        try:
+            net_slot = find_net_slot(data)
+        except ValueError as e:
+            print(f"  ERROR: {e}")
+            return
+
+        translation_slots = collect_translation_slots(data)
+        print(f"  Translation slots found: "
+              + ", ".join(f"{n}={code}" for n, code in sorted(translation_slots.items())))
+        print(f"  English (NET) source: bibleRef{net_slot} "
+              f"(bibleTranslation{net_slot} = 'NET')")
+
+        for chapter in data.get("chapters", []):
+            for el in chapter.get("elements", []):
+                if el.get("type") == "biblePassage":
+                    element_id = el.get("elementId", "unknown")
+                    process_element(el, element_id, net_slot, translation_slots)
+                    passage_count += 1
+    else:
+        # Monolingual file: unnumbered bibleRef / translation / passageUrl.
+        default_translation = get_mono_translation_code(data)
+        print(f"  Monolingual file detected. "
+              f"studyMetadata bibleTranslation = '{default_translation}'")
+
+        for chapter in data.get("chapters", []):
+            for el in chapter.get("elements", []):
+                if el.get("type") == "biblePassage":
+                    element_id = el.get("elementId", "unknown")
+                    process_element_mono(el, element_id, default_translation)
+                    passage_count += 1
 
     output_path = input_path.with_name(
         input_path.stem + "_updated_refs" + input_path.suffix
