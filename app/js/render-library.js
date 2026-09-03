@@ -1336,12 +1336,7 @@ async function renderLibrary() {
    */
   window.libPathDownload = function(url) {
   if (!url || url === '' || url.includes('placeholder.com')) {
-    const toast = document.getElementById('toast');
-    if (toast) {
-      toast.textContent = t('renderlib_download_coming_soon');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
-    }
+    showToast({ message: t('renderlib_download_coming_soon'), isManual: true, duration: 2500 });
     return;
   }
 

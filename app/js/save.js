@@ -58,11 +58,11 @@ async function saveAnswers(isManual = true) {
 // Track progress as user types.
 // Debounced at 200ms so querySelectorAll and the DOM write in updateProgress()
 // run at most once per 200ms burst of keystrokes rather than on every character.
-let _updateProgressTimer = null;
+// Uses the shared debounce() helper from search.js instead of a hand-rolled timer.
+const _debouncedUpdateProgress = debounce(updateProgress, 200);
 document.addEventListener('input', e => {
   if (e.target.classList.contains('answer-field')) {
-    clearTimeout(_updateProgressTimer);
-    _updateProgressTimer = setTimeout(updateProgress, 200);
+    _debouncedUpdateProgress();
   }
 });
 
