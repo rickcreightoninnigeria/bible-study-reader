@@ -135,24 +135,16 @@ document.addEventListener('visibilitychange', () => {
   if (!ch || !studyId) return;
 
   (async () => {
-    let record;
     try {
-      record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
-    } catch (e) {
-      console.warn('[visibilitychange] IDB read failed; falling back to empty object.', e);
-      record = {};
-    }
-
-    document.querySelectorAll('.answer-field').forEach(field => {
-      const type  = field.dataset.type;
-      const index = field.dataset.index;
-      if (type !== undefined && index !== undefined) {
-        record[answerFieldKey(type, index)] = field.value;
-      }
-    });
-
-    try {
-      await StudyIDB.setChapterAnswers(studyId, ch.chapterNumber, record);
+      await StudyIDB.updateChapterAnswers(studyId, ch.chapterNumber, record => {
+        document.querySelectorAll('.answer-field').forEach(field => {
+          const type  = field.dataset.type;
+          const index = field.dataset.index;
+          if (type !== undefined && index !== undefined) {
+            record[answerFieldKey(type, index)] = field.value;
+          }
+        });
+      }, 'visibilitychange');
     } catch (e) {
       console.warn('[visibilitychange] IDB write failed.', e);
     }

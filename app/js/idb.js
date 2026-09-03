@@ -253,6 +253,52 @@ const StudyIDB = (() => {
     });
   }
 
+  // ── Serialized chapter-answer updates ──────────────────────────────────────
+  // getChapterAnswers()/setChapterAnswers() each open their own IndexedDB
+  // transaction, so a bare read-modify-write is never atomic — two callers
+  // updating the same chapter's record close together race, and whichever
+  // set() lands second silently overwrites the other's change. This queues
+  // updates per chapter key so concurrent callers run their read-mutate-write
+  // cycle one at a time instead of racing. All call sites that used to
+  // read-modify-write via getChapterAnswers()/setChapterAnswers() directly
+  // (saveAnswers(), blur auto-save, saveLikertAnswer(), toggleStar(), the
+  // visibilitychange flush, and the voice-transcript recovery path) go
+  // through this instead.
+  const _chapterUpdateQueues = new Map();
+
+  // mutate(record) is called synchronously with the current record (or a
+  // fresh {} if none exists yet, or the read failed) and should modify it in
+  // place. Resolves with the updated record on success; rejects if the write
+  // fails. A failed read falls back to {} (logged via `tag`) rather than
+  // aborting, matching the pre-existing fallback used at every call site.
+  async function updateChapterAnswers(studyId, chapterNum, mutate, tag = 'updateChapterAnswers') {
+    const key  = chapterAnswersIDBKey(studyId, chapterNum);
+    const prev = _chapterUpdateQueues.get(key) || Promise.resolve();
+    const run = prev.catch(() => {}).then(async () => {
+      let record;
+      try {
+        record = await getChapterAnswers(studyId, chapterNum);
+      } catch (e) {
+        console.warn(`[${tag}] IDB read failed; falling back to empty object.`, e);
+        record = {};
+      }
+      mutate(record);
+      await setChapterAnswers(studyId, chapterNum, record);
+      return record;
+    });
+    _chapterUpdateQueues.set(key, run);
+    // Drop the queue entry once settled so it doesn't grow unboundedly over a
+    // long session. Handled via .then(onFulfilled, onRejected) rather than
+    // .finally() so this cleanup can't itself produce an unhandled-rejection
+    // warning — the `run` promise returned below still carries the real
+    // result/error for the caller.
+    run.then(
+      () => { if (_chapterUpdateQueues.get(key) === run) _chapterUpdateQueues.delete(key); },
+      () => { if (_chapterUpdateQueues.get(key) === run) _chapterUpdateQueues.delete(key); }
+    );
+    return run;
+  }
+
   // Deletes all answer records for a study: chapter objects, global_notes,
   // and lastPosition. Used by confirmClearAnswers() and deleteStudy().
   // Returns the list of deleted keys (useful for logging/debugging).
@@ -346,7 +392,7 @@ const StudyIDB = (() => {
     // images store
     getImage, setImage, removeImage, removeImagesByPrefix,
     // answers store
-    getChapterAnswers, setChapterAnswers,
+    getChapterAnswers, setChapterAnswers, updateChapterAnswers,
     getAnswerRaw, setAnswerRaw, deleteAnswerRaw,
     deleteStudyAnswers, getAllStudyAnswerKeys, getAllAnswerEntries,
     // global

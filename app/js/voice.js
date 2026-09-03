@@ -171,20 +171,13 @@ function receiveVoiceTranscript(transcript) {
     const studyId = window.activeStudyId;
     if (studyId) {
       (async () => {
-        let record;
-        try {
-          record = await StudyIDB.getChapterAnswers(studyId, pending.chapterNumber);
-        } catch (e) {
-          console.warn('[voice recovery] IDB read failed; falling back to empty object.', e);
-          record = {};
-        }
-
         const fieldKey = answerFieldKey(pending.type, pending.index);
-        const current  = record[fieldKey] || '';
-        record[fieldKey] = current ? current.trimEnd() + ' ' + transcript : transcript;
 
         try {
-          await StudyIDB.setChapterAnswers(studyId, pending.chapterNumber, record);
+          await StudyIDB.updateChapterAnswers(studyId, pending.chapterNumber, record => {
+            const current = record[fieldKey] || '';
+            record[fieldKey] = current ? current.trimEnd() + ' ' + transcript : transcript;
+          }, 'voice recovery');
         } catch (e) {
           console.warn('[voice recovery] IDB write failed.', e);
           return;
