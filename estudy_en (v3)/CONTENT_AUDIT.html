@@ -1,0 +1,553 @@
+<title>Estudy Content Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --bg:#F6F7FA;
+    --surface:#FFFFFF;
+    --surface-2:#EEF0F5;
+    --ink:#1B1F27;
+    --ink-soft:#565D6D;
+    --ink-faint:#8992A3;
+    --border:#E1E4EA;
+    --accent:#3D4E7C;
+    --accent-soft:#EAEDF6;
+    --accent-ink:#2B3A63;
+
+    --sev-critical:#AC2B22;
+    --sev-critical-bg:#FBEBE9;
+    --sev-high:#8A5A00;
+    --sev-high-bg:#FBF1DE;
+    --sev-medium:#3D5A80;
+    --sev-medium-bg:#EAEFF6;
+    --sev-note:#6B7280;
+    --sev-note-bg:#EFF0F3;
+
+    --shadow: 0 1px 2px rgba(27,31,39,.04), 0 6px 20px rgba(27,31,39,.06);
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14161B;
+      --surface:#1B1E26;
+      --surface-2:#232733;
+      --ink:#E8EAEF;
+      --ink-soft:#A3AABC;
+      --ink-faint:#6C7385;
+      --border:#2A2E3A;
+      --accent:#93A6E0;
+      --accent-soft:#232A45;
+      --accent-ink:#C4CFF0;
+
+      --sev-critical:#E68A83;
+      --sev-critical-bg:#33201F;
+      --sev-high:#DDB05E;
+      --sev-high-bg:#332A17;
+      --sev-medium:#8FA6D6;
+      --sev-medium-bg:#1F2733;
+      --sev-note:#9AA1B2;
+      --sev-note-bg:#232733;
+
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14161B;
+    --surface:#1B1E26;
+    --surface-2:#232733;
+    --ink:#E8EAEF;
+    --ink-soft:#A3AABC;
+    --ink-faint:#6C7385;
+    --border:#2A2E3A;
+    --accent:#93A6E0;
+    --accent-soft:#232A45;
+    --accent-ink:#C4CFF0;
+
+    --sev-critical:#E68A83;
+    --sev-critical-bg:#33201F;
+    --sev-high:#DDB05E;
+    --sev-high-bg:#332A17;
+    --sev-medium:#8FA6D6;
+    --sev-medium-bg:#1F2733;
+    --sev-note:#9AA1B2;
+    --sev-note-bg:#232733;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent-soft); color:var(--accent-ink); }
+
+  a{ color:var(--accent-ink); text-decoration-color:var(--border); text-underline-offset:2px; }
+  a:hover{ text-decoration-color:currentColor; }
+  a:focus-visible, button:focus-visible, summary:focus-visible{
+    outline:2px solid var(--accent); outline-offset:2px; border-radius:3px;
+  }
+
+  code, .mono{ font-family:var(--mono); font-size:.88em; }
+  code{
+    background:var(--surface-2); border:1px solid var(--border);
+    border-radius:4px; padding:.1em .4em;
+  }
+
+  h1,h2,h3,h4{ font-family:var(--serif); font-weight:600; text-wrap:balance; margin:0; color:var(--ink); }
+
+  .wrap{ max-width:820px; margin:0 auto; padding:0 24px 120px; }
+
+  /* ── Top nav ─────────────────────────────────────────── */
+  .topnav{
+    position:sticky; top:0; z-index:10;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .topnav-inner{
+    max-width:820px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .topnav-brand{ font-family:var(--serif); font-weight:600; font-size:16px; margin-right:auto; }
+  .topnav a{
+    font-size:13.5px; color:var(--ink-soft); text-decoration:none;
+    font-weight:500; letter-spacing:.01em;
+  }
+  .topnav a:hover{ color:var(--accent-ink); }
+
+  /* ── Header ──────────────────────────────────────────── */
+  .hero{ padding:56px 0 40px; }
+  .eyebrow{
+    font-size:12.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent-ink); margin-bottom:14px; display:block;
+  }
+  .hero h1{ font-size:40px; line-height:1.12; margin-bottom:16px; }
+  .hero p{ font-size:17px; color:var(--ink-soft); max-width:62ch; margin-bottom:6px; }
+  .hero .meta{ font-size:13.5px; color:var(--ink-faint); margin-top:18px; }
+
+  /* ── Scorecard ───────────────────────────────────────── */
+  .scorecard{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+    gap:1px; background:var(--border); border:1px solid var(--border);
+    border-radius:12px; overflow:hidden; margin:28px 0 8px;
+  }
+  .stat{ background:var(--surface); padding:18px 16px; }
+  .stat .n{ font-family:var(--serif); font-size:28px; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; }
+  .stat .l{ font-size:12.5px; color:var(--ink-soft); margin-top:6px; line-height:1.35; }
+  .stat.c .n{ color:var(--sev-critical); }
+  .stat.h .n{ color:var(--sev-high); }
+
+  section{ margin-top:56px; }
+  .section-head{ margin-bottom:22px; }
+  .section-head h2{ font-size:26px; margin-bottom:8px; }
+  .section-head p{ color:var(--ink-soft); font-size:15px; max-width:64ch; }
+
+  /* ── Severity badge ──────────────────────────────────── */
+  .sev{
+    display:inline-flex; align-items:center; gap:5px;
+    font-size:11px; font-weight:600; letter-spacing:.03em; text-transform:uppercase;
+    padding:3px 8px; border-radius:20px; white-space:nowrap;
+  }
+  .sev::before{ content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
+  .sev.critical{ color:var(--sev-critical); background:var(--sev-critical-bg); }
+  .sev.high{ color:var(--sev-high); background:var(--sev-high-bg); }
+  .sev.medium{ color:var(--sev-medium); background:var(--sev-medium-bg); }
+  .sev.note{ color:var(--sev-note); background:var(--sev-note-bg); }
+
+  /* ── Critical issue cards ────────────────────────────── */
+  .crit-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:22px 24px; margin-bottom:14px; box-shadow:var(--shadow);
+    border-left:3px solid var(--sev-critical);
+  }
+  .crit-card.high{ border-left-color:var(--sev-high); }
+  .crit-card .head{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+  .crit-card h3{ font-size:18px; }
+  .crit-card p{ margin:8px 0 0; color:var(--ink-soft); font-size:14.5px; line-height:1.6; }
+  .crit-card .files{ margin-top:10px; font-size:13px; color:var(--ink-faint); }
+
+  /* ── Study accordion ─────────────────────────────────── */
+  .study{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    margin-bottom:10px; overflow:hidden;
+  }
+  .study summary{
+    list-style:none; cursor:pointer; padding:16px 20px;
+    display:flex; align-items:center; gap:12px; justify-content:space-between;
+  }
+  .study summary::-webkit-details-marker{ display:none; }
+  .study summary .title{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .study summary .title strong{ font-family:var(--serif); font-weight:600; font-size:16.5px; }
+  .study summary .count{ font-size:12.5px; color:var(--ink-faint); }
+  .study summary .chev{
+    color:var(--ink-faint); transition:transform .15s ease; flex-shrink:0;
+  }
+  .study[open] summary .chev{ transform:rotate(90deg); }
+  .study summary:hover{ background:var(--surface-2); }
+  .study-body{ padding:0 20px 20px; border-top:1px solid var(--border); }
+  .study-note{ font-size:13.5px; color:var(--ink-soft); padding:14px 0 4px; }
+
+  .finding{ padding:14px 0; border-bottom:1px solid var(--border); }
+  .finding:last-child{ border-bottom:none; }
+  .finding .fhead{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:5px; }
+  .finding .loc{ font-family:var(--mono); font-size:12px; color:var(--ink-faint); }
+  .finding p{ margin:0; font-size:14.5px; line-height:1.6; }
+  .finding p + p{ margin-top:6px; color:var(--ink-soft); font-size:13.5px; }
+
+  .clean-note{
+    font-size:13px; color:var(--ink-faint); padding:12px 0 4px;
+    display:flex; align-items:center; gap:7px;
+  }
+  .clean-note::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--ink-faint); flex-shrink:0; }
+
+  /* ── Pattern cards ───────────────────────────────────── */
+  .pattern{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:20px 22px; margin-bottom:12px;
+  }
+  .pattern h3{ font-size:16px; margin-bottom:6px; display:flex; align-items:center; gap:10px; }
+  .pattern .tally{
+    font-family:var(--mono); font-size:12px; color:var(--accent-ink);
+    background:var(--accent-soft); padding:2px 8px; border-radius:20px; font-weight:500;
+  }
+  .pattern p{ font-size:14.5px; color:var(--ink-soft); line-height:1.65; margin:0 0 10px; }
+  .pattern .example{
+    font-family:var(--mono); font-size:12.5px; background:var(--surface-2);
+    border:1px solid var(--border); border-radius:6px; padding:10px 12px;
+    color:var(--ink-soft); overflow-x:auto; white-space:pre-wrap; word-break:break-word;
+  }
+
+  /* ── Scope note / footer ─────────────────────────────── */
+  .scope{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:10px;
+    padding:20px 22px; font-size:14px; color:var(--ink-soft); line-height:1.7;
+  }
+  .scope h3{ font-size:15px; color:var(--ink); margin-bottom:8px; }
+  .scope ul{ margin:8px 0 0; padding-left:20px; }
+  .scope li{ margin-bottom:4px; }
+
+  footer{
+    margin-top:64px; padding-top:24px; border-top:1px solid var(--border);
+    font-size:12.5px; color:var(--ink-faint);
+  }
+
+  @media (max-width:600px){
+    .hero h1{ font-size:30px; }
+    .wrap{ padding:0 16px 100px; }
+  }
+</style>
+
+<div class="topnav">
+  <div class="topnav-inner">
+    <span class="topnav-brand">Estudy Content Audit</span>
+    <a href="#summary">Summary</a>
+    <a href="#critical">Critical</a>
+    <a href="#studies">By study</a>
+    <a href="#patterns">Patterns</a>
+    <a href="#scope">Scope</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero" id="summary">
+    <span class="eyebrow">Bible Study Reader &middot; estudy_en (v3)</span>
+    <h1>What's actually in the study files</h1>
+    <p>A full read-through of every canonical <code>.estudy</code> JSON file in the English content library — the files the app actually loads, not the drafts and backups sitting alongside them.</p>
+    <p>24 studies, ~7.8&nbsp;MB of reader-facing text, checked for broken JSON, mismatched or missing verse data, content copied in from the wrong study, translation/attribution mismatches, and plain typos.</p>
+    <div class="meta">Reviewed 2026-09-04 &middot; 16 independent passes, one per study or study-pair</div>
+  </div>
+
+  <div class="scorecard">
+    <div class="stat c"><div class="n">2</div><div class="l">files fail to parse as JSON</div></div>
+    <div class="stat c"><div class="n">5</div><div class="l">studies contain another study's leftover content</div></div>
+    <div class="stat h"><div class="n">1</div><div class="l">study is ~90% missing its actual chapters</div></div>
+    <div class="stat h"><div class="n">3</div><div class="l">studies declare one Bible translation, quote another</div></div>
+    <div class="stat h"><div class="n">2</div><div class="l">"multilingual" studies are mostly untranslated</div></div>
+    <div class="stat"><div class="n">15+</div><div class="l">files ship the same API key in plain text</div></div>
+  </div>
+
+  <section id="critical">
+    <div class="section-head">
+      <h2>Critical &amp; high-priority issues</h2>
+      <p>The handful of things worth fixing before anything else — either because they break the app outright, mislead a reader about what study they're in, or carry legal/security weight.</p>
+    </div>
+
+    <div class="crit-card">
+      <div class="head"><h3>Two files won't parse as JSON</h3><span class="sev critical">Critical</span></div>
+      <p><strong>Belief/Who am I/study.json</strong> — a literal, unescaped newline character sits inside a passage-text string (the Mark&nbsp;12:29&#8209;30 quote), which breaks <code>JSON.parse</code> outright. The file cannot load at all until that one character is fixed. Confirmed as the only such character in the file — nothing else is corrupted this way.</p>
+      <p><strong>NT/(41) Introducing Mark/introducing_mark_en_study_original.json</strong> — a backup copy, not the canonical file, so lower priority, but also fails to parse (missing comma/bracket in an array).</p>
+      <div class="files">Belief/Who am I/study.json &middot; NT/(41) Introducing Mark/…_original.json</div>
+    </div>
+
+    <div class="crit-card">
+      <div class="head"><h3>Five studies contain content copied from a different study</h3><span class="sev critical">Critical</span></div>
+      <p>Traced this to a clear pattern: new studies appear to have been built by cloning the JSON of a previous study, and the onboarding slides, "How to use this study" page, AI Tutor prompt, or leaders' notes weren't always fully rewritten afterward. Grepping the whole library for the leftover study titles confirms the scope precisely:</p>
+      <p><strong>Exploring Deuteronomy</strong> — its onboarding slides, How&nbsp;To&nbsp;Use page, and AI Tutor prompt are entirely about <em>"1 John for Today"</em> (wrong book, wrong theme, wrong session count). Leaders' notes are correctly about Deuteronomy.</p>
+      <p><strong>Exploring Isaiah</strong> — same leftover: How&nbsp;To&nbsp;Use and the AI Tutor prompt are both about <em>"1 John for Today."</em> Leaders' notes and onboarding slides are correctly Isaiah-specific.</p>
+      <p><strong>Exploring Hebrews</strong> — was evidently cloned from Deuteronomy rather than the template directly: its AI Tutor prompt says <em>"1 John for Today,"</em> its tags say <code>["old testament","hebrews"]</code>, and ten of its twelve leaders'-notes chapters (~166&nbsp;KB) are genuine Deuteronomy 4–16 commentary, not Hebrews. See the next card — this file has a second, larger problem too.</p>
+      <p><strong>Her Own Name (1) &amp; (2)</strong> — both studies' entire <code>leadersNotesData</code> sections are copied from <em>Grow in Christ</em> (its "Growth Graph" diagram, its septic-tank illustration, the parable of the lost son) — nothing about pastors' wives, identity, or calling. Volume 2's copy even keeps Volume 1's seven-chapter numbering, though this study has six.</p>
+      <div class="files">OT/(05) Exploring Deuteronomy &middot; OT/(23) Exploring Isaiah &middot; NT/(58) Exploring Hebrews &middot; Ministry/Her Own Name (1) &amp; (2)</div>
+    </div>
+
+    <div class="crit-card">
+      <div class="head"><h3>Exploring Hebrews is only one chapter long</h3><span class="sev critical">Critical</span></div>
+      <p>Independent of the leaders'-notes contamination above: the study's own onboarding slide and leaders' notes describe a twelve-session study, and <code>howToUseData</code> references "warning passages in chapters 3, 6, 10, and 12" — but the actual <code>chapters[]</code> array a reader sees contains exactly <strong>one</strong> chapter, covering Hebrews&nbsp;1:1–2:4. Eleven of the twelve sessions the study advertises don't exist yet. This one needs finishing, not just fixing.</p>
+      <div class="files">NT/(58) Exploring Hebrews/exploring_hebrews_en_study.json</div>
+    </div>
+
+    <div class="crit-card high">
+      <div class="head"><h3>Two "multilingual" studies are mostly one language</h3><span class="sev high">High</span></div>
+      <p><strong>Thinking about Baptism</strong> declares English, Hausa, and Fulfulde — but 97–98% of the actual chapter content (every question, callout, and heading) has empty Hausa/Fulfulde fields. Chapters 4 and 5 are 100% English-only. Every Bible passage's non-English translation text is empty too. Only the onboarding slides and How&nbsp;To&nbsp;Use page are genuinely trilingual.</p>
+      <p><strong>Her Own Name (2)</strong> — almost every Bible passage across four of its six chapters has no passage text in <em>any</em> language (empty for English too, not just Hausa/Fulfulde), and every translated book-name field (<code>bibleRef2</code>/<code>bibleRef3</code>) across the whole study is empty, unlike Volume 1 where these are filled in throughout.</p>
+      <div class="files">Belief/Thinking about Baptism &middot; Ministry/Her Own Name (2)</div>
+    </div>
+
+    <div class="crit-card high">
+      <div class="head"><h3>Bible translation credited doesn't match the text quoted</h3><span class="sev high">High</span></div>
+      <p>Three studies' metadata and copyright pages name one Bible translation — with that publisher's full copyright notice — while every actual passage quotes a different one:</p>
+      <p><strong>What Rules My Heart</strong> — metadata and copyright page both say NIV (Biblica's copyright block, in full), but all 163 Bible passages are tagged NET and link to NET on Bible Gateway.</p>
+      <p><strong>BUILD Module&nbsp;01</strong> — same pattern: NIV declared and credited, NET actually quoted throughout (spot-checked against 2&nbsp;Timothy&nbsp;1:8&#8209;12).</p>
+      <p><strong>Exploring Isaiah</strong> — the reverse: NET is declared and credited, but every "Read the passage" link across all 28 chapters points to NIV on Bible Gateway.</p>
+      <p>Worth fixing before wider release — crediting the wrong publisher for the actual text isn't just cosmetic.</p>
+      <div class="files">Life/What Rules My Heart &middot; Ministry/BUILD/Module 01 &middot; OT/(23) Exploring Isaiah</div>
+    </div>
+
+    <div class="crit-card high">
+      <div class="head"><h3>The same API key is embedded in plain text across the library</h3><span class="sev high">High</span></div>
+      <p>Every study with an AI Tutor sets <code>studyAiData.apiKey</code> to what looks like a live, working credential (the app's own "obfuscated" format — its README already notes this scheme "deters casual inspection only — it is NOT secure storage"). It's the identical value in at least 15 of the studies checked, which reads as one shared key reused everywhere rather than a placeholder. Not reproduced here — worth a direct check with whoever owns the AI Tutor backend on whether this key is live, and if so whether it should move behind a server-side proxy rather than shipping inside every study file.</p>
+      <div class="files">Present in most studies with an AI Tutor configured — not itemised per file below.</div>
+    </div>
+
+    <div class="crit-card high">
+      <div class="head"><h3>Corrupted scripture text, not just formatting</h3><span class="sev high">High</span></div>
+      <p><strong>Theology 2</strong>, chapter 9 (all 62 Bible passages) — every passage is either empty (5) or contains raw, unprocessed NET Bible translator notes leaking straight into the reader-facing text: doubled verse numbers, stray <code>&num;&nbsp;tn</code>/<code>&num;&nbsp;sn</code> markers, e.g. <em>"Nevertheless I must # tn This is the frequent expression…"</em> instead of clean verse text. Chapters 1–8 are clean — this is confined to chapter 9.</p>
+      <p><strong>Knowing God through Jesus (1)</strong> — Psalm 103:8 reads <em>"…patient and replenishing in lookup"</em> — corrupted text, appearing identically in two places.</p>
+      <p><strong>Who am I</strong> — Psalm 8:4&#8209;6 repeats itself mid-sentence with a stray floating apostrophe; Isaiah 24:5&#8209;6 has a sentence fragment glued onto the end with no space.</p>
+      <div class="files">Belief/Theology 2 &middot; Belief/Knowing God through Jesus (1) &middot; Belief/Who am I</div>
+    </div>
+  </section>
+
+  <section id="studies">
+    <div class="section-head">
+      <h2>Findings by study</h2>
+      <p>Everything else, organised by file. Formatting-only issues that recur across nearly every study (wrong-direction quotation marks, curly quotes breaking HTML links) are pulled out into their own section below rather than repeated here — open a study to see what's specific to it.</p>
+    </div>
+
+    <details class="study">
+      <summary><span class="title"><strong>Knowing God through Jesus</strong><span class="count">Belief &middot; 2 files</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">ch00-el22</span></div><p>Closing-prayer callout has cross-mismatched emphasis tags — opens <code>&lt;i&gt;</code>, closes <code>&lt;/em&gt;</code>, reopens <code>&lt;em&gt;</code>, closes <code>&lt;/i&gt;</code> — and one tag is left unclosed.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch02-el01, ch02-el02, ch02-el03, ch03-el01, ch04-el01, ch05-el01</span></div><p>Citation links use a curly quote to delimit the <code>href</code>/<code>style</code> attribute (<code>href=&rsquo;https://...&rsquo;</code>) instead of a straight quote — breaks HTML attribute parsing.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">studyAboutData / imageData</span></div><p>Publisher URL is given as both <code>beaconlight.co.uk</code> and <code>beaconlight.org.uk</code> in the same file.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Volume 2 &middot; leadersNotesData</span></div><p>Effectively empty — one stub chapter entry (numbered 1, which doesn't even match this volume's chapters&nbsp;6&#8209;10) with every field blank. Volume 1's equivalent is fully written for all 11 chapters.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Volume 2 &middot; onboarding slide</span></div><p>Says "a ten-session Bible study" — this volume has 5 chapters (6&#8209;10); reads like Volume&nbsp;1's slide, uncorrected.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Volume 2 &middot; all 72 questions</span></div><p>None of this volume's questions have a sample answer or hint, unlike Volume 1 (38 of 61 do) — a completeness gap between the two volumes.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch07-el44</span></div><p>"Before Next Chapter" callout has an empty <code>answer</code> field behind a live "Find out" button — the challenge text ended up in <code>question</code> instead.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Theology 2</strong><span class="count">Belief &middot; 1 file, 744&nbsp;KB</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">ch09, all 62 passages</span></div><p>See "Corrupted scripture text" above — this whole chapter's Bible passages need re-pasting from a clean source.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch01-el75, ch01-el149, ch03-el47</span></div><p>Unclosed/mismatched <code>&lt;sup&gt;</code> and <code>&lt;em&gt;</code> tags around verse markers.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch02-el07 &ndash; ch02-el12</span></div><p>"Chrstological" (missing an "i") repeated six times — one per heresy callout's eyebrow.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev note">Formatting</span><span class="loc">ch03/04/05, ×6</span></div><p>"Lord &rsquo;s" — stray space before the possessive apostrophe, left over from stripped small-caps markup.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev note">Formatting</span><span class="loc">ch08&#8211;09</span></div><p>Switches to straight apostrophes where chapters 1&#8211;7 use curly ones.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Thinking about Baptism</strong> &amp; <strong>Truth Unlocked</strong><span class="count">Belief &middot; 2 files</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">Baptism &middot; all chapters</span></div><p>See "Mostly one language" above.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Baptism &middot; copyrightData</span></div><p>"stored in a retreival system" &mdash; should be "retrieval."</p></div>
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">Truth Unlocked &middot; metadata / howToUseData / AI prompt</span></div><p>All three describe "8 essential Bible studies," but the file has 9 chapters &mdash; chapter&nbsp;9, "Knowing the Bible, Knowing God," is unaccounted for everywhere it's described.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Truth Unlocked &middot; studyAboutData.author</span></div><p>Two of three author bios are literal placeholder text: <code>"Paul Adams &hellip; ."</code> and <code>"John Phillips &hellip; ."</code> Only the third author's bio is actually written.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Truth Unlocked &middot; onboarding slide 4</span></div><p>A <code>style</code> attribute is delimited with curly quotes instead of straight ones &mdash; will break attribute parsing.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Who am I</strong><span class="count">Belief &middot; 2 files &middot; one won't parse</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">study.json</span></div><p>See "Two files won't parse" above.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">both files, ~40 elements</span></div><p>31 (main file) and 12 (Bereans variant) Bible-passage elements have completely empty passage text &mdash; spread across nearly every chapter. The linked-passage popup shows nothing for these.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">ch02-el07, ch03-el22</span></div><p>Psalm 8:4&#8209;6 repeats itself verbatim mid-string with a stray floating apostrophe; Isaiah 24:5&#8209;6 has a trailing fragment glued on with no space &mdash; both read as copy-paste debris.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch05-el22</span></div><p>An entire HTML table's attributes are delimited with curly quotes throughout &mdash; will not parse as valid HTML.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Bereans file &middot; ch02-el18</span></div><p>Micah 6:8 quote cuts off mid-sentence ("&hellip;what is good,"); the complete quote exists correctly in the sibling "Who am I" file.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Bereans file &middot; 4 passages</span></div><p>Study declares NET throughout, but 4 passages (Psalm 37:4, 1 Peter 1:17, John 3:20, Zephaniah 3:17) are sourced from NIV.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Bereans file &middot; ch09-el03</span></div><p>Duplicate JSON key <code>"format"</code> declared twice with different values &mdash; the first is silently discarded by any parser.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Conversion</strong><span class="count">Life &middot; 1 file</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="clean-note">Cleanest file in the audit &mdash; well-written throughout, no structural bugs. A few small things:</div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch04-el21</span></div><p>"What do you think they really <strong>means</strong>?" &mdash; the sole outlier among 10 otherwise-identical instances of this boilerplate question.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev note">Formatting</span><span class="loc">studyAboutData / imageData</span></div><p>Same beaconlight.co.uk / .org.uk domain mismatch as Knowing God through Jesus.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Find Rest for your Soul</strong><span class="count">Life &middot; 1 file, 504&nbsp;KB</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">copyrightData.notices[4]</span></div><p>An image-credit link is missing its protocol (<code>href="www.pexels.com/&hellip;"</code>) &mdash; will resolve as a broken relative path.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">copyrightData.notices[3]</span></div><p>Missing space before a <code>&lt;b&gt;</code> tag collapses two words together: "&hellip;chapter two of<strong>Captured</strong>&hellip;"</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">4 chapters</span></div><p>Leaders'-notes chapter titles disagree with the reader-facing chapter titles on capitalisation ("You Are Enough" vs "You are Enough") and punctuation.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch03-el36, ch03-el41</span></div><p>Two elements make the same point with the same closing sentence, back to back &mdash; reads as an editing leftover.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch08-el11</span></div><p>Explains the meaning of words from John 3:16&#8209;17 several elements before that passage is actually shown to the reader.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Grow in Christ</strong> &amp; <strong>Make Many Deep Disciples</strong><span class="count">Life &middot; 2 files</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Grow in Christ &middot; howToUseData</span></div><p>Describes a "Common Misunderstanding" card feature the study never actually uses &mdash; zero callouts of that subtype exist in the content.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Grow in Christ &middot; leadersNotesData ch4</span></div><p>References a "Thomas" opening story that isn't in chapter 4 &mdash; the chapter actually opens with a John Owen quote. Leftover from a removed illustration.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Grow in Christ &middot; ch01, 5 images</span></div><p>Growth-graph diagrams have no image source at all &mdash; will only ever show the emoji fallback.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Make Many &middot; ch01-el22</span></div><p>An HTML list is opened but never closed &mdash; a stray <code>&lt;br&gt;</code> sits where <code>&lt;/ul&gt;</code> should be.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Make Many &middot; leadersNotesData</span></div><p>A paragraph is opened four times but only closed three &mdash; the final paragraph is left unclosed.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Make Many &middot; ch03-el05</span></div><p>Reader-facing text begins with a stray <code>&gt;</code> character &mdash; leftover markdown blockquote marker.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Make Many &middot; ch05-el18</span></div><p>"You <strong>dont</strong> just have fellowship" &mdash; missing apostrophe.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>What Rules My Heart</strong> &amp; <strong>Working for the Good</strong><span class="count">Life &middot; 2 files</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">What Rules My Heart</span></div><p>See "Translation credited doesn't match" above.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">What Rules My Heart &middot; howToUseData</span></div><p>States sessions 8&#8211;15 include a "Deep Idol Awareness Scale," but chapter 14 has no Likert scale element at all.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch01-el37, ch14-el11</span></div><p>Two grammar errors: a dropped "that," and "What" where "Why" was clearly meant.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">What Rules My Heart &middot; leadersNotesData</span></div><p>Empty for the whole study, while the sister study (Working for the Good) has full per-chapter notes &mdash; looks unfinished rather than intentional.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">Working for the Good &middot; ch07-el13</span></div><p>Inside the John 21:20 quotation itself: "who is going to <strong>betrayal</strong> you" &mdash; a typo inside the Bible text being presented as scripture, not just commentary.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Working for the Good &middot; ch01-el11</span></div><p>A nested quotation opens and closes with the identical curly mark, so it never visibly closes.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>BUILD Module 01</strong><span class="count">Ministry &middot; 1 file, 660&nbsp;KB</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="clean-note">Second-cleanest file in the audit &mdash; zero duplicate IDs, zero broken HTML, no dangling references, correct onboarding/AI-prompt content.</div>
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">whole file</span></div><p>See "Translation credited doesn't match" above.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">leadersNotesData</span></div><p>Empty for this whole module &mdash; worth confirming with the author whether that's intentional at this stage.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Her Own Name (1) &amp; (2)</strong><span class="count">Ministry &middot; 2 files, trilingual</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">both volumes &middot; leadersNotesData</span></div><p>See "Content copied from a different study" above.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">Volume 2 &middot; chapters 7, 8, 9, 11</span></div><p>Chapter titles are all literally <em>"Called, Not Appointed"</em> &mdash; Volume&nbsp;1's chapter&#8209;1 title &mdash; even though each chapter's actual content is different (spiritual gifts, mentoring, loving your neighbour, finances). Chapter&nbsp;10's English title ended up sitting in the Fulfulde slot instead of the English one.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">Volume 2 &middot; chapters 7, 8, 10, 12</span></div><p>Every Bible passage has no passage text in any language at all &mdash; not just missing translation, missing entirely. Chapters&nbsp;9 and 11 have English text but no Hausa/Fulfulde.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Volume 2 &middot; studyMetadata</span></div><p>Description fields are Volume&nbsp;1's text verbatim ("This first volume invites pastors' wives to lay down the weight of performance&hellip;") despite the title correctly saying "(volume 2)."</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Volume 1 &middot; leadersNotesData</span></div><p>Hausa/Fulfulde slots have translated headers but empty bodies throughout &mdash; effectively English-only despite appearing translated.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Introducing Mark</strong> &amp; <strong>Exploring Hebrews</strong><span class="count">NT &middot; 2 files</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">Hebrews</span></div><p>See "Only one chapter long" and "Content copied from a different study" above &mdash; this is the most incomplete file in the audit.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Mark &middot; ch02-el14, ch04-el04</span></div><p>Three verse markers are missing their closing <code>&lt;/sup&gt;</code> tag and use a curly quote where the tag should be; two other quotes in the same passages close with the wrong-direction mark.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Mark &middot; onboarding slide</span></div><p>"A eight-session Bible study" &mdash; should be "An."</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>1 John for Today</strong> &amp; <strong>Jude for Today</strong><span class="count">NT &middot; 2 files</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">1 John &middot; ch04-el08</span></div><p>Labelled 1&nbsp;John&nbsp;3:12, but the passage text is verse&nbsp;11 duplicated verbatim from the preceding element, not properly set off &mdash; the popup will show a duplicated, mislabelled passage.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">1 John &middot; ch06-el13</span></div><p>Labelled 1&nbsp;John&nbsp;5:11 but has no verse-number marker at all in the passage text.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">1 John &middot; ch02 chapterTitle</span></div><p>"Certainity" &mdash; should be "Certainty."</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">1 John &middot; ch5/ch6 titles</span></div><p>Two chapters' stated verse ranges overlap (both claim to cover 1&nbsp;John&nbsp;5:3&#8209;5), and chapter&nbsp;6's own reading callout starts a verse earlier than its own chapter title says.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">Jude &middot; ch01-el05</span></div><p>Three quoted phrases in one sample answer each use mismatched or backwards quote marks &mdash; reads as genuinely broken punctuation, not just style drift.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Introducing Genesis</strong><span class="count">OT &middot; 1 file</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">howToUseData</span></div><p>States "the eight chapters" &mdash; the study has seven, confirmed by both the chapter array and the onboarding slide's own "seven-session" text.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch05-el02, ch03-el14</span></div><p>Two duplicated-word typos: "Read: Genesis <strong>Genesis</strong> 6:1&#8209;9:28" and "although they <strong>do do</strong> that."</p></div>
+        <div class="finding"><div class="fhead"><span class="sev note">Formatting</span><span class="loc">whole file</span></div><p>Bible-reference dash style is inconsistent &mdash; hyphens in some chapters, en&#8209;dashes in others, for the same field.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Exploring Deuteronomy</strong><span class="count">OT &middot; 1 file, 772&nbsp;KB &mdash; largest in the library</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">onboarding / howToUseData / AI prompt</span></div><p>See "Content copied from a different study" above &mdash; all reader-facing app chrome for this study is currently about 1&nbsp;John.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch01-el24</span></div><p>Passage text ends with a closing <code>&lt;/p&gt;</code> that has no matching opening tag anywhere in the string.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch15</span></div><p>Chapter title and reading callout both say the range starts at Deuteronomy&nbsp;23:16, but the quoted passage text actually begins at verse&nbsp;15.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Exploring Isaiah</strong><span class="count">OT &middot; 1 file, 660&nbsp;KB, 28 chapters</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev critical">Critical</span><span class="loc">howToUseData / AI prompt</span></div><p>See "Content copied from a different study" above.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev high">High</span><span class="loc">whole file</span></div><p>See "Translation credited doesn't match" above.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">"Read the passage" callouts, all 28 chapters</span></div><p>89 instances of curly quotes used as HTML attribute delimiters &mdash; the single most repeated instance of this bug found anywhere in the library.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">studyMetadata.title</span></div><p>"Exploring <strong>isaiah</strong>" &mdash; lowercase; the short title correctly capitalises it.</p></div>
+      </div>
+    </details>
+
+    <details class="study">
+      <summary><span class="title"><strong>Travelling with Jonah</strong><span class="count">OT &middot; 1 file, 564&nbsp;KB</span></span><span class="chev">&rsaquo;</span></summary>
+      <div class="study-body">
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">118 instances, all chapters</span></div><p>The small-caps "LORD" styling consistently uses curly quotes to delimit its <code>style</code> attribute &mdash; the single largest count of this specific bug in the library.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">leadersNotesData ch1</span></div><p>Roughly ten element-ID cross-references in the pacing guide, key points, and exegetical notes point at the wrong element &mdash; e.g. pointing to an image where a question is meant. Chapters 2&#8211;8 are all accurate; this drift is isolated to chapter&nbsp;1, as if its element list was edited after the notes were written.</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">onboarding slide vs. leadersNotesData</span></div><p>The study has 8 chapters, but the onboarding slide calls it "seven-session," and the leaders' notes themselves disagree internally &mdash; some chapters say "eight," others say "seven."</p></div>
+        <div class="finding"><div class="fhead"><span class="sev medium">Medium</span><span class="loc">ch01-el06, ch01-el25</span></div><p>The Jonah&nbsp;1:12 sailors' quote has its opening and closing marks swapped, in both places it appears.</p></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="patterns">
+    <div class="section-head">
+      <h2>Patterns that recur almost everywhere</h2>
+      <p>Three issues showed up in nearly every file checked. Rather than list each occurrence per study above, here's what they are and roughly how big each one is — worth a global pass rather than fixing file by file.</p>
+    </div>
+
+    <div class="pattern">
+      <h3>Wrong-direction curly quotes <span class="tally">nearly every study</span></h3>
+      <p>Scare-quoted words and phrases are set with the <em>right</em> single quotation mark (&rsquo;) on both sides, instead of an opening&nbsp;&lsquo;&nbsp;paired with a closing&nbsp;&rsquo;. Counts run from a few dozen to several hundred per file — Find Rest for your Soul alone has 366 instances, Isaiah and Jonah both run into the hundreds. A smaller but sharper version shows up too: quotes that are fully backwards (&rsquo;text&lsquo; rather than &lsquo;text&rsquo;), which reads as broken punctuation rather than just a style choice.</p>
+      <div class="example">&ldquo;come &rsquo;from within&rsquo;&rdquo;   &larr; should open with &lsquo;
+&ldquo;&rsquo;helpless,&lsquo; &rsquo;ungodly,&lsquo;&rdquo;   &larr; fully backwards</div>
+    </div>
+
+    <div class="pattern">
+      <h3>Curly quotes used to delimit HTML attributes <span class="tally">10+ studies, 400+ instances</span></h3>
+      <p>Wherever a passage or callout embeds a raw <code>&lt;a href=&hellip;&gt;</code>, <code>&lt;span style=&hellip;&gt;</code>, or <code>&lt;table&gt;</code>, the attribute value is sometimes delimited with a curly quote instead of a straight one. A curly quote isn't a valid HTML attribute delimiter, so the tag won't parse as intended — the link, the styling, or the whole table can break depending on the renderer. Isaiah (89 instances) and Jonah (118) are the worst affected; Who&nbsp;am&nbsp;I has a whole table built this way.</p>
+      <div class="example">&lt;a href=&rsquo;https://www.biblegateway.com/&hellip;&rsquo;&gt;   &larr; should be href="&hellip;"</div>
+    </div>
+
+    <div class="pattern">
+      <h3>Publisher domain: .co.uk or .org.uk? <span class="tally">4 studies checked</span></h3>
+      <p>Knowing God through Jesus, Conversion, Find Rest for your Soul, and Grow in Christ all give the same publisher's URL two different ways in the same file — <code>studyAboutData.publisher.url</code> says <code>beaconlight.co.uk</code>, <code>imageData.publisher.provenance</code> says <code>beaconlight.org.uk</code>. Worth settling on the correct one and sweeping it everywhere at once, since it's clearly the same organisation info block copied study to study.</p>
+    </div>
+  </section>
+
+  <section id="scope">
+    <div class="scope">
+      <h3>What this covered</h3>
+      <p>24 canonical files — the ones the app actually loads, identified by checking which file in each study's folder is newest/most complete where more than one candidate existed (e.g. Ministry/BUILD/Module&nbsp;01 has three JSON files at different draft stages; the most recent and complete was reviewed).</p>
+      <ul>
+        <li><strong>Not reviewed in depth:</strong> 51 other files in this folder &mdash; <code>_original.json</code> backups, a <code>sources/</code> folder of pre-merge chapter components, an <code>old/</code> folder of superseded drafts, and the two top-level templates. All were checked for valid JSON syntax only; one (Mark's <code>_original</code> backup) also fails to parse, noted above.</li>
+        <li><strong>Not attempted:</strong> theological or doctrinal review, or verifying quoted scripture word-for-word against a Bible text &mdash; findings above are limited to structural bugs, internal inconsistencies, and errors an agent could confirm from the file's own content (e.g. a translation credited as one version while every link points to another).</li>
+      </ul>
+    </div>
+    <footer>Estudy Content Audit &middot; generated by reading every canonical study file in full, in 16 parallel passes, cross-checked against the app's own <code>.estudy</code> schema.</footer>
+  </section>
+
+</div>

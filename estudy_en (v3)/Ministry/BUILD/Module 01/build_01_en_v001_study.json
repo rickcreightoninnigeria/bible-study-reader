@@ -11,7 +11,7 @@
     "studyVersion"     :1,
     "language"         :"en",
     "bibleTranslation" :{
-      "en":"NIV"
+      "en":"NET"
     },
     "createdAt"   :"2026-05-05T00:00:00Z",
     "updatedAt"   :"2026-05-05T00:00:00Z",
@@ -6268,10 +6268,10 @@
       "statement":"2 Timothy & the Pastoral Epistles: Preaching the Gospel & Godly Leadership (Manual for Trainers, BUILD COU & BUILD Partners). Licensed under a Creative Commons attribution, non-commercial, no derivatives license."
     },
     "bibleTranslation":{
-      "name"     :"NIV",
-      "version"  :"Holy Bible, New International Version®, NIV®",
-      "copyright":"Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc™",
-      "url"      :"https://www.biblica.com",
+      "name"     :"NET Bible",
+      "version"  :"NET Bible® (New English Translation)",
+      "copyright":"©1996, 2019 Biblical Studies Press, L.L.C.",
+      "url"      :"https://netbible.com",
       "usedWith" :"permission"
     },
     "notices":[

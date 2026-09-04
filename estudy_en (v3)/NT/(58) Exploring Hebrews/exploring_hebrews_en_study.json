@@ -15,7 +15,7 @@
     },
     "createdAt"   :"2026-05-04T00:00:00Z",
     "updatedAt"   :"2026-05-04T00:00:00Z",
-    "tags"        :["old testament", "hebrews"],
+    "tags"        :["new testament", "hebrews"],
     "shareMessage":"Check out this Bible study app — “Bible Study Reader”.\n\nAvailable soon on Google Play and the App Store."
   },
   "theme":{
@@ -1236,7 +1236,7 @@
     }
   },
   "studyAiData":{
-    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘1 John for Today’ — exploring the New Testament book of 1 John.",
+    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Exploring Hebrews’ — exploring the New Testament letter to the Hebrews.",
     "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }
