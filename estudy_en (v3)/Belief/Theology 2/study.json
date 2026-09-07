@@ -824,7 +824,7 @@
           "format": "HTML",
           "bibleRef": "Acts 2:32-36",
           "translation": "NET",
-          "passageText": "<sup>32</sup> This Jesus God raised up, and we are all witnesses of it. <sup>33</sup> So then, exalted to the right hand of God, and having received the promise of the Holy Spirit from the Father, he has poured out what you both see and hear. <sup>34</sup> For David did not ascend into heaven, but he himself says, ‘The Lord said to my lord, “Sit at my right hand 35</sup> until I make your enemies a footstool for your feet.”’ 36</sup> Therefore let all the house of Israel know beyond a doubt that God has made this Jesus whom you crucified both Lord and Christ.”",
+          "passageText": "<sup>32</sup> This Jesus God raised up, and we are all witnesses of it. <sup>33</sup> So then, exalted to the right hand of God, and having received the promise of the Holy Spirit from the Father, he has poured out what you both see and hear. <sup>34</sup> For David did not ascend into heaven, but he himself says, ‘The Lord said to my lord, “Sit at my right hand <sup>35</sup> until I make your enemies a footstool for your feet.”’ <sup>36</sup> Therefore let all the house of Israel know beyond a doubt that God has made this Jesus whom you crucified both Lord and Christ.”",
           "passageUrl": "https://www.bible.com/bible/107/ACT.2.NET",
           "bottomPadding": "none"
         },
@@ -1584,7 +1584,7 @@
           "format": "HTML",
           "bibleRef": "Jude 1:20-21",
           "translation": "NET",
-          "passageText": "<sup>20<sup> But you, dear friends, by building yourselves up in your most holy faith, by praying in the Holy Spirit, <sup>21</sup> maintain yourselves in the love of God, while anticipating the mercy of our Lord Jesus Christ that brings eternal life.",
+          "passageText": "<sup>20</sup> But you, dear friends, by building yourselves up in your most holy faith, by praying in the Holy Spirit, <sup>21</sup> maintain yourselves in the love of God, while anticipating the mercy of our Lord Jesus Christ that brings eternal life.",
           "passageUrl": "https://www.bible.com/bible/107/JUD.1.NET",
           "bottomPadding": "none"
         },
@@ -1912,7 +1912,7 @@
           "eyebrow": "The Chalcedonian Definition (AD 451)",
           "term": "Full historic text",
           "question": "The summary above is drawn from this fuller, historic statement of the Council. It is dense, careful, ancient language – read it slowly, more than once if needed.",
-          "answer": "<p>Therefore, following the holy fathers, we all with one accord teach men to acknowledge one and the same Son, our Lord Jesus Christ, at once complete in Godhead and complete in manhood, truly God and truly man, consisting also of a reasonable soul and body; of one substance with the Father as regards his Godhead, and at the same time of one substance with us as regards his manhood; like us in all respects, apart from sin; as regards his Godhead, begotten of the Father before the ages, but yet as regards his manhood begotten, for us men and for our salvation, of Mary the Virgin, the God-bearer; one and the same Christ, Son, Lord, Only-begotten, recognised in two natures, without confusion, without change, without division, without separation; the distinction of natures being in no way annulled by the union, but rather the characteristics of each nature being preserved and coming together to form one person and subsistence, not as parted or separated into two persons, but one and the same Son and Only-begotten God the Word, Lord Jesus Christ; even as the prophets from earliest times spoke of him, and our Lord Jesus Christ himself taught us, and the creed of the fathers has handed down to us.</p><br><p style=’text-align: right; font-size: 0.8em;’><a href=’https://www.monergism.com/definition-council-chalcedon-451-ad’>(source ↗)</a></p>",
+          "answer": "<p>Therefore, following the holy fathers, we all with one accord teach men to acknowledge one and the same Son, our Lord Jesus Christ, at once complete in Godhead and complete in manhood, truly God and truly man, consisting also of a reasonable soul and body; of one substance with the Father as regards his Godhead, and at the same time of one substance with us as regards his manhood; like us in all respects, apart from sin; as regards his Godhead, begotten of the Father before the ages, but yet as regards his manhood begotten, for us men and for our salvation, of Mary the Virgin, the God-bearer; one and the same Christ, Son, Lord, Only-begotten, recognised in two natures, without confusion, without change, without division, without separation; the distinction of natures being in no way annulled by the union, but rather the characteristics of each nature being preserved and coming together to form one person and subsistence, not as parted or separated into two persons, but one and the same Son and Only-begotten God the Word, Lord Jesus Christ; even as the prophets from earliest times spoke of him, and our Lord Jesus Christ himself taught us, and the creed of the fathers has handed down to us.</p><br><p style=\"text-align: right; font-size: 0.8em;\"><a href=\"https://www.monergism.com/definition-council-chalcedon-451-ad\">(source ↗)</a></p>",
           "buttonText": "Read full definition ➡",
           "bottomPadding": "normal"
         },
@@ -1998,7 +1998,7 @@
           "format": "HTML",
           "bibleRef": "Philippians 2:6-7",
           "translation": "NET",
-          "passageText": "<sup>6</sup> who though he existed in the form of God <sup>7</sup> but emptied himself",
+          "passageText": "<sup>6</sup> who though he existed in the form of God did not regard equality with God as something to be grasped, <sup>7</sup> but emptied himself by taking on the form of a slave, by looking like other men, and by sharing in human nature.",
           "passageUrl": "https://www.bible.com/bible/107/PHP.2.NET",
           "bottomPadding": "none"
         },
@@ -8692,7 +8692,7 @@
           "format": "HTML",
           "bibleRef": "Genesis 3:15",
           "translation": "NET",
-          "passageText": "<sup>15</sup> And I will put hostility between you and the woman",
+          "passageText": "<sup>15</sup> And I will put hostility between you and the woman and between your offspring and her offspring; he will strike your head, and you will strike his heel.",
           "passageUrl": "https://www.bible.com/bible/107/GEN.3.NET",
           "bottomPadding": "none"
         },
@@ -9379,7 +9379,7 @@
           "format": "HTML",
           "bibleRef": "Matthew 8:16-17",
           "translation": "NET",
-          "passageText": "<sup>16</sup> When it was evening, many demon-possessed people were brought to him. He drove out the spirits with a word, and healed all who were sick. <sup>17</sup> In this way what was spoken by Isaiah the prophet was fulfilled:",
+          "passageText": "<sup>16</sup> When it was evening, many demon-possessed people were brought to him. He drove out the spirits with a word, and healed all who were sick. <sup>17</sup> In this way what was spoken by Isaiah the prophet was fulfilled: ‘He took our weaknesses and carried our diseases.’",
           "passageUrl": "https://www.bible.com/bible/107/MAT.8.NET",
           "bottomPadding": "none"
         },
@@ -9712,7 +9712,7 @@
           "format": "HTML",
           "bibleRef": "Isaiah 1:18",
           "translation": "NET",
-          "passageText": "<sup>18</sup> Come, let’s consider your options,” says the Lord .",
+          "passageText": "<sup>18</sup> “Come, let’s consider your options,” says the Lord. “Though your sins have stained you like the color red, you can become white like snow; though they are as easy to see as the color scarlet, you can become white like wool.”",
           "passageUrl": "https://www.bible.com/bible/107/ISA.1.NET",
           "bottomPadding": "none"
         },
@@ -10554,7 +10554,7 @@
           "format": "HTML",
           "bibleRef": "Daniel 12:2-3",
           "translation": "NET",
-          "passageText": "<sup>2</sup> Many of those who sleep <sup>3</sup> But the wise will shine",
+          "passageText": "<sup>2</sup> Many of those who sleep in the dusty ground will awake – some to everlasting life, and others to shame and everlasting abhorrence. <sup>3</sup> But the wise will shine like the brightness of the heavenly expanse. And those bringing many to righteousness will be like the stars forever and ever.",
           "passageUrl": "https://www.bible.com/bible/107/DAN.12.NET",
           "bottomPadding": "none"
         },
@@ -10596,7 +10596,7 @@
           "format": "HTML",
           "bibleRef": "Psalm 22:22-24",
           "translation": "NET",
-          "passageText": "<sup>22</sup> I will declare your name to my countrymen! <sup>23</sup> You loyal followers of the Lord , praise him! <sup>24</sup> For he did not despise or detest the suffering of the oppressed;",
+          "passageText": "<sup>22</sup> I will declare your name to my countrymen! In the middle of the assembly I will praise you! <sup>23</sup> You loyal followers of the Lord, praise him! All you descendants of Jacob, honor him! All you descendants of Israel, stand in awe of him! <sup>24</sup> For he did not despise or detest the suffering of the oppressed; he did not ignore him; when he cried out to him, he responded.",
           "passageUrl": "https://www.bible.com/bible/107/PSA.22.NET",
           "bottomPadding": "none"
         },
@@ -10908,7 +10908,7 @@
           "format": "HTML",
           "bibleRef": "Philippians 2:9-11",
           "translation": "NET",
-          "passageText": "<sup>9</sup> As a result God exalted him <sup>10</sup> so that at the name of Jesus <sup>11</sup> and every tongue confess",
+          "passageText": "<sup>9</sup> As a result God exalted him and gave him the name that is above every name, <sup>10</sup> so that at the name of Jesus every knee will bow – in heaven and on earth and under the earth – <sup>11</sup> and every tongue confess that Jesus Christ is Lord to the glory of God the Father.",
           "passageUrl": "https://www.bible.com/bible/107/PHP.2.NET",
           "bottomPadding": "none"
         },
@@ -12437,7 +12437,7 @@
           "format": "HTML",
           "bibleRef": "1 Peter 1:6-7, 4:12-13",
           "translation": "NET",
-          "passageText": "<sup>6</sup> This brings you great joy, although you may have to suffer for a short time in various trials. <sup>7</sup> Such trials show the proven character of your faith, which is much more valuable than gold – gold that is tested by fire, even though it is passing away – and will bring praise and glory and honor when Jesus Christ is revealed.",
+          "passageText": "<sup>6</sup> This brings you great joy, although you may have to suffer for a short time in various trials. <sup>7</sup> Such trials show the proven character of your faith, which is much more valuable than gold – gold that is tested by fire, even though it is passing away – and will bring praise and glory and honor when Jesus Christ is revealed. <br><br><br><sup>12</sup> Dear friends, do not be astonished that a trial by fire is occurring among you, as though something strange were happening to you. <sup>13</sup> But rejoice in the degree that you have shared in the sufferings of Christ, so that when his glory is revealed you may also rejoice and be glad.",
           "passageUrl": "https://www.bible.com/bible/107/1PE.1.NET",
           "bottomPadding": "none"
         },
@@ -12830,7 +12830,7 @@
           "format": "HTML",
           "bibleRef": "Revelation 11:15",
           "translation": "NET",
-          "passageText": "<sup>15</sup> Then the seventh angel blew his trumpet, and there were loud voices in heaven saying:",
+          "passageText": "<sup>15</sup> Then the seventh angel blew his trumpet, and there were loud voices in heaven saying: “The kingdom of the world has become the kingdom of our Lord and of his Christ, and he will reign for ever and ever.”",
           "passageUrl": "https://www.bible.com/bible/107/REV.11.NET",
           "bottomPadding": "none"
         },
