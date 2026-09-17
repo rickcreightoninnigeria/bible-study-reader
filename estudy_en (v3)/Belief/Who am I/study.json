@@ -111,7 +111,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jeremiah doesn't just say the mind is unreliable — he says it is 'deceitful' and 'incurably bad,' which means the very instrument we'd use to examine ourselves is the thing that's compromised. That's why the verse ends with a question rather than an answer: 'Who can understand it?' It isn't rhetorical throat-clearing — it's an honest admission that self-knowledge has a built-in blind spot. We can't fully trust our own read on ourselves, because the mind doing the reading is the same mind capable of deceiving us. That's a humbling starting point for any study on identity: some outside light is going to be necessary.",
+          "questionHint": "The verse calls the mind 'deceitful' — if the thing doing the self-examining is itself untrustworthy, what problem does that create for figuring yourself out from the inside alone?"
         },
         {
           "elementId": "ch01-el07",
@@ -132,7 +134,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul describes a strange split: 'I do not do what I want – instead, I do what I hate.' He isn't confused about right and wrong in the abstract; he's confused about why his actions don't match his own desires. His explanation is that 'it is no longer me doing it, but sin that lives in me' — as if something foreign has taken up residence inside him and is pulling against his own will. That's disorienting because it means self-understanding isn't just a matter of figuring out what you want; even when you know what you want, something in you resists it, which makes 'who I am' feel divided rather than simple.",
+          "questionHint": "Paul says it's 'no longer me doing it, but sin that lives in me' — what does it mean for someone to feel like there are two different wills operating inside the same person?"
         },
         {
           "elementId": "ch01-el09",
@@ -161,7 +165,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The Pharisee's prayer is really a report card measured against other people: 'I thank you that I am not like other people' — and he names the worst examples he can think of, then lists his own religious achievements. He isn't examining himself at all; he's scanning the room for someone to look worse than. That's the trap — comparison lets you feel secure without ever actually looking inward, because your standard becomes 'better than them' instead of anything true about your own heart. Looking down on someone else can feel like self-knowledge, but it's really just a way of avoiding it.",
+          "questionHint": "The Pharisee measures himself by saying he's not 'like other people' — what does he never actually stop to look at when comparison is doing all the work?"
         },
         {
           "elementId": "ch01-el12",
@@ -190,7 +196,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus paints a deliberately absurd picture: someone fussing over a 'speck' in another person's eye while there's a 'beam of wood' lodged in his own. The size difference is the whole point — it's not that we notice others' faults and ignore ours equally, it's that our own faults are often bigger and we still see them as smaller. He calls this pattern hypocrisy because it lets a person appear helpful and discerning about others while staying blind about themselves. Real self-understanding, according to Jesus, has to start with dealing with your own beam before you're qualified to comment on anyone's speck.",
+          "questionHint": "Jesus contrasts a tiny 'speck' with a 'beam of wood' — why would he pick such an exaggerated size difference to describe how we see other people's faults versus our own?"
         },
         {
           "elementId": "ch01-el15",
@@ -211,7 +219,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "James compares hearing God's word without living it to glancing in a mirror and then walking away having 'immediately' forgotten your own face. That's an odd kind of forgetting — you'd think seeing yourself clearly would stick. But James's point is that hearing truth without acting on it doesn't actually change your self-perception; it evaporates the moment you stop looking. So merely listening — nodding along, feeling convicted in the moment — isn't the same as knowing yourself. Real self-understanding requires that what you see gets carried out the door and lived, or the reflection never actually becomes knowledge.",
+          "questionHint": "James says the man 'immediately forgets what sort of person he was' right after looking in the mirror — what does that forgetting suggest is missing besides just looking?"
         },
         {
           "elementId": "ch01-el17",
@@ -232,7 +242,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The proverb's warning is packed into one word: 'seems.' A way can feel entirely right — confident, reasonable, justified — and still end in death. That gap between how something seems and where it actually leads is exactly what makes self-deception dangerous: it doesn't feel like deception from the inside. If our own sense of rightness were a reliable guide, this proverb wouldn't need to exist. It's a caution against trusting your own certainty as proof of truth, because certainty and correctness aren't the same thing, and by the time the end reveals itself, the way has already been walked.",
+          "questionHint": "The proverb says the way only 'seems right' — what does that word admit about the difference between how confident something feels and where it actually leads?"
         },
         {
           "elementId": "ch01-el19",
@@ -261,7 +273,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Notice who David asks to do the searching: not himself, but God — 'Examine me, and probe my thoughts! Test me, and know my concerns!' Given how deceitful our own minds can be, this is the logical move: if you can't fully trust your own self-assessment, you invite someone who can see truly to do it for you. David isn't afraid of what might be found — he specifically asks God to check for 'idolatrous tendency,' the kind of misplaced allegiance a person might not even notice in themselves. Knowing God well enough to trust him with that search is what makes real self-understanding possible.",
+          "questionHint": "David doesn't examine himself — he asks God to 'examine me' and 'probe my thoughts.' Why would inviting someone else to search you succeed where searching yourself might fail?"
         },
         {
           "elementId": "ch01-el22",
@@ -282,7 +296,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God's command here is surprisingly simple: 'Stop your striving and recognize that I am God!' Self-understanding, in this psalm, doesn't come from more analysis or effort — it comes from stillness in front of someone bigger than you. Once you recognize who God actually is — exalted over the nations and the earth, the one 'on our side,' our protector — your own size and situation come into focus by comparison. You see yourself rightly not by staring harder at yourself, but by looking at him and realizing you're small, dependent, and, remarkably, defended by someone far greater than any threat you face.",
+          "questionHint": "God says 'stop your striving' before 'recognize that I am God' — why would ceasing effort, rather than trying harder, be the doorway to recognizing something true?"
         },
         {
           "elementId": "ch01-el24",
@@ -303,7 +319,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "John doesn't just state a fact, he marvels at it — 'see what sort of love' — and then adds an exclamation most translations soften but the text clearly carries: 'and indeed we are!' That extra emphasis matters, because it answers a doubt before it's even raised: this isn't a title we've earned or a status that might be revoked, it's a settled reality given entirely by the Father's love. Knowing that God is the kind of God who calls people his children reframes the question 'who am I?' — the answer isn't found by digging into yourself, but by receiving what he's already declared.",
+          "questionHint": "John doesn't just say we're called children — he adds 'and indeed we are!' What is that extra emphasis meant to settle for someone who might doubt it?"
         },
         {
           "elementId": "ch01-el26",
@@ -332,7 +350,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The proverb pictures what's inside a person as 'deep water' — not shallow or immediately visible, but something you have to work to reach. That's the warning: don't assume you already know your own heart just because it's yours; it takes real effort to get down to it. But the proverb also holds out encouragement, because it says an 'understanding person draws it out' — meaning that depth isn't unreachable, just resistant to a quick glance. With patience, wisdom, and probably help from someone who knows how to ask the right questions, what's hidden in us can actually be brought up into the light.",
+          "questionHint": "The proverb calls inner counsel 'deep water' that has to be 'drawn out' — what does drawing water up from a well require that a quick glance at the surface doesn't?"
         },
         {
           "elementId": "ch01-el29",
@@ -475,7 +495,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The verse doesn't leave 'image' and 'likeness' as abstract ideas — it immediately attaches a purpose to them: 'so they may rule.' Being made like God is tied to being given real responsibility to govern creation on his behalf, the way a representative reflects the one who sent them. And it's explicit that this applies to everyone equally: 'male and female he created them' both bear the image, not one more than the other. So identity here isn't primarily about appearance or intellect — it's about being God's appointed representatives, entrusted with a role that mirrors his own care and authority over the world.",
+          "questionHint": "The command to rule comes right after 'in our image, after our likeness' — what does attaching a job to the image suggest about what bearing it actually means?"
         },
         {
           "elementId": "ch02-el07",
@@ -496,7 +518,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalm opens in genuine wonder — 'of what importance is the human race, that you should notice them?' — as if the psalmist can hardly believe the answer he's about to give. That answer is startling: humanity is made 'a little less than the heavenly beings,' crowned with 'honor and majesty,' and appointed to rule over creation with 'everything... placed under their authority.' This isn't humanity claiming greatness for itself; it's God's own assessment of the rank he's given us, positioned just under the heavenly realm and set in charge of the earth. Being made in God's image means carrying dignity and delegated authority we didn't invent for ourselves.",
+          "questionHint": "The psalm says humanity is made 'a little less than the heavenly beings' — what rank is being given here, and who decided it?"
         },
         {
           "elementId": "ch02-el09",
@@ -517,7 +541,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "James zeroes in on something practical: the same tongue that blesses 'the Lord and Father' can turn around and curse 'people made in God's image.' By putting those two acts side by side, he makes cursing another person more than rudeness — it's an offense against the image God stamped on them. This matters for identity because it means every person you meet, however unimpressive or difficult, carries something of God's own likeness. You can't genuinely honor God while treating his image-bearers with contempt; the two are inseparably connected, which is exactly why James finds the contradiction so glaring.",
+          "questionHint": "James points out it's 'with it' — the same tongue — doing both the blessing and the cursing. What does using one instrument for such opposite purposes reveal?"
         },
         {
           "elementId": "ch02-el11",
@@ -538,7 +564,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This verse uses the word 'image' more narrowly than Genesis does — it's part of Paul's argument about head coverings and order in Corinthian worship, not a full statement on who bears God's image. Here he calls the man 'the image and glory of God' and the woman 'the glory of the man,' framing image and glory as relational: something reflected outward within a relationship, not just an individual possession. It's a reminder that Scripture uses this language with some nuance depending on context — earlier we saw that both male and female together bear God's image in Genesis; here Paul is drawing out a specific relational dimension of glory within his own argument.",
+          "questionHint": "Paul pairs 'image' here with the word 'glory' rather than leaving it alone — what does adding 'glory' suggest about a relational, not just individual, dimension to this verse?"
         },
         {
           "elementId": "ch02-el13",
@@ -567,7 +595,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God's blessing comes packed with active verbs: 'be fruitful and multiply,' 'fill the earth,' 'subdue it,' 'rule.' None of these describe passive existence — they describe a calling to grow, spread, cultivate, and govern. Alongside that, he generously provides for every need: 'every seed-bearing plant' and 'every tree that has fruit' are given for food, with no hint of scarcity. And the whole scene is capped with God's own verdict: 'it was very good.' God's original plan wasn't just for humanity to survive in the world he made — it was for them to actively multiply, steward, and enjoy it under his blessing.",
+          "questionHint": "God stacks up 'fill... subdue... rule' as one blessing — what do those three commands have in common about the kind of life humanity was meant to have?"
         },
         {
           "elementId": "ch02-el16",
@@ -588,7 +618,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God places the man in the orchard with a job — 'to care for it and to maintain it' — meaning purposeful work was part of the plan from the very beginning, not a punishment added later. Then comes remarkable freedom: 'you may freely eat fruit from every tree,' with only a single exception named. The plan wasn't restriction; it was abundance bounded by one clear line, given with a real warning attached to it. God's design combined meaningful responsibility, generous provision, and a boundary meant to be trusted rather than second-guessed — all three together, not one without the others.",
+          "questionHint": "Before naming the one restriction, God says the man may 'freely eat fruit from every tree' — how much freedom actually surrounded that single boundary?"
         },
         {
           "elementId": "ch02-el18",
@@ -609,7 +641,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Micah names three things God wants, and none of them are ritual performances: 'promote justice, be faithful, and live obediently before your God.' That's a picture of character and relationship rather than a checklist of religious tasks. Justice points outward, toward how we treat others fairly; faithfulness points toward steady, trustworthy commitment; and living obediently before God points toward an ongoing posture, not a one-time achievement. Together they describe humanity's original calling as something relational and moral at its core — not primarily about what we produce or accomplish, but about the kind of people we become in how we treat God and others.",
+          "questionHint": "Micah names justice, faithfulness, and walking obediently together as one answer — what kind of life do those three things describe when held together rather than separately?"
         },
         {
           "elementId": "ch02-el20",
@@ -638,7 +672,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God says, 'Let us make humankind in our image, after our likeness' — plural pronouns from the one God who has no other gods beside him. That's genuinely strange if God were simply a solitary individual; there'd be no one else to include in 'us' and 'our.' The unusual pronoun hints that something communal or relational exists within God's own being, even before he creates anyone else. And if humanity is made in the image of a God who is inherently relational, it starts to explain why we, too, are built for relationship rather than designed to thrive in isolation.",
+          "questionHint": "God says 'let us make... in our image' while remaining one God — who else could that plural 'us' possibly be including?"
         },
         {
           "elementId": "ch02-el23",
@@ -667,7 +703,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Everything else in Genesis 1 gets called 'good' or 'very good,' which makes this line stand out sharply: 'It is not good for the man to be alone.' In a chapter full of divine approval, this is the one thing God himself flags as deficient — not sin, not failure, just solitude itself. And notice what God proposes isn't merely company but 'a companion for him who corresponds to him' — someone genuinely matched to him, not just present alongside him. Even before anything had gone wrong, God built humanity for relationship that fits, not for isolated self-sufficiency.",
+          "questionHint": "God doesn't just promise the man company — he promises 'a companion... who corresponds to him.' What kind of companion is being described there, beyond simply 'someone'?"
         },
         {
           "elementId": "ch02-el26",
@@ -688,7 +726,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The Preacher makes his case with a very concrete picture: 'if they fall, one will help his companion up, but pity the person who falls down and has no one to help him up.' It's not an abstract claim about companionship being nice — it's about what happens specifically in a moment of weakness or failure. Alone, a fall just stays a fall; with someone else, it becomes recoverable. That's the practical reason isolation doesn't work well for us: we're not just less efficient alone, as the 'more benefit from labor' also shows, we're also more exposed when things go wrong and there's no one there to lift us back up.",
+          "questionHint": "The passage pictures someone falling with 'no one to help him up' — what specific vulnerability does that scenario expose that working alone might otherwise hide?"
         },
         {
           "elementId": "ch02-el28",
@@ -830,7 +870,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Compare the serpent's question to what God actually said back in the garden: God had told the man he could 'freely eat fruit from every tree,' with only one exception. The serpent flips that entirely, asking, 'Is it really true that God said, “You must not eat from any tree of the orchard”?' — turning one narrow restriction into a total ban. That distortion makes God sound stingy and controlling rather than generous, and it's delivered as an innocent-sounding question rather than a flat accusation, which makes it easier to plant doubt without directly attacking God. Exaggerating a limit into a prohibition is exactly how the serpent gets Eve second-guessing God's character.",
+          "questionHint": "The serpent says 'any tree' — but God's actual command allowed eating from every tree except one. What's the difference between those two versions of the rule?"
         },
         {
           "elementId": "ch03-el07",
@@ -851,7 +893,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Eve rightly corrects the serpent's exaggeration by naming the actual tree, but then she overcorrects: she adds 'and you must not touch it,' a restriction God never gave. His original command was only about eating, with no mention of touching at all. By adding to what God said, she makes the command sound harsher and more arbitrary than it was — which, ironically, makes it easier for the serpent to later argue that touching the fruit does no harm, undermining a rule God never actually gave in the first place. Getting God's word slightly wrong, even while trying to defend it, left her more vulnerable, not less.",
+          "questionHint": "Eve adds 'and you must not touch it' — go back to God's actual command in Genesis 2:17. Does it say anything about touching?"
         },
         {
           "elementId": "ch03-el09",
@@ -880,7 +924,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The two men in the temple are focused on completely different things. The Pharisee's prayer is aimed at comparison — 'I thank you that I am not like other people' — and at his own résumé of fasting and tithing. The tax collector, by contrast, won't even 'look up to heaven' and focuses only on his own need: 'God, be merciful to me, sinner that I am!' Jesus says it's the second man who goes home justified. Focusing on how you measure up against others, or on your own accomplishments, keeps you from seeing your actual need before God — and Jesus's closing line makes the stakes plain: 'everyone who exalts himself will be humbled.'",
+          "questionHint": "One man prays 'I am not like other people,' the other prays 'be merciful to me, sinner that I am.' Where is each man's attention actually pointed?"
         },
         {
           "elementId": "ch03-el12",
@@ -901,7 +947,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's warning is short but pointed: something that's genuinely permissible for you — your 'liberty' — 'does not become a hindrance to the weak.' The word 'hindrance' is doing real work here: it means your freedom can become an obstacle that trips someone else up, even when nothing you did was technically wrong. Focusing only on what you're allowed to do, without asking who else is affected, can quietly turn a good freedom into a cause of someone else's sin. It's a reminder that self-focus — even self-focus on legitimate rights — can still lead toward harm if it ignores the people around you.",
+          "questionHint": "Paul warns that liberty can become a 'hindrance to the weak' — what does the word 'hindrance' suggest about who might get hurt by a freedom that's otherwise fine?"
         },
         {
           "elementId": "ch03-el14",
@@ -922,7 +970,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul makes a startling claim: sinful desires were 'aroused by the law' — meaning fixation on the rule itself, rather than curbing sin, actually stirred it up. Focusing on the law as the center of attention, rather than on God himself, produced 'fruit for death' instead of obedience. His solution isn't better rule-focus but a change of orientation entirely — being 'released from the law' and now serving 'in the new life of the Spirit and not under the old written code.' Where our attention lands shapes what grows in us; fixating on the letter of a rule can backfire in ways that trusting and following the Spirit doesn't.",
+          "questionHint": "Paul says sinful desires were 'aroused by the law' — what does it mean that focusing on the rule itself is described as stirring up the very thing it forbids?"
         },
         {
           "elementId": "ch03-el16",
@@ -951,7 +1001,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Isaiah doesn't soften the language: sin has 'alienated you from your God' and caused him to 'reject you and not listen to your prayers.' This isn't describing a vague feeling of guilt — it's describing real relational breakdown, the kind where communication itself stops working, like a friendship gone so cold that calls no longer get answered. Sin isn't presented here as a private failing that stays contained inside a person; it actively damages the relationship it's committed against, creating genuine distance between the sinner and God, distance that shows up concretely in prayers that seem to go unheard.",
+          "questionHint": "Isaiah says sin causes God to 'not listen to your prayers' — what everyday kind of relationship breakdown does that unanswered-communication picture resemble?"
         },
         {
           "elementId": "ch03-el19",
@@ -972,7 +1024,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "John names a specific contradiction: someone can claim to 'have fellowship with him' while still 'walking in the darkness' — and John's verdict is blunt: 'we are lying and not practicing the truth.' The lie isn't necessarily spoken to other people; it's a self-deception, a claim to closeness with God that the person's own ongoing life contradicts. This shows sin doesn't just create distance from God in some abstract sense — it makes our own claims about our relationship with him false in practice, no matter how sincerely we might say them, if the walking doesn't match the words.",
+          "questionHint": "John says persisting in darkness while claiming fellowship makes 'we are lying' — lying to whom, exactly, when the claim and the behavior don't match?"
         },
         {
           "elementId": "ch03-el21",
@@ -1001,7 +1055,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Isaiah widens the lens beyond individual guilt: 'the earth is defiled by its inhabitants,' because people have 'violated laws' and 'broken the permanent treaty.' The consequence isn't confined to the people who sinned either — 'a treaty curse devours the earth' itself, and the land's inhabitants are reduced to 'just a handful.' Sin here isn't a private transaction between a person and God; it pollutes the shared world those people live in, and the created order itself absorbs and shows the damage of human unfaithfulness, far beyond whoever originally broke faith.",
+          "questionHint": "Isaiah says 'the earth is defiled by its inhabitants' — who does the defiling, and what ends up bearing the consequence alongside them?"
         },
         {
           "elementId": "ch03-el24",
@@ -1022,7 +1078,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul says creation itself was 'subjected to futility' — not by its own choice, but because of humanity's fall — and as a result 'the whole creation groans and suffers together until now.' That's a striking image: the natural world isn't neutral background to human sin, it's caught up in the same 'bondage of decay' that sin introduced. But the passage doesn't end in despair; it's framed by hope — creation waits to 'be set free... into the glorious freedom of God's children,' the same freedom promised to us. Sin bound creation to us in its groaning, and it's bound to us in its hoped-for release too.",
+          "questionHint": "Paul says creation 'groans' but does so 'in hope' — hope of what, according to the passage's own words about being 'set free'?"
         },
         {
           "elementId": "ch03-el26",
@@ -1051,7 +1109,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalmist doesn't describe sin as merely a spiritual issue — he feels it physically: 'my whole body is sick because of your judgment,' and 'I am deprived of health because of my sin.' Then he shifts to the weight of it: his sins 'overwhelm me; like a heavy load, they are too much for me to bear.' Sin, in this psalm, doesn't stay tidily contained to the soul — it presses in on the body and the emotions too, leaving a person genuinely worn down, not just guilty in the abstract but exhausted and unwell under the actual felt weight of it.",
+          "questionHint": "The psalmist says his 'whole body is sick' because of his sin — what does that tell you about whether sin's effects stay only 'spiritual' or spread further?"
         },
         {
           "elementId": "ch03-el29",
@@ -1072,7 +1132,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul lands on a painful admission: 'nothing good lives in me, that is, in my flesh,' and then describes the gap that creates — 'I want to do the good, but I cannot do it.' Wanting and doing have come apart from each other inside him, which means sin doesn't just affect his actions, it fractures his relationship with his own will. He can no longer simply trust his intentions to translate into his behavior; there's a resistance built in. That internal splitting — desiring one thing and doing another — is exactly what makes sin's damage to self-understanding so disorienting.",
+          "questionHint": "Paul says 'I want to do the good, but I cannot do it' — what does that gap between wanting and doing reveal about a person's relationship with themselves?"
         },
         {
           "elementId": "ch03-el31",
@@ -1093,7 +1155,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's cry is raw — 'Wretched man that I am! Who will rescue me from this body of death?' — and notice that the answer doesn't come from more effort or self-discipline. It comes as a gift: 'Thanks be to God through Jesus Christ our Lord!' The hope here isn't that the inner struggle instantly disappears — Paul still admits he serves 'the law of sin' with his flesh even after this — but that rescue has been provided from outside himself, through Christ, rather than needing to be achieved by finally winning the internal battle on his own. Hope, in other words, is received, not manufactured.",
+          "questionHint": "Paul moves from 'who will rescue me?' straight to 'thanks be to God' — is the rescue he describes something he accomplishes, or something given to him?"
         },
         {
           "elementId": "ch03-el33",
@@ -1229,7 +1293,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul says these people 'knew God' yet refused to glorify him or thank him, and the result wasn't neutral — their thoughts became 'futile' and their hearts 'darkened.' Then comes the trade: they 'exchanged the glory of the immortal God' for images of mortal humans, birds, animals, even reptiles. That's the wrongness of misplaced worship laid bare — it's a downgrade, swapping the one glorious, eternal God for something smaller and dying. And the claim to wisdom collapses into foolishness in the same breath. Worshipping the wrong thing isn't just misdirected devotion; it corrodes the mind and heart that do the worshipping.",
+          "questionHint": "Look at the word 'exchanged' — when you trade something immortal and glorious for an image of a mortal creature, what does that trade cost the person making it?"
         },
         {
           "elementId": "ch04-el07",
@@ -1258,7 +1324,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This one verse traces a short, sobering chain: hardness of heart leads to ignorance, ignorance darkens understanding, and darkened understanding leaves a person 'alienated from the life of God.' So giving your heart to the wrong thing doesn't just disappoint you — it cuts you off, bit by bit, from the very life God offers. The word 'alienated' is key; it's not a gradual fading but an estrangement, like a relationship that's been broken. Wrong love hardens before it darkens, and it darkens before it isolates. That's where it ends up — not just wasted affection, but distance from God himself.",
+          "questionHint": "The verse starts with 'hardness of their hearts' as the root cause — what does hardness usually do to something over time, and where does that process end here?"
         },
         {
           "elementId": "ch04-el10",
@@ -1287,7 +1355,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Solomon calls the heart a wellspring: 'from it are the sources of life.' That single image explains the urgency of the command to guard it 'with all vigilance.' A spring doesn't just hold water for itself — everything downstream depends on what flows out of it. If the source is guarded and clean, life flows from it; if it's polluted or misdirected, everything that depends on it suffers too. Guarding your heart, then, isn't about repressing feeling — it's about protecting the origin point of your choices, desires, and actions, because whatever you allow to take root there eventually shows up everywhere else in your life.",
+          "questionHint": "The verse calls the heart the 'sources of life' — if a spring feeds everything downstream, what happens to the rest of the stream when the source itself is left unguarded?"
         },
         {
           "elementId": "ch04-el13",
@@ -1308,7 +1378,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus contrasts two kinds of treasure: one earthly, vulnerable to 'moth and rust' and thieves, and one heavenly, immune to decay and theft. But the real punchline is verse 21: 'where your treasure is, there your heart will be also.' The heart doesn't lead the treasure — it follows it. So being careless about what you treasure isn't a side issue; whatever you invest in will inevitably capture your heart's attention and affection too. That's why guarding your heart means first being honest about what you're actually storing up. Choose treasure that can't rot or be stolen, and your heart will be anchored somewhere secure.",
+          "questionHint": "Verse 21 says your heart follows your treasure, not the other way around — so if you want to know where your heart actually is, what should you look at first?"
         },
         {
           "elementId": "ch04-el15",
@@ -1337,7 +1409,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This passage describes love in the most forceful terms possible — 'as strong as death,' with a passion 'as unrelenting as Sheol,' burning like 'a blazing flame' that no flood can quench and no fortune can buy. This isn't casual affection; it's a consuming, unstoppable force once it takes hold. That's exactly why where you set it matters so much. Love this powerful will reshape you, and if it's aimed at the wrong thing, that same unquenchable intensity becomes destructive rather than life-giving. Because love can't simply be bought, sold, or reversed on a whim, choosing its object carefully isn't optional — it's essential.",
+          "questionHint": "The passage says love can't be quenched by floods or purchased with 'all his possessions' — if love is that unstoppable and irreversible once given, why would its target matter so much?"
         },
         {
           "elementId": "ch04-el18",
@@ -1366,7 +1440,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus states this bluntly: 'whoever loves father or mother more than me is not worthy of me.' Disordered love of parents is loving them more than Christ — placing their approval, wishes, or claim on your life above his. Ordered love, by implication, still loves parents genuinely, but Christ occupies the position they cannot: the one whose claim comes first. This isn't Jesus dismissing family affection; it's Jesus refusing to be second to anyone, even the closest human relationships. The love itself isn't the problem — the ranking is. When any love, even a good one, outranks Christ, it has become disordered.",
+          "questionHint": "Jesus doesn't say 'do not love father or mother' — he says not to love them 'more than me.' What does that specific wording tell you about what's actually wrong with disordered love?"
         },
         {
           "elementId": "ch04-el21",
@@ -1387,7 +1463,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus quotes the command directly: 'God said, Honor your father and mother,' pairing it with the severe warning against insulting them. Notice the source — this is presented as God's own command, not merely a cultural nicety. That matters for understanding ordered love: honoring parents isn't in competition with loving God, it's part of obeying him. Disordered love would use devotion to God as an excuse to neglect or dishonor parents; ordered love recognizes that caring for family is itself something God has commanded and takes seriously, seen in how sharply he speaks about failing to do it.",
+          "questionHint": "The verse opens with 'For God said' — whose command is honoring your parents, according to this verse, and what does that do to the idea that loving God could excuse neglecting them?"
         },
         {
           "elementId": "ch04-el23",
@@ -1416,7 +1494,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus answers with the Shema and its command: love the Lord your God 'with all your heart, with all your soul, with all your mind, and with all your strength,' calling it 'the most important.' The repeated word 'all' leaves no corner of a person exempt — feeling, will, intellect, and energy are all to be directed toward God. That's the right ordering: not a fragment of devotion alongside other loves, but total love for God placed at the very top, so that every other love in a person's life takes its proper shape and place underneath that first, all-encompassing commitment.",
+          "questionHint": "Count how many times 'all' appears in this command — what does that repetition suggest about how much of yourself is meant to be organized around loving God first?"
         },
         {
           "elementId": "ch04-el26",
@@ -1437,7 +1517,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "John doesn't just say God loves — he says 'God is love.' That's an identity statement, not merely a description of behavior. Because love is who God is at his core, not just something he occasionally does, a life patterned after him will necessarily be a life of love. And John makes the connection sharp: 'the person who does not love does not know God.' Love becomes the evidence, even the test, of actually knowing him. If our lives are meant to reflect who God is, and God's very essence is love, then it makes complete sense that love would be the foundation everything else is built on.",
+          "questionHint": "The verse says 'God is love,' not 'God loves' — what's the difference between something being an action God takes and something being what God actually is?"
         },
         {
           "elementId": "ch04-el28",
@@ -1581,7 +1663,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalm grounds creation's value in ownership: 'The Lord owns the earth and all it contains, the world and all who live in it.' Nothing here belongs to us by ultimate right — it's his possession, from the ground beneath our feet to the people living on it. That ownership is exactly why creation deserves respect rather than careless use or contempt. We don't get to decide creation's worth on our own terms, because it was never ours to begin with; its value comes from belonging to the Lord, and treating it carelessly means mishandling something that isn't ours.",
+          "questionHint": "The verse says the Lord 'owns' the earth and everyone in it — if something belongs to someone else, what does that usually require of the way you treat it?"
         },
         {
           "elementId": "ch05-el07",
@@ -1602,7 +1686,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul stacks up the scope deliberately — 'all things in heaven and on earth,' visible and invisible, even thrones, dominions, principalities, and powers — and says all of it was created 'by him,' 'through him,' and 'for him.' Creation's goodness isn't incidental or self-generated; it flows out of Christ as its source, was made by his agency, and exists for his purposes. Nothing falls outside that threefold claim. That's how we know creation deserves respect: it isn't random matter to be used however we like, but something intentionally brought into being by, through, and for Christ himself.",
+          "questionHint": "Notice the three prepositions used — 'by him,' 'through him,' 'for him' — what does using all three together say about how thoroughly creation belongs to Christ?"
         },
         {
           "elementId": "ch05-el09",
@@ -1623,7 +1709,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "John draws a stark either/or: 'Do not love the world or the things in the world. If anyone loves the world, the love of the Father is not in him.' Notice this isn't a warning about moderation — it's exclusivity. Loving 'the world' as an ultimate object doesn't just crowd out love for the Father a little; it displaces it entirely, according to this verse. That's how we know love of created things can go wrong: not because things themselves are evil, but because when something created is loved in the place that belongs to the Father, both loves can't occupy that same space in a person.",
+          "questionHint": "The verse says if someone loves the world, the Father's love 'is not in him' — what does that wording suggest about whether these two loves can share the same top spot in a person's heart?"
         },
         {
           "elementId": "ch05-el11",
@@ -1644,7 +1732,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "James doesn't soften this at all — he calls his readers 'adulterers' for choosing friendship with the world, a word that assumes a covenant relationship has been betrayed. He then spells out the logic plainly: friendship with the world 'means hostility toward God,' and choosing to be the world's friend actively 'makes himself God's enemy.' There's no neutral middle ground offered here. This shows love of created things goes wrong precisely when the world becomes a rival loyalty — not just a distraction, but something that positions a person in active opposition to God, the way infidelity positions someone against a spouse.",
+          "questionHint": "James uses the word 'adulterers' before he even explains what he means — what kind of relationship does that word assume has already been broken?"
         },
         {
           "elementId": "ch05-el13",
@@ -1673,7 +1763,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This passage only gives us half the picture on purpose — it names loving God with 'all your heart, with all your soul, with all your mind, and with all your strength' as 'the most important' commandment, full stop. It doesn't mention loving people here at all. But that's the point: this establishes the foundation everything else has to be built on. Loving God first, completely, isn't a rival to loving people — it's what makes any other love rightly ordered rather than idolatrous. Love for people fits underneath this greatest command, not beside it as a competitor.",
+          "questionHint": "This passage calls loving God 'the most important' commandment but doesn't mention neighbors at all here — what might that silence suggest about which love has to come first before the other one can be rightly ordered?"
         },
         {
           "elementId": "ch05-el16",
@@ -1702,7 +1794,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus draws a sharp contrast between two agendas: 'the thief comes only to steal and kill and destroy,' while he has come 'so that they may have life, and may have it abundantly.' The word 'abundantly' is doing real work here — Jesus isn't offering mere survival or bare existence, but overflow, fullness, more-than-enough life. That's a direct yes to flourishing being part of God's plan: it's explicitly named as the purpose of Jesus's coming, set against the destructive alternative. Flourishing isn't a distraction from following Jesus; according to this verse, it's precisely what he came to give.",
+          "questionHint": "Jesus doesn't just say he came to give life — he says life 'abundantly.' What does that extra word add to what he's promising beyond mere survival?"
         },
         {
           "elementId": "ch05-el19",
@@ -1723,7 +1817,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus invites the 'weary and burdened' to come to him for rest, but the way he offers it is unexpected — he says 'take my yoke on you and learn from me,' not 'set down every burden.' A yoke is still work, still a load to carry. But it's carried alongside someone 'gentle and humble in heart,' and the promise is 'rest for your souls.' So flourishing, in this passage, isn't the absence of all effort or difficulty; it's found in whose yoke you're under. God's plan for flourishing runs through relationship with Jesus himself, not through escaping all labor.",
+          "questionHint": "Jesus offers rest but then immediately says 'take my yoke' — a yoke is a tool for work, not rest. Why might he combine those two ideas instead of just promising freedom from burdens?"
         },
         {
           "elementId": "ch05-el21",
@@ -1768,7 +1864,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul frames it carefully: he doesn't want believers to be 'uninformed' about those who have died, precisely so that they won't 'grieve like the rest who have no hope.' The wrong way to grieve, according to this verse, isn't grieving itself — it's grieving as though there's nothing beyond death, the way people without any resurrection hope do. The problem is being 'uninformed,' missing the knowledge that reshapes grief. Christian grief is still real grief, but it's grief carried by people who know something others don't, which is why Paul is so intent on informing them rather than leaving them to sorrow blindly.",
+          "questionHint": "Paul says the goal is that they not grieve 'like the rest who have no hope' — what does that phrase imply is the actual problem: grief itself, or grief without something specific?"
         },
         {
           "elementId": "ch05-el26",
@@ -1797,7 +1895,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul answers this from firsthand experience: he has known both 'times of need and times of abundance,' hunger and plenty, and in 'any and every circumstance' he has 'learned the secret of contentment.' That word 'learned' matters — contentment here isn't a natural disposition or a lucky temperament, it's something acquired, and acquired specifically 'through the one who strengthens me.' So yes, contentment is possible without flourishing, but not through willpower or positive thinking. It comes through a strength supplied from outside the circumstances themselves, which is why Paul can say the same thing whether he's satisfied or hungry.",
+          "questionHint": "Paul calls contentment something he 'learned,' and says he does 'all things through the one who strengthens me' — is the source of his contentment his circumstances, or something else entirely?"
         },
         {
           "elementId": "ch05-el29",
@@ -1962,7 +2062,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This list pairs 'lovers of themselves' right alongside 'lovers of money,' boastful, arrogant, and — tellingly — 'loving pleasure rather than loving God.' That last phrase names the real opposite directly: this kind of self-love displaces love of God, putting self and pleasure where God's place should be. It also produces the whole ugly list that follows — disobedience, ingratitude, lack of self-control — while keeping 'the outward appearance of religion' but denying its power. So self-love, in this sense, is the opposite of genuine godliness: it's a hollowed-out religion that has swapped love of God for love of self.",
+          "questionHint": "The list says people will be 'loving pleasure rather than loving God' — what does that 'rather than' tell you about which love this bad kind of self-love has pushed out?"
         },
         {
           "elementId": "ch06-el07",
@@ -1983,7 +2085,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This proverb links self-love to something surprising: wisdom. 'The one who acquires wisdom loves himself,' it says, and the one who 'preserves understanding will prosper.' Good self-love here isn't indulgence or vanity — it's wanting genuine wisdom and understanding for yourself, the kind that leads to real prosperity rather than fleeting pleasure. Seeking wisdom is actually an act of caring well for your own life, taking your own good seriously enough to pursue what will actually help you flourish. That's why self-love can be a good thing: when it's aimed at wisdom rather than ease, it's simply taking proper care of yourself.",
+          "questionHint": "The proverb connects self-love to 'acquires wisdom' rather than to comfort or pleasure — what does pursuing wisdom, instead of ease, reveal about what this kind of self-love is actually seeking?"
         },
         {
           "elementId": "ch06-el09",
@@ -2012,7 +2116,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus states the second great commandment plainly: 'Love your neighbor as yourself,' and adds that no commandment is greater than these two together. The measuring stick he gives is telling — not an abstract ideal, but yourself. Whatever care, attention, and concern you already give your own needs and well-being becomes the standard for how you're to treat the person next to you. This assumes a person already has some baseline regard for their own life, and then calls them to extend that same quality of care outward. Loving neighbors, in Jesus's own words, is measured by the love you already know how to give yourself.",
+          "questionHint": "Jesus doesn't invent a new standard for loving neighbors — he says 'as yourself.' What does using yourself as the measuring stick assume you're already doing for yourself?"
         },
         {
           "elementId": "ch06-el12",
@@ -2041,7 +2147,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's warning is precise: don't 'think more highly of yourself than you ought to think,' but use 'sober discernment.' Disordered self-love looks like inflated self-assessment — rating yourself above the truth of who you are. Paul immediately grounds the corrective in something outside the self: the 'measure of faith' God has distributed to each person. That reframes everything — whatever gifts or standing you have were given, not self-generated, which should produce sober clarity rather than an inflated ego. Disordered self-love forgets that source and starts treating its own abilities as self-made achievements deserving of higher status than reality supports.",
+          "questionHint": "Paul says not to think of yourself more highly than you 'ought' — and then mentions faith God has 'distributed' to you. What does remembering it was given, not earned, do to an inflated self-view?"
         },
         {
           "elementId": "ch06-el15",
@@ -2062,7 +2170,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul names the disordered pattern directly: being 'motivated by selfish ambition or vanity.' Both point to a self that's grasping for its own advancement or image, using others as a means to that end. The alternative he offers isn't just restraint but a full reversal — 'in humility,' treating others as 'more important than yourself.' That contrast makes the disordered version clear: selfish, vain self-love centers everything on your own advancement and appearance, calculating how situations serve you rather than others. It's a love of self that has crowded out any real regard for the people around you.",
+          "questionHint": "Paul pairs 'selfish ambition or vanity' against 'in humility' as the opposite motive — what do ambition and vanity have in common that humility specifically corrects?"
         },
         {
           "elementId": "ch06-el17",
@@ -2083,7 +2193,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "James is blunt about the fruit of this kind of self-focus: 'where there is jealousy and selfishness, there is disorder and every evil practice.' Notice how sweeping that is — not just some evil practices, but 'every' one, tracing back to jealousy and selfishness at the root. Disordered, selfish self-love isn't presented as a minor personal quirk; it's the soil that produces chaos and wrongdoing broadly. This shows that selfish self-love isn't a private matter that only affects the person who has it — James treats it as a source of disorder that spreads outward into every kind of evil practice.",
+          "questionHint": "James says jealousy and selfishness lead to 'disorder and every evil practice' — what does the word 'every' suggest about how far-reaching this kind of self-love's effects really are?"
         },
         {
           "elementId": "ch06-el19",
@@ -2112,7 +2224,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalmist's response to being known and made isn't self-congratulation — it's thanks directed at God: 'I will give you thanks because your deeds are awesome and amazing.' The praise for being 'fearfully and wonderfully made' goes to the maker, not to the self admiring itself. Right alongside that sits a quiet comfort: 'You knew me thoroughly.' Humble, rightly-ordered self-love looks like this combination — genuine wonder at how you were made, paired with the security of being fully known, but with the gratitude aimed outward at God rather than inward at your own achievement or appearance.",
+          "questionHint": "The psalmist says 'I will give you thanks' about his own being — thanks to whom, and what does directing that gratitude outward rather than inward say about rightly-ordered self-regard?"
         },
         {
           "elementId": "ch06-el22",
@@ -2133,7 +2247,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul reframes the body entirely: it's 'the temple of the Holy Spirit,' and 'you are not your own' because 'you were bought at a price.' Rightly-ordered self-love, according to this passage, doesn't start from self-ownership at all — it starts from belonging to God. Because the body is sacred space, indwelt by the Spirit and purchased rather than self-possessed, caring for it becomes an act of honoring God rather than self-indulgence or self-neglect. The command that follows, 'glorify God with your body,' shows that healthy self-care and worship aren't separate categories here — they're the same act.",
+          "questionHint": "Paul says your body is 'the temple of the Holy Spirit' and that 'you are not your own' — if your body belongs to someone else, what does that change about the reason you'd take care of it?"
         },
         {
           "elementId": "ch06-el24",
@@ -2154,7 +2270,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul states something almost obvious to make his point: 'no one has ever hated his own body but he feeds it and takes care of it.' That ordinary, everyday nourishment and care is treated as normal and good — not vanity, just basic stewardship of what you've been given. He then raises the comparison: this is 'just as Christ also does the church.' Humble, rightly-ordered self-love looks like this unremarkable, practical care for your own body and needs, modeled on the same kind of attentive, nurturing love Christ shows the church — not indulgence, and not neglect either.",
+          "questionHint": "Paul compares feeding and caring for your own body to how 'Christ also does the church' — what kind of care does that comparison suggest is normal and good, rather than selfish?"
         },
         {
           "elementId": "ch06-el26",
@@ -2183,7 +2301,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The Lord grounds identity in origin: 'My hand made them; that is how they came to be.' A right attitude toward yourself starts there — recognizing you were made, not self-created. But the verse pairs that with a specific posture that draws God's favor: he shows 'special favor to the humble and contrite, who respect what I have to say.' So the learning happens in two moves — remembering you were shaped by God's hand, and responding to him with humility and contrition rather than self-sufficiency. Right self-regard grows out of both truths held together: made by him, and humbly attentive to him.",
+          "questionHint": "The Lord says 'My hand made them' before mentioning who receives his favor — how does remembering you were made, rather than self-made, shape the humble attitude he describes next?"
         },
         {
           "elementId": "ch06-el29",
@@ -2204,7 +2324,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter's instruction has a specific shape: 'humble yourselves under his mighty hand,' with the promise that God 'will exalt you in due time.' The right attitude toward yourself, according to this verse, involves a voluntary lowering — not self-loathing, but placing yourself under God's mighty hand rather than promoting or defending yourself. And notice where the timing sits: exaltation comes 'in due time,' which is God's timing, not yours to seize or rush. Learning a right attitude to yourself means trusting that if there's any lifting up to be done, it's God who does it, and he'll do it when he chooses.",
+          "questionHint": "Peter says God will exalt you 'in due time' if you first humble yourself — whose timing governs when any lifting up happens, and what does that ask you to do in the meantime?"
         },
         {
           "elementId": "ch06-el31",
@@ -2340,7 +2462,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Isaiah puts five boasts in the fallen king's own mouth: 'I will climb up to the sky... I will set up my throne... I will make myself like the Most High.' That's the anatomy of pride — not just wanting more, but wanting to occupy God's place, to rule from the highest point and answer to no one. Human pride runs the same script in miniature: we want our will, our judgment, our comfort enthroned above everything else, including God. And the passage shows exactly where that road ends — not enthronement but the pit, mocked by the very people who once feared 'the conqueror of the nations.'",
+          "questionHint": "Count how many times the fallen king says 'I will' before he's ever brought down — what does the pattern of those statements, more than any single one, tell you about what pride is reaching for?"
         },
         {
           "elementId": "ch07-el07",
@@ -2348,7 +2472,7 @@
           "format": "HTML",
           "bibleRef": "Ezekiel 28:2-9,17",
           "translation": "NET",
-          "passageText": "<sup>7</sup> I am about to bring foreigners against you, the most terrifying of nations. They will draw their swords against the grandeur made by your wisdom, and they will defile your splendor.",
+          "passageText": "<sup>2</sup> “Son of man, say to the prince of Tyre, ‘This is what the sovereign Lord says: “‘Your heart is proud and you said, “I am a god; I sit in the seat of gods, in the heart of the seas” – yet you are a man and not a god, though you think you are godlike. <sup>3</sup> Look, you are wiser than Daniel; no secret is hidden from you. <sup>4</sup> By your wisdom and understanding you have gained wealth for yourself; you have amassed gold and silver in your treasuries. <sup>5</sup> By your great skill in trade you have increased your wealth, and your heart is proud because of your wealth. <sup>6</sup> “‘Therefore this is what the sovereign Lord says: Because you think you are godlike, <sup>7</sup> I am about to bring foreigners against you, the most terrifying of nations. They will draw their swords against the grandeur made by your wisdom, and they will defile your splendor. <sup>8</sup> They will bring you down to the pit, and you will die violently in the heart of the seas. <sup>9</sup> Will you still say, “I am a god,” before the one who kills you – though you are a man and not a god – when you are in the power of those who wound you? <sup>17</sup> Your heart was proud because of your beauty; you corrupted your wisdom on account of your splendor. I threw you down to the ground; I placed you before kings, that they might see you.",
           "passageUrl": "https://www.bible.com/bible/107/EZK.28.NET",
           "bottomPadding": "none"
         },
@@ -2361,7 +2485,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The verse focuses on what's coming, not what was done: 'foreigners... the most terrifying of nations' will 'draw their swords against the grandeur made by your wisdom' and 'defile your splendor.' Notice the phrase 'made by your wisdom' — the pride here isn't abstract, it's pride in your own competence, in what you built and calculated. That's exactly how human pride often operates too: we don't usually claim to be gods outright, we just quietly credit our own wisdom for what we have and treat it as untouchable. This verse says otherwise — grandeur built on self-credited wisdom is precisely what gets defiled.",
+          "questionHint": "The verse says nations will draw swords against 'the grandeur made by your wisdom' — whose wisdom does it credit for that grandeur, and what does that tell you about where the pride was rooted?"
         },
         {
           "elementId": "ch07-el09",
@@ -2390,7 +2516,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The verse is blunt: 'The Lord abhors every arrogant person.' Not dislikes, not disapproves of — abhors, a word for something viscerally repulsive. That's a strong statement about how seriously God takes pride; it isn't a minor character flaw he overlooks in someone who's otherwise faithful. The second half adds the certainty of consequence: 'rest assured that they will not go unpunished.' Pride is dangerous, then, not because it's merely unattractive, but because it provokes God's active revulsion and guarantees a reckoning — there's no version of arrogance that quietly slips past him unnoticed or unaddressed.",
+          "questionHint": "The verse doesn't say God merely dislikes arrogance — it says he 'abhors' it. What does that stronger word suggest about how pride is different from an ordinary flaw?"
         },
         {
           "elementId": "ch07-el12",
@@ -2411,7 +2539,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "James quotes an old proverb to make his point: 'God opposes the proud, but he gives grace to the humble.' Notice the verb — opposes. Pride doesn't just fail to earn God's favor, it actively puts you on the wrong side of him, like an adversary rather than a child he's helping. That's what makes it so dangerous: it forfeits the very thing you need most. The verse opens by saying 'he gives greater grace' — grace is available and abundant, but pride is the one posture guaranteed to be met with resistance instead of that grace.",
+          "questionHint": "The verse says God 'opposes' the proud rather than simply withholding blessing from them — what's the difference between God being unhelpful toward pride and God being actively against it?"
         },
         {
           "elementId": "ch07-el14",
@@ -2427,7 +2557,7 @@
           "format": "HTML",
           "bibleRef": "Proverbs 16:18",
           "translation": "NET",
-          "passageText": "<sup>18</sup> Pride goes before destruction,",
+          "passageText": "<sup>18</sup> Pride goes before destruction, and a haughty spirit before a fall.",
           "passageUrl": "https://www.bible.com/bible/107/PRO.16.NET",
           "bottomPadding": "none"
         },
@@ -2440,7 +2570,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "All we're given here is the first half of the proverb — 'Pride goes before destruction' — but even that fragment makes a claim worth sitting with: it's describing an order, a sequence. Pride isn't pictured as one danger among many that might befall a proud person; it's pictured as what precedes and leads to destruction, almost as its natural forerunner. Wisdom, in other words, isn't only warning that pride is wrong, but that it's a kind of signal — when you notice pride rising up in yourself, that's warning enough that a fall is already on its way.",
+          "questionHint": "The proverb says pride 'goes before' destruction rather than simply causing it — what does that word order suggest about pride functioning as a warning sign of what's coming?"
         },
         {
           "elementId": "ch07-el17",
@@ -2469,7 +2601,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalm doesn't tell the builder or the watchman to stop working — it says their work is 'in vain' without the Lord behind it. That's the paradox of independent dependence: real human effort (building, guarding) still happens, but its success was never actually in human hands to begin with. You can be diligent and skilled and still labor 'in vain' if the Lord isn't the one building or guarding through you. Scripture doesn't resolve this by asking us to do less, but by asking us to recognize whose effort was actually decisive all along.",
+          "questionHint": "The psalm says the builder's labor is 'in vain' without the Lord — does it tell the builder to stop building? What does that tension show you about how effort and dependence fit together?"
         },
         {
           "elementId": "ch07-el20",
@@ -2490,7 +2624,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul tells the Philippians to 'work out your salvation' — real, active effort is expected of them, 'not only in my presence but even more in my absence.' But he immediately grounds that command in verse 13: it is God 'bringing forth in you both the desire and the effort.' Even the wanting to obey, not just the doing, is credited to God's work in them. That's independent dependence exactly — genuine human striving sitting right alongside the truth that the will and the power behind that striving were God's gift all along.",
+          "questionHint": "Paul commands them to work, then immediately says God produces 'both the desire and the effort' in them — if God supplies even the wanting, what's left that's genuinely theirs to do?"
         },
         {
           "elementId": "ch07-el22",
@@ -2519,7 +2655,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The passage pronounces a curse on 'people who trust in mere human beings' and 'depend on mere flesh and blood for their strength' — and then pictures the result as a shrub stranded 'in a salt land where no one can live,' unable to notice good things even when they come. That image explains why anxiety is the natural response to relying on the world: human strength is 'mere flesh and blood,' inherently unstable ground to build a life on. If your security is rooted in something that can't sustain it, restlessness isn't an overreaction — it's an accurate read of how fragile that foundation really is.",
+          "questionHint": "The cursed person 'cannot experience good things even when they happen' — what does that detail suggest happens to your capacity for peace when your trust is planted in unreliable ground?"
         },
         {
           "elementId": "ch07-el25",
@@ -2540,7 +2678,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul isn't describing distant strangers — he's describing 'difficult times' filled with people who are 'lovers of themselves, lovers of money, boastful, arrogant... treacherous, reckless, conceited' while still keeping up 'the outward appearance of religion.' That combination is what makes anxiety a reasonable response to the world: the danger isn't only obvious hostility, it's that self-focused, untrustworthy character can hide behind a religious veneer, so you can't always tell who or what is safe. When Paul's own advice is simply 'avoid people like these,' he's acknowledging that this landscape really does call for caution, not naivety.",
+          "questionHint": "Paul says these people will 'maintain the outward appearance of religion' while having 'repudiated its power' — what does that gap between appearance and reality tell you about why the world can feel hard to navigate safely?"
         },
         {
           "elementId": "ch07-el27",
@@ -2569,7 +2709,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus doesn't promise the trouble will disappear — he says plainly, 'In the world you have trouble and suffering.' The peace he offers isn't the absence of hardship but something located 'in me': 'so that in me you may have peace.' The right response to anxiety, then, isn't denial that the world is genuinely hard, but courage rooted in a settled fact he states outright — 'I have conquered the world.' Trouble is real, but it isn't the last word; the last word belongs to the one who has already won, and peace comes from being found in him, not from circumstances changing.",
+          "questionHint": "Jesus says 'in me you may have peace' rather than 'in the world you will have no trouble' — where does he locate the source of peace, if not in circumstances improving?"
         },
         {
           "elementId": "ch07-el30",
@@ -2716,7 +2858,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus draws a direct line between remaining and fruit: 'The one who remains in me — and I in him — bears much fruit.' The realization he's pointing to isn't just that we need help sometimes, but something more total: 'apart from me you can accomplish nothing.' Not less, not little — nothing. Fruitfulness was never meant to come from self-generated effort branching off on its own; a branch doesn't produce by trying harder, it produces by staying attached to the vine. What we should realize instead of self-reliance is this ongoing, moment-by-moment connection as the actual source of anything worthwhile we do.",
+          "questionHint": "Jesus doesn't say 'apart from me you can accomplish less' — he says 'nothing.' Why choose that absolute word instead of a milder one if he just wanted to encourage relying on him more?"
         },
         {
           "elementId": "ch08-el07",
@@ -2737,7 +2881,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul reports what God told him directly: 'My grace is enough for you, for my power is made perfect in weakness.' That's a strange kind of math — power isn't diminished by weakness, it's completed by it. What Paul realizes instead of pushing past his weakness or hiding it is to 'boast most gladly about my weaknesses,' precisely so that 'the power of Christ may reside in' him. The realization isn't resignation to limitation; it's recognizing that admitted weakness is the very place where Christ's power has room to show up and do its clearest work.",
+          "questionHint": "God says his power is 'made perfect in weakness' rather than in spite of it — what does 'made perfect' suggest about weakness's role, not just its presence?"
         },
         {
           "elementId": "ch08-el09",
@@ -2766,7 +2912,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's antidote to inflated self-opinion isn't self-hatred but recalibration: think 'with sober discernment,' seeing yourself accurately rather than either too highly or too low. And he grounds that sober view in a specific fact — whatever faith you have was something 'God has distributed to each of you,' a 'measure' assigned, not something you generated yourself. That reframes the whole comparison game: if your faith itself is a gift measured out by someone else, there's no basis for the kind of self-elevated thinking Paul warns against. Clear-eyed humility starts with remembering where what you have actually came from.",
+          "questionHint": "Paul says faith is a 'measure' God 'distributed' to you — if even your faith was assigned to you rather than earned, what happens to the case for thinking 'more highly' of yourself?"
         },
         {
           "elementId": "ch08-el12",
@@ -2780,9 +2928,9 @@
           "elementId": "ch08-el13",
           "type": "biblePassage",
           "format": "HTML",
-          "bibleRef": "Philippians 2:3-5",
+          "bibleRef": "Philippians 2:3-8",
           "translation": "NET",
-          "passageText": "<sup>3</sup> Instead of being motivated by selfish ambition or vanity, each of you should, in humility, be moved to treat one another as more important than yourself. <sup>4</sup> Each of you should be concerned not only about your own interests, but about the interests of others as well. <sup>5</sup> You should have the same attitude toward one another that Christ Jesus had,",
+          "passageText": "<sup>3</sup> Instead of being motivated by selfish ambition or vanity, each of you should, in humility, be moved to treat one another as more important than yourself. <sup>4</sup> Each of you should be concerned not only about your own interests, but about the interests of others as well. <sup>5</sup> You should have the same attitude toward one another that Christ Jesus had, <sup>6</sup> who though he existed in the form of God did not regard equality with God as something to be grasped, <sup>7</sup> but emptied himself by taking on the form of a slave, by looking like other men, and by sharing in human nature. <sup>8</sup> He humbled himself, by becoming obedient to the point of death – even death on a cross!",
           "passageUrl": "https://www.bible.com/bible/107/PHP.2.NET",
           "bottomPadding": "none"
         },
@@ -2795,7 +2943,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul defines humility by contrast and by action: instead of 'selfish ambition or vanity,' it means being 'moved to treat one another as more important than yourself.' It isn't only an internal attitude — it shows up as attention redirected outward: 'concerned not only about your own interests, but about the interests of others as well.' That second clause matters — Paul doesn't ask you to stop caring about your own interests, just to stop caring about only your own. And he anchors the whole instruction in a person: 'the same attitude... that Christ Jesus had,' making humility something modeled, not merely commanded.",
+          "questionHint": "Paul says to be concerned 'not only' about your own interests 'but about' others' too — does that mean dropping self-concern entirely, or expanding what you're concerned about?"
         },
         {
           "elementId": "ch08-el15",
@@ -2803,7 +2953,7 @@
           "format": "HTML",
           "bibleRef": "Micah 6:8",
           "translation": "NET",
-          "passageText": "<sup>8</sup> He has told you, O man, what is good,",
+          "passageText": "<sup>8</sup> He has told you, O man, what is good, and what the Lord really wants from you: He wants you to promote justice, to be faithful, and to live obediently before your God.",
           "passageUrl": "https://www.bible.com/bible/107/MIC.6.NET",
           "bottomPadding": "none"
         },
@@ -2816,7 +2966,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The fragment we have doesn't yet spell out what the 'good' actually is — it only states that it has been told, plainly, to 'O man.' Even that much is worth noticing: God doesn't leave what's required for humility a mystery for us to guess at or philosophize toward. It 'has' already been told — past tense, settled, available. Whatever humility involves, according to this verse's own framing, isn't a hidden secret reserved for the spiritually elite; it's something already disclosed and expected to be known and acted on by ordinary people.",
+          "questionHint": "The verse says what is good 'has' already been told to you — what does that verb tense suggest about whether humility is a mystery you have to work out for yourself?"
         },
         {
           "elementId": "ch08-el17",
@@ -2845,7 +2997,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul draws a sharp contrast between two possible sources of approval: 'the person who commends himself' versus 'the person the Lord commends.' Only one of those, he says, is actually 'approved.' So where should we be looking instead of self-promotion or self-assessment? Toward the Lord's own verdict — 'the one who boasts must boast in the Lord.' That relocates the whole question of worth and achievement outside ourselves; it isn't our own résumé of accomplishments that settles anything, it's whether the Lord himself has commended it, which means we can stop performing for a verdict we were never qualified to render on ourselves.",
+          "questionHint": "Paul contrasts the one who commends himself with the one 'the Lord commends' — whose commendation does he say actually counts as being 'approved'?"
         },
         {
           "elementId": "ch08-el20",
@@ -2874,7 +3028,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalm gets specific about what makes the wicked man's arrogance so dangerous — not just that he thinks well of himself, but what he concludes about God: 'God won't hold me accountable; he doesn't care.' Pride here isn't just inflated self-regard, it's a functional atheism — arrogance that quietly edits God out of the picture as someone who notices or responds. That's what makes pride so dangerous: left unchecked, it doesn't just puff up the self, it talks itself out of any accountability at all, assuming indifference where there is actually a God who sees and cares.",
+          "questionHint": "The arrogant man's thought isn't 'there is no God' but 'he won't hold me accountable; he doesn't care' — what does pride do to your sense of being watched or answerable, even if you'd still say you believe in God?"
         },
         {
           "elementId": "ch08-el23",
@@ -2903,7 +3059,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul doesn't just forbid anxiety, he gives a replacement action: 'in every situation, through prayer and petition with thanksgiving, tell your requests to God.' The turn from anxiety isn't willpower or suppression — it's redirection, taking whatever was fueling the worry and handing it over in prayer, with thanksgiving mixed in even before the outcome is known. And the result isn't a guarantee that circumstances change, but that 'the peace of God that surpasses all understanding will guard your hearts and minds' — a peace that doesn't depend on things adding up logically, but stands guard regardless.",
+          "questionHint": "Paul pairs 'prayer and petition' with 'thanksgiving' before the situation is resolved — what does giving thanks in advance suggest about how this turn away from anxiety actually works?"
         },
         {
           "elementId": "ch08-el26",
@@ -2932,7 +3090,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter links two things that might seem opposite: humbling yourself 'under his mighty hand' and casting 'all your cares on him.' The different life God calls us to isn't self-sufficient toughness, and it isn't anxious self-management either — it's a kind of trusting surrender on both fronts, low before God's power yet unafraid to hand him every worry. And there's a promise attached to the humility: 'God will exalt you in due time.' The casting of cares is grounded in a stated reason, not just an instruction: 'because he cares for you' — the trust makes sense because the one receiving the cares is already invested in you.",
+          "questionHint": "Peter gives a reason for casting your cares on God — 'because he cares for you' — how does that reason change casting cares from a technique into something more like trust in a person?"
         },
         {
           "elementId": "ch08-el29",
@@ -3071,7 +3231,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The proverb compares what's inside a person to 'deep water' — not hidden exactly, but not visible on the surface either, requiring real effort to reach. That's why it's hard to understand ourselves and others: our actual motives, the 'counsel' driving our choices, sit below what's easily observed, including to ourselves. The proverb doesn't say this depth is unreachable, though — it says 'an understanding person draws it out,' which takes patience and skill, like drawing water from a well rather than glancing at a puddle. Self-knowledge and knowing others both require that same slow, deliberate work.",
+          "questionHint": "The proverb compares a person's inner counsel to 'deep water' rather than a puddle — what kind of effort does drawing water up from a well require that glancing at a surface doesn't?"
         },
         {
           "elementId": "ch09-el06",
@@ -3100,7 +3262,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul draws the line at what shapes a person's 'outlook' — those who 'live according to the flesh have their outlook shaped by the things of the flesh,' while those who live by the Spirit are shaped by the things of the Spirit. That's exactly how desires and fears expose the heart: whatever you set your mind on, whatever you're drawn toward or anxious about, is already revealing which direction is forming you. Desires and fears aren't just passing feelings — according to Paul, they're evidence of which 'things' currently occupy and shape your inner orientation, flesh or Spirit.",
+          "questionHint": "Paul says people's 'outlook' is 'shaped by' whatever they set their mind on — what does that suggest your desires and fears are actually doing to you, beyond just reflecting how you already feel?"
         },
         {
           "elementId": "ch09-el09",
@@ -3121,7 +3285,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus redirects fear rather than eliminating it — 'do not be afraid of those who kill the body,' but 'fear him' who has authority beyond death. That contrast exposes the heart: what you're actually afraid of shows what you think has ultimate power over you. Then Jesus pivots from fear to worth and desire: 'even the hairs on your head are all numbered... you are more valuable than many sparrows,' and 'your Father is well pleased to give you the kingdom.' Rightly placed fear and rightly placed desire both trace back to the same reality — whether you know yourself as cared for by this Father or not.",
+          "questionHint": "Jesus moves from telling them whom to fear straight into telling them how valued and cared for they are — why put those two things next to each other?"
         },
         {
           "elementId": "ch09-el11",
@@ -3150,7 +3316,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This is a blessing, not a warning — 'May he grant your heart's desire; may he bring all your plans to pass!' Someone praying this over another person clearly doesn't treat desire itself as suspect or dangerous; it's something worth asking God to fulfill. That tells us desires can be good: they're not automatically selfish or dangerous impulses to suppress, but can be exactly what a good God delights to grant. The verse assumes desire and plans are a normal, even hoped-for, part of a flourishing life under his blessing.",
+          "questionHint": "The verse is phrased as a prayer of blessing over someone's desires, not a warning against them — what does praying for someone's 'heart's desire' to be granted assume about desire itself?"
         },
         {
           "elementId": "ch09-el14",
@@ -3171,7 +3339,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalmist lists desire after desire that God has already met — forgiveness for sin, healing for disease, deliverance from the Pit, being 'crowned' with love and compassion, and having his life 'satisfied... with good things.' None of these are treated as improper longings; they're 'kind deeds' worth actively remembering, worth telling your own soul not to forget. That's the evidence that desire is good: God is pictured here as someone who delights to satisfy real needs and longings, right down to renewing youth 'like an eagle's' — abundant, generous fulfillment, not stingy suspicion of wanting things.",
+          "questionHint": "The psalmist calls God's answers to these longings 'kind deeds' worth actively remembering — what does calling them 'kind' rather than merely 'necessary' suggest about how God views satisfying desire?"
         },
         {
           "elementId": "ch09-el16",
@@ -3200,7 +3370,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "These proverbs put desire on a spectrum rather than condemning it outright: 'what the righteous desire leads only to good,' while 'the faithless will be captured by their own desires' and 'what the wicked hope for leads to wrath.' The word 'captured' is telling — desire doesn't just misfire occasionally for the faithless, it takes them prisoner, becomes something that controls rather than serves them. So the problem isn't desire itself, since righteous desire leads to good; the problem is what's being desired and by whom, since the same capacity can either deliver good or become a trap that owns you.",
+          "questionHint": "The faithless aren't just disappointed by their desires, they're 'captured' by them — what does that word suggest happens when a desire stops being something you have and starts being something that has you?"
         },
         {
           "elementId": "ch09-el19",
@@ -3221,7 +3393,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul describes an actual civil war inside a person: 'the flesh has desires that are opposed to the Spirit, and the Spirit has desires that are opposed to the flesh... so that you cannot do what you want.' That last phrase is the real problem with desire — it's not unified or trustworthy, since even your own wanting is internally divided against itself. That's why desires can be a problem: left to themselves, they pull in contrary directions and leave you unable to simply do what you want. Paul's answer isn't better willpower but a decisive act — those who belong to Christ 'have crucified the flesh with its passions and desires.'",
+          "questionHint": "Paul says the flesh and Spirit's opposing desires mean 'you cannot do what you want' — what does it say about desire that even doing 'what you want' becomes impossible?"
         },
         {
           "elementId": "ch09-el21",
@@ -3242,7 +3416,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter's language is military: fleshly desires 'do battle against the soul.' That's a strong claim — these desires aren't neutral preferences competing politely for attention, they're actively fighting to win against the deeper part of you. He also calls believers 'foreigners and exiles,' which matters here: indulging desires that belong to our old home means fighting for a home we've already left. That's why desires can be a problem — not because wanting things is inherently wrong, but because some desires are actively working against the soul's good, not just distracting from it.",
+          "questionHint": "Peter says these desires 'do battle against the soul' — what does military language like 'battle' suggest about desire's danger, compared to just calling it a 'distraction'?"
         },
         {
           "elementId": "ch09-el23",
@@ -3263,7 +3439,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's instruction is deliberately severe: 'put to death whatever in your nature belongs to the earth.' Not manage, not moderate, not gradually redirect — put to death, language for a decisive, final act rather than ongoing negotiation. The list he gives ends with a striking equation: 'greed which is idolatry.' That's the key to dealing with wrong desire — it names what's really happening underneath it. A wrongly directed desire isn't just excessive wanting, it's worship misplaced onto something other than God, and worship misplaced that seriously can't just be trimmed back; it has to be killed.",
+          "questionHint": "Paul calls greed 'idolatry' rather than just excess — what does naming a wrong desire as worship, rather than simply as too much wanting, suggest about how seriously it needs to be dealt with?"
         },
         {
           "elementId": "ch09-el25",
@@ -3292,7 +3470,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter connects fear to a specific identity: we address God 'as Father,' yet this Father also 'impartially judges according to each one's work.' That combination shapes what good fear looks like — not a Father who abandons discipline, and not a judge who is anything but fair, but both held together, producing 'reverence' rather than either presumption or terror. He adds that this reverence is meant to mark 'the time of your temporary residence here,' as if fear rightly understood is part of living as someone who doesn't fully belong to this present place yet answers to the one who does the judging.",
+          "questionHint": "Peter calls God both 'Father' and one who 'impartially judges' in the same sentence — how does holding those two together shape 'reverence' differently than fearing a judge alone would?"
         },
         {
           "elementId": "ch09-el28",
@@ -3313,7 +3493,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus explains the mechanics of a bad fear: those doing evil 'hate the light and do not come to the light, so that their deeds will not be exposed.' That's fear functioning as self-protection — not reverence toward someone greater, but avoidance driven by not wanting to be seen accurately. This is a fear that keeps you away from the very thing that could actually help you, because what you're really afraid of is exposure, not wrongdoing itself. Bad fear, by this measure, is the kind that steers you toward hiding rather than toward the one who sees clearly.",
+          "questionHint": "The verse says people avoid the light so their deeds 'will not be exposed' — what is that fear actually protecting, and what is it protecting it from?"
         },
         {
           "elementId": "ch09-el30",
@@ -3321,7 +3503,7 @@
           "format": "HTML",
           "bibleRef": "Psalm 23:4",
           "translation": "NET",
-          "passageText": "<sup>4</sup> Even when I must walk through the darkest valley,",
+          "passageText": "<sup>4</sup> Even when I must walk through the darkest valley, I fear no danger, for you are with me; your rod and your staff reassure me.",
           "passageUrl": "https://www.bible.com/bible/107/PSA.23.NET",
           "bottomPadding": "none"
         },
@@ -3334,7 +3516,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The line we have names the danger honestly — 'the darkest valley' — without minimizing or explaining it away; there's no pretending the valley isn't dark or that walking through it is easy. That honesty is itself part of how Scripture deals with wrong fears: it doesn't ask you to deny that hard, frightening seasons exist. What the verse offers as an answer to that fear is signaled by its own phrasing — 'even when' sets up a contrast, implying that whatever follows is meant to hold true precisely within the darkest circumstances, not only once you're safely past them.",
+          "questionHint": "The phrase 'even when' sets up a contrast with something that follows — what kind of statement would need to come next to make walking through 'the darkest valley' something other than simply fearful?"
         },
         {
           "elementId": "ch09-el32",
@@ -3355,7 +3539,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "These two half-verses point the same direction from opposite angles: fear and desire. 'Fearing the Lord is the beginning of moral knowledge' — real wisdom starts by rightly fearing him, while 'fools despise wisdom and instruction' by skipping that step. Then Psalm 37 adds the desire side: 'take delight in the Lord, and he will answer your prayers.' So the same God is meant to be both feared and delighted in — not two contradictory postures, but two sides of taking him seriously as who he actually is. Whoever or whatever fills those two roles for you, fear and desire, functions as your real god.",
+          "questionHint": "One verse says to fear the Lord and the other says to delight in the Lord — how can the same relationship hold both fear and delight together instead of one canceling out the other?"
         },
         {
           "elementId": "ch09-el34",
@@ -3499,7 +3685,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul is careful about the timing here: Christ died for us 'while we were still helpless' and 'while we were still sinners' — not after we'd cleaned ourselves up or proven ourselves worth saving. He even contrasts this with normal human loyalty, where someone might risk dying for a truly good person, but rarely for anyone else. God's love didn't wait for us to become good. That's why our safety with God isn't fragile or conditional on our performance — it was demonstrated and settled at the point we least deserved it, which means it can't be undone by our ongoing weakness either.",
+          "questionHint": "Look at the timing words 'while we were still helpless' and 'while we were still sinners' — what does it mean that Christ's death happened before any improvement on our part, not after?"
         },
         {
           "elementId": "ch10-el07",
@@ -3520,7 +3708,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalm doesn't promise that nothing frightening will happen — it pictures the worst-case scenario directly: the earth shaking, mountains tumbling into the sea, waves crashing and foaming. Yet the response is 'we do not fear.' That's because safety here isn't defined by calm circumstances but by who God is in the middle of the chaos — 'our strong refuge,' 'our helper in times of trouble.' The confidence isn't that trouble won't come, but that even if the most stable things in creation gave way, God himself wouldn't. Our safety is anchored in him, not in the absence of shaking.",
+          "questionHint": "Notice the psalm imagines the most extreme instability possible — mountains falling into the sea — and still says 'we do not fear.' What does that say about where the safety actually comes from?"
         },
         {
           "elementId": "ch10-el09",
@@ -3541,7 +3731,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The reason we can approach God 'confidently' rather than nervously is spelled out plainly: our high priest isn't someone incapable of sympathizing with us, but one who was 'tempted in every way just as we are, yet without sin.' He knows weakness from the inside, not from a safe theoretical distance. That's what lets us come to 'the throne of grace' expecting mercy and help rather than rejection. If Jesus had never faced real temptation and pressure, we might reasonably fear he'd have no patience for our struggles. Because he does understand, we can come honestly, without needing to hide our weakness first.",
+          "questionHint": "The passage says Jesus was 'tempted in every way just as we are' — how does knowing the one you're approaching has actually faced what you're facing change whether you come to him confidently or fearfully?"
         },
         {
           "elementId": "ch10-el11",
@@ -3562,7 +3754,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The whole weight of this verse sits in the name itself. Matthew doesn't just report that a son will be born — he stops to translate the name for us: Emmanuel means 'God with us.' That's the safety being promised here. It isn't that God sends help from a distance or issues instructions from far away; he comes to be present, right in the middle of human life, sharing the same space and conditions we live in. A God who is with us, in person, is a fundamentally different kind of safety than a God who merely watches over us from somewhere else.",
+          "questionHint": "The verse pauses to translate the name 'Emmanuel' for us — what does that translation itself say about where God chooses to be in relation to us?"
         },
         {
           "elementId": "ch10-el13",
@@ -3591,7 +3785,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Abram's fear runs the calculation out loud: if the Egyptians know Sarai is his wife, 'they will kill me but will keep you alive.' To protect his own life, he asks her to say she's his sister — a half-truth that leaves her exposed to being taken into someone else's household while he stays safe. Fear over his own safety makes him willing to sacrifice hers. It's a striking picture of how self-protective fear doesn't just make us cautious — it can make us willing to use the people closest to us as a shield, treating their safety as expendable for our own.",
+          "questionHint": "Look at what Abram asks Sarai to do and who benefits from the lie — whose safety is he actually protecting, and at whose expense?"
         },
         {
           "elementId": "ch10-el16",
@@ -3612,7 +3808,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The spies don't lie about the facts — there really were strong people and fortified cities — but their fear reframes everything: 'we seemed like grasshoppers both to ourselves and to them.' That self-image, born of fear, spreads instantly to the whole community, who weep all night and start talking about appointing a new leader to take them back to Egypt. Fear over safety doesn't stay private; it becomes contagious and starts rewriting the story of who they are. Ten men's fear convinces an entire nation that slavery in Egypt would be safer than trusting God for the promise he'd already begun keeping.",
+          "questionHint": "Notice the phrase 'we seemed like grasshoppers both to ourselves and to them' — how did their own self-image, shaped by fear, end up driving the whole nation's decision?"
         },
         {
           "elementId": "ch10-el18",
@@ -3633,7 +3831,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Saul explains himself plainly: he saw the army scattering, Samuel hadn't arrived, the Philistines were massing at Micmash, and 'I felt obligated' to offer the sacrifice himself rather than wait. Later, about a different failure, he says it even more directly — 'I was afraid of the army, and I followed their wishes.' In both cases, fear of losing his troops and his position pushed him to disobey a direct command from God, and it cost him the kingdom permanently. Saul's story shows that fear over safety can make us listen to the loudest pressure in the room instead of the command we already know we've been given.",
+          "questionHint": "Saul says outright, 'I was afraid of the army, and I followed their wishes' — whose voice ended up guiding his decision instead of God's command?"
         },
         {
           "elementId": "ch10-el20",
@@ -3654,7 +3854,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Elijah has just seen God defeat the prophets of Baal, yet one threat from Jezebel sends him running for his life to Beer Sheba, and then further still into the desert alone. But fear doesn't stop at flight — it curdles into despair: 'I've had enough! Now, O Lord, take my life.' The same fear that made him run for safety now makes him want to give up on life altogether. It's a sobering picture of where unchecked fear can lead: not just away from danger, but into isolation and hopelessness, even after seeing God act powerfully just days before.",
+          "questionHint": "Elijah flees in fear and then almost immediately asks God to let him die — what does that jump from fear to despair reveal about where fear, left unchecked, can lead?"
         },
         {
           "elementId": "ch10-el22",
@@ -3675,7 +3877,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter's fear escalates step by step. First he simply denies it: 'I don't know what you're talking about.' Then he denies it again, this time 'with an oath.' By the third accusation he's cursing and swearing he doesn't know Jesus at all. Each time the danger of being associated with Jesus feels closer, Peter's denial gets more forceful, until he's willing to invoke a curse on himself to distance himself from the man he'd sworn to follow. Fear over his own safety doesn't just make him quiet — it makes him actively renounce the very relationship that defines him.",
+          "questionHint": "Track the escalation from a plain denial to swearing an oath to cursing — what does that pattern show about how far fear pushed Peter to protect himself?"
         },
         {
           "elementId": "ch10-el24",
@@ -3691,7 +3895,7 @@
           "format": "HTML",
           "bibleRef": "Psalm 146:3-4",
           "translation": "NET",
-          "passageText": "<sup>3</sup> Do not trust in princes, <sup>4</sup> Their life’s breath departs, they return to the ground;",
+          "passageText": "<sup>3</sup> Do not trust in princes, or in human beings, who cannot deliver! <sup>4</sup> Their life’s breath departs, they return to the ground; on that day their plans die.",
           "passageUrl": "https://www.bible.com/bible/107/PSA.146.NET",
           "bottomPadding": "none"
         },
@@ -3704,7 +3908,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The warning is blunt: don't trust in princes. And the reason given, even in this short fragment, is mortality — 'their life's breath departs, they return to the ground.' Whatever power or protection a human ruler seems to offer, it comes from someone who is going to die like everyone else. A protector who can't outlast his own breath can't be the foundation of lasting safety. It's not that human leaders are useless or that we shouldn't respect them, but that placing our deepest trust for safety in anyone whose life will simply end one day is trusting something that was never built to hold that weight.",
+          "questionHint": "The passage points to the prince's 'life's breath' departing and his body returning 'to the ground' — what does that basic fact about mortality say about anyone's ability to be a lasting source of safety?"
         },
         {
           "elementId": "ch10-el27",
@@ -3725,7 +3931,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Israel asks for a king so they can be 'like all the other nations,' rejecting Samuel's leadership for something that looks more secure. But God tells Samuel plainly that the real rejection is aimed at him. Then Samuel spells out exactly what this 'safety' will cost: the king will take their sons for his army, their daughters for his household, their best fields, a tenth of their crops and flocks, until 'you yourselves will be his servants.' The very thing they sought for protection becomes the mechanism of their own exploitation. Seeking safety in the wrong source doesn't just disappoint — it can quietly reverse the relationship, so the shelter you begged for ends up owning you.",
+          "questionHint": "Look at the long list of things Samuel says the king will 'take' — sons, daughters, fields, servants, flocks. What's the irony in seeking safety through a king who ends up taking so much from the very people he's supposed to protect?"
         },
         {
           "elementId": "ch10-el29",
@@ -3746,7 +3954,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God names the problem as a double wrong: not just abandoning him, 'the fountain of life-giving water,' but replacing him with something that was never going to work anyway — cisterns they dug for themselves, and cracked ones at that, unable to even hold water. The image is almost comic in its wastefulness: they didn't just leave a good source for a mediocre one, they left an endless spring for a leaky hole they built by hand. That's what trusting the wrong thing for safety looks like — real effort poured into something that can't deliver what it promises, while the actual source of life sits rejected.",
+          "questionHint": "Compare the two water sources named here — a 'fountain of life-giving water' versus a 'cracked cistern which cannot even hold water.' What's the functional difference between them, beyond just who made them?"
         },
         {
           "elementId": "ch10-el31",
@@ -3767,7 +3977,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus draws a stark contrast between two kinds of treasure: earthly treasure, which moth, rust, and thieves can all reach and destroy, versus treasure in heaven, which none of those forces can touch. Then he adds the key insight: 'where your treasure is, there your heart will be also.' It's not just that earthly security can be lost — it's that wherever we park our sense of safety, our heart follows and settles there too. If our treasure is something moths can eat or thieves can steal, our heart is tied to something fundamentally fragile, and we'll feel that fragility as constant, low-grade anxiety even when nothing has actually gone wrong yet.",
+          "questionHint": "Jesus says 'where your treasure is, there your heart will be also' — if your sense of safety is invested in something moth and rust can destroy, what happens to your heart as a result?"
         },
         {
           "elementId": "ch10-el33",
@@ -3788,7 +4000,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's instruction has two parts that work together: don't be haughty or set your hope on riches, 'which are uncertain' — and instead set your hope on God, 'who richly provides us with all things for our enjoyment.' The contrast is pointed: money is called uncertain, unstable ground to build a hope on, while God is described as the one who richly provides. The alternative to trusting wealth for safety isn't grim self-denial — it's redirecting that same hope toward a more reliable and, notably, more generous source. God isn't just described as sufficient here, but as one who provides abundantly, and for our enjoyment, not merely our survival.",
+          "questionHint": "The passage calls riches 'uncertain' but describes God as the one who 'richly provides.' What's the difference between hoping in something uncertain and hoping in someone described that way?"
         },
         {
           "elementId": "ch10-el35",
@@ -3919,7 +4133,7 @@
           "format": "HTML",
           "bibleRef": "Genesis 1:27",
           "translation": "NET",
-          "passageText": "<sup>27</sup> God created humankind in his own image,",
+          "passageText": "<sup>27</sup> God created humankind in his own image, in the image of God he created them, male and female he created them.",
           "passageUrl": "https://www.bible.com/bible/107/GEN.1.NET",
           "bottomPadding": "none"
         },
@@ -3932,7 +4146,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This line is brief, but it's carrying enormous weight for something so short: God created humankind 'in his own image.' Value, in this account, isn't something humanity had to earn or grow into — it was built into the very act of being made. To bear someone's image is to carry a resemblance to them, a stamp that says something true about their worth is reflected in you. Long before anyone did anything to prove themselves useful or good, the simple fact of being made in God's own image already established their worth. That's the starting point Scripture gives for human value — not achievement, but origin.",
+          "questionHint": "The verse says humankind was made 'in his own image' — what does carrying someone's image, rather than just being one of their creations among many, suggest about the worth built into that?"
         },
         {
           "elementId": "ch11-el07",
@@ -3953,7 +4169,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This verse is mostly setting up a comparison Paul doesn't finish until later in the chapter, but even on its own it tells us something significant: sin and death didn't stay contained to 'one man' — they spread 'to all people.' The scale of that consequence is striking. It means humanity isn't a random scattering of disconnected individuals whose choices don't matter beyond themselves; one man's action affected the entire human family. If our actions carry that kind of weight in God's ordered world, it says something about how seriously we're taken — significant enough that what happens to one person ripples through all of us.",
+          "questionHint": "The verse says death spread 'to all people' because of what happened through 'one man' — what does the scale of that consequence suggest about how much weight a single human life carries in God's world?"
         },
         {
           "elementId": "ch11-el09",
@@ -3974,7 +4192,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul stacks up several categories that usually determine someone's worth or status — Jew or Greek, slave or free, male or female — and says none of them count for defining who belongs to God's family: 'for all of you are one in Christ Jesus.' The basis for this new status isn't ancestry, class, or gender, but that 'you have clothed yourselves with Christ' through faith and baptism. Clothing yourself in someone changes how you're seen and identified. On that basis, believers become 'sons of God' and heirs of the promise made to Abraham — not by natural qualification, but by being placed into Christ himself.",
+          "questionHint": "Paul says believers have 'clothed yourselves with Christ' — what does putting on someone else's identity like clothing suggest about where your new value and status actually come from?"
         },
         {
           "elementId": "ch11-el11",
@@ -4003,7 +4223,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul imagines the foot complaining, 'since I am not a hand, I am not part of the body,' and answers that its status in the body was never up for debate in the first place — 'it does not lose its membership in the body because of that.' The value of each part isn't determined by how prominent or central it looks, but by the simple fact that 'God has placed each of the members in the body just as he decided.' If every part were the same, the body couldn't even function — so the very differences that might make someone feel like the 'lesser' part are exactly what God arranged on purpose.",
+          "questionHint": "The foot's complaint is 'since I am not a hand, I am not part of the body' — according to the passage, does its membership in the body actually depend on being a hand?"
         },
         {
           "elementId": "ch11-el14",
@@ -4032,7 +4254,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalmist doesn't describe being manufactured on an assembly line — the language is intimate and individual: 'you wove me together in my mother's womb,' 'you made my mind and heart,' 'you knew me thoroughly.' Weaving is careful, attentive, one-at-a-time work, not mass production. This is what makes the psalmist respond with thanks rather than mere acknowledgment — 'your deeds are awesome and amazing.' You're not one of countless identical copies stamped out and shipped; you were personally formed and personally known before you ever did anything, which is exactly what makes you a precious one-off rather than just generically special among a crowd.",
+          "questionHint": "The psalm uses the word 'wove' for how you were made, and says God 'knew me thoroughly' — what does weaving, as opposed to stamping out identical copies, suggest about being one-of-a-kind rather than just generically special?"
         },
         {
           "elementId": "ch11-el17",
@@ -4061,7 +4285,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus names the driving motive right at the start: 'they do all their deeds to be seen by people.' Everything that follows — wide phylacteries, long tassels, the best seats, elaborate greetings, being called 'Rabbi' — is aimed at an audience, not at God or genuine faithfulness. It's value sought through visibility and status symbols rather than character. The problem isn't that these things existed, but that they became performances calculated for maximum recognition. When value is chased this way, worth becomes dependent on being noticed, so the goal quietly shifts from being faithful to appearing impressive, which is a much shakier foundation for identity.",
+          "questionHint": "Jesus opens with 'they do all their deeds to be seen by people' — how does that one phrase explain everything else listed afterward, from wide phylacteries to loving the title 'Rabbi'?"
         },
         {
           "elementId": "ch11-el20",
@@ -4082,7 +4308,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus is precise about the hypocrites' location and audience — praying 'standing in synagogues and on street corners so that people can see them.' The prayer isn't wrong in itself; what corrupts it is the intended viewer. And then comes the sobering line: 'they have their reward.' That's not a threat of future punishment so much as a statement of fact — the applause and notice they wanted is exactly what they got, and that's all they'll get. Seeking value in being seen by people means people's attention becomes the entire payment, closing off any deeper reward that could have come from being known by God instead.",
+          "questionHint": "Jesus says of those who pray to be seen, 'they have their reward' — reward from whom, and what deeper reward does chasing that one exclude?"
         },
         {
           "elementId": "ch11-el22",
@@ -4111,7 +4339,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus links two things that might not seem connected at first: believing in him, and where you look for praise. 'How can you believe, if you accept praise from one another and don't seek the praise that comes from the only God?' Accepting human approval as your measure of worth isn't neutral — it actively competes with, and can crowd out, trust in God. If your sense of value is already satisfied by what people think of you, there's little room left to need or seek what God thinks. Seeking affirmation in the wrong place doesn't just leave you empty later; it can quietly block faith itself.",
+          "questionHint": "Jesus asks how someone can believe while they 'accept praise from one another' instead of seeking praise from God — what does chasing approval from people crowd out or compete with?"
         },
         {
           "elementId": "ch11-el25",
@@ -4132,7 +4362,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's alternative is simple to state but demanding to live: work at whatever you're doing 'with enthusiasm, as to the Lord and not for people.' The audience shifts entirely — instead of performing for whoever's watching, the aim becomes pleasing Christ, who sees regardless of who else notices. And the payoff shifts too: 'you will receive your inheritance from the Lord as the reward,' something secure and promised rather than fickle and dependent on human opinion. When Christ is the one you're ultimately serving, your worth and reward no longer rise and fall with whether anyone happened to notice or applaud.",
+          "questionHint": "Paul says to work 'as to the Lord and not for people' — whose reaction does your effort now answer to, and how does that change what you're actually working for?"
         },
         {
           "elementId": "ch11-el27",
@@ -4161,7 +4393,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God's own words here push back hard against the idea of passive, endless tolerance. He says he expected correction to actually land — 'Now you will accept correction!' — with real consequences threatened if it didn't. But instead of turning, the people 'eagerly sinned in everything they did.' That word 'eagerly' matters: this isn't stumbling weakness God is patiently overlooking, it's willing, persistent rebellion. Someone who says God just forgives and endlessly endures our failings is missing this half of the picture — God does correct, does warn, and does respond to a refusal to change, even while remaining committed to his people.",
+          "questionHint": "Notice the word 'eagerly' describing how the people kept sinning even after correction was offered — what does that word suggest about the difference between struggling with sin and refusing to turn from it?"
         },
         {
           "elementId": "ch11-el30",
@@ -4297,7 +4531,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God states the terms of this belonging in his own voice: 'I will take you to myself for a people, and I will be your God.' Notice who's doing the acting — God takes, God commits to being their God — and notice where they're being taken from: 'your enslavement to the Egyptians.' This isn't a relationship Israel earned or negotiated; it's one God initiated out of slavery, on his own terms and by his own choice. That's the ground for confidence — belonging to God rests on his decision to claim a people for himself, not on their track record of deserving it.",
+          "questionHint": "Look at who is doing the taking in 'I will take you to myself' — and what condition they were being taken out of. Whose initiative creates this belonging?"
         },
         {
           "elementId": "ch12-el07",
@@ -4318,7 +4554,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The promise is short, but it echoes a relationship that had been broken: 'you will again be my people and I will be your God.' That word 'again' matters — this isn't the first time this bond existed; it had been disrupted, and God is the one restoring it. Belonging here isn't described as something Israel rebuilds through effort, but as a covenant God himself renews and re-declares. The simplicity of the formula — my people, your God — is itself the point: after everything that went wrong, the relationship comes back to this same basic, mutual claim.",
+          "questionHint": "The verse says 'you will AGAIN be my people' — what does that word imply about the history of this relationship, and who is the one restoring it?"
         },
         {
           "elementId": "ch12-el09",
@@ -4339,7 +4577,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul uses two images here that both point toward security rather than uncertainty. Believers are 'marked with the seal of the promised Holy Spirit' — a seal being a mark of ownership and authenticity — and that same Spirit is 'the down payment of our inheritance,' a partial payment that guarantees the rest is coming. Belonging to God isn't left as a hope we can't verify; it's sealed and backed by a deposit already given. The full inheritance is still ahead, 'until the redemption of God's own possession,' but the Spirit's presence now is the proof that the rest of the promise is coming.",
+          "questionHint": "The passage uses two financial and legal images — 'seal' and 'down payment' — what do a mark of ownership and a partial payment guaranteeing the rest both say about how secure this belonging is?"
         },
         {
           "elementId": "ch12-el11",
@@ -4360,7 +4600,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul describes a kind of double confirmation here: 'the Spirit himself bears witness with our spirit that we are God's children.' It's not just an outward legal fact declared once and left unfelt — it's something testified to from within, alongside our own awareness. And the identity carries real consequence: 'if children, then heirs,' co-heirs with Christ himself. Belonging to God isn't a fragile hope we're left to talk ourselves into; it's something the Spirit actively affirms, paired with the sober reality that sharing in Christ's sufferings now is bound up with sharing in his glory later.",
+          "questionHint": "Paul says the Spirit 'bears witness WITH our spirit' — what does having two witnesses, rather than just one, suggest about how certain this claim to belong to God is meant to feel?"
         },
         {
           "elementId": "ch12-el13",
@@ -4389,7 +4631,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jephthah's own family shuts him out — his half-brothers tell him plainly, 'you are not going to inherit any of our father's wealth, because you are another woman's son,' and drive him away. Rejected by the community that should have claimed him, he doesn't end up alone; he finds belonging among 'lawless men' who join his gang in the land of Tob. It's real community, in the sense that people gather around him, but it's a community formed out of shared exclusion and lawlessness rather than health or honor. Rejection by the right people doesn't erase the need to belong — it often just redirects it toward whoever will take you in.",
+          "questionHint": "Notice who exactly joins Jephthah once his family casts him out — 'lawless men.' What does the kind of community he finds say about what happens when someone is rejected by the people who should have claimed him?"
         },
         {
           "elementId": "ch12-el16",
@@ -4418,7 +4662,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul draws a direct line between two options: being 'conformed to this present world,' shaped from the outside by pressure to fit its pattern, or being 'transformed by the renewing of your mind,' changed from the inside out. The alternative to wrong conformity isn't just resisting the crowd through willpower — it's a genuine renewal of how you think, which then equips you to 'test and approve what is the will of God.' Belonging that comes from conforming to the world is passive and externally imposed; the transformation Paul calls for actively reshapes your thinking so your choices flow from renewed conviction rather than social pressure.",
+          "questionHint": "Paul contrasts being 'conformed' to the world with being 'transformed' by renewed thinking — which one starts from the outside pressing in, and which one starts from the inside out?"
         },
         {
           "elementId": "ch12-el19",
@@ -4447,7 +4693,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The command is specific and practical: don't follow a crowd into evil, and in a lawsuit, don't shape your testimony to match what the majority wants to hear just because it's the majority. The danger named here isn't belonging itself, but what belonging can quietly cost — 'so as to pervert justice.' Going along with a group, even a large or confident one, can pull a person into dishonesty or injustice they wouldn't choose on their own. This is a clear warning that the pull to belong and agree with the crowd can override what's actually true and right, if we let it.",
+          "questionHint": "The passage warns against testimony that 'agrees with a crowd so as to pervert justice' — what does that phrase suggest is at risk when belonging to the group becomes more important than telling the truth?"
         },
         {
           "elementId": "ch12-el22",
@@ -4468,7 +4716,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Saul's confession is unusually direct about his motive: 'I was afraid of the army, and I followed their wishes.' He doesn't blame confusion or bad information — he names fear of the group's disapproval, and his desire to stay in step with them, as the reason he disobeyed a command he already knew. Wanting to belong to and please the army pulled harder on him than his loyalty to what God had said. It's a plain example of how the pull to fit in with the people around us can override obedience, even when we already know exactly what we were supposed to do.",
+          "questionHint": "Saul says plainly, 'I was afraid of the army, and I followed their wishes' — what did he choose to belong to instead of obeying the command he already knew?"
         },
         {
           "elementId": "ch12-el24",
@@ -4489,7 +4739,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter had been eating openly with Gentile believers, living out the truth that in Christ there's no longer a barrier between Jew and Gentile. But 'when certain people came from James,' he pulled back and separated himself, and Paul names the reason without softening it: 'he was afraid of those who were pro-circumcision.' Wanting to stay in good standing with one group led Peter to abandon a deeper belonging he already knew was true, and it was contagious — 'even Barnabas was led astray with them.' Fear of losing approval from the wrong crowd can pull even mature believers into behavior that betrays what they actually believe.",
+          "questionHint": "Paul says Peter changed his behavior specifically 'when they arrived' and because 'he was afraid of those who were pro-circumcision' — whose approval was he protecting, and what truer belonging did it cost him?"
         },
         {
           "elementId": "ch12-el26",
@@ -4510,7 +4762,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The psalm puts the order in a way worth noticing: 'He made us and we belong to him.' Belonging follows directly from being made — it isn't something we constructed for ourselves or negotiated after the fact. The image that follows, 'we are his people, the sheep of his pasture,' reinforces the same idea: sheep don't establish their own belonging to a shepherd, they simply are his, cared for and led. When we're tempted to look elsewhere for a sense of belonging, this is the plain fact worth returning to — we already belong to the one who made us, before we do anything to secure it.",
+          "questionHint": "The psalm says 'He made us and we belong to him' — which comes first in that sentence, the making or the belonging, and what does that order suggest about how this belonging was established?"
         },
         {
           "elementId": "ch12-el28",
@@ -4518,7 +4772,7 @@
           "format": "HTML",
           "bibleRef": "Isaiah 43:1",
           "translation": "NET",
-          "passageText": "<sup>1</sup> Now, this is what the Lord says,",
+          "passageText": "<sup>1</sup> Now, this is what the Lord says, the one who created you, O Jacob, and formed you, O Israel: “Don’t be afraid, for I will protect you. I call you by name, you are mine.",
           "passageUrl": "https://www.bible.com/bible/107/ISA.43.NET",
           "bottomPadding": "none"
         },
@@ -4531,7 +4785,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This portion of the verse only gives us the opening formula — 'this is what the Lord says' — the introduction to a declaration whose actual content isn't included here. Even so, it's worth noticing what this small phrase does say: whatever follows is presented as coming directly and personally from the Lord himself, not as secondhand report or general wisdom. It sets up an announcement worth waiting for and trusting because of who is speaking it. The reminder we're meant to hold onto is that when God speaks to identity and belonging, it is genuinely his own voice addressing us, not a rumor about him.",
+          "questionHint": "This phrase is only the introduction — 'this is what the Lord says' — whose voice is being announced here, even before we hear what's actually said?"
         },
         {
           "elementId": "ch12-el30",
@@ -4552,7 +4808,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul marks a clear before-and-after: no longer 'foreigners and noncitizens,' but 'fellow citizens with the saints and members of God's household.' Both new categories describe full belonging rather than partial or provisional status. Citizenship implies legal standing and rights within a community, not just permission to visit it; being part of a household implies the intimacy of family, not just formal membership. Put together, the reminder is layered — you belong civically, among God's people, and relationally, within his own family — which leaves no room for the old status of outsider looking in from a distance.",
+          "questionHint": "Paul moves from 'foreigners and noncitizens' to 'fellow citizens' and 'members of God's household' — what two different kinds of belonging (civic and then relational) do those final two terms describe?"
         },
         {
           "elementId": "ch12-el32",
@@ -4573,7 +4831,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter stacks up four identity titles in a row — 'a chosen race, a royal priesthood, a holy nation, a people of his own' — each one describing a group set apart and claimed, not a collection of individuals figuring things out alone. And then he gives the reason for it: 'so that you may proclaim the virtues of the one who called you out of darkness into his marvelous light.' Belonging here isn't just a private comfort to enjoy quietly; it comes with a purpose. Being called into this identity is meant to result in a community that shows and tells what the one who called them out of darkness is actually like.",
+          "questionHint": "Peter piles up four titles — 'chosen race, royal priesthood, holy nation, a people of his own' — and then gives a purpose clause, 'so that you may proclaim...' What is this belonging ultimately for?"
         },
         {
           "elementId": "ch12-el34",
@@ -4709,7 +4969,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God promises to give a new heart and put a new spirit within us, replacing a heart of stone with a heart of flesh. This isn't a minor tune-up — it's a transplant. A heart of stone is unresponsive, hard, resistant to God; a heart of flesh is soft, alive, able to feel and respond to him. Being new in Christ means the very core of who we are — our desires, our capacity to love and obey — has been exchanged for something that can actually beat in rhythm with God, not just externally reformed but internally remade.",
+          "questionHint": "What's the difference between a heart of stone and a heart of flesh — what can one do that the other can't?"
         },
         {
           "elementId": "ch13-el07",
@@ -4730,7 +4992,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul ties our newness to Christ's own resurrection: because we've been buried with him through baptism, we're raised to walk in \"a new life,\" just as Christ was raised through the Father's glory. Being new in Christ isn't just forgiveness for the old life — it's participation in a death and a resurrection. The old identity was buried; a new way of living, patterned after resurrection power rather than the old patterns, has begun. It's not self-improvement; it's new life on the other side of death.",
+          "questionHint": "The verse links our \"new life\" to something specific that happened to Christ through the Father's glory — what was it, and why would our new life need to be modeled on that?"
         },
         {
           "elementId": "ch13-el09",
@@ -4751,7 +5015,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul states it as plainly as possible: anyone in Christ is \"a new creation\" — what is old has passed away, and what is new has come. Notice the totality of the language: not improved, not patched up, but a whole new creation, with the old genuinely gone. This is one of the clearest ways we are new in Christ — our identity isn't defined by our past record or old patterns anymore, but by being remade into something that didn't exist before.",
+          "questionHint": "The verse uses two strong contrasts — \"passed away\" and \"has come.\" What do those words suggest about how complete this change is meant to be?"
         },
         {
           "elementId": "ch13-el11",
@@ -4772,7 +5038,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This passage is careful to say what our newness is NOT based on: not \"works of righteousness that we have done.\" Instead it comes \"through the washing of the new birth and the renewing of the Holy Spirit,\" and it flows from God's mercy. So one way we're new in Christ is through a Spirit-worked rebirth and renewal that we receive rather than earn — it's God's washing and renewing at work in us, not our own performance record.",
+          "questionHint": "The passage explicitly rules out one possible source for our salvation before naming the real one — what does it rule out, and what does it put in its place?"
         },
         {
           "elementId": "ch13-el13",
@@ -4793,7 +5061,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter praises God because \"by his great mercy he gave us new birth into a living hope,\" and that new birth comes specifically through the resurrection of Jesus from the dead. So this is another facet of our newness: we've been born again, not into ordinary hope but a \"living hope\" — a hope that is alive because it's rooted in a risen Christ rather than mere wishful thinking. Our newness includes this fresh, resurrection-powered hope that didn't exist before.",
+          "questionHint": "The passage calls this a \"living hope\" rather than just \"hope\" — what does the resurrection have to do with why this hope is alive rather than just wishful?"
         },
         {
           "elementId": "ch13-el15",
@@ -4814,7 +5084,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul describes his newness almost paradoxically: \"I have been crucified with Christ, and it is no longer I who live, but Christ lives in me.\" Being new in Christ, here, means an exchange of who is at the center — the old self was crucified, and now Christ himself lives in Paul. Even the ongoing life Paul lives \"in the body\" is lived by the faithfulness of the Son of God who loved him. Our newness includes this indwelling — Christ living his life through us.",
+          "questionHint": "Paul says it's \"no longer I who live, but Christ\" — what does it mean for Christ to actually live IN a person, rather than the person just trying harder to follow him?"
         },
         {
           "elementId": "ch13-el17",
@@ -4843,7 +5115,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus makes it an absolute condition: \"unless a person is born from above, he cannot see the kingdom of God.\" This is why our newness matters so much — it isn't a bonus or an optional upgrade, it's the very thing that determines whether we can see and enter God's kingdom at all. No amount of moral effort in our old, unborn state gets us there; only being born from above does. Being made new in Christ is important because without it, the kingdom is literally invisible to us.",
+          "questionHint": "Jesus doesn't say the unborn-again person struggles to see the kingdom — what stronger word does he use, and what does that tell you about how essential this new birth is?"
         },
         {
           "elementId": "ch13-el20",
@@ -4872,7 +5146,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Both, and the passage holds them together without smoothing out the tension. Verse 3 states a finished fact: \"you have died and your life is hidden with Christ in God\" — in Christ's death, our old self already died. But verse 5 gives a command: \"put to death whatever in your nature belongs to the earth\" — sexual immorality, impurity, shameful passion, evil desire, and greed. So our old self is dead in the sense that its power has been broken, but it still shows up in specific practices we're responsible to actively kill.",
+          "questionHint": "One verse is stated as something already true about you (\"you have died\"), the other as something you're told to do (\"put to death\") — how can both be accurate at once?"
         },
         {
           "elementId": "ch13-el23",
@@ -4901,7 +5177,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The passage names lying specifically — \"do not lie to one another\" — as something tied to \"the old man\" we've put off. In its place we've been \"clothed with the new man that is being renewed in knowledge according to the image of the one who created it.\" So one old thing to get rid of is dishonesty between believers, precisely because it belongs to a self we've already taken off, like an old garment, in favor of one being continually renewed into the image of our Creator.",
+          "questionHint": "What specific old habit does Paul name here as something that belongs to \"the old man\" and doesn't fit the \"new man\"?"
         },
         {
           "elementId": "ch13-el26",
@@ -4922,7 +5200,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul says \"our old man was crucified with him so that the body of sin would no longer dominate us.\" The old thing to get rid of, or rather recognize as already dealt with, is sin's dominating power over us — the passage's goal is precisely that we would \"no longer be enslaved to sin.\" Our old, sin-enslaved self was put to death with Christ so that sin's mastery over us is broken, not so we'd keep serving the same master out of habit.",
+          "questionHint": "The verse gives a purpose (\"so that…\") for the old man's crucifixion — what result was it meant to produce in how sin relates to us now?"
         },
         {
           "elementId": "ch13-el28",
@@ -4943,7 +5223,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Short and direct: \"those who belong to Christ have crucified the flesh with its passions and desires.\" What we're to get rid of here is \"the flesh\" — not just isolated bad actions but the whole cluster of passions and desires that drive them. Belonging to Christ is tied directly to this crucifixion; it's presented as already true of those who are his, meaning our fleshly passions and desires have lost their claim on us, even though we still have to live that reality out.",
+          "questionHint": "The verse pairs \"the flesh\" with two other words — what are they, and what do they add to what exactly gets crucified?"
         },
         {
           "elementId": "ch13-el30",
@@ -4972,7 +5254,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The passage lays out the whole sequence: lay aside \"the old man who is being corrupted in accordance with deceitful desires,\" be \"renewed in the spirit of your mind,\" and then \"put on the new man who has been created in God's image – in righteousness and holiness that comes from truth.\" So what we put on instead is this new man — an identity actually created in God's image, marked by righteousness and holiness that flow from truth rather than the deceit that corrupted the old one.",
+          "questionHint": "The passage contrasts \"deceitful desires\" corrupting the old man with something else the new man's righteousness \"comes from\" — what is that source?"
         },
         {
           "elementId": "ch13-el33",
@@ -4993,7 +5277,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This verse doesn't describe the new thing we put on — instead it exposes why relying on the law alone never gets us there. Paul says \"sin, seizing the opportunity through the commandment, produced in me all kinds of wrong desires.\" The command itself was good, but sin hijacked it to stir up exactly the desires it forbade. That's the trap: fighting the old self by willpower and rule-keeping alone gives sin something to grab onto. It points us toward needing something other than the law itself — a Spirit-renewed life rather than sheer rule-following.",
+          "questionHint": "The verse says sin \"seized the opportunity\" through the commandment — what does that reveal about why simply having a rule to follow isn't enough to change us?"
         },
         {
           "elementId": "ch13-el35",
@@ -5014,7 +5300,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's answer here is to \"be transformed by the renewing of your mind\" instead of being \"conformed to this present world.\" What we put on instead of worldly conformity is a mind actively being renewed — one capable of testing and approving what God's will is, described as \"good and well-pleasing and perfect.\" It's a call to let our whole way of thinking be remade, so that discerning and doing God's will becomes possible rather than just following the world's mold by default.",
+          "questionHint": "The verse contrasts being \"conformed\" with being \"transformed\" — what's the difference between those two words, and which one involves the mind being renewed?"
         },
         {
           "elementId": "ch13-el37",
@@ -5035,7 +5323,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Here the answer is good works — but rooted in a specific identity: \"we are his workmanship, having been created in Christ Jesus for good works.\" What we put on instead of the old life is a life of doing the good works God \"prepared beforehand so we may do them.\" These aren't works we invent to earn favor; they're works already planned by God for us specifically, because we are his handiwork, newly made in Christ for exactly this purpose.",
+          "questionHint": "The verse says God \"prepared beforehand\" these good works — what does that timing suggest about whose idea the good works are, and whose we are as we do them?"
         },
         {
           "elementId": "ch13-el39",
@@ -5171,7 +5461,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus tells his followers plainly, \"You are the light of the world,\" comparing them to a city on a hill that can't be hidden, or a lamp meant to be put on a stand rather than under a basket. The mission that follows is direct: \"let your light shine before people, so that they can see your good deeds and give honor to your Father in heaven.\" Our mission is visibility, not concealment — living in a way that our good deeds are seen, with the aim not of our own praise but of pointing people to God.",
+          "questionHint": "Jesus gives two images for what light is NOT supposed to do (hidden, under a basket) — what does that tell you about the kind of visibility he expects from his followers?"
         },
         {
           "elementId": "ch14-el07",
@@ -5192,7 +5484,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The passage tells us to \"take thought of how to spur one another on to love and good works,\" explicitly warning against \"abandoning our own meetings, as some are in the habit of doing.\" Instead we're to keep \"encouraging each other,\" and to do so with increasing urgency \"because you see the day drawing near.\" Meeting together isn't presented as optional or merely social — it's a deliberate practice of mutual encouragement toward love and good works, made more important, not less, as time goes on.",
+          "questionHint": "The passage names a habit some people had fallen into regarding meetings — what was it, and what are believers told to do instead?"
         },
         {
           "elementId": "ch14-el09",
@@ -5221,7 +5515,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul draws a direct comparison: \"just as the body is one and yet has many members... so too is Christ.\" Being a member of Christ's body means belonging to one unified whole made up of genuinely different parts, and that unity was created \"in one Spirit... baptized into one body,\" erasing old dividing lines between \"Jews or Greeks or slaves or free.\" Membership isn't uniformity — \"the body is not a single member, but many\" — but a diversity of parts joined by one Spirit into one body.",
+          "questionHint": "Paul says the body was formed \"in one Spirit\" across categories like Jew, Greek, slave, and free — what does that tell you about what actually unites members of Christ's body?"
         },
         {
           "elementId": "ch14-el12",
@@ -5242,7 +5538,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul again uses the body image, noting that \"not all the members serve the same function,\" yet \"we who are many are one body in Christ.\" Being a member means two things held together: individuality of function — you're not interchangeable with every other member — and genuine belonging to one another, since he says members are those \"who belong to one another.\" Being part of Christ's body means your distinct role matters precisely because you're bound to others who need it.",
+          "questionHint": "The passage says members \"serve\" different functions but also \"belong to one another\" — how do those two ideas work together rather than against each other?"
         },
         {
           "elementId": "ch14-el14",
@@ -5263,7 +5561,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This passage shows that Christ gave specific people — apostles, prophets, evangelists, pastors and teachers — with a purpose: \"to equip the saints for the work of ministry\" and \"build up the body of Christ.\" Being a member of Christ's body means being someone these gifted people are meant to equip, moving all of us together \"until we all attain to the unity of the faith... a mature person, attaining to the measure of Christ's full stature.\" Membership carries a growth trajectory — toward unity and maturity, not just belonging as a static fact.",
+          "questionHint": "The gifted leaders in this passage aren't meant to do all the ministry themselves — what are they given \"to equip\" others for?"
         },
         {
           "elementId": "ch14-el16",
@@ -5292,7 +5592,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The passage moves through several pictures at once: we're no longer \"foreigners and noncitizens\" but \"fellow citizens with the saints and members of God's household.\" That household is also described as a building — \"built on the foundation of the apostles and prophets, with Christ Jesus himself as the cornerstone\" — growing into \"a holy temple\" and \"a dwelling place of God in the Spirit.\" Belonging to God's household means moving from outsider status to full membership in a structure that God himself is actively building and living in.",
+          "questionHint": "The passage says we're no longer \"foreigners and noncitizens\" — what are we instead, and what is Christ's specific role in the building we now belong to?"
         },
         {
           "elementId": "ch14-el19",
@@ -5313,7 +5615,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter calls believers \"living stones\" being \"built up as a spiritual house,\" with the purpose of being \"a holy priesthood\" who \"offer spiritual sacrifices that are acceptable to God through Jesus Christ.\" Belonging to God's household here means being actual building material — alive, not inert — assembled into a house whose function is priestly: offering sacrifices, though now spiritual ones, made acceptable only through Jesus. Household membership comes with a job: worship that is welcomed by God because of Christ.",
+          "questionHint": "Peter calls believers \"living stones\" rather than just stones — what does the word \"living\" add, and what is the finished structure used for?"
         },
         {
           "elementId": "ch14-el21",
@@ -5334,7 +5638,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This passage draws a contrast between Christ, who is \"faithful as a son over God's house,\" and us: \"we are of his house.\" But it attaches a condition — \"if in fact we hold firmly to our confidence and the hope we take pride in.\" Belonging to God's household here isn't just a title we passively hold; it's tied to continuing to hold firmly to our confidence and hope in Christ, the faithful Son who rules over that house.",
+          "questionHint": "The verse adds a small but important word — \"if\" — before naming what we need to hold onto. What are we told to hold firmly to?"
         },
         {
           "elementId": "ch14-el23",
@@ -5363,7 +5669,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter names our identity in a cluster of titles — \"a chosen race, a royal priesthood, a holy nation, a people of his own\" — and immediately attaches a purpose clause: \"so that you may proclaim the virtues of the one who called you out of darkness into his marvelous light.\" Our royal priesthood identity isn't just status; it comes with a mission to declare God's excellencies. That mission makes sense given where we came from — people who \"once were not a people\" and \"were shown no mercy\" but now have received it.",
+          "questionHint": "The identity titles are followed by the words \"so that\" — what specific mission does that phrase introduce as the reason for the identity?"
         },
         {
           "elementId": "ch14-el26",
@@ -5384,7 +5692,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "This brief verse says Christ \"has appointed us as a kingdom, as priests serving his God and Father.\" Our royal priesthood identity here is directly tied to service — we are priests who serve God and Father — and the whole verse ends not in self-focus but in worship: \"to him be the glory and the power for ever and ever.\" Being made a kingdom of priests points our mission toward serving God and giving him glory, rather than toward status for its own sake.",
+          "questionHint": "The verse names two things we've been appointed as — what are they, and what does the verse say we do as the second one?"
         },
         {
           "elementId": "ch14-el28",
@@ -5405,7 +5715,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God tells Israel that if they listen and keep his covenant, they'll be his \"special possession out of all the nations,\" even though \"all the earth is mine\" — meaning this priesthood identity is a particular calling within a wider ownership. They're to become \"a kingdom of priests and a holy nation.\" This is the Old Testament root of the royal priesthood language Peter later uses — a people set apart, in relationship to a God who claims the whole earth, given a mission tied to obedience to his covenant.",
+          "questionHint": "God says \"all the earth is mine\" right before calling Israel his \"special possession\" — what does that combination suggest about why they were chosen out of everyone else?"
         },
         {
           "elementId": "ch14-el30",
@@ -5434,7 +5746,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "John sees \"an enormous crowd that no one could count,\" drawn \"from every nation, tribe, people, and language,\" standing before God's throne and the Lamb, dressed in white and holding palm branches, crying out that \"salvation belongs to our God... and to the Lamb.\" The future we look forward to is this: a vast, uncountable, multi-ethnic gathering, secure before God's throne, united in loud, joyful praise, giving all credit for salvation to God and the Lamb rather than to themselves.",
+          "questionHint": "John describes the crowd's makeup (\"every nation, tribe, people, and language\") and their cry (\"salvation belongs to...\") — what do those two details tell you about the nature of this future gathering?"
         },
         {
           "elementId": "ch14-el33",
@@ -5581,7 +5895,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "God speaks directly and repeatedly to fear: \"Don't be afraid... Don't be frightened,\" grounding the command in who he is and what he does — \"I am your God! I strengthen you... I help you... I uphold you with my saving right hand!\" What helps us trust God isn't a technique but this repeated, personal assurance of his presence and active help — his strengthening, helping, and upholding — that meets our fear directly rather than dismissing it.",
+          "questionHint": "God gives three specific actions he promises to do for you (strengthen, help, uphold) — how might remembering those specific promises change the way you face a frightening circumstance?"
         },
         {
           "elementId": "ch15-el07",
@@ -5610,7 +5926,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The phrase \"walk in newness of life\" comes right out of this verse's picture of having \"been buried with him through baptism into death,\" so that \"just as Christ was raised from the dead through the glory of the Father, so we too may live a new life.\" To walk in newness of life means our ongoing, daily way of living is meant to correspond to resurrection — not a return to the old buried life, but an actual walking pattern shaped by the same power that raised Christ.",
+          "questionHint": "The verse connects our \"new life\" to something that happened to Christ \"through the glory of the Father\" — what was that event, and how does it become the pattern for how we're meant to walk?"
         },
         {
           "elementId": "ch15-el10",
@@ -5631,7 +5949,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul frames walking in newness of life as walking \"by the Spirit,\" which results in not carrying out \"the desires of the flesh.\" He's honest about the ongoing tension — \"the flesh has desires that are opposed to the Spirit, and the Spirit has desires that are opposed to the flesh... so that you cannot do what you want\" — but promises that \"if you are led by the Spirit, you are not under the law.\" Walking in newness of life means being actively led by the Spirit through a real, ongoing conflict, not living free of struggle altogether.",
+          "questionHint": "Paul says the flesh and Spirit are \"opposed to each other\" — what does he say happens instead when you are specifically \"led by the Spirit\"?"
         },
         {
           "elementId": "ch15-el12",
@@ -5652,7 +5972,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Walking in newness of life here involves an active sequence: laying aside \"the old man who is being corrupted in accordance with deceitful desires,\" being \"renewed in the spirit of your mind,\" and putting on \"the new man who has been created in God's image – in righteousness and holiness that comes from truth.\" It isn't a one-time event but an ongoing process — one that touches how we think as much as how we act, moving us away from deceit and corruption toward a righteousness rooted in truth.",
+          "questionHint": "This passage names three steps — laying aside, being renewed, and putting on — which step deals specifically with \"the spirit of your mind\"?"
         },
         {
           "elementId": "ch15-el14",
@@ -5681,7 +6003,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Peter grounds the call to holiness directly in God's own character: \"like the Holy One who called you, become holy yourselves in all of your conduct,\" quoting the command \"You shall be holy, because I am holy.\" Personal holiness reflects our new identity because it's meant to resemble the very God who called us — not an arbitrary standard, but a family likeness. Being holy \"in all of your conduct\" means this isn't confined to select moments but is meant to characterize the whole of how we live.",
+          "questionHint": "Peter says to be holy \"like\" someone specific — who is that, and what does imitating that person's holiness suggest about our new identity as his children?"
         },
         {
           "elementId": "ch15-el17",
@@ -5702,7 +6026,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul roots this call in identity first — \"as the elect of God, holy and dearly loved\" — before listing what to put on: \"a heart of mercy, kindness, humility, gentleness, and patience,\" along with \"bearing with one another and forgiving one another... just as the Lord has forgiven you.\" Then \"add love, which is the perfect bond.\" Personal holiness reflects our new identity by working outward from who we already are — chosen and loved — into concrete relational virtues, especially a forgiveness that mirrors the forgiveness we've received.",
+          "questionHint": "Paul says to forgive others \"just as\" someone forgave you — whose forgiveness is the model, and what does that model suggest about the kind of holiness expected of us?"
         },
         {
           "elementId": "ch15-el19",
@@ -5723,7 +6049,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul calls believers, on the basis of \"these promises,\" to \"cleanse ourselves from everything that could defile the body and the spirit,\" so as to \"accomplish holiness out of reverence for God.\" Personal holiness here reflects our new identity as people who already possess God's promises — the cleansing isn't done to earn something, but flows from reverence for the God whose promises we already hold, touching the whole person, body and spirit together.",
+          "questionHint": "Paul says this cleansing is \"out of reverence for God\" and based on \"these promises\" already given — what does that ordering (promise first, then holiness) tell you about the motive behind it?"
         },
         {
           "elementId": "ch15-el21",
@@ -5752,7 +6080,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul lists the \"fruit of the Spirit\" as a single cluster — \"love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control\" — noting \"against such things there is no law.\" Bearing this fruit as part of our new identity means these qualities grow out of the Spirit's presence in us rather than being manufactured by willpower or rule-keeping. Notably it's called \"fruit,\" singular, suggesting these traits belong together as one organic outgrowth of the Spirit's life in us, not a checklist to master separately.",
+          "questionHint": "Paul calls this list \"fruit\" (singular) rather than \"fruits\" — what might that word choice suggest about whether these qualities grow separately or together?"
         },
         {
           "elementId": "ch15-el24",
@@ -5773,7 +6103,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Jesus makes fruit-bearing entirely dependent on connection: \"Remain in me, and I will remain in you... apart from me you can accomplish nothing.\" Using the vine and branches image, he says a branch \"cannot bear fruit by itself\" unless it \"remains in the vine.\" Bearing fruit as part of our new identity isn't something we produce through effort separated from Christ — it happens only through ongoing, abiding connection to him, \"the vine,\" with fruitfulness as the natural overflow of remaining attached to him.",
+          "questionHint": "Jesus repeats the phrase \"remain in me\" — what does he say happens to a branch that tries to bear fruit without staying connected to the vine?"
         },
         {
           "elementId": "ch15-el26",
@@ -5794,7 +6126,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul contrasts past and present: \"you were at one time darkness, but now you are light in the Lord,\" and follows with a command: \"Walk as children of the light.\" He defines the fruit that light produces: \"all goodness, righteousness, and truth,\" paired with the ongoing aim of \"learn[ing] what is pleasing to the Lord.\" Bearing this fruit as part of our new identity means living consistently with what we now are — light, not darkness — letting that identity produce goodness, righteousness, and truth as we keep discerning what pleases God.",
+          "questionHint": "Paul says believers \"were\" darkness but \"now\" are light — what specific fruit does he say this new identity as light is supposed to produce?"
         },
         {
           "elementId": "ch15-el28",
@@ -5823,7 +6157,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The answer here is good works, but framed by identity: \"we are his workmanship, having been created in Christ Jesus for good works that God prepared beforehand so we may do them.\" What else we're to do is walk in these specific good works — not works we dream up ourselves, but ones God already planned for us before we ever got there, simply because he made us, in Christ, for exactly that purpose.",
+          "questionHint": "The verse says these good works were \"prepared beforehand\" by God — what does that timing tell you about whose plan we're stepping into when we do them?"
         },
         {
           "elementId": "ch15-el31",
@@ -5844,7 +6180,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul reframes ordinary work with a wide scope — \"whatever you are doing, work at it with enthusiasm\" — and a different audience: \"as to the Lord and not for people.\" What else we're to do is bring this wholehearted, Lord-directed attitude into everything, motivated by \"your inheritance from the Lord as the reward,\" summed up in the simple charge, \"Serve the Lord Christ.\" Even routine tasks become an act of service to Christ himself when done this way.",
+          "questionHint": "Paul contrasts working \"as to the Lord\" with working \"for people\" — how might remembering who you're really working for change your enthusiasm for an ordinary task?"
         },
         {
           "elementId": "ch15-el33",
@@ -5865,7 +6203,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "Paul's charge is to steadiness and effort: \"be firm. Do not be moved! Always be outstanding in the work of the Lord.\" What else we're to do is persist in that work, and he gives the reason we can: \"your labor is not in vain in the Lord.\" Because our labor has guaranteed meaning in Christ, we're freed to keep going with full effort rather than wondering whether any of it actually matters.",
+          "questionHint": "Paul gives a reason at the end of the verse for why we can keep laboring without giving up — what does he say our labor \"is not,\" when done \"in the Lord\"?"
         },
         {
           "elementId": "ch15-el35",
@@ -5894,7 +6234,9 @@
           "answerType": "freeText",
           "required": false,
           "answerPlaceholder": "Remember to answer the question from the passage",
-          "bottomPadding": "normal"
+          "bottomPadding": "normal",
+          "sampleAnswer": "The master's words to the faithful servant paint the picture: \"Well done, good and faithful slave! You have been faithful in a few things. I will put you in charge of many things. Enter into the joy of your master.\" What we look forward to is this commendation and welcome — recognition for faithfulness, entrusted with greater responsibility, and invited into the master's own joy. It's a future where present faithfulness, even in small things, leads to greater trust and shared joy with Christ himself.",
+          "questionHint": "The master gives the servant two rewards for faithfulness in \"a few things\" — what are they, and what does the phrase \"enter into the joy of your master\" suggest about the nature of that reward?"
         },
         {
           "elementId": "ch15-el38",
