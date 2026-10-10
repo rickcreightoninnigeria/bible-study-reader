@@ -11,6 +11,7 @@
 //   appSettings                    – settings.js
 //   chapters, currentChapter       – state.js
 //   answerFieldKey, likertFieldKey – state.js
+//   studyText                      – render-chapter-elements.js (runtime call only)
 //   StudyIDB                       – idb.js
 //   window.activeStudyId           – state.js
 //   window.titlePageData           – set by study-loader.js
@@ -25,6 +26,43 @@
 // report and shares it via the native Web Share API, Android bridge, or clipboard.
 // Question and reflection answers are read from the DOM (already rendered).
 // Notes are read from IDB since they are not a standard .answer-field.
+// Rows of a Likert element for share/print, in the reader's language.
+// Standard scales give one statement per row. Bipolar scales give a
+// "left ↔ right" pair, and because their labels repeat on both sides of the
+// midpoint (e.g. Agree … Neutral … Agree) the chosen label is followed by
+// the statement it leans toward. `answer` is null when the row is unanswered.
+function _likertShareRows(el, record) {
+  const isBipolar = el.subtype === 'bipolar';
+  const scale = studyText(el, 'scale') || [];
+  const rows  = (isBipolar ? studyText(el, 'statementPairs') : studyText(el, 'statements')) || [];
+  const n     = Number(el.scaleNumber) || scale.length || 5;  // scaleNumber may be stored as a string
+  return rows.map((row, stIdx) => {
+    const raw = parseInt((record || {})[likertFieldKey(el.elementId, stIdx)], 10);
+    let answer = null;
+    if (raw >= 1 && raw <= n) {
+      answer = scale[raw - 1] || String(raw);
+      if (isBipolar && raw !== (n + 1) / 2) answer += ` (${raw < (n + 1) / 2 ? row.left : row.right})`;
+    }
+    return { statement: isBipolar ? `${row.left} ↔ ${row.right}` : row, answer };
+  });
+}
+
+// Plain-text Likert section for the share reports. Returns '' when none of
+// the chapter's Likert rows has been answered.
+function _likertShareText(ch, record, bold) {
+  let text = '';
+  (ch.elements || [])
+    .filter(e => e.type === 'likertScale' && !e.repeatElement)
+    .forEach(el => {
+      const rows = _likertShareRows(el, record);
+      if (!rows.some(r => r.answer)) return;
+      text += bold(t('shareprint_print_likert_heading')) + '\n';
+      rows.forEach(r => { text += `• ${r.statement}: ${r.answer || t('shareprint_print_no_answer')}\n`; });
+      text += '\n';
+    });
+  return text;
+}
+
 async function shareAnswers() {
   const ch      = chapters[currentChapter];
   const studyId = window.activeStudyId;
@@ -81,6 +119,7 @@ async function shareAnswers() {
       report += `------------------------------------------\n`;
       report += notesVal + '\n\n';
     }
+    report += _likertShareText(ch, record, bold);
   } catch (e) {
     console.warn('[shareAnswers] IDB read failed for notes.', e);
   }
@@ -154,7 +193,7 @@ async function exportStudyAnswers() {
           if (answer) {
             hasReflections    = true;
             chapterHasAnswers = true;
-            const qText = el.question || el.question1 || '';
+            const qText = studyText(el, 'question');
             reflectionReport += `${bold(t('shareprint_label_q'))} ${qText}\n`;
             reflectionReport += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
           }
@@ -173,26 +212,12 @@ async function exportStudyAnswers() {
       chapterReport += notesAnswer + '\n\n';
     }
 
-    // Likert scale responses
-    (ch.elements || [])
-      .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
-      .forEach(el => {
-        const scale      = el.scale      || el.scale1      || [];
-        const statements = el.statements || el.statements1 || [];
-        if (!statements.length) return;
-
-        let likertReport = '';
-        statements.forEach((stmt, stIdx) => {
-          const raw      = record[likertFieldKey(el.elementId, stIdx)];
-          const labelIdx = raw ? (parseInt(raw, 10) - 1) : -1;
-          const label    = (labelIdx >= 0 && labelIdx < scale.length) ? scale[labelIdx] : t('shareprint_print_no_answer');
-          likertReport += `• ${stmt}: ${label}\n`;
-        });
-
-        chapterHasAnswers = true;
-        chapterReport += bold(t('shareprint_print_likert_heading')) + '\n';
-        chapterReport += likertReport + '\n';
-      });
+    // Likert scale responses (standard and bipolar)
+    const likertText = _likertShareText(ch, record, bold);
+    if (likertText) {
+      chapterHasAnswers = true;
+      chapterReport += likertText;
+    }
 
     if (chapterHasAnswers) {
       report += chapterReport;
@@ -337,21 +362,15 @@ function buildChapterBody(ch, record) {
 
   // Likert scale responses
   (ch.elements || [])
-    .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
+    .filter(e => e.type === 'likertScale' && !e.repeatElement)
     .forEach(el => {
-      const scale      = el.scale      || el.scale1      || [];
-      const statements = el.statements || el.statements1 || [];
-      if (!statements.length) return;
+      const rows = _likertShareRows(el, record);
+      if (!rows.length) return;
 
-      const rowsHtml = statements.map((stmt, stIdx) => {
-        const raw      = record[likertFieldKey(el.elementId, stIdx)];
-        const labelIdx = raw ? (parseInt(raw, 10) - 1) : -1;
-        const label    = (labelIdx >= 0 && labelIdx < scale.length) ? scale[labelIdx] : null;
-        return `<div class="likert-block-row">
-          <div class="likert-block-statement">${stmt}</div>
-          <div class="likert-block-response${label ? '' : ' no-answer'}">${label || t('shareprint_print_no_answer')}</div>
-        </div>`;
-      }).join('');
+      const rowsHtml = rows.map(({ statement, answer }) => `<div class="likert-block-row">
+          <div class="likert-block-statement">${statement}</div>
+          <div class="likert-block-response${answer ? '' : ' no-answer'}">${answer || t('shareprint_print_no_answer')}</div>
+        </div>`).join('');
 
       body += `<div class="likert-block">
         <div class="likert-block-title">${t('shareprint_print_likert_heading')}</div>
@@ -366,7 +385,7 @@ function buildChapterBody(ch, record) {
       .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
       .forEach((el, ri) => {
         const answer = (record[answerFieldKey('r', el.elementId)] || '').trim();
-        const qText  = el.question || el.question1 || '';
+        const qText  = studyText(el, 'question');
         body += `<div class="question-block">
           <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
           <div class="question-text">${qText}</div>
@@ -509,12 +528,12 @@ function buildBlankChapterBody(ch) {
   }
 
   (ch.elements || [])
-    .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
+    .filter(e => e.type === 'likertScale' && !e.repeatElement)
     .forEach(el => {
-      const statements = el.statements || el.statements1 || [];
-      if (!statements.length) return;
-      const rowsHtml = statements.map(stmt => `<div class="likert-block-row">
-          <div class="likert-block-statement">${stmt}</div>
+      const rows = _likertShareRows(el, null);
+      if (!rows.length) return;
+      const rowsHtml = rows.map(({ statement }) => `<div class="likert-block-row">
+          <div class="likert-block-statement">${statement}</div>
           <div class="likert-block-response blank-answer" style="min-width:60pt;"></div>
         </div>`).join('');
       body += `<div class="likert-block">
@@ -528,7 +547,7 @@ function buildBlankChapterBody(ch) {
     (ch.elements || [])
       .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
       .forEach((el, ri) => {
-        const qText = el.question || el.question1 || '';
+        const qText = studyText(el, 'question');
         body += `<div class="question-block">
           <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
           <div class="question-text">${qText}</div>

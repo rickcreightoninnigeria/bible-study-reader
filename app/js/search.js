@@ -361,7 +361,7 @@ async function runSearchCore(query) {
         if (savedAnswer) {
           const norm = normalize(savedAnswer);
           if (queries.some(q => norm.includes(q))) {
-            const questionText = stripHtml(el.question || el.question1 || '');
+            const questionText = stripHtml(studyText(el, 'question'));
             results.push({
               chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle,
               ref: t('search_reflection_ref', { num: rIdx + 1 }),

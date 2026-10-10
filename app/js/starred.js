@@ -140,7 +140,7 @@ async function getStarredQuestions(ch, preloadedRecord = null) {
     reflEls.forEach((el, ri) => {
       if (record[starFieldKey(el.elementId)] === '1') {
         starred.push({
-          q: { ref: t('starred_reflection_ref', { number: ri + 1 }), text: el.question },
+          q: { ref: t('starred_reflection_ref', { number: ri + 1 }), text: studyText(el, 'question') },
           elementId: el.elementId,
           isReflection: true
         });

@@ -115,13 +115,21 @@ function buildLangMap(studyMetadata) {
 // langMap is optional: callers that don't have it (e.g. helpers called outside
 // a render ctx) can omit it and the function will fall back gracefully.
 
+// Returns the first argument that has content: a non-empty string or a
+// non-empty array. Untranslated language slots are stored as '' for text but
+// as [] for list fields (statements2, scale2, …), and [] is truthy — so a
+// plain `a || b` chain would pick the empty list instead of falling back.
+function _firstFilled(...values) {
+  return values.find(v => (Array.isArray(v) ? v.length > 0 : !!v));
+}
+
 function resolveText(el, lang, field, langMap) {
   // ── Multilingual path (langMap has entries) ────────────────────────────────
   if (langMap && Object.keys(langMap).length > 0) {
     const slot = langMap[lang];
     if (slot !== undefined) {
       // This element may not carry every language slot — fall back to slot 1.
-      return el[`${field}${slot}`] || el[`${field}1`] || '';
+      return _firstFilled(el[`${field}${slot}`], el[`${field}1`]) || '';
     }
     // lang not in langMap at all — fall back to slot 1.
     return el[`${field}1`] || '';
@@ -180,8 +188,8 @@ function resolveMetaField(obj, field, lang, langMap) {
 function resolveTextWithFallback(el, lang, field, langMap, fallback = '') {
   if (langMap && Object.keys(langMap).length > 0) {
     const slot = langMap[lang];
-    if (slot !== undefined) return el[`${field}${slot}`] || el[`${field}1`] || el[field] || fallback;
-    return el[`${field}1`] || el[field] || fallback;
+    if (slot !== undefined) return _firstFilled(el[`${field}${slot}`], el[`${field}1`], el[field]) || fallback;
+    return _firstFilled(el[`${field}1`], el[field]) || fallback;
   }
   return el[field] || fallback;
 }
@@ -262,6 +270,19 @@ function getActiveLang(availableLangs) {
   const preferred = window._activeStudyLang;
   if (preferred && availableLangs.includes(preferred)) return preferred;
   return availableLangs[0] || null;
+}
+
+// studyText(obj, field, fallback)
+//
+// Resolves a study-content field (question, text, chapterTitle, statements,
+// scale, …) for the language the reader currently has selected, using the
+// same "active slot → slot 1 → unnumbered → fallback" chain as the chapter
+// renderer. For use outside the render loop — search, share, print, starred
+// lists — where no ctx.activeLang / ctx.langMap is to hand.
+function studyText(obj, field, fallback = '') {
+  const langMap = buildLangMap(window.studyMetadata || {});
+  const lang    = getActiveLang(detectAvailableLangs());
+  return resolveTextWithFallback(obj || {}, lang, field, langMap, fallback);
 }
 
 

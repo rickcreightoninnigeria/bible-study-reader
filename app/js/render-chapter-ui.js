@@ -108,6 +108,7 @@ function buildLangBar(langs, activeLang) {
 
 async function setStudyLang(code) {
   window._activeStudyLang = code;
+  refreshChapterTextForLang();  // search/share/print/starred follow the new language
 
   if (SUPPORTED_LANGUAGES.includes(code)) {
     window._sessionUiLangOverride = code;

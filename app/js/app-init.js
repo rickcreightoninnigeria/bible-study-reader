@@ -174,6 +174,7 @@ async function reloadLocaleAndRerender(langCode) {
   const availableLangs = detectAvailableLangs();
   if (availableLangs.includes(langCode)) {
     window._activeStudyLang = langCode;
+    refreshChapterTextForLang();
   }
 
   // Patch the footer with the new locale's app title.

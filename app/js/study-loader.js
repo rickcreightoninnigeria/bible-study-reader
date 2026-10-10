@@ -380,30 +380,31 @@ function applyImageData(imageData) {
 
 // Returns a plain string for a field that may be stored unnumbered (mono-lingual
 // studies: el.question) or in numbered language slots (multilingual studies:
-// el.question1/2/3). Falls back to slot 1 so downstream consumers of the
-// normalised shape (search, share, print, starred) never see undefined.
+// el.question1/2/3), using slot 1. This is the language-independent default
+// resolver for the helpers below; refreshChapterTextForLang() re-runs them
+// with studyText() so the normalised text follows the reader's language.
 function _plainField(el, field) {
   return el[field] ?? el[`${field}1`] ?? '';
 }
 
 // Returns the text of the first element with the given subtype.
-function _extractTextBySubtype(elements, subtype) {
+function _extractTextBySubtype(elements, subtype, resolve = _plainField) {
   const el = (elements || []).find(e => e.type === 'text' && e.subtype === subtype);
-  return el ? _plainField(el, 'text') : '';
+  return el ? resolve(el, 'text') : '';
 }
 
 // Returns an array of reflection question strings.
-function _extractReflectionQuestions(elements) {
+function _extractReflectionQuestions(elements, resolve = _plainField) {
   return (elements || [])
     .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
-    .map(e => _plainField(e, 'question'));
+    .map(e => resolve(e, 'question'));
 }
 
 // Reconstructs sections[] from the flat elements[].
 // A new section starts at each bridge text element (or implicitly at the first
 // biblePassage when there is no leading bridge). Questions are grouped under
 // the most recently seen biblePassage reference.
-function _buildSectionsFromElements(elements) {
+function _buildSectionsFromElements(elements, resolve = _plainField) {
   const els = (elements || []).filter(e => !e.repeatElement);
   const sections = [];
   let currentSection = null;
@@ -411,7 +412,7 @@ function _buildSectionsFromElements(elements) {
 
   els.forEach(el => {
     if (el.type === 'text' && el.subtype === 'bridge') {
-      currentSection = { bridge: _plainField(el, 'text'), questions: [] };
+      currentSection = { bridge: resolve(el, 'text'), questions: [] };
       sections.push(currentSection);
       lastRef = null;
     } else if (el.type === 'biblePassage') {
@@ -427,13 +428,37 @@ function _buildSectionsFromElements(elements) {
       }
       currentSection.questions.push({
         ref:       el.linkedPassage || lastRef || '',
-        text:      _plainField(el, 'question'),
+        text:      resolve(el, 'question'),
         elementId: el.elementId,
       });
     }
   });
 
   return sections;
+}
+
+// The text fields of a normalised chapter (everything search, share, print
+// and the starred lists read), resolved with the given resolver.
+function _normalisedChapterText(ch, resolve = _plainField) {
+  const title = resolve(ch, 'chapterTitle');
+  return {
+    chapterTitle: title,
+    title,
+    intro:      _extractTextBySubtype(ch.elements, 'chapterIntro', resolve),
+    closing:    _extractTextBySubtype(ch.elements, 'chapterClosing', resolve),
+    reflection: _extractReflectionQuestions(ch.elements, resolve),
+    sections:   _buildSectionsFromElements(ch.elements, resolve),
+  };
+}
+
+// Re-resolves every loaded chapter's normalised text for the reader's
+// current study language (window._activeStudyLang). Called once the study's
+// metadata is known in applyStudyData(), and again wherever the study
+// language changes. Mutates the chapter objects in place so references held
+// elsewhere stay valid. A no-op for mono-lingual studies in effect, since
+// studyText() then returns the plain unnumbered fields.
+function refreshChapterTextForLang() {
+  (window.chapters || []).forEach(ch => Object.assign(ch, _normalisedChapterText(ch, studyText)));
 }
 
 // Assigns all globals from a parsed JSON data object and (re-)starts the app.
@@ -534,15 +559,11 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
 
   // Normalise chapters: map new .estudy field names (chapterTitle, chapterNumber,
   // flat elements[]) to the shape the engine expects (title, num, sections[], etc.)
+  // Text fields are resolved for the reader's language by
+  // refreshChapterTextForLang() below, once window.studyMetadata is set.
   window.chapters = (data.chapters || []).map(ch => ({
     ...ch,
-    chapterTitle: _plainField(ch, 'chapterTitle'),
     num:        ch.chapterNumber,
-    title:      _plainField(ch, 'chapterTitle'),
-    intro:      _extractTextBySubtype(ch.elements, 'chapterIntro'),
-    closing:    _extractTextBySubtype(ch.elements, 'chapterClosing'),
-    reflection: _extractReflectionQuestions(ch.elements),
-    sections:   _buildSectionsFromElements(ch.elements),
   }));
 
   // ── Expose studyMetadata globally ─────────────────────────────────────────
@@ -551,6 +572,7 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   // numbered metadata fields (title1/2/3, subtitle1/2/3, shortTitle1/2/3).
   const metadata = data.studyMetadata || {};
   window.studyMetadata = metadata;
+  refreshChapterTextForLang();
 
   // ── Build the language-slot map once ──────────────────────────────────────
   // { ha: 1, ff: 2, en: 3 } — used for all metadata and slide field resolution
