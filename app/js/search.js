@@ -21,6 +21,9 @@
 function openSearch() {
   closeMenu();
   saveLastPosition();
+  // Remember whether we opened over a non-chapter page (e.g. the title page,
+  // which has no activeTabPage) so closeSearch() can restore it exactly.
+  window._nonChapterBeforeSearch = isNonChapterPage;
   isNonChapterPage = true;
   document.getElementById('searchOverlay').classList.add('open');
   const searchBtn = document.getElementById('navSearchBtn');
@@ -36,7 +39,10 @@ function openSearch() {
 function closeSearch() {
   document.getElementById('searchOverlay').classList.remove('open');
   document.getElementById('searchInput').blur();
-  if (!window.activeTabPage) isNonChapterPage = false;
+  // Restore the pre-search value rather than inferring it from activeTabPage:
+  // the title page is a non-chapter page with no activeTabPage, and clearing
+  // the flag there re-enabled chapter swipes and position saving on it.
+  if (!window.activeTabPage) isNonChapterPage = !!window._nonChapterBeforeSearch;
   const searchBtn = document.getElementById('navSearchBtn');
   if (searchBtn) { searchBtn.innerHTML = ICONS.search; searchBtn.onclick = () => navSearchClick(); }
   if (window._titleBeforeSearch) {
@@ -46,14 +52,20 @@ function closeSearch() {
 }
 
 function highlightMatch(text, query) {
-  const safeText = escapeHtml(text);
-  if (!query) return safeText;
+  const raw = String(text ?? '');
+  if (!query) return escapeHtml(raw);
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return safeText.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
+  // Match against the raw text and escape each piece afterwards. Matching
+  // against already-escaped text let a query like "amp" or "quot" land inside
+  // an entity (&amp; → &<mark>amp</mark>;), corrupting the rendered result.
+  // split() with a capture group puts the matches at the odd indices.
+  return raw.split(new RegExp(`(${escaped})`, 'gi'))
+    .map((part, i) => (i % 2 ? `<mark>${escapeHtml(part)}</mark>` : escapeHtml(part)))
+    .join('');
 }
 
 function stripHtml(html) {
-  return html.replace(/<[^>]+>/g, '');
+  return String(html ?? '').replace(/<[^>]+>/g, '');
 }
 
 // ── DEBOUNCE ──────────────────────────────────────────────────────────────────

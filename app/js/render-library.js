@@ -407,7 +407,7 @@ function _buildStudyCard(id, entry, listIds, isPinned, moveFn, toggleFn) {
            aria-label="${t('renderlib_move_down')}">${ICONS.arrowDown}</button>
        </div>`
     : `<button class="study-card-delete-btn"
-         onclick="event.stopPropagation(); deleteStudy('${id}', '${escapeHtml(e.title)}')"
+         onclick="event.stopPropagation(); deleteStudy('${id}', ${escapeHtml(JSON.stringify(e.title))})"
          style="background:none; border:none; padding:10px; font-size:18px; cursor:pointer; opacity:0.6; z-index:2; margin-left: 4px;">
          ${ICONS.trash}
        </button>`;
@@ -603,7 +603,7 @@ async function renderLibrary() {
               ${e.subtitle ? `<div class="lib-ri-meta">${escapeHtml(e.subtitle)}</div>` : ''}
             </div>
             <button class="lib-ri-delete-btn"
-              onclick="event.stopPropagation(); deleteStudy('${id}', '${safe}')"
+              onclick="event.stopPropagation(); deleteStudy('${id}', ${escapeHtml(JSON.stringify(e.title))})"
               title="${t('renderlib_delete_title', { title: safe })}"
               aria-label="${t('renderlib_delete_title', { title: safe })}">
               ${ICONS.trash}
