@@ -892,7 +892,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Carrying a cross in Jesus’s day meant walking toward certain death, with no possibility of turning back — so when Jesus calls his followers to “deny himself, take up his cross,” he’s describing a total, irreversible surrender of self-direction and self-preservation, not merely giving up a few comforts or habits. He’s asking his followers to let go of the right to run their own life, protect their own reputation and safety, and determine their own priorities — surrendering ultimate control and self-interest entirely to follow him, whatever the cost.",
+          "questionHint"     :"Think about what made the cross-carrying image so vivid to Jesus’s original audience — there was no coming back from it; what does that finality suggest about the kind of surrender Jesus is asking for?"
         },
         {
           "elementId"        :"ch08-el07",
@@ -904,7 +906,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus means that clinging tightly to self-preservation and self-direction, refusing to give anything up for him, ultimately leads to a wasted, meaningless life, since “what benefit is it for a person to gain the whole world, yet forfeit his life?” But surrendering control and comfort for Jesus’s sake, though it looks like loss, actually leads to genuine, lasting life. The apparent contradiction dissolves once we see Jesus contrasting two different kinds of “life” — the temporary, self-focused kind that ultimately amounts to nothing, and the eternal, genuine kind found only through him.",
+          "questionHint"     :"Notice Jesus uses the same word, “life,” to mean two different things in the same sentence — what distinguishes the “life” that’s lost from the “life” that’s saved?"
         },
         {
           "elementId"        :"ch08-el08",
@@ -917,7 +921,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus doesn’t hide or minimise the cost of discipleship — his call to “deny himself, take up his cross” directly anticipates real loss, and his warning about being “ashamed” of him “in this adulterous and sinful generation” shows he expected some followers would face real social and relational pressure for their loyalty to him. Jesus built this cost into what it means to follow him from the very beginning — it isn’t a surprising exception to discipleship but was always part of the honest invitation he gave.",
+          "questionHint"     :"Notice Jesus names the cost openly rather than glossing over it — what difference does it make to know this hardship was anticipated by Jesus himself, not a sign that something has gone wrong?"
         },
         {
           "elementId"    :"ch08-el09",
@@ -972,7 +978,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Just as a branch bears fruit not through its own effort but by staying attached to the vine and drawing life from it, “remaining in Jesus” means maintaining an ongoing, dependent connection to him — through his word (“if my words remain in you”), through obedience to his commands, and through continual relationship rather than occasional or one-off engagement. Practically, this looks like consistently returning to Jesus’s teaching, staying in ongoing communication with him, and living in obedience that flows from love, rather than trying to produce spiritual fruit through sheer self-effort disconnected from him.",
+          "questionHint"     :"Notice the branch does nothing clever or effortful — it simply stays attached; what would the equivalent of “staying attached” look like in your own daily rhythm with Jesus?"
         },
         {
           "elementId"        :"ch08-el15",
@@ -984,7 +992,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"This statement is humbling because it strips away any illusion that our spiritual growth or accomplishments come from our own strength or willpower. Yet it’s also freeing because it removes the crushing pressure of having to produce results by our own effort — instead of anxiously striving to generate fruit ourselves, the responsibility shifts onto our dependence on Jesus and his life flowing through us. The pressure it removes is the burden of self-generated spiritual success; what it places on Jesus instead is the actual work of producing fruit in and through us as we simply remain connected to him.",
+          "questionHint"     :"Notice the statement is phrased as a flat fact, not a warning — “apart from me you can accomplish nothing” — how does accepting that as true actually lighten the load rather than adding to it?"
         },
         {
           "elementId"        :"ch08-el16",
@@ -996,7 +1006,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus explicitly connects obedience to remaining “in my love” and states his purpose in teaching this is “so that my joy may be in you, and your joy may be complete” — obedience here isn’t presented as a joyless duty or a hurdle to endure, but as the very pathway into deep, complete joy, because it flows from and deepens a loving relationship with Jesus rather than being separate from or opposed to it.",
+          "questionHint"     :"Notice obedience and joy are linked directly in this passage, not treated as opposites — what does that connection suggest about the motive behind genuine, Spirit-led obedience?"
         },
         {
           "elementId"    :"ch08-el17",
@@ -1045,7 +1057,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Religion driven by trying to be “good enough” through one’s own effort can feel like an exhausting, never-satisfied burden — endless striving with no assurance of ever having done enough, leaving people “weary and burdened.” What makes Jesus’s yoke different, according to this passage, is that it comes from someone “gentle and humble in heart,” offering genuine “rest” rather than more demands to perform; his “yoke is easy to bear” and his “load is not hard to carry” — following him isn’t about achieving impossible self-earned worthiness but resting in what he offers.",
+          "questionHint"     :"Notice Jesus doesn’t say he removes all yokes, only that his is “easy” — what’s the real difference between his yoke and one driven by self-earned religious performance?"
         },
         {
           "elementId"        :"ch08-el22",
@@ -1057,7 +1071,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus describes himself — God in human form — not as harsh, demanding, or intimidating, but as “gentle and humble in heart.” This is significant because it reveals God’s own character toward those who come to him: rather than a distant, exacting judge, Jesus presents himself as approachable, patient, and considerate toward the weary and burdened, inviting genuine closeness rather than fearful distance.",
+          "questionHint"     :"Notice this description comes from Jesus’s own mouth, about himself, as God in human form — what does his choice of this particular word, “gentle,” reveal about how he wants to be approached?"
         },
         {
           "elementId"        :"ch08-el23",
@@ -1274,7 +1290,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The word “right” suggests a genuine, legally-grounded status — not a fragile feeling or temporary favour, but something conferred with real standing and permanence, given specifically “to all who have received him.” Since this status is given by God himself as a “right,” rather than earned or merely felt, it carries real security: our standing as God’s children rests on his own reliable grant, not on our fluctuating performance or feelings.",
+          "questionHint"     :"Notice John chooses the word “right” rather than “feeling” or “experience” — what kind of security does a legal right have that a mere feeling doesn’t?"
         },
         {
           "elementId"        :"ch09-el07",
@@ -1293,7 +1311,9 @@
             "required"         :false,
             "answerPlaceholder":"Your reflection…"
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer" :"In a world where identity and belonging are often bound up almost entirely with bloodline, ethnicity, and family lineage, this verse is significant because it establishes an entirely different basis for becoming God’s child — not physical descent, human will, or ancestry, but being “born... of God” himself. This frees a person from having their standing before God determined by their family background or ethnicity, and instead gives them a new, spiritual birth and identity directly and permanently rooted in God, available regardless of one’s natural family line.",
+          "questionHint" :"Notice the verse rules out three natural sources of identity — family line, a father’s desire, a husband’s will — before naming the true source; what does that threefold denial emphasise?"
         },
         {
           "elementId"    :"ch09-el08",
@@ -1335,7 +1355,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"A slave approaches a master out of “fear” — anxious, uncertain of favour, always working to avoid punishment or earn approval through performance. A child approaching a father, by contrast, comes with the confident intimacy of “adoption,” crying out “Abba, Father” — a relationship marked by security, trust, and belonging rather than anxious striving. Paul’s point is that believers have received the Spirit of the second kind of relationship, not the first — genuine, secure sonship rather than fearful servitude.",
+          "questionHint"     :"Notice Paul contrasts the outcome of each spirit — one leads “again to fear,” the other to crying “Abba, Father” — what does that outcome reveal about the quality of each relationship?"
         },
         {
           "elementId"        :"ch09-el12",
@@ -1347,7 +1369,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul describes this witness as something the Spirit does directly and personally “within” a person — not merely a conclusion we reason our way to intellectually, but an inward assurance given by God’s own Spirit confirming our status as his children. For our sense of belonging, this means our confidence doesn’t rest on our own feelings or performance alone, but is grounded and guaranteed by God’s own Spirit personally testifying to our hearts that we genuinely belong to him.",
+          "questionHint"     :"Notice Paul distinguishes this from an “intellectual conclusion” — what’s the difference between reasoning your way to a belief and having the Spirit personally testify to it within you?"
         },
         {
           "elementId"        :"ch09-el13",
@@ -1366,7 +1390,9 @@
             "required"         :false,
             "answerPlaceholder":"Your reflection…"
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer" :"“Abba” is a uniquely tender, trusting term a young child would use with a father, and remarkably, Jesus himself used this very word in Gethsemane at the moment of his greatest anguish — showing it’s a word of intimate trust even amid deep distress, not merely comfortable ease. Paul likely highlights this particular word because it captures the depth of secure, childlike intimacy believers now have with God through adoption — the same tender address Jesus himself used with the Father is now given to believers as their own natural way of approaching God.",
+          "questionHint" :"Notice Jesus used this exact word at his moment of greatest anguish, not just in comfortable times — what does that timing suggest about when this kind of intimate address is most needed?"
         },
         {
           "elementId"    :"ch09-el14",
@@ -1405,7 +1431,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"In the Old Testament, only the high priest could enter the innermost sanctuary, God’s most holy presence, and only once a year, through an elaborate system of sacrifice. What has changed is that Jesus’s own sacrifice — “by the blood of Jesus,” through “the fresh and living way... through his flesh” — has permanently opened access to God’s presence for every believer, not just a single specially appointed priest on a single yearly occasion. Every believer now has direct, ongoing, confident access into God’s presence, without needing any human priestly intermediary or restricted, occasional access.",
+          "questionHint"     :"Notice the old system allowed access to one person, once a year — compare that restriction with what this passage says is now true for “all” believers."
         },
         {
           "elementId"        :"ch09-el18",
@@ -1417,7 +1445,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"The writer moves directly from “let us draw near” to God (v22) to “let us spur one another on” and not “abandoning our own meetings” (vv24-25), suggesting that genuine closeness to God is meant to be lived out and reinforced within Christian community, not pursued in isolation. The connection is that a life of confident access to God naturally overflows into loving encouragement of others; drawing near to God and staying closely connected to fellow believers are two aspects of the same faithful life, not separate concerns.",
+          "questionHint"     :"Notice how quickly the passage moves from the individual’s access to God (v22) to the community’s responsibility to each other (vv24-25) — why might the writer see these as inseparable?"
         },
         {
           "elementId"        :"ch09-el19",
@@ -1436,7 +1466,9 @@
             "required"         :false,
             "answerPlaceholder":"Your reflection…"
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer" :"The passage directly addresses this exact temptation, naming “those who have got into the habit of abandoning” the gathering of believers as something to specifically avoid, urging instead “encouraging each other,” especially “as you see the day drawing near.” Rather than affirming quiet, invisible, solitary faith as sufficient or safer, this passage insists on the ongoing importance of gathering with and being encouraged by other believers, precisely because Christian faith and endurance are meant to be sustained in community, not carried alone.",
+          "questionHint" :"Notice the writer calls abandoning the gathering a “habit” some had fallen into, not a one-time lapse — what does the passage urge instead of that pattern?"
         },
         {
           "elementId"    :"ch09-el20",
@@ -1475,7 +1507,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul isn’t saying that ethnicity, social status, or gender simply cease to exist or matter at all in any sense — rather, he’s saying these former dividing markers no longer determine our primary identity or standing before God, since “you are all one in Christ Jesus.” Something else now takes precedence: our shared identity as those who “have clothed yourselves with Christ” through faith and baptism becomes the defining reality that unites believers across every previous social and cultural division, without necessarily erasing those distinct backgrounds altogether.",
+          "questionHint"     :"Notice Paul says believers are “one in Christ Jesus,” not that they become identical — what’s the difference between differences being erased and differences no longer being what defines you?"
         },
         {
           "elementId"        :"ch09-el24",
@@ -1494,7 +1528,9 @@
             "required"         :false,
             "answerPlaceholder":"Your reflection…"
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer" :"For someone who has left one community of belonging, Galatians 3:28 offers a remarkable, concrete promise: in Christ, you are placed on entirely equal footing with every other believer, regardless of your prior background — there is no second-class status based on where you came from. Your belonging in Christ’s family is full, equal, and permanent, secured not by your former community or background but by being clothed with Christ himself alongside every other believer.",
+          "questionHint" :"Notice the promise is stated without exception or qualification — “neither... nor” for every major dividing category; what does that completeness mean for someone worried they might not fully belong?"
         },
         {
           "elementId"    :"ch09-el25",
@@ -1719,7 +1755,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus states this as an existing fact of identity — “you are the light of the world” — not as a future goal to strive toward or a status to earn through effort. The difference this makes is significant: rather than anxiously trying to become something we’re not yet, believers are called simply to live consistently with who they already are in Christ. It removes the pressure of performance-based achievement and replaces it with the calling to let an already-true identity be visibly lived out, rather than desperately manufactured.",
+          "questionHint"     :"Notice Jesus doesn’t say “try to be” or “become” — he says “you are”; what does that present-tense statement of fact remove from the pressure of trying to live it out?"
         },
         {
           "elementId"        :"ch10-el07",
@@ -1730,7 +1768,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Just as a city on a hill is visible simply because of its location, not because it’s straining to be noticed, the light of Jesus in a believer’s life is meant to be a natural, unforced overflow of who they already are — visible through consistent, genuine “good deeds” lived out in ordinary daily life, rather than through deliberate self-promotion or performance for an audience. The visibility comes from simply living faithfully where God has placed us, trusting the light will be seen without needing to manufacture attention for it.",
+          "questionHint"     :"Notice the city on the hill doesn’t do anything special to be seen — its visibility is simply a byproduct of where it stands; what would that kind of unforced visibility look like in your own daily context?"
         },
         {
           "elementId"        :"ch10-el08",
@@ -1741,7 +1781,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Jesus makes clear the ultimate purpose of visible good deeds is that people would “glorify your Father in heaven” — not admire or praise the believer personally. Keeping this goal in mind reorients how we think about living in front of others: rather than seeking personal recognition, reputation, or approval for ourselves, our visible good works become a means of pointing observers past us entirely, toward God himself as the true object of praise.",
+          "questionHint"     :"Notice the verse names God, not the believer, as the one who receives glory — how would genuinely holding that goal change what you hope people notice about you?"
         },
         {
           "elementId"    :"ch10-el09",
@@ -1779,7 +1821,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Peter assumes that a life devoted to doing good and remaining unshaken even under suffering — visibly different, hopeful, and unafraid in circumstances that would normally provoke fear or bitterness — will naturally provoke curiosity and prompt people to ask “for a reason for the hope that is in you.” A life like this stands out precisely because its calm, hopeful resilience under real pressure doesn’t match ordinary human responses to hardship, making people genuinely wonder what accounts for it.",
+          "questionHint"     :"Notice Peter assumes people will ask, not that you’ll need to bring it up yourself — what kind of visible difference in how you handle hardship would actually prompt that question?"
         },
         {
           "elementId"        :"ch10-el13",
@@ -1790,7 +1834,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Peter instructs believers to give their answer “with gentleness and respect,” explicitly not with argument, defensiveness, or a need to win the exchange. A respectful, unhurried response looks like genuinely listening to the question being asked, answering honestly and calmly without pressure or hostility, and maintaining “a good conscience” throughout — prioritising the other person’s dignity and the integrity of one’s own conduct over “winning” the conversation.",
+          "questionHint"     :"Notice Peter pairs “gentleness” with giving an actual defence — he doesn’t ask you to soften the content, only the manner; what’s the difference between softening your answer and softening how you deliver it?"
         },
         {
           "elementId"        :"ch10-el14",
@@ -1841,7 +1887,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Peter means that suffering endured specifically for righteous, faithful living carries genuine blessing — it identifies the sufferer with Christ himself and demonstrates the authenticity of their faith, rather than being a sign that something has gone wrong or that God has abandoned them. Knowing that Jesus himself suffered for doing right, despite being completely innocent, helps because it means such suffering is not meaningless or a mark of failure, but is the very path Jesus himself walked, making it something believers can endure in solidarity with him rather than in isolation or despair.",
+          "questionHint"     :"Notice Jesus’s own suffering wasn’t a sign that God had failed him — how does remembering that pattern reshape what your own suffering for doing right might actually mean?"
         },
         {
           "elementId"        :"ch10-el19",
@@ -1862,7 +1910,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Rather than trying to muster raw courage through sheer willpower, “setting Christ apart as Lord” in a moment of fear means deliberately redirecting our attention and trust away from the threatening pressure around us and onto Christ’s actual authority and lordship over the situation. In practice, this might look like consciously reminding ourselves in that moment that Christ, not our accusers or circumstances, holds ultimate authority and is worthy of our trust — anchoring our composure in who he is rather than in our own emotional resilience.",
+          "questionHint"     :"Notice the alternative to fear here isn’t “be braver” but a specific mental and spiritual act — setting Christ apart as Lord; what does directing your focus onto his authority do to the size of the fear in front of you?"
         },
         {
           "elementId"    :"ch10-el21",
@@ -1900,7 +1950,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul asks “who can be against us?” and answers by pointing to God’s total commitment, having “not spare[d] his own Son” for us. He asks “who will bring any charge?” and answers “it is God who justifies” — no accuser can succeed against God’s own verdict. He asks “who is the one who will condemn?” and answers that Christ, having died, risen, and now interceding for us, guarantees no condemnation. He asks “who will separate us from the love of Christ?” and, after listing severe hardships, answers with total confidence: nothing “will be able to separate us.” By posing and then decisively answering each question himself, Paul builds an unshakeable, cumulative case for the security of believers.",
+          "questionHint"     :"Notice Paul never leaves a question hanging — he answers each one himself immediately; what effect does that rhetorical pattern have on the overall confidence of the passage?"
         },
         {
           "elementId"        :"ch10-el25",
@@ -1911,7 +1963,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul does not promise believers exemption from trouble, distress, persecution, or danger — these things genuinely can and do happen to God’s people, as his quotation about being “killed all day long” makes plain. What he promises instead is that none of these hardships have the power to sever the relationship of love between God and his people. The distinction matters enormously because it means our security in God’s love was never meant to depend on the absence of suffering — we can expect real hardship while still holding unshakeable confidence that it cannot touch what matters most.",
+          "questionHint"     :"Notice Paul quotes a verse about believers literally being killed — he isn’t denying real suffering happens; what exactly does he say that suffering cannot do?"
         },
         {
           "elementId"        :"ch10-el26",
@@ -1924,7 +1978,9 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Remember to answer the question from the passage",
-          "bottomPadding"    :"normal"
+          "bottomPadding"    :"normal",
+          "sampleAnswer"     :"Paul’s confidence is grounded not in wishful thinking but in the concrete historical evidence of the cross: God “did not spare his own Son, but gave him up for us all” — if God has already demonstrated this ultimate, costly commitment to us, Paul reasons, surely he will “also, along with him, freely give us all things” needed for our ongoing security. Our own confidence can rest on that exact same basis: not on our own feelings or strength, but on the settled historical fact of what God has already done for us in Christ’s death.",
+          "questionHint"     :"Notice Paul’s logic moves from a greater gift already given (God’s own Son) to a lesser one still to come (“all things”) — how does that “how much more” reasoning work?"
         },
         {
           "elementId"    :"ch10-el27",

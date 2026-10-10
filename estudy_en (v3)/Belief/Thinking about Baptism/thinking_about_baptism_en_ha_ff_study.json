@@ -441,7 +441,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"“Cut to the heart” describes a deep, painful conviction — not mere intellectual agreement but a sudden, piercing realisation of guilt that goes straight to the core of a person’s being. What produces this reaction is the devastating combination Peter presents: the very Jesus they had crucified is in fact “Lord and Messiah” — God’s own appointed King and rightful ruler. The crowd realises they haven’t just made a mistake; they have rejected and killed God’s own Anointed One. That recognition of personal guilt before the true King is what drives them to cry out, “what shall we do?”",
+          "questionHint1":"Notice what the crowd has just been told about Jesus — consider what it would feel like to realise you had crucified the very person now revealed to be Lord and Messiah."
         },
         {
           "elementId"         :"ch01-el07",
@@ -456,7 +458,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"Peter’s two instructions are to “repent” and to “be baptised.” Repentance means a genuine turning away from sin and unbelief — a change of mind and direction, rejecting their former rejection of Jesus and turning toward him in faith. Baptism is the outward, public act that follows and expresses that inward repentance — being baptised “in the name of Jesus Christ for the forgiveness of sins” identifies the person publicly with Jesus and marks the point at which they visibly align themselves with him. Repentance is the inward turning; baptism is the outward declaration of that turning.",
+          "questionHint1"     :"Notice that one instruction addresses what happens inside a person and the other addresses a visible, public act — how do the two relate to each other?"
         },
         {
           "elementId"    :"ch01-el08",
@@ -493,7 +497,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"The two things promised are “the forgiveness of your sins” and “the gift of the Holy Spirit.” Forgiveness means the guilt Peter has just exposed in the crowd — their responsibility for rejecting and crucifying Jesus — can be genuinely wiped away, not held against them. The gift of the Holy Spirit means believers don’t just receive pardon and then have to manage on their own; God himself comes to live within them, empowering and transforming their lives from the inside. Together, the promises cover both the legal problem of guilt and the practical problem of ongoing spiritual power.",
+          "questionHint1"     :"Notice that one promise deals with the past (guilt already incurred) and the other with the future (ongoing life) — what need does each one meet?"
         },
         {
           "elementId"         :"ch01-el10",
@@ -516,7 +522,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"Verse 41 tells us that “those who accepted his message were baptised” — baptism follows, and is a response to, believing the gospel message. The connection is that baptism doesn’t create faith or bring someone into relationship with God by itself; it is the appropriate, expected next step for someone who has already genuinely believed. This establishes the right order: first hearing and accepting the gospel message in faith, then being baptised as the public expression of that faith — baptism is for believers, not a substitute for believing.",
+          "questionHint1":"Notice which comes first in the verse — accepting the message, or being baptised — and what that sequence tells you about what baptism is actually for."
         },
         {
           "elementId"    :"ch01-el11",
@@ -552,7 +560,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"The gospel is the good news that Jesus Christ, God’s own Son, lived a perfect life, died on the cross to take the punishment for our sins, and rose from the dead three days later, defeating sin and death. Because of what he has done, anyone who turns from their sin and trusts in him is forgiven and given new, everlasting life — not because of anything they’ve done to earn it, but purely because of God’s grace, received through faith in Jesus.",
+          "questionHint1"     :"Try to include all the key pieces: who Jesus is, what he did, and how a person receives the benefit of it."
         },
         {
           "elementId"         :"ch01-el14",
@@ -644,7 +654,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"What stands out is how immediate the eunuch’s response is — the moment he understands the gospel from Isaiah’s prophecy and sees water along the road, his very next words are “What is to stop me from being baptised?” He doesn’t wait for a scheduled ceremony, a waiting period, or further preparation; he orders the chariot to stop right there so he can be baptised on the spot. His urgency shows that the first Christians understood baptism as the natural, immediate response to believing the gospel — not a formality to be delayed, but something a new believer would want to do as soon as possible.",
+          "questionHint1"     :"Notice how little time passes between the eunuch understanding the gospel and asking to be baptised — what does that gap (or lack of one) suggest about how urgent baptism felt to the early church?"
         },
         {
           "elementId"   :"ch01-el19",
@@ -865,7 +877,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"Human beings are spiritually “unclean” in the sense that sin has made us morally defiled and unfit to stand in the presence of a holy God — not physically dirty, but inwardly corrupted by wrongdoing in a way we cannot fix or clean up ourselves. Jesus has dealt with this by his death, which cleanses believers from that defilement, washing away the guilt and stain of sin so they can be made right with God. The image of a bath captures this well because a bath doesn’t just cover up dirt — it genuinely removes it; in the same way, what Jesus has done doesn’t merely hide our sin, it actually cleanses us from it.",
+          "questionHint1":"Think about what a bath actually does — it doesn’t disguise dirt, it removes it — and apply that to what Jesus has done with our sin."
         },
         {
           "elementId"    :"ch02-el08",
@@ -925,7 +939,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"Paul means that when someone is baptised, they are identifying so closely with Jesus that his death becomes, in a spiritual sense, their own death too — their old, sinful way of life is put to death along with Christ. A Christian’s experience is connected to the cross because just as Jesus genuinely died and was buried, the believer’s old self dies to the power and mastery of sin; and just as Jesus was raised to new life, the believer is raised to live a genuinely new life. Baptism dramatises this union: going under the water pictures dying and being buried with Christ, and coming back up pictures being raised to new life with him.",
+          "questionHint1":"Notice how the physical action of going under the water and coming back up mirrors the two things Paul says happen spiritually — what are those two things?"
         },
         {
           "elementId"         :"ch02-el11",
@@ -940,7 +956,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"Paul’s point is that the believer’s former identity — the “old self” that was ruled and enslaved by sin, unable to do anything but serve its desires — has been decisively put to death through union with Christ’s crucifixion. In what sense is it “dead”? Not that sin is now totally absent from a believer’s experience, but that its former mastery and controlling power over the person has been broken; sin is no longer the believer’s master, because they now belong to Christ instead.",
+          "questionHint1"     :"Notice Paul doesn’t say sin is now absent, but that its mastery is broken — what’s the difference between sin being present and sin being your master?"
         },
         {
           "elementId"         :"ch02-el12",
@@ -963,7 +981,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"Jesus “died to sin once for all” and now “lives to God” — he passed once through death and now lives an unending resurrection life, no longer under death’s power at all. Paul says believers are to follow this same pattern: to actively “count,” or reckon, themselves as dead to sin’s claim over them and alive to God instead. Practically, this means recognising that sin no longer has the right to command your obedience, and instead of automatically giving in to sinful desires, you actively choose to live in a way that reflects being alive to God — rejecting sin’s old claims and reorienting your life toward him.",
+          "questionHint1":"Notice the word “count” (or “consider”) in v11 — this is something you actively choose to believe and act on, not just a feeling; what would that look like in practice?"
         },
         {
           "elementId"         :"ch02-el13",
@@ -978,7 +998,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"Paul tells believers not to offer any part of themselves to sin “as an instrument of wickedness,” but instead to offer themselves to God “as those who have been brought from death to life,” offering every part of themselves to him “as an instrument of righteousness.” In other words: withhold your body and abilities from serving sin, and instead present them to serve God’s purposes. Baptism is a public declaration of exactly this commitment because it visibly and publicly marks the moment someone switches allegiance — declaring before witnesses that they now belong to God and intend to live under his lordship rather than sin’s.",
+          "questionHint1"     :"Notice the two opposite verbs Paul uses — what to withhold, and what to offer instead — and think about how baptism visibly enacts that same switch of allegiance."
         },
         {
           "elementId"    :"ch02-el14",
@@ -1351,7 +1373,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"Jesus establishes his authority first because the commission that follows — making disciples of all nations — is an enormous, seemingly impossible task, and the disciples need to know it rests on his complete, universal authority rather than their own limited ability. Knowing the one sending you out has “all authority in heaven and on earth” means the mission isn’t a fragile human project that could fail; it carries the full backing and power of the risen, exalted Christ himself, who rules over everything relevant to the task, including any opposition that might arise.",
+          "questionHint1":"Notice the order — Jesus states his authority before giving the command; why would the disciples need to hear that first, before being sent on such a daunting task?"
         },
         {
           "elementId"         :"ch03-el09",
@@ -1366,7 +1390,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"A disciple is a committed follower and learner of Jesus — someone who has trusted him and is seeking to live under his lordship and grow in obedience to him. To “make” a disciple means helping bring a person to that point of following Jesus and then continuing to help them grow. Baptism and teaching are both essential because they address different stages of discipleship: baptism marks the decisive, public entry point into following Jesus, while ongoing teaching (“obey everything I have commanded”) builds up that new believer’s understanding and practice over a lifetime — one is the beginning, the other the ongoing formation.",
+          "questionHint1"     :"Notice that baptism and teaching aren’t the same activity — one happens once, the other continues; what different role does each play in forming a disciple?"
         },
         {
           "elementId"         :"ch03-el10",
@@ -1389,7 +1415,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"All three persons are named because baptism brings the believer into relationship with the one true God who exists eternally as Father, Son, and Holy Spirit — not into relationship with just one aspect of God, but with the full Trinity. This trinitarian formula tells us that baptism unites us to the Father who has adopted us as children, the Son who has redeemed us through his death and resurrection, and the Spirit who now lives within us and empowers our new life — a comprehensive, complete relationship with the whole Godhead, not a partial one.",
+          "questionHint1":"Notice that baptism isn’t said to be into the name of Jesus alone here — why might naming all three persons matter for what baptism actually joins a person to?"
         },
         {
           "elementId"         :"ch03-el11",
@@ -1404,7 +1432,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"This promise assures Jesus’s disciples that as they carry out the difficult, ongoing task of making disciples, they never do so alone or under their own resources — the risen Christ himself remains personally and continually present with them, right up until history’s very end. It’s a promise specifically tied to obedience to the commission: as his people go and make disciples, his presence accompanies exactly that work, providing strength, comfort, and confidence for the task ahead, however daunting it feels.",
+          "questionHint1"     :"Notice this promise isn’t given as a general comfort to everyone but specifically to those carrying out the commission — what does that connection suggest about when you can most expect to experience it?"
         },
         {
           "elementId"    :"ch03-el12",
@@ -1485,7 +1515,9 @@
             "question2":"",
             "question3":""
           },
-          "bottomPadding":"normal"
+          "bottomPadding":"normal",
+          "sampleAnswer1":"This tells us the Christian community is meant to be marked, above all, by humility and patient, loving endurance with one another rather than pride, self-assertion, or quick frustration. Living “worthy of the calling” isn’t primarily about individual achievement but about how believers treat each other in community — genuinely bearing with one another’s weaknesses and differences in love, since the church is made up of imperfect people who need ongoing grace and patience from each other, not a community of people who have already arrived.",
+          "questionHint1":"Notice that every quality Paul lists here — humble, gentle, patient, bearing with one another — is about how you treat other people, not about personal spiritual achievement."
         },
         {
           "elementId"         :"ch03-el17",
@@ -1500,7 +1532,9 @@
           "answerPlaceholder1":"Your thoughts…",
           "answerPlaceholder2":"",
           "answerPlaceholder3":"",
-          "bottomPadding"     :"normal"
+          "bottomPadding"     :"normal",
+          "sampleAnswer1"     :"Baptism is placed alongside foundational realities like one body, one Spirit, one Lord, one faith, and one God precisely because it isn’t a minor, optional practice but a core, unifying mark of the Christian faith shared by every believer everywhere. By listing “one baptism” among these great theological pillars, Paul is saying that baptism itself is a unifying reality for the whole church — every Christian, regardless of background or culture, has undergone the same baptism into the same Lord, making it one of the concrete, visible expressions of the deep unity all believers already share in Christ.",
+          "questionHint1"     :"Notice what company baptism keeps in this list — one Lord, one faith, one God — what does that placement suggest about how significant Paul considers it to be?"
         },
         {
           "elementId"    :"ch03-el18",

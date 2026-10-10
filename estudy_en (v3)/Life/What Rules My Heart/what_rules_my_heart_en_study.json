@@ -103,7 +103,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 John 5:21"
+          "linkedPassage"    :"1 John 5:21",
+          "sampleAnswer"     :"John ends his entire letter with a single, direct command: “Little children, guard yourselves from idols.” After a long letter about knowing God, walking in the light, loving one another, and testing the spirits, he closes not with a summary of doctrine but with this urgent, practical warning — showing that guarding against idolatry is the fitting, final application of everything he has just taught about knowing and loving God.",
+          "questionHint"     :"Notice this is the very last verse of the letter — why might John choose to end on this particular warning rather than a summary of doctrine?"
         },
         {
           "elementId"    :"ch01-el07",
@@ -152,7 +154,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Exodus 20:3-5, Matthew 4:10, Romans 1:25"
+          "linkedPassage"    :"Exodus 20:3-5, Matthew 4:10, Romans 1:25",
+          "sampleAnswer"     :"Exodus 20:3-5 establishes the foundational command: God’s people are to have “no other gods” before him and must not make or bow down to carved images, because the Lord is a “jealous God” who will not share worship with rivals. Matthew 4:10 confirms this remains binding even for Jesus himself, who resists Satan’s temptation by insisting that only the Lord is to be worshipped and served. Romans 1:25 diagnoses the deeper problem behind all idolatry: it is fundamentally an exchange — trading “the truth of God for a lie” and worshipping the creation rather than the Creator. Together, these passages teach that idolatry is a serious, exclusive rivalry with the one true God.",
+          "questionHint"     :"Notice the word “exchanged” in Romans 1:25 — what does that word suggest idolatry actually is, at its root?"
         },
         {
           "elementId"    :"ch01-el12",
@@ -201,7 +205,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Ezekiel 14:3, 1 Samuel 15:23, Colossians 3:5"
+          "linkedPassage"    :"Ezekiel 14:3, 1 Samuel 15:23, Colossians 3:5",
+          "sampleAnswer"     :"Ezekiel 14:3 reveals that idols can be set up invisibly “in their hearts” — internal attachments and priorities, not just physical statues. 1 Samuel 15:23 identifies stubborn rebellion and self-willed presumption against God’s word as being just as spiritually serious “as the evil of idolatry” — disobedience itself functions like idol worship. Colossians 3:5 goes further, explicitly naming “greed” as idolatry, alongside sexual immorality and impurity — showing that idols can be desires, cravings, and disordered loves of the heart, not only carved images.",
+          "questionHint"     :"Notice that none of these three verses mention a literal statue — what do they locate the idol in instead?"
         },
         {
           "elementId"    :"ch01-el17",
@@ -240,7 +246,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Deuteronomy 6:14-15, Isaiah 42:8"
+          "linkedPassage"    :"Deuteronomy 6:14-15, Isaiah 42:8",
+          "sampleAnswer"     :"God’s attitude is one of jealous exclusivity and serious anger. Deuteronomy 6:14-15 warns that because the Lord is “a jealous God,” pursuing other gods will provoke his anger to the point of removing his people from the land altogether. Isaiah 42:8 reinforces this: God declares his own unique name and glory, insisting “I will not share my glory with anyone else, or the praise due me with idols.” God does not view idolatry as a minor rival devotion but as a direct affront to his unique, rightful glory, deserving serious consequences.",
+          "questionHint"     :"Notice the word “jealous” used of God in Deuteronomy — what does that word suggest about how seriously he takes shared devotion?"
         },
         {
           "elementId"    :"ch01-el21",
@@ -289,7 +297,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Jeremiah 10:5, Habakkuk 2:18-19"
+          "linkedPassage"    :"Jeremiah 10:5, Habakkuk 2:18-19",
+          "sampleAnswer"     :"Idols have no real power at all. Jeremiah 10:5 compares them to harmless, immobile “scarecrows in a cucumber field” — they cannot talk, cannot walk, and have no power to either help or harm anyone who trusts in them. Habakkuk 2:18-19 makes the same point even more pointedly, mocking the absurdity of trusting a craftsman-made object: idols are “mute,” give no “reliable guidance,” and have “no life’s breath inside” them at all. Despite the great effort people put into making and adorning idols, they are utterly powerless to deliver anything they’re asked for.",
+          "questionHint"     :"Notice both passages compare the idol to its maker — what does it mean that the thing made can’t outperform the limitations of the one who made it?"
         },
         {
           "elementId"    :"ch01-el26",
@@ -338,7 +348,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Psalm 115:4-8, Galatians 5:19-21, Jeremiah 2:13"
+          "linkedPassage"    :"Psalm 115:4-8, Galatians 5:19-21, Jeremiah 2:13",
+          "sampleAnswer"     :"Psalm 115:4-8 exposes the absurdity plainly: idols have mouths, eyes, ears, and hands, yet cannot speak, see, hear, or touch — and, strikingly, those who trust in them “will end up like them,” lifeless and unresponsive. Galatians 5:19-21 shows idolatry’s practical fruit is destructive: it’s listed among the “works of the flesh” that lead to exclusion from God’s kingdom. Jeremiah 2:13 captures the tragedy at the heart of it: idolatry means rejecting God, “the fountain of life-giving water,” in exchange for “cracked cisterns which cannot even hold water” — trading the only real source of life for something worthless and broken.",
+          "questionHint"     :"Notice Psalm 115’s warning that worshippers “will end up like” their idols — what does that suggest happens to a person who gives their devotion to something lifeless?"
         },
         {
           "elementId"    :"ch01-el31",
@@ -359,7 +371,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Corinthians 10:14"
+          "linkedPassage"    :"1 Corinthians 10:14",
+          "sampleAnswer"     :"Paul’s instruction is direct and urgent: “flee from idolatry.” The appropriate attitude isn’t cautious tolerance, careful management, or curious engagement, but active, decisive avoidance — treating idolatry the way one would flee from real, immediate danger, refusing to entertain or dabble with it at all.",
+          "questionHint"     :"Notice the verb Paul chooses — “flee” — rather than something like “be careful with” or “manage”; what does that word choice suggest about the right posture toward idolatry?"
         },
         {
           "elementId"    :"ch01-el33",
@@ -473,7 +487,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 3:7-9"
+          "linkedPassage"    :"1 Kings 3:7-9",
+          "sampleAnswer"     :"Solomon doesn’t ask for long life, riches, or victory over his enemies. Instead, recognising his own youth and inexperience in leading such a vast nation, he asks God for “a discerning mind” — wisdom to make good judicial decisions and to “distinguish right from wrong” for God’s people. His request centres on wisdom for the responsibility God has given him, not personal gain.",
+          "questionHint"     :"Notice what Solomon explicitly says he lacks (v7) before naming what he actually asks for — how does his self-awareness shape his request?"
         },
         {
           "elementId"    :"ch02-el06",
@@ -514,7 +530,9 @@
           "required"         :false,
           "answerPlaceholder":"1.\n2.\n3.\n4.\n5.\n6.",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 3:11-12, 1 Kings 3:13, 1 Kings 3:14"
+          "linkedPassage"    :"1 Kings 3:11-12, 1 Kings 3:13, 1 Kings 3:14",
+          "sampleAnswer"     :"Because Solomon asked for wisdom rather than long life, riches, or vengeance, God grants him six things: (1) a wise mind, (2) a discerning mind “superior to that of anyone who has preceded or will succeed you,” (3) riches, (4) honour, (5) unrivalled greatness — he will be “the greatest king of your generation,” and, conditionally on his obedience, (6) long life, “if you follow my instructions.”",
+          "questionHint"     :"Notice that some blessings are given outright and one (long life) is explicitly conditional — which is which?"
         },
         {
           "elementId"    :"ch02-el10",
@@ -543,7 +561,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 10:6-9"
+          "linkedPassage"    :"1 Kings 10:6-9",
+          "sampleAnswer"     :"She is impressed by Solomon’s wisdom and insight (“your wise sayings and insight”), his wealth, which “surpass[es] what was reported” to her, and the evident flourishing of his officials, who are fortunate simply to stand before him and hear his wisdom daily. Strikingly, she doesn’t stop at admiring Solomon himself — she goes on to praise the Lord for placing him on the throne so he could “make just and right decisions,” tracing the credit back to God.",
+          "questionHint"     :"Notice that her final words aren’t about Solomon at all, but about the Lord — what does that final shift suggest she ultimately recognises?"
         },
         {
           "elementId"    :"ch02-el13",
@@ -572,7 +592,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 11:9-10"
+          "linkedPassage"    :"1 Kings 11:9-10",
+          "sampleAnswer"     :"The Lord becomes angry with Solomon because he “had shifted his allegiance away from the Lord” — despite God appearing to him personally twice and explicitly warning him not to follow other gods, Solomon disobeys that direct command anyway. His heart, once devoted to God, turns toward idolatry.",
+          "questionHint"     :"Notice that this wasn’t a case of Solomon never being warned — God had spoken to him about this exact issue twice; what does that make his failure?"
         },
         {
           "elementId"    :"ch02-el16",
@@ -601,7 +623,9 @@
           "required"         :false,
           "answerPlaceholder":"1.\n2.\n3.\n4.",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Deuteronomy 17:16-17"
+          "linkedPassage"    :"Deuteronomy 17:16-17",
+          "sampleAnswer"     :"The king must avoid: (1) accumulating many horses for himself; (2) sending people back to Egypt to acquire horses; (3) marrying many wives, “lest his heart turn aside”; and (4) accumulating excessive silver and gold.",
+          "questionHint"     :"Notice the specific reason given for the ban on many wives — what does that reason suggest is really at stake in all four commands?"
         },
         {
           "elementId"    :"ch02-el19",
@@ -639,7 +663,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 10:26"
+          "linkedPassage"    :"1 Kings 10:26",
+          "sampleAnswer"     :"Solomon fails this test directly — he “accumulated chariots and horses,” amassing 1,400 chariots and 12,000 horses, exactly the kind of large-scale stockpiling Deuteronomy had warned against.",
+          "questionHint"     :"Compare the specific numbers given here with the flat command in Deuteronomy 17:16 — is there any way to read this as obedience?"
         },
         {
           "elementId"    :"ch02-el23",
@@ -660,7 +686,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 10:28-29"
+          "linkedPassage"    :"1 Kings 10:28-29",
+          "sampleAnswer"     :"Solomon fails this test too — his horses “were imported from Egypt,” the very source Deuteronomy specifically forbade returning to, and he even becomes a horse-trading middleman, exporting chariots and horses to other kings for profit.",
+          "questionHint"     :"Notice Solomon doesn’t just fail quietly here — he turns the forbidden practice into an profitable export business; what does that added detail suggest about how far he strayed?"
         },
         {
           "elementId"    :"ch02-el25",
@@ -681,7 +709,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 10:14-15, 10:23, 10:27"
+          "linkedPassage"    :"1 Kings 10:14-15, 10:23, 10:27",
+          "sampleAnswer"     :"Solomon fails this test as well, on a massive scale — he receives 666 talents of gold every single year alone, becomes “wealthier... than any of the kings of the earth,” and makes silver “as common in Jerusalem as stones,” a staggering, deliberate accumulation of exactly the wealth Deuteronomy warned against.",
+          "questionHint"     :"Notice the comparison to something as ordinary as stones — what does that image communicate about the sheer scale of what Solomon accumulated?"
         },
         {
           "elementId"    :"ch02-el27",
@@ -702,7 +732,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Kings 11:1, 11:3-6"
+          "linkedPassage"    :"1 Kings 11:1, 11:3-6",
+          "sampleAnswer"     :"Solomon fails this test most disastrously of all — he takes 700 royal wives and 300 concubines from many foreign nations, and just as Deuteronomy predicted, his heart is turned away: his wives “shifted his allegiance to other gods,” leading him to actually worship foreign idols like Astarte and Milcom and abandon his wholehearted devotion to the Lord, doing “evil in the Lord’s sight.”",
+          "questionHint"     :"Notice that this is the exact outcome Deuteronomy 17:17 warned would happen (“lest his heart turn aside”) — how directly does Solomon’s story fulfil that specific warning?"
         },
         {
           "elementId"    :"ch02-el29",
@@ -870,7 +902,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Jeremiah 10:6-7"
+          "linkedPassage"    :"Jeremiah 10:6-7",
+          "sampleAnswer"     :"By declaring “there is no one like you, Lord” and that God alone deserves reverence as “King of all nations,” Jeremiah shows that God’s greatness and power stand utterly unmatched — not just by other gods, but even by “the wise men of the nations” and their kings. Set against such unrivalled, incomparable glory, idols are shown up as pretenders with nothing to offer; the very greatness of the true God exposes how empty and powerless any rival claim to worship really is.",
+          "questionHint"     :"Notice the comparison isn’t just to other gods but to human kings and wise men too — how does that widen just how incomparable God’s glory is shown to be?"
         },
         {
           "elementId"    :"ch03-el06",
@@ -928,7 +962,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 16:13, Colossians 3:5, Matthew 10:37"
+          "linkedPassage"    :"Luke 16:13, Colossians 3:5, Matthew 10:37",
+          "sampleAnswer"     :"Luke 16:13 names money as a rival master that competes directly with serving God. Colossians 3:5 names sexual immorality, impurity, and greed as idolatrous desires of the flesh. Matthew 10:37 names even good relationships — love for father, mother, son, or daughter — when loved more than Jesus himself. Together these show that money, sexual desire, material greed, and even family relationships can all become “surface idols” — good or neutral things that become idolatrous the moment they take the place that should belong to God alone.",
+          "questionHint"     :"Notice that Matthew 10:37 doesn’t condemn loving your family, only loving them more than Jesus — what does that tell you about how a good thing becomes an idol?"
         },
         {
           "elementId"    :"ch03-el12",
@@ -966,7 +1002,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Proverbs 20:5"
+          "linkedPassage"    :"Proverbs 20:5",
+          "sampleAnswer"     :"Proverbs 20:5 says the “counsel,” or motives, “in the heart of a man is like deep water” — hidden, hard to access, and not easily visible even to the person themselves. This is why deep idols, the underlying desires driving surface behaviours, can be so difficult to spot: they operate below conscious awareness, disguised as reasonable motives. Yet there is hope because “a discerning person draws it out” — with careful, honest reflection, and often help from others, what’s hidden in the heart can genuinely be uncovered and examined, rather than remaining permanently inaccessible.",
+          "questionHint"     :"Notice the verse doesn’t say the water can never be reached — it says a discerning person “draws it out”; what does that verb suggest about the effort involved?"
         },
         {
           "elementId"    :"ch03-el16",
@@ -995,7 +1033,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Ecclesiastes 2:10-11"
+          "linkedPassage"    :"Ecclesiastes 2:10-11",
+          "sampleAnswer"     :"The Preacher pursued every pleasure and accomplishment he wanted, denying himself nothing, and even found real, immediate enjoyment in it (“all my accomplishments gave me joy”). Yet reflecting honestly on everything he had achieved, his verdict was total: “Everything is futile — like chasing the wind! There is nothing of lasting value.” It’s futile to search for meaning outside of God because even total, unrestrained success at gaining everything the world offers still leaves nothing of lasting value behind — worldly accomplishment simply cannot deliver the permanent significance that only God can provide.",
+          "questionHint"     :"Notice that the Preacher isn’t someone who failed to get what he wanted — he got everything; what does his verdict, coming from a position of total success, add to its weight?"
         },
         {
           "elementId"    :"ch03-el19",
@@ -1146,7 +1186,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Daniel 3:1-7"
+          "linkedPassage"    :"Daniel 3:1-7",
+          "sampleAnswer"     :"Nebuchadnezzar builds an enormous ninety-foot golden statue and demands that every people, nation, and language group in his empire bow down and worship it, on pain of being thrown into a blazing furnace. The idol of power shows up here as an obsession with total, absolute control — commanding universal worship of an image representing his own kingdom’s greatness, and being willing to use terrifying force to compel total submission from everyone under his rule.",
+          "questionHint"     :"Notice the scale of what he builds and the extreme penalty he attaches to refusal — what does that combination reveal about what he actually wants from his subjects?"
         },
         {
           "elementId"    :"ch04-el06",
@@ -1185,7 +1227,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Daniel 2:1-12, Daniel 3:8-23"
+          "linkedPassage"    :"Daniel 2:1-12, Daniel 3:8-23",
+          "sampleAnswer"     :"When his wise men cannot tell him his dream, Nebuchadnezzar responds with disproportionate rage, ordering the execution of “all the wise men of Babylon” simply because his demand couldn’t be met. Likewise, when Shadrach, Meshach, and Abednego refuse to bow to his golden statue, he responds “filled with rage,” intensifying his cruelty by having the furnace heated seven times hotter than normal. In both cases, any resistance to his absolute authority triggers extreme, violent fury — showing how thoroughly his identity and sense of control are bound up in getting total obedience.",
+          "questionHint"     :"Notice that his anger isn’t measured or proportionate in either story — what does that intensity suggest about how much his sense of self depends on being obeyed?"
         },
         {
           "elementId"    :"ch04-el10",
@@ -1214,7 +1258,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Daniel 2:37-38"
+          "linkedPassage"    :"Daniel 2:37-38",
+          "sampleAnswer"     :"By the world’s standards, Nebuchadnezzar is extraordinarily successful — Daniel himself tells him, “you are the king of kings,” granted “sovereignty, power, strength, and honor” by God, with dominion over human beings, wild animals, and birds alike, described as “the head of gold” in the vision’s hierarchy of kingdoms. He stands at the very top of worldly power and achievement.",
+          "questionHint"     :"Notice that even Daniel, God’s prophet, doesn’t dispute Nebuchadnezzar’s greatness — what does that tell you about how real and significant his worldly success actually was?"
         },
         {
           "elementId"    :"ch04-el13",
@@ -1243,7 +1289,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Daniel 4:20-26"
+          "linkedPassage"    :"Daniel 4:20-26",
+          "sampleAnswer"     :"Despite his towering greatness — a tree so large its top “reached to the sky” and could be seen throughout the earth — Nebuchadnezzar needed to learn that his power was never ultimately his own. He is humbled, driven from human society to live like an animal, specifically “until you understand that the Most High is ruler over human kingdoms and gives them to whomever he wishes.” His kingdom is only restored once he genuinely comes to understand that “Heaven rules” — that all human power, however great, remains entirely under God’s sovereign authority.",
+          "questionHint"     :"Notice the specific condition attached to his restoration in v26 — what single realisation does his kingdom depend on him reaching?"
         },
         {
           "elementId"    :"ch04-el16",
@@ -1284,7 +1332,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Mark 10:45, 2 Corinthians 12:9, Zechariah 4:6"
+          "linkedPassage"    :"Mark 10:45, 2 Corinthians 12:9, Zechariah 4:6",
+          "sampleAnswer"     :"Mark 10:45 confronts the idol of power with Jesus’s own example: even the Son of Man “did not come to be served but to serve,” modelling voluntary humility rather than the pursuit of control or status. 2 Corinthians 12:9 undercuts the idol further by teaching that God’s power is actually “made perfect in weakness” — our own weakness, rather than being something to hide or overcome through self-assertion, becomes the very place where Christ’s power is displayed, freeing us to even “boast” in weakness rather than chase strength. Zechariah 4:6 drives the point home directly: lasting change happens “not by strength and not by power, but by my Spirit” — real accomplishment ultimately depends on God, not on human power or control.",
+          "questionHint"     :"Notice all three passages point away from human strength toward something else entirely — serving, weakness, the Spirit; what do all three have in common as an alternative to grasping for power?"
         },
         {
           "elementId"    :"ch04-el20",
@@ -1443,7 +1493,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"John 12:42-43"
+          "linkedPassage"    :"John 12:42-43",
+          "sampleAnswer"     :"Even rulers who genuinely “believed in” Jesus refuse to openly confess it, out of fear of the Pharisees and being expelled from the synagogue. The danger is captured directly: “they loved praise from men more than praise from God” — the idol of approval can override even genuine faith, causing people to suppress the truth and hide their real convictions simply to avoid social rejection.",
+          "questionHint"     :"Notice these rulers did believe — their problem wasn’t doubt but silence; what does that show about how far the fear of others’ opinion can go, even alongside real faith?"
         },
         {
           "elementId"    :"ch05-el06",
@@ -1482,7 +1534,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Proverbs 29:25, John 5:44"
+          "linkedPassage"    :"Proverbs 29:25, John 5:44",
+          "sampleAnswer"     :"Proverbs 29:25 warns that “the fear of people becomes a snare” — an entrapment that limits and controls behaviour, contrasted with the security of trusting the Lord instead. John 5:44 goes further, showing that seeking human praise can actually become a barrier to faith itself: “how can you believe, if you accept praise from one another and don’t seek the praise that comes from... God?” The idol of approval can trap us in fear-driven, compromised choices, and can even obstruct genuine belief when human praise is valued over God’s.",
+          "questionHint"     :"Notice John 5:44 frames this as a genuine obstacle to believing, not just an annoyance — how could craving human praise actually get in the way of real faith?"
         },
         {
           "elementId"    :"ch05-el10",
@@ -1511,7 +1565,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 6:26"
+          "linkedPassage"    :"Luke 6:26",
+          "sampleAnswer"     :"Jesus pronounces a “woe” — a warning of judgment, not a blessing — on anyone whom “all people speak well of,” specifically comparing this universal popularity to how people once spoke well of the false prophets. Rather than treating widespread approval as a mark of success or godliness, Jesus treats it with suspicion, since genuine faithfulness to God’s truth will inevitably provoke opposition from some, not universal praise.",
+          "questionHint"     :"Notice Jesus doesn’t say popularity is neutral — he attaches a “woe” to it; why would universal approval be a warning sign rather than a good sign?"
         },
         {
           "elementId"    :"ch05-el13",
@@ -1540,7 +1596,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"2 Corinthians 3:4-6"
+          "linkedPassage"    :"2 Corinthians 3:4-6",
+          "sampleAnswer"     :"Paul is explicit that our adequacy doesn’t come from ourselves at all — “not that we are adequate in ourselves to consider anything as coming from ourselves, but our adequacy is from God.” What really makes us good enough is not our own competence, effort, or performance, but God himself, who makes us adequate through the life-giving Spirit rather than through the letter of the law, which only condemns.",
+          "questionHint"     :"Notice Paul locates our adequacy entirely outside ourselves — in God — rather than in our own ability; what would change if you actually believed that about your own sense of being “good enough”?"
         },
         {
           "elementId"    :"ch05-el16",
@@ -1589,7 +1647,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Acts 5:29, 1 Corinthians 4:3-4, 1 Thessalonians 2:4"
+          "linkedPassage"    :"Acts 5:29, 1 Corinthians 4:3-4, 1 Thessalonians 2:4",
+          "sampleAnswer"     :"Acts 5:29 gives the guiding principle: “we must obey God rather than people” — when human approval and obedience to God conflict, God’s authority takes priority, period. 1 Corinthians 4:3-4 models genuine freedom from human judgment: Paul treats being judged by others, or even by himself, as “a minor matter,” since ultimately “the one who judges me is the Lord.” 1 Thessalonians 2:4 reorients the whole motivation for our actions: speaking “not to please people but God, who examines our hearts” — putting the idol of approval to death means consciously redirecting our aim from pleasing onlookers to pleasing the God who alone truly sees and evaluates us.",
+          "questionHint"     :"Notice all three passages relocate the final verdict on your life to God alone — how does knowing he is the only one whose judgment ultimately counts loosen the grip of needing others’ approval?"
         },
         {
           "elementId"    :"ch05-el21",
@@ -1748,7 +1808,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 18:9-23"
+          "linkedPassage"    :"Luke 18:9-23",
+          "sampleAnswer"     :"The Pharisee’s prayer is entirely a résumé of his own performance — fasting, tithing, comparing himself favourably to “extortionists” and “this tax collector” — yet Jesus says it’s the humble, performance-less tax collector who “went down to his home justified,” not the Pharisee. Similarly, the rich ruler has kept the commandments faithfully “since my youth,” yet when Jesus asks him to give up his wealth and follow him, he becomes “very sad” and walks away — his performance-based righteousness cannot cope with genuinely surrendering everything to Jesus. Focusing on performance leads us astray by producing self-righteous comparison and pride, while masking an unwillingness to actually trust and follow Jesus with everything.",
+          "questionHint"     :"Notice that both the Pharisee and the ruler have genuinely impressive track records — what does Jesus’s response to each of them suggest is missing despite that?"
         },
         {
           "elementId"    :"ch06-el06",
@@ -1787,7 +1849,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Exodus 2:11-15, Exodus 3:10-15; 4:1-17"
+          "linkedPassage"    :"Exodus 2:11-15, Exodus 3:10-15; 4:1-17",
+          "sampleAnswer"     :"In Exodus 2, Moses is overconfident, taking control into his own hands by killing an Egyptian and assuming leadership over his people without being asked or sent — but when this backfires and becomes known, his confidence collapses into fear, and he flees into hiding in Midian. Decades later in Exodus 3-4, when God himself actually calls and sends him, Moses swings to the opposite extreme: anxious self-doubt, repeatedly objecting (“Who am I...”, “what should I say...”, “I am not an eloquent man...”, “please send anyone else!”). Moses moves from self-reliant overconfidence to anxious under-confidence — in neither case is he simply trusting God’s control rather than his own.",
+          "questionHint"     :"Notice that Moses is confident when acting on his own initiative and anxious when God actually calls him — what does that pattern suggest about where his trust really lay in each moment?"
         },
         {
           "elementId"    :"ch06-el10",
@@ -1816,7 +1880,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 15:25-30"
+          "linkedPassage"    :"Luke 15:25-30",
+          "sampleAnswer"     :"The older son’s anger reveals he has been obeying his father not out of love but as a transactional strategy to earn rewards he feels entitled to: “these many years I have worked like a slave for you, and I never disobeyed... yet you never gave me even a goat.” His resentment at his father’s grace toward his returning brother shows he expected his own careful control and rule-keeping to guarantee outcomes in his favour — when his father’s freely-given grace disrupts that expected system, he refuses to even join the celebration, exposing that his real allegiance was to his own system of earned control rather than genuine relationship with his father.",
+          "questionHint"     :"Notice the older son describes his years of obedience as “working like a slave” rather than as loving service — what does that word choice reveal about what he thought his obedience was buying him?"
         },
         {
           "elementId"    :"ch06-el13",
@@ -1855,7 +1921,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Philippians 4:4-7, 1 Peter 5:6-7"
+          "linkedPassage"    :"Philippians 4:4-7, 1 Peter 5:6-7",
+          "sampleAnswer"     :"Instead of gripping for control, Paul instructs believers not to “be anxious about anything” but instead to bring “every situation” to God directly “through prayer and petition with thanksgiving” — replacing anxious self-management with trusting, thankful prayer, resulting in a peace that actively “guard[s]” our hearts and minds. 1 Peter 5:6-7 adds the posture needed: humbling ourselves “under the mighty hand of God” and “casting all your cares on him because he cares for you” — actively transferring the weight of our worries onto God rather than carrying, or trying to control, them ourselves.",
+          "questionHint"     :"Notice the active verb “casting” in 1 Peter — this isn’t passive resignation but a deliberate act; what would it look like to actually “cast” a specific worry onto God right now?"
         },
         {
           "elementId"    :"ch06-el17",
@@ -1876,7 +1944,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Job 38:1-11"
+          "linkedPassage"    :"Job 38:1-11",
+          "sampleAnswer"     :"God confronts Job with an overwhelming series of questions about the foundation of the world and the boundaries of the sea — “where were you when I laid the foundation of the earth?” “who shut up the sea with doors... when I said, ‘To here you may come and no farther’?” These questions expose how little Job, or any human, actually knows or controls compared to God, who alone established, measures, and governs the entire created order down to its finest details. It’s a mistake to think we control everything because we weren’t even present at creation, let alone capable of setting limits on forces as vast as the sea — genuine, comprehensive control belongs to God alone.",
+          "questionHint"     :"Notice God doesn’t answer Job’s complaints directly — he asks questions instead; what effect do these particular questions have on Job’s sense of his own control?"
         },
         {
           "elementId"    :"ch06-el19",
@@ -1907,7 +1977,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 6:25-34, John 15:5"
+          "linkedPassage"    :"Matthew 6:25-34, John 15:5",
+          "sampleAnswer"     :"Jesus points to God’s evident, reliable care for birds and wildflowers — creatures that do nothing to provide for themselves, yet are fed and clothed by the Father — as reassurance that our heavenly Father, who values us far more than birds or grass, already knows and will provide for our needs, freeing us from anxious control-seeking over food, drink, and clothing. Instead, we’re told to “pursue his kingdom and righteousness” first, trusting God with the rest one day at a time. John 15:5 adds a deeper root: recognising that “apart from me you can accomplish nothing” — genuine fruitfulness depends on remaining connected to Jesus, not on our own controlling effort.",
+          "questionHint"     :"Notice Jesus’s argument moves from lesser to greater — if God cares for birds and grass, how much more for you; how does that logic address the urge to control your own provision?"
         },
         {
           "elementId"    :"ch06-el22",
@@ -2058,7 +2130,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Genesis 13:8-13; 19:1-38"
+          "linkedPassage"    :"Genesis 13:8-13; 19:1-38",
+          "sampleAnswer"     :"When Abram offers Lot first choice of land, Lot chooses purely on the basis of immediate visual appeal and material advantage — the well-watered Jordan region “like the garden of the Lord” — without regard to the moral character of its inhabitants, pitching his tents “next to Sodom,” a city of people who were “extremely wicked rebels against the Lord.” That short-sighted choice for immediate comfort and prosperity eventually costs Lot everything: he narrowly escapes Sodom’s destruction, loses his wife in the process, and his story ends in a degrading, drunken incident with his own daughters that produces the Moabite and Ammonite nations, who would later become enemies of Israel.",
+          "questionHint"     :"Notice what Lot actually looks at when he chooses — the land’s appearance and fertility — and what he doesn’t consider; what does that omission cost him later?"
         },
         {
           "elementId"    :"ch07-el06",
@@ -2087,7 +2161,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Genesis 25:29-34"
+          "linkedPassage"    :"Genesis 25:29-34",
+          "sampleAnswer"     :"Overwhelmed by hunger, Esau demands Jacob’s stew and, when told the price is his birthright, dismisses its value entirely: “I’m about to die! What good is the birthright to me?” He trades away his inheritance — his future standing, blessing, and leadership of the family line — for a single meal to satisfy an immediate craving. The text’s blunt verdict is damning: “Esau despised his birthright” — his instant gratification revealed a heart that valued momentary comfort far more than a lasting, God-given inheritance.",
+          "questionHint"     :"Notice the verdict at the end of the passage isn’t “Esau was hungry” but “Esau despised his birthright” — what does that word choice say about where the real problem lay?"
         },
         {
           "elementId"    :"ch07-el09",
@@ -2136,7 +2212,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Corinthians 10:23-24, Matthew 16:24-25, Romans 5:1-5"
+          "linkedPassage"    :"1 Corinthians 10:23-24, Matthew 16:24-25, Romans 5:1-5",
+          "sampleAnswer"     :"1 Corinthians 10:23-24 calls us away from self-focused comfort-seeking toward seeking “the good of the other person” rather than merely what benefits ourselves. Matthew 16:24-25 calls for self-denial and cross-bearing rather than self-preservation — paradoxically, “whoever wants to save his life will lose it, but whoever loses his life for my sake will find it.” Romans 5:1-5 reframes suffering itself as something to actually “rejoice” in, since it produces endurance, character, and hope. Together, these passages call us toward self-giving love, willing self-denial, and even embracing suffering for what it produces, instead of chasing personal comfort as our highest good.",
+          "questionHint"     :"Notice Romans 5 doesn’t just tolerate suffering but says to “rejoice” in it — what does it say suffering actually produces that makes that response make sense?"
         },
         {
           "elementId"    :"ch07-el14",
@@ -2165,7 +2243,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"James 4:17"
+          "linkedPassage"    :"James 4:17",
+          "sampleAnswer"     :"James states it plainly: “whoever knows what is good to do and does not do it is guilty of sin.” God doesn’t treat comfortable avoidance of known responsibilities as a neutral or excusable choice — it’s named directly as sin, regardless of whether any other rule was broken.",
+          "questionHint"     :"Notice this verse doesn’t describe doing something wrong, but failing to do something known to be right — what does that tell you about sins of omission, not just commission?"
         },
         {
           "elementId"    :"ch07-el17",
@@ -2206,7 +2286,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"1 Corinthians 9:24-27, 2 Corinthians 1:3-7, Revelation 21:3-4"
+          "linkedPassage"    :"1 Corinthians 9:24-27, 2 Corinthians 1:3-7, Revelation 21:3-4",
+          "sampleAnswer"     :"1 Corinthians 9:24-27 pictures disciplined, purposeful self-control like an athlete training to win a race, willingly subduing personal comfort now for the sake of a greater, lasting prize later. 2 Corinthians 1:3-7 reframes present suffering as something God redeems for a bigger purpose — the comfort we receive from God in trouble becomes something we can then pass on to comfort others. Revelation 21:3-4 provides the ultimate hope that reframes present sacrifice: real, complete, permanent comfort, with every tear wiped away and no more death or pain, is coming in the new creation, freeing us to endure present discomfort without needing to grasp for complete comfort here and now.",
+          "questionHint"     :"Notice all three passages point beyond the present moment — a future prize, others’ future comfort, a future new creation; how does keeping that future in view loosen comfort’s grip on the present?"
         },
         {
           "elementId"    :"ch07-el21",
@@ -2365,7 +2447,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 6:24"
+          "linkedPassage"    :"Matthew 6:24",
+          "sampleAnswer"     :"Jesus says plainly that “no one can serve two masters” — you will inevitably love one and hate the other, be devoted to one and despise the other. The basic issue with love of money is that it functions as a rival master competing for the exact same devotion, loyalty, and service that belongs to God alone — money and God cannot both occupy the position of ultimate master in a person’s life at the same time.",
+          "questionHint"     :"Notice Jesus doesn’t say serving money is merely unwise — he says it’s impossible to serve both it and God at once; what does that impossibility suggest about the kind of thing money is competing to be?"
         },
         {
           "elementId"    :"ch08-el06",
@@ -2424,7 +2508,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Proverbs 11:28, Proverbs 23:4-5, Ezekiel 7:19, Matthew 6:19-21"
+          "linkedPassage"    :"Proverbs 11:28, Proverbs 23:4-5, Ezekiel 7:19, Matthew 6:19-21",
+          "sampleAnswer"     :"Proverbs 11:28 warns that “the one who trusts in his riches will fall” — riches make an unstable foundation for security. Proverbs 23:4-5 pictures wealth as fleeting and unpredictable, growing “wings for themselves” and flying away “like an eagle” the moment you look at it. Ezekiel 7:19 shows money’s ultimate impotence in real crisis — it “will not be able to deliver them in the day of the Lord’s wrath” and “will not satisfy their hunger.” Matthew 6:19-21 completes the picture: earthly treasures are vulnerable to moth, rust, and thieves — nothing stored up on earth is truly safe. Together, these passages show money is fragile, temporary, and ultimately powerless to provide the security or satisfaction we hope it will.",
+          "questionHint"     :"Notice how many different ways money is described as able to disappear — falling, flying away, being stolen; what pattern do all these images share?"
         },
         {
           "elementId"    :"ch08-el12",
@@ -2463,7 +2549,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Mark 4:19, 1 Timothy 6:10"
+          "linkedPassage"    :"Mark 4:19, 1 Timothy 6:10",
+          "sampleAnswer"     :"Mark 4:19 shows that “the seductiveness of wealth” can “choke the word” of God so that it “produces nothing” in a person’s life — money can crowd out genuine spiritual fruitfulness. 1 Timothy 6:10 identifies love of money as “a root of all kinds of evil,” causing some people to “stray from the faith” entirely and “stab themselves with many pains” — self-inflicted suffering that comes from chasing money instead of God.",
+          "questionHint"     :"Notice 1 Timothy calls it “a root” rather than the sin itself — what does that suggest about how many different specific problems can grow out of this one underlying love?"
         },
         {
           "elementId"    :"ch08-el16",
@@ -2502,7 +2590,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Colossians 3:5, Matthew 19:21-22"
+          "linkedPassage"    :"Colossians 3:5, Matthew 19:21-22",
+          "sampleAnswer"     :"Colossians 3:5 explicitly names “greed” as a form of idolatry — putting money or possessions in the place that belongs to God. Matthew 19:21-22 illustrates this in action: when Jesus invites the rich young man to sell his possessions and follow him, the man “went away sorrowful, for he was very rich” — his wealth held a grip on his heart that he wasn’t willing to release, even for Jesus himself. Together, these passages show the Bible treats greed and excessive attachment to money not as a minor character flaw but as genuine idolatry, capable of displacing wholehearted devotion to God.",
+          "questionHint"     :"Notice the rich young man doesn’t argue with Jesus or refuse outright — he simply walks away sad; what does his sorrow reveal about where his heart actually was?"
         },
         {
           "elementId"    :"ch08-el20",
@@ -2571,7 +2661,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 12:15, Hebrews 13:5, Deuteronomy 8:17-18, Ecclesiastes 5:10, Proverbs 30:8-9"
+          "linkedPassage"    :"Luke 12:15, Hebrews 13:5, Deuteronomy 8:17-18, Ecclesiastes 5:10, Proverbs 30:8-9",
+          "sampleAnswer"     :"Luke 12:15 warns to “guard yourself from all types of greed,” since “one’s life does not consist in the abundance of his possessions.” Hebrews 13:5 calls for contentment rather than the love of money, grounded in God’s promise never to leave or abandon us. Deuteronomy 8:17-18 warns against the pride of self-sufficiency — thinking “my own ability and skill have gotten me this wealth” — reminding us that God is the one who gives the ability to gain wealth. Ecclesiastes 5:10 exposes the endless dissatisfaction of loving money: it will never be enough. Proverbs 30:8-9 prays for neither poverty nor riches, since riches tempt self-sufficient pride (“Who is the Lord?”) while poverty tempts desperate dishonesty.",
+          "questionHint"     :"Notice Proverbs 30 doesn’t ask for riches at all, even though riches aren’t forbidden elsewhere — what specific danger does that prayer say each financial extreme carries?"
         },
         {
           "elementId"    :"ch08-el27",
@@ -2737,7 +2829,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 12:15"
+          "linkedPassage"    :"Luke 12:15",
+          "sampleAnswer"     :"Jesus warns to “guard yourself from all types of greed,” because life’s true value and meaning do not “consist in the abundance of his possessions.” We must be careful what we aim for because success and abundance can easily masquerade as the goal of life itself, when in fact they were never meant to define or measure a life’s worth — pursuing them as ultimate ends, rather than as good gifts under God, leads to a distorted, greed-driven aim.",
+          "questionHint"     :"Notice Jesus doesn’t say possessions are bad, only that life doesn’t “consist” in them — what’s the difference between having good things and building your life’s meaning around them?"
         },
         {
           "elementId"    :"ch09-el06",
@@ -2787,7 +2881,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Ecclesiastes 2:11 and 4:4, Isaiah 55:2, Luke 12:20-21"
+          "linkedPassage"    :"Ecclesiastes 2:11 and 4:4, Isaiah 55:2, Luke 12:20-21",
+          "sampleAnswer"     :"Ecclesiastes 2:11 shows that even total success and effort can leave nothing but the verdict “everything is futile — like chasing the wind,” while 4:4 exposes that much skillful work is driven merely by “competition between one person and another.” Isaiah 55:2 diagnoses a deeper problem: spending ourselves on pursuits “that will not nourish” or “satisfy” us. Luke 12:20-21 shows the ultimate danger of work aimed at self: storing up riches “for himself” while being “not rich toward God” — all such accumulation can be undone in an instant by death. Career and work go wrong when driven by rivalry, futile effort, or self-focused accumulation with no reference to God.",
+          "questionHint"     :"Notice Ecclesiastes 4:4 says much skillful work is really just “competition between one person and another” — what motive does that expose behind work that looks admirable on the surface?"
         },
         {
           "elementId"    :"ch09-el11",
@@ -2845,7 +2941,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 9:25, Psalm 49:16-17, Revelation 3:17"
+          "linkedPassage"    :"Luke 9:25, Psalm 49:16-17, Revelation 3:17",
+          "sampleAnswer"     :"Luke 9:25 warns that gaining “the whole world” is worthless if it costs us our very self — success purchased at the cost of our soul is no success at all. Psalm 49:16-17 reminds us that no matter how much someone’s wealth or the “splendour of his house” increases, none of it can be carried beyond death — success is ultimately left behind. Revelation 3:17 exposes the spiritual blindness success can produce: a church that boasts “I am rich... and need nothing” is actually, in God’s eyes, “wretched, pitiful, poor, blind, and naked” — success can breed a false sense of self-sufficiency that masks genuine spiritual poverty.",
+          "questionHint"     :"Notice Revelation 3:17 describes a church that feels rich but is actually spiritually poor — how could outward success actually hide, rather than reveal, someone’s true spiritual condition?"
         },
         {
           "elementId"    :"ch09-el17",
@@ -2903,7 +3001,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Deuteronomy 8:17-18, Proverbs 23:4-5, Jeremiah 9:23-24"
+          "linkedPassage"    :"Deuteronomy 8:17-18, Proverbs 23:4-5, Jeremiah 9:23-24",
+          "sampleAnswer"     :"Deuteronomy 8:17-18 calls us to remember that it’s the Lord “who gives the ability to get wealth” in the first place, rather than crediting our own “ability and skill.” Proverbs 23:4-5 counsels restraint: “do not wear yourself out to get rich,” recognising riches’ fleeting, unreliable nature. Jeremiah 9:23-24 redirects our boasting entirely: instead of boasting in wisdom, might, or riches, we should boast only in genuinely knowing the Lord, who himself delights in “faithful love, justice, and righteousness.” Instead of chasing success as an ultimate goal, we’re called to humble dependence on God, restrained ambition, and a boast that rests entirely in knowing him.",
+          "questionHint"     :"Notice Jeremiah doesn’t just forbid boasting in wisdom, might, and riches — he gives one specific thing to boast in instead; what is it, and why might that be the only boast that’s actually safe?"
         },
         {
           "elementId"    :"ch09-el23",
@@ -3069,7 +3169,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Galatians 6:3"
+          "linkedPassage"    :"Galatians 6:3",
+          "sampleAnswer"     :"Paul warns that “if anyone thinks he is something when he is nothing, he deceives himself.” Valuing ourselves the wrong way means inflating our own self-importance beyond reality — a form of self-deception, not genuine insight, that misjudges our true worth and standing.",
+          "questionHint"     :"Notice Paul calls this “self-deception” rather than simple pride — what does that word suggest about how convincing this kind of inflated self-view can feel from the inside?"
         },
         {
           "elementId"    :"ch10-el06",
@@ -3118,7 +3220,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 20:26-28, Luke 18:14, 1 Corinthians 1:28-29"
+          "linkedPassage"    :"Matthew 20:26-28, Luke 18:14, 1 Corinthians 1:28-29",
+          "sampleAnswer"     :"Matthew 20:26-28 reverses the normal hierarchy of greatness: “whoever wants to be great among you must be your servant,” modelled by Jesus himself, who “did not come to be served but to serve.” Luke 18:14 reinforces this reversal: “everyone who exalts himself will be humbled, but the one who humbles himself will be exalted.” 1 Corinthians 1:28-29 shows God’s kingdom deliberately favours “what is low and despised in the world,” specifically so no one can boast before him. Jesus’s kingdom completely inverts worldly status: greatness comes through humble service, self-exaltation leads to humiliation, and God specifically chooses the lowly rather than the impressive.",
+          "questionHint"     :"Notice Jesus grounds this reversal in his own example (v28) — how does his own path of serving rather than being served set the pattern for what he asks of his followers?"
         },
         {
           "elementId"    :"ch10-el11",
@@ -3167,7 +3271,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Isaiah 66:2, Philippians 2:3, 1 Peter 5:5"
+          "linkedPassage"    :"Isaiah 66:2, Philippians 2:3, 1 Peter 5:5",
+          "sampleAnswer"     :"Isaiah 66:2 shows that God, despite having made everything himself, shows “special favour to the humble and contrite, who respect what I say” — not to the impressive or self-important. Philippians 2:3 makes humility the active alternative to “selfish ambition or vanity,” calling believers to treat “one another as more important than yourself.” 1 Peter 5:5 states the principle bluntly: “God opposes the proud but gives grace to the humble.” In discipleship, humility isn’t a lesser virtue to be tolerated alongside pursuing status — it’s the actual posture God favours and rewards, while pride actively provokes his opposition.",
+          "questionHint"     :"Notice 1 Peter 5:5 doesn’t just say God prefers the humble — it says he actively “opposes” the proud; what does that stronger word suggest about how seriously God takes this?"
         },
         {
           "elementId"    :"ch10-el16",
@@ -3196,7 +3302,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 23:5-12"
+          "linkedPassage"    :"Matthew 23:5-12",
+          "sampleAnswer"     :"Jesus criticises religious leaders who “do all their deeds to be seen by people,” loving honour, prominent seats, and being called “Rabbi.” He instructs his own followers instead not to seek such titles, since “you have one Teacher” and “one Father... in heaven” — human titles of spiritual authority risk elevating a person into a status that belongs only to God and Christ. We should be reluctant to accept titles because doing so risks the same status-seeking posture Jesus condemns, and because “the greatest among you will be your servant” — true greatness looks like service, not being addressed with honorific titles.",
+          "questionHint"     :"Notice Jesus doesn’t object to titles in general but to what they represent here — being “seen by people”; what’s the real danger he’s warning against?"
         },
         {
           "elementId"    :"ch10-el19",
@@ -3235,7 +3343,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"2 Corinthians 10:18, Psalm 75:6-7"
+          "linkedPassage"    :"2 Corinthians 10:18, Psalm 75:6-7",
+          "sampleAnswer"     :"Paul states plainly that “it is not the person who commends himself who is approved, but the person the Lord commends” — self-promotion carries no real weight; only God’s own approval genuinely matters. Psalm 75:6-7 reinforces that status and exaltation don’t come from any human source or direction — “God is the judge; he brings one down and exalts another.” What really matters in terms of status is not self-promotion or human recognition, but God’s own commendation and sovereign decision about who is exalted.",
+          "questionHint"     :"Notice Psalm 75:6-7 rules out every human direction — east, west, the wilderness — as the source of one’s standing; where does it say true exaltation actually comes from?"
         },
         {
           "elementId"    :"ch10-el23",
@@ -3256,7 +3366,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Romans 12:3"
+          "linkedPassage"    :"Romans 12:3",
+          "sampleAnswer"     :"Paul instructs believers “not to think more highly of yourself than you ought to think, but to think with sober discernment,” recognising that whatever measure of faith or gifting we have was itself “distributed” to us by God. We should think of ourselves honestly and modestly — neither inflated with pride nor falsely diminished — assessing ourselves clearly and remembering that even our abilities are gifts we’ve received rather than achievements purely of our own making.",
+          "questionHint"     :"Notice Paul doesn’t tell us to think poorly of ourselves, only “soberly” — what’s the difference between false modesty and the accurate self-assessment he’s actually calling for?"
         },
         {
           "elementId"    :"ch10-el25",
@@ -3452,7 +3564,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 7:22-23, Acts 8:18-20, Galatians 6:12, Philippians 1:15-17"
+          "linkedPassage"    :"Matthew 7:22-23, Acts 8:18-20, Galatians 6:12, Philippians 1:15-17",
+          "sampleAnswer"     :"Matthew 7:22-23 warns that impressive ministry activity — prophesying, casting out demons, powerful deeds, even done “in your name” — can still be met with Jesus’s devastating verdict “I never knew you,” if it wasn’t rooted in genuine relationship with him. Acts 8:18-20 shows Simon attempting to purchase spiritual power with money, treating God’s gift as something to be acquired rather than received. Galatians 6:12 exposes ministry driven by wanting to “make a good showing” and avoid persecution. Philippians 1:15-17 reveals that even preaching Christ himself can be done “from envy and rivalry” and “selfish ambition,” intended to cause trouble for others rather than out of love.",
+          "questionHint"     :"Notice Matthew 7:22-23 describes people doing genuinely impressive, visible ministry — what does Jesus say was actually missing underneath it all?"
         },
         {
           "elementId"    :"ch11-el09",
@@ -3511,7 +3625,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 10:41-42, 1 Corinthians 3:12-13, 2 Corinthians 13:1-3, Revelation 2:4-5"
+          "linkedPassage"    :"Luke 10:41-42, 1 Corinthians 3:12-13, 2 Corinthians 13:1-3, Revelation 2:4-5",
+          "sampleAnswer"     :"Luke 10:41-42 shows Martha “worried and troubled about many things” in her busy service, missing “the best part” that Mary chose simply by sitting attentively with Jesus — even good, active service can crowd out genuine devotion to Christ himself. 1 Corinthians 3:12-13 warns that not all ministry “building” is of equal lasting value — some is like “gold, silver, precious stones” and some like “wood, hay, or straw,” and only fire, God’s testing, will reveal which is which. Revelation 2:4-5 exposes perhaps the most subtle danger of all: a church that maintains sound doctrine and hard work yet has quietly “departed from your first love” — going through the right motions while losing genuine love for Christ.",
+          "questionHint"     :"Notice Revelation 2 isn’t written to a church doing nothing — it’s written to one still working hard; what does that combination reveal about how subtle this particular failure can be?"
         },
         {
           "elementId"    :"ch11-el15",
@@ -3570,7 +3686,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Proverbs 16:2, Matthew 6:1 and 23:5, John 12:43, 2 Corinthians 5:11-12"
+          "linkedPassage"    :"Proverbs 16:2, Matthew 6:1 and 23:5, John 12:43, 2 Corinthians 5:11-12",
+          "sampleAnswer"     :"Proverbs 16:2 warns that “all a person’s ways seem right in his own opinion,” while “the Lord evaluates the motives” — outward appearance and self-assessment can both be badly mistaken about what’s really going on in the heart. Matthew 6:1 and 23:5 show Jesus criticising displaying righteousness and religious deeds specifically “to be seen by people,” warning this forfeits any reward “with your Father in heaven.” John 12:43 diagnoses the underlying danger: people can love “praise from men more than praise from God.” It’s dangerous to focus only on what can be seen because visible results and reputation can mask, or even actively substitute for, the actual state of the heart, which only God can truly evaluate.",
+          "questionHint"     :"Notice Proverbs 16:2 says our own ways “seem right” to us — what does that suggest about trusting your own sense that your ministry motives are pure?"
         },
         {
           "elementId"    :"ch11-el21",
@@ -3629,7 +3747,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Mark 10:42-45, John 3:27-30, Acts 20:17-35, Colossians 3:23"
+          "linkedPassage"    :"Mark 10:42-45, John 3:27-30, Acts 20:17-35, Colossians 3:23",
+          "sampleAnswer"     :"Mark 10:42-45 sets the pattern directly against worldly “lording it over” others: true greatness in ministry means becoming “servant” and even “slave of all,” following Jesus’s own example of coming “not to be served but to serve.” John 3:27-30 models genuine humility, with John the Baptist gladly stepping back so that Christ can increase: “he must become more important while I become less important.” Acts 20:17-35 shows Paul’s example of ministry marked by humility, tears, sacrificial teaching, and complete disregard for personal wealth (“I have not desired anyone’s silver or gold”), summarised in the principle “it is more blessed to give than to receive.” Colossians 3:23 gives the underlying motivation: working “with enthusiasm, as to the Lord and not for people.”",
+          "questionHint"     :"Notice John the Baptist’s own summary of his ministry in v30 — what does his willingness to “become less important” suggest true ministry success actually looks like?"
         },
         {
           "elementId"    :"ch11-el27",
@@ -3795,7 +3915,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 10:37"
+          "linkedPassage"    :"Matthew 10:37",
+          "sampleAnswer"     :"Yes — Jesus says plainly that “whoever loves father or mother more than me is not worthy of me, and whoever loves son or daughter more than me is not worthy of me.” Loving family isn’t wrong in itself, but it becomes “too much” the moment that love competes with and outranks our love and devotion to Jesus — family love turns idolatrous precisely when it displaces Christ from first place in our hearts.",
+          "questionHint"     :"Notice Jesus doesn’t forbid loving father, mother, son, or daughter — only loving them “more than me”; where exactly is the line he draws?"
         },
         {
           "elementId"    :"ch12-el06",
@@ -3826,7 +3948,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Mark 3:33-35, Romans 9:7-8"
+          "linkedPassage"    :"Mark 3:33-35, Romans 9:7-8",
+          "sampleAnswer"     :"When told his mother and brothers are looking for him, Jesus redefines true family not by biology but by obedience: “whoever does the will of God is my brother and sister and mother.” Romans 9:7-8 reinforces this with Israel’s own history — not all of Abraham’s physical descendants were “true descendants”; rather, it is “the children of promise” who are counted as God’s children. Being in God’s family supersedes family of origin because spiritual relationship through faith and obedience, not blood or ancestry, is what ultimately defines true belonging in God’s family.",
+          "questionHint"     :"Notice Jesus redefines “mother and brothers” by what people do, not by who they’re related to — what does that redefinition say about the basis of family in God’s kingdom?"
         },
         {
           "elementId"    :"ch12-el09",
@@ -3847,7 +3971,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 22:30"
+          "linkedPassage"    :"Matthew 22:30",
+          "sampleAnswer"     :"Jesus says that “in the resurrection they neither marry nor are given in marriage, but are like angels in heaven” — earthly marriage and family structures, as we know them, are not permanent, eternal fixtures but belong to this present age. This means our earthly families, precious as they are, should be held with a light enough grip to recognise they are not ultimate — our deepest and most permanent relationships and identity are found in Christ and his eternal kingdom, not in family structures that will not carry over unchanged into the resurrection.",
+          "questionHint"     :"If earthly marriage doesn’t continue into the resurrection, what does that suggest about the ultimate, more permanent relationship every believer actually has?"
         },
         {
           "elementId"    :"ch12-el11",
@@ -3906,7 +4032,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Joshua 24:15, Jeremiah 7:18, Luke 9:57-62; 14:15-23, Acts 5:1-11"
+          "linkedPassage"    :"Joshua 24:15, Jeremiah 7:18, Luke 9:57-62; 14:15-23, Acts 5:1-11",
+          "sampleAnswer"     :"Jeremiah 7:18 shows a whole family unit — children, fathers, and women together — cooperating in idolatry, showing how family loyalty and tradition can normalise and perpetuate false worship across generations. In Luke 9:57-62, family obligations are used as reasons to delay following Jesus fully, while in Luke 14:15-23 a new marriage becomes one of several excuses for skipping the kingdom’s invitation altogether. Acts 5:1-11 shows a husband and wife together conspiring to deceive God, with fatal consequences. In each case, families can lead us astray by joining together in shared idolatry, providing convenient excuses to delay obedience to Christ, or teaming up in deception. Joshua 24:15, by contrast, shows the positive alternative: a family unit deliberately choosing together to worship the Lord.",
+          "questionHint"     :"Notice that in three of these passages, it isn’t one person leading a family astray but the family acting together — what does that suggest about how family unity can cut both ways?"
         },
         {
           "elementId"    :"ch12-el17",
@@ -3945,7 +4073,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Luke 2:48-49, Luke 12:51-53"
+          "linkedPassage"    :"Luke 2:48-49, Luke 12:51-53",
+          "sampleAnswer"     :"When his anxious parents find the young Jesus in the temple, he responds not with an apology but with a redirection of priority: “didn’t you know that I must be in my Father’s house?” — even at twelve years old, his ultimate accountability was to his heavenly Father, not merely to meeting his parents’ expectations. Luke 12:51-53 goes further, with Jesus warning that his coming will actually bring “division,” setting even close family members “against” each other. Putting God first can challenge family expectations because genuine obedience to Christ may sometimes look, from a family’s perspective, like defying or disappointing them.",
+          "questionHint"     :"Notice Mary’s question assumes Jesus owed his parents an explanation — how does his answer reframe whose expectations he was actually accountable to?"
         },
         {
           "elementId"    :"ch12-el21",
@@ -3974,7 +4104,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 19:29"
+          "linkedPassage"    :"Matthew 19:29",
+          "sampleAnswer"     :"Jesus promises that “whoever has left houses or brothers or sisters or father or mother or children or fields for my sake will receive a hundred times as much and will inherit eternal life.” The encouragement is that any genuine sacrifice of family relationships or possessions made for Christ’s sake is never a net loss — it is met with abundant, overflowing reward, both now and ultimately in eternal life, far outweighing whatever was given up.",
+          "questionHint"     :"Notice the specific proportion Jesus names — “a hundred times as much” — what does that scale suggest about how he views the cost of following him compared to the reward?"
         },
         {
           "elementId"    :"ch12-el24",
@@ -4005,7 +4137,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Exodus 20:12, 1 Timothy 5:8"
+          "linkedPassage"    :"Exodus 20:12, 1 Timothy 5:8",
+          "sampleAnswer"     :"Exodus 20:12 makes honouring one’s father and mother one of the Ten Commandments, with the promise of a long life attached to it — care for family is a serious, God-given command, not optional. 1 Timothy 5:8 goes even further, stating that failing to provide for one’s own relatives, “especially for members of his own household,” means someone “has denied the faith and is worse than an unbeliever.” Proper care for our families is not itself idolatry — it is a clear biblical command and mark of genuine faith; the danger lies only in family devotion overtaking devotion to God, not in caring for family at all.",
+          "questionHint"     :"Notice 1 Timothy 5:8 treats neglecting family as a denial of faith, not a minor failing — how strongly does that language suggest family care matters to God?"
         },
         {
           "elementId"    :"ch12-el27",
@@ -4171,7 +4305,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Galatians 3:28"
+          "linkedPassage"    :"Galatians 3:28",
+          "sampleAnswer"     :"Paul states that in Christ, all the deep social and cultural divisions people typically consider fundamental — Jew/Greek, slave/free, male/female — are transcended: “for all of you are one in Christ Jesus.” If Christ’s identity and unity supersede even the most basic categories of ethnicity, social status, and cultural background, then no particular tradition or culture can be treated as ultimate — each is relativised and unified under a deeper identity found in Christ himself.",
+          "questionHint"     :"Notice Paul names the three deepest social divisions of his world — ethnicity, class, and gender — and says Christ unites across all of them; what does that leave for any single culture to claim as ultimate?"
         },
         {
           "elementId"    :"ch13-el06",
@@ -4220,7 +4356,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 15:3-7, Mark 7:7-8, Colossians 2:8"
+          "linkedPassage"    :"Matthew 15:3-7, Mark 7:7-8, Colossians 2:8",
+          "sampleAnswer"     :"Matthew 15:3-7 shows the Pharisees using a religious tradition to actually “nullify the word of God,” letting people avoid the direct command to honour their parents by cleverly reclassifying their resources as dedicated “to God” instead. Jesus quotes Isaiah’s rebuke: “they worship me in vain, teaching as doctrines the commandments of men” — external tradition can replace and override genuine obedience to God’s actual word. Colossians 2:8 warns believers to be careful they aren’t “captivate[d]” by “empty, deceitful philosophy” based on “human traditions,” rather than on Christ.",
+          "questionHint"     :"Notice the Pharisees’ tradition wasn’t obviously evil — it looked like extra devotion to God; how did it end up doing the opposite of what it appeared to do?"
         },
         {
           "elementId"    :"ch13-el11",
@@ -4279,7 +4417,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Isaiah 1:13-17, Isaiah 29:13, Galatians 1:13-14, Philippians 3:4-7"
+          "linkedPassage"    :"Isaiah 1:13-17, Isaiah 29:13, Galatians 1:13-14, Philippians 3:4-7",
+          "sampleAnswer"     :"Isaiah 1:13-17 exposes a religious culture going through all the correct external motions — sacrifices, festivals, prayers — while God declares he cannot “tolerate” it because it’s disconnected from actual justice (“your hands are covered with blood”). Isaiah 29:13 diagnoses the same disconnect: people who “say wonderful things” about God while their worship is really “nothing but rules taught by men.” Paul’s own testimony in Galatians 1:13-14 and Philippians 3:4-7 shows this culture producing intense religious zeal — even “savagely persecuting the church” — that felt like faithful devotion but was actually opposition to God’s true purposes; he later counts all his impressive religious credentials as “liabilities because of Christ.”",
+          "questionHint"     :"Notice Paul describes his persecution of the church as coming from “zeal for God,” not indifference to him — what does that reveal about how sincere religious devotion can still oppose the truth?"
         },
         {
           "elementId"    :"ch13-el17",
@@ -4328,7 +4468,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Jeremiah 10:2-5, Ephesians 4:17-18, 1 Peter 1:18"
+          "linkedPassage"    :"Jeremiah 10:2-5, Ephesians 4:17-18, 1 Peter 1:18",
+          "sampleAnswer"     :"Jeremiah 10:2-5 warns against following pagan practices that are, despite their impressive craftsmanship, genuinely “worthless” — powerless idols with no ability to help or harm. Ephesians 4:17-18 describes life apart from God as marked by “the futility of their thinking” and hearts “darkened” and “alienated from the life of God.” 1 Peter 1:18 speaks of being ransomed specifically from an “empty way of life inherited from your ancestors” — showing that inherited tradition, simply because it’s familiar or long-standing, isn’t automatically good or true. We should be careful about which traditions we follow because tradition can just as easily be worthless or spiritually darkening as it can be good.",
+          "questionHint"     :"Notice 1 Peter calls the ancestral way of life “empty,” not evil in an obvious way — what does that word suggest about traditions that feel harmless simply because they’re familiar?"
         },
         {
           "elementId"    :"ch13-el22",
@@ -4357,7 +4499,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Romans 12:2"
+          "linkedPassage"    :"Romans 12:2",
+          "sampleAnswer"     :"Paul instructs believers, “do not be conformed to this present world, but be transformed by the renewing of your mind.” The way to avoid being wrongly shaped by culture is active, ongoing transformation through the renewal of our minds — a deliberate, Spirit-enabled process of thinking differently from the surrounding culture — which then equips us to genuinely “test and approve” what God’s will actually is, rather than simply absorbing our culture’s assumptions by default.",
+          "questionHint"     :"Notice Paul contrasts two verbs — “conformed” and “transformed” — what’s the difference between passively absorbing your culture’s shape and actively being reshaped from within?"
         },
         {
           "elementId"    :"ch13-el25",
@@ -4533,7 +4677,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Romans 7:18-19"
+          "linkedPassage"    :"Romans 7:18-19",
+          "sampleAnswer"     :"Paul confesses a painful internal contradiction: “I want to do the good, but I cannot do it... I do not do the good I want, but I do the very evil I do not want!” Simply knowing what’s right doesn’t automatically produce the power to actually do it, because “nothing good lives in me, that is, in my flesh.” Change isn’t always easy and insight isn’t always enough because our fallen human nature has a genuine, stubborn resistance to doing good that mere intellectual understanding cannot overcome by itself.",
+          "questionHint"     :"Notice Paul isn’t confused about what’s right — he knows exactly what he wants to do; where does his actual problem lie, if not in his understanding?"
         },
         {
           "elementId"    :"ch14-el08",
@@ -4572,7 +4718,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 11:28-30"
+          "linkedPassage"    :"Matthew 11:28-30",
+          "sampleAnswer"     :"Jesus invites “all you who are weary and burdened” to come to him for genuine “rest,” offering a “yoke” that is “easy to bear” and a “load” that “is not hard to carry” — in stark contrast to the heavy, exhausting, ultimately unsatisfying demands that idols place on their worshippers, who must constantly serve, appease, and maintain them without ever receiving true rest. It makes more sense to turn to Jesus than idols because he actually delivers what idols only ever promise but can never provide: genuine rest for weary souls, offered freely and gently rather than demanded at great cost.",
+          "questionHint"     :"Notice Jesus describes his own yoke as “easy” and his load as light — how does that compare with the endless, unrewarded effort idols typically demand from their worshippers?"
         },
         {
           "elementId"    :"ch14-el12",
@@ -4613,7 +4761,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Genesis 1:27, Romans 5:12, Galatians 3:26-29"
+          "linkedPassage"    :"Genesis 1:27, Romans 5:12, Galatians 3:26-29",
+          "sampleAnswer"     :"Genesis 1:27 establishes our fundamental worth: humanity is made “in his own image,” giving every person inherent, God-given dignity from the very beginning, prior to and independent of any achievement. Even though Romans 5:12 acknowledges that sin and death have since affected every person, Galatians 3:26-29 shows that in Christ believers become “sons of God through faith,” “clothed” with Christ himself, and made “heirs according to the promise” — a status that transcends all human categories of division. We can be confident we are valued by God because our worth is rooted in being made in his image and, for believers, secured permanently through adoption into his family in Christ.",
+          "questionHint"     :"Notice Genesis 1:27 grounds human worth in being made “in his image” — before any person has done anything at all; what does that timing suggest about where our value actually comes from?"
         },
         {
           "elementId"    :"ch14-el16",
@@ -4652,7 +4802,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Psalm 34:18, Hebrews 4:15-16"
+          "linkedPassage"    :"Psalm 34:18, Hebrews 4:15-16",
+          "sampleAnswer"     :"Psalm 34:18 assures us that “the Lord is near the brokenhearted” and personally “delivers those who are discouraged” — he draws close to pain rather than distancing himself from it. Hebrews 4:15-16 adds that Jesus himself, as our high priest, is not “incapable of sympathising with our weaknesses,” having been “tempted in every way just as we are,” which is precisely why we can “confidently approach the throne of grace to receive mercy and find grace whenever we need help.” It’s worth bringing our past hurts to Jesus because he draws genuinely near to the brokenhearted and truly understands our pain.",
+          "questionHint"     :"Notice Hebrews grounds our confidence to approach God specifically in Jesus’s own experience of temptation and weakness — why does his shared experience make approaching him with our hurts less intimidating?"
         },
         {
           "elementId"    :"ch14-el20",
@@ -4691,7 +4843,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Ruth 1:3-5; 1:20-21; 4:14-17, Genesis 16:6-14"
+          "linkedPassage"    :"Ruth 1:3-5; 1:20-21; 4:14-17, Genesis 16:6-14",
+          "sampleAnswer"     :"Naomi, having lost her husband and both sons and calling herself “Mara” (bitter) because she felt God had “caused me to return empty,” eventually finds her bitterness transformed into joy: through Ruth’s faithfulness and the birth of Obed, grandfather of King David, the women declare “the Lord is to be praised,” and Naomi herself becomes the caregiver of new life and hope. Hagar, mistreated and fleeing into the desert, discovers that God sees and hears her personal suffering directly — “you are the God who sees me” — receiving both comfort in her immediate crisis and an assurance of a future for her son.",
+          "questionHint"     :"Notice both women name God based on their experience — Naomi calling herself “Mara” and Hagar calling God “the God who sees me” — what different stages of the same healing process do those two names represent?"
         },
         {
           "elementId"    :"ch14-el24",
@@ -4712,7 +4866,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Philippians 3:13-14"
+          "linkedPassage"    :"Philippians 3:13-14",
+          "sampleAnswer"     :"Paul describes his own posture as deliberately “forgetting the things that are behind and reaching out for the things that are ahead,” pursuing “the prize of the upward call of God in Christ Jesus” rather than dwelling on his past. Knowing Christ helps us not get trapped in the past because it gives us a forward-looking goal genuinely worth pursuing — our identity and future are found in Christ’s call ahead of us, not in whatever has already happened behind us, freeing us to move forward rather than remain stuck.",
+          "questionHint"     :"Notice Paul mentions both forgetting the past and reaching forward — why might having something worth reaching for make it easier to actually let go of what’s behind?"
         },
         {
           "elementId"    :"ch14-el26",
@@ -4857,7 +5013,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Matthew 6:33, Matthew 23:37-40"
+          "linkedPassage"    :"Matthew 6:33, Matthew 23:37-40",
+          "sampleAnswer"     :"Matthew 6:33 gives the clear principle: “above all pursue his kingdom and righteousness, and all these things will be given to you as well” — God’s kingdom and righteousness must hold first place, with everything else finding its proper place beneath that priority, trusting God to provide the rest. Matthew 23:37-40 shows the tragic alternative: Jerusalem, offered God’s gathering love “as a hen gathers her chicks,” refuses it, choosing rejection instead. The right order is God’s kingdom and righteousness first, with every other love and pursuit ordered underneath and in light of that primary devotion.",
+          "questionHint"     :"Notice the word “above all” in Matthew 6:33 — what does that phrase tell you about how every other pursuit should relate to seeking God’s kingdom?"
         },
         {
           "elementId"    :"ch15-el07",
@@ -4886,7 +5044,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Psalm 37:4"
+          "linkedPassage"    :"Psalm 37:4",
+          "sampleAnswer"     :"The psalmist promises: “then you will take delight in the Lord, and he will answer your prayers.” What follows from genuinely delighting in the Lord is that our desires themselves become increasingly aligned with his will, so that what we ask for in prayer is answered — not because delighting in God is a technique to manipulate him into granting our wishes, but because a heart that truly delights in God comes to desire what he desires.",
+          "questionHint"     :"Notice the order in the verse — delight comes first, answered prayer follows; what does that sequence suggest about why the prayers get answered?"
         },
         {
           "elementId"    :"ch15-el10",
@@ -4907,7 +5067,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Mark 10:21-22"
+          "linkedPassage"    :"Mark 10:21-22",
+          "sampleAnswer"     :"Jesus, looking at the rich young man “in love,” identifies the one thing standing between him and following Jesus fully: his wealth. He calls him specifically to “sell whatever you have and give the money to the poor,” directly targeting his particular idol. If we do not repent of our idols, Jesus may call us to give up, or directly confront, the very thing we are most attached to — not because the thing itself is necessarily evil, but because our idolatrous grip on it is what’s actually keeping us from wholeheartedly following him.",
+          "questionHint"     :"Notice Jesus’s command is aimed at this man’s specific attachment, not a generic instruction he gives everyone — what does that specificity suggest about how Jesus deals with each person’s particular idol?"
         },
         {
           "elementId"    :"ch15-el12",
@@ -4946,7 +5108,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Colossians 3:1-2, Matthew 16:24-25"
+          "linkedPassage"    :"Colossians 3:1-2, Matthew 16:24-25",
+          "sampleAnswer"     :"Colossians 3:1-2 calls us to actively “keep seeking” and “keep thinking about things above, where Christ is,” rather than being preoccupied with “things on the earth” — a deliberate, ongoing redirection of focus and desire toward Christ. Matthew 16:24-25 describes this in even more costly terms: genuine discipleship requires self-denial and “taking up his cross,” even being willing to lose one’s life for Jesus’s sake in order to truly find it. Putting God and Jesus first looks like consistently reorienting our minds toward Christ, and being willing to deny ourselves and sacrifice whatever following him requires.",
+          "questionHint"     :"Notice Colossians uses the word “keep” twice — this is a continual practice, not a one-time decision; what would it look like to actually keep doing this day to day?"
         },
         {
           "elementId"    :"ch15-el16",
@@ -4985,7 +5149,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Isaiah 26:3, Jeremiah 17:7-8"
+          "linkedPassage"    :"Isaiah 26:3, Jeremiah 17:7-8",
+          "sampleAnswer"     :"Isaiah 26:3 promises that God “keep[s] completely safe the people who maintain their faith, for they trust in you” — genuine security for those who trust him. Jeremiah 17:7-8 pictures this trust producing a flourishing, resilient life “like a tree planted near a stream,” whose roots reach the water so that it has “nothing to fear when the heat comes,” stays “green,” and “does not stop producing fruit” even “in a year of drought.” God promises those who seek him first genuine peace and security, and a resilient, continually fruitful life that doesn’t wither even under difficult circumstances.",
+          "questionHint"     :"Notice the tree image specifically mentions drought and heat — the promise isn’t the absence of hardship, but resilience within it; what’s the difference between those two kinds of promise?"
         },
         {
           "elementId"    :"ch15-el20",
@@ -5024,7 +5190,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"John 15:5, John 6:35"
+          "linkedPassage"    :"John 15:5, John 6:35",
+          "sampleAnswer"     :"John 15:5 shows that genuine fruitfulness comes only through actively “remain[ing]” connected to Jesus, the vine — “apart from me you can accomplish nothing.” John 6:35 shows Jesus as the one who genuinely satisfies our deepest hunger and thirst: “the one who comes to me will never go hungry, and the one who believes in me will never be thirsty.” What helps us get our priorities and loves right is staying continually, personally connected to Jesus himself, rather than relying on our own effort or looking to idols to meet those deep needs.",
+          "questionHint"     :"Notice both verses use ongoing, continuous language — “remains,” “comes,” “believes” — what does that suggest about whether this is a one-time fix or an ongoing relationship?"
         },
         {
           "elementId"    :"ch15-el24",
@@ -5045,7 +5213,9 @@
           "required"         :false,
           "answerPlaceholder":"Your answer…",
           "bottomPadding"    :"normal",
-          "linkedPassage"    :"Hebrews 12:2"
+          "linkedPassage"    :"Hebrews 12:2",
+          "sampleAnswer"     :"Hebrews 12:2 instructs us to keep “our eyes fixed on Jesus, the pioneer and perfecter of our faith,” who himself endured the cross “for the joy set out for him,” disregarding its shame, and is now seated “at the right hand of the throne of God.” The way forward to keep away from idols is to maintain a fixed, ongoing focus on Jesus himself — following his own example of enduring present difficulty for the sake of greater joy ahead — rather than letting our gaze drift toward the competing attractions that idols offer.",
+          "questionHint"     :"Notice the verse describes Jesus enduring the cross by keeping a greater joy in view — how might fixing your eyes on a similar future joy help loosen an idol’s pull in the present?"
         },
         {
           "elementId"    :"ch15-el26",
