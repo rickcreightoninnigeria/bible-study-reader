@@ -233,7 +233,8 @@ async function handleFileSelect(event) {
 
 async function deleteStudy(id, title) {
     const { isConfirmed } = await Swal.fire({
-      title: t('studyloader_delete_title', { title }),
+      // Swal renders title as HTML — escape the study-supplied title.
+      title: t('studyloader_delete_title', { title: escapeHtml(title) }),
       html:  t('studyloader_delete_body'),
       icon: 'warning',
       showCancelButton: true,
@@ -377,17 +378,25 @@ function applyImageData(imageData) {
 // These helpers reconstruct the old shape so all downstream functions
 // (search, share, print, progress, starring) continue to work unchanged.
 
+// Returns a plain string for a field that may be stored unnumbered (mono-lingual
+// studies: el.question) or in numbered language slots (multilingual studies:
+// el.question1/2/3). Falls back to slot 1 so downstream consumers of the
+// normalised shape (search, share, print, starred) never see undefined.
+function _plainField(el, field) {
+  return el[field] ?? el[`${field}1`] ?? '';
+}
+
 // Returns the text of the first element with the given subtype.
 function _extractTextBySubtype(elements, subtype) {
   const el = (elements || []).find(e => e.type === 'text' && e.subtype === subtype);
-  return el ? el.text : '';
+  return el ? _plainField(el, 'text') : '';
 }
 
 // Returns an array of reflection question strings.
 function _extractReflectionQuestions(elements) {
   return (elements || [])
     .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
-    .map(e => e.question);
+    .map(e => _plainField(e, 'question'));
 }
 
 // Reconstructs sections[] from the flat elements[].
@@ -402,7 +411,7 @@ function _buildSectionsFromElements(elements) {
 
   els.forEach(el => {
     if (el.type === 'text' && el.subtype === 'bridge') {
-      currentSection = { bridge: el.text, questions: [] };
+      currentSection = { bridge: _plainField(el, 'text'), questions: [] };
       sections.push(currentSection);
       lastRef = null;
     } else if (el.type === 'biblePassage') {
@@ -418,7 +427,7 @@ function _buildSectionsFromElements(elements) {
       }
       currentSection.questions.push({
         ref:       el.linkedPassage || lastRef || '',
-        text:      el.question,
+        text:      _plainField(el, 'question'),
         elementId: el.elementId,
       });
     }
@@ -527,8 +536,9 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   // flat elements[]) to the shape the engine expects (title, num, sections[], etc.)
   window.chapters = (data.chapters || []).map(ch => ({
     ...ch,
+    chapterTitle: _plainField(ch, 'chapterTitle'),
     num:        ch.chapterNumber,
-    title:      ch.chapterTitle,
+    title:      _plainField(ch, 'chapterTitle'),
     intro:      _extractTextBySubtype(ch.elements, 'chapterIntro'),
     closing:    _extractTextBySubtype(ch.elements, 'chapterClosing'),
     reflection: _extractReflectionQuestions(ch.elements),
@@ -1079,7 +1089,7 @@ async function _installStudyFileQuietly(file, fileName) {
     const data       = JSON.parse(jsonString);
     const studyId    = data.studyMetadata?.studyId;
     if (!studyId) {
-      console.warn('[defaultStudies] Skipping', file.name, '— missing studyMetadata.studyId');
+      console.warn('[defaultStudies] Skipping', name, '— missing studyMetadata.studyId');
       return;
     }
 
@@ -1143,11 +1153,15 @@ async function _installStudyFileQuietly(file, fileName) {
 
   } else {
     // ── Legacy plain-JSON .estudy ───────────────────────────────────────────
-    const text    = await file.text();
+    // `file` is a raw ArrayBuffer when called from the bundled installer
+    // (installDefaultStudiesIfNeeded) — ArrayBuffer has no .text() method.
+    const text    = file instanceof ArrayBuffer
+      ? new TextDecoder().decode(file)
+      : await file.text();
     const data    = JSON.parse(text);
     const studyId = data.studyMetadata?.studyId;
     if (!studyId) {
-      console.warn('[defaultStudies] Skipping plain-JSON', file.name, '— missing studyId');
+      console.warn('[defaultStudies] Skipping plain-JSON', name, '— missing studyId');
       return;
     }
 
@@ -1345,39 +1359,62 @@ async function loadStudyFromFile(file) {
       const data = JSON.parse(text);
       const _plainStudyId = data.studyMetadata?.studyId;
 
-      if (_plainStudyId) {
-        // Version check (user-initiated path).
-        const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
-        if (_versionDecision === 'downgrade-blocked') {
-          showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+      // A study without a studyId can't be stored or keyed. Activating it
+      // anyway would leave window.activeStudyId pointing at the *previous*
+      // study, so every answer typed into it would be saved over that other
+      // study's records. Reject it, as the zip path above does.
+      if (!_plainStudyId) {
+        showPickerError(t('studyloader_error_no_study_id', { filename: file.name }));
+        return;
+      }
+
+      // Version check (user-initiated path).
+      const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
+      if (_versionDecision === 'downgrade-blocked') {
+        showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+        return;
+      }
+      if (_versionDecision === 'skip') {
+        // Same version already installed — open it as normal without
+        // re-writing, *provided the content is actually still there*. If the
+        // study was deleted (which intentionally leaves the version record
+        // in place), the IDB entry will be missing even though the version
+        // says "skip" — in that case fall through and reinstall from the
+        // incoming file instead of silently doing nothing.
+        const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
+        if (existing) {
+          await _activateOrDeferStudy(_plainStudyId, existing);
           return;
         }
-        if (_versionDecision === 'skip') {
-          // Same version already installed — open it as normal without
-          // re-writing, *provided the content is actually still there*. If the
-          // study was deleted (which intentionally leaves the version record
-          // in place), the IDB entry will be missing even though the version
-          // says "skip" — in that case fall through and reinstall from the
-          // incoming file instead of silently doing nothing.
-          const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
-          if (existing) {
-            await _activateOrDeferStudy(_plainStudyId, existing);
-            return;
-          }
-        }
-        // 'install': show update toast if upgrading an existing install.
-        const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
-        const _installedVer = _getInstalledStudyVersion(_plainStudyId);
-        const _studyTitle   = data.studyMetadata?.title || _plainStudyId;
-        if (_installedVer > 0 && _incomingVer > _installedVer) {
-          showToast({
-            message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
-            isManual: true,
-          });
-        }
-        // Record version (plain-JSON installs don't go through IDB.set below — do it here).
-        if (_incomingVer > 0) _setInstalledStudyVersion(_plainStudyId, _incomingVer);
       }
+      // 'install': show update toast if upgrading an existing install.
+      const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
+      const _installedVer = _getInstalledStudyVersion(_plainStudyId);
+      const _studyTitle   = data.studyMetadata?.title || _plainStudyId;
+      if (_installedVer > 0 && _incomingVer > _installedVer) {
+        showToast({
+          message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
+          isManual: true,
+        });
+      }
+
+      // Persist and register, same as the zip path — without this the study
+      // only lived in memory: it never appeared in the Library and was gone
+      // after a restart, even though its version record had been written.
+      try {
+        await StudyIDB.set(`study_content_${_plainStudyId}`, data);
+      } catch (err) {
+        if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+        throw err;
+      }
+      const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
+      if (!registry.includes(_plainStudyId)) {
+        registry.push(_plainStudyId);
+        safeSetItem('study_registry', JSON.stringify(registry));
+      }
+      safeSetItem('bsr_last_active_study', _plainStudyId);
+      recordStudyInstalled(_plainStudyId);
+      if (_incomingVer > 0) _setInstalledStudyVersion(_plainStudyId, _incomingVer);
 
       await _activateOrDeferStudy(_plainStudyId, data, { checkVersion: true });
     }

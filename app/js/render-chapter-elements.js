@@ -704,6 +704,15 @@ function renderCallout(ctx) {
 // avoiding a redundant IDB fetch.
  
 function renderLikertScaleElement(ctx) {
-  const { el, ch, chapterAnswers } = ctx;
-  return renderLikertScale(el, ch.chapterNumber, chapterAnswers);
+  const { el, ch, chapterAnswers, activeLang, langMap } = ctx;
+  // Multilingual studies store these fields in numbered language slots
+  // (statements1/2/3, scale1/2/3, …). renderLikertScale() reads the plain
+  // names, so resolve them for the active language first — otherwise the
+  // scale renders with no statements, no labels and an empty popup.
+  const resolved = { ...el };
+  for (const field of ['statements', 'statementPairs', 'scale', 'popupTitle', 'instruction']) {
+    const value = resolveText(el, activeLang, field, langMap);
+    if (value) resolved[field] = value;
+  }
+  return renderLikertScale(resolved, ch.chapterNumber, chapterAnswers);
 }

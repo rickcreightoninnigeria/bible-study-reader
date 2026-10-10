@@ -211,6 +211,8 @@ function confirmClearAnswers() {
       return;
     }
 
+    // Drop cached answers so Search doesn't keep showing the cleared ones.
+    if (typeof storageCache !== 'undefined') storageCache.clear();
     clearLastPosition();
     currentChapter = 0;
     showToast({ message: t('settings_clear_answers_toast'), isManual: true });
@@ -277,6 +279,13 @@ async function resetAllData() {
   if (!step2.isConfirmed) return;
 
   // 1. Wipe all localStorage
+  // Detach from the open study first. location.reload() below fires
+  // visibilitychange/pagehide, whose flush handlers (gestures.js) would
+  // otherwise write the on-screen answers and reading position straight back
+  // into IDB after clearAll() — leaving answers that reappear when the same
+  // study is reinstalled.
+  window.activeStudyId = null;
+
   localStorage.clear();
 
   // 2. Wipe all IndexedDB stores (studies, images, and answers)

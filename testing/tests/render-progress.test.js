@@ -24,8 +24,11 @@ function loadSandbox() {
   vm.createContext(sandbox);
   // Load state.js first so key helpers are available as globals
   const stateCode    = readFileSync(join(__dirname, '../../app/js/state.js'),           'utf8');
+  const searchCode   = readFileSync(join(__dirname, '../../app/js/search.js'),          'utf8');
   const progressCode = readFileSync(join(__dirname, '../../app/js/render-progress.js'), 'utf8');
   vm.runInContext(stateCode,    sandbox);
+  // render-progress.js calls debounce() (defined in search.js) at load time.
+  vm.runInContext(searchCode,   sandbox);
   vm.runInContext(progressCode, sandbox);
   return sandbox;
 }

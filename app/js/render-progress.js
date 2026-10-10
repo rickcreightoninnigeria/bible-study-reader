@@ -18,6 +18,9 @@
 //   autoResize                     – settings.js
 //   goToChapter                    – navigation.js
 //   activateStudy                  – study-loader.js
+//   _buildSectionsFromElements,
+//   _extractReflectionQuestions    – study-loader.js (runtime call only)
+//   debounce                       – search.js
 
 // ── PATHWAY HELPERS ───────────────────────────────────────────────────────────
 
@@ -47,40 +50,54 @@ function clearActivePathway() {
 // returns per-chapter counts: [{ chNum, total, answered }, ...] sorted by
 // chapter number. This is the single source both getStudyProgressForId()
 // (aggregate) and _buildPathwayStudyDetailHtml() (per-chapter breakdown)
-// build on, so a pathway study's chapters are only read from IDB once —
-// they used to be read once per function, once each, sequentially.
+// build on, so a pathway study's chapters are only read from IDB once.
+//
+// `total` comes from the study's own content (questions, reflections and
+// Likert rows), scored by the same _getChapterProgressFromRecord() the
+// Active Study tab uses. It used to be the number of answer fields *saved*
+// in IDB — and since blank answers are never saved, total ≈ answered, so a
+// study with a single answered question showed as 100% / Done.
+//
+// Returns [] when the study isn't installed or nothing has been answered
+// yet, so callers can keep treating an empty result as "not started".
 // A single chapter's read failure doesn't abort the others; it just
-// contributes { total: 0, answered: 0 } for that chapter and logs a warning.
+// contributes zero answered for that chapter and logs a warning.
 async function _getStudyChapterCounts(studyId) {
+  let data = null;
   let keys = [];
   try {
-    keys = await StudyIDB.getAllStudyAnswerKeys(studyId);
+    [data, keys] = await Promise.all([
+      StudyIDB.get(`study_content_${studyId}`),
+      StudyIDB.getAllStudyAnswerKeys(studyId),
+    ]);
   } catch (e) {
     console.warn('[_getStudyChapterCounts] IDB read failed.', e);
     return [];
   }
+  if (!data || !Array.isArray(data.chapters)) return [];
 
-  // Keys are like `${studyId}_ch${N}` — extract the chapter numbers.
-  const chNums = [...new Set(
-    keys.map(k => { const m = k.match(/_ch(\d+)$/); return m ? Number(m[1]) : null; })
-        .filter(n => n !== null)
-  )].sort((a, b) => a - b);
+  // Keys are like `${studyId}_ch${N}` — skip the IDB reads entirely for a
+  // study with no saved answers.
+  const hasAnswers = keys.some(k => /_ch\d+$/.test(k) && !/_celebrated_ch\d+$/.test(k));
+  if (!hasAnswers) return [];
 
-  return Promise.all(chNums.map(async chNum => {
-    let total = 0, answered = 0;
+  const counts = await Promise.all(data.chapters.map(async raw => {
+    // Same normalised shape applyStudyData() builds for the active study.
+    const ch = {
+      ...raw,
+      reflection: _extractReflectionQuestions(raw.elements),
+      sections:   _buildSectionsFromElements(raw.elements),
+    };
+    let record = {};
     try {
-      const record = await StudyIDB.getChapterAnswers(studyId, chNum);
-      for (const [field, val] of Object.entries(record)) {
-        // Count question (q_), reflection (r_), and Likert (likert_) fields only
-        if (!/^(q_|r_|likert_)/.test(field)) continue;
-        total++;
-        if ((val || '').trim()) answered++;
-      }
+      record = await StudyIDB.getChapterAnswers(studyId, raw.chapterNumber);
     } catch (e) {
-      console.warn(`[_getStudyChapterCounts] IDB read failed for ch${chNum}.`, e);
+      console.warn(`[_getStudyChapterCounts] IDB read failed for ch${raw.chapterNumber}.`, e);
     }
-    return { chNum, total, answered };
+    const { total, answered } = _getChapterProgressFromRecord(ch, record);
+    return { chNum: raw.chapterNumber, total, answered };
   }));
+  return counts.sort((a, b) => a.chNum - b.chNum);
 }
 
 // Counts answered questions for an arbitrary studyId by reading answer keys
@@ -140,9 +157,11 @@ function _getChapterProgressFromRecord(ch, record) {
   (ch.elements || [])
     .filter(e => e.type === 'likertScale' && !e.repeatElement)
     .forEach(el => {
+      // Multilingual studies store the rows in numbered slots (statements1…);
+      // every slot has the same row count, so slot 1 is enough for counting.
       const rows = el.subtype === 'bipolar'
-        ? (el.statementPairs || [])
-        : (el.statements    || []);
+        ? (el.statementPairs || el.statementPairs1 || [])
+        : (el.statements    || el.statements1    || []);
       rows.forEach((_, stIdx) => {
         total++;
         const val = (record[likertFieldKey(el.elementId, stIdx)] || '').trim();
@@ -210,9 +229,11 @@ function _progressTabBarHtml(activeTab) {
     <div class="progress-tab-bar" id="progressTabBar">
       <button
         class="progress-tab ${activeTab === 'study' ? 'active' : ''}"
+        data-tab="study"
         onclick="switchProgressTab('study')">${t('progress_tab_study')}</button>
       <button
         class="progress-tab ${activeTab === 'pathway' ? 'active' : ''}"
+        data-tab="pathway"
         onclick="switchProgressTab('pathway')">${t('progress_tab_pathway')}</button>
     </div>`;
 }
@@ -222,7 +243,9 @@ function _progressTabBarHtml(activeTab) {
 // asynchronously and written to the DOM after it resolves.
 window.switchProgressTab = function(tab) {
   document.querySelectorAll('.progress-tab').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.toLowerCase().includes(tab));
+    // Match on data-tab, not the label text — translated labels don't
+    // contain the English words 'study' / 'pathway'.
+    btn.classList.toggle('active', btn.dataset.tab === tab);
   });
   const studyPanel   = document.getElementById('progressStudyPanel');
   const pathwayPanel = document.getElementById('progressPathwayPanel');
@@ -289,7 +312,10 @@ async function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal,
   }
 
   // Build chapter rows — getStarredQuestions is async, so we await per chapter.
-  const chapterRowsArr = await Promise.all(chapterStats.map(async ({ ch, total, answered, pct, record }) => {
+  // chIdx is the position in the chapters[] array — what Router/goToChapter
+  // expect. It is NOT chapterNumber - 1: studies may number chapters from 0
+  // or start mid-series (e.g. chapter 7).
+  const chapterRowsArr = await Promise.all(chapterStats.map(async ({ ch, total, answered, pct, record }, chIdx) => {
     const chRingColor = pct === 100 ? 'var(--success)' : pct > 0 ? 'var(--accent)' : 'var(--border)';
     const chBgColor   = 'var(--border)';
     const isDone      = pct === 100;
@@ -304,7 +330,7 @@ async function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal,
         </div>
         <div id="progressStarList_${ch.chapterNumber}" class="prog-star-list">
           ${starredQs.map(({ q, elementId }) => `
-            <div onclick="navigateToStarred(${ch.chapterNumber - 1}, '${elementId}')" class="prog-star-item">
+            <div onclick="navigateToStarred(${chIdx}, '${elementId}')" class="prog-star-item">
               <div class="prog-star-ref">${q.ref}</div>
               <div class="prog-star-text">${q.text}</div>
             </div>`).join('')}
@@ -314,7 +340,7 @@ async function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal,
 
     return `
       <div class="progress-chapter-item prog-chapter-outer">
-        <div class="prog-chapter-inner" onclick="Router.navigate({ page: 'chapter', idx: ${ch.chapterNumber - 1} })">
+        <div class="prog-chapter-inner" onclick="Router.navigate({ page: 'chapter', idx: ${chIdx} })">
           <div class="progress-chapter-ring">
             ${progressRingSvg(pct, 44, 4, chRingColor, chBgColor)}
           </div>

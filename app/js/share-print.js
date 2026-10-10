@@ -177,8 +177,8 @@ async function exportStudyAnswers() {
     (ch.elements || [])
       .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
       .forEach(el => {
-        const scale      = el.scale      || [];
-        const statements = el.statements || [];
+        const scale      = el.scale      || el.scale1      || [];
+        const statements = el.statements || el.statements1 || [];
         if (!statements.length) return;
 
         let likertReport = '';
@@ -339,8 +339,8 @@ function buildChapterBody(ch, record) {
   (ch.elements || [])
     .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
     .forEach(el => {
-      const scale      = el.scale      || [];
-      const statements = el.statements || [];
+      const scale      = el.scale      || el.scale1      || [];
+      const statements = el.statements || el.statements1 || [];
       if (!statements.length) return;
 
       const rowsHtml = statements.map((stmt, stIdx) => {
@@ -511,7 +511,7 @@ function buildBlankChapterBody(ch) {
   (ch.elements || [])
     .filter(e => e.type === 'likertScale' && !e.repeatElement && e.subtype !== 'bipolar')
     .forEach(el => {
-      const statements = el.statements || [];
+      const statements = el.statements || el.statements1 || [];
       if (!statements.length) return;
       const rowsHtml = statements.map(stmt => `<div class="likert-block-row">
           <div class="likert-block-statement">${stmt}</div>

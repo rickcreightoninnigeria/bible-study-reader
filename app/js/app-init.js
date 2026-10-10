@@ -203,6 +203,12 @@ function rerenderCurrentView() {
     return;
   }
 
+  // The title page is a non-chapter page with no activeTabPage of its own.
+  if (!window.activeTabPage) {
+    renderTitlePage();
+    return;
+  }
+
   // User is on a non-chapter page — dispatch by activeTabPage
   switch (window.activeTabPage) {
     case 'library':  openLibrary();                           break;
@@ -212,6 +218,7 @@ function rerenderCurrentView() {
     case 'leaders':  renderLeadersNotes();                   break;
     case 'progress': renderProgressOverview();               break;
     case 'notes':    renderNotesPage();                      break;
+    case 'godeeper': renderGoDeeper(window.activeTabId);     break;
     default:
       // Fallback — shouldn't happen, but safe
       openLibrary();

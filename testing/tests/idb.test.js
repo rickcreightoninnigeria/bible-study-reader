@@ -37,6 +37,9 @@ function makeSandbox() {
   };
   vm.createContext(sandbox);
 
+  // idb.js builds its answer-store keys with helpers from state.js
+  // (chapterAnswersIDBKey etc.), loaded before it in index.html.
+  vm.runInContext(readFileSync(join(__dirname, '../../app/js/state.js'), 'utf8'), sandbox);
   const raw = readFileSync(join(__dirname, '../../app/js/idb.js'), 'utf8');
   const iife = raw.replace('const StudyIDB = ', 'window.StudyIDB = ');
   vm.runInContext(iife, sandbox);
