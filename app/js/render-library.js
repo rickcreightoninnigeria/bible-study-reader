@@ -480,7 +480,9 @@ async function renderLibrary() {
 
   const showRecent  = libShowRecent     === 'on' || (libShowRecent     === '>5' && studyCount > 5);
   const showShelves = libShowShelvesTab === 'on' || (libShowShelvesTab === '>8' && studyCount > 8);
-  const showPaths   = libShowPathsTab   === 'on' || (libShowPathsTab   === '>2' && studyCount > 2);
+  // Imported pathways always show the Paths tab — the user added them on purpose.
+  const showPaths   = libShowPathsTab   === 'on' || (libShowPathsTab   === '>2' && studyCount > 2)
+                   || getImportedPathwayGroups().length > 0;
 
   // If the stored tab is no longer visible, fall back to 'all'.
   let activeTab = window._libActiveTab || 'all';
@@ -628,7 +630,7 @@ async function renderLibrary() {
     return `
       ${riHtml}
       <div class="library-eyebrow">${t('renderlib_add_study')}</div>
-      <input type="file" id="studyPicker" accept=".estudy,.zip,application/zip,application/octet-stream,*/*" multiple style="display:none" onchange="handleFileSelect(event)">
+      <input type="file" id="studyPicker" accept=".estudy,.epathway,.zip,application/zip,application/json,application/octet-stream,*/*" multiple style="display:none" onchange="handleFileSelect(event)">
       <button class="import-btn" onclick="openDriveStudyFolder()">
         ${ICONS.download}&nbsp;${t('renderlib_download_estudy')}
       </button>
@@ -1107,46 +1109,45 @@ async function renderLibrary() {
 
   // ── TAB: Paths ──────────────────────────────────────────────────────────────
 
+  // Text in the Paths tab may come from imported pathway files (see
+  // pathways-import.js), so every displayed string is escaped, built-in
+  // descriptions (which use authored HTML) go through sanitizeHtml(), and
+  // inline handlers receive numeric indices only — never titles, IDs or URLs.
+  // The handlers look the data up again via getAllPathways().
   function buildPathsTab() {
-    const pathways = ((window.appAboutData || {}).learningPathways || {}).learningPathways || [];
+    const pathways = getAllPathways();
+    const activeKey = getActivePathwayKey();
     const showMode = window._libShowPaths || 'few'; // 'one' | 'few' | 'many' | 'all'
-    // l1Limit: how many L1 groups to show. 'one' = only the first.
+    // l1Limit: how many built-in L1 groups to show. 'one' = only the first.
+    // Imported groups are always shown — the user added them on purpose.
     const l1Limit  = showMode === 'one' ? 1 : Infinity;
     // l2Limit: how many L2 items to show per L1 group
     const l2Limit  = showMode === 'all'  ? Infinity
                    : showMode === 'many' ? 2
                    : 1; // 'few' and 'one' both show 1 L2 per L1
+    const installedIds = JSON.parse(localStorage.getItem('study_registry') || '[]');
 
     // Build level-3 rows for a given pathway (titleLevel2 item)
     function buildL3Rows(pathway, l1Idx, l2Idx) {
-      const studies = pathway.studyTitles || [];
-      const installedIds = JSON.parse(localStorage.getItem('study_registry') || '[]');
-
-      const rows = studies.map((s, l3Idx) => {
-        const hasDl = s.downloadLocation && s.downloadLocation !== '';
+      return (pathway.studyTitles || []).map((s, l3Idx) => {
+        const hasDl = !!s.downloadLocation;
         // Treat a study as installed only if it is in the registry AND passes the
         // current lang filter. A filtered-out study reverts to catalogue-only so
         // the user doesn't see an "open" button for a language they've hidden.
         const inRegistry       = s.studyId && installedIds.includes(s.studyId);
-        const passesLangFilter = inRegistry && studyMatchesLangFilter(studyCache[s.studyId]);
-        const alreadyInstalled = passesLangFilter;
+        const alreadyInstalled = inRegistry && studyMatchesLangFilter(studyCache[s.studyId]);
         const showDlBtn = hasDl && !alreadyInstalled;
-        const safeDlUrl = hasDl ? s.downloadLocation.replace(/'/g, "\\'") : '';
-        const downloadHintL3 = showDlBtn
-          ? `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${ICONS.download} This study is available to download. Tap the download icon next to <b>${s.titleLevel3}</b> to install it.</p>`
-          : alreadyInstalled
-          ? ''
-          : `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${t('renderlib_study_not_available')}</p>`;
-        const safeDesc = ((s.description || '') + downloadHintL3).replace(/'/g, "\\'").replace(/"/g, '&quot;').replace(/\n/g, ' ');
+        const safeTitle = escapeHtml(s.titleLevel3);
+        const idx = `${l1Idx}, ${l2Idx}, ${l3Idx}`;
         const dlBtn = showDlBtn
           ? `<button class="lib-path-l3-info-btn lib-path-l3-dl-btn"
-               onclick="event.stopPropagation(); libPathDownload('${safeDlUrl}')"
-               title="${t('renderlib_download_study', { title: s.titleLevel3.replace(/'/g, "\\'")})}" aria-label="${t('renderlib_download_study', { title: s.titleLevel3.replace(/'/g, "\\'")})}">
+               onclick="event.stopPropagation(); libPathDownloadAt(${idx})"
+               title="${escapeHtml(t('renderlib_download_study', { title: s.titleLevel3 }))}" aria-label="${escapeHtml(t('renderlib_download_study', { title: s.titleLevel3 }))}">
                ${ICONS.download}
              </button>`
           : alreadyInstalled
           ? `<button class="lib-path-l3-info-btn lib-path-l3-installed-btn"
-               onclick="event.stopPropagation(); activateStudy('${s.studyId}')"
+               onclick="event.stopPropagation(); libPathOpenStudyAt(${idx})"
                title="${t('renderlib_installed_open')}"
                aria-label="${t('renderlib_installed_open')}">
                ${ICONS.chevronRight}
@@ -1154,63 +1155,56 @@ async function renderLibrary() {
           : '';
         return `
           <div class="lib-path-l3-row${alreadyInstalled ? ' lib-path-l3-row--installed' : ''}">
-            <span class="lib-path-l3-title">${s.titleLevel3}</span>
+            <span class="lib-path-l3-title">${safeTitle}</span>
             ${dlBtn}
             <button class="lib-path-l3-info-btn"
-              onclick="libPathOpenPopup('${s.titleLevel3.replace(/'/g,"\\'")}','${safeDesc}',event)"
+              onclick="libPathInfoAt(${idx}, event)"
               aria-label="${t('renderlib_pathway_info_btn')}"
               title="${t('renderlib_pathway_info_btn')}">${ICONS.triggerInfo}</button>
           </div>`;
       }).join('');
-
-      return rows;
     }
 
     // Build level-2 accordion buttons + their children, sliced by l2Limit
     function buildL2Buttons(pathways2, l1Idx) {
       const visible = showMode === 'all' ? pathways2 : pathways2.slice(0, l2Limit);
-      const rows = visible.map((p2, l2Idx) => {
+      return visible.map((p2, l2Idx) => {
         const childrenId = `lp-l2-ch-${l1Idx}-${l2Idx}`;
         const btnId      = `lp-l2-btn-${l1Idx}-${l2Idx}`;
-        const installedIds = JSON.parse(localStorage.getItem('study_registry') || '[]');
-        const l2HasDl = p2.downloadLocation && p2.downloadLocation !== '';
-        const allInstalled = l2HasDl && (p2.studyTitles || [])
-          .filter(s => s.studyId)
-          .every(s => installedIds.includes(s.studyId) && studyMatchesLangFilter(studyCache[s.studyId]));
-        const showL2Dl = l2HasDl && !allInstalled;
-        const pathwayHint = `<p style="margin-top:12px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">Click the ${ICONS.pathwayOff} icon next to <b>${p2.titleLevel2}</b> to activate this pathway. Your progress across all its studies will then appear in a new tab on the My Progress page.</p>`;
-        const downloadHintL2 = showL2Dl
-          ? `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${ICONS.download} This bundle is available to download. Tap the download icon next to <b>${p2.titleLevel2}</b> to install all its studies at once.</p>`
-          : `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${t('renderlib_pathway_not_available')}</p>`;
-        const fullDesc2  = (p2.description || '') + pathwayHint + downloadHintL2;
-        const safeDesc = fullDesc2.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-        const safeName   = (p2.titleLevel2 || '').replace(/'/g, "\\'");
-        const pathwayKey    = `${l1Idx}_${l2Idx}`;
-        const isSetActive   = localStorage.getItem('bsr_activePathwayId') === pathwayKey;
-        const safeL2DlUrl = l2HasDl ? p2.downloadLocation.replace(/'/g, "\\'") : '';
+        const showL2Dl   = !!p2.downloadLocation && !_libPathAllInstalled(p2, installedIds);
+        const isSetActive = activeKey === p2.pathwayKey;
         const l2DlBtn = showL2Dl
           ? `<button class="lib-path-l2-info-btn lib-path-l2-dl-btn"
-               onclick="event.stopPropagation(); libPathDownload('${safeL2DlUrl}')"
+               onclick="event.stopPropagation(); libPathDownloadAt(${l1Idx}, ${l2Idx}, -1)"
                title="${t('renderlib_download_bundle')}"
                aria-label="${t('renderlib_download_bundle')}">
                ${ICONS.download}
+             </button>`
+          : '';
+        const removeBtn = p2.isImported
+          ? `<button class="lib-path-l2-info-btn lib-path-remove-btn"
+               onclick="event.stopPropagation(); libPathRemoveAt(${l1Idx}, ${l2Idx})"
+               title="${t('pathways_remove_btn')}"
+               aria-label="${t('pathways_remove_btn')}">
+               ${ICONS.trash}
              </button>`
           : '';
         return `
           <div class="lib-path-l2-btn${showMode === 'one' ? ' open' : ''}" id="${btnId}"
             onclick="libPathToggleL2('${childrenId}','${btnId}',event)">
             <span class="lib-path-l2-icon">${ICONS.triangleRight}</span>
-            <span class="lib-path-l2-label">${p2.titleLevel2}</span>
+            <span class="lib-path-l2-label">${escapeHtml(p2.titleLevel2)}</span>
             ${l2DlBtn}
             <button class="lib-path-set-active-btn ${isSetActive ? 'is-set' : ''}"
-              data-pathway-key="${pathwayKey}"
-              onclick="event.stopPropagation(); libPathSetActive('${pathwayKey}', this)"
+              data-pathway-key="${escapeHtml(p2.pathwayKey)}"
+              onclick="event.stopPropagation(); libPathSetActiveAt(${l1Idx}, ${l2Idx}, this)"
               title="${isSetActive ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active')}"
               aria-label="${isSetActive ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active')}">
               ${isSetActive ? ICONS.pathwayOn : ICONS.pathwayOff}
             </button>
+            ${removeBtn}
             <button class="lib-path-l2-info-btn"
-              onclick="libPathOpenPopup('${safeName}','${safeDesc}',event)"
+              onclick="libPathInfoAt(${l1Idx}, ${l2Idx}, -1, event)"
               aria-label="${t('renderlib_pathway_info_btn')}"
               title="${t('renderlib_pathway_info_btn')}">${ICONS.triggerInfo}</button>
           </div>
@@ -1220,28 +1214,25 @@ async function renderLibrary() {
             </div>
           </div>`;
       }).join('');
-      return rows;
     }
 
-    // Build level-1 accordion buttons
-    const l1Html = pathways.slice(0, l1Limit).map((p1, l1Idx) => {
+    // Build level-1 accordion buttons. Indices are positions in the full
+    // getAllPathways() list, so the 'one' limit skips rather than renumbers.
+    let builtinShown = 0;
+    const l1Html = pathways.map((p1, l1Idx) => {
+      if (!p1.isImported && builtinShown++ >= l1Limit) return '';
       const childrenId  = `lp-l1-ch-${l1Idx}`;
       const btnId       = `lp-l1-btn-${l1Idx}`;
-      const hiddenCount = (showMode === 'all' || showMode === 'one') ? 0 : (p1.pathways || []).length - Math.min((p1.pathways || []).length, l2Limit);
-      const baseDesc    = (p1.description || '');
-      const hiddenNote  = hiddenCount > 0
-        ? ` <p style="margin-top:10px;font-size:0.85em;color:var(--text-faint);">&#9432; ${t('renderlib_paths_hidden_note', { count: hiddenCount })}</p>`
+      const badge       = p1.isImported
+        ? ` <span class="lib-path-imported-badge">${t('pathways_imported_badge')}</span>`
         : '';
-      const fullDesc    = baseDesc + hiddenNote;
-      const safeDesc    = fullDesc.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-      const safeName    = (p1.titleLevel1 || '').replace(/'/g, "\\'");
       return `
         <div class="lib-path-l1-btn${showMode === 'one' ? ' open' : ''}" id="${btnId}"
           onclick="libPathToggleL1('${childrenId}','${btnId}',event)">
           <span class="lib-path-l1-icon">${ICONS.triangleRight}</span>
-          <span class="lib-path-l1-label">${p1.titleLevel1}</span>
+          <span class="lib-path-l1-label">${escapeHtml(p1.titleLevel1)}${badge}</span>
           <button class="lib-path-info-btn"
-            onclick="libPathOpenPopup('${safeName}','${safeDesc}',event)">${ICONS.triggerInfo}</button>
+            onclick="libPathInfoAt(${l1Idx}, -1, -1, event)">${ICONS.triggerInfo}</button>
         </div>
         <div class="lib-path-l1-children${showMode === 'one' ? ' open' : ''}" id="${childrenId}">
           ${buildL2Buttons(p1.pathways || [], l1Idx)}
@@ -1268,6 +1259,58 @@ async function renderLibrary() {
         ${l1Html}
       </div>`;
   }
+
+  // True when every study in a pathway is installed and passes the lang filter
+  // (the bundle download button is then hidden).
+  function _libPathAllInstalled(pathway, installedIds) {
+    return (pathway.studyTitles || [])
+      .filter(s => s.studyId)
+      .every(s => installedIds.includes(s.studyId) && studyMatchesLangFilter(studyCache[s.studyId]));
+  }
+
+  // Builds the info popup for a group (l2 = -1), pathway (l3 = -1) or study.
+  // Descriptions: built-in → sanitizeHtml (authored HTML), imported → escaped
+  // plain text. The hint paragraphs are app text with escaped titles.
+  window.libPathInfoAt = function(l1, l2, l3, event) {
+    const group = getAllPathways()[l1];
+    if (!group) return;
+    const hint = html => `<p style="margin-top:10px; font-size:0.85em; color:var(--text-faint); border-top:1px solid var(--border); padding-top:10px;">${html}</p>`;
+    const desc = item => item.descriptionIsHtml === false
+      ? escapeHtml(item.description || '').replace(/\n/g, '<br>')
+      : sanitizeHtml(item.description || '');
+    const installedIds = JSON.parse(localStorage.getItem('study_registry') || '[]');
+    let title, body;
+
+    if (l2 < 0) {
+      title = group.titleLevel1;
+      const showMode = window._libShowPaths || 'few';
+      const l2Limit = showMode === 'all' || showMode === 'one' ? Infinity : showMode === 'many' ? 2 : 1;
+      const hiddenCount = Math.max(0, group.pathways.length - l2Limit);
+      body = desc(group)
+        + (group.isImported && group.publisherName
+            ? hint(`${escapeHtml(t('pathways_import_publisher'))} ${escapeHtml(group.publisherName)}`) : '')
+        + (hiddenCount > 0 ? hint(`&#9432; ${escapeHtml(t('renderlib_paths_hidden_note', { count: hiddenCount }))}`) : '');
+    } else if (l3 < 0) {
+      const p2 = group.pathways[l2];
+      if (!p2) return;
+      title = p2.titleLevel2;
+      const showL2Dl = !!p2.downloadLocation && !_libPathAllInstalled(p2, installedIds);
+      body = desc(p2)
+        + hint(`Click the ${ICONS.pathwayOff} icon next to <b>${escapeHtml(p2.titleLevel2)}</b> to activate this pathway. Your progress across all its studies will then appear in a new tab on the My Progress page.`)
+        + hint(showL2Dl
+            ? `${ICONS.download} This bundle is available to download. Tap the download icon next to <b>${escapeHtml(p2.titleLevel2)}</b> to install all its studies at once.`
+            : escapeHtml(t('renderlib_pathway_not_available')));
+    } else {
+      const s = (group.pathways[l2] || {}).studyTitles?.[l3];
+      if (!s) return;
+      title = s.titleLevel3;
+      const alreadyInstalled = s.studyId && installedIds.includes(s.studyId) && studyMatchesLangFilter(studyCache[s.studyId]);
+      body = desc(s) + (s.downloadLocation && !alreadyInstalled
+        ? hint(`${ICONS.download} This study is available to download. Tap the download icon next to <b>${escapeHtml(s.titleLevel3)}</b> to install it.`)
+        : alreadyInstalled ? '' : hint(escapeHtml(t('renderlib_study_not_available'))));
+    }
+    window.libPathOpenPopup(escapeHtml(title), body, event);
+  };
 
   function buildTryThisBlock() {
     const d = window.appAboutData || {};
@@ -1314,48 +1357,34 @@ async function renderLibrary() {
     window.libPathOpenPopup(t('renderlib_paths_popup_title'), t('renderlib_paths_popup_body'), null);
   };
 
-  /**
-   * UPDATED: Optimized for Google Drive Zip Downloads
-   */
-  window.libPathDownload = function(url) {
-  if (!url || url === '' || url.includes('placeholder.com')) {
-    showToast({ message: t('renderlib_download_coming_soon'), isManual: true, duration: 2500 });
-    return;
-  }
-
-  let finalUrl = url;
-
-  // Convert sharing-link format to direct download format if needed
-  if (url.includes('drive.google.com') && url.includes('/file/d/')) {
-    const fileId = url.split('/file/d/')[1].split('/')[0];
-    finalUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-  }
-
-  // Use the Android bridge if available (required for WebView), otherwise open
-  // in a new browser tab. window.open() is preferred over a hidden <a download>
-  // click for Drive URLs because the uc?export=download endpoint redirects
-  // through an interstitial — window.open follows the redirect chain correctly
-  // while the download attribute on an anchor behaves inconsistently across
-  // browsers for cross-origin redirects.
-  if (window.Android && typeof window.Android.openUrl === 'function') {
-    window.Android.openUrl(finalUrl);
-  } else {
-    window.open(finalUrl, '_blank');
-  }
+  // Download, open, set-active and remove all take positions in
+  // getAllPathways() and look the pathway up again here, so no title, URL or
+  // ID ever travels through an inline handler. Downloads are handed to the
+  // system browser by openPathwayDownload() (pathways-import.js).
+  window.libPathDownloadAt = function(l1, l2, l3) {
+    const p2 = getAllPathways()[l1]?.pathways[l2];
+    if (p2) openPathwayDownload(p2.pathwayKey, l3);
   };
 
-  window.libPathSetActive = function(pathwayKey, btn) {
-    const current = localStorage.getItem('bsr_activePathwayId');
-    if (current === pathwayKey) {
-      // Toggle off
-      localStorage.removeItem('bsr_activePathwayId');
-    } else {
-      safeSetItem('bsr_activePathwayId', pathwayKey);
-    }
+  window.libPathOpenStudyAt = function(l1, l2, l3) {
+    const s = getAllPathways()[l1]?.pathways[l2]?.studyTitles[l3];
+    if (s && s.studyId) activateStudy(s.studyId);
+  };
+
+  window.libPathRemoveAt = function(l1, l2) {
+    const p2 = getAllPathways()[l1]?.pathways[l2];
+    if (p2) removeImportedPathway(p2.pathwayKey);
+  };
+
+  window.libPathSetActiveAt = function(l1, l2, btn) {
+    const p2 = getAllPathways()[l1]?.pathways[l2];
+    if (!p2) return;
+    // Toggle off when it's already the active pathway
+    setActivePathwayKey(getActivePathwayKey() === p2.pathwayKey ? null : p2.pathwayKey);
     // Refresh all set-active buttons in the current view so their state is correct
+    const activeKey = getActivePathwayKey();
     document.querySelectorAll('.lib-path-set-active-btn').forEach(b => {
-      const k = b.dataset.pathwayKey;
-      const active = localStorage.getItem('bsr_activePathwayId') === k;
+      const active = activeKey === b.dataset.pathwayKey;
       b.classList.toggle('is-set', active);
       b.title     = active ? t('renderlib_pathway_active_clear') : t('renderlib_pathway_set_active');
       b.innerHTML = active ? ICONS.pathwayOn : ICONS.pathwayOff;

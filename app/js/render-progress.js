@@ -18,30 +18,28 @@
 //   autoResize                     – settings.js
 //   goToChapter                    – navigation.js
 //   activateStudy                  – study-loader.js
+//   getActivePathwayKey, setActivePathwayKey, findPathwayByKey,
+//   clearActivePathwayIfMissing    – pathways-import.js (runtime call only)
 //   _buildSectionsFromElements,
 //   _extractReflectionQuestions    – study-loader.js (runtime call only)
 //   debounce                       – search.js
 
 // ── PATHWAY HELPERS ───────────────────────────────────────────────────────────
 
-// Reads bsr_activePathwayId from localStorage and resolves it to the pathway
-// object from learningPathways.json. The key is a composite "l1Idx_l2Idx"
-// string, e.g. "0_2". Returns null if nothing is set or the key can't be found.
+// Resolves the active pathway key (bsr_activePathwayId) to its pathway via
+// getAllPathways() — built-in or imported, see pathways-import.js. Returns
+// null if nothing is set; a key that no longer resolves (pathway removed or
+// replaced) is cleared, with a toast.
 function getActivePathway() {
-  const key = localStorage.getItem('bsr_activePathwayId');
-  if (!key) return null;
-  const [l1, l2] = key.split('_').map(Number);
-  const pathways = ((window.appAboutData || {}).learningPathways || {}).learningPathways || [];
-  const l1Item = pathways[l1];
-  if (!l1Item) return null;
-  const l2Item = (l1Item.pathways || [])[l2];
-  if (!l2Item) return null;
-  return { ...l2Item, _l1Title: l1Item.titleLevel1, _key: key };
+  clearActivePathwayIfMissing();
+  const found = findPathwayByKey(getActivePathwayKey());
+  if (!found) return null;
+  return { ...found.pathway, _l1Title: found.group.titleLevel1, _key: found.pathway.pathwayKey };
 }
 
 // Clears the active pathway and re-renders.
 function clearActivePathway() {
-  localStorage.removeItem('bsr_activePathwayId');
+  setActivePathwayKey(null);
   Router.replaceState({ page: 'progress' });
   renderProgressOverview();
 }
@@ -306,7 +304,7 @@ async function _buildStudyPanelHtml(chapterStats, overallAnswered, overallTotal,
       pathwayPill = `
         <div class="progress-pathway-pill">
           <span class="progress-pathway-pill-icon">🗺</span>
-          ${t('progress_pathway_pill', { pos, total, pathwayTitle: pathway.titleLevel2 })}
+          ${escapeHtml(t('progress_pathway_pill', { pos, total, pathwayTitle: pathway.titleLevel2 }))}
         </div>`;
     }
   }
@@ -423,7 +421,7 @@ async function _buildPathwayPanelHtml(pathway) {
     } else if (inRegistry) {
       openBtn = `<button class="prog-pathway-open-btn" title="${t('progress_btn_open_study_title')}"
         aria-label="${t('progress_btn_open_study_title')}"
-        onclick="event.stopPropagation(); activateStudy('${s.studyId}')">→</button>`;
+        onclick="event.stopPropagation(); activateStudy(${jsArg(s.studyId)})">→</button>`;
     } else {
       openBtn = `<button class="prog-pathway-open-btn" title="${t('progress_btn_find_library_title')}"
         aria-label="${t('progress_btn_find_library_title')}"
@@ -448,7 +446,7 @@ async function _buildPathwayPanelHtml(pathway) {
           </div>
           <div class="prog-pathway-study-info">
             <div class="prog-pathway-study-num">${t('progress_study_num', { num: idx + 1 })}</div>
-            <div class="prog-pathway-study-title">${s.titleLevel3}</div>
+            <div class="prog-pathway-study-title">${escapeHtml(s.titleLevel3)}</div>
           </div>
           <div class="prog-pathway-study-right">
             ${statusLabel}

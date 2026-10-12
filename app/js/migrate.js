@@ -44,6 +44,7 @@
 //
 // Keys intentionally NOT migrated (stay in localStorage):
 //   study_registry, lib_recent_*, lib_pinned*, bsr_activePathwayId,
+//   bsr_importedPathways (imported pathway groups — pathways-import.js),
 //   appSettings, app_language, app_onboarding_complete, bsr_infoSeen_*
 //   — these are app-level / settings keys, not per-study answer data.
 

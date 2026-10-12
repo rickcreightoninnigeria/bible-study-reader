@@ -208,13 +208,23 @@ async function handleFileSelect(event) {
         await loadAnyFile(files[0]);
         return;
     }
-    // Multiple files: install all quietly, then open Library / All tab.
-    // Mirrors loadBundleFromFile() — no activation, single summary toast.
+    await _installMultipleFiles(files);
+}
+
+// Installs several picked files at once: studies quietly (mirroring
+// loadBundleFromFile() — no activation, single summary toast), then any
+// pathway files among them, then opens Library / All tab. Shared by the
+// Library picker (handleFileSelect) and the study picker
+// (handlePickerFileChange).
+async function _installMultipleFiles(files) {
     let installed = 0;
     let failed = 0;
+    const pathwayTexts = [];
     showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
     for (const file of files) {
         try {
+            const text = await _readPathwayFileText(file);
+            if (text !== null) { pathwayTexts.push(text); continue; }
             await _installStudyFileQuietly(file);
             installed++;
         } catch (err) {
@@ -222,13 +232,24 @@ async function handleFileSelect(event) {
             failed++;
         }
     }
-    Router.navigate({ page: 'library' });
+    await Router.navigate({ page: 'library' });
     switchLibTab('all');
+    for (const text of pathwayTexts) await importPathwaysFromText(text);
     if (failed === 0) {
         showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
     } else {
         showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
     }
+}
+
+// Returns the text of a picked file if it is a plain-JSON pathway file, or
+// null otherwise (zips and studies). Only the first bytes are read for zips.
+async function _readPathwayFileText(file) {
+    const head = new Uint8Array(await file.slice(0, 2).arrayBuffer());
+    if (head[0] === 0x50 && head[1] === 0x4B) return null;          // "PK" — a zip
+    if (file.size > 4 * PATHWAY_FILE_MAX_BYTES) return null;         // far too big to be a pathway file
+    const text = await file.text();
+    return looksLikePathwayFile(text) ? text : null;
 }
 
 async function deleteStudy(id, title) {
@@ -943,6 +964,48 @@ async function loadStudyFromBase64(base64String) {
     }
 }
 
+// ── ZIP LIMITS ────────────────────────────────────────────────────────────────
+// Every zip the user opens (.estudy, bundle, nested .estudy inside a bundle)
+// is checked before any entry is read, so a hostile archive can't exhaust
+// memory or storage ("zip bomb") or smuggle in path-traversal names.
+// Sizes are the ones declared in the zip's central directory (JSZip's
+// _data.uncompressedSize / compressedSize); a lying archive then fails JSZip's
+// own read, and every read result is also checked against ZIP_MAX_ENTRY_BYTES.
+const ZIP_MAX_ENTRIES       = 200;
+const ZIP_MAX_ENTRY_BYTES   = 25  * 1024 * 1024;
+const ZIP_MAX_TOTAL_BYTES   = 150 * 1024 * 1024;
+const ZIP_MAX_RATIO         = 100;               // uncompressed : compressed
+const ZIP_RATIO_MIN_BYTES   = 1024 * 1024;       // ignore the ratio for tiny entries
+
+function _checkZipLimits(zip) {
+  const entries = Object.values(zip.files);
+  if (entries.length > ZIP_MAX_ENTRIES) throw new Error(t('studyloader_zip_too_many', { max: ZIP_MAX_ENTRIES }));
+  let total = 0;
+  for (const entry of entries) {
+    const name = entry.name;
+    if (name.includes('\\') || name.startsWith('/') || /^[A-Za-z]:/.test(name) || name.split('/').includes('..')) {
+      throw new Error(t('studyloader_zip_bad_entry'));
+    }
+    if (entry.dir) continue;
+    const size       = (entry._data && entry._data.uncompressedSize) || 0;
+    const compressed = (entry._data && entry._data.compressedSize) || 0;
+    total += size;
+    if (size > ZIP_MAX_ENTRY_BYTES || total > ZIP_MAX_TOTAL_BYTES ||
+        (size > ZIP_RATIO_MIN_BYTES && size > compressed * ZIP_MAX_RATIO)) {
+      throw new Error(t('studyloader_zip_too_large'));
+    }
+  }
+}
+
+// Reads a zip entry and enforces ZIP_MAX_ENTRY_BYTES on the actual result,
+// in case the declared size in the archive was false.
+async function _readZipEntry(entry, type) {
+  const data = await entry.async(type);
+  const size = typeof data === 'string' ? data.length : (data.size ?? data.byteLength ?? 0);
+  if (size > ZIP_MAX_ENTRY_BYTES) throw new Error(t('studyloader_zip_too_large'));
+  return data;
+}
+
 // ── FILE LOADING ROUTER ───────────────────────────────────────────────────────
 // loadAnyFile() is the single entry point for all file imports. It detects
 // whether the file is a bundle zip (containing .estudy files), a single zip
@@ -959,24 +1022,38 @@ async function loadAnyFile(file) {
     }
 
     if (zip) {
+      _checkZipLimits(zip);
       // A bundle zip contains multiple study files — either .estudy or .zip entries.
       // A single-study zip contains study.json directly (no inner study files).
+      // Either kind of bundle may also carry pathways.json at its root (see
+      // pathways-import.js).
       const innerStudyFiles = Object.values(zip.files)
         .filter(f => !f.dir && (f.name.endsWith('.estudy') || f.name.endsWith('.zip')));
 
       const hasSingleStudyJson = Object.keys(zip.files)
         .some(name => name.endsWith('study.json'));
+      const pathwaysEntry = zip.file('pathways.json');
 
       if (innerStudyFiles.length > 0 && !hasSingleStudyJson) {
         // ── Bundle: zip containing multiple .estudy or .zip study files ──────
-        await loadBundleFromFile(zip, innerStudyFiles);
+        await loadBundleFromFile(zip, innerStudyFiles, pathwaysEntry);
+      } else if (pathwaysEntry && !hasSingleStudyJson) {
+        // ── Zip holding only pathways.json ───────────────────────────────────
+        await importPathwaysFromText(await _readZipEntry(pathwaysEntry, 'string'));
       } else {
         // ── Single zip-format .estudy (contains study.json directly) ─────────
         await loadStudyFromFile(file);
       }
     } else {
-      // ── Plain-JSON .estudy (legacy format) ───────────────────────────────────
-      await loadStudyFromFile(file);
+      // ── Plain JSON: a .epathway pathway file or a legacy .estudy ─────────────
+      // Pathway files are detected first so they aren't misrouted to the study
+      // loader (which would report a missing studyId).
+      const text = new TextDecoder().decode(arrayBuffer);
+      if (looksLikePathwayFile(text)) {
+        await importPathwaysFromText(text);
+      } else {
+        await loadStudyFromFile(file);
+      }
     }
   } catch (err) {
     showPickerError(t('studyloader_error_load_file', { filename: file.name, error: err.message }));
@@ -1143,6 +1220,7 @@ async function _installStudyFileQuietly(file, fileName) {
   } catch (_) {
     zip = null;
   }
+  if (zip) _checkZipLimits(zip);
 
   if (zip) {
     // ── Zip-format .estudy ──────────────────────────────────────────────────
@@ -1155,7 +1233,7 @@ async function _installStudyFileQuietly(file, fileName) {
       return;
     }
 
-    const jsonString = await jsonFile.async('string');
+    const jsonString = await _readZipEntry(jsonFile, 'string');
     const data       = JSON.parse(jsonString);
     const studyId    = data.studyMetadata?.studyId;
     if (!isSafeStudyId(studyId)) {
@@ -1186,30 +1264,48 @@ async function _installStudyFileQuietly(file, fileName) {
     // is never in the DOM at this point. Any IDBUnavailable error propagates
     // to the caller's catch block (installDefaultStudiesIfNeeded), which shows
     // a toast and logs to console — the appropriate surface for a startup failure.
-    const imageNames = ['cover', 'publisher', 'author'];
-    for (const name of imageNames) {
-      const entry = zip.file(`images/${name}.webp`);
-      if (entry) {
-        const blob = await entry.async('blob');
-        await StudyIDB.setImage(`${studyId}_${name}`, blob);
+    // Images and content are written before the registry entry, so a failure
+    // part-way (bad entry, storage quota, …) would leave orphaned images. For a
+    // study that wasn't already installed, remove whatever was written; an
+    // existing install keeps its (possibly partly refreshed) data.
+    const wasInstalled = !!(await StudyIDB.get(`study_content_${studyId}`));
+    // Exact keys written, so cleanup can't touch another study whose ID
+    // merely starts with this one (a prefix delete would).
+    const writtenImageKeys = [];
+    try {
+      const imageNames = ['cover', 'publisher', 'author'];
+      for (const name of imageNames) {
+        const entry = zip.file(`images/${name}.webp`);
+        if (entry) {
+          const blob = await _readZipEntry(entry, 'blob');
+          writtenImageKeys.push(`${studyId}_${name}`);
+          await StudyIDB.setImage(`${studyId}_${name}`, blob);
+        }
       }
-    }
 
-    // Store chapter images
-    for (const ch of (data.chapters || [])) {
-      for (const el of (ch.elements || [])) {
-        if (el.type === 'image' && !el.src) {
-          const entry = zip.file(`images/${el.elementId}.webp`);
-          if (entry) {
-            const blob = await entry.async('blob');
-            await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
+      // Store chapter images
+      for (const ch of (data.chapters || [])) {
+        for (const el of (ch.elements || [])) {
+          if (el.type === 'image' && !el.src) {
+            const entry = zip.file(`images/${el.elementId}.webp`);
+            if (entry) {
+              const blob = await _readZipEntry(entry, 'blob');
+              writtenImageKeys.push(`${studyId}_${el.elementId}`);
+              await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
+            }
           }
         }
       }
-    }
 
-    // Persist study data and register
-    await StudyIDB.set(`study_content_${studyId}`, data);
+      // Persist study data and register
+      await StudyIDB.set(`study_content_${studyId}`, data);
+    } catch (err) {
+      if (!wasInstalled) {
+        for (const key of writtenImageKeys) await StudyIDB.removeImage(key).catch(() => {});
+        await StudyIDB.remove(`study_content_${studyId}`).catch(() => {});
+      }
+      throw err;
+    }
     const registry = JSON.parse(localStorage.getItem('study_registry') || '[]');
     if (!registry.includes(studyId)) {
       registry.push(studyId);
@@ -1264,7 +1360,11 @@ async function _installStudyFileQuietly(file, fileName) {
 // Processes a bundle zip that contains multiple .estudy or .zip study files.
 // Installs each one quietly (no UI thrashing between studies), then opens the
 // library so the user sees everything that was installed.
-async function loadBundleFromFile(outerZip, innerStudyFiles) {
+// pathwaysEntry: the bundle's root pathways.json entry, if any. Its pathways
+// are imported after the studies (so the confirmation can count them). A
+// pathways.json inside a nested .estudy/.zip is never read — pathways only
+// come from files the user opened directly.
+async function loadBundleFromFile(outerZip, innerStudyFiles, pathwaysEntry = null) {
   const total = innerStudyFiles.length;
   let installed = 0;
   let failed = 0;
@@ -1273,7 +1373,7 @@ async function loadBundleFromFile(outerZip, innerStudyFiles) {
 
   for (const entry of innerStudyFiles) {
     try {
-      const blob = await entry.async('blob');
+      const blob = await _readZipEntry(entry, 'blob');
       const innerFile = new File([blob], entry.name, { type: 'application/octet-stream' });
       await _installStudyFileQuietly(innerFile);
       installed++;
@@ -1286,7 +1386,18 @@ async function loadBundleFromFile(outerZip, innerStudyFiles) {
   // Open the library once so the user sees all newly installed studies together.
   // recordStudyInstalled is called here (not inside _installStudyFileQuietly)
   // so only user-initiated bundle imports appear in the Recently Installed list.
-  Router.navigate({ page: 'library' });
+  await Router.navigate({ page: 'library' });
+
+  // Studies first, then the bundle's pathways, then one summary toast.
+  if (pathwaysEntry) {
+    let pathwaysText = null;
+    try {
+      pathwaysText = await _readZipEntry(pathwaysEntry, 'string');
+    } catch (err) {
+      console.error('Failed to read pathways.json:', err);
+    }
+    if (pathwaysText !== null) await importPathwaysFromText(pathwaysText, { bundledStudyCount: installed });
+  }
 
   if (failed === 0) {
     showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
@@ -1308,6 +1419,7 @@ async function loadStudyFromFile(file) {
     } catch (_) {
       zip = null; // not a zip — will fall through to plain JSON below
     }
+    if (zip) _checkZipLimits(zip);
 
     if (zip) {
       // ── New zip-based .estudy ───────────────────────────────────────────────
@@ -1319,7 +1431,7 @@ async function loadStudyFromFile(file) {
         showPickerError(t('studyloader_error_no_study_json', { filename: file.name }));
         return;
       }
-      const jsonString = await jsonFile.async('string');
+      const jsonString = await _readZipEntry(jsonFile, 'string');
       const data = JSON.parse(jsonString);
       const studyId = data.studyMetadata?.studyId;
       if (!isSafeStudyId(studyId)) {
@@ -1363,7 +1475,7 @@ async function loadStudyFromFile(file) {
       for (const name of imageNames) {
         const entry = zip.file(`images/${name}.webp`);
         if (entry) {
-          const blob = await entry.async('blob');
+          const blob = await _readZipEntry(entry, 'blob');
           try {
             await StudyIDB.setImage(`${studyId}_${name}`, blob);
           } catch (err) {
@@ -1379,7 +1491,7 @@ async function loadStudyFromFile(file) {
           if (el.type === 'image' && !el.src) {
             const entry = zip.file(`images/${el.elementId}.webp`);
             if (entry) {
-              const blob = await entry.async('blob');
+              const blob = await _readZipEntry(entry, 'blob');
               try {
                 await StudyIDB.setImage(`${studyId}_${el.elementId}`, blob);
               } catch (err) {
@@ -1610,7 +1722,7 @@ function renderStudyPicker() {
         <span>${t('studyloader_picker_choose_file')}</span>
         <input
           type="file"
-          accept=".estudy,.zip,application/zip,application/octet-stream,*/*"
+          accept=".estudy,.epathway,.zip,application/zip,application/json,application/octet-stream,*/*"
           multiple
           style="display:none;"
           onchange="handlePickerFileChange(event)"
@@ -1642,26 +1754,5 @@ async function handlePickerFileChange(event) {
     await loadAnyFile(files[0]);
     return;
   }
-  // Multiple files: install all quietly, then open Library / All tab.
-  // Mirrors loadBundleFromFile() — no activation, single summary toast.
-  let installed = 0;
-  let failed = 0;
-  showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
-  for (const file of files) {
-    try {
-      await _installStudyFileQuietly(file);
-      installed++;
-    } catch (err) {
-      console.error(`Failed to install ${file.name}:`, err);
-      failed++;
-    }
-  }
-  Router.navigate({ page: 'library' });
-  switchLibTab('all');
-  if (failed === 0) {
-    showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
-  } else {
-    showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
-  }
+  await _installMultipleFiles(files);
 }
-

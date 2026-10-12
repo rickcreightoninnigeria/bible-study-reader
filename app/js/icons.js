@@ -21,7 +21,7 @@
 //  AUDIO / INPUT (injected at render time)
 //    mic, micStop, speak, speakStop
 //
-//  LEARNING PATHWAY (toggled at runtime by libPathSetActive())
+//  LEARNING PATHWAY (toggled at runtime by libPathSetActiveAt())
 //    pathwayOff, pathwayOn
 //
 //  CONTENT / CHAPTER (injected at render time)
