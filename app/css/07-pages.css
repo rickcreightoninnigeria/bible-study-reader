@@ -4337,4 +4337,3 @@ body.gallery-viewer-open { overflow: hidden; }
 .gallery-viewer-credit { margin-top: 6px; font-size: 0.75rem; opacity: 0.7; }
 .gallery-viewer-credit:empty,
 .gallery-viewer-caption:empty { display: none; }
-
