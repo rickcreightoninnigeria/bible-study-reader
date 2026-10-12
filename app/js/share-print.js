@@ -563,7 +563,7 @@ function printBlankStudy() {
   const meta = window.titlePageData || {};
 
   const coverImageHtml = meta.image?.src
-    ? `<img src="${meta.image.src}" alt="${meta.image?.alt || ''}"
+    ? `<img src="${escapeHtml(meta.image.src)}" alt="${escapeHtml(meta.image?.alt || '')}"
            style="max-width:100%; max-height:160pt; object-fit:cover; display:block; margin:0 auto 20pt;"
            onerror="this.style.display='none'" />`
     : meta.image?.fallbackEmoji

@@ -242,7 +242,10 @@ async function cleanOrphanedRegistry() {
     if (err.name === 'IDBUnavailable') { _showIdbUnavailableError(); return; }
     throw err;
   }
-  const valid = registry.filter((id, i) => !!results[i]);
+  // Also drop IDs that aren't plain [A-Za-z0-9_.-] — they are interpolated
+  // into inline handlers in the Library, and could only have been installed
+  // before isSafeStudyId() checks were added to the install paths.
+  const valid = registry.filter((id, i) => !!results[i] && isSafeStudyId(id));
   if (valid.length !== registry.length) {
     console.warn('cleanOrphanedRegistry: removed', registry.length - valid.length, 'orphaned ID(s)');
     const removed = registry.length - valid.length;

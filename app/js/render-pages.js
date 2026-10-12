@@ -1,7 +1,7 @@
 // ── RENDER PAGES ──────────────────────────────────────────────────────────────
 // All non-chapter page renderers: How To Use, Settings, Leaders Notes, About,
 // Copyright, and the Share App link. Also contains navigateTab() (used by
-// swipe navigation on tabbed pages) and renderParas() (shared text helper).
+// swipe navigation on tabbed pages).
 //
 // Dependencies (all available as globals before this file loads):
 //   ICONS                          – icons.js
@@ -156,7 +156,7 @@ function renderTitlePage() {
   // 5. Render the title page using the established CSS classes
   content.innerHTML = `
     <div class="title-page">
-      ${meta.image?.src ? `<img class="title-page-image" src="${meta.image.src}" alt="${meta.image?.alt || ''}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
+      ${meta.image?.src ? `<img class="title-page-image" src="${escapeHtml(meta.image.src)}" alt="${escapeHtml(meta.image?.alt || '')}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
       <div class="title-page-image-fallback" style="${meta.image?.src ? 'display:none' : 'display:flex'}">${meta.image?.fallbackEmoji || '📖'}</div>
       <div class="title-page-body">
         <div class="title-page-main">${title}</div>
@@ -178,7 +178,7 @@ function renderTitlePage() {
         <div class="title-page-publisher">
           <span class="title-page-publisher-label">${t('main_titlepage_published_by')}</span>
           <button class="title-page-publisher-logo" onclick="Router.navigate({ page: 'about', tabId: 'publisher' })">
-            <img src="${window.studyAboutData?.publisher?.image || ''}" alt="${window.studyAboutData?.publisher?.logoAlt || '[Publisher info]'}" class="publisher-logo-img" onerror="this.style.display='none'" />
+            <img src="${escapeHtml(window.studyAboutData?.publisher?.image || '')}" alt="${escapeHtml(window.studyAboutData?.publisher?.logoAlt || '[Publisher info]')}" class="publisher-logo-img" onerror="this.style.display='none'" />
             <span style="color:rgba(245,240,232,0.45); margin-left:4px;">${ICONS.triggerInfo}</span>
           </button>
         </div>
@@ -1872,7 +1872,7 @@ async function renderAbout(tabId) {
         <div class="copyright-block">
           <div class="copyright-block-label">${t('renderpages_about_author_label')}</div>
           <div class="about-photo-wrap">
-            <img src="${a.image || ''}" alt="${a.imageAlt || 'Author photo'}"
+            <img src="${escapeHtml(a.image || '')}" alt="${escapeHtml(a.imageAlt || 'Author photo')}"
               class="about-photo" onerror="this.style.display='none'" />
           </div>
           ${authorParas}
@@ -1884,9 +1884,9 @@ async function renderAbout(tabId) {
       <div class="copyright-page" style="padding-top:16px;">
         <div class="copyright-block">
           <div class="copyright-block-label">${t('renderpages_about_publisher_label', { name: p.name })}</div>
-          <img src="${p.image || ''}" alt="${p.imageAlt || p.name || ''}" class="about-publisher-logo" onerror="this.style.display='none'" />
+          <img src="${escapeHtml(p.image || '')}" alt="${escapeHtml(p.imageAlt || p.name || '')}" class="about-publisher-logo" onerror="this.style.display='none'" />
           ${publishParas}
-          <p>Find out more at <a href="${p.url}" target="_blank">${p.url.replace('https://','')}</a></p>
+          <p>Find out more at <a href="${_safeUrl(p.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.url.replace('https://',''))}</a></p>
         </div>
       </div>`;
   } else if (activeTab === 'copyright') {
@@ -2117,9 +2117,3 @@ async function renderGoDeeper(tabId) {
   window.scrollTo(0, 0);
 }
 
-
-// Converts a double-newline-delimited string into a series of <p> tags.
-// Used for intro, bridge, and closing text fields in the chapters data.
-function renderParas(text) {
-  return text.split('\n\n').map(p => `<p>${p}</p>`).join('');
-}

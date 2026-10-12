@@ -104,6 +104,16 @@ function safeSetItem(key, value) {
 }
 window.safeSetItem = safeSetItem;
 
+// Formats a value as a JavaScript string literal for an inline handler inside
+// a double-quoted HTML attribute, e.g. onclick="fn(${jsArg(label)})".
+// JSON.stringify produces a valid, fully escaped JS string (quotes,
+// backslashes, newlines), and escapeHtml() then protects the surrounding
+// attribute. Use this instead of hand-escaping quotes for any value that
+// comes from a study file.
+function jsArg(value) {
+  return escapeHtml(JSON.stringify(String(value ?? '')));
+}
+
 // ── TOAST ─────────────────────────────────────────────────────────────────────
 // Escapes a string for safe injection into innerHTML.
 // Covers the four characters that are meaningful in HTML contexts.

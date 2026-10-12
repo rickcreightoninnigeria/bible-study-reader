@@ -4,24 +4,28 @@
 // Supported format values (case-insensitive):
 //   'HTML'      – sanitised with DOMPurify then injected as HTML
 //   'markdown'  – parsed with markdown-it (html: false — raw HTML is escaped)
-//   'plainText' – double-newline-delimited paragraphs wrapped in <p> tags
+//   'plainText' – double-newline-delimited paragraphs, sanitised, in <p> tags
 //                 (any unrecognised format string also falls through to this)
 //
-// NOTE: markdown-it runs with html: false, so raw HTML in markdown source is
-// escaped rather than rendered. If html: true is ever enabled, pipe the output
-// through DOMPurify.sanitize(..., _PURIFY_CONFIG) before returning it.
+// Every path is sanitised with _PURIFY_CONFIG before it is returned —
+// markdown-it's output included, as defence in depth (it runs with html: false,
+// so raw HTML in markdown source is escaped anyway).
 //
 // Dependencies (must be loaded before this file):
 //   purify.min.js        – window.DOMPurify  (must load BEFORE this file)
 //   markdown-it.min.js   – window.markdownit constructor
+//   openFootnoteModal    – modals.js (runtime call only, from the click listener)
 
 // ── DOMPURIFY CONFIG ──────────────────────────────────────────────────────────
-// Applied to all HTML-format study content before it reaches the DOM.
+// Applied to all formatted study content before it reaches the DOM.
 // Restricts the tag/attribute set to what study content legitimately needs:
-// rich text formatting, links, and superscript footnote buttons.
-// Inline event handlers (onclick, onerror, …) and data-* attributes are
-// stripped, so even a malicious .estudy file authored by a third party cannot
-// inject executable code through HTML-format fields.
+// rich text formatting and links. Inline event handlers (onclick, onerror, …),
+// id (authored ids could collide with the app's own: #toast, #chapterMenu, …)
+// and data-* attributes are all stripped, so a malicious .estudy file authored
+// by a third party cannot inject executable code through formatted fields.
+//
+// Footnote buttons are NOT authored content: expandFootnoteMarkers() adds them
+// after sanitising, as data-driven buttons with no inline handler.
 //
 // If you ever need to allow additional tags (e.g. <table>) for a new element
 // type, add them to ALLOWED_TAGS rather than loosening the config globally.
@@ -30,11 +34,40 @@ const _PURIFY_CONFIG = {
     'b', 'i', 'em', 'strong', 'u', 's', 'p', 'br',
     'ul', 'ol', 'li', 'blockquote',
     'h1', 'h2', 'h3', 'h4',
-    'a', 'span', 'sup', 'sub', 'button',
+    'a', 'span', 'sup', 'sub',
   ],
-  ALLOWED_ATTR: ['href', 'target', 'rel', 'class', 'id', 'onclick'],
+  ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
   ALLOW_DATA_ATTR: false,
 };
+
+// ── LOAD-TIME DOMPURIFY CONFIG ────────────────────────────────────────────────
+// Used by sanitizeStudyData() in study-loader.js, which cleans every string in
+// a study as it is loaded — including the many fields (question text, titles,
+// Likert statements, …) that are inserted into the page without passing
+// through renderFormatted(). It starts from DOMPurify's defaults (which remove
+// scripts, event handlers and javascript: URLs) rather than the narrow
+// allowlist above, because authors legitimately use tables, <div>, <cite> and
+// <mark> in those fields and narrowing here would visibly strip them.
+// On top of the defaults it removes ids (collisions with app ids), <style>
+// (could restyle the whole app) and form controls (an injected
+// <textarea class="answer-field"> would be picked up by the save code).
+const _LOAD_PURIFY_CONFIG = {
+  FORBID_ATTR: ['id'],
+  FORBID_TAGS: ['style', 'form', 'input', 'textarea', 'select', 'button'],
+};
+
+// Every authored link that opens a new tab gets rel="noopener noreferrer", so
+// the opened page cannot reach back into the app via window.opener. Registered
+// once; DOMPurify runs hooks for every sanitize() call, whatever the config.
+DOMPurify.addHook('afterSanitizeAttributes', node => {
+  if (node.tagName === 'A' && node.hasAttribute('target')) {
+    node.setAttribute('rel', 'noopener noreferrer');
+  }
+});
+
+function sanitizeHtml(html) {
+  return DOMPurify.sanitize(html || '', _PURIFY_CONFIG);
+}
 
 // ── MARKDOWN-IT INSTANCE ─────────────────────────────────────────────────────
 // Initialised once and reused. Options:
@@ -55,47 +88,58 @@ const _md = window.markdownit({
 // tags. Single newlines within a paragraph are preserved as-is (not <br>).
 //
 // This is the rendering path for format: 'plainText' and for any format value
-// that is not recognised.
-//
-// Previously defined in render-pages.js; centralised here so both
-// render-elements.js and render-pages.js share one implementation.
+// that is not recognised. Each paragraph is sanitised rather than escaped:
+// authors put <b>…</b> and entities like &ldquo; in plainText fields and expect
+// them to render, but nothing executable may get through.
 function renderParas(text) {
-  return text.split('\n\n').map(p => `<p>${p}</p>`).join('');
+  return text.split('\n\n').map(p => `<p>${sanitizeHtml(p)}</p>`).join('');
 }
 
-// ── expandFootnoteMarkers(text, footnotes) ────────────────────────────────────
-// Pre-pass that replaces [[fn:N]] markers in text with superscript buttons
-// that open openFootnoteModal(). Called by renderFormatted() when a footnotes
-// array is supplied. Runs before markdown-it so the markers are not escaped.
+// ── FOOTNOTES ─────────────────────────────────────────────────────────────────
+// expandFootnoteMarkers(html, footnotes) replaces [[fn:N]] markers in
+// already-rendered, already-sanitised HTML with superscript buttons:
+//   <sup><button class="footnote-btn" data-fn-key="K">N</button></sup>
+// The footnote body is not embedded in the markup. It is sanitised and kept in
+// _footnoteBodies under key K, and one delegated click listener (below) opens
+// it. Building a JS string literal inside an onclick attribute instead broke on
+// any newline or U+2028 in a footnote body, and required onclick to be allowed
+// through the sanitiser.
 //
-// @param {string}   text      - Raw content string containing [[fn:N]] markers.
-// @param {Array}    footnotes - Array of { id: number, body: string } objects.
-// @returns {string} Text with markers replaced by <sup><button>…</button></sup>.
-function expandFootnoteMarkers(text, footnotes) {
-  if (!footnotes || !footnotes.length) return text;
-  return text.replace(/\[\[fn:(\d+)\]\]/g, (_, n) => {
+// It runs AFTER formatting so that markdown-it (html: false) never sees the
+// button markup — run before, the button was escaped into visible text.
+//
+// @param {string} html      - Rendered HTML still containing [[fn:N]] markers.
+// @param {Array}  footnotes - Array of { id: number, body: string } objects.
+// @returns {string} HTML with markers replaced by footnote buttons.
+const _footnoteBodies = new Map();
+let _footnoteKeySeq = 0;
+
+function expandFootnoteMarkers(html, footnotes) {
+  if (!footnotes || !footnotes.length) return html;
+  return html.replace(/\[\[fn:(\d+)\]\]/g, (_, n) => {
     const num = parseInt(n, 10);
     const fn  = footnotes.find(f => f.id === num);
     if (!fn) return `<sup>${n}</sup>`;
-    // Sanitise the footnote body first, then escape for the inline onclick string.
-    // DOMPurify runs before the manual quote-escaping so the escaping step only
-    // sees the already-clean output — not raw study-author content.
-    const cleanBody = DOMPurify.sanitize(fn.body || '', _PURIFY_CONFIG);
-    const safeBody = cleanBody
-      .replace(/\\/g, '\\\\')
-      .replace(/'/g,  "\\'")
-      .replace(/"/g,  '&quot;');
-    return `<sup><button class="footnote-btn" onclick="openFootnoteModal('Note\u00a0${n}', '${safeBody}')">${n}</button></sup>`;
+    const key = String(++_footnoteKeySeq);
+    _footnoteBodies.set(key, { title: `Note\u00a0${num}`, body: sanitizeHtml(fn.body) });
+    return `<sup><button class="footnote-btn" data-fn-key="${key}">${num}</button></sup>`;
   });
 }
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest && e.target.closest('.footnote-btn[data-fn-key]');
+  if (!btn) return;
+  const fn = _footnoteBodies.get(btn.dataset.fnKey);
+  if (fn) openFootnoteModal(fn.title, fn.body);
+});
 
 // ── renderFormatted(text, format, footnotes) ─────────────────────────────────
 // Master formatting entry point. Accepts a raw string and a format identifier
 // and returns an HTML string ready for innerHTML injection.
 //
-// If a footnotes array is supplied, [[fn:N]] markers in the text are expanded
-// into superscript buttons (via expandFootnoteMarkers()) before formatting.
-// This pre-pass runs before markdown-it so the markers are never escaped.
+// If a footnotes array is supplied, [[fn:N]] markers are expanded into
+// superscript buttons (via expandFootnoteMarkers()) after formatting and
+// sanitising, so the generated buttons are neither escaped nor stripped.
 //
 // Parameters:
 //   text      {string}  The raw content string. Returns '' if falsy.
@@ -111,18 +155,17 @@ function expandFootnoteMarkers(text, footnotes) {
 //   renderFormatted(el.text, el.format)
 //   renderFormatted(body, ch.format || d.format)              // leaders notes / go-deeper (no footnotes)
 //   renderFormatted(body, blockFormat, ch.footnotes)          // go-deeper blocks with footnotes
-// NOTE: markdown-it is used with html: false (the default), meaning any raw
-// HTML embedded in a markdown string will be escaped rather than rendered.
-// This is intentional. If html: true is ever enabled to allow inline HTML
-// within markdown, apply DOMPurify.sanitize(_md.render(processed), _PURIFY_CONFIG)
-// instead of the bare _md.render(processed) call below.
 function renderFormatted(text, format, footnotes) {
   if (!text) return '';
-  const processed = footnotes ? expandFootnoteMarkers(text, footnotes) : text;
   const fmt = (format || 'plainText').toLowerCase();
-  if (fmt === 'html')     return DOMPurify.sanitize(processed, _PURIFY_CONFIG);
-  if (fmt === 'markdown') return _md.render(processed);
-  return renderParas(processed);
+  let html;
+  if (fmt === 'html')          html = sanitizeHtml(text);
+  // markdown-it escapes raw HTML (html: false); sanitising its output as well
+  // is defence in depth in case that option is ever changed.
+  else if (fmt === 'markdown') html = sanitizeHtml(_md.render(text));
+  else                         html = renderParas(text);
+  // Markers are plain text, so they survive all three paths unchanged.
+  return footnotes ? expandFootnoteMarkers(html, footnotes) : html;
 }
 
 // ── renderFormattedArray(items, format) ──────────────────────────────────────
@@ -134,7 +177,7 @@ function renderFormatted(text, format, footnotes) {
 // markdown syntax is honoured within each paragraph. Adjacent items are
 // separated by the whitespace markdown-it adds naturally between block elements.
 //
-// For 'HTML' and 'plainText': each item is wrapped in a <p> tag.
+// For 'HTML' and 'plainText': each item is sanitised and wrapped in a <p> tag.
 //
 // Parameters:
 //   items  {string[]}  Array of paragraph strings.
@@ -143,13 +186,10 @@ function renderFormattedArray(items, format) {
   if (!Array.isArray(items) || items.length === 0) return '';
   const fmt = (format || 'plainText').toLowerCase();
   if (fmt === 'markdown') {
-    return items.map(item => _md.render(item || '')).join('');
+    return items.map(item => sanitizeHtml(_md.render(item || ''))).join('');
   }
-  // HTML and plainText: wrap each item in <p>
-  // HTML items are sanitised individually before wrapping so each item's
-  // content is clean before it is concatenated into the final string.
-  if (fmt === 'html') {
-    return items.map(item => `<p>${DOMPurify.sanitize(item || '', _PURIFY_CONFIG)}</p>`).join('\n');
-  }
-  return items.map(item => `<p>${item || ''}</p>`).join('\n');
+  // HTML and plainText: wrap each item in <p>, sanitising each item first.
+  // plainText is sanitised rather than escaped for the reason given on
+  // renderParas() above.
+  return items.map(item => `<p>${sanitizeHtml(item)}</p>`).join('\n');
 }

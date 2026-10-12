@@ -372,6 +372,48 @@ function applyImageData(imageData) {
   }
 }
 
+// ── STUDY CONTENT SANITISATION ────────────────────────────────────────────────
+// .estudy files may be authored by third parties, and most study strings are
+// inserted into the page as HTML — many without passing through
+// renderFormatted(). Rather than escaping at every one of those sites,
+// sanitizeStudyData() cleans the whole study once, as applyStudyData() loads
+// it, so everything downstream receives safe values:
+//
+//   • ID-like fields (elementId, repeatElement, calloutId, id, tabId, and the
+//     language / languageN codes) are reduced to [A-Za-z0-9_.-]. They are
+//     interpolated into inline handlers such as onclick="toggleStar(3, 'ID')",
+//     where a quote would break out of the string. The replacement is
+//     deterministic, so references between elements still match, and every
+//     ID in the bundled studies is already in this form (unchanged by it).
+//   • Every other string containing '<' is run through DOMPurify with
+//     _LOAD_PURIFY_CONFIG (format-text.js), which keeps authored formatting
+//     (<b>, tables, &ldquo; …) but removes scripts and event handlers.
+//     Strings without '<' cannot introduce markup and are left untouched;
+//     quote-breakout in attribute values is handled by escaping at those
+//     attribute sites instead.
+//
+// Returns a cleaned deep copy; the stored study is not modified.
+const _SAFE_ID_RE = /^[A-Za-z0-9_.-]+$/;
+const _ID_KEY_RE  = /^(elementId|repeatElement|calloutId|id|tabId|language\d*)$/;
+
+function isSafeStudyId(id) {
+  return typeof id === 'string' && _SAFE_ID_RE.test(id);
+}
+
+function sanitizeStudyData(value, key = '') {
+  if (typeof value === 'string') {
+    if (_ID_KEY_RE.test(key)) return value.replace(/[^A-Za-z0-9_.-]/g, '_');
+    return value.includes('<') ? DOMPurify.sanitize(value, _LOAD_PURIFY_CONFIG) : value;
+  }
+  if (Array.isArray(value)) return value.map(item => sanitizeStudyData(item, key));
+  if (value && typeof value === 'object') {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) out[k] = sanitizeStudyData(v, k);
+    return out;
+  }
+  return value;
+}
+
 // ── ESTUDY FORMAT NORMALISATION HELPERS ──────────────────────────────────────
 // The new .estudy format stores chapters as a flat elements[] array rather than
 // the old nested {intro, sections[], closing, reflection[]} structure.
@@ -542,6 +584,10 @@ function restoreStudyTheme() {
 }
 
 async function applyStudyData(data, { isStudySwitch = false, silent = false } = {}) {
+  // Clean all study strings before any of them reach the DOM (see
+  // sanitizeStudyData() above).
+  data = sanitizeStudyData(data);
+
   // Revoke any blob URLs created for the previous study before overwriting
   // state. This prevents blob URLs accumulating in memory across study switches.
   _revokeAllBlobUrls();
@@ -791,7 +837,9 @@ async function loadStudyFromJson(jsonString) {
         // Always persist to IDB so the study is available on next launch
         // and so startApp() can find it even if it runs after this call.
         const studyId = data.studyMetadata && data.studyMetadata.studyId;
-        if (!studyId) {
+        // studyId is used in IDB keys and in inline handlers
+        // (activateStudy('ID')), so only plain [A-Za-z0-9_.-] IDs are accepted.
+        if (!isSafeStudyId(studyId)) {
             // alert() is blocked or unstyled on Android WebView — use the
             // same safe fallback chain as showPickerError().
             showPickerError(t('studyloader_error_no_study_id', { filename: 'JSON' }));
@@ -1110,8 +1158,8 @@ async function _installStudyFileQuietly(file, fileName) {
     const jsonString = await jsonFile.async('string');
     const data       = JSON.parse(jsonString);
     const studyId    = data.studyMetadata?.studyId;
-    if (!studyId) {
-      console.warn('[defaultStudies] Skipping', name, '— missing studyMetadata.studyId');
+    if (!isSafeStudyId(studyId)) {
+      console.warn('[defaultStudies] Skipping', name, '— missing or invalid studyMetadata.studyId');
       return;
     }
 
@@ -1182,8 +1230,8 @@ async function _installStudyFileQuietly(file, fileName) {
       : await file.text();
     const data    = JSON.parse(text);
     const studyId = data.studyMetadata?.studyId;
-    if (!studyId) {
-      console.warn('[defaultStudies] Skipping plain-JSON', name, '— missing studyId');
+    if (!isSafeStudyId(studyId)) {
+      console.warn('[defaultStudies] Skipping plain-JSON', name, '— missing or invalid studyId');
       return;
     }
 
@@ -1274,7 +1322,7 @@ async function loadStudyFromFile(file) {
       const jsonString = await jsonFile.async('string');
       const data = JSON.parse(jsonString);
       const studyId = data.studyMetadata?.studyId;
-      if (!studyId) {
+      if (!isSafeStudyId(studyId)) {
         showPickerError(t('studyloader_error_no_study_id', { filename: file.name }));
         return;
       }
@@ -1385,7 +1433,7 @@ async function loadStudyFromFile(file) {
       // anyway would leave window.activeStudyId pointing at the *previous*
       // study, so every answer typed into it would be saved over that other
       // study's records. Reject it, as the zip path above does.
-      if (!_plainStudyId) {
+      if (!isSafeStudyId(_plainStudyId)) {
         showPickerError(t('studyloader_error_no_study_id', { filename: file.name }));
         return;
       }

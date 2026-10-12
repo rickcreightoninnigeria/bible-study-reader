@@ -425,8 +425,8 @@ function _buildStudyCard(id, entry, listIds, isPinned, moveFn, toggleFn) {
   const coverHtml = e.coverSrc
     ? `<img class="study-card-cover" src="${e.coverSrc}" alt=""
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-       <div class="study-card-cover-fallback" style="display:none">${escapeHtml(e.fallback)}</div>`
-    : `<div class="study-card-cover-fallback">${escapeHtml(e.fallback)}</div>`;
+       <div class="study-card-cover-fallback" style="display:none">${e.fallback}</div>`
+    : `<div class="study-card-cover-fallback">${e.fallback}</div>`;
 
   card.innerHTML = `
     <button class="${pinClass}"
@@ -552,14 +552,17 @@ async function renderLibrary() {
 
     // Collect all language codes for this study (used by lang filter and badges).
     // Multilingual: language1/language2/…  Mono-lingual: language (unnumbered).
+    // Codes are interpolated into onclick="setLibLangFilter('CODE')", and this
+    // screen reads studies straight from IDB (not via sanitizeStudyData()), so
+    // only plain [A-Za-z0-9_.-] codes are kept.
     const _langs = [];
     if (_isML) {
       for (let i = 1; ; i++) {
         const code = meta[`language${i}`];
         if (!code) break;
-        _langs.push(code);
+        if (isSafeStudyId(code)) _langs.push(code);
       }
-    } else if (meta.language) {
+    } else if (isSafeStudyId(meta.language)) {
       _langs.push(meta.language);
     }
 
@@ -568,7 +571,7 @@ async function renderLibrary() {
       title:    _res('title', 'Untitled Study').trim(),
       subtitle: _res('subtitle', ''),
       shelves:  meta.libraryShelves || null,
-      fallback: data.imageData?.cover?.fallback || '📖',
+      fallback: escapeHtml(data.imageData?.cover?.fallback || '📖'),
       langs:    _langs,          // ordered array of all language codes for this study
       lang:     _langs[0] || '', // primary language (for legacy single-lang filter)
       coverSrc,

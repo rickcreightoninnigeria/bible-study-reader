@@ -535,15 +535,15 @@ function renderQuestion(ctx) {
     <textarea class="answer-field"
       data-type="${isReflection ? 'r' : 'q'}"
       data-index="${el.elementId}"
-      placeholder="${placeholder}"
+      placeholder="${escapeHtml(placeholder)}"
       oninput="autoResize(this)"
       onblur="localValidateAutoTrigger(this)"
     >${val}</textarea>`;
 
   const cardOpen = `
     <div class="question-card ${starred ? 'starred-card' : ''}" id="${cardId}"${noPad}
-      data-question-subtype="${el.subtype || ''}"
-      data-linked-passage="${el.linkedPassage || ''}"${sampleAnswerAttr}${questionHintAttr}>`;
+      data-question-subtype="${escapeHtml(el.subtype || '')}"
+      data-linked-passage="${escapeHtml(el.linkedPassage || '')}"${sampleAnswerAttr}${questionHintAttr}>`;
 
   if (isHeader) {
     // Header subtype: custom label in the ref bar instead of a scripture ref.
@@ -657,7 +657,7 @@ function renderImage(ctx) {
   return `
     <div class="chapter-image-wrapper" style="${alignStyle}"${noPad}>
       ${imgSrc
-        ? `<img class="chapter-image" src="${imgSrc}" alt="${imgAlt}"
+        ? `<img class="chapter-image" src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
            <div class="chapter-image-fallback" style="display:none">${fallback}</div>`
         : `<div class="chapter-image-fallback">${fallback}</div>`}

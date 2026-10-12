@@ -25,29 +25,27 @@
 // set of inline elements than a typical callout answer.
 //
 // NOTE: DOMPurify (purify.min.js) must be loaded before modals.js.
-const _MODAL_PURIFY_CONFIG = {
-  ALLOWED_TAGS: [
-    'b', 'i', 'em', 'strong', 'u', 's', 'p', 'br',
-    'ul', 'ol', 'li', 'blockquote',
-    'h1', 'h2', 'h3', 'h4',
-    'a', 'span', 'sup', 'sub', 'button',
-  ],
-  ALLOWED_ATTR: ['href', 'target', 'rel', 'class', 'id', 'onclick'],
-  ALLOW_DATA_ATTR: false,
-};
+// Same object as format-text.js's config, so the two can't drift apart again
+// (this copy used to still allow onclick after format-text.js dropped it).
+const _MODAL_PURIFY_CONFIG = _PURIFY_CONFIG;
 
 function safeSetHtml(elementId, html) {
   const el = document.getElementById(elementId);
   if (el) el.innerHTML = DOMPurify.sanitize(html || '', _MODAL_PURIFY_CONFIG);
 }
 
-// Sanitise a plain URL before putting it in an href — strips javascript: and
-// data: schemes while leaving https / http / relative URLs untouched.
+// Sanitise a plain URL before putting it in an href. Allowlists http(s),
+// mailto and tel, plus scheme-less (relative or bare www.) URLs; anything else
+// — javascript:, data:, vbscript:, … — becomes ''. Browsers ignore tabs,
+// newlines and leading control characters inside a scheme ("java\tscript:"),
+// so those are stripped before the scheme is read. The result is
+// HTML-escaped so it can go straight into a double-quoted attribute.
 function _safeUrl(url) {
   if (!url) return '';
-  const trimmed = url.trim().toLowerCase();
-  if (trimmed.startsWith('javascript:') || trimmed.startsWith('data:')) return '';
-  return url;
+  const compact = String(url).replace(/[\u0000-\u0020\u007f]/g, '');
+  const scheme  = compact.match(/^([a-z][a-z0-9+.-]*):/i);
+  if (scheme && !/^(https?|mailto|tel)$/i.test(scheme[1])) return '';
+  return escapeHtml(String(url).trim());
 }
 
 // Opens the QA modal from an inline callout element (v2/v3 .estudy format).
@@ -221,15 +219,11 @@ function renderLikertScale(el, chNum, chapterAnswers = null) {
     ).join('');
   }
 
-  // Safely escape title and instruction for use as single-quoted JS string
-  // literals inside the onclick attribute below. Two escapes are needed
-  // since they're nested inside each other: '/g -> \' keeps an embedded
-  // single quote from closing the JS string literal early, and "/g ->
-  // &quot; keeps an embedded double quote from closing the surrounding
-  // onclick="..." HTML attribute early (the same collision scaleJson
-  // below avoids for its own data attribute).
-  const safeTitle = (el.popupTitle || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-  const safeInstr = (el.instruction || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  // Title and instruction are passed to the onclick below via jsArg()
+  // (utils.js), which produces a fully escaped JS string literal — the old
+  // hand-escaping of ' and " missed backslashes, so a title ending in \
+  // could break out of the string. scaleJson escapes " for the same
+  // attribute-collision reason.
   const scaleJson = JSON.stringify(scale).replace(/"/g, '&quot;');
 
   return `
@@ -237,7 +231,7 @@ function renderLikertScale(el, chNum, chapterAnswers = null) {
       <div class="likert-header-row">
         <button class="likert-info-btn"
           data-scale="${scaleJson}"
-          onclick="openLikertPopup('${safeTitle}', '${safeInstr}', this)"
+          onclick="openLikertPopup(${jsArg(el.popupTitle)}, ${jsArg(el.instruction)}, this)"
           title="${t('modals_likert_about_title')}">${t('modals_likert_about_btn')}</button>
         <div class="likert-number-headers">${numberHeadersHtml}</div>
       </div>
@@ -306,7 +300,7 @@ function openVerseModal(ref) {
           const safeLabel = escapeHtml(tr.label);
           return `<button
             class="verse-trans-btn${tr.label === activeTrans.label ? ' active' : ''}"
-            onclick="switchVerseTranslation('${escapeHtml(ref)}', '${safeLabel}')"
+            onclick="switchVerseTranslation(${jsArg(ref)}, ${jsArg(tr.label)})"
           >${safeLabel}</button>`;
         }).join('')
       }</div>`
