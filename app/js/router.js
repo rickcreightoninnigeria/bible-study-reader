@@ -86,6 +86,7 @@ function _closeAnyOpenModal() {
     { id: 'deeperModalOverlay', close: () => closeDeeperModal() },
     { id: 'likertPopupOverlay', close: () => closeLikertPopup() },
     { id: 'info-modal-overlay', close: () => closeInfoModal() },
+    { id: 'galleryViewerOverlay', close: () => closeGalleryViewer() },   // gallery.js
   ];
   for (const { id, close } of modals) {
     if (document.getElementById(id)?.classList.contains('open')) {
@@ -327,14 +328,29 @@ const Router = (() => {
 
   // ── popstate listener ───────────────────────────────────────────────────────
 
+    // Closing a modal or the search overlay on Back undoes the navigation with
+    // history.forward() — which fires a popstate of its own. Without this flag
+    // that second event was treated as a fresh Back and sent the user to the
+    // Library, so Back on any open popup closed it *and* left the page.
+    // The flag also self-clears after a second, in case the forward() is
+    // ever a no-op and no event arrives.
+    let _ignoreNextPop = false;
+    const _undoBack = () => {
+      _ignoreNextPop = true;
+      setTimeout(() => { _ignoreNextPop = false; }, 1000);
+      history.forward();
+      _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
+    };
+
     window.addEventListener('popstate', async (e) => {
+      if (_ignoreNextPop) { _ignoreNextPop = false; return; }
+
       // If the search overlay is open, close it and undo the navigation —
       // the overlay closing is not a navigation, just a UI dismiss.
       const searchOverlay = document.getElementById('searchOverlay');
       if (searchOverlay?.classList.contains('open')) {
         closeSearch();
-        history.forward();
-        _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
+        _undoBack();
         return;
       }
 
@@ -344,8 +360,7 @@ const Router = (() => {
       // We cannot rely on e.state?.page === '_modal' because this WebView
       // reports the destination state in e.state, not the popped entry's state.
       if (_closeAnyOpenModal()) {
-        history.forward();
-        _shadowIdx = Math.min(_shadowIdx + 1, _shadowStack.length - 1);
+        _undoBack();
         return;
       }
 

@@ -290,6 +290,11 @@ async function renderChapter(idx, scrollY = 0) {
     // ── 5. Notes field ────────────────────────────────────────────────────────
     // chapterAnswers is passed so buildNotesField() can read the saved notes
     // value synchronously from the pre-loaded object.
+    // ── 5a. "Read more" link to the matching appendix chapter (optional) ──────
+    // After the chapter's content and before Notes, so it reads as part of the
+    // chapter rather than as chapter navigation (Prev/Next, Save/Share).
+    contentHtml += buildReadMoreButton(ch, activeLang, langMap);
+
     contentHtml += buildNotesField(ch, chapterAnswers);
 
     // ── 6. Prev/Next nav buttons ──────────────────────────────────────────────

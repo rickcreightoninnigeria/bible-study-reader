@@ -32,7 +32,7 @@ function handleGesture() {
     '.modal-overlay, #qaModalOverlay.open, #deeperModalOverlay.open, ' +
     '#verseModalOverlay.open, #likertPopupOverlay.open, #searchOverlay.open, ' +
     '.onboarding-overlay, #libPathPopupOverlay, ' +
-    '#versionWarningOverlay'
+    '#versionWarningOverlay, #galleryViewerOverlay.open'
   );
   if (hasOpenClassOverlay) return;
 

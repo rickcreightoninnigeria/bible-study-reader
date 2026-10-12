@@ -193,3 +193,53 @@ function buildNavButtons(idx, activeLang, langMap) {
         : `<div style="flex:1"></div>`}
     </div>`;
 }
+
+
+// ── READ MORE (study chapter → appendix) ─────────────────────────────────────
+// Optional full-width button after a study chapter's content that opens the
+// matching Go Deeper ("appendix") chapter. Off by default:
+//   • goDeeperData.readMoreButtons: true links every study chapter to the
+//     appendix chapter with the same chapterNumber;
+//   • per chapter, "readMore": false suppresses it, and
+//     "readMore": { "chapter": N, "label": "…" } targets another appendix
+//     chapter and/or sets the label — either key also turns the button on
+//     for that chapter when the study-wide switch is off.
+// Label: chapter's readMore.label → goDeeperData.readMoreLabel (both accept
+// numbered language slots: label1/label2, readMoreLabel1/…) → the UI string.
+// The second line is the appendix chapter's title, for the active language.
+// No button if the target appendix chapter doesn't exist.
+//
+// The markup carries only the integer chapter number (data-goto-appendix).
+// Before navigating, the reader's place is remembered in
+// window._readMoreReturn so the appendix's "Back to study" button can return
+// them there (the system Back button still goes to the Library).
+function buildReadMoreButton(ch, activeLang, langMap) {
+  const d = window.goDeeperData;
+  if (!d || !Array.isArray(d.chapters) || ch.readMore === false) return '';
+  const obj = ch.readMore && typeof ch.readMore === 'object' && !Array.isArray(ch.readMore) ? ch.readMore : null;
+  if (!obj && d.readMoreButtons !== true) return '';
+  const target = obj && Number.isInteger(obj.chapter) ? obj.chapter : ch.chapterNumber;
+  const appendixCh = d.chapters.find(c => c.chapterNumber === target);
+  if (!appendixCh || !Number.isInteger(target)) return '';
+  const label = (obj && resolveTextWithFallback(obj, activeLang, 'label', langMap))
+    || resolveTextWithFallback(d, activeLang, 'readMoreLabel', langMap)
+    || t('renderchapter_read_more');
+  const title = resolveTextWithFallback(appendixCh, activeLang, 'title', langMap);
+  return `
+    <button type="button" class="chapter-jump-btn read-more-btn" data-goto-appendix="${target}">
+      <span class="chapter-jump-text">
+        <span class="chapter-jump-label">${escapeHtml(label)}</span>
+        ${title ? `<span class="chapter-jump-title">${escapeHtml(title)}</span>` : ''}
+      </span>
+      <span class="chapter-jump-icon" aria-hidden="true">${ICONS.arrowDown}</span>
+    </button>`;
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest && e.target.closest('[data-goto-appendix]');
+  if (!btn) return;
+  const n = parseInt(btn.dataset.gotoAppendix, 10);
+  if (!Number.isInteger(n)) return;
+  window._readMoreReturn = { studyId: window.activeStudyId, idx: currentChapter, scrollY: window.scrollY };
+  Router.navigate({ page: 'godeeper', tabId: `ch_${n}` });
+});

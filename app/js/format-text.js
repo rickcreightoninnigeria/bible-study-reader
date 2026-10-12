@@ -35,6 +35,7 @@ const _PURIFY_CONFIG = {
     'ul', 'ol', 'li', 'blockquote',
     'h1', 'h2', 'h3', 'h4',
     'a', 'span', 'sup', 'sub',
+    'hr',                       // markdown '---' dividers (Leaders' Notes, Go Deeper)
   ],
   ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
   ALLOW_DATA_ATTR: false,

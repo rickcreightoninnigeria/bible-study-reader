@@ -1297,6 +1297,9 @@ async function _installStudyFileQuietly(file, fileName) {
         }
       }
 
+      // Gallery images referenced by src in goDeeperData / leadersNotesData
+      await storeGalleryImages(zip, data, studyId, key => writtenImageKeys.push(key));
+
       // Persist study data and register
       await StudyIDB.set(`study_content_${studyId}`, data);
     } catch (err) {
@@ -1501,6 +1504,15 @@ async function loadStudyFromFile(file) {
             }
           }
         }
+      }
+
+      // 2c. Extract gallery images referenced by src in goDeeperData /
+      //     leadersNotesData (stored as {studyId}_gallery_<file>; see gallery.js)
+      try {
+        await storeGalleryImages(zip, data, studyId);
+      } catch (err) {
+        if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
+        throw err;
       }
 
       // 3. Store the parsed study object in IDB and update the registry

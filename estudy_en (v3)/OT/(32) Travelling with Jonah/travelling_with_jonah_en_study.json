@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.02,
+    "studyVersion"     :1.03,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NIV"
@@ -3619,6 +3619,7 @@
     ]
   },
   "goDeeperData":{
+    "readMoreButtons" :true,
     "format"          :"markdown",
     "titleMenuHeading":"Travelling with Jonah",
     "intro"           :{
@@ -3670,6 +3671,7 @@
       },
       {
         "chapterNumber":1,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"Running Scared (?)",
         "footnotes"    :[
@@ -3786,22 +3788,23 @@
           "header" :"Images",
           "images" :[
             {
-              "src"    :"images/ch01-map-world.webp",
+              "elementId":"ch01-el03",
               "alt"    :"Map of the ancient Near East showing Israel and Nineveh",
               "caption":"Image 1: Jonah’s world — Israel sits left of centre; Nineveh lies far to the north-east"
             },
             {
-              "src"    :"images/ch01-map-empire.webp",
+              "elementId":"ch01-el05",
               "alt"    :"Map showing the extent of the Assyrian Empire at its peak",
               "caption":"Image 2: The Assyrian Empire at its biggest — Israel and Judah are swallowed within it"
             },
             {
-              "src"    :"images/ch01-balawat-gates.webp",
+              "elementId":"ch01-el12",
               "alt"    :"Detail from the Balawat gates showing Assyrian war crimes",
-              "caption":"Image 3: Assyrian war crimes — a detail from the Balawat gates, British Museum"
+              "caption":"Image 3: Assyrian war crimes — a detail from the Balawat gates, British Museum",
+              "provenance":"Balawat gates of Shalmaneser III, British Museum, accession no. ANE 121651. © The Trustees of the British Museum."
             },
             {
-              "src"    :"images/ch01-map-jonah-runs.webp",
+              "elementId":"ch01-el15",
               "alt"    :"Map showing Jonah’s route away from Nineveh towards Tarshish",
               "caption":"Image 4: Jonah runs — God calls him north-east; he heads south-west"
             }
@@ -3810,6 +3813,7 @@
       },
       {
         "chapterNumber":2,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"The God who Saves",
         "footnotes"    :[
@@ -3921,6 +3925,7 @@
       },
       {
         "chapterNumber":3,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"A Second Chance?",
         "footnotes"    :[
@@ -4046,6 +4051,7 @@
       },
       {
         "chapterNumber":4,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"The Wrong Sort of God",
         "footnotes"    :[
@@ -4201,6 +4207,7 @@
       },
       {
         "chapterNumber":5,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"Strong Words",
         "footnotes"    :[
@@ -4345,13 +4352,15 @@
             {
               "src"    :"images/ch05-vulture-relief.webp",
               "alt"    :"Assyrian relief showing a vulture carrying off intestines",
-              "caption":"Image 6: A vulture carries off intestines. Intestines represented compassion, so the message is: ‘All who resist Assyria will be treated without mercy.’ British Museum, Accession no. WA 118907."
+              "caption":"Image 6: A vulture carries off intestines. Intestines represented compassion, so the message is: ‘All who resist Assyria will be treated without mercy.’ British Museum, Accession no. WA 118907.",
+              "provenance":"British Museum, accession no. WA 118907."
             }
           ]
         }
       },
       {
         "chapterNumber":6,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"Sorrow and Repentance",
         "footnotes"    :[
@@ -4507,6 +4516,7 @@
       },
       {
         "chapterNumber":7,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"Don’t Say a Word",
         "footnotes"    :[
@@ -4631,6 +4641,7 @@
       },
       {
         "chapterNumber":8,
+        "backToStudy"  :true,
         "format"       :"markdown",
         "title"        :"Where to from Here?",
         "footnotes"    :[],

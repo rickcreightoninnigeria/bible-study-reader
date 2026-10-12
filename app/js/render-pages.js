@@ -1634,11 +1634,32 @@ const LEADERS_TABS = []; // populated dynamically — see renderLeadersNotes
 //                  {classPrefix}-block-label.
 // highlightClass – the wrapper class for subtype:'highlighted' blocks
 //                  ('leaders-watch' or 'go-deeper-highlight').
-function _buildContentBlocksHtml(ch, activeLang, langMap, skipFields, classPrefix, highlightClass) {
+// format         – the content format ('markdown', 'HTML', …): markdown bodies
+//                  are rendered via renderFormatted(); other formats are
+//                  inserted as authored (already cleaned at load time by
+//                  sanitizeStudyData()), as before.
+// footnotes      – optional [{ id, body }] array: [[fn:N]] markers in bodies
+//                  become footnote buttons (expandFootnoteMarkers()).
+//
+// Numbered keys (body1, body2, …) are language slots only in multilingual
+// studies, so trailing digits are collapsed into one field only there. In a
+// mono-lingual study a digit is just part of the block's name — collapsing
+// callout1…callout6 into one "callout" field silently dropped callout2–6.
+// (Multilingual studies therefore can't use block names ending in a digit.)
+//
+// Subtype 'image-gallery' blocks are rendered by buildGalleryHtml()
+// (gallery.js); a gallery with no displayable image renders nothing at all.
+function _buildContentBlocksHtml(ch, activeLang, langMap, skipFields, classPrefix, highlightClass, format = '', footnotes = null) {
+  const isMultilang = !!langMap && Object.keys(langMap).length > 0;
+  const isMarkdown  = String(format || '').toLowerCase() === 'markdown';
+  const formatBody  = html => {
+    const out = isMarkdown ? renderFormatted(html, 'markdown') : (html || '');
+    return Array.isArray(footnotes) ? expandFootnoteMarkers(out, footnotes) : out;
+  };
   const seen = new Set();
   const contentFields = [];
   for (const key of Object.keys(ch)) {
-    const base = key.replace(/\d+$/, '');
+    const base = isMultilang ? key.replace(/\d+$/, '') : key;
     if (!skipFields.has(base) && !seen.has(base)) {
       seen.add(base);
       contentFields.push(base);
@@ -1650,23 +1671,32 @@ function _buildContentBlocksHtml(ch, activeLang, langMap, skipFields, classPrefi
     if (!resolved || typeof resolved !== 'object') return '';
 
     const { subtype, header, body } = resolved;
+    const headerHtml = header ? `<div class="${classPrefix}-block-label">${header}</div>` : '';
 
-    if (subtype === 'highlighted') {
-      if (!body) return '';
-      const headerHtml = header ? `<div class="${classPrefix}-block-label">${header}</div>` : '';
+    if (subtype === 'image-gallery') {
+      const galleryHtml = buildGalleryHtml(resolved, classPrefix);
+      if (!galleryHtml) return '';   // no displayable images: omit the header too
       return `
           <div class="${classPrefix}-block">
             ${headerHtml}
-            <div class="${highlightClass}">${body}</div>
+            ${galleryHtml}
+          </div>`;
+    }
+
+    if (subtype === 'highlighted') {
+      if (!body) return '';
+      return `
+          <div class="${classPrefix}-block">
+            ${headerHtml}
+            <div class="${highlightClass}">${formatBody(body)}</div>
           </div>`;
     }
 
     // Default: 'standard' (or any unrecognised subtype)
-    const headerHtml = header ? `<div class="${classPrefix}-block-label">${header}</div>` : '';
     return `
           <div class="${classPrefix}-block">
             ${headerHtml}
-            ${body || ''}
+            ${formatBody(body)}
           </div>`;
   }).join('\n');
 }
@@ -1770,7 +1800,9 @@ async function renderLeadersNotes(tabId) {
       // Skips the structural fields rendered separately (chapterNumber, format,
       // title/chapterTitle — Leaders Notes supports both the old and new field names).
       const SKIP = new Set(['chapterNumber', 'format', 'title', 'chapterTitle']);
-      const blocksHtml = _buildContentBlocksHtml(ch, activeLang, langMap, SKIP, 'leaders', 'leaders-watch');
+      await prefetchGalleryImages(ch, activeLang, langMap);
+      const blocksHtml = _buildContentBlocksHtml(ch, activeLang, langMap, SKIP, 'leaders', 'leaders-watch',
+        ch.format || d.format);
 
       tabContent = `
         <div class="leaders-chapter" style="margin-top:16px;">
@@ -1970,6 +2002,50 @@ async function renderAbout(tabId) {
 
 const GODEEPER_TABS = []; // populated dynamically — see renderGoDeeper
 
+// ── BACK TO STUDY (appendix → study chapter) ─────────────────────────────────
+// Optional button at the bottom of a Go Deeper chapter, opted into per
+// chapter with "backToStudy":
+//   true                          → the study chapter with the same chapterNumber
+//   { "chapter": N, "label": "…" } → another study chapter and/or a custom label
+// Label: chapter's backToStudy.label → goDeeperData.backToStudyLabel (both
+// accept numbered language slots) → the UI string. The second line is the
+// study chapter's title. No button if the target chapter doesn't exist.
+//
+// The markup carries only the chapter's array index (data-back-to-study). If
+// the reader came here via that chapter's "Read more" button, they return to
+// where they were in it (window._readMoreReturn, set in render-chapter-ui.js);
+// otherwise they land at the top of the chapter.
+function _buildBackToStudyButton(ch, d, activeLang, langMap) {
+  const opt = ch.backToStudy;
+  const obj = opt && typeof opt === 'object' && !Array.isArray(opt) ? opt : null;
+  if (opt !== true && !obj) return '';
+  const target = obj && Number.isInteger(obj.chapter) ? obj.chapter : ch.chapterNumber;
+  const idx = (window.chapters || []).findIndex(c => c.chapterNumber === target);
+  if (idx === -1) return '';
+  const label = (obj && resolveTextWithFallback(obj, activeLang, 'label', langMap))
+    || resolveTextWithFallback(d, activeLang, 'backToStudyLabel', langMap)
+    || t('renderpages_back_to_study');
+  const title = resolveTextWithFallback(window.chapters[idx], activeLang, 'chapterTitle', langMap);
+  return `
+    <button type="button" class="chapter-jump-btn back-to-study-btn" data-back-to-study="${idx}">
+      <span class="chapter-jump-icon" aria-hidden="true">${ICONS.arrowUp}</span>
+      <span class="chapter-jump-text">
+        <span class="chapter-jump-label">${escapeHtml(label)}</span>
+        ${title ? `<span class="chapter-jump-title">${escapeHtml(title)}</span>` : ''}
+      </span>
+    </button>`;
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest && e.target.closest('[data-back-to-study]');
+  if (!btn) return;
+  const idx = parseInt(btn.dataset.backToStudy, 10);
+  if (!Number.isInteger(idx) || !window.chapters || !window.chapters[idx]) return;
+  const ret = window._readMoreReturn;
+  const scrollY = ret && ret.studyId === window.activeStudyId && ret.idx === idx ? ret.scrollY : 0;
+  Router.navigate({ page: 'chapter', idx, scrollY });
+});
+
 async function renderGoDeeper(tabId) {
   closeMenu();
   _resetNonChapterPageState();
@@ -2031,9 +2107,12 @@ async function renderGoDeeper(tabId) {
   const introHeader  = hasIntro ? (rawIntro.header || pageTitle) : '';
 
   // ── Build tab definitions and cache on the constant for navigateTab() ─────
+  // Only chapters with an integer chapterNumber get a tab: the tab id is
+  // interpolated into an inline onclick below, so a string from a hostile
+  // study file must never reach it.
   GODEEPER_TABS.length = 0;
   if (hasIntro) GODEEPER_TABS.push({ id: 'intro', label: introHeader });
-  (d.chapters || []).forEach(ch =>
+  (d.chapters || []).filter(ch => Number.isInteger(ch.chapterNumber)).forEach(ch =>
     GODEEPER_TABS.push({ id: `ch_${ch.chapterNumber}`, label: String(ch.chapterNumber) })
   );
 
@@ -2056,10 +2135,13 @@ async function renderGoDeeper(tabId) {
 
   if (activeTab === 'intro' && hasIntro) {
     // body: string or array of strings
+    // Markdown-format appendices are rendered as markdown; other formats are
+    // inserted as authored (cleaned at load by sanitizeStudyData()), as before.
     const rawBody  = rawIntro.body;
+    const isMd     = String(d.format || '').toLowerCase() === 'markdown';
     const bodyHtml = Array.isArray(rawBody)
-      ? rawBody.map(p => `<p>${p}</p>`).join('\n')
-      : (typeof rawBody === 'string' ? rawBody : '');
+      ? (isMd ? renderFormattedArray(rawBody, 'markdown') : rawBody.map(p => `<p>${p}</p>`).join('\n'))
+      : (typeof rawBody === 'string' ? (isMd ? renderFormatted(rawBody, 'markdown') : rawBody) : '');
 
     tabContent = `
       <div class="go-deeper-intro" style="margin: 20px 16px;">
@@ -2075,9 +2157,20 @@ async function renderGoDeeper(tabId) {
       // Resolve the chapter title for the active language.
       const chapterTitle = resolveMetaField(ch, 'title', activeLang, langMap) || '';
 
-      // Skips the structural fields rendered separately (chapterNumber, format, title).
-      const SKIP = new Set(['chapterNumber', 'format', 'title']);
-      const blocksHtml = _buildContentBlocksHtml(ch, activeLang, langMap, SKIP, 'go-deeper', 'go-deeper-highlight');
+      // Skips the structural fields rendered separately (chapterNumber, format,
+      // title), the footnote list (shown via [[fn:N]] buttons) and the
+      // backToStudy setting (rendered as a button below).
+      const SKIP   = new Set(['chapterNumber', 'format', 'title', 'footnotes', 'backToStudy']);
+      const format = ch.format || d.format;
+      // Footnote bodies use the chapter's format too (e.g. *italic* titles).
+      const footnotes = Array.isArray(ch.footnotes)
+        ? ch.footnotes
+            .filter(fn => fn && Number.isInteger(fn.id) && typeof fn.body === 'string')
+            .map(fn => ({ id: fn.id, body: String(format || '').toLowerCase() === 'markdown' ? renderFormatted(fn.body, 'markdown') : fn.body }))
+        : null;
+      await prefetchGalleryImages(ch, activeLang, langMap);
+      const blocksHtml = _buildContentBlocksHtml(ch, activeLang, langMap, SKIP, 'go-deeper', 'go-deeper-highlight', format, footnotes);
+      const backHtml   = _buildBackToStudyButton(ch, d, activeLang, langMap);
 
       tabContent = `
         <div class="go-deeper-chapter" style="margin-top: 16px;">
@@ -2088,6 +2181,7 @@ async function renderGoDeeper(tabId) {
           <div class="go-deeper-chapter-body">
             ${blocksHtml}
           </div>
+          ${backHtml}
         </div>`;
     }
   }

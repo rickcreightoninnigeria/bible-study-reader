@@ -734,7 +734,12 @@ Each named content key maps to an object with these fields:
 Key names are author-defined — `background`, `keyPoints`, `pastorals`, and
 `watch` are conventions, not requirements. Use any names that make sense for
 your study. The renderer processes all keys in JSON insertion order, skipping
-`chapterNumber`, `format`, `title`, and `chapterTitle`.
+`chapterNumber`, `format`, `title`, and `chapterTitle`. In a multilingual study, block
+names must not end in a digit (a trailing number is a language slot); in a
+single-language study they may (`point1`, `point2`, … are all shown).
+`"markdown"` format bodies are rendered as markdown. In a multilingual study
+block names must not end in a digit (a trailing number is a language slot); in
+a single-language study they may.
 
 You can have as many or as few content blocks per chapter as you need. A
 chapter with only a `watch` block is valid; a chapter with ten blocks is
@@ -832,7 +837,10 @@ shown directly.
 
 | Field | Required | Notes |
 |-------|----------|-------|
-| `format` | No | `"HTML"` — indicates that `body` fields contain HTML. Included by convention; the renderer always treats `body` as HTML. |
+| `format` | No | `"HTML"` (default) — `body` fields contain HTML. `"markdown"` — `body` fields, the intro and footnotes are rendered as markdown. A chapter's own `format` overrides this. |
+| `readMoreButtons` | No | `true` adds a **Read more** button at the end of each study chapter, linking to the Go Deeper chapter with the same `chapterNumber` (no button where there is none). Off by default. See [Read more and Back to study](#read-more-and-back-to-study). |
+| `readMoreLabel` | No | Study-wide label for Read more buttons. Default: "Read more" in the app's language. Multilingual: `readMoreLabel1`, `readMoreLabel2`, … |
+| `backToStudyLabel` | No | Study-wide label for Back to study buttons. Default: "Back to the study". Multilingual: `backToStudyLabel1`, … |
 | `titleMenuHeading` | **Yes** | The label used in the Contents menu and as the page header title. Multilingual: use `titleMenuHeading1`, `titleMenuHeading2`, … slots. |
 | `intro` | No | Content for the intro tab. See [Intro object](#intro-object) below. If absent, no intro tab is shown. Multilingual: use `intro1`, `intro2`, … slots. |
 | `chapters[]` | No | Array of chapter content objects. If absent or empty, the page shows only the intro (without a tab bar). |
@@ -852,7 +860,9 @@ The `intro` value is an object with two fields:
 |-------|-------|
 | `chapterNumber` | **Required.** Must match a `chapterNumber` in the main `chapters[]` array. The tab label is this number. |
 | `format` | No | `"HTML"` by convention. |
-| `title` | Optional. Chapter title shown in the tab's chapter header. Multilingual: `title1`, `title2`, … |
+| `title` | Optional. Chapter title shown in the tab's chapter header (and under a Read more button that links here). Multilingual: `title1`, `title2`, … |
+| `footnotes` | Optional. `[{ "id": 5, "body": "…" }]`. A `[[fn:5]]` marker in any block body becomes a superscript button that opens the note. Bodies use the chapter's `format`. |
+| `backToStudy` | Optional. `true` adds a **Back to study** button at the end of the chapter, linking to the study chapter with the same `chapterNumber`; `{ "chapter": N, "label": "…" }` links to study chapter N and/or sets the label (`label1`, `label2`, … in multilingual studies). No button if that study chapter doesn't exist. |
 | *(content keys)* | Any number of named content block keys (e.g. `background`, `context`, `keyQuote`). Rendered in JSON insertion order. |
 
 #### Content block fields
@@ -861,16 +871,51 @@ Each named content key maps to a block with these fields:
 
 | Field | Required | Notes |
 |-------|----------|-------|
-| `subtype` | **Yes** | `"standard"` — renders as a prose block (`.go-deeper-block`) with an optional header label. `"highlighted"` — wraps the body in a visually distinct callout box (`.go-deeper-highlight`). Blocks with an empty `body` are skipped entirely. |
+| `subtype` | **Yes** | `"standard"` — renders as a prose block (`.go-deeper-block`) with an optional header label. `"highlighted"` — wraps the body in a visually distinct callout box (`.go-deeper-highlight`); blocks with an empty `body` are skipped. `"image-gallery"` — a thumbnail grid that opens a full-screen viewer; see [Image galleries](#image-galleries). |
 | `header` | No | Label rendered above the body using the `.go-deeper-block-label` class. For `"highlighted"` blocks, omit to produce an unlabelled callout. |
-| `body` | No | HTML string. Rendered directly into the block. |
+| `body` | No | HTML or markdown string, according to `format`. |
+
+#### Image galleries
+
+A block with `"subtype": "image-gallery"` lists its pictures in `images`:
+
+```json
+"imageGallery": {
+  "subtype": "image-gallery",
+  "header":  "Images",
+  "images": [
+    { "elementId": "ch01-el03" },
+    { "src": "images/nineveh-walls.webp",
+      "alt": "Reconstructed walls of ancient Nineveh",
+      "caption": "Image 5: Near the site of ancient Nineveh",
+      "provenance": "Photo: …" }
+  ]
+}
+```
+
+| Field | Notes |
+|-------|-------|
+| `elementId` | Reuses one of the study's inline `image` elements (stored once). Its `alt`, `caption` and `provenance` are used for any of those fields the entry leaves out. Wins over `src` if both are given. |
+| `src` | A file inside the `.estudy` zip: `images/<name>.webp` (or `.png`, `.jpg`, `.jpeg`), letters, digits, `.`, `_` and `-` only, at most 5 MB. Anything else is ignored. |
+| `alt`, `caption` | Plain text. The caption shows under the thumbnail (two lines) and in full in the viewer. |
+| `provenance` | Plain-text credit, shown as "Credit: …" in the viewer and read out with the thumbnail. |
+
+An entry whose picture can't be found is skipped; if none can be found the
+whole block (including its header) is left out. Galleries also work in
+Leaders' Notes.
 
 #### Key naming
 
 Key names are author-defined — `background`, `context`, and `keyQuote` above
 are examples, not requirements. Use any names that make the content clear to
 you as the author. The renderer discovers all keys automatically in JSON
-insertion order, skipping `chapterNumber`, `format`, and `title`.
+insertion order, skipping `chapterNumber`, `format`, `title`, `footnotes` and
+`backToStudy`.
+
+In a **multilingual** study a trailing number on a key is a language slot
+(`background1`, `background2`), so block names must not themselves end in a
+digit there — use `scene-a`, `sceneOne`, etc. In a single-language study
+names such as `callout1` … `callout6` are fine and are all shown.
 
 #### Multilingual Go Deeper
 
@@ -931,6 +976,32 @@ Notes, so you can style them independently in `07-pages.css`:
 The chapter tab header (chapter number + title) reuses `.leaders-chapter-header`,
 `.leaders-chapter-number`, and `.leaders-chapter-title` from the Leaders' Notes
 styles, since the structural layout is identical.
+
+### Read more and Back to study
+
+These link a study chapter and its Go Deeper chapter in both directions. Both
+are optional and off by default.
+
+**Read more** (end of a study chapter → Go Deeper chapter). Turn it on for
+every chapter with `goDeeperData.readMoreButtons: true`, or per study chapter
+with a `readMore` key on the chapter object in the main `chapters[]` array:
+
+| `readMore` value | Effect |
+|---|---|
+| *(absent)* | Follows `readMoreButtons`. |
+| `false` | No button for this chapter, even when `readMoreButtons` is on. |
+| `{ "chapter": N }` | Links to Go Deeper chapter N (e.g. `0` for an introductory chapter). Turns the button on for this chapter. |
+| `{ "label": "…" }` | Custom label (`label1`, `label2`, … in multilingual studies). Turns the button on. |
+
+Label order: the chapter's `readMore.label`, then `goDeeperData.readMoreLabel`,
+then the app's default. The Go Deeper chapter's `title` is shown underneath.
+The app draws the arrow — don't put one in the label.
+
+**Back to study** (end of a Go Deeper chapter → study chapter): add
+`backToStudy` to the Go Deeper chapter (see Chapter fields above). If the
+reader arrived via Read more, it returns them to the place they left;
+otherwise to the top of the chapter. The system Back button keeps its usual
+behaviour (it goes to the Library).
 
 ---
 

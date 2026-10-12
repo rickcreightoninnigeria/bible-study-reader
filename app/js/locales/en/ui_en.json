@@ -749,5 +749,14 @@
   "studyloader_zip_too_many"                            :"This file contains too many items (the limit is {max}).",
   "studyloader_zip_too_large"                           :"This file is too large, or contains an item that is too large, to install safely.",
   "studyloader_zip_bad_entry"                           :"This file contains an item with an unsafe name and can't be installed.",
-  "studyloader_error_title"                             :"Couldn't load the file"
+  "studyloader_error_title"                             :"Couldn't load the file",
+  "renderchapter_read_more"                             :"Read more",
+  "renderpages_back_to_study"                           :"Back to the study",
+  "gallery_grid_label"                                  :"Image gallery",
+  "gallery_viewer_label"                                :"Image viewer",
+  "gallery_close"                                       :"Close image viewer",
+  "gallery_previous"                                    :"Previous image",
+  "gallery_next"                                        :"Next image",
+  "gallery_counter"                                     :"{current} / {total}",
+  "gallery_credit"                                      :"Credit"
 }

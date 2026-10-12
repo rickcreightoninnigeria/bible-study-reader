@@ -558,18 +558,22 @@
   font-style: italic;
   font-weight: 400;
 }
-.leaders-chapter-body {
+.leaders-chapter-body,
+.go-deeper-chapter-body {
   background: var(--card-bg);
   border-radius: 0 0 10px 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px var(--shadow);
 }
-.leaders-block {
+.leaders-block,
+.go-deeper-block {
   padding: 16px 18px;
   border-top: 1px solid var(--surface-mid);
 }
-.leaders-block:first-child { border-top: none; }
-.leaders-block-label {
+.leaders-block:first-child,
+.go-deeper-block:first-child { border-top: none; }
+.leaders-block-label,
+.go-deeper-block-label {
   font-family: var(--font-stack-mono);
   font-size: 10px;         /* UI chrome — stays px */
   font-weight: bold;
@@ -578,15 +582,18 @@
   color: var(--emphasis);
   margin-bottom: 8px;
 }
-.leaders-block p {
+.leaders-block p,
+.go-deeper-block p {
   font-size: 0.875rem;     /* was 14px — scales */
   color: var(--text-secondary);
   line-height: 1.75;
 }
-.leaders-block p + p { margin-top: 10px; }
+.leaders-block p + p,
+.go-deeper-block p + p { margin-top: 10px; }
 
 /* "Watch for" callout — inset accent strip within a leaders block */
-.leaders-watch {
+.leaders-watch,
+.go-deeper-highlight {
   background: var(--surface-mid);
   border-inline-start: 3px solid var(--accent);   /* was border-left */
   border-radius: 0 6px 6px 0;
@@ -2811,6 +2818,7 @@ body.dark-mode .copyright-page {
 body.dark-mode .howto-section-heading,
 body.dark-mode .settings-section-heading,
 body.dark-mode .leaders-block-label,
+body.dark-mode .go-deeper-block-label,
 body.dark-mode .copyright-block-label {
   color: var(--emphasis-light);
 }
@@ -2850,7 +2858,9 @@ body.dark-mode .howto-tab-bar {
 /* ── Copyright ── */
 body.dark-mode .copyright-block,
 body.dark-mode .leaders-chapter-body,
+body.dark-mode .go-deeper-chapter-body,
 body.dark-mode .leaders-intro,
+body.dark-mode .go-deeper-block,
 body.dark-mode .leaders-block {
   background: var(--dm-raised);
   box-shadow: 0 1px 6px rgba(0,0,0,0.4);
@@ -2858,6 +2868,7 @@ body.dark-mode .leaders-block {
 body.dark-mode .copyright-block p,
 body.dark-mode .copyright-block ul li,
 body.dark-mode .leaders-intro p,
+body.dark-mode .go-deeper-block p,
 body.dark-mode .leaders-block p {
   color: var(--dm-text-mid);
 }
@@ -2873,6 +2884,7 @@ body.dark-mode .cc-badge {
 
 /* ── Leaders notes ── */
 body.dark-mode .leaders-chapter-header { background: var(--dm-base); }
+body.dark-mode .go-deeper-highlight,
 body.dark-mode .leaders-watch {
   background: var(--dm-sunken);
   color: var(--dm-text-mid);
@@ -4178,3 +4190,151 @@ body.dark-mode .lib-try-desc  { color: var(--dm-text-faint); }
 :lang(el) .modal-btn-ok {
   letter-spacing: 0;
 }
+
+/* ── Chapter ↔ appendix jump buttons ──────────────────────────────────────────
+   "Read more" (end of a study chapter → its Go Deeper chapter) and "Back to
+   study" (end of a Go Deeper chapter → its study chapter). Full-width, outlined
+   cards — deliberately unlike the solid Prev/Next and Save/Share buttons so
+   they aren't mistaken for chapter navigation. The arrow comes from ICONS. */
+.chapter-jump-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: calc(100% - 32px);
+  margin: 24px 16px 8px;
+  padding: 14px 16px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1.5px solid var(--accent);
+  border-radius: 10px;
+  text-align: start;
+  font-family: var(--font-stack-heading);
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.go-deeper-chapter .chapter-jump-btn { width: 100%; margin: 20px 0 0; }
+.chapter-jump-btn:hover { background: var(--surface-mid); }
+.chapter-jump-text { flex: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.chapter-jump-label { font-size: 1rem; font-weight: 600; color: var(--accent); }
+.chapter-jump-title { font-size: 0.8125rem; color: var(--text-secondary); overflow-wrap: anywhere; }
+.chapter-jump-icon { color: var(--accent); flex-shrink: 0; display: inline-flex; }
+body.dark-mode .chapter-jump-btn { background: var(--dm-raised); color: var(--dm-text); border-color: var(--accent-light); }
+body.dark-mode .chapter-jump-label,
+body.dark-mode .chapter-jump-icon { color: var(--accent-light); }
+body.dark-mode .chapter-jump-title { color: var(--dm-text-mid); }
+
+/* ── Image gallery (gallery.js) ───────────────────────────────────────────────
+   Thumbnail grid: 2 columns on phones, more as space allows. */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 6px;
+}
+@media (min-width: 560px) { .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.gallery-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  background: none;
+  border: none;
+  text-align: start;
+  cursor: pointer;
+  color: inherit;
+  min-width: 0;
+}
+.gallery-thumb-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-mid);
+  display: block;
+}
+.gallery-thumb-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+body.dark-mode .gallery-thumb-caption { color: var(--dm-text-mid); }
+body.dark-mode .gallery-thumb-img { border-color: var(--dm-border); background: var(--dm-sunken); }
+
+/* Full-screen viewer — always dark, like a photo viewer, in both themes. */
+.gallery-viewer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: none;
+  flex-direction: column;
+  background: rgba(10, 8, 6, 0.94);
+  color: #f5f0e8;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.gallery-viewer-overlay.open { display: flex; }
+body.gallery-viewer-open { overflow: hidden; }
+.gallery-viewer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+}
+.gallery-viewer-counter { font-family: var(--font-stack-mono); font-size: 13px; opacity: 0.85; }
+.gallery-viewer-close,
+.gallery-viewer-nav {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.gallery-viewer-nav:disabled { opacity: 0.25; cursor: default; }
+.gallery-viewer-prev svg { transform: scaleX(-1); }
+/* Prev/next float over the image's edges so the image gets the full width. */
+.gallery-viewer-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+}
+.gallery-viewer-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.45);
+}
+.gallery-viewer-prev { left: 8px; }
+.gallery-viewer-next { right: 8px; }
+.gallery-viewer-img {
+  flex: 1;
+  min-width: 0;
+  max-height: 100%;
+  object-fit: contain;
+  align-self: stretch;
+  width: 100%;
+}
+.gallery-viewer-text {
+  padding: 12px 18px 18px;
+  max-height: 30vh;
+  overflow-y: auto;
+  text-align: center;
+}
+.gallery-viewer-caption { font-size: 0.9375rem; line-height: 1.5; }
+.gallery-viewer-credit { margin-top: 6px; font-size: 0.75rem; opacity: 0.7; }
+.gallery-viewer-credit:empty,
+.gallery-viewer-caption:empty { display: none; }
+
