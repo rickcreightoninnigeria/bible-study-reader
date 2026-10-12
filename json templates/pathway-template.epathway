@@ -1,0 +1,78 @@
+{
+  "_help": "Template for a Bible Study Reader pathway file. Replace every value marked REPLACE. Fields starting with _help are notes for you: the app ignores them, so you can leave them in or delete them. Full guide: PATHWAY_FORMAT.md.",
+
+  "estudyPathwayFileVersion": 1,
+  "_help_estudyPathwayFileVersion": "Format version. Leave this as 1.",
+
+  "groupId": "replace-with-your-ministry-id",
+  "_help_groupId": "A permanent ID for your ministry's group of pathways. Letters, digits, dot, underscore and hyphen only (max 64), e.g. grace-ministry. Never change it: the app uses it to recognise updates to this file.",
+
+  "version": 1,
+  "_help_version": "Raise this number (2, 3, …) every time you publish a changed file. Users who already have version 1 only get your changes if the new number is higher.",
+
+  "publisher": {
+    "name": "REPLACE: Your Ministry Name"
+  },
+  "_help_publisher": "Shown to users when they import the file, labelled as self-declared.",
+
+  "title": "REPLACE: Your Ministry Name",
+  "_help_title": "The heading for your group in the Library's Paths tab (max 200 characters).",
+
+  "description": "REPLACE: One or two sentences about your ministry and who these pathways are for.",
+  "_help_description": "Plain text only (max 5,000 characters). HTML or markdown is shown as typed, not formatted.",
+
+  "pathways": [
+    {
+      "pathwayId": "new-believers",
+      "_help_pathwayId": "A permanent ID for this pathway, unique within this file. Same character rules as groupId.",
+
+      "title": "REPLACE: New Believers",
+
+      "description": "REPLACE: What this pathway covers, who it is for, and how long it takes.",
+
+      "downloadLocation": "https://example.org/REPLACE-new-believers-bundle.zip",
+      "_help_downloadLocation": "Optional. A direct https:// link to a bundle zip containing all of this pathway's .estudy files. Delete the line if you have no bundle. Links must be https and on a public website (no IP addresses or local network names). Google Drive share links work.",
+
+      "studies": [
+        {
+          "studyId": "REPLACE-study-id-1",
+          "_help_studyId": "Must exactly match studyMetadata.studyId inside the .estudy file, so the app can tell whether the study is installed. Same character rules as groupId.",
+          "title": "REPLACE: First study title",
+          "description": "REPLACE: A short description of this study.",
+          "downloadLocation": "https://example.org/REPLACE-study-1.estudy"
+        },
+        {
+          "studyId": "REPLACE-study-id-2",
+          "title": "REPLACE: Second study title",
+          "description": "REPLACE: A short description of this study.",
+          "downloadLocation": "https://example.org/REPLACE-study-2.estudy"
+        }
+      ]
+    },
+    {
+      "pathwayId": "growing-disciples",
+      "_help_pathwayId": "This second pathway shows multilingual text: any title or description may list one version per language code. The app shows the user's language, then English, then the first one listed.",
+
+      "title": {
+        "en": "REPLACE: Growing Disciples",
+        "fr": "REPLACE: Disciples en croissance",
+        "ha": "REPLACE: Almajirai masu girma"
+      },
+      "description": {
+        "en": "REPLACE: Description in English.",
+        "fr": "REPLACE: Description en français."
+      },
+
+      "studies": [
+        {
+          "studyId": "REPLACE-study-id-3",
+          "title": {
+            "en": "REPLACE: Third study title",
+            "fr": "REPLACE: Titre de la troisième étude"
+          },
+          "description": "REPLACE: A short description of this study."
+        }
+      ]
+    }
+  ]
+}
