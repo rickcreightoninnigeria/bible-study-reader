@@ -27,9 +27,14 @@
 // within the browser's localStorage quota.
 //
 // Active pathway keys (bsr_activePathwayId) are stable strings:
-//   builtin:{l1Idx}_{l2Idx}          – built-in pathways (as before, positional)
+//   builtin:{pathwayId}              – built-in pathways (pathwayId is set in
+//                                      learningPathways_{lang}.json)
 //   imp:{groupId}:{pathwayId}        – imported pathways
-// A legacy positional value "1_2" is migrated to "builtin:1_2" on first read.
+// Keys never depend on a pathway's position, so built-in pathways can be
+// added, removed, reordered or moved between groups in a future release
+// without changing which pathway a user has set active. Older position-based
+// values ("1_2", and "builtin:1_2" from the first import release) are
+// converted on first read — see LEGACY_BUILTIN_PATHWAY_IDS.
 //
 // Dependencies (all runtime calls; nothing runs at load time):
 //   t, window.appLocale              – i18n.js
@@ -54,6 +59,20 @@ const PATHWAY_ID_RE               = /^[A-Za-z0-9._-]{1,64}$/;
 const PATHWAY_LANG_RE             = /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})?$/;
 const IMPORTED_PATHWAYS_KEY       = 'bsr_importedPathways';
 const ACTIVE_PATHWAY_KEY          = 'bsr_activePathwayId';
+
+// Built-in pathway positions ("l1Idx_l2Idx") as they stood when pathwayIds
+// were introduced, used to convert active-pathway keys saved by older app
+// versions. FROZEN: this records the past, so it must never be edited when
+// the built-in pathways change — otherwise a user upgrading from an old
+// version straight to a later one would be converted against the wrong order.
+const LEGACY_BUILTIN_PATHWAY_IDS = Object.freeze({
+  '0_0': 'foundations',   '0_1': 'growing-roots',     '0_2': 'deeper-understanding',
+  '0_3': 'live-on-mission', '0_4': 'leading-others',
+  '1_0': 'fighting-sin',  '1_1': 'theology-of-work',  '1_2': 'suffering',
+  '2_0': 'pastoral-care', '2_1': 'make-christ-known', '2_2': 'teaching-preaching',
+  '3_0': 'church',        '3_1': 'wisdom',
+  '4_0': 'hospitality',   '4_1': 'cultural-apologetics', '4_2': 'social-justice',
+});
 
 // ── Validation ────────────────────────────────────────────────────────────────
 
@@ -291,7 +310,12 @@ function getAllPathways() {
       description:       p.description || '',
       descriptionIsHtml: true,
       downloadLocation:  p.downloadLocation || '',
-      pathwayKey:        `builtin:${l1}_${l2}`,
+      // Keyed by its permanent pathwayId. A pathway missing one (e.g. a
+      // language file that lost it) falls back to its position rather than
+      // breaking; the locale test in testing/ guards against that happening.
+      pathwayKey:        typeof p.pathwayId === 'string' && PATHWAY_ID_RE.test(p.pathwayId)
+                           ? `builtin:${p.pathwayId}`
+                           : `builtin:${l1}_${l2}`,
       isImported:        false,
       studyTitles: (p.studyTitles || []).map(s => ({
         titleLevel3:      s.titleLevel3 || '',
@@ -342,16 +366,27 @@ function findPathwayByKey(key) {
 
 // ── Active pathway key ────────────────────────────────────────────────────────
 
-// Returns the active pathway key, migrating a legacy positional value
-// ("1_2" → "builtin:1_2") in place.
+// Returns the active pathway key, converting a position-based value saved by
+// an older version ("1_2" or "builtin:1_2") to "builtin:{pathwayId}" in place.
+// The conversion uses the frozen LEGACY_BUILTIN_PATHWAY_IDS table, not the
+// current pathway order. A position outside that table can only be matched
+// against the current data, so it is converted once the data has loaded, and
+// left alone until then.
 function getActivePathwayKey() {
   const raw = localStorage.getItem(ACTIVE_PATHWAY_KEY);
-  if (raw && /^\d+_\d+$/.test(raw)) {
-    const migrated = `builtin:${raw}`;
-    safeSetItem(ACTIVE_PATHWAY_KEY, migrated);
-    return migrated;
+  const legacy = raw && raw.match(/^(?:builtin:)?(\d+_\d+)$/);
+  if (!legacy) return raw || null;
+
+  let pathwayId = LEGACY_BUILTIN_PATHWAY_IDS[legacy[1]];
+  if (!pathwayId && window.appAboutData && window.appAboutData.learningPathways) {
+    const [l1, l2] = legacy[1].split('_').map(Number);
+    const p = (((window.appAboutData.learningPathways.learningPathways || [])[l1] || {}).pathways || [])[l2];
+    if (p && typeof p.pathwayId === 'string' && PATHWAY_ID_RE.test(p.pathwayId)) pathwayId = p.pathwayId;
   }
-  return raw || null;
+  if (!pathwayId) return `builtin:${legacy[1]}`;
+  const converted = `builtin:${pathwayId}`;
+  safeSetItem(ACTIVE_PATHWAY_KEY, converted);
+  return converted;
 }
 
 function setActivePathwayKey(key) {

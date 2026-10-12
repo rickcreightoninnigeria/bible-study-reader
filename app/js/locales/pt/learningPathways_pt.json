@@ -5,6 +5,7 @@
       "description": " Um programa fundamental concebido para ajudar cada crente a estabelecer raízes firmes e progredir rumo à liderança.",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " 1. Fundamentos",
           "description": " O ponto de partida essencial para compreender a mensagem central da Bíblia e a nossa resposta a ela.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " 2. Criando raízes",
           "description": " Aprofundando-se na estrutura da Bíblia e nos hábitos espirituais pessoais.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " 3. Compreensão mais profunda",
           "description": " Lidar com livros mais complexos e com a dinâmica do ministério.",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " 4. Viva em missão",
           "description": " Voltando nosso foco para o coração de Deus para o mundo.",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " 5. Liderar os Outros",
           "description": " Capacitação para funções de liderança formais e informais.",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " Recursos focados na jornada interior do crente e na aplicação da verdade ao coração.",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " Combater o Pecado",
           "description": " Auxílio prático e teológico para lidar com a tentação e padrões de desobediência.",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " Teologia do Trabalho",
           "description": " Enxergando nosso trabalho diário sob a perspectiva da criação e do reino de Deus.",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " Sofrimento",
           "description": " Caminhando pelo vale da sombra da morte com esperança.",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " Estudos voltados para o cuidado pastoral, evangelização e ensino.",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " Assistência Pastoral",
           "description": " Capacitar os fiéis para caminharem juntos em momentos difíceis.",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " Faça Cristo conhecido",
           "description": " Com foco na evangelização e na explicação da fé de forma clara.",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " Ensino e pregação",
           "description": "Formação para aqueles que são chamados a lidar com a Palavra e explicá-la em um ambiente público.",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " Com foco na Teologia Sistemática e nas doutrinas históricas da Igreja.",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " Igreja",
           "description": " Compreender a natureza, a missão e a estrutura do corpo de Cristo.",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " Sabedoria",
           "description": " Aprender a viver com habilidade no mundo de Deus.",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " Como a igreja interage com a cultura, a comunidade e a sociedade em geral.",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " Hospitalidade",
           "description": " Abrir nossas vidas e lares como uma ponte para o Evangelho.",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " Apologética Cultural",
           "description": " Respondendo às perguntas que o mundo realmente está fazendo.",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " Justiça social",
           "description": " O coração de Deus para com os vulneráveis e oprimidos.",
           "downloadLocation": "",

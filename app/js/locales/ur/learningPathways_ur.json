@@ -5,6 +5,7 @@
       "description": " ایک بنیادی ٹریک جو ہر مومن کی مضبوط جڑیں قائم کرنے اور قیادت کی طرف پیشرفت کرنے میں مدد کرنے کے لیے ڈیزائن کیا گیا ہے۔",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " 1. بنیادیں",
           "description": " بائبل کے بنیادی پیغام اور ہمارے ردعمل کو سمجھنے کے لیے ضروری نقطہ آغاز۔",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " 2. بڑھتی ہوئی جڑیں۔",
           "description": " بائبل کے ڈھانچے اور ذاتی روحانی عادات کی گہرائی میں جانا۔",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " 3. گہری تفہیم",
           "description": " زیادہ پیچیدہ کتابوں اور وزارت کی حرکیات کے ساتھ کشتی۔",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " 4. ایک مشن پر رہتے ہیں۔",
           "description": " دنیا کے لیے اپنی توجہ کو خُدا کے دل کی طرف موڑنا۔",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " 5. دوسروں کی قیادت کرنا",
           "description": " باضابطہ اور غیر رسمی قیادت کے کرداروں کے لیے لیس کرنا۔",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " وسائل مومن کے داخلی سفر اور دل پر حق کے اطلاق پر مرکوز ہیں۔",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " گناہ سے لڑنا",
           "description": " فتنہ اور نافرمانی کے نمونوں سے نمٹنے کے لیے عملی اور مذہبی مدد۔",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " کام کی تھیولوجی",
           "description": " ہماری روزمرہ کی محنت کو خدا کی تخلیق اور بادشاہی کی عینک سے دیکھنا۔",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " مصائب",
           "description": " موت کے سائے کی وادی میں امید کے ساتھ چلنا۔",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " پادری کی دیکھ بھال، انجیلی بشارت، اور تعلیم کی طرف مبنی مطالعہ۔",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " پادری کی دیکھ بھال",
           "description": " مومنوں کو مشکل میں ایک دوسرے کے شانہ بشانہ چلنے کے لیے لیس کرنا۔",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " مسیح کو پہچانیں۔",
           "description": " انجیلی بشارت پر توجہ مرکوز کرنا اور ایمان کی واضح انداز میں وضاحت کرنا۔",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " درس و تبلیغ",
           "description": "عوامی ماحول میں کلام کو سنبھالنے اور سمجھانے کے لیے بلائے جانے والوں کے لیے تربیت۔",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " سیسٹیمیٹک تھیالوجی اور چرچ کے تاریخی عقائد پر توجہ۔",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " چرچ",
           "description": " مسیح کے جسم کی فطرت، مشن اور ساخت کو سمجھنا۔",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " حکمت",
           "description": " خدا کی دنیا میں مہارت سے جینا سیکھنا۔",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " کس طرح چرچ ثقافت، کمیونٹی، اور معاشرے کے ساتھ بڑے پیمانے پر تعامل کرتا ہے۔",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " مہمان نوازی۔",
           "description": " ہماری زندگیوں اور گھروں کو انجیل کے لیے ایک پل کے طور پر کھولنا۔",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " ثقافتی معافی",
           "description": " ان سوالوں کا جواب دینا جو دراصل دنیا پوچھ رہی ہے۔",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " سماجی انصاف",
           "description": " کمزوروں اور مظلوموں کے لیے خدا کا دل۔",
           "downloadLocation": "",

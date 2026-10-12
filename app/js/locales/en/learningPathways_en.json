@@ -5,6 +5,7 @@
       "description":"A foundational track designed to help every believer establish firm roots and progress toward leadership.",
       "pathways"   :[
         {
+          "pathwayId"       :"foundations",
           "titleLevel2"     :"1. Foundations",
           "description"     :"The essential starting point for understanding the core message of the Bible and our response.",
           "downloadLocation":"https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -46,6 +47,7 @@
         },
 
         {
+          "pathwayId"       :"growing-roots",
           "titleLevel2"     :"2. Growing Roots",
           "description"     :"Moving deeper into the structure of the Bible and personal spiritual habits.",
           "downloadLocation":"https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -85,6 +87,7 @@
         },
 
         {
+          "pathwayId"       :"deeper-understanding",
           "titleLevel2"     :"3. Deeper Understanding",
           "description"     :"Wrestling with more complex books and the dynamics of ministry.",
           "downloadLocation":"",
@@ -122,6 +125,7 @@
         },
 
         {
+          "pathwayId"       :"live-on-mission",
           "titleLevel2"     :"4. Live on a Mission",
           "description"     :"Turning our focus outward to God's heart for the world.",
           "downloadLocation":"",
@@ -153,6 +157,7 @@
         },
 
         {
+          "pathwayId"       :"leading-others",
           "titleLevel2"     :"5. Leading Others",
           "description"     :"Equipping for formal and informal leadership roles.",
           "downloadLocation":"",
@@ -196,6 +201,7 @@
       "description":"Resources focused on the internal journey of the believer and the application of truth to the heart.",
       "pathways"   :[
         {
+          "pathwayId"       :"fighting-sin",
           "titleLevel2"     :"Fighting Sin",
           "description"     :"Practical and theological help for dealing with temptation and patterns of disobedience.",
           "downloadLocation":"",
@@ -235,6 +241,7 @@
         },
 
         {
+          "pathwayId"       :"theology-of-work",
           "titleLevel2"     :"Theology of Work",
           "description"     :"Viewing our daily labor through the lens of God's creation and kingdom.",
           "downloadLocation":"",
@@ -273,6 +280,7 @@
         },
 
         {
+          "pathwayId"       :"suffering",
           "titleLevel2"     :"Suffering",
           "description"     :"Walking through the valley of the shadow of death with hope.",
           "downloadLocation":"",
@@ -316,6 +324,7 @@
       "description":"Studies oriented toward pastoral care, evangelism, and teaching.",
       "pathways"   :[
         {
+          "pathwayId"       :"pastoral-care",
           "titleLevel2"     :"Pastoral Care",
           "description"     :"Equipping believers to walk alongside one another in difficulty.",
           "downloadLocation":"",
@@ -353,6 +362,7 @@
         },
 
         {
+          "pathwayId"       :"make-christ-known",
           "titleLevel2"     :"Make Christ Known",
           "description"     :"A focus on evangelism and explaining the faith in a clear way.",
           "downloadLocation":"",
@@ -390,6 +400,7 @@
         },
 
         {
+          "pathwayId"       :"teaching-preaching",
           "titleLevel2"     :"Teaching & Preaching",
           "description"     :"Training for those called to handle and explain the Word in a public setting.",
           "downloadLocation":"",
@@ -433,6 +444,7 @@
       "description":"A focus on Systematic Theology and the historical doctrines of the Church.",
       "pathways"   :[
         {
+          "pathwayId"       :"church",
           "titleLevel2"     :"Church",
           "description"     :"Understanding the nature, mission, and structure of the body of Christ.",
           "downloadLocation":"",
@@ -470,6 +482,7 @@
         },
 
         {
+          "pathwayId"       :"wisdom",
           "titleLevel2"     :"Wisdom",
           "description"     :"Learning to live skillfully in God's world.",
           "downloadLocation":"",
@@ -513,6 +526,7 @@
       "description":"How the church interacts with culture, community, and society at large.",
       "pathways"   :[
         {
+          "pathwayId"       :"hospitality",
           "titleLevel2"     :"Hospitality",
           "description"     :"Opening our lives and homes as a bridge for the Gospel.",
           "downloadLocation":"",
@@ -550,6 +564,7 @@
         },
 
         {
+          "pathwayId"       :"cultural-apologetics",
           "titleLevel2"     :"Cultural Apologetics",
           "description"     :"Answering the questions the world is actually asking.",
           "downloadLocation":"",
@@ -587,6 +602,7 @@
         },
 
         {
+          "pathwayId"       :"social-justice",
           "titleLevel2"     :"Social Justice",
           "description"     :"God's heart for the vulnerable and the oppressed.",
           "downloadLocation":"",

@@ -5,6 +5,7 @@
       "description": " Ọ̀nà ìpìlẹ̀ tí a ṣe láti ran gbogbo onígbàgbọ́ lọ́wọ́ láti fi gbòǹgbò tí ó lágbára àti ìlọsíwájú sí ipò aṣáájú múlẹ̀.",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " 1. Àwọn ìpìlẹ̀",
           "description": " Ibi tí a ti bẹ̀rẹ̀ pàtàkì fún lílóye ohun pàtàkì nínú Bíbélì àti ìdáhùn wa.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " 2. Gbòǹgbò tí ń dàgbà",
           "description": " Lílọ jinlẹ̀ sí ìṣètò Bíbélì àti àwọn ìwà ẹ̀mí ara ẹni.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " 3. Òye Jíjinlẹ̀",
           "description": " Ijakadi pẹlu awọn iwe ti o nira diẹ sii ati agbara iṣẹ-iranṣẹ.",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " 4. Gbé ìgbé ayé lórí iṣẹ́ àkànṣe kan",
           "description": " Pípà àfiyèsí wa sí ọkàn Ọlọ́run fún ayé.",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " 5. Ṣíṣe àkóso àwọn ẹlòmíràn",
           "description": " Igbaradi fun awọn ipa olori deede ati ti kii ṣe deede.",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " Àwọn ohun èlò tí a gbé kalẹ̀ lórí ìrìn àjò inú ti onígbàgbọ́ àti fífi òtítọ́ sí ọkàn.",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " Jíjà fún Ẹ̀ṣẹ̀",
           "description": " Ìrànlọ́wọ́ tó wúlò àti ti ẹ̀kọ́ nípa Ọlọ́run fún bí a ṣe lè kojú ìdánwò àti àwọn àpẹẹrẹ àìgbọ́ràn.",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " Ẹ̀kọ́ nípa Iṣẹ́",
           "description": " Wiwo iṣẹ ojoojumọ wa nipasẹ wiwo ẹda ati ijọba Ọlọrun.",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " Ìjìyà",
           "description": " Rírìn la àfonífojì òjìji ikú kọjá pẹ̀lú ìrètí.",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " Àwọn ẹ̀kọ́ tí a gbé kalẹ̀ sí ìtọ́jú àwọn olùṣọ́ àgùntàn, ìwàásù ìhìnrere, àti kíkọ́ni.",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " Ìtọ́jú Àgùntàn",
           "description": " Pípèsè àwọn onígbàgbọ́ láti rìn lẹ́gbẹ̀ẹ́ ara wọn nínú ìṣòro.",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " Jẹ́ Kí Kristi Jẹ́ Mímọ̀",
           "description": " Àfiyèsí sí ìhìnrere àti ṣíṣàlàyé ìgbàgbọ́ ní ọ̀nà tí ó ṣe kedere.",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " Kíkọ́ni àti Ìwàásù",
           "description": "Ìdánilẹ́kọ̀ọ́ fún àwọn tí a pè láti ṣe àgbékalẹ̀ àti láti ṣàlàyé Ọ̀rọ̀ náà ní gbangba.",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " Àfiyèsí lórí Ẹ̀kọ́ Ìsìn Àgbékalẹ̀ àti àwọn ẹ̀kọ́ ìtàn ti Ìjọ.",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " Ṣọ́ọ̀ṣì",
           "description": " Lílóye ìwà, iṣẹ́ àkànṣe, àti ìṣètò ara Kristi.",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " Ọgbọ́n",
           "description": " Kíkọ́ láti gbé ní ọ̀nà ọgbọ́n ní ayé Ọlọ́run.",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " Bí ìjọ ṣe ń bá àṣà, àwùjọ àti àwùjọ lò pọ̀.",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " Àlejò àlejò",
           "description": " Ṣíṣí ayé àti ilé wa sílẹ̀ gẹ́gẹ́ bí afárá fún Ìhìnrere.",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " Àforíjì Àṣà",
           "description": " Dídáhùn sí àwọn ìbéèrè tí ayé ń béèrè ní gidi.",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " Ìdájọ́ Òdodo Àwùjọ",
           "description": " Ọkàn Ọlọ́run fún àwọn aláìlera àti àwọn tí a ń ni lára.",
           "downloadLocation": "",

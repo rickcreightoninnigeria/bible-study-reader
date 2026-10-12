@@ -5,6 +5,7 @@
       "description": " Tsarin tushe wanda aka tsara don taimaka wa kowane mai bi ya kafa tushe mai ƙarfi da ci gaba zuwa ga shugabanci.",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " 1. Tushe",
           "description": " Muhimmin wurin farawa don fahimtar ainihin saƙon Littafi Mai Tsarki da kuma martaninmu.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " 2. Tushen Girma",
           "description": " Ci gaba da zurfafa cikin tsarin Littafi Mai Tsarki da kuma halayen ruhaniya na mutum.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " 3. Zurfafa Fahimta",
           "description": " Kokawa da littattafai masu rikitarwa da kuma yanayin hidima.",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " 4. Rayuwa a kan Manufar Aiki",
           "description": " Juya hankalinmu zuwa ga zuciyar Allah ga duniya.",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " 5. Jagorantar Wasu",
           "description": " Shirya don ayyukan jagoranci na yau da kullun da na yau da kullun.",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " Albarkatu sun mayar da hankali kan tafiyar cikin gida ta mai bi da kuma amfani da gaskiya a zuciya.",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " Yaƙi da Zunubi",
           "description": " Taimakon aiki da na tauhidi don magance jaraba da alamu na rashin biyayya.",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " Tauhidin Aiki",
           "description": " Kallon ayyukanmu na yau da kullun ta hanyar kallon halittar Allah da mulkinsa.",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " Wahala",
           "description": " Tafiya cikin kwarin inuwar mutuwa da bege.",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " Nazarin da aka mayar da hankali kan kula da fastoci, wa'azin bishara, da koyarwa.",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " Kula da Kiwo",
           "description": " Ba da kayan aiki ga masu imani don tafiya tare da juna cikin wahala.",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " Ku Sanar da Kristi",
           "description": " Mai da hankali kan wa'azin bishara da kuma bayyana imani ta hanya bayyananna.",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " Koyarwa & Wa'azi",
           "description": "Horarwa ga waɗanda aka kira su su yi amfani da Kalmar a cikin wani wuri na jama'a.",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " Mai da hankali kan Tauhidin Tsari da kuma koyarwar tarihi ta Cocin.",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " Coci",
           "description": " Fahimtar yanayi, manufa, da tsarin jikin Kristi.",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " Hikima",
           "description": " Koyon rayuwa cikin ƙwarewa a duniyar Allah.",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " Yadda coci ke mu'amala da al'adu, al'umma, da kuma al'umma baki ɗaya.",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " Karimci",
           "description": " Buɗe rayuwarmu da gidajenmu a matsayin gada ga Bishara.",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " Ra'ayin Al'adu",
           "description": " Amsa tambayoyin da duniya ke yi a zahiri.",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " Adalci na Zamantakewa",
           "description": " Zuciyar Allah ga marasa ƙarfi da waɗanda aka zalunta.",
           "downloadLocation": "",

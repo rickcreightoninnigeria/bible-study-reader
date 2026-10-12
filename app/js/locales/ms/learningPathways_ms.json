@@ -5,6 +5,7 @@
       "description": " Landasan asas yang direka untuk membantu setiap orang percaya membina akar umbi yang kukuh dan maju ke arah kepimpinan.",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " 1. Asas",
           "description": " Titik permulaan penting untuk memahami mesej teras Bible dan respons kita.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " 2. Akar yang Berkembang",
           "description": " Bergerak lebih dalam ke dalam struktur Alkitab dan tabiat rohani peribadi.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " 3. Pemahaman yang Lebih Mendalam",
           "description": " Bergelut dengan buku-buku yang lebih kompleks dan dinamik pelayanan.",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " 4. Hidup dalam Misi",
           "description": " Mengalihkan tumpuan kita kepada hati Tuhan untuk dunia.",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " 5. Memimpin Orang Lain",
           "description": " Melengkapi diri untuk peranan kepimpinan formal dan tidak formal.",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " Sumber yang tertumpu pada perjalanan dalaman orang percaya dan penerapan kebenaran ke dalam hati.",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " Melawan Dosa",
           "description": " Bantuan praktikal dan teologi untuk menangani godaan dan corak ketidakpatuhan.",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " Teologi Kerja",
           "description": " Melihat pekerjaan harian kita melalui lensa ciptaan dan kerajaan Tuhan.",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " Penderitaan",
           "description": " Berjalan melalui lembah bayang-bayang maut dengan penuh harapan.",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " Pengajian yang berorientasikan kepada penjagaan pastoral, penginjilan, dan pengajaran.",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " Penjagaan Pastoral",
           "description": " Melengkapi orang yang beriman untuk berjalan seiring dalam kesukaran.",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " Jadikan Kristus Dikenali",
           "description": " Tumpuan kepada penginjilan dan penjelasan iman dengan cara yang jelas.",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " Mengajar & Berdakwah",
           "description": "Latihan untuk mereka yang dipanggil untuk mengendalikan dan menerangkan Firman di khalayak ramai.",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " Tumpuan kepada Teologi Sistematik dan doktrin-doktrin sejarah Gereja.",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " Gereja",
           "description": " Memahami sifat, misi, dan struktur tubuh Kristus.",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " Kebijaksanaan",
           "description": " Belajar untuk hidup dengan mahir di dunia Tuhan.",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " Bagaimana gereja berinteraksi dengan budaya, komuniti, dan masyarakat amnya.",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " Hospitaliti",
           "description": " Membuka kehidupan dan rumah kita sebagai jambatan untuk Injil.",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " Apologetik Budaya",
           "description": " Menjawab persoalan yang sebenarnya diajukan oleh dunia.",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " Keadilan Sosial",
           "description": " Hati Tuhan untuk mereka yang lemah dan tertindas.",
           "downloadLocation": "",

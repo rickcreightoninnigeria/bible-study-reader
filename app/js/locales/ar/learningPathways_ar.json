@@ -5,6 +5,7 @@
       "description": " مسار تأسيسي مصمم لمساعدة كل مؤمن على ترسيخ جذوره والتقدم نحو القيادة.",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " 1. الأسس",
           "description": " نقطة البداية الأساسية لفهم الرسالة الجوهرية للكتاب المقدس وردنا عليها.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " 2. تنمية الجذور",
           "description": " التعمق أكثر في بنية الكتاب المقدس والعادات الروحية الشخصية.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " 3. فهم أعمق",
           "description": " التعامل مع الكتب الأكثر تعقيداً وديناميكيات الخدمة.",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " 4. عش من أجل رسالة",
           "description": " توجيه تركيزنا نحو الخارج، نحو قلب الله تجاه العالم.",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " 5. قيادة الآخرين",
           "description": " التجهيز لأدوار القيادة الرسمية وغير الرسمية.",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " موارد تركز على الرحلة الداخلية للمؤمن وتطبيق الحقيقة على القلب.",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " محاربة الخطيئة",
           "description": " مساعدة عملية ولاهوتية للتعامل مع الإغراء وأنماط العصيان.",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " لاهوت العمل",
           "description": " النظر إلى عملنا اليومي من خلال عدسة خلق الله وملكوته.",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " معاناة",
           "description": " السير عبر وادي ظل الموت بأمل.",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " دراسات موجهة نحو الرعاية الرعوية والتبشير والتعليم.",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " الرعاية الروحية",
           "description": " تجهيز المؤمنين للسير جنباً إلى جنب في الشدائد.",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " عرّفوا الناس بالمسيح",
           "description": " التركيز على التبشير وشرح العقيدة بطريقة واضحة.",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " التعليم والوعظ",
           "description": "تدريب لمن دُعوا للتعامل مع كلمة الله وشرحها في الأماكن العامة.",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " التركيز على اللاهوت المنهجي والعقائد التاريخية للكنيسة.",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " كنيسة",
           "description": " فهم طبيعة ورسالة وبنية جسد المسيح.",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " حكمة",
           "description": " تعلم العيش بمهارة في عالم الله.",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " كيف تتفاعل الكنيسة مع الثقافة والمجتمع والمجتمع ككل.",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " ضيافة",
           "description": " فتح حياتنا وبيوتنا كجسر لنشر الإنجيل.",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " الدفاع عن الثقافة",
           "description": " الإجابة على الأسئلة التي يطرحها العالم بالفعل.",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " العدالة الاجتماعية",
           "description": " قلب الله مع الضعفاء والمظلومين.",
           "downloadLocation": "",

@@ -5,6 +5,7 @@
       "description": " Njia ya msingi iliyoundwa ili kumsaidia kila mwamini kuanzisha mizizi imara na kusonga mbele kuelekea uongozi.",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " 1. Misingi",
           "description": " Sehemu muhimu ya kuanzia ya kuelewa ujumbe mkuu wa Biblia na mwitikio wetu.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " 2. Kukua Mizizi",
           "description": " Kuingia zaidi katika muundo wa Biblia na tabia za kiroho za kibinafsi.",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " 3. Uelewa wa Kina",
           "description": " Kupambana na vitabu tata zaidi na mienendo ya huduma.",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " 4. Ishi kwa Misheni",
           "description": " Kuelekeza umakini wetu nje kuelekea moyo wa Mungu kwa ajili ya ulimwengu.",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " 5. Kuwaongoza Wengine",
           "description": " Kuandaa majukumu rasmi na yasiyo rasmi ya uongozi.",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " Rasilimali zililenga safari ya ndani ya mwamini na matumizi ya ukweli moyoni.",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " Kupambana na Dhambi",
           "description": " Msaada wa vitendo na wa kitheolojia wa kukabiliana na majaribu na mifumo ya kutotii.",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " Theolojia ya Kazi",
           "description": " Kuangalia kazi yetu ya kila siku kupitia lenzi ya uumbaji na ufalme wa Mungu.",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " Mateso",
           "description": " Kutembea kupitia bonde la uvuli wa mauti kwa matumaini.",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " Masomo yanayolenga utunzaji wa kichungaji, uinjilisti, na ufundishaji.",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " Huduma ya Kichungaji",
           "description": " Kuwaandaa waumini kutembea pamoja katika shida.",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " Mjulishe Kristo",
           "description": " Kuzingatia uinjilisti na kuelezea imani kwa njia iliyo wazi.",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " Kufundisha na Kuhubiri",
           "description": "Mafunzo kwa wale walioitwa kushughulikia na kuelezea Neno hadharani.",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " Mkazo katika Theolojia ya Kimfumo na mafundisho ya kihistoria ya Kanisa.",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " Kanisa",
           "description": " Kuelewa asili, misheni, na muundo wa mwili wa Kristo.",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " Hekima",
           "description": " Kujifunza kuishi kwa ustadi katika ulimwengu wa Mungu.",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " Jinsi kanisa linavyoingiliana na utamaduni, jamii, na jamii kwa ujumla.",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " Ukarimu",
           "description": " Kufungua maisha na nyumba zetu kama daraja la Injili.",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " Utetezi wa Kitamaduni",
           "description": " Kujibu maswali ambayo ulimwengu unauliza kweli.",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " Haki ya Kijamii",
           "description": " Moyo wa Mungu kwa ajili ya walio dhaifu na waliokandamizwa.",
           "downloadLocation": "",

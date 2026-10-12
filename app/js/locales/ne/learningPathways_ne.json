@@ -5,6 +5,7 @@
       "description": " प्रत्येक विश्वासीलाई दृढ जरा स्थापित गर्न र नेतृत्वतर्फ प्रगति गर्न मद्दत गर्न डिजाइन गरिएको आधारभूत मार्ग।",
       "pathways": [
         {
+          "pathwayId": "foundations",
           "titleLevel2": " १. जगहरू",
           "description": " बाइबलको मूल सन्देश र हाम्रो प्रतिक्रिया बुझ्नको लागि आवश्यक सुरुवात बिन्दु।",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
@@ -41,6 +42,7 @@
           ]
         },
         {
+          "pathwayId": "growing-roots",
           "titleLevel2": " २. जराहरू बढाउने",
           "description": " बाइबलको संरचना र व्यक्तिगत आध्यात्मिक बानीहरूको गहिराइमा जाँदै।",
           "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
@@ -75,6 +77,7 @@
           ]
         },
         {
+          "pathwayId": "deeper-understanding",
           "titleLevel2": " ३. गहिरो बुझाइ",
           "description": " जटिल पुस्तकहरू र सेवाको गतिशीलतासँग कुस्ती खेल्दै।",
           "downloadLocation": "",
@@ -107,6 +110,7 @@
           ]
         },
         {
+          "pathwayId": "live-on-mission",
           "titleLevel2": " ४. मिसनमा बाँच्नुहोस्",
           "description": " संसारको लागि परमेश्वरको हृदयमा हाम्रो ध्यान बाहिरतिर केन्द्रित गर्ने।",
           "downloadLocation": "",
@@ -134,6 +138,7 @@
           ]
         },
         {
+          "pathwayId": "leading-others",
           "titleLevel2": " ५. अरूको नेतृत्व गर्ने",
           "description": " औपचारिक र अनौपचारिक नेतृत्व भूमिकाहरूको लागि सुसज्जित।",
           "downloadLocation": "",
@@ -172,6 +177,7 @@
       "description": " स्रोतहरू विश्वासीको आन्तरिक यात्रा र हृदयमा सत्यको प्रयोगमा केन्द्रित थिए।",
       "pathways": [
         {
+          "pathwayId": "fighting-sin",
           "titleLevel2": " पापसँग लड्दै",
           "description": " प्रलोभन र अवज्ञाको ढाँचाहरूसँग व्यवहार गर्न व्यावहारिक र धार्मिक सहयोग।",
           "downloadLocation": "",
@@ -206,6 +212,7 @@
           ]
         },
         {
+          "pathwayId": "theology-of-work",
           "titleLevel2": " कामको धर्मशास्त्र",
           "description": " हाम्रो दैनिक श्रमलाई परमेश्वरको सृष्टि र राज्यको दृष्टिकोणबाट हेर्ने।",
           "downloadLocation": "",
@@ -239,6 +246,7 @@
           ]
         },
         {
+          "pathwayId": "suffering",
           "titleLevel2": " दुःखकष्ट",
           "description": " मृत्युको छायाको उपत्यकामा आशाका साथ हिंड्दै।",
           "downloadLocation": "",
@@ -277,6 +285,7 @@
       "description": " पास्टरल हेरचाह, सुसमाचार प्रचार र शिक्षण तर्फ उन्मुख अध्ययनहरू।",
       "pathways": [
         {
+          "pathwayId": "pastoral-care",
           "titleLevel2": " पास्टरल केयर",
           "description": " विश्वासीहरूलाई कठिनाइमा एकअर्कासँग हिंड्न सुसज्जित गर्नु।",
           "downloadLocation": "",
@@ -309,6 +318,7 @@
           ]
         },
         {
+          "pathwayId": "make-christ-known",
           "titleLevel2": " ख्रीष्टलाई चिनाउनुहोस्",
           "description": " सुसमाचार प्रचारमा ध्यान केन्द्रित गर्नु र विश्वासलाई स्पष्ट तरिकाले व्याख्या गर्नु।",
           "downloadLocation": "",
@@ -341,6 +351,7 @@
           ]
         },
         {
+          "pathwayId": "teaching-preaching",
           "titleLevel2": " शिक्षण र प्रचार",
           "description": "सार्वजनिक स्थानमा वचन सम्हाल्न र व्याख्या गर्न बोलाइएकाहरूका लागि तालिम।",
           "downloadLocation": "",
@@ -379,6 +390,7 @@
       "description": " व्यवस्थित धर्मशास्त्र र चर्चको ऐतिहासिक सिद्धान्तहरूमा केन्द्रित।",
       "pathways": [
         {
+          "pathwayId": "church",
           "titleLevel2": " चर्च",
           "description": " ख्रीष्टको शरीरको प्रकृति, उद्देश्य र संरचना बुझ्ने।",
           "downloadLocation": "",
@@ -411,6 +423,7 @@
           ]
         },
         {
+          "pathwayId": "wisdom",
           "titleLevel2": " बुद्धि",
           "description": " परमेश्वरको संसारमा कुशलतापूर्वक बाँच्न सिक्दै।",
           "downloadLocation": "",
@@ -449,6 +462,7 @@
       "description": " चर्चले संस्कृति, समुदाय र समाजसँग कसरी अन्तरक्रिया गर्छ।",
       "pathways": [
         {
+          "pathwayId": "hospitality",
           "titleLevel2": " आतिथ्य",
           "description": " हाम्रो जीवन र घरहरूलाई सुसमाचारको लागि पुलको रूपमा खोल्दै।",
           "downloadLocation": "",
@@ -481,6 +495,7 @@
           ]
         },
         {
+          "pathwayId": "cultural-apologetics",
           "titleLevel2": " सांस्कृतिक क्षमायाचना",
           "description": " संसारले वास्तवमा सोधिरहेका प्रश्नहरूको जवाफ दिँदै।",
           "downloadLocation": "",
@@ -513,6 +528,7 @@
           ]
         },
         {
+          "pathwayId": "social-justice",
           "titleLevel2": " सामाजिक न्याय",
           "description": " कमजोर र उत्पीडितहरूका लागि परमेश्वरको हृदय।",
           "downloadLocation": "",
