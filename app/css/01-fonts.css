@@ -6,9 +6,8 @@
  * @font-face declarations load fonts from the local fonts/ folder.
  * This ensures all fonts work offline (required for the Android APK build).
  *
- * If you are serving this as a web page with internet access, the Google
- * Fonts @import below acts as a fallback for any weights not covered
- * here (though in practice all used weights are declared below).
+ * There is deliberately no Google Fonts @import: every family used is bundled
+ * and declared below (see section 01).
  *
  * Font files (ttf) should be downloaded from Google Fonts and placed at:
  *
@@ -69,15 +68,15 @@
  */
 
 
-/* ── 01. GOOGLE FONTS IMPORT ────────────────────────────────────────────── */
-/* Web-browser fallback if local font files are absent.
-   In the Android APK build the @font-face blocks below take priority;
-   this import is a no-op when offline and the fonts/ folder is present.
-   The Noto families listed here cover all non-Latin scripts in the current
-   UI language set. Add Noto Sans Ethiopic and Noto Sans Greek if those
-   languages are added. */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@400;500&family=Noto+Nastaliq+Urdu:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500&family=Noto+Sans+Myanmar:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+KR:wght@400;500&family=Noto+Sans+Hebrew:wght@400;500&family=Noto+Sans+Ethiopic:wght@400;500&display=swap');
+/* ── 01. FONT SOURCES ──────────────────────────────────────────────────── */
+/* All fonts are bundled in ../fonts/ and declared in the @font-face blocks
+   below, so the app makes no network request for fonts and works the same
+   offline. This file used to @import the same families from Google Fonts as
+   a fallback for missing local files; every family now has local files, so
+   the import only added a request to Google on every online page load
+   (render-blocking, and not covered by the privacy policy). To add a font,
+   add its file to fonts/ and a @font-face rule here — don't re-add the
+   import. */
 
 
 /* ── 02. LATIN / UI @font-face ──────────────────────────────────────────── */

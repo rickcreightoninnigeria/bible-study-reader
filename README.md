@@ -33,7 +33,7 @@ Licensed **CC BY-SA 4.0** — Rick Creighton, 2026.
 - **Chapter-by-chapter content** — question cards, answer textareas, Likert
   scales, verse pop-ups, QA callout modals, "go deeper" prompts, opening
   quotes, and reflection questions.
-- **Answer persistence** — all answers auto-save to `localStorage` on blur;
+- **Answer persistence** — all answers auto-save to IndexedDB on blur;
   manual Save button also available.
 - **Progress tracking** — per-chapter completion rings and a full Progress
   Overview page; starred/bookmarked questions panel.
@@ -51,12 +51,12 @@ Licensed **CC BY-SA 4.0** — Rick Creighton, 2026.
 - **Onboarding & feature tutorials** — slide-based overlay engine for
   first-run guidance and optional per-feature tutorials.
 - **Dark mode** — toggle in Settings; CSS custom properties throughout.
-- **Multilingual UI** — 13 languages built in (see [i18n](#internationalisation-i18n)),
+- **Multilingual UI** — 18 languages built in (see [i18n](#internationalisation-i18n)),
   with full RTL layout support for Arabic.
 - **Swipe navigation** — horizontal swipe moves between chapters; also
   navigates between tabs on Settings and How To pages.
 - **Offline-first** — all fonts, scripts, and styles are local; no CDN
-  calls at runtime (font files must be placed in `fonts/` — see below).
+  calls at runtime (font files live in `fonts/`).
 
 ---
 
@@ -101,6 +101,8 @@ js/
                              visibilitychange listeners (backgrounding save, last position)
   navigation.js             goToChapter(), menu open/close, tab reset
   share-print.js            Answer export/share/print report generation; Android share/print bridge
+  pathways-import.js        User-importable learning pathways (.epathway / pathways.json): validation, storage,
+                             merged built-in + imported pathway reader, active-pathway keys, download hand-off
   render-progress.js        Progress Overview page, Notes page, pathway helpers, renderMenu(),
                              updateProgress()
   render-library.js         Library page: tabs (Load / All / Recent / Shelves / Paths), reorder mode
@@ -109,6 +111,7 @@ js/
                              once no users remain on a pre-migration version)
   app-init.js               DOMContentLoaded startup sequence (startApp()); locale loader;
                              reloadLocaleAndRerender()
+  gallery.js                Image-gallery blocks (thumbnail grid + full-screen viewer) for Go Deeper / Leaders' Notes
   render-pages.js           Non-chapter pages: How To, Settings, Leaders Notes, About, Copyright,
                              renderTitlePage()
   render-chapter-elements.js  Per-element-type chapter content renderers; language-slot resolution
@@ -142,8 +145,9 @@ images/
 
 The app uses **no bundler or module system**. Every script file declares its
 exports as plain `window`/`var` globals. The `<script>` tags in `index.html`
-must appear in exactly this order because each file depends on globals that
-earlier files have already declared.
+must appear in this order because some files use globals from earlier files at
+load time (see the notes in `app/index.html`; a unit test checks the order).
+See `ARCHITECTURE.md` for a fuller overview of the codebase.
 
 | # | File | Key globals it declares | Depends on |
 |---|------|------------------------|------------|
@@ -169,16 +173,18 @@ earlier files have already declared.
 | 20 | `gestures.js` | `touchstartX`, `touchendX`, `handleGesture()` | `settings.js`, `state.js`, `idb.js` |
 | 21 | `navigation.js` | `goToChapter()`, `closeMenu()`, `closeNonChapterPage()`, `_resetNonChapterPageState()` | `icons.js`, `settings.js`, `state.js` |
 | 22 | `share-print.js` | `shareAnswers()`, `exportStudyAnswers()`, `printAllChapters()` | `state.js`, `idb.js`, `utils.js` |
-| 23 | `render-progress.js` | `renderProgressOverview()`, `renderNotesPage()`, `renderMenu()`, `updateProgress()`, `getActivePathway()` | `icons.js`, `settings.js`, `state.js`, `starred.js`, `navigation.js` |
-| 24 | `render-library.js` | `renderLibrary()`, `recordStudyOpened()`, `recordStudyInstalled()`, library history helpers | `idb.js`, `icons.js`, `settings.js`, `utils.js` |
-| 25 | `study-loader.js` | `applyStudyData()`, `loadAnyFile()`, `loadStudyFromJson()`, `loadStudyFromBase64()`, `activateStudy()`, `deleteStudy()`, `openLibrary()` | Most of the above |
-| 26 | `migrate.js` | `migrateAnswersToIDB()` | `idb.js`, `state.js` |
-| 27 | `app-init.js` | `startApp()`, `reloadLocaleAndRerender()` | Everything above |
-| 28 | `render-pages.js` | `renderHowToUse()`, `renderSettings()` (augments settings.js), `renderLeadersNotes()`, `renderGoDeeper()`, `renderAbout()`, `renderTitlePage()`, `navigateTab()` | `icons.js`, `settings.js`, `onboarding.js`, `navigation.js` |
-| 29 | `render-chapter-elements.js` | Per-element renderers (`renderHeading()`, `renderQuestion()`, `renderImage()`, etc.), `buildLangMap()`, `resolveText()`, `resolveMetaField()`, `resolveTextWithFallback()`, `getActiveLang()` | Almost everything above |
-| 30 | `render-chapter-ui.js` | `buildSaveBar()`, `buildNotesField()`, `buildNavButtons()` | `render-chapter-elements.js` |
-| 31 | `render-chapter.js` | `renderChapter()`, `detectAvailableLangs()` | Almost everything |
-| 32 | `save.js` | `saveAnswers()` | `state.js`, `idb.js`, `search.js`, `utils.js` |
+| 23 | `pathways-import.js` | `getAllPathways()`, `findPathwayByKey()`, `getActivePathwayKey()`, `importPathwaysFromText()`, `removeImportedPathway()`, `openPathwayDownload()`, `vetDownloadUrl()` | `utils.js`, `format-text.js`, `study-loader.js` (runtime) |
+| 24 | `render-progress.js` | `renderProgressOverview()`, `renderNotesPage()`, `renderMenu()`, `updateProgress()`, `getActivePathway()` | `icons.js`, `settings.js`, `state.js`, `starred.js`, `navigation.js` |
+| 25 | `render-library.js` | `renderLibrary()`, `recordStudyOpened()`, `recordStudyInstalled()`, library history helpers | `idb.js`, `icons.js`, `settings.js`, `utils.js` |
+| 26 | `study-loader.js` | `applyStudyData()`, `loadAnyFile()`, `loadStudyFromJson()`, `loadStudyFromBase64()`, `activateStudy()`, `deleteStudy()`, `openLibrary()` | Most of the above |
+| 27 | `migrate.js` | `migrateAnswersToIDB()` | `idb.js`, `state.js` |
+| 28 | `app-init.js` | `startApp()`, `reloadLocaleAndRerender()` | Everything above |
+| 29 | `gallery.js` | `buildGalleryHtml()`, `prefetchGalleryImages()`, `storeGalleryImages()`, `openGalleryViewer()` | `render-chapter.js` (`_imageBlobCache`, runtime), `idb.js` |
+| 30 | `render-pages.js` | `renderHowToUse()`, `renderSettings()` (augments settings.js), `renderLeadersNotes()`, `renderGoDeeper()`, `renderAbout()`, `renderTitlePage()`, `navigateTab()` | `icons.js`, `settings.js`, `onboarding.js`, `navigation.js` |
+| 31 | `render-chapter-elements.js` | Per-element renderers (`renderHeading()`, `renderQuestion()`, `renderImage()`, etc.), `buildLangMap()`, `resolveText()`, `resolveMetaField()`, `resolveTextWithFallback()`, `getActiveLang()` | Almost everything above |
+| 32 | `render-chapter-ui.js` | `buildSaveBar()`, `buildNotesField()`, `buildNavButtons()` | `render-chapter-elements.js` |
+| 33 | `render-chapter.js` | `renderChapter()`, `detectAvailableLangs()` | Almost everything |
+| 34 | `save.js` | `saveAnswers()` | `state.js`, `idb.js`, `search.js`, `utils.js` |
 
 ---
 
@@ -262,7 +268,8 @@ from localStorage in a past release, via the one-time migration in
 | `lib_recent_installed` | JSON array of recently installed study IDs (newest first, max 4) |
 | `lib_pinned` | JSON array of pinned study IDs (Recent tab) |
 | `lib_pinned_all` | JSON array of pinned study IDs (All tab) |
-| `bsr_activePathwayId` | Active learning pathway key (`"{l1Idx}_{l2Idx}"`) |
+| `bsr_activePathwayId` | Active learning pathway key: `builtin:{pathwayId}` or `imp:{groupId}:{pathwayId}` (older positional values like `"1_2"` are converted on first read) |
+| `bsr_importedPathways` | `{ groups: [...] }` — pathway groups the user imported from `.epathway` files / bundles (see `json templates/PATHWAY_FORMAT.md`) |
 | `bsr_infoSeen_{infoId}` | `"hidden"` once a ⓘ info popup's "Show this again" has been unticked |
 | `bsr_idb_migration_done` | `"1"` once the one-time localStorage → IndexedDB answer migration has completed |
 | `default_studies_installed` | App version string — gates the bundled-studies installer to run once per app update |
@@ -277,7 +284,8 @@ version 3. Three object stores:
   for large studies.
 - **`images`** — stores cover/publisher/author images as Blobs, keyed by
   `{studyId}_cover`, `{studyId}_publisher`, `{studyId}_author`, plus inline
-  chapter images keyed by `{studyId}_{elementId}`.
+  chapter images keyed by `{studyId}_{elementId}` and Go Deeper gallery files
+  keyed by `{studyId}_gallery_{filename}`.
 - **`answers`** — all per-study user data. One record per chapter, keyed by
   `{studyId}_ch{N}` (built via `chapterAnswersIDBKey()`), whose value is a
   plain object of field → answer produced by `answerFieldKey()` /

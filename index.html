@@ -1,66 +1,39 @@
 <!DOCTYPE html>
 <!--
   ==========================================================================
-  Bible Study Reader (BSR)
-  A multi-session Bible study app — mobile-first, WebView-compatible.
+  Bible Study Reader
+  A mobile-first, offline-first app for working through Bible studies
+  loaded from .estudy files.
   Author: Rick Creighton, 2026. Licensed CC BY-SA 4.0.
 
-  ARCHITECTURE OVERVIEW
-  ─────────────────────
-  This is a multi-file web app. index.html is a static shell only — all
-  logic and styles are loaded from external files. It is designed to run
-  as a web page or wrapped in an Android/iOS WebView.
+  This file is a static shell: the nav bar, chapter menu drawer, toasts, the
+  #mainContent container, modal/overlay containers, then the scripts. All
+  logic lives in js/*.js (classic scripts sharing globals, no bundler) and
+  all styles in css/*.css. Everything is rendered into #mainContent at
+  runtime.
+
+  SCRIPT ORDER MATTERS
+  ────────────────────
+  Files may call later-loaded functions at runtime, but a few things run at
+  load time and need earlier files: format-text.js needs DOMPurify and
+  markdown-it; render-progress.js and save.js call debounce() (search.js);
+  save.js also needs updateProgress() (render-progress.js). Add a new script
+  next to the files it depends on, not at the end by default.
 
   STORAGE
   ───────
-  - Answer data, downloaded studies, and progress → IndexedDB (via StudyIDB)
-  - App settings and UI state                     → localStorage ('bsr_' key prefix)
+  IndexedDB (StudyIDB, idb.js): studies, images and all answer data.
+  localStorage: study registry, settings, UI flags, active pathway.
 
-  CSS FILES (loaded in <head>, in order)
-  ──────────────────────────────────────
-  00-tokens.css              – Design tokens (CSS custom properties)
-  01-reset-base.css          – Reset and base element styles
-  02-layout.css              – Page layout, containers, grid
-  03-typography.css          – Font sizes, line heights, text styles
-  04-components.*.css        – Shared UI components (buttons, inputs, icons…)
-  05a-components.cards.css   – Study/library card components
-  05b-components.cards.responses.css – Answer/response card styles
-  05c-components.nav.css     – Navigation bar and drawer styles
-  06-pages.*.css             – Page-specific styles (chapter, library, settings…)
-  07-themes.css              – Light/dark/study theme overrides
-  08-animations.css          – Transitions and keyframe animations
+  WHERE TO READ MORE
+  ──────────────────
+  ARCHITECTURE.md  – file list, load order, globals, storage keys, routing,
+                     the .estudy install flow, i18n, the Android bridge.
+  ESTUDY_FORMAT.md – the .estudy / study.json file format.
+  README.md        – overview, running locally, contributing.
 
-  JAVASCRIPT FILES (loaded at end of <body>, in order)
-  ─────────────────────────────────────────────────────
-  idb.js             – IndexedDB wrapper (StudyIDB): read/write answers & studies
-  state.js           – Global state variables (window.chapters, window.settings…)
-  settings.js        – Settings defaults, init, save, reset, clear functions
-  format-text.js     – Text formatting utilities (markdown-lite, verse refs…)
-  render-elements.js – Renders individual study elements (questions, passages…)
-  render-chapter-ui.js – Renders the chapter view and answer controls
-  render-pages.js    – Renders non-chapter pages (title, library, settings…)
-  render-progress.js – Progress ring, chapter menu progress indicators
-  render-library.js  – Library tab: installed studies, pathways, search
-  study-loader.js    – .estudy file parsing, applyStudyData(), IDB persistence
-  tts.js             – Text-to-speech (Android bridge + Web Speech API fallback)
-  voice.js           – Voice/language selection UI helpers
-  search.js          – Full-text search with scoring, synonyms, fuzzy matching
-  modals.js          – Verse modal, QA modal, notes info modal
-  router.js          – Client-side router: pushState, popstate, deep links
-  app-init.js        – Boot sequence: settings init, study restore, event listeners
-
-  HTML SHELL SECTIONS (this file)
-  ────────────────────────────────
-  <head>   – Meta tags, CSS links, preloaded font
-  <body>   – Static shell only:
-               · Top navigation bar (#topNav)
-               · Chapter/page menu drawer (#menuDrawer)
-               · Toast notification (#toast)
-               · Main content container (#mainContent)
-               · Verse modal (#verseModal)
-               · QA modal (#qaModal)
-               · Search overlay (#searchOverlay)
-             All dynamic content is injected by JS render functions.
+  NOTE: the repository's root index.html must stay identical to this file
+  (a unit test checks it).
   ==========================================================================
 -->
 <html lang="en">
@@ -245,11 +218,13 @@
 <script src="js/gestures.js"></script>
 <script src="js/navigation.js"></script>
 <script src="js/share-print.js"></script>
+<script src="js/pathways-import.js"></script>
 <script src="js/render-progress.js"></script>
 <script src="js/render-library.js"></script>
 <script src="js/study-loader.js"></script>
 <script src="js/migrate.js"></script>
 <script src="js/app-init.js"></script>
+<script src="js/gallery.js"></script>
 <script src="js/render-pages.js"></script>
 <script src="js/render-chapter-elements.js"></script>
 <script src="js/render-chapter-ui.js"></script>

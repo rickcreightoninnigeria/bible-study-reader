@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <!--
   ==========================================================================
-  ${meta.title}
-  A ten-session Bible study app
+  Bible Study Reader
+  A mobile-first, offline-first app for working through Bible studies
+  loaded from .estudy files.
   Author: Rick Creighton, 2026. Licensed CC BY-SA 4.0.
 
-  FILE OVERVIEW
-  ─────────────
-  This is a single-file mobile-first web app (HTML + CSS + JS in one file).
-  It is designed to be delivered as a web page or wrapped in a WebView for
-  Android/iOS. Answer data is persisted to IndexedDB (via StudyIDB). App settings
-  and non-answer state remain in localStorage under the 'bsr_' key prefix.
+  This file is a static shell: the nav bar, chapter menu drawer, toasts, the
+  #mainContent container, modal/overlay containers, then the scripts. All
+  logic lives in js/*.js (classic scripts sharing globals, no bundler) and
+  all styles in css/*.css. Everything is rendered into #mainContent at
+  runtime.
 
-  MAJOR SECTIONS (in order)
-  ──────────────────────────
-  1. <head>   – Fonts, CSS custom properties (design tokens), all CSS rules
-  2. <body>   – Static HTML shell: top nav, chapter menu drawer, toast, main
-               content container, verse modal, QA modal, search overlay
-  3. <script> – All JavaScript:
-       a. Global constants – Font sizes, user-changeable settings
-       e. Modal functions  – openVerseModal, openQaModal, openQaModalFromElement, openNotesInfo, etc.
-       f. Star system      – toggleStar, getStarredQuestions, etc.
-       g. Settings         – SETTINGS_DEFAULTS, initSettings, saveSetting, etc.
-       i. Search           – Full-text search with scoring, synonyms, fuzzy
-                             matching, debouncing, and localStorage caching
-       k. State vars       – currentChapter, menuOpen, isNonChapterPage
-       l. Render funcs     – renderMenu, renderTitlePage, renderChapter, etc.
-       m. Navigation       – goToChapter, closeMenu, closeNonChapterPage, etc.
-       n. Save / Share     – saveAnswers, shareAnswers, exportAllAnswers
-       o. Progress         – updateProgress, getChapterProgress, progress ring
-       p. Init block       – initSettings(), renderTitlePage(), event listeners
-       q. Swipe nav        – touchstart/touchend gesture handler
-       r. Scroll / vis     – saveLastPosition, visibilitychange handler
-       s. Clipboard        – Long-press-to-copy on answer fields
+  SCRIPT ORDER MATTERS
+  ────────────────────
+  Files may call later-loaded functions at runtime, but a few things run at
+  load time and need earlier files: format-text.js needs DOMPurify and
+  markdown-it; render-progress.js and save.js call debounce() (search.js);
+  save.js also needs updateProgress() (render-progress.js). Add a new script
+  next to the files it depends on, not at the end by default.
+
+  STORAGE
+  ───────
+  IndexedDB (StudyIDB, idb.js): studies, images and all answer data.
+  localStorage: study registry, settings, UI flags, active pathway.
+
+  WHERE TO READ MORE
+  ──────────────────
+  ARCHITECTURE.md  – file list, load order, globals, storage keys, routing,
+                     the .estudy install flow, i18n, the Android bridge.
+  ESTUDY_FORMAT.md – the .estudy / study.json file format.
+  README.md        – overview, running locally, contributing.
+
+  NOTE: the repository's root index.html must stay identical to this file
+  (a unit test checks it).
   ==========================================================================
 -->
 <html lang="en">
