@@ -1,0 +1,158 @@
+# Bible Study Reader — Architecture
+
+Written for a planning assistant who cannot see the repo. Describes `main` at commit `7a910e1` (13 Oct 2026). Section 12 lists what was **not** verified.
+
+**What it is.** An offline-first, mobile-first Bible study reader: vanilla JS, no build step, no framework, classic `<script>` tags sharing globals. Runs as a static web page or inside an Android WebView (a separate Kotlin wrapper, not in this repo). Content comes from user-loaded `.estudy` files (zip: `study.json` + `images/`). Answers, studies and images live in IndexedDB; settings in localStorage. Licence CC BY-SA 4.0.
+
+## 1. Files
+
+**`app/index.html`** is the shell: nav bar, chapter drawer, toasts, modal containers, then the scripts. The root `index.html` is a stale copy (section 11).
+
+**`app/js/` (first-party)**
+- `format-text.js` — DOMPurify config, markdown-it instance, `renderFormatted/renderParas/renderFormattedArray`, footnote-button expansion.
+- `state.js` — `window.*` state vars and IDB key helpers (`chapterAnswersIDBKey` etc.).
+- `i18n.js` — `LANGUAGE_MAP`, `resolveLanguage`, `applyLanguageToDom`, `t()`, `setLanguage`.
+- `idb.js` — `StudyIDB` wrapper.
+- `icons.js` — `ICONS` (inline SVG strings).
+- `settings.js` — `SETTINGS_DEFAULTS`, `appSettings`, save/reset, clear answers.
+- `tts.js`, `voice.js` — read-aloud and voice input (Android bridge, Web Speech fallback).
+- `modals.js` — verse/QA/deeper/Likert/info/footnote modals, `renderLikertScale`, `safeSetHtml`, `_safeUrl`.
+- `starred.js` — starring questions, starred panels.
+- `search.js` — search overlay, scoring, synonyms, `debounce`, `storageCache`.
+- `onboarding.js` — app/study/upgrade onboarding slides, first-use info triggers, `updateNavButtons`.
+- `router.js` — `Router`, History API, popstate, modal/overlay back-handling.
+- `utils.js` — Swal dark-mode patch, last-position save/restore, toasts, `escapeHtml`, `jsArg`, long-press copy, `getPlatform`.
+- `validation.js` — AI tutor (Gemini API) and local answer checks. It does **not** validate study files.
+- `gestures.js` — swipe nav, scroll/visibility saves.
+- `navigation.js` — `goToChapter`, menu drawer, non-chapter page reset.
+- `share-print.js` — share/export/print answers.
+- `pathways-import.js` — imported pathways, merged pathway reader, active-pathway keys.
+- `render-progress.js` — progress page, notes page, pathway progress.
+- `render-library.js` — library tabs (All, Recent, Shelves, Paths, Load), pins, delete.
+- `study-loader.js` — install/activate studies, `applyStudyData`, `sanitizeStudyData`, zip limits, themes.
+- `migrate.js` — one-time localStorage→IDB answer migration.
+- `app-init.js` — `startApp`, `loadLocale`, `initApp`.
+- `gallery.js` — image gallery blocks and full-screen viewer.
+- `render-pages.js` — title, How-to, Settings, Leaders' Notes, About, Go Deeper pages.
+- `render-chapter-elements.js` — per-element renderers; `resolveText`, `buildLangMap`, `studyText`.
+- `render-chapter-ui.js` — language bar, notes field, nav buttons, save bar, Read more button.
+- `render-chapter.js` — `renderChapter` orchestrator, `_imageBlobCache`.
+- `save.js` — save/blur/Likert answer saving.
+
+**Other app files.** `css/01…08` (11 files, `07-pages.css` is ~4,300 lines). `fonts/`. `images/`. `js/locales/<lang>/` holds four JSON files per language (`appAboutData`, `libraryShelvesStructure`, `learningPathways`, `ui`) for 18 languages (am ar en es ff fr ha ig lg ms my ne pt sw tl ur yo zh-CN). `js/appAboutData_untranslated.json` is language-independent app data (**currently `{}`**, see section 11). `app/estudy-editor.html`, `study-editor.html`, `study-editor-translate.html` and `ui-translate.html` are standalone authoring/translation tools.
+
+**Repo level.** `ESTUDY_FORMAT.md` (file format spec), `README.md` (partly stale), `json templates/` (study/pathway templates and `PATHWAY_FORMAT.md`), `estudy_en (v3)/` and `estudy_XX (v3)/` (the study library as `.estudy` files plus unzipped JSON/images), `py/` (xlsx↔json translation scripts, Bible-reference populators), `testing/` (vitest, 6 files, 149 tests).
+
+## 2. Script load order (`app/index.html`)
+
+sweetalert2 → jszip → purify → markdown-it → `format-text` → `state` → `i18n` → `idb` → `icons` → `settings` → `tts` → `voice` → `modals` → `starred` → `search` → `onboarding` → `router` → `utils` → `validation` → `gestures` → `navigation` → `share-print` → `pathways-import` → `render-progress` → `render-library` → `study-loader` → `migrate` → `app-init` → `gallery` → `render-pages` → `render-chapter-elements` → `render-chapter-ui` → `render-chapter` → `save`.
+
+Rules that matter:
+- Files may only *call* later-loaded functions at runtime; load-time dependencies are few. `format-text.js` needs `DOMPurify` and `markdownit` at load. `render-progress.js` calls `debounce` (from `search.js`) at load. `save.js` runs `debounce(updateProgress, 200)` at load, so `search.js` and `render-progress.js` must load before it.
+- Top-level `const`/`let` are global lexical bindings (not on `window`).
+- Unit tests load source files into `vm` sandboxes in this order; changing load-time dependencies can break them.
+
+## 3. Globals and owners
+
+- **`state.js`** (`window.*`): `chapters`, `titlePageData`, `studyAboutData`, `howToUseData`, `leadersNotesData`, `goDeeperData`, `copyrightData`, `verseData`, `qaCallouts(ById)`, `studyMetadata`, `activeStudyId`, `lastPositionCache`, `currentChapter`, `menuOpen`, `isNonChapterPage`, `activeTabPage`, `activeTabId`, `_appReady`, `pendingStudyData`, `studyOnboardingSlides`, `_lib*`, `FONT_*`. **`applyStudyData()` (study-loader.js) writes the study ones**; `studyAiData` is first created there.
+- **Other owners:** `appSettings` (settings.js, `let`); `StudyIDB` (idb.js); `Router` (router.js); `ICONS`; `LANGUAGE_MAP`/`SUPPORTED_LANGUAGES`/`RTL_LANGUAGES` (i18n.js); `appStrings`, `appLocale`, `appAboutData` (written by `loadLocale`, app-init.js); `_activeStudyLang`, `_sessionUiLangOverride` (set by lang bars, i18n-related); `storageCache` (search.js); `_imageBlobCache` (render-chapter.js); `_activeBlobUrls` (study-loader.js); `GODEEPER_TABS`/`LEADERS_TABS`/`HOWTO_TABS` (render-pages.js); `touchstartX/touchendX` (gestures.js); `_readMoreReturn` (render-chapter-ui.js).
+- Inline `onclick` handlers need their functions global; several are assigned as `window.fn = …`.
+
+## 4. Storage
+
+**localStorage**
+- `study_registry` — JSON array of installed study ids (the library's source of truth, with IDB content).
+- `bsr_last_active_study`; `appSettings` (JSON); `app_language`.
+- `app_onboarding_complete`, `onboardingComplete_<studyId>`, `featureSeen_*`, `bsr_infoSeen_<id>`, `intermediateDefaultsApplied`.
+- `bsr_studyver_<studyId>` — installed `studyVersion` (version gate for loads).
+- `default_studies_installed`, `bsr_idb_migration_done`.
+- `lib_recent_installed`, `lib_recent_opened`, `lib_pinned`, `lib_pinned_all`.
+- `bsr_activePathwayId` — `builtin:<pathwayId>` or `imp:<groupId>:<pathwayId>` (legacy positional values `1_2` / `builtin:1_2` auto-convert via a frozen table).
+- `bsr_importedPathways` — `{ groups: [...] }`.
+- `localStorage.clear()` = "Reset all data".
+
+**IndexedDB** `BibleStudyReader`, version **3**, three stores with out-of-line keys:
+- `studies`: `study_content_<studyId>` → parsed study JSON.
+- `images`: Blobs under `<studyId>_cover|publisher|author`, `<studyId>_<elementId>` (inline images), `<studyId>_gallery_<file>` (gallery files).
+- `answers`:
+  - `<studyId>_ch<N>` → object with fields `q_<elementId>`, `r_<elementId>`, `notes_0`, `likert_<elementId>_<i>`, `star_<elementId>`;
+  - `<studyId>_celebrated_ch<N>` → `'1'`;
+  - `<studyId>_global_notes`;
+  - `<studyId>_lastPosition` → JSON string `{chapterIdx, scrollY}`.
+- `N` is `chapterNumber`, **not** the array index. Per-chapter read-modify-write goes through `StudyIDB.updateChapterAnswers` (serialised per key).
+- `deleteStudyAnswers`/`removeImagesByPrefix` delete by `<studyId>_` prefix, so a study id that is a prefix of another (`a` vs `a_b`) would delete both.
+
+## 5. Routing (`router.js`)
+
+History API only (no hash). State shape: `{ page, idx, tabId, scrollY, studyId }`.
+
+- **Pages:** `title`, `chapter` (`idx` = array index), `library`, `progress`, `howto`, `settings`, `leaders`, `about`, `notes`, `godeeper`, `_exit_guard`. Tabbed pages use `tabId` (Go Deeper uses `ch_<n>`/`intro`).
+- **API:** `Router.navigate(dest)` (push + render), `back()` (`history.back()`), `boot`, `replaceState` (tab switches), `pushWithoutRender`.
+- **Back is deliberately flattened:** from any page Back renders the Library; from the Library it shows an exit-confirm Swal then calls the native exit. Close (✕) buttons use `Router.back()`, so they also go to the Library.
+- Popstate first closes an open search overlay or modal (`_closeAnyOpenModal` list, including the gallery viewer), then undoes the navigation with `history.forward()` and ignores the follow-up event.
+- `_navigating` makes overlapping navigations silently drop.
+- Page renderers set `activeTabPage`/`isNonChapterPage`. The title page sets `isNonChapterPage` but no `activeTabPage`.
+- `Router.boot` is called by `initApp`/`startApp`; the Escape key calls `history.back()`.
+
+## 6. Loading and installing studies
+
+**Startup** (`startApp`, on DOMContentLoaded): `initSettings` → `migrateAnswersToIDB` → `resolveLanguage` + `loadLocale` → `_appReady = true` → apply `pendingStudyData` if native delivered one early → `cleanOrphanedRegistry` → first run: Library + app onboarding; else restore `bsr_last_active_study` (`StudyIDB.get` → `applyStudyData` → `initApp`); else Library.
+
+**Entry points** (most end in `_installStudyFileQuietly` or `loadStudyFromFile`; `loadStudyFromJson` stores directly):
+- Library/picker file input → `handleFileSelect`/`handlePickerFileChange` (one file: `loadAnyFile`; several: `_installMultipleFiles`).
+- Android: `loadStudyFromBase64(b64)` → `loadAnyFile`; `loadStudyFromJson(text)` (plain-JSON path, may arrive before DOMContentLoaded).
+- `loadAnyFile` detects: bundle zip (contains `.estudy`/`.zip` entries and no `study.json`; optional root `pathways.json`), single zip study, `.epathway` / plain JSON pathway file (detected by `"estudyPathwayFileVersion"`), or legacy plain-JSON study.
+
+**Per study:** `_checkZipLimits` (≤200 entries, 25 MB/entry, 150 MB total, ratio ≤100, no `..`/`\`/absolute names) → parse `study.json` → require a `[A-Za-z0-9_.-]` `studyId` → `_shouldInstallStudy` (compares `studyVersion` with `bsr_studyver_<id>`; downgrade blocked on user loads) → write images (cover/publisher/author, inline `images/<elementId>.webp`, gallery `src` files) → `StudyIDB.set(study_content_<id>)` → registry push. The quiet installer deletes images it wrote if the install fails part-way. Updates do **not** delete images the new version no longer uses.
+
+**`applyStudyData(data)`:** `sanitizeStudyData` (deep copy; strings containing `<` through DOMPurify; ID-like keys reduced to `[A-Za-z0-9_.-]`) → build normalised `window.chapters` (adds `num`, resolved `chapterTitle`, `intro`, `closing`, `reflection[]`, `sections[]` from flat `elements[]`; this legacy shape feeds search/share/progress/starred; re-resolved by `refreshChapterTextForLang` on language change) → set study globals → resolve cover/publisher/author blob URLs → `applyTheme` → read `lastPositionCache` → `initApp` (restore position or title page, then onboarding). `_revokeAllBlobUrls` runs first, deferred two animation frames.
+
+## 7. study.json blocks and their renderers
+
+`studyMetadata` (id, title/subtitle/shortTitle, `language1..N`, `studyVersion`, `estudyFileVersion`, shelves) → title page, library cards, header. `imageData` → cover/publisher/author. `theme` → 22 CSS custom properties (`THEME_PROPS`), suspended on app pages (`suspendStudyTheme`). `chapters[]` `{chapterNumber, chapterTitle, elements[]}` → `renderChapter`, one renderer per element `type`: `heading`, `text` (subtypes chapterIntro/bridge/chapterClosing…), `biblePassage` (registers `verseData`, outputs no HTML), `question` (subtypes header/reflection/standard; answer textarea, star, sample answer, local validate), `image`, `callout`, `likertScale`; `repeatElement` references another element. `studyOnboardingSlides` → study onboarding overlay. `studyAiData` → AI tutor (`apiKey` ships inside the study file). `howToUseData` → How-to "Study" tab. `leadersNotesData` → Leaders' Notes (hidden unless `showPageLeaders`). `goDeeperData` → Go Deeper page (tabs, markdown/HTML blocks, footnotes, `readMoreButtons`/`backToStudy` links, `image-gallery` blocks). `studyAboutData`/`copyrightData` → About page. Full spec: `ESTUDY_FORMAT.md`.
+
+Text fields are multilingual via numbered slots (`title1`, `title2`…) mapped by `studyMetadata.language1..N`. Format per field: `HTML`, `markdown`, or `plainText` (also the default); all are sanitised.
+
+## 8. i18n
+
+Two independent languages:
+1. **UI language** — `resolveLanguage()` (saved `app_language` → browser language → `en`). `loadLocale(lang)` XHR-fetches four JSON files from `js/locales/<lang>/` (plus `en` fallbacks), merges key-by-key into `window.appStrings` (UI) and file-level into `window.appAboutData` (about, shelves, pathways). `t(key, vars)` returns the key itself when missing. RTL (`ar`, `he`, `fa`, `ur`) via `dir` on `<html>`. `setLanguage` → `reloadLocaleAndRerender`.
+2. **Study language** — `window._activeStudyLang`, chosen from a lang bar in chapters, How-to, Leaders' Notes, Go Deeper. `detectAvailableLangs()` reads `studyMetadata.language1..N`; `resolveText`/`resolveTextWithFallback`/`studyText` pick numbered slots with fallback to slot 1 then the plain field. Choosing a study language that is also a supported UI language also switches the UI locale for the session (`_sessionUiLangOverride`).
+
+New UI strings go in `ui_en.json`; other locales fall back to English per key. The built-in pathway files carry permanent `pathwayId`s in all 19 files (a unit test checks them).
+
+## 9. Android bridge (`window.Android`, plain WebView)
+
+**JS → native:** `exitApp()`, `openUrl(url)`, `share(text)`, `printContent(html)`, `speak(text)`, `stopSpeaking()`, `isSpeaking()`, `startVoiceInput()`. Each is feature-detected; web fallbacks exist (`window.open`, `navigator.share`/clipboard, `window.print`, Web Speech). `getPlatform()` treats `window.Android` as "android". Router also tries Capacitor/Cordova exit.
+**Native → JS globals:** `loadStudyFromBase64(b64)`, `loadStudyFromJson(text)`, `receiveVoiceTranscript(text)`.
+Downloads are never fetched in-app: links go to `Android.openUrl`/`window.open`, and the user then opens the file in the app.
+
+## 10. Third-party libraries (vendored in `app/js/`)
+
+SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev only: vitest 2, fake-indexeddb. Google Fonts are `@import`ed from the web in `css/01-fonts.css` (line 80) and linked in the print window (`share-print.js`); `app/fonts/` also holds local TTFs, so the app degrades offline but is not fully self-contained. The AI tutor calls the Gemini API (`generativelanguage.googleapis.com`) directly from the client.
+
+## 11. Fragile or surprising
+
+- **`appAboutData_untranslated.json` is `{}`.** Verified in a running app: `appVersion`, `estudyVersion`, `androidPackageId`, `sampleDownloadId`, author/publisher are all `undefined`. The old values (`0.6.0`, `"3"`, `com.rickcreighton.bsr`) were deleted in commit `811799f` and the file re-created empty in `90dafec`. Effects (from reading the code, not each observed): version footer missing or "vundefined", upgrade onboarding never fires, `checkEstudyVersion` never warns, Play Store links lack the package id.
+- **`installDefaultStudiesIfNeeded()` is never called**, and `app/estudy/firstEstudies.zip` does not exist, so no studies are pre-installed.
+- **Root `index.html` is a stale copy**: it lacks `pathways-import.js` and `gallery.js` and its `js/` paths don't exist at the root. Anyone serving it would break.
+- **CI workflow is in `testing/github/workflows/`**, not `.github/workflows/`, so it won't run on GitHub.
+- **`README.md` and some header comments are stale** (they say answers are in localStorage, list old file names). Trust code and `ESTUDY_FORMAT.md`.
+- **Chapter identity:** answers key on `chapterNumber`; the router, menu and swipe use array index. Chapter numbering can start at 0 or mid-series. Never assume `idx = chapterNumber − 1`.
+- **Back always goes to the Library**, and `_navigating` drops overlapping navigations.
+- **Everything is global**: new function names can collide silently; load order matters.
+- **Block keys:** in multilingual studies a trailing digit on a Go Deeper/Leaders' key is a language slot; in mono-lingual studies it is part of the name.
+- **Security model:** study files are untrusted. Defences are `sanitizeStudyData` at load, DOMPurify on formatted fields, escaping at attribute sites, `jsArg()`/numeric indices for inline handlers, and `data-*` + delegated listeners. New code interpolating study strings into HTML or `onclick` reintroduces injection.
+- **Storage limits:** localStorage ~5 MB; study JSON can exceed 500 KB and is read whole from IDB.
+- **Guarded by tests:** vitest sandboxes use `vm` and load files in a fixed order.
+- **Android Back and safe-area behaviour** of the gallery viewer is untested on devices.
+
+## 12. Not verified
+
+- **No device or WebView testing.** Everything was run in desktop Chromium via Playwright; Android WebView, iOS, and the Kotlin wrapper (not in this repo) were not examined.
+- **Not read in full:** `onboarding.js`, `validation.js` (AI tutor and local validation internals), `tts.js`/`voice.js` beyond the bridge calls, `render-library.js` shelves logic, `share-print.js` print HTML, the CSS files, the four editor HTML tools, the `py/` scripts, `render-pages.js` Settings/How-to/About internals, `migrate.js` internals.
+- **Rendering of `howToUseData`, `studyAboutData`, `copyrightData`** is summarised from `ESTUDY_FORMAT.md` and spot checks, not traced line by line.
+- **The Android-to-JS call names** are taken from JS definitions; the native side's actual invocations were not seen.
+- **Which `index.html` is deployed**, and how the web build is hosted, is unknown.
+- **The AI tutor was not exercised** (no API key); the Gemini model name in `validation.js` is a preview model that may change.
+- **Library tab counts, shelves and recent lists** (`lib_*` key shapes) were read from code only.
