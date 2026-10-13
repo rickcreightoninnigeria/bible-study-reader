@@ -504,6 +504,14 @@ function renderQuestion(ctx) {
   const encodedSampleAnswer = sampleAnswerText ? sampleAnswerText.replace(/"/g, '&quot;') : '';
   const encodedQuestionHint = questionHintText ? questionHintText.replace(/"/g, '&quot;') : '';
 
+  // Local-validation tuning: honoured by validation.js via dataset.
+  const thresholdRaw  = resolveTextWithFallback(el, activeLang, 'shortAnswerThreshold', langMap);
+  const thresholdNum  = Number(thresholdRaw);
+  const thresholdAttr = thresholdRaw !== '' && Number.isFinite(thresholdNum) && thresholdNum >= 0
+    ? ` data-short-answer-threshold="${Math.floor(thresholdNum)}"` : '';
+  const skipVerseAttr = (el.skipBibleVerseCheck === true || el.skipBibleVerseCheck === 'true')
+    ? ' data-skip-bible-verse-check="true"' : '';
+
   const sampleAnswerAttr = sampleAnswerText ? ` data-sample-answer="${encodedSampleAnswer}"` : '';
   const questionHintAttr = questionHintText ? ` data-question-hint="${encodedQuestionHint}"` : '';
 
@@ -543,12 +551,12 @@ function renderQuestion(ctx) {
   const cardOpen = `
     <div class="question-card ${starred ? 'starred-card' : ''}" id="${cardId}"${noPad}
       data-question-subtype="${escapeHtml(el.subtype || '')}"
-      data-linked-passage="${escapeHtml(el.linkedPassage || '')}"${sampleAnswerAttr}${questionHintAttr}>`;
+      data-linked-passage="${escapeHtml(el.linkedPassage || '')}"${sampleAnswerAttr}${questionHintAttr}${thresholdAttr}${skipVerseAttr}>`;
 
   if (isHeader) {
     // Header subtype: custom label in the ref bar instead of a scripture ref.
     // Supports plain text, HTML, and markdown (resolved via el.format).
-    const headerHtml = renderFormatted(el.header || '', el.format);
+    const headerHtml = renderFormatted(resolveTextWithFallback(el, activeLang, 'header', langMap), el.format);
 
     return `${cardOpen}
         <div class="question-ref question-ref-split">
@@ -676,7 +684,7 @@ function renderImage(ctx) {
 
 function renderCallout(ctx) {
   const { el, noPad, activeLang, langMap } = ctx;
-  const safeId = el.elementId.replace(/'/g, "\\'");
+  const safeId = String(el.elementId || '').replace(/'/g, "\\'");
 
   const eyebrow  = resolveText(el, activeLang, 'eyebrow',  langMap);
   const term     = resolveText(el, activeLang, 'term',     langMap);
@@ -708,6 +716,24 @@ function renderCallout(ctx) {
           <button class="qa-callout-btn" onclick="openQaModalFromElement('${safeId}', '${activeLang}')">
             ${btnLabel}
           </button>
+        </div>
+      </div>`;
+  }
+
+  // 'highlighted' (info box with a body) and 'activity' (prompt text) have no
+  // popup: they render inline in the general callout style, without a button.
+  if (el.subtype === 'highlighted' || el.subtype === 'activity') {
+    const body = el.subtype === 'highlighted' ? resolveTextWithFallback(el, activeLang, 'body', langMap) : '';
+    if (!term && !body && !question) return '';
+    const bodyHtml = body
+      ? `<div class="gen-callout-question">${renderFormatted(body, el.format)}</div>`
+      : (question ? `<div class="gen-callout-question">${question}</div>` : '');
+    return `
+      <div class="gen-callout-card"${noPad}>
+        ${eyebrow ? `<div class="gen-callout-eyebrow">${eyebrow}</div>` : ''}
+        <div class="gen-callout-body">
+          ${term ? `<div class="gen-callout-term">${term}</div>` : ''}
+          ${bodyHtml}
         </div>
       </div>`;
   }

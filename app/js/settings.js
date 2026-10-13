@@ -203,7 +203,9 @@ function confirmClearAnswers() {
 
     const currentStudyId = window.activeStudyId;
     try {
-      await StudyIDB.deleteStudyAnswers(currentStudyId);
+      let reg = [];
+      try { reg = JSON.parse(localStorage.getItem('study_registry') || '[]'); } catch (_) {}
+      await StudyIDB.deleteStudyAnswers(currentStudyId, siblingPrefixes(currentStudyId, reg));
     } catch (e) {
       console.warn('[confirmClearAnswers] IDB delete failed.', e);
       // Don't report success or navigate away — the answers are still there.

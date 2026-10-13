@@ -187,6 +187,24 @@ describe('StudyIDB — deleteStudyAnswers', () => {
     expect((await StudyIDB.getChapterAnswers('markCh5', 1)).q_el_01).toBe('b');
   });
 
+  it('spares another study whose id extends this one when excluded', async () => {
+    const { StudyIDB } = makeSandbox();
+    await StudyIDB.setChapterAnswers('john', 1, { q_el_01: 'a' });
+    await StudyIDB.setChapterAnswers('john_2', 1, { q_el_01: 'b' });
+    await StudyIDB.deleteStudyAnswers('john', ['john_2_']);
+    expect(await StudyIDB.getChapterAnswers('john', 1)).toEqual({});
+    expect((await StudyIDB.getChapterAnswers('john_2', 1)).q_el_01).toBe('b');
+  });
+
+  it('removeImagesByPrefix spares excluded prefixes', async () => {
+    const { StudyIDB } = makeSandbox();
+    await StudyIDB.setImage('john_cover', 'x');
+    await StudyIDB.setImage('john_2_cover', 'y');
+    await StudyIDB.removeImagesByPrefix('john_', ['john_2_']);
+    expect(await StudyIDB.getImage('john_cover')).toBeFalsy();
+    expect(await StudyIDB.getImage('john_2_cover')).toBe('y');
+  });
+
   it('returns the list of deleted keys', async () => {
     const { StudyIDB } = makeSandbox();
     await StudyIDB.setChapterAnswers('baptism', 1, { q_el_01: 'a' });

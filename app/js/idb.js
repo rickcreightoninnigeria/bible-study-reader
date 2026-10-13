@@ -169,10 +169,11 @@ const StudyIDB = (() => {
     });
   }
 
-  // Removes all images whose key starts with the given prefix.
+  // Removes all images whose key starts with the given prefix, except keys
+  // starting with any excludePrefixes (other studies whose id extends this one).
   // Used by deleteStudy to sweep up inline chapter images ({studyId}_{elementId})
   // that are not individually tracked at install time.
-  async function removeImagesByPrefix(prefix) {
+  async function removeImagesByPrefix(prefix, excludePrefixes = []) {
     const db = await open();
     return new Promise((resolve, reject) => {
       const tx    = db.transaction(IMG_STORE, 'readwrite');
@@ -184,7 +185,7 @@ const StudyIDB = (() => {
       req.onsuccess = e => {
         const cursor = e.target.result;
         if (!cursor) return; // iteration complete; tx will commit
-        cursor.delete();
+        if (!excludePrefixes.some(x => String(cursor.key).startsWith(x))) cursor.delete();
         cursor.continue();
       };
       req.onerror  = e => reject(e.target.error);
@@ -302,7 +303,7 @@ const StudyIDB = (() => {
   // Deletes all answer records for a study: chapter objects, global_notes,
   // and lastPosition. Used by confirmClearAnswers() and deleteStudy().
   // Returns the list of deleted keys (useful for logging/debugging).
-  async function deleteStudyAnswers(studyId) {
+  async function deleteStudyAnswers(studyId, excludePrefixes = []) {
     const db = await open();
     return new Promise((resolve, reject) => {
       const tx    = db.transaction(ANS_STORE, 'readwrite');
@@ -316,8 +317,10 @@ const StudyIDB = (() => {
       req.onsuccess = e => {
         const cursor = e.target.result;
         if (!cursor) return; // iteration complete
-        deleted.push(cursor.key);
-        cursor.delete();
+        if (!excludePrefixes.some(x => String(cursor.key).startsWith(x))) {
+          deleted.push(cursor.key);
+          cursor.delete();
+        }
         cursor.continue();
       };
       req.onerror   = e => reject(e.target.error);

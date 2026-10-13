@@ -21,7 +21,7 @@ Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or 
 - **Lookup for elements (`resolveText`):** multilingual → `fieldN` for the reader's language → else `field1` (empty-string and empty-array slots count as missing). **There is no fallback to the unnumbered name in multilingual studies**, so an unnumbered `question` is invisible there. Mono-lingual → unnumbered only.
 - **Fallback-friendly fields** (`slot → slot1 → unnumbered`): `chapterTitle`, Go Deeper/Leaders `title`, `readMoreLabel`, `backToStudyLabel`, and the label inside `readMore`/`backToStudy`.
 - **Not language-keyed even in multilingual studies (single value, all languages):** `image.alt`, `image.caption`, callout `buttonText`, gallery entry `alt`/`caption`/`provenance`, `elementId`, `answerType`, `bottomPadding`.
-- **Bug to author around: question `header` is read unnumbered only**, so in a multilingual study `header1/2/3` are ignored and the label renders **empty** (confirmed in a run with Her Own Name). Put a language-neutral value in `header` or avoid the header subtype there.
+- Question `header` is numbered like other text (`header1/2/3`, falling back to slot 1 then the unnumbered `header`). *(Fixed; older app versions rendered an empty label in multilingual studies.)*
 - The reader chooses the study language from a language bar (first language by default). Codes unknown to the app still work; they just show 🌐 instead of a flag.
 - **Block names in Go Deeper/Leaders' Notes** collapse trailing digits into slots only in multilingual studies; there, never end a block name in a digit.
 - Bible translations are independent of language slots, see `biblePassage`.
@@ -73,7 +73,7 @@ Every element: `type` and **`elementId`** (string, unique within the chapter; mi
 
 **`heading`**: `text` (numbered). Subtypes `section` (rule + h2), `subsection` (h3), `reflection` (reflection header). **Any other subtype renders nothing.** ✖ `level`.
 
-**`text`**: `text` (numbered), `format`, subtype optional. `intro`, `bridge` (default style), `closing` (adds a "Closing" divider); `quote`, `openingQuote`, `application`, `diagram` and any other value render like `bridge`. Gets a read-aloud button when long enough. *Share/print quirk:* the legacy text used by print and share looks for subtypes `chapterIntro`/`chapterClosing`, so `intro` and `closing` text is **left out of printed/shared reports** (bridge text is included).
+**`text`**: `text` (numbered), `format`, subtype optional. `intro`, `bridge` (default style), `closing` (adds a "Closing" divider); `quote`, `openingQuote`, `application`, `diagram` and any other value render like `bridge`. Gets a read-aloud button when long enough. Print and share include the `intro` and `closing` text (the legacy names `chapterIntro`/`chapterClosing` are also accepted).
 
 **`biblePassage`** (renders nothing; registers a verse pop-up):
 - Single-translation: `bibleRef`, `passageText` (HTML, shown in the pop-up), `passageUrl` (optional link), `translation` (label, default "NET").
@@ -84,13 +84,14 @@ Every element: `type` and **`elementId`** (string, unique within the chapter; mi
 - Required: `question` (numbered, HTML). Optional: `answerPlaceholder` (numbered, plain text), `linkedPassage`, `sampleAnswer` (numbered), `questionHint` (numbered), `deeper`, `format`.
 - Subtypes: `standard` (or none), `header` (label bar from `header`, not language-resolved, see section 2), `reflection` (devotional: counts toward progress, no local check unless it has a `linkedPassage`). Others behave as standard.
 - `deeper`: `{label (numbered, default "Go deeper"), question (numbered)}`; the question opens read-only in a pop-up. ✖ any other field inside `deeper`.
-- ✖ `answerType`, `required`, `commentHint`, `shortAnswerThreshold`, `skipBibleVerseCheck` (documented in comments, never wired, see section 8), and stray `passageText` / `bibleRef` on non-passage elements.
+- `shortAnswerThreshold` (number, numbered or plain; minimum words before local validation stops calling an answer too short) and `skipBibleVerseCheck` (`true` skips the Bible-verse check) are read by local answer-checking.
+- ✖ `answerType`, `required`, `commentHint`, and stray `passageText` / `bibleRef` on non-passage elements.
 
-**`callout`**: ✔ `eyebrow`, `term`, `question` (card), `answer` (pop-up body, cleaned to the allowed-tag list; no markdown; eyebrow/term show as plain text in the pop-up), `buttonText` (single-language; defaults to the app's text). **Only subtypes `general` and `misunderstanding` render. Other subtypes render nothing** (confirmed: Travelling with Jonah has 51 `highlighted` and Exploring Hebrews 1 `activity`). ✖ `body`, `format`.
+**`callout`**: ✔ `eyebrow`, `term`, `question` (card), `answer` (pop-up body, cleaned to the allowed-tag list; no markdown; eyebrow/term show as plain text in the pop-up), `buttonText` (single-language; defaults to the app's text). Subtypes `general` and `misunderstanding` get a button and pop-up. `highlighted` renders an inline box with `eyebrow`, `term` and `body` (numbered; `format` honoured, no button); `activity` renders `eyebrow`, `term` and `question` inline. Other subtypes render nothing.
 
 **`image`**: ✔ `alt`, `caption` (+`format`), `fallback` (emoji if missing, default 🖼️), `align` (`full` default | `left` | `right` | `center`), `width` (percent, ignored for `full`), `src`. If `src` is set it is used **directly as the image URL** (no file is read from the zip; an external URL needs network): prefer no `src` and ship `images/<elementId>.webp`. ✖ `provenance` (only a gallery entry's default credit), `base`.
 
-**`likertScale`**: ✔ `scale` (array of labels; numbered), `scaleNumber` (default = number of labels or 5; may be a string), `subtype` `standard`/none with `statements` (array of strings, numbered) or `bipolar` with `statementPairs` (array of `{left,right}`, numbered), `popupTitle`, `instruction` (numbered). Answers `likert_<id>_<i>` = `"1"`…`"n"`; each statement row counts toward progress.
+**`likertScale`**: ✔ `scale` (array of labels; numbered), `scaleNumber` (default = number of labels or 5; may be a string; clamped to 1–10), `subtype` `standard`/none with `statements` (array of strings, numbered) or `bipolar` with `statementPairs` (array of `{left,right}`, numbered), `popupTitle`, `instruction` (numbered). Answers `likert_<id>_<i>` = `"1"`…`"n"`; each statement row counts toward progress.
 
 **Progress counts** every non-repeat `question` (reflections included) plus every Likert row. **Search** indexes bridge text, question text, the passage reference and saved answers (including reflection answers); nothing else.
 
@@ -103,8 +104,8 @@ Every element: `type` and **`elementId`** (string, unique within the chapter; mi
 ## 9. Smaller pages
 
 - **`studyOnboardingSlides[]`**: ✔ `icon`, `eyebrow`, `heading` (these three plain text), `body`, `bodyAfter` (HTML; `\n` becomes a blank line), `action: {label, id}` with `id` `settings` or `howto` (other ids give a button that does nothing). Numbered in multilingual studies. ✖ `format`. Shown once per study.
-- **`howToUseData.sections[]`**: `heading` (numbered) and **`blocks[]` (required, or the tab throws)**, each `{title, body}` numbered; body is HTML.
-- **`studyAboutData`**: **`author: {paras[], image?, imageAlt?}`** and **`publisher: {name, url, paras[], image?, imageAlt?}`**. Both objects, each `paras` array and the publisher `url` are required or the About page throws. `paras` are HTML paragraphs; `format` ignored. `images/author.webp` / `publisher.webp` replace `image` when the matching `imageData` entry exists. The `url` is shown as a link (`https://` stripped from the label; `javascript:` and `data:` are dropped).
+- **`howToUseData.sections[]`**: `heading` (numbered) and `blocks[]` (a missing list renders an empty section), each `{title, body}` numbered; body is HTML.
+- **`studyAboutData`**: **`author: {paras[], image?, imageAlt?}`** and **`publisher: {name, url, paras[], image?, imageAlt?}`**. Missing objects, `paras` or `url` are tolerated (shown empty). `paras` are HTML paragraphs; `format` ignored. `images/author.webp` / `publisher.webp` replace `image` when the matching `imageData` entry exists. The `url` is shown as a link (`https://` stripped from the label; `javascript:` and `data:` are dropped).
 - **`copyrightData`**: ✔ `copyright.statement` (shown as "© line"), `notices[]` (HTML list items). ✖ `licence` and everything else: **the page always shows hard-coded CC BY-SA 4.0 text**, whatever licence you declare.
 
 ## 10. `leadersNotesData` and `goDeeperData`
@@ -120,13 +121,13 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 
 ## 11. Quick lists
 
-**Ignored:** `createdAt`, `updatedAt`, `tags`, `shareMessage`, `imageData.*.provenance`, inline `image.provenance` (except gallery credit), `answerType`, `required`, `commentHint`, `shortAnswerThreshold`, `skipBibleVerseCheck`, `note`, heading `level`, callout `body`/`format`, slide `format`, `copyrightData.licence`, Leaders `bookOverview`, theme keys outside the 22, multilingual `header1…`, unnumbered `bibleTranslation`.
+**Ignored:** `createdAt`, `updatedAt`, `tags`, `shareMessage`, `imageData.*.provenance`, inline `image.provenance` (except gallery credit), `answerType`, `required`, `commentHint`, `note`, heading `level`, slide `format`, `copyrightData.licence`, Leaders `bookOverview`, theme keys outside the 22; unnumbered `bibleTranslation`.
 
-**Unsafe / avoid:** any `<script>`/handlers (stripped); `src` on `image` elements pointing off-device; string `chapterNumber` in Leaders' Notes; secrets in `apiKey`, `sampleAnswer`, `questionHint`; ids outside `[A-Za-z0-9_.-]`; a `studyId` that prefixes another.
+**Unsafe / avoid:** any `<script>`/handlers (stripped); `src` on `image` elements pointing off-device; a non-integer `chapterNumber` (numeric strings are converted to integers; anything else becomes 0); secrets in `apiKey`, `sampleAnswer`, `questionHint`; ids outside `[A-Za-z0-9_.-]`; a `studyId` that prefixes another (deleting/clearing now spares other installed studies whose id extends it, but avoid it).
 
 ## 12. Not verified
 
-- Nothing was tested on Android WebView or iOS; renders were checked in desktop Chromium, and several behaviours here come from reading code only (About/How-to throwing on missing fields, the Leaders' `chapterNumber` path, the `libraryShelves` placement of unknown names, `readMore` with unusual values).
+- Nothing was tested on Android WebView or iOS; renders were checked in desktop Chromium, and several behaviours here come from reading code only (the `libraryShelves` placement of unknown names, `readMore` with unusual values).
 - `onboarding.js` internals beyond slide fields, `render-library.js` shelf edge cases, and the editor tools in `app/*.html` (which may enforce stricter rules than the app) were not read in full.
 - The AI tutor was never run (no key); the Gemini model name is a preview model.
 - Behaviour with very large studies (hundreds of chapters, MBs of JSON) was not measured; only the zip limits above are enforced.

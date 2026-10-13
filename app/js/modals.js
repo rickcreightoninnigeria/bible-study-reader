@@ -171,7 +171,7 @@ function qaCalloutHtml(id) {
 //   statementPairs – array of { left, right } objects instead of statements
 function renderLikertScale(el, chNum, chapterAnswers = null) {
   const isBipolar  = el.subtype === 'bipolar';
-  const n          = el.scaleNumber || (el.scale ? el.scale.length : 5);
+  const n          = Math.min(10, Math.max(1, Math.floor(Number(el.scaleNumber || (el.scale ? el.scale.length : 5))) || 5));
   const scale      = el.scale || [];
   const eid        = el.elementId || '';
 

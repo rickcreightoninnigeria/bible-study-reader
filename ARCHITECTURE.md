@@ -81,7 +81,7 @@ Rules that matter:
   - `<studyId>_global_notes`;
   - `<studyId>_lastPosition` → JSON string `{chapterIdx, scrollY}`.
 - `N` is `chapterNumber`, **not** the array index. Per-chapter read-modify-write goes through `StudyIDB.updateChapterAnswers` (serialised per key).
-- `deleteStudyAnswers`/`removeImagesByPrefix` delete by `<studyId>_` prefix, so a study id that is a prefix of another (`a` vs `a_b`) would delete both.
+- `deleteStudyAnswers`/`removeImagesByPrefix` delete by `<studyId>_` prefix; callers pass `siblingPrefixes(id, registry)` as an exclusion list so a study id that prefixes another (`a` vs `a_b`) does not delete the other's data.
 
 ## 5. Routing (`router.js`)
 
@@ -135,7 +135,6 @@ SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev onl
 ## 11. Fragile or surprising
 
 - **Open: `installDefaultStudiesIfNeeded()` is never called**, and `app/estudy/firstEstudies.zip` does not exist, so no studies are pre-installed. Wiring it in without the asset could show an error toast on Android (a missing `file://` XHR fires `onerror`, not a 404), so this needs the owner's decision about shipping the zip.
-- **Open: prefix deletion.** `deleteStudyAnswers`/`removeImagesByPrefix` use `<studyId>_`, so a study id that is a prefix of another (`a` vs `a_b`) would delete both studies' data. Not triggered by any current study id.
 - **App data file:** `appVersion`, `estudyVersion`, `androidPackageId` live only in `appAboutData_untranslated.json`. It was once emptied by mistake (commits `811799f`/`90dafec`), silently disabling the version footer, upgrade onboarding, the `.estudy` version check and Play Store links; now restored. The upgrade-onboarding slide for 0.6.0 ("moving to database storage") shows once to existing users who never saw it.
 - **Docs and CI:** `README.md` and the `index.html` header were refreshed; the CI workflow now lives where GitHub reads it. Docs can still drift: prefer code and `ESTUDY_FORMAT.md` when they disagree.
 - **Chapter identity:** answers key on `chapterNumber`; the router, menu and swipe use array index. Chapter numbering can start at 0 or mid-series. Never assume `idx = chapterNumber − 1`.

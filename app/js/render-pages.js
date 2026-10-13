@@ -327,7 +327,7 @@ async function renderHowToUse(tabId) {
         return `
         <div class="howto-section">
           <div class="howto-section-heading">${heading}</div>
-          ${section.blocks.map(block => {
+          ${(section.blocks || []).map(block => {
             // Resolve block title and body for the active language.
             const blockTitle = resolveMetaField(block, 'title', activeLang, langMap);
             const blockBody  = resolveMetaField(block, 'body',  activeLang, langMap);
@@ -1762,7 +1762,7 @@ async function renderLeadersNotes(tabId) {
   // Build tab definitions once and cache on the constant so navigateTab() can use it
   LEADERS_TABS.length = 0;
   if (hasIntro) LEADERS_TABS.push({ id: 'intro', label: 'Intro' });
-  (d.chapters || []).forEach(ch => LEADERS_TABS.push({ id: `ch_${ch.chapterNumber}`, label: String(ch.chapterNumber) }));
+  (d.chapters || []).filter(ch => Number.isInteger(ch.chapterNumber)).forEach(ch => LEADERS_TABS.push({ id: `ch_${ch.chapterNumber}`, label: String(ch.chapterNumber) }));
 
   const activeTab = tabId || (LEADERS_TABS[0] && LEADERS_TABS[0].id) || 'intro';
   window.activeTabId = activeTab;
@@ -1882,8 +1882,9 @@ async function renderAbout(tabId) {
   const activeTab = tabId || 'author';
   window.activeTabId = activeTab;
 
-  const a = studyAboutData.author;
-  const p = studyAboutData.publisher;
+  const a = { paras: [], ...(studyAboutData && studyAboutData.author) };
+  const p = { paras: [], url: '', ...(studyAboutData && studyAboutData.publisher) };
+  a.paras = a.paras || []; p.paras = p.paras || []; p.url = p.url || '';
   const d = copyrightData;
   const studyTitle = window.titlePageData?.title || '';
 

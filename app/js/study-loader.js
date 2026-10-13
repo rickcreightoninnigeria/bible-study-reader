@@ -280,8 +280,9 @@ async function deleteStudy(id, title) {
     // ever reinstalled.
     try {
       await StudyIDB.remove(`study_content_${id}`);
-      await StudyIDB.removeImagesByPrefix(`${id}_`);
-      await StudyIDB.deleteStudyAnswers(id);
+      const others = siblingPrefixes(id, registry);
+      await StudyIDB.removeImagesByPrefix(`${id}_`, others);
+      await StudyIDB.deleteStudyAnswers(id, others);
     } catch (err) {
       if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return; }
       throw err;
@@ -417,11 +418,24 @@ function applyImageData(imageData) {
 const _SAFE_ID_RE = /^[A-Za-z0-9_.-]+$/;
 const _ID_KEY_RE  = /^(elementId|repeatElement|calloutId|id|tabId|language\d*)$/;
 
+// Prefixes of other installed studies whose ids extend `id` + '_' (e.g. deleting
+// "john" must not touch the data of "john_2"). Pass to the IDB prefix sweeps.
+function siblingPrefixes(id, ids) {
+  return (ids || []).filter(o => o !== id && o.startsWith(`${id}_`)).map(o => `${o}_`);
+}
+
 function isSafeStudyId(id) {
   return typeof id === 'string' && _SAFE_ID_RE.test(id);
 }
 
 function sanitizeStudyData(value, key = '') {
+  // chapterNumber is interpolated into inline handlers and element ids, so it
+  // must be a plain integer. Numeric strings ("3") are accepted; anything else
+  // becomes 0 (which the chapter-list renderers then skip or show harmlessly).
+  if (key === 'chapterNumber') {
+    const n = typeof value === 'number' ? value : (typeof value === 'string' && /^\s*\d{1,6}\s*$/.test(value) ? Number(value) : NaN);
+    return Number.isInteger(n) ? n : 0;
+  }
   if (typeof value === 'string') {
     if (_ID_KEY_RE.test(key)) return value.replace(/[^A-Za-z0-9_.-]/g, '_');
     return value.includes('<') ? DOMPurify.sanitize(value, _LOAD_PURIFY_CONFIG) : value;
@@ -452,7 +466,9 @@ function _plainField(el, field) {
 
 // Returns the text of the first element with the given subtype.
 function _extractTextBySubtype(elements, subtype, resolve = _plainField) {
-  const el = (elements || []).find(e => e.type === 'text' && e.subtype === subtype);
+  // Real studies use 'intro'/'closing'; the legacy names are 'chapterIntro'/'chapterClosing'.
+  const alt = { chapterIntro: 'intro', chapterClosing: 'closing' }[subtype];
+  const el = (elements || []).find(e => e.type === 'text' && (e.subtype === subtype || e.subtype === alt));
   return el ? resolve(el, 'text') : '';
 }
 
