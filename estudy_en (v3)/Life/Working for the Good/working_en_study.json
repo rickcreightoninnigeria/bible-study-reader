@@ -3645,9 +3645,5 @@
       "fallback"  :"👨‍🌾",
       "provenance":"offline photo"
     }
-  },
-  "studyAiData":{
-    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Working for the Good: Faith, Love, and Worship in our Everyday Labour’ — An eight-session Bible study exploring what it means to work faithfully as a Christian. Drawing on passages from Genesis to Revelation, each session tackles a different dimension of work: its God-given goodness, its distortion by sin, and its redemption in Christ. Whether you feel your job is meaningless, disconnected from your faith, or simply exhausting, this study invites you to see your daily labour as an act of love, a form of worship, and part of God’s larger purposes for the world.",
-    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }

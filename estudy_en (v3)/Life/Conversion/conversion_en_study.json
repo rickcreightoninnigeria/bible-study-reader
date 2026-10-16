@@ -4402,9 +4402,5 @@
       "fallback"  :"👨‍🌾",
       "provenance":"offline photo"
     }
-  },
-  "studyAiData":{
-    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Conversion: New not (just) nice’ — exploring what genuine conversion means – and why it matters.",
-    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }

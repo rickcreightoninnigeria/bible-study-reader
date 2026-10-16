@@ -5092,9 +5092,5 @@
       "alt"     :"Rick Creighton",
       "fallback":"👨‍🏫"
     }
-  },
-  "studyAiData":{
-    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study called ’Travelling with Jonah: a double journey’ — exploring the Old Testament book of Jonah. The study journeys through Jonah twice: first forwards (chapters 1–4), then backwards (chapters 4–1). Key themes include God’s sovereignty, repentance vs remorse, the difference between worldly and godly sorrow, the extraordinary compassion of God, and what it means to truly fear the Lord. The study draws connections between Jonah and the death and resurrection of Jesus.",
-    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }

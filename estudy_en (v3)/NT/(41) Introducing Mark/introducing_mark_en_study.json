@@ -2610,9 +2610,5 @@
       "fallback"  :"👨‍🌾",
       "provenance":"offline photo"
     }
-  },
-  "studyAiData":{
-    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Introducing Mark’ — exploring the New Testament book of Mark",
-    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }

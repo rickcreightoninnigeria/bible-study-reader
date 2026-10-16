@@ -7733,9 +7733,5 @@
       "fallback"  :"🧑‍🦱",
       "provenance":"offline photo"
     }
-  },
-  "studyAiData":{
-    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Exploring Isaiah’ — exploring the Old Testament book of Isaiah.",
-    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }

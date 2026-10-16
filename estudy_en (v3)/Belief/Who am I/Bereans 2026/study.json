@@ -4118,9 +4118,5 @@
       "fallback"  :"👨‍🌾",
       "provenance":"offline photo"
     }
-  },
-  "studyAiData":{
-    "aiMentorPrompt":"You are a warm, thoughtful mentor for a Bible study series called ‘Who am I?: The Theology of Being Human’.",
-    "apiKey"        :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }

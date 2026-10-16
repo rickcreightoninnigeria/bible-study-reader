@@ -2685,9 +2685,5 @@
       "fallback"  :"👨‍🌾",
       "provenance":"offline photo"
     }
-  },
-  "studyAiData":{
-    "aiTutorPrompt":"You are a warm, thoughtful tutor for a Bible study series called ’Make Many Deep Disciples’ — a church membership course.",
-    "apiKey"       :"bsr1.IzoIMicMJT0zN0ZqVwVMKCMrHwEiPkhxIENzSVlbNx0cYS1GKS15"
   }
 }
