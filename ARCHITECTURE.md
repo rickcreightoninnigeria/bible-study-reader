@@ -22,7 +22,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 - `onboarding.js` — app/study/upgrade onboarding slides, first-use info triggers, `updateNavButtons`.
 - `router.js` — `Router`, History API, popstate, modal/overlay back-handling.
 - `utils.js` — Swal dark-mode patch, last-position save/restore, toasts, `escapeHtml`, `jsArg`, long-press copy, `getPlatform`.
-- `validation.js` — local (offline) answer checks only. It does **not** validate study files. (It once also held an AI tutor; that was removed and `studyAiData` in study files is ignored.)
+- `answer-match.js` — pure, DOM-free text matching for the answer check (Unicode-aware normalising, `keyTerms`, result codes). `validation.js` — the answer-check UI: gathers inputs from the question *element* (looked up by the card id, not from `data-*` attributes), maps result codes to translated messages, wires the buttons. Local (offline) answer checks only. It does **not** validate study files. (It once also held an AI tutor; that was removed and `studyAiData` in study files is ignored.)
 - `gestures.js` — swipe nav, scroll/visibility saves.
 - `navigation.js` — `goToChapter`, menu drawer, non-chapter page reset.
 - `share-print.js` — share/export/print answers.
@@ -45,12 +45,13 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 
 ## 2. Script load order (`app/index.html`)
 
-sweetalert2 → jszip → purify → markdown-it → `format-text` → `state` → `i18n` → `idb` → `icons` → `settings` → `tts` → `voice` → `modals` → `starred` → `search` → `onboarding` → `router` → `utils` → `validation` → `gestures` → `navigation` → `share-print` → `pathways-import` → `render-progress` → `render-library` → `study-loader` → `migrate` → `app-init` → `gallery` → `render-pages` → `render-chapter-elements` → `render-chapter-ui` → `render-chapter` → `save`.
+sweetalert2 → jszip → purify → markdown-it → `format-text` → `state` → `i18n` → `idb` → `icons` → `settings` → `tts` → `voice` → `modals` → `starred` → `search` → `onboarding` → `router` → `utils` → `answer-match` → `validation` → `gestures` → `navigation` → `share-print` → `pathways-import` → `render-progress` → `render-library` → `study-loader` → `migrate` → `app-init` → `gallery` → `render-pages` → `render-chapter-elements` → `render-chapter-ui` → `render-chapter` → `save`.
 
 Rules that matter:
 - Files may only *call* later-loaded functions at runtime; load-time dependencies are few. `format-text.js` needs `DOMPurify` and `markdownit` at load. `render-progress.js` calls `debounce` (from `search.js`) at load. `save.js` runs `debounce(updateProgress, 200)` at load, so `search.js` and `render-progress.js` must load before it.
 - Top-level `const`/`let` are global lexical bindings (not on `window`).
 - `testing/tests/index-html.test.js` checks that every script/stylesheet exists, every `app/js/*.js` file has exactly one tag, the load-time dependencies above are ordered correctly, and the root `index.html` equals `app/index.html`.
+- `answer-match.js` has no load-time dependencies and must load before `validation.js`. The Main point modal lives in `modals.js`.
 - Other unit tests load source files into `vm` sandboxes in this order; changing load-time dependencies can break them.
 
 ## 3. Globals and owners

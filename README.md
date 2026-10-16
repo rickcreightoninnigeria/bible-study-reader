@@ -96,7 +96,8 @@ js/
   onboarding.js             Slide overlay engine: app onboarding, study onboarding, feature tutorials
   router.js                 History-API-backed navigation router; bottom-nav click handlers
   utils.js                  Last-position save/restore, showToast(), autoResize, long-press copy
-  validation.js             Local offline answer validation ("answer check")
+  answer-match.js           Pure text matching for the answer check: Unicode-aware normalising, keyTerms, tiers
+  validation.js             Local offline answer validation ("answer check") UI: feedback toast, Main point button
   gestures.js               Swipe gesture navigation between chapters/tabs; scroll and
                              visibilitychange listeners (backgrounding save, last position)
   navigation.js             goToChapter(), menu open/close, tab reset
@@ -169,7 +170,8 @@ See `ARCHITECTURE.md` for a fuller overview of the codebase.
 | 16 | `onboarding.js` | `showAppOnboarding()`, `showOnboardingIfNeeded()`, `showFeatureTutorial()`, `showSlideOverlay()`, `navSearchClick()` | `settings.js`, `icons.js` |
 | 17 | `router.js` | `Router`, `navLibClick()`, `navProgressClick()`, `navHowtoClick()`, `navSettingsClick()` | `state.js` |
 | 18 | `utils.js` | `saveLastPosition()`, `getLastPosition()`, `showToast()`, `initLongPressCopy()`, `escapeHtml()` | `state.js`, `idb.js` |
-| 19 | `validation.js` | `openLocalValidateForCard()`, `localValidateAutoTrigger()` | `state.js`, `icons.js`, `utils.js` |
+| 18a | `answer-match.js` | `evaluateAnswer()`, `normaliseText()`, `parseKeyTerms()`, `matchKeyTerms()`, `tierFor()` | none (no DOM) |
+| 19 | `validation.js` | `openLocalValidateForCard()`, `localValidateAutoTrigger()`, `wireLocalValidateCards()` | `answer-match.js`, `state.js`, `icons.js`, `utils.js` |
 | 20 | `gestures.js` | `touchstartX`, `touchendX`, `handleGesture()` | `settings.js`, `state.js`, `idb.js` |
 | 21 | `navigation.js` | `goToChapter()`, `closeMenu()`, `closeNonChapterPage()`, `_resetNonChapterPageState()` | `icons.js`, `settings.js`, `state.js` |
 | 22 | `share-print.js` | `shareAnswers()`, `exportStudyAnswers()`, `printAllChapters()` | `state.js`, `idb.js`, `utils.js` |

@@ -74,4 +74,8 @@ describe('script load order (load-time dependencies)', () => {
   it('gallery.js loads before render-pages.js (which calls it)', () => {
     before('gallery.js', 'render-pages.js');
   });
+
+  it('answer-match.js loads before validation.js (which calls it)', () => {
+    before('answer-match.js', 'validation.js');
+  });
 });

@@ -82,6 +82,11 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Your thoughts...",
+          "sampleAnswer"     :"God sends his Son out of love for the whole world, so that anyone who believes in him will not perish but have eternal life.",
+          "questionHint"     :"Look at the first four words of the verse.",
+          "keyTerms"         :["love|loved", "believ|trust|faith", "eternal life|everlasting"],
+          "mainPoint"        :"God's motivation is **love**: he gave his Son so that everyone who **believes** has *eternal life*. (John 3:16)",
+          "mainPointFormat"  :"markdown",
           "bottomPadding"    :"normal"
         },
 

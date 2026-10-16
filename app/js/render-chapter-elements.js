@@ -491,26 +491,15 @@ function renderQuestion(ctx) {
     resolveText(el, activeLang, 'answerPlaceholder', langMap) ||
     (isReflection ? t('renderchapter_placeholder_reflection') : t('renderchapter_placeholder_thoughts'));
 
-  // Resolve sampleAnswer and questionHint for the active language.
-  // Multilingual studies use sampleAnswer1/2/3 and questionHint1/2/3;
-  // mono-lingual studies use sampleAnswer and questionHint (unnumbered).
-  // resolveText handles both cases transparently via langMap.
-  const sampleAnswerText = resolveText(el, activeLang, 'sampleAnswer', langMap);
-  const questionHintText = resolveText(el, activeLang, 'questionHint', langMap);
-
-  const encodedSampleAnswer = sampleAnswerText ? sampleAnswerText.replace(/"/g, '&quot;') : '';
-  const encodedQuestionHint = questionHintText ? questionHintText.replace(/"/g, '&quot;') : '';
-
-  // Local-validation tuning: honoured by validation.js via dataset.
-  const thresholdRaw  = resolveTextWithFallback(el, activeLang, 'shortAnswerThreshold', langMap);
-  const thresholdNum  = Number(thresholdRaw);
-  const thresholdAttr = thresholdRaw !== '' && Number.isFinite(thresholdNum) && thresholdNum >= 0
-    ? ` data-short-answer-threshold="${Math.floor(thresholdNum)}"` : '';
-  const skipVerseAttr = (el.skipBibleVerseCheck === true || el.skipBibleVerseCheck === 'true')
-    ? ' data-skip-bible-verse-check="true"' : '';
-
-  const sampleAnswerAttr = sampleAnswerText ? ` data-sample-answer="${encodedSampleAnswer}"` : '';
-  const questionHintAttr = questionHintText ? ` data-question-hint="${encodedQuestionHint}"` : '';
+  // sampleAnswer, questionHint, keyTerms, shortAnswerThreshold and
+  // skipBibleVerseCheck are NOT written to the page. Local validate reads them
+  // from the question element itself (looked up by this card's id), so model
+  // answers stay out of the markup and no study text becomes an attribute.
+  //
+  // mainPoint is read when the Main point button is tapped (modals.js); here we
+  // only need to know whether the question has one for the active language.
+  const mainPointText = resolveText(el, activeLang, 'mainPoint', langMap);
+  const hasMainPoint  = typeof mainPointText === 'string' && mainPointText.trim() !== '';
 
   const deeperLabel = el.deeper
     ? (resolveText(el.deeper, activeLang, 'label', langMap) || t('renderchapter_go_deeper'))
@@ -524,6 +513,7 @@ function renderQuestion(ctx) {
       <button class="answer-info-btn" title="${t('renderchapter_answer_info_btn_title')}" aria-label="${t('renderchapter_answer_info_btn_title')}"
           onclick="openInfoModal('answer-action-row-info', window._answerRowInfoHtml, this)">${ICONS.triggerInfo}</button>
       <button class="local-validate-btn" title="${t('renderchapter_check_my_answer')}" aria-label="${t('renderchapter_check_my_answer')}" onclick="openLocalValidateForCard(this)" ${val ? '' : 'disabled'}>${ICONS.localValidate}</button>
+      ${hasMainPoint ? `<button class="main-point-btn" data-main-point-id="${escapeHtml(el.elementId)}" title="${t('mainpoint_btn_title')}" aria-label="${t('mainpoint_btn_title')}" ${val ? '' : 'disabled'}>${ICONS.mainPoint}</button>` : ''}
       ${voiceInputAvailable() ? `<button class="mic-btn" onclick="startVoiceInput(this)" aria-label="${t('renderchapter_answer_tools_mic_label')}" title="${t('renderchapter_answer_tools_mic_label')}">${ICONS.mic}</button>` : ''}
     </div>`;
 
@@ -547,7 +537,7 @@ function renderQuestion(ctx) {
   const cardOpen = `
     <div class="question-card ${starred ? 'starred-card' : ''}" id="${cardId}"${noPad}
       data-question-subtype="${escapeHtml(el.subtype || '')}"
-      data-linked-passage="${escapeHtml(el.linkedPassage || '')}"${sampleAnswerAttr}${questionHintAttr}${thresholdAttr}${skipVerseAttr}>`;
+      data-linked-passage="${escapeHtml(el.linkedPassage || '')}">`;
 
   if (isHeader) {
     // Header subtype: custom label in the ref bar instead of a scripture ref.

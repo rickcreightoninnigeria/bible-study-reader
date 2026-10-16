@@ -463,8 +463,9 @@
   outline: none;
 }
 
-/* Validate + mic: no margins, sit flush at the inline-end edge */
-.local-validate-btn {
+/* Validate + main point + mic: no margins, sit flush at the inline-end edge */
+.local-validate-btn,
+.main-point-btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -476,12 +477,14 @@
   align-items: center;
   justify-content: center;
 }
-.local-validate-btn {
+.local-validate-btn,
+.main-point-btn {
   color: var(--validate);
 }
 
-/* Gap between local-validate and mic */
-.local-validate-btn {
+/* Gap between local-validate, main point and mic */
+.local-validate-btn,
+.main-point-btn {
   margin-inline-end: 4px;                        /* was margin-right: 4px */
 }
 .answer-action-row .mic-btn {
@@ -490,7 +493,9 @@
 }
 
 .local-validate-btn:hover,
-.local-validate-btn:focus {
+.local-validate-btn:focus,
+.main-point-btn:hover,
+.main-point-btn:focus {
   opacity: 1;
   background: var(--surface-mid);
   outline: none;
@@ -626,7 +631,7 @@ body.dark-mode .deeper-btn { color: var(--emphasis-light); }
 
    NO CHANGES NEEDED for:
      .answer-field — uses --main-font-family, no letter-spacing, no heading font
-     .mic-btn, .local-validate-btn — icons only
+     .mic-btn, .local-validate-btn, .main-point-btn — icons only
      .likert-radio, .likert-options — no text
      All dark mode and animation rules
    ══════════════════════════════════════════════════════════════════════════ */

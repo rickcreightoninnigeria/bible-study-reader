@@ -352,8 +352,12 @@ the user's answer.
 | `question` | **Yes** | The question text. HTML is not interpreted here — use plain text. |
 | `linkedPassage` | No | Must match a `bibleRef` from a `biblePassage` element in this chapter. When set, the ref bar becomes tappable and opens the verse modal. Required for local answer validation to work. |
 | `answerPlaceholder` | No | Custom placeholder text inside the textarea. |
-| `sampleAnswer` | No | A model answer string used by the local answer validator. Not displayed in the study UI, but written as a `data-sample-answer` attribute on the question card in the DOM. Any user who opens browser DevTools can read it. Do not include content you need to keep confidential — see [Model answers are client-visible](#model-answers-are-client-visible) below. |
-| `questionHint` | No | A hint string used by the local validator. Like `sampleAnswer`, it is written to the DOM as `data-question-hint` and is readable via DevTools. |
+| `sampleAnswer` | No | A model answer used by the local answer validator for a loose "is this on topic?" check. It is never shown in the study UI and is not written into the page markup, but it is in the study file and in the app's memory, so anyone with the file can read it — see [Model answers are in the study file](#model-answers-are-in-the-study-file) below. Numbered in multilingual studies (`sampleAnswer1`, …). |
+| `questionHint` | No | A hint appended to the validator's "stuck", "too short", "repeats" and "off topic" messages. Same visibility as `sampleAnswer`. Numbered in multilingual studies. |
+| `keyTerms` | No | The ideas a good answer should contain, so the validator can tell "covers the main ideas" from "mentions one word". See [Key terms and the main point](#key-terms-and-the-main-point). Numbered in multilingual studies (`keyTerms1`, …). |
+| `mainPoint` | No | A short statement of the key idea, shown in a pop-up when the reader taps the **Main point** button (enabled once they have written something). Numbered in multilingual studies. Up to about 2,000 characters. |
+| `mainPointFormat` | No | `markdown` (default), `HTML` or `plainText`: how `mainPoint` is formatted. Not numbered. |
+| `skipBibleVerseCheck` | No | `true` turns off the "your answer repeats the passage" check, for questions where quoting the passage is the right answer. |
 | `shortAnswerThreshold` | No | Overrides the minimum word count used by the local answer validator's short-answer check for this question only. Use this when a genuinely short answer is the correct form of response. See [Short answer threshold](#short-answer-threshold) below. |
 | `deeper` | No | Adds a "(Go deeper)" button next to the question text that opens a modal with an additional question. `label` is the button text; `question` is the deeper question itself. |
 
@@ -432,27 +436,76 @@ For these, set `shortAnswerThreshold` to lower the floor or remove it entirely:
 }
 ```
 
-> **Note:** `shortAnswerThreshold` values are written by the renderer to a `data-short-answer-threshold` attribute on the question card element and read from there by the validator. Study authors set the JSON field; the renderer handles the rest.
+> **Note:** the validator reads `shortAnswerThreshold` (and `skipBibleVerseCheck`) directly from the question element. A value of `0` is honoured in every language slot (it is not treated as "empty"). Study authors set the JSON field; nothing is written to the page.
 
 ---
 
-#### Model answers are client-visible
+#### Key terms and the main point
 
-Because all answer validation happens in the browser, `sampleAnswer` and `questionHint` values must be present in the page for the validator to read them. The renderer writes them as `data-sample-answer` and `data-question-hint` attributes on each question card element. They are not displayed in the study UI, but they are readable in plain text by anyone who opens browser DevTools and inspects the element.
+Two optional fields make the local answer check more useful. They apply to
+`standard` questions (and any question with a `linkedPassage`) that show the
+answer-check button; reflection questions get nothing.
 
-This is an inherent limitation of client-side validation — there is no way to use these fields for validation while also keeping them hidden from a determined user.
+```json
+"keyTerms":  ["justif|declared righteous|acquit", "faith|trust", "grace$"],
+"mainPoint": "We are **declared righteous** by *faith*, not by works. (Romans 3:28)",
+"mainPointFormat": "markdown"
+```
 
-**What this means in practice:**
+**`keyTerms`** is an array with one string per idea the answer should contain.
+Each string lists alternatives separated by `|`; the idea counts as covered if
+any alternative appears in the answer.
 
-- A technically curious user can read your model answers without answering the questions.
-- This is unlikely to affect typical users, but study authors should be aware of it when deciding how much detail to put into `sampleAnswer`.
-- `questionHint` values are equally visible and carry the same caveat.
+| Write | Matches |
+|-------|---------|
+| `justif` | any word that *starts* with it: "justified", "justification" |
+| `sin$` | the whole word "sin" only (not "since") |
+| `declared righteous` | that phrase, starting at a word start ("declared righteousness" too) |
+| `*iman` | the text anywhere inside a word (for languages that attach prefixes, such as Arabic *bil-iman*) |
+| `称义` | in languages written without spaces (Chinese, Japanese, Thai, Burmese, Khmer, Lao), plain text is matched anywhere |
 
-**Guidance for study authors:**
+Matching ignores case and punctuation, ignores optional marks in Latin, Greek
+and Cyrillic writing (so "Jésù" matches "Jesu") and in Arabic and Hebrew (vowel
+marks), and keeps the marks that are part of a word in other scripts (for
+example Devanagari). Keep prefixes long enough to be specific: `sin` also
+matches "single" and "sinew"; use `sin$`. At most 12 entries, 10 alternatives per
+entry and 60 characters per alternative are used; anything that is not an array
+of non-empty strings is ignored.
 
-- If your model answer contains sensitive theological positions, grading rubrics you would prefer not to disclose, or content that loses value once seen, consider whether to include it, shorten it, or rephrase it as a keyword list rather than a full answer.
-- A `sampleAnswer` that captures the key themes (e.g. key words or a short phrase) is usually sufficient for the validator and less revealing than a full paragraph.
-- There is no obfuscation option for these fields; obfuscating model answers would not meaningfully protect them while making the validator harder to maintain.
+**What the reader sees.** With `keyTerms`: none matched gives the existing
+"going in a different direction" message; some matched gives a neutral "you've
+picked up part of this"; at least half matched (and never fewer than two, when
+there are two or more) gives "Well done". With one entry there is no "partial".
+**Without `keyTerms` the check can never say "Well done"**; it only says "Looks
+good" when the answer shares some words with the `sampleAnswer`.
+
+**`mainPoint`** is shown only when the reader taps the Main point button, so
+they commit to an answer first. It is never part of the feedback message. If a
+question has a `mainPoint`, the feedback points to the button. The pop-up text is
+cleaned like any other formatted text (scripts, event handlers and unsafe links
+are removed).
+
+**Multilingual studies** use numbered slots (`keyTerms1`, `keyTerms2`,
+`mainPoint1`, …), falling back to slot 1. Matching uses the language the reader
+has selected; only English has a list of ignorable common words, so for other
+languages very short words are skipped instead. Non-English matching has not yet
+been reviewed by native speakers.
+
+---
+
+#### Model answers are in the study file
+
+`sampleAnswer`, `questionHint`, `keyTerms` and `mainPoint` are used by the
+validator in the reader's browser, so they are in the study file and in the
+app's memory. They are **not** written into the page markup (older versions
+wrote `data-sample-answer` and `data-question-hint` on each question card), so
+they no longer show when someone inspects an element, but anyone who opens the
+`.estudy` file, or the browser's developer tools, can read them.
+
+- Treat them as visible: do not put anything in them that must stay confidential.
+- A `mainPoint` is meant to be seen. Short `keyTerms` and a brief `sampleAnswer`
+  reveal less than a full model answer and work just as well.
+- There is no obfuscation option; it would not meaningfully protect them.
 
 ---
 

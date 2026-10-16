@@ -12,54 +12,27 @@
 //   a self-dismissing toast. Nothing is persisted or appended to the answer.
 //
 // The local-validate icon is:
-//   • Always visible on eligible cards (independent of AI availability)
+//   • Always visible on eligible cards
 //   • Disabled when the answer field is empty
 //   • Hidden on non-bible question subtypes (reflection, deeper, etc.)
 //
-// sampleAnswer (optional, per question):
-//   If a question element carries a sampleAnswer field in the study JSON, the
-//   renderer should pass it as data-sample-answer on the .question-card element.
-//   _localValidate reads it from the DOM if present and uses it for thematic
-//   checking. It is never rendered visibly to the user.
+// The matching itself lives in answer-match.js (pure text logic, no DOM). This
+// file only gathers the inputs, maps result codes to translated messages, and
+// wires the buttons.
 //
-// shortAnswerThreshold (optional, per question):
-//   Overrides the default minimum word count used in the short-answer check
-//   (step 2) for a specific question. Useful when a genuinely short answer is
-//   the correct form of response (e.g. "name one word", "which option best
-//   describes you?").
-//
-//   The renderer resolves the effective threshold and writes it as
-//   data-short-answer-threshold on the .question-card element:
-//
-//   Monolingual studies:
-//     element.shortAnswerThreshold  →  data-short-answer-threshold
-//
-//   Multilingual studies (languageN suffix convention):
-//     Resolution order for the active language suffix N:
-//       1. element.shortAnswerThresholdN  (per-language override)
-//       2. element.shortAnswerThreshold   (cross-language default)
-//       3. Attribute omitted              (built-in default logic applies)
-//
-//   Values:
-//     Integer ≥ 1  — use as the minimum word count for this question
-//     0            — disable the short-answer check entirely for this question
-//     Absent       — use the existing default (35% of sampleAnswer length, ≤ 6)
-//
-// skipBibleVerseCheck (optional, per question):
-//   Disables the passage-repetition check (step 4) for a specific question.
-//   Use when the correct answer is expected to quote the passage directly —
-//   e.g. "What does Paul say about X?" or "Copy out the memory verse."
-//
-//   Set as a boolean attribute on the .question-card element:
-//     data-skip-bible-verse-check="true"  →  step 4 is skipped
-//     Absent or any other value           →  step 4 runs as normal
-//
-//   Unlike shortAnswerThreshold, this is a simple boolean with no per-language
-//   variant — it applies to all languages for the question.
+// Per-question study fields, all optional and read from the question ELEMENT
+// (looked up by the card's id), not from data-* attributes — so model answers
+// no longer sit in the page markup, and study text never becomes an attribute:
+//   sampleAnswer, questionHint   numbered in multilingual studies
+//   keyTerms                     array of "alt|alt|prefix$" strings (see answer-match.js)
+//   mainPoint, mainPointFormat   shown on demand by the Main point button (modals.js)
+//   shortAnswerThreshold         minimum words; 0 turns the check off
+//   skipBibleVerseCheck          true skips the "repeats the passage" check
 //
 // ── SHARED DEPENDENCIES (globals) ────────────────────────────────────────────
-//   ICONS, showToast, chapters, currentChapter, storageKey,
-//   saveAnswers, verseData
+//   ICONS, showToast, chapters, currentChapter, verseData, studyText,
+//   buildLangMap, getActiveLang, detectAvailableLangs,
+//   answer-match.js (evaluateAnswer)
 // ─────────────────────────────────────────────────────────────────────────────
 
 
@@ -76,29 +49,12 @@ function _getQuestionText(card) {
 // ═════════════════════════════════════════════════════════════════════════════
 //
 // Lightweight offline answer checking for bible-study question cards.
-// Triggered by a dedicated icon in the answer-action-row. Results appear in a short-lived toast only;
-// nothing is persisted or appended to the answer.
+// Triggered by a dedicated icon in the answer-action-row. Results appear in a
+// short-lived toast only; nothing is persisted or appended to the answer.
 //
-// Question subtypes that local validate handles:
-//   standard, header   — full heuristic checks + sampleAnswer thematic check
-//
-// Question subtypes that local validate skips (hidden icon):
-//   reflection, deeper — these are personal/devotional; heuristic checks
-//                        would be misleading or patronising
-//
-// sampleAnswer:
-//   An optional, study-author-supplied model answer stored in the element JSON.
-//   The renderer should write it as data-sample-answer on the .question-card
-//   element IF it is present. _localValidate reads it from there if available.
-//   It is never rendered visibly to the user anywhere in the UI.
-//
-// shortAnswerThreshold:
-//   An optional per-question override for the minimum word count checked in
-//   step 2. The renderer resolves the effective value (honouring the
-//   shortAnswerThresholdN / shortAnswerThreshold multilingual fallback chain)
-//   and writes it as data-short-answer-threshold on the .question-card element.
-//   0 = disable the short-answer check entirely for this question.
-//   Absent = use the built-in default (35% of sampleAnswer length, capped at 6).
+// Question subtypes that local validate handles: standard, and any question
+// with a linked passage (see localValidateEligible). Reflection and deeper
+// questions are personal or devotional, so they get no check.
 //
 // ── Eligibility check ─────────────────────────────────────────────────────────
 
@@ -138,7 +94,7 @@ function localValidateEligible(card) {
 // unrelated auto-validate.
 const _LV_STILL_WORKING_SELECTOR =
   '.question-ref [data-ref], .deeper-btn, .answer-info-btn, .mic-btn, ' +
-  '.local-validate-btn, .verse-trans-btn, .star-btn';
+  '.local-validate-btn, .main-point-btn, .verse-trans-btn, .star-btn';
 
 // PRIMARY FIX: a browser only blurs the currently focused field, on either
 // desktop or mobile, as the *default action* of the mousedown/tap that
@@ -219,13 +175,8 @@ function openLocalValidateForCard(buttonEl) {
   // Guard: icon should be disabled when empty, but double-check here
   if (!answer) return;
 
-  const questionText          = _getQuestionText(card);
-  const sampleAnswer          = card.dataset.sampleAnswer || null;
-  const questionHint          = card.dataset.questionHint || null;
-  const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
-  const skipBibleVerseCheck   = card.dataset.skipBibleVerseCheck === 'true';
-
-  const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck);
+  const feedback = _lvFeedbackFor(card, answer);
+  if (feedback === null) return;
 
   // feedback is always a non-null string (either a problem message or a
   // positive confirmation). Scroll card to centre first so the toast
@@ -279,15 +230,105 @@ function localValidateAutoTrigger(textareaEl) {
     // Record the answer we are about to validate so next blur can diff
     card.dataset.lvLastAnswer = answer;
 
-    const questionText          = _getQuestionText(card);
-    const sampleAnswer          = card.dataset.sampleAnswer || null;
-    const questionHint          = card.dataset.questionHint || null;
-    const shortAnswerThreshold  = card.dataset.shortAnswerThreshold ?? null;
-    const skipBibleVerseCheck   = card.dataset.skipBibleVerseCheck === 'true';
-
-    const feedback = _localValidate(answer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck);
-    _localValidateShowFeedback(card, feedback);
+    const feedback = _lvFeedbackFor(card, answer);
+    if (feedback !== null) _localValidateShowFeedback(card, feedback);
   }, 120);
+}
+
+// ── Inputs: the question element, looked up by the card's id ───────────────────
+// The study fields are read from the element itself rather than from data-*
+// attributes on the card. The card's id is the element's elementId (for a
+// repeatElement card it is the source element's id, which is the one found
+// here, since repeat entries are skipped in the first pass).
+function _lvQuestionElement(card) {
+  const id = card && card.id;
+  if (!id || typeof chapters === 'undefined') return null;
+  const ch = chapters[typeof currentChapter === 'number' ? currentChapter : 0];
+  const list = ch && Array.isArray(ch.elements) ? ch.elements : [];
+  return list.find(e => e && e.elementId === id && !e.repeatElement)
+      || list.find(e => e && e.elementId === id)
+      || null;
+}
+
+// The language used for matching: the active study language, else the study's
+// declared language, else English (the behaviour before this was configurable).
+function _lvLang() {
+  try {
+    const active = getActiveLang(detectAvailableLangs());
+    if (active) return active;
+  } catch (e) { /* fall through */ }
+  const declared = window.studyMetadata && window.studyMetadata.language;
+  return typeof declared === 'string' && declared ? declared : 'en';
+}
+
+// A numeric field (shortAnswerThreshold) can legitimately be 0, which
+// resolveText()'s "empty means missing" rule would drop, so it is resolved here
+// with explicit undefined/null/'' tests: active slot → slot 1 → unnumbered.
+function _lvNumberField(el, field) {
+  let slot;
+  try { slot = buildLangMap(window.studyMetadata || {})[_lvLang()]; } catch (e) { slot = undefined; }
+  const candidates = slot !== undefined ? [el[field + slot], el[field + '1'], el[field]] : [el[field]];
+  for (const v of candidates) {
+    if (v === undefined || v === null || v === '') continue;
+    const n = Number(v);
+    return Number.isFinite(n) && n >= 0 ? Math.floor(n) : null;
+  }
+  return null;
+}
+
+function _lvStringField(el, field) {
+  const v = studyText(el, field);
+  return typeof v === 'string' && v.trim() !== '' ? v : null;
+}
+
+// Everything the check needs for one card. Never throws: a missing element or
+// a hostile field just yields empty values.
+function _lvQuestionConfig(card) {
+  const cfg = { questionText: '', sampleAnswer: null, questionHint: null, keyTerms: null,
+                hasMainPoint: false, shortAnswerThreshold: null, skipBibleVerseCheck: false, lang: 'en' };
+  try {
+    cfg.questionText = _getQuestionText(card);
+    cfg.lang = _lvLang();
+    const el = _lvQuestionElement(card);
+    if (!el) return cfg;
+    cfg.sampleAnswer  = _lvStringField(el, 'sampleAnswer');
+    cfg.questionHint  = _lvStringField(el, 'questionHint');
+    const kt = studyText(el, 'keyTerms');
+    cfg.keyTerms      = Array.isArray(kt) ? kt : null;
+    cfg.hasMainPoint  = _lvStringField(el, 'mainPoint') !== null;
+    cfg.shortAnswerThreshold = _lvNumberField(el, 'shortAnswerThreshold');
+    cfg.skipBibleVerseCheck  = el.skipBibleVerseCheck === true || el.skipBibleVerseCheck === 'true';
+  } catch (e) {
+    console.warn('[localValidate] could not read the question fields', e);
+  }
+  return cfg;
+}
+
+// The feedback string for one card, or null if something unexpected went wrong
+// (a failed check must never break typing or saving).
+function _lvFeedbackFor(card, answer) {
+  try {
+    const c = _lvQuestionConfig(card);
+    return _localValidate(answer, c.questionText, card, c.sampleAnswer, c.questionHint,
+      c.shortAnswerThreshold, c.skipBibleVerseCheck,
+      { keyTerms: c.keyTerms, hasMainPoint: c.hasMainPoint, lang: c.lang });
+  } catch (e) {
+    console.warn('[localValidate] check failed', e);
+    return null;
+  }
+}
+
+// Plain-text versions of the linked passage in every translation, for the
+// "repeats the passage" check. Inline verse numbers glued to a word ("21For")
+// are removed.
+function _lvPassageTexts(card) {
+  const refEl      = card && card.querySelector('.question-ref span[data-ref]');
+  const passageRef = refEl ? refEl.dataset.ref : null;
+  const entry      = passageRef && typeof verseData !== 'undefined' && verseData[passageRef];
+  const translations = entry && Array.isArray(entry.translations) ? entry.translations : [];
+  return translations
+    .map(tr => _stripHtml((tr && tr.text) || '').replace(/\b\d+(?=[a-zA-Z])/g, ''))
+    .filter(s => s.length > 20);
 }
 
 // ── Core validation logic ─────────────────────────────────────────────────────
@@ -295,160 +336,76 @@ function localValidateAutoTrigger(textareaEl) {
 // Returns a feedback string in all cases — never null.
 // Callers decide how to display it (toast, thread, etc.).
 //
+// The checks run in answer-match.js (evaluateAnswer); this maps its result code
+// to a translated message and appends the questionHint where it always did.
+//
 // Parameters:
 //   userAnswer           — the raw answer text from the textarea
 //   questionText         — the question text (plain, from DOM)
 //   card                 — the .question-card element (for passage lookup)
-//   sampleAnswer         — optional model answer string (from data-sample-answer)
-//   questionHint         — optional hint string (from data-question-hint)
-//   shortAnswerThreshold — optional string from data-short-answer-threshold:
-//                            '0'        → disable the short-answer check
-//                            '1', '2'…  → use as the minimum word count
-//                            null       → use built-in default logic
+//   sampleAnswer         — optional model answer string
+//   questionHint         — optional hint string
+//   shortAnswerThreshold — optional minimum word count (number or numeric
+//                          string; 0 disables the check; null = built-in default)
+//   skipBibleVerseCheck  — true skips the "repeats the passage" check
+//   extra                — optional { keyTerms, hasMainPoint, lang }
+function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck = false, extra = {}) {
+  const opts = extra && typeof extra === 'object' ? extra : {};
+  const { code } = evaluateAnswer({
+    answer: userAnswer,
+    questionText,
+    passageTexts: skipBibleVerseCheck ? [] : _lvPassageTexts(card),
+    sampleAnswer,
+    keyTerms: opts.keyTerms,
+    shortAnswerThreshold,
+    skipBibleVerseCheck,
+    lang: opts.lang,
+  });
+  return _lvMessageFor(code, questionHint, !!opts.hasMainPoint);
+}
 
-function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck = false) {
-  const answer = userAnswer.trim();
-
-  // ── Shared utilities ────────────────────────────────────────────────────────
-  // Appends the questionHint to withMsg as a new sentence if one is available; otherwise falls back to withoutMsg
-  const withHint = (withMsg, withoutMsg) => questionHint
-    ? withMsg + ' ' + questionHint
-    : withoutMsg;
-
-
-  const normalise = s => s.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
-
-  // Words to exclude from overlap and thematic comparisons.
-  // Biblical text is saturated with these, so they inflate overlap ratios falsely.
-  const STOPWORDS = new Set([
-    'the','a','an','and','or','but','in','on','of','to','is','it','he','his',
-    'was','for','with','that','this','are','as','at','by','from','have','had',
-    'not','be','has','were','they','we','you','i','my','our','their','him','her',
-    'its','so','if','then','will','would','can','could','should','all','one',
-    'who','what','which','when','how','do','did','been','more','no','up','out',
-    // High-frequency biblical vocabulary that appears in almost every passage
-    'god','jesus','lord','christ','said','went','came','upon','into','them',
-    'him','us','me','thy','thee','thou','ye','unto','hath','doth','shall'
-  ]);
-
-  const contentWords = str =>
-    new Set(normalise(str).split(' ').filter(w => w.length > 1 && !STOPWORDS.has(w)));
-
-  // ── 1. Low-engagement filler ────────────────────────────────────────────────
-  // Catches non-answers before the word-count check.
-  const LOW_ENGAGEMENT = /^(i\s+don'?t\s+know|not\s+sure|not\s+really\s+sure|not\s+sure\s+about\s+this|no\s+idea|no\s+idea\s+at\s+all|no\s+clue|idk|idc|n\/a|yes|no|maybe|yeah|yep|nope|nah|ok|okay|sure|fine|true|false|dunno|duno|don'?t\s+know|tbh|tbd|tbc|t\.b\.c\.|todo|to\s+do|later|will\s+do|come\s+back\s+to\s+this|revisit|unsure|pass|skip|test|testing|asdf|qwerty|aaa+|xxx+|123+|--|[-?]|\?|\.{2,})\.?$/i;
-  if (LOW_ENGAGEMENT.test(answer)) {
-    return withHint(
-      t('validation_lv_stuck_hint'),
-      t('validation_lv_stuck_no_hint')
-    );
+// Result code → message. Appends the hint after the message when there is one
+// (the "stuck" and "off topic" messages have wording of their own for that
+// case). Messages that could be read as praise point to the Main point button
+// when the question has one.
+function _lvMessageFor(code, hint, hasMainPoint) {
+  const withHint = (withKey, withoutKey) => hint ? t(withKey) + ' ' + hint : t(withoutKey);
+  const pointer = hasMainPoint ? ' ' + t('validation_lv_see_main_point') : '';
+  switch (code) {
+    case 'stuck':           return withHint('validation_lv_stuck_hint', 'validation_lv_stuck_no_hint');
+    case 'tooShort':        return withHint('validation_lv_too_short', 'validation_lv_too_short');
+    case 'repeatsQuestion': return withHint('validation_lv_repeats_question', 'validation_lv_repeats_question');
+    case 'repeatsPassage':  return withHint('validation_lv_repeats_passage', 'validation_lv_repeats_passage');
+    case 'offTopic':        return withHint('validation_lv_off_topic_hint', 'validation_lv_off_topic_no_hint');
+    case 'partial':         return t('validation_lv_partial') + pointer;
+    case 'strong':          return t('validation_lv_strong') + pointer;
+    case 'pass':            return t('validation_lv_pass_thematic') + pointer;
+    default:                return withHint('validation_lv_pass_no_sample_hint', 'validation_lv_pass_no_sample_no_hint');
   }
+}
 
-  // ── 2. Very short answer ────────────────────────────────────────────────────
-  // Minimum words calibrated against sampleAnswer length if available.
-  // shortAnswerThreshold (from data-short-answer-threshold on the card) overrides
-  // the default when present. 0 = skip this check entirely for this question.
-  const wordCount = answer.split(/\s+/).filter(Boolean).length;
-  const minWords  = shortAnswerThreshold !== null
-    ? parseInt(shortAnswerThreshold, 10)                         // author-supplied override
-    : sampleAnswer
-      ? Math.min(6, Math.round(sampleAnswer.split(/\s+/).filter(Boolean).length * 0.35))
-      : 6;
-  if (minWords > 0 && wordCount < minWords) {
-    return withHint(
-      t('validation_lv_too_short'),
-      t('validation_lv_too_short')
-    );
-  }
-
-  // ── 3. Answer repeats the question ─────────────────────────────────────────
-  const normAnswer   = normalise(answer);
-  const normQuestion = normalise(questionText);
-  if (normQuestion.length > 20) {
-    const qWords     = contentWords(normQuestion);
-    const aWordList  = normAnswer.split(' ').filter(w => !STOPWORDS.has(w));
-    const overlap    = aWordList.filter(w => qWords.has(w)).length;
-    const ratio      = aWordList.length > 0 ? overlap / aWordList.length : 0;
-    if (ratio > 0.70) {
-      return withHint(
-        t('validation_lv_repeats_question'),
-        t('validation_lv_repeats_question')
-      );
+// Wires the local-validate and Main point buttons after a chapter renders:
+// removes them from cards that are not eligible, and enables or disables them as
+// the answer field fills or empties.
+function wireLocalValidateCards(container) {
+  container.querySelectorAll('.question-card').forEach(card => {
+    const lvBtn = card.querySelector('.local-validate-btn');
+    const mpBtn = card.querySelector('.main-point-btn');
+    if (!lvBtn) { if (mpBtn) mpBtn.remove(); return; }
+    if (!localValidateEligible(card)) {
+      lvBtn.remove();
+      if (mpBtn) mpBtn.remove();
+      return;
     }
-  }
-
-  // ── 4. Answer repeats the linked Bible passage ──────────────────────────────
-  // Skipped when skipBibleVerseCheck is true (author has flagged that a direct
-  // quote is the expected form of answer, e.g. "What does Paul say about X?").
-  if (!skipBibleVerseCheck) {
-    const refEl      = card && card.querySelector('.question-ref span[data-ref]');
-    const passageRef = refEl ? refEl.dataset.ref : null;
-    // Build the union of content words across all translations for this passage.
-    // Multilingual studies store multiple translations in the translations array
-    // (one per bibleTranslationN). Checking all of them means that pasting any
-    // translation — not just the first — is correctly caught.
-    const passageEntry   = passageRef && typeof verseData !== 'undefined' && verseData[passageRef];
-    const translations   = passageEntry?.translations || [];
-    const passageStrings = translations
-      .map(tr => _stripHtml(tr.text || '')
-        // Strip inline verse numbers (digits at a word boundary before text,
-        // e.g. "21For" → "For", "22adultery" → "adultery").
-        .replace(/\b\d+(?=[a-zA-Z])/g, ''))
-      .filter(s => s.length > 20);
-
-    if (passageStrings.length > 0) {
-      // Union of content words from every translation
-      const pWords    = new Set(passageStrings.flatMap(s => [...contentWords(s)]));
-      const aWordList = normAnswer.split(' ').filter(w => w.length > 1 && !STOPWORDS.has(w));
-      const overlap   = aWordList.filter(w => pWords.has(w)).length;
-
-      // Direction 1: what fraction of the answer's content words are from the passage?
-      // Catches answers that are mostly or entirely copied verse text.
-      const ratioAnswer = aWordList.length > 0 ? overlap / aWordList.length : 0;
-
-      // Direction 2: does the answer contain ANY content words not in ANY translation?
-      // Catches a pure copy of any translation with no original contribution.
-      const hasOriginalWords = aWordList.some(w => !pWords.has(w));
-
-      if (ratioAnswer > 0.70 || !hasOriginalWords) {
-        return withHint(
-          t('validation_lv_repeats_passage'),
-          t('validation_lv_repeats_passage')
-        );
-      }
+    const textarea = card.querySelector('.answer-field');
+    if (textarea) {
+      textarea.addEventListener('input', () => {
+        const empty = !textarea.value.trim();
+        lvBtn.disabled = empty;
+        if (mpBtn) mpBtn.disabled = empty;
+      });
     }
-  }
-
-  // ── 5. Thematic check against sampleAnswer (if present) ────────────────────
-  //
-  // This check is intentionally lenient. Its purpose is not to mark the answer
-  // right or wrong, but to catch answers that are completely off-topic —
-  // i.e. those that share no meaningful vocabulary with a model answer at all.
-  //
-  // Threshold is low (≥ 1 shared content word out of the sample's content words)
-  // so that paraphrase, personal reflection, and creative expression all pass
-  // without penalty. Only truly unrelated answers are flagged.
-  if (sampleAnswer && sampleAnswer.trim().length > 10) {
-    const sampleContentWords = contentWords(sampleAnswer);
-    if (sampleContentWords.size >= 3) {
-      const aWords    = contentWords(answer);
-      const thematic  = [...aWords].filter(w => sampleContentWords.has(w)).length;
-      if (thematic === 0) {
-        return withHint(
-          t('validation_lv_off_topic_hint'),
-          t('validation_lv_off_topic_no_hint')
-        );
-      }
-    }
-    // ── 6a. Passes all checks including thematic ───────────────────────────────
-    return t('validation_lv_pass_thematic');
-  }
-
-  // ── 6b. Passes all checks — no thematic check available ────────────────────
-  return withHint(
-    t('validation_lv_pass_no_sample_hint'),
-    t('validation_lv_pass_no_sample_no_hint')
-  );
+  });
 }
 
 

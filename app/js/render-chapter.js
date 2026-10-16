@@ -195,11 +195,19 @@ async function renderChapter(idx, scrollY = 0) {
     // Built once per render and passed into renderQuestion() via ctx so that
     // render-elements.js carries no setup logic of its own. Also written to
     // window._answerRowInfoHtml so the inline onclick handler can reach it.
+    const chapterHasMainPoint = (ch.elements || []).some(e => {
+      if (!e || e.type !== 'question') return false;
+      const mp = resolveText(e, activeLang, 'mainPoint', langMap);
+      return typeof mp === 'string' && mp.trim() !== '';
+    });
     const answerRowInfoHtml = {
       title: t('renderchapter_answer_tools_title'),
       body:
         `<p><b>${ICONS.mic} ${t('renderchapter_answer_tools_mic_label')}</b> — ${t('renderchapter_answer_tools_mic_desc')}</p><br>` +
-        `<p><b>${ICONS.localValidate} ${t('renderchapter_answer_tools_localvalidate_label')}</b> — ${t('renderchapter_answer_tools_localvalidate_desc')}</p>`,
+        `<p><b>${ICONS.localValidate} ${t('renderchapter_answer_tools_localvalidate_label')}</b> — ${t('renderchapter_answer_tools_localvalidate_desc')}</p>` +
+        // The Main point entry only appears in chapters that have one, so the
+        // popup never describes a button the reader can't see.
+        (chapterHasMainPoint ? `<br><p><b>${ICONS.mainPoint} ${t('renderchapter_answer_tools_mainpoint_label')}</b> — ${t('renderchapter_answer_tools_mainpoint_desc')}</p>` : ''),
     };
     window._answerRowInfoHtml = answerRowInfoHtml;
 
@@ -327,22 +335,9 @@ async function renderChapter(idx, scrollY = 0) {
     }
 
     // ── Post-render: local-validate wiring ────────────────────────────────────
-    // Remove the button from ineligible cards, then wire the textarea's input
-    // event to enable/disable the button on eligible cards.
-    container.querySelectorAll('.question-card').forEach(card => {
-      const lvBtn = card.querySelector('.local-validate-btn');
-      if (!lvBtn) return;
-      if (!localValidateEligible(card)) {
-        lvBtn.remove();
-        return;
-      }
-      const textarea = card.querySelector('.answer-field');
-      if (textarea) {
-        textarea.addEventListener('input', () => {
-          lvBtn.disabled = !textarea.value.trim();
-        });
-      }
-    });
+    // Remove the validate and Main point buttons from ineligible cards, and wire
+    // the textarea's input event to enable/disable them on eligible ones.
+    wireLocalValidateCards(container);
 
     // ── Post-render: chapter-eyebrow info trigger (first chapter only) ───────
     // Compares against chapters[0].chapterNumber rather than a hardcoded 1 —

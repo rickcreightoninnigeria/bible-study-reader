@@ -2,7 +2,8 @@
  * Reusable vm sandbox for loading app/js/validation.js in tests.
  *
  * validation.js registers DOM listeners at load time and expects a handful of
- * globals (t, ICONS, showToast, escapeHtml, verseData). This stub provides
+ * globals (t, ICONS, showToast, escapeHtml, verseData, chapters, studyText …) and
+ * the functions of answer-match.js, which is loaded first. This stub provides
  * the minimum so the file can be evaluated without a browser. `t` returns the
  * key (plus any params) so tests assert on keys, not on English wording.
  *
@@ -23,6 +24,16 @@ export function makeValidationSandbox(extra = {}) {
     console,
     window: {},
     verseData: {},
+    // Study globals that validation.js reads (the tests override these as needed).
+    chapters: [],
+    currentChapter: 0,
+    studyText: (obj, field, fallback = '') => {
+      const v = obj && obj[field];
+      return (Array.isArray(v) ? v.length > 0 : !!v) ? v : fallback;
+    },
+    buildLangMap: () => ({}),
+    getActiveLang: langs => (langs && langs[0]) || null,
+    detectAvailableLangs: () => [],
     t: (key, params) => (params ? `${key} ${JSON.stringify(params)}` : key),
     ICONS: new Proxy({}, { get: () => '' }),
     showToast: () => {},
@@ -40,6 +51,8 @@ export function makeValidationSandbox(extra = {}) {
     ...extra,
   };
   vm.createContext(sandbox);
+  // answer-match.js loads first, as in index.html.
+  vm.runInContext(readFileSync(join(APP_JS, 'answer-match.js'), 'utf8'), sandbox, { filename: 'answer-match.js' });
   vm.runInContext(readFileSync(join(APP_JS, 'validation.js'), 'utf8'), sandbox, { filename: 'validation.js' });
   sandbox.__listeners = listeners;
   return sandbox;

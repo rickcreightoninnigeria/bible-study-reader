@@ -14,6 +14,7 @@
 //   likertFieldKey – state.js (IDB field-key helpers)
 //   verseData, chapters, currentChapter – window globals / state.js
 //   resolveText, buildLangMap – render-elements.js (language resolution)
+//   studyText, renderFormatted – render-chapter-elements.js / format-text.js
 //   window.studyMetadata      – study-loader.js (language slot map source)
 
 // ── SAFE HTML HELPER ──────────────────────────────────────────────────────────
@@ -549,6 +550,47 @@ function openFootnoteModal(title, bodyHtml) {
 
   document.getElementById('info-modal-overlay').classList.add('open');
 }
+
+// ── MAIN POINT MODAL ──────────────────────────────────────────────────────────
+// Shows a question's optional mainPoint (a short statement of the key idea) in
+// the shared info modal. It is opened by the Main point button on the answer
+// row, which is only enabled once the reader has written something, so they
+// commit to an answer before seeing the author's. It is never part of the
+// feedback toast.
+//
+// The text is read from the question element when the button is tapped (not
+// from the page), formatted with renderFormatted() — markdown by default, or
+// mainPointFormat — and passed to openFootnoteModal(), whose safeSetHtml()
+// sanitises it again. Because it reuses #info-modal-overlay, the Back button
+// closes it (router._closeAnyOpenModal) and local validate's "still working"
+// check ignores the blur it causes (validation.js).
+const MAIN_POINT_MAX_CHARS = 2000;
+const MAIN_POINT_FORMATS   = ['markdown', 'html', 'plaintext'];
+
+function openMainPointModal(elementId) {
+  if (typeof elementId !== 'string' || !elementId) return;
+  const ch   = chapters[currentChapter];
+  const list = ch && Array.isArray(ch.elements) ? ch.elements : [];
+  const el   = list.find(e => e && e.elementId === elementId && !e.repeatElement)
+            || list.find(e => e && e.elementId === elementId);
+  if (!el) return;
+
+  const raw = studyText(el, 'mainPoint');
+  if (typeof raw !== 'string' || raw.trim() === '') return;
+
+  const requested = typeof el.mainPointFormat === 'string' ? el.mainPointFormat.toLowerCase() : '';
+  const format    = MAIN_POINT_FORMATS.includes(requested) ? requested : 'markdown';
+
+  openFootnoteModal(t('mainpoint_modal_title'), renderFormatted(raw.slice(0, MAIN_POINT_MAX_CHARS), format));
+}
+
+// One delegated listener: the button carries only its element id, never an
+// inline handler or study text.
+document.addEventListener('click', e => {
+  const btn = e.target && e.target.closest && e.target.closest('.main-point-btn');
+  if (!btn || btn.disabled) return;
+  openMainPointModal(btn.dataset.mainPointId);
+});
 
 // USAGE EXAMPLES FOR INFO TRIGGERS
 // Inline placement — caller inserts the returned button manually
