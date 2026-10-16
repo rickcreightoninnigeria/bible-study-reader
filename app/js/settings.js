@@ -17,7 +17,6 @@ const SETTINGS_DEFAULTS = {
   localValidateMode  :'auto',
   rememberPosition   :true,
   shareFormat        :'formatted',
-  showCheckAnswerBtn :false,
   showLibraryPaths   :false,
   showNavButtons     :true,
   showPageAbout      :true,
@@ -140,9 +139,6 @@ function applyAllSettings() {
   }
   dynStyle.textContent = `.answer-field { min-height: ${getAnswerFieldMinHeight()} !important; } #globalNotesField { min-height: 450px !important; }`;
   updateNavButtons(null);  // show/hide Progress and HowTo buttons per settings
-
-  // 6. Check-answer button visibility
-  applyCheckAnswerBtnVisibility();
 }
 
 // Clamps px to [FONT_MIN, FONT_MAX] and saves it as the fontSize setting.
@@ -307,24 +303,6 @@ async function resetAllData() {
 function getAnswerFieldMinHeight() {
   const map = { small: '50px', medium: '100px', large: '200px' };
   return map[appSettings.answerFieldSize] || '80px';
-}
-
-// Returns true if the checkAnswer (AI tutor) button should be rendered on
-// question cards. Controlled by the showCheckAnswerBtn setting, which is
-// only exposed in the Settings UI when interfaceMode === 'advanced'.
-function showCheckAnswerButton() {
-  return !!appSettings.showCheckAnswerBtn;
-}
-
-// Shows or hides all .check-answer-btn elements currently in the DOM,
-// matching the showCheckAnswerBtn setting. Called by applyAllSettings()
-// so that toggling the setting from the Settings page takes effect
-// immediately without a re-render.
-function applyCheckAnswerBtnVisibility() {
-  const visible = appSettings.showCheckAnswerBtn;
-  document.querySelectorAll('.check-answer-btn').forEach(btn => {
-    btn.style.display = visible ? '' : 'none';
-  });
 }
 
 // Expands a textarea to fit its content by temporarily collapsing it to 'auto'

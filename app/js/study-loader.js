@@ -800,7 +800,6 @@ async function applyStudyData(data, { isStudySwitch = false, silent = false } = 
   window.leadersNotesData = data.leadersNotesData || {};
   window.goDeeperData     = data.goDeeperData     || null;
   window.studyAboutData   = data.studyAboutData   || {};
-  window.studyAiData      = data.studyAiData      || {};
 
   // ── Apply publisher and author images ─────────────────────────────────────
   // Must run after window.titlePageData and window.studyAboutData are set,

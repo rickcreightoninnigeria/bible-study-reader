@@ -1,0 +1,18 @@
+{
+  "filler: idk": "validation_lv_stuck_no_hint",
+  "filler: not sure": "validation_lv_stuck_hint Try rereading verse 2.",
+  "too short (default 6)": "validation_lv_too_short",
+  "too short with hint": "validation_lv_too_short Look at verse 2.",
+  "threshold 0 disables short check": "validation_lv_pass_no_sample_no_hint",
+  "threshold 3 (override)": "validation_lv_pass_no_sample_no_hint",
+  "threshold 3 too short": "validation_lv_too_short",
+  "repeats question": "validation_lv_repeats_question",
+  "repeats passage": "validation_lv_repeats_passage",
+  "repeats passage, skipBibleVerseCheck": "validation_lv_pass_no_sample_no_hint",
+  "off topic vs sample": "validation_lv_off_topic_no_hint",
+  "pass thematic": "validation_lv_pass_thematic",
+  "pass, no sample": "validation_lv_pass_no_sample_no_hint",
+  "pass, no sample, hint": "validation_lv_pass_no_sample_hint Think about why.",
+  "answer with transcript appended": "validation_lv_pass_thematic",
+  "multi-translation passage union": "validation_lv_repeats_passage"
+}

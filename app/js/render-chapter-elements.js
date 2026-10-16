@@ -48,10 +48,7 @@
 //   renderLikertScale                – modals.js
 //   localValidateAutoTrigger,
 //   openLocalValidateForCard,
-//   localValidateEligible            – local-validate.js
-//   aiTutorAvailable,
-//   showCheckAnswerButton,
-//   openAiTutorForCard               – ai-tutor.js
+//   localValidateEligible            – validation.js
 //   startVoiceInput                  – voice.js
 //   autoResize                       – utils.js
 //   saveAnswers                      – save.js
@@ -526,7 +523,6 @@ function renderQuestion(ctx) {
     <div class="answer-action-row">
       <button class="answer-info-btn" title="${t('renderchapter_answer_info_btn_title')}" aria-label="${t('renderchapter_answer_info_btn_title')}"
           onclick="openInfoModal('answer-action-row-info', window._answerRowInfoHtml, this)">${ICONS.triggerInfo}</button>
-      ${aiTutorAvailable() && showCheckAnswerButton() ? `<button class="check-answer-btn" title="${t('renderchapter_ask_ai_tutor')}" aria-label="${t('renderchapter_ask_ai_tutor')}" onclick="openAiTutorForCard(this)">${ICONS.checkAnswer}</button>` : ''}
       <button class="local-validate-btn" title="${t('renderchapter_check_my_answer')}" aria-label="${t('renderchapter_check_my_answer')}" onclick="openLocalValidateForCard(this)" ${val ? '' : 'disabled'}>${ICONS.localValidate}</button>
       ${voiceInputAvailable() ? `<button class="mic-btn" onclick="startVoiceInput(this)" aria-label="${t('renderchapter_answer_tools_mic_label')}" title="${t('renderchapter_answer_tools_mic_label')}">${ICONS.mic}</button>` : ''}
     </div>`;

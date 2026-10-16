@@ -1094,21 +1094,6 @@ async function renderSettings(tabId) {
         </div>
       </div>` : '';
 
-    // ── Answer Check Button — Advanced only ──────────────────────────────────
-    const checkAnswerSection = adv ? `
-      <div class="settings-section">
-        <div class="settings-section-heading">${t('renderpages_settings_answerchecking_heading')}</div>
-        <div class="settings-block">
-          <div class="settings-row">
-            <div class="settings-row-text">
-              <div class="settings-row-label">${t('renderpages_settings_answerbtn_label')}</div>
-              <div class="settings-row-desc">${t('renderpages_settings_answerbtn_desc')}</div>
-            </div>
-            ${tog('showCheckAnswerBtn')}
-          </div>
-        </div>
-      </div>` : '';
-
     // ── App Version & Updates — always shown ──────────────────────────────────────
     const platform = getPlatform();
 
@@ -1268,7 +1253,6 @@ async function renderSettings(tabId) {
       ${optionalPagesSection}
       ${savingSection}
       ${ttsSection}
-      ${checkAnswerSection}
       ${appVersionSection}
       ${interfaceModeSection}`;
   }
