@@ -381,6 +381,14 @@ async function startApp() {
   // Any call that arrived before this point will have set window.pendingStudyData.
   window._appReady = true;
 
+  // Install bundled default studies on first run (silent — no navigation side-effects).
+  // Must run before the routing block below so studies are in the registry when
+  // openLibrary() renders for the first time. It needs window.appAboutData (its
+  // once-per-app-version flag), which loadLocale() above has just filled in.
+  // This call was dropped in 0c86fd4 and never restored, so fresh installs
+  // started with an empty library; app-init.test.js now guards it.
+  await installDefaultStudiesIfNeeded();
+
   // Case 0: Android delivered a .estudy file before DOMContentLoaded fired.
   // pendingStudyData is already persisted to IDB by loadStudyFromJson (or
   // deferred the same way by loadStudyFromFile's _activateOrDeferStudy), so
