@@ -22,7 +22,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 - `onboarding.js` — app/study/upgrade onboarding slides, first-use info triggers, `updateNavButtons`.
 - `router.js` — `Router`, History API, popstate, modal/overlay back-handling.
 - `utils.js` — Swal dark-mode patch, last-position save/restore, toasts, `escapeHtml`, `jsArg`, long-press copy, `getPlatform`.
-- `validation.js` — AI tutor (Gemini API) and local answer checks. It does **not** validate study files.
+- `validation.js` — local (offline) answer checks only. It does **not** validate study files. (It once also held an AI tutor; that was removed and `studyAiData` in study files is ignored.)
 - `gestures.js` — swipe nav, scroll/visibility saves.
 - `navigation.js` — `goToChapter`, menu drawer, non-chapter page reset.
 - `share-print.js` — share/export/print answers.
@@ -110,7 +110,7 @@ History API only (no hash). State shape: `{ page, idx, tabId, scrollY, studyId }
 
 ## 7. study.json blocks and their renderers
 
-`studyMetadata` (id, title/subtitle/shortTitle, `language1..N`, `studyVersion`, `estudyFileVersion`, shelves) → title page, library cards, header. `imageData` → cover/publisher/author. `theme` → 22 CSS custom properties (`THEME_PROPS`), suspended on app pages (`suspendStudyTheme`). `chapters[]` `{chapterNumber, chapterTitle, elements[]}` → `renderChapter`, one renderer per element `type`: `heading`, `text` (subtypes chapterIntro/bridge/chapterClosing…), `biblePassage` (registers `verseData`, outputs no HTML), `question` (subtypes header/reflection/standard; answer textarea, star, sample answer, local validate), `image`, `callout`, `likertScale`; `repeatElement` references another element. `studyOnboardingSlides` → study onboarding overlay. `studyAiData` → AI tutor (`apiKey` ships inside the study file). `howToUseData` → How-to "Study" tab. `leadersNotesData` → Leaders' Notes (hidden unless `showPageLeaders`). `goDeeperData` → Go Deeper page (tabs, markdown/HTML blocks, footnotes, `readMoreButtons`/`backToStudy` links, `image-gallery` blocks). `studyAboutData`/`copyrightData` → About page. Full spec: `ESTUDY_FORMAT.md`.
+`studyMetadata` (id, title/subtitle/shortTitle, `language1..N`, `studyVersion`, `estudyFileVersion`, shelves) → title page, library cards, header. `imageData` → cover/publisher/author. `theme` → 22 CSS custom properties (`THEME_PROPS`), suspended on app pages (`suspendStudyTheme`). `chapters[]` `{chapterNumber, chapterTitle, elements[]}` → `renderChapter`, one renderer per element `type`: `heading`, `text` (subtypes chapterIntro/bridge/chapterClosing…), `biblePassage` (registers `verseData`, outputs no HTML), `question` (subtypes header/reflection/standard; answer textarea, star, sample answer, local validate), `image`, `callout`, `likertScale`; `repeatElement` references another element. `studyOnboardingSlides` → study onboarding overlay. `studyAiData` → deprecated, ignored. `howToUseData` → How-to "Study" tab. `leadersNotesData` → Leaders' Notes (hidden unless `showPageLeaders`). `goDeeperData` → Go Deeper page (tabs, markdown/HTML blocks, footnotes, `readMoreButtons`/`backToStudy` links, `image-gallery` blocks). `studyAboutData`/`copyrightData` → About page. Full spec: `ESTUDY_FORMAT.md`.
 
 Text fields are multilingual via numbered slots (`title1`, `title2`…) mapped by `studyMetadata.language1..N`. Format per field: `HTML`, `markdown`, or `plainText` (also the default); all are sanitised.
 
@@ -130,7 +130,7 @@ Downloads are never fetched in-app: links go to `Android.openUrl`/`window.open`,
 
 ## 10. Third-party libraries (vendored in `app/js/`)
 
-SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev only: vitest 2, fake-indexeddb. All fonts are bundled in `app/fonts/` and declared in `css/01-fonts.css` (29 faces, all load locally; the app makes no font requests). Only the print window (`share-print.js`) and the four editor tools still link Google Fonts. The AI tutor calls the Gemini API (`generativelanguage.googleapis.com`) directly from the client.
+SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev only: vitest 2, fake-indexeddb. All fonts are bundled in `app/fonts/` and declared in `css/01-fonts.css` (29 faces, all load locally; the app makes no font requests). Only the print window (`share-print.js`) and the four editor tools still link Google Fonts. The app itself makes no JavaScript-initiated request to an external host (the locale and library loaders use relative XHR; downloads are handed to the browser).
 
 ## 11. Fragile or surprising
 
@@ -149,9 +149,8 @@ SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev onl
 ## 12. Not verified
 
 - **No device or WebView testing.** Everything was run in desktop Chromium via Playwright; Android WebView, iOS, and the Kotlin wrapper (not in this repo) were not examined.
-- **Not read in full:** `onboarding.js`, `validation.js` (AI tutor and local validation internals), `tts.js`/`voice.js` beyond the bridge calls, `render-library.js` shelves logic, `share-print.js` print HTML, the CSS files, the four editor HTML tools, the `py/` scripts, `render-pages.js` Settings/How-to/About internals, `migrate.js` internals.
+- **Not read in full:** `onboarding.js`, `validation.js` (local validation internals), `tts.js`/`voice.js` beyond the bridge calls, `render-library.js` shelves logic, `share-print.js` print HTML, the CSS files, the four editor HTML tools, the `py/` scripts, `render-pages.js` Settings/How-to/About internals, `migrate.js` internals.
 - **Rendering of `howToUseData`, `studyAboutData`, `copyrightData`** is summarised from `ESTUDY_FORMAT.md` and spot checks, not traced line by line.
 - **The Android-to-JS call names** are taken from JS definitions; the native side's actual invocations were not seen.
 - **Which `index.html` is deployed** (root copy or `app/`), and how the web build is hosted, is unknown; both are kept identical.
-- **The AI tutor was not exercised** (no API key); the Gemini model name in `validation.js` is a preview model that may change.
 - **Library tab counts, shelves and recent lists** (`lib_*` key shapes) were read from code only.

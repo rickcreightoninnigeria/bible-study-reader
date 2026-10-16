@@ -1,6 +1,6 @@
 PRIVACY POLICY — BIBLE STUDY READER
 
-Last updated: April 2026
+Last updated: 16 October 2026
 
 This Privacy Policy explains what data the Bible Study Reader app collects, how it is used, and under what circumstances it leaves your device.
 
@@ -32,28 +32,10 @@ The app uses the internet only in the following specific circumstances:
 3a. Downloading study files
 When you download a study from the in-app library, the app fetches the study file from a third-party file host (currently Google Drive). This is a standard file download; no personal information is sent. The study file is then stored on your device (see Section 2).
 
-3b. AI Tutor (optional feature, not available in all studies)
-Some studies include an optional AI Tutor feature powered by the Google Gemini API. This feature is only active if the study you are using has been configured with it by its author.
-
-When you use the AI Tutor, the following information is sent to Google's servers:
-  • The chapter title and study context for the chapter you are working on
-  • The text of the question you are asking about
-  • The messages you type in the AI Tutor conversation panel
-
-The following is NOT sent to Google:
-  • Your saved question answers
-  • Your notes
-  • Your name or any account information
-  • Any device identifiers
-
-Google processes this data in accordance with its own privacy policy and the Google Gemini API terms of service. You can review Google's privacy policy at https://policies.google.com/privacy.
-
-The AI Tutor conversation is stored locally on your device as part of your answer record. It is not stored on any server operated by the app developer.
-
-If you do not want your typed messages sent to Google, simply do not use the AI Tutor feature. It can be disabled in Settings.
-
-3c. App updates (Android only)
+3b. App updates (Android only)
 The app may check for available updates by fetching version information from a file hosted on Google Drive. This is a standard file request; no personal information is sent.
+
+The app itself does not transmit your answers, notes or any other text you type to any server. Earlier versions of the app offered an optional AI Tutor that sent text to the Google Gemini API; that feature has been removed. Some older study files may still contain unused AI Tutor settings, which the app ignores. Any AI Tutor conversation you saved in an answer before the feature was removed remains on your device only.
 
 ────────────────────────────────────────
 4. MICROPHONE (VOICE INPUT)
@@ -75,7 +57,7 @@ The read-aloud feature uses your device's built-in text-to-speech engine to read
 
 The app requests the following Android permissions:
 
-• INTERNET — required to download study files and (where applicable) to use the AI Tutor feature.
+• INTERNET — required to download study files and to check for app updates.
 • RECORD_AUDIO — required only for the optional voice input feature. This permission is requested only when you first attempt to use voice input.
 • READ_EXTERNAL_STORAGE / file access — required to allow you to load .estudy files from your device's storage.
 
@@ -90,7 +72,6 @@ The app is not directed at children under the age of 13 and does not knowingly c
 The app interacts with the following third-party services under the circumstances described above:
 
 • Google Drive — for downloading study files and app updates
-• Google Gemini API — for the optional AI Tutor feature (only in studies that include it)
 
 The app contains no advertising networks, analytics SDKs, social media integrations, or crash-reporting services.
 

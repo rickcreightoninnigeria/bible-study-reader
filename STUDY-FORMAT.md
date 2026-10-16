@@ -11,7 +11,7 @@ Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or 
 - **Rejected at load (user sees an error or toast):** not a zip/JSON; no `study.json`; missing or unsafe `studyMetadata.studyId` (must match `^[A-Za-z0-9_.-]+$`); zip with >200 entries, any entry >25 MB, total >150 MB, compression ratio >100 on entries >1 MB, or entry names containing `..`, `\`, a leading `/` or a drive letter; a `studyVersion` **lower** than the installed one (blocked).
 - **Same `studyVersion` as installed:** the *installed* copy opens and your file is ignored. To update a study, **raise `studyVersion`** (numeric; parsed with `parseFloat`, so use `1.03`, not `1.2.3`).
 - **Warns but loads:** `estudyFileVersion` ≠ `3` (non-blocking banner).
-- **No schema validation exists.** `validation.js` does not validate files (it is the AI tutor and answer checker, section 8). Missing optional fields are tolerated; some missing required fields throw when the page renders (flagged below). Unknown element `type`s are silently skipped.
+- **No schema validation exists.** `validation.js` does not validate files (it is the local answer checker, section 8). Missing optional fields are tolerated; some missing required fields throw when the page renders (flagged below). Unknown element `type`s are silently skipped.
 - **Load-time cleaning (`sanitizeStudyData`):** every string containing `<` is cleaned with DOMPurify: scripts, event handlers (`onclick`…), `javascript:` URLs, iframes are removed; `id` attributes and `<style> <form> <input> <textarea> <select> <button>` are stripped. Keys named `elementId`, `repeatElement`, `calloutId`, `id`, `tabId` and `language*` have characters outside `[A-Za-z0-9_.-]` replaced by `_`. **Keep ids inside that set from the start**: images are installed using the raw id, then looked up using the cleaned one, so a space or other character breaks the image link.
 
 ## 2. Multilingual numbered slots
@@ -47,7 +47,7 @@ Footnotes (`[[fn:N]]` markers with a chapter `footnotes: [{id, body}]` array) wo
 | `imageData` | no | cover / publisher / author fallbacks and alt text |
 | `theme` | no | CSS custom properties |
 | `studyOnboardingSlides` | no | slide overlay on first open |
-| `studyAiData` | no | AI tutor |
+| `studyAiData` | no | deprecated; ignored |
 | `howToUseData` | no | How-to → "Study" tab |
 | `leadersNotesData` | no | Leaders' Notes page (only if the user enables `showPageLeaders`, default off) |
 | `goDeeperData` | no | Go Deeper page (Contents menu entry appears automatically) |
@@ -99,7 +99,7 @@ Every element: `type` and **`elementId`** (string, unique within the chapter; mi
 
 **Local check** (offline, per card; shows a 10-second toast, nothing is saved; works for Latin-script text only, because it strips everything outside `a–z0–9`). Shown on questions of subtype `standard`/none, or any question with `linkedPassage`. In order: low-engagement filler ("I don't know", "yes", "idk"…); fewer than N words (N = 6, or 35% of the `sampleAnswer` word count, max 6); answer mostly repeats the question (>70% content-word overlap); answer mostly repeats the linked passage in any translation (>70% or no original words); no shared content word with `sampleAnswer` (only when it has ≥3 content words). `questionHint` is appended to the message when a check fails. `sampleAnswer`/`questionHint` are written into `data-` attributes, so they are readable by anyone who opens the study file or DOM; never put secrets there.
 
-**AI tutor:** `studyAiData.apiKey` (a Gemini key; plain, or `bsr1.`-obfuscated, which is **not** secure; the key ships inside the study file and is visible to every reader) and optional `aiTutorPrompt` (system prompt; default is a short built-in one). The button also needs the user setting "check answer button" (default off). Context sent: chapter title plus the matching Leaders' Notes chapter's `keyPoints` and `pastorals` blocks.
+**`studyAiData`:** deprecated and ignored. The AI tutor was removed; old files that still contain it (with an `apiKey` and `aiMentorPrompt`/`aiTutorPrompt`) load normally. Do not add it to new studies, and revoke any key that was distributed in one.
 
 ## 9. Smaller pages
 
@@ -123,12 +123,11 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 
 **Ignored:** `createdAt`, `updatedAt`, `tags`, `shareMessage`, `imageData.*.provenance`, inline `image.provenance` (except gallery credit), `answerType`, `required`, `commentHint`, `note`, heading `level`, slide `format`, `copyrightData.licence`, Leaders `bookOverview`, theme keys outside the 22; unnumbered `bibleTranslation`.
 
-**Unsafe / avoid:** any `<script>`/handlers (stripped); `src` on `image` elements pointing off-device; a non-integer `chapterNumber` (numeric strings are converted to integers; anything else becomes 0); secrets in `apiKey`, `sampleAnswer`, `questionHint`; ids outside `[A-Za-z0-9_.-]`; a `studyId` that prefixes another (deleting/clearing now spares other installed studies whose id extends it, but avoid it).
+**Unsafe / avoid:** any `<script>`/handlers (stripped); `src` on `image` elements pointing off-device; a non-integer `chapterNumber` (numeric strings are converted to integers; anything else becomes 0); secrets in `sampleAnswer`, `questionHint`; ids outside `[A-Za-z0-9_.-]`; a `studyId` that prefixes another (deleting/clearing now spares other installed studies whose id extends it, but avoid it).
 
 ## 12. Not verified
 
 - Nothing was tested on Android WebView or iOS; renders were checked in desktop Chromium, and several behaviours here come from reading code only (the `libraryShelves` placement of unknown names, `readMore` with unusual values).
 - `onboarding.js` internals beyond slide fields, `render-library.js` shelf edge cases, and the editor tools in `app/*.html` (which may enforce stricter rules than the app) were not read in full.
-- The AI tutor was never run (no key); the Gemini model name is a preview model.
 - Behaviour with very large studies (hundreds of chapters, MBs of JSON) was not measured; only the zip limits above are enforced.
 - Limits not listed here do not exist in the code as far as I found: no maximum on text length, element count or `studyId` length.

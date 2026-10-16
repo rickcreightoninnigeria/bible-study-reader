@@ -96,7 +96,7 @@ js/
   onboarding.js             Slide overlay engine: app onboarding, study onboarding, feature tutorials
   router.js                 History-API-backed navigation router; bottom-nav click handlers
   utils.js                  Last-position save/restore, showToast(), autoResize, long-press copy
-  validation.js             AI Tutor (Socratic feedback) and local offline answer validation
+  validation.js             Local offline answer validation ("answer check")
   gestures.js               Swipe gesture navigation between chapters/tabs; scroll and
                              visibilitychange listeners (backgrounding save, last position)
   navigation.js             goToChapter(), menu open/close, tab reset
@@ -169,7 +169,7 @@ See `ARCHITECTURE.md` for a fuller overview of the codebase.
 | 16 | `onboarding.js` | `showAppOnboarding()`, `showOnboardingIfNeeded()`, `showFeatureTutorial()`, `showSlideOverlay()`, `navSearchClick()` | `settings.js`, `icons.js` |
 | 17 | `router.js` | `Router`, `navLibClick()`, `navProgressClick()`, `navHowtoClick()`, `navSettingsClick()` | `state.js` |
 | 18 | `utils.js` | `saveLastPosition()`, `getLastPosition()`, `showToast()`, `initLongPressCopy()`, `escapeHtml()` | `state.js`, `idb.js` |
-| 19 | `validation.js` | `openAiTutorForCard()`, `openLocalValidateForCard()` | `state.js`, `icons.js`, `utils.js` |
+| 19 | `validation.js` | `openLocalValidateForCard()`, `localValidateAutoTrigger()` | `state.js`, `icons.js`, `utils.js` |
 | 20 | `gestures.js` | `touchstartX`, `touchendX`, `handleGesture()` | `settings.js`, `state.js`, `idb.js` |
 | 21 | `navigation.js` | `goToChapter()`, `closeMenu()`, `closeNonChapterPage()`, `_resetNonChapterPageState()` | `icons.js`, `settings.js`, `state.js` |
 | 22 | `share-print.js` | `shareAnswers()`, `exportStudyAnswers()`, `printAllChapters()` | `state.js`, `idb.js`, `utils.js` |
@@ -202,7 +202,7 @@ for print styles only).
 | `03-base.css` | Box-sizing reset, `body`, `.content` wrapper, blockquote, RTL base rules |
 | `04-chrome.css` | Sticky top nav, chapter menu drawer, save bar, chapter nav buttons, close-button animations |
 | `05a-components.cards.display.css` | Read-only cards: chapter header, section header, intro, bridge text, opening quotes, chapter images, speak button |
-| `05b-components.cards.responses.css` | Interactive cards: question card wrapper, answer textarea, mic button, Likert scale + popup, AI Tutor / local-validate buttons |
+| `05b-components.cards.responses.css` | Interactive cards: question card wrapper, answer textarea, mic button, Likert scale + popup, local-validate button |
 | `05c-components.nav.css` | Toasts (save, celebration, version warning), GPU compositing hints |
 | `05d-components.starred.css` | Starred-questions collapsible summary panel |
 | `06-overlays.css` | Fixed-position layers: verse modal, QA modal, go-deeper modal, onboarding slides, search overlay, info-trigger popups |
@@ -237,7 +237,7 @@ Key top-level fields at a glance:
 | `verseData` | Map of verse references → NET Bible text, used by verse pop-up modals |
 | `qaCallouts` / `qaCalloutsById` | Legacy (v1) and current (v2) inline callout definitions |
 | `studyOnboardingSlides` | Optional first-run slides shown when the study is opened for the first time |
-| `studyAiData` | Optional AI Tutor configuration: API key (plain or obfuscated), system prompt, model |
+| `studyAiData` | Deprecated and ignored (the AI Tutor was removed). Old files that still carry it load normally. |
 | `howToUseData` | Optional study-specific content injected into the How To page |
 | `leadersNotesData` | Optional leaders' notes page content (leaders/mentors only) |
 | `goDeeperData` | Optional supplementary prose page for general readers |

@@ -25,7 +25,7 @@ the full file format so you can author one from scratch.
      - [`likertScale`](#likertscale-element)
      - [`image`](#image-element)
 7. [`studyOnboardingSlides`](#studyonboardingslides)
-8. [`studyAiData`](#studyaidata)
+8. [`studyAiData`](#studyaidata) (deprecated, ignored)
 9. [`howToUseData`](#howtousedata)
 10. [`leadersNotesData`](#leadersnotedata)
 11. [`goDeeperData`](#godeeperdata)
@@ -76,7 +76,7 @@ are available offline.
   "theme":                { ... },   // optional
   "chapters":             [ ... ],   // required — at least one chapter
   "studyOnboardingSlides":[ ... ],   // optional
-  "studyAiData":          { ... },   // optional
+  "studyAiData":          { ... },   // deprecated: ignored by the app
   "howToUseData":         { ... },   // optional
   "leadersNotesData":     { ... },   // optional
   "goDeeperData":         { ... },   // optional
@@ -452,7 +452,7 @@ This is an inherent limitation of client-side validation — there is no way to 
 
 - If your model answer contains sensitive theological positions, grading rubrics you would prefer not to disclose, or content that loses value once seen, consider whether to include it, shorten it, or rephrase it as a keyword list rather than a full answer.
 - A `sampleAnswer` that captures the key themes (e.g. key words or a short phrase) is usually sufficient for the validator and less revealing than a full paragraph.
-- There is no obfuscation option for these fields. Unlike `apiKey`, where obfuscation buys a small amount of friction, obfuscating model answers would not meaningfully protect them while making the validator harder to maintain.
+- There is no obfuscation option for these fields; obfuscating model answers would not meaningfully protect them while making the validator harder to maintain.
 
 ---
 
@@ -597,35 +597,23 @@ app-level onboarding.
 
 ## `studyAiData`
 
-Optional. Enables the AI Tutor feature, which gives Socratic feedback on
-question answers using the Google Gemini API.
+**Deprecated and ignored.** The app used to offer an AI Tutor that called the
+Google Gemini API; that feature has been removed. A `studyAiData` block in an
+older study file is harmless: the app still loads the file and does not read
+the block, make any network request, or show a tutor button. New studies
+should not include it.
 
 ```json
 "studyAiData": {
-  "apiKey":        "bsr1.YOUR_OBFUSCATED_KEY_HERE",
-  "aiTutorPrompt": "You are a warm, thoughtful tutor for a study on Romans..."
+  "apiKey":        "…",
+  "aiMentorPrompt": "…"
 }
 ```
 
-| Field | Notes |
-|-------|-------|
-| `apiKey` | A Google Gemini API key. Can be plain text or obfuscated (see below). If absent, the AI Tutor button is hidden. |
-| `aiTutorPrompt` | System prompt for the tutor. A detailed default is used if this is omitted. |
-
-**Key obfuscation.** A plain API key in a `.estudy` file is readable by anyone
-who opens the file. To make it less immediately usable, you can obfuscate it:
-
-1. Load the app in a browser with a study already open.
-2. Open the browser console and call:
-   ```js
-   aiTutorObfuscateKey('AIzaSy...')
-   ```
-3. Copy the output (a `bsr1.` prefixed string) and paste it as the `apiKey`
-   value in your study JSON.
-
-This is obfuscation only — not encryption. Anyone who reads the source code
-of `validation.js` can reverse it. For studies distributed publicly, consider
-whether including an API key is appropriate.
+**Revoke old keys.** If an old study file contains an `apiKey`, anyone who has
+the file can still read it (an obfuscated `bsr1.` key is trivially reversible).
+Removing the block from the file does not make a key that has already been
+distributed safe: revoke the key at Google.
 
 ---
 
@@ -774,10 +762,6 @@ each content block resolve via `resolveMetaField()`:
 
 The lang bar on the Leaders' Notes page shares `window._activeStudyLang` with
 the chapter pages, so switching language on any page carries over.
-
-> **Note:** The `keyPoints` and `pastorals` content from `leadersNotesData` is
-> also passed to the AI Tutor as context for its Socratic feedback — if
-> `studyAiData` is present and the AI Tutor is enabled.
 
 ---
 
