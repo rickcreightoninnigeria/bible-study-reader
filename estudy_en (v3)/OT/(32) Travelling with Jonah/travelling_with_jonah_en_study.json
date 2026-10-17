@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.03,
+    "studyVersion"     :1.04,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NIV"
@@ -3623,7 +3623,7 @@
     "format"          :"markdown",
     "titleMenuHeading":"Travelling with Jonah",
     "intro"           :{
-      "header":"About this book",
+      "header":"About",
       "body"  :[
         "This is a companion reader to the *Travelling with Jonah* small-group study. Each chapter tab offers the full text of the corresponding book chapter — background, commentary, illustrations, and pastoral application — so you can read, reflect, and go deeper at your own pace.",
         "Footnotes appear as small superscript buttons inline in the text. Tap one to read the note, then tap anywhere outside to dismiss it."

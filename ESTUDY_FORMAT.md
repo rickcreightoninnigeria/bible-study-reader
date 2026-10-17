@@ -1040,6 +1040,24 @@ reader arrived via Read more, it returns them to the place they left;
 otherwise to the top of the chapter. The system Back button keeps its usual
 behaviour (it goes to the Library).
 
+### Previous / Next buttons on Go Deeper chapters
+
+Each Go Deeper chapter gets a quiet **Previous** button and a solid **Next**
+button above Back to study, styled like the Previous/Next buttons at the end of
+a study chapter. They are **on by default**; switch them off with
+`goDeeperData.chapterNavButtons: false`.
+
+- Previous appears only when there is an earlier Go Deeper chapter; Next only
+  when there is a later one. The first chapter never links back to the intro tab.
+- Default text is the neighbouring chapter's title (or "Chapter N" if it has
+  none). The app draws the arrows — don't put them in the labels.
+- Override per chapter with `previousLabel` / `nextLabel` on the Go Deeper
+  chapter (`previousLabel1`, `nextLabel1`, … in multilingual studies).
+- The intro tab shows a Next button to the first chapter ("Start reading" by
+  default); override with `goDeeperData.intro.nextLabel`.
+- Tip: keep `goDeeperData.intro.header` short (e.g. "About") — it is the first
+  tab title, and the tab bar is narrow.
+
 ---
 
 ## `studyAboutData`

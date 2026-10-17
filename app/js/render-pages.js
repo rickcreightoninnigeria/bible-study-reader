@@ -2031,6 +2031,71 @@ document.addEventListener('click', e => {
   Router.navigate({ page: 'chapter', idx, scrollY });
 });
 
+// ── PREVIOUS / NEXT CHAPTER (appendix → neighbouring appendix chapter) ────────
+// Quiet "previous" and solid "next" buttons at the foot of every tab, styled
+// like the study chapters' own Previous/Next (.chapter-nav). On by default;
+// goDeeperData.chapterNavButtons: false turns them off.
+//   • A chapter shows Previous only if an earlier chapter exists, Next only if
+//     a later one does. The About tab is not a "previous chapter" of the first
+//     chapter.
+//   • The About tab shows just Next, to the first chapter, labelled "Start
+//     reading" (or intro.nextLabel).
+// Labels: the chapter's previousLabel / nextLabel (numbered language slots
+// allowed) → the neighbouring chapter's title → "Chapter N".
+//
+// The markup carries only a tab id taken from GODEEPER_TABS (integer chapter
+// numbers only) in data-godeeper-tab; a single delegated listener below does
+// the navigation, so no study text reaches an inline handler.
+function _buildGoDeeperNavButtons(activeTab, d, activeLang, langMap, rawIntro) {
+  if (!d || d.chapterNavButtons === false) return '';
+  const tabs = GODEEPER_TABS;
+  const at   = tabs.findIndex(tab => tab.id === activeTab);
+  if (at === -1) return '';
+
+  const chapterOf = tab => (tab && tab.id.startsWith('ch_'))
+    ? (d.chapters || []).find(c => c.chapterNumber === parseInt(tab.id.slice(3), 10))
+    : null;
+  const titleOf = (tab, ch) => (ch && resolveMetaField(ch, 'title', activeLang, langMap))
+    || t('renderpages_leaders_chapter_label', { number: tab.label });
+  const labelFor = (obj, field, fallback) => {
+    const custom = obj && resolveTextWithFallback(obj, activeLang, field, langMap);
+    return typeof custom === 'string' && custom.trim() ? custom : fallback;
+  };
+
+  const here     = chapterOf(tabs[at]);
+  const prevTab  = activeTab !== 'intro' && tabs[at - 1] && tabs[at - 1].id !== 'intro' ? tabs[at - 1] : null;
+  const nextTab  = tabs[at + 1] || null;
+  const prevCh   = chapterOf(prevTab);
+  const nextCh   = chapterOf(nextTab);
+
+  const prevLabel = prevTab ? labelFor(here, 'previousLabel', titleOf(prevTab, prevCh)) : '';
+  const nextLabel = nextTab
+    ? (activeTab === 'intro'
+        ? labelFor(rawIntro && typeof rawIntro === 'object' ? rawIntro : null, 'nextLabel', t('renderpages_godeeper_start_reading'))
+        : labelFor(here, 'nextLabel', titleOf(nextTab, nextCh)))
+    : '';
+  if (!prevTab && !nextTab) return '';
+
+  return `
+    <div class="chapter-nav go-deeper-nav">
+      ${prevTab
+        ? `<button type="button" class="chapter-nav-btn secondary" data-godeeper-tab="${prevTab.id}">← ${escapeHtml(prevLabel)}</button>`
+        : `<div style="flex:1"></div>`}
+      ${nextTab
+        ? `<button type="button" class="chapter-nav-btn" data-godeeper-tab="${nextTab.id}">→ ${escapeHtml(nextLabel)}</button>`
+        : `<div style="flex:1"></div>`}
+    </div>`;
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target && e.target.closest && e.target.closest('[data-godeeper-tab]');
+  if (!btn) return;
+  const id = btn.dataset.godeeperTab;
+  if (!GODEEPER_TABS.some(tab => tab.id === id)) return;   // only a tab this page really has
+  Router.replaceState({ page: 'godeeper', tabId: id });
+  renderGoDeeper(id);
+});
+
 async function renderGoDeeper(tabId) {
   closeMenu();
   _resetNonChapterPageState();
@@ -2131,7 +2196,8 @@ async function renderGoDeeper(tabId) {
     tabContent = `
       <div class="go-deeper-intro" style="margin: 20px 16px;">
         ${bodyHtml}
-      </div>`;
+      </div>
+      ${_buildGoDeeperNavButtons('intro', d, activeLang, langMap, rawIntro)}`;
 
   } else {
     // Chapter tab
@@ -2166,6 +2232,7 @@ async function renderGoDeeper(tabId) {
           <div class="go-deeper-chapter-body">
             ${blocksHtml}
           </div>
+          ${_buildGoDeeperNavButtons(activeTab, d, activeLang, langMap, rawIntro)}
           ${backHtml}
         </div>`;
     }

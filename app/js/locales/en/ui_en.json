@@ -739,6 +739,7 @@
   "studyloader_error_title"                             :"Couldn't load the file",
   "renderchapter_read_more"                             :"Read more",
   "renderpages_back_to_study"                           :"Back to the study",
+  "renderpages_godeeper_start_reading"                  :"Start reading",
   "gallery_grid_label"                                  :"Image gallery",
   "gallery_viewer_label"                                :"Image viewer",
   "gallery_close"                                       :"Close image viewer",

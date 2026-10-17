@@ -219,7 +219,9 @@
   flex: 1;
   background: var(--text);
   color: var(--surface);
-  border: none;
+  /* The highlighted border is the same amber as the outlined "Read more" and
+     "Back to the study" buttons, so the way forward stands out. */
+  border: 1.5px solid var(--accent);
   border-radius: 10px;
   padding: 14px 10px;
   font-family: var(--font-stack-heading);
@@ -232,7 +234,7 @@
 .chapter-nav-btn:hover  { background: var(--text-secondary); }
 .chapter-nav-btn.secondary {
   background: transparent;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);       /* same width as Next, so both are one height */
   color: var(--text-secondary);
 }
 .chapter-nav-btn.secondary:hover { background: var(--surface-mid); }
@@ -385,6 +387,9 @@
    overridden at the body level in base.css dark mode. */
 
 /* ── Chapter nav ── */
+body.dark-mode .chapter-nav-btn:not(.secondary) {
+  border-color: var(--accent-light);       /* as .chapter-jump-btn in dark mode */
+}
 body.dark-mode .chapter-nav-btn.secondary {
   border-color: var(--dm-border);
   color: var(--text-faint);
