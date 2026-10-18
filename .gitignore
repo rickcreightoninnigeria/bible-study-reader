@@ -16,3 +16,7 @@ __pycache__/
 .env
 node_modules/
 testing/node_modules/
+
+# Studies that are not licensed for the public repo. Tests that need one read
+# it from here and skip themselves when it is absent.
+testing/local-fixtures/
