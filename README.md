@@ -227,7 +227,8 @@ differ.
 
 For full details on authoring `.estudy` files — including the complete JSON
 schema, element types, verse data format, and how to include cover images —
-see **[ESTUDY_FORMAT.md](ESTUDY_FORMAT.md)** (to be written).
+see **[STUDY-FORMAT.md](STUDY-FORMAT.md)** (the reference) and
+**[AUTHORING-TUTORIAL.md](AUTHORING-TUTORIAL.md)** (a short walk-through).
 
 Key top-level fields at a glance:
 
@@ -510,7 +511,7 @@ No other external scripts, no CDN calls at runtime.
    Then open `http://localhost:8080` in your browser.
 
 4. **Load a study.** Use the Library → Load button to open a `.estudy` file
-   from your local machine. See [ESTUDY_FORMAT.md](ESTUDY_FORMAT.md) for how
+   from your local machine. See [AUTHORING-TUTORIAL.md](AUTHORING-TUTORIAL.md) for how
    to create one.
 
 ---

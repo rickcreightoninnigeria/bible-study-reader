@@ -5,7 +5,7 @@
     "Subtype names use the current vocabulary (post-April-2026 rename).",
     "Delete the '_comment' fields before use — they are documentation only.",
     "Delete or replace the '_template_notes' and all '_comment' keys before publishing.",
-    "Question fields for the answer check (all optional): sampleAnswer, questionHint, keyTerms ('alt|alt', trailing $ = whole word, leading * = inside a word), mainPoint + mainPointFormat. See ESTUDY_FORMAT.md, 'Key terms and the main point'."
+    "Question fields for the answer check (all optional): sampleAnswer, questionHint, keyTerms ('alt|alt', trailing $ = whole word, leading * = inside a word), mainPoint + mainPointFormat. See STUDY-FORMAT.md, section 7 (question)."
   ],
 
   "metadata":{

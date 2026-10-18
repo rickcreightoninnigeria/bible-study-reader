@@ -1,6 +1,6 @@
 # Bible Study Reader — Architecture
 
-Written for a planning assistant who cannot see the repo. Describes `main` as of 13 Oct 2026 (after commit `7a910e1`, plus the fixes noted in section 11). Section 12 lists what was **not** verified.
+Written for a planning assistant who cannot see the repo. Describes `main` as of 18 Oct 2026 (after the Go Deeper table and tab-bar commits), plus the fixes noted in section 11. Section 12 lists what was **not** verified.
 
 **What it is.** An offline-first, mobile-first Bible study reader: vanilla JS, no build step, no framework, classic `<script>` tags sharing globals. Runs as a static web page or inside an Android WebView (a separate Kotlin wrapper, not in this repo). Content comes from user-loaded `.estudy` files (zip: `study.json` + `images/`). Answers, studies and images live in IndexedDB; settings in localStorage. Licence CC BY-SA 4.0.
 
@@ -41,7 +41,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 
 **Other app files.** `css/01…08` (11 files, `07-pages.css` is ~4,300 lines). `fonts/`. `images/`. `js/locales/<lang>/` holds four JSON files per language (`appAboutData`, `libraryShelvesStructure`, `learningPathways`, `ui`) for 18 languages (am ar en es ff fr ha ig lg ms my ne pt sw tl ur yo zh-CN). `js/appAboutData_untranslated.json` is language-independent app data (`appVersion` 0.6.0, `estudyVersion` "3", `androidPackageId`, `sampleDownloadId`, dates, author/publisher); `appVersion` must be set or version-dependent features silently stop working. `app/estudy-editor.html`, `study-editor.html`, `study-editor-translate.html` and `ui-translate.html` are standalone authoring/translation tools.
 
-**Repo level.** `ESTUDY_FORMAT.md` (file format spec), `README.md` (overview, refreshed), `json templates/` (study/pathway templates and `PATHWAY_FORMAT.md`), `estudy_en (v3)/` and `estudy_XX (v3)/` (the study library as `.estudy` files plus unzipped JSON/images), `py/` (xlsx↔json translation scripts, Bible-reference populators), `testing/` (vitest, 7 files, 203 tests; CI in `.github/workflows/test.yml` runs them from `testing/`).
+**Repo level.** `STUDY-FORMAT.md` (what the code does with a study file: the authoring authority), `AUTHORING-TUTORIAL.md` (short guide), `README.md` (overview, refreshed), `json templates/` (study/pathway templates, `PATHWAY_FORMAT.md` and `example_study_excerpt.json`, a worked example with placeholder text), `estudy_en (v3)/` and `estudy_XX (v3)/` (the study library as `.estudy` files plus unzipped JSON/images), `py/` (xlsx↔json translation scripts, Bible-reference populators, `validate_study.py`), `testing/` (vitest, 16 files, about 495 tests; `testing/local-fixtures/` is git-ignored and holds studies that must not be published, whose tests skip themselves when the file is absent; CI in `.github/workflows/test.yml` runs them from `testing/`).
 
 ## 2. Script load order (`app/index.html`)
 
@@ -111,7 +111,7 @@ History API only (no hash). State shape: `{ page, idx, tabId, scrollY, studyId }
 
 ## 7. study.json blocks and their renderers
 
-`studyMetadata` (id, title/subtitle/shortTitle, `language1..N`, `studyVersion`, `estudyFileVersion`, shelves) → title page, library cards, header. `imageData` → cover/publisher/author. `theme` → 22 CSS custom properties (`THEME_PROPS`), suspended on app pages (`suspendStudyTheme`). `chapters[]` `{chapterNumber, chapterTitle, elements[]}` → `renderChapter`, one renderer per element `type`: `heading`, `text` (subtypes chapterIntro/bridge/chapterClosing…), `biblePassage` (registers `verseData`, outputs no HTML), `question` (subtypes header/reflection/standard; answer textarea, star, sample answer, local validate), `image`, `callout`, `likertScale`; `repeatElement` references another element. `studyOnboardingSlides` → study onboarding overlay. `studyAiData` → deprecated, ignored. `howToUseData` → How-to "Study" tab. `leadersNotesData` → Leaders' Notes (hidden unless `showPageLeaders`). `goDeeperData` → Go Deeper page (tabs, markdown/HTML blocks, footnotes, `readMoreButtons`/`backToStudy` links, `image-gallery` blocks). `studyAboutData`/`copyrightData` → About page. Full spec: `ESTUDY_FORMAT.md`.
+`studyMetadata` (id, title/subtitle/shortTitle, `language1..N`, `studyVersion`, `estudyFileVersion`, shelves) → title page, library cards, header. `imageData` → cover/publisher/author. `theme` → 22 CSS custom properties (`THEME_PROPS`), suspended on app pages (`suspendStudyTheme`). `chapters[]` `{chapterNumber, chapterTitle, elements[]}` → `renderChapter`, one renderer per element `type`: `heading`, `text` (subtypes chapterIntro/bridge/chapterClosing…), `biblePassage` (registers `verseData`, outputs no HTML), `question` (subtypes header/reflection/standard; answer textarea, star, sample answer, local validate), `image`, `callout`, `likertScale`; `repeatElement` references another element. `studyOnboardingSlides` → study onboarding overlay. `studyAiData` → deprecated, ignored. `howToUseData` → How-to "Study" tab. `leadersNotesData` → Leaders' Notes (hidden unless `showPageLeaders`). `goDeeperData` → Go Deeper page (tabs, markdown/HTML blocks, footnotes, `readMoreButtons`/`backToStudy` links, Previous/Next chapter buttons built by `_buildGoDeeperNavButtons` with one delegated click listener, `image-gallery` blocks; HTML bodies may contain tables, styled by `.go-deeper-table*` in `07-pages.css`; the active tab is scrolled into view after each render). `studyAboutData`/`copyrightData` → About page. Authoring reference: `STUDY-FORMAT.md`.
 
 Text fields are multilingual via numbered slots (`title1`, `title2`…) mapped by `studyMetadata.language1..N`. Format per field: `HTML`, `markdown`, or `plainText` (also the default); all are sanitised.
 
@@ -135,9 +135,9 @@ SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev onl
 
 ## 11. Fragile or surprising
 
-- **Open: `installDefaultStudiesIfNeeded()` is never called**, and `app/estudy/firstEstudies.zip` does not exist, so no studies are pre-installed. Wiring it in without the asset could show an error toast on Android (a missing `file://` XHR fires `onerror`, not a 404), so this needs the owner's decision about shipping the zip.
+- **Bundled studies:** `startApp` calls `installDefaultStudiesIfNeeded()` on first run for each `appVersion`. It reads `estudy/firstEstudies.zip` by XHR; that zip is not in the repo (it is added to the build). A missing file (404) is treated as normal: a console note, no toast, and the flag is not set, so a later build that has the zip still installs. Covered by `default-studies.test.js`.
 - **App data file:** `appVersion`, `estudyVersion`, `androidPackageId` live only in `appAboutData_untranslated.json`. It was once emptied by mistake (commits `811799f`/`90dafec`), silently disabling the version footer, upgrade onboarding, the `.estudy` version check and Play Store links; now restored. The upgrade-onboarding slide for 0.6.0 ("moving to database storage") shows once to existing users who never saw it.
-- **Docs and CI:** `README.md` and the `index.html` header were refreshed; the CI workflow now lives where GitHub reads it. Docs can still drift: prefer code and `ESTUDY_FORMAT.md` when they disagree.
+- **Docs and CI:** `README.md` and the `index.html` header were refreshed; the CI workflow now lives where GitHub reads it. Docs can still drift: prefer the code and `STUDY-FORMAT.md` when they disagree.
 - **Chapter identity:** answers key on `chapterNumber`; the router, menu and swipe use array index. Chapter numbering can start at 0 or mid-series. Never assume `idx = chapterNumber − 1`.
 - **Back always goes to the Library**, and `_navigating` drops overlapping navigations.
 - **Everything is global**: new function names can collide silently; load order matters.
@@ -151,7 +151,7 @@ SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev onl
 
 - **No device or WebView testing.** Everything was run in desktop Chromium via Playwright; Android WebView, iOS, and the Kotlin wrapper (not in this repo) were not examined.
 - **Not read in full:** `onboarding.js`, `validation.js` (local validation internals), `tts.js`/`voice.js` beyond the bridge calls, `render-library.js` shelves logic, `share-print.js` print HTML, the CSS files, the four editor HTML tools, the `py/` scripts, `render-pages.js` Settings/How-to/About internals, `migrate.js` internals.
-- **Rendering of `howToUseData`, `studyAboutData`, `copyrightData`** is summarised from `ESTUDY_FORMAT.md` and spot checks, not traced line by line.
+- **Rendering of `howToUseData`, `studyAboutData`, `copyrightData`** was traced in `render-pages.js` for the fields `STUDY-FORMAT.md` lists; other fields are spot-checked.
 - **The Android-to-JS call names** are taken from JS definitions; the native side's actual invocations were not seen.
 - **Which `index.html` is deployed** (root copy or `app/`), and how the web build is hosted, is unknown; both are kept identical.
 - **Library tab counts, shelves and recent lists** (`lib_*` key shapes) were read from code only.

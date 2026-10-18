@@ -1,0 +1,253 @@
+{
+  "studyMetadata": {
+    "studyId": "example_romans_v001",
+    "estudyFileVersion": 3,
+    "studyVersion": 1.0,
+    "title": "Example: Romans 1",
+    "shortTitle": "Romans",
+    "subtitle": "A worked example of every current feature",
+    "description": "Placeholder text throughout: Bible text is written as {{NIV:ref}} markers to be filled from a text source.",
+    "author": "A. N. Author",
+    "authorLabel": "Written by",
+    "version": "Example · v1.0",
+    "language": "en",
+    "libraryShelves": [
+      {
+        "Shelf": "New Testament",
+        "Section": "Paul's Letters",
+        "Subsection": "Romans"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "chapterTitle": "The gospel and its power",
+      "elements": [
+        {
+          "elementId": "ch01-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>Before you read chapter 1 of the book, work through these passages. Notice what each says about the gospel.</p>"
+        },
+        {
+          "elementId": "ch01-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "What do you already think the word ‘gospel’ means?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch01-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Not ashamed of the gospel"
+        },
+        {
+          "elementId": "ch01-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Romans 1:16–17",
+          "translation": "NIV",
+          "passageText": "<p><sup>16</sup>{{NIV:Romans 1:16}} <sup>17</sup>{{NIV:Romans 1:17}}</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Romans+1%3A16-17&version=NIVUK",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verse 16 says Paul is ‘not ashamed’ of the gospel. What reason does he give?",
+          "linkedPassage": "Romans 1:16–17",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the word ‘because’ in verse 16.",
+          "sampleAnswer": "Paul is not ashamed because the gospel is the power of God for the salvation of everyone who believes. It is not just a message about power; it is the means God uses. It is for everyone who believes, first Jew and then Gentile.",
+          "keyTerms": [
+            "power",
+            "salvation|saved|save",
+            "believ$|believes|faith",
+            "jew|gentile"
+          ],
+          "mainPoint": "The gospel is **God’s power to save**, for everyone who believes.",
+          "mainPointFormat": "markdown",
+          "deeper": {
+            "label": "Go deeper …",
+            "question": "Why might someone be tempted to be ashamed of the gospel today?"
+          }
+        },
+        {
+          "elementId": "ch01-el06",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 John 1:5–2:2",
+          "translation": "NIV",
+          "passageText": "<p><sup>5</sup>{{NIV:1 John 1:5}}</p><p><sup>2:1</sup>{{NIV:1 John 2:1}} <sup>2</sup>{{NIV:1 John 2:2}}</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+John+1%3A5-2%3A2&version=NIVUK",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el07",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does this passage say we should do when we sin?",
+          "linkedPassage": "1 John 1:5–2:2",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at 1:9 and 2:1.",
+          "sampleAnswer": "We should confess our sins, trusting that God is faithful and just to forgive us. If anyone does sin, we have an advocate with the Father, Jesus Christ the Righteous One.",
+          "keyTerms": [
+            "confess",
+            "forgiv",
+            "advocate|jesus"
+          ]
+        },
+        {
+          "elementId": "ch01-el08",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Key term",
+          "term": "The gospel",
+          "question": "Tap to read what ‘gospel’ means.",
+          "answer": "<p>‘Gospel’ means ‘good news’.</p>",
+          "buttonText": "Read more ➡"
+        },
+        {
+          "elementId": "ch01-el09",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch01-el10",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Where do you feel most tempted to keep quiet about the gospel?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch01-el11",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>Now read the chapter. Tap <strong>Read more</strong> below.</p>"
+        }
+      ]
+    }
+  ],
+  "goDeeperData": {
+    "readMoreButtons": true,
+    "format": "HTML",
+    "titleMenuHeading": "The book",
+    "intro": {
+      "header": "About",
+      "nextLabel": "Start reading",
+      "body": [
+        "This is the full text of the book. Work through the session first, then read the chapter here.",
+        "Footnotes appear as small superscript buttons. Tap one to read the note."
+      ]
+    },
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "backToStudy": true,
+        "format": "HTML",
+        "title": "The gospel and its power",
+        "nextLabel": "The problem",
+        "footnotes": [
+          {
+            "id": 1,
+            "body": "A note with <i>italic</i> text."
+          },
+          {
+            "id": 2,
+            "body": "A second note."
+          }
+        ],
+        "introduction": {
+          "subtype": "standard",
+          "body": "<p>[[fn:1]]A paragraph that starts with a footnote marker, which is how a heading is footnoted.</p><p>A later paragraph with a note at the end.[[fn:2]]</p>"
+        },
+        "sectionHeading": {
+          "subtype": "standard",
+          "header": "A heading with nothing under it",
+          "body": ""
+        },
+        "believers": {
+          "subtype": "standard",
+          "header": "A table",
+          "body": "<p>Text before the table.</p><div class=\"go-deeper-table-wrap\"><table class=\"go-deeper-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">Column A</th><th scope=\"col\">Column B</th></tr></thead><tbody><tr><th scope=\"row\">Row one</th><td><ul><li>First point</li><li>Second point</li></ul></td><td>Short cell</td></tr><tr><th scope=\"row\">Row two</th><td colspan=\"2\">A cell that spans both columns</td></tr></tbody></table></div><p>Text after the table.</p>"
+        },
+        "exercise": {
+          "subtype": "highlighted",
+          "header": "Exercise",
+          "body": "<p>A boxed exercise.</p><ul><li>First question</li><li>Second question</li></ul>"
+        }
+      },
+      {
+        "chapterNumber": 2,
+        "format": "HTML",
+        "title": "The problem",
+        "previousLabel": "Back to the start",
+        "main": {
+          "subtype": "standard",
+          "header": "An appendix chapter with no study chapter",
+          "body": "<p>No Read more button leads here, and there is no Back to study button, because there is no study chapter 2.</p>"
+        }
+      }
+    ]
+  },
+  "leadersNotesData": {
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "watch": {
+          "subtype": "highlighted",
+          "header": "Watch for",
+          "body": "Members who think the gospel is only about going to heaven."
+        }
+      }
+    ]
+  },
+  "howToUseData": {
+    "sections": [
+      {
+        "heading": "How this study works",
+        "blocks": [
+          {
+            "title": "Study first, then read",
+            "body": "<p>Do each session <strong>before</strong> reading the matching chapter.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  "studyAboutData": {
+    "author": {
+      "paras": [
+        "A. N. Author wrote this example."
+      ]
+    },
+    "publisher": {
+      "name": "Example Publishing",
+      "url": "https://example.org",
+      "paras": [
+        "Published by Example Publishing.",
+        "AI assistance: this app edition was prepared with the help of an AI assistant. The author reviewed and approved the content."
+      ]
+    }
+  },
+  "copyrightData": {
+    "copyright": {
+      "statement": "Example © A. N. Author 2026."
+    },
+    "notices": [
+      "Bible passages are from the NIV, used by permission. (Illustrative notice.)"
+    ]
+  }
+}
