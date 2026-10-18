@@ -603,6 +603,45 @@
   color: var(--text-secondary);
   line-height: 1.65;
 }
+/* Tables in Go Deeper bodies (format "HTML" only: markdown bodies are cut down
+   to a tag allow-list that has no table tags). Authors wrap each table in
+   <div class="go-deeper-table-wrap"> and give it class "go-deeper-table".
+   The wrapper scrolls sideways so a wide table never widens the page. The
+   min-width on cells stops columns being squeezed to a few letters: a
+   3-column table still fits a 380px phone, a 4-column one scrolls.
+   Paragraph size/colour is set only on .go-deeper-block p, so cells restate it. */
+.go-deeper-table-wrap {
+  overflow-x: auto;
+  margin: 12px 0;
+  -webkit-overflow-scrolling: touch;
+}
+.go-deeper-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.go-deeper-table th,
+.go-deeper-table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: start;            /* start, not left, so RTL studies mirror */
+  vertical-align: top;
+  min-width: 5.5rem;
+}
+.go-deeper-table thead th,
+.go-deeper-table tbody th {
+  background: var(--surface-mid);
+  color: var(--text);
+  font-weight: 600;
+}
+.go-deeper-table ul,
+.go-deeper-table ol {
+  margin: 0;
+  padding-inline-start: 1.1rem;
+}
+
 /* Footer label reminding leaders this content is confidential */
 .leaders-confidential {
   text-align: center;
@@ -2888,6 +2927,17 @@ body.dark-mode .go-deeper-highlight,
 body.dark-mode .leaders-watch {
   background: var(--dm-sunken);
   color: var(--dm-text-mid);
+}
+
+/* Go Deeper tables: --border and --surface-mid keep their light values in dark
+   mode, so the dark tokens are used instead. */
+body.dark-mode .go-deeper-table { color: var(--dm-text-mid); }
+body.dark-mode .go-deeper-table th,
+body.dark-mode .go-deeper-table td { border-color: var(--dm-border); }
+body.dark-mode .go-deeper-table thead th,
+body.dark-mode .go-deeper-table tbody th {
+  background: var(--dm-sunken);
+  color: var(--dm-text);
 }
 
 /* ── Settings ── */

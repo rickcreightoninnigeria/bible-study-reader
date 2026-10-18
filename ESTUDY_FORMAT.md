@@ -317,6 +317,8 @@ linked to it.
 |-------|----------|-------|
 | `bibleRef` | **Yes** | The human-readable reference string, e.g. `"Romans 1:16–17"`. Question elements reference passages by this exact string in their `linkedPassage` field. |
 | `passageText` | **Yes** | The passage text as HTML. Verse numbers can be wrapped in `<sup>` tags for proper display and TTS stripping. |
+
+The text is shown exactly as written, so it can be supplied by hand. A passage that crosses a chapter boundary stays one element: label the first verse of the new chapter in full (`<sup>2:1</sup>`) and `bibleRef` as `"1 John 1:5–2:2"`. Omitted verses need no marker: the numbers simply skip (14, 15, 17…).
 | `passageUrl` | No | Link to the full passage in context at netbible.org or another site. Shown as a "see context" link in the verse modal. |
 
 Place a `biblePassage` element **before** any question elements that reference
@@ -910,7 +912,30 @@ Each named content key maps to a block with these fields:
 |-------|----------|-------|
 | `subtype` | **Yes** | `"standard"` — renders as a prose block (`.go-deeper-block`) with an optional header label. `"highlighted"` — wraps the body in a visually distinct callout box (`.go-deeper-highlight`); blocks with an empty `body` are skipped. `"image-gallery"` — a thumbnail grid that opens a full-screen viewer; see [Image galleries](#image-galleries). |
 | `header` | No | Label rendered above the body using the `.go-deeper-block-label` class. For `"highlighted"` blocks, omit to produce an unlabelled callout. |
-| `body` | No | HTML or markdown string, according to `format`. |
+| `body` | No | HTML or markdown string, according to `format`. May be empty. |
+
+A `standard` block with a `header` and an empty `body` shows the heading alone, which keeps a book's boxes in
+their original order. A `highlighted` block with an empty `body` shows nothing.
+
+A footnote marker may open a paragraph (`<p>[[fn:4]]Text…`): the button comes first. Use this to footnote a
+heading, which cannot carry a button.
+
+#### Tables
+
+Tables are supported in bodies whose `format` is `"HTML"` (markdown bodies drop table tags). Wrap the table in
+a `div` and give both elements the classes below; header cells take `scope="col"` or `scope="row"`, and
+`colspan` works. Do not use inline styles.
+
+```html
+<div class="go-deeper-table-wrap"><table class="go-deeper-table">
+  <thead><tr><th scope="col">Topic</th><th scope="col">Notes</th></tr></thead>
+  <tbody><tr><th scope="row">First</th><td>Cell text</td></tr></tbody>
+</table></div>
+```
+
+The wrapper scrolls sideways when the table is wider than the screen, so it never widens the page. Cells are at
+least 5.5rem wide, so a three-column table fits a phone and a four-column one scrolls. Keep every row the
+same width once `colspan` is counted.
 
 #### Image galleries
 
