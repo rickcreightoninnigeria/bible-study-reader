@@ -150,8 +150,10 @@ def main(path):
         fmt = str(ch.get('format', gd.get('format', ''))).lower()
         footnotes = ch.get('footnotes', [])
         ids = [f.get('id') for f in footnotes]
-        if ids != list(range(1, len(ids) + 1)):
-            err(f'Go Deeper {n}: footnote ids {ids} should run 1..N')
+        if len(set(ids)) != len(ids) or not all(isinstance(i, int) for i in ids):
+            err(f'Go Deeper {n}: footnote ids {ids} must be unique integers')
+        elif ids != list(range(1, len(ids) + 1)):
+            warn(f'Go Deeper {n}: footnote ids {ids} do not run 1..N (works, but 1..N is the convention)')
         body = {k: v for k, v in ch.items() if k != 'footnotes'}
         used = sorted({int(m) for _, s in strings(body) for m in re.findall(r'\[\[fn:(\d+)\]\]', s)})
         if used != sorted(i for i in ids if isinstance(i, int)):

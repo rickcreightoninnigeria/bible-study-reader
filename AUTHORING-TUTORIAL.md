@@ -59,7 +59,7 @@ Both are visible to anyone who opens the study file, so don't put anything secre
 ```
 
 - `"readMoreButtons": true` (top level) puts **Read more** at the end of each study chapter, linking to the Go Deeper chapter with the same number. `backToStudy: true` on the Go Deeper chapter adds the way back. Previous and Next buttons appear automatically; text defaults to the neighbouring chapter titles.
-- Footnotes run 1, 2, 3… in each chapter, and every `[[fn:N]]` needs its entry.
+- Footnotes are numbered 1, 2, 3… in each chapter (by convention; the app shows the id as the note number), and every `[[fn:N]]` needs its entry.
 - A block with a header and an empty `body` shows just the heading. A `highlighted` block with an empty body shows nothing.
 - Tables need `"format": "HTML"` and the two classes in `STUDY-FORMAT.md` section 10.
 - Never end a block key in a digit.

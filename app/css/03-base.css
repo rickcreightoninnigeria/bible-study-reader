@@ -7,6 +7,7 @@
  * 02. Body            – Global font, background, colour and paper texture
  * 03. Content wrapper – .content max-width and padding
  * 04. Blockquote      – Default blockquote indent reset
+ * 04b. Divine name    – .divine-name: small capitals for LORD (YHWH) in Bible text
  * 05. Section divider – Horizontal rule with centred label
  *
  * ── DARK MODE ───────────────────────────────────────────────────────────
@@ -87,6 +88,15 @@ body {
 blockquote {
   margin-inline-start: 0;    /* was margin-left */
   padding-inline-start: 10px; /* was padding-left */
+}
+
+
+/* ── 04b. DIVINE NAME ───────────────────────────────────────────────────── */
+/* Study authors write <span class="divine-name">Lord</span> where the Bible
+   prints LORD in small capitals for the divine name. A class, not an inline
+   style: style attributes are unsupported in study files. */
+.divine-name {
+  font-variant: small-caps;
 }
 
 

@@ -133,3 +133,18 @@ describe('table CSS', () => {
     expect(dark).toContain('var(--dm-text-mid)');
   });
 });
+
+describe('divine name class', () => {
+  it('.divine-name sets small capitals, so studies need no inline style for LORD', () => {
+    const css = read('css/03-base.css');
+    const i = css.indexOf('.divine-name {');
+    expect(i).toBeGreaterThan(-1);
+    expect(css.slice(i, css.indexOf('}', i))).toContain('font-variant: small-caps');
+  });
+
+  it('span and class survive the formatted-text allow-list (pop-ups use it)', () => {
+    const cfg = slice(read('js/format-text.js'), 'const _PURIFY_CONFIG', '};');
+    expect(cfg).toContain("'span'");
+    expect(cfg).toMatch(/ALLOWED_ATTR:[^\]]*'class'/);
+  });
+});
