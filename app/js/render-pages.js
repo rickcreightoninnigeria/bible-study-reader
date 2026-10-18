@@ -2261,5 +2261,16 @@ async function renderGoDeeper(tabId) {
     </div>
   `;
   window.scrollTo(0, 0);
+
+  // A long study has more tabs than fit a phone (Love & Wisdom: About + 11).
+  // The bar scrolls sideways, so bring the active tab into view — otherwise
+  // opening chapter 10 or 11 (or tapping Next) leaves nothing highlighted.
+  // Sets scrollLeft directly: scrollIntoView() would also scroll the page.
+  const _bar = document.getElementById('goDeepTabBar');
+  const _act = _bar && _bar.querySelector('.howto-tab.active');
+  if (_bar && _act) {
+    const barBox = _bar.getBoundingClientRect(), actBox = _act.getBoundingClientRect();
+    _bar.scrollLeft += (actBox.left + actBox.width / 2) - (barBox.left + barBox.width / 2);
+  }
 }
 
