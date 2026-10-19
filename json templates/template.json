@@ -243,7 +243,7 @@
       "icon"   :"⚙️",
       "eyebrow":"Make it yours",
       "heading":"Adjust to your preference",
-      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">If you need bigger text, go straight to Settings now.</div>",
+      "body"   :"<div>If you need bigger text, go straight to Settings now.</div>",
       "action" :{
         "label":"⚙ Settings",
         "fn"   :null
