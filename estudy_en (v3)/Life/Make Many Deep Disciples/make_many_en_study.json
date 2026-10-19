@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Church", "Subsection": "Nature of Church" }, { "Shelf": "Life", "Section": "Relationships & Family", "Subsection": "Community" }, { "Shelf": "Ministry", "Section": "Leadership & Administration", "Subsection": "Church Governance" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -2421,7 +2421,7 @@
       "icon"   :"⚙️",
       "eyebrow":"Make it yours",
       "heading":"Adjust to your preference",
-      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\"><br>      If you need bigger text go straight to settings now<br>    </div>",
+      "body"   :"<div><br>      If you need bigger text go straight to settings now<br>    </div>",
       "action" :{
         "id"   :"settings",
         "label":"⚙ Settings",

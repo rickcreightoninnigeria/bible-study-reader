@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Law", "Subsection": "Genesis" }, { "Shelf": "Beliefs", "Section": "Creation & Humanity", "Subsection": "Creation" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -3392,7 +3392,7 @@
       "icon"   :"⚙️",
       "eyebrow":"Make it yours",
       "heading":"Adjust to your preference",
-      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "body"   :"<div>\n      If you need bigger text go straight to settings now\n    </div>",
       "action" :{
         "id"   :"settings",
         "label":"⚙ Settings",
