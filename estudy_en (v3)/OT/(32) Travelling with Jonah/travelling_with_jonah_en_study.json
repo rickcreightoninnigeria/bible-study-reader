@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.09,
+    "studyVersion"     :1.10,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -419,6 +419,16 @@
           "bibleRef"     :"Jonah 1:17",
           "translation"  :"NET",
           "passageText"  :"<sup>17</sup>The <span class=\"divine-name\">Lord</span> sent a huge fish to swallow Jonah, and Jonah was in the stomach of the fish three days and three nights.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jonah+1&version=NET",
+          "bottomPadding":"none"
+        },
+        {
+          "elementId"    :"ch01-el33-p",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jonah 1",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>The <span class=\"divine-name\">Lord</span>’s message came to Jonah son of Amittai, <sup>2</sup><i>“Go immediately to Nineveh, that large capital city, and announce judgment against its people because their wickedness has come to my attention.”</i> <sup>3</sup>Instead, Jonah immediately headed off to Tarshish to escape from the commission of the <span class=\"divine-name\">Lord</span>. He traveled to Joppa and found a merchant ship heading to Tarshish. So he paid the fare and went aboard it to go with them to Tarshish, far away from the <span class=\"divine-name\">Lord</span>. <sup>4</sup>But the <span class=\"divine-name\">Lord</span> hurled a powerful wind on the sea. Such a violent tempest arose on the sea that the ship threatened to break up! <sup>5</sup>The sailors were so afraid that each cried out to his own god and they flung the ship’s cargo overboard to make the ship lighter. Jonah, meanwhile, had gone down into the hold below deck, had lain down, and was sound asleep. <sup>6</sup>The ship’s captain approached him and said, <i>“What are you doing asleep? Get up! Cry out to your god! Perhaps your god might take notice of us so that we might not die!”</i> <sup>7</sup>The sailors said to one another, <i>“Come on, let’s cast lots to find out whose fault it is that this disaster has overtaken us.”</i> So they cast lots, and Jonah was singled out. <sup>8</sup>They said to him, <i>“Tell us, whose fault is it that this disaster has overtaken us? What’s your occupation? Where do you come from? What’s your country? And who are your people?”</i> <sup>9</sup>He said to them, <i>“I am a Hebrew, and I worship the <span class=\"divine-name\">Lord</span>, the God of heaven, who made the sea and the dry land.”</i> <sup>10</sup>Hearing this, the men became even more afraid and said to him, <i>“What have you done?”</i> (The men said this because they knew that he was trying to escape from the <span class=\"divine-name\">Lord</span>, because he had previously told them.) <sup>11</sup>Because the storm was growing worse and worse, they said to him, <i>“What should we do to you so that the sea will calm down for us?”</i> <sup>12</sup>He said to them, <i>“Pick me up and throw me into the sea so that the sea will calm down for you, because I know it’s my fault you are in this severe storm.”</i> <sup>13</sup>Instead, they tried to row back to land, but they were not able to do so because the storm kept growing worse and worse. <sup>14</sup>So they cried out to the <span class=\"divine-name\">Lord</span>, <i>“Oh, please, <span class=\"divine-name\">Lord</span>, don’t let us die on account of this man! Don’t hold us guilty of shedding innocent blood. After all, you, <span class=\"divine-name\">Lord</span>, have done just as you pleased.”</i> <sup>15</sup>So they picked Jonah up and threw him into the sea, and the sea stopped raging. <sup>16</sup>The men feared the <span class=\"divine-name\">Lord</span> greatly and earnestly vowed to offer lavish sacrifices to the <span class=\"divine-name\">Lord</span>. <sup>17</sup>The <span class=\"divine-name\">Lord</span> sent a huge fish to swallow Jonah, and Jonah was in the stomach of the fish three days and three nights.",
           "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jonah+1&version=NET",
           "bottomPadding":"none"
         },
@@ -919,7 +929,7 @@
           "format"       :"HTML",
           "eyebrow"      :"Making Connections",
           "term"         :"",
-          "body"         :"It is not just Jonah who makes the mistake of knowing the truth and not living it out. We can know what God has done for us in Jesus, and still not show it in our lives. Jesus himself warned:\n\n‘Everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock … But everyone who hears these words of mine and does not put them into practice is like a foolish man who built his house on sand.’ (Matthew 7:24–27)\n\nThe question is worth sitting with: Am I living up to the knowledge I have? Am I hearing Jesus’ words and building on them — or am I just hearing?",
+          "body"         :"It is not just Jonah who makes the mistake of knowing the truth and not living it out. We can know what God has done for us in Jesus, and still not show it in our lives. Jesus himself warned:\n\n“Everyone who hears these words of mine and does them is like a wise man who built his house on rock. … Everyone who hears these words of mine and does not do them is like a foolish man who built his house on sand.” (Matthew 7:24–27)\n\nThe question is worth sitting with: Am I living up to the knowledge I have? Am I hearing Jesus’ words and building on them — or am I just hearing?",
           "bottomPadding":"normal"
         },
         {
@@ -1388,7 +1398,7 @@
           "format"       :"HTML",
           "eyebrow"      :"Making Connections",
           "term"         :"",
-          "body"         :"God presented Jesus as a sacrifice of atonement … He did this to demonstrate his justice … so as to be just and the one who justifies those who have faith in Jesus. (Romans 3:25–26)\n\nForgiveness is not easy or cheap for God. It is supremely costly — it cost the life of his one and only Son. The reason God can give us so many chances to turn from sin is that Jesus has bought those chances with his blood. That is wonderfully good news, but it is also wonderfully serious news. The Ninevites had only a one-sentence message to go on, and they took it seriously. Let’s be sure we take the message of Jesus seriously too.",
+          "body"         :"God publicly displayed him at his death as the mercy seat accessible through faith. … This was to demonstrate his righteousness … so that he would be just and the justifier of the one who lives because of Jesus’ faithfulness. (Romans 3:25–26)\n\nForgiveness is not easy or cheap for God. It is supremely costly — it cost the life of his one and only Son. The reason God can give us so many chances to turn from sin is that Jesus has bought those chances with his blood. That is wonderfully good news, but it is also wonderfully serious news. The Ninevites had only a one-sentence message to go on, and they took it seriously. Let’s be sure we take the message of Jesus seriously too.",
           "bottomPadding":"normal"
         },
         {
@@ -1700,6 +1710,16 @@
           "repeatElement":"ch04-el15"
         },
         {
+          "elementId"    :"ch04-el18-p",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jonah 4:6-9",
+          "translation"  :"NET",
+          "passageText"  :"<sup>6</sup>The <span class=\"divine-name\">Lord</span> God appointed a little plant and caused it to grow up over Jonah to be a shade over his head to rescue him from his misery. Now Jonah was very delighted about the little plant. <sup>7</sup>So God sent a worm at dawn the next day, and it attacked the little plant so that it dried up. <sup>8</sup>When the sun began to shine, God sent a hot east wind. So the sun beat down on Jonah’s head, and he grew faint. So he despaired of life and said, <i>“I would rather die than live!”</i> <sup>9</sup>God said to Jonah, <i>“Are you really so very angry about the little plant?”</i> And he said, <i>“I am as angry as I could possibly be!”</i>",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jonah+4&version=NET",
+          "bottomPadding":"none"
+        },
+        {
           "elementId"        :"ch04-el18",
           "type"             :"question",
           "subtype"          :"standard",
@@ -1769,6 +1789,16 @@
           "format"       :"plainText",
           "text"         :"Learning to Be Passionate for Our World",
           "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch04-el23-p",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jonah 4",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>This displeased Jonah terribly and he became very angry. <sup>2</sup>He prayed to the <span class=\"divine-name\">Lord</span> and said, <i>“Oh, <span class=\"divine-name\">Lord</span>, this is just what I thought would happen when I was in my own country. This is what I tried to prevent by attempting to escape to Tarshish, because I knew that you are a gracious and compassionate God, slow to anger and abounding in mercy, and one who relents concerning threatened judgment.</i> <sup>3</sup><i>So now, <span class=\"divine-name\">Lord</span>, kill me instead, because I would rather die than live!”</i> <sup>4</sup>The <span class=\"divine-name\">Lord</span> said, <i>“Are you really so very angry?”</i> <sup>5</sup>Jonah left the city and sat down east of it. He made a shelter for himself there and sat down under it in the shade to see what would happen to the city. <sup>6</sup>The <span class=\"divine-name\">Lord</span> God appointed a little plant and caused it to grow up over Jonah to be a shade over his head to rescue him from his misery. Now Jonah was very delighted about the little plant. <sup>7</sup>So God sent a worm at dawn the next day, and it attacked the little plant so that it dried up. <sup>8</sup>When the sun began to shine, God sent a hot east wind. So the sun beat down on Jonah’s head, and he grew faint. So he despaired of life and said, <i>“I would rather die than live!”</i> <sup>9</sup>God said to Jonah, <i>“Are you really so very angry about the little plant?”</i> And he said, <i>“I am as angry as I could possibly be!”</i> <sup>10</sup>The <span class=\"divine-name\">Lord</span> said, <i>“You were upset about this little plant, something for which you did not work, nor did you do anything to make it grow. It grew up overnight and died the next day.</i> <sup>11</sup><i>Should I not be more concerned about Nineveh, this enormous city? There are more than 120,000 people in it who do not know right from wrong, as well as many animals.”</i>",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jonah+4&version=NET",
+          "bottomPadding":"none"
         },
         {
           "elementId"        :"ch04-el23",
@@ -2016,7 +2046,7 @@
           "format"       :"HTML",
           "eyebrow"      :"Making Connections",
           "term"         :"God’s Word Must Be Reckoned With",
-          "body"         :"That is how it was for Jonah; that is how it is for us. God has not just spoken through Jonah — he has spoken through the gospel of Jesus Christ. Throughout the Old Testament, God spoke in many parts and many ways. But he has spoken his definitive word in his Son (Hebrews 1:1–3). Think of the word Jonah is given to preach: the warning is clear, but the message is not yet complete. Jesus makes the warning and hope of the gospel even more clear and complete — and it all turns on how we respond to him:\n\n<i>‘Whoever believes in the Son has eternal life, but whoever rejects the Son will not see life, for God’s wrath remains on him.’</i> (John 3:36)\n\nWe cannot walk away and think there will be no comeback, any more than Jonah could. We stand in a more privileged position — so we have even less excuse if we refuse God’s word to us in Jesus.",
+          "body"         :"That is how it was for Jonah; that is how it is for us. God has not just spoken through Jonah — he has spoken through the gospel of Jesus Christ. Throughout the Old Testament, God spoke in many parts and many ways. But he has spoken his definitive word in his Son (Hebrews 1:1–3). Think of the word Jonah is given to preach: the warning is clear, but the message is not yet complete. Jesus makes the warning and hope of the gospel even more clear and complete — and it all turns on how we respond to him:\n\n<i>“The one who believes in the Son has eternal life. The one who rejects the Son will not see life, but God’s wrath remains on him.”</i> (John 3:36)\n\nWe cannot walk away and think there will be no comeback, any more than Jonah could. We stand in a more privileged position — so we have even less excuse if we refuse God’s word to us in Jesus.",
           "bottomPadding":"normal"
         },
         {
@@ -2166,6 +2196,16 @@
           "term"         :"Remorse is not repentance",
           "body"         :"Regret that you got caught is not repentance. Sorrow about consequences is not repentance. Repentance means recognising you were <i>wrong</i> — not just unlucky — and turning back to God.",
           "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch05-el23-p",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jonah 3:5-10",
+          "translation"  :"NET",
+          "passageText"  :"<sup>5</sup>The people of Nineveh believed in God, and they declared a fast and put on sackcloth, from the greatest to the least of them. <sup>6</sup>When the news reached the king of Nineveh, he got up from his throne, took off his royal robe, put on sackcloth, and sat on ashes. <sup>7</sup>He issued a proclamation and said, <i>“In Nineveh, by the decree of the king and his nobles: No human or animal, cattle or sheep, is to taste anything; they must not eat and they must not drink water.</i> <sup>8</sup><i>Every person and animal must put on sackcloth and must cry earnestly to God, and everyone must turn from their evil way of living and from the violence that they do.</i> <sup>9</sup><i>Who knows? Perhaps God might be willing to change his mind and relent and turn from his fierce anger so that we might not die.”</i> <sup>10</sup>When God saw their actions—that they turned from their evil way of living—God relented concerning the judgment he had threatened them with and did not destroy them.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jonah+3&version=NET",
+          "bottomPadding":"none"
         },
         {
           "elementId"        :"ch05-el23",
@@ -2441,9 +2481,9 @@
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"2 Corinthians 7:10",
-          "translation"  :"NIV",
-          "passageText"  :"<i>\"Godly sorrow brings repentance that leads to salvation and leaves no regret, but worldly sorrow brings death.\"</i> (2 Corinthians 7:10)",
-          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+7%3A10&version=NIV",
+          "translation"  :"NET",
+          "passageText"  :"<i>“For sadness as intended by God produces a repentance that leads to salvation, leaving no regret, but worldly sadness brings about death.”</i> (2 Corinthians 7:10)",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+7%3A10&version=NET",
           "bottomPadding":"none"
         },
         {
@@ -2500,10 +2540,10 @@
           "elementId"    :"ch06-el11",
           "type"         :"biblePassage",
           "format"       :"HTML",
-          "bibleRef"     :"Psalm 51:1–4, 10, 17 (NIV)",
-          "translation"  :"NIV",
-          "passageText"  :"<i>Have mercy on me, O God, according to your unfailing love; according to your great compassion blot out my transgressions. Wash away all my iniquity and cleanse me from my sin. For I know my transgressions, and my sin is always before me. Against you, you only, have I sinned and done what is evil in your sight, so that you are proved right when you speak and justified when you judge… Create in me a pure heart, O God, and renew a steadfast spirit within me… The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise.</i> (Psalm 51:1–4, 10, 17)",
-          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+51&version=NIV",
+          "bibleRef"     :"Psalm 51:1–4, 10, 17",
+          "translation"  :"NET",
+          "passageText"  :"<i>Have mercy on me, O God, because of your loyal love. Because of your great compassion, wipe away my rebellious acts. Wash away my wrongdoing. Cleanse me of my sin. For I am aware of my rebellious acts; I am forever conscious of my sin. Against you—you above all —I have sinned; I have done what is evil in your sight. So you are just when you confront me; you are right when you condemn me. … Create for me a pure heart, O God. Renew a resolute spirit within me. … The sacrifice God desires is a humble spirit — O God, a humble and repentant heart you will not reject.</i> (Psalm 51:1–4, 10, 17)",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Psalm+51&version=NET",
           "bottomPadding":"none"
         },
         {
@@ -2512,7 +2552,7 @@
           "subtype"          :"standard",
           "format"           :"plainText",
           "question"         :"Compare Psalm 51 with Jonah’s prayer. What does David say about sin, guilt, and forgiveness that is completely absent from Jonah’s prayer in chapter 2?",
-          "linkedPassage"    :"Psalm 51:1–4, 10, 17 (NIV)",
+          "linkedPassage"    :"Psalm 51:1–4, 10, 17",
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
@@ -2520,7 +2560,7 @@
           "questionHint"     :"Read through Jonah 2 carefully. Can you find a single verse where Jonah names his sin, acknowledges his guilt, or asks for forgiveness? Compare that with the first four verses of Psalm 51.",
           "deeper"           :{
             "label"            :"Go deeper …",
-            "question"         :"David writes in Psalm 51:4 ‘Against you, you only, have I sinned.’ He had wronged Bathsheba and Uriah terribly — so why does he say ‘you only’? What does this tell us about the nature of all sin at its deepest level?",
+            "question"         :"David writes in Psalm 51:4 “Against you—you above all—I have sinned.” He had wronged Bathsheba and Uriah terribly — so why does he say “you above all”? What does this tell us about the nature of all sin at its deepest level?",
             "answerType"       :"freeText",
             "required"         :false,
             "answerPlaceholder":"Your reflection…"
@@ -2632,7 +2672,7 @@
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
-          "sampleAnswer"     :"Jonah promises a sacrifice with a public declaration of praise, and to do what he has promised. These are good things — religious activities that honour God. David in Psalm 51 says: ‘You do not delight in sacrifice, or I would bring it. The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise.’ The crucial difference is the heart behind the offering. David knows that God is not primarily interested in the performance of religious acts. He wants the broken and contrite heart that the acts are supposed to express. Jonah offers the acts without the broken heart. If our heart is not right with God, the goDeeperData warns, God is not impressed by our religious activity, however sincere it may feel. Grand sacrifices of praise, devout prayers, earnest vows — God does not want our busyness. He wants our hearts.",
+          "sampleAnswer"     :"Jonah promises a sacrifice with a public declaration of praise, and to do what he has promised. These are good things — religious activities that honour God. David in Psalm 51 says: “Certainly you do not want a sacrifice, or else I would offer it; you do not desire a burnt sacrifice. The sacrifice God desires is a humble spirit — O God, a humble and repentant heart you will not reject.” The crucial difference is the heart behind the offering. David knows that God is not primarily interested in the performance of religious acts. He wants the broken and contrite heart that the acts are supposed to express. Jonah offers the acts without the broken heart. If our heart is not right with God, the goDeeperData warns, God is not impressed by our religious activity, however sincere it may feel. Grand sacrifices of praise, devout prayers, earnest vows — God does not want our busyness. He wants our hearts.",
           "questionHint"     :"What does Psalm 51:16–17 say God actually wants — and how does that compare with what Jonah is offering in v9?",
           "deeper"           :{
             "label"            :"Go deeper …",
@@ -2727,9 +2767,9 @@
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Matthew 12:38-41",
-          "translation"  :"NIV",
-          "passageText"  :"<i>\"Then some of the Pharisees and Scribes answered him, ‘Teacher, we want to see a sign from you.’ But he answered them, ‘An evil and adulterous generation seeks a sign! And no sign will be given to it except the sign of Jonah the prophet. For just as Jonah was in the belly of the sea creature three days and three nights, so the Son of Man will be in the heart of the earth three days and three nights. The men of Nineveh will stand up at the judgment with this generation and condemn it — because they repented at the preaching of Jonah, and now one greater than Jonah is here.’\"</i> (Matthew 12:38–41)",
-          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+12%3A38-41&version=NIV",
+          "translation"  :"NET",
+          "passageText"  :"<i>Then some of the experts in the law along with some Pharisees answered him, “Teacher, we want to see a sign from you.” But he answered them, “An evil and adulterous generation asks for a sign, but no sign will be given to it except the sign of the prophet Jonah. For just as Jonah was in the belly of the huge fish for three days and three nights, so the Son of Man will be in the heart of the earth for three days and three nights. The people of Nineveh will stand up at the judgment with this generation and condemn it, because they repented when Jonah preached to them —and now, something greater than Jonah is here!</i> (Matthew 12:38–41)",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+12%3A38-41&version=NET",
           "bottomPadding":"none"
         },
         {
@@ -2777,9 +2817,9 @@
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"2 Corinthians 7:10",
-          "translation"  :"NIV",
-          "passageText"  :"<i>\"Godly sorrow brings repentance that leads to salvation and leaves no regret, but worldly sorrow brings death.\"</i> (2 Corinthians 7:10)",
-          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+7%3A10&version=NIV",
+          "translation"  :"NET",
+          "passageText"  :"<i>“For sadness as intended by God produces a repentance that leads to salvation, leaving no regret, but worldly sadness brings about death.”</i> (2 Corinthians 7:10)",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=2+Corinthians+7%3A10&version=NET",
           "bottomPadding":"none"
         },
         {
@@ -2839,9 +2879,9 @@
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Matthew 12:40",
-          "translation"  :"NIV",
-          "passageText"  :"<i>‘For just as Jonah was in the belly of the sea creature three days and three nights, so the Son of Man will be in the heart of the earth three days and three nights.’</i> (Matthew 12:40)",
-          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+12%3A38-41&version=NIV",
+          "translation"  :"NET",
+          "passageText"  :"<i>For just as Jonah was in the belly of the huge fish for three days and three nights, so the Son of Man will be in the heart of the earth for three days and three nights.</i> (Matthew 12:40)",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Matthew+12%3A38-41&version=NET",
           "bottomPadding":"none"
         },
         {
@@ -3159,6 +3199,16 @@
           "format"       :"plainText",
           "text"         :"When God Speaks — Two Kinds of Response",
           "bottomPadding":"normal"
+        },
+        {
+          "elementId"    :"ch07-el25-p",
+          "type"         :"biblePassage",
+          "format"       :"HTML",
+          "bibleRef"     :"Jonah 1",
+          "translation"  :"NET",
+          "passageText"  :"<sup>1</sup>The <span class=\"divine-name\">Lord</span>’s message came to Jonah son of Amittai, <sup>2</sup><i>“Go immediately to Nineveh, that large capital city, and announce judgment against its people because their wickedness has come to my attention.”</i> <sup>3</sup>Instead, Jonah immediately headed off to Tarshish to escape from the commission of the <span class=\"divine-name\">Lord</span>. He traveled to Joppa and found a merchant ship heading to Tarshish. So he paid the fare and went aboard it to go with them to Tarshish, far away from the <span class=\"divine-name\">Lord</span>. <sup>4</sup>But the <span class=\"divine-name\">Lord</span> hurled a powerful wind on the sea. Such a violent tempest arose on the sea that the ship threatened to break up! <sup>5</sup>The sailors were so afraid that each cried out to his own god and they flung the ship’s cargo overboard to make the ship lighter. Jonah, meanwhile, had gone down into the hold below deck, had lain down, and was sound asleep. <sup>6</sup>The ship’s captain approached him and said, <i>“What are you doing asleep? Get up! Cry out to your god! Perhaps your god might take notice of us so that we might not die!”</i> <sup>7</sup>The sailors said to one another, <i>“Come on, let’s cast lots to find out whose fault it is that this disaster has overtaken us.”</i> So they cast lots, and Jonah was singled out. <sup>8</sup>They said to him, <i>“Tell us, whose fault is it that this disaster has overtaken us? What’s your occupation? Where do you come from? What’s your country? And who are your people?”</i> <sup>9</sup>He said to them, <i>“I am a Hebrew, and I worship the <span class=\"divine-name\">Lord</span>, the God of heaven, who made the sea and the dry land.”</i> <sup>10</sup>Hearing this, the men became even more afraid and said to him, <i>“What have you done?”</i> (The men said this because they knew that he was trying to escape from the <span class=\"divine-name\">Lord</span>, because he had previously told them.) <sup>11</sup>Because the storm was growing worse and worse, they said to him, <i>“What should we do to you so that the sea will calm down for us?”</i> <sup>12</sup>He said to them, <i>“Pick me up and throw me into the sea so that the sea will calm down for you, because I know it’s my fault you are in this severe storm.”</i> <sup>13</sup>Instead, they tried to row back to land, but they were not able to do so because the storm kept growing worse and worse. <sup>14</sup>So they cried out to the <span class=\"divine-name\">Lord</span>, <i>“Oh, please, <span class=\"divine-name\">Lord</span>, don’t let us die on account of this man! Don’t hold us guilty of shedding innocent blood. After all, you, <span class=\"divine-name\">Lord</span>, have done just as you pleased.”</i> <sup>15</sup>So they picked Jonah up and threw him into the sea, and the sea stopped raging. <sup>16</sup>The men feared the <span class=\"divine-name\">Lord</span> greatly and earnestly vowed to offer lavish sacrifices to the <span class=\"divine-name\">Lord</span>. <sup>17</sup>The <span class=\"divine-name\">Lord</span> sent a huge fish to swallow Jonah, and Jonah was in the stomach of the fish three days and three nights.",
+          "passageUrl"   :"https://www.biblegateway.com/passage/?search=Jonah+1&version=NET",
+          "bottomPadding":"none"
         },
         {
           "elementId"        :"ch07-el25",
@@ -3920,7 +3970,7 @@
         "makingConnections":{
           "subtype":"highlighted",
           "header" :"Making Connections",
-          "body"   :"It is not just Jonah who makes this mistake. We can know the truth about what God has done for us in Jesus, and still not live it out. We can know that we have been saved from our sin, and yet not show it in our lives. Jesus himself warns us against this:\n\n> *’Everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock … But everyone who hears these words of mine and does not put them into practice is like a foolish man who built his house on sand.’* (Matthew 7:24–27)\n\nSo here is a question worth sitting with: Am I living up to the knowledge I have? Am I hearing Jesus’ words and building on them — or am I just hearing?"
+          "body"   :"It is not just Jonah who makes this mistake. We can know the truth about what God has done for us in Jesus, and still not live it out. We can know that we have been saved from our sin, and yet not show it in our lives. Jesus himself warns us against this:\n\n> *“Everyone who hears these words of mine and does them is like a wise man who built his house on rock. … Everyone who hears these words of mine and does not do them is like a foolish man who built his house on sand.”* (Matthew 7:24–27)\n\nSo here is a question worth sitting with: Am I living up to the knowledge I have? Am I hearing Jesus’ words and building on them — or am I just hearing?"
         }
       },
       {
@@ -4031,7 +4081,7 @@
         "jeremiah":{
           "subtype":"standard",
           "header" :"",
-          "body"   :"> *’If at any time I announce that a nation or kingdom is to be uprooted, torn down and destroyed, and if that nation I warned repents of its evil, then I will relent and not inflict on it the disaster I had planned.’* (Jeremiah 18:7–8)"
+          "body"   :"> *There are times, Jeremiah, when I threaten to uproot, tear down, and destroy a nation or kingdom. But if that nation I threatened stops doing wrong, I will cancel the destruction I intended to do to it.* (Jeremiah 18:7–8)"
         },
         "callout6":{
           "subtype":"highlighted",
@@ -4046,7 +4096,7 @@
         "makingConnections":{
           "subtype":"highlighted",
           "header" :"Making Connections",
-          "body"   :"*’Acquitting the guilty and condemning the innocent — the Lord detests them both.’* (Proverbs 17:15)\n\nIt is a big deal to acquit the guilty, and a big deal to condemn the innocent. We call such things a miscarriage of justice — or, more bluntly, a crime. Yet God has done both in Jesus: condemned the one who is perfectly innocent, and acquitted those who are guilty — precisely in order to demonstrate his justice:\n\n> *’God presented him as a sacrifice of atonement … He did this to demonstrate his justice … so as to be just and the one who justifies those who have faith in Jesus.’* (Romans 3:25–26)\n\nWe can slip into taking God’s forgiveness for granted. But actually it is amazingly good news — and amazingly costly news. Many remarkable things happen in Jonah’s story: the storm, Jonah surviving in the whale, 120,000 people responding to his message. But the most amazing thing of all is that God forgives these vicious Ninevites. He has compassion on them.\n\nWe often think forgiveness is easy for God. There was a famous atheist who, on his death-bed, was asked what he would say if he discovered there really was a God after all. He said: *’Oh, God will forgive me. That is what he does.’*[[fn:12]] If forgiveness were as casual as that, it would not be forgiveness at all — it would be apathy. Imagine one of these Ninevite warlords arriving at the gates of heaven and God saying: *’Sure, come on in — so you impaled a few thousand people on poles. What is that between friends?’* There is something deeply offensive about that idea, because it ends up saying that evil does not matter, that sin does not matter.\n\nGod cannot turn a blind eye to evil and still be God. He has to punish evil; it has to be paid for. What the Ninevites do not know — and what Jonah himself does not really know — is that God himself was going to pay the price for their evil. That is what Jesus came into the world to do. He took our sin on himself and died in our place, so that we could be forgiven.\n\nForgiveness is not easy or cheap for God. It is supremely costly — it cost the life of his one and only Son. The reason God can give us so many chances to turn from sin is that Jesus has bought those chances with his blood. That is wonderfully good news, but it is also wonderfully serious news. The Ninevites had only a one-sentence message to go on, and they took it seriously. Let’s be sure we take the message of Jesus seriously too."
+          "body"   :"*’The one who acquits the guilty and the one who condemns the innocent — both of them are an abomination to the Lord.’* (Proverbs 17:15)\n\nIt is a big deal to acquit the guilty, and a big deal to condemn the innocent. We call such things a miscarriage of justice — or, more bluntly, a crime. Yet God has done both in Jesus: condemned the one who is perfectly innocent, and acquitted those who are guilty — precisely in order to demonstrate his justice:\n\n> *God publicly displayed him at his death as the mercy seat accessible through faith. … This was to demonstrate his righteousness … so that he would be just and the justifier of the one who lives because of Jesus’ faithfulness.* (Romans 3:25–26)\n\nWe can slip into taking God’s forgiveness for granted. But actually it is amazingly good news — and amazingly costly news. Many remarkable things happen in Jonah’s story: the storm, Jonah surviving in the whale, 120,000 people responding to his message. But the most amazing thing of all is that God forgives these vicious Ninevites. He has compassion on them.\n\nWe often think forgiveness is easy for God. There was a famous atheist who, on his death-bed, was asked what he would say if he discovered there really was a God after all. He said: *’Oh, God will forgive me. That is what he does.’*[[fn:12]] If forgiveness were as casual as that, it would not be forgiveness at all — it would be apathy. Imagine one of these Ninevite warlords arriving at the gates of heaven and God saying: *’Sure, come on in — so you impaled a few thousand people on poles. What is that between friends?’* There is something deeply offensive about that idea, because it ends up saying that evil does not matter, that sin does not matter.\n\nGod cannot turn a blind eye to evil and still be God. He has to punish evil; it has to be paid for. What the Ninevites do not know — and what Jonah himself does not really know — is that God himself was going to pay the price for their evil. That is what Jesus came into the world to do. He took our sin on himself and died in our place, so that we could be forgiven.\n\nForgiveness is not easy or cheap for God. It is supremely costly — it cost the life of his one and only Son. The reason God can give us so many chances to turn from sin is that Jesus has bought those chances with his blood. That is wonderfully good news, but it is also wonderfully serious news. The Ninevites had only a one-sentence message to go on, and they took it seriously. Let’s be sure we take the message of Jesus seriously too."
         }
       },
       {
@@ -4243,7 +4293,7 @@
         "makingConnections":{
           "subtype":"highlighted",
           "header" :"Making Connections",
-          "body"   :"God’s word has to be reckoned with. That is how it was for Jonah; that is how it is for us. God has not just spoken through Jonah — he has spoken through the gospel of Jesus Christ.\n\nHebrews 1:1–3 makes the point that God has spoken his definitive word to us in his Son. Throughout the Old Testament, God spoke in ’many parts and many ways’ — in many occasions, forms, and fragments. The message is there clearly enough in the Prophets (see Luke 24:27). But it is clearer again in Jesus; less piecemeal, more explicit.\n\nThink of the word Jonah is given to preach in Nineveh. The warning is totally clear, but the message is not totally complete. Jesus makes the warning and hope of the gospel even more clear and complete — and it all turns on how we respond to him and his word:\n\n> *’Whoever believes in the Son has eternal life, but whoever rejects the Son will not see life, for God’s wrath remains on him.’* (John 3:36)\n\nWe cannot walk away and think there will be no comeback, any more than Jonah could. We stand in a more privileged position — so we have even less excuse if we refuse God’s word to us in Jesus."
+          "body"   :"God’s word has to be reckoned with. That is how it was for Jonah; that is how it is for us. God has not just spoken through Jonah — he has spoken through the gospel of Jesus Christ.\n\nHebrews 1:1–3 makes the point that God has spoken his definitive word to us in his Son. Throughout the Old Testament, God spoke in ’many parts and many ways’ — in many occasions, forms, and fragments. The message is there clearly enough in the Prophets (see Luke 24:27). But it is clearer again in Jesus; less piecemeal, more explicit.\n\nThink of the word Jonah is given to preach in Nineveh. The warning is totally clear, but the message is not totally complete. Jesus makes the warning and hope of the gospel even more clear and complete — and it all turns on how we respond to him and his word:\n\n> *The one who believes in the Son has eternal life. The one who rejects the Son will not see life, but God’s wrath remains on him.* (John 3:36)\n\nWe cannot walk away and think there will be no comeback, any more than Jonah could. We stand in a more privileged position — so we have even less excuse if we refuse God’s word to us in Jesus."
         },
         "judgment":{
           "subtype":"standard",
@@ -4391,7 +4441,7 @@
         "benefitOfDoubt":{
           "subtype":"standard",
           "header" :"",
-          "body"   :"Normally it is good to begin by giving people the benefit of the doubt. But any doubt there was, any uncertainty — Jonah’s behaviour in chapter 4 has blown it right out of the water. There is no doubt any more: Jonah fundamentally has not repented. He does not want God’s love and grace to be shown to the Ninevites, and that gives us a pretty big hint that he probably has not understood the love and grace God has shown to him. So let’s use that knowledge — that something goes badly wrong further down the line — to see if we can spot any early signs of it here in chapter 2.\n\nThere is a verse in the New Testament that gives us a clue about what might be wrong:\n\n> *’Godly sorrow brings repentance that leads to salvation and leaves no regret, but worldly sorrow brings death.’* (2 Corinthians 7:10)"
+          "body"   :"Normally it is good to begin by giving people the benefit of the doubt. But any doubt there was, any uncertainty — Jonah’s behaviour in chapter 4 has blown it right out of the water. There is no doubt any more: Jonah fundamentally has not repented. He does not want God’s love and grace to be shown to the Ninevites, and that gives us a pretty big hint that he probably has not understood the love and grace God has shown to him. So let’s use that knowledge — that something goes badly wrong further down the line — to see if we can spot any early signs of it here in chapter 2.\n\nThere is a verse in the New Testament that gives us a clue about what might be wrong:\n\n> *For sadness as intended by God produces a repentance that leads to salvation, leaving no regret, but worldly sadness brings about death.* (2 Corinthians 7:10)"
         },
         "callout2":{
           "subtype":"highlighted",
@@ -4416,7 +4466,7 @@
         "psalm51":{
           "subtype":"standard",
           "header" :"Psalm 51",
-          "body"   :"> Have mercy on me, O God, according to your unfailing love;\n> according to your great compassion blot out my transgressions.\n> Wash away all my iniquity and cleanse me from my sin.\n>\n> For I know my transgressions, and my sin is always before me.\n> Against you, you only, have I sinned and done what is evil in your sight,\n> so that you are proved right when you speak and justified when you judge.\n> Surely I was sinful at birth, sinful from the time my mother conceived me.\n> Surely you desire truth in the inner parts; you teach me wisdom in the inmost place.\n>\n> Cleanse me with hyssop, and I shall be clean; wash me, and I shall be whiter than snow.\n> Let me hear joy and gladness; let the bones you have crushed rejoice.\n> Hide your face from my sins and blot out all my iniquity.\n> Create in me a pure heart, O God, and renew a steadfast spirit within me.\n> Do not cast me from your presence or take your Holy Spirit from me.\n> Restore to me the joy of your salvation and grant me a willing spirit, to sustain me.\n>\n> Then I will teach transgressors your ways, and sinners will turn back to you.\n> Save me from bloodguilt, O God, the God who saves me,\n> and my tongue will sing of your righteousness.\n> O Lord, open my lips, and my mouth will declare your praise.\n> You do not delight in sacrifice, or I would bring it;\n> you do not take pleasure in burnt offerings.\n> The sacrifices of God are a broken spirit;\n> a broken and contrite heart, O God, you will not despise.\n>\n> In your good pleasure make Zion prosper; build up the walls of Jerusalem.\n> Then there will be righteous sacrifices, whole burnt offerings to delight you;\n> then bulls will be offered on your altar. *(Psalm 51:1–19)*\n\nDid you see what was different? David is absolutely clear about his own guilt and transgression and sin. He knows he is in the wrong, and that he needs mercy and forgiveness."
+          "body"   :"> Have mercy on me, O God, because of your loyal love.\n> Because of your great compassion, wipe away my rebellious acts.\n> Wash away my wrongdoing.\n> Cleanse me of my sin.\n>\n> For I am aware of my rebellious acts;\n> I am forever conscious of my sin.\n> Against you—you above all —I have sinned;\n> I have done what is evil in your sight.\n> So you are just when you confront me;\n> you are right when you condemn me.\n> Look, I was guilty of sin from birth,\n> a sinner the moment my mother conceived me.\n> Look, you desire integrity in the inner man;\n> you want me to possess wisdom.\n>\n> Cleanse me with hyssop and I will be pure;\n> wash me and I will be whiter than snow.\n> Grant me the ultimate joy of being forgiven.\n> May the bones you crushed rejoice.\n> Hide your face from my sins.\n> Wipe away all my guilt.\n> Create for me a pure heart, O God.\n> Renew a resolute spirit within me.\n> Do not reject me.\n> Do not take your holy Spirit away from me.\n> Let me again experience the joy of your deliverance.\n> Sustain me by giving me the desire to obey.\n>\n> Then I will teach rebels your merciful ways,\n> and sinners will turn to you.\n> Rescue me from the guilt of murder, O God, the God who delivers me.\n> Then my tongue will shout for joy because of your righteousness.\n> O Lord, give me the words.\n> Then my mouth will praise you.\n> Certainly you do not want a sacrifice, or else I would offer it;\n> you do not desire a burnt sacrifice.\n> The sacrifice God desires is a humble spirit —\n> O God, a humble and repentant heart you will not reject.\n>\n> Because you favor Zion, do what is good for her.\n> Fortify the walls of Jerusalem.\n> Then you will accept the proper sacrifices, burnt sacrifices and whole offerings;\n> then bulls will be sacrificed on your altar. *(Psalm 51:1–19)*\n\nDid you see what was different? David is absolutely clear about his own guilt and transgression and sin. He knows he is in the wrong, and that he needs mercy and forgiveness."
         },
         "callout4":{
           "subtype":"highlighted",
@@ -4461,7 +4511,7 @@
         "dangerousRoad":{
           "subtype":"standard",
           "header" :"",
-          "body"   :"But that is secondary. If we start to correct others from God’s word without first taking to heart God’s words of correction to us, then we are starting to become a Jonah, a Pharisee, a hypocrite. That road leads to spiritual decay.\n\nAnd that is deadly. Verse 9 contains probably the best bit of Jonah’s whole prayer: *’But as for me, I promise to offer a sacrifice to you with a public declaration of praise; I will surely do what I have promised. Salvation belongs to the Lord!’* That sounds pretty good. But compare it with what David says in Psalm 51:\n\n> *’You do not delight in sacrifice, or I would bring it; you do not take pleasure in burnt offerings. The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise.’* (51:16–17)\n\nIf our heart is not right with God, then God could not care less about our efforts to please him or work for him — whether we are trying to be some sort of super-prophet, super-missionary, or just doing our small part. If we are pressing ahead on a sinful track, God is not going to be the least impressed. It does not matter how grand our sacrifice of praise, how devout our prayers, how earnest our vows — God does not want our busyness. He wants our hearts.\n\nOf course, God is tremendously generous. Even when we are rebelling, he may be gracious enough to use what we do and bring good out of it — he does it with Jonah in chapter 3. But if he does, let’s not be too flattered. God can bring good out of what Satan does; he can bring good out of our hypocrisy too. If we act sinfully and God is still gracious enough to bring good out of it, he will have done it *in spite of us*, not because of us.\n\nGod may be gracious enough to give us a second, third, fourth, or fifth chance to sort things out with him. Jonah gets a whole string of them. But practice makes perfect. Practise turning down God’s chances to repent, and you might get rather good at it. Do not do that — one day it will be too late. Instead, let’s be people who apply God’s word to ourselves, take it to heart, and put it into practice."
+          "body"   :"But that is secondary. If we start to correct others from God’s word without first taking to heart God’s words of correction to us, then we are starting to become a Jonah, a Pharisee, a hypocrite. That road leads to spiritual decay.\n\nAnd that is deadly. Verse 9 contains probably the best bit of Jonah’s whole prayer: *’But as for me, I promise to offer a sacrifice to you with a public declaration of praise; I will surely do what I have promised. Salvation belongs to the Lord!’* That sounds pretty good. But compare it with what David says in Psalm 51:\n\n> *Certainly you do not want a sacrifice, or else I would offer it; you do not desire a burnt sacrifice. The sacrifice God desires is a humble spirit — O God, a humble and repentant heart you will not reject.* (51:16–17)\n\nIf our heart is not right with God, then God could not care less about our efforts to please him or work for him — whether we are trying to be some sort of super-prophet, super-missionary, or just doing our small part. If we are pressing ahead on a sinful track, God is not going to be the least impressed. It does not matter how grand our sacrifice of praise, how devout our prayers, how earnest our vows — God does not want our busyness. He wants our hearts.\n\nOf course, God is tremendously generous. Even when we are rebelling, he may be gracious enough to use what we do and bring good out of it — he does it with Jonah in chapter 3. But if he does, let’s not be too flattered. God can bring good out of what Satan does; he can bring good out of our hypocrisy too. If we act sinfully and God is still gracious enough to bring good out of it, he will have done it *in spite of us*, not because of us.\n\nGod may be gracious enough to give us a second, third, fourth, or fifth chance to sort things out with him. Jonah gets a whole string of them. But practice makes perfect. Practise turning down God’s chances to repent, and you might get rather good at it. Do not do that — one day it will be too late. Instead, let’s be people who apply God’s word to ourselves, take it to heart, and put it into practice."
         },
         "pft2":{
           "subtype":"highlighted",
@@ -4501,7 +4551,7 @@
         "matthew12":{
           "subtype":"standard",
           "header" :"",
-          "body"   :"> *Then some of the Pharisees and Scribes answered him, ‘Teacher, we want to see a sign from you.’ But he answered them, ‘An evil and adulterous generation seeks a sign! And no sign will be given to it except the sign of Jonah the prophet. For just as Jonah was in the belly of the sea creature three days and three nights, so the Son of Man will be in the heart of the earth three days and three nights. The men of Nineveh will stand up at the judgment with this generation and condemn it — because they repented at the preaching of Jonah, and now one greater than Jonah is here.’* (Matthew 12:38–41)"
+          "body"   :"> *Then some of the experts in the law along with some Pharisees answered him, “Teacher, we want to see a sign from you.” But he answered them, “An evil and adulterous generation asks for a sign, but no sign will be given to it except the sign of the prophet Jonah. For just as Jonah was in the belly of the huge fish for three days and three nights, so the Son of Man will be in the heart of the earth for three days and three nights. The people of Nineveh will stand up at the judgment with this generation and condemn it, because they repented when Jonah preached to them —and now, something greater than Jonah is here!* (Matthew 12:38–41)"
         },
         "callout8":{
           "subtype":"highlighted",
@@ -4925,7 +4975,7 @@
         "exegetical":{
           "subtype":"standard",
           "header" :"Exegetical Notes",
-          "body"   :"<p><strong>’Jonah prayed to the Lord his God from the stomach of the fish’ (2:1).</strong> The prayer is located inside the fish, before the vomiting — not after. Jonah is not reporting the rescue from the safety of dry land; he is giving thanks from within the predicament. This is Psalm-lament structure: trust expressed before resolution. It is genuine. The question is not whether the prayer is sincere — it almost certainly is — but whether sincerity is sufficient evidence of repentance. El07 and el12 together establish that it is not.</p><br><p><strong>Jonah’s prayer echoes at least eight Psalms.</strong> The ‘belly of Sheol’ (cf. Psalm 88:6), ‘banished from your sight’ (cf. Psalm 31:22), ‘the ocean current engulfed me’ (cf. Psalm 42:7), ‘I cried out for help’ (cf. Psalm 18:6), ‘you brought me up from the Pit’ (cf. Psalm 30:3), ‘my prayer came to you, to your holy temple’ (cf. Psalm 18:6), ‘worthless idols’ (cf. Psalm 31:6), ‘sacrifice … with a public declaration of praise’ (cf. Psalm 50:14). Jonah is not plagiarising — he is doing what a devout Israelite would do: drawing on the vocabulary of communal prayer. This is why the prayer sounds so right. It is the prayer book of Israel. The problem is not the words; it is what the words are absent of.</p><br><p><strong>Psalm 51 as a comparison text (el12).</strong> Psalm 51 is David’s response to Nathan’s confrontation after the Bathsheba/Uriah incident — a genuine, specific, named sin followed by a genuine, specific, named prayer of repentance. The contrast with Jonah is not incidental: it is the author’s implicit invitation to the reader to notice what is missing. David knows his transgressions (v3). David says God is right to judge (v4). David asks for a clean heart, not just a clean situation (v10). David knows God wants a broken spirit, not religious performance (v17). Jonah has none of these. The comparison is worth making explicit in the session.</p><br><p><strong>’Against you, you only, have I sinned’ (Psalm 51:4) — el12 deeper question.</strong> This is one of the most theologically important lines in the Psalter. David has wronged Bathsheba and arranged Uriah’s death — clearly he has sinned against other people. What he means is that every sin, at its deepest level, is an offence against God — because all moral order derives from God, and all wrongdoing is ultimately a rejection of his authority and character. This is not dismissing the harm done to others; it is naming the deepest dimension of what sin is. This is exactly what Jonah fails to see: his problem is not just that he ran away; it is that he set his own preferences above God’s explicit command.</p><br><p><strong>The sea creature and biblical symbolism.</strong> El26 raises the question of whether the fish is mercy or judgment, and the exegetical note from session 2 bears repeating here: sea monsters in the Hebrew Bible are consistently associated with chaos and the forces opposed to God (cf. Job 3:8, 7:12; Psalm 74:13–14; Isaiah 27:1). An ancient Israelite reader would not have heard ’huge fish’ as a rescue vehicle. They would have heard it as a terrifying instrument of divine judgment. The mercy comes later — in the vomiting, not the swallowing. The fish is judgment that turns out to bring salvation. That is what makes the Jonah/Jesus parallel structurally exact.</p><br><p><strong>Matthew 12:38–41 and the uniqueness of the comparison.</strong> The Go Deeper chapter 6 section notes that Jesus almost never compares himself to Old Testament prophets — and when he does, he compares himself to the one prophet who failed most conspicuously. This is not incidental. The comparison works because of the structural parallel (three days/three nights; condemnation becoming salvation), not because of Jonah’s godliness. Jesus is greater than Jonah in every respect except one — and in that one respect, the parallel is exact: both experience God’s No and God’s Yes on their own person. In Jesus’s case, the No is entirely undeserved and entirely substitutionary.</p>"
+          "body"   :"<p><strong>’Jonah prayed to the Lord his God from the stomach of the fish’ (2:1).</strong> The prayer is located inside the fish, before the vomiting — not after. Jonah is not reporting the rescue from the safety of dry land; he is giving thanks from within the predicament. This is Psalm-lament structure: trust expressed before resolution. It is genuine. The question is not whether the prayer is sincere — it almost certainly is — but whether sincerity is sufficient evidence of repentance. El07 and el12 together establish that it is not.</p><br><p><strong>Jonah’s prayer echoes at least eight Psalms.</strong> The ‘belly of Sheol’ (cf. Psalm 88:6), ‘banished from your sight’ (cf. Psalm 31:22), ‘the ocean current engulfed me’ (cf. Psalm 42:7), ‘I cried out for help’ (cf. Psalm 18:6), ‘you brought me up from the Pit’ (cf. Psalm 30:3), ‘my prayer came to you, to your holy temple’ (cf. Psalm 18:6), ‘worthless idols’ (cf. Psalm 31:6), ‘sacrifice … with a public declaration of praise’ (cf. Psalm 50:14). Jonah is not plagiarising — he is doing what a devout Israelite would do: drawing on the vocabulary of communal prayer. This is why the prayer sounds so right. It is the prayer book of Israel. The problem is not the words; it is what the words are absent of.</p><br><p><strong>Psalm 51 as a comparison text (el12).</strong> Psalm 51 is David’s response to Nathan’s confrontation after the Bathsheba/Uriah incident — a genuine, specific, named sin followed by a genuine, specific, named prayer of repentance. The contrast with Jonah is not incidental: it is the author’s implicit invitation to the reader to notice what is missing. David knows his transgressions (v3). David says God is right to judge (v4). David asks for a clean heart, not just a clean situation (v10). David knows God wants a broken spirit, not religious performance (v17). Jonah has none of these. The comparison is worth making explicit in the session.</p><br><p><strong>“Against you—you above all—I have sinned” (Psalm 51:4) — el12 deeper question.</strong> This is one of the most theologically important lines in the Psalter. David has wronged Bathsheba and arranged Uriah’s death — clearly he has sinned against other people. What he means is that every sin, at its deepest level, is an offence against God — because all moral order derives from God, and all wrongdoing is ultimately a rejection of his authority and character. This is not dismissing the harm done to others; it is naming the deepest dimension of what sin is. This is exactly what Jonah fails to see: his problem is not just that he ran away; it is that he set his own preferences above God’s explicit command.</p><br><p><strong>The sea creature and biblical symbolism.</strong> El26 raises the question of whether the fish is mercy or judgment, and the exegetical note from session 2 bears repeating here: sea monsters in the Hebrew Bible are consistently associated with chaos and the forces opposed to God (cf. Job 3:8, 7:12; Psalm 74:13–14; Isaiah 27:1). An ancient Israelite reader would not have heard ’huge fish’ as a rescue vehicle. They would have heard it as a terrifying instrument of divine judgment. The mercy comes later — in the vomiting, not the swallowing. The fish is judgment that turns out to bring salvation. That is what makes the Jonah/Jesus parallel structurally exact.</p><br><p><strong>Matthew 12:38–41 and the uniqueness of the comparison.</strong> The Go Deeper chapter 6 section notes that Jesus almost never compares himself to Old Testament prophets — and when he does, he compares himself to the one prophet who failed most conspicuously. This is not incidental. The comparison works because of the structural parallel (three days/three nights; condemnation becoming salvation), not because of Jonah’s godliness. Jesus is greater than Jonah in every respect except one — and in that one respect, the parallel is exact: both experience God’s No and God’s Yes on their own person. In Jesus’s case, the No is entirely undeserved and entirely substitutionary.</p>"
         },
         "watch":{
           "subtype":"highlighted",
@@ -5072,7 +5122,6 @@
     },
     "notices":[
       "Scripture quoted by permission. Quotations designated (NET) are from the NET Bible® copyright ©1996-2016 by Biblical Studies Press, L.L.C. http://netbible.com All rights reserved. NET quotations are not covered by the Creative Commons License, but are used under the NET Bible’s own ministry permissions.",
-      "Scripture quotations from books other than Jonah (2 Corinthians 7:10, Psalm 51, Matthew 7 and 12, Jeremiah 18, Romans 3 and John 3, among others) are from THE HOLY BIBLE, NEW INTERNATIONAL VERSION®, NIV® Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. NIV quotations are not covered by the Creative Commons License, but are used under the NIV’s own copyright permissions.",
       "The author’s own translations of Scripture are marked with an asterisk (*).",
       "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
       "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
