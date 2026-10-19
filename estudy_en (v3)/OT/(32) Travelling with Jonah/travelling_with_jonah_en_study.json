@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.07,
+    "studyVersion"     :1.08,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NIV"
