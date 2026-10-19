@@ -147,13 +147,13 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 
 1. Valid JSON; `studyMetadata.studyId` matches `[A-Za-z0-9_.-]+` and is permanent.
 2. Every `elementId` unique across the study, matching `[A-Za-z0-9_.-]+`; every `repeatElement` target exists in the same chapter.
-3. Every `linkedPassage` equals an **earlier** `bibleRef` in the same chapter, character for character (check dashes).
+3. Every `linkedPassage` equals an **earlier** `bibleRef` in the same chapter, character for character (check dashes and any suffix such as "(quoting Psalm 2:7)"). A chapter with **no** `biblePassage` elements may use `linkedPassage` as a plain reference label (nothing opens). Never put a placeholder such as `"NONE"` in `linkedPassage`; and a `reflection` with a `linkedPassage` gets the answer-check button, so leave it off unless you want that.
 4. `chapterNumber`s are unique integers; every Go Deeper `chapterNumber` is an integer.
 5. In each Go Deeper chapter the `[[fn:N]]` markers and the `footnotes` ids are the same set, and the ids are unique integers. By convention they run 1..N per chapter; the app shows the id as the note number, so a study that keeps a printed book's own numbers (5, 6, 7) also works.
 6. No Go Deeper or Leaders' block key ends in a digit (required in multilingual studies; keep the habit in single-language ones).
 7. Table rows all add up to the same width once `colspan` is counted; tables are in `format: "HTML"` bodies.
 8. `keyTerms` is an array of strings (at most 12); `mainPoint` is 2,000 characters or fewer.
-9. No `studyAiData`, no `apiKey`, no `style=` attributes, no `<script>`.
+9. No `studyAiData`, no `apiKey`, no `style=` attributes, no `<script>`, no leftover template placeholders (`${…}`), and no `<table>` in a callout `answer` or other pop-up text (tables are stripped there; use a list).
 10. Raise `studyVersion` (1.03 → 1.04) whenever you change a file that readers may already have; the same version is ignored.
 11. Declared images exist: `images/<elementId>.webp` for every `image` without `src`; gallery `src` files are in the zip.
 12. Before release open it in the app: a passage pop-up, a hint, a footnote, a table at phone width, Read more and Back to study, and the copyright page (section 9: it always prints CC BY-SA, whatever you declare).

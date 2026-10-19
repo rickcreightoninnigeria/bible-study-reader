@@ -102,6 +102,9 @@ def main(path):
             err(f'duplicate chapterNumber {n}')
         nums.add(n)
         refs_so_far, ids_in_ch = set(), set()
+        # A chapter with no biblePassage elements uses linkedPassage as a plain
+        # reference label (nothing to tap), which is legitimate.
+        chapter_has_passages = any(e.get('type') == 'biblePassage' for e in ch.get('elements', []))
         for el in ch.get('elements', []):
             eid = el.get('elementId')
             where = f'chapter {n}, {eid or el.get("type")}'
@@ -120,10 +123,12 @@ def main(path):
                     if re.fullmatch(r'bibleRef\d*', k) and v:
                         refs_so_far.add(v)
             lp = el.get('linkedPassage')
-            if lp and lp not in refs_so_far:
+            if lp and el.get('subtype') == 'reflection':
+                warn(f'{where}: a reflection with linkedPassage {lp!r} gets the answer-check button; remove it')
+            elif lp and lp not in refs_so_far and chapter_has_passages:
                 norm = lambda s: re.sub(r'[–—-]', '-', s)
                 later = any(norm(lp) == norm(r) for r in refs_so_far)
-                err(f'{where}: linkedPassage {lp!r} matches no earlier bibleRef'
+                err(f'{where}: linkedPassage {lp!r} matches no earlier bibleRef (so it is not tappable)'
                     + (' (differs only in the dash type)' if later else ''))
             kt = el.get('keyTerms')
             if kt is not None:
@@ -180,6 +185,13 @@ def main(path):
             warn(f'{p}: style attribute (unsupported; use a class)')
         if re.search(r'=\s*[’‘“”]', s):
             err(f'{p}: curly quote used as an HTML attribute quote')
+    for p, s in strings(study):
+        if '${' in s:
+            err(f'{p}: unsubstituted template placeholder ${{...}}')
+    for ci, ch in enumerate(chapters):
+        for el in ch.get('elements', []):
+            if el.get('type') == 'callout' and '<table' in str(el.get('answer', '')):
+                err(f'chapter {ch.get("chapterNumber")}, {el.get("elementId")}: a table in a callout answer is stripped to run-on text; use a list')
     if 'studyAiData' in study:
         warn('studyAiData is deprecated and ignored; remove it')
     for p in keys_anywhere(study, {'apiKey'}):
