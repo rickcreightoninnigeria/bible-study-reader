@@ -8,7 +8,7 @@
     "description"      :"Not every message about God is trustworthy. <em>How do we recognise truth from error? What should we do when faith is distorted or misused?</em> Jude writes with urgency to address that very situation.<blockquote>‘I felt compelled to write and urge you to contend for the faith that was once for all entrusted to God’s holy people.’ (Jude 1:3)</blockquote>His words are direct and serious. The truth about God is not something to reshape or ignore. It has been given, and it must be guarded. Jude calls his readers not just to believe, but to stand firm—holding on to what is true even when it is challenged.",
     "libraryShelves"   :[{ "Shelf": "New Testament", "Section": "General Letters & Revelation", "Subsection": "Jude" }, { "Shelf": "Ministry", "Section": "Evangelism & Missions", "Subsection": "Apologetics" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -966,7 +966,7 @@
       "icon"   :"⚙️",
       "eyebrow":"Make it yours",
       "heading":"Adjust to your preference",
-      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "body"   :"<div>\n      If you need bigger text go straight to settings now\n    </div>",
       "action" :{
         "id"   :"settings",
         "label":"⚙ Settings",
