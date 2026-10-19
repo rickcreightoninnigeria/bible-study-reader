@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Abubuwan Da Aka Yi Imani Da Su", "Section": "Cira", "Subsection": "Tuba" }, { "Shelf": "Rayuwa", "Section": "Hali da Tsarkakewa", "Subsection": "Kasancewa cikin Almasihu" }, { "Shelf": "Hidima", "Section": "Almajirantarwa da Jagoranci", "Subsection": "Hidima ta Mutum da Mutum" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language"         :"ha",
     "bibleTranslation" :{
       "en":"NET"
@@ -2307,7 +2307,7 @@
       "icon"   :"⚙️",
       "eyebrow":"Tsara shi yadda kake so",
       "heading":"Daidaita zuwa abin da kake so",
-      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\"><br>      Idan kana buƙatar babban rubutu je zuwa wurin saituna (settings) yanzu<br>    </div>",
+      "body"   :"<div><br>      Idan kana buƙatar babban rubutu je zuwa wurin saituna (settings) yanzu<br>    </div>",
       "action" :{
         "id"   :"settings",
         "label":"⚙ Saituna",

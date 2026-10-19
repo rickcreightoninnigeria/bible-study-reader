@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Sanctification" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Growth in Grace" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language"         :"fr",
     "bibleTranslation" :{
       "en":"NET"
@@ -3070,7 +3070,7 @@
       "icon"   :"⚙️",
       "eyebrow":"Personnalisez-le",
       "heading":"Ajustez selon vos préférences",
-      "body"   :"<div style=’font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;’>\n      Si vous avez besoin d’un texte plus grand, allez directement aux paramètres maintenant\n    </div>",
+      "body"   :"<div>\n      Si vous avez besoin d’un texte plus grand, allez directement aux paramètres maintenant\n    </div>",
       "action" :{
         "id"   :"settings",
         "label":"⚙ Paramètres",

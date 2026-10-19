@@ -16,7 +16,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Sanctification" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Growth in Grace" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language1"        :"ha",
     "language2"        :"ff",
     "language3"        :"en",
@@ -4932,7 +4932,7 @@
       "heading3":"Adjust to your preference",
       "body1"   :"",
       "body2"   :"",
-      "body3"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "body3"   :"<div>\n      If you need bigger text go straight to settings now\n    </div>",
       "action"  :{
         "id"    :"settings",
         "label1":"",
