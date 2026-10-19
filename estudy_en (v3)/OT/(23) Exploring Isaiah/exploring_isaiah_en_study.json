@@ -8,7 +8,7 @@
     "author"           :"Julie Rowbory",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Isaiah" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1,
+    "studyVersion"     :1.01,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -64,7 +64,7 @@
           "term"         :"Isaiah 1",
           "question"     :"Read Isaiah 1 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+1&version=NET\">Read Isaiah 1 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+1&version=NET\">Read Isaiah 1 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -348,7 +348,7 @@
           "term"         :"Isaiah 2–4",
           "question"     :"Read Isaiah 2–4 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+2&version=NET\">Read Isaiah 2–4 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+2&version=NET\">Read Isaiah 2–4 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -609,7 +609,7 @@
           "term"         :"Isaiah 5–6",
           "question"     :"Read Isaiah 5–6 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+5&version=NET\">Read Isaiah 5–6 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+5&version=NET\">Read Isaiah 5–6 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -688,8 +688,8 @@
           "eyebrow"      :"Session Handout",
           "term"         :"The Woes of Isaiah 5:8–25",
           "question"     :"Go through Isaiah 5:8–25 in your group. For each woe, summarise the offence and the Lord’s response. Is there any connection between the nature of the offence and the nature of the judgment?",
-          "answer"       :"<table style=’width:100%;border-collapse:collapse;font-size:0.9em;’><tr style=’background:#f0f0f0;’><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>Woe (verses)</th><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>The Offence</th><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>Therefore (verses)</th><th style=’padding:6px;border:1px solid #ccc;text-align:left;’>The Lord’s Response</th></tr><tr><td style=’padding:6px;border:1px solid #ccc;’>5:8–10</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:9–10, 15–17</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr style=’background:#fafafa;’><td style=’padding:6px;border:1px solid #ccc;’>5:11–12</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:13–14</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr><td style=’padding:6px;border:1px solid #ccc;’>5:18–19</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr style=’background:#fafafa;’><td style=’padding:6px;border:1px solid #ccc;’>5:20</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24–25</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr><td style=’padding:6px;border:1px solid #ccc;’>5:21</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24–25</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr><tr style=’background:#fafafa;’><td style=’padding:6px;border:1px solid #ccc;’>5:22–23</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td><td style=’padding:6px;border:1px solid #ccc;’>5:24–25</td><td style=’padding:6px;border:1px solid #ccc;’>&nbsp;</td></tr></table>",
-          "buttonText"   :"Show table ▼",
+          "answer"       :"<p>For each woe, work out the offence and the Lord’s response (the “therefore”). The verses to look at are:</p><ul><li>Woe: 5:8–10 &nbsp;→&nbsp; Therefore: 5:9–10, 15–17</li><li>Woe: 5:11–12 &nbsp;→&nbsp; Therefore: 5:13–14</li><li>Woe: 5:18–19 &nbsp;→&nbsp; Therefore: 5:24</li><li>Woe: 5:20 &nbsp;→&nbsp; Therefore: 5:24–25</li><li>Woe: 5:21 &nbsp;→&nbsp; Therefore: 5:24–25</li><li>Woe: 5:22–23 &nbsp;→&nbsp; Therefore: 5:24–25</li></ul>",
+          "buttonText"   :"Show handout ▼",
           "bottomPadding":"normal"
         },
         {
@@ -849,7 +849,7 @@
           "term"         :"Isaiah 7:1–9:7",
           "question"     :"Read Isaiah 7:1–9:7 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+7&version=NET\">Read Isaiah 7–9 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+7&version=NET\">Read Isaiah 7–9 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -1073,7 +1073,7 @@
           "term"         :"Isaiah 9:8–10:34",
           "question"     :"Read Isaiah 9:8–10:34 before working through the questions below. It is also worth reading on to the end of chapter 11.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+9&version=NET\">Read Isaiah 9–11 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+9&version=NET\">Read Isaiah 9–11 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -1244,7 +1244,7 @@
           "term"         :"Isaiah 11–12",
           "question"     :"Read Isaiah 11–12 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+11&version=NET\">Read Isaiah 11–12 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+11&version=NET\">Read Isaiah 11–12 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -1435,7 +1435,7 @@
           "term"         :"Isaiah 13–14",
           "question"     :"Read Isaiah 13–14 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+13&version=NET\">Read Isaiah 13–14 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+13&version=NET\">Read Isaiah 13–14 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -1654,7 +1654,7 @@
           "term"         :"Isaiah 15–18",
           "question"     :"Read Isaiah 15–18 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+15&version=NET\">Read Isaiah 15–18 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+15&version=NET\">Read Isaiah 15–18 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -1822,7 +1822,7 @@
           "term"         :"Isaiah 19–20",
           "question"     :"Read Isaiah 19–20 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+19&version=NET\">Read Isaiah 19–20 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+19&version=NET\">Read Isaiah 19–20 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -1965,7 +1965,7 @@
           "term"         :"Isaiah 21–23",
           "question"     :"Read Isaiah 21–23 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+21&version=NET\">Read Isaiah 21–23 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+21&version=NET\">Read Isaiah 21–23 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -2122,7 +2122,7 @@
           "term"         :"Isaiah 24–27",
           "question"     :"Read Isaiah 24–27 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+24&version=NET\">Read Isaiah 24–27 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+24&version=NET\">Read Isaiah 24–27 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -2279,7 +2279,7 @@
           "term"         :"Isaiah 28–29",
           "question"     :"Read Isaiah 28–29 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+28&version=NET\">Read Isaiah 28–29 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+28&version=NET\">Read Isaiah 28–29 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -2437,7 +2437,7 @@
           "term"         :"Isaiah 30–32",
           "question"     :"Read Isaiah 30–32 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+30&version=NET\">Read Isaiah 30–32 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+30&version=NET\">Read Isaiah 30–32 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -2580,7 +2580,7 @@
           "term"         :"Isaiah 33–35",
           "question"     :"Read Isaiah 33 first. Discuss it with your group, then read chapters 34–35.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+33&version=NET\">Read Isaiah 33–35 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+33&version=NET\">Read Isaiah 33–35 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -2714,7 +2714,7 @@
           "term"         :"Isaiah 36–39",
           "question"     :"Read Isaiah 36–37 first. Discuss those chapters, then read chapters 38–39.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+36&version=NET\">Read Isaiah 36–39 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+36&version=NET\">Read Isaiah 36–39 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -2857,7 +2857,7 @@
           "term"         :"Isaiah 40",
           "question"     :"Read Isaiah 40 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+40&version=NET\">Read Isaiah 40 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+40&version=NET\">Read Isaiah 40 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -3000,7 +3000,7 @@
           "term"         :"Isaiah 41:1–42:17",
           "question"     :"Read Isaiah 41:1–42:17 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+41&version=NET\">Read Isaiah 41–42 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+41&version=NET\">Read Isaiah 41–42 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -3152,7 +3152,7 @@
           "term"         :"Isaiah 42:18–44:23",
           "question"     :"Read Isaiah 42:18–43:21. Then read 43:22–44:23.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+42&version=NET\">Read Isaiah 42–44 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+42&version=NET\">Read Isaiah 42–44 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -3300,7 +3300,7 @@
           "term"         :"Isaiah 44:24–47:15",
           "question"     :"Read 44:24–45:25 first and discuss, then read 46:1–47:15.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+44&version=NET\">Read Isaiah 44–47 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+44&version=NET\">Read Isaiah 44–47 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -3429,7 +3429,7 @@
           "term"         :"Isaiah 48:1–50:3",
           "question"     :"Read Isaiah 48:1–50:3 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+48&version=NET\">Read Isaiah 48–50 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+48&version=NET\">Read Isaiah 48–50 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -3558,7 +3558,7 @@
           "term"         :"Isaiah 50:4–52:11",
           "question"     :"Read 50:4–51:8 first. Discuss it, then read 51:9–52:11.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+50&version=NET\">Read Isaiah 50–52 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+50&version=NET\">Read Isaiah 50–52 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -3701,7 +3701,7 @@
           "term"         :"Isaiah 52:13–53:12",
           "question"     :"Read Isaiah 52:13–53:12 slowly — perhaps twice. Let it land before working through the questions.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+52%3A13&version=NET\">Read Isaiah 52:13–53:12 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+52%3A13&version=NET\">Read Isaiah 52:13–53:12 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -3885,7 +3885,7 @@
           "term"         :"Isaiah 54–55",
           "question"     :"Read Isaiah 54–55 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+54&version=NET\">Read Isaiah 54–55 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+54&version=NET\">Read Isaiah 54–55 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -4019,7 +4019,7 @@
           "term"         :"Isaiah 56:1–57:21",
           "question"     :"Read Isaiah 56:1–57:21 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+56&version=NET\">Read Isaiah 56–57 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+56&version=NET\">Read Isaiah 56–57 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -4148,7 +4148,7 @@
           "term"         :"Isaiah 58:1–59:21",
           "question"     :"Read Isaiah 58:1–59:21 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+58&version=NET\">Read Isaiah 58–59 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+58&version=NET\">Read Isaiah 58–59 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -4277,7 +4277,7 @@
           "term"         :"Isaiah 60:1–61:11",
           "question"     :"Read Isaiah 60:1–61:11 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+60&version=NET\">Read Isaiah 60–61 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+60&version=NET\">Read Isaiah 60–61 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -4411,7 +4411,7 @@
           "term"         :"Isaiah 62:1–64:12",
           "question"     :"Read Isaiah 62:1–64:12 before working through the questions below.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+62&version=NET\">Read Isaiah 62–64 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+62&version=NET\">Read Isaiah 62–64 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -4568,7 +4568,7 @@
           "term"         :"Isaiah 65–66",
           "question"     :"Read Isaiah 65–66 before working through the questions below. As you read, look out for repeated descriptions of how the Lord communicates and what response he has to that communication.",
           "buttonText"   :"Open in Bible Gateway ↗",
-          "answer"       :"<p style=\"text-align:right;font-size:0.85em;\"><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+65&version=NET\">Read Isaiah 65–66 (NET) ↗</a></p>",
+          "answer"       :"<p><a href=\"https://www.biblegateway.com/passage/?search=Isaiah+65&version=NET\">Read Isaiah 65–66 (NET) ↗</a></p>",
           "bottomPadding":"normal"
         },
         {
@@ -4764,7 +4764,7 @@
       "icon"   :"⚙️",
       "eyebrow":"Make it yours",
       "heading":"Adjust to your preference",
-      "body"   :"<div style=\"font-size: ${FONT_MAX}px; line-height: 1.2; margin-bottom: 15px;\">\n      If you need bigger text go straight to settings now\n    </div>",
+      "body"   :"<div>\n      If you need bigger text go straight to settings now\n    </div>",
       "action" :{
         "id"   :"settings",
         "label":"⚙ Settings",
