@@ -29,7 +29,7 @@
           "type": "text",
           "subtype": "intro",
           "format": "HTML",
-          "text": "<p>Before you read chapter 1 of the book, work through these passages. Notice what each says about the gospel.</p>"
+          "text": "<p>Before you read chapter 1 of the book, work through these passages. Notice what each says about the gospel. When you have written an answer, tap Check [[icon:localValidate]] to see how it compares.</p>"
         },
         {
           "elementId": "ch01-el02",

@@ -1,6 +1,6 @@
 # study.json authoring guide (as the code actually behaves)
 
-For an assistant who writes `study.json` and cannot see the app. Derived from reading `study-loader.js`, `answer-match.js`, `validation.js`, `render-*.js`, `modals.js`, `format-text.js`, `gallery.js`, `onboarding.js` at `main` (18 Oct 2026). **This is the authority for what the app does**; if an older note, template or example disagrees with it, trust this file. A short walk-through is in `AUTHORING-TUTORIAL.md`, a worked example in `example_study_excerpt.json`, and `validate_study.py` checks a file against section 13. Section 12 lists what was not verified.
+For an assistant who writes `study.json` and cannot see the app. Derived from reading `study-loader.js`, `answer-match.js`, `validation.js`, `render-*.js`, `modals.js`, `format-text.js`, `icons.js`, `gallery.js`, `onboarding.js` at `main` (20 Oct 2026). **This is the authority for what the app does**; if an older note, template or example disagrees with it, trust this file. A short walk-through is in `AUTHORING-TUTORIAL.md`, a worked example in `example_study_excerpt.json`, and `validate_study.py` checks a file against section 13. Section 12 lists what was not verified.
 
 Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or rejected.
 
@@ -44,7 +44,7 @@ Footnotes (`[[fn:N]]` markers with a chapter `footnotes: [{id, body}]` array) wo
 - You cannot paste an `<svg>` yourself: the cleaning step removes it, and a pasted icon could not follow the reader's icon style.
 - The icon is decorative and hidden from screen readers, so always name the button in words too ("tap Check"), as in the example.
 - An unknown name is removed, and the validator warns about it. Search and text-to-speech skip the marker.
-- Apps older than this feature show the marker as literal text.
+- A style change in Settings shows on the next chapter render, like every other icon. Apps older than this feature show the marker as literal text.
 
 ## 4. Top-level blocks
 
@@ -88,7 +88,8 @@ Every element: `type` and **`elementId`** (string; the app needs it unique withi
 - Multi-translation: set `studyMetadata.bibleTranslation1..N` (string label, or `{lang: label}`), then `bibleRef1..N`, `passageText1..N`, `passageUrl1..N` matched by number. Empty `passageText` slots are skipped.
 - A question's `linkedPassage` must equal the passage's `bibleRef` / `bibleRef1` **exactly**, and the passage must come **earlier in `elements[]`** than the question or the reference is not tappable on first view. ✖ `note`. Compare the dash too: `Titus 2:11–14` (en dash) and `Titus 2:11-14` (hyphen) are different strings.
 - `passageText` is shown exactly as written, so hand-supplied text works. A passage that crosses a chapter boundary is still one element: label the first verse of the new chapter in full (`<sup>2:1</sup>`) and set `bibleRef` to `1 John 1:5–2:2`. An omitted verse needs no marker; the numbers just skip (14, 15, 17…).
-- The link under the pop-up is always labelled "NET - see context ↗", whatever the translation (a known label bug; the link itself goes to your `passageUrl`).
+- The link under the pop-up reads "*label* - see context ↗" (for example "NIV - see context ↗"), where *label* is the translation label: `translation`, or the matching `bibleTranslationN` label. The link goes to your `passageUrl`; with no `passageUrl` there is no link. *(Fixed in app 0.6.3; older versions always said "NET".)*
+- `passageText` is cleaned to the allowed-tag list in section 3, so `<ul>`, `<ol>` and `<li>` work (and are spaced and indented in the pop-up); tables and `div` are stripped.
 
 **`question`** (answer box; saved under `q_<elementId>`, or `r_` for reflection):
 - Required: `question` (numbered, HTML). Optional: `answerPlaceholder` (numbered, plain text), `linkedPassage`, `sampleAnswer` (numbered), `questionHint` (numbered), `keyTerms` (numbered array of `"alt|alt|prefix$|*inside"` strings; max 12 entries), `mainPoint` (numbered; shown by the **Main point** button once the reader has written an answer; ≤2,000 characters) with `mainPointFormat` (`markdown` default | `HTML` | `plainText`; not numbered), `deeper`, `format`.
@@ -147,6 +148,7 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 - `onboarding.js` internals beyond slide fields, `render-library.js` shelf edge cases, and the editor tools in `app/*.html` (which may enforce stricter rules than the app) were not read in full.
 - Very large studies: a 480 KB study with 9 chapters and 11 appendix chapters loads in about 40 ms and scrolls smoothly in desktop Chromium. Bigger files and slow Android devices were not measured; only the zip limits above are enforced.
 - The look of tables and Previous/Next buttons was checked at 380 px in light and dark mode, and right-to-left mirrors, in desktop Chromium only.
+- `[[icon:name]]` is covered by unit tests of the marker-swapping code only; it has not yet been seen rendering in the browser or on a device, and the full list of icon keys is whatever `ICONS_ROUNDED` in `icons.js` defines.
 - Limits not listed here do not exist in the code as far as I found: no maximum on text length, element count or `studyId` length.
 
 ## 13. Pre-flight checklist (what fails silently)
@@ -161,7 +163,7 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 6. No Go Deeper or Leaders' block key ends in a digit (required in multilingual studies; keep the habit in single-language ones).
 7. Table rows all add up to the same width once `colspan` is counted; tables are in `format: "HTML"` bodies.
 8. `keyTerms` is an array of strings (at most 12); `mainPoint` is 2,000 characters or fewer.
-9. No `studyAiData`, no `apiKey`, no `style=` attributes, no `<script>`, no leftover template placeholders (`${…}`), and no `<table>` in a callout `answer` or other pop-up text (tables are stripped there; use a list).
+9. No `studyAiData`, no `apiKey`, no `style=` attributes, no `<script>`, no leftover template placeholders (`${…}`), no `<table>` in a callout `answer` or other pop-up text (tables are stripped there; use a list), and every `[[icon:name]]` names a real icon (the validator warns on unknown names).
 10. Raise `studyVersion` (1.03 → 1.04) whenever you change a file that readers may already have; the same version is ignored.
 11. Declared images exist: `images/<elementId>.webp` for every `image` without `src`; gallery `src` files are in the zip.
 12. Before release open it in the app: a passage pop-up, a hint, a footnote, a table at phone width, Read more and Back to study, and the copyright page (section 9: it always prints CC BY-SA, whatever you declare).
