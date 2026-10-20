@@ -23,6 +23,7 @@
   "modals_likert_rotate_tip": " 💡 Amagezi: kyusa ekyuma kyo ebbali osobole okulaba obulungi minzaani.",
   "modals_verse_ref_label": " <span class=\"tewali kuvvuunula\">{ref} (NET) .",
   "modals_verse_net_link": " NET - laba ensonga ↗",
+  "modals_verse_link": " {label} - laba ensonga ↗",
   "modals_notes_info_title": " Ebiwandiiko oba Ebibuuzo",
   "modals_notes_info_body": "<p>Kozesa ekifo kino ku kintu kyonna ekitakwatagana bulungi mu bibuuzo ebitegekeddwa:</p><p>• Okufumiitiriza kw’omuntu ku ssuula</p><p>• Okuwandiika mu kiseera ky’okukubaganya ebirowoozo mu kibiina</p><p>• Ebiwandiiko by’okusaba ebikubirizibwa by’osomye</p><p>• Ebibuuzo by’olina okuleeta eri omukulembeze oba omubuulirizi</p><p>Ebiwandiiko bino bibaamu ng’okozesa bbaatuuni ya <b>Gabana</b> ku kino essuula.</p>",
   "modals_info_trigger_default_label": " Ebisingawo",

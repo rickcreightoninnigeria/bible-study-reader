@@ -138,6 +138,19 @@
   font-size: 9px;          /* footnote superscript — stays px */
 }
 
+/* ── Lists inside the passage pop-up ─────────────────────────────────────── */
+/* padding-inline-start flips automatically in RTL, as in the other modals. */
+.verse-modal-text ul,
+.verse-modal-text ol {
+  padding-inline-start: 1.4em;
+  margin: 8px 0;
+}
+.verse-modal-text li {
+  margin-bottom: 4px;
+}
+
+.verse-modal-text p + p { margin-top: 6px; }
+
 /* Attribution footer with link to full passage */
 .verse-modal-footer {
   margin-top: 16px;

@@ -349,7 +349,7 @@ function _renderVerseTranslation(tr, ref) {
   safeSetHtml('verseModalText', tr.text);
   safeSetHtml('verseModalFooter',
     tr.url
-      ? `(<a href="${_safeUrl(tr.url)}" target="_blank">${t('modals_verse_net_link')}</a>)`
+      ? `(<a href="${_safeUrl(tr.url)}" target="_blank">${t('modals_verse_link', { label: escapeHtml(tr.label) })}</a>)`
       : '');
   _wireVerseModalSpeak(tr.text);
 }
