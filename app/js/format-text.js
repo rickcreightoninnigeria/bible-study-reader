@@ -25,7 +25,9 @@
 // by a third party cannot inject executable code through formatted fields.
 //
 // Footnote buttons are NOT authored content: expandFootnoteMarkers() adds them
-// after sanitising, as data-driven buttons with no inline handler.
+// after sanitising, as data-driven buttons with no inline handler. Inline icons
+// work the same way: an author writes [[icon:name]] and expandIconMarkers()
+// swaps in the app's own SVG after sanitising (see below).
 //
 // If you ever need to allow additional tags (e.g. <table>) for a new element
 // type, add them to ALLOWED_TAGS rather than loosening the config globally.
@@ -122,7 +124,7 @@ function expandFootnoteMarkers(html, footnotes) {
     const fn  = footnotes.find(f => f.id === num);
     if (!fn) return `<sup>${n}</sup>`;
     const key = String(++_footnoteKeySeq);
-    _footnoteBodies.set(key, { title: `Note\u00a0${num}`, body: sanitizeHtml(fn.body) });
+    _footnoteBodies.set(key, { title: `Note\u00a0${num}`, body: expandIconMarkers(sanitizeHtml(fn.body)) });
     return `<sup><button class="footnote-btn" data-fn-key="${key}">${num}</button></sup>`;
   });
 }
@@ -133,6 +135,42 @@ document.addEventListener('click', e => {
   const fn = _footnoteBodies.get(btn.dataset.fnKey);
   if (fn) openFootnoteModal(fn.title, fn.body);
 });
+
+// ── INLINE ICONS ──────────────────────────────────────────────────────────────
+// An author can show one of the app's own icons inside formatted text with
+// [[icon:name]], where name is a key of ICONS (icons.js), e.g.
+//   "Tap Check [[icon:localValidate]] to see how your answer compares."
+// The sanitiser allows neither <svg> nor style, and a pasted icon could not
+// follow the reader's icon style anyway. So the marker travels through
+// sanitising as plain text and is swapped for ICONS[name] afterwards. The SVG
+// therefore always comes from the app, never from the study file, and always
+// matches the style chosen in Settings (as at the time the view is rendered,
+// like every other dynamic icon).
+//
+// Only markers in text are replaced. Markup is skipped, so a marker inside an
+// attribute value (href="[[icon:x]]") can never put an SVG into a tag.
+// An unknown name is removed rather than shown as literal text. The icon is
+// decorative (aria-hidden): the surrounding sentence should name the button.
+const _ICON_MARKER_RE = /\[\[icon:([A-Za-z0-9]+)\]\]/g;
+// A tag, honouring quoted attribute values that may contain '>'.
+const _HTML_TAG_RE    = /(<(?:"[^"]*"|'[^']*'|[^'">])*>)/;
+
+function expandIconMarkers(html) {
+  if (!html || html.indexOf('[[icon:') === -1) return html;
+  return html.split(_HTML_TAG_RE).map((part, i) => {
+    if (i % 2) return part;                       // odd indices are tags
+    return part.replace(_ICON_MARKER_RE, (_, name) =>
+      Object.prototype.hasOwnProperty.call(ICONS, name) && ICONS[name]
+        ? `<span class="inline-icon" aria-hidden="true">${ICONS[name]}</span>`
+        : '');
+  }).join('');
+}
+
+// stripIconMarkers(str) removes [[icon:name]] markers from RAW study text, for
+// consumers that read the unrendered string (search snippets, text-to-speech).
+function stripIconMarkers(str) {
+  return String(str ?? '').replace(_ICON_MARKER_RE, '');
+}
 
 // ── renderFormatted(text, format, footnotes) ─────────────────────────────────
 // Master formatting entry point. Accepts a raw string and a format identifier
@@ -166,7 +204,8 @@ function renderFormatted(text, format, footnotes) {
   else if (fmt === 'markdown') html = sanitizeHtml(_md.render(text));
   else                         html = renderParas(text);
   // Markers are plain text, so they survive all three paths unchanged.
-  return footnotes ? expandFootnoteMarkers(html, footnotes) : html;
+  html = footnotes ? expandFootnoteMarkers(html, footnotes) : html;
+  return expandIconMarkers(html);
 }
 
 // ── renderFormattedArray(items, format) ──────────────────────────────────────
@@ -187,10 +226,10 @@ function renderFormattedArray(items, format) {
   if (!Array.isArray(items) || items.length === 0) return '';
   const fmt = (format || 'plainText').toLowerCase();
   if (fmt === 'markdown') {
-    return items.map(item => sanitizeHtml(_md.render(item || ''))).join('');
+    return expandIconMarkers(items.map(item => sanitizeHtml(_md.render(item || ''))).join(''));
   }
   // HTML and plainText: wrap each item in <p>, sanitising each item first.
   // plainText is sanitised rather than escaped for the reason given on
   // renderParas() above.
-  return items.map(item => `<p>${sanitizeHtml(item)}</p>`).join('\n');
+  return expandIconMarkers(items.map(item => `<p>${sanitizeHtml(item)}</p>`).join('\n'));
 }

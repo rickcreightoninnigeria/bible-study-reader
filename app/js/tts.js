@@ -40,6 +40,9 @@ function ttsStripHtml(html) {
   // 1. Decode all HTML entities first (handles &mdash; &rsquo; &hellip; etc.)
   html = _ttsDecodeEntities(html);
 
+  // 1a. Drop [[icon:name]] markers: the surrounding text names the button.
+  html = stripIconMarkers(html);
+
   // 1b. Convert numeric ranges (hyphen/en-dash/em-dash between numbers) to "to"
   //     Handles verse refs (3:15–16), plain ranges (15-16), and prefixed refs (pp. 15-16).
   //     \u2013 = en dash, \u2014 = em dash. Placed after entity decoding so that

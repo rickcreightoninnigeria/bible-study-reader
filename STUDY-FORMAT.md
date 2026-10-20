@@ -38,6 +38,14 @@ Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or 
 
 Footnotes (`[[fn:N]]` markers with a chapter `footnotes: [{id, body}]` array) work **only in Go Deeper chapters**. Study chapters never pass footnotes, so markers there show as literal text.
 
+**Inline icons.** `[[icon:name]]` shows one of the app's own icons inside text, in whichever icon style the reader has chosen in Settings, e.g. `Tap Check [[icon:localValidate]] to see how your answer compares.` `name` is an icon key such as `localValidate` (the shield with a tick), `mainPoint`, `triggerInfo`, `starEmpty`, `starFilled`, `speak`, `mic`, `save`, `print` or `share`. Rules:
+
+- It works in `text` elements, image captions, question `header`, the `body` of a `highlighted` callout, Go Deeper and Leaders' Notes blocks and intros (any format), and footnote bodies. It does **not** work in the other unformatted fields listed above (question text, headings, callout eyebrow/term/question, Likert text, and so on): there the marker shows as literal text.
+- You cannot paste an `<svg>` yourself: the cleaning step removes it, and a pasted icon could not follow the reader's icon style.
+- The icon is decorative and hidden from screen readers, so always name the button in words too ("tap Check"), as in the example.
+- An unknown name is removed, and the validator warns about it. Search and text-to-speech skip the marker.
+- Apps older than this feature show the marker as literal text.
+
 ## 4. Top-level blocks
 
 | Block | Required | Rendered by |

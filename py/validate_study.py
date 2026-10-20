@@ -8,7 +8,7 @@ silently. Errors mean something will not work; warnings mean a field is
 ignored or a habit is risky. Exit status is 1 if there are any errors.
 Standard library only.
 """
-import json, re, sys, zipfile
+import json, os, re, sys, zipfile
 
 ID_RE = re.compile(r'^[A-Za-z0-9_.-]+$')
 GD_RESERVED = {'chapterNumber', 'backToStudy', 'format', 'title', 'footnotes',
@@ -33,6 +33,17 @@ def strings(o, path='', out=None):
         for k, v in o.items():
             strings(v, f'{path}.{k}' if path else k, out)
     return out
+
+
+def icon_names():
+    """Keys of ICONS_ROUNDED in app/js/icons.js, or None if that file is not found."""
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'app', 'js', 'icons.js')
+    try:
+        src = open(p, encoding='utf-8').read()
+        a = src.index('const ICONS_ROUNDED = {')
+        return set(re.findall(r'^\s{2}([A-Za-z0-9]+):\s*`', src[a:src.index('\n};', a)], re.M))
+    except (OSError, ValueError):
+        return None
 
 
 def keys_anywhere(o, names, path='', out=None):
@@ -92,6 +103,13 @@ def main(path):
     if not isinstance(chapters, list) or not chapters:
         err('chapters[] is missing or empty')
         chapters = []
+
+    names = icon_names()
+    if names:
+        for path_, s_ in strings(study):
+            for m in re.findall(r'\[\[icon:([A-Za-z0-9]*)\]\]', s_):
+                if m not in names:
+                    warn(f'{path_}: [[icon:{m}]] is not an app icon and will be removed')
 
     seen_ids, nums = {}, set()
     for ch in chapters:

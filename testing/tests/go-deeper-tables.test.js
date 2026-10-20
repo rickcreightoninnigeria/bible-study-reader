@@ -33,6 +33,7 @@ function makeSandbox() {
     console,
     // Stand-ins: the sanitiser and resolvers are not what is under test here.
     sanitizeHtml: s => s,
+    expandIconMarkers: s => s,
     renderFormatted: s => s,
     buildGalleryHtml: () => '',
     resolveMetaField: (ch, field) => ch[field],

@@ -65,7 +65,7 @@ function highlightMatch(text, query) {
 }
 
 function stripHtml(html) {
-  return String(html ?? '').replace(/<[^>]+>/g, '');
+  return stripIconMarkers(html).replace(/<[^>]+>/g, '');
 }
 
 // ── DEBOUNCE ──────────────────────────────────────────────────────────────────
