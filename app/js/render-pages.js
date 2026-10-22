@@ -41,6 +41,8 @@ function getSettingsTabs() {
     { id: 'language', label: () => `${currentLangFlag()} ${t('renderpages_tab_language')}` },
   ];
   if (mode === 'intermediate' || mode === 'advanced') tabs.push({ id: 'library', label: () => t('renderpages_tab_library') });
+  // Always last, and in every mode: it is for the moment something does not work.
+  tabs.push({ id: 'diagnostics', label: () => t('renderpages_tab_diagnostics') });
   return tabs;
 }
 
@@ -1525,12 +1527,25 @@ async function renderSettings(tabId) {
       </div>`;
   }
 
+  // ── Tab: Diagnostics ───────────────────────────────────────────────────────
+  // The body is filled in after the page is drawn (it reads storage, which is
+  // asynchronous): see renderDiagnosticsInto() in diagnostics.js.
+  function tabDiagnostics() {
+    return `
+      <div class="settings-section">
+        <div class="settings-section-heading">${t('renderpages_tab_diagnostics')}</div>
+        <div class="settings-row-desc" style="margin-bottom:16px;">${t('diag_intro')}</div>
+        <div id="diagnosticsBody" class="diag-body">${t('diag_loading')}</div>
+      </div>`;
+  }
+
   // ── Tab dispatch ───────────────────────────────────────────────────────────
   const tabContentFns = {
     app:      tabApp,
     study:    tabStudy,
     language: tabLanguage,
     library:  tabLibrary,
+    diagnostics: tabDiagnostics,
   };
 
   const tabBarHtml = `
@@ -1569,6 +1584,7 @@ async function renderSettings(tabId) {
 
   window.scrollTo(0, 0);
   updateSettingsControls();
+  if (activeTab === 'diagnostics') renderDiagnosticsInto('diagnosticsBody');
   if (activeTab === 'app') {
     createInfoTrigger(
       'interface-mode-intro',

@@ -10,6 +10,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 
 **`app/js/` (first-party)**
 - `error-report.js` — loaded FIRST; global `error`/`unhandledrejection` handlers, a log of the last 20 errors (`localStorage` key `bsr_error_log`), `reportError(err, {context, dialog})`, `showErrorDialog()` (message, list of lines, Copy details), a dismissible banner. Builds all DOM with `textContent`. Used by the study loader (open/install failures, per-file install summary) and by `renderChapter()` (one failing item no longer aborts the chapter).
+- `diagnostics.js` — the Settings → Diagnostics tab (always the last tab, every interface mode): `collectDiagnostics()`, `formatDiagnosticsReport()` (plain-English text for "Copy report"), `renderDiagnosticsInto()`. Read-only: app/device/feature/storage details, installed studies (flags missing content and a version record that disagrees with the saved study), version records left by deleted studies, and the error log from `error-report.js`. Holds no answers or personal data.
 - `format-text.js` — DOMPurify config, markdown-it instance, `renderFormatted/renderParas/renderFormattedArray`, footnote-button expansion.
 - `state.js` — `window.*` state vars and IDB key helpers (`chapterAnswersIDBKey` etc.).
 - `i18n.js` — `LANGUAGE_MAP`, `resolveLanguage`, `applyLanguageToDom`, `t()`, `setLanguage`.
