@@ -79,6 +79,7 @@ css/
   08-themes.css             Print / PDF export styles (@media print)
 
 js/
+  error-report.js           Global error handlers, error log, "Copy details" dialog and banner, install-summary dialog
   format-text.js            Converts stored text (HTML / markdown / plain) into sanitised display HTML
   state.js                  All mutable globals (chapters, settings, nav state); IDB field-key helpers
                              (answerFieldKey(), likertFieldKey(), chapterAnswersIDBKey(), etc.)
@@ -152,6 +153,7 @@ See `ARCHITECTURE.md` for a fuller overview of the codebase.
 
 | # | File | Key globals it declares | Depends on |
 |---|------|------------------------|------------|
+| 0 | `error-report.js` | `reportError()`, `recordError()`, `showErrorDialog()`, `getErrorLog()`, `clearErrorLog()`, global `error` / `unhandledrejection` handlers | — (loaded first on purpose, so a later script that fails to load or parse is still reported) |
 | 1 | `sweetalert2.all.min.js` | `Swal` / `Sweetalert2` | — |
 | 2 | `jszip.min.js` | `JSZip` | — |
 | 3 | `purify.min.js` | `DOMPurify` | — |

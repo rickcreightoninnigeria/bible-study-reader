@@ -132,7 +132,23 @@ function showVersionWarning(msg) {
 }
 
 // 3. Switch the Engine to a specific Study
+// Opens an installed study from the library. Any failure is reported in a
+// dialog that names the study and offers "Copy details"; before this, an error
+// here (a render crash, say) was an unhandled rejection and the reader saw
+// nothing happen.
 async function activateStudy(id) {
+  try {
+    await _activateStudyUnsafe(id);
+  } catch (err) {
+    reportError(err, {
+      context: 'open-study', studyId: id, dialog: true,
+      title:   t('errorreport_title'),
+      message: t('errorreport_open_study_failed'),
+    });
+  }
+}
+
+async function _activateStudyUnsafe(id) {
     let data;
     try {
       data = await StudyIDB.get(`study_content_${id}`);
@@ -217,28 +233,26 @@ async function handleFileSelect(event) {
 // Library picker (handleFileSelect) and the study picker
 // (handlePickerFileChange).
 async function _installMultipleFiles(files) {
-    let installed = 0;
-    let failed = 0;
+    const results = [];
     const pathwayTexts = [];
     showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
     for (const file of files) {
         try {
             const text = await _readPathwayFileText(file);
             if (text !== null) { pathwayTexts.push(text); continue; }
-            await _installStudyFileQuietly(file);
-            installed++;
+            results.push(await _installStudyFileQuietly(file));
         } catch (err) {
             console.error(`Failed to install ${file.name}:`, err);
-            failed++;
+            recordError(err, { context: 'install-file', file: file.name });
+            results.push({ status: 'failed', name: file.name, reason: err.message });
         }
     }
     await Router.navigate({ page: 'library' });
     switchLibTab('all');
     for (const text of pathwayTexts) await importPathwaysFromText(text);
-    if (failed === 0) {
+    const { installed, allGood } = _summariseInstall(results);
+    if (allGood) {
         showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
-    } else {
-        showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
     }
 }
 
@@ -949,7 +963,7 @@ async function loadStudyFromJson(jsonString) {
         // alert() is blocked or unstyled on Android WebView — this function is
         // called directly from Kotlin via the JS bridge, so showPickerError()'s
         // safe fallback chain (Swal → toast → static HTML) is used instead.
-        showPickerError(t('studyloader_error_load_json', { error: e.message }));
+        _reportLoadError(e, 'JSON', 'load-json');
     }
 }
 
@@ -975,7 +989,7 @@ async function loadStudyFromBase64(base64String) {
         // Use loadAnyFile (not loadStudyFromFile) so bundle zips are handled
         await loadAnyFile(file);
     } catch (e) {
-        showPickerError(t('studyloader_error_load_file_base64', { error: e.message }));
+        _reportLoadError(e, 'incoming.estudy', 'load-base64');
     }
 }
 
@@ -1071,8 +1085,7 @@ async function loadAnyFile(file) {
       }
     }
   } catch (err) {
-    showPickerError(t('studyloader_error_load_file', { filename: file.name, error: err.message }));
-    console.error(err);
+    _reportLoadError(err, file.name, 'load-file');
   }
 }
 
@@ -1220,8 +1233,30 @@ function _shouldInstallStudy(incomingData, { isUserInitiated = false } = {}) {
   return installedVersion === 0 ? 'install' : 'skip';
 }
 
+// Describes what _installStudyFileQuietly() did, so callers that tell the
+// reader (multi-file picks, bundles) can say more than "failed: 1".
+//   status: 'installed' | 'updated' | 'unchanged' (same version already there)
+//         | 'older' (file is older than the installed version) | 'failed'
+function _quietInstallResult(status, data, studyId, name, extra = {}) {
+  const meta = (data && data.studyMetadata) || {};
+  return {
+    status, name, studyId,
+    title:   meta.title || studyId || name,
+    version: parseFloat(meta.studyVersion) || 0,
+    ...extra,
+  };
+}
+
+// Result for a file that was skipped because an equal-or-newer version is already installed.
+function _quietSkipResult(data, studyId, name) {
+  const installed = _getInstalledStudyVersion(studyId);
+  const incoming  = parseFloat(data.studyMetadata?.studyVersion) || 0;
+  return _quietInstallResult(incoming < installed ? 'older' : 'unchanged', data, studyId, name, { installed });
+}
+
 // Installs a single .estudy File object into IDB and the registry without
-// activating it or touching the UI.  Used by installDefaultStudiesIfNeeded()
+// activating it or touching the UI. Returns a result object (see
+// _quietInstallResult); the bundled-studies installer ignores it.  Used by installDefaultStudiesIfNeeded()
 // so the default studies land silently in the background.
 //
 // Supports both zip-format .estudy (study.json + images/) and legacy plain-JSON.
@@ -1245,7 +1280,7 @@ async function _installStudyFileQuietly(file, fileName) {
       Object.values(zip.files).find(f => !f.dir && f.name.endsWith('.json') && !f.name.includes('/'));
     if (!jsonFile) {
       console.warn('[defaultStudies] Skipping', name, '— no JSON file found inside');
-      return;
+      return _quietInstallResult('failed', null, '', name, { reason: 'no_study_json' });
     }
 
     const jsonString = await _readZipEntry(jsonFile, 'string');
@@ -1253,7 +1288,7 @@ async function _installStudyFileQuietly(file, fileName) {
     const studyId    = data.studyMetadata?.studyId;
     if (!isSafeStudyId(studyId)) {
       console.warn('[defaultStudies] Skipping', name, '— missing or invalid studyMetadata.studyId');
-      return;
+      return _quietInstallResult('failed', data, '', name, { reason: 'no_study_id' });
     }
 
     // Version check: skip silently if an equal-or-newer version is already installed —
@@ -1263,11 +1298,12 @@ async function _installStudyFileQuietly(file, fileName) {
     // IDB content is gone (mirrors the same check in loadStudyFromJson()).
     // isUserInitiated is false here — this path is only reached from the bundled
     // installer, which uses the app-version flag as its primary gate.
+    const priorVersion = _getInstalledStudyVersion(studyId);
     if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
       const existing = await StudyIDB.get(`study_content_${studyId}`);
       if (existing) {
         console.log('[defaultStudies] Skipping', studyId, '— installed version is current or newer');
-        return;
+        return _quietSkipResult(data, studyId, name);
       }
       console.log('[defaultStudies] Version record says skip but content is missing for', studyId, '— reinstalling.');
     }
@@ -1334,6 +1370,7 @@ async function _installStudyFileQuietly(file, fileName) {
     if (installedVer > 0) _setInstalledStudyVersion(studyId, installedVer);
     // recordStudyInstalled is intentionally omitted — these are pre-installed,
     // not user-installed, and shouldn't pollute the Recently Installed list.
+    return _quietInstallResult(priorVersion > 0 && installedVer > priorVersion ? 'updated' : 'installed', data, studyId, name);
 
   } else {
     // ── Legacy plain-JSON .estudy ───────────────────────────────────────────
@@ -1346,17 +1383,18 @@ async function _installStudyFileQuietly(file, fileName) {
     const studyId = data.studyMetadata?.studyId;
     if (!isSafeStudyId(studyId)) {
       console.warn('[defaultStudies] Skipping plain-JSON', name, '— missing or invalid studyId');
-      return;
+      return _quietInstallResult('failed', data, '', name, { reason: 'no_study_id' });
     }
 
     // Version check: skip silently if an equal-or-newer version is already installed —
     // *provided the content is actually still there* (see the zip-format branch above
     // for why).
+    const priorVersion = _getInstalledStudyVersion(studyId);
     if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
       const existing = await StudyIDB.get(`study_content_${studyId}`);
       if (existing) {
         console.log('[defaultStudies] Skipping plain-JSON', studyId, '— installed version is current or newer');
-        return;
+        return _quietSkipResult(data, studyId, name);
       }
       console.log('[defaultStudies] Version record says skip but content is missing for', studyId, '(plain-JSON) — reinstalling.');
     }
@@ -1372,7 +1410,60 @@ async function _installStudyFileQuietly(file, fileName) {
     // Record the installed studyVersion so future installs can compare against it.
     const installedVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
     if (installedVer > 0) _setInstalledStudyVersion(studyId, installedVer);
+    return _quietInstallResult(priorVersion > 0 && installedVer > priorVersion ? 'updated' : 'installed', data, studyId, name);
   }
+}
+
+// ── INSTALL SUMMARY ──────────────────────────────────────────────────────────
+// Multi-file picks and bundles install quietly, one file after another. Each
+// file's result is collected here and, unless every file went in as new or as
+// an update, shown in a dialog that says what happened to each one. Before
+// this, a file that was skipped (same or older version) or could not be read
+// was counted as "installed" or hidden in a console message.
+
+// One line of the summary: { ok, text } for a result object.
+function _installResultLine(r) {
+  const v = { title: r.title, version: r.version, installed: r.installed, incoming: r.version, name: r.name };
+  switch (r.status) {
+    case 'installed': return { ok: true,  text: t('errorreport_install_installed', v) };
+    case 'updated':   return { ok: true,  text: t('errorreport_install_updated', v) };
+    case 'unchanged': return { ok: false, text: t('errorreport_install_unchanged', v) };
+    case 'older':     return { ok: false, text: t('errorreport_install_older', v) };
+    default: {
+      const reason = r.reason === 'no_study_json' ? t('errorreport_reason_no_study_json')
+                   : r.reason === 'no_study_id'   ? t('errorreport_reason_no_study_id')
+                   : (r.reason || '');
+      return { ok: false, text: t('errorreport_install_failed', { name: r.name, reason }) };
+    }
+  }
+}
+
+// Plain-text version for "Copy details".
+function _installResultDetails(results) {
+  const head = `Bible Study Reader ${window.appAboutData?.appVersion || ''}`.trim();
+  return [head, ...results.map(r =>
+    `${r.status}: ${r.name}` +
+    (r.studyId ? ` | ${r.studyId}` : '') +
+    (r.version ? ` | file v${r.version}` : '') +
+    (r.installed ? ` | installed v${r.installed}` : '') +
+    (r.reason ? ` | ${r.reason}` : ''))].join('\n');
+}
+
+// Counts the results that went in, and shows the dialog when any did not.
+// Returns { installed, allGood } so the caller can show its usual toast when
+// everything went in.
+function _summariseInstall(results) {
+  const installed = results.filter(r => r.status === 'installed' || r.status === 'updated').length;
+  const allGood   = installed === results.length;
+  if (!allGood) {
+    showErrorDialog({
+      title:   t('errorreport_install_title'),
+      message: t('errorreport_install_intro'),
+      lines:   results.map(_installResultLine),
+      details: _installResultDetails(results),
+    });
+  }
+  return { installed, allGood };
 }
 
 // Processes a bundle zip that contains multiple .estudy or .zip study files.
@@ -1384,8 +1475,7 @@ async function _installStudyFileQuietly(file, fileName) {
 // come from files the user opened directly.
 async function loadBundleFromFile(outerZip, innerStudyFiles, pathwaysEntry = null) {
   const total = innerStudyFiles.length;
-  let installed = 0;
-  let failed = 0;
+  const results = [];
 
   showToast({ message: t('studyloader_bundle_installing', { count: total }), isManual: true });
 
@@ -1393,13 +1483,14 @@ async function loadBundleFromFile(outerZip, innerStudyFiles, pathwaysEntry = nul
     try {
       const blob = await _readZipEntry(entry, 'blob');
       const innerFile = new File([blob], entry.name, { type: 'application/octet-stream' });
-      await _installStudyFileQuietly(innerFile);
-      installed++;
+      results.push(await _installStudyFileQuietly(innerFile));
     } catch (err) {
       console.error(`Failed to install ${entry.name}:`, err);
-      failed++;
+      recordError(err, { context: 'install-bundle-entry', file: entry.name });
+      results.push({ status: 'failed', name: entry.name, reason: err.message });
     }
   }
+  const installed = results.filter(r => r.status === 'installed' || r.status === 'updated').length;
 
   // Open the library once so the user sees all newly installed studies together.
   // recordStudyInstalled is called here (not inside _installStudyFileQuietly)
@@ -1417,10 +1508,9 @@ async function loadBundleFromFile(outerZip, innerStudyFiles, pathwaysEntry = nul
     if (pathwaysText !== null) await importPathwaysFromText(pathwaysText, { bundledStudyCount: installed });
   }
 
-  if (failed === 0) {
+  const summary = _summariseInstall(results);
+  if (summary.allGood) {
     showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
-  } else {
-    showToast({ message: t('studyloader_bundle_partial', { installed, failed }), isManual: true });
   }
 }
 
@@ -1629,8 +1719,19 @@ async function loadStudyFromFile(file) {
     }
 
   } catch (err) {
-    showPickerError(t('studyloader_error_load_file', { filename: file.name, error: err.message }));
+    _reportLoadError(err, file.name, 'install-study');
   }
+}
+
+// Reports an exception thrown while loading a file. Unlike showPickerError()
+// (one line of text), this records the error, names the file, and offers Copy
+// details so a reader can tell the author what happened.
+function _reportLoadError(err, filename, context) {
+  reportError(err, {
+    context, file: filename, dialog: true,
+    title:   t('errorreport_title'),
+    message: t('errorreport_load_file_failed', { filename }) + ' ' + ((err && err.message) || ''),
+  });
 }
 
 function showPickerError(msg) {

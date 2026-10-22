@@ -14,6 +14,10 @@
 
   SCRIPT ORDER MATTERS
   ────────────────────
+  error-report.js is deliberately FIRST and depends on nothing: it installs the
+  global error handlers, so a script that fails to download or parse later in
+  this list is still reported instead of failing silently.
+
   Files may call later-loaded functions at runtime, but a few things run at
   load time and need earlier files: format-text.js needs DOMPurify and
   markdown-it; render-progress.js and save.js call debounce() (search.js);
@@ -197,6 +201,7 @@
   </div>
 </div>
 
+<script src="js/error-report.js"></script>
 <script src="js/sweetalert2.all.min.js"></script>
 <script src="js/jszip.min.js"></script>
 <script src="js/purify.min.js"></script>

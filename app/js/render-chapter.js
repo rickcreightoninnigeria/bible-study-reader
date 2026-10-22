@@ -249,49 +249,59 @@ async function renderChapter(idx, scrollY = 0) {
         chapterAnswers,
       };
 
-      switch (resolved.type) {
+      // One item that cannot be drawn must not take the whole chapter with it:
+      // report it (naming the chapter and element) and leave a visible marker.
+      try {
+        switch (resolved.type) {
 
-        case 'heading':
-          contentHtml += renderHeading(ctx);
-          break;
+          case 'heading':
+            contentHtml += renderHeading(ctx);
+            break;
 
-        case 'text':
-          contentHtml += renderText(ctx);
-          break;
+          case 'text':
+            contentHtml += renderText(ctx);
+            break;
 
-        case 'biblePassage':
-          // Side-effect only: registers passage into verseData[].
-          // Returns '' — no HTML contribution.
-          renderBiblePassage(ctx);
-          break;
+          case 'biblePassage':
+            // Side-effect only: registers passage into verseData[].
+            // Returns '' — no HTML contribution.
+            renderBiblePassage(ctx);
+            break;
 
-        case 'question':
-          contentHtml += renderQuestion(ctx);
-          break;
+          case 'question':
+            contentHtml += renderQuestion(ctx);
+            break;
 
-        case 'image': {
-          // Resolve the image src. Priority: IDB blob (zip-imported studies,
-          // pre-fetched into _imageBlobCache above) → el.src → empty string.
-          // Blob URLs are memoised in _imageBlobCache (keyed by elementId) so
-          // IDB is only read once per image per study session. URLs are
-          // registered via _createBlobUrl() and revoked (along with the cache)
-          // by _revokeAllBlobUrls() when a new study is loaded.
-          const cacheKey = `${window.activeStudyId}_${resolved.elementId}`;
-          const imgSrc = _imageBlobCache.has(cacheKey) ? _imageBlobCache.get(cacheKey) : (resolved.src || '');
-          contentHtml += renderImage({ ...ctx, imgSrc });
-          break;
+          case 'image': {
+            // Resolve the image src. Priority: IDB blob (zip-imported studies,
+            // pre-fetched into _imageBlobCache above) → el.src → empty string.
+            // Blob URLs are memoised in _imageBlobCache (keyed by elementId) so
+            // IDB is only read once per image per study session. URLs are
+            // registered via _createBlobUrl() and revoked (along with the cache)
+            // by _revokeAllBlobUrls() when a new study is loaded.
+            const cacheKey = `${window.activeStudyId}_${resolved.elementId}`;
+            const imgSrc = _imageBlobCache.has(cacheKey) ? _imageBlobCache.get(cacheKey) : (resolved.src || '');
+            contentHtml += renderImage({ ...ctx, imgSrc });
+            break;
+          }
+
+          case 'callout':
+            contentHtml += renderCallout(ctx);
+            break;
+
+          case 'likertScale':
+            contentHtml += renderLikertScaleElement(ctx);
+            break;
+
+          default:
+            break;
         }
-
-        case 'callout':
-          contentHtml += renderCallout(ctx);
-          break;
-
-        case 'likertScale':
-          contentHtml += renderLikertScaleElement(ctx);
-          break;
-
-        default:
-          break;
+      } catch (elErr) {
+        reportError(elErr, {
+          context: 'render-element', chapter: ch.chapterNumber,
+          elementId: resolved.elementId, elementType: resolved.type,
+        });
+        contentHtml += `<div class="element-error">${escapeHtml(t('errorreport_element_failed', { id: resolved.elementId || '?' }))}</div>`;
       }
     }
 
@@ -372,10 +382,13 @@ async function renderChapter(idx, scrollY = 0) {
 
   } catch (err) {
     console.error(err);
+    // Keep a record (shown by "Copy details" and the error log) of which
+    // chapter failed; the dialog below stays as the reader-facing message.
+    recordError(err, { context: 'render-chapter', chapter: chapters[idx] ? chapters[idx].chapterNumber : idx });
     Swal.fire({
       icon:              'error',
       title:             t('renderchapter_error_title'),
-      html:              `<p>${t('renderchapter_error_body')}</p><p style="font-size:0.85em; color:var(--text-faint); font-family:monospace;">${err.message}</p>`,
+      html:              `<p>${t('renderchapter_error_body')}</p><p style="font-size:0.85em; color:var(--text-faint); font-family:monospace;">${escapeHtml(err.message)}</p>`,
       confirmButtonText: t('renderchapter_error_confirm'),
       showCancelButton:  true,
       cancelButtonText:  t('renderchapter_error_cancel'),

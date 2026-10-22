@@ -9,6 +9,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 **`app/index.html`** is the shell: nav bar, chapter drawer, toasts, modal containers, then the scripts. The root `index.html` is a byte-identical copy, kept in sync by a unit test (section 11).
 
 **`app/js/` (first-party)**
+- `error-report.js` — loaded FIRST; global `error`/`unhandledrejection` handlers, a log of the last 20 errors (`localStorage` key `bsr_error_log`), `reportError(err, {context, dialog})`, `showErrorDialog()` (message, list of lines, Copy details), a dismissible banner. Builds all DOM with `textContent`. Used by the study loader (open/install failures, per-file install summary) and by `renderChapter()` (one failing item no longer aborts the chapter).
 - `format-text.js` — DOMPurify config, markdown-it instance, `renderFormatted/renderParas/renderFormattedArray`, footnote-button expansion.
 - `state.js` — `window.*` state vars and IDB key helpers (`chapterAnswersIDBKey` etc.).
 - `i18n.js` — `LANGUAGE_MAP`, `resolveLanguage`, `applyLanguageToDom`, `t()`, `setLanguage`.

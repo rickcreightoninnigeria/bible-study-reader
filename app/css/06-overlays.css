@@ -1351,3 +1351,114 @@ body.dark-mode .info-modal-header { border-bottom-color: var(--dm-border); }
 :lang(el) .modal-close-footer-btn {
   letter-spacing: 0;
 }
+
+
+/* ── Error reporting (error-report.js) ───────────────────────────────────────
+   A dialog for failures the reader should see, and a small banner for errors
+   that happen in the background. Both sit above everything (--z-toast) because
+   an error can happen on any screen, and use only tokens, so they follow
+   light and dark mode. */
+.error-report-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-toast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.55);
+}
+.error-report-box {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 22px 20px 18px;
+  max-width: 460px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+.error-report-title   { margin: 0 0 10px; font-size: 1.15rem; }
+.error-report-message { margin: 0 0 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.error-report-lines   { list-style: none; margin: 0 0 12px; padding: 0; }
+.error-report-line    { padding: 6px 0; line-height: 1.45; border-top: 1px solid var(--border); overflow-wrap: anywhere; }
+.error-report-line:first-child { border-top: 0; }
+.error-report-line.warn { color: var(--emphasis); }
+.error-report-details { margin: 0 0 10px; font-size: 0.85rem; }
+.error-report-details summary { cursor: pointer; padding: 4px 0; }
+.error-report-pre {
+  margin: 6px 0 0;
+  padding: 10px;
+  max-height: 40vh;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--font-stack-mono);
+  font-size: 0.75rem;
+  background: var(--surface-mid);
+  border-radius: 8px;
+  user-select: text;
+}
+.error-report-hint    { margin: 0 0 14px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.45; }
+.error-report-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.error-report-btn {
+  font: inherit;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.error-report-btn.primary { background: var(--emphasis); border-color: var(--emphasis); color: #fff; }
+
+.error-report-banner {
+  position: fixed;
+  inset-inline: 12px;
+  bottom: 12px;
+  z-index: var(--z-toast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--emphasis);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+}
+.error-report-banner-text { flex: 1; font-size: 0.9rem; }
+.error-report-count       { font-size: 0.8rem; color: var(--text-secondary); }
+.error-report-banner-btn {
+  font: inherit;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+body.dark-mode .error-report-box,
+body.dark-mode .error-report-banner   { background: var(--dm-raised); color: var(--dm-text); }
+body.dark-mode .error-report-line     { border-top-color: var(--dm-border); }
+body.dark-mode .error-report-line.warn { color: var(--emphasis-light); }
+body.dark-mode .error-report-banner { border-color: var(--emphasis-light); }
+body.dark-mode .error-report-pre      { background: var(--dm-sunken); }
+body.dark-mode .error-report-hint,
+body.dark-mode .error-report-count    { color: var(--dm-text-mid); }
+body.dark-mode .error-report-btn,
+body.dark-mode .error-report-banner-btn { color: var(--dm-text); border-color: var(--dm-border); }
+body.dark-mode .error-report-btn.primary { color: #fff; border-color: var(--emphasis); }
+
+/* Placeholder that replaces one chapter item that failed to draw. */
+.element-error {
+  margin: 8px var(--content-margin);
+  padding: 8px 12px;
+  border: 1px dashed var(--emphasis);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+body.dark-mode .element-error { color: var(--dm-text-mid); }
