@@ -1,6 +1,6 @@
 # study.json authoring guide (as the code actually behaves)
 
-For an assistant who writes `study.json` and cannot see the app. Derived from reading `study-loader.js`, `answer-match.js`, `validation.js`, `render-*.js`, `modals.js`, `format-text.js`, `icons.js`, `gallery.js`, `onboarding.js` at `main` (20 Oct 2026). **This is the authority for what the app does**; if an older note, template or example disagrees with it, trust this file. A short walk-through is in `AUTHORING-TUTORIAL.md`, a worked example in `example_study_excerpt.json`, and `validate_study.py` checks a file against section 13. Section 12 lists what was not verified.
+For an assistant who writes `study.json` and cannot see the app. Derived from reading `study-loader.js`, `answer-match.js`, `validation.js`, `render-*.js`, `modals.js`, `format-text.js`, `icons.js`, `gallery.js`, `onboarding.js`, `share-print.js` at `main` (21 Oct 2026). **This is the authority for what the app does**; if an older note, template or example disagrees with it, trust this file. A short walk-through is in `AUTHORING-TUTORIAL.md`, a worked example in `example_study_excerpt.json`, and `validate_study.py` checks a file against section 13. Section 12 lists what was not verified.
 
 Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or rejected.
 
@@ -12,7 +12,7 @@ Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or 
 - **Same `studyVersion` as installed:** the *installed* copy opens and your file is ignored. To update a study, **raise `studyVersion`** (numeric; parsed with `parseFloat`, so use `1.03`, not `1.2.3`).
 - **Warns but loads:** `estudyFileVersion` ≠ `3` (non-blocking banner).
 - **No schema validation exists.** `validation.js` does not validate files (it is the local answer checker, section 8). Missing optional fields are tolerated; some missing required fields throw when the page renders (flagged below). Unknown element `type`s are silently skipped.
-- **Load-time cleaning (`sanitizeStudyData`):** every string containing `<` is cleaned with DOMPurify: scripts, event handlers (`onclick`…), `javascript:` URLs, iframes are removed; `id` attributes and `<style> <form> <input> <textarea> <select> <button>` are stripped. **`style="…"` attributes are *not* removed at this stage** (they are dropped later only in fields that go through the formatter, section 3), so a `style` may or may not show depending on the field. **Never use `style`**; use a class. Class rules exist only in the app's stylesheet. One exists for the divine name: write `<span class="divine-name">Lord</span>` where the Bible prints LORD in small capitals (it works in chapters, pop-ups and Go Deeper). Keys named `elementId`, `repeatElement`, `calloutId`, `id`, `tabId` and `language*` have characters outside `[A-Za-z0-9_.-]` replaced by `_`. **Keep ids inside that set from the start**: images are installed using the raw id, then looked up using the cleaned one, so a space or other character breaks the image link.
+- **Load-time cleaning (`sanitizeStudyData`):** every string containing `<` is cleaned with DOMPurify: scripts, event handlers (`onclick`…), `javascript:` URLs, iframes are removed; `id` attributes and `<style> <form> <input> <textarea> <select> <button>` are stripped. **`style="…"` attributes are *not* removed at this stage** (they are dropped later only in fields that go through the formatter, section 3), so a `style` may or may not show depending on the field. **Never use `style`**; use a class. Class rules exist only in the app's stylesheet. One exists for the divine name: write `[[sc:Lord]]` (preferred, works everywhere text is formatted, including markdown) or `<span class="divine-name">Lord</span>` (HTML fields only: it is shown as literal text in markdown fields) where the Bible prints LORD in small capitals. See "Inline markers" in section 3. Keys named `elementId`, `repeatElement`, `calloutId`, `id`, `tabId` and `language*` have characters outside `[A-Za-z0-9_.-]` replaced by `_`. **Keep ids inside that set from the start**: images are installed using the raw id, then looked up using the cleaned one, so a space or other character breaks the image link.
 
 ## 2. Multilingual numbered slots
 
@@ -38,13 +38,20 @@ Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or 
 
 Footnotes (`[[fn:N]]` markers with a chapter `footnotes: [{id, body}]` array) work **only in Go Deeper chapters**. Study chapters never pass footnotes, so markers there show as literal text.
 
-**Inline icons.** `[[icon:name]]` shows one of the app's own icons inside text, in whichever icon style the reader has chosen in Settings, e.g. `Tap Check [[icon:localValidate]] to see how your answer compares.` `name` is an icon key such as `localValidate` (the shield with a tick), `mainPoint`, `triggerInfo`, `starEmpty`, `starFilled`, `speak`, `mic`, `save`, `print` or `share`. Rules:
+**Inline markers.** Two markers are swapped for app-made markup *after* the text has been cleaned, so they need nothing the cleaning step removes. Apps older than this feature show either marker as literal text.
 
-- It works in `text` elements, image captions, question `header`, the `body` of a `highlighted` callout, Go Deeper and Leaders' Notes blocks and intros (any format), and footnote bodies. It does **not** work in the other unformatted fields listed above (question text, headings, callout eyebrow/term/question, Likert text, and so on): there the marker shows as literal text.
-- You cannot paste an `<svg>` yourself: the cleaning step removes it, and a pasted icon could not follow the reader's icon style.
-- The icon is decorative and hidden from screen readers, so always name the button in words too ("tap Check"), as in the example.
-- An unknown name is removed, and the validator warns about it. Search and text-to-speech skip the marker.
-- A style change in Settings shows on the next chapter render, like every other icon. Apps older than this feature show the marker as literal text.
+| Marker | Result |
+|---|---|
+| `[[sc:Lord]]` | `<span class="divine-name">Lord</span>`: small capitals for the divine name. You write "Lord"; the L stays full size and "ord" shows as small capitals, with a little extra letter-spacing. It follows the text colour, so it is right in light mode, dark mode and print. Example: `The [[sc:Lord]] reigns.` |
+| `[[icon:name]]` | One of the app's own icons, in whichever icon style the reader has chosen in Settings. Example: `Tap Check [[icon:localValidate]] to see how your answer compares.` `name` is an icon key such as `localValidate` (the shield with a tick), `mainPoint`, `triggerInfo`, `starEmpty`, `starFilled`, `speak`, `mic`, `save`, `print` or `share`. |
+
+Rules for both:
+
+- **Where they work:** `text` elements, image captions, question `header`, the `body` of a `highlighted` callout, the `answer` of a callout and `passageText` (pop-ups), `deeper` questions, Go Deeper and Leaders' Notes blocks and intros (any format, **including markdown**, and inside `*emphasis*`), and footnote bodies. They do **not** work in the other unformatted fields listed above (question text, headings, callout eyebrow/term/question, Likert text, and so on): there the marker shows as literal text.
+- **`[[sc:…]]` text** may hold only letters (any script, with accents), spaces, apostrophes (`'` or `’`) and full stops, up to 60 characters, starting with a letter. Anything else is not a marker and shows as literal text; this is deliberate, so nothing an author or a hostile file types inside a marker can become markup. Write one marker per name: `[[sc:Lord God]]`.
+- **Why `[[sc:…]]` exists:** markdown fields escape raw HTML, so `<span class="divine-name">` shows as visible text in a markdown Go Deeper body, caption or `mainPoint`. The validator warns about it.
+- **Print, search and read-aloud:** printed chapters show the small-capitals span (the print window carries its own copy of the rule) and drop icons; search and text-to-speech read the plain word ("Lord") and skip icons. Nobody sees or hears the marker.
+- **Icons:** you cannot paste an `<svg>` yourself (the cleaning step removes it, and it could not follow the reader's icon style). The icon is decorative and hidden from screen readers, so always name the button in words too ("tap Check"). An unknown name is removed and the validator warns. A style change in Settings shows on the next render, like every other icon.
 
 ## 4. Top-level blocks
 
@@ -148,7 +155,7 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 - `onboarding.js` internals beyond slide fields, `render-library.js` shelf edge cases, and the editor tools in `app/*.html` (which may enforce stricter rules than the app) were not read in full.
 - Very large studies: a 480 KB study with 9 chapters and 11 appendix chapters loads in about 40 ms and scrolls smoothly in desktop Chromium. Bigger files and slow Android devices were not measured; only the zip limits above are enforced.
 - The look of tables and Previous/Next buttons was checked at 380 px in light and dark mode, and right-to-left mirrors, in desktop Chromium only.
-- `[[icon:name]]` is covered by unit tests of the marker-swapping code only; it has not yet been seen rendering in the browser or on a device, and the full list of icon keys is whatever `ICONS_ROUNDED` in `icons.js` defines.
+- `[[sc:…]]` and `[[icon:…]]` were checked with the real DOMPurify, markdown-it and app code in desktop Chromium, and by unit tests; neither has been seen on Android or iOS, or in an actual printout. Small capitals are synthesised by the browser when a font has none, so their look differs between fonts and devices. The icon keys are whatever `ICONS_ROUNDED` in `icons.js` defines.
 - Limits not listed here do not exist in the code as far as I found: no maximum on text length, element count or `studyId` length.
 
 ## 13. Pre-flight checklist (what fails silently)
@@ -163,7 +170,7 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 6. No Go Deeper or Leaders' block key ends in a digit (required in multilingual studies; keep the habit in single-language ones).
 7. Table rows all add up to the same width once `colspan` is counted; tables are in `format: "HTML"` bodies.
 8. `keyTerms` is an array of strings (at most 12); `mainPoint` is 2,000 characters or fewer.
-9. No `studyAiData`, no `apiKey`, no `style=` attributes, no `<script>`, no leftover template placeholders (`${…}`), no `<table>` in a callout `answer` or other pop-up text (tables are stripped there; use a list), and every `[[icon:name]]` names a real icon (the validator warns on unknown names).
+9. No `studyAiData`, no `apiKey`, no `style=` attributes, no `<script>`, no leftover template placeholders (`${…}`), no `<table>` in a callout `answer` or other pop-up text (tables are stripped there; use a list), every `[[icon:name]]` names a real icon, every `[[sc:Text]]` holds only the allowed characters, and no `<span class="divine-name">` sits in a markdown field (use `[[sc:Text]]` there). The validator warns on all three.
 10. Raise `studyVersion` (1.03 → 1.04) whenever you change a file that readers may already have; the same version is ignored.
 11. Declared images exist: `images/<elementId>.webp` for every `image` without `src`; gallery `src` files are in the zip.
 12. Before release open it in the app: a passage pop-up, a hint, a footnote, a table at phone width, Read more and Back to study, and the copyright page (section 9: it always prints CC BY-SA, whatever you declare).

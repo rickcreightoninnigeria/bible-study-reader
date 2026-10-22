@@ -32,7 +32,10 @@ const _MODAL_PURIFY_CONFIG = _PURIFY_CONFIG;
 
 function safeSetHtml(elementId, html) {
   const el = document.getElementById(elementId);
-  if (el) el.innerHTML = DOMPurify.sanitize(html || '', _MODAL_PURIFY_CONFIG);
+  // [[icon:…]] and [[sc:…]] markers are expanded after sanitising, as in
+  // renderFormatted(), so they work in pop-ups (passage text, callout answers,
+  // Go deeper questions) too.
+  if (el) el.innerHTML = expandInlineMarkers(DOMPurify.sanitize(html || '', _MODAL_PURIFY_CONFIG));
 }
 
 // Sanitise a plain URL before putting it in an href. Allowlists http(s),

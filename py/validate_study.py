@@ -8,7 +8,7 @@ silently. Errors mean something will not work; warnings mean a field is
 ignored or a habit is risky. Exit status is 1 if there are any errors.
 Standard library only.
 """
-import json, os, re, sys, zipfile
+import json, os, re, sys, unicodedata, zipfile
 
 ID_RE = re.compile(r'^[A-Za-z0-9_.-]+$')
 GD_RESERVED = {'chapterNumber', 'backToStudy', 'format', 'title', 'footnotes',
@@ -44,6 +44,59 @@ def icon_names():
         return set(re.findall(r'^\s{2}([A-Za-z0-9]+):\s*`', src[a:src.index('\n};', a)], re.M))
     except (OSError, ValueError):
         return None
+
+
+SC_MARKER_RE = re.compile(r'\[\[sc:(.*?)\]\]')
+DIVINE_SPAN_RE = re.compile(r'<span\s+class=["\']divine-name["\']', re.I)
+BODY_PATH_RE = re.compile(r'(^|\.)body\d*(\[\d+\])?$')
+
+
+def sc_text_ok(text):
+    """[[sc:Text]] allows letters (any script), combining marks, spaces, apostrophes
+    and full stops, starting with a letter or mark, at most 60 characters."""
+    if not text or len(text) > 60:
+        return False
+    cat = lambda c: unicodedata.category(c)
+    if not (cat(text[0]).startswith('L') or cat(text[0]).startswith('M')):
+        return False
+    return all(cat(c).startswith(('L', 'M')) or c in " '\u2019." for c in text)
+
+
+def check_markers(study):
+    """[[sc:Text]] must be well formed; a divine-name span is escaped to visible
+    text wherever the field is rendered as markdown."""
+    for path, s in strings(study):
+        for m in SC_MARKER_RE.findall(s):
+            if not sc_text_ok(m):
+                warn(f'{path}: [[sc:{m}]] has disallowed characters or is too long, so it will show as literal text '
+                     '(allowed: letters, spaces, apostrophes, full stops; up to 60 characters)')
+
+    def md_warn(path):
+        warn(f'{path}: <span class="divine-name"> in a markdown field shows as literal text; use [[sc:Text]]')
+
+    for ch in study.get('chapters') or []:
+        for el in ch.get('elements') or []:
+            eid = el.get('elementId', '?')
+            if str(el.get('format', '')).lower() == 'markdown':
+                for k, v in el.items():
+                    if re.match(r'(text|caption|header)\d*$', k) and isinstance(v, str) and DIVINE_SPAN_RE.search(v):
+                        md_warn(f'element {eid}.{k}')
+            if str(el.get('mainPointFormat', 'markdown')).lower() == 'markdown':
+                for k, v in el.items():
+                    if re.match(r'mainPoint\d*$', k) and isinstance(v, str) and DIVINE_SPAN_RE.search(v):
+                        md_warn(f'element {eid}.{k}')
+    for name in ('goDeeperData', 'leadersNotesData'):
+        d = study.get(name) or {}
+        top = str(d.get('format', '')).lower()
+        parts = [('intro', d.get('intro'), top)] + [
+            (f'chapter {c.get("chapterNumber")}', c, str(c.get('format', d.get('format', ''))).lower())
+            for c in d.get('chapters') or []]
+        for label, part, fmt in parts:
+            if fmt != 'markdown':
+                continue
+            for path, s in strings(part):
+                if BODY_PATH_RE.search(path) and DIVINE_SPAN_RE.search(s):
+                    md_warn(f'{name} {label} {path}')
 
 
 def keys_anywhere(o, names, path='', out=None):
@@ -104,6 +157,7 @@ def main(path):
         err('chapters[] is missing or empty')
         chapters = []
 
+    check_markers(study)
     names = icon_names()
     if names:
         for path_, s_ in strings(study):

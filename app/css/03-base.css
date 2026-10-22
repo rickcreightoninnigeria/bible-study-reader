@@ -93,10 +93,16 @@ blockquote {
 
 /* ── 04b. DIVINE NAME ───────────────────────────────────────────────────── */
 /* Study authors write <span class="divine-name">Lord</span> where the Bible
-   prints LORD in small capitals for the divine name. A class, not an inline
-   style: style attributes are unsupported in study files. */
+   prints LORD in small capitals for the divine name, or the marker
+   [[sc:Lord]], which the app turns into the same span (needed in markdown
+   bodies, where an authored <span> would be escaped). A class, not an inline
+   style: style attributes are unsupported in study files. The author writes
+   "Lord": the L stays full size and "ord" shows as small capitals. No colour
+   is set, so it follows light, dark and print text colours. The print window
+   (share-print.js) is a separate document and repeats this rule. */
 .divine-name {
   font-variant: small-caps;
+  letter-spacing: var(--divine-name-tracking);
 }
 
 

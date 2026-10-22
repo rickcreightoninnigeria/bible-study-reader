@@ -1638,7 +1638,7 @@ function _buildContentBlocksHtml(ch, activeLang, langMap, skipFields, classPrefi
   const isMarkdown  = String(format || '').toLowerCase() === 'markdown';
   const formatBody  = html => {
     const out = isMarkdown ? renderFormatted(html, 'markdown') : (html || '');
-    return expandIconMarkers(Array.isArray(footnotes) ? expandFootnoteMarkers(out, footnotes) : out);
+    return expandInlineMarkers(Array.isArray(footnotes) ? expandFootnoteMarkers(out, footnotes) : out);
   };
   const seen = new Set();
   const contentFields = [];
@@ -2190,8 +2190,8 @@ async function renderGoDeeper(tabId) {
     const rawBody  = rawIntro.body;
     const isMd     = String(d.format || '').toLowerCase() === 'markdown';
     const bodyHtml = Array.isArray(rawBody)
-      ? (isMd ? renderFormattedArray(rawBody, 'markdown') : expandIconMarkers(rawBody.map(p => `<p>${p}</p>`).join('\n')))
-      : (typeof rawBody === 'string' ? (isMd ? renderFormatted(rawBody, 'markdown') : expandIconMarkers(rawBody)) : '');
+      ? (isMd ? renderFormattedArray(rawBody, 'markdown') : expandInlineMarkers(rawBody.map(p => `<p>${p}</p>`).join('\n')))
+      : (typeof rawBody === 'string' ? (isMd ? renderFormatted(rawBody, 'markdown') : expandInlineMarkers(rawBody)) : '');
 
     tabContent = `
       <div class="go-deeper-intro" style="margin: 20px 16px;">

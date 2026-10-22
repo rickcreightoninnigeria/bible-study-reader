@@ -41,7 +41,7 @@ function ttsStripHtml(html) {
   html = _ttsDecodeEntities(html);
 
   // 1a. Drop [[icon:name]] markers: the surrounding text names the button.
-  html = stripIconMarkers(html);
+  html = stripInlineMarkers(html);
 
   // 1b. Convert numeric ranges (hyphen/en-dash/em-dash between numbers) to "to"
   //     Handles verse refs (3:15–16), plain ranges (15-16), and prefixed refs (pp. 15-16).

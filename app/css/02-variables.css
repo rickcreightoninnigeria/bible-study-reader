@@ -117,6 +117,11 @@
 
   /* ── Setting the margins for content panels ── */
   --content-margin: 4px; /* tweak this one value to adjust all panels */
+
+  /* Extra spacing for .divine-name (small-capital LORD): small capitals read
+     better with a little air. Also read by the print window (share-print.js),
+     which has its own stylesheet, so change it here only. */
+  --divine-name-tracking: 0.04em;
 }
 
 

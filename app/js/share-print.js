@@ -260,11 +260,22 @@ async function exportStudyAnswers() {
 
 // ── PRINT / EXPORT TO PDF ─────────────────────────────────────────────────────
 
+// Study text reaches the print window as raw HTML, so its markers must be
+// resolved here: [[sc:Lord]] becomes the small-capitals span (styled by the
+// .divine-name rule in buildPrintHead), and [[icon:…]] is dropped because the
+// sentence around it names the button and the print window has no icon sizing.
+const _printMarkers = html => expandInlineMarkers(html, { icons: false });
+
+// Fallback only if --divine-name-tracking (02-variables.css) cannot be read.
+const _DIVINE_NAME_TRACKING_FALLBACK = '0.04em';
+
 function buildPrintHead(title) {
   const bodyFontStack    = appSettings.useSansSerif
     ? "'Inter', 'Helvetica Neue', Arial, sans-serif"
     : "'Source Serif 4', Georgia, 'Times New Roman', serif";
   const headingFontStack = "'Playfair Display', Georgia, 'Times New Roman', serif";
+  const divineNameTracking = getComputedStyle(document.documentElement)
+    .getPropertyValue('--divine-name-tracking').trim() || _DIVINE_NAME_TRACKING_FALLBACK;
 
   const fontFaceCSS = `
     @font-face { font-family: 'Playfair Display'; src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
@@ -298,6 +309,7 @@ function buildPrintHead(title) {
   .question-text { padding: 6pt 8pt 3pt; font-size: 10pt; }
   .answer { padding: 6pt 8pt; font-size: 10pt; border-top: 0.5pt solid #ddd; background: #f9f9f9; min-height: 32pt; white-space: pre-wrap; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .no-answer { color: #aaa; font-style: italic; }
+  .divine-name { font-variant: small-caps; letter-spacing: ${divineNameTracking}; }
   .reflection-heading { font-family: ${headingFontStack}; background: #8b3a2a; color: white; padding: 5pt 8pt; font-size: 10pt; font-style: italic; margin: 16pt 0 0 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-after: avoid; }
   .notes-heading { font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 16pt 0 4pt 0; }
   .likert-block { border: 0.5pt solid #ccc; margin: 8pt 0; page-break-inside: avoid; }
@@ -337,13 +349,13 @@ function buildChapterBody(ch, record) {
 
   // Intro
   if (ch.intro) {
-    body += `<div class="intro"><p>${ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+    body += `<div class="intro"><p>${_printMarkers(ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'))}</p></div>`;
   }
 
   // Sections: bridge text then questions with saved answers
   ch.sections.forEach(sec => {
     if (sec.bridge) {
-      body += `<div class="bridge">${sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>')}</div>`;
+      body += `<div class="bridge">${_printMarkers(sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>'))}</div>`;
     }
     sec.questions.forEach(q => {
       const answer = (record[answerFieldKey('q', q.elementId)] || '').trim();
@@ -357,7 +369,7 @@ function buildChapterBody(ch, record) {
 
   // Closing passage
   if (ch.closing) {
-    body += `<div class="closing"><p>${ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+    body += `<div class="closing"><p>${_printMarkers(ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'))}</p></div>`;
   }
 
   // Likert scale responses
@@ -507,12 +519,12 @@ function buildBlankChapterBody(ch) {
   let body = '';
 
   if (ch.intro) {
-    body += `<div class="intro"><p>${ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+    body += `<div class="intro"><p>${_printMarkers(ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'))}</p></div>`;
   }
 
   ch.sections.forEach(sec => {
     if (sec.bridge) {
-      body += `<div class="bridge">${sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>')}</div>`;
+      body += `<div class="bridge">${_printMarkers(sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>'))}</div>`;
     }
     sec.questions.forEach(q => {
       body += `<div class="question-block">
@@ -524,7 +536,7 @@ function buildBlankChapterBody(ch) {
   });
 
   if (ch.closing) {
-    body += `<div class="closing"><p>${ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p></div>`;
+    body += `<div class="closing"><p>${_printMarkers(ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'))}</p></div>`;
   }
 
   (ch.elements || [])
