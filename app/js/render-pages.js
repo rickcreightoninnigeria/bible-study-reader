@@ -1874,6 +1874,18 @@ const PROGRESS_TABS = [
   { id: 'pathway' },
 ];
 
+// Paragraphs of a study's own licence text, or [] when it has none.
+// The copyright page used to print CC BY-SA 4.0 for every study, which told
+// readers they could copy and adapt a book that is "All rights reserved". A
+// study that is not CC BY-SA now supplies copyrightData.licenceText (a string,
+// or an array of paragraph strings; HTML allowed, cleaned when the study loads),
+// and the page shows that instead of the CC BY-SA blocks. Anything that is not a
+// non-empty string is ignored, so a malformed value falls back to the default.
+function _copyrightLicenceParas(d) {
+  const raw = d && d.licenceText;
+  return (Array.isArray(raw) ? raw : [raw]).filter(x => typeof x === 'string' && x.trim());
+}
+
 async function renderAbout(tabId) {
   closeMenu();
   _resetNonChapterPageState();
@@ -1934,15 +1946,14 @@ async function renderAbout(tabId) {
       </div>`;
   } else if (activeTab === 'copyright') {
     const noticesHtml = (d.notices || []).map(n => `<li>${n}</li>`).join('\n');
-    tabContent = `
-      <div class="copyright-page" style="padding-top:16px;">
-        <div class="copyright-block">
-          <div class="copyright-block-label">${t('renderpages_copyright_author_label')}</div>
-          <p>${d.authorLine}</p>
+    const licenceParas = _copyrightLicenceParas(d);
+    // Default: the CC BY-SA 4.0 licence. Custom: the study's own licenceText.
+    const defaultLicenceInAuthorBlock = licenceParas.length ? '' : `
           <p>${t('renderpages_copyright_licence_link')}</p>
-          <div class="cc-badge">⚖️ CC BY-SA 4.0</div>
-        </div>
-        <div class="copyright-block">
+          <div class="cc-badge">⚖️ CC BY-SA 4.0</div>`;
+    const licenceBlocks = licenceParas.length
+      ? `<div class="copyright-block">${licenceParas.map(x => `<p>${x}</p>`).join('\n')}</div>`
+      : `<div class="copyright-block">
           <div class="copyright-block-label">${t('renderpages_copyright_freeto_label')}</div>
           <p>${t('renderpages_copyright_share_entry')}</p>
           <p>${t('renderpages_copyright_adapt_entry')}</p>
@@ -1951,7 +1962,14 @@ async function renderAbout(tabId) {
           <div class="copyright-block-label">${t('renderpages_copyright_terms_label')}</div>
           <p>${t('renderpages_copyright_attribution_entry')}</p>
           <p>${t('renderpages_copyright_sharealike_entry')}</p>
+        </div>`;
+    tabContent = `
+      <div class="copyright-page" style="padding-top:16px;">
+        <div class="copyright-block">
+          <div class="copyright-block-label">${t('renderpages_copyright_author_label')}</div>
+          <p>${d.authorLine}</p>${defaultLicenceInAuthorBlock}
         </div>
+        ${licenceBlocks}
         ${noticesHtml ? `<div class="copyright-block"><div class="copyright-block-label">${t('renderpages_copyright_notices_label')}</div><ul>${noticesHtml}</ul></div>` : ''}
       </div>`;
   }

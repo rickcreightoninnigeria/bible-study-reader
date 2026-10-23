@@ -20,3 +20,8 @@ testing/node_modules/
 # Studies that are not licensed for the public repo. Tests that need one read
 # it from here and skip themselves when it is absent.
 testing/local-fixtures/
+
+# Love & Wisdom is "All rights reserved" (used with permission in the app only).
+# The files stay on disk but must not be committed.
+estudy_en (v3)/Belief/Love & Wisdom/
+estudy_en (v3)/Belief/Love and Wisdom.estudy
