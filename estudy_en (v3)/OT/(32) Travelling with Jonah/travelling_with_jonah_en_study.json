@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.10,
+    "studyVersion"     :1.11,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -390,7 +390,7 @@
           "format"       :"HTML",
           "eyebrow"      :"",
           "term"         :"Back-to-Front Contrasts",
-          "body"         :"There is a striking string of reversals between the prophet Jonah and the pagan sailors:\n\n• The pagan captain has to tell Jonah the prophet to pray.\n• The sailors work desperately to save Jonah’s life when he has put theirs in danger — while he sleeps.\n• The sailors understand the seriousness of Jonah’s disobedience far better than he does. ‘What have you done?’ they ask. Jonah has no answer.\n• The sailors begin to worship the true God while Jonah is still running away from him.\n\nThe only good responses in this whole chapter come from the sailors. Of Jonah we hear no prayer, no worship, no apology, no repentance — nothing.",
+          "body"         :"There is a striking string of reversals between the prophet Jonah and the pagan sailors:<ul><li>The pagan captain has to tell Jonah the prophet to pray.</li><li>The sailors work desperately to save Jonah’s life when he has put theirs in danger — while he sleeps.</li><li>The sailors understand the seriousness of Jonah’s disobedience far better than he does. ‘What have you done?’ they ask. Jonah has no answer.</li><li>The sailors begin to worship the true God while Jonah is still running away from him.</li></ul>The only good responses in this whole chapter come from the sailors. Of Jonah we hear no prayer, no worship, no apology, no repentance — nothing.",
           "bottomPadding":"normal"
         },
         {
@@ -1303,7 +1303,7 @@
           "format"       :"HTML",
           "eyebrow"      :"",
           "term"         :"Sin, Sorrow, Sackcloth",
-          "body"         :"The Ninevites went through three stages — three S-words:\n\n<b>1. Recognise sin.</b> If we do not think we are sinful, we will not think we need to be forgiven.\n\n<b>2. Be sorry about it.</b> Realising sin is a bad thing — not just admitting it, but caring that it is wrong.\n\n<b>3. Respond to God.</b> The one action God wants from us is this: trust in his Son. Lots more actions will flow from that. But trusting Jesus Christ is the make-or-break issue.",
+          "body"         :"The Ninevites went through three stages — three S-words:<ol><li><b>Recognise sin.</b> If we do not think we are sinful, we will not think we need to be forgiven.</li><li><b>Be sorry about it.</b> Realising sin is a bad thing — not just admitting it, but caring that it is wrong.</li><li><b>Respond to God.</b> The one action God wants from us is this: trust in his Son. Lots more actions will flow from that. But trusting Jesus Christ is the make-or-break issue.</li></ol>",
           "bottomPadding":"normal"
         },
         {
@@ -2152,7 +2152,7 @@
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
-          "question"         :"The goDeeperData draws a careful comparison between Jonah’s response in chapter 2 and the Ninevites’ response in chapter 3. Work through the comparison below and discuss what it reveals:\n\n• Jonah recognises he is in distress (2:2). The Ninevites recognise their <i>ways are evil</i> (3:8). What is the difference?\n\n• Jonah acknowledges that God has acted against him (2:3), but doesn’t comment on whether God was right. The Ninevites recognise that God’s fierce anger is <i>justified</i> in view of their evil (3:9). What does that add?\n\n• Jonah calls out for ‘help’ — deliverance from his circumstances. The Ninevites call out for mercy from God himself. What is the crucial difference?",
+          "question"         :"The goDeeperData draws a careful comparison between Jonah’s response in chapter 2 and the Ninevites’ response in chapter 3. Work through the comparison below and discuss what it reveals:<ul><li>Jonah recognises he is in distress (2:2). The Ninevites recognise their <i>ways are evil</i> (3:8). What is the difference?</li><li>Jonah acknowledges that God has acted against him (2:3), but doesn’t comment on whether God was right. The Ninevites recognise that God’s fierce anger is <i>justified</i> in view of their evil (3:9). What does that add?</li><li>Jonah calls out for ‘help’ — deliverance from his circumstances. The Ninevites call out for mercy from God himself. What is the crucial difference?</li></ul>",
           "linkedPassage"    :"Jonah 3:5-9",
           "answerType"       :"freeText",
           "required"         :false,

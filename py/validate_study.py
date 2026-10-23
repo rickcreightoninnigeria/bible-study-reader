@@ -407,7 +407,9 @@ def main(path):
             err('copyrightData.licenceText must be a non-empty string or an array of non-empty strings')
         if 'licence' in cd:
             warn('copyrightData.licence is ignored; to replace the CC BY-SA text on the copyright page, use licenceText')
-        elif lt is None and any(re.search(r'all rights reserved', str(n), re.I) for n in (cd.get('notices') or [])):
+        # Only a notice that BEGINS with it: Bible-translation credits end with "All rights reserved."
+        # and say nothing about how the study itself may be used.
+        elif lt is None and any(re.match(r'\s*(<[^>]+>\s*)*all rights reserved', str(n), re.I) for n in (cd.get('notices') or [])):
             warn('copyrightData says "All rights reserved" but has no licenceText, so the copyright page will also show CC BY-SA 4.0')
     if 'studyAiData' in study:
         warn('studyAiData is deprecated and ignored; remove it')

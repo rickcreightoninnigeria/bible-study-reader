@@ -97,6 +97,10 @@ describe('validate_study.py and copyrightData', () => {
     expect(run(study({ notices }))).toContain('no licenceText');
     expect(run(study({ notices, licenceText: 'x' }))).not.toContain('no licenceText');
     expect(run(study({ notices: ['Some other notice.'] }))).not.toContain('no licenceText');
+    // A Bible-translation credit that ends with the phrase says nothing about the study itself.
+    const credit = 'Scripture quotations are from the Example Bible, copyright 2020 by Example Society. Used by permission. All rights reserved.';
+    expect(run(study({ notices: [credit] }))).not.toContain('no licenceText');
+    expect(run(study({ notices: ['<b>All rights reserved.</b> No part may be copied.'] }))).toContain('no licenceText');
   });
 
   it.skipIf(!hasPython)('says the old licence field is ignored', () => {

@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Conversion" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Identity in Christ" }, { "Shelf": "Ministry", "Section": "Discipleship & Mentoring", "Subsection": "One-to-One Ministry" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.02,
+    "studyVersion"     :1.03,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -548,7 +548,7 @@
           "type"         :"text",
           "subtype"      :"bridge",
           "format"       :"HTML",
-          "text"         :"<p>Before we move to personal reflection, here are the three key truths from this chapter to hold on to:</p><p><b>1. God is a God who speaks.</b> He has not left us to guess at who he is or what he is like. He has spoken through the prophets, and finally and fully through his Son, Jesus. The Bible is the written record of that communication.</p><p><b>2. The Bible is God-breathed.</b> That is Paul’s word – <em>theopneustos</em>. It means the Scriptures come from God himself, through real human writers, and carry his authority. It is not a human book about God; it is God’s word through humanity.</p><p><b>3. Jesus is the centre.</b> The whole Bible – from Genesis to Revelation – is ultimately about him. He is not just a figure who appears in the Gospels; he is the one to whom the whole story has always been pointing. When you read the Bible, you are reading a book whose greatest character is Jesus.</p>",
+          "text"         :"<p>Before we move to personal reflection, here are the three key truths from this chapter to hold on to:</p><ol><li><b>God is a God who speaks.</b> He has not left us to guess at who he is or what he is like. He has spoken through the prophets, and finally and fully through his Son, Jesus. The Bible is the written record of that communication.</li><li><b>The Bible is God-breathed.</b> That is Paul’s word – <em>theopneustos</em>. It means the Scriptures come from God himself, through real human writers, and carry his authority. It is not a human book about God; it is God’s word through humanity.</li><li><b>Jesus is the centre.</b> The whole Bible – from Genesis to Revelation – is ultimately about him. He is not just a figure who appears in the Gospels; he is the one to whom the whole story has always been pointing. When you read the Bible, you are reading a book whose greatest character is Jesus.</li></ol>",
           "bottomPadding":"normal"
         },
         {
@@ -943,7 +943,7 @@
           "type"         :"text",
           "subtype"      :"bridge",
           "format"       :"HTML",
-          "text"         :"Here are the three key truths from this session to hold on to:<br><br><b>1. God is both great and near.</b> His sovereignty, power, and holiness are never in question. But the Bible adds something: this same God draws near to those he loves. Greatness and intimacy are not in conflict – in God, they are inseparable.<br><br><b>2. Jesus is the fullest revelation of God.</b> All that God is – his character, his love, his purposes – is made visible in Jesus. To look at Jesus is to see what God is like. John puts it plainly: “The only one, himself God… has made God known.”<br><br><b>3. God invites us to call him Father.</b> This is not a human invention. It is the invitation of Jesus himself. To accept it is not presumption – it is faith.",
+          "text"         :"Here are the three key truths from this session to hold on to:<ol><li><b>God is both great and near.</b> His sovereignty, power, and holiness are never in question. But the Bible adds something: this same God draws near to those he loves. Greatness and intimacy are not in conflict – in God, they are inseparable.</li><li><b>Jesus is the fullest revelation of God.</b> All that God is – his character, his love, his purposes – is made visible in Jesus. To look at Jesus is to see what God is like. John puts it plainly: “The only one, himself God… has made God known.”</li><li><b>God invites us to call him Father.</b> This is not a human invention. It is the invitation of Jesus himself. To accept it is not presumption – it is faith.</li></ol>",
           "bottomPadding":"normal"
         },
         {
@@ -1333,7 +1333,7 @@
           "type"         :"text",
           "subtype"      :"bridge",
           "format"       :"HTML",
-          "text"         :"<p>Here are the three key truths from this chapter to hold on to:</p><p><b>1. Jesus’ identity is revealed through what he does, not only what he says.</b> He forgives sins. He commands demons and storms. He speaks with his own authority. His actions are the claims – and they add up to one conclusion.</p><p><b>2. Jesus is the image of the invisible God.</b> Paul’s language in Colossians 1 is as high as language can go: Jesus is before all things, the agent of creation, the one who holds everything together. To know Jesus is to know what God is like.</p><p><b>3. The question is personal, not just theological.</b> “Who do you say that I am?” is Jesus’ own question, addressed to every person who encounters him. It cannot be answered by proxy. It requires a response from you.</p>",
+          "text"         :"<p>Here are the three key truths from this chapter to hold on to:</p><ol><li><b>Jesus’ identity is revealed through what he does, not only what he says.</b> He forgives sins. He commands demons and storms. He speaks with his own authority. His actions are the claims – and they add up to one conclusion.</li><li><b>Jesus is the image of the invisible God.</b> Paul’s language in Colossians 1 is as high as language can go: Jesus is before all things, the agent of creation, the one who holds everything together. To know Jesus is to know what God is like.</li><li><b>The question is personal, not just theological.</b> “Who do you say that I am?” is Jesus’ own question, addressed to every person who encounters him. It cannot be answered by proxy. It requires a response from you.</li></ol>",
           "bottomPadding":"normal"
         },
         {
@@ -1707,7 +1707,7 @@
           "type"         :"text",
           "subtype"      :"bridge",
           "format"       :"HTML",
-          "text"         :"The Trinity is a mystery – but it is a <em>revealed</em> mystery, not an invented one. Here are three things that Christians can say clearly:<br><br><b>1. There is one God.</b> Christians are not polytheists. The God of the Old Testament and the God of the New Testament are the same God. He alone is Creator, Lord, and Saviour.<br><br><b>2. Within that one God, there is an eternal relationship.</b> Father, Son, and Holy Spirit are genuinely distinct – the Father is not the Son, the Son is not the Spirit – but they are not three separate gods. They are one in being, one in will, and one in love.<br><br><b>3. We know this because Jesus himself revealed it.</b> The Trinity is not the result of philosophical speculation. It is the result of listening carefully to what Jesus said and did. He spoke of the Father as distinct from himself. He promised to send the Spirit. He shared glory with the Father before creation. The Trinitarian shape of God is shown in Scripture – not imposed upon it.",
+          "text"         :"The Trinity is a mystery – but it is a <em>revealed</em> mystery, not an invented one. Here are three things that Christians can say clearly:<ol><li><b>There is one God.</b> Christians are not polytheists. The God of the Old Testament and the God of the New Testament are the same God. He alone is Creator, Lord, and Saviour.</li><li><b>Within that one God, there is an eternal relationship.</b> Father, Son, and Holy Spirit are genuinely distinct – the Father is not the Son, the Son is not the Spirit – but they are not three separate gods. They are one in being, one in will, and one in love.</li><li><b>We know this because Jesus himself revealed it.</b> The Trinity is not the result of philosophical speculation. It is the result of listening carefully to what Jesus said and did. He spoke of the Father as distinct from himself. He promised to send the Spirit. He shared glory with the Father before creation. The Trinitarian shape of God is shown in Scripture – not imposed upon it.</li></ol>",
           "bottomPadding":"normal"
         },
         {

@@ -8,7 +8,7 @@
     "author"           :"Canon Dr Jem Hovil with Canon Stephen Ssenyonjo Kewaza",
     "libraryShelves"   :[{ "Shelf": "New Testament", "Section": "Epistles", "Subsection": "Pastoral Epistles" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.01,
+    "studyVersion"     :1.02,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -186,7 +186,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Explain the importance of BUILD to another church leader\n2. Make an informed commitment to continuing with BUILD learning\n3. Recall a verse that expresses what BUILD stands for\n4. Demonstrate an awareness of the challenges you face in your ministry\n5. List and describe the key features of the BUILD curriculum",
+          "question"     :"<ol><li>Explain the importance of BUILD to another church leader</li><li>Make an informed commitment to continuing with BUILD learning</li><li>Recall a verse that expresses what BUILD stands for</li><li>Demonstrate an awareness of the challenges you face in your ministry</li><li>List and describe the key features of the BUILD curriculum</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -405,7 +405,7 @@
           "eyebrow"      :"Five Challenges for Local Church Leaders",
           "term"         :"The challenges BUILD is designed to address",
           "question"     :"What are the five main challenges facing local church leaders today?",
-          "answer"       :"<p><strong>1. Biblical</strong> — <em>The challenge of keeping the Bible central.</em><br>In a world full of competing voices and pressures, it is easy for the Bible to drift from the centre of church life and ministry to the margins.</p><p><strong>2. Understanding</strong> — <em>The challenge of explaining and applying the teaching of the Bible.</em><br>Many leaders want to teach the Bible faithfully but lack the tools and training to do so with confidence and accuracy.</p><p><strong>3. In-service</strong> — <em>The challenge of remaining committed to mission.</em><br>The demands of church life can crowd out active engagement with the community and the world. Leaders need to be equipped and encouraged to stay on mission.</p><p><strong>4. Leadership</strong> — <em>The challenge of a lack of faithful leaders who can train others.</em><br>Many churches are limited by a shortage of leaders who are both faithful to the gospel and capable of equipping others. Multiplication of leaders is urgent.</p><p><strong>5. Development</strong> — <em>The challenge of persevering with gospel ministry.</em><br>Ministry is hard and long. Many leaders start well but do not continue. BUILD is designed to equip leaders to persevere — and to keep growing throughout their ministry lives.</p>",
+          "answer"       :"<ol><li><strong>Biblical</strong> — <em>The challenge of keeping the Bible central.</em><br>In a world full of competing voices and pressures, it is easy for the Bible to drift from the centre of church life and ministry to the margins.</li><li><strong>Understanding</strong> — <em>The challenge of explaining and applying the teaching of the Bible.</em><br>Many leaders want to teach the Bible faithfully but lack the tools and training to do so with confidence and accuracy.</li><li><strong>In-service</strong> — <em>The challenge of remaining committed to mission.</em><br>The demands of church life can crowd out active engagement with the community and the world. Leaders need to be equipped and encouraged to stay on mission.</li><li><strong>Leadership</strong> — <em>The challenge of a lack of faithful leaders who can train others.</em><br>Many churches are limited by a shortage of leaders who are both faithful to the gospel and capable of equipping others. Multiplication of leaders is urgent.</li><li><strong>Development</strong> — <em>The challenge of persevering with gospel ministry.</em><br>Ministry is hard and long. Many leaders start well but do not continue. BUILD is designed to equip leaders to persevere — and to keep growing throughout their ministry lives.</li></ol>",
           "buttonText"   :"See the five challenges ➡",
           "bottomPadding":"normal"
         },
@@ -449,7 +449,7 @@
           "eyebrow"      :"BUILD’s Vision, Mission and Values",
           "term"         :"What BUILD is aiming for, how it plans to get there, and what it believes",
           "question"     :"What is BUILD’s vision, mission and set of values?",
-          "answer"       :"<p><strong>Vision</strong> — a picture of the future BUILD hopes to see:<br><em>’BUILD’s vision is to see a multitude of well-equipped leaders at the grassroots building healthy churches across Africa’s Great Lakes Region and beyond.’</em></p><p><strong>Mission</strong> — how BUILD aims to achieve that vision:<br><em>’BUILD’s mission is to enable churches to train their own leaders with a practical understanding of the gospel, Scripture and theology.’</em></p><p><strong>Values</strong> — the foundational convictions that motivate and guide BUILD:</p><p><strong>1. Biblical</strong> — BUILD believes in learning under Scripture. The Bible and its gospel must be central to all training if personal development and local church growth is to be genuine.</p><p><strong>2. Understanding</strong> — BUILD believes in learning with integrity. Skilful and godly use of the Bible and its gospel are essential for the development of true leaders.</p><p><strong>3. In-service</strong> — BUILD believes in learning in context. Learning is best done in the midst of ministry and mission, in partnership with local churches.</p><p><strong>4. Leadership</strong> — BUILD believes in learning and leadership. Leaders who understand the gospel deeply and invest in others are essential for healthy churches.</p><p><strong>5. Development</strong> — BUILD believes in learning for life. While every training course ends, Christian discipleship does not. BUILD equips leaders to be life-long learners.</p>",
+          "answer"       :"<p><strong>Vision</strong> — a picture of the future BUILD hopes to see:<br><em>’BUILD’s vision is to see a multitude of well-equipped leaders at the grassroots building healthy churches across Africa’s Great Lakes Region and beyond.’</em></p><p><strong>Mission</strong> — how BUILD aims to achieve that vision:<br><em>’BUILD’s mission is to enable churches to train their own leaders with a practical understanding of the gospel, Scripture and theology.’</em></p><p><strong>Values</strong> — the foundational convictions that motivate and guide BUILD:</p><ol><li><strong>Biblical</strong> — BUILD believes in learning under Scripture. The Bible and its gospel must be central to all training if personal development and local church growth is to be genuine.</li><li><strong>Understanding</strong> — BUILD believes in learning with integrity. Skilful and godly use of the Bible and its gospel are essential for the development of true leaders.</li><li><strong>In-service</strong> — BUILD believes in learning in context. Learning is best done in the midst of ministry and mission, in partnership with local churches.</li><li><strong>Leadership</strong> — BUILD believes in learning and leadership. Leaders who understand the gospel deeply and invest in others are essential for healthy churches.</li><li><strong>Development</strong> — BUILD believes in learning for life. While every training course ends, Christian discipleship does not. BUILD equips leaders to be life-long learners.</li></ol>",
           "buttonText"   :"See vision, mission and values ➡",
           "bottomPadding":"normal"
         },
@@ -502,7 +502,7 @@
           "eyebrow"      :"The Four-Fold Structure of BUILD",
           "term"         :"Force — Foundation — Focus — Fruit",
           "question"     :"How does a BUILD programme work? What are its four key elements?",
-          "answer"       :"<p><strong>1. FORCE — Coordination and curriculum</strong><br>The force behind BUILD is its curriculum and coordination. Programme coordinators ensure the work is well-managed and well-resourced. The BUILD course is the key resource put into the hands of trainers to equip others. It continues to be developed and translated.</p><p><strong>2. FOUNDATION — Formal training-of-trainers</strong><br>The foundation of BUILD is its formal training-of-trainers. This produces grassroots educators for local BUILD groups — trainers who can use the BUILD course and its materials to equip others. This training is sometimes done in partnership with a college, training centre, or network of churches. Trainers begin training participants in local BUILD groups during the course itself, equipping themselves more effectively in the process.</p><p><strong>3. FOCUS — Non-formal training of local church leaders</strong><br>The focus of BUILD is the non-formal training of local church leaders in local BUILD groups. Participants are church leaders at the grassroots — BUILD’s primary target group: mature Christians, lay workers, and others who lead within local congregations. These groups are led by BUILD trainers or local trainers who emerge from within the groups themselves.</p><p><strong>4. FRUIT — Informal training and other impacts</strong><br>The fruit of BUILD is the informal training and wider impact that flows from the programme. This includes more effective preaching, teaching, pastoral care, and outreach. Lives, churches, and communities are transformed as the gospel is proclaimed more effectively through word and deed.</p>",
+          "answer"       :"<ol><li><strong>FORCE — Coordination and curriculum</strong><br>The force behind BUILD is its curriculum and coordination. Programme coordinators ensure the work is well-managed and well-resourced. The BUILD course is the key resource put into the hands of trainers to equip others. It continues to be developed and translated.</li><li><strong>FOUNDATION — Formal training-of-trainers</strong><br>The foundation of BUILD is its formal training-of-trainers. This produces grassroots educators for local BUILD groups — trainers who can use the BUILD course and its materials to equip others. This training is sometimes done in partnership with a college, training centre, or network of churches. Trainers begin training participants in local BUILD groups during the course itself, equipping themselves more effectively in the process.</li><li><strong>FOCUS — Non-formal training of local church leaders</strong><br>The focus of BUILD is the non-formal training of local church leaders in local BUILD groups. Participants are church leaders at the grassroots — BUILD’s primary target group: mature Christians, lay workers, and others who lead within local congregations. These groups are led by BUILD trainers or local trainers who emerge from within the groups themselves.</li><li><strong>FRUIT — Informal training and other impacts</strong><br>The fruit of BUILD is the informal training and wider impact that flows from the programme. This includes more effective preaching, teaching, pastoral care, and outreach. Lives, churches, and communities are transformed as the gospel is proclaimed more effectively through word and deed.</li></ol>",
           "buttonText"   :"See the four elements ➡",
           "bottomPadding":"normal"
         },
@@ -553,7 +553,7 @@
           "eyebrow"      :"Four Types of Learning Unit",
           "term"         :"Every module contains fifteen units of four kinds",
           "question"     :"What are the four types of learning unit in the BUILD curriculum?",
-          "answer"       :"<p><strong>1. Tools</strong> — for encountering God’s word in God’s world. These units give you the knowledge and skills you need for handling the Bible well.</p><p><strong>2. Encounters</strong> — with God’s word in God’s world. These units put the tools to work as you study passages of Scripture — discovering their meaning and learning how to teach them to others.</p><p><strong>3. Reflection</strong> — for wisdom. These units help you think carefully about different issues and equip you to lead others in that process. They develop your skills of theological reflection.</p><p><strong>4. Action</strong> — as leaders in mission. These units provide practical training in areas such as preaching, pastoral care, and leadership — essential skills for local church leaders.</p>",
+          "answer"       :"<ol><li><strong>Tools</strong> — for encountering God’s word in God’s world. These units give you the knowledge and skills you need for handling the Bible well.</li><li><strong>Encounters</strong> — with God’s word in God’s world. These units put the tools to work as you study passages of Scripture — discovering their meaning and learning how to teach them to others.</li><li><strong>Reflection</strong> — for wisdom. These units help you think carefully about different issues and equip you to lead others in that process. They develop your skills of theological reflection.</li><li><strong>Action</strong> — as leaders in mission. These units provide practical training in areas such as preaching, pastoral care, and leadership — essential skills for local church leaders.</li></ol>",
           "buttonText"   :"See the four unit types ➡",
           "bottomPadding":"normal"
         },
@@ -659,7 +659,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Explain how someone can recognise God’s voice today\n2. Illustrate why God’s speech in the past still speaks today\n3. Point out the challenges we face in understanding the Bible\n4. State the four steps for understanding a book of the Bible\n5. Apply the four steps to a Bible verse",
+          "question"     :"<ol><li>Explain how someone can recognise God’s voice today</li><li>Illustrate why God’s speech in the past still speaks today</li><li>Point out the challenges we face in understanding the Bible</li><li>State the four steps for understanding a book of the Bible</li><li>Apply the four steps to a Bible verse</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -1108,7 +1108,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Present the small, practical steps for understanding a book of the Bible\n2. Use a set of questions to discover the setting of a Bible book\n3. List the main themes of a Bible book\n4. Summarise the situation and message of 1 Timothy\n5. Compare and contrast 1 and 2 Timothy",
+          "question"     :"<ol><li>Present the small, practical steps for understanding a book of the Bible</li><li>Use a set of questions to discover the setting of a Bible book</li><li>List the main themes of a Bible book</li><li>Summarise the situation and message of 1 Timothy</li><li>Compare and contrast 1 and 2 Timothy</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -1215,7 +1215,7 @@
           "eyebrow"      :"Three places to find background information — within the Bible",
           "term"         :"The Bible interprets the Bible",
           "question"     :"Where should you look when you want to understand the setting of a Bible letter?",
-          "answer"       :"<p><strong>1. Other parts of the Bible</strong> shed light on the setting of a book. The New Testament repeatedly refers to the Old Testament (e.g. 1 Timothy 5:18 quotes Deuteronomy 25:4 and Luke 10:7). The book of Acts often contains important background for understanding the epistles.</p><p><strong>2. Related Bible books</strong> provide useful information too. Reading the other Pastoral Epistles — 2 Timothy and Titus — gives insights into the situation reflected in 1 Timothy.</p><p><strong>3. The Bible book itself</strong> provides the information we need. We can read 1 Timothy carefully and discover its own situation by asking the right questions.</p>",
+          "answer"       :"<ol><li><strong>Other parts of the Bible</strong> shed light on the setting of a book. The New Testament repeatedly refers to the Old Testament (e.g. 1 Timothy 5:18 quotes Deuteronomy 25:4 and Luke 10:7). The book of Acts often contains important background for understanding the epistles.</li><li><strong>Related Bible books</strong> provide useful information too. Reading the other Pastoral Epistles — 2 Timothy and Titus — gives insights into the situation reflected in 1 Timothy.</li><li><strong>The Bible book itself</strong> provides the information we need. We can read 1 Timothy carefully and discover its own situation by asking the right questions.</li></ol>",
           "buttonText"   :"See the three sources ➡",
           "bottomPadding":"normal"
         },
@@ -1763,7 +1763,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Explain how Unit 3 relates to Unit 4\n2. List the first four steps of the Scripture Sculpture process\n3. Begin to use the four steps for encountering a Bible passage\n4. Respond to God’s word in 2 Timothy 1:6-7",
+          "question"     :"<ol><li>Explain how Unit 3 relates to Unit 4</li><li>List the first four steps of the Scripture Sculpture process</li><li>Begin to use the four steps for encountering a Bible passage</li><li>Respond to God’s word in 2 Timothy 1:6-7</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -1997,7 +1997,7 @@
           "type"         :"text",
           "subtype"      :"bridge",
           "format"       :"HTML",
-          "text"         :"Now look closely at the words of 2 Tim 1:6-7 themselves. You are looking for three kinds of detail:<br><br><b>1. Repeated and related words and phrases</b> — words or ideas that appear more than once, or that cluster together around a theme.<br><b>2. Other important, complicated, or unusual words and phrases</b> — anything that stands out, surprises you, or needs explaining.<br><b>3. Connections and links between words and phrases</b> — logical connectors like ’for’, ‘therefore’, ‘but’, ‘because’, ‘so’; and contrasts like ’not… but…’.<br><br>In a paper-based setting you would mark these with different colours — green for repeated words, red for important or unusual words, blue for links and connections. In this study, use the questions below to capture the same observations in writing. Be selective: if you mark everything, you have marked nothing.",
+          "text"         :"Now look closely at the words of 2 Tim 1:6-7 themselves. You are looking for three kinds of detail:<ol><li><b>Repeated and related words and phrases</b> — words or ideas that appear more than once, or that cluster together around a theme.</li><li><b>Other important, complicated, or unusual words and phrases</b> — anything that stands out, surprises you, or needs explaining.</li><li><b>Connections and links between words and phrases</b> — logical connectors like ’for’, ‘therefore’, ‘but’, ‘because’, ‘so’; and contrasts like ’not… but…’.</li></ol>In a paper-based setting you would mark these with different colours — green for repeated words, red for important or unusual words, blue for links and connections. In this study, use the questions below to capture the same observations in writing. Be selective: if you mark everything, you have marked nothing.",
           "bottomPadding":"normal"
         },
         {
@@ -2234,7 +2234,7 @@
           "eyebrow"      :"Worked Example",
           "term"         :"Steps 2–4: SKELETON, HEART, BRAIN — 2 Tim 1:6-7",
           "question"     :"Tap to see the full worked examples for Steps 2, 3, and 4.",
-          "answer"       :"<p><strong>Step 2: SKELETON — Outline the Structure</strong></p><p><em>Links:</em> ’Because of this’ links the passage to v. 5 — the confidence Timothy can have in his own God-given faith. ’For’ (v. 7) links back to v. 6 — Timothy is to rekindle his gifts not only because of the confidence he can have in his own faith, but also because of the character of God’s Holy Spirit who has been given to him. ’Not… but…’ creates the contrast at the heart of v. 7.</p><p><em>Themes:</em> Verse 6 opens with an introduction (‘Because of this’), rooted in Paul’s confidence in Timothy’s sincere faith. It continues with a command (‘rekindle God’s gift’) and adds a note of confidence (‘through the laying on of my hands’ — a public, witnessed event). Verse 7 gives a further reason for Timothy to use his gifts with confidence rather than fear.</p><p><em>Outline (the ’big bones’):</em><br>1. Introduction to confidence in God and his gifts: Timothy can be confident in his faith (v. 6a).<br>2. Command to renew confidence in God and his gifts: Timothy must rekindle his God-given gifts for ministry (v. 6b).<br>3. Reason to renew confidence in God and his gifts: God’s Spirit produces power, love, and self-control — not timidity (v. 7).</p><p><strong>Step 3: HEART — Identify the Message</strong></p><p><em>Theme:</em> Renewing confidence in God and his gifts for ministry.</p><p><em>Message:</em> Paul tells Timothy to renew his confidence in God and his gifts for ministry — because the Spirit God has given produces power, love, and self-control, not timidity.</p><p><strong>Step 4: BRAIN — Understand the Purpose</strong></p><p><em>Purpose:</em> Paul tells Timothy to renew his confidence in God and his gifts because he is facing an urgent and demanding task — one he cannot overcome with his own abilities and strength.</p><p><em>Connection for today:</em> In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?</p>",
+          "answer"       :"<p><strong>Step 2: SKELETON — Outline the Structure</strong></p><p><em>Links:</em> ’Because of this’ links the passage to v. 5 — the confidence Timothy can have in his own God-given faith. ’For’ (v. 7) links back to v. 6 — Timothy is to rekindle his gifts not only because of the confidence he can have in his own faith, but also because of the character of God’s Holy Spirit who has been given to him. ’Not… but…’ creates the contrast at the heart of v. 7.</p><p><em>Themes:</em> Verse 6 opens with an introduction (‘Because of this’), rooted in Paul’s confidence in Timothy’s sincere faith. It continues with a command (‘rekindle God’s gift’) and adds a note of confidence (‘through the laying on of my hands’ — a public, witnessed event). Verse 7 gives a further reason for Timothy to use his gifts with confidence rather than fear.</p><p><em>Outline (the ’big bones’):</em></p><ol><li>Introduction to confidence in God and his gifts: Timothy can be confident in his faith (v. 6a).</li><li>Command to renew confidence in God and his gifts: Timothy must rekindle his God-given gifts for ministry (v. 6b).</li><li>Reason to renew confidence in God and his gifts: God’s Spirit produces power, love, and self-control — not timidity (v. 7).</li></ol><p><strong>Step 3: HEART — Identify the Message</strong></p><p><em>Theme:</em> Renewing confidence in God and his gifts for ministry.</p><p><em>Message:</em> Paul tells Timothy to renew his confidence in God and his gifts for ministry — because the Spirit God has given produces power, love, and self-control, not timidity.</p><p><strong>Step 4: BRAIN — Understand the Purpose</strong></p><p><em>Purpose:</em> Paul tells Timothy to renew his confidence in God and his gifts because he is facing an urgent and demanding task — one he cannot overcome with his own abilities and strength.</p><p><em>Connection for today:</em> In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?</p>",
           "buttonText"   :"See Steps 2–4 worked examples ➡",
           "bottomPadding":"normal"
         },
@@ -2316,7 +2316,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Follow and apply the four steps of Encountering a Bible Passage to a passage from 2 Timothy yourself\n2. Share the message of 2 Timothy 1:8-12 with a group of people today",
+          "question"     :"<ol><li>Follow and apply the four steps of Encountering a Bible Passage to a passage from 2 Timothy yourself</li><li>Share the message of 2 Timothy 1:8-12 with a group of people today</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -2677,7 +2677,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Reflect independently on issues you meet in the Pastoral Epistles\n2. Evaluate your own understanding of the gospel\n3. Explain what the gospel is to other church leaders",
+          "question"     :"<ol><li>Reflect independently on issues you meet in the Pastoral Epistles</li><li>Evaluate your own understanding of the gospel</li><li>Explain what the gospel is to other church leaders</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -3073,7 +3073,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Name and then internalise clear motives for sharing the gospel\n2. Share the story of what God has done in your life in a way that communicates the heart of the gospel\n3. Use a simple framework to explain the gospel to others",
+          "question"     :"<ol><li>Name and then internalise clear motives for sharing the gospel</li><li>Share the story of what God has done in your life in a way that communicates the heart of the gospel</li><li>Use a simple framework to explain the gospel to others</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -3262,7 +3262,7 @@
           "eyebrow"      :"Testimony Structure",
           "term"         :"Before — During — After",
           "question"     :"How do you structure a testimony that clearly communicates the gospel?",
-          "answer"       :"<p><strong>1. Before</strong> — Explain what life was like before you met Christ. You may have been brought up in a Christian home where Jesus was always known. Do not invent a troubled past if you do not have one — but make it clear that you came to a point where you made a decision yourself about Christ.</p><p><strong>2. During</strong> — How did you come to meet Christ and make that decision? What were the circumstances, who was influential, what got you thinking? All our stories are different — but make it clear that God calls us to turn away from our wrongdoing and self-centredness and to turn to him as our only hope.</p><p><strong>3. After</strong> — What difference has it made? Be realistic about the ups and downs of the Christian life, but use examples of how Christ’s love and God’s promises have made a difference to you and those around you.</p><p><strong>Practical tips:</strong> Prepare well — you will be more relaxed and yourself if you know your story. Keep the length appropriate for the listener. Avoid jargon: say ’rebellion and disobedience’ rather than ’sin’; ’turn away from self and to God’ rather than ’repent’; ’rely on what God has done in Christ rather than our own efforts’ rather than ’faith’. Pray — changing lives is what God does, not us.</p>",
+          "answer"       :"<ol><li><strong>Before</strong> — Explain what life was like before you met Christ. You may have been brought up in a Christian home where Jesus was always known. Do not invent a troubled past if you do not have one — but make it clear that you came to a point where you made a decision yourself about Christ.</li><li><strong>During</strong> — How did you come to meet Christ and make that decision? What were the circumstances, who was influential, what got you thinking? All our stories are different — but make it clear that God calls us to turn away from our wrongdoing and self-centredness and to turn to him as our only hope.</li><li><strong>After</strong> — What difference has it made? Be realistic about the ups and downs of the Christian life, but use examples of how Christ’s love and God’s promises have made a difference to you and those around you.</li></ol><p><strong>Practical tips:</strong> Prepare well — you will be more relaxed and yourself if you know your story. Keep the length appropriate for the listener. Avoid jargon: say ’rebellion and disobedience’ rather than ’sin’; ’turn away from self and to God’ rather than ’repent’; ’rely on what God has done in Christ rather than our own efforts’ rather than ’faith’. Pray — changing lives is what God does, not us.</p>",
           "buttonText"   :"See the structure ➡",
           "bottomPadding":"normal"
         },
@@ -3346,7 +3346,7 @@
           "eyebrow"      :"3 Things to Understand",
           "term"         :"1. God is King   2. We are sinners   3. Jesus came to save us",
           "question"     :"What are the three foundational truths of the gospel that every person needs to understand?",
-          "answer"       :"<p><strong>1. God is King</strong><br>God is ’the eternal king, immortal, invisible, the only God’ (v. 17). God is in charge of everything and everyone — always has been and always will be, because he alone is eternal. He is not like us: he is immortal and invisible. He is unique — the only God. We have been created to give him honour and glory, which means recognising who he is and living to please him.<br><em>Question to consider: Do you understand that God is King and that you should obey him?</em></p><p><strong>2. We are sinners</strong><br>God made us to love and obey him, but we live for our own honour and glory. That is why Paul calls people ’sinners’ and counts himself ’the worst of them’ (vv. 15-16). No one likes this label — but Paul has just told us that God loves us very much (v. 14). Despite and because of his great love for us, God cannot stand our sin and we cannot approach him. This leads to death — a problem that only God can solve.<br><em>Question to consider: Do you understand that you are a sinner and are cut off from God?</em></p><p><strong>3. Jesus came to save us</strong><br>The heart of the ’trustworthy saying’ is this: ‘Christ Jesus came into the world to save sinners’ (v. 15). If we understand our guilt, shame and powerlessness, we know we need a saviour. The title ’Christ Jesus’ means ’God’s chosen rescuer.’ God the King came in the person of his Son — and his death and resurrection completed his mission. At the cross, Jesus dealt with sin and evil once and for all.<br><em>Question to consider: Do you understand that Christ Jesus is the only one who can rescue you?</em></p>",
+          "answer"       :"<ol><li><strong>God is King</strong><br>God is ’the eternal king, immortal, invisible, the only God’ (v. 17). God is in charge of everything and everyone — always has been and always will be, because he alone is eternal. He is not like us: he is immortal and invisible. He is unique — the only God. We have been created to give him honour and glory, which means recognising who he is and living to please him.<br><em>Question to consider: Do you understand that God is King and that you should obey him?</em></li><li><strong>We are sinners</strong><br>God made us to love and obey him, but we live for our own honour and glory. That is why Paul calls people ’sinners’ and counts himself ’the worst of them’ (vv. 15-16). No one likes this label — but Paul has just told us that God loves us very much (v. 14). Despite and because of his great love for us, God cannot stand our sin and we cannot approach him. This leads to death — a problem that only God can solve.<br><em>Question to consider: Do you understand that you are a sinner and are cut off from God?</em></li><li><strong>Jesus came to save us</strong><br>The heart of the ’trustworthy saying’ is this: ‘Christ Jesus came into the world to save sinners’ (v. 15). If we understand our guilt, shame and powerlessness, we know we need a saviour. The title ’Christ Jesus’ means ’God’s chosen rescuer.’ God the King came in the person of his Son — and his death and resurrection completed his mission. At the cross, Jesus dealt with sin and evil once and for all.<br><em>Question to consider: Do you understand that Christ Jesus is the only one who can rescue you?</em></li></ol>",
           "buttonText"   :"See 3 things to understand ➡",
           "bottomPadding":"normal"
         },
@@ -3357,7 +3357,7 @@
           "eyebrow"      :"2 Things to Do",
           "term"         :"1. Believe in Jesus   2. Receive new life",
           "question"     :"What are the two responses the gospel calls for?",
-          "answer"       :"<p><strong>1. Believe in Jesus</strong><br>Verse 16 reminds us that God has done all the work, but we need to respond: we must ’believe in him.’ That means trusting what God has already done for us through Jesus Christ. The gospel is ’a trustworthy saying that deserves full acceptance’ — we must put our hope fully in Jesus, the only one who can rescue us.<br><em>Question to consider: Will you put your trust fully in Jesus to save you?</em></p><p><strong>2. Receive new life</strong><br>Verse 16 continues: as we trust in God we ’receive eternal life.’ The King removes our sin and shame and welcomes us into his kingdom — a place with no evil and no end. That life begins now through the gift of God’s Holy Spirit and continues beyond death into the future, when God’s new heavens and new earth will be established forever.<br><em>Question to consider: Will you open your heart to receive God’s gift of new life?</em></p>",
+          "answer"       :"<ol><li><strong>Believe in Jesus</strong><br>Verse 16 reminds us that God has done all the work, but we need to respond: we must ’believe in him.’ That means trusting what God has already done for us through Jesus Christ. The gospel is ’a trustworthy saying that deserves full acceptance’ — we must put our hope fully in Jesus, the only one who can rescue us.<br><em>Question to consider: Will you put your trust fully in Jesus to save you?</em></li><li><strong>Receive new life</strong><br>Verse 16 continues: as we trust in God we ’receive eternal life.’ The King removes our sin and shame and welcomes us into his kingdom — a place with no evil and no end. That life begins now through the gift of God’s Holy Spirit and continues beyond death into the future, when God’s new heavens and new earth will be established forever.<br><em>Question to consider: Will you open your heart to receive God’s gift of new life?</em></li></ol>",
           "buttonText"   :"See 2 things to do ➡",
           "bottomPadding":"normal"
         },
@@ -3544,7 +3544,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Follow and apply the four steps of Encountering a Bible Passage to a passage from 2 Timothy yourself\n2. Share the message of 2 Timothy 2:1-7 with a group of people today",
+          "question"     :"<ol><li>Follow and apply the four steps of Encountering a Bible Passage to a passage from 2 Timothy yourself</li><li>Share the message of 2 Timothy 2:1-7 with a group of people today</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -3905,7 +3905,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Recall and arrange the steps of theological reflection\n2. Apply the steps of theological reflection to issues you encounter\n3. Plan steps to make the gospel more central to your ministry\n4. Use the acronym ’BUILD’ to present the logic of gospel ministry",
+          "question"     :"<ol><li>Recall and arrange the steps of theological reflection</li><li>Apply the steps of theological reflection to issues you encounter</li><li>Plan steps to make the gospel more central to your ministry</li><li>Use the acronym ’BUILD’ to present the logic of gospel ministry</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -4018,7 +4018,7 @@
           "elementId"        :"ch09-el14",
           "type"             :"question",
           "format"           :"plainText",
-          "question"         :"ENCOUNTER — DESCRIBE: Apply the following questions to the challenge or issue you identified at the start of this unit.\n\n1. How did events unfold? Tell the story of what you experienced.\n2. Who was involved? Describe the people.\n3. What were the various people doing and saying? Record what happened.\n4. Where and when did the events take place? Describe the situation.\n5. What key things have you discovered that will need further reflection?",
+          "question"         :"ENCOUNTER — DESCRIBE: Apply the following questions to the challenge or issue you identified at the start of this unit.<ol><li>How did events unfold? Tell the story of what you experienced.</li><li>Who was involved? Describe the people.</li><li>What were the various people doing and saying? Record what happened.</li><li>Where and when did the events take place? Describe the situation.</li><li>What key things have you discovered that will need further reflection?</li></ol>",
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Work through each question in turn. Describe — don’t yet explain or analyse. Resist the urge to jump to conclusions or solutions at this stage…",
@@ -4048,7 +4048,7 @@
           "elementId"        :"ch09-el17",
           "type"             :"question",
           "format"           :"plainText",
-          "question"         :"REFLECTION — CONSIDER AND DEVELOP PRINCIPLES: Apply the following questions to the discoveries you made in Step 1.\n\n1. Why might these things be happening? What reasons might lie behind what you described?\n2. What light does the gospel — the good news of God’s grace — shed on all this?\n3. What Bible passages and themes are particularly relevant to the problem?\n4. What pictures or illustrations help you to understand God’s perspective on it?\n5. What principles emerge from this process?",
+          "question"         :"REFLECTION — CONSIDER AND DEVELOP PRINCIPLES: Apply the following questions to the discoveries you made in Step 1.<ol><li>Why might these things be happening? What reasons might lie behind what you described?</li><li>What light does the gospel — the good news of God’s grace — shed on all this?</li><li>What Bible passages and themes are particularly relevant to the problem?</li><li>What pictures or illustrations help you to understand God’s perspective on it?</li><li>What principles emerge from this process?</li></ol>",
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Work through each question in turn. Keep the gospel at the centre. List principles rather than plans — you will make plans in Step 3…",
@@ -4078,7 +4078,7 @@
           "elementId"        :"ch09-el20",
           "type"             :"question",
           "format"           :"plainText",
-          "question"         :"ACTION — PLAN AND PRACTISE: Apply the following questions to the principles you drew out in Step 2.\n\n1. How might all this change my attitudes?\n2. What action can I take that will put these principles into practice?\n3. What plans can I make in order to achieve this?",
+          "question"         :"ACTION — PLAN AND PRACTISE: Apply the following questions to the principles you drew out in Step 2.<ol><li>How might all this change my attitudes?</li><li>What action can I take that will put these principles into practice?</li><li>What plans can I make in order to achieve this?</li></ol>",
           "answerType"       :"freeText",
           "required"         :false,
           "answerPlaceholder":"Be specific and concrete. What will you actually do — and when? Vague intentions rarely lead to change; specific plans do…",
@@ -4202,7 +4202,7 @@
           "eyebrow"      :"The BUILD Learning Cycle",
           "term"         :"The logic and order of gospel ministry",
           "question"     :"What is the logic behind the order of the BUILD letters — and how do they form a cycle of gospel ministry?",
-          "answer"       :"<p><strong>1. Biblical</strong> — The Bible and its gospel are of immense value: <em>’All Scripture…’</em> (2 Tim 3:16-17)<br>First, the Bible is a great treasure that bears God’s authority. We must constantly return to Scripture.</p><p><strong>2. Understanding</strong> — We must use it all with great care: <em>’Correctly handles…’</em> (2 Tim 2:15)<br>Second, we must handle the glorious gospel it contains — the word of truth — with great care and integrity.</p><p><strong>3. In-service</strong> — That includes using it in practice in mission: <em>’Reflect…’</em> (2 Tim 2:7)<br>Third, careful use of Scripture is not simply about preserving the gospel — it is about sharing it and being strengthened by it. The Bible is God’s gift for a church on mission.</p><p><strong>4. Leadership</strong> — And passing true gospel ministry on to others: <em>’Entrust…’</em> (2 Tim 2:2)<br>Fourth, part of that mission is to pass the gospel on — to train trustworthy and true ministers of the gospel.</p><p><strong>5. Development</strong> — This is an ongoing commitment: <em>’Continue…’</em> (2 Tim 3:14)<br>Fifth and finally, all this is an ongoing process. All true teachers of the gospel must continue in what they have learnt, watching both life and doctrine. And then the cycle returns to Biblical — back to Scripture, to renew our grasp of the gospel, and to begin again.</p>",
+          "answer"       :"<ol><li><strong>Biblical</strong> — The Bible and its gospel are of immense value: <em>’All Scripture…’</em> (2 Tim 3:16-17)<br>First, the Bible is a great treasure that bears God’s authority. We must constantly return to Scripture.</li><li><strong>Understanding</strong> — We must use it all with great care: <em>’Correctly handles…’</em> (2 Tim 2:15)<br>Second, we must handle the glorious gospel it contains — the word of truth — with great care and integrity.</li><li><strong>In-service</strong> — That includes using it in practice in mission: <em>’Reflect…’</em> (2 Tim 2:7)<br>Third, careful use of Scripture is not simply about preserving the gospel — it is about sharing it and being strengthened by it. The Bible is God’s gift for a church on mission.</li><li><strong>Leadership</strong> — And passing true gospel ministry on to others: <em>’Entrust…’</em> (2 Tim 2:2)<br>Fourth, part of that mission is to pass the gospel on — to train trustworthy and true ministers of the gospel.</li><li><strong>Development</strong> — This is an ongoing commitment: <em>’Continue…’</em> (2 Tim 3:14)<br>Fifth and finally, all this is an ongoing process. All true teachers of the gospel must continue in what they have learnt, watching both life and doctrine. And then the cycle returns to Biblical — back to Scripture, to renew our grasp of the gospel, and to begin again.</li></ol>",
           "buttonText"   :"See the BUILD cycle ➡",
           "bottomPadding":"normal"
         },
@@ -4271,7 +4271,7 @@
           "eyebrow"      :"Unit Outcomes",
           "term"         :"Refer back to Unit 4 for the full learning outline.",
           "question"     :"By the end of this unit you will be able to…",
-          "answer"       :"<p>1. Follow and apply the four steps of Encountering a Bible Passage to 2 Timothy 3:14-17<br>2. Share the message of 2 Timothy 3:14-17 with a group of people today</p>",
+          "answer"       :"<ol><li>Follow and apply the four steps of Encountering a Bible Passage to 2 Timothy 3:14-17</li><li>Share the message of 2 Timothy 3:14-17 with a group of people today</li></ol>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
         },
@@ -4639,7 +4639,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Repeat the process of theological reflection learnt in Unit 9\n2. Show what 2 Timothy says about the nature and purpose of the Bible\n3. Explain how the nature of the Bible relates to its purpose\n4. Evaluate the relationship between private and public Bible study and prayer\n5. Apply the lessons of Unit 10 to personal Bible study\n6. Present a simple pattern of Bible study to others",
+          "question"     :"<ol><li>Repeat the process of theological reflection learnt in Unit 9</li><li>Show what 2 Timothy says about the nature and purpose of the Bible</li><li>Explain how the nature of the Bible relates to its purpose</li><li>Evaluate the relationship between private and public Bible study and prayer</li><li>Apply the lessons of Unit 10 to personal Bible study</li><li>Present a simple pattern of Bible study to others</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -5212,7 +5212,7 @@
           "eyebrow"      :"Unit Outcomes",
           "term"         :"Refer back to Unit 4 for the full learning outline.",
           "question"     :"By the end of this unit you will be able to…",
-          "answer"       :"<p>1. Follow and apply the four steps of Encountering a Bible Passage to 2 Timothy 4:1-5<br>2. Share the message of 2 Timothy 4:1-5 with a group of people today</p>",
+          "answer"       :"<ol><li>Follow and apply the four steps of Encountering a Bible Passage to 2 Timothy 4:1-5</li><li>Share the message of 2 Timothy 4:1-5 with a group of people today</li></ol>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
         },
@@ -5572,7 +5572,7 @@
           "subtype"      :"general",
           "eyebrow"      :"Unit Outcomes",
           "term"         :"By the end of this unit you will be able to…",
-          "question"     :"1. Explain how Unit 13 relates to Unit 4\n2. Outline the steps of preaching a passage of Scripture\n3. Demonstrate how to follow the steps of preaching\n4. Evaluate sermons using some simple steps",
+          "question"     :"<ol><li>Explain how Unit 13 relates to Unit 4</li><li>Outline the steps of preaching a passage of Scripture</li><li>Demonstrate how to follow the steps of preaching</li><li>Evaluate sermons using some simple steps</li></ol>",
           "answer"       :"<p>Keep these outcomes in mind as you work through the unit. Return to them at the end to check your progress.</p>",
           "buttonText"   :"See outcomes ➡",
           "bottomPadding":"normal"
@@ -5738,7 +5738,7 @@
           "eyebrow"      :"Review: Steps 1-4 on 2 Timothy 1:6-7",
           "term"         :"What we discovered when we encountered this passage in Unit 4",
           "question"     :"What did the four encounter steps reveal about 2 Timothy 1:6-7?",
-          "answer"       :"<p><strong>Step 1: FLESH — Details</strong><br>Paul is convinced that Timothy’s faith in Christ is genuine. Because of this confidence Paul reminds Timothy to do something important: he must renew his confidence in God and his gifts. The greatest gift is God’s Holy Spirit — powerful, loving, and self-controlled.</p><p><strong>Step 2: SKELETON — Structure</strong><br>1. Introduction to confidence in God and his gifts: Timothy can be confident in his faith (v. 6a) because Paul has assured him it is sincere (v. 5).<br>2. The command to renew confidence in God and his gifts: Timothy has God-given gifts for ministry — therefore he must rekindle them (v. 6b).<br>3. The reason to renew: God’s Spirit is committed and resilient, and we have this confidence-building Spirit in our lives (v. 7).</p><p><strong>Step 3: HEART — Message</strong><br>Theme: Renewing confidence in God and his gifts for ministry.<br>Message: Paul tells Timothy to renew his confidence in God and his gifts for ministry.</p><p><strong>Step 4: BRAIN — Purpose and Connections</strong><br>Purpose of the text: Paul tells Timothy to renew his confidence because he is facing an urgent and demanding task — one he cannot overcome with his own abilities and strength.<br>Connection for today: In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?</p>",
+          "answer"       :"<p><strong>Step 1: FLESH — Details</strong><br>Paul is convinced that Timothy’s faith in Christ is genuine. Because of this confidence Paul reminds Timothy to do something important: he must renew his confidence in God and his gifts. The greatest gift is God’s Holy Spirit — powerful, loving, and self-controlled.</p><p><strong>Step 2: SKELETON — Structure</strong></p><ol><li>Introduction to confidence in God and his gifts: Timothy can be confident in his faith (v. 6a) because Paul has assured him it is sincere (v. 5).</li><li>The command to renew confidence in God and his gifts: Timothy has God-given gifts for ministry — therefore he must rekindle them (v. 6b).</li><li>The reason to renew: God’s Spirit is committed and resilient, and we have this confidence-building Spirit in our lives (v. 7).</li></ol><p><strong>Step 3: HEART — Message</strong><br>Theme: Renewing confidence in God and his gifts for ministry.<br>Message: Paul tells Timothy to renew his confidence in God and his gifts for ministry.</p><p><strong>Step 4: BRAIN — Purpose and Connections</strong><br>Purpose of the text: Paul tells Timothy to renew his confidence because he is facing an urgent and demanding task — one he cannot overcome with his own abilities and strength.<br>Connection for today: In the face of all the daily demands and difficulties we face, how can we renew our confidence in God and his gifts for ministry?</p>",
           "buttonText"   :"See the review ➡",
           "bottomPadding":"normal"
         },
