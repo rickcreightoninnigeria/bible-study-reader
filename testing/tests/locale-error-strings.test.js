@@ -86,3 +86,21 @@ describe('t() plural form', () => {
     expect(t('k', { count: 1 })).toMatch(/^1 more section in this pathway/);
   });
 });
+
+describe('every locale is complete', () => {
+  const keys = Object.keys(en).filter(k => !k.startsWith('___'));
+  for (const lang of langs) {
+    it(`${lang}: has every English key`, () => {
+      const d = load(lang);
+      expect(keys.filter(k => typeof d[k] !== 'string' || !d[k].trim())).toEqual([]);
+    });
+  }
+
+  it('the Reset-all confirmation word is "reset" everywhere, so what the body asks for is what is checked', () => {
+    for (const lang of ['en', ...langs]) {
+      const d = load(lang);
+      expect(d.settings_resetall_confirm2_keyword, lang).toBe('reset');
+      expect(d.settings_resetall_confirm2_body, lang).toContain('<strong>reset</strong>');
+    }
+  });
+});
