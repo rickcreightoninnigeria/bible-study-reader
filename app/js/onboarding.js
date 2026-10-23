@@ -60,12 +60,19 @@ function getUpgradeOnboardingSlides() {
   // showUpgradeOnboardingIfNeeded() will silently skip, and
   // showUpgradeOnboarding() will show a "nothing to see" toast instead.
   //    body:    '<ul><li><b>??:</b> ??</li><li><b>??:</b> ??</li></ul>',
+  // Written for readers, not authors: say what they will notice. Rewrite this
+  // for each release (the text is English only, like the eyebrow and heading).
   return [
     {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
-      body:    '<ul><li><b>Storage:</b> a major behind-the-scenes update (moving to database storage)</li></ul>',
+      body:    '<ul>' +
+        '<li><b>Clearer problems:</b> if a study will not open or install, the app now says what went wrong and lets you copy the details.</li>' +
+        '<li><b>Settings → Diagnostics:</b> check your device and studies, and send a problem report by email.</li>' +
+        '<li><b>Updating a study:</b> if you open a file for a study you already have, the app asks whether to keep your copy or replace it.</li>' +
+        '<li><b>Easier reading:</b> lists in Go Deeper, Leaders’ Notes and pop-ups are now properly indented.</li>' +
+        '</ul>',
     },
   ];
 }

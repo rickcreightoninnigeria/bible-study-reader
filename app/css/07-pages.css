@@ -117,6 +117,13 @@
   line-height: 1.7;
   margin-bottom: 32px;
 }
+/* Lists in the description: the global reset removed the indent. */
+.title-page-desc ul,
+.title-page-desc ol {
+  padding-inline-start: var(--prose-list-indent);
+  margin: 8px 0;
+}
+.title-page-desc li { margin-bottom: 4px; }
 .title-page-author {
   font-family: var(--font-stack-mono);
   font-size: 11px;         /* UI chrome — stays px */
@@ -268,6 +275,22 @@
   margin-bottom: 8px;
 }
 .howto-block p:last-child { margin-bottom: 0; }
+/* Lists in a study's How-to blocks. The global reset removed the indent;
+   items read like the paragraphs around them. */
+.howto-block-body ul,
+.howto-block-body ol {
+  padding-inline-start: var(--prose-list-indent);
+  margin: 8px 0;
+}
+.howto-block-body li {
+  font-family: var(--main-font-family);
+  font-size: 0.906rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 4px;
+}
+.howto-block-body > ul:last-child,
+.howto-block-body > ol:last-child { margin-bottom: 0; }
 
 /* UI feature item — icon + label + description row */
 .howto-ui-item {
@@ -591,6 +614,68 @@
 .leaders-block p + p,
 .go-deeper-block p + p { margin-top: 10px; }
 
+/* Lists in Go Deeper and Leaders' Notes (markdown and HTML bodies alike).
+   The global reset (03-base.css) strips the browser's list indent and nothing
+   here restored it, so markers sat on the card's edge and wrapped lines
+   returned to it. The indent is padding-inline-start so that, in RTL, the
+   markers move to the right-hand side. Nested lists sit tighter, and a loose
+   list (items wrapped in <p>) keeps the item spacing because p + p margins
+   only apply between paragraphs inside one item. Lists in tables are set by
+   .go-deeper-table below, which comes later and wins. */
+.leaders-block ul,
+.leaders-block ol,
+.leaders-intro ul,
+.leaders-intro ol,
+.go-deeper-block ul,
+.go-deeper-block ol,
+.go-deeper-intro ul,
+.go-deeper-intro ol {
+  padding-inline-start: var(--prose-list-indent);
+  margin: 10px 0;
+}
+.leaders-block ul ul,
+.leaders-block ul ol,
+.leaders-block ol ul,
+.leaders-block ol ol,
+.leaders-intro ul ul,
+.leaders-intro ul ol,
+.leaders-intro ol ul,
+.leaders-intro ol ol,
+.go-deeper-block ul ul,
+.go-deeper-block ul ol,
+.go-deeper-block ol ul,
+.go-deeper-block ol ol,
+.go-deeper-intro ul ul,
+.go-deeper-intro ul ol,
+.go-deeper-intro ol ul,
+.go-deeper-intro ol ol {
+  margin: 4px 0;
+}
+/* No extra gap above or below a list that is the first or last thing in a card
+   (the card already has its own padding). Written out rather than with :is(),
+   which older Android WebViews do not know. */
+.leaders-block > ul:first-child,
+.leaders-block > ol:first-child,
+.go-deeper-block > ul:first-child,
+.go-deeper-block > ol:first-child { margin-top: 0; }
+.leaders-block > ul:last-child,
+.leaders-block > ol:last-child,
+.go-deeper-block > ul:last-child,
+.go-deeper-block > ol:last-child { margin-bottom: 0; }
+/* List items read like the paragraphs around them. */
+.leaders-block li,
+.leaders-intro li,
+.go-deeper-block li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 4px;
+}
+.leaders-intro li { font-size: 0.906rem; }
+.leaders-block li:last-child,
+.leaders-intro li:last-child,
+.go-deeper-block li:last-child { margin-bottom: 0; }
+
 /* "Watch for" callout — inset accent strip within a leaders block */
 .leaders-watch,
 .go-deeper-highlight {
@@ -641,6 +726,7 @@
   margin: 0;
   padding-inline-start: 1.1rem;
 }
+.go-deeper-table li { margin-bottom: 0; }
 
 /* Footer label reminding leaders this content is confidential */
 .leaders-confidential {
@@ -2873,6 +2959,7 @@ body.dark-mode .howto-ui-label {
   color: var(--dm-text);
 }
 body.dark-mode .howto-block p,
+body.dark-mode .howto-block-body li,
 body.dark-mode .howto-ui-desc {
   color: var(--dm-text-mid);
 }
@@ -2907,8 +2994,11 @@ body.dark-mode .leaders-block {
 body.dark-mode .copyright-block p,
 body.dark-mode .copyright-block ul li,
 body.dark-mode .leaders-intro p,
+body.dark-mode .leaders-intro li,
 body.dark-mode .go-deeper-block p,
-body.dark-mode .leaders-block p {
+body.dark-mode .go-deeper-block li,
+body.dark-mode .leaders-block p,
+body.dark-mode .leaders-block li {
   color: var(--dm-text-mid);
 }
 body.dark-mode .copyright-block a    { color: var(--emphasis-light); }

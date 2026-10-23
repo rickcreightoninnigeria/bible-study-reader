@@ -407,6 +407,14 @@
   line-height: 1.75;
 }
 .deeper-modal-body p + p { margin-top: 12px; }
+/* Lists in the "Go deeper" question pop-up. Like the other pop-ups, it needs its
+   own rule: the global reset removes the browser's list indent. */
+.deeper-modal-body ul,
+.deeper-modal-body ol {
+  padding-inline-start: var(--prose-list-indent);   /* flips in RTL */
+  margin: 8px 0;
+}
+.deeper-modal-body li { margin-bottom: 4px; }
 
 /* ── 06. MODAL CLOSE FOOTER ─────────────────────────────────────────────── */
 /* A centred ✕ Close button rendered at the foot of bottom-sheet modals

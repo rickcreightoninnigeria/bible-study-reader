@@ -122,6 +122,12 @@
      better with a little air. Also read by the print window (share-print.js),
      which has its own stylesheet, so change it here only. */
   --divine-name-tracking: 0.04em;
+
+  /* Indent of bulleted and numbered lists in text the global reset would leave
+     flush: Go Deeper and Leaders' Notes cards, the "Go deeper" question pop-up,
+     question text, How-to blocks and the title-page description. Applied with
+     padding-inline-start, so it flips in RTL. */
+  --prose-list-indent: 1.4em;
 }
 
 

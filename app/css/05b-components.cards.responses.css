@@ -96,6 +96,14 @@
   font-style: italic;
   color: var(--emphasis);
 }
+/* Lists in question text. The global reset removes the browser's list indent;
+   padding-inline-start flips in RTL so markers stay inside the card. */
+.question-text ul,
+.question-text ol {
+  padding-inline-start: var(--prose-list-indent);
+  margin: 8px 0;
+}
+.question-text li { margin-bottom: 4px; }
 
 /* "go deeper ↗" inline link within question text.
    Styled as subtle inline text, not a visible button. */
