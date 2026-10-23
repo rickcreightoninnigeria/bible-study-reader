@@ -1,0 +1,1228 @@
+{
+  "studyMetadata": {
+    "studyId": "made_marred_renewed_p1",
+    "title": "Made, Marred and Renewed",
+    "subtitle": "Part I: Created but Fallen",
+    "shortTitle": "Made, Marred, Renewed",
+    "description": "Who are we, and how did we come to be this way? This study accompanies Part I of Made, Marred and Renewed (Volume 1 of Rick Creighton’s Doctrine for Disciple-Making), a theology textbook for church leaders, students and thoughtful lay people. Each session takes about an hour and works through the key Bible passages behind one chapter, with questions you can answer from the text itself. Use it with a group or on your own; the chapter is built in, to read afterwards if you wish.",
+    "author": "Rick Creighton",
+    "studyVersion": 1.0,
+    "estudyFileVersion": 3,
+    "language": "en",
+    "libraryShelves": {
+      "Shelf": "Beliefs",
+      "Section": "Creation & Humanity"
+    }
+  },
+  "imageData": {
+    "cover": {
+      "alt": "Cover of Made, Marred and Renewed",
+      "fallback": "📖"
+    }
+  },
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "chapterTitle": "Starting with the Resurrection",
+      "elements": [
+        {
+          "elementId": "ch01-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>Daniel’s wife died eight months ago after a short illness. He still comes to church every week, sits in the same place, and sings the songs – but something in him has gone quiet. ‘I believe in the resurrection,’ he tells his pastor. ‘I just don’t feel that it changes anything. She’s still gone. The house is still empty. I can’t see how any of that is going to be undone.’</p><p>Whether he realises it or not, Daniel is facing a question of theology: how what he believes connects with how he lives and grieves – the subject of this chapter.</p><p><em>Daniel is a composite character, not a real individual.</em></p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el02",
+          "type": "question",
+          "subtype": "header",
+          "format": "plainText",
+          "header": "As we get started…",
+          "question": "What do you think is really going on for Daniel? If you were his friend, what would you want to say to him – and what would you avoid saying?",
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el03",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "Some people picture theology like a <b>brick wall</b>: each belief rests on the ones below it, so one crack threatens the whole thing. Others picture it like a <b>spider’s web</b>: many strands, connected in all directions, which can bend and still hold. Look at the two pictures below, then answer honestly.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el04",
+          "type": "image",
+          "alt": "A brick wall in which each brick is labelled with a doctrine, from Eternity and Creation at the bottom to Eschatology at the top.",
+          "fallback": "🖼️",
+          "align": "center",
+          "width": "70",
+          "caption": "Figure 1.1: Not like a brick wall",
+          "format": "plainText",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el05",
+          "type": "image",
+          "alt": "A spider’s web, with many strands connected to a central point.",
+          "fallback": "🖼️",
+          "align": "center",
+          "width": "50",
+          "caption": "Figure 1.2: More like a spider’s web",
+          "format": "plainText",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el06",
+          "type": "question",
+          "subtype": "header",
+          "format": "plainText",
+          "header": "Wall or web?",
+          "question": "Look at the two pictures. Which is closer to how your own beliefs fit together? If one belief were shaken, what else would feel at risk?",
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el07",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "1. Waking up to what we already believe",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el08",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 5:8-14",
+          "translation": "NIV",
+          "passageText": "<p><sup>8</sup>For you were once darkness, but now you are light in the Lord. Live as children of light <sup>9</sup>(for the fruit of the light consists in all goodness, righteousness and truth) <sup>10</sup>and find out what pleases the Lord. <sup>11</sup>Have nothing to do with the fruitless deeds of darkness, but rather expose them. <sup>12</sup>It is shameful even to mention what the disobedient do in secret. <sup>13</sup>But everything exposed by the light becomes visible – and everything that is illuminated becomes a light. <sup>14</sup>This is why it is said:</p><p>‘Wake up, sleeper,<br>rise from the dead,<br>and Christ will shine on you.’</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+5%3A8-14&version=NIVUK"
+        },
+        {
+          "elementId": "ch01-el09",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul quotes a wake-up call in verse 14. Who is being addressed, and what is promised? Those who wake are not starting from nothing: verses 8–11 describe the life they were already living and the life they now live. What does the light do to what was already there (vv11–13), and what are they to discover (v10)?",
+          "linkedPassage": "Ephesians 5:8-14",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what the readers once were (v8) and what the light does to things already around them (v13).",
+          "sampleAnswer": "Paul addresses a sleeper, someone as good as dead, and promises that Christ will shine on them. Those who wake are not starting from nothing: they already had a way of living, which Paul calls darkness (vv8–11). The light exposes what was already there and makes it visible (vv11–13), and the person who is awake is to discover what pleases the Lord (v10). In the same way, we wake up in the middle of a life, and a theology, that is already being lived, and now have the chance to look at it honestly.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el10",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Misunderstanding",
+          "term": "Theology is only for experts",
+          "question": "Do you need a degree to do theology? Think about it before tapping ‘Find out’.",
+          "answer": "<p>No. Everybody is some sort of theologian, whether or not they have ever studied. We all have some answer to the big questions: Is there a God? What is he like? What happens at death? The real question is not whether we have a theology, but whether we reflect on the theology we already have, and whether we are growing in it.</p>",
+          "buttonText": "Find out",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el11",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "2. Hearing and doing",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el12",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Matthew 7:24-27",
+          "translation": "NIV",
+          "passageText": "<p><sup>24</sup>‘Therefore everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock. <sup>25</sup>The rain came down, the streams rose, and the winds blew and beat against that house; yet it did not fall, because it had its foundation on the rock. <sup>26</sup>But everyone who hears these words of mine and does not put them into practice is like a foolish man who built his house on sand. <sup>27</sup>The rain came down, the streams rose, and the winds blew and beat against that house, and it fell with a great crash.’</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Matthew+7%3A24-27&version=NIVUK"
+        },
+        {
+          "elementId": "ch01-el13",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Both builders hear Jesus’ words. What is the only difference between them, and what do the rain, floods and wind reveal?",
+          "linkedPassage": "Matthew 7:24-27",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Compare verse 24 with verse 26.",
+          "sampleAnswer": "Both men hear Jesus’ words; the only difference is that the wise man puts them into practice and the foolish man does not. The rain, streams and wind come against both houses in the same way. They reveal what each house was built on. Hearing without doing is like building on sand: it stands only until the storm comes.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el14",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Titus 1:1-3; 2:11-14",
+          "translation": "NIV",
+          "passageText": "<p><sup>1</sup>Paul, a servant of God and an apostle of Jesus Christ to further the faith of God’s elect and their knowledge of the truth that leads to godliness – <sup>2</sup>in the hope of eternal life, which God, who does not lie, promised before the beginning of time, <sup>3</sup>and which now at his appointed season he has brought to light through the preaching entrusted to me by the command of God our Saviour,</p><p>…</p><p><sup>11</sup>For the grace of God has appeared that offers salvation to all people. <sup>12</sup>It teaches us to say ‘No’ to ungodliness and worldly passions, and to live self-controlled, upright and godly lives in this present age, <sup>13</sup>while we wait for the blessed hope – the appearing of the glory of our great God and Saviour, Jesus Christ, <sup>14</sup>who gave himself for us to redeem us from all wickedness and to purify for himself a people that are his very own, eager to do what is good.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Titus+1%3A1-3%3B+2%3A11-14&version=NIVUK"
+        },
+        {
+          "elementId": "ch01-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Put the two passages together. What is the ‘knowledge of the truth’ meant to lead to (1:1)? What does God’s grace ‘teach’ us (2:12), what are we waiting for (2:13), and why did Jesus give himself (2:14)?",
+          "linkedPassage": "Titus 1:1-3; 2:11-14",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the repeated link between truth, grace and the way we live.",
+          "sampleAnswer": "The knowledge of the truth is meant to lead to godliness (1:1). God’s grace teaches us to say no to ungodliness and worldly passions, and to live self-controlled, upright and godly lives in the present age (2:12). Meanwhile we wait for the appearing of the glory of our great God and Saviour, Jesus Christ (2:13). He gave himself to redeem us from all wickedness and to purify a people who are eager to do what is good (2:14). Truth and grace are both aimed at changed lives.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el16",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "3. Why the Resurrection comes first",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el17",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Corinthians 15:3-4, 12-19",
+          "translation": "NIV",
+          "passageText": "<p><sup>3</sup>For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, <sup>4</sup>that he was buried, that he was raised on the third day according to the Scriptures,</p><p>…</p><p><sup>12</sup>But if it is preached that Christ has been raised from the dead, how can some of you say that there is no resurrection of the dead? <sup>13</sup>If there is no resurrection of the dead, then not even Christ has been raised. <sup>14</sup>And if Christ has not been raised, our preaching is useless and so is your faith. <sup>15</sup>More than that, we are then found to be false witnesses about God, for we have testified about God that he raised Christ from the dead. But he did not raise him if in fact the dead are not raised. <sup>16</sup>For if the dead are not raised, then Christ has not been raised either. <sup>17</sup>And if Christ has not been raised, your faith is futile; you are still in your sins. <sup>18</sup>Then those also who have fallen asleep in Christ are lost. <sup>19</sup>If only for this life we have hope in Christ, we are of all people most to be pitied.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A3-4%2C+12-19&version=NIVUK"
+        },
+        {
+          "elementId": "ch01-el18",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul says the gospel he received is ‘of first importance’ (vv3–4). Reading verses 12–19, list what Paul says would be lost if Christ had not been raised.",
+          "linkedPassage": "1 Corinthians 15:3-4, 12-19",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Count the “if… then” statements.",
+          "sampleAnswer": "If Christ has not been raised, Paul’s preaching is useless and so is the faith of those who believe it (v14). The apostles would be false witnesses, because they testified that God raised Christ (v15). Faith would be futile and we would still be in our sins (v17). Those who have died in Christ would be lost (v18), and Christians would be the most to be pitied of all people (v19).",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el19",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Corinthians 15:20-22, 42-49",
+          "translation": "NIV",
+          "passageText": "<p><sup>20</sup>But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep. <sup>21</sup>For since death came through a man, the resurrection of the dead comes also through a man. <sup>22</sup>For as in Adam all die, so in Christ all will be made alive.</p><p>…</p><p><sup>42</sup>So will it be with the resurrection of the dead. The body that is sown is perishable, it is raised imperishable; <sup>43</sup>it is sown in dishonour, it is raised in glory; it is sown in weakness, it is raised in power; <sup>44</sup>it is sown a natural body, it is raised a spiritual body.</p><p>If there is a natural body, there is also a spiritual body. <sup>45</sup>So it is written: ‘The first man Adam became a living being’; the last Adam, a life-giving spirit. <sup>46</sup>The spiritual did not come first, but the natural, and after that the spiritual. <sup>47</sup>The first man was of the dust of the earth; the second man is of heaven. <sup>48</sup>As was the earthly man, so are those who are of the earth; and as is the heavenly man, so also are those who are of heaven. <sup>49</sup>And just as we have borne the image of the earthly man, so shall we bear the image of the heavenly man.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A20-22%2C+42-49&version=NIVUK"
+        },
+        {
+          "elementId": "ch01-el20",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul contrasts Adam and Christ (vv20–22, 45). What does each bring, and to whom? What kind of body does Paul say believers will receive (vv42–44, 49)?",
+          "linkedPassage": "1 Corinthians 15:20-22, 42-49",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the pairs: death and life, perishable and imperishable, natural and spiritual.",
+          "sampleAnswer": "In Adam all die; in Christ all will be made alive (v22). Christ is the firstfruits of those who have died (v20), the beginning of a harvest still to come. The body is sown perishable and natural, and raised imperishable and spiritual (vv42–44). Just as we have borne the image of the earthly man, we will also bear the image of the heavenly man (v49). The raised body is real but transformed.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el21",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Key Idea",
+          "term": "Representation",
+          "question": "Paul says ‘in Adam’ all die and ‘in Christ’ all will be made alive. How can one person’s action affect so many others? Think of an example, then tap ‘Find out’.",
+          "answer": "<p>The word has two senses. Symbolic representation is like a flag standing for a country: it does nothing. Active representation is different: when a national team goes to the World Cup, or a president signs a treaty at the UN, they act on behalf of everyone they represent. If the team wins, the country wins; if the president signs, the whole country is bound. Jesus represents us in this active sense: his triumph over sin and death is our triumph.</p>",
+          "buttonText": "Find out",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el22",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "4. Not escape, but renewal",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el23",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Romans 8:18-25; Revelation 21:1-5",
+          "translation": "NIV",
+          "passageText": "<p><sup>18</sup>I consider that our present sufferings are not worth comparing with the glory that will be revealed in us. <sup>19</sup>For the creation waits in eager expectation for the children of God to be revealed. <sup>20</sup>For the creation was subjected to frustration, not by its own choice, but by the will of the one who subjected it, in hope <sup>21</sup>that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God.</p><p><sup>22</sup>We know that the whole creation has been groaning as in the pains of childbirth right up to the present time. <sup>23</sup>Not only so, but we ourselves, who have the firstfruits of the Spirit, groan inwardly as we wait eagerly for our adoption to sonship, the redemption of our bodies. <sup>24</sup>For in this hope we were saved. But hope that is seen is no hope at all. Who hopes for what they already have? <sup>25</sup>But if we hope for what we do not yet have, we wait for it patiently.</p><p>…</p><p><sup>1</sup>Then I saw ‘a new heaven and a new earth,’ for the first heaven and the first earth had passed away, and there was no longer any sea. <sup>2</sup>I saw the Holy City, the new Jerusalem, coming down out of heaven from God, prepared as a bride beautifully dressed for her husband. <sup>3</sup>And I heard a loud voice from the throne saying, ‘Look! God’s dwelling-place is now among the people, and he will dwell with them. They will be his people, and God himself will be with them and be their God. <sup>4</sup>“He will wipe every tear from their eyes. There will be no more death” or mourning or crying or pain, for the old order of things has passed away.’</p><p><sup>5</sup>He who was seated on the throne said, ‘I am making everything new!’ Then he said, ‘Write this down, for these words are trustworthy and true.’</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Romans+8%3A18-25%3B+Revelation+21%3A1-5&version=NIVUK"
+        },
+        {
+          "elementId": "ch01-el24",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Romans 8 and Revelation 21 describe the same hope. What is creation doing now, and what will happen to it (Rom 8:19–22)? What do believers wait for (v23)? In Revelation 21, where does God make his home (v3), what is removed (v4), and what does he say he is doing with everything (v5)? Is the hope escape from the world, or its renewal?",
+          "linkedPassage": "Romans 8:18-25; Revelation 21:1-5",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice who is groaning, what they are waiting to be freed from and into, and where God ends up living.",
+          "sampleAnswer": "Creation groans like a woman in labour, waiting to be set free from decay into the freedom and glory of God’s children (Rom 8:19–22). Believers wait for the redemption of their bodies (v23). In Revelation God makes his home with people, wipes away every tear, and death, mourning, crying and pain are gone (Rev 21:3–4). He says he is making everything new (v5). The hope is renewal of creation, not escape from it.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el25",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "5. Hope in grief",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el26",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "1 Thessalonians 4:13-18",
+          "translation": "NIV",
+          "passageText": "<p><sup>13</sup>Brothers and sisters, we do not want you to be uninformed about those who sleep in death, so that you do not grieve like the rest of mankind, who have no hope. <sup>14</sup>For we believe that Jesus died and rose again, and so we believe that God will bring with Jesus those who have fallen asleep in him. <sup>15</sup>According to the Lord’s word, we tell you that we who are still alive, who are left until the coming of the Lord, will certainly not precede those who have fallen asleep. <sup>16</sup>For the Lord himself will come down from heaven, with a loud command, with the voice of the archangel and with the trumpet call of God, and the dead in Christ will rise first. <sup>17</sup>After that, we who are still alive and are left will be caught up together with them in the clouds to meet the Lord in the air. And so we will be with the Lord for ever. <sup>18</sup>Therefore encourage one another with these words.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=1+Thessalonians+4%3A13-18&version=NIVUK"
+        },
+        {
+          "elementId": "ch01-el27",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul does not tell the Thessalonians not to grieve. How does he say Christians grieve, and what is his reason (vv13–14)? What will happen, in order (vv15–17)?",
+          "linkedPassage": "1 Thessalonians 4:13-18",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the contrast with the rest of mankind in verse 13.",
+          "sampleAnswer": "Paul says they should not grieve like the rest of mankind, who have no hope (v13). The reason is that Jesus died and rose again, so God will bring with Jesus those who have fallen asleep in him (v14). The Lord himself will come down from heaven, and the dead in Christ will rise first (v16). Then those who are still alive will be caught up with them, and so we will be with the Lord for ever (v17). Paul tells them to encourage one another with these words (v18).",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el28",
+          "type": "heading",
+          "subtype": "reflection",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el29",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which teaching of Jesus have I heard many times but not yet put into practice (Matt 7:24-27)?",
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el30",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Think of someone you are helping, and of 1 Thessalonians 4:13–18. Where in their life does it feel as if nothing can really be undone? Are they hoping for things to go back to how they were (resuscitation) or for something transformed (resurrection)?",
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el31",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "In the light of Revelation 21:1–5, when we speak of heaven in our songs, sermons and funerals, do we speak of escape from creation, or of the resurrection of the body and a new creation?",
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch01-el32",
+          "type": "text",
+          "subtype": "closing",
+          "format": "plainText",
+          "text": "Daniel doesn’t need to be told that the resurrection is true so much as shown what kind of truth it is. It isn’t a consolation prize set alongside real loss; it is God’s answer to real loss – not that death didn’t happen, but that death doesn’t have the last word. His grief is not a failure of faith: Christians grieve, but not without hope.\n\nLook back at your answer about Daniel at the start. Has it changed? If you have time, you can read the accompanying book chapter to see how these passages fit together, and why the Resurrection is a good place to begin thinking about theology.",
+          "bottomPadding": "normal"
+        }
+      ]
+    },
+    {
+      "chapterNumber": 2,
+      "chapterTitle": "Creation",
+      "elements": [
+        {
+          "elementId": "ch02-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>On Sunday mornings Naomi goes for a walk instead of going to church. She grew up in church but stopped attending in her second year at university. She now describes herself as ‘spiritual, not religious.’ She meditates, talks about ‘energy’ and ‘the universe,’ and finds church talk of sin and judgment cold by comparison. ‘At least when I sit outside and feel connected to everything,’ she says, ‘I feel that I’m part of something bigger than myself.’</p><p>Whether she realises it or not, Naomi has already made some important decisions about what creation is, and about how it relates to God – the subject of this chapter and the next. This chapter deals with the doctrine of creation ‘in general’ while the following chapter deals with the doctrine of the creation of <em>humanity</em> in particular. This chapter will first look at God’s <em>act</em> of creating, then at what this tells us about roles and responsibilities within creation, and then at the implications of creation for discipleship.</p><p><em>Naomi is a composite character, not a real individual.</em></p>",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el02",
+          "type": "question",
+          "subtype": "header",
+          "format": "plainText",
+          "header": "As we get started…",
+          "question": "Naomi finds meaning in nature and feels ‘connected to everything.’ What is right about that, and what might be missing? Where do you see yourself, or people you know, in her story?",
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el03",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Read",
+          "term": "Genesis 1:1–2:3",
+          "question": "Before the next question, read the whole account of creation, aloud if you are in a group.",
+          "answer": "<p><sup>1</sup>In the beginning God created the heavens and the earth. <sup>2</sup>Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.</p><p><sup>3</sup>And God said, ‘Let there be light,’ and there was light. <sup>4</sup>God saw that the light was good, and he separated the light from the darkness. <sup>5</sup>God called the light ‘day’, and the darkness he called ‘night’. And there was evening, and there was morning – the first day.</p><p><sup>6</sup>And God said, ‘Let there be a vault between the waters to separate water from water.’ <sup>7</sup>So God made the vault and separated the water under the vault from the water above it. And it was so. <sup>8</sup>God called the vault ‘sky’. And there was evening, and there was morning – the second day.</p><p><sup>9</sup>And God said, ‘Let the water under the sky be gathered to one place, and let dry ground appear.’ And it was so. <sup>10</sup>God called the dry ground ‘land’, and the gathered waters he called ‘seas’. And God saw that it was good.</p><p><sup>11</sup>Then God said, ‘Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.’ And it was so. <sup>12</sup>The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it according to their kinds. And God saw that it was good. <sup>13</sup>And there was evening, and there was morning – the third day.</p><p><sup>14</sup>And God said, ‘Let there be lights in the vault of the sky to separate the day from the night, and let them serve as signs to mark sacred times, and days and years, <sup>15</sup>and let them be lights in the vault of the sky to give light on the earth.’ And it was so. <sup>16</sup>God made two great lights – the greater light to govern the day and the lesser light to govern the night. He also made the stars. <sup>17</sup>God set them in the vault of the sky to give light on the earth, <sup>18</sup>to govern the day and the night, and to separate light from darkness. And God saw that it was good. <sup>19</sup>And there was evening, and there was morning – the fourth day.</p><p><sup>20</sup>And God said, ‘Let the water teem with living creatures, and let birds fly above the earth across the vault of the sky.’ <sup>21</sup>So God created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And God saw that it was good. <sup>22</sup>God blessed them and said, ‘Be fruitful and increase in number and fill the water in the seas, and let the birds increase on the earth.’ <sup>23</sup>And there was evening, and there was morning – the fifth day.</p><p><sup>24</sup>And God said, ‘Let the land produce living creatures according to their kinds: the livestock, the creatures that move along the ground, and the wild animals, each according to its kind.’ And it was so. <sup>25</sup>God made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the ground according to their kinds. And God saw that it was good.</p><p><sup>26</sup>Then God said, ‘Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.’</p><p><sup>27</sup>So God created mankind in his own image,<br>in the image of God he created them;<br>male and female he created them.</p><p><sup>28</sup>God blessed them and said to them, ‘Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.’</p><p><sup>29</sup>Then God said, ‘I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food. <sup>30</sup>And to all the beasts of the earth and all the birds in the sky and all the creatures that move along the ground – everything that has the breath of life in it – I give every green plant for food.’ And it was so.</p><p><sup>31</sup>God saw all that he had made, and it was very good. And there was evening, and there was morning – the sixth day.</p><p><sup>2:1</sup>Thus the heavens and the earth were completed in all their vast array.</p><p><sup>2</sup>By the seventh day God had finished the work he had been doing; so on the seventh day he rested from all his work. <sup>3</sup>Then God blessed the seventh day and made it holy, because on it he rested from all the work of creating that he had done.</p>",
+          "buttonText": "Read passage ➡",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el04",
+          "type": "text",
+          "subtype": "bridge",
+          "format": "HTML",
+          "text": "As you read, notice <b>who acts</b>, <b>how</b> God creates, what he calls <b>‘good’</b>, and what is <b>missing</b> from the account. Many ancient stories of origins involve battles between gods; look for any sign of a rival here.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el05",
+          "type": "question",
+          "subtype": "header",
+          "format": "plainText",
+          "header": "After reading Genesis 1…",
+          "question": "What stands out to you in Genesis 1? What does it tell us about God, and about the world he made?",
+          "answerPlaceholder": "Your thoughts…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el06",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "1. From nothing, by his word",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el07",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Genesis 1:1-5",
+          "translation": "NIV",
+          "passageText": "<p><sup>1</sup>In the beginning God created the heavens and the earth. <sup>2</sup>Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.</p><p><sup>3</sup>And God said, ‘Let there be light,’ and there was light. <sup>4</sup>God saw that the light was good, and he separated the light from the darkness. <sup>5</sup>God called the light ‘day’, and the darkness he called ‘night’. And there was evening, and there was morning – the first day.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Genesis+1%3A1-5&version=NIVUK"
+        },
+        {
+          "elementId": "ch02-el08",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does God bring light into being (v3), and what does that suggest about his power? What do you notice about the Spirit’s role in verse 2?",
+          "linkedPassage": "Genesis 1:1-5",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what God does before light appears, and at what he does not use.",
+          "sampleAnswer": "God speaks, and light comes into being (v3): his word alone is enough. Nothing in the passage shows him struggling against a rival or needing a tool, which shows how great his power is. In verse 2 the Spirit of God is already there, hovering over the waters before the light appears. So creation is God’s work, with his Spirit present from the beginning.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el09",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Psalm 33:6-9",
+          "translation": "NIV",
+          "passageText": "<p><sup>6</sup>By the word of the [[sc:Lord]] the heavens were made,<br>their starry host by the breath of his mouth.<br><sup>7</sup>He gathers the waters of the sea into jars;<br>he puts the deep into storehouses.<br><sup>8</sup>Let all the earth fear the [[sc:Lord]];<br>let all the people of the world revere him.<br><sup>9</sup>For he spoke, and it came to be;<br>he commanded, and it stood firm.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Psalm+33%3A6-9&version=NIVUK"
+        },
+        {
+          "elementId": "ch02-el10",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does Psalm 33:6–9 describe creation, and how does it connect to Genesis 1:3? What response does the psalm call for (v8)?",
+          "linkedPassage": "Psalm 33:6-9",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice the verbs: he spoke, he commanded.",
+          "sampleAnswer": "The psalm says the heavens were made by the word of the Lord, and their starry host by the breath of his mouth (v6). This echoes Genesis 1:3, where God speaks and things come to be: he spoke, and it came to be (v9). He also gathers the waters of the sea and puts the deep into storehouses (v7), so even the sea is under his control. The right response is that all the earth should fear the Lord and all the people of the world should revere him (v8).",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el11",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "John 1:1-3; 1 Corinthians 8:6; Colossians 1:15-17",
+          "translation": "NIV",
+          "passageText": "<p><sup>1</sup>In the beginning was the Word, and the Word was with God, and the Word was God. <sup>2</sup>He was with God in the beginning. <sup>3</sup>Through him all things were made; without him nothing was made that has been made.</p><p>…</p><p><sup>6</sup>yet for us there is but one God, the Father, from whom all things came and for whom we live; and there is but one Lord, Jesus Christ, through whom all things came and through whom we live.</p><p>…</p><p><sup>15</sup>The Son is the image of the invisible God, the firstborn over all creation. <sup>16</sup>For in him all things were created: things in heaven and on earth, visible and invisible, whether thrones or powers or rulers or authorities; all things have been created through him and for him. <sup>17</sup>He is before all things, and in him all things hold together.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=John+1%3A1-3%3B+1+Corinthians+8%3A6%3B+Colossians+1%3A15-17&version=NIVUK"
+        },
+        {
+          "elementId": "ch02-el12",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does each passage say about the Son’s part in creation, and how does it relate him to the Father? Looking back at Genesis 1:2, where would you look for the Spirit?",
+          "linkedPassage": "John 1:1-3; 1 Corinthians 8:6; Colossians 1:15-17",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the little words through, for and in.",
+          "sampleAnswer": "John says the Word was with God and was God, and that all things were made through him (John 1:1–3). Paul says there is one God, the Father, from whom all things came, and one Lord, Jesus Christ, through whom all things came (1 Cor 8:6). In Colossians the Son is the image of the invisible God, all things were created through him and for him, and in him all things hold together (Col 1:15–17). The Spirit appears in Genesis 1:2, hovering over the waters, so creation is the work of Father, Son and Spirit together.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el13",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "2. Good and well-ordered",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el14",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Genesis 1:31–2:3",
+          "translation": "NIV",
+          "passageText": "<p><sup>31</sup>God saw all that he had made, and it was very good. And there was evening, and there was morning – the sixth day.</p><p><sup>2:1</sup>Thus the heavens and the earth were completed in all their vast array.</p><p><sup>2</sup>By the seventh day God had finished the work he had been doing; so on the seventh day he rested from all his work. <sup>3</sup>Then God blessed the seventh day and made it holy, because on it he rested from all the work of creating that he had done.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Genesis+1%3A31-2%3A3&version=NIVUK"
+        },
+        {
+          "elementId": "ch02-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Look back over Genesis 1. How often does God call his work ‘good’, and what changes in verse 31? What does the rest on the seventh day (2:1–3) tell us about God’s relationship to what he has made?",
+          "linkedPassage": "Genesis 1:31–2:3",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Count the ‘good’s, then compare the last verdict.",
+          "sampleAnswer": "God calls his work good six times, in verses 4, 10, 12, 18, 21 and 25, and in verse 31 he calls all that he had made very good. So the physical world is good, and is not a mistake or a trap. In 2:1–3 the work is completed, and God rests on the seventh day, blesses it and makes it holy. Creation is finished and ordered, and God is at rest in what he has made.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el16",
+          "type": "callout",
+          "subtype": "misunderstanding",
+          "format": "HTML",
+          "eyebrow": "Common Misunderstanding",
+          "term": "The physical world is second-rate",
+          "question": "Have you ever heard that spiritual things are better than physical ones, and that the body or the material world is somehow lower, or even evil? Look back at Genesis 1 before you answer, then tap ‘Find out’.",
+          "answer": "<p>Gnosticism was an early Christian heresy that saw physical existence as evil. It taught that a lesser, evil god (the ‘demiurge’) made the material world, and that salvation meant escaping it through secret ‘knowledge’. Genesis says the opposite: the one true God made everything and calls it good, even very good. The Bible does not treat the physical world as a trap to escape, and the Son took a body.</p>",
+          "buttonText": "Find out",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el17",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "3. Sustained and held",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el18",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Acts 17:24-28; Hebrews 1:3, 10",
+          "translation": "NIV",
+          "passageText": "<p><sup>24</sup>‘The God who made the world and everything in it is the Lord of heaven and earth and does not live in temples built by human hands. <sup>25</sup>And he is not served by human hands, as if he needed anything. Rather, he himself gives everyone life and breath and everything else. <sup>26</sup>From one man he made all the nations, that they should inhabit the whole earth; and he marked out their appointed times in history and the boundaries of their lands. <sup>27</sup>God did this so that they would seek him and perhaps reach out for him and find him, though he is not far from any one of us. <sup>28</sup>“For in him we live and move and have our being.” As some of your own poets have said, “We are his offspring.”</p><p>…</p><p><sup>3</sup>The Son is the radiance of God’s glory and the exact representation of his being, sustaining all things by his powerful word. After he had provided purification for sins, he sat down at the right hand of the Majesty in heaven.</p><p>…</p><p><sup>10</sup>He also says,</p><p>‘In the beginning, Lord, you laid the foundations of the earth,<br>and the heavens are the work of your hands.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Acts+17%3A24-28%3B+Hebrews+1%3A3%2C+10&version=NIVUK"
+        },
+        {
+          "elementId": "ch02-el19",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does God give to everyone, and what does he not need (Acts 17:24–25)? What does it mean that ‘in him we live and move and have our being’ (v28)? What do Hebrews 1:3 and 1:10 say the Son has done and is doing? (Hebrews 1:10 is addressed to the Son.)",
+          "linkedPassage": "Acts 17:24-28; Hebrews 1:3, 10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the direction of the giving: who gives, and who receives?",
+          "sampleAnswer": "God gives everyone life and breath and everything else, and he needs nothing from us, because he is not served by human hands as if he needed anything (Acts 17:25). To say that in him we live and move and have our being is to say that we depend on him at every moment, not only at the beginning. Hebrews says the Son laid the foundations of the earth (1:10) and is now sustaining all things by his powerful word (1:3). Creation is not a one-off event: everything continues to depend on him.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el20",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "4. For his glory",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el21",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Psalm 19:1-6; Revelation 4:11",
+          "translation": "NIV",
+          "passageText": "<p><sup>1</sup>The heavens declare the glory of God;<br>the skies proclaim the work of his hands.<br><sup>2</sup>Day after day they pour forth speech;<br>night after night they reveal knowledge.<br><sup>3</sup>They have no speech, they use no words;<br>no sound is heard from them.<br><sup>4</sup>Yet their voice goes out into all the earth,<br>their words to the ends of the world.<br>In the heavens God has pitched a tent for the sun.<br><sup>5</sup>It is like a bridegroom coming out of his chamber,<br>like a champion rejoicing to run his course.<br><sup>6</sup>It rises at one end of the heavens<br>and makes its circuit to the other;<br>nothing is deprived of its warmth.</p><p>…</p><p><sup>11</sup>‘You are worthy, our Lord and God,<br>to receive glory and honour and power,<br>for you created all things,<br>and by your will they were created<br>and have their being.’</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Psalm+19%3A1-6%3B+Revelation+4%3A11&version=NIVUK"
+        },
+        {
+          "elementId": "ch02-el22",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What are the heavens doing (Ps 19:1–4), and why, according to Revelation 4:11, were all things created? What does that suggest creation is for?",
+          "linkedPassage": "Psalm 19:1-6; Revelation 4:11",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice who the heavens are talking about, and who is worthy to receive in Revelation 4:11.",
+          "sampleAnswer": "The heavens declare the glory of God and proclaim the work of his hands (Ps 19:1). Day after day and night after night they pour forth speech and reveal knowledge, though they use no words (vv2–3), and their voice goes out into all the earth (v4). In Revelation 4:11 God is worthy to receive glory, honour and power, because he created all things and by his will they were created and have their being. So creation exists for God’s glory: it points to him, and he deserves the praise.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el23",
+          "type": "heading",
+          "subtype": "section",
+          "format": "plainText",
+          "text": "5. Whose world is it?",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el24",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Psalm 24:1-2; Psalm 8:3-9",
+          "translation": "NIV",
+          "passageText": "<p><sup>1</sup>The earth is the [[sc:Lord]]’s, and everything in it,<br>the world, and all who live in it;<br><sup>2</sup>for he founded it on the seas<br>and established it on the waters.</p><p>…</p><p><sup>3</sup>When I consider your heavens,<br>the work of your fingers,<br>the moon and the stars,<br>which you have set in place,<br><sup>4</sup>what is mankind that you are mindful of them,<br>human beings that you care for them?</p><p><sup>5</sup>You have made them a little lower than the angels<br>and crowned them with glory and honour.<br><sup>6</sup>You made them rulers over the works of your hands;<br>you put everything under their feet:<br><sup>7</sup>all flocks and herds,<br>and the animals of the wild,<br><sup>8</sup>the birds in the sky,<br>and the fish in the sea,<br>all that swim the paths of the seas.</p><p><sup>9</sup>[[sc:Lord]], our Lord,<br>how majestic is your name in all the earth!</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Psalm+24%3A1-2%3B+Psalm+8%3A3-9&version=NIVUK"
+        },
+        {
+          "elementId": "ch02-el25",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Whose earth is it (Ps 24:1–2)? What place does Psalm 8 give to human beings (vv3–8), and what does the psalm assume about who is really in charge (v9)? What would that mean for how we treat what we think we own?",
+          "linkedPassage": "Psalm 24:1-2; Psalm 8:3-9",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at whose earth it is, then at what human beings are given in Psalm 8.",
+          "sampleAnswer": "The earth belongs to the Lord, and so does everything in it, because he founded it on the seas (Ps 24:1–2). Psalm 8 says human beings are made a little lower than the angels, crowned with glory and honour, and made rulers over the works of God’s hands (vv5–6). But the psalm ends by praising the Lord whose name is majestic in all the earth (v9), so human beings rule under him. We are stewards, not owners: responsible for what we have been given, and accountable to the one it belongs to.",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el26",
+          "type": "heading",
+          "subtype": "reflection",
+          "format": "plainText",
+          "text": "Personal Reflection",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el27",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Thinking of Psalm 24:1–2 and Psalm 8: do I treat my body, my work or my possessions as something to escape, to worship, or to own, rather than to steward? Which is my greatest temptation?",
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el28",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Think of someone you are helping, and of Acts 17:24–28 and Hebrews 1:3. Do they attribute too much meaning to nature (worship), or too little (dismissal)? Where might they be acting as an owner rather than as a steward?",
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el29",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Think of our church, and of Psalm 19:1–6 and Revelation 4:11. Do our prayers and songs thank God for creation (food, rain, bodies, seasons) as well as for salvation?",
+          "answerPlaceholder": "Your reflection…",
+          "bottomPadding": "normal"
+        },
+        {
+          "elementId": "ch02-el30",
+          "type": "text",
+          "subtype": "closing",
+          "format": "plainText",
+          "text": "Naomi is half right. Genesis agrees that the world is full of meaning and worthy of wonder – but as a gift, not as God himself. If everything is simply ‘the universe’, there is no one left to thank. The God of Genesis keeps the difference between Creator and creation, and in keeping it makes room for a real relationship. Her sense of belonging to something bigger than herself can become a pointer to the Creator she was made to know (Rom 1:20).\n\nLook back at your answer about Naomi at the start. Has it changed? If you have time, you can read the accompanying book chapter to see how these passages fit together, and what follows for worship, stewardship and the way we think about evil.",
+          "bottomPadding": "normal"
+        }
+      ]
+    }
+  ],
+  "howToUseData": {
+    "sections": [
+      {
+        "heading": "Getting started",
+        "blocks": [
+          {
+            "title": "Before the chapter",
+            "body": "Each session is designed to be done <b>before</b> you read the matching chapter of the book. Work through the Bible passages and questions first. Reading the chapter afterwards is optional, if you have time."
+          },
+          {
+            "title": "Reading the Bible passages",
+            "body": "Tap a Bible reference in a question to open the passage. The questions can all be answered from the passage itself."
+          },
+          {
+            "title": "Your answers",
+            "body": "Your answers are saved on this device as you type. Some questions have a hint, and some have a sample answer you can compare with your own thinking afterwards."
+          }
+        ]
+      },
+      {
+        "heading": "Using the study",
+        "blocks": [
+          {
+            "title": "In a group",
+            "body": "A session takes about an hour. Read each passage aloud, then discuss the question that follows. A group short of time can skip the ‘Find out’ boxes."
+          },
+          {
+            "title": "On your own",
+            "body": "Take the questions at your own pace, writing something for each one before you look at any sample answer."
+          },
+          {
+            "title": "The book chapter",
+            "body": "At the end of each session, the ‘Read the chapter (optional)’ button opens the full chapter. A ‘Back to the study’ button at the bottom of the chapter brings you back."
+          }
+        ]
+      }
+    ]
+  },
+  "goDeeperData": {
+    "format": "markdown",
+    "titleMenuHeading": "Read the Book",
+    "readMoreButtons": true,
+    "readMoreLabel": "Read the chapter (optional)",
+    "backToStudyLabel": "Back to the study",
+    "chapters": [
+      {
+        "chapterNumber": 1,
+        "format": "markdown",
+        "backToStudy": true,
+        "title": "Starting with the Resurrection",
+        "footnotes": [
+          {
+            "id": 1,
+            "body": "Daniel is a composite character, not a real individual."
+          },
+          {
+            "id": 2,
+            "body": "Cf. Millard J. Erickson, *Christian Theology*, 3rd ed. (Grand Rapids, MI: Baker Academic, 2013), ch. 1 (electronic edition), which defines theology as ‘the discipline that strives to give a coherent statement of the doctrines of the Christian faith, based primarily on the Scriptures, placed in the context of culture in general, worded in a contemporary idiom, and related to issues of life.’"
+          },
+          {
+            "id": 3,
+            "body": "Cf. Kevin J. Vanhoozer, *Faith Speaking Understanding: Performing the Drama of Doctrine* (Louisville, KY: Westminster John Knox Press, 2014), ch. 1 (electronic edition): ‘Doctrine is instruction about God and direction for playing one’s role in the same drama of salvation that lies at the heart of the Scriptures.’"
+          },
+          {
+            "id": 4,
+            "body": "Anselm, *Proslogion* 26, trans. M. J. Charlesworth, in *Anselm of Canterbury: The Major Works*, ed. Brian Davies and G. R. Evans, Oxford World’s Classics (Oxford: Oxford University Press, 1998), 103-104."
+          },
+          {
+            "id": 5,
+            "body": "On Scripture as a drama in several acts, see Vanhoozer, *Faith Speaking Understanding*, ch. 4 (electronic edition), who compares N. T. Wright’s five-act scheme with others and proposes his own. On the ‘overlap of the ages,’ see N. T. Wright, *Paul and the Faithfulness of God*, Christian Origins and the Question of God 4 (Minneapolis, MN: Fortress Press, 2013), ch. 11 (electronic edition)."
+          },
+          {
+            "id": 6,
+            "body": "Making use of the web metaphor does not necessarily imply that there is no importance to the order in which we approach theological topics – even in a web, some strands have a more primary, load-bearing role. The value of the web metaphor is not to deny something (e.g. ordering), but to emphasise something, namely interconnectedness."
+          },
+          {
+            "id": 7,
+            "body": "This section follows Oliver O’Donovan, *Resurrection and Moral Order*, 2nd ed. (Leicester: Apollos; Grand Rapids, MI: Eerdmans, 1994), ch. 1, in places closely, and the Representation box develops his comparison of the risen Christ with a national leader acting for his people."
+          },
+          {
+            "id": 8,
+            "body": "O’Donovan, *Resurrection*, ch. 1, citing Rom 8:3, and speaking of ‘God’s No to life in the flesh.’ I have added ‘sinful’ and ‘redeemed’ to make clear that the ‘No’ is not to bodily life."
+          },
+          {
+            "id": 9,
+            "body": "The phrase is my own. Cf. Richard Lints, *Identity and Idolatry: The Image of God and Its Inversion*, New Studies in Biblical Theology 36 (Downers Grove, IL: InterVarsity Press, 2015), ch. 6, ‘Inverting the Inversion’ (electronic edition), where idolatry inverts the image of God, and Christ, the perfect image, overturns that inversion."
+          },
+          {
+            "id": 10,
+            "body": "O’Donovan, *Resurrection*, ch. 1."
+          },
+          {
+            "id": 11,
+            "body": "O’Donovan, *Resurrection*, ch. 1, from which the phrase comes: ‘the hope that we call “gnostic”, the hope for redemption from creation rather than for the redemption of creation.’"
+          },
+          {
+            "id": 12,
+            "body": "Samuel Waje Kunhiyop, *African Christian Theology* (Grand Rapids, MI: Hippo Books, 2019), ch. 10 (electronic edition)."
+          }
+        ],
+        "opening": {
+          "subtype": "standard",
+          "header": "",
+          "body": "*Wake up, sleeper, rise from the dead, and Christ will shine on you.* (Ephesians 5:14)\n\nDaniel’s wife died eight months ago after a short illness.[[fn:1]] He still comes to church every week, sits in the same place, and sings the songs – but something in him has gone quiet. ‘I believe in the resurrection,’ he tells his pastor. ‘I just don’t feel that it changes anything. She’s still gone. The house is still empty. I can’t see how any of that is going to be undone.’\n\nWhether he realises it or not, Daniel is facing a question of theology: how what he believes connects with how he lives and grieves – the subject of this chapter."
+        },
+        "awakeningToTheology": {
+          "subtype": "standard",
+          "header": "Awakening to Theology",
+          "body": "> Remember, therefore, what you have received and heard; hold it fast, and repent.\\\n> But if you do not wake up, I will come like a thief,\\\n> and you will not know at what time I will come to you. (Rev 3:3)\n\nEverybody is some sort of theologian. The issue is not *whether* we have a theology. No matter who we are – Christian, atheist, Muslim, Buddhist, or agnostic – we all have a theology, even before we awake to the fact. We all have some sort of idea of how we would answer the big questions of life: Is there a God? What is God like? How do we know what is right and wrong? What does it mean to be a human being? What happens to a person at death? Everyone has an answer to those questions (even if the answer is ‘I don’t know’ or ‘Nothing is there’). So the issue is not *whether* we have a theology, but rather whether we *reflect* on the theology we already have. Do we develop a reflective theology, or do we stick with an unreflective theology?\n\nThat is why I am using the metaphor of ‘waking.’ When you awaken to the tasks of a new day, the day does not spring into being when you wake. The day is already in process, and you are already part of it, even in your sleep. Your awakening allows you to join in with the day, consciously and reflectively. It is similar with theology. Your theology is already in process, and you are already thinking theologically, long before you reflect on what you are doing. In choosing to study theology, you are not *starting* the process of becoming a theologian. You already *are* a theologian, by existing as a creature in God’s image, in his world. Instead, in choosing to study theology, you are *awakening* to the fact that you already are a theologian – perhaps awakening to this for the very first time, or perhaps awakening more fully to something you have begun to grasp previously.\n\nThe Christian life is theological through and through. Whenever you ask, or answer, ‘Who is God?’, ‘What does it mean to have faith?’ or ‘What is sin?’, you are doing theology.\n\nWhen you seek to know God better, you are doing theology. When you try to please him, you are putting theology into practice. All of us are theologians; the only question is whether we are ‘good’ or ‘bad’ theologians – do we seek to know God well, or badly? Are we reflective or unreflective theologians; are we growing or stagnant theologians? If we take God seriously, then we will want to be reflective about our theology, and growing in our theology – we will want to be doing our theology *well*."
+        },
+        "definingTheology": {
+          "subtype": "standard",
+          "header": "Defining Theology and Doctrine",
+          "body": "‘Theology’ and ‘doctrine’ are often used interchangeably, and in this book I treat them as synonyms unless a distinction matters. Strictly, though, they differ. Doctrine (from the Latin *doctrina*, ‘teaching’) is the attempt to clarify and pass on the core teachings of the Christian faith. Theology (from the Greek *theos*, ‘God’, and *logos*, ‘word’ or ‘study’) is the study of God. More formally, it is the systematic study of Christian teaching, which seeks a clear understanding of reality, expressed in terms that our own world, cultures and lives can grasp, and with its relevance to them made clear.[[fn:2]] So, loosely, the two words can be used interchangeably; more precisely, Christian theology is the systematic study of Christian doctrine."
+        },
+        "howTheologyConnects": {
+          "subtype": "standard",
+          "header": "How Does Theology Connect?",
+          "body": "Theology connects. Theological ideas don’t just lie around haphazardly, like a heap of random bricks on the ground. But the connections are complex. Developing Christian theology is less like building a wall, as in Figure 1.1 (where each row of bricks builds sequentially on the row below it), and more like constructing a spider’s web, as in Figure 1.2 (where every part is connected to every part).\n\n*(Figures 1.1 and 1.2 are in the Figures at the end of this chapter.)*\n\nThe metaphor (or conceptual model) we use for understanding how theology connects makes a difference to how we see theological errors. If you knock one brick out of a wall, the rest of the wall may be essentially unaffected – perhaps it will be a little weaker where the hole is, but the overall shape of the wall is unchanged. But if you snap one strand of a spider’s web, it distorts the whole web – if you snap a major strand, the whole web is distorted massively, or maybe even destroyed; if you snap a minor strand, the whole web is still distorted, but perhaps more subtly.\n\nThe interconnections between topics in theology will not be quite so regular as the spider’s web in Figure 1.2 suggests. Figure 1.4 gives an example of how these connections might look if presented in the form of a mind map.\n\nThis interconnected, web-like nature is hard to convey in a book, because books are naturally meant to be read in a linear order. You start at chapter 1, then move on to chapter 2, and so on. Reading a book is more like following the bricks in a wall – that is just how books work. So the chapters in this book will follow a logical order (partly shaped around the biblical storyline from Creation to Fall to Salvation to New Creation). However, I am not assuming that we are building a wall from scratch. I assume that my readers are already familiar with the basic contours of Christian theology, so that reading this book is actually more like another journey round the spider’s web. Because of this, I will, from time to time, point out the connections between one part of theology and another."
+        },
+        "systematicAndOtherDisciplines": {
+          "subtype": "standard",
+          "header": "Systematic Theology and Other Theological Disciplines",
+          "body": "Theology (here meaning systematic theology) also connects with other fields of Christian study, such as exegesis, biblical theology, and ethics. My answer will combine elements of both a linear process (going in order from exegesis to biblical theology to systematic theology to ethics), as well as a circular process (going round and round between all of them several times). Imagine a ‘flow’ that runs through those four stages:\n\n*(Figure 1.3, From exegesis to ethics, is in the Figures at the end of this chapter.)*\n\n- **Exegesis:** understanding specific Bible passages;\n\n- **Biblical Theology:** understanding how the whole Bible fits together;\n\n- **Systematic Theology:** understanding what the Bible in its entirety says about any given topic;\n\n- **Ethics:** knowing how we should live in response.\n\nIt makes sense to start with exegesis and end with ethics. Sometimes the flow will be linear, but not always. Suppose you want to study what the Bible says about divorce and remarriage. You might move from exegesis to biblical theology to systematic theology – and then realise that what you’ve discovered so far doesn’t all fit together well – so you realise you need to go back and do some more exegesis. This is perfectly normal and healthy.\n\nFigure 1.3 also includes some auxiliary subjects, such as Greek, hermeneutics and philosophy. The list is not complete; it shows how other disciplines can help us become better reflective theologians.\n\n*(Figure 1.4, a mind map, is in the Figures at the end of this chapter.)*"
+        },
+        "extrasAddYourOwnConnections": {
+          "subtype": "highlighted",
+          "header": "Extras: Add your own connections",
+          "body": "Take a moment to look at the mind map in Figure 1.4. Pay particular attention to the connections that have been marked between different areas of theology (the connections marked by the curved lines, with arrows at either end of them).\n\nHere are two questions to ask yourself:\n\n1. Do you agree with the connections that have been marked on the diagram?\n\n2. Can you improve the diagram, by thinking of additional connections that have been missed out?"
+        },
+        "theologyAndDiscipleship": {
+          "subtype": "standard",
+          "header": "Theology and Discipleship",
+          "body": "Scripture never separates the truth we believe from the life we live. Jesus says that the truth will set us free (John 8:32), and prays that his disciples will be sanctified by it (John 17:17). Whoever ‘lives by the truth comes into the light’ (John 3:21), and as we speak ‘the truth in love’ we grow to maturity in Christ (Eph 4:15). Paul describes his own calling as furthering ‘the faith of God’s elect and their knowledge of the truth that leads to godliness’ (Titus 1:1). That is the point of knowing the truth: it is meant to lead to godliness. Knowledge of the truth that does not lead to godliness is foolishness. Jesus puts it this way:\n\n> ‘Therefore everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock. The rain came down, the streams rose, and the winds blew and beat against that house; yet it did not fall, because it had its foundation on the rock. But everyone who hears these words of mine and does not put them into practice is like a foolish man who built his house on sand. The rain came down, the streams rose, and the winds blew and beat against that house, and it fell with a great crash.’ (Matt 7:24-27)\n\nThe parable distinguishes wise people from foolish people. But the difference is not exposure to the truth – in the parable *both* the wise man *and* the foolish man represent people who ‘hear these words’ of Jesus. The difference is not the hearing, but *what you do with* the hearing. To study theology, without your life being changed, is to be like the foolish man building his house on the sand. That’s not a good place to be. God’s truth is meant to lead us to godliness. Doctrine is meant for discipleship.[[fn:3]] In Titus 2 Paul takes us to the heart of theology, ‘the grace of God’ that has appeared (Titus 2:11), and what he says of that grace applies to theology as a whole:\n\n> It teaches us to say ‘No’ to ungodliness and worldly passions, and to live self-controlled, upright and godly lives in this present age, while we wait for the blessed hope – the appearing of the glory of our great God and Saviour, Jesus Christ, who gave himself for us to redeem us from all wickedness and to purify for himself a people that are his very own, eager to do what is good. (Titus 2:12-14)\n\n*Lord, make me to know you aright, that I may love, serve, enjoy and possess you more and more.\\\nAnd since in the life below I cannot fully attain this blessedness,\\\nlet it at least grow in me day by day, until it all be fulfilled in the life to come. Amen.*\\\n(Adapted from Anselm of Canterbury, *Proslogion* 26)[[fn:4]]"
+        },
+        "extrasExegesisToEthics": {
+          "subtype": "highlighted",
+          "header": "Extras: From Exegesis to Ethics",
+          "body": "There can be value in having different perspectives on how progressive revelation unfolds. From the perspective of exegesis and biblical theology it can be useful to think of Scripture as drama, where you move from one Act to the next – and so you generally leave one to enter the next – the exception being the New Testament era, which is then described as an ‘overlap of the ages.’[[fn:5]]\n\nFrom the perspective of ethics, however, it can be helpful to think more in terms of layers – when you are standing on one layer, you are also at the same time standing on all the other layers that came before. (Imagine standing on a rug: you are being held up by the rug, *and* being held up by the concrete under the rug, *and* being held up by the ground under the concrete.) From this perspective, as New Testament believers we are in the new age, and at the same time we are still in the old creation – and so our experience reflects both realities at once.\n\n(Thanks to Tim Adeney for this clarification.)"
+        },
+        "whereToStart": {
+          "subtype": "standard",
+          "header": "Where to Start with Theology",
+          "body": "If we thought theology was like a brick wall – with one row as a foundation, and the next row on top of it and so on – then it might be very important to know where to start. We might need to decide which topics go on the bottom row, and which topics come next and so on. But if theology is more like a web, or an interconnected network, then it does not matter quite so much where we start.[[fn:6]] We will need to cover every topic eventually, and preferably we will cover them several times. What is more important is that we keep developing the network of interconnections – we need to keep considering how each part of theology relates to every other part, and we need to think about which parts are most closely connected, and thus which parts are most interdependent on each other. For example, the way we understand the person of Christ will affect the way we understand the work of Christ, and vice versa. Similarly, the way we understand the incarnation will influence the way we understand the Trinity and vice versa."
+        },
+        "whyResurrection": {
+          "subtype": "standard",
+          "header": "Why Start with the Resurrection?",
+          "body": "The Resurrection of Jesus Christ might seem a strange place to start: it comes in the middle of the story, not at the beginning. But it takes us to the centre of God’s purposes, and the New Testament itself starts here.[[fn:7]]\n\nWhen the apostles first preached the gospel, the Resurrection stood at its centre (Acts 2:24, 32; 17:31). When Paul sums up what he passed on ‘as of first importance,’ it is that Christ died for our sins, was buried, and ‘was raised on the third day according to the Scriptures’ (1 Cor 15:3-4). And he makes everything hang on it: ‘if Christ has not been raised, your faith is futile; you are still in your sins’ (1 Cor 15:17). Peter, too, opens his first letter with the living hope that the Resurrection gives (1 Pet 1:3).\n\nStarting with the Resurrection is not an attempt to isolate the Resurrection from other key moments in salvation history. In fact, the Resurrection makes a good starting point precisely because it is so fundamentally connected with so much of the rest of theology. Consider the following seven-point summary of the Bible’s message:\n\n- God created the world, and originally the world was entirely and beautifully good.\n\n- Humanity sinned, rebelling against God, and bringing death, suffering, and brokenness into the world.\n\n- God entered our experience, becoming a human being, incarnated in the person of his Son, Jesus.\n\n- Jesus became our representative: he died for the sins of the world, bearing the punishment for all our wrong-doing, in our place.\n\n- God raised Jesus from the dead, physically and definitively, so that death is defeated; he currently reigns with God.\n\n- Jesus will come again to right all wrongs, and to usher in a new heaven and a new earth.\n\n- God’s redeemed people will reign with him forever in a new universe where everything is finally made right.\n\nAll of those points need each other in order to make complete sense. And the Resurrection only makes sense when understood in the light of all the others: The Resurrection is the affirmation of the goodness of God’s original creation, even in the light of human sin. It is only possible because of the incarnation, and because of Jesus standing as our atoning representative. The Resurrection declares that Jesus’ atoning work on the cross is complete. At the cross God pronounced his ‘No’ to sinful life in the flesh, and that ‘No’ was the condition of his ‘Yes’ to redeemed life in the Spirit, which he declared in raising Jesus from the dead.[[fn:8]] But this life in the Spirit is a spiritual physicality – Jesus’ Resurrection is the firstfruits of a whole New Creation, where everything will be renewed, perfected and made right. Paul’s ‘spiritual body’ (1 Cor 15:44) is a body transformed by the Spirit, not an immaterial one. His Resurrection gives us a glimpse of what the whole New Creation will be like – it is a foretaste of it. Jesus himself will return as Judge to usher in this new heaven and new earth, and all God’s people will be resurrected, just as he has been, and will reign with him forever in this new world where everything is finally made right.\n\nThe Resurrection of Christ inverts an inversion.[[fn:9]] Sin and death turned God’s good world upside down; the Resurrection turns it the right way up again. It takes a situation that is very wrong and puts it right – yet not as a simple reset, back to square one, but by transforming it into something better than it was before. Daniel’s empty house is exactly the kind of wrong that seems beyond undoing. And yet the Resurrection gives hope that one day it will be undone.\n\nIn the Resurrection, God reverses Adam’s choice of sin and death and reaffirms God’s initial gift to Adam of goodness and life: ‘For as in Adam all die, so in Christ all will be made alive’ (1 Cor 15:22). But this reaffirmation is not just a repeat of that original affirmation in Genesis 1. The Resurrection of Christ goes beyond that original gift of life, and transforms it. Paul points to this truth when he argues that the ‘last Adam’ (Jesus) is parallel to, but greater than the first Adam: ‘“The first man Adam became a living being”; the last Adam, a life-giving spirit’ (1 Cor 15:45).\n\nThe Resurrection also reaffirms God’s initial work as Creator. Without Jesus’ Resurrection, we could have had some grounds for wondering whether God’s initial good creation was irreparably ruined. The first big-scale response to sin in Genesis is the story of the Flood – which is almost like an Uncreation Event: the separations of Genesis 1 are undone, and the world returns to its initial ‘watery deep’ state (Gen 1:2, NET). This seems to be the equivalent of a hard reboot – and yet even this drastic event does not deal with sin: afterwards, ‘every inclination of the human heart is evil from childhood’ (Gen 8:21). The question naturally arises: If even the Flood is not big enough to deal with sin, then can *anything* reverse the damage that was done at the Fall? Is creation a lost cause? ‘If the creature consistently acted to uncreate itself, and with itself to uncreate the rest of creation, did this not mean that God’s handiwork was flawed beyond hope of repair? It might have been possible before Christ rose from the dead to answer in good faith, Yes.’[[fn:10]]"
+        },
+        "extrasSolidPhysicalHope": {
+          "subtype": "highlighted",
+          "header": "Extras: Our hope is solid and physical",
+          "body": "Without the Resurrection, then, perhaps the ‘best’ salvation we could have hoped for would have been some sort of redemption *from* creation, rather than the redemption *of* creation.[[fn:11]] This is sometimes called a ‘gnostic’ hope – a hope to escape from the physical creation into some sort of ‘spiritual-only’ afterlife. (I will return to ‘gnosticism’ briefly in Chapter 2.)\n\nChristians, too, can slip into a ‘gnostic’ hope instead of a fully Christian one. In the West you see this in cartoons of ‘heaven’ as fluffy white clouds, with people floating around in white robes, holding harps. In Africa the same hope can take another form. Traditional belief holds that ‘at death, one moves into the presence of the ancestors,’ and the dead are spoken of as ‘the living dead.’[[fn:12]] We need to make sure that the hope held out at Christian funerals is more than just rest, or just joining those who have gone before. Both pictures have given up on the goodness of creation: they look for life after death, but not for the resurrection of the body. The Resurrection tells us that human sin will not be allowed to uncreate what God has created. His New Creation will triumph."
+        },
+        "extrasRepresentation": {
+          "subtype": "highlighted",
+          "header": "Extras: Representation",
+          "body": "In the Resurrection, just as in the atonement, Jesus is our representative. He stands in our place.\n\nWe use the word ‘representation’ in at least two different ways, so it is good to be clear about exactly what we mean. Representation can be symbolic (only), and representation can also be active.\n\nA football team can be represented by its logo (or its team colours); a country can be represented by its flag. This is symbolic representation: the flag (or logo/colours) don’t have to do anything – they just symbolise what they represent.\n\nActive representation is different. When a country’s football team goes to the World Cup, those 11 players represent all the citizens of that country. The 11 players act on behalf of the country: if the players win, the country wins. When a country’s president goes to the UN, the president represents all the citizens of that country. If the president signs a treaty, the whole country is bound by it.\n\nThe Resurrection is not merely symbolic representation – it is much more active than that. Jesus’ fate is our fate. His triumph over sin and death is our triumph over sin and death. His restoration is our restoration. His Resurrection guarantees our resurrection to come."
+        },
+        "summary": {
+          "subtype": "standard",
+          "header": "Summary",
+          "body": "1. Everyone already has a theology. The question is whether we reflect on it and grow in it – whether we are good theologians or bad ones.\n\n2. ‘Doctrine’ and ‘theology’ can be used interchangeably. More precisely, theology is the systematic study of Christian doctrine, made clear and relevant to our world.\n\n3. Theology connects. It is less like a brick wall, built row by row, and more like a spider’s web, where a broken strand distorts the whole.\n\n4. Exegesis, biblical theology, systematic theology and ethics form a flow, and we may need to go round it more than once.\n\n5. Knowing the truth is meant to lead to godliness (Titus 1:1). Doctrine is for discipleship: to hear Jesus’ words without putting them into practice is to build on sand (Matt 7:24-27).\n\n6. Because theology is a web, it matters less where we start. This book starts with the Resurrection. There God reverses Adam’s choice of sin and death and reaffirms his creation, and the new life goes beyond the first gift of life.\n\n7. Our hope is the redemption of creation, not redemption from it. In his resurrection, as in his death, Jesus is our active representative: his victory over sin and death is ours."
+        },
+        "toolsMyself": {
+          "subtype": "standard",
+          "header": "Tools for Making Disciples: For myself",
+          "body": "The doctrine of the Resurrection is meant to shape how we live, not only what we believe, and these prompts take it in three directions: towards myself, towards someone I am helping, and towards our church.\n\n- Which of my beliefs about God, death or right and wrong have I held for years without ever stopping to examine them?\n\n- Is my faith more like a wall or a web? If one belief were shaken, what else would I feel was at risk?\n\n- Which teaching of Jesus have I heard many times but not yet put into practice (Matt 7:24-27)?\n\n- Do I hope for the redemption of creation, or for an escape from it? What difference does Jesus’ bodily resurrection make to how I think about my body, my work and my death?"
+        },
+        "toolsSomeoneElse": {
+          "subtype": "standard",
+          "header": "Tools for Making Disciples: For someone I am helping",
+          "body": "Begin by listening to the person’s story and reasons: these prompts are for opening a conversation, not for diagnosing someone from a distance, and they help to locate where Resurrection hope has, or has not yet, reached a particular situation.\n\n- Where in this person’s life does it feel as if nothing can really be undone?\n\n- Are they hoping for mere resuscitation (things going back to how they were), or for resurrection (things transformed into something greater)?\n\n- What would change if they trusted that, because Jesus has been raised, God’s ‘no’ to death and decay is final and certain – even while grief remains?\n\n- Is their theology currently a wall (one crack and it all comes down) or a web (still connected, even under strain)?"
+        },
+        "toolsChurch": {
+          "subtype": "standard",
+          "header": "Tools for Making Disciples: For our church",
+          "body": "- When we speak of heaven in our songs, sermons and funerals, do we speak of escape from creation, or of the resurrection of the body and a new creation?\n\n- How do we stay with the bereaved after the funeral is over, when the visits stop but the grief does not?\n\n- Do we make room for honest questions and help people think them through, or do we treat questions as a lack of faith?\n\n- How do we judge whether our teaching is working: by how much people know, or by whether what they know is leading to godliness (Titus 1:1)?"
+        },
+        "danielRevisited": {
+          "subtype": "standard",
+          "header": "Daniel Revisited",
+          "body": "When Daniel says that he believes in the resurrection but does not feel that it changes anything, it is tempting to move straight to reassurance – ‘she’s in a better place,’ ‘you’ll see her again.’ These may be true things, but said too quickly they can sound like a request for Daniel to feel better, rather than help for him to grieve.\n\nDaniel does not need to be told that the resurrection is true so much as shown what kind of truth it is. The Resurrection of Jesus is not a consolation prize set alongside real loss. It is God’s answer to real loss: not that death did not happen, but that death does not have the last word (1 Cor 15:54-57). Because Christ was raised bodily, the hope held out to Daniel is not a vague survival but the resurrection of the body – the undoing of the very thing he says cannot be undone.\n\nDaniel’s grief is not a failure of faith. Christians grieve, but not ‘like the rest of mankind, who have no hope’ (1 Thess 4:13). His pastor’s task is to grieve with him, and to keep that hope in view until Daniel can hold it again for himself."
+        },
+        "questionsForReflection": {
+          "subtype": "standard",
+          "header": "Questions for Reflection",
+          "body": "1. What would you say to Daniel – and what would you avoid saying?\n\n2. Should every Christian study theology? Why, or why not?\n\n3. How much theology is ‘enough’ for you to know?\n\n4. The chapter compares theology to a brick wall and to a spider’s web. Which picture better describes how you currently think about theology – and what would change if you adopted the other?\n\n5. Why does this book start with the Resurrection rather than, say, the doctrine of God? What does that choice teach about how to do theology?\n\n6. Titus 1:1 links knowledge of the truth with godliness. Where in your own life has your knowledge of God not yet shaped your godliness – and why?"
+        },
+        "technicalTerms": {
+          "subtype": "standard",
+          "header": "Technical Terms",
+          "body": "Doctrine: the core teachings of the Christian faith, clarified and passed on (from Latin *doctrina*, teaching).\n\nTheology: the systematic study of Christian teaching, aiming at a clear understanding of reality that is comprehensible, and relevant, within our contemporary world (from Greek *theos*, God, and *logos*, word or study).\n\nSystematic theology: theology that gathers what the whole Bible teaches on a subject and relates it to the rest of Christian belief.\n\nRepresentation: either symbolic (a flag represents a country) or active (a team represents a country by acting on its behalf). Jesus is our active representative in his death and Resurrection.\n\nGnostic hope: a hope of redemption from creation, rather than the redemption of creation. The term is borrowed from O’Donovan; it names a kind of hope, not the whole of ancient Gnosticism."
+        },
+        "furtherReading": {
+          "subtype": "standard",
+          "header": "Further Reading",
+          "body": "### Key Bible Passages\n\nMatt 7:24-27; John 17:17; Rom 8:18-25; 1 Cor 15; Eph 4:15; 1 Thess 4:13-18; Titus 1:1-3; 2:11-14; 1 Pet 1:3-9; Rev 21:1-5.\n\n**Erickson, Millard J. *Christian Theology*.** 3rd ed. Grand Rapids, MI: Baker Academic, 2013.\\\nA full, readable evangelical systematic theology. Chapters 1-4 ask what theology is, whether it is possible, how it is done, and how it is contextualised. For students, pastors, and serious lay readers.\n\n**Kunhiyop, Samuel Waje. *African Christian Theology*.** Grand Rapids, MI: Hippo Books, 2019.\\\nA systematic theology written for African contexts, setting biblical teaching beside traditional African worldviews. Chapter 10, ‘Death, Judgement and Eternity,’ covers death, burial and the afterlife, and the resurrection of the dead; chapter 7 discusses reverence for ancestors. For students and pastors.\n\n**McGrath, Alister E. *Christian Theology: An Introduction*.** 6th ed. Chichester: Wiley Blackwell, 2017.\\\nA clear introduction to the whole of Christian doctrine. Chapter 5, ‘Getting Started: Preliminaries,’ discusses how theology is defined, how it is structured, and the place of commitment and neutrality in it. A good first read for students and lay readers.\n\n**O’Donovan, Oliver. *Resurrection and Moral Order: An Outline for Evangelical Ethics*.** 2nd ed. Leicester: Apollos; Grand Rapids, MI: Eerdmans, 1994.\\\nThe source of this chapter’s section on the Resurrection. Chapter 1 argues that the Resurrection ‘tells us of God’s vindication of his creation.’ Demanding; for students and pastors.\n\n**Vanhoozer, Kevin J. *Faith Speaking Understanding: Performing the Drama of Doctrine*.** Louisville, KY: Westminster John Knox Press, 2014.\\\nArgues that doctrine gives the church direction for its part in the drama of redemption, so that doctrine and discipleship belong together; chapter 4 sets out the Bible’s story as a drama in five acts. For students and pastors."
+        },
+        "imageGallery": {
+          "subtype": "image-gallery",
+          "header": "Figures",
+          "images": [
+            {
+              "elementId": "ch01-el04",
+              "caption": "Figure 1.1: Not like a brick wall",
+              "provenance": "© Rick Creighton, CC BY-SA 4.0"
+            },
+            {
+              "elementId": "ch01-el05",
+              "caption": "Figure 1.2: More like a spider’s web",
+              "provenance": "Created by Rick Creighton with Claude (Anthropic), CC BY-SA 4.0"
+            },
+            {
+              "src": "images/ch01-exegesis-to-ethics.webp",
+              "alt": "A diagram of four theological disciplines (exegesis, biblical theology, systematic theology and ethics) with supporting subjects feeding into each.",
+              "caption": "Figure 1.3: From exegesis to ethics",
+              "provenance": "© Rick Creighton, CC BY-SA 4.0"
+            },
+            {
+              "src": "images/ch01-mind-map.webp",
+              "alt": "A mind map of doctrines grouped in circles, with arrows showing connections between them.",
+              "caption": "Figure 1.4: A mind map of some theological topics and their interconnections",
+              "provenance": "© Rick Creighton, CC BY-SA 4.0"
+            }
+          ]
+        }
+      },
+      {
+        "chapterNumber": 2,
+        "format": "markdown",
+        "backToStudy": true,
+        "title": "Creation",
+        "footnotes": [
+          {
+            "id": 1,
+            "body": "Paraphrased from *Summa contra Gentiles* II.3"
+          },
+          {
+            "id": 2,
+            "body": "Naomi is a composite character, not a real individual."
+          },
+          {
+            "id": 3,
+            "body": "Cf. Christopher Watkin, *Biblical Critical Theory: How the Bible’s Unfolding Story Makes Sense of Modern Life and Culture* (Grand Rapids, MI: Zondervan, 2022), ch. 2."
+          },
+          {
+            "id": 4,
+            "body": "Even time itself is a creation of God – time itself had a beginning – which is a confusing thing to say. Perhaps a better statement is this: In eternity past, only God existed (as Father, Son, and Spirit). No creature, and no part of creation, has existed for eternity past."
+          },
+          {
+            "id": 5,
+            "body": "*Ex nihilo* is Latin: *ex* = ‘out of’ (like in ‘**ex**it’) and *nihilo* = ‘nothing’ (like in ‘an**nihil**ate’). So *ex nihilo* means ‘out of nothing.’ The Bible doesn’t use the exact wording ‘out of nothing,’ but that phrase is a good summary of the biblical concepts, see Gen 1:1-2; Ps 33:6; John 1:1-3; Rom 4:17; 1 Cor 1:28; Col 1:15-17; Heb 11:3; cf. Bruce Milne, *Know the Truth: A Handbook of Christian Belief*, 3rd ed. (Nottingham: IVP, 2009), 95."
+          },
+          {
+            "id": 6,
+            "body": "This ‘Christian dualism’ is rarely defended at a theoretical or academic level, but in my experience is often close to what Christians believe at a popular level; cf. Janet Hamilton, Bernard Hamilton, and Yuri Stoyanov, *Christian Dualist Heresies in the Byzantine World, c. 650-c. 1450: Selected Sources* (Manchester: Manchester University Press, 1998), 1-55."
+          },
+          {
+            "id": 7,
+            "body": "Milne, *Know the Truth*, 96."
+          },
+          {
+            "id": 8,
+            "body": "This in itself does not mean it is wrong to use the language of ‘perfect’ – but it does mean we need to check carefully whether it is the most helpful language. The second and third points above suggest other ways of speaking about creation’s goodness are more helpful."
+          },
+          {
+            "id": 9,
+            "body": "The following point is highly hypothetical, because it concerns what *might* have happened *if* the Fall never occurred – and ultimately we cannot know, because it *did* occur(!) But some Reformed theologians have speculated that it may have always been God’s intention for the original creation to be surpassed by the New Creation, even without a Fall. Cf. Louis Berkhof, *Systematic Theology* (Edinburgh: Banner of Truth, 1958), 216."
+          },
+          {
+            "id": 10,
+            "body": "Even then, we need to clarify what we mean by ‘perfect.’ God has created human beings to be knowledgeable; but God is the only one who is All-Knowing. Humans can grow in wisdom, but God cannot as he is already perfectly wise. God has created human beings to have power; but God is the only one who is All-Powerful. Humans can grow in power, but God cannot as he is already perfectly powerful. God has created human beings to be good; but God is the only one who is All-Good. Humans can grow in goodness, but God cannot as he is already perfectly good. Being ‘perfect’ – in the strongest sense of being so totally good that there is no way of improving – is something that is only true of God himself. God is the only one who is truly perfect. Wanting to be perfect, in the strongest sense of divine perfection, is a form of wanting to be God. The word ‘perfect’ can be used in a weaker sense, where it means something ‘doesn’t have any flaws or bad parts’ – but then that weaker usage is the same as saying that something is ‘completely good’ or ‘totally good.’ If we are careful to mean only this, then it would be appropriate to talk about creaturely perfection – and this would be the same as talking about creation being ‘very good’ or ‘totally good’ or ‘purely good.’ It can be thought of this way: (i) God did originally create the world as ‘perfect’ in the weaker sense of ‘creaturely perfection’ – because after all, the world is a creature; (ii) God did not originally create the world in the stronger sense of ‘divine perfection’ – because after all, the world is not divine(!). Thus the world, when first created, was already totally good, but could also grow in goodness to become even better. The only One who cannot grow in goodness – the only one who is already Perfectly Good (in the strongest sense of perfect) – is God himself. The New Creation is certainly better than the original creation, in that there will be no possibility of a second Fall. In this sense it can be appropriate to say that the New Creation will be perfect – but we still should not think that we are saying that the New Creation is perfect in the same way that God himself is!"
+          },
+          {
+            "id": 11,
+            "body": "Cf. Vishal Mangalwadi, *The Book That Made Your World: How the Bible Created the Soul of Western Civilization* (Nashville: Thomas Nelson, 2011), 220-45."
+          },
+          {
+            "id": 12,
+            "body": "Cf. Peter Harrison, *The Bible, Protestantism, and the Rise of Natural Science* (Cambridge: Cambridge University Press, 1998), 4-8."
+          },
+          {
+            "id": 13,
+            "body": "What happens in Genesis 1 is better described as a move from non-order to order, rather than from disorder to order (or from nothingness to order, rather than from chaos to order), cf. Anthony C. Thiselton, ‘Creation,’ *The Thiselton Companion to Christian Theology* (Grand Rapids, MI: Eerdmans, 2015). Alister McGrath argues that the Bible presents creation as both the imposition of order on the formless (cf. Gen 2:7; Isa 29:16; 64:8; Jer 18:1-6), and as the conquest of forces of chaos, usually presented as some sort of monster (e.g. Behemoth, Leviathan, Nahar, Rahab, Tannim, or Yam; cf. Job 3:8; 7:12; 9:13; 40:15-41:11; Ps 74:13-15; Isa 27:1), Alister E. McGrath, *Christian Theology: An Introduction*, 6th ed. (Chichester: Wiley Blackwell, 2017), ch. 9. We will return to the conquest of evil, rather than dualism, in Chapter 5."
+          },
+          {
+            "id": 14,
+            "body": "Oliver O’Donovan, *Begotten or Made?* (Oxford: Clarendon, 1984), 12."
+          },
+          {
+            "id": 15,
+            "body": "This dilemma is named after Euthyphro, a character in one of Plato’s dialogues."
+          },
+          {
+            "id": 16,
+            "body": "Augustine, *City of God*, trans. R. W. Dyson (Cambridge: Cambridge University Press, 1998), XI.6; *Confessions*, trans. Henry Chadwick (Oxford: Oxford University Press, 1998), XI.13-14."
+          },
+          {
+            "id": 17,
+            "body": "Milne, *Know the Truth*, 97."
+          },
+          {
+            "id": 18,
+            "body": "Milne, *Know the Truth*, 97-98."
+          },
+          {
+            "id": 19,
+            "body": "Thiselton, ‘Creation.’"
+          },
+          {
+            "id": 20,
+            "body": "This section draws from Thomas F. Torrance, *The Trinitarian Faith: The Evangelical Theology of the Ancient Catholic Church*, 2nd ed. (London: T&T Clark, 1997), 76-109."
+          },
+          {
+            "id": 21,
+            "body": "In the biblical record, miraculous provision of food is rare and clustered at turning points; cf. Exod 16 (manna and quail), 1 Kgs 17:8-16, Mark 6:30-44, 8:1-10 (and parallels)."
+          },
+          {
+            "id": 22,
+            "body": "Again, in over two thousand years of biblical history, many miracles are recorded. Interestingly, however, they are concentrated especially in three periods: the time of Moses (when the people are redeemed from Egypt during the Exodus); the time of Elijah & Elisha (when Israel is in danger of falling away from God altogether, and is being called back to the Mosaic Covenant); and the time of Jesus and the Apostles (when the New Covenant is inaugurated). All three periods are key turning points in salvation history, and the presence of *concentrated* numbers of miracles helps to underline their importance."
+          },
+          {
+            "id": 23,
+            "body": "H. Wheeler Robinson, quoted in Milne, *Know the Truth*, 91; the definition is the one given in the *Oxford English Dictionary*, 3rd ed. (Oxford: Oxford University Press, 2003), s.v. ‘nature, n., def. I.1.a,’ https://www.oed.com/ (accessed 6 October 2026). McGrath notes that such ideas can treat nature itself as an active and even wise power – Robert Boyle’s ‘vulgar notion of nature’ as ‘a most wise being’ – and argues that ‘nature’ is not a neutral given but ‘an interpreted and socially mediated category’; for that reason he turns to the category of creation. Alister E. McGrath, *A Scientific Theology*, vol. 1, *Nature* (Edinburgh: T&T Clark; Grand Rapids, MI: Eerdmans, 2001), 132-33."
+          },
+          {
+            "id": 24,
+            "body": "Millard J. Erickson, *Christian Theology*, 3rd ed. (Grand Rapids, MI: Baker Academic, 2013), ch. 16."
+          },
+          {
+            "id": 25,
+            "body": "The following examples do not explicitly take account of the Fall, and how it mars creation’s glory. We shall return to this theme in Chapter 4."
+          },
+          {
+            "id": 26,
+            "body": "These distances are approximate: Proxima Centauri is about 4.2 light-years away, the Milky Way’s disc is about 100,000 light-years across, and the observable universe is about 93 billion light-years across. The times are calculated at a constant speed of 1,000km/s, ignoring acceleration. For the distances, see David J. Eicher, ‘How Vast Is the Universe? Unimaginably Enormous,’ *Astronomy*, 26 September 2023, https://www.astronomy.com/science/how-vast-is-the-universe-unimaginably-enormous/ (accessed 6 October 2026)."
+          },
+          {
+            "id": 27,
+            "body": "An understanding of God’s creation as good does not *require* the incarnation, but it ‘allows’ it in the sense of being coherent with it."
+          },
+          {
+            "id": 28,
+            "body": "Erickson, *Christian Theology*, 357."
+          },
+          {
+            "id": 29,
+            "body": "McGrath also highlights Moltmann’s argument that the increasing exploitation of the natural world flows from the increasing possibilities coming out of the rise of technology, rather than arising from specifically Christian teachings. McGrath appreciates the way that Moltmann ‘stresses the manner in which God can be said to indwell the creation through the Holy Spirit, so that the pillage of creation becomes an assault on God. On the basis of this analysis, Moltmann is able to offer a rigorously trinitarian defense of a distinctively Christian ecological ethic.’ McGrath, *Christian Theology*, ch. 9."
+          },
+          {
+            "id": 30,
+            "body": "McGrath, *Christian Theology*, ch. 9."
+          },
+          {
+            "id": 31,
+            "body": "Of course human society is now fallen, as we will consider in Chapter 4, and so can be a contributory factor in leading us into sin. But it cannot be made to shoulder the whole blame as if, unlike the individual, it were inherently evil."
+          },
+          {
+            "id": 32,
+            "body": "McGrath, *Christian Theology*, ch. 9. McGrath goes on to note that Augustine pushes the question back a stage, to Satan as an angel created good who fell by his own will; how a good angel could fall remains unresolved. Cf. Augustine, *City of God* XII.6-9, and Chapter 6."
+          },
+          {
+            "id": 33,
+            "body": "Cf. Erickson, *Christian Theology*, 347."
+          },
+          {
+            "id": 34,
+            "body": "Wayne Grudem, *Systematic Theology* (Grand Rapids, MI: Zondervan, 1994), ch. 15."
+          },
+          {
+            "id": 35,
+            "body": "Erickson, *Christian Theology*, 349-54."
+          },
+          {
+            "id": 36,
+            "body": "McGrath, *Christian Theology*, chs. 7, 14."
+          }
+        ],
+        "opening": {
+          "subtype": "standard",
+          "header": "",
+          "body": "*You alone are the [[sc:Lord]]. You made the heavens, even the highest heavens, and all their starry host,\\\nthe earth and all that is on it, the seas and all that is in them.\\\nYou give life to everything, and the multitudes of heaven worship you.*\n\nNehemiah 9:6\n\n*An error concerning the Creation ends as false thinking about God*.\n\n(Thomas Aquinas)[[fn:1]]\n\nOn Sunday mornings Naomi goes for a walk instead of going to church. She grew up in church but stopped attending in her second year at university.[[fn:2]] She now describes herself as ‘spiritual, not religious.’ She meditates, talks about ‘energy’ and ‘the universe,’ and finds church talk of sin and judgment cold by comparison. ‘At least when I sit outside and feel connected to everything,’ she says, ‘I feel that I’m part of something bigger than myself.’\n\nWhether she realises it or not, Naomi has already made some important decisions about what creation is, and about how it relates to God – the subject of this chapter and the next. This chapter deals with the doctrine of creation ‘in general’ while the following chapter deals with the doctrine of the creation of *humanity* in particular. This chapter will first look at God’s *act* of creating, then at what this tells us about roles and responsibilities within creation, and then at the implications of creation for discipleship."
+        },
+        "extrasOtherOriginStoriesViolence": {
+          "subtype": "highlighted",
+          "header": "Extras: Other Origin Stories & Violence",
+          "body": "There are many alternative origin stories, both ancient and modern. Many of them share something missing from Genesis 1: conflict and (often gory) violence.[[fn:3]] Such accounts thus see a dualism between good and evil, or else an indifference between them, as basic to reality.\n\nIn Genesis, however, God is supreme, so there is no rival for him to be in conflict with. The cosmos is created through peaceful speech not the carnage of war. So when we seek peace we are not chasing a pipe-dream; we are calling our world back to its origins, however obscured they may currently be.\n\n(A later volume will explore the profound implications of having a Trinitarian God as Creator.)"
+        },
+        "theActOfCreating": {
+          "subtype": "standard",
+          "header": "The Act of Creating",
+          "body": "This section considers how God creates: from *nothing* to something; from nothing to something *good*; and from nothing to something well-*ordered*."
+        },
+        "fromNothingToSomething": {
+          "subtype": "standard",
+          "header": "From Nothing to Something",
+          "body": "‘In the beginning, God.’ Scripture teaches that God alone is eternal. For the rest of creation, there was a time[[fn:4]] when it did not exist. Everything else has a start, but God does not. The technical term for this is to say that God created *ex nihilo*, which means ‘out of nothing.’[[fn:5]] This rules out two false understandings:\n\n1. **Dualism**. Some pagan religions believed in ‘dualism’ – i.e. that Good and Evil were equal and opposite. A Christianised (and syncretistic) version of this would be to believe that God expresses the eternal and omnipresent principle of Good, and that Satan expresses the eternal and omnipresent principle of Evil.[[fn:6]] The Bible is completely different from these pagan myths. God alone is Creator; there is no dualism of any sort. God did not have to overcome any hostile force in order to create. Before God created, there wasn’t anything else other than God. There wasn’t even ‘God plus nothing’ (as if ‘nothing’ was a sort of ‘pseudo-something’). There was just God.\n\n2. **Emanation**. The world is not an ‘emanation’ from God – as if God made the world out of himself (rather than out of nothing), as if it was somehow an extension of his being. The world is ‘other’ than God. God is immanent, but remains transcendent.\n\nThis original act of divine creation, in Genesis 1:1, is unique, and uniquely expresses God’s sovereignty and power. (Sometimes this ‘creation *ex nihilo*’ is referred to as ‘primary creation.’)[[fn:7]] God, of course, continues to create throughout the rest of Genesis 1, but in the rest of the chapter he is shaping the universe that he has already called into being out of nothingness. (This ‘shaping-creation’ is sometimes referred to as ‘secondary creation.’)\n\n#### God’s power"
+        },
+        "extrasDeismPantheism": {
+          "subtype": "highlighted",
+          "header": "Extras: Deism & Pantheism",
+          "body": "**Deism** (from the Latin deus meaning ‘god’) is the belief that God created the world, but has now withdrawn from it. He cannot (or does not) engage with his creation. Deism stresses transcendence and denies immanence.\n\n**Pantheism** (from the Greek πᾶν or pan, meaning ‘all’ and θεός or theos, meaning ‘god’) is the belief that God is everything and everything is God: God *is* the universe and the universe *is* God (or, at least, the universe is an emanation of God). A pantheistic God is not personal. Pantheism stresses immanence and denies transcendence.\n\n**Panentheism** (from the Greek πᾶν or pan meaning ‘all,’ ἐν or en meaning ‘in,’ and θεός or theos meaning ‘god’ – so altogether meaning ‘all-in-God’) is a close relative of pantheism. It is the belief that the world exists within God, but that God is ‘bigger’ than the world. Forms of it differ on how far the world is itself divine."
+        },
+        "fromNothingToSomethingContinued": {
+          "subtype": "standard",
+          "header": "",
+          "body": "God created the whole universe out of nothing, and called it into existence. This gives us a glimpse of his power. Four other truths help unpack this power:\n\n- **God is not dependent**. He existed before creation, and without it. He doesn’t depend on it, it depends on him.\n\n- **God is not local**. He created absolutely everything there is. Every galaxy, every planet, every country, every region. He is God over everything, and everyone.\n\n- **God is transcendent**. Transcendence refers to God being above and beyond the universe. God is wholly other to creation, wholly distinct from it, not simply some aspect of it. God’s radical, divine holiness is one way the Bible speaks of his transcendence.\n\n- **God is immanent**. Immanence refers to God being and acting within the universe. He is in communion with the world that he has created. God continuously sustains the world. He is active within it, and it is entirely dependent on his presence: ‘In him we live and move and have our being’ (Acts 17:28).\n\n#### The power of his Word\n\nIn particular, the act of creation shows us the power of God’s word: ‘And God said … and it was so.’ Seven times in Genesis 1, God speaks and things come to be, just the way he said for them to be. For us creatures, if we want something to happen then speaking is generally not enough; we have to physically *do* something. Not so with God: ‘By the word of the [[sc:Lord]] the heavens were made, their starry host by the breath of his mouth. … For he spoke, and it came to be; he commanded, and it stood firm’ (Ps 33:6, 9). Even the ongoing existence of the universe depends on the divine word: the Son sustains all things by his powerful word (Heb 1:3).\n\n#### The role of the Son and the Spirit\n\nThe act of creation is a Trinitarian act. Certainly God the Father is the God of creation: ‘there is but one God, the Father, from whom all things came and for whom we live’ (1 Cor 8:6a). The Son is also intimately involved in creation: ‘there is but one Lord, Jesus Christ, through whom all things came and through whom we live’ (1 Cor 8:6b). He is the Word who speaks creation into existence (cf. John 1:1-3), and he is the one through whom and for whom everything is created (Col 1:15-17) – the Son is also the God of creation. The Spirit too is intimately involved in creation – he is the Spirit who hovers over the newly formed creation from the beginning, superintending it (cf. Gen 1:2; Job 26:13, 33:4; Ps 104:30; Isa 40:12-13) – the Spirit is also the God of creation."
+        },
+        "fromNothingToSomethingGood": {
+          "subtype": "standard",
+          "header": "From Nothing to Something Good",
+          "body": "Unlike gnosticism and paganism, the Bible teaches us that the physical world of matter is not evil. God repeatedly affirms it as ‘good’ – even as ‘very good.’"
+        },
+        "extrasGnosticismTheDemiurge": {
+          "subtype": "highlighted",
+          "header": "Extras: Gnosticism & the ‘demiurge’",
+          "body": "**Gnosticism** (from the Greek γνωστικός or gnōstikós, meaning ‘having knowledge’) was an early Christian heresy. It emphasised personal spiritual knowledge (‘gnosis’) instead of apostolic teachings, and church authority. It viewed physical existence as evil. Salvation was thought to involve direct ‘knowledge’ of God through mystical ‘insight.’ Instead of focusing on sin and repentance, Gnosticism spoke of illusion and enlightenment. Gnostics believed in a supreme, hidden God who was responsible for spirituality and goodness, and a lesser, evil god who was responsible for creating the physical universe.\n\n**Demiurge** (from the Greek δημιουργός or dēmiourgós, meaning ‘artisan’ or ‘craftsman’) was a term originally used in Greek Platonic philosophy as roughly equivalent in meaning to creator. The Gnostics, however, adopted the term and used it to refer to their idea of a lesser, evil god who they thought had created the physical universe."
+        },
+        "fromNothingToSomethingGoodContinued": {
+          "subtype": "standard",
+          "header": "",
+          "body": "However, it is worth noticing that ‘good’ is not the same as ‘perfect.’ This is not to disparage the original creation – after all, in God’s own estimate it is *very* good! But it is to take account of three important biblical truths. First of all, ‘good’ (and ‘very good’) is the Bible’s own language for describing the creation; ‘perfect’ is not.[[fn:8]] Second, the Fall could happen. It is easier to talk about a ‘very good’ world going wrong, than to talk about a ‘perfect’ world going wrong. (‘If it was perfect, why did it go wrong in the first place??’) Third, the New Creation will be even better than the original (not least because no ‘Second Fall’ will be possible). So the original creation was very good, and the New Creation will be even better.[[fn:9]] If we were going to use the language of ‘perfect’ in regard to creation, we would be better to save it for speaking of the New Creation.[[fn:10]]\n\n#### God’s love and generosity\n\nGod chose to create the universe out of love. Creation is an act of self-giving by God. He did not ‘need’ to create, as if he were somehow lonely or in need of self-expression. The doctrine of the Trinity reminds us that an ‘Other’ already existed in himself. God as Trinity already was a community of love. God chose to share that community of love with his creation that he called into being. Creation is a gracious gift to his creatures – God was not pressured to create by reasons outside of himself (Eph 1:11; Rev 4:11)."
+        },
+        "fromNothingToSomethingWellOrdered": {
+          "subtype": "standard",
+          "header": "From Nothing to Something Well-Ordered",
+          "body": "God’s creation is structured and orderly. He brings distinction and separation: day from night, light from darkness, etc. This gives an underpinning for science. If creation was random, there would be no sense in looking for order within the randomness. Many of the leaders of the scientific revolution in sixteenth- and seventeenth-century Europe were Christians.[[fn:11]] Partly because they were Christians, and believed in a God of order who had created an ordered universe, they had the confidence needed to look for an underlying order within the (apparent) randomness of events in the world.[[fn:12]][[fn:13]]\n\nGod’s ordering of creation is true physically, and also morally. Our world has moral order built into it, waiting to be discerned. This does not make moral order a rival to God, because the moral order that God has created is an expression of his character. In other words, the doctrine of creation’s orderliness – its God-given structure – denies two distinct alternatives:\n\n- **Creation is not chaotic**. It is not random, or purposeless, or meaningless. God has given it a structure and the more we study creation – in all its facets (from physics to psychology, from mathematics to the mating rituals of mosquitoes), at all its levels (from astrophysics to sub-atomic particles) – the more we can expect to discover that order.\n\n- **Creation is not a blank canvas**. In the next chapter we will think more about humanity’s ‘sub-creative’ role within God’s purposes. God has left room for us to shape the world around us. But that world already comes with its own structure and order and integrity. The question is whether we will work creatively with the grain of the universe, or whether we will try to fight against that grain. The point here is that creation is not a blank canvas for us to shape in any way we so choose; rather it comes with existing structure that we are to respect.\n\nOliver O’Donovan puts this well:\n\nChristians should confess their faith in the natural order as the good creation of God. To do this is to acknowledge that there are limits to the employment of technique and limits to the appropriateness of our ‘making.’ These limits will not be taught us by compassion, but only by the understanding of what God has made, and by a discovery that it is complete, whole, and satisfying.[[fn:14]]\n\nGod intends us to ‘make’ and be creative – but within the limits of the creation he has already established. When we do this we will find satisfaction in his good gifts to us; when we over-reach ourselves we share again in the first sin of our original parents, Adam and Eve, and set ourselves up in disharmony with God and his creation. Volume 2, Chapter 18 goes into more detail on how we may discern this order in creation."
+        },
+        "extrasTheEuthyphroDilemma": {
+          "subtype": "highlighted",
+          "header": "Extras: The Euthyphro Dilemma",
+          "body": "Plato (and much of later philosophy) never understood that God’s created moral order was an expression of his character. Plato framed the issue as a dilemma:[[fn:15]]\n\n(a) Is lying wrong because God says so?\\\nor\\\n(b) God tells us not to lie, because it’s already wrong?\n\nIf (a) is true, then that seems to imply that morality is arbitrary, and God could have decided otherwise; he could have decided to make a world where lying is right, and truth-telling is wrong – and we all would have been expected to embrace lying and reject truth-telling. (This seems ‘counter-intuitive.’)\n\nIf (b) is true, then it seems like God is conforming to a higher standard that already exists outside of his creative act – which seems to imply there is something outside of God, or greater than God after all.\n\nAll dilemmas of this sort turn out to be ‘false dilemmas’ or ‘false dichotomies.’ That means you are being asked to choose between two possibilities, as if those were the only two possibilities available – yet both of them are wrong, and the right answer is a third option that is not presented to you. In this case, the correct option is that morality *is* a standard that already exists before God begins creating the universe, namely his own character – it is *not* a ‘higher’ standard that is somehow ‘outside’ of him. The moral order he builds into creation reflects that character."
+        },
+        "theIntelligibilityOfCreation": {
+          "subtype": "standard",
+          "header": "The Intelligibility of Creation",
+          "body": "Often the created order is not immediately intelligible, at least not in terms of how it appears superficially. The vagaries of the weather, the inscrutability of why lightning should strike one tree and not another, the seeming randomness of why a pandemic should arise from one place in one year and not another in another year – all these things and many more do not seem immediately intelligible. The doctrine of creation gives us confidence to look for an intelligibility underneath the superficial unintelligibility. The universe was not created by a God of chaos, but a God of faithfulness, and order, and intelligibility. It was created by the Word of God. All the ‘laws of nature’ are dependent on the Word of God as their source."
+        },
+        "creationAndTime": {
+          "subtype": "standard",
+          "header": "Creation and Time",
+          "body": "Consider the question: *Was the act of Creation an act in time?* This is not an easy question to answer – if ‘yes’ that seems to make time stand outside creation (as uncreated?); but if no, then that begs more questions of how time and creation fit together. The problem arises because the question is wrongly framed. With Augustine, it is better to think, not of God creating the world ‘in’ time, but of him creating the world ‘with’ time.[[fn:16]] In other words, time itself is part of God’s creation – which suggests that eternity, from ‘within’ which God creates the universe (including time) is something greater than and beyond time."
+        },
+        "ongoingSustenance": {
+          "subtype": "standard",
+          "header": "Ongoing Sustenance",
+          "body": "The Bible describes God as upholding the world (Heb 1:3; Col 1:17; Acts 17:25). The Hebrew participles used for God’s creative work also imply ongoing activity (cf. Job 9:8-9; Ps 104:2-3; Isa 42:5; 44:24; 45:18), though this is not always obvious in translation. Also, the Bible presents all of the following as works of God: maintaining the stars and seasons (Job 38:31-33; Isa 40:26; Acts 14:17); the weather (Job 38; Matt 5:45); animal life cycles (Job 39; Matt 6:28-30); human life cycles (Ps 104:27-29); and human skills (farming, Isa 28:24-25; metalwork, Isa 54:16; other crafts Exod 31:2-5; and warfare, Ps 144:1).[[fn:17]] Milne expresses this point well:\n\nGod has called the universe into being out of nothing, and hence at every moment it ‘hangs’ suspended, as it were, over the abyss of non-existence. If God were to withdraw his upholding Word, then all being, spiritual and material, would instantly tumble back into nothing and cease to exist. The continuation of the universe from one moment to the next is therefore as great a miracle, and as fully the work of God, as is its coming into being at the beginning. In this profound sense we all live every instant only by the grace of God; our every breath is his gift.[[fn:18]]\n\n#### The *dangers* of the ‘God of the gaps’ approach\n\nSometimes Christians have tried to demonstrate God’s ongoing role in created order by pointing to areas where our understanding of the processes of creation are incomplete, where we can’t (fully) explain what happens and why in terms of the structure of creation itself. In previous centuries people might have pointed to the motion of the stars, or the complexity of the weather as places in created order where God’s ongoing handiwork can ‘still’ be seen; more recently people might point to the beginning of human life as a place where God’s handiwork can ‘still’ be seen. In this understanding, God is seen as being active in the ‘gaps’ in our scientific understanding of the world. The problem is not in seeing God as being active in those areas. The problem is in thinking he is *only* active in those areas, or *specially*, or *additionally* active there. This is wrong. God is actively sustaining, and sovereignly superintending all of his world: ‘Are not two sparrows sold for a penny? Yet not one of them will fall to the ground outside your Father’s care. And even the very hairs of your head are all numbered’ (Matt 10:29-30). God is sovereign over the processes we understand (to whatever degree, at a creaturely level), as well as being sovereign of the processes we do not understand (to any degree, at a creaturely level). Reducing God’s activity to only the gaps in our knowledge demonstrates a weak grasp of God’s sustenance of all things, all the time."
+        },
+        "dependentIndependence": {
+          "subtype": "standard",
+          "header": "Dependent Independence",
+          "body": "The universe is ‘contingent’ not ‘necessary,’ in the sense that it did not have to exist – God was not required to create it (and he might have created it in a very different way from how he did). And yet, having been created by the faithful God, it is stable, reliable, and consistent, upheld by the purposes of covenant love, his faithful ongoing sustenance. When considered in themselves, created things are fleeting, changeable, and weak. But when considered in the light of the faithfulness of their Creator, we can have confidence in them being maintained by the sustaining power of the Word of God. By grace, he preserves them from falling back into non-existence. The universe is neither self-supporting, nor mere illusion. In creating the world *ex nihilo* God has freely brought it into being as something totally distinct from himself, and yet as something having its own reality and thus a measure of genuine independence. This produces a certain paradox: creation’s God-given independence is itself dependent upon God. ‘If God were to withdraw his creative life and power, all creation would disintegrate and perish.’[[fn:19]][[fn:20]]\n\n#### Miracles\n\nGod is all-powerful, so he could work directly all the time if he wanted to. He could continually overrule the normal processes of created order, and could cause miracles to happen non-stop. God could feed the widow and the orphan by making food spring into being every time they get out their plates. But God does not do this. Only rarely[[fn:21]] does God do anything like this. The reason for this is that God is the Creator. He has *created* creation. He has created it to work in a particular way, and he wants it to work that way, and he likes it to work that way. Of course, the Fall (see Chapter 4) has spoiled God’s good purposes in creation. God is certainly acting to overcome how his creation has been spoiled. But he overcomes it by redeeming creation, not by overthrowing it or overriding it. God does not normally overthrow the workings of created order, even for the important, laudable, and life-sustaining task of feeding orphans and widows. This tells us that:\n\n1. Created order is tremendously important to God. It is so important to him that he delights to work *through* created means, rather than around them. God delights to feed orphans and widows by sanctifying the communities they live in, so that he feeds them through moral growth of those around them, rather than bypassing those communities to feed them miraculously and directly.\n\n2. When miracles do happen, they are generally signalling that something *massively* important is happening in God’s purposes for the world – and so we should pay attention.[[fn:22]]\n\nThis does not explain why a particular person goes hungry, and it never excuses us from feeding them: the call to feed the hungry is a call to act, not to wait for a miracle."
+        },
+        "aNoteAboutTheLanguageOfNature": {
+          "subtype": "standard",
+          "header": "A note about the language of ‘Nature’",
+          "body": "In English it is common to speak about ‘nature’ as well as ‘creation’ – in some circles the language of ‘nature’ may be much more common than ‘creation.’ There is nothing wrong with any word, so long as we know what it means. But ‘nature’, in the sense of an independent physical power, is not a category the Bible itself uses, and so we have to find a definition outside of Scripture – and the definition(s) people choose may not always be consistent with Scripture. Often people use it to mean something like ‘the creative and regulative physical power which is conceived of as operating in the physical world and as the immediate cause of all its phenomena.’[[fn:23]] Such definitions can cause trouble, as ‘nature’ then becomes a rival or alternative to God. I would suggest that you are more likely to remain faithful in your theological thinking if you train yourself to think of ‘creation’ or ‘the created order’ as your primary terminology, and leave ‘nature’ as a derivative (and slightly slippery!) term that you will have to keep an eye on, and keep redefining in terms of your understanding of creation."
+        },
+        "creationsPurposeGodsGlory": {
+          "subtype": "standard",
+          "header": "Creation’s Purpose: God’s Glory",
+          "body": "All of creation glorifies God (Ps 19:1), but in different ways. Erickson draws out how obedience brings glory to God: ‘inanimate creation does so mechanically, obeying natural laws that govern the physical world. The animate creation does so instinctively, responding to impulses within. Only humans and angels are capable of obeying God consciously and willingly and thus glorifying God most fully.’[[fn:24]] Creation also glorifies God through its own, modest glory, since he is the one who created that creaturely glory. Creation’s glory, in this sense, includes a whole range of characteristics, for example:[[fn:25]]\n\n- **Beauty**. Creation is filled with beauty: the colours of a sunset; the delicacy of a flower; the wonder of a nebula. And God’s beauty surpasses all of this.\n\n- **Complexity**. From the miracles of DNA to the intricacies of quantum mechanics, creation can be mind-bogglingly complex to understand; yet is simplicity itself to the mind of its Creator.\n\n- **Hugeness** (both physical and temporal). A rocket, travelling at 1000km/s (that’s about 2.2 million mph) would take about 1,300 years to travel from earth to Proxima Centauri, our nearest star. It would take about 30 million years to travel all the way across the galaxy, and about 28 trillion years to travel across the observable universe. And yet these distances and timescales are vanishingly small before our infinite God.[[fn:26]]\n\n- **Goodness**. The goodness of creation, and the joy it brings us, point to the goodness of the ultimate Joy-giver, who created it all and pronounced it ‘very good.’\n\nCreation’s ‘glory’ points beyond itself to God’s greater glory."
+        },
+        "rolesAndResponsibilities": {
+          "subtype": "standard",
+          "header": "Roles and Responsibilities",
+          "body": ""
+        },
+        "thePlaceOfTheFatherSonAndSpirit": {
+          "subtype": "standard",
+          "header": "The Place of the Father, Son, and Spirit",
+          "body": "God, as Father, Son, and Spirit, is totally unique – he alone is the Creator, he alone is worthy of our worship and adoration. Creation is ontologically distinct from its Creator. And God has total authority over creation: he made it, so he owns it, so he decides the rules. A strong doctrine of creation also keeps us from downgrading Christ’s incarnation. Suppose for a moment that the physical world was somehow inherently evil; then it would be almost impossible to accept that the Son – the Second Person of the Trinity! – could take on a physical (and therefore evil!) human body. By contrast, correctly understanding that God’s creation is good means that the incarnation makes sense.[[fn:27]]"
+        },
+        "thePlaceOfHumanity": {
+          "subtype": "standard",
+          "header": "The Place of Humanity",
+          "body": "The next chapter concentrates on humanity’s place within creation, but we include a short summary here:\n\n- **Image of God**. Humanity has been made in the image of God, and so occupies a special, privileged, and precious place within creation. And also a place of great responsibility.\n\n- **Relationship**. Humanity has been made for relationship: relationship with God, with one another, and with the rest of creation.\n\n- **Reigning**. Humanity has been given the task of reigning over God’s creation under him. However, that reign should be according to the pattern of God’s reign – which is a pattern of care, not domination. We are granted stewardship under God, not independent ownership."
+        },
+        "thePlaceOfSpiritualPowers": {
+          "subtype": "standard",
+          "header": "The Place of Spiritual Powers",
+          "body": "This topic is treated more fully in Chapter 6. For now, we note that whatever spiritual powers there exist, they are creaturely powers, not divine powers. They are servants of God – either faithful servants carrying out his will, or else rebellious servants whose powers are limited, and whose days of rebellion are numbered."
+        },
+        "thePlaceOfTheRestOfCreation": {
+          "subtype": "standard",
+          "header": "The Place of the rest of Creation",
+          "body": "Creation is intended to bring glory to God. It is the product of his productive work, entrusted to humanity to steward. The whole of creation is metaphorically pictured as longing for God’s purposes to be fulfilled (cf. Rom 8:19-21), and as rejoicing when those purposes will be fulfilled (cf. Ps 96:11-13)."
+        },
+        "creationAndDiscipleship": {
+          "subtype": "standard",
+          "header": "Creation and Discipleship",
+          "body": ""
+        },
+        "worshipAndPraise": {
+          "subtype": "standard",
+          "header": "Worship and Praise",
+          "body": "Creation – in all its beautiful and wonderful complexity – gives us unending reasons to praise our Creator. ‘You are worthy, our Lord and God, to receive glory and honour and power, for you created all things, and by your will they were created and have their being’ (Rev 4:11)."
+        },
+        "orderVsBlankCanvas": {
+          "subtype": "standard",
+          "header": "Order vs Blank Canvas",
+          "body": "The fact that we live in an ordered creation – which includes a moral ordering – has profound implications for morality and ethics, for issues of life and death, sex, parenthood, reproduction, and medicine. A solidly Christian approach to ethics, including bioethics, depends upon a substantive doctrine of created moral order. We will consider these issues in more detail in the next chapter, and in Volume 2 (especially Chapters 12, 13 and 18)."
+        },
+        "theEnvironmentEcologyAndSustainability": {
+          "subtype": "standard",
+          "header": "The Environment, Ecology, and Sustainability",
+          "body": "God has an eye to the well-being of even the birds of the air and the grass of the field (Matt 6:26-30; 10:29). Everything has value and deserves respect since it is *God’s* creation. There is a sense in which it is ‘ours’ too: it is ours to steward – and stewardship should have respect built in. Respect, however, should not entail worship. As Erickson notes: ‘Only God deserves our worship. Everything else exists for his sake, not he for its sake. Although we will highly respect the creation, since it has been made by him, we will always maintain a clear distinction between God and it.’[[fn:28]] Calvin B. DeWitt argues for four ecological principles arising from the doctrine of creation. McGrath[[fn:29]] summarises DeWitt’s principles as:\n\n1. **The ‘earth-keeping principle’**: just as the creator keeps and sustains humanity, so humanity must keep and sustain the creator’s creation.\n\n2. **The ‘sabbath principle’**: the creation must be allowed to recover from human use of its resources.\n\n3. **The ‘fruitfulness principle’**: the fecundity of the creation is to be enjoyed, not destroyed.\n\n4. **The ‘fulfillment and limits principle’**: there are limits set to humanity’s role within creation, with boundaries set in place which must be respected.[[fn:30]]\n\nVolume 2, Chapter 23 develops a fuller theology of ecology and the environment, including the Sabbath rest of the land."
+        },
+        "thinkingAboutEvil": {
+          "subtype": "standard",
+          "header": "Thinking about Evil",
+          "body": "We cannot excuse our evil behaviour by blaming the evil realm of the physical world – because it is not inherently evil! Nor can we blame society (as if individuals are basically OK, and it is only wider society that leads them into sin) – because human society is also not inherently evil. It is part of the good world God originally made.[[fn:31]] McGrath summarises Augustine’s view of creation, and its relation to evil, as follows:\n\n1. Everything that exists owes that existence to God. There is no alternative source or origin of existence.\n\n2. Everything that exists was created good by a good God.\n\n3. The evil that exists within the world is not to be thought of as something positive and real, possessing its own distinct substance. Rather, it is to be thought of as a ‘lack of goodness.’\n\n4. Evil does not derive its origin from God but from humanity’s use of its God-given freedom.[[fn:32]]\n\nWe will give further consideration to the ‘problem’ of evil in Chapter 5."
+        },
+        "freedomToEnjoyGodsGiftsInCreation": {
+          "subtype": "standard",
+          "header": "Freedom to Enjoy God’s Gifts in Creation",
+          "body": "A strong doctrine of creation provides a counterweight against asceticism. If you think the physical creation is in some way evil, you are likely to be suspicious of the human body, and physical pleasure. This has led some Christians to seek godliness in the realm of the ‘spiritual’ only, by emphasising ascetic spiritual disciplines (e.g. fasting, meditation, and/or solitude) and simultaneously arguing that the truly ‘spiritual’ will avoid sex and other physical pleasure (e.g. from a varied and pleasant diet).[[fn:33]] These disciplines are good in themselves; the mistake is to think that the physical is the problem."
+        },
+        "aPostScriptOnChronology": {
+          "subtype": "standard",
+          "header": "A Post-Script on Chronology",
+          "body": "The attentive reader may have noticed that this chapter has not yet addressed the issue of the chronology of creation. Often lots of effort is spent on debating the chronology of creation (e.g. ‘six days’ vs ‘millions of years’). This issue is not without importance for our wider theology, but that importance is indirect – its importance comes from how it impacts our doctrine of Scripture, and our understanding of hermeneutics. To clarify this distinction between ‘direct’ and ‘indirect’ consequences, consider the following examples.\n\nFirst, if we change our view on creation *ex nihilo* then direct theological consequences follow. If God created the universe out of some pre-existing matter that was not created by him, then it follows directly that God is not the only eternal being – either the pre-existing matter is also eternal, or whatever created it (whether a single entity, or an ongoing chain of them) is eternal. Either way, our understanding of God’s nature is immediately and fundamentally changed. And, in addition, there may be secondary, indirect consequences for our doctrine of Scripture, and/or our understanding of hermeneutics.\n\nSecond, if we change our view on the chronology of creation – suppose we change our view from a ‘six day creation’ to a ‘three day creation,’ or perhaps we change our view of the age of the earth from a billion years old to a trillion years old – then no direct theological consequences follow. Nothing in the rest of theology hangs directly on whether creation took three days, or six days (or three billion years, or six trillion years). There may, however, be secondary, indirect consequences for our doctrine of Scripture, and/or our understanding of hermeneutics.\n\nIt is not wrong to pay attention to the chronology of creation; but sometimes so much attention gets paid to this that we forget to concentrate on the actual theology of creation(!) – the doctrines that have direct consequences as well as indirect ones – such as the kind of matters discussed in this chapter and the next. Therefore, in this chapter I have attempted to redress the balance by giving priority to the *doctrine* of creation. A number of excellent – and detailed – treatments of the chronology of creation are available, and the interested reader is referred to these: for an extensive, but even-handed overview, which concludes that both ‘young earth’ and ‘old earth’ views are possible, see Wayne Grudem;[[fn:34]] for an ‘old earth, but non-theistic-evolution view’ see Erickson;[[fn:35]] for a more sympathetic approach to theistic evolution see McGrath.[[fn:36]]"
+        },
+        "summary": {
+          "subtype": "standard",
+          "header": "Summary",
+          "body": "1\\. God alone is eternal. He created everything else by his word, out of nothing, and without conflict or violence. He is the sole Creator, and the only one worthy of worship.\n\n2\\. Creation is distinct from God, yet depends on him at every moment. Against deism, God is not distant; against pantheism, the world is not God. God is both transcendent and immanent.\n\n3\\. Against dualism and gnosticism, creation is good – ‘very good’ is the Bible’s own verdict – and God has no rival. Evil is not part of the original creation – and since there was a time when evil entered creation, we can hope for a time when it is evicted.\n\n4\\. Creation is ordered and intelligible, and it has a real integrity of its own. God sustains it, and normally works through created means.\n\n5\\. Creation has a built-in order, including a moral order, which expresses God’s character rather than being either an arbitrary rule or a standard above him. Our own creativity is meant to flourish within the bounds that God’s creation sets.\n\n6\\. Creation exists for God’s glory. Father, Son, and Spirit each have a part in it, and spiritual powers, however real, are creatures, not rivals to God.\n\n7\\. We are called to steward creation – not to own it, and not to worship it – and to enjoy it as God’s gift. This shapes how we think about evil, our bodies, and the environment."
+        },
+        "toolsMyself": {
+          "subtype": "standard",
+          "header": "Tools for Making Disciples: For myself",
+          "body": "The doctrine of creation is meant to shape how we live, not only what we believe. These prompts take it in three directions: towards myself, towards someone I am helping, and towards our church. Use the ones that fit.\n\n- Do I treat my body, my work, or my possessions as something to escape, to worship, or to own – rather than to steward?\n\n- Do I suspect that enjoying food, rest, or beauty is somehow less spiritual than prayer? Where did that idea come from?\n\n- Which gift of creation – a meal, a view, a night’s sleep – can I receive this week with thanks to the Creator?\n\n- What one everyday practice – eating, resting, working, throwing things away – will I change this month because everything I use is God’s creation?"
+        },
+        "toolsSomeoneElse": {
+          "subtype": "standard",
+          "header": "Tools for Making Disciples: For someone I am helping",
+          "body": "Begin by listening to the person’s story and reasons; these prompts are for opening a conversation, not for diagnosing someone from a distance. Try to understand where someone’s view of the material world might have drifted towards escaping it, worshipping it, or ignoring it – rather than stewarding it.\n\n- Do they treat the physical world – body, work, possessions – as something to escape, or as something to steward?\n\n- Do they attribute too much meaning to nature (worship), or too little (dismissal)?\n\n- Where might they be acting as an owner rather than as a steward?\n\n- Can they name one everyday practice – eating, resting, working, throwing things away – that their doctrine of creation should change?"
+        },
+        "toolsChurch": {
+          "subtype": "standard",
+          "header": "Tools for Making Disciples: For our church",
+          "body": "- Do our prayers and songs thank God for creation – food, rain, bodies, seasons – as well as for salvation?\n\n- How do we treat our land, buildings, water, and rubbish? Would a visitor see that we believe they belong to God?\n\n- Do we teach that the body and its pleasures are good gifts within God’s order, or do we leave people suspecting that the physical is second-rate?\n\n- When we explain why things go wrong – sickness, poverty, conflict – do we blame the world itself, or do we speak honestly of sin while still calling creation good?"
+        },
+        "naomiRevisited": {
+          "subtype": "standard",
+          "header": "Naomi Revisited",
+          "body": "It would be easy to try to argue Naomi out of her experience, as though the aim were to make her feel less connected to the world around her. That would be a mistake. Naomi is half right, and it is worth telling her so.\n\nGenesis agrees with her that the world is full of meaning and worthy of wonder – but as a gift, not as God himself. Pantheism, the view Naomi is drifting towards, dissolves the difference between Creator and creation until there is no one left to thank. Christianity keeps that difference, and in keeping it, keeps room for a real relationship. Nor is the God of Genesis cold: he looks at all he has made and calls it ‘very good.’\n\nNaomi is not a drop merging into an ocean, but a creature known and addressed by the God who made the ocean. Her sense of belonging to something bigger than herself can become a pointer to the Creator she was made to know (Rom 1:20)."
+        },
+        "questionsForReflection": {
+          "subtype": "standard",
+          "header": "Questions for Reflection",
+          "body": "1\\. Where in your own thinking do you notice traces of deism (God distant and uninvolved) or pantheism (God and the world blurred together)?\n\n2\\. The chapter notes that in Genesis the cosmos is created ‘through peaceful speech not the carnage of war.’ How should that shape a Christian response to conflict and chaos?\n\n3\\. What does it mean, in practice, to be a steward rather than an owner of creation? Choose one area of your life – money, the environment, your body – and apply it.\n\n4\\. How should the doctrine of creation affect the way you worship God, think about evil, treat animals, and throw away rubbish? Pick two or three of these and note the connections."
+        },
+        "technicalTerms": {
+          "subtype": "standard",
+          "header": "Technical Terms",
+          "body": "Deism: Belief that God created the world, but has now withdrawn from it.\n\nDemiurge: Used by the Gnostics for their lesser, evil god who they thought had created the universe.\n\nDualism: Belief in: ‘**Two** equal and opposite powers of good and evil’\n\nEpistemology: The study of how we *know* things (often contrasted with ontology).\n\n*Ex nihilo*: Creation ‘out of nothing’\n\nGnosticism: Heresy that emphasised spiritual knowledge and viewed physical existence as evil.\n\nImmanence: God being and acting within the universe, in communion with the world that he has created, continuously sustaining it.\n\nOntology: The study of the *nature* or *being* of things (often contrasted with epistemology).\n\nPanentheism: Belief that the world exists within God, while God is also more than the world.\n\nPantheism: Belief that God is everything, and everything is God.\n\nTranscendence: God being above and beyond creation, wholly other to creation, wholly distinct from it."
+        },
+        "furtherReading": {
+          "subtype": "standard",
+          "header": "Further Reading",
+          "body": "### Key Bible Passages\n\nGen 1-2; Job 38-42; Ps 8:1-9; 19:1-6; 24:1-2; 33:6-9; 104; John 1:1-14; 1 Cor 8:6; Col 1:16-17; Heb 1:10.\n\n**Berkhof, Louis. *Systematic Theology*.** Edinburgh: Banner of Truth, 1958.\\\nA long-standing Reformed textbook, concise and orderly; cited here on the original creation and the New Creation. Older in style; for students and pastors.\n\n**Erickson, Millard J. *Christian Theology*.** 3rd ed. Grand Rapids, MI: Baker Academic, 2013.\\\nA full, readable evangelical systematic theology, used throughout this chapter, including for an ‘old earth’ view of the chronology of creation. For students, pastors, and serious lay readers.\n\n**Grudem, Wayne. *Systematic Theology: An Introduction to Biblical Doctrine*.** Grand Rapids, MI: Zondervan, 1994.\\\nA full evangelical systematic theology; chapter 15 sets out the main views on the age of the earth fairly before giving its own tentative conclusion. For students and pastors.\n\n**Hamilton, Janet, Bernard Hamilton, and Yuri Stoyanov. *Christian Dualist Heresies in the Byzantine World, c. 650-c. 1450: Selected Sources*.** Manchester: Manchester University Press, 1998.\\\nTranslated primary sources on the dualist movements of the Byzantine world.\\\nSpecialist; for readers who want to see what dualism looked like in practice.\n\n**Harrison, Peter. *The Bible, Protestantism, and the Rise of Natural Science***. Cambridge: Cambridge University Press, 1998.\\\nA scholarly study of how Protestant ways of reading the Bible helped shape early modern natural science. For students.\n\n**Mangalwadi, Vishal. *The Book That Made Your World: How the Bible Created the Soul of Western Civilization*.** Nashville, TN: Thomas Nelson, 2011.\\\nA popular, wide-ranging account of how the Bible has shaped the modern West, including its science. Accessible; for all readers.\n\n**McGrath, Alister E. *A Scientific Theology*. Vol. 1, *Nature*.** Edinburgh: T&T Clark; Grand Rapids, MI: Eerdmans, 2001.\\\nA rigorous work on how theology and the natural sciences relate; cited here on the language of ‘nature.’ Demanding; for advanced students.\n\n**McGrath, Alister E. *Christian Theology: An Introduction*.** 6th ed. Chichester: Wiley Blackwell, 2017.\\\nA clear introduction to the whole of Christian doctrine, cited here on Augustine and evil and on ecology (ch. 9). A good first read for students and lay readers.\n\n**Milne, Bruce. *Know the Truth: A Handbook of Christian Belief*.** 3rd ed. Nottingham: IVP, 2009.\\\nAn accessible evangelical handbook, and this chapter’s main source on God’s upholding of the world. For all readers.\n\n**O’Donovan, Oliver. *Begotten or Made?*** Oxford: Clarendon, 1984.\\\nA short book on the limits of human ‘making’ and the givenness of created order.\\\nConcise but demanding; for students and pastors willing to read slowly.\n\n**Reed, Rodney L., and David K. Ngaruiya, eds. *God and Creation*.** Africa Society of Evangelical Theology Series. Carlisle: Langham Global Library, 2019.\\\nEssays from African perspectives on God as Creator, creation care and the environment, and human relationships; for pastors, students, and serious lay readers.\n\n**Thiselton, Anthony C. ‘Creation.’ In *The Thiselton Companion to Christian Theology*.** Grand Rapids, MI: Eerdmans, 2015.\\\nA short entry, useful on the shape of Genesis 1 (non-order rather than chaos). For students and pastors.\n\n**Torrance, Thomas F. *The Trinitarian Faith: The Evangelical Theology of the Ancient Catholic Church*.** 2nd ed. London: T&T Clark, 1997.\\\nA demanding account of the Nicene faith; its treatment of creation lies behind ‘Dependent Independence’ (ch. 3, pp. 76-109). For advanced students.\n\n**Watkin, Christopher. *Biblical Critical Theory: How the Bible’s Unfolding Story Makes Sense of Modern Life and Culture*.** Grand Rapids, MI: Zondervan, 2022.\\\nA long, readable book that reads modern culture through the Bible’s story; ch. 2, cited here, bears on the violence of other origin stories. For pastors and serious lay readers."
+        }
+      }
+    ]
+  },
+  "studyAboutData": {
+    "author": {
+      "imageAlt": "Rick Creighton",
+      "fallbackEmoji": "👤",
+      "paras": [
+        "Rick Creighton teaches systematic theology to students preparing for pastoral ministry, cross-cultural mission and lay leadership in the church, at ECWA Theological Seminary, Kagoro, and at Jos ECWA Theological Seminary in Nigeria. This study accompanies his book <i>Made, Marred and Renewed</i>.",
+        "This study was drafted with the help of an AI model, Claude (made by Anthropic), working from the book. Claude drafted the questions, hints and sample answers, which the author then reviewed and revised. The decisions are the author’s, and so are any errors that remain."
+      ]
+    }
+  },
+  "copyrightData": {
+    "copyright": {
+      "holder": "Rick Creighton",
+      "year": 2026,
+      "statement": "Rick Creighton, 2026. Licensed under CC BY-SA 4.0."
+    },
+    "notices": [
+      "Scripture quotations taken from the Holy Bible, New International Version Anglicised. Copyright © 1979, 1984, 2011 Biblica. Used by permission of Hodder &amp; Stoughton Ltd, an Hachette UK company. ‘NIV’ is a registered trademark of Biblica UK trademark number 1448790. [Permission for use in this study to be confirmed.]",
+      "Scripture quotations designated (NET) are taken from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. http://netbible.com All rights reserved. Scripture quoted by permission."
+    ]
+  }
+}
