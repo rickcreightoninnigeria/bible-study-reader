@@ -96,6 +96,13 @@ describe('every locale is complete', () => {
     });
   }
 
+  for (const lang of langs) {
+    it(`${lang}: has no keys that English lacks (they would never be used)`, () => {
+      const extra = Object.keys(load(lang)).filter(k => !k.startsWith('___') && !(k in en));
+      expect(extra).toEqual([]);
+    });
+  }
+
   it('the Reset-all confirmation word is "reset" everywhere, so what the body asks for is what is checked', () => {
     for (const lang of ['en', ...langs]) {
       const d = load(lang);
