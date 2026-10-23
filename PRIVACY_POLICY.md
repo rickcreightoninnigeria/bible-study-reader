@@ -1,6 +1,6 @@
 PRIVACY POLICY — BIBLE STUDY READER
 
-Last updated: 16 October 2026
+Last updated: 23 October 2026
 
 This Privacy Policy explains what data the Bible Study Reader app collects, how it is used, and under what circumstances it leaves your device.
 
@@ -21,6 +21,7 @@ All of the following is stored locally on your device only and is never transmit
 • Your app settings and preferences (font size, dark mode, language, etc.)
 • The study content files (.estudy files) you have installed
 • Cover images and other media associated with installed studies
+• A short log of recent error messages (the error text, the app version and the ID of the study that was open; never your answers or notes), kept so that a problem can be diagnosed. You can clear it in Settings → Diagnostics.
 
 This data is stored using your device's browser storage (localStorage) and IndexedDB. It remains on your device until you delete it within the app, uninstall the app, or clear the app's data through your device settings.
 
@@ -34,6 +35,9 @@ When you download a study from the in-app library, the app fetches the study fil
 
 3b. App updates (Android only)
 The app may check for available updates by fetching version information from a file hosted on Google Drive. This is a standard file request; no personal information is sent.
+
+3c. Reporting a problem (optional)
+Settings → Diagnostics has a "Report a problem" button. It opens your own email app with a message addressed to bible.study.reader@gmail.com and a diagnostic report already filled in: the app version, basic details of your device and browser (such as screen size and language), the titles and versions of the studies you have installed, and recent error messages. It never includes your answers or notes. Nothing is sent unless you review the message and press Send yourself, and you may delete any part of it first.
 
 The app itself does not transmit your answers, notes or any other text you type to any server. Earlier versions of the app offered an optional AI Tutor that sent text to the Google Gemini API; that feature has been removed. Some older study files may still contain unused AI Tutor settings, which the app ignores. Any AI Tutor conversation you saved in an answer before the feature was removed remains on your device only.
 

@@ -139,12 +139,14 @@ function showVersionWarning(msg) {
 async function activateStudy(id) {
   try {
     await _activateStudyUnsafe(id);
+    clearOpenFailure(id);
   } catch (err) {
-    reportError(err, {
+    const entry = reportError(err, {
       context: 'open-study', studyId: id, dialog: true,
       title:   t('errorreport_title'),
       message: t('errorreport_open_study_failed'),
     });
+    recordOpenFailure(id, entry);
   }
 }
 

@@ -99,6 +99,132 @@ def check_markers(study):
                     md_warn(f'{name} {label} {path}')
 
 
+ELEMENT_TYPES = {'heading', 'text', 'biblePassage', 'question', 'image', 'callout', 'likertScale'}
+HEADING_SUBTYPES = {'section', 'subsection', 'reflection'}
+CALLOUT_SUBTYPES = {'general', 'misunderstanding', 'highlighted', 'activity'}
+
+
+def check_structure(study):
+    """Shapes that make the app throw or draw nothing: a chapter that is not an
+    object, `elements` that is not an array, an element that is null... Each is
+    reported, then dropped so the remaining checks can run on what is usable."""
+    if not isinstance(study, dict):
+        err('the file must hold one JSON object')
+        return False
+    if not isinstance(study.get('studyMetadata'), dict):
+        err('studyMetadata is missing or is not an object')
+        study['studyMetadata'] = {}
+    chapters = study.get('chapters')
+    if isinstance(chapters, list):
+        kept = []
+        for i, ch in enumerate(chapters):
+            if not isinstance(ch, dict):
+                err(f'chapters[{i}] is not an object, so the chapter cannot be shown')
+                continue
+            els = ch.get('elements')
+            if els is not None and not isinstance(els, list):
+                err(f'chapter {ch.get("chapterNumber", i)}: elements must be an array, so the chapter will not open')
+                ch['elements'] = []
+            elif els:
+                good = []
+                for j, el in enumerate(els):
+                    if isinstance(el, dict):
+                        good.append(el)
+                    else:
+                        err(f'chapter {ch.get("chapterNumber", i)}: elements[{j}] is not an object, so the whole chapter will not open')
+                ch['elements'] = good
+            kept.append(ch)
+        study['chapters'] = kept
+    for name in ('goDeeperData', 'leadersNotesData'):
+        d = study.get(name)
+        if d is None:
+            continue
+        if not isinstance(d, dict):
+            err(f'{name} must be an object')
+            study[name] = {}
+            continue
+        cs = d.get('chapters')
+        if cs is not None and not isinstance(cs, list):
+            err(f'{name}.chapters must be an array')
+            d['chapters'] = []
+        elif cs:
+            d['chapters'] = [c for c in cs if isinstance(c, dict)]
+            for c in cs:
+                if not isinstance(c, dict):
+                    err(f'{name}.chapters has an entry that is not an object')
+            for c in d['chapters']:
+                fns = c.get('footnotes')
+                if fns is not None and not (isinstance(fns, list) and all(isinstance(f, dict) for f in fns)):
+                    err(f'{name} chapter {c.get("chapterNumber")}: footnotes must be an array of {{id, body}} objects')
+                    c['footnotes'] = []
+    return True
+
+
+def numbered(el, base):
+    """(key, value) for `base` and its numbered slots (base1, base2 ...)."""
+    return [(k, v) for k, v in el.items() if re.fullmatch(re.escape(base) + r'\d*', k)]
+
+
+def check_element_shapes(where, el):
+    """Field shapes the renderers rely on. A wrong one does not stop the study:
+    the app shows a warning marker in place of that one item."""
+    if 'repeatElement' in el:
+        return                      # a pointer to another element: nothing of its own to check
+    typ = el.get('type')
+    sub = el.get('subtype')
+    marker = '(the item is replaced by a warning marker)'
+
+    def need_string(base):
+        for k, v in numbered(el, base):
+            if v is not None and not isinstance(v, str):
+                err(f'{where}: {k} must be a string, not {type(v).__name__} {marker}')
+
+    if typ is None:
+        warn(f'{where}: no type, so the item is skipped')
+    elif typ not in ELEMENT_TYPES:
+        warn(f'{where}: unknown type {typ!r} is skipped (known: {", ".join(sorted(ELEMENT_TYPES))})')
+        return
+    if typ in ('heading', 'text'):
+        need_string('text')
+    if typ == 'heading' and sub not in HEADING_SUBTYPES:
+        warn(f'{where}: heading subtype {sub!r} renders nothing (use section, subsection or reflection)')
+    if typ == 'question' and sub == 'header':
+        need_string('header')
+    if typ == 'image':
+        need_string('caption')
+    if typ == 'callout':
+        if sub not in CALLOUT_SUBTYPES:
+            warn(f'{where}: callout subtype {sub!r} renders nothing (use general, misunderstanding, highlighted or activity)')
+        if sub == 'highlighted':
+            need_string('body')
+    if typ == 'likertScale':
+        bipolar = sub == 'bipolar'
+        rows_key = 'statementPairs' if bipolar else 'statements'
+        rows = numbered(el, rows_key)
+        if not any(v for _, v in rows):
+            warn(f'{where}: no {rows_key}, so the card has no rows')
+        for k, v in rows:
+            if not isinstance(v, list):
+                err(f'{where}: {k} must be an array {marker}')
+            elif bipolar:
+                for i, pair in enumerate(v):
+                    if not (isinstance(pair, dict) and isinstance(pair.get('left'), str) and isinstance(pair.get('right'), str)):
+                        err(f'{where}: {k}[{i}] must be an object with string "left" and "right" (a missing side shows as "undefined")')
+            elif not all(isinstance(s, str) for s in v):
+                warn(f'{where}: {k} should be an array of strings (other values are shown as written)')
+        for k, v in numbered(el, 'scale'):
+            if not (isinstance(v, list) and all(isinstance(s, str) for s in v)):
+                err(f'{where}: {k} must be an array of label strings {marker}')
+        sn = el.get('scaleNumber')
+        if sn is not None:
+            try:
+                ok = 1 <= int(float(sn)) <= 10
+            except (TypeError, ValueError):
+                ok = False
+            if not ok:
+                warn(f'{where}: scaleNumber {sn!r} is not between 1 and 10; the app uses its default or clamps it')
+
+
 def keys_anywhere(o, names, path='', out=None):
     out = [] if out is None else out
     if isinstance(o, dict):
@@ -144,6 +270,8 @@ def main(path):
         err(f'cannot read as JSON: {e}')
         return
     if study is None:
+        return
+    if not check_structure(study):
         return
     meta = study.get('studyMetadata') or {}
     sid = meta.get('studyId', '')
@@ -218,6 +346,7 @@ def main(path):
                 warn(f'{where}: mainPoint is over 2,000 characters')
             if el.get('type') in ('question', 'callout') and 'elementId' not in el:
                 err(f'{where}: missing elementId')
+            check_element_shapes(where, el)
         for el in ch.get('elements', []):
             r = el.get('repeatElement')
             if r and r not in ids_in_ch:

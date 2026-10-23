@@ -112,6 +112,14 @@ function navigateTab(page, direction) {
 // carries no language bar — it silently follows window._activeStudyLang,
 // which the chapter lang bar (or the leaders/how-to lang bars) sets.
 
+// If the study now showing failed to open last time, say so at the top of the page.
+function _showOpenFailureNotice(content) {
+  try {
+    const notice = buildOpenFailureNotice(window.activeStudyId);
+    if (notice) content.insertBefore(notice, content.firstChild);
+  } catch (e) { /* the notice is a courtesy: never break the page for it */ }
+}
+
 function renderTitlePage() {
   closeMenu();
   _resetNonChapterPageState();
@@ -130,6 +138,7 @@ function renderTitlePage() {
         <p style="color:var(--text-faint); margin-bottom:30px;">${t('main_no_study_body')}</p>
         <button class="howto-share-btn" style="margin:0 auto; display:inline-flex;" onclick="Router.navigate({ page: 'library' })"><span>${ICONS.library}</span>${t('main_no_study_btn')}</button>
       </div>`;
+    _showOpenFailureNotice(content);
     return;
   }
 
@@ -186,6 +195,7 @@ function renderTitlePage() {
         </div>
       </div>
     </div>`;
+  _showOpenFailureNotice(content);
 
   window.scrollTo(0, 0);
   

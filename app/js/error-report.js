@@ -339,6 +339,67 @@ function reportError(err, ctx = {}) {
   }
 }
 
+// ── Failed study opens ───────────────────────────────────────────────────────
+// When a study fails to open, the dialog is closed in seconds and the reader is
+// left on a page that gives no hint of what went wrong. The failure is also
+// kept (one record, in localStorage) so the title page can keep saying so
+// until the study opens properly or the reader dismisses the note.
+const BSR_OPEN_FAILURE_KEY = 'bsr_last_open_failure';
+
+function recordOpenFailure(studyId, entry) {
+  try {
+    localStorage.setItem(BSR_OPEN_FAILURE_KEY, JSON.stringify({
+      studyId: String(studyId),
+      time: new Date().toISOString(),
+      message: (entry && entry.message) || '',
+      details: entry ? formatErrorDetails(entry) : '',
+    }));
+  } catch (e) { /* storage full or blocked: the dialog already told the reader */ }
+}
+
+// The stored failure, or null. With a studyId, only if it is for that study.
+function getOpenFailure(studyId) {
+  try {
+    const raw = localStorage.getItem(BSR_OPEN_FAILURE_KEY);
+    if (!raw) return null;
+    const f = JSON.parse(raw);
+    if (!f || typeof f.studyId !== 'string') return null;
+    return studyId === undefined || f.studyId === String(studyId) ? f : null;
+  } catch (e) { return null; }
+}
+
+function clearOpenFailure(studyId) {
+  try {
+    if (studyId === undefined || getOpenFailure(studyId)) localStorage.removeItem(BSR_OPEN_FAILURE_KEY);
+  } catch (e) { /* ignore */ }
+}
+
+// A note for the top of the title page, or null when that study has no recorded
+// failure. Built with textContent only: the message comes from an exception.
+function buildOpenFailureNotice(studyId) {
+  const f = getOpenFailure(studyId);
+  if (!f) return null;
+  const box = _erEl('div', 'open-failure-notice');
+  box.id = 'openFailureNotice';
+  box.setAttribute('role', 'alert');
+  box.appendChild(_erEl('div', 'open-failure-title', '⚠ ' + _er('errorreport_notice_title', 'This study did not open properly last time.')));
+  box.appendChild(_erEl('div', 'open-failure-msg', f.message));
+  const row = _erEl('div', 'error-report-actions');
+  const mk = (label, fn, primary) => {
+    const b = _erEl('button', 'error-report-btn' + (primary ? ' primary' : ''), label);
+    b.type = 'button';
+    b.addEventListener('click', () => fn(b));
+    row.appendChild(b);
+  };
+  mk(_er('errorreport_details_btn', 'Details'), () => showErrorDialog({ message: f.message, details: f.details }));
+  if (typeof reportProblemByEmail === 'function') {
+    mk(_er('diag_report', 'Report a problem'), () => reportProblemByEmail(null, f.details), true);
+  }
+  mk(_er('errorreport_notice_dismiss', 'Dismiss'), () => { clearOpenFailure(studyId); box.remove(); });
+  box.appendChild(row);
+  return box;
+}
+
 // ── Global handlers ──────────────────────────────────────────────────────────
 // Capture phase, so that a <script> or <link> that fails to load (missing file,
 // no network) is seen too: those errors do not bubble.

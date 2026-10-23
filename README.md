@@ -79,7 +79,7 @@ css/
   08-themes.css             Print / PDF export styles (@media print)
 
 js/
-  diagnostics.js            Settings → Diagnostics tab: device/storage/study checks and a copyable report
+  diagnostics.js            Settings → Diagnostics tab: device/storage/study checks, a copyable report, "Report a problem" by email
   error-report.js           Global error handlers, error log, "Copy details" dialog and banner, install-summary dialog
   format-text.js            Converts stored text (HTML / markdown / plain) into sanitised display HTML
   state.js                  All mutable globals (chapters, settings, nav state); IDB field-key helpers

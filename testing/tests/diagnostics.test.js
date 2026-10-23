@@ -185,6 +185,64 @@ describe('the page', () => {
   });
 });
 
+describe('Report a problem', () => {
+  const ADDRESS = 'bible.study.reader@gmail.com';
+
+  it('offers the button and says where the report goes and that nothing is sent automatically', async () => {
+    const sb = makeSandbox({ registry: [], studies: {} });
+    const html = sb.renderDiagnosticsHtml(await sb.collectDiagnostics());
+    expect(html).toContain('reportProblemByEmail(this)');
+    expect(html).toContain('Report a problem');
+    expect(html).toContain(ADDRESS);
+    expect(html).toContain('Nothing is sent until you press Send');
+  });
+
+  it('builds a mailto link to the project address with the report in the body', () => {
+    const sb = makeSandbox();
+    const url = sb.buildReportMailto('LINE ONE\nLINE TWO', '0.6.9');
+    expect(url.startsWith(`mailto:${ADDRESS}?subject=`)).toBe(true);
+    const params = new URLSearchParams(url.split('?')[1]);
+    expect(params.get('subject')).toBe('Bible Study Reader problem (v0.6.9)');
+    expect(params.get('body')).toContain('Please describe what you were doing');
+    expect(params.get('body')).toContain('LINE ONE\nLINE TWO');
+  });
+
+  it('keeps the start and the end of a very long report', () => {
+    const sb = makeSandbox();
+    const report = 'START' + 'x'.repeat(20000) + 'END-OF-ERRORS';
+    const out = sb.trimReportForMail(report, 1000);
+    expect(out.length).toBeLessThanOrEqual(1000);
+    expect(out.startsWith('START')).toBe(true);
+    expect(out.endsWith('END-OF-ERRORS')).toBe(true);
+    expect(out).toContain('left out');
+    expect(sb.trimReportForMail('short', 1000)).toBe('short');
+  });
+
+  it('copies the full report, then opens the email app via the Android bridge when there is one', async () => {
+    const sb = makeSandbox();
+    const copied = [], opened = [];
+    sb._erCopy = async text => { copied.push(text); return true; };
+    sb.window.Android = { openUrl: u => opened.push(u) };
+    const status = { textContent: '' };
+    sb.document.getElementById = id => (id === 'diagMailStatus' ? status : null);
+    await sb.reportProblemByEmail(null);
+    expect(opened).toHaveLength(1);
+    expect(opened[0]).toContain(`mailto:${ADDRESS}`);
+    expect(status.textContent).toContain('also copied');
+  });
+
+  it('falls back to the address in the message when the copy fails', async () => {
+    const sb = makeSandbox();
+    sb._erCopy = async () => false;
+    sb.window.Android = { openUrl: () => {} };
+    const status = { textContent: '' };
+    sb.document.getElementById = () => status;
+    await sb.reportProblemByEmail(null);
+    expect(status.textContent).toContain(ADDRESS);
+    expect(status.textContent).not.toContain('also copied');
+  });
+});
+
 describe('wiring into Settings', () => {
   const rp = read('js/render-pages.js');
 

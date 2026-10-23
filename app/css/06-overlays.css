@@ -1440,6 +1440,22 @@ body.dark-mode .info-modal-header { border-bottom-color: var(--dm-border); }
   cursor: pointer;
 }
 
+/* Note at the top of the title page after a study failed to open. */
+.open-failure-notice {
+  margin: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--emphasis);
+  background: var(--surface);
+  color: var(--text);
+}
+.open-failure-title { font-weight: 600; margin-bottom: 4px; }
+.open-failure-msg   { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 10px; overflow-wrap: anywhere; }
+.open-failure-notice .error-report-actions { justify-content: flex-start; gap: 8px; }
+
+body.dark-mode .open-failure-notice { background: var(--dm-raised); color: var(--dm-text); border-color: var(--emphasis-light); }
+body.dark-mode .open-failure-msg    { color: var(--dm-text-mid); }
+
 body.dark-mode .error-report-box,
 body.dark-mode .error-report-banner   { background: var(--dm-raised); color: var(--dm-text); }
 body.dark-mode .error-report-line     { border-top-color: var(--dm-border); }

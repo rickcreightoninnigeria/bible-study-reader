@@ -305,15 +305,37 @@ function renderDiagnosticsHtml(info) {
 
   parts.push(`<div class="diag-actions">
     <button class="error-report-btn primary" id="diagCopyBtn" type="button" onclick="copyDiagnosticsReport(this)">${escapeHtml(t('diag_copy'))}</button>
+    <button class="error-report-btn" type="button" onclick="reportProblemByEmail(this)">${escapeHtml(t('diag_report'))}</button>
     <button class="error-report-btn" type="button" onclick="renderDiagnosticsInto('diagnosticsBody')">${escapeHtml(t('diag_refresh'))}</button>
     ${Array.isArray(e) && e.length ? `<button class="error-report-btn" type="button" onclick="clearDiagnosticsErrors()">${escapeHtml(t('diag_clear_errors'))}</button>` : ''}
-  </div>`);
+  </div>
+  <div class="settings-row-desc" id="diagMailStatus" role="status">${escapeHtml(t('diag_report_note', { address: DIAG_REPORT_EMAIL }))}</div>`);
   return parts.join('');
 }
 
 // ── Page wiring ──────────────────────────────────────────────────────────────
 
 let _diagLastReport = '';
+
+// Where "Report a problem" sends the report. The reader's own email app opens
+// with the report filled in; nothing is sent until they press Send.
+const DIAG_REPORT_EMAIL = 'bible.study.reader@gmail.com';
+const DIAG_MAIL_BODY_MAX = 6000;   // characters of the report placed in the email itself
+
+// Keeps the start and the end of a long report (the end holds the error log),
+// dropping the middle.
+function trimReportForMail(report, max = DIAG_MAIL_BODY_MAX) {
+  if (report.length <= max) return report;
+  const gap = '\n\n[… middle of the report left out here …]\n\n';
+  const head = Math.floor((max - gap.length) / 2);
+  return report.slice(0, head) + gap + report.slice(report.length - head);
+}
+
+function buildReportMailto(report, version) {
+  const subject = `Bible Study Reader problem${version ? ` (v${version})` : ''}`;
+  const body = `${t('diag_mail_intro')}\n\n${trimReportForMail(report)}`;
+  return `mailto:${DIAG_REPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 async function renderDiagnosticsInto(elementId) {
   const host = document.getElementById(elementId);
@@ -329,6 +351,28 @@ async function renderDiagnosticsInto(elementId) {
 async function copyDiagnosticsReport(btn) {
   const ok = await _erCopy(_diagLastReport);
   if (btn) btn.textContent = ok ? t('diag_copied') : t('errorreport_copy_failed');
+}
+
+// Copies the full report (in case the email is cut short) and opens the email app.
+// `preamble` (optional) goes first, e.g. the details of a study that would not
+// open. Works from anywhere: the report is gathered here if the Diagnostics page
+// has not been shown.
+async function reportProblemByEmail(btn, preamble = '') {
+  if (!_diagLastReport) {
+    try { _diagLastReport = formatDiagnosticsReport(await collectDiagnostics()); }
+    catch (e) { _diagLastReport = ''; }
+  }
+  const report = preamble ? `${preamble}\n\n${_diagLastReport}` : _diagLastReport;
+  const copied = await _erCopy(report);
+  const url = buildReportMailto(report, window.appAboutData?.appVersion);
+  try {
+    if (window.Android && typeof window.Android.openUrl === 'function') window.Android.openUrl(url);
+    else window.location.href = url;
+  } catch (e) {
+    reportError(e, { context: 'report-problem' });
+  }
+  const status = document.getElementById('diagMailStatus');
+  if (status) status.textContent = t(copied ? 'diag_report_opened_copied' : 'diag_report_opened', { address: DIAG_REPORT_EMAIL });
 }
 
 function clearDiagnosticsErrors() {

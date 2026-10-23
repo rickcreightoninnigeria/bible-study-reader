@@ -56,6 +56,7 @@ function makeSandbox({ strings } = {}) {
     localStorage: {
       getItem: k => (k in store ? store[k] : null),
       setItem: (k, v) => { store[k] = String(v); },
+      removeItem: k => { delete store[k]; },
     },
     document: {
       body,
@@ -336,7 +337,7 @@ describe('wiring', () => {
   });
 
   it('opening a study from the library reports failures in a dialog', () => {
-    expect(loader).toMatch(/async function activateStudy\(id\) \{\s*try \{\s*await _activateStudyUnsafe\(id\);\s*\} catch \(err\) \{\s*reportError\(err, \{\s*context: 'open-study'/);
+    expect(loader).toMatch(/async function activateStudy\(id\) \{\s*try \{\s*await _activateStudyUnsafe\(id\);\s*clearOpenFailure\(id\);\s*\} catch \(err\) \{\s*const entry = reportError\(err, \{\s*context: 'open-study'/);
   });
 
   it('every file-loading entry point reports through _reportLoadError', () => {
@@ -366,5 +367,79 @@ describe('wiring', () => {
     }
     expect(used.size).toBeGreaterThan(10);
     for (const key of used) expect(en[key], key).toBeTypeOf('string');
+  });
+});
+
+describe('a failed study open is remembered for the title page', () => {
+  const failure = () => sb.recordOpenFailure('demo', sb.recordError(new TypeError('boom'), { context: 'open-study', studyId: 'demo' }));
+
+  it('stores the failure for that study only', () => {
+    failure();
+    expect(sb.getOpenFailure('demo')).toMatchObject({ studyId: 'demo', message: 'boom' });
+    expect(sb.getOpenFailure('demo').details).toContain('boom');
+    expect(sb.getOpenFailure('other')).toBeNull();
+    expect(sb.getOpenFailure()).not.toBeNull();
+  });
+
+  it('is cleared for the right study only', () => {
+    failure();
+    sb.clearOpenFailure('other');
+    expect(sb.getOpenFailure('demo')).not.toBeNull();
+    sb.clearOpenFailure('demo');
+    expect(sb.getOpenFailure('demo')).toBeNull();
+  });
+
+  it('copes with a damaged record', () => {
+    sb.store.bsr_last_open_failure = '{not json';
+    expect(sb.getOpenFailure('demo')).toBeNull();
+    sb.store.bsr_last_open_failure = '{"studyId":5}';
+    expect(sb.getOpenFailure('demo')).toBeNull();
+  });
+
+  it('builds no note when there is nothing to say', () => {
+    expect(sb.buildOpenFailureNotice('demo')).toBeNull();
+    failure();
+    expect(sb.buildOpenFailureNotice('other')).toBeNull();
+  });
+
+  it('builds a note with Details, Report a problem and Dismiss; the message is text, never markup', () => {
+    sb.recordOpenFailure('demo', { message: '<img src=x onerror=alert(1)>', name: 'Error' });
+    const box = sb.buildOpenFailureNotice('demo');
+    expect(box.textContent).toContain('This study did not open properly last time.');
+    expect(box.textContent).toContain('<img src=x onerror=alert(1)>');
+    expect(box.attrs.role).toBe('alert');
+    const labels = box.findAll(e => e.tagName === 'BUTTON').map(b => b.textContent);
+    expect(labels).toEqual(['Details', 'Dismiss']);          // no Report button until diagnostics.js is loaded
+  });
+
+  it('offers Report a problem when diagnostics.js is present, handing it the details', async () => {
+    const calls = [];
+    sb.reportProblemByEmail = (btn, details) => calls.push(details);
+    failure();
+    const box = sb.buildOpenFailureNotice('demo');
+    const buttons = box.findAll(e => e.tagName === 'BUTTON');
+    expect(buttons.map(b => b.textContent)).toEqual(['Details', 'Report a problem', 'Dismiss']);
+    await buttons[1].click();
+    expect(calls).toHaveLength(1);
+    expect(calls[0]).toContain('boom');
+  });
+
+  it('Dismiss removes the note and the record', async () => {
+    failure();
+    sb.document.body.appendChild(sb.buildOpenFailureNotice('demo'));
+    const dismiss = sb.body.find(e => e.tagName === 'BUTTON' && e.textContent === 'Dismiss');
+    await dismiss.click();
+    expect(sb.body.find(e => e.id === 'openFailureNotice')).toBeNull();
+    expect(sb.getOpenFailure('demo')).toBeNull();
+  });
+
+  it('is wired: activateStudy records a failure and clears it on success; the title page shows the note', () => {
+    const loader = read('js/study-loader.js');
+    const act = slice(loader, 'async function activateStudy(id)', 'async function _activateStudyUnsafe');
+    expect(act).toContain('clearOpenFailure(id)');
+    expect(act).toContain('recordOpenFailure(id, entry)');
+    const pages = read('js/render-pages.js');
+    expect(pages.match(/^\s+_showOpenFailureNotice\(content\);/gm)).toHaveLength(2);
+    expect(pages).toContain('buildOpenFailureNotice(window.activeStudyId)');
   });
 });
