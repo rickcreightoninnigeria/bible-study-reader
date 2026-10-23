@@ -42,3 +42,47 @@ describe('error-reporting strings in every locale', () => {
     });
   }
 });
+
+// A translated placeholder name is shown literally on screen. Translations may
+// leave a placeholder out, but may never invent or rename one.
+describe('placeholders in every string of every locale', () => {
+  const noPlural = s => s.replace(/\{\w+,\s*plural,[^}]*\}[^}]*\}\}/g, '');
+  const simple = s => (noPlural(s).match(/\{[^{}\s,]+\}/g) || []);
+  for (const lang of langs) {
+    it(`${lang}: uses only placeholders that the English string has`, () => {
+      const d = load(lang);
+      const bad = [];
+      for (const [k, v] of Object.entries(d)) {
+        if (typeof v !== 'string' || typeof en[k] !== 'string') continue;
+        const allowed = new Set(simple(en[k]));
+        for (const p of simple(v)) if (!allowed.has(p)) bad.push(`${k}: ${p}`);
+      }
+      expect(bad).toEqual([]);
+    });
+  }
+});
+
+describe('t() plural form', () => {
+  const src = readFileSync(join(__dirname, '../../app/js/i18n.js'), 'utf8');
+  const a = src.indexOf('function t(key, vars)');
+  const b = src.indexOf('\n}\n', a) + 3;
+  const make = strings => new Function('window', 'console', src.slice(a, b) + '; return t;')({ appStrings: strings }, { warn() {} });
+
+  it('picks one/other by count', () => {
+    const t = make({ k: '{count} more section{count, plural, one{} other{s}} left' });
+    expect(t('k', { count: 1 })).toBe('1 more section left');
+    expect(t('k', { count: 3 })).toBe('3 more sections left');
+  });
+
+  it('leaves strings without a plural alone, and copes with no variables', () => {
+    const t = make({ a: 'Hello {name}', p: 'x{count, plural, one{} other{s}}' });
+    expect(t('a', { name: 'Ada' })).toBe('Hello Ada');
+    expect(t('p')).toBe('xs');
+  });
+
+  it('the English Paths note no longer shows the raw pattern', () => {
+    const t = make({ k: en.renderlib_paths_hidden_note });
+    expect(t('k', { count: 2 })).toMatch(/^2 more sections in this pathway/);
+    expect(t('k', { count: 1 })).toMatch(/^1 more section in this pathway/);
+  });
+});

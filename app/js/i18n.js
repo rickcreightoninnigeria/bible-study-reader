@@ -215,6 +215,11 @@ function t(key, vars) {
     return key; // key name shown in UI — easy to spot during development
   }
 
+  // {count, plural, one{…} other{…}}: the one/other form only. Without this the
+  // pattern was shown literally (e.g. in the "more sections" note on Paths).
+  str = str.replace(/\{(\w+),\s*plural,\s*one\{([^}]*)\}\s*other\{([^}]*)\}\}/g,
+    (m, name, one, other) => (vars && Number(vars[name]) === 1 ? one : other));
+
   if (vars) {
     Object.entries(vars).forEach(([k, v]) => {
       str = str.replaceAll(`{${k}}`, v);
