@@ -167,7 +167,7 @@ function renderTitlePage() {
         <div class="title-page-desc">${description}</div>
         <div class="title-page-author">${meta.authorLabel || t('main_fallback_author_label')}</div>
         <div class="title-page-author-name">${meta.authorName || meta.author || ''}</div>
-        <div class="title-page-version">${meta.version || ''}</div>
+        <div class="title-page-version">${[meta.version, meta.studyVersion ? t('main_titlepage_study_version', { version: escapeHtml(String(meta.studyVersion)) }) : ''].filter(Boolean).join(' · ')}</div>
         ${pos ? `
           <button class="title-page-start-btn" onclick="returnToLastPosition()">
             ${t('main_titlepage_continue', { chapter: chapters[pos.chapterIdx].chapterNumber })}

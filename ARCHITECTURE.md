@@ -68,7 +68,7 @@ Rules that matter:
 - `study_registry` — JSON array of installed study ids (the library's source of truth, with IDB content).
 - `bsr_last_active_study`; `appSettings` (JSON); `app_language`.
 - `app_onboarding_complete`, `onboardingComplete_<studyId>`, `featureSeen_*`, `bsr_infoSeen_<id>`, `intermediateDefaultsApplied`.
-- `bsr_studyver_<studyId>` — installed `studyVersion` (version gate for loads).
+- `bsr_studyver_<studyId>` — installed `studyVersion`, as written (compared as a decimal number; same/older single-file opens ask the user via `_resolveUserInstall`).
 - `default_studies_installed`, `bsr_idb_migration_done`.
 - `lib_recent_installed`, `lib_recent_opened`, `lib_pinned`, `lib_pinned_all`.
 - `bsr_activePathwayId` — `builtin:<pathwayId>` or `imp:<groupId>:<pathwayId>` (legacy positional values `1_2` / `builtin:1_2` auto-convert via a frozen table).

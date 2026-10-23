@@ -269,7 +269,7 @@ from localStorage in a past release, via the one-time migration in
 | `app_onboarding_complete` | `"1"` once the app-level onboarding has been seen |
 | `study_registry` | JSON array of installed study IDs |
 | `bsr_last_active_study` | studyId to restore on next launch |
-| `bsr_studyver_{studyId}` | Last-installed version number for a study — survives deletion, so a deleted-then-reinstalled study can be told apart from a real downgrade |
+| `bsr_studyver_{studyId}` | Version of the file last installed for a study, stored as written. Used to decide whether an incoming file is newer; same/older asks the user |
 | `lib_recent_opened` | JSON array of recently opened study IDs (newest first, max 7) |
 | `lib_recent_installed` | JSON array of recently installed study IDs (newest first, max 4) |
 | `lib_pinned` | JSON array of pinned study IDs (Recent tab) |

@@ -898,35 +898,14 @@ async function loadStudyFromJson(jsonString) {
 
         // Version check (user-initiated path — Android intent delivery is always
         // user-initiated: the user tapped "Open with" or shared a file).
-        const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
-        if (_versionDecision === 'downgrade-blocked') {
-            showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+        const _decision = await _resolveUserInstall(data, studyId);
+        if (_decision.action === 'stop') return;
+        if (_decision.action === 'open-existing') {
+            window.activeStudyId = studyId;
+            if (window._appReady) { await Router.navigate({ page: 'library' }); await applyStudyData(_decision.existing, { isStudySwitch: true }); }
             return;
         }
-        if (_versionDecision === 'skip') {
-            // Same version already installed — just activate it, *provided the
-            // content is actually still there*. If the study was deleted (which
-            // intentionally leaves the version record in place), the IDB entry
-            // will be missing even though the version says "skip" — in that case
-            // fall through and reinstall from the incoming file instead of
-            // silently doing nothing.
-            const existing = await StudyIDB.get(`study_content_${studyId}`);
-            if (existing) {
-                window.activeStudyId = studyId;
-                if (window._appReady) { await Router.navigate({ page: 'library' }); await applyStudyData(existing, { isStudySwitch: true }); }
-                return;
-            }
-        }
-        // 'install': show update toast if upgrading an existing install.
-        const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
-        const _installedVer = _getInstalledStudyVersion(studyId);
-        const _studyTitle   = data.studyMetadata?.title || studyId;
-        if (_installedVer > 0 && _incomingVer > _installedVer) {
-            showToast({
-                message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
-                isManual: true,
-            });
-        }
+        _announceUpdate(data, studyId, _decision);
 
         try {
           await StudyIDB.set(`study_content_${studyId}`, data);
@@ -946,7 +925,7 @@ async function loadStudyFromJson(jsonString) {
         safeSetItem('bsr_last_active_study', studyId);
         recordStudyInstalled(studyId); // ← track in Recently Installed
         // Record the installed studyVersion so future loads can compare against it.
-        if (_incomingVer > 0) _setInstalledStudyVersion(studyId, _incomingVer);
+        _setInstalledStudyVersion(studyId, data.studyMetadata?.studyVersion);
 
         // If the app is already initialised (DOMContentLoaded has fired),
         // apply immediately. Otherwise stash for startApp() to pick up.
@@ -1195,42 +1174,136 @@ async function installDefaultStudiesIfNeeded() {
 // the app-version flag 'default_studies_installed', which changes on every app
 // update, so the bundle is always re-evaluated and newer studies always win.
 //
-// studyVersion values are treated as floats (1, 1.01, 2, etc.).
-// Studies that carry no studyVersion field are treated as version 0, which means
-// any incoming file with an explicit version will always replace them.
+// studyVersion is compared as a DECIMAL NUMBER: 1.1 and 1.10 are the same
+// version, and both come after 1.09. Authors keep to two decimal places
+// (1.01, 1.02 ... 1.09, 1.10), so the order is always the obvious one. A version
+// that does not start with a number counts as 0, and so does a study with no
+// studyVersion at all, so any file that has one is newer.
 
-function _getInstalledStudyVersion(studyId) {
+function _versionString(v) {
+  return v === undefined || v === null ? '' : String(v).trim();
+}
+
+function _versionNumber(v) {
+  const n = parseFloat(_versionString(v));
+  return Number.isNaN(n) ? 0 : n;
+}
+
+// -1 if a is older than b, 0 if equal, 1 if newer.
+function compareStudyVersions(a, b) {
+  const x = _versionNumber(a), y = _versionNumber(b);
+  return x === y ? 0 : (x < y ? -1 : 1);
+}
+
+// The version recorded when a study was installed, exactly as written ('' if none).
+// Older app versions recorded a number, which reads back the same way.
+function _installedStudyVersionRaw(studyId) {
   const stored = localStorage.getItem(`bsr_studyver_${studyId}`);
-  return stored !== null ? parseFloat(stored) : 0;
+  return stored === null ? '' : stored.trim();
 }
 
+// Numeric form, kept for callers that only need "is there a record".
+function _getInstalledStudyVersion(studyId) {
+  return parseFloat(_installedStudyVersionRaw(studyId)) || 0;
+}
+
+// Records the version as written. An empty version removes the record, so a
+// study that no longer carries one is not held to an old number.
 function _setInstalledStudyVersion(studyId, version) {
-  safeSetItem(`bsr_studyver_${studyId}`, String(version));
+  const raw = _versionString(version);
+  if (raw) safeSetItem(`bsr_studyver_${studyId}`, raw);
+  else localStorage.removeItem(`bsr_studyver_${studyId}`);
 }
 
-// Compares the incoming study's version against what is already installed.
-// Returns one of three string tokens:
-//   'install'          — incoming is newer (or same version with no existing install);
-//                        proceed with installation.
-//   'skip'             — incoming is the same version or older and the caller is
-//                        a silent/bundled path; skip without any UI.
-//   'downgrade-blocked'— incoming is strictly older and the caller is user-initiated;
-//                        show a toast and abort.
-//
-// isUserInitiated: true  → manual file-picker or Android intent open
-//                  false → installDefaultStudiesIfNeeded bundle (never calls this,
-//                          but passing false makes the helper safe to reuse later)
+// Decides, for the SILENT installers (bundled studies), whether an incoming
+// file should be installed. Returns:
+//   'install'          — incoming is newer, or nothing is recorded for this study.
+//   'skip'             — same version or older (silent paths show nothing).
+//   'downgrade-blocked'— older, and isUserInitiated (kept for callers that ask).
+// User-opened files go through _resolveUserInstall() instead, which asks.
 function _shouldInstallStudy(incomingData, { isUserInitiated = false } = {}) {
-  const studyId         = incomingData.studyMetadata?.studyId;
-  const incomingVersion = parseFloat(incomingData.studyMetadata?.studyVersion) || 0;
-  const installedVersion = studyId ? _getInstalledStudyVersion(studyId) : 0;
+  const studyId   = incomingData.studyMetadata?.studyId;
+  const incoming  = _versionString(incomingData.studyMetadata?.studyVersion);
+  const installed = studyId ? _installedStudyVersionRaw(studyId) : '';
+  if (!installed) return 'install';
+  const c = compareStudyVersions(incoming, installed);
+  if (c > 0) return 'install';
+  if (c < 0) return isUserInitiated ? 'downgrade-blocked' : 'skip';
+  return 'skip';
+}
 
-  if (incomingVersion > installedVersion) return 'install';
-  if (incomingVersion < installedVersion) return isUserInitiated ? 'downgrade-blocked' : 'skip';
-  // Equal versions: treat as 'install' only if nothing was previously recorded
-  // (installedVersion === 0 means the study was installed before this versioning
-  // system existed — always allow it to write the version record).
-  return installedVersion === 0 ? 'install' : 'skip';
+// ── USER-OPENED FILES: ASK, DO NOT GUESS ─────────────────────────────────────
+// A file the reader opened themselves is compared with the copy they already
+// have. Newer installs. Same or older used to be handled silently (the old copy
+// opened, or a three-second toast said "older"), which looked like a failure.
+// Now a dialog that stays until answered gives both version numbers and the
+// choice. A study that is not installed (never was, or was deleted) simply
+// installs, whatever its version.
+//
+// The version of the copy they have is read from the saved study itself, which
+// is the truth; the recorded number is only a fallback.
+
+const _VERSION_DEFAULTS = {
+  same_title:  'You already have this version',
+  older_title: 'This file is older than the one you have',
+  same_body:   '{title}: you have v{installed}, and this file is also v{incoming}. If you were expecting changes, ask whoever gave you the file for a newer version.',
+  older_body:  '{title}: you have v{installed}, but this file is v{incoming}, which is older. Keeping the version you have is usually right.',
+  keep:        'Keep what I have',
+  install:     'Install this file anyway',
+};
+
+// Resolves 'keep' or 'install'. Never left hanging: if something replaces the
+// dialog, the answer is 'keep', the safe choice.
+function _askVersionConflict({ kind, title, installed, incoming }) {
+  return new Promise(resolve => {
+    const vars = { title, installed, incoming };
+    showErrorDialog({
+      title:   _er(`versioncheck_${kind}_title`, _VERSION_DEFAULTS[`${kind}_title`]),
+      message: _er(`versioncheck_${kind}_body`, _VERSION_DEFAULTS[`${kind}_body`], vars),
+      actions: [
+        { label: _er('versioncheck_install_anyway', _VERSION_DEFAULTS.install), onClick: () => resolve('install') },
+        { label: _er('versioncheck_keep', _VERSION_DEFAULTS.keep), primary: true, onClick: () => resolve('keep') },
+      ],
+      onCancel: () => resolve('keep'),
+    });
+  });
+}
+
+// Returns { action, existing?, installed? }:
+//   'install'       go ahead (installed = the version being replaced, if any)
+//   'open-existing' the reader chose to keep their copy: open it instead
+//   'stop'          storage is unavailable; the error has been shown
+async function _resolveUserInstall(data, studyId) {
+  let existing;
+  try {
+    existing = await StudyIDB.get(`study_content_${studyId}`);
+  } catch (err) {
+    if (err.name === 'IDBUnavailable') { showPickerError(t('error_idb_unavailable')); return { action: 'stop' }; }
+    throw err;
+  }
+  if (!existing) return { action: 'install' };
+
+  const meta      = data.studyMetadata || {};
+  const incoming  = _versionString(meta.studyVersion);
+  const installed = _versionString(existing.studyMetadata?.studyVersion) || _installedStudyVersionRaw(studyId);
+  if (!incoming && !installed) return { action: 'install' };       // neither is versioned: the new file replaces
+
+  const c = compareStudyVersions(incoming, installed);
+  if (c > 0) return { action: 'install', installed };
+
+  const title  = meta.title || meta.title1 || studyId;
+  const choice = await _askVersionConflict({ kind: c === 0 ? 'same' : 'older', title, installed: installed || '0', incoming: incoming || '0' });
+  return choice === 'install' ? { action: 'install', installed } : { action: 'open-existing', existing };
+}
+
+// "Updating X to vN…" when a file replaces an installed copy.
+function _announceUpdate(data, studyId, decision) {
+  if (!decision.installed) return;
+  const meta = data.studyMetadata || {};
+  showToast({
+    message:  t('studyloader_version_updating', { title: meta.title || studyId, version: _versionString(meta.studyVersion) }),
+    isManual: true,
+  });
 }
 
 // Describes what _installStudyFileQuietly() did, so callers that tell the
@@ -1242,16 +1315,16 @@ function _quietInstallResult(status, data, studyId, name, extra = {}) {
   return {
     status, name, studyId,
     title:   meta.title || studyId || name,
-    version: parseFloat(meta.studyVersion) || 0,
+    version: _versionString(meta.studyVersion),
     ...extra,
   };
 }
 
 // Result for a file that was skipped because an equal-or-newer version is already installed.
 function _quietSkipResult(data, studyId, name) {
-  const installed = _getInstalledStudyVersion(studyId);
-  const incoming  = parseFloat(data.studyMetadata?.studyVersion) || 0;
-  return _quietInstallResult(incoming < installed ? 'older' : 'unchanged', data, studyId, name, { installed });
+  const installed = _installedStudyVersionRaw(studyId);
+  const incoming  = _versionString(data.studyMetadata?.studyVersion);
+  return _quietInstallResult(compareStudyVersions(incoming, installed) < 0 ? 'older' : 'unchanged', data, studyId, name, { installed });
 }
 
 // Installs a single .estudy File object into IDB and the registry without
@@ -1298,7 +1371,7 @@ async function _installStudyFileQuietly(file, fileName) {
     // IDB content is gone (mirrors the same check in loadStudyFromJson()).
     // isUserInitiated is false here — this path is only reached from the bundled
     // installer, which uses the app-version flag as its primary gate.
-    const priorVersion = _getInstalledStudyVersion(studyId);
+    const priorVersion = _installedStudyVersionRaw(studyId);
     if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
       const existing = await StudyIDB.get(`study_content_${studyId}`);
       if (existing) {
@@ -1366,11 +1439,11 @@ async function _installStudyFileQuietly(file, fileName) {
       safeSetItem('study_registry', JSON.stringify(registry));
     }
     // Record the installed studyVersion so future installs can compare against it.
-    const installedVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
-    if (installedVer > 0) _setInstalledStudyVersion(studyId, installedVer);
+    const installedVer = _versionString(data.studyMetadata?.studyVersion);
+    _setInstalledStudyVersion(studyId, installedVer);
     // recordStudyInstalled is intentionally omitted — these are pre-installed,
     // not user-installed, and shouldn't pollute the Recently Installed list.
-    return _quietInstallResult(priorVersion > 0 && installedVer > priorVersion ? 'updated' : 'installed', data, studyId, name);
+    return _quietInstallResult(priorVersion && compareStudyVersions(installedVer, priorVersion) > 0 ? 'updated' : 'installed', data, studyId, name);
 
   } else {
     // ── Legacy plain-JSON .estudy ───────────────────────────────────────────
@@ -1389,7 +1462,7 @@ async function _installStudyFileQuietly(file, fileName) {
     // Version check: skip silently if an equal-or-newer version is already installed —
     // *provided the content is actually still there* (see the zip-format branch above
     // for why).
-    const priorVersion = _getInstalledStudyVersion(studyId);
+    const priorVersion = _installedStudyVersionRaw(studyId);
     if (_shouldInstallStudy(data, { isUserInitiated: false }) === 'skip') {
       const existing = await StudyIDB.get(`study_content_${studyId}`);
       if (existing) {
@@ -1408,9 +1481,9 @@ async function _installStudyFileQuietly(file, fileName) {
       safeSetItem('study_registry', JSON.stringify(registry));
     }
     // Record the installed studyVersion so future installs can compare against it.
-    const installedVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
-    if (installedVer > 0) _setInstalledStudyVersion(studyId, installedVer);
-    return _quietInstallResult(priorVersion > 0 && installedVer > priorVersion ? 'updated' : 'installed', data, studyId, name);
+    const installedVer = _versionString(data.studyMetadata?.studyVersion);
+    _setInstalledStudyVersion(studyId, installedVer);
+    return _quietInstallResult(priorVersion && compareStudyVersions(installedVer, priorVersion) > 0 ? 'updated' : 'installed', data, studyId, name);
   }
 }
 
@@ -1548,35 +1621,13 @@ async function loadStudyFromFile(file) {
       }
 
       // Version check (user-initiated path).
-      const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
-      if (_versionDecision === 'downgrade-blocked') {
-        showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+      const _decision = await _resolveUserInstall(data, studyId);
+      if (_decision.action === 'stop') return;
+      if (_decision.action === 'open-existing') {
+        await _activateOrDeferStudy(studyId, _decision.existing);
         return;
       }
-      if (_versionDecision === 'skip') {
-        // Same version already installed — open it as normal without re-writing,
-        // *provided the content is actually still there*. If the study was
-        // deleted (which intentionally leaves the version record in place),
-        // the IDB entry will be missing even though the version says "skip" —
-        // in that case fall through and reinstall from the incoming file
-        // instead of silently doing nothing.
-        const existing = await StudyIDB.get(`study_content_${studyId}`);
-        if (existing) {
-          await _activateOrDeferStudy(studyId, existing);
-          return;
-        }
-      }
-      // 'install': incoming is newer — show an update toast if upgrading an
-      // existing install (installedVersion > 0), then proceed.
-      const _incomingVer   = parseFloat(data.studyMetadata?.studyVersion) || 0;
-      const _installedVer  = _getInstalledStudyVersion(studyId);
-      const _studyTitle    = data.studyMetadata?.title || studyId;
-      if (_installedVer > 0 && _incomingVer > _installedVer) {
-        showToast({
-          message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
-          isManual: true,
-        });
-      }
+      _announceUpdate(data, studyId, _decision);
 
       // 2. Extract any image assets and store them as Blobs in IDB
       const imageNames = ['cover', 'publisher', 'author'];
@@ -1638,8 +1689,7 @@ async function loadStudyFromFile(file) {
       safeSetItem('bsr_last_active_study', studyId);
       recordStudyInstalled(studyId); // ← track in Recently Installed
       // Record the installed studyVersion so future loads can compare against it.
-      const _newVer = parseFloat(data.studyMetadata?.studyVersion) || 0;
-      if (_newVer > 0) _setInstalledStudyVersion(studyId, _newVer);
+      _setInstalledStudyVersion(studyId, data.studyMetadata?.studyVersion);
 
       // 4. Apply to the running app.
       // Images were already written to IDB in step 2a/2b above; applyStudyData()
@@ -1668,34 +1718,13 @@ async function loadStudyFromFile(file) {
       }
 
       // Version check (user-initiated path).
-      const _versionDecision = _shouldInstallStudy(data, { isUserInitiated: true });
-      if (_versionDecision === 'downgrade-blocked') {
-        showToast({ message: t('studyloader_version_downgrade_blocked'), isManual: true });
+      const _decision = await _resolveUserInstall(data, _plainStudyId);
+      if (_decision.action === 'stop') return;
+      if (_decision.action === 'open-existing') {
+        await _activateOrDeferStudy(_plainStudyId, _decision.existing);
         return;
       }
-      if (_versionDecision === 'skip') {
-        // Same version already installed — open it as normal without
-        // re-writing, *provided the content is actually still there*. If the
-        // study was deleted (which intentionally leaves the version record
-        // in place), the IDB entry will be missing even though the version
-        // says "skip" — in that case fall through and reinstall from the
-        // incoming file instead of silently doing nothing.
-        const existing = await StudyIDB.get(`study_content_${_plainStudyId}`);
-        if (existing) {
-          await _activateOrDeferStudy(_plainStudyId, existing);
-          return;
-        }
-      }
-      // 'install': show update toast if upgrading an existing install.
-      const _incomingVer  = parseFloat(data.studyMetadata?.studyVersion) || 0;
-      const _installedVer = _getInstalledStudyVersion(_plainStudyId);
-      const _studyTitle   = data.studyMetadata?.title || _plainStudyId;
-      if (_installedVer > 0 && _incomingVer > _installedVer) {
-        showToast({
-          message:  t('studyloader_version_updating', { title: _studyTitle, version: _incomingVer }),
-          isManual: true,
-        });
-      }
+      _announceUpdate(data, _plainStudyId, _decision);
 
       // Persist and register, same as the zip path — without this the study
       // only lived in memory: it never appeared in the Library and was gone
@@ -1713,7 +1742,7 @@ async function loadStudyFromFile(file) {
       }
       safeSetItem('bsr_last_active_study', _plainStudyId);
       recordStudyInstalled(_plainStudyId);
-      if (_incomingVer > 0) _setInstalledStudyVersion(_plainStudyId, _incomingVer);
+      _setInstalledStudyVersion(_plainStudyId, data.studyMetadata?.studyVersion);
 
       await _activateOrDeferStudy(_plainStudyId, data, { checkVersion: true });
     }

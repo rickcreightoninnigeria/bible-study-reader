@@ -225,6 +225,35 @@ describe('the banner and dialog', () => {
     expect(sb.body.querySelector('.error-report-overlay')).toBeNull();
   });
 
+  it('a question dialog shows the given buttons instead of Close, closes on a click, and runs that click', async () => {
+    const picked = [];
+    sb.showErrorDialog({ title: 'Which?', message: 'm', actions: [
+      { label: 'Install anyway', onClick: () => picked.push('install') },
+      { label: 'Keep', primary: true, onClick: () => picked.push('keep') },
+    ] });
+    const labels = sb.body.findAll(e => e.tagName === 'BUTTON').map(b => b.textContent);
+    expect(labels).toEqual(['Install anyway', 'Keep']);
+    await sb.body.find(e => e.tagName === 'BUTTON' && e.textContent === 'Install anyway').click();
+    expect(picked).toEqual(['install']);
+    expect(sb.body.querySelector('.error-report-overlay')).toBeNull();
+  });
+
+  it('a question dialog replaced by another dialog reports a cancel, once, so nobody waits forever', () => {
+    const events = [];
+    sb.showErrorDialog({ message: 'q', actions: [{ label: 'A', onClick: () => events.push('A') }], onCancel: () => events.push('cancel') });
+    sb.showErrorDialog({ message: 'something else' });
+    sb.showErrorDialog({ message: 'and again' });
+    expect(events).toEqual(['cancel']);
+  });
+
+  it('a button press does not also count as a cancel', async () => {
+    const events = [];
+    sb.showErrorDialog({ message: 'q', actions: [{ label: 'A', onClick: () => events.push('A') }], onCancel: () => events.push('cancel') });
+    await sb.body.find(e => e.tagName === 'BUTTON' && e.textContent === 'A').click();
+    sb.showErrorDialog({ message: 'next' });
+    expect(events).toEqual(['A']);
+  });
+
   it('uses English defaults before the locale has loaded', () => {
     const early = makeSandbox({ strings: undefined });
     early.window.appStrings = undefined;
@@ -240,10 +269,12 @@ describe('install summary (study-loader.js)', () => {
       dialogs: [],
       window: { appAboutData: { appVersion: '0.6.9' } },
       t: (key, vars) => { let s = en[key]; for (const [k, v] of Object.entries(vars || {})) s = s.replaceAll(`{${k}}`, v); return s; },
-      _getInstalledStudyVersion: id => installedVersions[id] || 0,
+      localStorage: { getItem: k => { const id = k.replace('bsr_studyver_', ''); return id in installedVersions ? String(installedVersions[id]) : null; } },
+      safeSetItem() {},
       showErrorDialog: o => loader.dialogs.push(o),
     };
     vm.createContext(loader);
+    vm.runInContext(slice(src, 'function _versionString(', '// Decides, for the SILENT installers'), loader);
     vm.runInContext(slice(src, 'function _quietInstallResult(', '// Installs a single .estudy File object'), loader);
     vm.runInContext(slice(src, '// One line of the summary', '// Processes a bundle zip'), loader);
     return loader;

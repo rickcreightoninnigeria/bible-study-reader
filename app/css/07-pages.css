@@ -4415,6 +4415,7 @@ body.gallery-viewer-open { overflow: hidden; }
 .diag-label { flex: 0 1 48%; color: var(--text-secondary); }
 .diag-value { flex: 1 1 52%; text-align: end; font-family: var(--font-stack-mono); font-size: 0.78rem; overflow-wrap: anywhere; user-select: text; }
 .diag-ok  { color: var(--success); }
+.diag-note { color: var(--text-secondary); font-size: 0.82rem; line-height: 1.45; padding: 4px 0; }
 .diag-bad { color: var(--emphasis); font-size: 0.85rem; line-height: 1.45; padding: 4px 0; }
 .diag-study { padding: 8px 0 4px; border-top: 1px solid var(--border); }
 .diag-study:first-of-type { border-top: 0; padding-top: 0; }
@@ -4444,3 +4445,4 @@ body.dark-mode .diag-study          { border-color: var(--dm-border); }
 body.dark-mode .diag-label          { color: var(--dm-text-mid); }
 body.dark-mode .diag-pre            { background: var(--dm-sunken); }
 body.dark-mode .diag-ok             { color: var(--dm-text); }
+body.dark-mode .diag-note           { color: var(--dm-text-mid); }

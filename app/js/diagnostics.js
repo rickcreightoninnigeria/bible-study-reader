@@ -100,22 +100,23 @@ async function _diagStorage() {
   return out;
 }
 
-// Installed studies, read from the registry and the saved content, with the
-// problems that can make an update misbehave:
-//   no_content        registered, but the saved study is missing
-//   version_mismatch  the version record differs from the saved study's own version
+// Installed studies, read from the registry and the saved content, with:
+//   no_content        registered, but the saved study is missing (a problem)
+//   unreadable        the saved study could not be read (a problem)
+//   version_mismatch  the remembered version differs from the saved study's own
+//                     version (a note: the saved study's version is what counts
+//                     when a file is opened, so this no longer blocks anything)
 //   no_record         saved, but no version record (harmless)
-// Also the version records left behind by deleted studies, which make the
-// app refuse an older file of the same study.
 async function _diagStudies() {
   let registry = [];
   try { registry = JSON.parse(localStorage.getItem('study_registry') || '[]'); } catch (e) { registry = []; }
   if (!Array.isArray(registry)) registry = [];
 
-  const recordFor = id => parseFloat(localStorage.getItem(DIAG_VERSION_KEY_PREFIX + id)) || 0;
+  // The version exactly as recorded ("1.10" stays "1.10"); '' if none.
+  const recordFor = id => (localStorage.getItem(DIAG_VERSION_KEY_PREFIX + id) || '').trim();
   const studies = [];
   for (const id of registry) {
-    const row = { id, title: '', recorded: recordFor(id), contentVersion: 0, fileFormat: '', chapters: 0, issues: [] };
+    const row = { id, title: '', recorded: recordFor(id), contentVersion: '', fileFormat: '', chapters: 0, issues: [] };
     try {
       const data = await StudyIDB.get(`study_content_${id}`);
       if (!data) {
@@ -123,11 +124,13 @@ async function _diagStudies() {
       } else {
         const m = data.studyMetadata || {};
         row.title          = m.title || m.title1 || '';
-        row.contentVersion = parseFloat(m.studyVersion) || 0;
+        row.contentVersion = m.studyVersion === undefined ? '' : String(m.studyVersion).trim();
         row.fileFormat     = m.estudyFileVersion !== undefined ? String(m.estudyFileVersion) : '';
         row.chapters       = Array.isArray(data.chapters) ? data.chapters.length : 0;
         if (!row.recorded)                              row.issues.push('no_record');
-        else if (row.recorded !== row.contentVersion)   row.issues.push('version_mismatch');
+        else if (typeof compareStudyVersions === 'function'
+                 ? compareStudyVersions(row.recorded, row.contentVersion) !== 0
+                 : row.recorded !== row.contentVersion)  row.issues.push('version_mismatch');
       }
     } catch (e) {
       row.issues.push('unreadable');
@@ -136,14 +139,7 @@ async function _diagStudies() {
     studies.push(row);
   }
 
-  const orphans = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i) || '';
-    if (!key.startsWith(DIAG_VERSION_KEY_PREFIX)) continue;
-    const id = key.slice(DIAG_VERSION_KEY_PREFIX.length);
-    if (!registry.includes(id)) orphans.push({ id, recorded: recordFor(id) });
-  }
-  return { studies, orphans };
+  return { studies };
 }
 
 async function collectDiagnostics() {
@@ -163,7 +159,7 @@ function diagnosticsProblemCount(info) {
   let n = 0;
   if (Array.isArray(info.features)) n += info.features.filter(f => !f.ok && !f.optional).length;
   if (info.studies && Array.isArray(info.studies.studies)) {
-    n += info.studies.studies.filter(s => s.issues.some(i => i !== 'no_record')).length;
+    n += info.studies.studies.filter(s => s.issues.some(i => i === 'no_content' || i === 'unreadable')).length;
   }
   if (Array.isArray(info.errors)) n += info.errors.length ? 1 : 0;
   return n;
@@ -217,9 +213,6 @@ function formatDiagnosticsReport(info) {
     section('Installed studies', st.studies.length ? st.studies.map(r =>
       `${r.id}${r.title ? ` "${r.title}"` : ''} | saved v${r.contentVersion || '?'} | record v${r.recorded || 'none'} | ` +
       `format ${r.fileFormat || '?'} | ${r.chapters} chapters` + (r.issues.length ? ` | ISSUES: ${r.issues.join(', ')}` : '')) : ['none']);
-    if (st.orphans.length) {
-      section('Deleted studies that still remember a version', st.orphans.map(o => `${o.id} | v${o.recorded}`));
-    }
   }
 
   const e = info.errors;
@@ -289,7 +282,7 @@ function renderDiagnosticsHtml(info) {
   } else {
     const rows = st.studies.length ? st.studies.map(r => {
       const issues = r.issues.filter(i => i !== 'no_record').map(i =>
-        `<div class="diag-bad">${escapeHtml(t('diag_issue_' + i, { recorded: r.recorded, content: r.contentVersion }))}</div>`).join('');
+        `<div class="${i === 'version_mismatch' ? 'diag-note' : 'diag-bad'}">${escapeHtml(t('diag_issue_' + i, { recorded: r.recorded, content: r.contentVersion }))}</div>`).join('');
       return `<div class="diag-study"><div class="diag-study-title">${escapeHtml(r.title || r.id)}</div>` +
         _dRow(t('diag_study_id'), r.id) +
         _dRow(t('diag_study_saved'), r.contentVersion ? `v${r.contentVersion}` : unknown) +
@@ -297,11 +290,6 @@ function renderDiagnosticsHtml(info) {
         _dRow(t('diag_study_chapters'), String(r.chapters)) + issues + '</div>';
     }).join('') : `<div class="settings-row-desc">${escapeHtml(t('diag_no_studies'))}</div>`;
     parts.push(_dSection('diag_h_studies', rows));
-    if (st.orphans.length) {
-      parts.push(_dSection('diag_h_orphans',
-        `<div class="settings-row-desc">${escapeHtml(t('diag_orphans_intro'))}</div>` +
-        st.orphans.map(o => _dRow(o.id, `v${o.recorded}`)).join('')));
-    }
   }
 
   const e = info.errors;

@@ -149,9 +149,14 @@ function _erEl(tag, className, text) {
   return el;
 }
 
+// Removes an overlay. A dialog that is waiting for a choice (see `actions` in
+// showErrorDialog) is told it was dismissed by something else, so whoever is
+// awaiting its answer is never left hanging.
 function _erRemove(id) {
   const el = document.getElementById(id);
-  if (el) el.remove();
+  if (!el) return;
+  if (typeof el.__onRemoved === 'function') el.__onRemoved();
+  el.remove();
 }
 
 // Copies text; falls back to a hidden textarea where the clipboard API is
@@ -179,11 +184,15 @@ async function _erCopy(text) {
   }
 }
 
-// options: { title, message, lines: [{ok, text}], details }
+// options: { title, message, lines: [{ok, text}], details, actions, onCancel }
 //   title/message  plain text; lines: a list shown under the message (each
 //   with an ✓ or ⚠ marker); details: text shown under "Technical details" and
 //   copied by the Copy button.
-function showErrorDialog({ title, message, lines = [], details = '' } = {}) {
+//   actions: [{ label, primary, onClick }] makes it a question: these buttons
+//   replace Close, the dialog closes when one is pressed, and onClick runs.
+//   onCancel runs instead if something else replaces the dialog first, so a
+//   caller awaiting the answer always gets one.
+function showErrorDialog({ title, message, lines = [], details = '', actions = null, onCancel = null } = {}) {
   try {
     _erRemove('errorReportOverlay');
     _erRemove('errorReportBanner');
@@ -216,7 +225,8 @@ function showErrorDialog({ title, message, lines = [], details = '' } = {}) {
         _er('errorreport_hint', 'If this keeps happening, tap “Copy details” and send them to the person who gave you the study.')));
     }
 
-    const actions = _erEl('div', 'error-report-actions');
+    const row = _erEl('div', 'error-report-actions');
+    const choices = Array.isArray(actions) ? actions : null;
     if (details) {
       const copyBtn = _erEl('button', 'error-report-btn', _er('errorreport_copy', 'Copy details'));
       copyBtn.type = 'button';
@@ -225,16 +235,35 @@ function showErrorDialog({ title, message, lines = [], details = '' } = {}) {
         copyBtn.textContent = ok ? _er('errorreport_copied', 'Copied ✓') : _er('errorreport_copy_failed', 'Could not copy — open Technical details and select the text');
         if (!ok) _erOpenDetails(box);
       });
-      actions.appendChild(copyBtn);
+      row.appendChild(copyBtn);
     }
-    const closeBtn = _erEl('button', 'error-report-btn primary', _er('errorreport_close', 'Close'));
-    closeBtn.type = 'button';
-    closeBtn.addEventListener('click', () => overlay.remove());
-    actions.appendChild(closeBtn);
-    box.appendChild(actions);
+    let focusBtn;
+    if (choices) {
+      let settled = false;
+      overlay.__onRemoved = () => { if (!settled) { settled = true; if (onCancel) onCancel(); } };
+      for (const choice of choices) {
+        const btn = _erEl('button', 'error-report-btn' + (choice.primary ? ' primary' : ''), choice.label);
+        btn.type = 'button';
+        btn.addEventListener('click', () => {
+          if (settled) return;
+          settled = true;
+          overlay.remove();
+          if (choice.onClick) choice.onClick();
+        });
+        row.appendChild(btn);
+        if (choice.primary) focusBtn = btn;
+      }
+    } else {
+      const closeBtn = _erEl('button', 'error-report-btn primary', _er('errorreport_close', 'Close'));
+      closeBtn.type = 'button';
+      closeBtn.addEventListener('click', () => overlay.remove());
+      row.appendChild(closeBtn);
+      focusBtn = closeBtn;
+    }
+    box.appendChild(row);
 
     document.body.appendChild(overlay);
-    closeBtn.focus();
+    if (focusBtn) focusBtn.focus();
   } catch (e) {
     console.error('[error-report] could not show the dialog', e);
   }

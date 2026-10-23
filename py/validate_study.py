@@ -149,8 +149,13 @@ def main(path):
     sid = meta.get('studyId', '')
     if not ID_RE.match(str(sid)):
         err(f'studyId {sid!r} must match [A-Za-z0-9_.-]+')
-    if not isinstance(meta.get('studyVersion'), (int, float)):
-        warn('studyVersion should be a number such as 1.03')
+    sv = meta.get('studyVersion')
+    sv_ok = (isinstance(sv, (int, float)) and not isinstance(sv, bool)) or \
+            (isinstance(sv, str) and re.fullmatch(r'\d+(\.\d+)?', sv.strip()))
+    if not sv_ok:
+        warn('studyVersion should be a decimal number with two places, such as 1.03 (1.01 ... 1.09, then 1.10)')
+    elif isinstance(sv, str) and sv.strip() != str(sv):
+        warn('studyVersion has spaces around it')
     multilingual = 'language1' in meta
     chapters = study.get('chapters')
     if not isinstance(chapters, list) or not chapters:

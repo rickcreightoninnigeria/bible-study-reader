@@ -66,7 +66,7 @@ describe('collectDiagnostics', () => {
     expect(info.app).toMatchObject({ version: '0.6.9', fileFormat: '3', uiLanguage: 'ha', interfaceMode: 'basic', activeStudy: 'demo' });
     expect(info.device).toMatchObject({ chrome: '68.0.3440.91', android: '9', screen: '360x640', online: true });
     expect(info.storage).toEqual({ usage: 5 * 1048576, quota: 500 * 1048576, persisted: false });
-    expect(info.studies.studies).toEqual([{ id: 'a', title: 'Theology', recorded: 1.2, contentVersion: 1.2, fileFormat: '3', chapters: 2, issues: [] }]);
+    expect(info.studies.studies).toEqual([{ id: 'a', title: 'Theology', recorded: '1.2', contentVersion: '1.2', fileFormat: '3', chapters: 2, issues: [] }]);
   });
 
   it('flags the study problems that make an update misbehave', async () => {
@@ -79,9 +79,16 @@ describe('collectDiagnostics', () => {
     expect(rows).toEqual({ gone: ['no_content'], drift: ['version_mismatch'], norecord: ['no_record'] });
   });
 
-  it('lists version records left behind by deleted studies', async () => {
+  it('does not report a version record left by a deleted study: it no longer blocks anything', async () => {
     const sb = makeSandbox({ registry: ['a'], versions: { a: 1, deleted_one: 2.5 }, studies: { a: study(1) } });
-    expect((await sb.collectDiagnostics()).studies.orphans).toEqual([{ id: 'deleted_one', recorded: 2.5 }]);
+    expect((await sb.collectDiagnostics()).studies.orphans).toBeUndefined();
+  });
+
+  it('reads "1.10" as recorded; a different saved version is a mismatch, the same number is not', async () => {
+    const sb = makeSandbox({ registry: ['a', 'b'], versions: { a: '1.10', b: '1.10' }, studies: { a: study('1.1'), b: study('1.09') } });
+    sb.compareStudyVersions = (x, y) => (parseFloat(x) === parseFloat(y) ? 0 : 1);     // stand-in for the loader's comparison
+    const rows = Object.fromEntries((await sb.collectDiagnostics()).studies.studies.map(r => [r.id, r.issues]));
+    expect(rows).toEqual({ a: [], b: ['version_mismatch'] });
   });
 
   it('keeps going when one section fails: the rest are still reported', async () => {
@@ -111,8 +118,11 @@ describe('problem count', () => {
 
     const noisy = makeSandbox({ registry: ['a', 'b'], versions: { a: 1.9 }, studies: { a: study(1.2), b: study(1) },
       log: [{ message: 'x' }, { message: 'y' }] });
-    // a: version mismatch (1) + b: no record (harmless, 0) + errors present (1)
-    expect(noisy.diagnosticsProblemCount(await noisy.collectDiagnostics())).toBe(2);
+    // a: version mismatch (a note, 0) + b: no record (harmless, 0) + errors present (1)
+    expect(noisy.diagnosticsProblemCount(await noisy.collectDiagnostics())).toBe(1);
+    // a study listed but with no saved content IS a problem
+    const missing = makeSandbox({ registry: ['gone'], versions: {}, studies: {} });
+    expect(missing.diagnosticsProblemCount(await missing.collectDiagnostics())).toBe(1);
   });
 });
 
@@ -125,7 +135,6 @@ describe('the report to copy', () => {
     expect(report).toContain('Chrome/WebView: 68.0.3440.91');
     expect(report).toContain('Android: 9');
     expect(report).toContain('a "Theology" | saved v1.2 | record v1.2 | format 3 | 2 chapters');
-    expect(report).toContain('gone | v3');
     expect(report).toContain('Used: 5.0 MB');
     expect(report).toContain('no   Share sheet (optional)');
     expect(report).toContain('DETAILS boom');
@@ -154,7 +163,7 @@ describe('the page', () => {
       log: [{ time: '2026-10-22T10:00:00Z', message: 'x' }] });
     const html = sb.renderDiagnosticsHtml(await sb.collectDiagnostics());
     expect(html).toContain('content is missing');
-    expect(html).toContain('(v1.9) is not the version saved (v1.2)');
+    expect(html).toContain('(v1.9) differs from the saved study (v1.2)');
     expect(html).toContain('copyDiagnosticsReport(this)');
     expect(html).toContain('clearDiagnosticsErrors()');
   });

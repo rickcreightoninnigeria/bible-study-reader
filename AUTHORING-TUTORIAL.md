@@ -77,5 +77,5 @@ Both are visible to anyone who opens the study file, so don't put anything secre
 1. `python3 validate_study.py study.json` until it reports no errors.
 2. Zip with `images/` if you have pictures, rename to `.estudy`.
 3. Open it in the app: a passage pop-up, a hint, a footnote, a table at phone width, Read more and Back to study.
-4. **To update a study, raise `studyVersion`** (1.0 → 1.01). The app ignores a file with the same version as the one installed, and refuses a lower one.
+4. **To update a study, raise `studyVersion`** (1.0 → 1.01). A newer version installs over the old one. If a student opens a file with the same or a lower version than the one they already have, the app asks whether to keep what they have or install the file anyway. Number versions with two decimal places: 1.01, 1.02 … 1.09, 1.10 (1.1 is the same as 1.10).
 5. Remember the copyright page always prints the app's CC BY-SA text, whatever you declare in `copyrightData`. If your study is not CC BY-SA, say so to Rick.

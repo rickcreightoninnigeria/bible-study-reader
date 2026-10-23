@@ -70,3 +70,19 @@ describe.skipIf(!hasPython)('validate_study.py marker checks', () => {
     expect(out).not.toContain('divine-name');
   });
 });
+
+describe.skipIf(!hasPython)('validate_study.py studyVersion check', () => {
+  const withVersion = (v) => ({ ...study([]), studyMetadata: { studyId: 't', studyVersion: v } });
+
+  it.each([1, 1.03, 1.1, '1.10', '2'])('accepts %j', (v) => {
+    expect(validate(withVersion(v))).not.toContain('studyVersion');
+  });
+
+  it.each(['v2', '1.', '1.2.3', '', true])('warns about %j', (v) => {
+    expect(validate(withVersion(v))).toContain('studyVersion should be a decimal number');
+  });
+
+  it('warns about spaces around a string version', () => {
+    expect(validate(withVersion(' 1.10 '))).toContain('studyVersion has spaces around it');
+  });
+});
