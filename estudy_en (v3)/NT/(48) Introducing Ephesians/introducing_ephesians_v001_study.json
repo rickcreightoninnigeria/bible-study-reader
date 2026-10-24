@@ -1,0 +1,1948 @@
+{
+  "studyMetadata": {
+    "studyId": "ephesians_v001",
+    "estudyFileVersion": 3,
+    "studyVersion": 1.0,
+    "title": "Introducing Ephesians",
+    "shortTitle": "Ephesians",
+    "subtitle": "Seven sessions in Paul’s letter",
+    "description": "A seven-session study of Paul’s letter to the Ephesians, for individuals or small groups. Each session takes about 45–60 minutes and follows the letter from God’s plan and his saving grace, through the new people he is building, to the way they are to live and stand firm.",
+    "author": "Rick Creighton",
+    "authorLabel": "Written by",
+    "version": "Ephesians · v1.00",
+    "language": "en",
+    "libraryShelves": [
+      {
+        "Shelf": "New Testament",
+        "Section": "Paul's Letters",
+        "Subsection": "Ephesians"
+      }
+    ]
+  },
+  "imageData": {
+    "publisher": {
+      "alt": "🔆BeaconLight — biblical truth to share",
+      "fallback": "🔆BeaconLight",
+      "provenance": "www.beaconlight.co.uk"
+    },
+    "author": {
+      "alt": "Rick Creighton",
+      "fallback": "👨‍🌾",
+      "provenance": "offline photo"
+    }
+  },
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "chapterTitle": "Praise for a plan older than the world",
+      "elements": [
+        {
+          "elementId": "ch01-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>Welcome to this study of Paul’s letter to the Ephesians. Each session is designed to take about 45–60 minutes, whether you work alone or prepare for a group. Tap the Bible reference on a question to read the passage. When you have written an answer, tap Check [[icon:localValidate]] to see how it compares with the main ideas of the passage. It never grades you, and you can keep working on your answer afterwards.</p><p>In this first session we read the opening of the letter. Paul moves almost at once into praise, and what he praises God for sets the tone for everything that follows.</p>"
+        },
+        {
+          "elementId": "ch01-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "If you were asked to list the blessings God gives his people, what would be on your list?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch01-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Who is writing, and what has God done?"
+        },
+        {
+          "elementId": "ch01-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 1:1–6",
+          "translation": "NET",
+          "passageText": "<p><sup>1</sup>From Paul, an apostle of Christ Jesus by the will of God, to the saints [in Ephesus], the faithful in Christ Jesus. <sup>2</sup>Grace and peace to you from God our Father and the Lord Jesus Christ! <sup>3</sup>Blessed is the God and Father of our Lord Jesus Christ, who has blessed us with every spiritual blessing in the heavenly realms in Christ. <sup>4</sup>For he chose us in Christ before the foundation of the world that we should be holy and blameless before him in love. <sup>5</sup>He did this by predestining us to adoption as his legal heirs through Jesus Christ, according to the pleasure of his will— <sup>6</sup>to the praise of the glory of his grace that he has freely bestowed on us in his dearly loved Son.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+1%3A1-6&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does Paul describe himself, and how does he describe the people he is writing to (verses 1–2)?",
+          "linkedPassage": "Ephesians 1:1–6",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the labels attached to each in verse 1.",
+          "sampleAnswer": "Paul calls himself an apostle of Christ Jesus, and he says it is by the will of God, so his authority comes from God and not from himself. He describes his readers as saints, meaning God’s holy and set-apart people, and as faithful in Christ Jesus. He wishes them grace and peace, which come from God our Father and the Lord Jesus Christ.",
+          "keyTerms": [
+            "apostle",
+            "will of God|God’s will",
+            "saint|holy|set apart",
+            "faithful|believ",
+            "grace",
+            "peace"
+          ]
+        },
+        {
+          "elementId": "ch01-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "In verse 3 Paul says God has blessed us. Describe the blessing: how much of it is there, what kind is it, and how do we come to have it?",
+          "linkedPassage": "Ephesians 1:1–6",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice the phrases beginning with ‘in’ and ‘with’.",
+          "sampleAnswer": "God has blessed us with every spiritual blessing, so nothing is held back. These blessings belong to the heavenly realm rather than being merely material or earthly. We have them in Christ, which means they come to us through our union with him. The rest of the passage unpacks what this blessing includes.",
+          "keyTerms": [
+            "every|all",
+            "spiritual",
+            "Christ",
+            "heaven"
+          ]
+        },
+        {
+          "elementId": "ch01-el07",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What did God do before the world was made, and what did he plan for those he chose (verses 4–5)?",
+          "linkedPassage": "Ephesians 1:1–6",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for what he chose us to be, and what he planned for us to become.",
+          "sampleAnswer": "God chose us in Christ before the foundation of the world. His purpose was that we would be holy and blameless before him. He also planned that we would become his adopted children through Jesus Christ. This was God’s own loving initiative, and it was aimed at making us his family.",
+          "keyTerms": [
+            "chose|chosen|elect",
+            "holy",
+            "blameless",
+            "adopt|children|sons",
+            "love"
+          ]
+        },
+        {
+          "elementId": "ch01-el08",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 1:7–10",
+          "translation": "NET",
+          "passageText": "<p><sup>7</sup>In him we have redemption through his blood, the forgiveness of our offenses, according to the riches of his grace <sup>8</sup>that he lavished on us in all wisdom and insight. <sup>9</sup>He did this when he revealed to us the mystery of his will, according to his good pleasure that he set forth in Christ, <sup>10</sup>toward the administration of the fullness of the times, to head up all things in Christ—the things in heaven and the things on earth.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+1%3A7-10&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el09",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What do we have in Christ according to verse 7, and what did it cost?",
+          "linkedPassage": "Ephesians 1:7–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘through his blood’.",
+          "sampleAnswer": "In Christ we have redemption, which means we have been set free at a price, and we have the forgiveness of our sins. It came through his blood, that is, through his death. Paul adds that all this flows from the riches of God’s grace. Forgiveness is costly for Christ but a free gift to us.",
+          "keyTerms": [
+            "redempt",
+            "forgiv",
+            "blood|death|cross",
+            "grace|rich"
+          ]
+        },
+        {
+          "elementId": "ch01-el10",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul speaks of the ‘mystery’ of God’s will (verses 9–10). What is God’s plan, and when will it be carried out?",
+          "linkedPassage": "Ephesians 1:7–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Verse 10 says what will happen to ‘all things’ and who will be at the head.",
+          "sampleAnswer": "The mystery is a purpose God kept hidden but has now made known to us. His plan is to gather everything, both in heaven and on earth, under Christ as head. He will carry it out when the time is right, when the times reach their fulfilment. History is therefore moving towards a goal, and Christ is at the centre of it.",
+          "keyTerms": [
+            "all things|everything",
+            "Christ",
+            "head|unite|together",
+            "time|fulfil"
+          ]
+        },
+        {
+          "elementId": "ch01-el11",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 1:11–14",
+          "translation": "NET",
+          "passageText": "<p><sup>11</sup>In Christ we too have been claimed as God’s own possession, since we were predestined according to the purpose of him who accomplishes all things according to the counsel of his will <sup>12</sup>so that we, who were the first to set our hope on Christ, would be to the praise of his glory. <sup>13</sup>And when you heard the word of truth (the gospel of your salvation)—when you believed in Christ —you were marked with the seal of the promised Holy Spirit, <sup>14</sup>who is the down payment of our inheritance, until the redemption of God’s own possession, to the praise of his glory.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+1%3A11-14&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch01-el12",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verses 11–14 speak of ‘we’ and then of ‘you’. What is said about each group, and what do they share?",
+          "linkedPassage": "Ephesians 1:11–14",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at who ‘first hoped in Christ’ and who ‘also’ heard the message of truth.",
+          "sampleAnswer": "Paul says ‘we’ were the first to hope in Christ, which most likely means Jewish believers like himself. The ‘you’ are Gentile believers, who also heard the word of truth, the gospel of their salvation, and believed in Christ. Both groups share the same inheritance. Both have been marked with the same Holy Spirit.",
+          "keyTerms": [
+            "we",
+            "you",
+            "hear|heard|word of truth|gospel",
+            "believ",
+            "seal|Spirit",
+            "inherit"
+          ]
+        },
+        {
+          "elementId": "ch01-el13",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does Paul describe the work of the Holy Spirit in verses 13–14?",
+          "linkedPassage": "Ephesians 1:11–14",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Think about what the Spirit shows and what he promises.",
+          "sampleAnswer": "The Spirit is the seal that marks believers as belonging to God. He is also described as a guarantee, or first instalment, of the inheritance that is still to come. This lasts until the final redemption of those who are God’s own people. The Spirit is God’s pledge that he will finish what he has begun.",
+          "keyTerms": [
+            "seal|mark",
+            "guarantee|down payment|deposit|pledge|first instalment",
+            "inherit",
+            "redempt",
+            "Spirit"
+          ]
+        },
+        {
+          "elementId": "ch01-el14",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "A refrain is repeated in verses 6, 12 and 14. What is it, and what does it tell us about the purpose of all these blessings?",
+          "linkedPassage": "Ephesians 1:11–14",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at how each of the three stretches of the passage ends.",
+          "sampleAnswer": "Each stretch ends with praise: to the praise of his glorious grace, and to the praise of his glory. Paul is saying that everything God does for his people ends in God’s glory. Our salvation is therefore ultimately about him rather than about us. Our right response is worship.",
+          "keyTerms": [
+            "praise",
+            "glory",
+            "grace",
+            "worship|thank"
+          ]
+        },
+        {
+          "elementId": "ch01-el15",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch01-el16",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which of the blessings in this passage (chosen, adopted, forgiven, shown God’s plan, sealed with the Spirit) do you find hardest to believe is really true for you? Why?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch01-el17",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Paul begins with what God has done before he says anything about what we should do. How might starting there change the way you approach the coming week?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch01-el18",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Write a short prayer of thanks to God for one of the blessings in this passage, in your own words.",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch01-el19",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>That is the first session. Next time we look at Paul’s prayer for his readers, and then at how he describes what God did for us when we were spiritually dead.</p>"
+        }
+      ]
+    },
+    {
+      "chapterNumber": 2,
+      "chapterTitle": "Eyes opened, lives raised",
+      "elements": [
+        {
+          "elementId": "ch02-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>In this session Paul prays for his readers, and then he describes in stark terms what they were like before God acted. Notice how much of the passage is about what God does rather than what we do. Tap Check [[icon:localValidate]] when you have written an answer.</p>"
+        },
+        {
+          "elementId": "ch02-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "Think of a time when someone helped you to see something you had been unable to see. What changed for you?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch02-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Paul’s prayer"
+        },
+        {
+          "elementId": "ch02-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 1:15–23",
+          "translation": "NET",
+          "passageText": "<p><sup>15</sup>For this reason, because I have heard of your faith in the Lord Jesus and your love for all the saints, <sup>16</sup>I do not cease to give thanks for you when I remember you in my prayers. <sup>17</sup>I pray that the God of our Lord Jesus Christ, the glorious Father, will give you spiritual wisdom and revelation in your growing knowledge of him, <sup>18</sup>—since the eyes of your heart have been enlightened —so that you can know what is the hope of his calling, what is the wealth of his glorious inheritance in the saints, <sup>19</sup>and what is the incomparable greatness of his power toward us who believe, as displayed in the exercise of his immense strength. <sup>20</sup>This power he exercised in Christ when he raised him from the dead and seated him at his right hand in the heavenly realms <sup>21</sup>far above every rule and authority and power and dominion and every name that is named, not only in this age but also in the one to come. <sup>22</sup>And God put all things under Christ’s feet, and gave him to the church as head over all things. <sup>23</sup>Now the church is his body, the fullness of him who fills all in all.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+1%3A15-23&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch02-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul thanks God for his readers and then tells them what he asks God to give them (verses 15–18). What is he asking for, and what kind of knowing does he have in mind?",
+          "linkedPassage": "Ephesians 1:15–23",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice the phrases about ‘wisdom’, ‘revelation’ and the ‘eyes of your heart’.",
+          "sampleAnswer": "Paul thanks God for their faith in the Lord Jesus and their love towards every believer. He prays that God would give them a spirit of wisdom and revelation so that they know God better. He asks that the eyes of their hearts would be enlightened. He is not asking for new information but for a deeper, personal knowledge of God that only God can give.",
+          "keyTerms": [
+            "faith",
+            "love",
+            "wisdom",
+            "revelation",
+            "know|knowledge",
+            "eyes|enlighten"
+          ]
+        },
+        {
+          "elementId": "ch02-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul wants his readers to know three things (verses 18–19). What are they?",
+          "linkedPassage": "Ephesians 1:15–23",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the three phrases that begin with ‘what is’ or ‘the’: a hope, an inheritance, and a power.",
+          "sampleAnswer": "He wants them to know the hope that goes with God’s call. He wants them to know the riches of God’s glorious inheritance among his holy people. He also wants them to know the immeasurable greatness of God’s power for those who believe. Together these point to a secure future, a rich inheritance, and the strength to live now.",
+          "keyTerms": [
+            "hope",
+            "inherit|rich",
+            "power"
+          ]
+        },
+        {
+          "elementId": "ch02-el07",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does Paul measure the greatness of God’s power (verses 19–21)? What did that power do for Christ?",
+          "linkedPassage": "Ephesians 1:15–23",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for what God did to Christ and where he placed him.",
+          "sampleAnswer": "God’s power was shown when he raised Christ from the dead. He also seated Christ at his right hand in the heavenly realms. Christ is now far above every ruler, authority, power and name, in this age and the next. Paul adds that this same power is at work for those who believe.",
+          "keyTerms": [
+            "rais|resurrect",
+            "right hand|seated|exalt",
+            "above|rule|authority",
+            "believ|us"
+          ]
+        },
+        {
+          "elementId": "ch02-el08",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What do verses 22–23 say about Christ’s relation to ‘all things’ and to the church?",
+          "linkedPassage": "Ephesians 1:15–23",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘head’ and ‘body’.",
+          "sampleAnswer": "God has put all things under Christ’s feet, so he is Lord of everything. He has also made Christ head over all things for the sake of the church. The church is called Christ’s body. The Lord who rules the universe is therefore bound closely to his people and acts for their good.",
+          "keyTerms": [
+            "feet|under",
+            "head",
+            "body|church",
+            "fill|fullness"
+          ]
+        },
+        {
+          "elementId": "ch02-el09",
+          "type": "heading",
+          "subtype": "section",
+          "text": "From death to life"
+        },
+        {
+          "elementId": "ch02-el10",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 2:1–3",
+          "translation": "NET",
+          "passageText": "<p><sup>1</sup>And although you were dead in your offenses and sins, <sup>2</sup>in which you formerly lived according to this world’s present path, according to the ruler of the domain of the air, the ruler of the spirit that is now energizing the sons of disobedience, <sup>3</sup>among whom all of us also formerly lived out our lives in the cravings of our flesh, indulging the desires of the flesh and the mind, and were by nature children of wrath even as the rest…</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+2%3A1-3&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch02-el11",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does Paul describe his readers’ condition before God acted (verses 1–3)? Which forces were at work in them and around them?",
+          "linkedPassage": "Ephesians 2:1–3",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what they followed and what they deserved.",
+          "sampleAnswer": "Paul says they were dead in their transgressions and sins, which is more than being unwell. They followed the ways of this world and the ruler of the domain of the air, who is at work in those who disobey. They also followed the cravings of their flesh and mind. By nature they were deserving of wrath, like everyone else. They were helpless and unable to rescue themselves.",
+          "keyTerms": [
+            "dead",
+            "world",
+            "ruler|air|devil|Satan",
+            "flesh|desire|craving",
+            "wrath"
+          ]
+        },
+        {
+          "elementId": "ch02-el12",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 2:4–10",
+          "translation": "NET",
+          "passageText": "<p><sup>4</sup>But God, being rich in mercy, because of his great love with which he loved us, <sup>5</sup>even though we were dead in offenses, made us alive together with Christ—by grace you are saved! — <sup>6</sup>and he raised us up together with him and seated us together with him in the heavenly realms in Christ Jesus, <sup>7</sup>to demonstrate in the coming ages the surpassing wealth of his grace in kindness toward us in Christ Jesus. <sup>8</sup>For by grace you are saved through faith, and this is not from yourselves, it is the gift of God; <sup>9</sup>it is not from works, so that no one can boast. <sup>10</sup>For we are his creative work, having been created in Christ Jesus for good works that God prepared beforehand so we can do them.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+2%3A4-10&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch02-el13",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verse 4 begins with the words ‘But God’. What does he do, and what moved him to do it?",
+          "linkedPassage": "Ephesians 2:4–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what God is said to be rich in, and at the three things done ‘with Christ’.",
+          "sampleAnswer": "Because of his great love and his rich mercy, God made us alive with Christ even though we were dead. He raised us up with Christ, and gave us a place with him in the heavenly realms. The reason lies in God’s character: his mercy and love. Nothing in us earned it.",
+          "keyTerms": [
+            "love",
+            "mercy",
+            "alive",
+            "rais",
+            "seated|heaven"
+          ]
+        },
+        {
+          "elementId": "ch02-el14",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does verse 7 say is God’s long-term purpose in saving us?",
+          "linkedPassage": "Ephesians 2:4–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the words ‘in the coming ages’.",
+          "sampleAnswer": "God’s purpose is that in the ages to come he will show the surpassing riches of his grace. He will show this through his kindness towards us in Christ Jesus. Those who have been saved are meant to be a display of what his grace can do. Salvation is therefore bound up with God’s glory as well as our good.",
+          "keyTerms": [
+            "ages",
+            "show|display",
+            "grace",
+            "kindness"
+          ]
+        },
+        {
+          "elementId": "ch02-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "According to verses 8–9, what is the source of salvation, how is it received, and what is ruled out? What is said to be a gift?",
+          "linkedPassage": "Ephesians 2:4–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice the phrases ‘by grace’, ‘through faith’ and ‘not from works’.",
+          "sampleAnswer": "Salvation is by grace and is received through faith. Paul says it is not our own doing but God’s gift, and it is not the result of works, so no one can boast. Whether ‘this’ points to faith itself or to the whole saving event, the result is the same: from beginning to end it is God’s gift, and no one can take credit for it.",
+          "keyTerms": [
+            "grace",
+            "faith",
+            "gift",
+            "works",
+            "boast"
+          ]
+        },
+        {
+          "elementId": "ch02-el16",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does verse 10 say about the good works of believers? Who made us, who prepared the works, and what are they for?",
+          "linkedPassage": "Ephesians 2:4–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘creative work’ and ‘prepared beforehand’.",
+          "sampleAnswer": "We are God’s creative work, created in Christ Jesus. God prepared good works in advance for us to do, so that we can do them. Good works are therefore the result of salvation and not its cause. We do not earn God’s favour by them, but we are saved for them.",
+          "keyTerms": [
+            "creative work|workmanship|made|created",
+            "prepared",
+            "good works"
+          ]
+        },
+        {
+          "elementId": "ch02-el17",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch02-el18",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Paul prays that the ‘eyes of the heart’ would be opened. Where do you most need God to help you see more clearly at the moment?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch02-el19",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Paul describes our past as being dead, not just unwell. How does this change the way you think about your own story, or about people who do not yet believe?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch02-el20",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Verse 10 says God has prepared good works for us to do. What is one practical way you could walk in one of them this week?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch02-el21",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>Next time we see what God’s grace means for the way people relate to one another, as Paul turns to Jews and Gentiles, and prays that his readers would grasp the love of Christ.</p>"
+        }
+      ]
+    },
+    {
+      "chapterNumber": 3,
+      "chapterTitle": "Strangers made family",
+      "elements": [
+        {
+          "elementId": "ch03-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>In this session Paul shows what God’s saving work means for people who were once far apart. In his day the great divide was between Jews and Gentiles. Read for what Christ has done, and for what that now means for God’s people.</p>"
+        },
+        {
+          "elementId": "ch03-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "Think of a time when you felt like an outsider (at school, at work, in a new country or in a church). What made you feel that way?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch03-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Outsiders brought near"
+        },
+        {
+          "elementId": "ch03-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 2:11–13",
+          "translation": "NET",
+          "passageText": "<p><sup>11</sup>Therefore remember that formerly you, the Gentiles in the flesh—who are called “uncircumcision” by the so-called “circumcision” that is performed on the body by human hands— <sup>12</sup>that you were at that time without the Messiah, alienated from the citizenship of Israel and strangers to the covenants of promise, having no hope and without God in the world. <sup>13</sup>But now in Christ Jesus you who used to be far away have been brought near by the blood of Christ.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+2%3A11-13&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul asks his Gentile readers to remember what they were once like (verses 11–12). List the ways he describes their former situation.",
+          "linkedPassage": "Ephesians 2:11–13",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the list that follows ‘at that time you were’.",
+          "sampleAnswer": "They were without the Messiah and cut off from the citizenship of Israel. They were strangers to the covenants of promise, so they had no share in what God had promised. They had no hope and were without God in the world. They were outsiders in every way that matters, both relationally and spiritually.",
+          "keyTerms": [
+            "without Christ|without the Messiah|Messiah|apart from Christ",
+            "Israel|citizen",
+            "covenant|promise",
+            "hope",
+            "without God|God"
+          ]
+        },
+        {
+          "elementId": "ch03-el06",
+          "type": "heading",
+          "subtype": "subsection",
+          "text": "Peace through the cross"
+        },
+        {
+          "elementId": "ch03-el07",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 2:14–18",
+          "translation": "NET",
+          "passageText": "<p><sup>14</sup>For he is our peace, the one who made both groups into one and who destroyed the middle wall of partition, the hostility, <sup>15</sup>when he nullified in his flesh the law of commandments in decrees. He did this to create in himself one new man out of two, thus making peace, <sup>16</sup>and to reconcile them both in one body to God through the cross, by which the hostility has been killed. <sup>17</sup>And he came and preached peace to you who were far off and peace to those who were near, <sup>18</sup>so that through him we both have access in one Spirit to the Father.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+2%3A14-18&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el08",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verse 14 says ‘he himself is our peace’. What has Christ done to the barrier between Jews and Gentiles, and how did he do it?",
+          "linkedPassage": "Ephesians 2:14–18",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words about a wall, and about his flesh and the cross.",
+          "sampleAnswer": "Christ has destroyed the wall of hostility that stood between Jews and Gentiles, and has made the two groups one. He did this in his own body, by his death on the cross. In doing so he set aside the commandments and regulations that kept the two groups apart. In his own person he creates peace.",
+          "keyTerms": [
+            "wall|barrier|hostility",
+            "one|both",
+            "cross|flesh|death|blood",
+            "peace"
+          ]
+        },
+        {
+          "elementId": "ch03-el09",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul speaks of two kinds of reconciliation in verses 15–18: between people, and between people and God. How does he connect them?",
+          "linkedPassage": "Ephesians 2:14–18",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the phrases ‘one new humanity’ and ‘access to the Father’.",
+          "sampleAnswer": "Christ creates one new humanity out of the two groups and so makes peace between them. In the same act he reconciles both groups to God through the cross. Both groups now come to the Father through the same Spirit. Being reconciled to God and being reconciled to one another belong together.",
+          "keyTerms": [
+            "one new|new humanity|new man",
+            "reconcil",
+            "Spirit",
+            "Father|access"
+          ]
+        },
+        {
+          "elementId": "ch03-el10",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 2:19–22",
+          "translation": "NET",
+          "passageText": "<p><sup>19</sup>So then you are no longer foreigners and noncitizens, but you are fellow citizens with the saints and members of God’s household, <sup>20</sup>because you have been built on the foundation of the apostles and prophets, with Christ Jesus himself as the cornerstone. <sup>21</sup>In him the whole building, being joined together, grows into a holy temple in the Lord, <sup>22</sup>in whom you also are being built together into a dwelling place of God in the Spirit.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+2%3A19-22&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el11",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What is the new status of the Gentile believers in verse 19? Give the pictures Paul uses.",
+          "linkedPassage": "Ephesians 2:19–22",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what they are ‘no longer’ and what they are ‘now’.",
+          "sampleAnswer": "They are no longer strangers and foreigners. They now share citizenship with God’s people and belong to God’s household. They have been brought inside, as full members with the same standing as any Jewish believer. Their belonging is secure because it rests on what Christ has done.",
+          "keyTerms": [
+            "no longer|strangers|foreigners",
+            "citizen",
+            "household|family",
+            "members|belong"
+          ]
+        },
+        {
+          "elementId": "ch03-el12",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul changes the picture to a building in verses 20–22. What is the foundation, what is the cornerstone, and what is being built?",
+          "linkedPassage": "Ephesians 2:19–22",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at who is named at the foundation and who is at the corner.",
+          "sampleAnswer": "The building rests on the foundation of the apostles and prophets, with Christ Jesus himself as the cornerstone. The whole building is fitted together and is growing into a holy temple, set apart for the Lord. It is a dwelling place for God by his Spirit. God now lives among his people rather than in a building of stone.",
+          "keyTerms": [
+            "apostles|prophets",
+            "cornerstone",
+            "temple|dwelling",
+            "Spirit"
+          ]
+        },
+        {
+          "elementId": "ch03-el13",
+          "type": "heading",
+          "subtype": "section",
+          "text": "A secret now revealed"
+        },
+        {
+          "elementId": "ch03-el14",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 3:1–13",
+          "translation": "NET",
+          "passageText": "<p><sup>1</sup>For this reason I, Paul, the prisoner of Christ Jesus for the sake of you Gentiles <sup>2</sup>if indeed you have heard of the stewardship of God’s grace that was given to me for you, <sup>3</sup>that by revelation the mystery was made known to me, as I wrote before briefly. <sup>4</sup>When reading this, you will be able to understand my insight into the mystery of Christ <sup>5</sup>(which was not disclosed to people in former generations as it has now been revealed to his holy apostles and prophets by the Spirit), <sup>6</sup>namely, that through the gospel the Gentiles are fellow heirs, fellow members of the body, and fellow partakers of the promise in Christ Jesus. <sup>7</sup>I became a servant of this gospel according to the gift of God’s grace that was given to me by the exercise of his power. <sup>8</sup>To me—less than the least of all the saints —this grace was given, to proclaim to the Gentiles the unfathomable riches of Christ <sup>9</sup>and to enlighten everyone about God’s secret plan —the mystery that has been hidden for ages in God who has created all things. <sup>10</sup>The purpose of this enlightenment is that through the church the multifaceted wisdom of God should now be disclosed to the rulers and the authorities in the heavenly realms. <sup>11</sup>This was according to the eternal purpose that he accomplished in Christ Jesus our Lord, <sup>12</sup>in whom we have boldness and confident access to God by way of Christ’s faithfulness. <sup>13</sup>For this reason I ask you not to lose heart because of what I am suffering for you, which is your glory.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+3%3A1-13&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What is the ‘mystery’ that Paul says was not made known to earlier generations but has now been revealed (3:4–6)? How does Paul describe his own part in it (3:1, 7–8)?",
+          "linkedPassage": "Ephesians 3:1–13",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the three ‘fellow’ words in verse 6, and for how Paul describes himself in verse 8.",
+          "sampleAnswer": "The mystery is that, through the gospel, Gentiles share equally with Jews: they are fellow heirs, belong to the same body, and have a share in the same promise in Christ. Paul calls himself a prisoner for the sake of the Gentiles and a servant of this gospel by God’s grace. He speaks of himself as the very least of God’s people, yet he has been given the privilege of preaching the riches of Christ. He is humble, and he knows it is all of grace.",
+          "keyTerms": [
+            "Gentiles",
+            "fellow heirs|heirs",
+            "body",
+            "promise",
+            "servant|prisoner",
+            "grace"
+          ]
+        },
+        {
+          "elementId": "ch03-el16",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "According to verse 10, who is watching God’s wisdom displayed through the church, and what does this tell us about the importance of the church?",
+          "linkedPassage": "Ephesians 3:1–13",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the phrase ‘through the church’.",
+          "sampleAnswer": "The rulers and authorities in the heavenly places come to see God’s many-sided wisdom through the church. The church may look ordinary, but it is a public display of God’s wisdom. This was always part of his eternal purpose, which he has carried out in Christ Jesus. Paul draws confidence from this even in his suffering.",
+          "keyTerms": [
+            "rulers|authorities|powers",
+            "wisdom",
+            "church",
+            "eternal|purpose"
+          ]
+        },
+        {
+          "elementId": "ch03-el17",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Paul’s second prayer"
+        },
+        {
+          "elementId": "ch03-el18",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 3:14–21",
+          "translation": "NET",
+          "passageText": "<p><sup>14</sup>For this reason I kneel before the Father, <sup>15</sup>from whom every family in heaven and on earth is named. <sup>16</sup>I pray that according to the wealth of his glory he will grant you to be strengthened with power through his Spirit in the inner person, <sup>17</sup>that Christ will dwell in your hearts through faith, so that, because you have been rooted and grounded in love, <sup>18</sup>you will be able to comprehend with all the saints what is the breadth and length and height and depth, <sup>19</sup>and thus to know the love of Christ that surpasses knowledge, so that you will be filled up to all the fullness of God. <sup>20</sup>Now to him who by the power that is working within us is able to do far beyond all that we ask or think, <sup>21</sup>to him be the glory in the church and in Christ Jesus to all generations, forever and ever. Amen.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+3%3A14-21&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch03-el19",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul pray for in verses 16–19? List the requests and notice how they build on one another.",
+          "linkedPassage": "Ephesians 3:14–21",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the verbs: strengthened, dwell, grasp, know, filled.",
+          "sampleAnswer": "He prays that they would be strengthened with power through the Spirit in the inner person. He prays that Christ would dwell in their hearts through faith. He asks that, rooted and grounded in love, they would grasp how wide, long, high and deep Christ’s love is, and know it even though it surpasses knowledge. His final request is that they would be completely filled with God’s own fullness.",
+          "keyTerms": [
+            "strengthen|power",
+            "dwell",
+            "love",
+            "know",
+            "filled|fullness"
+          ]
+        },
+        {
+          "elementId": "ch03-el20",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does the prayer end (verses 20–21)? What does Paul say about God’s ability and about who should receive glory?",
+          "linkedPassage": "Ephesians 3:14–21",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘far more than all we ask or think’.",
+          "sampleAnswer": "God is able to do much more than we could ever ask or think, by the power that is already working in us. Paul gives glory to God, in the church and in Christ Jesus, through every generation, without end. The prayer therefore ends on confidence in God and not in ourselves. It also invites us to pray boldly, since God can do more than we can ask.",
+          "keyTerms": [
+            "able",
+            "more|beyond",
+            "power",
+            "glory",
+            "church"
+          ]
+        },
+        {
+          "elementId": "ch03-el21",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch03-el22",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "How does being called a member of God’s household (2:19) change the way you see your place in your church?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch03-el23",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Who in your church or community is quite different from you in background or outlook? What is one step you could take to welcome them?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch03-el24",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Choose one of Paul’s requests in 3:16–19 and turn it into a prayer for yourself or for someone you know.",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch03-el25",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>Next time Paul turns from what God has done to how God’s people should live together, beginning with unity and growth in the church.</p>"
+        }
+      ]
+    },
+    {
+      "chapterNumber": 4,
+      "chapterTitle": "Worthy of the calling",
+      "elements": [
+        {
+          "elementId": "ch04-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>With chapter 4 the letter turns from what God has done to how his people should live. The first thing Paul asks for is unity, and he is clear that unity is something God has already given and we must guard.</p>"
+        },
+        {
+          "elementId": "ch04-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "What helps a church feel united, and what damages it? Think of examples from your own experience.",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch04-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "One body"
+        },
+        {
+          "elementId": "ch04-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 4:1–6",
+          "translation": "NET",
+          "passageText": "<p><sup>1</sup>I, therefore, the prisoner for the Lord, urge you to live worthily of the calling with which you have been called, <sup>2</sup>with all humility and gentleness, with patience, putting up with one another in love, <sup>3</sup>making every effort to keep the unity of the Spirit in the bond of peace. <sup>4</sup>There is one body and one Spirit, just as you too were called to the one hope of your calling, <sup>5</sup>one Lord, one faith, one baptism, <sup>6</sup>one God and Father of all, who is over all and through all and in all.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+4%3A1-6&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch04-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul urges his readers to live in a way that is worthy of their calling. What qualities does he list (verses 2–3), and what is the unity he wants them to keep?",
+          "linkedPassage": "Ephesians 4:1–6",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the list of attitudes, and at who provides the unity.",
+          "sampleAnswer": "He asks for complete humility and gentleness, together with patience. They are to put up with one another in love, and to work hard at preserving the unity the Spirit gives, held together by peace. The unity is already given by the Spirit, and so it is something to preserve rather than something to invent. Peace is the bond that holds it.",
+          "keyTerms": [
+            "humility|humble",
+            "gentle",
+            "patien",
+            "love",
+            "unity",
+            "peace"
+          ]
+        },
+        {
+          "elementId": "ch04-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verses 4–6 repeat the word ‘one’ seven times. List what Paul says there is one of, and notice who stands at the centre of the list.",
+          "linkedPassage": "Ephesians 4:1–6",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "The list moves through the Spirit, the Lord and the Father.",
+          "sampleAnswer": "Paul names one body, one Spirit, one hope, one Lord, one faith, one baptism, and one God and Father of all. The list is built around the Spirit, the Lord and the Father. Church unity therefore rests on who God is, and not on human agreement. Those who share this one God share one calling.",
+          "keyTerms": [
+            "body",
+            "Spirit",
+            "hope",
+            "Lord",
+            "faith",
+            "baptism",
+            "God|Father"
+          ]
+        },
+        {
+          "elementId": "ch04-el07",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Christ’s gifts"
+        },
+        {
+          "elementId": "ch04-el08",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 4:7–10",
+          "translation": "NET",
+          "passageText": "<p><sup>7</sup>But to each one of us grace was given according to the measure of Christ’s gift. <sup>8</sup>Therefore it says, “When he ascended on high he captured captives; he gave gifts to men.” <sup>9</sup>Now what is the meaning of “he ascended,” except that he also descended to the lower regions, namely, the earth? <sup>10</sup>He, the very one who descended, is also the one who ascended above all the heavens, in order to fill all things.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+4%3A7-10&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch04-el09",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does verse 7 say about the grace Christ gives, and what does verse 8 say he did after ascending on high?",
+          "linkedPassage": "Ephesians 4:7–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘each one of us’ and at what the victorious king does.",
+          "sampleAnswer": "Grace has been given to each one of us, according to the measure of Christ’s gift. This means no believer is left out. Paul then quotes a psalm about a victorious king who ascends on high, leads captives, and gives gifts. The picture is of a conqueror sharing the benefits of his victory with his people.",
+          "keyTerms": [
+            "each|every",
+            "grace|gift",
+            "ascend",
+            "measure",
+            "captives|victor"
+          ]
+        },
+        {
+          "elementId": "ch04-el10",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verses 9–10 say that the one who ascended is the same one who first descended. Why might Paul draw attention to both movements?",
+          "linkedPassage": "Ephesians 4:7–10",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Verse 9 says where he descended to; think about where he started and where he ended up.",
+          "sampleAnswer": "The Christ who has ascended far above all the heavens, to fill all things, is the same Jesus who first came down. Verse 9 says he descended to the lower regions, namely, the earth, which fits his coming down in the incarnation. The Lord who now gives gifts is the one who humbled himself before he was exalted. His authority is therefore matched by his humility.",
+          "keyTerms": [
+            "descend",
+            "ascend",
+            "same",
+            "fill|all things",
+            "earth|incarnation|humbl"
+          ]
+        },
+        {
+          "elementId": "ch04-el11",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Growing up together"
+        },
+        {
+          "elementId": "ch04-el12",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 4:11–16",
+          "translation": "NET",
+          "passageText": "<p><sup>11</sup>And he himself gave some as apostles, some as prophets, some as evangelists, and some as pastors and teachers, <sup>12</sup>to equip the saints for the work of ministry, that is, to build up the body of Christ, <sup>13</sup>until we all attain to the unity of the faith and of the knowledge of the Son of God—a mature person, attaining to the measure of Christ’s full stature. <sup>14</sup>So we are no longer to be children, tossed back and forth by waves and carried about by every wind of teaching by the trickery of people who craftily carry out their deceitful schemes. <sup>15</sup>But practicing the truth in love, we will in all things grow up into Christ, who is the head. <sup>16</sup>From him the whole body grows, fitted and held together through every supporting ligament. As each one does its part, the body builds itself up in love.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+4%3A11-16&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch04-el13",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Which gifts does Christ give to the church in verse 11, and what are they for (verse 12)?",
+          "linkedPassage": "Ephesians 4:11–16",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what the people in verse 11 are meant to do ‘for the equipping’ of others.",
+          "sampleAnswer": "Christ gives apostles, prophets, evangelists, and pastors and teachers. They are given to equip God’s people for the work of ministry. The aim is to build up the body of Christ. Leaders are therefore not meant to do all the ministry themselves; they are meant to prepare everyone else to serve.",
+          "keyTerms": [
+            "apostle",
+            "prophet",
+            "evangelist",
+            "pastor|shepherd|teacher",
+            "equip",
+            "build"
+          ]
+        },
+        {
+          "elementId": "ch04-el14",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What is the goal that the body is heading towards (verse 13)? Notice the word ‘until’.",
+          "linkedPassage": "Ephesians 4:11–16",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the three things Paul says we are heading towards.",
+          "sampleAnswer": "The goal is unity: that we all arrive at a shared faith and a shared knowledge of the Son of God. This unity leads to maturity, measured by the full stature of Christ. Maturity is therefore something we share together rather than reach alone. It is measured by Christ himself.",
+          "keyTerms": [
+            "unity",
+            "knowledge|know",
+            "mature|maturity",
+            "Christ|stature"
+          ]
+        },
+        {
+          "elementId": "ch04-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verse 14 describes spiritual immaturity with a picture. What is the picture, and what dangers does it expose us to?",
+          "linkedPassage": "Ephesians 4:11–16",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘children’, ‘waves’ and ‘wind’.",
+          "sampleAnswer": "Immature believers are like children in a boat, thrown about by the waves and pushed along by every gust of teaching. They are open to human trickery and to the cunning of people who deceive. Such instability puts them at risk. Paul’s answer is not suspicion but growing up in Christ.",
+          "keyTerms": [
+            "children|infant",
+            "waves|tossed",
+            "wind|teaching",
+            "decei|trick|craft"
+          ]
+        },
+        {
+          "elementId": "ch04-el16",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does the body grow, according to verses 15–16? Notice the phrases about truth, love and each part.",
+          "linkedPassage": "Ephesians 4:11–16",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at how Paul describes the way the body is joined together and what each part contributes.",
+          "sampleAnswer": "The body grows by speaking the truth in love, and so we grow up into Christ, who is the head. The whole body is fitted together and held firm by every joint that supports it. As each part does its share, the body builds itself up in love. Growth therefore needs truth, love, and the contribution of every member.",
+          "keyTerms": [
+            "truth",
+            "love",
+            "head|Christ",
+            "each part|every|body",
+            "grow"
+          ]
+        },
+        {
+          "elementId": "ch04-el17",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch04-el18",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which of the qualities in verse 2 do you find hardest in your church life? Why?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch04-el19",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "What gift or ability has God given you that could help to build up others? Who could help you see it more clearly?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch04-el20",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Think of a time you were ‘blown about’ by a new idea or teaching. What helped you to stand firm, and what might help you in the future?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch04-el21",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>Next time we read what the new life looks like in everyday habits: how we speak, how we treat others, and how we walk in the light.</p>"
+        }
+      ]
+    },
+    {
+      "chapterNumber": 5,
+      "chapterTitle": "A life that looks like Christ",
+      "elements": [
+        {
+          "elementId": "ch05-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>This session covers a long stretch of practical teaching. Paul links how people think with how they live, and he roots every command in what God has already done in Christ. As you read, notice the reasons Paul gives for each command.</p>"
+        },
+        {
+          "elementId": "ch05-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "Think of someone whose way of life changed noticeably after they came to know Christ. What difference did you see?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch05-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Leaving the old way of life"
+        },
+        {
+          "elementId": "ch05-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 4:17–24",
+          "translation": "NET",
+          "passageText": "<p><sup>17</sup>So I say this, and insist in the Lord, that you no longer live as the Gentiles do, in the futility of their thinking. <sup>18</sup>They are darkened in their understanding, being alienated from the life of God because of the ignorance that is in them due to the hardness of their hearts. <sup>19</sup>Because they are callous, they have given themselves over to indecency for the practice of every kind of impurity with greediness. <sup>20</sup>But you did not learn about Christ like this, <sup>21</sup>if indeed you heard about him and were taught in him, just as the truth is in Jesus. <sup>22</sup>You were taught with reference to your former way of life to lay aside the old man who is being corrupted in accordance with deceitful desires, <sup>23</sup>to be renewed in the spirit of your mind, <sup>24</sup>and to put on the new man who has been created in God’s image —in righteousness and holiness that comes from truth.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+4%3A17-24&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch05-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does Paul describe the way of life and thinking of those who do not know God (verses 17–19)? Trace the path from the mind to behaviour.",
+          "linkedPassage": "Ephesians 4:17–24",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words about the mind, the heart and the conduct that follows.",
+          "sampleAnswer": "Their thinking is futile and their understanding is darkened. They are ignorant because of hardness of heart, and they are cut off from the life of God. They have become callous and given themselves over to sensuality and every kind of impurity. The problem begins in the mind and heart and ends in conduct.",
+          "keyTerms": [
+            "futil",
+            "dark",
+            "ignoran|hard",
+            "alienated|cut off",
+            "sensual|impur"
+          ]
+        },
+        {
+          "elementId": "ch05-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul say his readers have learned in Christ (verses 20–24)? What three actions does he describe?",
+          "linkedPassage": "Ephesians 4:17–24",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for the three verbs: put off, be renewed, put on.",
+          "sampleAnswer": "They have been taught in Christ according to the truth that is in Jesus. They are to put off the old self, which is being corrupted by deceitful desires. They are to be renewed in the spirit of their minds. They are to clothe themselves with the new self, which is made in God’s likeness and shows itself in true righteousness and holiness.",
+          "keyTerms": [
+            "put off|take off",
+            "old",
+            "renew",
+            "new self|new man",
+            "righteous|holy"
+          ]
+        },
+        {
+          "elementId": "ch05-el07",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Daily habits"
+        },
+        {
+          "elementId": "ch05-el08",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 4:25–5:2",
+          "translation": "NET",
+          "passageText": "<p><sup>25</sup>Therefore, having laid aside falsehood, each one of you speak the truth with his neighbor, because we are members of one another. <sup>26</sup>Be angry and do not sin; do not let the sun go down on the cause of your anger. <sup>27</sup>Do not give the devil an opportunity. <sup>28</sup>The one who steals must steal no longer; instead he must labor, doing good with his own hands, so that he will have something to share with the one who has need. <sup>29</sup>You must let no unwholesome word come out of your mouth, but only what is beneficial for the building up of the one in need, that it would give grace to those who hear. <sup>30</sup>And do not grieve the Holy Spirit of God, by whom you were sealed for the day of redemption. <sup>31</sup>You must put away all bitterness, anger, wrath, quarreling, and slanderous talk—indeed all malice. <sup>32</sup>Instead, be kind to one another, compassionate, forgiving one another, just as God in Christ also forgave you. <sup>5:1</sup>Therefore, be imitators of God as dearly loved children <sup>2</sup>and live in love, just as Christ also loved us and gave himself for us, a sacrificial and fragrant offering to God.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+4%3A25-5%3A2&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch05-el09",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Choose three of the commands in 4:25–29. For each, what is the old habit, what replaces it, and what reason does Paul give?",
+          "linkedPassage": "Ephesians 4:25–5:2",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice that each command is paired with a reason.",
+          "sampleAnswer": "Paul tells them to put away falsehood and to speak truthfully, since we are members of one another. Anger must be dealt with quickly, without giving the devil a foothold. The thief must stop stealing and work honestly so as to have something to share. Our talk should be what builds others up rather than what harms. In each case a bad habit is replaced by something that serves other people.",
+          "keyTerms": [
+            "truth",
+            "anger",
+            "steal|work",
+            "build|corrupt|talk"
+          ]
+        },
+        {
+          "elementId": "ch05-el10",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul say about the Holy Spirit and about forgiveness in 4:30–32? How are the two connected with the way we treat others?",
+          "linkedPassage": "Ephesians 4:25–5:2",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what we should not do to the Spirit and what God has done for us.",
+          "sampleAnswer": "We are told not to grieve the Holy Spirit, by whom we were sealed for the day of redemption. This means our behaviour matters to him. Bitterness, rage, anger, slander and malice are to be removed. In their place we are to be kind and tender-hearted, forgiving one another as God in Christ has forgiven us.",
+          "keyTerms": [
+            "grieve",
+            "Spirit",
+            "bitter",
+            "kind|tender|compassion",
+            "forgiv"
+          ]
+        },
+        {
+          "elementId": "ch05-el11",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "In 5:1–2, who are we to imitate, and what example does Paul give?",
+          "linkedPassage": "Ephesians 4:25–5:2",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at who we are and who loved us.",
+          "sampleAnswer": "We are to imitate God, as his dearly loved children. We are to live a life of love, modelled on Christ’s love for us, in which he gave himself for us. His death is described as a sweet-smelling offering and sacrifice to God. Love, then, is defined by Christ’s self-giving.",
+          "keyTerms": [
+            "imitat",
+            "children",
+            "love",
+            "gave himself|sacrifice|offering"
+          ]
+        },
+        {
+          "elementId": "ch05-el12",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Children of light"
+        },
+        {
+          "elementId": "ch05-el13",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 5:3–14",
+          "translation": "NET",
+          "passageText": "<p><sup>3</sup>But among you there must not be either sexual immorality, impurity of any kind, or greed, as these are not fitting for the saints. <sup>4</sup>Neither should there be vulgar speech, foolish talk, or coarse jesting—all of which are out of character—but rather thanksgiving. <sup>5</sup>For you can be confident of this one thing: that no person who is immoral, impure, or greedy (such a person is an idolater) has any inheritance in the kingdom of Christ and God. <sup>6</sup>Let nobody deceive you with empty words, for because of these things God’s wrath comes on the sons of disobedience. <sup>7</sup>Therefore do not be sharers with them, <sup>8</sup>for you were at one time darkness, but now you are light in the Lord. Live like children of light— <sup>9</sup>for the fruit of the light consists in all goodness, righteousness, and truth— <sup>10</sup>trying to learn what is pleasing to the Lord. <sup>11</sup>Do not participate in the unfruitful deeds of darkness, but rather expose them. <sup>12</sup>For the things they do in secret are shameful even to mention. <sup>13</sup>But all things being exposed by the light are made visible. <sup>14</sup>For everything made visible is light, and for this reason it says: “Awake, O sleeper! Rise from the dead, and Christ will shine on you!”</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+5%3A3-14&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch05-el14",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What must be completely absent from God’s people (verses 3–7), and what is to take its place? What reason does Paul give?",
+          "linkedPassage": "Ephesians 5:3–14",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the list of what is ‘not even to be named’ and the word that replaces it.",
+          "sampleAnswer": "Sexual immorality, impurity and greed are to be left out of their lives altogether. Crude and foolish talk is also out of place, and in its place there should be thanksgiving. These things are unfitting for God’s holy people. Those who persist in them have no inheritance in the kingdom of Christ and God, so Paul warns them not to be deceived.",
+          "keyTerms": [
+            "immoral",
+            "greed|covet",
+            "thank",
+            "inherit",
+            "deceiv"
+          ]
+        },
+        {
+          "elementId": "ch05-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul says ‘you were at one time darkness, but now you are light in the Lord’ (verse 8). What does the light produce, and how are we to treat the works of darkness (verses 9–14)?",
+          "linkedPassage": "Ephesians 5:3–14",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the ‘fruit of the light’ and at what Paul says about exposing things.",
+          "sampleAnswer": "The fruit of the light is all that is good, right and true. Believers are to discover what pleases the Lord, to take no part in the fruitless deeds of darkness, and to show them up for what they are, since the light makes everything plain. The call in verse 14 is to wake up from sleep, to rise from among the dead, and to receive the light of Christ.",
+          "keyTerms": [
+            "light",
+            "good|righteous|truth",
+            "please",
+            "expose",
+            "wake|rise|shine"
+          ]
+        },
+        {
+          "elementId": "ch05-el16",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 5:15–20",
+          "translation": "NET",
+          "passageText": "<p><sup>15</sup>Therefore consider carefully how you live—not as unwise but as wise, <sup>16</sup>taking advantage of every opportunity, because the days are evil. <sup>17</sup>For this reason do not be foolish, but be wise by understanding what the Lord’s will is. <sup>18</sup>And do not get drunk with wine, which is debauchery, but be filled by the Spirit, <sup>19</sup>speaking to one another in psalms, hymns, and spiritual songs, singing and making music in your hearts to the Lord, <sup>20</sup>always giving thanks to God the Father for all things in the name of our Lord Jesus Christ,</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+5%3A15-20&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch05-el17",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul contrast in verses 15–18, and what does he give as the alternative to being drunk with wine?",
+          "linkedPassage": "Ephesians 5:15–20",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the two kinds of living, and at what we are to be ‘filled’ with.",
+          "sampleAnswer": "Paul contrasts unwise living with wise living. Believers are to use every opportunity well, since the days are evil, and to understand what the Lord’s will is. They are not to be drunk with wine, which leads to wild living. Instead they are to be filled with the Spirit, so that the Spirit takes the place of control by drink.",
+          "keyTerms": [
+            "wise",
+            "time|opportunity",
+            "will",
+            "drunk",
+            "filled|Spirit"
+          ]
+        },
+        {
+          "elementId": "ch05-el18",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul say a life filled by the Spirit looks like in verses 19–20?",
+          "linkedPassage": "Ephesians 5:15–20",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the three things Paul mentions: speaking, singing and giving thanks.",
+          "sampleAnswer": "Such a life shows itself in encouraging one another with psalms, hymns and songs inspired by the Spirit. It also includes singing and making music to the Lord from the heart. It is marked by constant thanks to God the Father for everything, offered in the name of the Lord Jesus Christ. The overflow is worship and gratitude shared with other believers.",
+          "keyTerms": [
+            "psalms|hymns|songs",
+            "sing",
+            "thank",
+            "Lord Jesus|Father"
+          ]
+        },
+        {
+          "elementId": "ch05-el19",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch05-el20",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which habit of the ‘old self’ in this passage do you most need God’s help to put away?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch05-el21",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Paul links the renewing of our minds with the way we live. What are you feeding your mind with at the moment, and is it helping you grow?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch05-el22",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Is there anyone you need to forgive, or whose forgiveness you need to ask, as God in Christ has forgiven you?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch05-el23",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>Next time Paul applies the same gospel to the closest of human relationships: marriage, parents and children, and work.</p>"
+        }
+      ]
+    },
+    {
+      "chapterNumber": 6,
+      "chapterTitle": "Households under Christ’s rule",
+      "elements": [
+        {
+          "elementId": "ch06-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>This passage speaks about marriage, family and work. Faithful Christians read some of its key words in different ways, so as you read, pay close attention to what the text actually says to each person, and to how Paul repeatedly points to Christ.</p>"
+        },
+        {
+          "elementId": "ch06-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "What do people today generally assume about authority and submission in marriage? Where do you think those assumptions come from?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch06-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Husbands and wives"
+        },
+        {
+          "elementId": "ch06-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 5:21–24",
+          "translation": "NET",
+          "passageText": "<p><sup>21</sup>and submitting to one another out of reverence for Christ. <sup>22</sup>Wives, submit to your husbands as to the Lord, <sup>23</sup>because the husband is the head of the wife as also Christ is the head of the church (he himself being the savior of the body). <sup>24</sup>But as the church submits to Christ, so also wives should submit to their husbands in everything.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+5%3A21-24&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Verse 21 introduces the whole passage. Who is addressed, and what is the motive?",
+          "linkedPassage": "Ephesians 5:21–24",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Notice the words ‘one another’ and ‘out of reverence for Christ’.",
+          "sampleAnswer": "Paul speaks to believers in general and asks them to submit to one another. The motive is reverence for Christ. The teaching to wives, husbands, children and slaves grows out of this attitude. It sets the tone for what follows.",
+          "keyTerms": [
+            "one another|each other",
+            "reverence|Christ",
+            "submit"
+          ]
+        },
+        {
+          "elementId": "ch06-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What is asked of wives in verses 22–24, and what comparison does Paul use?",
+          "linkedPassage": "Ephesians 5:21–24",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the comparison between the husband and Christ.",
+          "sampleAnswer": "Wives are asked to submit to their husbands as they would to the Lord. The reason given is that the husband is head of the wife in the way Christ is head of the church, and Christ is the Saviour of that body. As the church submits to Christ, so wives are to submit to their husbands in everything. The comparison with Christ is central to the instruction.",
+          "keyTerms": [
+            "submit",
+            "husband",
+            "head",
+            "church|Christ",
+            "Lord"
+          ]
+        },
+        {
+          "elementId": "ch06-el07",
+          "type": "callout",
+          "subtype": "general",
+          "format": "HTML",
+          "eyebrow": "Two ways of reading",
+          "term": "Head and submission",
+          "question": "Tap to see how Christians read verses 21–24 differently.",
+          "answer": "<p>Christians who take the Bible seriously read these verses in two main ways. Both agree that Paul is not allowing harshness or control, and that Christ’s self-giving love is the pattern for both spouses.</p><ul><li><strong>Complementarian reading.</strong> The husband is head of his wife as Christ is head of the church, so he carries a loving, sacrificial responsibility to lead and protect, and the wife willingly submits to that leadership. The roles differ, but husband and wife are equal in worth and equally under Christ.</li><li><strong>Egalitarian (or mutualist) reading.</strong> Verse 21 asks all believers to submit to one another, and the verses that follow work that out within marriage. ‘Head’ may carry the sense of source or nourisher rather than ruler, and Paul takes the ordinary household instructions of his day and reshapes them by asking far more of the husband than the culture did. Marriage is then a partnership of mutual service.</li></ul><p>As you read the rest of the passage, notice what is said to each partner and what both are asked to imitate. Which details does each reading take most seriously?</p>",
+          "buttonText": "Read more ➡"
+        },
+        {
+          "elementId": "ch06-el08",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 5:25–33",
+          "translation": "NET",
+          "passageText": "<p><sup>25</sup>Husbands, love your wives just as Christ loved the church and gave himself for her <sup>26</sup>to sanctify her by cleansing her with the washing of the water by the word, <sup>27</sup>so that he may present the church to himself as glorious—not having a stain or wrinkle, or any such blemish, but holy and blameless. <sup>28</sup>In the same way husbands ought to love their wives as their own bodies. He who loves his wife loves himself. <sup>29</sup>For no one has ever hated his own body, but he feeds it and takes care of it, just as Christ also does the church, <sup>30</sup>because we are members of his body. <sup>31</sup>For this reason a man will leave his father and mother and will be joined to his wife, and the two will become one flesh. <sup>32</sup>This mystery is great—but I am actually speaking with reference to Christ and the church. <sup>33</sup>Nevertheless, each one of you must also love his own wife as he loves himself, and the wife must respect her husband.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+5%3A25-33&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el09",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What pattern is set for husbands in verses 25–27, and what is Christ’s purpose for the church?",
+          "linkedPassage": "Ephesians 5:25–33",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what Christ gave and what he aims to do for the church.",
+          "sampleAnswer": "Husbands are to love their wives in the way Christ loved the church, giving himself up for her. Christ’s aim is to make the church holy, cleansing her by water and the word. He wants to present her to himself as glorious, without stain or wrinkle, holy and blameless. The measure of a husband’s love is therefore Christ’s sacrifice, aimed at the good of the one he loves.",
+          "keyTerms": [
+            "love",
+            "gave himself|give",
+            "holy|cleans|sanctif",
+            "present|glorious|blameless"
+          ]
+        },
+        {
+          "elementId": "ch06-el10",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What second reason does Paul give in verses 28–30 for a husband to love his wife? What words does he use for how we care for our own bodies?",
+          "linkedPassage": "Ephesians 5:25–33",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the comparison with a man’s own body and the two verbs used for care.",
+          "sampleAnswer": "Husbands should love their wives as they love their own bodies; in loving his wife a man loves himself. Nobody hates his own body; instead he feeds and cares for it. Christ does the same for the church, because we are members of his body. A husband’s care should therefore be as natural and constant as caring for himself.",
+          "keyTerms": [
+            "own bod",
+            "nourish|feed",
+            "cherish|care",
+            "members|body"
+          ]
+        },
+        {
+          "elementId": "ch06-el11",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul quotes from Genesis in verse 31 and calls it a ‘mystery’ in verse 32. What does he say it points to, and how does verse 33 sum up the passage?",
+          "linkedPassage": "Ephesians 5:25–33",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what Paul says he is ‘talking about’ in verse 32.",
+          "sampleAnswer": "The Genesis quotation speaks of a man leaving his parents, being joined to his wife, and the two becoming one flesh. Paul says this is a profound mystery, and he is speaking about Christ and the church. So marriage points beyond itself to Christ’s union with his people. He sums up by saying each husband must love his wife as himself, and each wife must respect her husband.",
+          "keyTerms": [
+            "one flesh",
+            "mystery",
+            "Christ and the church|Christ",
+            "love",
+            "respect"
+          ]
+        },
+        {
+          "elementId": "ch06-el12",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Children and parents"
+        },
+        {
+          "elementId": "ch06-el13",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 6:1–4",
+          "translation": "NET",
+          "passageText": "<p><sup>1</sup>Children, obey your parents in the Lord, for this is right. <sup>2</sup>“Honor your father and mother,” which is the first commandment accompanied by a promise, namely, <sup>3</sup>“that it will go well with you and that you will live a long time on the earth.” <sup>4</sup>Fathers, do not provoke your children to anger, but raise them up in the discipline and instruction of the Lord.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+6%3A1-4&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el14",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul ask of children in 6:1–3, and what reasons does he give?",
+          "linkedPassage": "Ephesians 6:1–4",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘in the Lord’, ‘right’ and ‘promise’.",
+          "sampleAnswer": "Children are to obey their parents as those who belong to the Lord, because it is the right thing to do. They are to honour their father and mother, which Paul calls the first commandment with a promise. The promise is that life will go well for them, and that they will live long on the earth. Obedience and honour are set in the context of the Lord.",
+          "keyTerms": [
+            "obey",
+            "honou|honor",
+            "right",
+            "promise"
+          ]
+        },
+        {
+          "elementId": "ch06-el15",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul say fathers must avoid and what must they do (verse 4)?",
+          "linkedPassage": "Ephesians 6:1–4",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look for one thing to avoid and two things to do.",
+          "sampleAnswer": "Fathers must not goad their children into anger. They are to raise them with the Lord’s discipline and teaching. Parents have authority, but it is to be used for the good of the children rather than to exasperate them. The goal is to bring children up with Christ at the centre.",
+          "keyTerms": [
+            "provoke|anger|exasperat",
+            "discipline|train|bring up",
+            "instruction|teach",
+            "Lord"
+          ]
+        },
+        {
+          "elementId": "ch06-el16",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Slaves and masters"
+        },
+        {
+          "elementId": "ch06-el17",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 6:5–9",
+          "translation": "NET",
+          "passageText": "<p><sup>5</sup>Slaves, obey your human masters with fear and trembling, in the sincerity of your heart, as to Christ, <sup>6</sup>not like those who do their work only when someone is watching —as people-pleasers—but as slaves of Christ doing the will of God from the heart. <sup>7</sup>Obey with enthusiasm, as though serving the Lord and not people, <sup>8</sup>because you know that each person, whether slave or free, if he does something good, this will be rewarded by the Lord. <sup>9</sup>Masters, treat your slaves the same way, giving up the use of threats, because you know that both you and they have the same master in heaven, and there is no favoritism with him.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+6%3A5-9&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch06-el18",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul tell slaves in verses 5–8, and what reasons does he give? Who is their real Master?",
+          "linkedPassage": "Ephesians 6:5–9",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at who they are really serving, and who will reward them.",
+          "sampleAnswer": "Paul tells slaves to obey their earthly masters with respect and sincerity, as they would obey Christ. They are not to serve only to win favour but as slaves of Christ doing God’s will from the heart. He gives as a reason that the Lord will reward each person for any good they do, whether slave or free. Their real Master is Christ.",
+          "keyTerms": [
+            "obey",
+            "sincer|heart",
+            "Christ",
+            "reward|Lord",
+            "free"
+          ]
+        },
+        {
+          "elementId": "ch06-el19",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul tell masters in verse 9, and what do masters and slaves have in common?",
+          "linkedPassage": "Ephesians 6:5–9",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what masters must stop doing and who is ‘in heaven’.",
+          "sampleAnswer": "Masters are to treat their slaves in the same spirit, with goodwill and respect. They are to give up threatening them. Both masters and slaves have the same Master in heaven, who shows no favouritism. By reminding masters that they too are accountable, Paul undermines the idea that they are the highest authority.",
+          "keyTerms": [
+            "same way|treat",
+            "threat",
+            "Master|Lord",
+            "favouritism|partiality"
+          ]
+        },
+        {
+          "elementId": "ch06-el20",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch06-el21",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Where do you hold some authority over others (at home, at work or at church)? What would it look like to use it as Christ uses his?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch06-el22",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Where are you called to serve someone ‘as to the Lord’? How might remembering Christ change the way you do it?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch06-el23",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Whatever your own situation (married, single, widowed or something else), what does this passage show about how the gospel shapes everyday relationships?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch06-el24",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>Next time we reach the last section of the letter, where Paul calls his readers to stand firm against evil, and ends with a request for prayer and a blessing.</p>"
+        }
+      ]
+    },
+    {
+      "chapterNumber": 7,
+      "chapterTitle": "Strong in the Lord",
+      "elements": [
+        {
+          "elementId": "ch07-el01",
+          "type": "text",
+          "subtype": "intro",
+          "format": "HTML",
+          "text": "<p>The letter ends with a call to stand firm. Paul uses the picture of a soldier’s equipment, and he is careful about where the strength comes from. Read the passage slowly and note each piece of equipment and what it does.</p>"
+        },
+        {
+          "elementId": "ch07-el02",
+          "type": "question",
+          "subtype": "header",
+          "header": "As we get started…",
+          "format": "plainText",
+          "question": "When you picture a Christian facing spiritual opposition, what do you imagine? Where do your ideas come from?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch07-el03",
+          "type": "heading",
+          "subtype": "section",
+          "text": "The opposition"
+        },
+        {
+          "elementId": "ch07-el04",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 6:10–13",
+          "translation": "NET",
+          "passageText": "<p><sup>10</sup>Finally, be strengthened in the Lord and in the strength of his power. <sup>11</sup>Clothe yourselves with the full armor of God, so that you will be able to stand against the schemes of the devil. <sup>12</sup>For our struggle is not against flesh and blood, but against the rulers, against the powers, against the world rulers of this darkness, against the spiritual forces of evil in the heavens. <sup>13</sup>For this reason, take up the full armor of God so that you may be able to stand your ground on the evil day, and having done everything, to stand.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+6%3A10-13&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch07-el05",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Where does Paul say our strength comes from (verse 10), and what are we told to put on and why (verse 11)?",
+          "linkedPassage": "Ephesians 6:10–13",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the words ‘in the Lord’ and ‘the armour of God’.",
+          "sampleAnswer": "We are to be strengthened in the Lord and in the strength of his power, so the strength is his rather than ours. We are told to clothe ourselves with the full armour of God. The purpose is that we may stand against the schemes of the devil. The equipment comes from God, and so does the power.",
+          "keyTerms": [
+            "strength",
+            "Lord",
+            "armour|armor",
+            "devil|schemes",
+            "stand"
+          ]
+        },
+        {
+          "elementId": "ch07-el06",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Who is the struggle against, and who is it not against (verse 12)?",
+          "linkedPassage": "Ephesians 6:10–13",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what the struggle is not, and what it is.",
+          "sampleAnswer": "The struggle is not against flesh and blood. It is against rulers, powers, the world rulers of this darkness, and the spiritual forces of evil in the heavens. The opposition is real and spiritual, and people are not the ultimate enemy.",
+          "keyTerms": [
+            "flesh and blood",
+            "rulers|authorities|powers",
+            "spiritual",
+            "evil|dark"
+          ]
+        },
+        {
+          "elementId": "ch07-el07",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What is the aim of putting on the armour (verse 13)? Notice how often the word ‘stand’ is repeated in verses 11–14.",
+          "linkedPassage": "Ephesians 6:10–13",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Count the uses of ‘stand’.",
+          "sampleAnswer": "The aim is to be able to stand your ground on the evil day and, having done everything, to stand. The emphasis falls on holding a position rather than on charging ahead. The armour is for standing in the strength the Lord supplies.",
+          "keyTerms": [
+            "stand",
+            "ground|withstand|resist",
+            "evil day|day of evil",
+            "everything"
+          ]
+        },
+        {
+          "elementId": "ch07-el08",
+          "type": "heading",
+          "subtype": "section",
+          "text": "The equipment"
+        },
+        {
+          "elementId": "ch07-el09",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 6:14–20",
+          "translation": "NET",
+          "passageText": "<p><sup>14</sup>Stand firm therefore, by fastening the belt of truth around your waist, by putting on the breastplate of righteousness, <sup>15</sup>by fitting your feet with the preparation that comes from the good news of peace, <sup>16</sup>and in all of this, by taking up the shield of faith with which you can extinguish all the flaming arrows of the evil one. <sup>17</sup>And take the helmet of salvation and the sword of the Spirit (which is the word of God). <sup>18</sup>With every prayer and petition, pray at all times in the Spirit, and to this end be alert, with all perseverance and petitions for all the saints. <sup>19</sup>Pray for me also, that I may be given the right words when I begin to speak —that I may confidently make known the mystery of the gospel, <sup>20</sup>for which I am an ambassador in chains. Pray that I may be able to speak boldly as I ought to speak.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+6%3A14-20&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch07-el10",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Name the first three pieces of equipment in verses 14–15, and what each is described as.",
+          "linkedPassage": "Ephesians 6:14–20",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the belt, the breastplate and the footwear.",
+          "sampleAnswer": "The belt is truth and the breastplate is righteousness. The footwear is the preparation that comes from the good news of peace. Each is a way of living out the gospel: being truthful, living rightly, and being prepared to share the good news. They are ordinary habits of faithful discipleship.",
+          "keyTerms": [
+            "truth",
+            "righteous",
+            "gospel|good news|peace",
+            "feet|shoes|preparation|readiness"
+          ]
+        },
+        {
+          "elementId": "ch07-el11",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Name the last three pieces in verses 16–17 and say what each does.",
+          "linkedPassage": "Ephesians 6:14–20",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at the shield, the helmet and the sword.",
+          "sampleAnswer": "The shield of faith can put out all the flaming arrows of the evil one. The helmet is salvation. The sword is the word of God, which the Spirit supplies. Faith, salvation and God’s word are what God gives us to hold on to and to use.",
+          "keyTerms": [
+            "shield|faith",
+            "arrow|evil one",
+            "helmet|salvation",
+            "sword|word"
+          ]
+        },
+        {
+          "elementId": "ch07-el12",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "How does prayer fit into this passage (verse 18)? What phrases describe how and for whom we should pray?",
+          "linkedPassage": "Ephesians 6:14–20",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at ‘all times’, ‘in the Spirit’, ‘keep alert’ and ‘all the saints’.",
+          "sampleAnswer": "Paul says to pray constantly, in the Spirit, using every kind of prayer and request. He asks for alertness and perseverance. The prayers are to be for all the saints, which means for all believers. Prayer is less another piece of equipment than the way the whole soldier lives.",
+          "keyTerms": [
+            "all times|always|constantly",
+            "Spirit",
+            "alert|watch",
+            "persever",
+            "all the saints|all God’s people"
+          ]
+        },
+        {
+          "elementId": "ch07-el13",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "What does Paul ask his readers to pray for him (verses 19–20)? What does this tell us about what he cared about most?",
+          "linkedPassage": "Ephesians 6:14–20",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at what Paul does not ask for, as well as what he does.",
+          "sampleAnswer": "He asks them to pray that he would be given the right words, so that he can confidently make known the mystery of the gospel. He describes himself as an ambassador in chains. He does not ask first for release from prison. His priority is that the gospel is proclaimed boldly, as he ought to speak.",
+          "keyTerms": [
+            "words",
+            "confident|fearless|boldly|boldness",
+            "gospel|mystery",
+            "chains|prison|ambassador"
+          ]
+        },
+        {
+          "elementId": "ch07-el14",
+          "type": "heading",
+          "subtype": "section",
+          "text": "Farewell"
+        },
+        {
+          "elementId": "ch07-el15",
+          "type": "biblePassage",
+          "format": "HTML",
+          "bibleRef": "Ephesians 6:21–24",
+          "translation": "NET",
+          "passageText": "<p><sup>21</sup>Tychicus, my dear brother and faithful servant in the Lord, will make everything known to you, so that you too may know about my circumstances, how I am doing. <sup>22</sup>I have sent him to you for this very purpose, that you may know our circumstances and that he may encourage your hearts. <sup>23</sup>Peace to the brothers and sisters, and love with faith, from God the Father and the Lord Jesus Christ. <sup>24</sup>Grace be with all those who love our Lord Jesus Christ with an undying love.</p>",
+          "passageUrl": "https://www.biblegateway.com/passage/?search=Ephesians+6%3A21-24&version=NET",
+          "bottomPadding": "none"
+        },
+        {
+          "elementId": "ch07-el16",
+          "type": "question",
+          "subtype": "standard",
+          "format": "plainText",
+          "question": "Paul ends by sending Tychicus and giving a blessing. What is Tychicus to do, and what does Paul wish for his readers?",
+          "linkedPassage": "Ephesians 6:21–24",
+          "answerPlaceholder": "Your thoughts…",
+          "questionHint": "Look at how Paul describes Tychicus, and at the three things Paul wishes for them.",
+          "sampleAnswer": "Tychicus, a beloved brother and faithful servant, will let them know how Paul is getting on, so that they may be encouraged. Paul wishes his readers peace, and love with faith, from God the Father and the Lord Jesus Christ. He ends with grace for all who love our Lord Jesus Christ with a love that does not die. The letter ends as it began, with grace and peace.",
+          "keyTerms": [
+            "Tychicus",
+            "encourage",
+            "peace",
+            "love",
+            "grace"
+          ]
+        },
+        {
+          "elementId": "ch07-el17",
+          "type": "heading",
+          "subtype": "reflection",
+          "text": "Reflect"
+        },
+        {
+          "elementId": "ch07-el18",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Which piece of the armour are you most likely to neglect? What would it look like to put it on this week?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch07-el19",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "How could you pray more regularly for other Christians, especially those who are facing hardship because of the gospel?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch07-el20",
+          "type": "question",
+          "subtype": "reflection",
+          "format": "plainText",
+          "question": "Looking back over the whole letter, which truth about God’s plan or God’s people has most shaped you, and how will you carry it forward?",
+          "answerPlaceholder": "Your thoughts…"
+        },
+        {
+          "elementId": "ch07-el21",
+          "type": "text",
+          "subtype": "closing",
+          "format": "HTML",
+          "text": "<p>You have reached the end of the letter. Take a few moments to look back over your answers from the earlier sessions, and to give thanks for what God has shown you.</p><p>If you would like to think further about Paul’s language of ‘powers’ in 6:12, tap <strong>Read more</strong> below.</p>"
+        }
+      ]
+    }
+  ],
+  "goDeeperData": {
+    "readMoreButtons": true,
+    "format": "HTML",
+    "titleMenuHeading": "Go deeper",
+    "chapters": [
+      {
+        "chapterNumber": 7,
+        "backToStudy": true,
+        "title": "The powers and the struggle",
+        "opening": {
+          "subtype": "standard",
+          "header": "What Paul says, and what he leaves unsaid",
+          "body": "<p>Paul says plainly that Christians are in a struggle (6:12), and he names an opponent, the devil (6:11, 16). He also describes forces ranged alongside the devil: rulers, powers, world rulers of this darkness, and spiritual forces of evil. Some of these words have already appeared in the letter (1:21; 2:2; 3:10). But Paul gives no ranking of these powers, no account of where they came from, and no technique for dealing with them. His aim is practical: that his readers should stand firm in the Lord’s strength.</p>"
+        },
+        "views": {
+          "subtype": "standard",
+          "header": "Three ways Christians understand ‘the powers’",
+          "body": "<ol><li><strong>Personal spiritual beings.</strong> The devil and his angels are real, personal enemies of God and his people, and verse 12 is naming them. Supporters point to the phrase ‘in the heavens’, to the mention of the devil in verses 11 and 16, and to the way Jesus and the apostles spoke of demons. This has been the majority reading among commentators.</li><li><strong>Human structures.</strong> ‘Rulers’ and ‘authorities’ describe the institutions, traditions and systems (government, law, economics, even religion) that shape human life and can enslave it. Supporters note that Paul uses the same words of human authorities in other places, and that this view takes the reality of structural evil seriously. Critics reply that Paul says the struggle is not against ‘flesh and blood’, and that the devil and the heavenly setting in this passage point away from earthly structures.</li><li><strong>Personal powers working through structures.</strong> The powers are personal spiritual beings, but they can use human institutions, ideas and systems as their instruments, so Christians may meet them in both places. This view tries to keep what is strong in the other two.</li></ol><p>All three agree that Paul’s own emphasis falls on how the church is to stand.</p>"
+        },
+        "danger": {
+          "subtype": "highlighted",
+          "header": "Two things to avoid",
+          "body": "<ul><li><strong>Ignoring the struggle.</strong> Some Christians never think of their faith as a contest with an opponent, and so they go unarmed and are caught off guard.</li><li><strong>Becoming preoccupied with it.</strong> Others make the powers the centre of attention, searching for demons or trying to name and rank them. Paul does neither. He points his readers to Christ’s strength, to truth, righteousness, the gospel, faith, salvation, God’s word and prayer. The powers are real, but Christ has been seated far above them (1:20–21), and that is where the passage keeps its focus.</li></ul>"
+        },
+        "armour": {
+          "subtype": "standard",
+          "header": "What the armour is made of",
+          "body": "<p>The commands in this passage are addressed to ‘you’ in the plural, so Paul is speaking to the whole church, and not only to individuals. Much of the language comes from Isaiah, where it describes God and his Messiah (Isaiah 11:5; 52:7; 59:17). To put on the armour is therefore to take on what God himself is like, and to stand in what Christ has won. Most of the pieces are defensive: the picture is of holding firm.</p>"
+        },
+        "discuss": {
+          "subtype": "highlighted",
+          "header": "Questions to talk over",
+          "body": "<ul><li>Looking only at verses 11–12, which of the three readings do you find most persuasive? What else would you need to know to decide?</li><li>Where have you seen the danger of ignoring the struggle? Where have you seen the danger of being preoccupied with it?</li><li>If the commands are given to the whole church, what might it look like to ‘stand’ together and not alone?</li><li>How does knowing that Christ has been seated above every power (1:20–21) change the way you read verse 12?</li></ul>"
+        }
+      }
+    ]
+  },
+  "studyAboutData": {
+    "author": {
+      "paras": [
+        "Rick Creighton grew up in Northern Ireland and studied maths at Oxford and then taught maths at a secondary school in England. After that, he studied theology at Moore Theological College in Sydney and London School of Theology.",
+        "He served as a church pastor in England for ten years, before moving to Nigeria in 2012, where he has been teaching at ECWA Theological Seminary Kagoro and Jos ECWA Theological Seminary. He has been involved with BeaconLight Training since 2003.",
+        "Rick is married to Alanna. They have three children: Asha, Conor, and Jack."
+      ]
+    },
+    "publisher": {
+      "name": "BeaconLight",
+      "url": "https://www.beaconlight.co.uk",
+      "paras": [
+        "BeaconLight is a non-denominational Christian training organisation based in the UK, founded in 1995. Its aim is to equip Christians worldwide with practically-applied Biblical gospel ministry tools — resources designed to help people both equip themselves and equip others.",
+        "BeaconLight’s resources include CrossCheck, which enables Christians to explain their faith and lead others to Jesus, and Word@Work, a verse-by-verse applied devotional commentary of the whole New Testament. BeaconLight also provides printed Biblical resources to prisons, seafarers, police, and the armed services.",
+        "BeaconLight believes that Christian ministry should be free of charge, and all its online materials are available without registration or payment. The ministry is funded entirely by donations.",
+        "BeaconLight is a member of the Evangelical Alliance and Global Connections, and is a registered charity in England and Wales (Charity No. 1047046).",
+        "AI assistance: this app edition was prepared with the help of an AI assistant. The author reviewed and approved the content."
+      ]
+    }
+  },
+  "copyrightData": {
+    "copyright": {
+      "statement": "Rick Creighton, 2026. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License."
+    },
+    "notices": [
+      "You do not have to comply with the licence for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.",
+      "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
+      "In preparing this edition, the author made use of Claude, an AI assistant, to draft the questions, notes and Go Deeper text from the Bible passages, and to prepare the study file. All content decisions, theological judgements, and final wording are the author’s responsibility.",
+      "In preparing this study the following works were consulted: John Stott, The Message of Ephesians; N. T. Wright, Paul for Everyone: The Prison Letters; Richard Coekin, Ephesians For You; Klyne Snodgrass, Ephesians (The NIV Application Commentary); Peter T. O’Brien, The Letter to the Ephesians. The questions and notes are original.",
+      "<p>Scripture quoted by permission. Quotations designated (<a href=\"http://netbible.org\">NET</a>) are from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. http://netbible.com All rights reserved.</p>"
+    ]
+  }
+}

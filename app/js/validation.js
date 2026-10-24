@@ -414,14 +414,20 @@ function _lvLevelFor(code) {
 // when the question has one; a partial answer gets a short list of steps, the
 // last of which is that pointer.
 function _lvDetailForCode(code, hint, hasMainPoint) {
-  const withHint = (withKey, withoutKey) => hint ? t(withKey) + ' ' + hint : t(withoutKey);
+  const hintItems = _lvHintItems(hint);
+  if (!hintItems.length) hint = null;            // nothing readable in it: treat as no hint
+  // With a hint, the message is shown on its own and the hint below it as a
+  // bulleted list (see _lvToastHtml); `message` keeps the older one-string form.
+  // So every lead-in used with a hint (the *_hint strings) ends with a colon,
+  // ready for the list. The no-hint strings end as sentences.
+  const withHint = (withKey, withoutKey) => hint ? t(withKey) : t(withoutKey);
   const pointer = hasMainPoint ? ' ' + t('validation_lv_see_main_point') : '';
   let text, steps = [];
   switch (code) {
     case 'stuck':           text = withHint('validation_lv_stuck_hint', 'validation_lv_stuck_no_hint'); break;
-    case 'tooShort':        text = withHint('validation_lv_too_short', 'validation_lv_too_short'); break;
-    case 'repeatsQuestion': text = withHint('validation_lv_repeats_question', 'validation_lv_repeats_question'); break;
-    case 'repeatsPassage':  text = withHint('validation_lv_repeats_passage', 'validation_lv_repeats_passage'); break;
+    case 'tooShort':        text = withHint('validation_lv_too_short_hint', 'validation_lv_too_short'); break;
+    case 'repeatsQuestion': text = withHint('validation_lv_repeats_question_hint', 'validation_lv_repeats_question'); break;
+    case 'repeatsPassage':  text = withHint('validation_lv_repeats_passage_hint', 'validation_lv_repeats_passage'); break;
     case 'offTopic':        text = withHint('validation_lv_off_topic_hint', 'validation_lv_off_topic_no_hint'); break;
     case 'partial':
       text = t('validation_lv_partial');
@@ -432,8 +438,20 @@ function _lvDetailForCode(code, hint, hasMainPoint) {
     case 'pass':            text = t('validation_lv_pass_thematic') + pointer; break;
     default:                text = withHint('validation_lv_pass_no_sample_hint', 'validation_lv_pass_no_sample_no_hint');
   }
-  const message = [text, ...steps.map((s, i) => `${i + 1}. ${s}`)].join('\n');
-  return { code, text, steps, message };
+  const showItems = hint && !['partial', 'strong', 'pass'].includes(code) ? hintItems : [];
+  const flatText = showItems.length ? text + ' ' + hint : text;
+  const message = [flatText, ...steps.map((s, i) => `${i + 1}. ${s}`)].join('\n');
+  return { code, text, steps, hintItems: showItems, message };
+}
+
+// A hint written on several lines (a "\n" between points) is shown as a
+// bulleted list, one bullet per line; a one-line hint is a list of one. A leading
+// "-", "*", "•" or "1." on a line is dropped, since the bullet replaces it.
+function _lvHintItems(hint) {
+  if (typeof hint !== 'string') return [];
+  return hint.split(/\r?\n/)
+    .map(s => s.replace(/^\s*(?:[-*•·]|\d{1,2}[.)])(?:\s+|$)/, '').trim())
+    .filter(Boolean);
 }
 
 // The toast's HTML. Everything from the study (the hint) is escaped; the face
@@ -444,9 +462,11 @@ function _lvToastHtml(detail) {
   const fix = s => escapeHtml(s).replace(/\[\[icon:mainPoint\]\]/g, icon);
   const steps = detail.steps && detail.steps.length
     ? `<ol class="lv-steps">${detail.steps.map(s => `<li>${fix(s)}</li>`).join('')}</ol>` : '';
+  const hints = detail.hintItems && detail.hintItems.length
+    ? `<ul class="lv-hints">${detail.hintItems.map(s => `<li>${fix(s)}</li>`).join('')}</ul>` : '';
   const face = _lvLevelFor(detail.code).face;
   const faceHtml = face ? `<span class="lv-face" aria-hidden="true">${face}</span>` : '';
-  const body = `<div class="lv-text">${fix(detail.text)}${steps}</div>`;
+  const body = `<div class="lv-text">${fix(detail.text)}${hints}${steps}</div>`;
   const html = faceHtml ? `<div class="lv-toast">${faceHtml}${body}</div>` : body;
   return typeof expandInlineMarkers === 'function' ? expandInlineMarkers(html) : html;
 }

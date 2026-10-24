@@ -14,7 +14,7 @@
       }
     ],
     "estudyFileVersion": 3,
-    "studyVersion": 1.03,
+    "studyVersion": 1.04,
     "language": "en"
   },
   "theme": {
@@ -86,7 +86,7 @@
             "thank|pray"
           ],
           "mainPoint": "God is not an impersonal force but a **personal Father**, the Father of Jesus, so we can thank him and speak to him.",
-          "questionHint": "Paul uses a very specific title for God here — what does that title tell you about the kind of relationship God has with Jesus, and what might that imply about His nature?"
+          "questionHint": "Paul uses a very specific title for God here.\nWhat does that title tell you about the kind of relationship God has with Jesus?\nWhat might that imply about His nature?"
         },
         {
           "elementId": "ch01-el05",
@@ -148,7 +148,7 @@
             "made|formed|crafts|wove|created"
           ],
           "mainPoint": "Each human life is **no accident**: God forms every person with deliberate, intimate care.",
-          "questionHint": "Think about what weaving involves — would you describe it as a careless, random process, or a deliberate and careful one? What does that tell you about how God formed you?"
+          "questionHint": "Think about what weaving involves.\nWould you describe it as a careless, random process, or a deliberate and careful one?\nWhat does that tell you about how God formed you?"
         },
         {
           "elementId": "ch01-el10",
@@ -175,7 +175,7 @@
             "life"
           ],
           "mainPoint": "The Bible has a purpose: it was written **so that we may believe in Jesus and find life** in him.",
-          "questionHint": "John tells us directly what outcome he was hoping for in his readers — can you spot the two goals he mentions, and how are they connected to each other?"
+          "questionHint": "John tells us directly what outcome he was hoping for in his readers.\nCan you spot the two goals he mentions?\nHow are they connected to each other?"
         },
         {
           "elementId": "ch01-el12",
@@ -203,7 +203,7 @@
             "creat|sustain|uphold|powerful word"
           ],
           "mainPoint": "God has spoken **finally and fully through his Son**, who shows what God is truly like and shares God’s own divine identity.",
-          "questionHint": "The passage contrasts how God spoke ‘long ago’ with how he has spoken ‘in these last days’ — what is different about the two ways, and what does the description of the Son in verse 3 tell you about how closely he is linked to God himself?"
+          "questionHint": "The passage contrasts how God spoke ‘long ago’ with how he has spoken ‘in these last days’.\nWhat is different about the two ways?\nWhat does the description of the Son in verse 3 tell you about how closely he is linked to God himself?"
         },
         {
           "elementId": "ch01-el14",
@@ -238,7 +238,7 @@
             "emphasis|superlative|repeat|three times|threefold|highest|fullest"
           ],
           "mainPoint": "To call God holy is to say he is **utterly set apart**, morally perfect and unlike anything created. The threefold repetition is the strongest possible emphasis.",
-          "questionHint": "In everyday language, if you want to stress how extremely something is true, what do you do — and how might that same idea apply to why the angels repeat the word ‘holy’ three times rather than just once?"
+          "questionHint": "In everyday language, if you want to stress how extremely something is true, what do you do.\nHow might that same idea apply to why the angels repeat the word ‘holy’ three times rather than just once?"
         },
         {
           "elementId": "ch01-el17",
@@ -265,7 +265,7 @@
             "one with|united|equal|divine|fully god|is god"
           ],
           "mainPoint": "Jesus is **the image and presence of God**, so to see Jesus is to see what the Father is like.",
-          "questionHint": "Philip asks to be shown the Father as if the Father were somewhere else — why does Jesus find this question so surprising, and what does His answer imply about where the Father can actually be found?"
+          "questionHint": "Philip asks to be shown the Father as if the Father were somewhere else.\nWhy does Jesus find this question so surprising?\nWhat does His answer imply about where the Father can actually be found?"
         },
         {
           "elementId": "ch01-el19",
@@ -292,7 +292,7 @@
             "thousand years|like a day|like yesterday"
           ],
           "mainPoint": "God is **eternal and not bound by time**: he existed before creation and sees all history at once, so he is never caught off guard.",
-          "questionHint": "The psalmist says God existed even before the mountains came into existence or the world was brought into being, and calls Him ‘the eternal God’ — what does that tell you about whether God had a beginning, and how might that affect the way He experiences time compared to us?"
+          "questionHint": "The psalmist says God existed even before the mountains came into existence or the world was brought into being, and calls Him ‘the eternal God’.\nWhat does that tell you about whether God had a beginning?\nHow might that affect the way He experiences time compared to us?"
         },
         {
           "elementId": "ch01-el21",
@@ -319,7 +319,7 @@
             "character|promise|love|goodness"
           ],
           "mainPoint": "God **never changes**. His character, love and promises are constant, so we can trust him fully.",
-          "questionHint": "Think about a time when someone’s changing moods or broken promises made it hard to trust them — how might God being completely unchanging make a difference to how you relate to Him?"
+          "questionHint": "Think about a time when someone’s changing moods or broken promises made it hard to trust them.\nHow might God being completely unchanging make a difference to how you relate to Him?"
         },
         {
           "elementId": "ch01-el23",
@@ -345,7 +345,7 @@
             "guide|hand|hold|help|with me|near|with us"
           ],
           "mainPoint": "God is **present everywhere** and there is nowhere we can go from him. That is a comfort to those who trust him, and a searching thought for anyone who would rather hide.",
-          "questionHint": "The psalmist lists extreme opposites — heaven and Sheol, near and far — to make a point about God’s presence. What conclusion is he building towards, and does knowing God is always present feel like good news or an uncomfortable truth to you personally?"
+          "questionHint": "The psalmist lists extreme opposites — heaven and Sheol, near and far — to make a point about God’s presence.\nWhat conclusion is he building towards?\nDoes knowing God is always present feel like good news or an uncomfortable truth to you personally?"
         },
         {
           "elementId": "ch01-el25",
@@ -372,7 +372,7 @@
             "trust|permanent|unchanging|unconditional|always|never"
           ],
           "mainPoint": "God does not merely love; **love is who he is**. His love is therefore permanent and unconditional, not a response to our being lovable.",
-          "questionHint": "Consider the difference between saying ‘a teacher is kind’ and ‘a teacher sometimes acts kindly’ — which says more about their core identity, and how does that distinction apply to what John is claiming about God?"
+          "questionHint": "Consider the difference between saying ‘a teacher is kind’ and ‘a teacher sometimes acts kindly’.\nWhich says more about their core identity?\nHow does that distinction apply to what John is claiming about God?"
         },
         {
           "elementId": "ch01-el27",
@@ -407,7 +407,7 @@
             "proof|prove|initiat|first"
           ],
           "mainPoint": "God showed his love by **Christ’s death for us while we were still sinners**. His love is not a reward for good behaviour.",
-          "questionHint": "In most human relationships, we tend to show kindness to people who have been kind to us — so what is surprising or unexpected about the specific moment Paul says God chose to demonstrate His love?"
+          "questionHint": "In most human relationships, we tend to show kindness to people who have been kind to us.\nWhat is surprising or unexpected about the specific moment Paul says God chose to demonstrate His love?"
         },
         {
           "elementId": "ch01-el30",
@@ -434,7 +434,7 @@
             "unconditional|free|undeserved|originating|cost"
           ],
           "mainPoint": "**God took the initiative**. He loved us first and sent his Son at great cost, so his love originates in him and does not depend on ours.",
-          "questionHint": "John says ‘not that we have loved God, but that he loved us’ — who does he say made the first move, and what practical difference might it make to you personally to know that the relationship started with God, not with you?"
+          "questionHint": "John says ‘not that we have loved God, but that he loved us’.\nWho does he say made the first move?\nWhat practical difference might it make to you personally to know that the relationship started with God, not with you?"
         },
         {
           "elementId": "ch01-el32",
@@ -525,7 +525,7 @@
             "creat|made all things|creator"
           ],
           "mainPoint": "Before he came to earth Jesus **already existed** as the Word: with God, fully God, and the Creator of all things.",
-          "questionHint": "John says the Word was ‘in the beginning’ — does that suggest Jesus had a starting point, or that He was already there before anything began? What else does John say about His role before creation?"
+          "questionHint": "John says the Word was ‘in the beginning’.\nDoes that suggest Jesus had a starting point, or that He was already there before anything began?\nWhat else does John say about His role before creation?"
         },
         {
           "elementId": "ch02-el05",
@@ -552,7 +552,7 @@
             "hold together|sustain|upholds|actively|continues|cohere|keeps|held together|held"
           ],
           "mainPoint": "Jesus is **Creator and sustainer**. All things were made in him, through him and for him, and are held together in him.",
-          "questionHint": "Paul uses three prepositions in verse 16 — all things were created ‘in’, ‘through’, and ‘for’ Jesus. What does adding those three together suggest about the scope of His involvement in creation, and how does verse 17 extend that idea into the present?"
+          "questionHint": "Paul uses three prepositions in verse 16 — all things were created ‘in’, ‘through’, and ‘for’ Jesus.\nWhat does adding those three together suggest about the scope of His involvement in creation?\nHow does verse 17 extend that idea into the present?"
         },
         {
           "elementId": "ch02-el07",
@@ -587,7 +587,7 @@
             "mission|purpose|central|planned|announced"
           ],
           "mainPoint": "His very name states his mission: Jesus came **to save his people from their sins**.",
-          "questionHint": "The angel gives a reason for the name with the word ‘because’ — what specific problem does He say Jesus will come to solve, and does that surprise you given what people might have expected a Saviour to do?"
+          "questionHint": "The angel gives a reason for the name with the word ‘because’.\nWhat specific problem does He say Jesus will come to solve?\nDoes that surprise you given what people might have expected a Saviour to do?"
         },
         {
           "elementId": "ch02-el10",
@@ -621,7 +621,7 @@
             "grew|growth|strong|wisdom|develop|matur"
           ],
           "mainPoint": "Jesus’ birth and his **growth in strength and wisdom** show a genuine human childhood. He grew up as we do.",
-          "questionHint": "Verse 40 says Jesus ‘grew’ and ‘became strong’ — do those words suggest something that happened all at once or over time, and what does that tell you about whether His childhood was similar to ours?"
+          "questionHint": "Verse 40 says Jesus ‘grew’ and ‘became strong’.\nDo those words suggest something that happened all at once or over time?\nWhat does that tell you about whether His childhood was similar to ours?"
         },
         {
           "elementId": "ch02-el13",
@@ -647,7 +647,7 @@
             "real|genuine|literal|actual|limitation|weak"
           ],
           "mainPoint": "Jesus’ hunger was **real and physical**, confirming that his humanity was genuine and not a costume.",
-          "questionHint": "Think about what hunger feels like after missing just one meal — what does experiencing it after forty days tell you about whether Jesus had a real human body with real physical needs?"
+          "questionHint": "Think about what hunger feels like after missing just one meal.\nWhat does experiencing it after forty days tell you about whether Jesus had a real human body with real physical needs?"
         },
         {
           "elementId": "ch02-el15",
@@ -673,7 +673,7 @@
             "real|genuine|authentic|truly|actual|fully"
           ],
           "mainPoint": "Jesus’ tiredness shows that his **humanity was authentic**: he needed rest as we do.",
-          "questionHint": "Why do human beings need to sleep at all, and what does needing sleep tell you about the kind of body a person has — could someone who never truly got tired fall into a deep sleep during a dangerous storm?"
+          "questionHint": "Why do human beings need to sleep at all?\nWhat does needing sleep tell you about the kind of body a person has?\nCould someone who never truly got tired fall into a deep sleep during a dangerous storm?"
         },
         {
           "elementId": "ch02-el17",
@@ -700,7 +700,7 @@
             "human|humanity|body|mortal"
           ],
           "mainPoint": "Jesus **really died**, confirmed by those whose job was to make sure. This proves his humanity and makes the resurrection a real rising from death.",
-          "questionHint": "The soldiers broke the legs of the others to speed their deaths — so why is it significant that they did not need to do this to Jesus, and what were they effectively confirming by leaving Him alone?"
+          "questionHint": "The soldiers broke the legs of the others to speed their deaths.\nWhy is it significant that they did not need to do this to Jesus?\nWhat were they effectively confirming by leaving Him alone?"
         },
         {
           "elementId": "ch02-el19",
@@ -735,7 +735,7 @@
             "eternal|before|beginning|pre-exist|existed"
           ],
           "mainPoint": "John says the Word **was with God and was fully God**: Jesus is distinct from the Father yet shares his divine nature.",
-          "questionHint": "John says the Word was both ‘with God’ and ‘was fully God’ — do those two statements contradict each other, or could they together be pointing to something about Jesus that is more complex than a simple either/or?"
+          "questionHint": "John says the Word was both ‘with God’ and ‘was fully God’.\nDo those two statements contradict each other, or could they together be pointing to something about Jesus that is more complex than a simple either/or?"
         },
         {
           "elementId": "ch02-el22",
@@ -789,7 +789,7 @@
             "divine|share|nature|identity|equal|is god|one with|deity"
           ],
           "mainPoint": "Jesus does not merely speak for the Father; he **embodies him**. To know what God is like, we look at Jesus.",
-          "questionHint": "Philip wanted to be shown the Father as if Jesus and the Father were two entirely separate things to find — why does Jesus find this question so bewildering, and what does His surprise tell you about how closely He sees Himself as connected to the Father?"
+          "questionHint": "Philip wanted to be shown the Father as if Jesus and the Father were two entirely separate things to find.\nWhy does Jesus find this question so bewildering?\nWhat does His surprise tell you about how closely He sees Himself as connected to the Father?"
         },
         {
           "elementId": "ch02-el26",
@@ -816,7 +816,7 @@
             "fear|awe|overwhelm|afraid|worship"
           ],
           "mainPoint": "Jesus’ command over the storm is what only God does: **this is God himself in human form**.",
-          "questionHint": "In the Old Testament, who is described as having authority over the sea and storms? Knowing that, what conclusion does it seem like Mark wants the reader to draw from the disciples’ question?"
+          "questionHint": "In the Old Testament, who is described as having authority over the sea and storms?\nKnowing that, what conclusion does it seem like Mark wants the reader to draw from the disciples’ question?"
         },
         {
           "elementId": "ch02-el28",
@@ -843,7 +843,7 @@
             "believer|promise|live even|eternal life|rest"
           ],
           "mainPoint": "Jesus does not merely give life: **he is the resurrection and the life**, and his authority over death is his own.",
-          "questionHint": "Notice that Jesus says ‘I am the resurrection’ rather than ‘I can perform resurrections’ — what is the difference between those two statements, and what does it suggest about where the power over death actually resides?"
+          "questionHint": "Notice that Jesus says ‘I am the resurrection’ rather than ‘I can perform resurrections’.\nWhat is the difference between those two statements?\nWhat does it suggest about where the power over death actually resides?"
         },
         {
           "elementId": "ch02-el30",
@@ -888,7 +888,7 @@
             "help|approach|come to him|struggle|support"
           ],
           "mainPoint": "Jesus was tempted as we are, yet did not sin, so he **understands our struggles from the inside** and can truly help.",
-          "questionHint": "Think about whether you would rather seek help from someone who has only read about a difficult experience or from someone who has actually been through it themselves — how does that apply to what this verse is saying about Jesus?"
+          "questionHint": "Think about whether you would rather seek help from someone who has only read about a difficult experience or from someone who has actually been through it themselves.\nHow does that apply to what this verse is saying about Jesus?"
         },
         {
           "elementId": "ch02-el34",
@@ -979,7 +979,7 @@
             "himself|pronoun|he not|not an it|not a force|personhood|compassion|groan"
           ],
           "mainPoint": "The Spirit intercedes, knows God’s mind and helps us, so he is **a person and not an impersonal force**.",
-          "questionHint": "Think about what interceding for someone actually involves — could a wind or an electrical current do it? What does it require, and do those qualities belong to a force or a person?"
+          "questionHint": "Think about what interceding for someone actually involves.\nCould a wind or an electrical current do it?\nWhat does it require?\nDo those qualities belong to a force or a person?"
         },
         {
           "elementId": "ch03-el05",
@@ -1006,7 +1006,7 @@
             "behaviour|behavior|how we live|matters|conduct"
           ],
           "mainPoint": "The Spirit can be grieved, so he is **a person who feels and cares** about how we live.",
-          "questionHint": "Can you grieve a tool, a machine, or a natural force? What kind of being must something be in order to experience grief, and what does that imply about the Holy Spirit?"
+          "questionHint": "Can you grieve a tool, a machine, or a natural force?\nWhat kind of being must something be in order to experience grief?\nWhat does that imply about the Holy Spirit?"
         },
         {
           "elementId": "ch03-el07",
@@ -1068,7 +1068,7 @@
             "each|individual|personal|everyone|every"
           ],
           "mainPoint": "Wind and fire show the Spirit’s coming as **powerful, purifying and personal**, resting on each believer.",
-          "questionHint": "Think about the properties of wind and fire — they are both powerful, both impossible to fully control, and both visible through their effects rather than directly. What might those qualities be saying about how the Spirit works?"
+          "questionHint": "Think about the properties of wind and fire — they are both powerful, both impossible to fully control, and both visible through their effects rather than directly.\nWhat might those qualities be saying about how the Spirit works?"
         },
         {
           "elementId": "ch03-el12",
@@ -1103,7 +1103,7 @@
             "belong|faith|not a second step|second step|higher level"
           ],
           "mainPoint": "**Every believer has the Spirit.** Having the Spirit of Christ is what it means to belong to Christ, not a second step for the few.",
-          "questionHint": "Paul states this as an either/or with no exceptions — you either have the Spirit or you don’t belong to Christ. What does that absolute framing tell you about whether the Spirit is available only to certain kinds of Christians?"
+          "questionHint": "Paul states this as an either/or with no exceptions — you either have the Spirit or you don’t belong to Christ.\nWhat does that absolute framing tell you about whether the Spirit is available only to certain kinds of Christians?"
         },
         {
           "elementId": "ch03-el15",
@@ -1138,7 +1138,7 @@
             "ends of the earth|farthest|worldwide|local|jerusalem|everywhere|all believers"
           ],
           "mainPoint": "The Spirit gives **power to be Jesus’ witnesses**. It is given for mission, not personal benefit, and it applies to all believers today.",
-          "questionHint": "Jesus links the gift of power directly to a specific task — what is that task, and does the fact that it stretches ‘to the farthest parts of the earth’ suggest it was only meant for the first disciples, or for all followers of Jesus?"
+          "questionHint": "Jesus links the gift of power directly to a specific task.\nWhat is that task?\nDoes the fact that it stretches ‘to the farthest parts of the earth’ suggest it was only meant for the first disciples, or for all followers of Jesus?"
         },
         {
           "elementId": "ch03-el18",
@@ -1173,7 +1173,7 @@
             "transform|teach|comfort|help|shaping"
           ],
           "mainPoint": "The Spirit is our advantage because he is **with every believer everywhere and works from within**, unlike Jesus’ physical presence in one place.",
-          "questionHint": "When Jesus was physically present, how many people could be with Him at once — and how does the Spirit’s way of being present with believers differ from that limitation?"
+          "questionHint": "When Jesus was physically present, how many people could be with Him at once?\nHow does the Spirit’s way of being present with believers differ from that limitation?"
         },
         {
           "elementId": "ch03-el21",
@@ -1199,7 +1199,7 @@
             "remember|recall|memory|bring to mind|bring back"
           ],
           "mainPoint": "The Spirit **teaches** us God’s truth and **reminds** us of what Jesus said.",
-          "questionHint": "Jesus mentions two separate things the Spirit will do — can you identify them both in verse 26, and think of a time when you may have experienced either of them while reading the Bible or facing a difficult situation?"
+          "questionHint": "Jesus mentions two separate things the Spirit will do.\nCan you identify them both in verse 26, and think of a time when you may have experienced either of them while reading the Bible or facing a difficult situation?"
         },
         {
           "elementId": "ch03-el23",
@@ -1226,7 +1226,7 @@
             "human intelligence|study alone|unbeliever|foolish|cannot|natural|not enough|without the spirit"
           ],
           "mainPoint": "Only the Spirit knows the depths of God, so **real understanding of God and his word needs the Spirit’s illumination**, not human study alone.",
-          "questionHint": "Paul uses an analogy about knowing another person’s inner thoughts — only their own spirit has access to that. How does he apply that same logic to the question of who can truly understand the things of God?"
+          "questionHint": "Paul uses an analogy about knowing another person’s inner thoughts — only their own spirit has access to that.\nHow does he apply that same logic to the question of who can truly understand the things of God?"
         },
         {
           "elementId": "ch03-el25",
@@ -1252,7 +1252,7 @@
             "not alone|comfort|understands|covered|inadequa|weakness|without words|inexpressible|cannot find words"
           ],
           "mainPoint": "When we do not know how to pray, **the Spirit steps in and intercedes for us**, so our inadequacy in prayer is covered.",
-          "questionHint": "Paul doesn’t say the Spirit helps us find better words — he says the Spirit intercedes when we have no words at all. What does it mean for your prayer life to know that your weakness in prayer is something the Spirit is already covering?"
+          "questionHint": "Paul doesn’t say the Spirit helps us find better words — he says the Spirit intercedes when we have no words at all.\nWhat does it mean for your prayer life to know that your weakness in prayer is something the Spirit is already covering?"
         },
         {
           "elementId": "ch03-el27",
@@ -1292,7 +1292,7 @@
             "tongues|interpretation"
           ],
           "mainPoint": "The Spirit gives **a wide variety of gifts**, from the apparently ordinary (wisdom, knowledge, faith) to the dramatic (healing, miracles, tongues).",
-          "questionHint": "Look back through the list carefully — which of these gifts would you expect to find in any church today, and are there any that seem more unusual or unexpected to you, and why?"
+          "questionHint": "Look back through the list carefully.\nWhich of these gifts would you expect to find in any church today?\nAre there any that seem more unusual or unexpected to you, and why?"
         },
         {
           "elementId": "ch03-el30",
@@ -1319,7 +1319,7 @@
             "willpower|effort|trying harder|manufacture|natural result|produced|cannot force"
           ],
           "mainPoint": "Spiritual **fruit grows gradually** from staying connected to the Spirit. It cannot be produced by willpower.",
-          "questionHint": "Think about how fruit grows on a tree — does it appear instantly, or does it take time and depend on the health of the connection between the branch and the tree? How might that process mirror the way these qualities develop in a Christian?"
+          "questionHint": "Think about how fruit grows on a tree.\nDoes it appear instantly, or does it take time and depend on the health of the connection between the branch and the tree?\nHow might that process mirror the way these qualities develop in a Christian?"
         },
         {
           "elementId": "ch03-el32",
@@ -1490,7 +1490,7 @@
             "sovereign|authority|orders|control|intentional"
           ],
           "mainPoint": "God the Father is **the sole Creator** of everything. He made it personally and with full authority.",
-          "questionHint": "In Isaiah 45:12, God says ‘I made the earth’ and ‘my hands stretched out the sky’ — what does that personal, direct language suggest about how involved He was in the act of creation, and whether He needed anyone else’s help?"
+          "questionHint": "In Isaiah 45:12, God says ‘I made the earth’ and ‘my hands stretched out the sky’.\nWhat does that personal, direct language suggest about how involved He was in the act of creation, and whether He needed anyone else’s help?"
         },
         {
           "elementId": "ch04-el06",
@@ -1517,7 +1517,7 @@
             "sustain|hold together|ongoing|continues|cohere|held"
           ],
           "mainPoint": "Jesus is **the agent, origin and goal of creation**, and he sustains it. Nothing exists apart from him.",
-          "questionHint": "Colossians 1:16 says everything was created not just ‘through’ Jesus but also ‘for’ him — what does it mean for creation to have been made for Jesus, and how does that compare with the way you normally think about Him?"
+          "questionHint": "Colossians 1:16 says everything was created not just ‘through’ Jesus but also ‘for’ him.\nWhat does it mean for creation to have been made for Jesus?\nHow does that compare with the way you normally think about Him?"
         },
         {
           "elementId": "ch04-el09",
@@ -1543,7 +1543,7 @@
             "all three|father, son|unified|together|not one member|not alone|whole godhead|fullness"
           ],
           "mainPoint": "The Spirit was **active in creation from the start and continues to renew it**, so creation is the work of Father, Son and Spirit together.",
-          "questionHint": "Genesis 1:2 shows the Spirit present at the very start, before anything was formed — and Psalm 104:30 shows Him involved in bringing new life into being. What do those two moments together suggest about the scope of the Spirit’s involvement in creation?"
+          "questionHint": "Genesis 1:2 shows the Spirit present at the very start, before anything was formed — and Psalm 104:30 shows Him involved in bringing new life into being.\nWhat do those two moments together suggest about the scope of the Spirit’s involvement in creation?"
         },
         {
           "elementId": "ch04-el12",
@@ -1582,7 +1582,7 @@
             "environment|space|fill|inhabitant|first three|next three|parallel|formless"
           ],
           "mainPoint": "The six days move from **forming the spaces to filling them**, showing creation as ordered, deliberate and purposeful.",
-          "questionHint": "Look at days 1-3 and then days 4-6 side by side — do you notice a relationship between what is created on day 1 and day 4, day 2 and day 5, day 3 and day 6? What does that pairing suggest about the structure of the account?"
+          "questionHint": "Look at days 1-3 and then days 4-6 side by side.\nDo you notice a relationship between what is created on day 1 and day 4, day 2 and day 5, day 3 and day 6?\nWhat does that pairing suggest about the structure of the account?"
         },
         {
           "elementId": "ch04-el15",
@@ -1617,7 +1617,7 @@
             "instantly|without effort|no effort|alone|sufficient|no materials|tools"
           ],
           "mainPoint": "God creates **by his word alone**, which shows his absolute authority. Creation depends on him entirely and answers to him.",
-          "questionHint": "When a human being gives an order, it might or might not be obeyed — but when God speaks in Genesis 1, what always happens immediately, and what does that instant, total response tell you about the kind of authority He has?"
+          "questionHint": "When a human being gives an order, it might or might not be obeyed — but when God speaks in Genesis 1, what always happens immediately?\nWhat does that instant, total response tell you about the kind of authority He has?"
         },
         {
           "elementId": "ch04-el18",
@@ -1687,7 +1687,7 @@
             "awe|beyond|points|maker|creator"
           ],
           "mainPoint": "Creation exists **to declare God’s glory**, a universal testimony available to every person.",
-          "questionHint": "The psalm says the heavens ‘declare’ something — as if creation is actively communicating a message. What is the message it is declaring, and have you ever found yourself sensing that message when looking at something in the natural world?"
+          "questionHint": "The psalm says the heavens ‘declare’ something — as if creation is actively communicating a message.\nWhat is the message it is declaring?\nHave you ever found yourself sensing that message when looking at something in the natural world?"
         },
         {
           "elementId": "ch04-el24",
@@ -1750,7 +1750,7 @@
             "unique|different|category|set apart|no other|uniquely"
           ],
           "mainPoint": "Being made in God’s image means that **humans uniquely reflect God**, rational, moral and relational, which gives every person inherent dignity.",
-          "questionHint": "Genesis describes animals being made ‘according to their kinds’ but describes humans differently — made in the image and likeness of God Himself. What does that different description suggest about the kind of relationship God intends to have with human beings compared to the rest of creation?"
+          "questionHint": "Genesis describes animals being made ‘according to their kinds’ but describes humans differently — made in the image and likeness of God Himself.\nWhat does that different description suggest about the kind of relationship God intends to have with human beings compared to the rest of creation?"
         },
         {
           "elementId": "ch04-el29",
@@ -1793,7 +1793,7 @@
             "not exploit|not a licence|not licence|serve|environment|damage|failure"
           ],
           "mainPoint": "Humans are given **two responsibilities: to rule creation and to care for it**. That is stewardship, not exploitation.",
-          "questionHint": "Genesis 1:26 gives humans authority to ‘rule over’ creation, while Genesis 2:15 says the man was placed in the garden to ‘care for it and maintain it’ — do those two ideas feel like the same thing to you, or do they add different dimensions to what responsible stewardship looks like?"
+          "questionHint": "Genesis 1:26 gives humans authority to ‘rule over’ creation, while Genesis 2:15 says the man was placed in the garden to ‘care for it and maintain it’.\nDo those two ideas feel like the same thing to you, or do they add different dimensions to what responsible stewardship looks like?"
         },
         {
           "elementId": "ch04-el34",
@@ -1884,7 +1884,7 @@
             "broken|bent|cannot fix|cannot be straightened|human effort|unsatisf|lacking|missing"
           ],
           "mainPoint": "Life under the sun without God is **empty and futile**, broken in ways human effort cannot fix.",
-          "questionHint": "The phrase ‘chasing the wind’ describes trying to catch something — what is the point the writer is making about whether that chase can ever succeed, and do you think that rings true of how people experience life?"
+          "questionHint": "The phrase ‘chasing the wind’ describes trying to catch something.\nWhat is the point the writer is making about whether that chase can ever succeed?\nDo you think that rings true of how people experience life?"
         },
         {
           "elementId": "ch05-el05",
@@ -1911,7 +1911,7 @@
             "evil|accurate|evidence"
           ],
           "mainPoint": "The world hates Jesus because he **tells the truth about its evil**, exposing what people would rather not face.",
-          "questionHint": "Jesus says the world hates Him specifically because He testifies about its deeds — why might telling the truth about someone’s behaviour cause them to react with hostility rather than gratitude?"
+          "questionHint": "Jesus says the world hates Him specifically because He testifies about its deeds.\nWhy might telling the truth about someone’s behaviour cause them to react with hostility rather than gratitude?"
         },
         {
           "elementId": "ch05-el07",
@@ -1938,7 +1938,7 @@
             "hope|waiting|longing|eager|freedom|set free|revealed|children of god|sons of god"
           ],
           "mainPoint": "Because of human sin **creation was subjected to futility and decay**, yet it waits in hope to be set free.",
-          "questionHint": "Paul says creation was subjected to futility ‘not willingly’ — what does that tell you about whether the brokenness in the natural world is creation’s own fault or a consequence of something human beings did?"
+          "questionHint": "Paul says creation was subjected to futility ‘not willingly’.\nWhat does that tell you about whether the brokenness in the natural world is creation’s own fault or a consequence of something human beings did?"
         },
         {
           "elementId": "ch05-el09",
@@ -1973,7 +1973,7 @@
             "shepherd|danger|unaware|away from god"
           ],
           "mainPoint": "Sin is often **a quiet drifting and going our own way**, making ourselves our own authority.",
-          "questionHint": "Sheep don’t usually rebel dramatically — they just wander gradually without realising how lost they are becoming. How does that kind of slow drift compare to the way you might normally picture sin, and does it change your understanding of it?"
+          "questionHint": "Sheep don’t usually rebel dramatically — they just wander gradually without realising how lost they are becoming.\nHow does that kind of slow drift compare to the way you might normally picture sin?\nDoes it change your understanding of it?"
         },
         {
           "elementId": "ch05-el12",
@@ -2000,7 +2000,7 @@
             "degrad|diminish|damag"
           ],
           "mainPoint": "**Human sin persists, but so does God’s rescue.** He delivered his people again and again.",
-          "questionHint": "The verse says God delivered them ‘many times’ — what does the word ‘many’ suggest about how patient God was with their repeated failures, and what does the pattern of repeated rescue tell you about His character?"
+          "questionHint": "The verse says God delivered them ‘many times’.\nWhat does the word ‘many’ suggest about how patient God was with their repeated failures?\nWhat does the pattern of repeated rescue tell you about His character?"
         },
         {
           "elementId": "ch05-el14",
@@ -2035,7 +2035,7 @@
             "death|die|surely die"
           ],
           "mainPoint": "God gave **generous provision with one clear prohibition**, and the stated consequence of disobedience was death.",
-          "questionHint": "Before giving the one prohibition, God said the man could ‘freely eat’ from every other tree — what does that generous framing tell you about the kind of God who was setting this boundary, and does that change how you read the single restriction?"
+          "questionHint": "Before giving the one prohibition, God said the man could ‘freely eat’ from every other tree.\nWhat does that generous framing tell you about the kind of God who was setting this boundary?\nDoes that change how you read the single restriction?"
         },
         {
           "elementId": "ch05-el17",
@@ -2062,7 +2062,7 @@
             "food|appetite|delight|eyes|beauty|wisdom|ambition|pride|desire"
           ],
           "mainPoint": "The serpent **sowed doubt about God’s word and goodness**, and the woman was drawn by appetite, desire and the wish to be more.",
-          "questionHint": "The serpent’s first move was not to say ‘disobey God’ but to ask a question that cast doubt on what God had said — why is making someone question the reliability of God’s word an effective first step towards getting them to disobey it?"
+          "questionHint": "The serpent’s first move was not to say ‘disobey God’ but to ask a question that cast doubt on what God had said.\nWhy is making someone question the reliability of God’s word an effective first step towards getting them to disobey it?"
         },
         {
           "elementId": "ch05-el19",
@@ -2097,7 +2097,7 @@
             "internal|root|inner|cannot be solved|simply improving"
           ],
           "mainPoint": "Sin **comes from within, from the human heart**, not from our environment, so improving conditions alone cannot solve it.",
-          "questionHint": "Many people believe that if you could give everyone a good upbringing and a fair environment, people would naturally behave well — how does Jesus’ diagnosis in this passage agree or disagree with that assumption, and what are the implications either way?"
+          "questionHint": "Many people believe that if you could give everyone a good upbringing and a fair environment, people would naturally behave well.\nHow does Jesus’ diagnosis in this passage agree or disagree with that assumption?\nWhat are the implications either way?"
         },
         {
           "elementId": "ch05-el22",
@@ -2142,7 +2142,7 @@
             "relationship|not just rules|not primarily about rules|closeness"
           ],
           "mainPoint": "God is **personally grieved by sin**, which shows that sin breaks a relationship and is more than rule-breaking.",
-          "questionHint": "The passage says God ‘regretted’ making humankind and was ‘highly offended’ — what do those emotional words tell you about whether God sees sin as a minor inconvenience or something that genuinely affects Him?"
+          "questionHint": "The passage says God ‘regretted’ making humankind and was ‘highly offended’.\nWhat do those emotional words tell you about whether God sees sin as a minor inconvenience or something that genuinely affects Him?"
         },
         {
           "elementId": "ch05-el26",
@@ -2169,7 +2169,7 @@
             "without excuse|visible|creation|can be known|available|live without"
           ],
           "mainPoint": "God’s wrath is revealed against sin, and to suppress the truth is **deliberately to push away what can be known about God**.",
-          "questionHint": "The word ‘suppress’ implies that the truth is already present and known — you cannot suppress something you have never encountered. What does that tell you about Paul’s assumption regarding how much people already know about God before they are told the gospel?"
+          "questionHint": "The word ‘suppress’ implies that the truth is already present and known — you cannot suppress something you have never encountered.\nWhat does that tell you about Paul’s assumption regarding how much people already know about God before they are told the gospel?"
         },
         {
           "elementId": "ch05-el28",
@@ -2204,7 +2204,7 @@
             "foundation|gospel|need|not rank|cannot rank"
           ],
           "mainPoint": "Paul’s verdict is **universal: all fall short of God’s standard**. That is the foundation for the gospel applying to everyone.",
-          "questionHint": "Paul says ‘not even one’ is righteous — he is not comparing people to each other but to God’s standard. How might the conclusion change if the measuring stick is God’s perfect character rather than a comparison with other human beings?"
+          "questionHint": "Paul says ‘not even one’ is righteous — he is not comparing people to each other but to God’s standard.\nHow might the conclusion change if the measuring stick is God’s perfect character rather than a comparison with other human beings?"
         },
         {
           "elementId": "ch05-el31",
@@ -2240,7 +2240,7 @@
             "eternal life|life"
           ],
           "mainPoint": "Sin earns **death**, but eternal life is **God’s free gift** in Christ.",
-          "questionHint": "Paul deliberately uses the word ‘payoff’ or ‘wages’ for what sin produces — something that is earned — and then contrasts it with a ‘gift’ for what God offers. Why is that distinction between earning and receiving as a gift so important to the point he is making?"
+          "questionHint": "Paul deliberately uses the word ‘payoff’ or ‘wages’ for what sin produces — something that is earned — and then contrasts it with a ‘gift’ for what God offers.\nWhy is that distinction between earning and receiving as a gift so important to the point he is making?"
         },
         {
           "elementId": "ch05-el34",
@@ -2275,7 +2275,7 @@
             "jesus|christ|rescued by another|another"
           ],
           "mainPoint": "The struggle with sin is real, and **rescue comes through Jesus Christ**, not through trying harder.",
-          "questionHint": "Paul frames his question as ‘who will rescue me?’ rather than ‘what should I do to improve myself?’ — what does the choice of that word ‘rescue’ tell you about whether Paul thinks the answer to sin lies within himself or outside himself?"
+          "questionHint": "Paul frames his question as ‘who will rescue me?’ rather than ‘what should I do to improve myself?’\nWhat does the choice of that word ‘rescue’ tell you about whether Paul thinks the answer to sin lies within himself or outside himself?"
         },
         {
           "elementId": "ch05-el37",
@@ -2382,7 +2382,7 @@
             "rescue|save|salvation|not condemn|eternal life|perish|not anger|not punish"
           ],
           "mainPoint": "Despite our sin, God’s attitude is **love**. He gave his Son so that everyone who believes would be rescued, not condemned.",
-          "questionHint": "What word does John use to describe God’s motivation, and what did that motivation lead God to do?"
+          "questionHint": "What word does John use to describe God’s motivation?\nWhat did that motivation lead God to do?"
         },
         {
           "elementId": "ch06-el05",
@@ -2417,7 +2417,7 @@
             "captiv|debt|bound|slave|set us free|release|redeem|cannot pay|trapped"
           ],
           "mainPoint": "A **ransom** implies we were captive and could not pay. Jesus gave his life as the price to set us free.",
-          "questionHint": "Think about what a ransom is used for in everyday life — what does that tell you about the condition of the people Jesus came to help?"
+          "questionHint": "Think about what a ransom is used for in everyday life.\nWhat does that tell you about the condition of the people Jesus came to help?"
         },
         {
           "elementId": "ch06-el08",
@@ -2508,7 +2508,7 @@
             "blood|atoning|death|sacrifice|cross"
           ],
           "mainPoint": "Those who trust Christ are **declared righteous** and saved from God’s wrath, because his blood has dealt with sin.",
-          "questionHint": "Paul uses a courtroom-style word — what verdict is pronounced over believers, and what danger does that verdict protect them from?"
+          "questionHint": "Paul uses a courtroom-style word.\nWhat verdict is pronounced over believers?\nWhat danger does that verdict protect them from?"
         },
         {
           "elementId": "ch06-el15",
@@ -2537,7 +2537,7 @@
             "everyone|anyone|whoever|open to all|all who"
           ],
           "mainPoint": "Everyone who believes in Jesus is promised **eternal life rather than perishing**. God sent his Son to save, not to condemn.",
-          "questionHint": "Jesus gives two outcomes for those who believe — one thing they escape and one thing they receive. Can you identify both?"
+          "questionHint": "Jesus gives two outcomes for those who believe — one thing they escape and one thing they receive.\nCan you identify both?"
         },
         {
           "elementId": "ch06-el17",
@@ -2572,7 +2572,7 @@
             "decisive|single issue|name of|not because of|belief|faith"
           ],
           "mainPoint": "Believers are **not condemned**, while those who do not believe are already condemned. The deciding issue is faith in God’s Son.",
-          "questionHint": "Notice that John says the unbeliever ‘has been condemned already’ — what does the tense of that phrase suggest about when this judgment takes effect?"
+          "questionHint": "Notice that John says the unbeliever ‘has been condemned already’.\nWhat does the tense of that phrase suggest about when this judgment takes effect?"
         },
         {
           "elementId": "ch06-el20",
@@ -2600,7 +2600,7 @@
             "together|one reality|permanent|everlasting|eternal|for ever"
           ],
           "mainPoint": "Paul uses **three pictures together: punishment, destruction and exclusion**. They describe one reality, a permanent separation from God that is itself an everlasting destruction.",
-          "questionHint": "Paul uses a specific phrase to describe what this destruction means relationally — what are those people separated from, and why might that detail matter more than the word ‘destruction’ alone?"
+          "questionHint": "Paul uses a specific phrase to describe what this destruction means relationally.\nWhat are those people separated from?\nWhy might that detail matter more than the word ‘destruction’ alone?"
         },
         {
           "elementId": "ch06-el22",
@@ -2662,7 +2662,7 @@
             "credited|not earned|union with christ|belongs to god|received|swap|exchange"
           ],
           "mainPoint": "**Our sin goes to Christ and his righteousness comes to us**: a double exchange.",
-          "questionHint": "Paul says Jesus ‘did not know sin’ — so what makes the exchange he describes so surprising, and what does each party in the exchange give and receive?"
+          "questionHint": "Paul says Jesus ‘did not know sin’.\nWhat makes the exchange he describes so surprising?\nWhat does each party in the exchange give and receive?"
         },
         {
           "elementId": "ch06-el27",
@@ -2689,7 +2689,7 @@
             "buy|bought|price|paid|purchase|slave|freedom|ransom|free"
           ],
           "mainPoint": "Christ **redeemed us from the curse of the law** by taking it on himself on the cross, paying the price for our freedom.",
-          "questionHint": "What does it mean to ‘redeem’ something in everyday life (think of redeeming a voucher or buying something back), and how does that shed light on what Christ did for us?"
+          "questionHint": "What does it mean to ‘redeem’ something in everyday life (think of redeeming a voucher or buying something back)?\nHow does that shed light on what Christ did for us?"
         },
         {
           "elementId": "ch06-el29",
@@ -2717,7 +2717,7 @@
             "heal|wounds"
           ],
           "mainPoint": "Jesus **bore our sins** so that we might be freed from sin’s power, live for righteousness and be healed.",
-          "questionHint": "Peter mentions two results of Jesus bearing our sins — one is about stopping something and the other is about starting something. Can you identify what each is?"
+          "questionHint": "Peter mentions two results of Jesus bearing our sins — one is about stopping something and the other is about starting something.\nCan you identify what each is?"
         },
         {
           "elementId": "ch06-el31",
@@ -2760,7 +2760,7 @@
             "released|raised|resurrect"
           ],
           "mainPoint": "Death **could not hold Jesus**: with sin dealt with, it had no rightful claim on him.",
-          "questionHint": "Peter says it was ‘not possible’ for death to hold Jesus — what does that strong word suggest about the relationship between Jesus and death?"
+          "questionHint": "Peter says it was ‘not possible’ for death to hold Jesus.\nWhat does that strong word suggest about the relationship between Jesus and death?"
         },
         {
           "elementId": "ch06-el35",
@@ -2795,7 +2795,7 @@
             "ransom|gave himself|no one else|only christ|good works|religious leaders"
           ],
           "mainPoint": "There is **one God and one mediator**, Jesus Christ, who as a human being and as the one who gave himself bridges the gap no one else can.",
-          "questionHint": "An intermediary or mediator stands between two parties — who are the two parties here, and what does Jesus do to bring them together?"
+          "questionHint": "An intermediary or mediator stands between two parties.\nWho are the two parties here?\nWhat does Jesus do to bring them together?"
         },
         {
           "elementId": "ch06-el38",
@@ -2942,7 +2942,7 @@
             "predicted|galilee|third day|crucified|handed over|fulfil|reminded"
           ],
           "mainPoint": "The tomb was empty, and the angels reminded the women that **Jesus had foretold his death and rising**.",
-          "questionHint": "The two men ask the women a pointed question — what does the question ‘Why do you look for the living among the dead?’ imply about who they believe Jesus to be?"
+          "questionHint": "The two men ask the women a pointed question.\nWhat does the question ‘Why do you look for the living among the dead?’ imply about who they believe Jesus to be?"
         },
         {
           "elementId": "ch07-el08",
@@ -2969,7 +2969,7 @@
             "flesh and bones|flesh|physical|bodily|tangible|real"
           ],
           "mainPoint": "Jesus showed his wounds, invited them to touch him and ate fish, proving that **the resurrection was physical and bodily**, not a vision.",
-          "questionHint": "Jesus gives the disciples three different ways to verify that he is physically present — can you identify each one, and why might each type of evidence matter?"
+          "questionHint": "Jesus gives the disciples three different ways to verify that he is physically present.\nCan you identify each one?\nWhy might each type of evidence matter?"
         },
         {
           "elementId": "ch07-el10",
@@ -2996,7 +2996,7 @@
             "sacrifice|suffer|permanent|marks|erase|scars|cost"
           ],
           "mainPoint": "The disciples moved **from fear to joy**, and Jesus’ wounds confirm his identity and remain the marks of his sacrifice.",
-          "questionHint": "Think about why Jesus specifically showed his wounds rather than simply speaking to them — what would the wounds prove that words alone might not?"
+          "questionHint": "Think about why Jesus specifically showed his wounds rather than simply speaking to them.\nWhat would the wounds prove that words alone might not?"
         },
         {
           "elementId": "ch07-el12",
@@ -3023,7 +3023,7 @@
             "hallucination|crowd|private|group|simultaneous|many people|number"
           ],
           "mainPoint": "Paul points to over five hundred living witnesses, **inviting anyone to check**. A fabrication could not survive that.",
-          "questionHint": "Why might Paul have specifically pointed out that most of the five hundred are ‘still alive’ — what would his original readers have been able to do with that information?"
+          "questionHint": "Why might Paul have specifically pointed out that most of the five hundred are ‘still alive’?\nWhat would his original readers have been able to do with that information?"
         },
         {
           "elementId": "ch07-el14",
@@ -3085,7 +3085,7 @@
             "pattern|guarantee|assur|one-off|what happened to jesus|will happen to"
           ],
           "mainPoint": "The same God and Spirit who raised Jesus will give life to believers’ bodies: **Jesus’ resurrection is the pattern and guarantee of ours**.",
-          "questionHint": "Paul describes the Spirit using a phrase that points back to the resurrection of Jesus — how does that description link what happened to Jesus with what will happen to believers?"
+          "questionHint": "Paul describes the Spirit using a phrase that points back to the resurrection of Jesus.\nHow does that description link what happened to Jesus with what will happen to believers?"
         },
         {
           "elementId": "ch07-el19",
@@ -3120,7 +3120,7 @@
             "not distant|not passive|not limited|raised the dead|active"
           ],
           "mainPoint": "The power that raised Christ is **beyond compare and works for believers**, so God is neither distant nor limited.",
-          "questionHint": "Paul says this power is directed ‘toward us who believe’ — so what does the resurrection tell us not just about God’s ability, but about his posture towards his people?"
+          "questionHint": "Paul says this power is directed ‘toward us who believe’.\nWhat does the resurrection tell us not just about God’s ability, but about his posture towards his people?"
         },
         {
           "elementId": "ch07-el22",
@@ -3155,7 +3155,7 @@
             "guarantee|not the end|points forward|future|hope"
           ],
           "mainPoint": "The ascension was visible, and the promise is that **this same Jesus will return** in the same way.",
-          "questionHint": "The messengers use the specific phrase ‘this same Jesus’ — why might those three words be particularly important as a description of the one who will return?"
+          "questionHint": "The messengers use the specific phrase ‘this same Jesus’.\nWhy might those three words be particularly important as a description of the one who will return?"
         },
         {
           "elementId": "ch07-el25",
@@ -3190,7 +3190,7 @@
             "sovereign|nothing outside|nothing lies outside|ultimate|control|rule over|authority over|head"
           ],
           "mainPoint": "Christ is **seated at God’s right hand, far above every power**, and nothing lies outside his rule.",
-          "questionHint": "Paul piles up a list of powers that Christ is placed above — what do you think he is trying to convey by using such an exhaustive list rather than just saying ‘above everything’?"
+          "questionHint": "Paul piles up a list of powers that Christ is placed above.\nWhat do you think he is trying to convey by using such an exhaustive list rather than just saying ‘above everything’?"
         },
         {
           "elementId": "ch07-el28",
@@ -3217,7 +3217,7 @@
             "secure|certain|assur|not precarious|not uncertain|confiden|reassur"
           ],
           "mainPoint": "All powers are subject to Christ, so **the one who intercedes for us holds supreme authority**, and his intercession is secure.",
-          "questionHint": "If the one interceding for you held no authority, what difference might that make? Now consider what it means that he holds all authority — how does that change things?"
+          "questionHint": "If the one interceding for you held no authority, what difference might that make?\nNow consider what it means that he holds all authority.\nHow does that change things?"
         },
         {
           "elementId": "ch07-el30",
@@ -3252,7 +3252,7 @@
             "secure|reassur|not depend|performance|his grip|even when we fail|consistency"
           ],
           "mainPoint": "Jesus **always lives to intercede**, so our standing before God rests on his ongoing work and not on our own performance.",
-          "questionHint": "The writer says Jesus ‘always lives’ to intercede — what would it mean for believers if there were ever a moment when he stopped?"
+          "questionHint": "The writer says Jesus ‘always lives’ to intercede.\nWhat would it mean for believers if there were ever a moment when he stopped?"
         },
         {
           "elementId": "ch07-el33",
@@ -3295,7 +3295,7 @@
             "relationship|reunion|where he is|where i am|himself|not absence|presence"
           ],
           "mainPoint": "Jesus has gone to **prepare a place and will come again to take us to be with him**. The heart of Christian hope is Christ himself.",
-          "questionHint": "Jesus could have simply promised ‘a better place’ — but notice how he describes the destination in personal terms. What does that tell you about what he values most?"
+          "questionHint": "Jesus could have simply promised ‘a better place’ — but notice how he describes the destination in personal terms.\nWhat does that tell you about what he values most?"
         },
         {
           "elementId": "ch07-el37",
@@ -3430,7 +3430,7 @@
             "basically good|not weakness|starting point|effort|natural condition"
           ],
           "mainPoint": "Being spiritually dead means **we cannot save ourselves**. Rescue must come entirely from outside us.",
-          "questionHint": "Think about what a physically dead person is capable of doing for themselves — how does that image apply to what Paul is saying about our spiritual condition before God?"
+          "questionHint": "Think about what a physically dead person is capable of doing for themselves.\nHow does that image apply to what Paul is saying about our spiritual condition before God?"
         },
         {
           "elementId": "ch08-el07",
@@ -3465,7 +3465,7 @@
             "proud|pride|level|equal|more deserving|nothing to point to|personal achievement"
           ],
           "mainPoint": "Salvation is **entirely God’s gift**, which rules out any human contribution and any ground for boasting.",
-          "questionHint": "If someone received a gift and then boasted about it, what would that reveal about how they misunderstood where it came from — and how does that apply to salvation?"
+          "questionHint": "If someone received a gift and then boasted about it, what would that reveal about how they misunderstood where it came from?\nHow does that apply to salvation?"
         },
         {
           "elementId": "ch08-el10",
@@ -3545,7 +3545,7 @@
             "transformation|radical|deeper|more than|not merely|not just"
           ],
           "mainPoint": "Repentance goes **deeper than behaviour**: a new heart and spirit means a change in what we love and live for.",
-          "questionHint": "God could have just said ‘stop doing wrong things’ — why do you think he goes further and asks for a new heart and a new spirit?"
+          "questionHint": "God could have just said ‘stop doing wrong things’.\nWhy do you think he goes further and asks for a new heart and a new spirit?"
         },
         {
           "elementId": "ch08-el17",
@@ -3607,7 +3607,7 @@
             "not optional|hinge|necessary|essential|matter of life|not a matter of preference"
           ],
           "mainPoint": "Jesus’ repeated warning shows that **repentance is urgent and not optional**. The stakes are perishing.",
-          "questionHint": "Jesus says the same thing twice in the same passage — what effect does exact repetition usually have on the weight of a statement, and what does perishing imply about the severity of the alternative?"
+          "questionHint": "Jesus says the same thing twice in the same passage.\nWhat effect does exact repetition usually have on the weight of a statement?\nWhat does perishing imply about the severity of the alternative?"
         },
         {
           "elementId": "ch08-el22",
@@ -3642,7 +3642,7 @@
             "rewards|seek|responds|not indifferent"
           ],
           "mainPoint": "Faith is essential to please God, and it means believing **that he exists and that he rewards those who seek him**.",
-          "questionHint": "The writer gives two beliefs, not one — why might it be insufficient to believe that God exists if you did not also believe the second thing?"
+          "questionHint": "The writer gives two beliefs, not one.\nWhy might it be insufficient to believe that God exists if you did not also believe the second thing?"
         },
         {
           "elementId": "ch08-el25",
@@ -3698,7 +3698,7 @@
             "shepherd|his grip|his hand|not the grip|rests on him"
           ],
           "mainPoint": "Jesus’ sheep listen, are known and follow, and their security is **absolute because it rests on the shepherd’s grip** and not on theirs.",
-          "questionHint": "Jesus says no one will ‘snatch’ his sheep from his hand — whose hand are they in, and what does that tell you about where the security ultimately comes from?"
+          "questionHint": "Jesus says no one will ‘snatch’ his sheep from his hand.\nWhose hand are they in?\nWhat does that tell you about where the security ultimately comes from?"
         },
         {
           "elementId": "ch08-el29",
@@ -3725,7 +3725,7 @@
             "secure|relying|never stop|cannot fail|replaced|foundation|ongoing|continuous|every situation"
           ],
           "mainPoint": "Jesus saves completely because **his priesthood is permanent and he always intercedes**, so those who trust him are secure.",
-          "questionHint": "The writer connects ‘save completely’ to the fact that Jesus ‘always lives’ — what would change about the completeness of the salvation if Jesus’ intercession could ever stop?"
+          "questionHint": "The writer connects ‘save completely’ to the fact that Jesus ‘always lives’.\nWhat would change about the completeness of the salvation if Jesus’ intercession could ever stop?"
         },
         {
           "elementId": "ch08-el31",

@@ -66,8 +66,32 @@ describe('the feedback detail', () => {
     expect(detail('strong', null, false).text).toBe('validation_lv_strong');
   });
 
-  it('keeps the hint where it always was', () => {
-    expect(detail('stuck', 'Try verse 2.', false).text).toBe('validation_lv_stuck_hint Try verse 2.');
+  it('keeps the one-string form with the hint after the message', () => {
+    expect(detail('stuck', 'Try verse 2.', false).message).toBe('validation_lv_stuck_hint Try verse 2.');
+    expect(detail('tooShort', 'Look at v2.', false).message).toBe('validation_lv_too_short_hint Look at v2.');
+  });
+
+  it('the hint is kept apart from the message so it can be shown as a list', () => {
+    const d = detail('tooShort', 'Look at v2.', false);
+    expect(d.text).toBe('validation_lv_too_short_hint');
+    expect(d.hintItems).toEqual(['Look at v2.']);
+  });
+
+  it('a hint on several lines becomes several items; list markers and blank lines are dropped', () => {
+    const d = detail('repeatsQuestion', 'How does v19 sum up the passage?\n\n- What does it say about love?\n* And about us?\n\u2022 Why?\n2) Last one\r\n', false);
+    expect(d.hintItems).toEqual(['How does v19 sum up the passage?', 'What does it say about love?', 'And about us?', 'Why?', 'Last one']);
+  });
+
+  it('no hint, or one with nothing readable in it, means no list and the no-hint wording', () => {
+    for (const h of [null, '', '   ', '-', '\n\n']) {
+      const d = detail('stuck', h, false);
+      expect(d.hintItems, JSON.stringify(h)).toEqual([]);
+      expect(d.text).toBe('validation_lv_stuck_no_hint');
+    }
+  });
+
+  it('results that do not use the hint do not show it', () => {
+    for (const code of ['partial', 'strong', 'pass']) expect(detail(code, 'A hint.', true).hintItems).toEqual([]);
   });
 });
 
@@ -80,6 +104,18 @@ describe('the toast HTML', () => {
     expect(html).toMatch(/^<div class="lv-toast"><span class="lv-face" aria-hidden="true">😐<\/span><div class="lv-text">/);
     expect(html).toContain('<ol class="lv-steps"><li>validation_lv_partial_step1</li><li>validation_lv_partial_step2</li><li>');
     expect((html.match(/<li>/g) || []).length).toBe(3);
+  });
+
+  it('shows the hint under the message as a bulleted list, one bullet per line', () => {
+    const sb = make();
+    const html = sb._lvToastHtml(sb._lvDetailForCode('tooShort', 'How does v19 sum up the passage?\nWhat does it say about love?', false));
+    expect(html).toContain('validation_lv_too_short_hint<ul class="lv-hints"><li>How does v19 sum up the passage?</li><li>What does it say about love?</li></ul>');
+    expect(html).not.toContain('too_short How does');
+  });
+
+  it('a one-line hint is a list of one', () => {
+    const sb = make();
+    expect(sb._lvToastHtml(sb._lvDetailForCode('stuck', 'Try verse 2.', false))).toContain('<ul class="lv-hints"><li>Try verse 2.</li></ul>');
   });
 
   it('has no face or wrapper when there is no level', () => {
@@ -227,7 +263,7 @@ describe('wiring and styles', () => {
       expect(nav).toContain(`body.dark-mode #validate-toast.lv-${l}`);
     }
     expect(nav).toMatch(/\.lv-toast \{[^}]*text-align: start/);
-    expect(nav).toMatch(/\.lv-steps \{[^}]*padding-inline-start/);
+    expect(nav).toMatch(/\.lv-steps,\s*\.lv-hints \{[^}]*padding-inline-start/);
   });
 });
 
@@ -247,4 +283,35 @@ describe('the revised strings in every language', () => {
       expect(d.validation_lv_partial).not.toContain('Take another look');   // English text must not linger in the intro
     });
   }
+});
+
+describe('lead-ins before a hint end with a colon, in every language', () => {
+  const COLONS = [':', '：', '፦'];
+  const HINT_KEYS = ['validation_lv_stuck_hint', 'validation_lv_too_short_hint', 'validation_lv_repeats_question_hint',
+    'validation_lv_repeats_passage_hint', 'validation_lv_off_topic_hint', 'validation_lv_pass_no_sample_hint'];
+  const dirs = readdirSync(join(APP, 'js/locales'));
+  const load = l => JSON.parse(readFileSync(join(APP, `js/locales/${l}/ui_${l}.json`), 'utf8'));
+
+  for (const l of dirs) {
+    it(`${l}: ready for a list`, () => {
+      const d = load(l);
+      for (const k of HINT_KEYS) {
+        expect(typeof d[k], `${l} ${k}`).toBe('string');
+        expect(COLONS.some(c => d[k].trimEnd().endsWith(c)), `${l} ${k}: "${d[k].slice(-25)}"`).toBe(true);
+      }
+    });
+    it(`${l}: the no-hint wording still ends as a sentence, so it reads well alone`, () => {
+      const d = load(l);
+      for (const k of ['validation_lv_too_short', 'validation_lv_repeats_question', 'validation_lv_repeats_passage']) {
+        expect(COLONS.some(c => d[k].trimEnd().endsWith(c)), `${l} ${k}`).toBe(false);
+      }
+    });
+  }
+
+  it('every code that takes a hint uses a *_hint lead-in when there is one', () => {
+    const v = read('js/validation.js');
+    for (const k of ['too_short', 'repeats_question', 'repeats_passage']) {
+      expect(v).toContain(`withHint('validation_lv_${k}_hint', 'validation_lv_${k}')`);
+    }
+  });
 });

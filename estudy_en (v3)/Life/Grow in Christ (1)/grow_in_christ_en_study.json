@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Sanctification" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Growth in Grace" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.02,
+    "studyVersion"     :1.03,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -69,7 +69,7 @@
           "bottomPadding"       :"normal",
           "linkedPassage"       :"Mark 1:15",
           "sampleAnswer"        :"Jesus calls us to repent and to believe the gospel. Repentance means turning away from sin; belief means trusting in the good news of what Jesus has done.",
-          "questionHint"        :"Look at the two commands Jesus gives at the end of the verse — can you name them both?",
+          "questionHint"        :"Look at the two commands Jesus gives at the end of the verse.\nCan you name them both?",
           "shortAnswerThreshold":3
         },
         {
@@ -93,7 +93,7 @@
           "bottomPadding"    :"normal",
           "linkedPassage"    :"Colossians 2:6–7",
           "sampleAnswer"     :"We continue in the Christian life the same way we began it — by receiving Christ as Lord and living in him. Paul describes this as being rooted and built up in Christ, established in the faith as we were taught, and overflowing with thankfulness.",
-          "questionHint"     :"Paul says we should continue ’just as’ we began — what does that tell you about how the start and the middle of the Christian life relate to each other?"
+          "questionHint"     :"Paul says we should continue ’just as’ we began.\nWhat does that tell you about how the start and the middle of the Christian life relate to each other?"
         },
         {
           "elementId"    :"ch01-el05",
@@ -155,7 +155,7 @@
           "bottomPadding"    :"normal",
           "linkedPassage"    :"1 John 1:5–7",
           "sampleAnswer"     :"Because God is light and there is no darkness in him at all. If we keep walking in sin (darkness) while claiming fellowship with God, we are living a lie. Fighting sin matters because it is the path to genuine fellowship with God and with one another, and it is how we experience the ongoing cleansing of Jesus’ blood.",
-          "questionHint"     :"What does John say happens to our relationship with God if we keep walking in darkness — and what becomes possible when we walk in the light?"
+          "questionHint"     :"What does John say happens to our relationship with God if we keep walking in darkness?\nWhat becomes possible when we walk in the light?"
         },
         {
           "elementId"    :"ch01-el11",
@@ -207,7 +207,7 @@
           "bottomPadding"       :"normal",
           "linkedPassage"       :"James 3:2",
           "sampleAnswer"        :"No. James says plainly that ’we all stumble in many ways.’ Only a perfect person — someone who never stumbles in speech — would have complete mastery over the whole body. Since no one is perfect, stumbles are a normal part of the Christian life, not a sign that faith has failed.",
-          "questionHint"        :"James uses the word ’all’ — what does that tell you about who is expected to stumble, and how often?",
+          "questionHint"        :"James uses the word ’all’.\nWhat does that tell you about who is expected to stumble, and how often?",
           "shortAnswerThreshold":2
         },
         {
@@ -251,7 +251,7 @@
           "bottomPadding"    :"normal",
           "linkedPassage"    :"Romans 7:21–23",
           "sampleAnswer"     :"Paul describes an inner conflict: even when he wants to do good, evil is present within him. There is a ’law of sin’ at work in his body that fights against his desire to obey God and, in a sense, takes him prisoner. Growing in Christ is hard because this internal battle is real and ongoing — even for mature believers like Paul.",
-          "questionHint"     :"Paul describes two opposing forces at work inside him — what are they, and how does that conflict explain why growth is a struggle?"
+          "questionHint"     :"Paul describes two opposing forces at work inside him.\nWhat are they?\nHow does that conflict explain why growth is a struggle?"
         },
         {
           "elementId"    :"ch01-el20",
@@ -317,7 +317,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"No. Jesus’ words to the church in Sardis show how serious it is to become spiritually stuck. He describes them as having a reputation for being alive but actually being dead — and warns that if they do not wake up, repent, and return to what they first received, there will be real consequences. Settling for stagnation is not a neutral option.",
-          "questionHint"     :"What does Jesus say he will do if this church does not wake up — and does that sound like something they should be comfortable with?"
+          "questionHint"     :"What does Jesus say he will do if this church does not wake up?\nDoes that sound like something they should be comfortable with?"
         },
         {
           "elementId"    :"ch01-el26",
@@ -362,7 +362,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul reminds the Corinthians that, whatever they used to be, they have been washed, sanctified, and justified in the name of Jesus and by the Spirit of God. This is enormously encouraging: no past sin or pattern of failure defines us. Because of what Christ has already done, genuine change is possible — we are not stuck with who we were.",
-          "questionHint"     :"Paul says ’some of you were these things’ — what tense is that, and what does it imply about the possibility of real change?"
+          "questionHint"     :"Paul says ’some of you were these things’.\nWhat tense is that?\nWhat does it imply about the possibility of real change?"
         },
         {
           "elementId"    :"ch01-el30",
@@ -554,7 +554,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"(1) The Great Commission is about making disciples — people who are baptised and taught to obey. It is about ongoing formation, not just a moment of decision. (2) Jesus says his disciples are to be taught to obey everything he has commanded — the full scope of his teaching, not a selected portion.",
-          "questionHint"     :"What is the main verb Jesus gives in verse 19 — is it ’convert’, or something else — and what does the teaching in verse 20 involve?"
+          "questionHint"     :"What is the main verb Jesus gives in verse 19?\nIs it ’convert’, or something else?\nWhat does the teaching in verse 20 involve?"
         },
         {
           "elementId"    :"ch02-el10",
@@ -612,7 +612,7 @@
           "answerPlaceholder"   :"Try to answer the question from the Bible passage",
           "bottomPadding"       :"normal",
           "sampleAnswer"        :"Peter says we are to grow in the grace and knowledge of our Lord and Saviour Jesus Christ. Growing in grace means deepening our understanding and experience of God’s undeserved love and acceptance. Growing in knowledge means coming to know Christ more fully — who he is, what he has done, and what he calls us to.",
-          "questionHint"        :"Peter uses two nouns joined by ’and’ — can you spot both of them, and what do you think each one involves?",
+          "questionHint"        :"Peter uses two nouns joined by ’and’.\nCan you spot both of them?\nWhat do you think each one involves?",
           "shortAnswerThreshold":3
         },
         {
@@ -645,7 +645,7 @@
           "answerPlaceholder"   :"Try to answer the question from the Bible passage",
           "bottomPadding"       :"normal",
           "sampleAnswer"        :"We were helpless, ungodly, and sinners. We had done nothing to deserve Christ’s death — in fact, we were in no position to help ourselves at all. Paul’s point is that God’s love was not triggered by anything good in us; Christ died for us precisely when we were at our worst.",
-          "questionHint"        :"Paul uses three different words to describe our condition when Christ died — can you find all three, and what do they have in common?",
+          "questionHint"        :"Paul uses three different words to describe our condition when Christ died.\nCan you find all three?\nWhat do they have in common?",
           "shortAnswerThreshold":3
         },
         {
@@ -702,7 +702,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Grace is not merely the starting point of the Christian life — it actually trains us. The grace of God teaches us to say no to ungodliness and worldly desires, and to live self-controlled, upright, and godly lives. Far from making us careless about holiness, grace is the engine that produces godliness.",
-          "questionHint"     :"The passage says grace ’trains us’ — what exactly does it train us to do, and what does that suggest about the relationship between receiving grace and living a godly life?"
+          "questionHint"     :"The passage says grace ’trains us’.\nWhat exactly does it train us to do?\nWhat does that suggest about the relationship between receiving grace and living a godly life?"
         },
         {
           "elementId"    :"ch02-el23",
@@ -743,7 +743,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul wants to know Christ because knowing him surpasses the value of everything else combined — he counts all his former achievements and privileges as worthless by comparison. More specifically, he wants to be found in Christ with Christ’s righteousness (not his own), to experience resurrection power, to share in Christ’s sufferings, and ultimately to attain the resurrection from the dead. Knowing Christ is the whole goal.",
-          "questionHint"     :"Paul lists several specific things he hopes to gain or experience through knowing Christ in verses 9–11 — can you identify them?"
+          "questionHint"     :"Paul lists several specific things he hopes to gain or experience through knowing Christ in verses 9–11.\nCan you identify them?"
         },
         {
           "elementId"    :"ch02-el27",
@@ -767,7 +767,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul wants others to grow in the knowledge of the Son of God because that knowledge leads to maturity — specifically, to reaching the full measure of Christ’s stature. This is not just a personal goal but a communal one: the whole church is to attain unity in faith and knowledge together, growing up into Christ-like completeness.",
-          "questionHint"     :"What does Paul say is the end result of growing together in knowledge of the Son of God — and is this goal for individuals only, or for the whole church?"
+          "questionHint"     :"What does Paul say is the end result of growing together in knowledge of the Son of God?\nIs this goal for individuals only, or for the whole church?"
         },
         {
           "elementId"    :"ch02-el29",
@@ -962,7 +962,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The route to maturity is to continue living in Christ in the same way we first received him — as Lord. This involves being rooted and built up in him, established in the faith as we were taught, and living with an attitude of overflowing thankfulness. Maturity comes not by moving beyond Christ, but by going deeper into him.",
-          "questionHint"     :"Paul uses four phrases to describe what ’continuing in Christ’ looks like — can you identify them, and what do they have in common?"
+          "questionHint"     :"Paul uses four phrases to describe what ’continuing in Christ’ looks like.\nCan you identify them?\nWhat do they have in common?"
         },
         {
           "elementId"    :"ch03-el10",
@@ -986,7 +986,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Without deep roots, growth cannot last. The seed on rocky ground springs up quickly but withers under pressure because it has no depth. Seed among thorns is choked and never matures. Only seed in good soil — with proper roots — produces lasting fruit. Spiritually, if we are not deeply rooted in Christ, difficulties and distractions will prevent us from ever reaching maturity.",
-          "questionHint"     :"What happens to the seed that sprouts quickly but has no deep root — and what caused it to wither?"
+          "questionHint"     :"What happens to the seed that sprouts quickly but has no deep root?\nWhat caused it to wither?"
         },
         {
           "elementId"    :"ch03-el12",
@@ -1010,7 +1010,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Psalm 1 shows that where our roots go determines our fruitfulness and our final destiny. The person rooted in God’s word is like a tree by a stream — always fruitful, never withering, with God guarding their way. But the rootless (the wicked) are like chaff — they cannot stand when it matters most and their way ends in destruction. Right roots mean life; wrong roots mean ruin.",
-          "questionHint"     :"Compare the two images in the Psalm — a tree by a stream versus wind-driven chaff. What does each image say about the outcome of where a person has planted their roots?"
+          "questionHint"     :"Compare the two images in the Psalm — a tree by a stream versus wind-driven chaff.\nWhat does each image say about the outcome of where a person has planted their roots?"
         },
         {
           "elementId"    :"ch03-el14",
@@ -1034,7 +1034,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The church in Ephesus had drifted from their first love — and Jesus treats this very seriously. He warns that if they do not remember, repent, and return to their earlier devotion, he will remove their lampstand. Moving away from our foundation in Christ is not a minor adjustment; it puts our very existence as a light-bearing community in jeopardy.",
-          "questionHint"     :"What does Jesus threaten to do to this church if they do not repent — and how serious does that sound to you?"
+          "questionHint"     :"What does Jesus threaten to do to this church if they do not repent?\nHow serious does that sound to you?"
         },
         {
           "elementId"    :"ch03-el16",
@@ -1058,7 +1058,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"God’s better destiny for us is a heavenly citizenship and a transformed body. Paul says we eagerly await a Saviour from heaven — the Lord Jesus Christ — who will transform our humble, mortal bodies into the likeness of his own glorious, resurrection body, by the same power by which he rules all things.",
-          "questionHint"     :"What two things does Paul say believers are waiting for, and what will Jesus do to our bodies when he comes?"
+          "questionHint"     :"What two things does Paul say believers are waiting for?\nWhat will Jesus do to our bodies when he comes?"
         },
         {
           "elementId"    :"ch03-el18",
@@ -1090,7 +1090,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul says that as God’s chosen, holy, and dearly loved people, we should be growing in mercy, kindness, humility, gentleness, and patience. These are to be combined with a readiness to bear with others and to forgive as God has forgiven us. Over all of these characteristics, love is to be added as the bond that holds them all together perfectly.",
-          "questionHint"     :"Paul lists several character qualities in verse 12 — can you name them all, and what does he add in verse 14 that ties them all together?"
+          "questionHint"     :"Paul lists several character qualities in verse 12.\nCan you name them all?\nWhat does he add in verse 14 that ties them all together?"
         },
         {
           "elementId"    :"ch03-el21",
@@ -1300,7 +1300,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The serpent uses several tactics: he begins by misquoting God to sow doubt (‘Did God really say you must not eat from any tree?’), then flatly contradicts God’s warning about death (‘Surely you will not die’). He also plants a slander against God’s motives — implying that God is withholding something good from them. Finally, he appeals to Eve’s desires: the fruit looks good, it is attractive, and it promises wisdom. The deception works by mixing just enough truth with falsehood to make it plausible.",
-          "questionHint"     :"Look at what the serpent says in verses 1, 4, and 5 — in each case, is he distorting, denying, or slandering? What is he trying to make Eve doubt?"
+          "questionHint"     :"Look at what the serpent says in verses 1, 4, and 5.\nIn each case, is he distorting, denying, or slandering?\nWhat is he trying to make Eve doubt?"
         },
         {
           "elementId"        :"ch04-el09",
@@ -1314,7 +1314,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Eve makes several mistakes. First, she engages with the serpent’s distortion rather than rejecting it outright. Second, she slightly misquotes God’s command herself — adding ’you must not touch it’, which God had not said. Third, she allows herself to be swayed by the fruit’s physical appeal (good for food, attractive, desirable for wisdom) rather than holding firmly to God’s word. Fourth, Adam, who was with her, says nothing and also eats — and she shares the fruit without any resistance. Together they prioritise their own judgement over God’s clear instruction.",
-          "questionHint"     :"Compare what God actually said in chapter 2 with what Eve says in verse 3 — do you notice any difference? And in verse 6, what three things draw her towards the fruit?"
+          "questionHint"     :"Compare what God actually said in chapter 2 with what Eve says in verse 3.\nDo you notice any difference?\nIn verse 6, what three things draw her towards the fruit?"
         },
         {
           "elementId"    :"ch04-el10",
@@ -1346,7 +1346,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Even in the midst of judgement, God acts with care: he makes proper garments of skin for Adam and Eve and clothes them. This is a hint that God has not abandoned them — he is still providing for them and covering their shame. The fact that an animal apparently died to provide these skins also hints, very early in the Bible, at the idea that a substitute’s death can cover human sin and shame.",
-          "questionHint"     :"What does God personally do for Adam and Eve before sending them out — and what might the fact that it required animal skin suggest about how their shame is being covered?"
+          "questionHint"     :"What does God personally do for Adam and Eve before sending them out?\nWhat might the fact that it required animal skin suggest about how their shame is being covered?"
         },
         {
           "elementId"    :"ch04-el13",
@@ -1411,7 +1411,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin spreads to the next generation immediately. Cain’s jealousy over God’s acceptance of Abel’s offering turns to anger, and despite God’s direct warning that sin is crouching at the door and must be subdued, Cain does not resist it. The sin of Adam’s family has escalated from eating forbidden fruit to the first murder — all within a single generation. Sin passes from parents to children and grows in intensity.",
-          "questionHint"     :"God warns Cain that sin is ’crouching at the door’ and wants to dominate him — what does Cain choose to do with that warning, and what is the result?"
+          "questionHint"     :"God warns Cain that sin is ’crouching at the door’ and wants to dominate him.\nWhat does Cain choose to do with that warning?\nWhat is the result?"
         },
         {
           "elementId"    :"ch04-el19",
@@ -1435,7 +1435,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin not only spreads to the next generation — it escalates in intensity and becomes boastful. Lamech, just a few generations after Cain, kills a man merely for wounding him and then openly boasts about it to his wives. Where Cain’s sin was terrible, Lamech’s vengeance is out of all proportion and he glories in it. Sin grows more extreme and more shameless over time when left unchecked.",
-          "questionHint"     :"Compare Cain’s killing of Abel with Lamech’s attitude in these verses — what has changed, not just in the act, but in the attitude towards the sin?"
+          "questionHint"     :"Compare Cain’s killing of Abel with Lamech’s attitude in these verses.\nWhat has changed, not just in the act, but in the attitude towards the sin?"
         },
         {
           "elementId"        :"ch04-el21",
@@ -1649,7 +1649,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Here the refusal of knowledge takes the form of neglect. The author warns that if even the old message given through angels carried serious consequences for those who disobeyed, how much more serious is it to ignore the great salvation announced by the Lord himself? Sin can lead us to drift past saving knowledge not through dramatic rejection, but through simple carelessness — paying it no attention.",
-          "questionHint"     :"The writer doesn’t say people ’rejected’ salvation but that they ’neglected’ it — what is the difference, and why might neglect still be a form of refusing knowledge?"
+          "questionHint"     :"The writer doesn’t say people ’rejected’ salvation but that they ’neglected’ it.\nWhat is the difference?\nWhy might neglect still be a form of refusing knowledge?"
         },
         {
           "elementId"    :"ch05-el09",
@@ -1673,7 +1673,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John warns against being deceived about the connection between character and conduct. Sin can involve a refusal to accept what we actually know — namely, that a genuinely righteous person is known by actually practising righteousness. We can deceive ourselves into thinking we know God while our behaviour tells a different story. This is a refusal of knowledge about what true righteousness looks like.",
-          "questionHint"     :"John says ’let no one deceive you’ — what specific piece of knowledge is someone at risk of being deceived about in this verse?"
+          "questionHint"     :"John says ’let no one deceive you’.\nWhat specific piece of knowledge is someone at risk of being deceived about in this verse?"
         },
         {
           "elementId"    :"ch05-el11",
@@ -1745,7 +1745,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"What is refused here is twofold: the glorifying of God as God, and thankfulness to him. Even people who knew God chose not to honour him as God or to give thanks. Ingratitude is not merely a social failing — Paul frames it as a form of sin, a refusal to acknowledge God’s goodness and give him the credit he is due. The consequences are serious: futile thinking and a darkened heart.",
-          "questionHint"     :"Paul says they ’knew God’ but still refused two specific things — can you name both of them, and what do they have in common?"
+          "questionHint"     :"Paul says they ’knew God’ but still refused two specific things.\nCan you name both of them?\nWhat do they have in common?"
         },
         {
           "elementId"    :"ch05-el17",
@@ -1793,7 +1793,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul describes the ultimate form of sin as an exchange: swapping the truth of God for a lie, and transferring worship and service away from the Creator to created things. This is not just breaking rules — it is the wholesale replacement of God himself with something else. The creature refuses the Creator: they don’t merely disobey God, they redirect the devotion that is his due to things he has made. That is the deepest form of refusal.",
-          "questionHint"     :"Paul uses the word ’exchanged’ — what exactly was exchanged for what, and what does that tell you about where their ultimate loyalty ended up?"
+          "questionHint"     :"Paul uses the word ’exchanged’.\nWhat exactly was exchanged for what?\nWhat does that tell you about where their ultimate loyalty ended up?"
         },
         {
           "elementId"    :"ch05-el21",
@@ -1817,7 +1817,7 @@
           "answerPlaceholder"   :"Try to answer the question from the Bible passage",
           "bottomPadding"       :"normal",
           "sampleAnswer"        :"The opposite of refusing God is loving him with everything we have — heart, soul, mind, and strength. Where sin withholds, the greatest commandment demands total, wholehearted devotion. The fourfold repetition of ’all’ makes clear that this is not partial loyalty or occasional attention, but a complete and unreserved orientation of our entire selves towards God.",
-          "questionHint"        :"Jesus says ’all’ four times in this verse — what does that repeated emphasis tell you about what total acceptance of God (the opposite of refusal) actually looks like?",
+          "questionHint"        :"Jesus says ’all’ four times in this verse.\nWhat does that repeated emphasis tell you about what total acceptance of God (the opposite of refusal) actually looks like?",
           "shortAnswerThreshold":2
         },
         {
@@ -1871,7 +1871,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin draws the wrath of God. Paul says the wrath of God is currently being revealed from heaven against all ungodliness and unrighteousness — specifically against those who suppress the truth. Sin does not leave the relationship with God neutral; it places us under his just anger. The suppression of truth is not an innocent act — it is the active distortion of what God has made plain, and it has real consequences for how God relates to us.",
-          "questionHint"     :"What specific response does Paul say God has towards ungodliness and unrighteousness — and does that suggest the relationship between God and the sinner is comfortable or troubled?"
+          "questionHint"     :"What specific response does Paul say God has towards ungodliness and unrighteousness?\nDoes that suggest the relationship between God and the sinner is comfortable or troubled?"
         },
         {
           "elementId"    :"ch05-el28",
@@ -1895,7 +1895,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin brings us into the category of those who will face God’s judgement. Paul declares that God has already fixed a day on which he will judge the world in righteousness, through the risen Jesus. Every person living in sin stands under the certainty of that coming judgement. The resurrection of Jesus is the proof that this is real — it is not a distant threat but a confirmed appointment.",
-          "questionHint"     :"Paul says God has ’set a day’ — what does the fact that this day is already fixed tell you about the certainty of judgement for those who continue in sin?"
+          "questionHint"     :"Paul says God has ’set a day’.\nWhat does the fact that this day is already fixed tell you about the certainty of judgement for those who continue in sin?"
         },
         {
           "elementId"    :"ch05-el30",
@@ -1943,7 +1943,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul paints a bleak picture: sin leads to lives characterised by evil and envy, and a state of being hateful and hating one another. Relationships with others are poisoned — instead of love and goodwill, there is mutual hostility. Sin does not just damage our relationship with God; it corrupts every human relationship, turning people who were made for community into sources of harm to one another.",
-          "questionHint"     :"Paul ends his description with ’hateful and hating one another’ — what does that double description suggest about how sin affects both what we are and what we do to those around us?"
+          "questionHint"     :"Paul ends his description with ’hateful and hating one another’.\nWhat does that double description suggest about how sin affects both what we are and what we do to those around us?"
         },
         {
           "elementId"    :"ch05-el34",
@@ -1967,7 +1967,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin destroys trust — even between the closest of people. Micah describes a world so corrupted by sin that you cannot trust your closest friend, your companion, or even the person in your own home. This is a picture of social breakdown at the most intimate level: sin reaches into the places where trust should be strongest and corrodes them. Relationships that should be safe become dangerous.",
-          "questionHint"     :"Micah moves from ’friend’ to ’companion’ to ’the one who lies in your embrace’ — what does this progression tell you about how far sin’s damage to trust reaches?"
+          "questionHint"     :"Micah moves from ’friend’ to ’companion’ to ’the one who lies in your embrace’.\nWhat does this progression tell you about how far sin’s damage to trust reaches?"
         },
         {
           "elementId"    :"ch05-el36",
@@ -1991,7 +1991,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin spreads through deception — people who are in sin deceive others and are themselves deceived. This is a self-reinforcing cycle: those who are evil and those who are charlatans do not stay the same, they go from bad to worse. Sin damages relationships with others by turning them into occasions for manipulation and deception, while also trapping the sinner deeper in their own self-deception.",
-          "questionHint"     :"Paul says evil people are both ’deceiving others’ and ’being deceived themselves’ — what does it mean that sin damages both what you do to others and what happens to you?"
+          "questionHint"     :"Paul says evil people are both ’deceiving others’ and ’being deceived themselves’.\nWhat does it mean that sin damages both what you do to others and what happens to you?"
         },
         {
           "elementId"    :"ch05-el38",
@@ -2015,7 +2015,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"James traces conflict and quarrel directly back to internal sinful desires. Where there is envy and selfish ambition, disorder and every evil practice follow. The passions that war inside us spill outward into conflict with others — fighting, quarrelling, and even murder. Sin does not stay internal; it becomes the engine of relational breakdown and social disorder. The root is within; the fruit poisons those around us.",
-          "questionHint"     :"James asks where quarrels ’come from’ and then answers his own question — what does his answer reveal about the real source of conflict between people?"
+          "questionHint"     :"James asks where quarrels ’come from’ and then answers his own question.\nWhat does his answer reveal about the real source of conflict between people?"
         },
         {
           "elementId"    :"ch05-el40",
@@ -2039,7 +2039,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin drives the powerful to exploit the powerless. The proverb warns against robbing the poor precisely because of their poverty, and crushing the afflicted at the very place (the city gate) where they should receive justice. Sin corrupts relationships across social lines — it turns those with power into oppressors of the vulnerable, reversing the justice and care that God intends.",
-          "questionHint"     :"The verse says not to rob the poor ’because he is poor’ — what does that phrase suggest about the particularly sinful nature of exploiting someone’s vulnerability?"
+          "questionHint"     :"The verse says not to rob the poor ’because he is poor’.\nWhat does that phrase suggest about the particularly sinful nature of exploiting someone’s vulnerability?"
         },
         {
           "elementId"    :"ch05-el42",
@@ -2063,7 +2063,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul describes sin’s effects on the self as comprehensive: it makes us foolish (poor judgement), disobedient (rebellious will), and misled (distorted thinking). Most damagingly, it enslaves us — we become captive to various passions and desires, with no real freedom. Sin does not liberate the self; it imprisons it, reducing the person to a slave of their own cravings.",
-          "questionHint"     :"Paul uses the word ’enslaved’ to describe one of sin’s effects on the self — what does slavery imply about how much freedom or control the sinner actually has over their own life?"
+          "questionHint"     :"Paul uses the word ’enslaved’ to describe one of sin’s effects on the self.\nWhat does slavery imply about how much freedom or control the sinner actually has over their own life?"
         },
         {
           "elementId"    :"ch05-el44",
@@ -2081,7 +2081,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Sin also deceives the self. Paul says that evil people go from bad to worse and are not just deceiving others but being deceived themselves. The sinner does not see their situation clearly — they are caught in a self-reinforcing delusion. Sin doesn’t just make us behave badly; it warps our perception so that we can no longer accurately assess our own condition, making the problem harder and harder to escape.",
-          "questionHint"     :"Paul says that along with deceiving others, sinful people are ’being deceived themselves’ — who or what is doing the deceiving, and what might that mean for the sinner’s ability to see themselves clearly?"
+          "questionHint"     :"Paul says that along with deceiving others, sinful people are ’being deceived themselves’.\nWho or what is doing the deceiving?\nWhat might that mean for the sinner’s ability to see themselves clearly?"
         },
         {
           "elementId"    :"ch05-el46",
@@ -2289,7 +2289,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"In the culture of the day, asking for your inheritance while your father is still alive was deeply insulting — it was effectively wishing your father were dead. The son wants the father’s wealth without the relationship. What is surprising is the father’s response: rather than rebuking the son or refusing, he divides the estate and gives it to him. The father does not coerce loyalty; he allows the son to go, even at great personal cost.",
-          "questionHint"     :"In the culture of the time, an inheritance was only received after a parent’s death — what does the son’s demand therefore imply about how he views his father and their relationship?"
+          "questionHint"     :"In the culture of the time, an inheritance was only received after a parent’s death.\nWhat does the son’s demand therefore imply about how he views his father and their relationship?"
         },
         {
           "elementId"    :"ch06-el12",
@@ -2313,7 +2313,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"He leaves quickly, travels as far away as possible from his father, and wastes everything he has been given on extravagant, reckless living. The freedom he demanded is used entirely for self-indulgence, with no thought for his father, his family, or the future. He converts relationship and inheritance into immediate personal pleasure.",
-          "questionHint"     :"Notice the son goes to ’a distant country’ — what does the physical distance from his father suggest about the kind of freedom he was really looking for?"
+          "questionHint"     :"Notice the son goes to ’a distant country’.\nWhat does the physical distance from his father suggest about the kind of freedom he was really looking for?"
         },
         {
           "elementId"    :"ch06-el14",
@@ -2361,7 +2361,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"He has reached the absolute lowest point. Pigs were considered unclean animals under Jewish law, and contact with them was something a Jewish person would have considered deeply defiling. Now he is not just feeding them but longing to eat what they eat — and even that is denied him. The boy who demanded his father’s wealth is now below the level of the pigs he tends. He has lost everything, including his dignity.",
-          "questionHint"     :"Pigs were considered ritually unclean in Jewish culture — what does the fact that a Jewish boy is not only tending them but wanting to eat their food tell you about how far he has fallen?"
+          "questionHint"     :"Pigs were considered ritually unclean in Jewish culture.\nWhat does the fact that a Jewish boy is not only tending them but wanting to eat their food tell you about how far he has fallen?"
         },
         {
           "elementId"    :"ch06-el18",
@@ -2422,7 +2422,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The son expects to be demoted. He rehearses a speech admitting he is no longer worthy to be called a son and asks only to be treated as a hired servant. He expects a business transaction at best — not restoration. He is coming home not because he expects love but because he is desperate and has nowhere else to go. His expectations of his father are low.",
-          "questionHint"     :"What is the son planning to ask his father to make him — and what does that tell you about what kind of welcome he thinks he deserves?"
+          "questionHint"     :"What is the son planning to ask his father to make him?\nWhat does that tell you about what kind of welcome he thinks he deserves?"
         },
         {
           "elementId"    :"ch06-el24",
@@ -2454,7 +2454,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"No. The detail that the father saw him ’while he was still a long way off’ implies he was watching and waiting — he had not given up hope. He does not wait for the son to arrive and make his case; he runs to him. A father who had given up would not be scanning the horizon. His immediate compassion and physical embrace show that his love has never wavered, despite everything his son did.",
-          "questionHint"     :"How was the father able to see his son ’while he was still a long way off’ — and what does that suggest about what the father had been doing during his son’s absence?"
+          "questionHint"     :"How was the father able to see his son ’while he was still a long way off’?\nWhat does that suggest about what the father had been doing during his son’s absence?"
         },
         {
           "elementId"           :"ch06-el27",
@@ -2468,7 +2468,7 @@
           "answerPlaceholder"   :"Try to answer the question from the Bible passage",
           "bottomPadding"       :"normal",
           "sampleAnswer"        :"The father’s response is immediate, physical, and overwhelming: he feels compassion, runs to his son, embraces him, and kisses him — all before the son has said a word. There is no hesitation, no lecture, no conditions. The return of his son produces an outpouring of love that completely overtakes any thought of reproach.",
-          "questionHint"        :"The verse describes four actions the father takes in quick succession — can you list them, and what do they together tell you about the father’s emotional state?",
+          "questionHint"        :"The verse describes four actions the father takes in quick succession.\nCan you list them?\nWhat do they together tell you about the father’s emotional state?",
           "shortAnswerThreshold":4
         },
         {
@@ -2493,7 +2493,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The father immediately restores the son to full honour: the best robe (not a servant’s), a ring (a sign of family authority and belonging), sandals (servants went barefoot, not sons), and a feast with the fattened calf reserved for special occasions. The son asked to be a servant; the father reinstates him as a son. Everything about the response is lavish, urgent, and joyful — nothing is held back.",
-          "questionHint"     :"The son asked to be treated like a hired servant — look at the robe, ring, and sandals the father gives him. What status does each item represent, and how does it compare to what the son requested?"
+          "questionHint"     :"The son asked to be treated like a hired servant.\nLook at the robe, ring, and sandals the father gives him.\nWhat status does each item represent?\nHow does it compare to what the son requested?"
         },
         {
           "elementId"    :"ch06-el30",
@@ -2517,7 +2517,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"The father explains his joy in the most profound terms: his son was dead and is alive again, was lost and is found. He does not describe his son’s return in terms of behavioural improvement or a debt repaid — he describes it as a resurrection, a recovery of something precious that was gone. This is not relief; it is overwhelming joy at a life restored. And so they celebrate.",
-          "questionHint"     :"The father doesn’t say ’my son was bad but now he’s better’ — he says ’he was dead and is alive again.’ What does that stronger language tell you about how the father understood the son’s time away?"
+          "questionHint"     :"The father doesn’t say ’my son was bad but now he’s better’ — he says ’he was dead and is alive again.’\nWhat does that stronger language tell you about how the father understood the son’s time away?"
         },
         {
           "elementId"    :"ch06-el32",
@@ -2725,7 +2725,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"He responds with resentment and a transactional view of his relationship with his father: he has served him for years without disobedience, yet was never rewarded with even a small celebration. He frames everything as a business ledger — his loyal service deserved a return that he never received, while his wasteful brother gets the best. He even refuses to call the younger son his brother, calling him ’this son of yours’. His complaint reveals that he never understood the relationship as one of love at all.",
-          "questionHint"     :"Notice that the older son says he ’served’ his father and ’never disobeyed a commandment’ — does that sound like the language of a son, or of an employee? What does his choice of words reveal about how he understood his relationship with his father?"
+          "questionHint"     :"Notice that the older son says he ’served’ his father and ’never disobeyed a commandment’.\nDoes that sound like the language of a son, or of an employee?\nWhat does his choice of words reveal about how he understood his relationship with his father?"
         },
         {
           "elementId"    :"ch07-el14",
@@ -2813,7 +2813,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul says explicitly that God saved us not because of righteous works we have done, but on the basis of his mercy. The tower block idea assumes that enough good deeds will eventually earn God’s acceptance — but Paul rules that out entirely. Salvation has nothing to do with where we rank on any scale of human goodness; it is entirely a gift of mercy, worked through the new birth and the renewing of the Holy Spirit.",
-          "questionHint"     :"Paul says God saved us ’not by’ one thing but ’on the basis of’ another — can you identify both, and how does that distinction demolish the idea of a moral ranking system?"
+          "questionHint"     :"Paul says God saved us ’not by’ one thing but ’on the basis of’ another.\nCan you identify both?\nHow does that distinction demolish the idea of a moral ranking system?"
         },
         {
           "elementId"    :"ch07-el22",
@@ -2837,7 +2837,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Paul is emphatic and threefold in his denial: no one is justified by works of the law — not partly, not mainly, not at all. Justification comes entirely through the faithfulness of Christ, received by faith in him. The tower block model imagines that law-keeping accumulates merit; Paul says that model produces nothing. Whatever floor of the tower block you occupy, your good deeds cannot justify you before God.",
-          "questionHint"     :"Paul repeats the same negative point three times in this single verse — why do you think he emphasises it so strongly, and what is he trying to rule out completely?"
+          "questionHint"     :"Paul repeats the same negative point three times in this single verse.\nWhy do you think he emphasises it so strongly?\nWhat is he trying to rule out completely?"
         },
         {
           "elementId"    :"ch07-el24",
@@ -2886,7 +2886,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John points to a concrete, historical event as the proof: God sent his one and only Son into the world so that we might live through him. And crucially, the initiative was entirely God’s — not that we loved God, but that he loved us first and sent his Son as an atoning sacrifice. The love of God is not a feeling or a claim; it is demonstrated in the most costly act imaginable.",
-          "questionHint"     :"John says that love is shown by who acted first — who made the first move in this relationship, God or us, and what did that first move cost?"
+          "questionHint"     :"John says that love is shown by who acted first.\nWho made the first move in this relationship, God or us?\nWhat did that first move cost?"
         },
         {
           "elementId"    :"ch07-el29",
@@ -2910,7 +2910,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"Micah describes a God who is unique in his forgiveness — who does not hold onto anger forever but who delights in loyal love. He will have compassion, subdue our sins, and throw them into the depths of the sea, never to be retrieved. This is not reluctant tolerance but active, joyful love — a God who takes pleasure in showing mercy. The completeness of the forgiveness (all our sins, into the sea) is a powerful assurance of his love.",
-          "questionHint"     :"Micah says God ’delights in loyal love’ — the word ’delights’ means he takes pleasure in it. What does that tell you about whether God’s forgiveness is reluctant or wholehearted?"
+          "questionHint"     :"Micah says God ’delights in loyal love’ — the word ’delights’ means he takes pleasure in it.\nWhat does that tell you about whether God’s forgiveness is reluctant or wholehearted?"
         },
         {
           "elementId"    :"ch07-el31",
@@ -2958,7 +2958,7 @@
           "answerPlaceholder":"Try to answer the question from the Bible passage",
           "bottomPadding"    :"normal",
           "sampleAnswer"     :"John grounds God’s acceptance in his character: he is faithful and righteous, and therefore when we confess, he will forgive and cleanse. This is not a conditional offer that might not hold — it rests on who God is. The forgiveness covers our sins; the cleansing covers ’all unrighteousness’, which is broader still. The one condition on our side is honest confession; everything else is guaranteed by God’s own faithfulness.",
-          "questionHint"     :"John says God forgives because he is ’faithful and righteous’ — rather than saying God forgives because he feels like it. Why does basing forgiveness on God’s character make the promise more reliable?"
+          "questionHint"     :"John says God forgives because he is ’faithful and righteous’ — rather than saying God forgives because he feels like it.\nWhy does basing forgiveness on God’s character make the promise more reliable?"
         },
         {
           "elementId"    :"ch07-el35",

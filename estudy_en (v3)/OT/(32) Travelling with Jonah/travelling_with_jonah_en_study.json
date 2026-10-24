@@ -8,7 +8,7 @@
     "author"           :"Rick Creighton",
     "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
-    "studyVersion"     :1.11,
+    "studyVersion"     :1.12,
     "language"         :"en",
     "bibleTranslation" :{
       "en":"NET"
@@ -164,7 +164,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"God tells Jonah to go to Nineveh — described as a ‘large capital city’ — and announce judgment against its people. The reason is explicit: ‘their wickedness has come to my attention.’ God is not unaware of what is happening in Nineveh. He sees it, he cares about it, and he is sending his prophet to speak into it. The call is straightforward: no complicated strategy, no softening of the message. Go. Preach. That is it. What makes it extraordinary is the context: Nineveh is the capital of Israel’s most terrifying enemy. God is not asking Jonah to preach to his own people but to the people who most threaten and brutalise them.",
-          "questionHint"     :"Notice that God gives Jonah both a destination and a reason. What does the reason tell us about God’s relationship to the wider world beyond Israel?",
+          "questionHint"     :"Notice that God gives Jonah both a destination and a reason.\nWhat does the reason tell us about God’s relationship to the wider world beyond Israel?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God says that Nineveh’s wickedness ‘has come to my attention’. What does that phrase suggest about how God sees and responds to evil in the world?",
@@ -201,7 +201,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Nineveh lay to the north-east of Israel. Jonah heads south-west — to Joppa on the coast, where he catches a ship for Tarshish, most likely modern-day Spain. He is not just refusing; he is going as far as possible in exactly the opposite direction. The text hammers the point home: in a single verse Jonah goes ‘to escape from the commission of the Lord’ and ends up ‘far away from the Lord’. Jonah is not drifting or hesitating; he is making a deliberate, determined run for it. At this point the text does not tell us why — we have to wait until chapter 4 for that. For now, the natural guess is fear: preaching judgment to 120,000 brutal Assyrians is about as daunting a mission as it is possible to imagine.",
-          "questionHint"     :"Verse 3 says Jonah headed off ‘to escape from the commission of the Lord’ and was going ‘far away from the Lord’. What does this repeated emphasis on getting away suggest about Jonah’s state of mind?",
+          "questionHint"     :"Verse 3 says Jonah headed off ‘to escape from the commission of the Lord’ and was going ‘far away from the Lord’.\nWhat does this repeated emphasis on getting away suggest about Jonah’s state of mind?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Do you think Jonah actually believed he could flee from God? What might it tell us about how we think when we are in rebellion — even when we know better?",
@@ -253,7 +253,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The sailors respond exactly as you would expect: they are terrified, they cry out to their gods, and they do everything practically possible to save the ship — throwing the cargo overboard to lighten the load. They are active, urgent, and afraid. Jonah, by contrast, is asleep. He has gone below deck and is fast asleep through a storm so violent it threatens to break the ship apart. The contrast is almost comic in its absurdity — except that it is not funny at all. The pagan sailors are doing everything right while God’s own prophet is doing nothing. The irony deepens when the captain — a pagan — has to go and wake Jonah and tell him to pray to his god. The Lord’s prophet needs a pagan to remind him to pray.",
-          "questionHint"     :"The captain’s words to Jonah (‘What are you doing asleep? Get up! Cry out to your god!’) are dripping with irony. What does the fact that a pagan has to say this to God’s prophet tell us about the state Jonah is in?",
+          "questionHint"     :"The captain’s words to Jonah (‘What are you doing asleep? Get up! Cry out to your god!’) are dripping with irony.\nWhat does the fact that a pagan has to say this to God’s prophet tell us about the state Jonah is in?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Jonah sleeps through the storm. Is this simply exhaustion, or does it suggest something deeper about his spiritual state? What does it look like when someone is so deep in rebellion that they cannot even engage with the crisis around them?",
@@ -298,7 +298,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah’s confession is theologically impeccable: ‘I am a Hebrew, and I worship the Lord, the God of heaven, who made the sea and the dry land.’ He knows exactly who God is — the Creator of the very sea that is now threatening to kill them all. This is precisely what makes his behaviour so extraordinary and so damning. He is not running from a god he does not know or understand. He is running from the God of heaven who made the sea — and he is doing it on a boat, on that sea. The sailors are terrified when they hear this, and their question — ‘What have you done?’ — is the natural response. Even pagans can see the absurdity of trying to flee from the Creator of the ocean by sailing across it. Jonah apparently could not.",
-          "questionHint"     :"Jonah says he worships ‘the Lord, the God of heaven, who made the sea and the dry land.’ Given that he is on a ship in a storm, why is this confession particularly ironic?",
+          "questionHint"     :"Jonah says he worships ‘the Lord, the God of heaven, who made the sea and the dry land.’\nGiven that he is on a ship in a storm, why is this confession particularly ironic?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"There is a difference between knowing the truth about God and living by it. Jonah clearly knows who God is. What does his behaviour tell us about that gap? Where do you notice the same gap in your own life?",
@@ -348,7 +348,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah understands clearly: the storm is his fault, it is God’s doing, and the only way to save the others is to remove himself from the equation. That much is to his credit — he does not try to hide or deflect responsibility. He owns it. But notably, he does not pray, does not repent, does not turn around and go to Nineveh. He would rather go overboard than go to Nineveh. His solution is to exit the situation, not to change course. The sailors’ response is remarkable: despite knowing Jonah is the cause of all their trouble, they refuse to throw him over. They row as hard as they can to try to get him to land safely. These rough, pagan sailors are doing everything they can to save the life of the man whose disobedience nearly killed them all — while Jonah himself is apparently willing to drown.",
-          "questionHint"     :"Jonah takes responsibility for the storm — but notice what he does not do. What options were available to him that he did not take?",
+          "questionHint"     :"Jonah takes responsibility for the storm — but notice what he does not do.\nWhat options were available to him that he did not take?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Is there a difference between taking responsibility for a mess and genuinely repenting of it? Which is Jonah doing here — and what does the distinction look like in your own experience?",
@@ -373,7 +373,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The sailors ‘feared the Lord greatly’ and ‘earnestly vowed to offer lavish sacrifices’ to him. In other words, they become worshippers of Yahweh — the very God that Jonah was running away from. This is one of the great ironies of the chapter: Jonah’s flight from God, his disobedience, his near-drowning — all of it has ended up bringing a group of pagan sailors to faith in the Lord. God has used Jonah’s failure as the instrument of these men’s conversion. Jonah made no real effort to point them toward God — he was an absolute failure as a prophet — and yet God still worked through the chaos to bring these sailors to himself. That is a striking picture of God’s sovereignty: he can bring good out of even our most spectacular failures.",
-          "questionHint"     :"The sailors end up fearing the Lord and making vows to him. Who converted them? What does this tell us about whose work salvation ultimately is?",
+          "questionHint"     :"The sailors end up fearing the Lord and making vows to him.\nWho converted them?\nWhat does this tell us about whose work salvation ultimately is?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The sailors respond to God more faithfully than the prophet of God does throughout this chapter. What does that say to us about where genuine faith can be found — and about our assumptions regarding who is ‘inside’ and ‘outside’?",
@@ -443,7 +443,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"God sends the storm (v4). God’s purpose is behind the casting of the lot that identifies Jonah (v7). God sends a huge fish to swallow Jonah (v17). Even the calming of the sea when Jonah goes overboard is God’s doing (v15). Throughout the chapter, God is the one initiating, directing, and controlling events. The picture that emerges is of God’s total sovereignty — nothing happens outside his knowledge or beyond his reach. He is not thrown by Jonah’s rebellion; he uses it. He is not defeated by the storm; he sent it. He is not scrambling to recover a situation that got away from him; he is guiding the whole story toward his purpose. This is enormously reassuring: the technical word is sovereignty, and it means that in any situation — even the messiest — God has not lost the plot.",
-          "questionHint"     :"The text says God ‘sent’ the storm and ‘provided’ the fish. What do those active verbs tell us about God’s relationship to the events of the chapter?",
+          "questionHint"     :"The text says God ‘sent’ the storm and ‘provided’ the fish.\nWhat do those active verbs tell us about God’s relationship to the events of the chapter?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God’s sovereignty in this chapter means he can bring good out of Jonah’s complete failure. Does that make Jonah’s disobedience less serious? How do we hold together God’s sovereignty and human responsibility?",
@@ -468,7 +468,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"God has not given up on Jonah. He has not said, ‘You have failed — you are finished as a prophet.’ Instead he provides a fish — an unlikely, undignified, smelly rescue — to preserve Jonah’s life and give him time to reflect, repent, and learn. The fish is an act of grace, not punishment. Jonah deserved to drown; God saved him anyway. This is one of the defining characteristics of God throughout the book: he does not abandon people who have failed him. He pursues them. He provides for them even when they have walked away. The fish is not comfortable — but it is gracious. That is what grace often looks like: not what we wanted, but exactly what we needed.",
-          "questionHint"     :"The fish is often thought of as the dramatic centrepiece of Jonah — but it actually appears in only one verse in chapter 1. What is it doing in the story? Is it a punishment or something else?",
+          "questionHint"     :"The fish is often thought of as the dramatic centrepiece of Jonah — but it actually appears in only one verse in chapter 1.\nWhat is it doing in the story?\nIs it a punishment or something else?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Can you think of a time when God’s grace to you came in an uncomfortable or unexpected form — something that did not feel like a gift at the time? What does Jonah’s fish teach us about how to recognise grace?",
@@ -508,7 +508,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"This question is personal and the answer will be different for everyone. What Jonah’s story shows is that avoidance does not make the call go away — it just means we end up in a far bigger mess than if we had obeyed in the first place. The thing we are avoiding is usually daunting for a reason: it may cost us something, expose us to hostility, take us out of our comfort zone, or require us to trust God in a situation where we would prefer to stay in control. The question worth sitting with is not ‘is this hard?’ but ‘is this what God is asking of me?’ Because if it is, then the God who controlled the storm, the lot, and the fish is the same God who will be in control of whatever we step into when we obey.",
-          "questionHint"     :"Jonah’s call was to a specific place, to specific people, with a specific message. Is there a specific thing — not just a vague sense — that you have been putting off?",
+          "questionHint"     :"Jonah’s call was to a specific place, to specific people, with a specific message.\nIs there a specific thing — not just a vague sense — that you have been putting off?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"What would it look like to take a step toward the thing you have been avoiding — this week, specifically? What is the smallest concrete move in the right direction?",
@@ -570,7 +570,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"God’s sovereignty in chapter 1 is not a theological abstraction — it is a pastoral reality. It means that no situation is so broken, no failure so complete, that God cannot work in it and through it. He used Jonah’s disobedience to save the sailors. He used the storm to get Jonah’s attention. He used a fish to preserve Jonah’s life. None of those outcomes required Jonah to be at his best. God worked around Jonah’s worst. For us, this means that whatever mess we are in — whether of our own making or not — God has not lost the plot. That does not mean everything will be fine immediately, or that consequences will disappear. But it does mean that even in the middle of a storm, ‘the mess will not have the last word.’ God is still in control. And that is worth calling out to him about.",
-          "questionHint"     :"Is there a situation in your life right now that feels out of control or beyond recovery? What would it mean to trust that the God who controlled Jonah’s storm is also present in your situation?",
+          "questionHint"     :"Is there a situation in your life right now that feels out of control or beyond recovery?\nWhat would it mean to trust that the God who controlled Jonah’s storm is also present in your situation?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The chapter ends with Jonah inside a fish — alive, but not yet where he needs to be. God’s rescue is real but incomplete. How does that image speak to your experience of God’s help — which is often real but rarely instant or comfortable?",
@@ -656,7 +656,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The images pile up: thrown into the deep waters, the ocean current engulfing him, mighty waves sweeping over him, water engulfing him up to his neck, seaweed wrapped around his head, going down to the very bottoms of the mountains, the gates of the netherworld barring him in forever. Each image takes him deeper — further from the surface, further from air, further from any possibility of self-rescue. The phrase ‘the gates of the netherworld barred me in forever’ is the low point: this is the language of a tomb, of permanent death. What the imagery conveys is not just physical danger but utter helplessness. There is nothing Jonah can do. He cannot swim up from the very bottoms of the mountains. He cannot unwrap the seaweed himself. He cannot open the gates of the netherworld that have barred him in. His situation is humanly impossible — which is exactly the point.",
-          "questionHint"     :"Try to trace the movement of the images — do they go deeper or shallower as the verses progress? What effect does this have?",
+          "questionHint"     :"Try to trace the movement of the images.\nDo they go deeper or shallower as the verses progress?\nWhat effect does this have?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The language Jonah uses (‘the belly of Sheol’, ‘the Pit’, ‘barred me in forever’) is the language of death. Why might it be important that his rescue comes from what is functionally a dead-end situation?",
@@ -691,7 +691,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"V4 is the low point of the prayer. Jonah recalls the moment when he was convinced that he had been banished from God’s sight and would never again see the holy temple — the place where God’s presence was met. But by v6 the direction has reversed: ‘but you brought me up from the Pit, O Lord, my God.’ Jonah speaks of rescue as something God has already done, even though he is still inside the fish. The shift is not that his circumstances improve but that he turns toward God rather than away. He does not wait for his feelings to change before he prays; he prays against the grain of his feelings. This is not denial — Jonah does not pretend things are fine. It is faith: choosing to orient toward God even when circumstances say there is no point.",
-          "questionHint"     :"The word ‘yet’ carries a lot of weight here. What two things is it holding together, and why does that small word matter?",
+          "questionHint"     :"The word ‘yet’ carries a lot of weight here.\nWhat two things is it holding together?\nWhy does that small word matter?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Have you ever prayed against the grain of your feelings — choosing to trust God when circumstances suggested you shouldn’t? What did that look like, and what came of it?",
@@ -731,7 +731,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah should have called to God long before this — he should never have run away in the first place. But even once the storm came, he slept through it rather than praying. It takes the absolute extremity — his life literally ebbing away, seconds from death — to make him remember God and call out. This is a damning indictment, but it is also painfully recognisable. Most of us are tempted to try everything else first: our own resources, other people’s help, ignoring the problem — and to turn to God only when all of that has failed. We treat prayer as a last resort rather than a first response. The wartime proverb applies: there are no atheists in foxholes. Desperation, as uncomfortable as it is, has a way of clarifying what we actually believe and who we actually trust.",
-          "questionHint"     :"Jonah had plenty of earlier opportunities to call out to God — before he got on the boat, during the storm, when the captain woke him. What kept him from it until now?",
+          "questionHint"     :"Jonah had plenty of earlier opportunities to call out to God — before he got on the boat, during the storm, when the captain woke him.\nWhat kept him from it until now?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Do you tend to pray as a first response to trouble, or as a last resort? What does your pattern of prayer reveal about where you actually place your trust?",
@@ -762,7 +762,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah’s situation is, by any human measure, completely hopeless. He is at the bottom of the sea, inside a fish, having been thrown overboard in a violent storm. There is nowhere lower to be, and no human mechanism of rescue. And yet God hears him. The Lord hears a prayer prayed from the belly of Sheol. This tells us something important about God’s reach: there is no situation so extreme, no place so remote, no depth so unreachable, that it puts the person there beyond God’s hearing. Nowhere is beyond God’s reach. If God can hear Jonah from there — from the inside of a fish at the bottom of the sea — then no situation we face is too far gone to pray about. It is never pointless to call out to God.",
-          "questionHint"     :"The phrase ‘belly of Sheol’ is not just poetic — it describes the furthest possible point from life and from God’s presence. What does it mean that God hears from there?",
+          "questionHint"     :"The phrase ‘belly of Sheol’ is not just poetic — it describes the furthest possible point from life and from God’s presence.\nWhat does it mean that God hears from there?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Is there a situation in your life — or someone else’s — that feels too far gone to pray about? How does Jonah’s experience speak to that?",
@@ -812,7 +812,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The irony is sharp. In chapter 1, the sailors began the story crying out to their various gods — the idols Jonah is now denouncing. But by the end of the chapter, they had turned away from those idols to worship the Lord. Jonah, meanwhile — the prophet who knew the true God — was the one who ran away from him, refusing to obey, effectively clinging to his own stubborn will rather than trusting God. In a sense, Jonah was the one forfeiting mercy, not the pagan sailors. They were the ones who turned toward God; he was the one who turned away. So v8 is perfectly true — and perfectly, uncomfortably applicable to Jonah himself. He is preaching a sermon he has just been living out from the wrong side.",
-          "questionHint"     :"Think back to chapter 1: who was actually clinging to idols, and who was turning toward the Lord? Does Jonah realise the irony of what he is saying?",
+          "questionHint"     :"Think back to chapter 1.\nWho was actually clinging to idols?\nWho was turning toward the Lord?\nDoes Jonah realise the irony of what he is saying?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"An idol does not have to be a wooden statue. What are the ‘worthless idols’ — the things we cling to instead of God — that are most tempting in your own life? What grace might be forfeited by clinging to them?",
@@ -837,7 +837,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"‘Salvation belongs to the Lord’ is not a new theological discovery for Jonah. He knew this before he got on the boat for Tarshish. He knew it before the storm. He knew it before the fish. But knowing a truth in your head and having it formed in your life through experience are two very different things. Jonah knew salvation belonged to God — but he acted as though it came from his own choices and his own ability to manage his situation. He ran. He slept. He tried to exit the problem rather than turn back to God. What has changed is that he has now been on the receiving end of that salvation in the most visceral possible way. He was seconds from death; God pulled him out. He can no longer treat ‘salvation belongs to the Lord’ as a slogan. It is now a fact he has tasted. The question the book leaves open is: will he live differently because of it?",
-          "questionHint"     :"Jonah is not learning a new theological truth here — he already knew this. So what is the difference between knowing it before and saying it now?",
+          "questionHint"     :"Jonah is not learning a new theological truth here — he already knew this.\nSo what is the difference between knowing it before and saying it now?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Is there a truth about God that you know in your head but have not yet fully lived? What would it look like for that truth to move from intellectual knowledge to something that actually shapes your behaviour?",
@@ -877,7 +877,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Being swallowed by a fish cannot be enjoyable. It is dark, smelly, slimy, and lonely. There is nothing obviously comfortable or pleasant about Jonah’s circumstances. And yet he gives thanks. What is remarkable is that he sees the fish clearly: not as a punishment or a disaster, but as a gracious rescue. He deserved to drown. God saved him — in an undignified, uncomfortable, unlikely way — but saved him nonetheless. Jonah is clear-sighted enough to see the grace in it, and he gives thanks for it. This tells us something important about genuine thankfulness: it does not require comfortable circumstances. It requires a clear view of what God has actually done. The alternative — ‘well, I’m alive, I suppose, but is this really the best you can do, Lord?’ — is ingratitude born of taking grace for granted.",
-          "questionHint"     :"God’s ‘help’ here was a fish that swallowed Jonah. Most of us would not instinctively be grateful for that. What does it take to see grace in an uncomfortable rescue?",
+          "questionHint"     :"God’s ‘help’ here was a fish that swallowed Jonah.\nMost of us would not instinctively be grateful for that.\nWhat does it take to see grace in an uncomfortable rescue?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God’s top priority for us is not a trouble-free life but a godly one. How does that reframe what we should be thankful for — and what should we do when God’s help does not look the way we expected?",
@@ -912,7 +912,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"God’s response is immediate and complete: he commands the fish, and Jonah is deposited on dry land. There is no long probationary period, no ‘we’ll see if you can be trusted’, no grudging half-measure. Jonah prays with thankfulness and vows, and God acts. This is a picture of God’s extraordinary generosity toward people who have failed him. Jonah was wilfully disobedient. He ran. He slept through a storm he caused. He said nothing to the sailors about his God until they dragged it out of him. He deserved to drown. And yet: one prayer of genuine thankfulness and trust, and God delivers him completely. This is not what Jonah deserves — it is grace. It is also a gentle warning about what lies ahead: God’s generosity toward Jonah should make Jonah generous toward Nineveh. The question is whether it will.",
-          "questionHint"     :"God does not make Jonah wait or prove himself before responding. What does the immediacy of God’s response tell us about the nature of his forgiveness?",
+          "questionHint"     :"God does not make Jonah wait or prove himself before responding.\nWhat does the immediacy of God’s response tell us about the nature of his forgiveness?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God’s rescue here is in ‘two stages’: first the fish, then dry land. Why might God sometimes help in stages rather than all at once? What might he be teaching in the in-between times?",
@@ -962,7 +962,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Most of us have a natural order of operations when things go wrong: we try to sort it ourselves first, then ask others for help, and only turn to God when all else has failed. Jonah’s pattern is an extreme version of this — he literally had to be at the point of drowning inside a fish before he remembered to pray. The question is personal and practical: what is the current situation where the Ostrich Trick has been running? What would it look like to stop, bring it honestly before God, and ask for his help? Prayer as a first response rather than a last resort is not just piety — it is a statement about where we believe help actually comes from. If salvation truly belongs to the Lord, then it makes sense to go to him first.",
-          "questionHint"     :"Try to name something specific — a relationship, a decision, a worry — that you have been managing on your own. What would bringing it to God look like this week?",
+          "questionHint"     :"Try to name something specific — a relationship, a decision, a worry — that you have been managing on your own.\nWhat would bringing it to God look like this week?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"What stops us from praying first? Is it that we don’t really believe God can help, or that we want to stay in control, or something else? What does your answer reveal about where you actually place your trust?",
@@ -993,7 +993,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The word ‘yet’ is one of the most important words in the whole of Jonah’s prayer. It does not deny the reality of how things feel — Jonah genuinely feels banished, cut off, beyond hope. But it refuses to let that feeling be the final word. Faith, as this verse shows it, is not the absence of doubt or fear. It is the decision to orient toward God anyway — even when feelings say there is no point, even when circumstances say it is too late. The question is personal: what is the thing in your life right now where the feeling is ‘too far gone’, ‘too late’, or ‘God probably isn’t interested in this’? Jonah’s ‘yet’ is an invitation to pray that prayer anyway.",
-          "questionHint"     :"Jonah prays this while still inside the fish — before anything has changed in his circumstances. What does that tell us about the relationship between prayer and our feelings?",
+          "questionHint"     :"Jonah prays this while still inside the fish — before anything has changed in his circumstances.\nWhat does that tell us about the relationship between prayer and our feelings?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Where does the confidence to keep calling out to God come from? What has to be true about God for that to be possible in the middle of a hopeless situation?",
@@ -1024,7 +1024,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The gap between knowing a truth and living it is one of the most common and honest struggles in the Christian life. Jonah is not unusual in this — he is representative. He knew exactly who God was and exactly what God required. That knowledge did not automatically translate into obedience. The Making Connections section draws the same line to Jesus’ words: hearing is not the same as building. The question is specific and practical: not ‘is there a gap?’ (there always is), but ‘where is the gap right now, and what is one concrete step toward closing it?’ It might be a truth about forgiveness that has not yet reached a relationship. A truth about contentment that has not yet reached a habit. A truth about trusting God that has not yet reached a decision you are avoiding. Jonah’s experience inside the fish is a vivid reminder that the gap tends to get painfully obvious eventually — it is better to close it now.",
-          "questionHint"     :"Try to be specific: name the truth, and name the gap between knowing it and living it. Then name one small, concrete step toward closing that gap this week.",
+          "questionHint"     :"Try to be specific: name the truth, and name the gap between knowing it and living it.\nThen name one small, concrete step toward closing that gap this week.",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Why is it not enough simply to know the right things about God? What does it take for head-knowledge to become lived reality — and what role does experience (including uncomfortable experience) play in that process?",
@@ -1120,7 +1120,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The two openings are almost word for word identical: the word of the Lord comes to Jonah, and the command is the same — go to Nineveh, proclaim the message. God has not changed the mission. He has not found a more compliant prophet. He has not abandoned Jonah. He simply comes back with the same call. This tells us something important about God: he does not give up on people who have failed him. He could have said, ‘You had your chance — you’re finished as a prophet.’ That would have been understandable, perhaps even deserved. Instead he comes back with grace and a renewed commission. The God of the second chance is not a God who lowers his standards; he is a God who keeps coming back to people who have walked away.",
-          "questionHint"     :"Read 1:1–2 alongside 3:1–2. What has changed and what has stayed exactly the same? What does the unchanged commission tell us?",
+          "questionHint"     :"Read 1:1–2 alongside 3:1–2.\nWhat has changed and what has stayed exactly the same?\nWhat does the unchanged commission tell us?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God gives Jonah a second chance despite his spectacular failure. What does this tell us about how God deals with people who disobey him — and what does it imply about how we should deal with people who fail us?",
@@ -1155,7 +1155,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The text is spare — it does not tell us about Jonah’s inner state. But we know from chapter 4 that his original fears and objections have not gone away; he still does not want the Ninevites to repent, still resents God’s potential compassion toward them. So his obedience is not a change of heart — it is a change of behaviour. What changed is that his experience in the fish — three days of reflection in the most uncomfortable circumstances imaginable — has recalibrated his sense of what happens when you run from God. He has learned that the call does not go away, that God is more tenacious than he is, and that the cost of disobedience is very high. He obeys. Perhaps reluctantly, perhaps still with all his feelings intact. But he goes. That is itself worth noting: faithful obedience does not always require sorted feelings first.",
-          "questionHint"     :"V3 describes what Jonah did, not how he felt about it. What does the gap between his behaviour and his inner state (visible in chapter 4) tell us about the nature of obedience?",
+          "questionHint"     :"V3 describes what Jonah did, not how he felt about it.\nWhat does the gap between his behaviour and his inner state (visible in chapter 4) tell us about the nature of obedience?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Is there value in obedience that is not accompanied by the right feelings — or does that make it hollow? What do you think Jonah’s case suggests?",
@@ -1195,7 +1195,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"On the surface the message is pure judgment: a countdown to destruction, nothing more. But the king of Nineveh, remarkably, sees what is implicit in it. If God simply wanted to destroy Nineveh, there was no need to send a warning. The very fact that God sent a prophet with a message — even a message of judgment — is itself an act of grace. A warning implies that there is still time, still the possibility of a different outcome. The king’s response (‘Who knows? Perhaps God might be willing to change his mind and relent’) shows he understood this. God’s ‘Final Warning’ in big red letters is also, implicitly, an invitation. Jonah’s minimal, reluctant sermon communicates more than he perhaps intended.",
-          "questionHint"     :"If God simply wanted to destroy Nineveh, why send a prophet? What does the act of warning — even without an explicit offer of mercy — imply about God’s intentions?",
+          "questionHint"     :"If God simply wanted to destroy Nineveh, why send a prophet?\nWhat does the act of warning — even without an explicit offer of mercy — imply about God’s intentions?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"How would you feel if you knew you would have to answer to God in forty days’ time? What would you do differently? What does your answer reveal about what you actually believe about God?",
@@ -1245,7 +1245,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"To ‘believe God’ means to take God at his word — to treat what he says as true and act accordingly. In this context it implies at least three things. First, they believe in the God Jonah proclaims — they accept that this God is real and has authority over their city. Second, they believe God is right to pronounce judgment — they recognise that they deserve condemnation, that their wickedness has genuinely offended him. Third, they believe God means what he says — the threat is real, the forty days are real, the destruction is real unless something changes. All three are forms of taking God seriously. The Ninevites, who had never heard of this God before Jonah arrived, manage in a single day to do what Jonah — who had known God his whole life — had failed to do: they take God at his word and act on it.",
-          "questionHint"     :"The phrase ‘believed God’ is different from ‘believed in God.’ What does the specific phrasing suggest about the nature of their response?",
+          "questionHint"     :"The phrase ‘believed God’ is different from ‘believed in God.’\nWhat does the specific phrasing suggest about the nature of their response?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The people of Nineveh believed in God on the basis of five words from a reluctant prophet. What does that tell us about how little God needs to work with in order to bring people to faith?",
@@ -1286,7 +1286,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The three stages — sin, sorrow, sackcloth — are each necessary, and the absence of any one would reveal something was missing. If there is no recognition of sin, there is no reason to seek forgiveness — a person who does not think they are sinful does not think they need to be forgiven. If there is recognition but no sorrow, the response is merely intellectual — ‘Yes, I suppose I have done wrong’ said with a shrug. Plenty of people are willing to admit they are sinful but have no real sense that it matters. If there is sorrow but no change of behaviour, the sorrow is just emotion without weight — feeling bad without doing anything about it. The king’s decree shows all three working together: they know they have sinned, they are genuinely cut to the heart by it, and their sorrow translates into the concrete action of fasting, sackcloth, and calling urgently on God. The genuineness of their response is visible precisely because it changes what they do.",
-          "questionHint"     :"Think of someone who admits to wrongdoing but shows no sorrow about it — and someone who is sorry but never changes. What is missing in each case?",
+          "questionHint"     :"Think of someone who admits to wrongdoing but shows no sorrow about it — and someone who is sorry but never changes.\nWhat is missing in each case?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The king says ‘Who knows? Perhaps God might be willing to change his mind and relent.’ He is not certain of the outcome but responds anyway. What does it say about genuine repentance that it does not wait for guaranteed results before acting?",
@@ -1346,7 +1346,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"God’s response to Nineveh’s repentance reveals something fundamental about his character: he is not a mechanical God who executes judgments regardless of how people respond. He cares deeply about how people respond to him. He would far rather see people turn from evil and live than carry out the destruction they deserve. Jeremiah 18:7–8 makes this explicit: God’s announced judgments are conditional on the response of the people. This is not God being fickle or unpredictable. It is God being consistent in his character — he is a God who loves to show compassion. What changes when Nineveh repents is not God’s character but the situation: the people who were living in rebellious wickedness are now turning from it. God responds to that change. He is no computer executing a program; he is a person who takes seriously how we respond to him. The Ninevites had no guarantee of mercy — the king said ‘who knows?’ — and yet God’s response to genuine repentance is exactly what you would hope.",
-          "questionHint"     :"The king of Nineveh says ‘Who knows? Perhaps God might be willing to change his mind and relent.’ He is not certain. What does God’s actual response tell us about what he is like — and how reliable that ‘perhaps’ really is?",
+          "questionHint"     :"The king of Nineveh says ‘Who knows? Perhaps God might be willing to change his mind and relent.’\nHe is not certain.\nWhat does God’s actual response tell us about what he is like?\nHow reliable that ‘perhaps’ really is?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Read Jeremiah 18:7–8. How does this passage help us understand God’s response in Jonah 3:10? What does it tell us about the relationship between God’s announced judgments and human repentance?",
@@ -1381,7 +1381,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"If God can have compassion on the Ninevites — people whose wickedness was of a particularly horrific, systematic, and deliberate kind — then there is no category of person or sin that is simply beyond his willingness to forgive. This is both wonderful and, as the goDeeperData notes, ‘amazingly costly news.’ Forgiveness is not free for God. He does not look the other way or pretend sin does not matter. God cannot turn a blind eye to evil and still be God — evil has to be paid for. What the Ninevites did not know, and what Jonah himself did not yet understand, is that God was going to pay that price himself. Jesus took the sin of people like the Ninevites — and like us — on himself. The reason God can extend mercy to those who repent is that justice has not been abandoned; it has been satisfied at enormous cost.",
-          "questionHint"     :"Is there anyone, in your mind, who would be too bad for God to forgive? How does Nineveh’s story challenge that instinct?",
+          "questionHint"     :"Is there anyone, in your mind, who would be too bad for God to forgive?\nHow does Nineveh’s story challenge that instinct?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Read Romans 3:25–26. How does Paul explain how God can be both just and the one who forgives guilty people? What does the cross have to do with the forgiveness of Nineveh?",
@@ -1431,7 +1431,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The pattern in chapter 3 is striking: the call comes again, unchanged. God does not negotiate a smaller version of the mission or settle for a partial response. He comes back with the same thing he asked for in the first place. Most of us have experienced something similar: a persistent sense that God is pointing at something — a relationship that needs repairing, a conversation that needs to be had, a step of obedience that keeps presenting itself. And like Jonah, we often have very good reasons for why this time is not the right time. The question this passage asks is whether we will take the second chance — and the third, and the fourth — or whether, like Jonah, we will need to be swallowed by a fish first. The call will not change. The question is whether we will respond to it.",
-          "questionHint"     :"The commission in 3:1–2 is almost word-for-word the same as 1:1–2. God did not change the ask. What does that tell you about the thing you have been avoiding?",
+          "questionHint"     :"The commission in 3:1–2 is almost word-for-word the same as 1:1–2.\nGod did not change the ask.\nWhat does that tell you about the thing you have been avoiding?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Jonah obeyed without his feelings catching up to his behaviour. Is there something you need to do in obedience to God even though your feelings are not quite there yet? What would taking the first step look like?",
@@ -1462,7 +1462,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"This is one of the most searching questions in the whole study. The three stages are simple to describe and surprisingly easy to stop short of. Some people recognise they are sinful in a general, abstract sense but have never brought specific sins honestly before God. Some feel genuine sorrow — perhaps over the consequences of their sin more than the sin itself — but have never actually turned to God and asked for forgiveness. Some have done all three at some point in the past but have become comfortable since, and the process has stalled. The Ninevites’ response was immediate, urgent, and total — ‘from the greatest to the least.’ Chapter 3 is an invitation to ask honestly: where am I in that process? And is there a next step?",
-          "questionHint"     :"Be honest about which stage feels most real to you and which feels most distant. Is it recognising sin, caring about it, or actually turning to God?",
+          "questionHint"     :"Be honest about which stage feels most real to you and which feels most distant.\nIs it recognising sin, caring about it, or actually turning to God?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The king of Nineveh acted without a guarantee (‘who knows?’). What would it mean for you to turn to God without waiting for certainty that it will ‘work out’ first?",
@@ -1493,7 +1493,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Jonah himself is the most obvious cautionary example: he knew God was compassionate and it made him angry. He had mentally written off the Ninevites. They did not deserve grace, and he was not prepared to be the instrument of it. Most of us have, somewhere in our thinking, a category of person or group that we have quietly concluded is beyond God’s reach — too hardened, too hostile, too far into a pattern of life that seems irreversible. Nineveh’s story is a direct challenge to that category. If God can bring 120,000 Assyrian war criminals to repentance through a single reluctant sentence from an unwilling prophet, he can reach anyone. The question Jonah’s story raises is not whether God is willing — he clearly is — but whether we are willing to be instruments of that reach, even toward people we would rather see judged.",
-          "questionHint"     :"Is there a person, a people group, or a type of person you have privately concluded is beyond God’s compassion? What would it look like to pray for them in the way that God’s compassion in chapter 3 invites you to?",
+          "questionHint"     :"Is there a person, a people group, or a type of person you have privately concluded is beyond God’s compassion?\nWhat would it look like to pray for them in the way that God’s compassion in chapter 3 invites you to?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Jonah preached to the Ninevites while privately hoping they would not repent. Is there anyone you find it hard to genuinely want God’s mercy for? What would it take to pray for their repentance and mean it?",
@@ -1579,7 +1579,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The juxtaposition is jarring. God had compassion; Jonah became angry. The very outcome that should have delighted a prophet of God — 120,000 people turning from wickedness, destruction averted, God’s mercy on display — is the thing that enrages Jonah. This reveals something that the book has been carefully concealing until now: Jonah did not want his mission to succeed. He went to Nineveh, but he went hoping for failure. He delivered the message, but he wanted them to ignore it. He was not a prophet who reluctantly preached despite his fears; he was a prophet who preached while secretly praying the opposite of what his message implied. His anger at the outcome shows us what was in his heart all along: he wanted the Ninevites destroyed, not saved.",
-          "questionHint"     :"What would Jonah have considered a ‘successful’ outcome for his mission? How does the answer reveal what he was really after?",
+          "questionHint"     :"What would Jonah have considered a ‘successful’ outcome for his mission?\nHow does the answer reveal what he was really after?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Have you ever found yourself hoping that a person or a group of people would fail, be punished, or not receive God’s mercy? How does Jonah’s story speak to that instinct?",
@@ -1610,7 +1610,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah’s real reason is finally out: he was not afraid of the Ninevites. He was afraid that God would be merciful to them if they repented. He ran because he knew God’s character — gracious, compassionate, slow to anger, abounding in mercy, relenting from threatened judgment — and he did not want that character exercised toward Nineveh. The irony is that the very qualities of God that Jonah quotes here are among the most beloved in the Old Testament. They echo the great self-revelation of God in Exodus 34:6–7. Jonah knows them, has presumably been comforted by them in his own life — and now he throws them back at God as a complaint. This tells us that Jonah has one set of rules for himself and another for his enemies. He is happy for God to be gracious to Israel, but considers God’s grace toward Nineveh an outrage. His view of himself is that he deserves God’s mercy; his view of the Ninevites is that they do not.",
-          "questionHint"     :"The qualities Jonah lists in v2 — gracious, compassionate, slow to anger, abounding in mercy — are usually things we praise God for. Why is Jonah using them as a complaint?",
+          "questionHint"     :"The qualities Jonah lists in v2 — gracious, compassionate, slow to anger, abounding in mercy — are usually things we praise God for.\nWhy is Jonah using them as a complaint?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Look up Exodus 34:6–7 — the original context where God reveals these qualities. What is Jonah doing by quoting this passage in complaint? What does it tell us about the difference between knowing God’s character and accepting its implications?",
@@ -1645,7 +1645,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The question is devastating because of everything that has happened to Jonah in chapters 1 and 2. He disobeyed God, caused a storm that nearly killed innocent sailors, was thrown overboard, and should have drowned. God saved him with a fish. He has received mercy he did not deserve, rescue he had not earned, and a second chance he had no right to expect. For Jonah to now be furious that God is showing the same kind of mercy to Nineveh is breathtaking in its hypocrisy. He has experienced God’s free grace in his own life and is outraged when God extends it to others. He has no answer because there is no answer. He cannot justify such anger without implicitly claiming a right to God’s mercy that he knows he does not have. His silence is the silence of someone who has been caught in their own logic.",
-          "questionHint"     :"Think about what God has done for Jonah in chapters 1–2. How does that history make God’s question in v4 impossible to answer?",
+          "questionHint"     :"Think about what God has done for Jonah in chapters 1–2.\nHow does that history make God’s question in v4 impossible to answer?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God’s question — ‘Are you really so very angry?’ — could be asked of us in many situations. Are there circumstances in your life where you are angry at God’s mercy toward someone else? How does Jonah’s silence speak to that?",
@@ -1695,7 +1695,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"It is a striking and rather damning detail. The only thing that makes Jonah happy in the entire story is a plant that provides him personal comfort. Not the rescue from drowning in chapter 2. Not the second chance in chapter 3. Not the extraordinary sight of 120,000 people turning to God. A little plant. This tells us that throughout the story Jonah has been largely self-focused. His misery in chapter 1 was about being asked to do something he did not want to do. His prayer in chapter 2, for all its genuine theology, was focused on his own rescue. His anger in chapter 4 is about his enemies getting what he thinks they do not deserve. And his happiness is about his own physical comfort. The little plant making him ‘very delighted’ sets up the object lesson perfectly: God is about to expose exactly how self-centred Jonah’s concerns have been.",
-          "questionHint"     :"Go back through the whole story: when else does Jonah express happiness or contentment? What does the absence of joy at Nineveh’s repentance tell us?",
+          "questionHint"     :"Go back through the whole story.\nWhen else does Jonah express happiness or contentment?\nWhat does the absence of joy at Nineveh’s repentance tell us?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Jonah was happy about something that served him personally and indifferent to something that served others eternally. How does that contrast sit with you? Where do you notice similar priorities in your own life?",
@@ -1730,7 +1730,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"God is setting up an object lesson, almost like a parable made out of real events. He gives Jonah the little plant so that Jonah becomes genuinely attached to it — it matters to him, it brings him comfort and joy. Then he takes it away, to expose how Jonah responds to loss and frustration. The sequence works because Jonah’s reaction to the plant’s death is so disproportionate: he wants to die over a plant. That reaction then becomes the measuring stick. If Jonah can say he would ‘rather die than live’ over a little plant he had no part in creating or sustaining, then God’s question about Nineveh carries enormous force: is it possible that 120,000 people might deserve at least as much concern as the plant? The sequence is designed to let Jonah condemn himself with his own words and his own feelings.",
-          "questionHint"     :"Notice that God ‘appointed’ the little plant and ‘sent’ the worm. He is still in control. What does the sequence reveal about what God is trying to show Jonah?",
+          "questionHint"     :"Notice that God ‘appointed’ the little plant and ‘sent’ the worm.\nHe is still in control.\nWhat does the sequence reveal about what God is trying to show Jonah?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God uses an ordinary object — a plant — to make a profound point. Can you think of a time when God used something small and ordinary to show you something important about yourself?",
@@ -1761,7 +1761,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The book ends with a question, not an answer, and that is almost certainly deliberate. We never find out whether Jonah repented, whether he changed, whether he eventually agreed with God. The story is left open. The effect is to turn the question on the reader: God has just asked Jonah whether he should be concerned about a city of 120,000 people. The obvious answer is yes. But the real question is whether the reader agrees — and whether they will respond differently from Jonah. The open ending also leaves Jonah’s story as a mirror rather than a cautionary tale with a neat moral: we are not invited to look at Jonah and congratulate ourselves that we are not like him. We are invited to sit with the discomfort of how much we are.",
-          "questionHint"     :"Why might the author have chosen not to tell us what Jonah said in response? What does the open ending do that a tidy conclusion would not?",
+          "questionHint"     :"Why might the author have chosen not to tell us what Jonah said in response?\nWhat does the open ending do that a tidy conclusion would not?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God’s question at the end of the book is ultimately about whether we share his concern for people who do not know him. How would you honestly answer that question about your own city, your own neighbourhood, your own workplace?",
@@ -1811,7 +1811,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Remembering God’s grace to us flows directly from God’s question in v4: ‘Are you really so very angry?’ Jonah’s problem was that he had received mercy and not let it change him. When you genuinely understand how much you have been forgiven, the natural response is to want others to experience the same thing. You do not hoard what you know is a gift. Prayer flows from the recognition that God cares about Nineveh — and our city — far more than Jonah did. If God is concerned about 120,000 people who do not know right from wrong, then praying for people we know who don’t yet know God is simply aligning ourselves with what God already wants. Supporting gospel proclamation flows from Jonah’s own mission: God sent a messenger, and the message changed everything. The Ninevites had only a five-word sentence, and they responded. People in our world need someone to tell them too. Whether we go ourselves, support those who go, or create opportunities for others to hear — it all flows from taking seriously the concern God has for the people around us.",
-          "questionHint"     :"Think about each of the three: which one comes most naturally to you, and which one do you tend to neglect? What would it look like to grow in the one you neglect most?",
+          "questionHint"     :"Think about each of the three.\nWhich one comes most naturally to you?\nWhich one do you tend to neglect?\nWhat would it look like to grow in the one you neglect most?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Jonah knew about God’s grace but it had not really sunk in. Is there a difference in your own life between knowing you have been forgiven and living as if you have been? What would it look like for that grace to actually shape your attitude toward others?",
@@ -1871,7 +1871,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"This is perhaps the most uncomfortably personal question in the whole study. Jonah’s failure is not simply that he disobeyed; it is that he disobeyed because he could not bear the thought of his enemies being forgiven. That instinct — wanting justice for others and mercy for ourselves — is not unique to Jonah. Most of us have, somewhere, a person or a group whose repentance would feel unfair rather than joyful. Maybe someone who has wronged us personally. Maybe a category of people we have written off as beyond deserving grace. Jonah’s story exposes this as exactly the wrong response to having received mercy ourselves. The person who has been forgiven much — and who knows it — is the person most motivated to want others to experience that same forgiveness. The question is whether we have really let the depth of our own forgiveness sink in.",
-          "questionHint"     :"Be specific if you can. Is there a name, a face, a category of person? Bringing it into the open — at least before God — is the first step.",
+          "questionHint"     :"Be specific if you can.\nIs there a name, a face, a category of person?\nBringing it into the open — at least before God — is the first step.",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"What would it take for you to genuinely pray for that person’s repentance and mean it? What would have to change in you — not in them?",
@@ -1902,7 +1902,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The question at the end of Jonah is deliberately left unanswered — because the answer is meant to come from us. God is concerned about Nineveh. Is he concerned about our city? Of course he is. The question is whether we are. Concern for people who don’t know God can feel abstract until it becomes specific. A specific person you know who doesn’t follow Jesus. A specific street or community you drive past. A specific prayer you could pray, by name, regularly. The study’s three suggestions — remembering grace, praying, supporting proclamation — all require some degree of specificity to move from good intention to action. The question is not whether you feel concerned enough — Jonah’s feelings never caught up with what God wanted. The question is whether you will act.",
-          "questionHint"     :"Try to name something specific: a person, a place, an action. Vague concern tends to stay vague. What would it look like to move it one step toward something concrete this week?",
+          "questionHint"     :"Try to name something specific: a person, a place, an action.\nVague concern tends to stay vague.\nWhat would it look like to move it one step toward something concrete this week?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The book ends with a question and no answer from Jonah. If you were Jonah, what would you say? And what does your answer reveal about where you actually stand?",
@@ -1933,7 +1933,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Jonah’s feelings were wrong, and he needed to repent of them. The same can be true of us. Our feelings are not automatically trustworthy — they can reflect sin, pride, hurt, or self-centredness just as much as they can reflect genuine righteousness. The test the study suggests is simple: if my feeling is the exact opposite of how God says he feels about something, one of us has feelings that are out of joint. It is not God. Bringing wrong feelings to God honestly is itself an act of trust: ‘Lord, I know I feel angry/resentful/indifferent, and I know I shouldn’t. I can’t fix this feeling on my own. Change me.’ That is a prayer God can work with. Jonah’s mistake was not that he had wrong feelings; it was that he defended them rather than bringing them to God.",
-          "questionHint"     :"The study notes that feelings can be sinful just as much as thoughts, words, or deeds. Are there feelings you have been excusing rather than examining? What would it look like to bring them to God rather than defend them?",
+          "questionHint"     :"The study notes that feelings can be sinful just as much as thoughts, words, or deeds.\nAre there feelings you have been excusing rather than examining?\nWhat would it look like to bring them to God rather than defend them?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Looking back over all four chapters of Jonah: what is the single thing God most wants you to take away from this study? And what is one thing you will do differently because of it?",
@@ -2029,7 +2029,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah has learned a negative lesson: it is foolish to rebel against God’s word. You cannot hear what God says and walk off in the opposite direction — because this God is relentless in pursuing his purposes. The fish made that abundantly clear. So this time, Jonah does not run to Tarshish. He goes to Nineveh. But that is where the lesson ends. He has not learned to love what God loves, or to want what God wants. His heart is still set against mercy for his enemies. He obeys because he has calculated that he has no real alternative — perhaps hoping the Ninevites will just ignore him and be destroyed anyway. The fish produced compliance, not transformation. And the book of Jonah is very honest about that distinction.",
-          "questionHint"     :"The goDeeperData suggests Jonah may have been either ‘pessimistic’ (afraid the Ninevites would repent) or ‘optimistic’ (hoping they would ignore him). Either way, what had actually changed — and what had not?",
+          "questionHint"     :"The goDeeperData suggests Jonah may have been either ‘pessimistic’ (afraid the Ninevites would repent) or ‘optimistic’ (hoping they would ignore him).\nEither way, what had actually changed?\nWhat had not changed?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"There is a difference between learning ‘I cannot get away with disobedience’ and learning ‘I want what God wants.’ Have you ever changed your behaviour because you had no alternative rather than because your heart had changed? What does Jonah’s case suggest about which kind of change God is ultimately after?",
@@ -2064,7 +2064,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The space is there for a purpose: will the hearers respond? God does not announce judgment and then bring it immediately. He announces it and waits — because his announcement is itself an act of grace, a window of opportunity. The forty days is not a countdown to inevitable destruction; it is forty days in which Nineveh can respond. This pattern runs throughout the Bible: God’s warnings of judgment carry within them an implicit invitation. If God simply wanted to destroy, he would not warn. The fact that he warns — through Noah, through Jonah, through his Son — is itself evidence that his heart is for people to turn and live. The judgment is real; but so is the grace that announces it in advance.",
-          "questionHint"     :"Why would God bother warning at all, if judgment were simply inevitable? What does the existence of the warning tell us about God’s purposes?",
+          "questionHint"     :"Why would God bother warning at all, if judgment were simply inevitable?\nWhat does the existence of the warning tell us about God’s purposes?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData describes God’s judgment as his ‘Yes’ to everything good and ‘No’ to everything evil. Why is that actually good news — and why does the gospel require that ‘No’ before it can speak its ‘Yes’?",
@@ -2114,7 +2114,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah’s worst fears come true: the city repents from top to bottom. He cannot even rely on the normal arrogance of kings — the king himself takes off his robes, gets off his throne, puts on sackcloth, and sits in the dust. The speed is striking: it happens immediately, from the greatest to the least. The totality is striking: not some of the city, not the religious ones — all of them. This mirrors what happened with the sailors in chapter 1 — rough pagans who knew nothing of the true God, but when confronted with the reality of his judgment, they feared, they believed, they turned. The pattern is consistent: when God’s word goes out, it has power. It does not return empty. And the people you would least expect to respond are sometimes the ones who do.",
-          "questionHint"     :"The Ninevites are described as the kind of people Jonah wanted destroyed — brutal and violent. What does their response say about who is capable of repentance?",
+          "questionHint"     :"The Ninevites are described as the kind of people Jonah wanted destroyed — brutal and violent.\nWhat does their response say about who is capable of repentance?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"This is a re-run on a huge scale of the sailors’ story in chapter 1. In both cases, rough pagans respond to God more wholeheartedly than the prophet. What pattern is the book of Jonah establishing — and why might that pattern be uncomfortable for the religious reader?",
@@ -2158,7 +2158,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The differences are pointed and cumulative. Jonah recognised distress — he was in trouble and wanted out. The Ninevites went further: they named their evil ways specifically as evil, not just as a problem they were in trouble because of. Jonah acknowledged God had acted against him but never really admitted God was right to do so. The Ninevites, by contrast, implicitly accepted that God’s fierce anger was justified — they deserved what was coming. Most crucially, Jonah wanted deliverance from his circumstances. The Ninevites understood they needed something different: mercy from God himself. They needed to be delivered not just from the storm or the danger, but from God’s righteous anger. That is a much more searching understanding of the problem. And there is one more difference: the Ninevites actually turned from their evil ways (3:10). Jonah made promises of thanksgiving but never resolved to turn from anything.",
-          "questionHint"     :"Try to pinpoint the most important difference in the three comparisons. Which one goes deepest — and why?",
+          "questionHint"     :"Try to pinpoint the most important difference in the three comparisons.\nWhich one goes deepest — and why?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The Ninevites understood they needed mercy from God himself — not just rescue from dangerous circumstances. Do you understand your own need in those terms? What is the difference between wanting God to fix your situation and genuinely seeking his mercy?",
@@ -2218,7 +2218,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah’s response in chapter 2 looks more like remorse than repentance. He is in a desperate situation and wants out. He prays, he promises thanksgiving, he acknowledges God’s power. But he never names what he did as wrong. He never resolves to turn from his hatred of the Ninevites. He is sorry for his circumstances — not for his heart. The Ninevites’ response in chapter 3 is unambiguously repentance. They name their ways as evil. They accept that God’s anger is justified. They call out for mercy rather than just rescue. And crucially, they actually turn from their evil ways — God himself observes this (3:10). The pagans manage clear-cut repentance. The prophet manages something much less certain.",
-          "questionHint"     :"Jonah felt distress and called out to God. The Ninevites felt distress and called out to God. What was different about what each of them was actually asking for?",
+          "questionHint"     :"Jonah felt distress and called out to God.\nThe Ninevites felt distress and called out to God.\nWhat was different about what each of them was actually asking for?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Think about your own experience of repentance. Have there been times when what you called repentance was actually closer to remorse — sorrow about being caught or about consequences, without a genuine turning? What does true repentance look like in practice for you?",
@@ -2259,7 +2259,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Each of the four has a common stumbling block. Recognising our wrongdoing is hard because we prefer to explain, justify, or minimise. Recognising we deserve God’s wrath is hard because it feels extreme — most of us do not feel that our sin is as serious as all that. Calling out for mercy is hard because it requires humility: we are asking for something we cannot earn or deserve. And actually turning away — not just resolving to, but doing it — is hard because habits of sin are deeply entrenched. The answer will be personal, and the question is designed to move from general understanding to specific self-examination.",
-          "questionHint"     :"Be honest about which step feels most distant. Is it naming what you have done as wrong? Accepting God’s anger is justified? Asking for mercy? Actually changing?",
+          "questionHint"     :"Be honest about which step feels most distant.\nIs it naming what you have done as wrong?\nAccepting God’s anger is justified?\nAsking for mercy?\nActually changing?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The Ninevites repented without certainty: ‘Who knows? Perhaps God might be willing to change his mind and relent.’ We, on the other side of the cross, have far more certainty — God will certainly respond with mercy to those who genuinely turn to him. Does that greater certainty make repentance easier or harder? And why might greater knowledge of grace sometimes make us less urgent about repentance?",
@@ -2299,7 +2299,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"God sees past the outward signs — the fasting, the sackcloth, the proclamation — to the actual turning. He is not impressed by religious performance or elaborate expressions of sorrow. He is looking for the thing the outward signs are meant to represent: a genuine change of direction. The Ninevites’ outward actions were real, but what God noticed was the inward movement — they actually turned from their evil ways. This is a consistent theme in the prophets: God is not after ritual but reality, not ceremony but a changed life. The sackcloth mattered because it was genuine. God’s compassion was extended because the turning was real.",
-          "questionHint"     :"God ‘saw their actions’ — ‘that they turned from their evil way of living.’ The emphasis is on what he observed, not just what they said. What is the difference between performing repentance and actually repenting?",
+          "questionHint"     :"God ‘saw their actions’ — ‘that they turned from their evil way of living.’\nThe emphasis is on what he observed, not just what they said.\nWhat is the difference between performing repentance and actually repenting?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"As chapter 3 closes, Jonah is still east of the city, watching. The goDeeperData notes that he may still be clinging to some hope that Nineveh will be destroyed after all. And it raises the question: what actually happened inside the fish? Did Jonah repent — or only feel remorse? What do you think, based on the evidence so far?",
@@ -2349,7 +2349,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The question is deliberately specific. Vague, general confession (‘I know I am a sinner’) is not the same as the concrete, named repentance that the Ninevites modelled. They knew what their evil ways were. They named them. They turned from them. The invitation here is to do the same — to bring something specific before God, acknowledge it as wrong, ask for his mercy, and take a concrete step away from it. This side of heaven, repentance is not a one-time event. It is a pattern of life.",
-          "questionHint"     :"Try to be as specific as you can. Remorse stays vague; repentance names the thing. What is the specific thing?",
+          "questionHint"     :"Try to be as specific as you can.\nRemorse stays vague; repentance names the thing.\nWhat is the specific thing?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData raises repentance in three directions: for yourself, for the people around you, and for your city. Which of those three most needs your attention right now — and what would acting on it look like?",
@@ -2380,7 +2380,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Performing repentance is more common than we might like to admit. It can look like: confessing the same sin repeatedly without taking any steps to change; expressing sorrow in a group setting without any private honesty before God; or going through liturgical forms of confession without genuine engagement. None of those things are wrong in themselves — the danger is when they become substitutes for the actual turning. God sees their actions — that they turned from their evil way of living. The turning matters. The actual movement matters. What would it look like to move from performance to the real thing in the area you have been sitting with?",
-          "questionHint"     :"The sackcloth and fasting were real — but what God noticed was the turning. What is the equivalent of the turning in the area you are thinking about?",
+          "questionHint"     :"The sackcloth and fasting were real — but what God noticed was the turning.\nWhat is the equivalent of the turning in the area you are thinking about?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"We know from chapter 4 that Jonah’s prayer in chapter 2 did not produce genuine repentance. How do we guard against the same failure in ourselves — praying sincerely without our hearts really changing? What role does the community of the church play in that?",
@@ -2411,7 +2411,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Jonah’s compliance without transformation is uncomfortable precisely because it is so recognisable. We can give, serve, pray, and attend — all without our hearts being in it. We can obey because we fear the consequences of not obeying, or because we cannot see a way out, rather than because we genuinely love what God loves. The gap is not something to be ashamed of in the sense of hiding it. It is something to bring to God honestly: ‘Lord, I am doing this — but I am not sure I want to. Please change my heart, not just my behaviour.’ That is a prayer God can work with. Jonah’s mistake was not having wrong desires; it was refusing to bring them to God and ask him to change them.",
-          "questionHint"     :"The goal is not to feel guilty about joyless obedience, but to bring it honestly to God. What would one honest prayer about this look like this week?",
+          "questionHint"     :"The goal is not to feel guilty about joyless obedience, but to bring it honestly to God.\nWhat would one honest prayer about this look like this week?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"As we close session 5 and look toward session 6, we know we are going to re-examine Jonah’s prayer in the fish. Based on everything you have studied so far, what do you expect to find when we look more closely at chapter 2 — and what are you hoping to learn from it?",
@@ -2497,7 +2497,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Godly sorrow leads to genuine repentance — a change of direction — and leaves no regret. Worldly sorrow is distress about consequences: feeling bad about being in trouble, wanting the trouble to go away, perhaps even crying out to God for help — but without any real turning from sin. Paul says worldly sorrow brings death: it has the emotional texture of repentance without the substance of it. The distinction matters enormously for reading Jonah 2 because the chapter contains real sorrow, real prayer, real thankfulness — and yet chapter 4 shows us that something was missing. The question is which category Jonah’s sorrow falls into: godly sorrow that produces genuine change, or worldly sorrow that is essentially distress management.",
-          "questionHint"     :"Both kinds of sorrow can involve crying out to God for help and even feeling thankful when things improve. What is the thing that only godly sorrow produces — and that Jonah’s sorrow conspicuously does not?",
+          "questionHint"     :"Both kinds of sorrow can involve crying out to God for help and even feeling thankful when things improve.\nWhat is the thing that only godly sorrow produces — and that Jonah’s sorrow conspicuously does not?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Can you think of a time in your own life when you confused worldly sorrow with genuine repentance — when you felt bad about consequences without really turning from the sin itself? What eventually revealed the difference?",
@@ -2557,7 +2557,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"David’s prayer is saturated with the language of sin, guilt, and forgiveness. He names his transgressions specifically. He asks to be cleansed from his iniquity. He declares that God is right to judge him. He knows his sin is always before him. He asks for a clean heart and a renewed spirit. None of that is in Jonah’s prayer. Jonah’s chapter 2 is full of distress, rescue, and thankfulness — but there is no confession of sin, no acknowledgment of guilt, no asking for forgiveness, no resolve to turn from anything. He describes what happened to him; he does not name what he did. His prayer is about his situation, not his sin. That absence is the clearest evidence that what is happening in chapter 2 is worldly sorrow, not godly sorrow.",
-          "questionHint"     :"Read through Jonah 2 carefully. Can you find a single verse where Jonah names his sin, acknowledges his guilt, or asks for forgiveness? Compare that with the first four verses of Psalm 51.",
+          "questionHint"     :"Read through Jonah 2 carefully.\nCan you find a single verse where Jonah names his sin, acknowledges his guilt, or asks for forgiveness?\nCompare that with the first four verses of Psalm 51.",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"David writes in Psalm 51:4 “Against you—you above all—I have sinned.” He had wronged Bathsheba and Uriah terribly — so why does he say “you above all”? What does this tell us about the nature of all sin at its deepest level?",
@@ -2598,7 +2598,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Genuine repentance would have included Jonah naming what he actually did: deliberately running from God’s call because he did not want mercy shown to his enemies. It would have involved acknowledging that God was right to send the storm, right to have him thrown overboard. It would have involved asking for forgiveness, not just rescue. And it would have involved a genuine resolve to turn — not just to go to Nineveh because there was no alternative, but to want for Nineveh what God wants. None of that appears. Jonah describes his circumstances accurately and thanks God for his rescue. But he never turns the spotlight on himself and asks whether he was wrong. That is the missing ingredient.",
-          "questionHint"     :"Think about what Jonah actually did — the specific sin of chapter 1. Does he name it? Does he say it was wrong? Does he ask for forgiveness for it? Does he resolve to change his attitude toward Nineveh?",
+          "questionHint"     :"Think about what Jonah actually did — the specific sin of chapter 1.\nDoes he name it?\nDoes he say it was wrong?\nDoes he ask for forgiveness for it?\nDoes he resolve to change his attitude toward Nineveh?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData makes the point that ‘any sorrow can recognise there is a problem — but if I am to repent, I need to recognise there is a problem with me.’ What is the difference between recognising you are in trouble and recognising you are in the wrong? And why is the second much harder?",
@@ -2638,7 +2638,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah is in the belly of a fish, serving a self-inflicted sentence for running away from God, because he refused to warn the Ninevites to turn from their idols. He barely said a word to the sailors in chapter 1 — the very people who were in the middle of crying out to their various gods. And yet here he is, from inside the fish, pronouncing on the spiritual failure of people who worship worthless idols. He is the expert. He has seen it. He has spotted the problem. The irony, of course, is that he cannot see the same problem in himself. He is running from God while lecturing about running from God. He is forfeiting mercy while warning about forfeiting mercy. The goDeeperData compares this to the Pharisee in Luke 18: ‘Thank you Lord that I am not like other sinners.’ It is the classic posture of someone who is unrepentant — they can see the speck in others’ eyes while missing the plank in their own.",
-          "questionHint"     :"Who was worshipping worthless idols in chapter 1? And who was supposed to be warning them about it, but instead ran away? Now Jonah preaches about it from inside the fish. What does that tell us about the state of his self-awareness?",
+          "questionHint"     :"Who was worshipping worthless idols in chapter 1?\nWho was supposed to be warning them about it, but instead ran away?\nNow Jonah preaches about it from inside the fish.\nWhat does that tell us about the state of his self-awareness?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Read Luke 18:9–14. In what ways does the Pharisee’s prayer resemble Jonah’s? What does Jesus say about the person who prays like that — and what does he say about the one who prays very differently?",
@@ -2673,7 +2673,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah promises a sacrifice with a public declaration of praise, and to do what he has promised. These are good things — religious activities that honour God. David in Psalm 51 says: “Certainly you do not want a sacrifice, or else I would offer it; you do not desire a burnt sacrifice. The sacrifice God desires is a humble spirit — O God, a humble and repentant heart you will not reject.” The crucial difference is the heart behind the offering. David knows that God is not primarily interested in the performance of religious acts. He wants the broken and contrite heart that the acts are supposed to express. Jonah offers the acts without the broken heart. If our heart is not right with God, the goDeeperData warns, God is not impressed by our religious activity, however sincere it may feel. Grand sacrifices of praise, devout prayers, earnest vows — God does not want our busyness. He wants our hearts.",
-          "questionHint"     :"What does Psalm 51:16–17 say God actually wants — and how does that compare with what Jonah is offering in v9?",
+          "questionHint"     :"What does Psalm 51:16–17 say God actually wants?\nHow does that compare with what Jonah is offering in v9?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData makes a sobering point: God can bring good out of our hypocrisy — he does it with Jonah in chapter 3. But if he does, he does it in spite of us, not because of us. How should that truth shape the way we think about our own Christian activity — our serving, giving, and witness?",
@@ -2733,7 +2733,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The case for mercy: without the fish, Jonah would have drowned. God uses the fish to preserve his life, give him time to reflect, and eventually deposit him on dry land. Jonah’s own prayer in chapter 2 frames it largely as rescue. The case for judgment: being swallowed by a giant sea creature was not, to an ancient Israelite, a happy event. Sea monsters in the Bible are associated with chaos and destruction. It is God’s dramatic and severe response to Jonah’s stubborn rebellion. Jonah has been running so hard that God has to use something extreme to stop him. The goDeeperData’s resolution is that both are true simultaneously: this is what judgment means. God’s judgment is not simply condemnation or simply salvation — it is the process of saying ‘Yes’ to good and ‘No’ to evil, and both can happen in the same event, even on the same person.",
-          "questionHint"     :"Think about how a sea creature would have felt to an ancient Israelite reader. Then think about what the fish actually accomplishes. Can an event be both terrible and gracious at the same time?",
+          "questionHint"     :"Think about how a sea creature would have felt to an ancient Israelite reader.\nThen think about what the fish actually accomplishes.\nCan an event be both terrible and gracious at the same time?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData traces the pattern of judgment bringing both condemnation and salvation through the Flood (Noah delivered, others drowned) and the Exodus (Israel saved, Egypt condemned). Can you think of other examples in Scripture where salvation and judgment come together? What does the pattern tell us about how God works?",
@@ -2783,7 +2783,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The crucial parallel is that both Jonah and Jesus experience God’s judgment of condemnation and God’s judgment of salvation on the same person, at the same time. Jonah undergoes God’s ‘No’ — three days in the belly of the sea creature — and then experiences God’s ‘Yes’ on the third day. Jesus undergoes God’s ‘No’ — three days in the heart of the earth — and then experiences God’s ‘Yes’ on the third day. But with Jesus, the stakes are infinitely higher: he has done nothing to deserve the ‘No.’ He takes it on behalf of others. Because he has faced God’s condemnation in our place, we can hear God’s ‘Yes’ of salvation. The cross is the place where wrath and mercy meet — where justice and deliverance are brought together on one person, so that we do not have to face them ourselves.",
-          "questionHint"     :"The goDeeperData says this combination — condemnation and salvation on the same person — only happens twice in the whole Bible. What makes it so unusual? And why does it matter enormously that it happens with Jesus?",
+          "questionHint"     :"The goDeeperData says this combination — condemnation and salvation on the same person — only happens twice in the whole Bible.\nWhat makes it so unusual?\nWhy does it matter enormously that it happens with Jesus?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData says: ‘Because he has faced God’s “No,” we can hear God’s “Yes.” He bears our punishment to win our peace. The cross is the place where wrath and mercy meet.’ What difference does it make that Jesus is not just an example to follow but someone who has taken God’s judgment in our place? How does that change the nature of repentance for us, compared with the Ninevites who did not know this?",
@@ -2833,7 +2833,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Worldly sorrow is extremely common, and it can feel very much like repentance from the inside. The test is what it produces: does the sorrow lead to change, or does it lead back to the same pattern once the immediate pressure has eased? Moving from worldly sorrow to godly sorrow usually requires naming the specific sin — not just ‘I feel bad about this situation’ but ‘I did this specific wrong thing and it was wrong.’ It requires accepting that God was right to confront you with it. It requires asking specifically for forgiveness. And it requires taking a concrete step of turning — not just resolving to do better, but actually doing something different.",
-          "questionHint"     :"Try to name the thing specifically — not the situation, but the sin. Have you named it to God? Have you asked for forgiveness? Have you taken any concrete step of turning?",
+          "questionHint"     :"Try to name the thing specifically — not the situation, but the sin.\nHave you named it to God?\nHave you asked for forgiveness?\nHave you taken any concrete step of turning?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Paul says godly sorrow ‘leaves no regret.’ What does that mean — and what is the difference between the absence of regret that comes from genuine repentance and the absence of regret that comes from hardening your heart?",
@@ -2864,7 +2864,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Jonah’s blindness is the blindness of someone who has been applying God’s word outward rather than inward. The goDeeperData does not say there is never a place for noticing others’ sins — the Bible calls us to carry one another’s burdens and exhort one another. But that must be secondary. Starting with honest self-examination, specifically in the area you are most tempted to project onto others, is the place to begin. It might be worth asking: the thing I most often notice and comment on in others — is there any version of that in me? What would it look like to bring that to God first, before I say anything to anyone else?",
-          "questionHint"     :"The question is not whether to notice others’ sins — it is about where to start. Where do you need to start today?",
+          "questionHint"     :"The question is not whether to notice others’ sins — it is about where to start.\nWhere do you need to start today?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData warns that if we correct others from God’s word without first applying it to ourselves, we start to become ‘a Jonah, a Pharisee, a hypocrite.’ How do you build in habits of honest self-examination so that God’s word consistently reaches you before it reaches your commentary on others?",
@@ -2895,7 +2895,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The cross changes everything about repentance. For the Ninevites, repentance was a desperate gamble: ‘Who knows? Perhaps God might be willing to change his mind and relent.’ For those who know the cross, repentance is a homecoming: God has already acted to make forgiveness possible. The ‘No’ has already been spoken — at the cross, not over us. That means genuine repentance is not a frightening step toward an uncertain God but a confident step toward a God whose character has been fully revealed in Jesus. Knowing the cross might actually make genuine repentance harder in one sense: it removes every excuse for staying in worldly sorrow. If God has gone to that length to make forgiveness possible, the only right response is to take it seriously — to name the sin, receive the forgiveness, and actually turn.",
-          "questionHint"     :"The Ninevites repented without certainty. You have certainty. Does that certainty — the knowledge that the cross has dealt with sin — make you more eager to repent, or more comfortable staying where you are? What does your answer reveal?",
+          "questionHint"     :"The Ninevites repented without certainty.\nYou have certainty.\nDoes that certainty — the knowledge that the cross has dealt with sin — make you more eager to repent, or more comfortable staying where you are?\nWhat does your answer reveal?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Looking back over sessions 5 and 6 together: Jonah 3 showed us what clear-cut repentance looks like (the Ninevites). Jonah 2 has shown us what it does not look like (Jonah). And Matthew 12 has shown us the one in whom condemnation and salvation meet. What is the single most important thing you want to carry forward from these two sessions into your daily life?",
@@ -2991,7 +2991,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"On a first read, Jonah’s flight looks like fear or weakness — the sympathy naturally goes to him. Knowing chapter 4, it looks completely different. The standard prophetic pattern is: God speaks, prophet arises, prophet goes. Jonah follows the pattern up to a point: the word comes, Jonah arises. But then: Jonah heads in entirely the opposite direction — not from fear but from calculation. He does not want the Ninevites warned. He wants them dead. His silence is an act of malice, not cowardice. The upside-down start is not the stumbling of a frightened man; it is the deliberate rebellion of a bitter one. And that makes it a great deal worse.",
-          "questionHint"     :"The goDeeperData puts it starkly: Jonah runs away not because he is ‘too soft’ but because he is ‘too hard.’ What is the difference — and how does it change the moral character of his flight?",
+          "questionHint"     :"The goDeeperData puts it starkly: Jonah runs away not because he is ‘too soft’ but because he is ‘too hard.’\nWhat is the difference?\nHow does it change the moral character of his flight?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The call to Nineveh echoes the story of Sodom and Gomorrah (Genesis 18:25): God is the judge of all the earth, and wickedness that ‘comes up before him’ will be addressed. How should that truth shape the way we think about our own cities and cultures — their apparent untouchability, and what they owe to the God who made them?",
@@ -3041,7 +3041,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"In session 1, Jonah’s sleep felt like extreme passivity or denial — the Ostrich Trick, burying his head. Knowing chapter 4, it reads as something more active and deliberate. Jonah is not simply overwhelmed; he is ‘totally desensitised,’ as the goDeeperData puts it, by his own rebellion. He does not want to call on the Lord — because calling on the Lord would mean engaging with a God whose purposes he is actively opposing. And engaging with those purposes might lead to repentance, which might lead back to Nineveh. So he sleeps. The sleep is not weakness; it is the numbness of someone who has closed themselves off from God so thoroughly that even a catastrophic storm cannot reach them.",
-          "questionHint"     :"The goDeeperData says Jonah has ‘about as much life and sensitivity as a block of wood.’ Is that because he cannot feel the storm — or because he has decided not to respond to it?",
+          "questionHint"     :"The goDeeperData says Jonah has ‘about as much life and sensitivity as a block of wood.’\nIs that because he cannot feel the storm — or because he has decided not to respond to it?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The captain tells Jonah to ‘arise’ and call on his god. This is the second time in the chapter Jonah has been told to ‘arise’ (cf. 1:2). In both cases he gets up but does not follow the instruction. What does the pattern of partial obedience tell us about the state of his heart? Where do you notice a similar pattern in yourself?",
@@ -3081,7 +3081,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"Jonah uses the word translated ‘worship’ — literally ‘fear.’ In the Old Testament, to fear the Lord is the comprehensive description of what it means to live in right relationship with God: to revere him, trust him, obey him, order your life by his word. But Jonah has done none of those things in this chapter. He heard God’s word and deliberately ran in the opposite direction. He has not called on the Lord when the storm came. He is sitting below deck while a storm his own disobedience caused threatens to kill innocent sailors. His claim to ‘fear the Lord’ is entirely disconnected from his behaviour. It is the confession of a man who can articulate true theology while his life contradicts every word of it. The sailors, by contrast, have just learned about this God for the first time — and their response is immediate, visceral, and real.",
-          "questionHint"     :"The goDeeperData draws a sharp contrast: Jonah ‘says’ he fears the Lord; the sailors ‘actually’ fear the Lord. What is the difference between knowing the right words about God and actually fearing him?",
+          "questionHint"     :"The goDeeperData draws a sharp contrast: Jonah ‘says’ he fears the Lord; the sailors ‘actually’ fear the Lord.\nWhat is the difference between knowing the right words about God and actually fearing him?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData asks: ‘If someone asked you how you felt about God, would it occur to you to use the word “fear” in any context whatsoever?’ What is healthy about fearing God — and what does losing that fear do to how we read the Bible, how we pray, and how seriously we take his word?",
@@ -3116,7 +3116,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The sailors have one moment’s glimpse of who God is, and they respond with appropriate alarm. Jonah has a lifetime of knowledge — and shows no such alarm at all. This runs through the whole book as a pattern: the sailors, the king of Nineveh, the whole city — everyone who encounters the truth about God responds to it. The one person who does not is the prophet himself. The lesson is not that knowledge of God is unimportant. It is that knowledge of God, when it is not held in living faith, can actually insulate against the response it should produce. Familiarity breeds not just contempt but a kind of numbness: Jonah has heard the Lord’s voice so many times that he has learned how to tune it out. The sailors, hearing it for the first time, cannot.",
-          "questionHint"     :"The sailors knew nothing about the Lord before v9. Jonah knew everything. Who responds more appropriately — and what does that suggest about the dangers of familiarity with God’s word?",
+          "questionHint"     :"The sailors knew nothing about the Lord before v9.\nJonah knew everything.\nWho responds more appropriately?\nWhat does that suggest about the dangers of familiarity with God’s word?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Is it possible to become so familiar with God’s word that it stops having weight? How do you guard against that kind of spiritual numbness — the log-like slumber the goDeeperData describes?",
@@ -3156,7 +3156,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"On a first reading, v12 can look heroic — Jonah sacrificing himself to save the sailors, taking responsibility for the storm. Knowing chapter 4, it looks very different. Jonah is not choosing death as an act of noble self-sacrifice. He is choosing death as the final act of his rebellion: he would rather die than repent, and would rather die than give the Ninevites any chance of hearing God’s word and being spared. His own death is preferable to their salvation. This is how deeply the hatred has gone. The sailors, who have no such motive, do everything they can to avoid throwing him over. The contrast is the final, sharpest irony of the chapter: the pagans fight to save the prophet’s life; the prophet is willing to throw it away rather than do what God asks.",
-          "questionHint"     :"In session 1, we gave Jonah credit for taking responsibility for the storm. Does knowing his motive change whether that credit is deserved?",
+          "questionHint"     :"In session 1, we gave Jonah credit for taking responsibility for the storm.\nDoes knowing his motive change whether that credit is deserved?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"Jonah’s rebellion has reached the point where he prefers death to obedience. The goDeeperData traces a progression: Jonah the rebel, the runner, the slumberer, and finally the one who would rather die than submit. What does this progression tell us about where persistent refusal to heed God’s word leads?",
@@ -3181,7 +3181,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The sailors’ fear produces exactly what fear of the Lord is supposed to produce: worship. They offer sacrifice. They make vows. They turn from their own gods to the true God. Their entire relationship with the divine is reoriented by what they have witnessed. Jonah’s claimed fear has produced none of that. It has not produced obedience to God’s word. It has not produced prayer in the storm. It has not produced concern for the sailors. It has not produced any move toward repentance. Genuine fear of God, the goDeeperData notes, is what we call worship — it is the full orientation of a life toward the God who is fearfully awesome. What Jonah has is mere theological familiarity: he knows the right words, but they have not reached his life.",
-          "questionHint"     :"The sailors go from pagans crying to their own gods, to worshippers of the Lord making vows — all in one chapter. What does their transformation reveal about what genuine fear of God looks like in practice?",
+          "questionHint"     :"The sailors go from pagans crying to their own gods, to worshippers of the Lord making vows — all in one chapter.\nWhat does their transformation reveal about what genuine fear of God looks like in practice?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The sailors’ conversion is driven not by a sermon but by witnessing God’s power and Jonah’s exposure. What does that tell us about the relationship between the power of God’s word, the character of his messengers, and the spreading of the gospel? And what is the lesson for us?",
@@ -3221,7 +3221,7 @@
           "required"         :false,
           "answerPlaceholder":"Your thoughts…",
           "sampleAnswer"     :"The book is full of both responses, and the distribution is surprising. Heed: the sailors (ch1), the Ninevites (ch3), and even the king of Nineveh — all respond to God’s word with immediate, total, genuine turning. Rebel: Jonah — consistently, across the whole book. He hears God’s word and runs (ch1). He prays in extremity but without genuine repentance (ch2). He obeys mechanically without his heart (ch3). He rages at the outcome (ch4). The book’s diagnosis: the log-like slumber is not the state of pagans who have never heard. It is the state of someone who has heard many times and chosen, each time, not to heed. The gospel is powerful enough to reach the most violent pagan city in the ancient world. The same gospel cannot seem to reach the heart of the prophet who carries it.",
-          "questionHint"     :"Think through every character in the book: Jonah, the sailors, the captain, the Ninevites, the king. Which ones respond with heeding, and which with rebellion? Is the pattern what you expected?",
+          "questionHint"     :"Think through every character in the book: Jonah, the sailors, the captain, the Ninevites, the king.\nWhich ones respond with heeding?\nWhich ones respond with rebellion?\nIs the pattern what you expected?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData connects this to Hebrews 1:1–3: God has spoken supremely in his Son. If the people of Nineveh will stand at the judgment and condemn those who had more than they did (Matthew 12:41), what does that mean for us — who have the full gospel of Jesus Christ?",
@@ -3301,7 +3301,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"This is Jonah’s defining failure: the gap between his confession and his life. He worships the God of heaven who made the sea and the dry land — on a boat, on the sea, running from that God. The gap between what we profess and how we live is one of the most persistent features of human sinfulness, and Jonah is its most vivid case study. The question invites honest self-examination: not ‘do I know the right things?’ but ‘are those things shaping how I actually live?’ What area of life is currently furthest from alignment with what you believe?",
-          "questionHint"     :"Try to be specific. Not ‘I could pray more’ but a concrete area — a relationship, a habit, a pattern of thought or speech — where what you believe and what you do are furthest apart.",
+          "questionHint"     :"Try to be specific.\nNot ‘I could pray more’ but a concrete area — a relationship, a habit, a pattern of thought or speech — where what you believe and what you do are furthest apart.",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"What would it take to close that gap? Not in general — but this specific gap, this week. What is one concrete step?",
@@ -3332,7 +3332,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The goDeeperData makes an important clarification: fearing God is not about anxiety or uncertainty about his love. It is the awe and reverence appropriate to someone who knows they are dealing with the God who rules the universe, commands the storm, and speaks words that cannot be thwarted. It produces a certain seriousness about his word: not taking it lightly, not filing it away without acting on it, not going through the motions. It also produces a certain tenderness — because the fearfully awesome God is also the God who became flesh for us. The combination of awe and intimacy is what the sailors begin to experience in v16, and what Jonah has lost.",
-          "questionHint"     :"Think about how you approach God in prayer, in reading Scripture, in worship. Is there a sense of awe — of dealing with someone truly immense — or has familiarity dulled that?",
+          "questionHint"     :"Think about how you approach God in prayer, in reading Scripture, in worship.\nIs there a sense of awe — of dealing with someone truly immense — or has familiarity dulled that?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData says: ‘If we forget how fearfully awesome God is, we will take for granted how wonderfully precious it is to be his children.’ How does recovering a sense of God’s fearful greatness actually deepen rather than undermine our confidence as his children?",
@@ -3373,7 +3373,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"This is the closing question of the whole study, and it is designed to be as specific and concrete as possible. The backward journey has been building toward this: not just understanding Jonah better, but allowing the book to do its work —to produce genuine repentance, genuine fear of God, genuine concern for others, genuine heeding of what God has said. Encourage the group to name something specific rather than give a general answer. The book ends with a question. This session ends with one too. What is your answer?",
-          "questionHint"     :"Name it as specifically as you can: a relationship to repair, an attitude to repent of, a call to respond to, a person to pray for, a step of obedience to take. What is the one thing?",
+          "questionHint"     :"Name it as specifically as you can: a relationship to repair, an attitude to repent of, a call to respond to, a person to pray for, a step of obedience to take.\nWhat is the one thing?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The book of Jonah ends without telling us what Jonah did next. But you get to write the next chapter of your own story. Based on everything you have learned, what do you most want that chapter to look like — and what will you do this week to make it more like the sailors and less like Jonah?",
@@ -3425,7 +3425,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"The book of Jonah is relentless about God’s sovereignty. He controls the weather, the lot, the fish, the plant, the worm, the wind — and he does all of it in pursuit of his purposes for both Jonah and Nineveh. Fearing God means taking that seriously: treating his word as something that cannot be trifled with, treating his commands as things that will be accomplished with or without our cooperation, and treating his character — gracious, compassionate, slow to anger, abounding in mercy — as something to celebrate rather than resent. The question is honest and practical: does this God feel large to you? Or has familiarity shrunk him?",
-          "questionHint"     :"Think about the last week. When did you last feel genuinely awed by God? What would it look like for your sense of his greatness to shape one specific decision or habit differently?",
+          "questionHint"     :"Think about the last week.\nWhen did you last feel genuinely awed by God?\nWhat would it look like for your sense of his greatness to shape one specific decision or habit differently?",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God’s sovereignty in Jonah means he can work through willing people, unwilling people, and even a worm. How does that truth free you from feeling that everything depends on you — while still taking your own response seriously?",
@@ -3455,7 +3455,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"Jonah’s sin is a mirror for a particular kind of religious failure — one that is easy to miss precisely because it wears the clothes of faithfulness. He knew the right things, said the right things, and did the minimum required things. And underneath all of it, his heart was in exactly the wrong place. The study raises several specific areas where the same failure is possible for us: withholding concern from people we consider undeserving; applying God’s word to others before ourselves; confusing remorse with repentance; obeying outwardly while opposing God inwardly. The question is: which of these has landed most personally?",
-          "questionHint"     :"Be specific. Not ‘I know I sin’ but ‘this particular thing is what I need to name and deal with.’ Jonah never named his. Don’t make the same mistake.",
+          "questionHint"     :"Be specific.\nNot ‘I know I sin’ but ‘this particular thing is what I need to name and deal with.’\nJonah never named his.\nDon’t make the same mistake.",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The goDeeperData from session 6 warned that practising turning down God’s chances to repent makes you better at it. Is there a pattern of repeated avoidance in your life — a thing God keeps bringing up that you keep walking past? What would breaking that pattern look like?",
@@ -3485,7 +3485,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"This question opens in two directions deliberately. For someone not yet a Christian, the study of Jonah — and especially the Ninevites’ response in chapter 3 — is a direct invitation: repentance is possible for everyone, including people who seem too far gone, and God responds to it with immediate, complete compassion. For a Christian, the question is about ongoing repentance: the pattern of life in which sin is named, forgiveness is received, and turning is actually done. The Ninevites’ four elements (name the evil, accept the justice of God’s anger, call for mercy, turn) remain the template. Is there an area where that pattern has stalled?",
-          "questionHint"     :"If you are not yet a Christian, the question ‘what is stopping you?’ is worth sitting with honestly. If you are, ‘what does the real thing look like’ is the more searching question.",
+          "questionHint"     :"If you are not yet a Christian, the question ‘what is stopping you?’ is worth sitting with honestly.\nIf you are, ‘what does the real thing look like’ is the more searching question.",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"The Ninevites repented without certainty (‘who knows?’). You have certainty — the cross has dealt with sin, and God will certainly respond to genuine repentance with mercy. Does that certainty make repentance feel more urgent or less? And what does your answer reveal?",
@@ -3525,7 +3525,7 @@
           "required"         :false,
           "answerPlaceholder":"Your reflection…",
           "sampleAnswer"     :"God’s final question to Jonah is about concern for people. It is the question the book leaves unanswered — because it is ours to answer. The study has suggested three practical responses: remembering God’s grace to us (which ought to produce a desire to see others receive the same); praying specifically for people who don’t yet know God; and supporting the proclamation of the gospel in whatever way is open to us. The closing question of the whole book is whether we will be like Jonah — recipients of enormous grace who refuse to want it for others — or like the father in Luke 15, running to meet the returning prodigal.",
-          "questionHint"     :"Name someone specific. Not a category of person, but a name. And name one thing you will do this week — a prayer, a conversation, a message, a step.",
+          "questionHint"     :"Name someone specific.\nNot a category of person, but a name.\nName one thing you will do this week — a prayer, a conversation, a message, a step.",
           "deeper"           :{
             "label"            :"Go deeper …",
             "question"         :"God’s compassion for Nineveh was bought at the cross — it was not free for him. How does understanding the cost of grace change the way you think about sharing it with others? And how does Jonah’s failure to let received grace produce given grace serve as a warning for you personally?",

@@ -19,7 +19,7 @@
       }
     ],
     "estudyFileVersion": 3,
-    "studyVersion": 1.03,
+    "studyVersion": 1.04,
     "language": "en"
   },
   "theme": {
@@ -86,7 +86,7 @@
           "question": "What does verse 1 tell us about who God is in relation to the heavens and the earth?",
           "linkedPassage": "Genesis 1:1–2",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice who is acting in verse 1, and what is acted upon.",
+          "questionHint": "Notice who is acting in verse 1.\nNotice what is acted upon.",
           "sampleAnswer": "God is the Creator: He is the one who acts, and the heavens and the earth are what He acts upon. The verse begins with God, so He is already there before anything else exists and is not part of what He made. Verse 2 describes an earth that is empty and unformed, yet God’s Spirit is already present over the water. Everything else has a beginning in Him; He has no beginning Himself.",
           "keyTerms": [
             "creat|made|maker",
@@ -165,7 +165,7 @@
           "question": "In verses 6–10, who is active and who is acted upon? What does that show about the difference between God and what He makes?",
           "linkedPassage": "Genesis 1:6–10",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "List the verbs: what does God do, and what do the water, sky and land do?",
+          "questionHint": "List the verbs.\nWhat does God do?\nWhat do the water, sky and land do?",
           "sampleAnswer": "God speaks, makes, separates, gathers and names. The water, sky and land are shaped and placed by His word; they do not act on their own or resist Him. God stands over them as their Maker, not as one more part of the world. The passage gives us a Creator who is distinct from His creation and in charge of it.",
           "keyTerms": [
             "acts|active|speaks|makes|commands",
@@ -337,7 +337,7 @@
           "question": "What does God commission humanity to do in verse 28?",
           "linkedPassage": "Genesis 1:26–28",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Count the commands in verse 28 and note what each is about.",
+          "questionHint": "Count the commands in verse 28.\nNote what each is about.",
           "sampleAnswer": "God tells them to be fruitful, to multiply and to fill the earth, and to subdue it and rule over the fish, the birds and every living creature. There are two sides to the commission: filling the earth with people, and exercising authority over the rest of creation. It is given within a blessing, so it is a gift as well as a task. Because it is given to those made in God’s image, their rule is delegated by Him, not independent of Him.",
           "keyTerms": [
             "fruitful|multiply|fill|children|famil",
@@ -370,7 +370,7 @@
           "question": "In verses 29–31, what does God provide for what He has made, and how does He sum up His work?",
           "linkedPassage": "Genesis 1:28–31",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at what God gives in verses 29–30 and at His verdict in verse 31.",
+          "questionHint": "Look at what God gives in verses 29–30.\nLook at His verdict in verse 31.",
           "sampleAnswer": "God gives plants that yield seed and trees that bear fruit as food for humans, and green plants as food for the animals and birds. Creation comes with provision built in, which shows His generosity. At the end He looks at all that He has made and calls it very good. The story of humanity begins with provision and goodness, not scarcity or struggle.",
           "keyTerms": [
             "food|provide|give|plants|seed|fruit|eat",
@@ -416,7 +416,7 @@
           "question": "What does Genesis 2:1–3 say God did on the seventh day, and what does it say about the day itself?",
           "linkedPassage": "Genesis 2:1–3",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice the verbs: what did God do on the seventh day, and what did He do to the day?",
+          "questionHint": "Notice the verbs.\nWhat did God do on the seventh day?\nWhat did He do to the day?",
           "sampleAnswer": "God finished His work and ceased from it on the seventh day. This is not rest after exhaustion; it is the stopping that comes when the work is complete. He then blessed the seventh day and made it holy, setting it apart from the other days. The passage presents this pause as part of creation’s design from the start.",
           "keyTerms": [
             "finish|complet|done",
@@ -621,7 +621,7 @@
           "question": "What does God allow, and what does He forbid, in verses 16–17?",
           "linkedPassage": "Genesis 2:16–17",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice the word “freely” and how many trees fall into each group.",
+          "questionHint": "Notice the word “freely”.\nNotice how many trees fall into each group.",
           "sampleAnswer": "God allows the man to eat freely from every tree of the orchard. He forbids just one, the tree of the knowledge of good and evil, and warns that eating from it will bring death. The permission is wide and generous, and the restriction is narrow and specific. God is not stingy; He gives abundantly and sets one limit.",
           "keyTerms": [
             "every tree|all|any|freely|generous",
@@ -674,7 +674,7 @@
           "question": "What does God call “not good” in verse 18, and what does He decide to do about it?",
           "linkedPassage": "Genesis 2:18–20",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice what the Lord God says is “not good”, and what kind of companion He plans.",
+          "questionHint": "Notice what the Lord God says is “not good”.\nNotice what kind of companion He plans.",
           "sampleAnswer": "God says it is not good for the man to be alone. This is the first time anything in the story is called “not good”, in a world He has just made good. God says He will make a companion for him who corresponds to him, someone who truly matches him. So the need for relationship is not a weakness; it is part of how humans were made.",
           "keyTerms": [
             "alone|loneliness|solitary",
@@ -697,7 +697,7 @@
           "question": "What does the man do with the animals in verses 19–20, and what is the result?",
           "linkedPassage": "Genesis 2:18–20",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at what God brings to the man, what the man does, and what is not found.",
+          "questionHint": "Look at what God brings to the man.\nLook at what the man does.\nLook at what is not found.",
           "sampleAnswer": "God brings the animals to the man to see what he will name them, and he names them all. This shows the man exercising a role over them. But among all of them, no companion who corresponded to him was found. The animals are good, but they cannot meet this need; humans are different from them and made for one another.",
           "keyTerms": [
             "name",
@@ -807,7 +807,7 @@
           "question": "What does verse 25 say about how the man and woman felt about being unclothed, and what does that suggest about their relationship?",
           "linkedPassage": "Genesis 2:25",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice the two parts of the verse: what they were, and what they were not.",
+          "questionHint": "Notice the two parts of the verse.\nNotice what they were.\nNotice what they were not.",
           "sampleAnswer": "They were both naked, but they were not ashamed. There was nothing to hide and no fear of being fully known. This suggests a relationship of complete openness, trust and security, where being seen brought joy rather than exposure. There was no need to perform or protect themselves.",
           "keyTerms": [
             "naked|unclothed|expos",
@@ -956,7 +956,7 @@
           "question": "What does the serpent claim in verses 4–5 about death and about God’s motives?",
           "linkedPassage": "Genesis 2:16–17, 3:1–5",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice what the serpent says God “knows”, and what he says will happen.",
+          "questionHint": "Notice what the serpent says God “knows”.\nNotice what he says will happen.",
           "sampleAnswer": "The serpent flatly contradicts God’s warning: “Surely you will not die”. He then suggests that God is holding something back: God knows that when they eat, their eyes will open and they will be like God. That paints God as selfish and untrustworthy, keeping them from something good because He does not want rivals. Disobedience begins to look like gaining something rather than losing everything.",
           "keyTerms": [
             "not die|contradict|deny|surely",
@@ -1074,7 +1074,7 @@
           "question": "In 2:25 the couple were “naked, but they were not ashamed”. What changes in verses 7–10?",
           "linkedPassage": "Genesis 3:7–10",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at what they know, what they make, and what they do when they hear the Lord God.",
+          "questionHint": "Look at what they know.\nLook at what they make.\nLook at what they do when they hear the Lord God.",
           "sampleAnswer": "Their eyes are opened and they know they are naked, so shame has arrived. They sew fig leaves together to cover themselves, which is self-protection in place of openness. When they hear the Lord God moving in the orchard, they hide from Him, and the man says he was afraid. Shame, concealment and fear replace the ease they had before.",
           "keyTerms": [
             "naked|aware|shame|know",
@@ -1265,7 +1265,7 @@
           "question": "What does God do for Adam and Eve in verse 21, and how does that compare with what they did for themselves in verse 7?",
           "linkedPassage": "Genesis 3:21",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Compare “fig leaves” in verse 7 with “garments from skin” here, and notice who makes each.",
+          "questionHint": "Compare “fig leaves” in verse 7 with “garments from skin” here.\nNotice who makes each.",
           "sampleAnswer": "In verse 7 the couple sew fig leaves together to cover themselves. In verse 21 the Lord God Himself makes garments from skin and clothes them. Their own attempt to deal with their shame is replaced by something God provides. This comes right after the curses and just before the expulsion, so even in judgement God is still caring for them.",
           "keyTerms": [
             "himself|made|provide",
@@ -1294,7 +1294,7 @@
           "question": "Why does God send the man out of the garden, and in what sense might that also be an act of mercy?",
           "linkedPassage": "Genesis 3:22–24",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Read God’s reasoning in verse 22: what must not be allowed to happen?",
+          "questionHint": "Read God’s reasoning in verse 22.\nWhat must not be allowed to happen?",
           "sampleAnswer": "Now that the man knows good and evil, God will not let him reach out to the tree of life and live forever. So He expels him and posts sentries with a flaming sword to guard the way. This is judgement: they lose the garden and the closeness that came with it. Yet it is also merciful, because it stops humanity living on for ever in its fallen condition, and it leaves room for the rescue that verse 15 has begun to promise.",
           "keyTerms": [
             "tree of life|live forever|eternal|immortal",
@@ -1469,7 +1469,7 @@
           "question": "How does the Lord speak to Cain in verses 6–7, and how does He describe sin?",
           "linkedPassage": "Genesis 4:6–7",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice the questions God asks, and the verbs used of sin.",
+          "questionHint": "Notice the questions God asks.\nNotice the verbs used of sin.",
           "sampleAnswer": "The Lord speaks to Cain directly, with questions that invite him to look at himself. He says that if Cain does what is right he will be fine, but if not, sin is crouching at the door like a predator, desiring to dominate him. Yet Cain “must subdue it”: he is responsible, and he is able to resist. God warns him before anything worse happens.",
           "keyTerms": [
             "question|asks|speaks|warn",
@@ -1561,7 +1561,7 @@
           "question": "What are the consequences for Cain, and how does Cain describe them?",
           "linkedPassage": "Genesis 4:11–16",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Work through verses 11–14: what does Cain lose?",
+          "questionHint": "Work through verses 11–14.\nWhat does Cain lose?",
           "sampleAnswer": "Cain is banished from the ground, and when he works it, it will no longer yield its best. He will be a homeless wanderer on the earth. Cain says his punishment is too great to endure, that he is driven from the land, and that he must hide from the Lord’s presence. His losses are his work, his place, and closeness to God.",
           "keyTerms": [
             "banish|curs|driven|ground|yield",
@@ -1580,7 +1580,7 @@
           "question": "How does God still show mercy to Cain, even though he is being judged?",
           "linkedPassage": "Genesis 4:11–16",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at what Cain fears in verse 14 and what the Lord does about it in verse 15.",
+          "questionHint": "Look at what Cain fears in verse 14.\nLook at what the Lord does about it in verse 15.",
           "sampleAnswer": "Cain fears that anyone who finds him will kill him. The Lord promises that anyone who kills Cain will be avenged seven times over, and puts a special mark on him so that no one who finds him will strike him down. Cain has shown no sorrow for what he did, only fear for himself, yet God still protects him. Justice and mercy appear side by side.",
           "keyTerms": [
             "mark|protect|aveng",
@@ -1622,7 +1622,7 @@
           "question": "What does Lamech say to his wives, and how does his attitude compare with Cain’s?",
           "linkedPassage": "Genesis 4:17–24",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice how Lamech speaks to his wives, and what he says about vengeance and about Cain.",
+          "questionHint": "Notice how Lamech speaks to his wives.\nNotice what he says about vengeance and about Cain.",
           "sampleAnswer": "Lamech openly tells his wives that he has killed a man for wounding him. He boasts that if Cain is avenged seven times, then he will be avenged seventy-seven times. Cain denied what he had done; Lamech is proud of it. He has also turned God’s protection of Cain into a licence for bigger vengeance. Violence has moved from a secret act to something to boast about.",
           "keyTerms": [
             "boast|proud|openly|celebrat|poem|song",
@@ -1668,7 +1668,7 @@
           "question": "What signs of hope appear at the end of Genesis 4?",
           "linkedPassage": "Genesis 4:25–26",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at what Eve says about Seth, and at what people begin to do in verse 26.",
+          "questionHint": "Look at what Eve says about Seth.\nLook at what people begin to do in verse 26.",
           "sampleAnswer": "Eve gives birth to another son, Seth, and says God has given her another child in place of Abel. She sees him as God’s gift. Then a son is born to Seth, Enosh, and “at that time people began to worship the Lord”. Even as violence spreads, God provides a new line, and there are people who turn towards Him.",
           "keyTerms": [
             "seth|another child|replace|gift",
@@ -1937,7 +1937,7 @@
           "question": "What does God tell Noah He is going to do and why, and what does He ask Noah to do?",
           "linkedPassage": "Genesis 6:13–22",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at God’s reason in verse 13 and at His instructions from verse 14 on.",
+          "questionHint": "Look at God’s reason in verse 13.\nLook at His instructions from verse 14 on.",
           "sampleAnswer": "God has decided that all living creatures must die, because the earth is filled with violence. He tells Noah to build an ark of cypress wood, 450 feet long, with rooms, pitch inside and out, a door and three decks. Noah is to bring pairs of every kind of living creature, along with food. God’s answer to the violence is judgement, together with a way of rescue.",
           "keyTerms": [
             "violence|filled with violence|corrupt",
@@ -1998,7 +1998,7 @@
           "question": "What happens in the flood, and who survives?",
           "linkedPassage": "Genesis 7:11–24",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at the words used for how far the water reaches, and at who is left alive.",
+          "questionHint": "Look at the words used for how far the water reaches.\nLook at who is left alive.",
           "sampleAnswer": "The waters come from the deep and from the sky, and they rise until all the high mountains under the entire sky are covered. Every living thing that moved on the dry land died, including people, animals and birds. Only Noah and those with him in the ark survived. When they have entered, the Lord Himself shuts the door behind Noah.",
           "keyTerms": [
             "water|flood|deep|rain|windows",
@@ -2119,7 +2119,7 @@
           "question": "What does God promise, who is included, and what is the sign?",
           "linkedPassage": "Genesis 9:8–17",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice who is included in verses 9–10, and what God places in the clouds.",
+          "questionHint": "Notice who is included in verses 9–10.\nNotice what God places in the clouds.",
           "sampleAnswer": "God confirms a covenant with Noah and his descendants, and with every living creature that was in the ark. The promise is that never again will a flood destroy the earth. The sign is a rainbow in the clouds, a reminder of the covenant for all later generations. God says that when He sees the rainbow, He will remember the covenant.",
           "keyTerms": [
             "covenant|promise|agreement",
@@ -2145,7 +2145,7 @@
           "question": "What does the fact that God makes a covenant suggest about His character?",
           "linkedPassage": "Genesis 9:8–17",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice how often God says “I” in these verses, and what He promises to remember.",
+          "questionHint": "Notice how often God says “I” in these verses.\nNotice what He promises to remember.",
           "sampleAnswer": "God takes the initiative: He confirms the covenant, places the rainbow, and promises to remember. He binds Himself to a promise and stakes His integrity on keeping it. The covenant covers all living creatures, so it is generous as well as firm. This shows a God who is faithful and trustworthy, not arbitrary or unpredictable.",
           "keyTerms": [
             "commit|bind|promise|faithful",
@@ -2309,7 +2309,7 @@
           "question": "What do the people say they want to do in verses 3–4, and what two reasons do they give?",
           "linkedPassage": "Genesis 9:1, 11:1–4",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look at what they want to build, and at the phrases “make a name” and “otherwise”.",
+          "questionHint": "Look at what they want to build.\nLook at the phrases “make a name” and “otherwise”.",
           "sampleAnswer": "They make bricks and decide to build a city and a tower with its top in the heavens. They give two reasons: “so that we may make a name for ourselves”, and “otherwise we will be scattered across the face of the entire earth”. The first is about self-made significance and glory; the second is about security. Both put their own plans at the centre.",
           "keyTerms": [
             "city|tower|build|bricks",
@@ -2381,7 +2381,7 @@
           "question": "How does the Lord respond to what the people are building?",
           "linkedPassage": "Genesis 11:5–7",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice where the Lord goes, what He says in verse 6, and what He plans in verse 7.",
+          "questionHint": "Notice where the Lord goes.\nNotice what He says in verse 6.\nNotice what He plans in verse 7.",
           "sampleAnswer": "The Lord comes down to see the city and the tower. The tower with its top “in the heavens” is so small beside Him that He has to come down to see it. He says that if as one people sharing a language they have begun this, nothing they plan to do will be beyond them. So He plans to confuse their language so that they cannot understand each other, which limits where unchecked pride would lead.",
           "keyTerms": [
             "came down|go down|see",
@@ -2599,7 +2599,7 @@
           "question": "What do we learn about Abram’s family and situation at the start?",
           "linkedPassage": "Genesis 11:27–32",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Notice what verse 30 says about Sarai, and where the family has stopped.",
+          "questionHint": "Notice what verse 30 says about Sarai.\nNotice where the family has stopped.",
           "sampleAnswer": "Abram is part of Terah’s family, with his wife Sarai and his nephew Lot. His brother Haran died in Ur. Terah set out with them for Canaan, but they settled in Haran, where Terah died. Verse 30 adds that Sarai was barren and had no children. So Abram is an ordinary man with a family, but with no heir.",
           "keyTerms": [
             "terah|father|famil",
@@ -2700,7 +2700,7 @@
           "question": "Sarai was barren (11:30), and God promises Abram a great nation. What does the passage emphasise about who will make that promise happen?",
           "linkedPassage": "Genesis 11:30, 12:1–3",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Count the “I will” statements in verses 2–3 and ask who is doing the acting.",
+          "questionHint": "Count the “I will” statements in verses 2–3.\nAsk who is doing the acting.",
           "sampleAnswer": "God makes the promises: “I will make you into a great nation”, “I will bless you”, “I will make your name great”, “I will bless those who bless you”. Abram has a barren wife and no children, so a great nation cannot come from his own strength. The only thing asked of Abram is that he go. The promise rests on what God will do.",
           "keyTerms": [
             "i will|he will|promises",
@@ -2788,7 +2788,7 @@
           "question": "What does Abram do as he travels through the land, and what does the Lord tell him at Shechem?",
           "linkedPassage": "Genesis 12:6–9",
           "answerPlaceholder": "Your thoughts…",
-          "questionHint": "Look for the places Abram stops, and what he builds.",
+          "questionHint": "Look for the places Abram stops.\nLook for what he builds.",
           "sampleAnswer": "At Shechem the Lord appears and says “To your descendants I will give this land”, and Abram builds an altar to Him. He then moves to the hill country east of Bethel, pitches his tent, and builds another altar, where he worships the Lord. All the while the Canaanites are in the land, so it is not yet his. He keeps stopping to worship as he goes.",
           "keyTerms": [
             "altar|built|worship",

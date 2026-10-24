@@ -127,12 +127,15 @@
 }
 .lv-face { flex: none; font-size: 26px; line-height: 1; }   /* emoji: UI chrome, stays px */
 .lv-text { flex: 1; min-width: 0; line-height: 1.5; }
-.lv-steps {
+.lv-steps,
+.lv-hints {
   margin: 6px 0 0;
   padding-inline-start: 1.4em;
 }
-.lv-steps li { margin-bottom: 4px; }
-.lv-steps li:last-child { margin-bottom: 0; }
+.lv-steps li,
+.lv-hints li { margin-bottom: 4px; }
+.lv-steps li:last-child,
+.lv-hints li:last-child { margin-bottom: 0; }
 #validate-toast .inline-icon svg { vertical-align: -3px; }
 
 
