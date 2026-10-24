@@ -99,7 +99,7 @@ js/
   router.js                 History-API-backed navigation router; bottom-nav click handlers
   utils.js                  Last-position save/restore, showToast(), autoResize, long-press copy
   answer-match.js           Pure text matching for the answer check: Unicode-aware normalising, keyTerms, tiers
-  validation.js             Local offline answer validation ("answer check") UI: feedback toast, Main point button
+  validation.js             Local offline answer validation ("answer check") UI: traffic-light feedback toast, Main point button
   gestures.js               Swipe gesture navigation between chapters/tabs; scroll and
                              visibilitychange listeners (backgrounding save, last position)
   navigation.js             goToChapter(), menu open/close, tab reset

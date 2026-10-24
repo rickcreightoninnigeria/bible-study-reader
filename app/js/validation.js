@@ -158,9 +158,18 @@ const _LV_STILL_WORKING_OVERLAYS =
 // Scrolls the card to the centre of the viewport, then shows the toast.
 // Centralising first ensures the toast never obscures the answer field,
 // regardless of where on the screen the card started.
-function _localValidateShowFeedback(card, feedback) {
+function _localValidateShowFeedback(card, detail) {
   card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  showToast({ message: feedback, duration: 10000, elementId: 'validate-toast', isManual: true });
+  const toast = document.getElementById('validate-toast');
+  if (toast) {
+    toast.classList.remove('lv-red', 'lv-amber', 'lv-green');
+    const level = _lvLevelFor(detail.code).level;
+    if (level) toast.classList.add('lv-' + level);
+  }
+  // resetText '' : this toast has no default text to restore (it used to inherit
+  // "✓ Answers saved", which could replace the feedback while it was showing).
+  showToast({ message: _lvToastHtml(detail), isHtml: true, duration: _LV_TOAST_MS,
+              elementId: 'validate-toast', isManual: true, resetText: '' });
 }
 
 // Called by the localValidate button injected into each eligible question card.
@@ -175,13 +184,13 @@ function openLocalValidateForCard(buttonEl) {
   // Guard: icon should be disabled when empty, but double-check here
   if (!answer) return;
 
-  const feedback = _lvFeedbackFor(card, answer);
-  if (feedback === null) return;
+  const detail = _lvDetailFor(card, answer);
+  if (detail === null) return;
 
-  // feedback is always a non-null string (either a problem message or a
-  // positive confirmation). Scroll card to centre first so the toast
-  // never covers the answer field, then display.
-  _localValidateShowFeedback(card, feedback);
+  // detail is always non-null here (either a problem message or a positive
+  // confirmation). Scroll card to centre first so the toast never covers the
+  // answer field, then display.
+  _localValidateShowFeedback(card, detail);
 }
 
 // Called from the textarea's blur handler (onblur attribute in
@@ -230,8 +239,8 @@ function localValidateAutoTrigger(textareaEl) {
     // Record the answer we are about to validate so next blur can diff
     card.dataset.lvLastAnswer = answer;
 
-    const feedback = _lvFeedbackFor(card, answer);
-    if (feedback !== null) _localValidateShowFeedback(card, feedback);
+    const detail = _lvDetailFor(card, answer);
+    if (detail !== null) _localValidateShowFeedback(card, detail);
   }, 120);
 }
 
@@ -304,18 +313,25 @@ function _lvQuestionConfig(card) {
   return cfg;
 }
 
-// The feedback string for one card, or null if something unexpected went wrong
-// (a failed check must never break typing or saving).
-function _lvFeedbackFor(card, answer) {
+// The feedback for one card as { code, text, steps, message }, or null if
+// something unexpected went wrong (a failed check must never break typing or
+// saving). `message` is the same feedback as one plain string.
+function _lvDetailFor(card, answer) {
   try {
     const c = _lvQuestionConfig(card);
-    return _localValidate(answer, c.questionText, card, c.sampleAnswer, c.questionHint,
+    return _localValidateDetail(answer, c.questionText, card, c.sampleAnswer, c.questionHint,
       c.shortAnswerThreshold, c.skipBibleVerseCheck,
       { keyTerms: c.keyTerms, hasMainPoint: c.hasMainPoint, lang: c.lang });
   } catch (e) {
     console.warn('[localValidate] check failed', e);
     return null;
   }
+}
+
+// Just the plain-text message (or null).
+function _lvFeedbackFor(card, answer) {
+  const d = _lvDetailFor(card, answer);
+  return d === null ? null : d.message;
 }
 
 // Plain-text versions of the linked passage in every translation, for the
@@ -349,7 +365,11 @@ function _lvPassageTexts(card) {
 //                          string; 0 disables the check; null = built-in default)
 //   skipBibleVerseCheck  — true skips the "repeats the passage" check
 //   extra                — optional { keyTerms, hasMainPoint, lang }
-function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck = false, extra = {}) {
+function _localValidate(...args) {
+  return _localValidateDetail(...args).message;
+}
+
+function _localValidateDetail(userAnswer, questionText, card, sampleAnswer, questionHint, shortAnswerThreshold, skipBibleVerseCheck = false, extra = {}) {
   const opts = extra && typeof extra === 'object' ? extra : {};
   const { code } = evaluateAnswer({
     answer: userAnswer,
@@ -361,27 +381,74 @@ function _localValidate(userAnswer, questionText, card, sampleAnswer, questionHi
     skipBibleVerseCheck,
     lang: opts.lang,
   });
-  return _lvMessageFor(code, questionHint, !!opts.hasMainPoint);
+  return _lvDetailForCode(code, questionHint, !!opts.hasMainPoint);
 }
 
-// Result code → message. Appends the hint after the message when there is one
+// How long the feedback toast stays up. A partial answer now gets a short list
+// of steps, which takes longer to read.
+const _LV_TOAST_MS = 12000;
+
+// Result code → traffic-light level and face. Red: a long way off (just repeating
+// the question or the passage). Amber: getting closer, or heading a different way.
+// Green: good. No level (the toast keeps its usual teal) when the check could not
+// tell: "passes basic checks, no thematic data".
+const _LV_LEVELS = {
+  repeatsQuestion: { level: 'red',   face: '😕' },
+  repeatsPassage:  { level: 'red',   face: '😕' },
+  offTopic:        { level: 'amber', face: '😶' },
+  tooShort:        { level: 'amber', face: '😐' },
+  stuck:           { level: 'amber', face: '😐' },
+  partial:         { level: 'amber', face: '😐' },
+  strong:          { level: 'green', face: '😀' },
+  pass:            { level: 'green', face: '😀' },
+};
+function _lvLevelFor(code) {
+  return Object.prototype.hasOwnProperty.call(_LV_LEVELS, code) ? _LV_LEVELS[code] : { level: null, face: '' };
+}
+
+// Result code → { code, text, steps, message }. `text` is the message, `steps` an
+// optional list of things to do (shown as a numbered list), `message` the two
+// joined as plain text. Appends the hint after the message when there is one
 // (the "stuck" and "off topic" messages have wording of their own for that
 // case). Messages that could be read as praise point to the Main point button
-// when the question has one.
-function _lvMessageFor(code, hint, hasMainPoint) {
+// when the question has one; a partial answer gets a short list of steps, the
+// last of which is that pointer.
+function _lvDetailForCode(code, hint, hasMainPoint) {
   const withHint = (withKey, withoutKey) => hint ? t(withKey) + ' ' + hint : t(withoutKey);
   const pointer = hasMainPoint ? ' ' + t('validation_lv_see_main_point') : '';
+  let text, steps = [];
   switch (code) {
-    case 'stuck':           return withHint('validation_lv_stuck_hint', 'validation_lv_stuck_no_hint');
-    case 'tooShort':        return withHint('validation_lv_too_short', 'validation_lv_too_short');
-    case 'repeatsQuestion': return withHint('validation_lv_repeats_question', 'validation_lv_repeats_question');
-    case 'repeatsPassage':  return withHint('validation_lv_repeats_passage', 'validation_lv_repeats_passage');
-    case 'offTopic':        return withHint('validation_lv_off_topic_hint', 'validation_lv_off_topic_no_hint');
-    case 'partial':         return t('validation_lv_partial') + pointer;
-    case 'strong':          return t('validation_lv_strong') + pointer;
-    case 'pass':            return t('validation_lv_pass_thematic') + pointer;
-    default:                return withHint('validation_lv_pass_no_sample_hint', 'validation_lv_pass_no_sample_no_hint');
+    case 'stuck':           text = withHint('validation_lv_stuck_hint', 'validation_lv_stuck_no_hint'); break;
+    case 'tooShort':        text = withHint('validation_lv_too_short', 'validation_lv_too_short'); break;
+    case 'repeatsQuestion': text = withHint('validation_lv_repeats_question', 'validation_lv_repeats_question'); break;
+    case 'repeatsPassage':  text = withHint('validation_lv_repeats_passage', 'validation_lv_repeats_passage'); break;
+    case 'offTopic':        text = withHint('validation_lv_off_topic_hint', 'validation_lv_off_topic_no_hint'); break;
+    case 'partial':
+      text = t('validation_lv_partial');
+      steps = [t('validation_lv_partial_step1'), t('validation_lv_partial_step2')];
+      if (hasMainPoint) steps.push(t('validation_lv_partial_step3'));
+      break;
+    case 'strong':          text = t('validation_lv_strong') + pointer; break;
+    case 'pass':            text = t('validation_lv_pass_thematic') + pointer; break;
+    default:                text = withHint('validation_lv_pass_no_sample_hint', 'validation_lv_pass_no_sample_no_hint');
   }
+  const message = [text, ...steps.map((s, i) => `${i + 1}. ${s}`)].join('\n');
+  return { code, text, steps, message };
+}
+
+// The toast's HTML. Everything from the study (the hint) is escaped; the face
+// and the numbered list are built here. [[icon:mainPoint]] in a message is drawn
+// as the Main point button's lightbulb, or as 💡 if that icon is not available.
+function _lvToastHtml(detail) {
+  const icon = (typeof ICONS !== 'undefined' && ICONS && ICONS.mainPoint) ? '[[icon:mainPoint]]' : '💡';
+  const fix = s => escapeHtml(s).replace(/\[\[icon:mainPoint\]\]/g, icon);
+  const steps = detail.steps && detail.steps.length
+    ? `<ol class="lv-steps">${detail.steps.map(s => `<li>${fix(s)}</li>`).join('')}</ol>` : '';
+  const face = _lvLevelFor(detail.code).face;
+  const faceHtml = face ? `<span class="lv-face" aria-hidden="true">${face}</span>` : '';
+  const body = `<div class="lv-text">${fix(detail.text)}${steps}</div>`;
+  const html = faceHtml ? `<div class="lv-toast">${faceHtml}${body}</div>` : body;
+  return typeof expandInlineMarkers === 'function' ? expandInlineMarkers(html) : html;
 }
 
 // Wires the local-validate and Main point buttons after a chapter renders:

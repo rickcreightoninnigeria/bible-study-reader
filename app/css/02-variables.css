@@ -128,6 +128,13 @@
      question text, How-to blocks and the title-page description. Applied with
      padding-inline-start, so it flips in RTL. */
   --prose-list-indent: 1.4em;
+
+  /* Answer-check toast, traffic-light colours (light backgrounds, dark text).
+     Red: a long way off. Amber: getting closer. Green: good. The dark-mode
+     versions are in 05c-components.nav.css. */
+  --lv-red-bg:      #f9d8d4;  --lv-red-text:    #5a1a14;  --lv-red-border:    #e3a39b;
+  --lv-amber-bg:    #fbe8b4;  --lv-amber-text:  #563a00;  --lv-amber-border:  #e2c36a;
+  --lv-green-bg:    #d4edd2;  --lv-green-text:  #14401a;  --lv-green-border:  #93c795;
 }
 
 

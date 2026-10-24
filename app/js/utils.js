@@ -156,6 +156,13 @@ const _toastHideTimers = {};
 // message) then displayed that stale text instead of "Answers saved".
 const _toastResetText = {};
 
+// The pending 300 ms "put the default text back" timer, per toast. It has to be
+// cancellable: tapping the answer-check icon while its toast was still showing
+// hid the toast (starting this timer) and then showed the new feedback, and the
+// stale timer then overwrote that feedback with "✓ Answers saved" half a second
+// later. showToast() now cancels it (or applies it straight away).
+const _toastResetTimers = {};
+
 function _hideToast(elementId) {
   const toast = document.getElementById(elementId);
   if (!toast) return;
@@ -164,7 +171,11 @@ function _hideToast(elementId) {
   if (Object.prototype.hasOwnProperty.call(_toastResetText, elementId)) {
     const resetText = _toastResetText[elementId];
     delete _toastResetText[elementId];
-    setTimeout(() => { toast.textContent = resetText; }, 300);
+    clearTimeout(_toastResetTimers[elementId]);
+    _toastResetTimers[elementId] = setTimeout(() => {
+      delete _toastResetTimers[elementId];
+      toast.textContent = resetText;
+    }, 300);
   }
 }
 
@@ -182,9 +193,18 @@ function showToast({
   if (!toast) return;
 
   if (message !== null) {
+    // New text supersedes any reset still pending from the last hide.
+    clearTimeout(_toastResetTimers[elementId]);
+    delete _toastResetTimers[elementId];
     if (isHtml) toast.innerHTML = message;
     else        toast.textContent = message;
     _toastResetText[elementId] = resetText;
+  } else if (_toastResetTimers[elementId] !== undefined) {
+    // Showing the toast's own text again (e.g. the auto-save toast) while a
+    // reset is pending: restore the default text now rather than 300 ms later.
+    clearTimeout(_toastResetTimers[elementId]);
+    delete _toastResetTimers[elementId];
+    toast.textContent = resetText;
   }
 
   const text     = toast.textContent;
@@ -202,12 +222,20 @@ function showToast({
 // 10s for the validate toast). Routed through _hideToast() (not a direct
 // classList.remove) so the pending reset-text restoration still happens —
 // see the note on _toastResetText above.
+// A tap on the answer-check toast itself also dismisses it (it has no buttons,
+// and it stays up 12 s); other toasts, such as the celebration toast with its
+// Share button, ignore taps on themselves.
 document.addEventListener('pointerdown', e => {
   document.querySelectorAll('.toast.show, .validate-toast.show').forEach(toast => {
-    if (toast.contains(e.target)) return;   // tap landed on the toast itself
+    if (toast.contains(e.target) && toast.id !== 'validate-toast') return;
     _hideToast(toast.id);
   });
 }, true);
+
+// Escape closes the answer-check toast too, for keyboard and desktop users.
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') _hideToast('validate-toast');
+});
 
 // Shows the chapter-completion celebration toast the first time a chapter
 // reaches 100% completion. The "celebrated" flag is stored as a standalone

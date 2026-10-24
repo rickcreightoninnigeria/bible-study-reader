@@ -210,7 +210,12 @@ describe('the whole feedback path', () => {
 
   it('uses the tiers, and points to the Main point button when there is one', () => {
     expect(feedback('q1', 'Paul teaches that we are declared righteous through faith, not by our works.')).toBe('validation_lv_strong validation_lv_see_main_point');
-    expect(feedback('q1', 'Paul says we are justified by what we do and how we live and love.')).toBe('validation_lv_partial validation_lv_see_main_point');
+    // A partial answer gets a short list of steps; the last one points to the Main point button.
+    expect(feedback('q1', 'Paul says we are justified by what we do and how we live and love.'))
+      .toBe('validation_lv_partial\n1. validation_lv_partial_step1\n2. validation_lv_partial_step2\n3. validation_lv_partial_step3');
+    // Without a main point there is nothing to point to, so only the first two steps.
+    expect(feedback('q2', 'Paul says we are justified by what we do and how we live and love.'))
+      .toBe('validation_lv_partial\n1. validation_lv_partial_step1\n2. validation_lv_partial_step2');
     expect(feedback('q2', 'Paul teaches that we are declared righteous through faith, not by our works.')).toBe('validation_lv_strong');
     expect(feedback('q2', 'I enjoyed the weather and the sandwiches at our picnic last weekend.')).toBe('validation_lv_off_topic_no_hint');
   });

@@ -109,6 +109,32 @@
   top: 120px; /* offset below #toast (top: 64px) to prevent overlap */
 }
 
+/* Answer-check feedback: a coloured background (red / amber / green), a face on
+   the left and the message beside it. A partial answer also gets a numbered list
+   of steps. With no level (the check could not tell) the toast is the teal
+   --validate. The element is <div class="toast" id="validate-toast">: it has the
+   class "toast", not "validate-toast", so these rules use the id (which also
+   beats .toast's green background). */
+#validate-toast          { background: var(--validate); cursor: pointer; }   /* tapping it dismisses it */
+#validate-toast.lv-red   { background: var(--lv-red-bg);   color: var(--lv-red-text);   border: 1px solid var(--lv-red-border); }
+#validate-toast.lv-amber { background: var(--lv-amber-bg); color: var(--lv-amber-text); border: 1px solid var(--lv-amber-border); }
+#validate-toast.lv-green { background: var(--lv-green-bg); color: var(--lv-green-text); border: 1px solid var(--lv-green-border); }
+.lv-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: start;                           /* start, not left: mirrors in RTL */
+}
+.lv-face { flex: none; font-size: 26px; line-height: 1; }   /* emoji: UI chrome, stays px */
+.lv-text { flex: 1; min-width: 0; line-height: 1.5; }
+.lv-steps {
+  margin: 6px 0 0;
+  padding-inline-start: 1.4em;
+}
+.lv-steps li { margin-bottom: 4px; }
+.lv-steps li:last-child { margin-bottom: 0; }
+#validate-toast .inline-icon svg { vertical-align: -3px; }
+
 
 /* ── 03. VERSION WARNING ────────────────────────────────────────────────── */
 /* Persistent banner shown when the app content has been updated and the
@@ -374,6 +400,11 @@
 
 /* ── Toast ──
    No overrides needed — success green reads clearly on dark backgrounds. */
+
+/* ── Answer-check toast: deeper tints so it is not a bright slab at night ── */
+body.dark-mode #validate-toast.lv-red   { background: #4a2320; color: #ffdcd6; border-color: #8a4a44; }
+body.dark-mode #validate-toast.lv-amber { background: #4d3a0b; color: #ffe9b3; border-color: #8c6f1f; }
+body.dark-mode #validate-toast.lv-green { background: #1d4222; color: #d2f0d5; border-color: #3f7a47; }
 
 /* ── Celebration toast ──
    No overrides needed — accent gold and --text colour both hold in dark mode. */
