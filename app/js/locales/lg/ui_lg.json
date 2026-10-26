@@ -130,7 +130,7 @@
   "renderchapter_answer_tools_localvalidate_desc": " ekola okukebera okw’amangu nga tolina mukutu gwa yintaneeti ku ky’okuddamu kyo era n’awa endowooza ennyimpimpi. Mu mbeera ya <b>Manual</b> okwata ku kabonero kano ggwe kennyini; mu <b>Auto</b> mode ekola otomatiki oluvannyuma lwa buli kutereka. Kino osobola okukikyusa mu Settings → App.",
   "renderchapter_eyebrow_info_title": " Ebimu ku bintu by’olina okutunuulira",
   "renderchapter_eyebrow_info_body": "<p><b>Nkwata ku kabonero ka ☆</b> ku kaadi y'ebibuuzo okugiteekako emmunyeenye. Ebibuuzo ebiriko emmunyeenye biwandiikiddwa mu zaabu era ne bikung’aanyizibwa mu kipande ekifunze waggulu ku ssuula, n’olwekyo osobola okuzuula amangu ebibuuzo by’osinga okwagala okuddamu oba okukubaganya ebirowoozo. Era zirabika mu Progress Overview yo.</p><p><b>Nkwata ku kabonero k’akazindaalo</b> munda mu kifo kyonna eky’okuddamu okulagira eky’okuddamu kyo ng’okozesa eddoboozi mu kifo ky’okuwandiika. Akabonero kalabika singa ekyuma kyo kiwagira okuyingiza okwogera.</p><p><b>Layini ya langi ennyimpi</b> wansi w’ebbaala ey’okungulu ye bbaala yo ey’enkulaakulana y’essuula — ejjula nga bw’oddamu ebibuuzo mu ssuula eno.</p><p><b>Eby’okuddamu byo biterekebwa mu ngeri ey’otoma</b> ng’ovudde mu kifo ky’okuddamu — teweetaaga kukola kintu kyonna.</p>",
-  "renderchapter_print_btn": " Okukuba ebitabo",
+  "renderchapter_print_btn": "Print",
   "renderchapter_share_btn": " Omugabo",
   "renderchapter_recommend_btn": "Okuwabula",
   "renderchapter_nav_chapter_short": "Ch. {number}",
