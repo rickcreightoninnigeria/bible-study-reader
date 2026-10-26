@@ -190,7 +190,8 @@
 }
 .save-btn:active { transform: scale(0.98); }
 .save-btn.saved  { background: var(--success); }
-.save-btn span   { font-size: 14px; }   /* emoji — stays px */
+.save-btn-icon { display: inline-flex; flex-shrink: 0; }   /* a long label must not squeeze the icon */
+.save-bar.no-icons .save-btn-icon { display: none; }       /* set by fitSaveBar() when a label wraps */
 
 
 /* ── 04. CHAPTER NAV ────────────────────────────────────────────────────── */

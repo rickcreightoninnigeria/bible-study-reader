@@ -505,13 +505,13 @@ async function renderHowToUse(tabId) {
           <div class="howto-ui-icon">${ICONS.save}</div>
           <div class="howto-ui-text">
             <div class="howto-ui-label">
-              ${t('renderpages_chapters_save_label')}
+              ${t('renderpages_chapters_autosave_label')}
               <button class="howto-tutorial-btn" data-tutorial-id="auto-save"
                       onclick="showFeatureTutorial('auto-save', () => { Router.replaceState({ page: 'howto', tabId: 'chapters' }); renderHowToUse('chapters'); })">
                 <span class="tutorial-trigger-icon">${tutorialIcon('auto-save')}</span>
               </button>
             </div>
-            <div class="howto-ui-desc">${t('renderpages_chapters_save_desc')}</div>
+            <div class="howto-ui-desc">${t('renderpages_chapters_autosave_desc')}</div>
           </div>
         </div>
 

@@ -25,7 +25,7 @@
 //   5.  Notes field                   — buildNotesField()
 //   6.  Prev/Next nav buttons         — buildNavButtons()
 //   6a. "Read more" button (optional)  — buildReadMoreButton(); last in the chapter
-//   7.  Save/Share bar                — buildSaveBar()
+//   7.  Print/Share/Recommend bar     — buildSaveBar()
 //   8.  Spacer div
 //
 // Post-render DOM work (after innerHTML is set):
@@ -326,6 +326,7 @@ async function renderChapter(idx, scrollY = 0) {
 
     // ── Set innerHTML (single write) ──────────────────────────────────────────
     container.innerHTML = contentHtml;
+    fitSaveBar();   // drop the bar's icons if a label wraps
 
     // ── Post-render: language bar ─────────────────────────────────────────────
     // Populates #chapterLangBar with flag buttons for the available languages.

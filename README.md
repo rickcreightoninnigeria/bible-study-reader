@@ -34,7 +34,7 @@ Licensed **CC BY-SA 4.0** — Rick Creighton, 2026.
   scales, verse pop-ups, QA callout modals, "go deeper" prompts, opening
   quotes, and reflection questions.
 - **Answer persistence** — all answers auto-save to IndexedDB on blur;
-  manual Save button also available.
+  no Save button is needed.
 - **Progress tracking** — per-chapter completion rings and a full Progress
   Overview page; starred/bookmarked questions panel.
 - **Go Deeper page** — optional supplementary prose page for readers who want

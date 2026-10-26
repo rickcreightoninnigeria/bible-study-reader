@@ -1,5 +1,5 @@
 // ── RENDER CHAPTER UI ─────────────────────────────────────────────────────────
-// Chrome elements that surround the chapter content: the save/share bar,
+// Chrome elements that surround the chapter content: the print/share/recommend bar,
 // the notes free-text field, the prev/next navigation buttons, and the
 // sticky language switcher bar.
 //
@@ -31,7 +31,8 @@
 //   startVoiceInput      – voice.js
 //   openNotesInfo        – modals.js
 //   autoResize           – settings.js
-//   saveAnswers          – save.js
+//   debounce             – search.js
+//   shareAppLink         – render-pages.js
 //   printChapter         – share-print.js
 //   shareAnswers         – share-print.js
 //   goToChapter          – navigation.js
@@ -120,21 +121,54 @@ async function setStudyLang(code) {
 }
 
 
-// ── SAVE / SHARE BAR ──────────────────────────────────────────────────────────
+// ── PRINT / SHARE / RECOMMEND BAR ─────────────────────────────────────────────
+// Answers save themselves when the reader leaves a field, so the bar carries
+// no Save button. Share sends this chapter's answers; Recommend sends a link
+// to the app (the same message as the button on the How to Use page).
+//
+// Each button is an icon plus a word. In a language whose words are long, a
+// label can wrap onto two lines at a narrow width, which makes all three
+// buttons taller. fitSaveBar() (below) then drops the icons from the whole
+// bar so the words get the room.
 
 function buildSaveBar(ch) {
+  const btn = (style, onclick, icon, label) => `
+      <button class="save-btn"${style ? ` style="${style}"` : ''} onclick="${onclick}">
+        <span class="save-btn-icon">${icon}</span><span class="save-btn-label">${label}</span>
+      </button>`;
   return `
-    <div class="save-bar">
-      <button class="save-btn" onclick="saveAnswers()">
-        ${ICONS.save} ${t('renderchapter_save_btn')}
-      </button>
-      <button class="save-btn" style="background:var(--text-secondary)" onclick="printChapter()">
-        ${ICONS.print} ${t('renderchapter_print_btn')}
-      </button>
-      <button class="save-btn" style="background:var(--success)" onclick="shareAnswers()">
-        ${ICONS.share} ${t('renderchapter_share_btn')}
-      </button>
+    <div class="save-bar">${
+      btn('background:var(--text-secondary)', 'printChapter()', ICONS.print, t('renderchapter_print_btn'))}${
+      btn('background:var(--success)', 'shareAnswers()', ICONS.share, t('renderchapter_share_btn'))}${
+      btn('', 'shareAppLink()', ICONS.recommend, t('renderchapter_recommend_btn'))}
     </div>`;
+}
+
+// True when the text in a label breaks over more than one line.
+function _saveBarLabelWraps(label) {
+  const range = document.createRange();
+  range.selectNodeContents(label);
+  const tops = new Set(Array.from(range.getClientRects(), r => Math.round(r.top)));
+  return tops.size > 1;
+}
+
+// Hides the icons (class "no-icons" on the bar) when any label wraps with the
+// icons showing; shows them again when everything fits. Safe to call at any
+// time: it does nothing when there is no bar on screen.
+function fitSaveBar() {
+  const bar = document.querySelector('.save-bar');
+  if (!bar) return;
+  bar.classList.remove('no-icons');
+  const labels = Array.from(bar.querySelectorAll('.save-btn-label'));
+  if (labels.some(_saveBarLabelWraps)) bar.classList.add('no-icons');
+}
+
+// The bar's width changes with the window (rotating the phone, split screen),
+// and a web font arriving late changes the label widths, so fit again then.
+window.addEventListener('resize', debounce(fitSaveBar, 150));
+if (document.fonts) {
+  document.fonts.ready.then(fitSaveBar);
+  document.fonts.addEventListener('loadingdone', fitSaveBar);
 }
 
 
