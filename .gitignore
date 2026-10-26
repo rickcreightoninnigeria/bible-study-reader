@@ -25,3 +25,9 @@ testing/local-fixtures/
 # The files stay on disk but must not be committed.
 estudy_en (v3)/Belief/Love & Wisdom/
 estudy_en (v3)/Belief/Love and Wisdom.estudy
+
+# Working folders of superseded drafts and admin notes: "old", or "old " followed
+# by anything ("old & admin", "old and admin", ...), at any depth.
+# Files already committed in such folders stay tracked until removed with git rm --cached.
+old/
+old */
