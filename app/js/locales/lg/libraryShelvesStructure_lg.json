@@ -4,6 +4,17 @@
     "description": " Okunoonyereza okunoonyereza ku bitabo ebyawandiikibwa nga Kristo tannajja — okuva ku Mateeka ne Bannabbi okutuuka ku Byawandiikibwa. Endagaano enkadde eyogera ku ndagaano ya Katonda ne Isiraeri era n’esonga ku Masiya.",
     "sections": [
       {
+        "section": "Okulambika okutwaliza awamu",
+        "description": "Okusoma okutunuulira Endagaano Enkadde yonna — ebitabo byayo bwe bikwatagana n'engeri olugero lw'Ebyawandiikibwa gye lutambula okuva ku kutondebwa okutuuka ku Kristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Eby’eddiini mu Baibuli",
+            "description": "Okugoberera ensonga enkulu ez'Endagaano Enkadde — okutondebwa, endagaano, obwakabaka n'ekisuubizo — ng'olugero olumu olweyongera nga lulaga ku Kristo."
+          }
+        ]
+      },
+      {
         "section": " Amateeka",
         "description": " Ebitabo ebitaano ebisooka ebya Baibuli (Pentateuch), ebikwata ku kutonda, okugwa, okuva, n’okuwaayo Amateeka — omusingi Ebyawandiikibwa ebirala kwe bizimba.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Okusoma mu bitabo ebyawandiikibwa oluvannyuma lw’okujja kwa Kristo — Enjiri, ebbaluwa z’abatume, n’Okubikkulirwa. Endagaano empya eraga okutuukirizibwa kw’ebisuubizo bya Katonda mu Yesu n’obulamu bw’ekkanisa eyasooka.",
     "sections": [
       {
+        "section": "Okulambika okutwaliza awamu",
+        "description": "Okusoma okutunuulira Endagaano Empya yonna — ebitabo byayo bwe bikwatagana n'engeri gye bituusa olugero lw'Ebyawandiikibwa ku nkomerero yaalwo mu Kristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Eby’eddiini mu Baibuli",
+            "description": "Okugoberera ensonga enkulu ez'Endagaano Empya — okutuukirira, obwakabaka, endagaano empya n'ebitonde ebipya — ng'ekkomo ly'olugero lwa Baibuli olumu."
+          }
+        ]
+      },
+      {
         "section": " Enjiri & Ebikolwa by'Abatume",
         "description": " Ebiwandiiko ebina ebikwata ku bulamu bwa Yesu, okufa, n’okuzuukira, n’emboozi y’okugaziwa kw’ekkanisa eyasooka mu nsi y’Abaruumi.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Abasessaloniika",
             "description": " Okutereeza obutategeeragana ku biseera by’enkomerero, n’okukoowoola okukola emirimu egy’obwesigwa."
+          },
+          {
+            "name": "Ebbaluwa ez’Obusumba",
+            "description": "Ebbaluwa za Pawulo eri Timoseewo ne Tito, ezisomebwa wamu — ku bukulembeze, okuyigiriza okutuufu n'obulamu bw'ekkanisa obw'okutya Katonda."
           },
           {
             "name": " 1 Timoseewo",
@@ -356,6 +382,10 @@
           {
             "name": " Ebitendo bya Katonda",
             "description": " Obutukuvu bwa Katonda, okwagala kwe, obufuzi bwe, obwenkanya, n’engeri endala Ebyawandiikibwa bye biraga."
+          },
+          {
+            "name": "Okusaasira n’Ekisa",
+            "description": "Ekisa kya Katonda eky'okugumiikiriza era ekitasaanidde eri aboonoonyi n'abagwira — n'engeri gye kikola abantu be."
           },
           {
             "name": " Obusatu",
@@ -467,6 +497,10 @@
           {
             "name": " Okuzaala abaana",
             "description": " Ekirabo eky’enjawulo eky’okuleetebwa mu maka ga Katonda nga batabani be ne bawala be."
+          },
+          {
+            "name": "Okutukuzibwa",
+            "description": "Engeri ekisa kya Katonda gye kifuula abakkiriza abatukuvu — abaawulibwa mu Kristo, era abakula mu nneeyisa okufaanana ye."
           }
         ]
       },

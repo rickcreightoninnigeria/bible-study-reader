@@ -4,6 +4,17 @@
     "description": " Estudios que exploran los libros escritos antes de la venida de Cristo, desde la Ley y los Profetas hasta los Escritos. El Antiguo Testamento narra la historia del pacto de Dios con Israel y anticipa la llegada del Mesías.",
     "sections": [
       {
+        "section": "Descripción general",
+        "description": "Estudios que recorren el Antiguo Testamento en su conjunto: cómo encajan sus libros y cómo se despliega la historia de la Escritura desde la creación hacia Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teología bíblica",
+            "description": "Seguimiento de los grandes temas del Antiguo Testamento (creación, pacto, reino y promesa) como una sola historia que se despliega y apunta hacia Cristo."
+          }
+        ]
+      },
+      {
         "section": " Ley",
         "description": " Los primeros cinco libros de la Biblia (el Pentateuco), que abarcan la creación, la caída, el éxodo y la entrega de la Ley, constituyen el fundamento sobre el cual se edifica el resto de las Escrituras.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Estudios de los libros escritos después de la venida de Cristo: los Evangelios, las cartas de los apóstoles y el Apocalipsis. El Nuevo Testamento revela el cumplimiento de las promesas de Dios en Jesús y la vida de la iglesia primitiva.",
     "sections": [
       {
+        "section": "Descripción general",
+        "description": "Estudios que recorren el Nuevo Testamento en su conjunto: cómo encajan sus libros y cómo llevan la historia de la Escritura a su cumplimiento en Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teología bíblica",
+            "description": "Seguimiento de los grandes temas del Nuevo Testamento (cumplimiento, reino, nuevo pacto y nueva creación) como el clímax de la única historia de la Biblia."
+          }
+        ]
+      },
+      {
         "section": " Evangelios y Hechos",
         "description": " Los cuatro relatos de la vida, muerte y resurrección de Jesús, y la historia de la expansión de la iglesia primitiva por todo el mundo romano.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Tesalonicenses",
             "description": " Corrección de malentendidos sobre el fin de los tiempos y un llamado al trabajo fiel."
+          },
+          {
+            "name": "Epístolas pastorales",
+            "description": "Las cartas de Pablo a Timoteo y a Tito, leídas juntas: sobre liderazgo, sana enseñanza y vida piadosa de la iglesia."
           },
           {
             "name": " 1 Timoteo",
@@ -356,6 +382,10 @@
           {
             "name": " Atributos de Dios",
             "description": " La santidad, el amor, la soberanía, la justicia y las demás características de Dios que revelan las Escrituras."
+          },
+          {
+            "name": "Compasión y misericordia",
+            "description": "La bondad paciente e inmerecida de Dios hacia los pecadores y los extraños, y cómo moldea a su pueblo."
           },
           {
             "name": " La Santísima Trinidad",
@@ -467,6 +497,10 @@
           {
             "name": " Adopción",
             "description": " El extraordinario don de ser incorporados a la familia de Dios como sus hijos e hijas."
+          },
+          {
+            "name": "Santificación",
+            "description": "Cómo la gracia de Dios hace santos a los creyentes: apartados en Cristo y creciendo en la práctica para ser como él."
           }
         ]
       },

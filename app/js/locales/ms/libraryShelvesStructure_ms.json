@@ -4,6 +4,17 @@
     "description": " Kajian yang meneroka kitab-kitab yang ditulis sebelum kedatangan Kristus — daripada Hukum Taurat dan Kitab Para Nabi hinggalah kepada Kitab Suci. Perjanjian Lama menceritakan kisah perjanjian Tuhan dengan Israel dan menunjukkan kepada Mesias.",
     "sections": [
       {
+        "section": "Gambaran Keseluruhan",
+        "description": "Kajian yang meninjau Perjanjian Lama secara keseluruhan — bagaimana kitab-kitabnya saling berkait dan bagaimana kisah Kitab Suci berkembang daripada penciptaan menuju Kristus.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teologi Bible",
+            "description": "Menjejaki tema-tema besar Perjanjian Lama — penciptaan, perjanjian, kerajaan dan janji — sebagai satu kisah yang terbentang dan menunjuk kepada Kristus."
+          }
+        ]
+      },
+      {
         "section": " Undang-undang",
         "description": " Lima kitab pertama dalam Bible (Pentateukh), yang merangkumi penciptaan, kejatuhan, eksodus, dan pemberian Hukum Taurat — asas yang menjadi asas bagi seluruh Kitab Suci.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Kajian terhadap kitab-kitab yang ditulis selepas kedatangan Kristus — Injil, surat-surat para rasul, dan Wahyu. Perjanjian Baru mendedahkan penggenapan janji-janji Tuhan dalam Yesus dan kehidupan gereja awal.",
     "sections": [
       {
+        "section": "Gambaran Keseluruhan",
+        "description": "Kajian yang meninjau Perjanjian Baru secara keseluruhan — bagaimana kitab-kitabnya saling berkait dan bagaimana kitab-kitab itu membawa kisah Kitab Suci kepada kegenapannya dalam Kristus.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teologi Bible",
+            "description": "Menjejaki tema-tema besar Perjanjian Baru — kegenapan, kerajaan, perjanjian baru dan ciptaan baru — sebagai kemuncak satu kisah Alkitab yang terbentang."
+          }
+        ]
+      },
+      {
         "section": " Injil & Kisah Para Rasul",
         "description": " Empat kisah tentang kehidupan, kematian, dan kebangkitan Yesus, serta kisah pengembangan gereja awal di seluruh dunia Rom.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Tesalonika",
             "description": " Pembetulan salah faham tentang akhir zaman, dan seruan untuk bekerja dengan setia."
+          },
+          {
+            "name": "Surat-surat Pastoral",
+            "description": "Surat-surat Paulus kepada Timotius dan Titus, dibaca bersama — tentang kepimpinan, pengajaran yang sihat dan kehidupan gereja yang saleh."
           },
           {
             "name": " 1 Timotius",
@@ -356,6 +382,10 @@
           {
             "name": " Sifat-sifat Tuhan",
             "description": " Kekudusan, kasih, kedaulatan, keadilan Tuhan, dan ciri-ciri lain yang diungkapkan oleh Kitab Suci."
+          },
+          {
+            "name": "Belas Kasihan dan Rahmat",
+            "description": "Kebaikan Tuhan yang penyabar dan tidak layak diterima terhadap orang berdosa dan orang luar — dan bagaimana ia membentuk umat-Nya."
           },
           {
             "name": " Triniti",
@@ -467,6 +497,10 @@
           {
             "name": " Pengambilan anak angkat",
             "description": " Anugerah luar biasa untuk dibawa ke dalam keluarga Tuhan sebagai anak-anak lelaki dan perempuan-Nya."
+          },
+          {
+            "name": "Pengudusan",
+            "description": "Bagaimana anugerah Tuhan menjadikan orang percaya kudus — diasingkan dalam Kristus dan bertumbuh dalam amalan untuk menjadi seperti Dia."
           }
         ]
       },

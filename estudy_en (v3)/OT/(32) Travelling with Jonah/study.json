@@ -6,7 +6,7 @@
     "shortTitle"       :"Jonah",
     "description"      :"Jonah is an unusual book. If you are familiar with the Bible, it is probably one you feel fairly at home with — one you know quite well (or parts of quite well). The part about ’the whale’ is usually familiar territory. But there is a lot more to the book than just fish.<blockquote>’Do not be like Jonah.’ — the message in a sentence</blockquote>The story is not as straightforward as it looks at first glance. There are surprises, reversals and irony. Our hero does not look quite so heroic by the end — and some of the ’villains’ almost turn out to be heroes. We will journey through Jonah twice: forwards from chapter 1 to 4, then backwards from 4 to 1.",
     "author"           :"Rick Creighton",
-    "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God & His Character", "Subsection": "Compassion & Mercy" }],
+    "libraryShelves"   :[{ "Shelf": "Old Testament", "Section": "Prophets", "Subsection": "Jonah" }, { "Shelf": "Beliefs", "Section": "God", "Subsection": "Compassion & Mercy" }],
     "estudyFileVersion":3,
     "studyVersion"     :1.12,
     "language"         :"en",

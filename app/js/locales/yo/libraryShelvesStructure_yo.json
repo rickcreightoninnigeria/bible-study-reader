@@ -4,6 +4,17 @@
     "description": " Àwọn ẹ̀kọ́ tí ó ń ṣàyẹ̀wò àwọn ìwé tí a kọ ṣáájú wíwá Kristi — láti Òfin àti àwọn Wòlíì sí àwọn Ìwé Mímọ́. Májẹ̀mú Láéláé sọ ìtàn májẹ̀mú Ọlọ́run pẹ̀lú Ísírẹ́lì ó sì tọ́ka sí Mèsáyà.",
     "sections": [
       {
+        "section": "Àkótán Àkótán",
+        "description": "Àwọn ẹ̀kọ́ tí ó ṣe àkópọ̀ Májẹ̀mú Láéláé lódindi — bí àwọn ìwé rẹ̀ ṣe so pọ̀ àti bí ìtàn Ìwé Mímọ́ ṣe ń ṣí sílẹ̀ láti ìṣẹ̀dá sí Kristi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ẹ̀kọ́ nípa Ìsìn Bíbélì",
+            "description": "Títẹ̀lé àwọn kókó pàtàkì Májẹ̀mú Láéláé — ìṣẹ̀dá, májẹ̀mú, ìjọba àti ìlérí — gẹ́gẹ́ bí ìtàn kan tí ń ṣí sílẹ̀ tí ó tọ́ka sí Kristi."
+          }
+        ]
+      },
+      {
         "section": " Òfin",
         "description": " Àwọn ìwé márùn-ún àkọ́kọ́ nínú Bíbélì (Pentateuch), tí ó sọ̀rọ̀ nípa ìṣẹ̀dá, ìṣubú, ìjádelọ, àti fífúnni ní Òfin — ìpìlẹ̀ tí ìyókù Ìwé Mímọ́ kọ́ lé lórí.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Àwọn ìkẹ́kọ̀ọ́ nínú àwọn ìwé tí a kọ lẹ́yìn wíwá Kristi — àwọn ìwé Ìhìnrere, àwọn lẹ́tà àwọn aposteli, àti Ìfihàn. Májẹ̀mú Tuntun fi ìmúṣẹ àwọn ìlérí Ọlọ́run nínú Jésù àti ìgbésí ayé ìjọ ìṣáájú hàn.",
     "sections": [
       {
+        "section": "Àkótán Àkótán",
+        "description": "Àwọn ẹ̀kọ́ tí ó ṣe àkópọ̀ Májẹ̀mú Tuntun lódindi — bí àwọn ìwé rẹ̀ ṣe so pọ̀ àti bí wọ́n ṣe gbé ìtàn Ìwé Mímọ́ dé ìmúṣẹ rẹ̀ nínú Kristi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Ẹ̀kọ́ nípa Ìsìn Bíbélì",
+            "description": "Títẹ̀lé àwọn kókó pàtàkì Májẹ̀mú Tuntun — ìmúṣẹ, ìjọba, májẹ̀mú tuntun àti ìṣẹ̀dá tuntun — gẹ́gẹ́ bí òkè gíga ìtàn kan ṣoṣo ti Bíbélì."
+          }
+        ]
+      },
+      {
         "section": " Àwọn Ìhìnrere àti Ìṣe",
         "description": " Àwọn àkọsílẹ̀ mẹ́rin nípa ìgbésí ayé Jésù, ikú rẹ̀, àti àjíǹde rẹ̀, àti ìtàn ìtẹ̀síwájú ìjọ ìjímìjí kárí ayé Róòmù.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Tẹsalóníkà",
             "description": " Àtúnṣe àwọn àìlóye nípa àkókò ìkẹyìn, àti ìpè sí iṣẹ́ olóòótọ́."
+          },
+          {
+            "name": "Àwọn Lẹ́tà Ìtọ́jú Àgùntàn",
+            "description": "Àwọn lẹ́tà Pọ́ọ̀lù sí Tímótì àti Títù, tí a kà papọ̀ — lórí ìdarí, ẹ̀kọ́ tó yè kooro àti ìgbé ayé ìjọ tí ó bẹ̀rù Ọlọ́run."
           },
           {
             "name": " 1 Tímótì",
@@ -356,6 +382,10 @@
           {
             "name": " Àwọn Ànímọ́ Ọlọ́run",
             "description": " Ìwà mímọ́ Ọlọ́run, ìfẹ́ rẹ̀, agbára ìjọba rẹ̀, ìdájọ́ òdodo rẹ̀, àti àwọn ànímọ́ mìíràn tí Ìwé Mímọ́ fi hàn."
+          },
+          {
+            "name": "Ìyọ́nú àti Àánú",
+            "description": "Inú rere Ọlọ́run tí ó ní sùúrù, tí a kò tọ́ sí, fún àwọn ẹlẹ́ṣẹ̀ àti àwọn àlejò — àti bí ó ṣe ń mú àwọn ènìyàn rẹ̀ dàgbà."
           },
           {
             "name": " Mẹ́talọ́kan",
@@ -467,6 +497,10 @@
           {
             "name": " Ìgbàlọ́wọ́",
             "description": " Ẹ̀bùn àrà ọ̀tọ̀ ti jíjẹ́ ẹni tí a mú wá sínú ìdílé Ọlọ́run gẹ́gẹ́ bí ọmọkùnrin àti ọmọbìnrin rẹ̀."
+          },
+          {
+            "name": "Ìsọdimímọ́",
+            "description": "Bí oore-ọ̀fẹ́ Ọlọ́run ṣe ń sọ àwọn onígbàgbọ́ di mímọ́ — a ya wọ́n sọ́tọ̀ nínú Kristi, wọ́n sì ń dàgbà ní ìṣe láti dà bí rẹ̀."
           }
         ]
       },

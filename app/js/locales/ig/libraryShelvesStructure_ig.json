@@ -4,6 +4,17 @@
     "description": " Ọmụmụ ihe ndị na-enyocha akwụkwọ ndị e dere tupu Kraịst abịa — site n'Iwu na Ndị Amụma ruo n'Akwụkwọ Nsọ. Agba Ochie na-akọ akụkọ ọgbụgba ndụ Chineke na Izrel ma na-atụ aka na Mezaịa.",
     "sections": [
       {
+        "section": "Nchịkọta",
+        "description": "Ọmụmụ na-enyocha Agba Ochie n'ozuzu ya — otú akwụkwọ ya si dakọta na otú akụkọ Akwụkwọ Nsọ si apụta site na okike ruo Kraịst.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Nkà Mmụta Okpukpe nke Baịbụl",
+            "description": "Ịso isiokwu ukwu nke Agba Ochie — okike, ọgbụgba ndụ, alaeze, na nkwa — dị ka otu akụkọ na-apụta nke na-atụ aka n'ebe Kraịst nọ."
+          }
+        ]
+      },
+      {
         "section": " Iwu",
         "description": " Akwụkwọ ise mbụ nke Baịbụl (Pentateuch), nke gụnyere ihe e kere eke, ọdịda, ọpụpụ, na inye Iwu — ntọala nke akụkụ Akwụkwọ Nsọ ndị ọzọ na-ewulite.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Ọmụmụ ihe dị n'akwụkwọ ndị e dere mgbe Kraịst bịasịrị - Oziọma, akwụkwọ ozi nke ndịozi, na Mkpughe. Agba Ọhụrụ na-ekpughe mmezu nke nkwa Chineke n'ime Jisọs na ndụ nke chọọchị mbụ.",
     "sections": [
       {
+        "section": "Nchịkọta",
+        "description": "Ọmụmụ na-enyocha Agba Ọhụrụ n'ozuzu ya — otú akwụkwọ ya si dakọta na otú ha si kpọga akụkọ Akwụkwọ Nsọ n'imezu ya n'ime Kraịst.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Nkà Mmụta Okpukpe nke Baịbụl",
+            "description": "Ịso isiokwu ukwu nke Agba Ọhụrụ — imezu, alaeze, ọgbụgba ndụ ọhụrụ, na okike ọhụrụ — dị ka ihe kachasị elu nke otu akụkọ Baịbụl."
+          }
+        ]
+      },
+      {
         "section": " Oziọma na Ọrụ Ndịozi",
         "description": " Akụkọ anọ gbasara ndụ Jizọs, ọnwụ ya, na mbilite n'ọnwụ ya, na akụkọ gbasara mgbasawanye nke chọọchị mbụ n'ụwa niile nke ndị Rom.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " Ndị Tesalonaịka nke Abụọ",
             "description": " Ndozi nghọtahie gbasara oge ọgwụgwụ, na oku maka ọrụ kwesịrị ntụkwasị obi."
+          },
+          {
+            "name": "Akwụkwọ Ozi Ndị Ọzụzụ Atụrụ",
+            "description": "Akwụkwọ ozi Pọl degaara Timoti na Taịtọs, a na-agụkọ ọnụ — gbasara ndú, ozizi ziri ezi, na ndụ nzukọ nsọ."
           },
           {
             "name": " 1 Timoti",
@@ -356,6 +382,10 @@
           {
             "name": " Àgwà Chineke",
             "description": " Ịdị nsọ nke Chineke, ịhụnanya ya, ọbụbụeze ya, ikpe ziri ezi ya, na ihe ndị ọzọ Akwụkwọ Nsọ na-ekpughe."
+          },
+          {
+            "name": "Obi Ebere na Ọmịiko",
+            "description": "Obiọma Chineke nke na-anabata ndị mmehie na ndị ọbịa, nke ha na-ekwesịghị — na otú o si kpụzie ndị ya."
           },
           {
             "name": " Atọ n'Ime Otu",
@@ -467,6 +497,10 @@
           {
             "name": " Nkuchi",
             "description": " Onyinye pụrụ iche nke ịbụ onye a kpọbatara n'ezinụlọ Chineke dị ka ụmụ ya ndị nwoke na ndị nwanyị."
+          },
+          {
+            "name": "Ịdị Nsọ",
+            "description": "Otú amara Chineke si eme ndị kwenyere ka ha dị nsọ — ewepụrụ ha n'ime Kraịst, na-etokwa n'omume ka ha dị ka ya."
           }
         ]
       },

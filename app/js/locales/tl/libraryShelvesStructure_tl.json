@@ -4,6 +4,17 @@
     "description": " Mga pag-aaral na nagsasaliksik sa mga aklat na isinulat bago ang pagdating ni Kristo — mula sa Kautusan at mga Propeta hanggang sa mga Kasulatan. Isinasalaysay ng Lumang Tipan ang kuwento ng tipan ng Diyos sa Israel at tumutukoy sa Mesiyas.",
     "sections": [
       {
+        "section": "Pangkalahatang-ideya",
+        "description": "Mga pag-aaral na bumubuo ng pangkalahatang tanaw sa Lumang Tipan — kung paano nagkakaugnay ang mga aklat nito at kung paano lumalaganap ang kuwento ng Kasulatan mula sa paglikha patungo kay Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teolohiyang Biblikal",
+            "description": "Pagsubaybay sa mga pangunahing tema ng Lumang Tipan — paglikha, tipan, kaharian, at pangako — bilang iisang kuwentong lumalaganap na tumuturo kay Cristo."
+          }
+        ]
+      },
+      {
         "section": " Batas",
         "description": " Ang unang limang aklat ng Bibliya (ang Pentateuch), na sumasaklaw sa paglikha, sa pagbagsak, sa pag-alis, at sa pagbibigay ng Kautusan — ang pundasyon kung saan itinatatag ang iba pang bahagi ng Kasulatan.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Mga pag-aaral sa mga aklat na isinulat pagkatapos ng pagdating ni Kristo — ang mga Ebanghelyo, ang mga liham ng mga apostol, at ang Pahayag. Inihahayag ng Bagong Tipan ang katuparan ng mga pangako ng Diyos kay Hesus at sa buhay ng unang simbahan.",
     "sections": [
       {
+        "section": "Pangkalahatang-ideya",
+        "description": "Mga pag-aaral na bumubuo ng pangkalahatang tanaw sa Bagong Tipan — kung paano nagkakaugnay ang mga aklat nito at kung paano nila dinadala ang kuwento ng Kasulatan sa katuparan nito kay Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teolohiyang Biblikal",
+            "description": "Pagsubaybay sa mga pangunahing tema ng Bagong Tipan — katuparan, kaharian, bagong tipan, at bagong nilikha — bilang tugatog ng iisang kuwento ng Biblia."
+          }
+        ]
+      },
+      {
         "section": " Mga Ebanghelyo at Mga Gawa",
         "description": " Ang apat na salaysay ng buhay, kamatayan, at muling pagkabuhay ni Hesus, at ang kuwento ng paglawak ng sinaunang simbahan sa buong mundo ng Roma.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Tesalonica",
             "description": " Pagwawasto ng mga hindi pagkakaunawaan tungkol sa mga huling araw, at isang panawagan tungo sa tapat na gawain."
+          },
+          {
+            "name": "Mga Sulat Pastoral",
+            "description": "Ang mga sulat ni Pablo kay Timoteo at kay Tito, na binabasa nang sabay — tungkol sa pamumuno, tamang aral, at maka-Diyos na buhay ng iglesya."
           },
           {
             "name": " 1 Timoteo",
@@ -356,6 +382,10 @@
           {
             "name": " Mga Katangian ng Diyos",
             "description": " Ang kabanalan, pag-ibig, soberanya, katarungan, at iba pang mga katangiang ipinakikita ng Kasulatan ay ang kabanalan ng Diyos."
+          },
+          {
+            "name": "Habag at Awa",
+            "description": "Ang matiyaga at di-karapat-dapat na kabutihan ng Diyos sa mga makasalanan at mga dayuhan — at kung paano nito hinuhubog ang kanyang bayan."
           },
           {
             "name": " Ang Trinidad",
@@ -467,6 +497,10 @@
           {
             "name": " Pag-aampon",
             "description": " Ang pambihirang kaloob ng pagiging bahagi ng pamilya ng Diyos bilang kanyang mga anak na lalaki at babae."
+          },
+          {
+            "name": "Pagpapabanal",
+            "description": "Kung paano pinababanal ng biyaya ng Diyos ang mga mananampalataya — itinalaga kay Cristo at lumalago sa gawa upang maging katulad niya."
           }
         ]
       },

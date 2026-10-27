@@ -14,7 +14,7 @@
     "description2"     :"",
     "description3"     :"",
     "author"           :"Jay Parsons",
-    "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Salvation", "Subsection": "Baptism" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Baptism" }],
+    "libraryShelves"   :[{ "Shelf": "Beliefs", "Section": "Church", "Subsection": "Sacraments" }, { "Shelf": "Life", "Section": "Character & Sanctification", "Subsection": "Identity in Christ" }],
     "estudyFileVersion":3,
     "studyVersion"     :1.01,
     "language1"        :"en",

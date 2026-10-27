@@ -4,6 +4,17 @@
     "description": " Les études qui explorent les livres écrits avant la venue du Christ — de la Loi et des Prophètes aux Écrits. L'Ancien Testament relate l'histoire de l'alliance de Dieu avec Israël et annonce la venue du Messie.",
     "sections": [
       {
+        "section": "Aperçu",
+        "description": "Études qui survolent l'Ancien Testament dans son ensemble : comment ses livres s'articulent et comment l'histoire de l'Écriture se déploie de la création vers le Christ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Théologie biblique",
+            "description": "Suivre les grands thèmes de l'Ancien Testament — création, alliance, royaume et promesse — comme une seule histoire qui se déploie et pointe vers le Christ."
+          }
+        ]
+      },
+      {
         "section": " Loi",
         "description": " Les cinq premiers livres de la Bible (le Pentateuque), qui traitent de la création, de la chute, de l'exode et du don de la Loi, constituent le fondement sur lequel repose le reste des Écritures.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " L'étude des livres écrits après la venue du Christ – les Évangiles, les épîtres aux apôtres et l'Apocalypse – est essentielle. Le Nouveau Testament révèle l'accomplissement des promesses de Dieu en Jésus et la vie de l'Église primitive.",
     "sections": [
       {
+        "section": "Aperçu",
+        "description": "Études qui survolent le Nouveau Testament dans son ensemble : comment ses livres s'articulent et comment ils conduisent l'histoire de l'Écriture à son accomplissement en Christ.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Théologie biblique",
+            "description": "Suivre les grands thèmes du Nouveau Testament — accomplissement, royaume, nouvelle alliance et nouvelle création — comme le sommet de l'unique histoire de la Bible."
+          }
+        ]
+      },
+      {
         "section": " Évangiles et Actes",
         "description": " Les quatre récits de la vie, de la mort et de la résurrection de Jésus, et l'histoire de l'expansion de l'Église primitive à travers le monde romain.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Thessaloniciens",
             "description": " Correction des malentendus concernant la fin des temps et appel à une œuvre fidèle."
+          },
+          {
+            "name": "Épîtres pastorales",
+            "description": "Les lettres de Paul à Timothée et à Tite, lues ensemble : direction, saine doctrine et vie pieuse de l'Église."
           },
           {
             "name": " 1 Timothée",
@@ -356,6 +382,10 @@
           {
             "name": " Attributs de Dieu",
             "description": " La sainteté, l'amour, la souveraineté, la justice de Dieu et les autres caractéristiques que révèlent les Écritures."
+          },
+          {
+            "name": "Compassion et miséricorde",
+            "description": "La bonté patiente et imméritée de Dieu envers les pécheurs et les étrangers — et la manière dont elle façonne son peuple."
           },
           {
             "name": " La Trinité",
@@ -467,6 +497,10 @@
           {
             "name": " Adoption",
             "description": " Le don extraordinaire d'être accueillis dans la famille de Dieu comme ses fils et ses filles."
+          },
+          {
+            "name": "Sanctification",
+            "description": "Comment la grâce de Dieu rend les croyants saints — mis à part en Christ et grandissant dans la pratique pour lui ressembler."
           }
         ]
       },

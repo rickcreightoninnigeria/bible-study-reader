@@ -8,7 +8,7 @@ silently. Errors mean something will not work; warnings mean a field is
 ignored or a habit is risky. Exit status is 1 if there are any errors.
 Standard library only.
 """
-import json, os, re, sys, unicodedata, zipfile
+import difflib, json, os, re, sys, unicodedata, zipfile
 
 ID_RE = re.compile(r'^[A-Za-z0-9_.-]+$')
 GD_RESERVED = {'chapterNumber', 'backToStudy', 'format', 'title', 'footnotes',
@@ -44,6 +44,53 @@ def icon_names():
         return set(re.findall(r'^\s{2}([A-Za-z0-9]+):\s*`', src[a:src.index('\n};', a)], re.M))
     except (OSError, ValueError):
         return None
+
+
+def shelf_structure():
+    """{shelf: {section: [subsection, ...]}} from the English libraryShelvesStructure file, or None if not found."""
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'app', 'js', 'locales', 'en',
+                     'libraryShelvesStructure_en.json')
+    try:
+        data = json.load(open(p, encoding='utf-8'))
+        return {sh['shelf']: {sec['section']: [x['name'] if isinstance(x, dict) else x
+                                               for x in sec.get('subsections') or []]
+                              for sec in sh.get('sections') or []} for sh in data}
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+
+
+def check_shelves(meta):
+    """libraryShelves names are matched as text and never verified by the app: a name that is not in the
+    shelf list still shows, but as an extra shelf/section after the standard ones, with no description."""
+    ls = meta.get('libraryShelves')
+    structure = shelf_structure()
+    if ls is None or structure is None:
+        return
+    placements = ls if isinstance(ls, list) else [ls]
+
+    def near(name, options):
+        close = difflib.get_close_matches(str(name), list(options), n=1, cutoff=0.6)
+        return f' (did you mean {close[0]!r}?)' if close else ''
+
+    for i, p in enumerate(placements):
+        where = f'studyMetadata.libraryShelves[{i}]'
+        if not isinstance(p, dict) or not p.get('Shelf'):
+            warn(f'{where}: no Shelf, so this placement is ignored')
+            continue
+        shelf, sec, sub = p.get('Shelf'), p.get('Section'), p.get('Subsection')
+        if shelf not in structure:
+            warn(f'{where}: Shelf {shelf!r} is not in libraryShelvesStructure_en.json, so it shows as an extra '
+                 f'shelf with no description{near(shelf, structure)}')
+            continue
+        if sub and not sec:
+            warn(f'{where}: Subsection {sub!r} has no Section, so it is not shown (the study sits loose under {shelf!r})')
+        if sec and sec not in structure[shelf]:
+            warn(f'{where}: Section {sec!r} is not in the {shelf!r} shelf, so it shows after the standard '
+                 f'sections with no description{near(sec, structure[shelf])}')
+            continue
+        if sec and sub and sub not in structure[shelf][sec]:
+            warn(f'{where}: Subsection {sub!r} is not in {shelf!r} > {sec!r}, so it shows after the standard '
+                 f'subsections with no description{near(sub, structure[shelf][sec])}')
 
 
 SC_MARKER_RE = re.compile(r'\[\[sc:(.*?)\]\]')
@@ -284,6 +331,7 @@ def main(path):
         warn('studyVersion should be a decimal number with two places, such as 1.03 (1.01 ... 1.09, then 1.10)')
     elif isinstance(sv, str) and sv.strip() != str(sv):
         warn('studyVersion has spaces around it')
+    check_shelves(meta)
     multilingual = 'language1' in meta
     chapters = study.get('chapters')
     if not isinstance(chapters, list) or not chapters:

@@ -4,6 +4,17 @@
     "description": " Masomo yanayochunguza vitabu vilivyoandikwa kabla ya kuja kwa Kristo — kuanzia Sheria na Manabii hadi Maandiko. Agano la Kale linasimulia hadithi ya agano la Mungu na Israeli na linaelekeza mbele kwa Masihi.",
     "sections": [
       {
+        "section": "Muhtasari",
+        "description": "Masomo yanayopitia Agano la Kale kwa ujumla — jinsi vitabu vyake vinavyoungana na jinsi hadithi ya Maandiko inavyofunuka kutoka uumbaji kuelekea Kristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Theolojia ya Kibiblia",
+            "description": "Kufuatilia mada kuu za Agano la Kale — uumbaji, agano, ufalme na ahadi — kama hadithi moja inayofunuka na kuelekeza kwa Kristo."
+          }
+        ]
+      },
+      {
         "section": " Sheria",
         "description": " Vitabu vitano vya kwanza vya Biblia (Pentateuki), vinavyohusu uumbaji, anguko, kutoka, na utoaji wa Sheria — msingi ambao Maandiko mengine yote yanajengwa juu yake.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Masomo katika vitabu vilivyoandikwa baada ya kuja kwa Kristo — Injili, barua za mitume, na Ufunuo. Agano Jipya linafunua utimilifu wa ahadi za Mungu katika Yesu na maisha ya kanisa la kwanza.",
     "sections": [
       {
+        "section": "Muhtasari",
+        "description": "Masomo yanayopitia Agano Jipya kwa ujumla — jinsi vitabu vyake vinavyoungana na jinsi vinavyofikisha hadithi ya Maandiko kwenye utimilifu wake katika Kristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Theolojia ya Kibiblia",
+            "description": "Kufuatilia mada kuu za Agano Jipya — utimilifu, ufalme, agano jipya na uumbaji mpya — kama kilele cha hadithi moja ya Biblia."
+          }
+        ]
+      },
+      {
         "section": " Injili na Matendo",
         "description": " Masimulizi manne ya maisha ya Yesu, kifo chake, na ufufuo wake, na hadithi ya upanuzi wa kanisa la kwanza katika ulimwengu wa Kirumi.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Wathesalonike",
             "description": " Marekebisho ya kutoelewana kuhusu nyakati za mwisho, na wito wa kufanya kazi kwa uaminifu."
+          },
+          {
+            "name": "Barua za Kichungaji",
+            "description": "Barua za Paulo kwa Timotheo na Tito, zikisomwa pamoja — kuhusu uongozi, mafundisho yenye afya na maisha ya kanisa yanayompendeza Mungu."
           },
           {
             "name": " 1 Timotheo",
@@ -356,6 +382,10 @@
           {
             "name": " Sifa za Mungu",
             "description": " Utakatifu wa Mungu, upendo, enzi kuu, haki, na sifa zingine ambazo Maandiko yanafunua."
+          },
+          {
+            "name": "Huruma na Rehema",
+            "description": "Wema wa Mungu wenye subira na usiostahiliwa kwa wenye dhambi na wageni — na jinsi unavyowaumba watu wake."
           },
           {
             "name": " Utatu",
@@ -467,6 +497,10 @@
           {
             "name": " Kuasili",
             "description": " Zawadi ya ajabu ya kuletwa katika familia ya Mungu kama wana na binti zake."
+          },
+          {
+            "name": "Utakaso",
+            "description": "Jinsi neema ya Mungu inavyowafanya waumini watakatifu — wametengwa katika Kristo, na wanakua kimatendo kuwa kama yeye."
           }
         ]
       },

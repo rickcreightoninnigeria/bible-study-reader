@@ -75,7 +75,7 @@ Rules for both:
 
 ## 5. `studyMetadata`
 
-✔ `studyId` (required, id charset, permanent: it prefixes all stored data; **never** let one id be a prefix of another, e.g. `a` and `a_b`) · `title`, `subtitle`, `shortTitle` (header text, e.g. "Jonah · Ch. 1"), `description` (title page) — all numbered in multilingual studies · `author` or `authorName` (title page) and `authorLabel` (heading above it) · `version` (free text on the title page; optional) · `studyVersion` (a decimal number with two places, such as 1.03; see section 1) · `estudyFileVersion` (3) · `language` / `language1..N` · `bibleTranslation1..N` · `libraryShelves` (array of `{Shelf, Section, Subsection}` or one object; use names from the app's shelf list in `libraryShelvesStructure_en.json`; unmatched names are not verified; absent = "Other").
+✔ `studyId` (required, id charset, permanent: it prefixes all stored data; **never** let one id be a prefix of another, e.g. `a` and `a_b`) · `title`, `subtitle`, `shortTitle` (header text, e.g. "Jonah · Ch. 1"), `description` (title page) — all numbered in multilingual studies · `author` or `authorName` (title page) and `authorLabel` (heading above it) · `version` (free text on the title page; optional) · `studyVersion` (a decimal number with two places, such as 1.03; see section 1) · `estudyFileVersion` (3) · `language` / `language1..N` · `bibleTranslation1..N` · `libraryShelves` (array of `{Shelf, Section, Subsection}` or one object; use names from the app's shelf list in `libraryShelvesStructure_en.json`, spelled exactly; a name that is not in the list still shows, but after the standard ones and without a description, and `validate_study.py` warns about it; a study can have several placements; a whole-testament study goes under `Old Testament` or `New Testament` > `Overview` > `Biblical Theology`; absent = "Other").
 
 ✖ `createdAt`, `updatedAt`, `tags`, `shareMessage` (stored, never read). An unnumbered `bibleTranslation: {"en":"NET"}` is also ignored (see `biblePassage`).
 
@@ -155,7 +155,7 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 
 ## 12. Not verified
 
-- Nothing was tested on Android WebView or iOS; renders were checked in desktop Chromium, and several behaviours here come from reading code only (the `libraryShelves` placement of unknown names, `readMore` with unusual values).
+- Nothing was tested on Android WebView or iOS; renders were checked in desktop Chromium, and several behaviours here come from reading code only (`readMore` with unusual values).
 - `onboarding.js` internals beyond slide fields, `render-library.js` shelf edge cases, and the editor tools in `app/*.html` (which may enforce stricter rules than the app) were not read in full.
 - Very large studies: a 480 KB study with 9 chapters and 11 appendix chapters loads in about 40 ms and scrolls smoothly in desktop Chromium. Bigger files and slow Android devices were not measured; only the zip limits above are enforced.
 - The look of tables and Previous/Next buttons was checked at 380 px in light and dark mode, and right-to-left mirrors, in desktop Chromium only.

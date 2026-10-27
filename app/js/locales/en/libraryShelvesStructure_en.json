@@ -4,6 +4,13 @@
     "description":"Studies that explore the books written before the coming of Christ — from the Law and the Prophets to the Writings. The Old Testament tells the story of God's covenant with Israel and points forward to the Messiah.",
     "sections"   :[
       {
+        "section"          :"Overview",
+        "description"      :"Studies that survey the Old Testament as a whole — how its books fit together and how the story of Scripture unfolds from creation towards Christ.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Biblical Theology", "description": "Tracing the Old Testament's big themes — creation, covenant, kingdom, and promise — as one unfolding story that points forward to Christ." }]
+      },
+
+      {
         "section"          :"Law",
         "description"      :"The first five books of the Bible (the Pentateuch), covering creation, the fall, the exodus, and the giving of the Law — the foundation on which the rest of Scripture builds.",
         "allowsSubsections":true,
@@ -38,6 +45,13 @@
     "description":"Studies in the books written after the coming of Christ — the Gospels, the letters of the apostles, and Revelation. The New Testament reveals the fulfilment of God's promises in Jesus and the life of the early church.",
     "sections"   :[
       {
+        "section"          :"Overview",
+        "description"      :"Studies that survey the New Testament as a whole — how its books fit together and how they bring the story of Scripture to its fulfilment in Christ.",
+        "allowsSubsections":true,
+        "subsections"      :[{ "name": "Biblical Theology", "description": "Tracing the New Testament's big themes — fulfilment, kingdom, new covenant, and new creation — as the climax of the Bible's one unfolding story." }]
+      },
+
+      {
         "section"          :"Gospels & Acts",
         "description"      :"The four accounts of Jesus's life, death, and resurrection, and the story of the early church's expansion across the Roman world.",
         "allowsSubsections":true,
@@ -48,7 +62,7 @@
         "section"          :"Paul's Letters",
         "description"      :"Paul's letters to churches and individuals — exploring the logic of the gospel, Christian conduct, and the nature of the church.",
         "allowsSubsections":true,
-        "subsections"      :[{ "name": "Romans", "description": "Paul's most systematic exposition of the gospel: sin, justification, sanctification, and hope." }, { "name": "1 Corinthians", "description": "Addressing divisions and disorders in Corinth, with teaching on love, gifts, and the resurrection." }, { "name": "2 Corinthians", "description": "Paul's defence of his ministry and the paradox of strength through weakness." }, { "name": "Galatians", "description": "A passionate defence of justification by faith alone against those adding the law." }, { "name": "Ephesians", "description": "The riches of the believer's identity in Christ, and the church as God's new humanity." }, { "name": "Philippians", "description": "Joy in all circumstances and the example of Christ's humility." }, { "name": "Colossians", "description": "Christ as supreme over all things, and the implications for everyday life." }, { "name": "1 Thessalonians", "description": "Encouragement for a young church, with teaching on the return of Christ." }, { "name": "2 Thessalonians", "description": "Correction of misunderstandings about the end times, and a call to faithful work." }, { "name": "1 Timothy", "description": "Instructions for church life, leadership, and sound doctrine." }, { "name": "2 Timothy", "description": "Paul's final letter — a charge to Timothy to guard the gospel and finish well." }, { "name": "Titus", "description": "Appointing leaders and teaching that sound doctrine leads to godly living." }, { "name": "Philemon", "description": "A personal appeal for reconciliation and the social implications of the gospel." }]
+        "subsections"      :[{ "name": "Romans", "description": "Paul's most systematic exposition of the gospel: sin, justification, sanctification, and hope." }, { "name": "1 Corinthians", "description": "Addressing divisions and disorders in Corinth, with teaching on love, gifts, and the resurrection." }, { "name": "2 Corinthians", "description": "Paul's defence of his ministry and the paradox of strength through weakness." }, { "name": "Galatians", "description": "A passionate defence of justification by faith alone against those adding the law." }, { "name": "Ephesians", "description": "The riches of the believer's identity in Christ, and the church as God's new humanity." }, { "name": "Philippians", "description": "Joy in all circumstances and the example of Christ's humility." }, { "name": "Colossians", "description": "Christ as supreme over all things, and the implications for everyday life." }, { "name": "1 Thessalonians", "description": "Encouragement for a young church, with teaching on the return of Christ." }, { "name": "2 Thessalonians", "description": "Correction of misunderstandings about the end times, and a call to faithful work." }, { "name": "Pastoral Epistles", "description": "Paul's letters to Timothy and Titus, read together — on leadership, sound teaching, and godly church life." }, { "name": "1 Timothy", "description": "Instructions for church life, leadership, and sound doctrine." }, { "name": "2 Timothy", "description": "Paul's final letter — a charge to Timothy to guard the gospel and finish well." }, { "name": "Titus", "description": "Appointing leaders and teaching that sound doctrine leads to godly living." }, { "name": "Philemon", "description": "A personal appeal for reconciliation and the social implications of the gospel." }]
       },
 
       {
@@ -76,7 +90,7 @@
         "section"          :"God",
         "description"      :"Who is God? Studies exploring the Trinity, God's attributes, and what it means to know him personally.",
         "allowsSubsections":true,
-        "subsections"      :[{ "name": "Attributes of God", "description": "God's holiness, love, sovereignty, justice, and the other characteristics Scripture reveals." }, { "name": "The Trinity", "description": "One God in three persons — Father, Son, and Holy Spirit — and why this matters." }, { "name": "God the Father", "description": "God as Creator, King, and Father — and what it means to be his child." }]
+        "subsections"      :[{ "name": "Attributes of God", "description": "God's holiness, love, sovereignty, justice, and the other characteristics Scripture reveals." }, { "name": "Compassion & Mercy", "description": "God's patient, undeserved kindness to sinners and outsiders — and how it shapes his people." }, { "name": "The Trinity", "description": "One God in three persons — Father, Son, and Holy Spirit — and why this matters." }, { "name": "God the Father", "description": "God as Creator, King, and Father — and what it means to be his child." }]
       },
 
       {
@@ -111,7 +125,7 @@
         "section"          :"Salvation",
         "description"      :"How does God rescue sinners? Studies covering atonement, justification, adoption, and the whole sweep of what God does to save us.",
         "allowsSubsections":true,
-        "subsections"      :[{ "name": "Atonement", "description": "How Christ's death deals with sin — substitution, redemption, reconciliation, and more." }, { "name": "Conversion", "description": "What it means to turn from sin and trust in Christ — repentance and faith." }, { "name": "Justification", "description": "Being declared righteous before God — by grace alone, through faith alone, in Christ alone." }, { "name": "Adoption", "description": "The extraordinary gift of being brought into God's family as his sons and daughters." }]
+        "subsections"      :[{ "name": "Atonement", "description": "How Christ's death deals with sin — substitution, redemption, reconciliation, and more." }, { "name": "Conversion", "description": "What it means to turn from sin and trust in Christ — repentance and faith." }, { "name": "Justification", "description": "Being declared righteous before God — by grace alone, through faith alone, in Christ alone." }, { "name": "Adoption", "description": "The extraordinary gift of being brought into God's family as his sons and daughters." }, { "name": "Sanctification", "description": "How believers are made holy by God's grace — set apart in Christ, and growing in practice to be like him." }]
       },
 
       {

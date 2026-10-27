@@ -4,6 +4,17 @@
     "description": " Estudos que exploram os livros escritos antes da vinda de Cristo — da Lei e dos Profetas aos Escritos. O Antigo Testamento narra a história da aliança de Deus com Israel e aponta para o Messias.",
     "sections": [
       {
+        "section": "Visão geral",
+        "description": "Estudos que fazem um panorama do Antigo Testamento como um todo: como seus livros se encaixam e como a história das Escrituras se desenrola da criação em direção a Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teologia bíblica",
+            "description": "Acompanhar os grandes temas do Antigo Testamento (criação, aliança, reino e promessa) como uma única história que se desenrola e aponta para Cristo."
+          }
+        ]
+      },
+      {
         "section": " Lei",
         "description": " Os cinco primeiros livros da Bíblia (o Pentateuco), que abrangem a criação, a queda, o êxodo e a entrega da Lei — o alicerce sobre o qual o restante das Escrituras se constrói.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Estudos nos livros escritos após a vinda de Cristo — os Evangelhos, as cartas dos apóstolos e o Apocalipse. O Novo Testamento revela o cumprimento das promessas de Deus em Jesus e a vida da igreja primitiva.",
     "sections": [
       {
+        "section": "Visão geral",
+        "description": "Estudos que fazem um panorama do Novo Testamento como um todo: como seus livros se encaixam e como levam a história das Escrituras ao seu cumprimento em Cristo.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teologia bíblica",
+            "description": "Acompanhar os grandes temas do Novo Testamento (cumprimento, reino, nova aliança e nova criação) como o clímax da única história da Bíblia."
+          }
+        ]
+      },
+      {
         "section": " Evangelhos e Atos",
         "description": " Os quatro relatos da vida, morte e ressurreição de Jesus, e a história da expansão da igreja primitiva pelo mundo romano.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " 2 Tessalonicenses",
             "description": " Correção de mal-entendidos sobre o fim dos tempos e um chamado ao trabalho fiel."
+          },
+          {
+            "name": "Epístolas pastorais",
+            "description": "As cartas de Paulo a Timóteo e a Tito, lidas em conjunto: sobre liderança, sã doutrina e vida piedosa da igreja."
           },
           {
             "name": " 1 Timóteo",
@@ -356,6 +382,10 @@
           {
             "name": " Atributos de Deus",
             "description": " A santidade, o amor, a soberania, a justiça e as demais características de Deus reveladas nas Escrituras."
+          },
+          {
+            "name": "Compaixão e misericórdia",
+            "description": "A bondade paciente e imerecida de Deus para com pecadores e forasteiros, e como ela molda o seu povo."
           },
           {
             "name": " A Trindade",
@@ -467,6 +497,10 @@
           {
             "name": " Adoção",
             "description": " O dom extraordinário de sermos acolhidos na família de Deus como seus filhos e filhas."
+          },
+          {
+            "name": "Santificação",
+            "description": "Como a graça de Deus torna santos os crentes: separados em Cristo e crescendo na prática para ser como ele."
           }
         ]
       },

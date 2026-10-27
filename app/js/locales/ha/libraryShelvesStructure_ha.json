@@ -4,6 +4,17 @@
     "description": " Nazarin da ke bincika littattafan da aka rubuta kafin zuwan Almasihu - daga Doka da Annabawa zuwa Rubuce-rubuce. Tsohon Alkawari yana ba da labarin alkawarin Allah da Isra'ila kuma yana nuni ga Almasihu.",
     "sections": [
       {
+        "section": "Bayani",
+        "description": "Nazarin da ke duba Tsohon Alkawari gaba ɗaya — yadda littattafansa suka haɗu da yadda labarin Nassi ke bayyana daga halitta zuwa ga Kristi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Tauhidin Littafi Mai Tsarki",
+            "description": "Bin manyan jigogin Tsohon Alkawari — halitta, alkawari, mulki, da wa'adi — a matsayin labari guda mai bayyana kansa wanda ke nuni ga Kristi."
+          }
+        ]
+      },
+      {
         "section": " Dokar",
         "description": " Littattafai biyar na farko na Littafi Mai Tsarki (Pentateuch), waɗanda suka shafi halitta, faɗuwa, fitar da mutane daga Masar, da kuma bayar da Shari'a - tushen da sauran Littattafai ke ginawa a kai.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": " Nazari a cikin littattafan da aka rubuta bayan zuwan Almasihu - Linjila, wasiƙun manzanni, da Ru'ya ta Yohanna. Sabon Alkawari ya bayyana cikar alkawuran Allah a cikin Yesu da rayuwar cocin farko.",
     "sections": [
       {
+        "section": "Bayani",
+        "description": "Nazarin da ke duba Sabon Alkawari gaba ɗaya — yadda littattafansa suka haɗu da yadda suke kai labarin Nassi ga cikarsa cikin Kristi.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Tauhidin Littafi Mai Tsarki",
+            "description": "Bin manyan jigogin Sabon Alkawari — cikawa, mulki, sabon alkawari, da sabuwar halitta — a matsayin kololuwar labarin Littafi Mai Tsarki guda ɗaya."
+          }
+        ]
+      },
+      {
         "section": " Linjila & Ayyukan Manzanni",
         "description": " Labarai guda huɗu game da rayuwar Yesu, mutuwarsa, da tashinsa daga matattu, da kuma labarin faɗaɗa cocin farko a faɗin duniyar Romawa.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": " Tasalonikawa ta 2",
             "description": " Gyaran rashin fahimta game da ƙarshen zamani, da kuma kira zuwa ga aiki mai aminci."
+          },
+          {
+            "name": "Wasiƙun Fastoci",
+            "description": "Wasiƙun Bulus zuwa ga Timotawus da Titus, a karanta su tare — game da jagoranci, koyarwa mai kyau, da rayuwar ikilisiya ta tsoron Allah."
           },
           {
             "name": " 1 Timoti",
@@ -356,6 +382,10 @@
           {
             "name": " Halayen Allah",
             "description": " Tsarkin Allah, ƙaunarsa, ikon mallaka, adalci, da sauran halaye da Littafi Mai Tsarki ya bayyana."
+          },
+          {
+            "name": "Tausayi da Jinƙai",
+            "description": "Alherin Allah mai haƙuri wanda ba a cancance shi ba ga masu zunubi da baƙi — da yadda yake gina mutanensa."
           },
           {
             "name": " Triniti",
@@ -467,6 +497,10 @@
           {
             "name": " Ɗauka",
             "description": " Baiwar da ba a saba gani ba ta shiga cikin iyalin Allah a matsayin 'ya'yansa maza da mata."
+          },
+          {
+            "name": "Tsarkakewa",
+            "description": "Yadda alherin Allah ke tsarkake masu bi — an keɓe su cikin Kristi, suna kuma girma a aikace don su zama kamar sa."
           }
         ]
       },

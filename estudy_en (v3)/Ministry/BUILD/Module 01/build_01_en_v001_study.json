@@ -6,7 +6,7 @@
     "shortTitle"       :"BUILD 1",
     "description"      :"A fifteen-unit church leadership training module exploring 2 Timothy and the Pastoral Epistles, developing skills in Bible handling, preaching, theological reflection, and gospel-centred ministry.",
     "author"           :"Canon Dr Jem Hovil with Canon Stephen Ssenyonjo Kewaza",
-    "libraryShelves"   :[{ "Shelf": "New Testament", "Section": "Epistles", "Subsection": "Pastoral Epistles" }],
+    "libraryShelves"   :[{ "Shelf": "New Testament", "Section": "Paul's Letters", "Subsection": "Pastoral Epistles" }],
     "estudyFileVersion":3,
     "studyVersion"     :1.02,
     "language"         :"en",

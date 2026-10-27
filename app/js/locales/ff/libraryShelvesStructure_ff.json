@@ -4,6 +4,17 @@
     "description": "Janndeeji limtooji defte binndaaɗe ko adii gartol Almasiihu — diga Tawreeta e Annabo'en haa Binndi. Alkawal Kesal ɗon holla habaru alkawal Allah bee Isra’iila nden ɗon holla Almasiihu.",
     "sections": [
       {
+        "section": "Yiyngo",
+        "description": "Janngugol cuɓotooɗum Alkawal Ɓooyɗo fuu — no defte mum kawrata e no tinndinol Binndi Seniiɗi yaaɗata diga hebbingo haa Almasiihu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teoloji Bibil",
+            "description": "Hoɓtugo ɓurnaaji mawɗi Alkawal Ɓooyɗo — hebbingo, alkawal, laamu e kawtal — nder tinndinol gootol ngol ɗon holla Almasiihu."
+          }
+        ]
+      },
+      {
         "section": "Umrore",
         "description": "Defte jowi arandeeji nder Bibel (Pentateuch), ɗon limta tagdi, doggol, wurtugo, e hokkugo Tawreeta — limngal ko heddii nder Binndi.",
         "allowsSubsections": true,
@@ -194,6 +205,17 @@
     "description": "Jannde nder defte binndaaɗe ɓaawo gartol Almasiihu — Linjiila, ɓataakeeji nulaaɓe, e Wahyu. Alkawal Kesal holli timmingo alkawal Allah nder Yeesu e ngeedam ekklessiya arandeewal.",
     "sections": [
       {
+        "section": "Yiyngo",
+        "description": "Janngugol cuɓotooɗum Alkawal Kesal fuu — no defte mum kawrata e no ɗe ngaddata tinndinol Binndi Seniiɗi haa timmingo mum e Almasiihu.",
+        "allowsSubsections": true,
+        "subsections": [
+          {
+            "name": "Teoloji Bibil",
+            "description": "Hoɓtugo ɓurnaaji mawɗi Alkawal Kesal — timmingo, laamu, alkawal kesal e hebbingo kesal — nder cakkitiral tinndinol gootol Bibil."
+          }
+        ]
+      },
+      {
         "section": "Linjiila & Kuuɗe Nelaaɓe",
         "description": "Haalaaji nayi dow ngeedam Yeesu, maayde maako, e ummitineeki maako, e habaru yaajnugo ekklessiya arandeere nder duuniyaaru Roma'en fuu.",
         "allowsSubsections": true,
@@ -260,6 +282,10 @@
           {
             "name": "2 Tesalonika'en",
             "description": "Feewnitde luural ko fayti e jamaanu timmuɗo, e noddaango golle gooŋɗinɗe."
+          },
+          {
+            "name": "Ɓataakeeji Toppitagol",
+            "description": "Ɓataakeeji Pool dow Timote e Tit, wattaaɗi e jaangugo — dow hooreejo, ekkitinol cuɓaaɗo e nguurndam cuuɗi Alla ngam kerecee."
           },
           {
             "name": "1 Timote",
@@ -356,6 +382,10 @@
           {
             "name": "Sifaaaji Alla",
             "description": "Senngo Alla, yidde mum, njiimaandi mum, nuunɗal mum, e sifaaji goɗɗi ɗi Binndi ɗii peeñnini."
+          },
+          {
+            "name": "Yurmeende",
+            "description": "Yurmeende Alla ndeeɗoonde, nde mbaalaaki ngam bone e yaajaaɓe — e no nde sendaa jamaa maako."
           },
           {
             "name": "Trinité",
@@ -467,6 +497,10 @@
           {
             "name": "Jaɓde",
             "description": "Dokkal keeringal ngal o naatnaa e nder galle Alla hono ɓiɓɓe makko worɓe e rewɓe."
+          },
+          {
+            "name": "Senngo",
+            "description": "No yurmeende Alla seniidinta gooduɓe — ɓe ɓeydaa nder Almasiihu, ɓe mooɓtata e yeeyuɗum ngam wanugo wano makko."
           }
         ]
       },
