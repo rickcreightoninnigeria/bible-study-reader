@@ -1,16 +1,16 @@
 [
   {
-    "shelf": "Alkawal Kesal",
+    "shelf": "Alkawal Kiiɗɗo",
     "description": "Janndeeji limtooji defte binndaaɗe ko adii gartol Almasiihu — diga Tawreeta e Annabo'en haa Binndi. Alkawal Kesal ɗon holla habaru alkawal Allah bee Isra’iila nden ɗon holla Almasiihu.",
     "sections": [
       {
         "section": "Yiyngo",
-        "description": "Janngugol cuɓotooɗum Alkawal Ɓooyɗo fuu — no defte mum kawrata e no tinndinol Binndi Seniiɗi yaaɗata diga hebbingo haa Almasiihu.",
+        "description": "Janngugol cuɓotooɗum Alkawal Kiiɗɗo fuu — no defte mum kawrata e no tinndinol Binndi Seniiɗi yaaɗata diga hebbingo haa Almasiihu.",
         "allowsSubsections": true,
         "subsections": [
           {
             "name": "Teoloji Bibil",
-            "description": "Hoɓtugo ɓurnaaji mawɗi Alkawal Ɓooyɗo — hebbingo, alkawal, laamu e kawtal — nder tinndinol gootol ngol ɗon holla Almasiihu."
+            "description": "Hoɓtugo ɓurnaaji mawɗi Alkawal Kiiɗɗo — hebbingo, alkawal, laamu e kawtal — nder tinndinol gootol ngol ɗon holla Almasiihu."
           }
         ]
       },
@@ -36,7 +36,7 @@
             "description": "Jahdu Isra’iila nder ladde — 6amtaare maako, neɗɗaaku maako, e jokkugo gooŋgaaku Allah."
           },
           {
-            "name": "Dewtere Dewtere",
+            "name": "Dewtere",
             "description": "Waajuuji Muusaa, kesɗitingol alkawal e hesɗitinde Isra’iila’en ngam nastugo lesdi fodaandi."
           }
         ]

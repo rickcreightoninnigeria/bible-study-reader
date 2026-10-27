@@ -445,6 +445,38 @@ function _buildStudyCard(id, entry, listIds, isPinned, moveFn, toggleFn) {
   return card;
 }
 
+// ── SHELF PLACEMENT NAMES ─────────────────────────────────────────────────────
+// A study names its placement in English (libraryShelves: {Shelf, Section,
+// Subsection}), but the Shelves tab is built from the shelf list for the
+// interface language. Every language's list has the same shape as the English
+// one (a test checks this), so an English name is swapped for the translated
+// name at the same position. A name that is not in the English list is kept as
+// written: it may already be translated, or be an extra shelf the study made up.
+function localiseShelfPlacement(p, structure, structureEn) {
+  const out = { Shelf: p.Shelf, Section: p.Section || '', Subsection: p.Subsection || '' };
+  const nameOf = x => (typeof x === 'string' ? x : x && x.name);
+  const i = structureEn.findIndex(s => s.shelf.trim() === String(p.Shelf).trim());
+  if (i < 0 || !structure[i]) return out;
+  out.Shelf = structure[i].shelf;
+  const secsEn = structureEn[i].sections || [];
+  const secs   = structure[i].sections || [];
+  const j = secsEn.findIndex(s => s.section.trim() === out.Section.trim());
+  if (j < 0 || !secs[j]) return out;
+  out.Section = secs[j].section;
+  const subsEn = secsEn[j].subsections || [];
+  const subs   = secs[j].subsections || [];
+  const k = subsEn.findIndex(x => String(nameOf(x)).trim() === out.Subsection.trim());
+  if (k >= 0 && subs[k]) out.Subsection = nameOf(subs[k]);
+  return out;
+}
+
+// The name of the "Other" shelf (where studies with no placement go) in the
+// interface language.
+function localisedOtherShelfName(structure, structureEn) {
+  const i = structureEn.findIndex(s => s.shelf.trim() === 'Other');
+  return (i >= 0 && structure[i]) ? structure[i].shelf : 'Other';
+}
+
 async function renderLibrary() {
   // ── Define popup helper immediately so shelf/section info buttons rendered
   // below can call it safely, regardless of which tab's HTML is built first. ──
@@ -770,11 +802,8 @@ async function renderLibrary() {
       buckets[k].push(id);
     }
 
-    const knownShelfNames   = structure.map(s => s.shelf);
-    const knownSectionNames = {};
-    structure.forEach(s => {
-      knownSectionNames[s.shelf] = s.sections.map(sec => sec.section);
-    });
+    const structureEn = (window.appAboutData || {}).libraryShelvesStructureEn || structure;
+    const otherName   = localisedOtherShelfName(structure, structureEn);
 
     for (const id of registry) {
       const e = studyCache[id];
@@ -782,14 +811,15 @@ async function renderLibrary() {
       if (!studyMatchesLangFilter(e)) continue;  // lang filter
       const raw = e.shelves;
       const placements = !raw ? [] : Array.isArray(raw) ? raw : [raw];
-      if (placements.length === 0) { addToBucket('Other', '', '', id); continue; }
+      if (placements.length === 0) { addToBucket(otherName, '', '', id); continue; }
       let placedSomewhere = false;
       for (const ls of placements) {
         if (!ls || !ls.Shelf) continue;
-        addToBucket(ls.Shelf, ls.Section || '', ls.Subsection || '', id);
+        const p = localiseShelfPlacement(ls, structure, structureEn);
+        addToBucket(p.Shelf, p.Section, p.Subsection, id);
         placedSomewhere = true;
       }
-      if (!placedSomewhere) addToBucket('Other', '', '', id);
+      if (!placedSomewhere) addToBucket(otherName, '', '', id);
     }
 
     function studyRowHtml(id) {
@@ -1074,15 +1104,17 @@ async function renderLibrary() {
     const extraShelfNames = [...new Set(
       Object.keys(buckets)
         .map(k => JSON.parse(k)[0])
-        .filter(s => s !== 'Other' && !canonicalShelfNames.includes(s))
+        .filter(s => s !== otherName && !canonicalShelfNames.includes(s))
     )].sort();
     for (const shelfName of extraShelfNames) {
       html += renderShelf(shelfName, [], false);
     }
 
-    // 3. Render 'Other' last (if it has anything).
-    if (Object.keys(buckets).some(k => JSON.parse(k)[0] === 'Other')) {
-      html += renderShelf('Other', [], false);
+    // 3. Render 'Other' last (if it has anything). The shelf list normally has an
+    //    "Other" entry, which step 1 has already drawn; draw it here only when it has not.
+    if (!canonicalShelfNames.includes(otherName) &&
+        Object.keys(buckets).some(k => JSON.parse(k)[0] === otherName)) {
+      html += renderShelf(otherName, [], false);
     }
 
     const controls = `

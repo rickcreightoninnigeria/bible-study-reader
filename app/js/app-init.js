@@ -96,6 +96,9 @@ function _applyLocaleData({
     ...(untranslated || {}),
     ...(aboutData),
     libraryShelvesStructure: shelvesData,
+    // The English list, whatever the interface language: a study's libraryShelves
+    // names are English, and are matched to the translated list by position.
+    libraryShelvesStructureEn: shelvesFallback || shelvesLocale || [],
     learningPathways:        pathwaysData,
   };
   window.appStrings = uiStrings;
