@@ -440,6 +440,8 @@
   "studyloader_error_load_json": "研究文件加载失败：{error}",
   "studyloader_error_no_study_json": "{filename} 是一个 zip 文件，但其中不包含以 study.json 结尾的文件。",
   "studyloader_error_no_study_id": "{filename}: study.json 缺少 studyMetadata.studyId。",
+  "studyloader_error_pdf": "此文件是 PDF，不是圣经学习资料。应用可打开以 .estudy 结尾的学习文件。如果有人把这个 PDF 发给您，请向对方索取学习文件。",
+  "studyloader_error_not_study": "此文件不是应用能打开的学习文件。应用可打开以 .estudy 结尾的学习文件。如果是别人发给您的，请让对方重新发送学习文件。",
   "studyloader_bundle_installing": "安装：{count} 研究…",
   "studyloader_bundle_success": "已安装的研究：{count} ✓",
   "studyloader_bundle_partial": "已安装：{installed} · 失败：{failed}",

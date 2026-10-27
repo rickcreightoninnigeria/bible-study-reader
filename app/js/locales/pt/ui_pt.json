@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"Falha ao carregar o arquivo de estudo: {error}",
   "studyloader_error_no_study_json"                     :"{filename} é um zip, mas não contém nenhum arquivo terminando em study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json está sem studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"Este arquivo é um PDF, não um estudo bíblico. O aplicativo abre arquivos de estudo que terminam em .estudy. Se alguém lhe enviou este PDF, peça o arquivo do estudo.",
+  "studyloader_error_not_study"                         :"Este arquivo não é um estudo que o aplicativo possa abrir. O aplicativo abre arquivos de estudo que terminam em .estudy. Se alguém o enviou para você, peça que envie o arquivo do estudo novamente.",
   "studyloader_bundle_installing"                       :"Instalando: {count} estudos…",
   "studyloader_bundle_success"                          :"Estudos instalados: {count} ✓",
   "studyloader_bundle_partial"                          :"Instalados: {installed} · Falhas: {failed}",

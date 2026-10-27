@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"Nabigong i-load ang study file: {error}",
   "studyloader_error_no_study_json"                     :"Ang {filename} ay isang zip pero walang file na nagtatapos sa study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: Nawawala ang studyMetadata.studyId sa study.json.",
+  "studyloader_error_pdf"                               :"Ang file na ito ay isang PDF, hindi isang pag-aaral sa Bibliya. Binubuksan ng app ang mga study file na nagtatapos sa .estudy. Kung may nagpadala sa iyo ng PDF na ito, hilingin sa kanya ang study file.",
+  "studyloader_error_not_study"                         :"Ang file na ito ay hindi isang study na mabubuksan ng app. Binubuksan ng app ang mga study file na nagtatapos sa .estudy. Kung may nagpadala nito sa iyo, hilingin sa kanyang ipadala muli ang study file.",
   "studyloader_bundle_installing"                       :"Nag-i-install: {count} na mga pag-aaral…",
   "studyloader_bundle_success"                          :"Na-install na ang mga pag-aaral: {count} ✓",
   "studyloader_bundle_partial"                          :"Na-install: {installed} · Nabigo: {failed}",

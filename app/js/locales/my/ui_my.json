@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"လေ့လာမှုဖိုင်ကို တင်ရာတွင် အမှားဖြစ်သည်: {error}",
   "studyloader_error_no_study_json"                     :"{filename} သည် zip ဖိုင်ဖြစ်သော်လည်း study.json ဖြင့်ဆုံးသော ဖိုင်တစ်ခုမှ မပါရှိပါ။",
   "studyloader_error_no_study_id"                       :"{filename}: study.json တွင် studyMetadata.studyId ပျောက်ဆုံးနေသည်။",
+  "studyloader_error_pdf"                               :"ဤဖိုင်သည် PDF ဖြစ်ပြီး ကျမ်းစာလေ့လာမှု မဟုတ်ပါ။ အက်ပ်သည် .estudy ဖြင့်ဆုံးသော လေ့လာမှုဖိုင်များကို ဖွင့်ပေးပါသည်။ ဤ PDF ကို တစ်စုံတစ်ဦးက ပို့ပေးခဲ့ပါက လေ့လာမှုဖိုင်ကို ပြန်တောင်းပါ။",
+  "studyloader_error_not_study"                         :"ဤဖိုင်သည် အက်ပ်ဖွင့်နိုင်သော လေ့လာမှုဖိုင် မဟုတ်ပါ။ အက်ပ်သည် .estudy ဖြင့်ဆုံးသော လေ့လာမှုဖိုင်များကို ဖွင့်ပေးပါသည်။ တစ်စုံတစ်ဦးက ပို့ပေးခဲ့ပါက လေ့လာမှုဖိုင်ကို ထပ်မံပို့ပေးရန် တောင်းဆိုပါ။",
   "studyloader_bundle_installing"                       :"ထည့်သွင်းနေသည်: လေ့လာမှု {count} ခု…",
   "studyloader_bundle_success"                          :"လေ့လာမှုများ ထည့်သွင်းပြီးပြီ: {count} ✓",
   "studyloader_bundle_partial"                          :"ထည့်သွင်းပြီး: {installed} · မအောင်မြင်: {failed}",

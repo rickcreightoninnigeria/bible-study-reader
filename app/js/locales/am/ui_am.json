@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"የጥናት ፋይሉን መጫን አልተሳካም፡ {error}",
   "studyloader_error_no_study_json"                     :"{filename} ዚፕ ፋይል ነው ነገር ግን በ study.json የሚያልቅ ፋይል አልያዘም።",
   "studyloader_error_no_study_id"                       :"{filename}፡ study.json studyMetadata.studyId ይጎድለዋል።",
+  "studyloader_error_pdf"                               :"ይህ ፋይል የመጽሐፍ ቅዱስ ጥናት ሳይሆን PDF ነው። መተግበሪያው በ .estudy የሚያልቁ የጥናት ፋይሎችን ይከፍታል። ይህን PDF ሌላ ሰው ከላከልዎት፣ በምትኩ የጥናቱን ፋይል እንዲልክልዎ ይጠይቁት።",
+  "studyloader_error_not_study"                         :"ይህ ፋይል መተግበሪያው ሊከፍተው የሚችል ጥናት አይደለም። መተግበሪያው በ .estudy የሚያልቁ የጥናት ፋይሎችን ይከፍታል። ሌላ ሰው ከላከልዎት፣ የጥናቱን ፋይል እንደገና እንዲልክልዎ ይጠይቁት።",
   "studyloader_bundle_installing"                       :"በመጫን ላይ፡ {count} ጥናቶች…",
   "studyloader_bundle_success"                          :"ጥናቶች ተጭነዋል፡ {count} ✓",
   "studyloader_bundle_partial"                          :"ተጭነዋል፡ {installed} · አልተሳካም፡ {failed}",

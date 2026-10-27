@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"Enweghị ike ibuba fayụlụ ọmụmụ ihe: {error}",
   "studyloader_error_no_study_json"                     :"{filename} bụ zip mana o nweghị fayụlụ na-agwụ na study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json enweghị studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"Faịlụ a bụ PDF, ọ bụghị ọmụmụ Bible. Ngwa ahụ na-emeghe faịlụ ọmụmụ ndị na-agwụ na .estudy. Ọ bụrụ na onye zitere gị PDF a, rịọ ya faịlụ ọmụmụ ahụ kama.",
+  "studyloader_error_not_study"                         :"Faịlụ a abụghị ọmụmụ ngwa ahụ nwere ike imeghe. Ngwa ahụ na-emeghe faịlụ ọmụmụ ndị na-agwụ na .estudy. Ọ bụrụ na onye zitere gị ya, gwa ya ka o zighachi faịlụ ọmụmụ ahụ.",
   "studyloader_bundle_installing"                       :"Na-etinyere: Ọmụmụ ihe {count}…",
   "studyloader_bundle_success"                          :"Etinyela ọmụmụ ihe: {count} ✓",
   "studyloader_bundle_partial"                          :"Nke etinyere: {installed} · Nke kụrụ afọ n'ala: {failed}",

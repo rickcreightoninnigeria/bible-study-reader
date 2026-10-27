@@ -613,6 +613,8 @@
   "studyloader_error_load_json"                         :"Failed to load study file: {error}",
   "studyloader_error_no_study_json"                     :"{filename} is a zip but contains no file ending in study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json is missing studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"This file is a PDF, not a Bible study. The app opens study files that end in .estudy. If someone sent you this PDF, ask them for the study file instead.",
+  "studyloader_error_not_study"                         :"This file isn't a study the app can open. The app opens study files that end in .estudy. If someone sent it to you, ask them to send the study file again.",
   "studyloader_bundle_installing"                       :"Installing: {count} studies…",
   "studyloader_bundle_success"                          :"Studies installed: {count} ✓",
   "studyloader_bundle_partial"                          :"Installed: {installed} · Failed: {failed}",

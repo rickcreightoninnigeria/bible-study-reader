@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"Imeshindwa kupakia faili ya funzo: {error}",
   "studyloader_error_no_study_json"                     :"{filename} ni zip lakini haina faili inayoishia na study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json inakosa studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"Faili hii ni PDF, si somo la Biblia. Programu hufungua faili za somo zinazoishia na .estudy. Ikiwa mtu alikutumia PDF hii, mwombe akutumie faili ya somo badala yake.",
+  "studyloader_error_not_study"                         :"Faili hii si somo ambalo programu inaweza kufungua. Programu hufungua faili za somo zinazoishia na .estudy. Ikiwa mtu alikutumia, mwombe akutumie tena faili ya somo.",
   "studyloader_bundle_installing"                       :"Inasakinisha: Mafunzo {count}…",
   "studyloader_bundle_success"                          :"Mafunzo yamesakinishwa: {count} ✓",
   "studyloader_bundle_partial"                          :"Yamesakinishwa: {installed} · Yameshindwa: {failed}",

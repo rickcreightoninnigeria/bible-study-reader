@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"अध्ययन फाइल लोड गर्न असफल भयो: {error}",
   "studyloader_error_no_study_json"                     :"{filename} एक जिप फाइल हो तर यसमा study.json मा समाप्त हुने कुनै फाइल छैन।",
   "studyloader_error_no_study_id"                       :"{filename}: study.json मा studyMetadata.studyId छुटेको छ।",
+  "studyloader_error_pdf"                               :"यो फाइल PDF हो, बाइबल अध्ययन होइन। एपले .estudy मा समाप्त हुने अध्ययन फाइलहरू खोल्छ। कसैले तपाईंलाई यो PDF पठाएको हो भने, उहाँसँग अध्ययन फाइल माग्नुहोस्।",
+  "studyloader_error_not_study"                         :"यो फाइल एपले खोल्न सक्ने अध्ययन होइन। एपले .estudy मा समाप्त हुने अध्ययन फाइलहरू खोल्छ। कसैले तपाईंलाई पठाएको हो भने, उहाँलाई अध्ययन फाइल फेरि पठाउन भन्नुहोस्।",
   "studyloader_bundle_installing"                       :"स्थापना हुँदैछ: {count} अध्ययनहरू…",
   "studyloader_bundle_success"                          :"अध्ययनहरू स्थापना गरियो: {count} ✓",
   "studyloader_bundle_partial"                          :"स्थापना गरियो: {installed} · असफल भयो: {failed}",

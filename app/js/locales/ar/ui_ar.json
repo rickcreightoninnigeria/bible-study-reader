@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"فشل تحميل ملف الدراسة: {error}",
   "studyloader_error_no_study_json"                     :"{filename} ملف مضغوط ولكنه لا يحتوي على أي ملف ينتهي بـ study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: ملف study.json يفتقد studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"هذا الملف بصيغة PDF وليس دراسة كتابية. يفتح التطبيق ملفات الدراسة التي تنتهي بـ ‎.estudy. إذا أرسل لك أحدهم ملف PDF هذا، فاطلب منه إرسال ملف الدراسة بدلًا منه.",
+  "studyloader_error_not_study"                         :"هذا الملف ليس دراسة يستطيع التطبيق فتحها. يفتح التطبيق ملفات الدراسة التي تنتهي بـ ‎.estudy. إذا أرسله لك أحدهم، فاطلب منه إعادة إرسال ملف الدراسة.",
   "studyloader_bundle_installing"                       :"جاري التثبيت: {count} دراسات…",
   "studyloader_bundle_success"                          :"تم تثبيت الدراسات: {count} ✓",
   "studyloader_bundle_partial"                          :"تم التثبيت: {installed} · فشل: {failed}",

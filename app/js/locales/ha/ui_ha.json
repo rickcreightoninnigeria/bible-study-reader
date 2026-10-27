@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"An kasa loda fayil ɗin karatu: {error}",
   "studyloader_error_no_study_json"                     :"{filename} zip ne amma ba shi da fayil ɗin da ke ƙarewa da study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json ba shi da studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"Wannan fayil PDF ne, ba nazarin Littafi Mai Tsarki ba. Manhajar tana buɗe fayilolin nazari da ke ƙarewa da .estudy. Idan wani ya aiko maka da wannan PDF, ka roƙe shi fayil ɗin nazarin maimakon haka.",
+  "studyloader_error_not_study"                         :"Wannan fayil ba nazari ba ne da manhajar za ta iya buɗewa. Manhajar tana buɗe fayilolin nazari da ke ƙarewa da .estudy. Idan wani ne ya aiko maka, ka roƙe shi ya sake aiko maka da fayil ɗin nazarin.",
   "studyloader_bundle_installing"                       :"Ana shigarwa: Karatu {count}…",
   "studyloader_bundle_success"                          :"An shigar da karatu: {count} ✓",
   "studyloader_bundle_partial"                          :"An shigar: {installed} · An kasa: {failed}",

@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"مطالعہ فائل لوڈ کرنے میں ناکام: {error}",
   "studyloader_error_no_study_json"                     :"{filename} ایک زپ ہے لیکن اس میں study.json پر ختم ہونے والی کوئی فائل نہیں ہے۔",
   "studyloader_error_no_study_id"                       :"{filename}: study.json میں studyMetadata.studyId غائب ہے۔",
+  "studyloader_error_pdf"                               :"یہ فائل PDF ہے، بائبل کا مطالعہ نہیں۔ ایپ .estudy پر ختم ہونے والی مطالعہ کی فائلیں کھولتی ہے۔ اگر کسی نے آپ کو یہ PDF بھیجی ہے تو ان سے مطالعہ کی فائل مانگیں۔",
+  "studyloader_error_not_study"                         :"یہ فائل ایسا مطالعہ نہیں جسے ایپ کھول سکے۔ ایپ .estudy پر ختم ہونے والی مطالعہ کی فائلیں کھولتی ہے۔ اگر کسی نے آپ کو بھیجی ہے تو ان سے مطالعہ کی فائل دوبارہ بھیجنے کو کہیں۔",
   "studyloader_bundle_installing"                       :"انسٹال ہو رہا ہے: {count} مطالعات…",
   "studyloader_bundle_success"                          :"مطالعات انسٹال ہو گئے: {count} ✓",
   "studyloader_bundle_partial"                          :"انسٹالڈ: {installed} · ناکام: {failed}",

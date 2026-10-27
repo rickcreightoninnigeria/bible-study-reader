@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"Loduugo fayil janngirde ronkii: {error}",
   "studyloader_error_no_study_json"                     :"{filename} ko zip ammaa walaa fayil timmiirɗo study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json walaa studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"Fayil ɗu ko PDF, wanaa janngugol Bibil. Porogaraamu ndu ina uddita fayil janngugol timmiiɗo .estudy. So gooto neldii ma PDF ɗu, naamnu mo fayil janngugol ngol.",
+  "studyloader_error_not_study"                         :"Fayil ɗu wanaa janngugol porogaraamu ndu waawi uddugo. Porogaraamu ndu ina uddita fayil janngugol timmiiɗo .estudy. So gooto neldii ma ɗum, naamnu mo o neldan fayil janngugol ngol tawo.",
   "studyloader_bundle_installing"                       :"Ɗon nastina: janngirde {count}…",
   "studyloader_bundle_success"                          :"Janngirde nastaama: {count} ✓",
   "studyloader_bundle_partial"                          :"Nastinaama: {installed} · Ronkii: {failed}",

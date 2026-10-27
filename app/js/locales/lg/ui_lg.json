@@ -539,6 +539,8 @@
   "studyloader_error_load_json": " Kiremereddwa okutikka fayiro y'okunoonyereza: {error}",
   "studyloader_error_no_study_json": "{filename} ye zipu naye terimu fayiro ekoma mu study.json.",
   "studyloader_error_no_study_id": "{filename}: study.json ebulamu studyMetadata.studyId.",
+  "studyloader_error_pdf": "Fayiro eno ya PDF, si kusoma kwa Baibuli. App eggulawo fayiro z'okusoma ezikoma mu .estudy. Omuntu bw'aba akuweerezza PDF eno, musabe akuweereze fayiro y'okusoma.",
+  "studyloader_error_not_study": "Fayiro eno si kusoma App kw'esobola okuggulawo. App eggulawo fayiro z'okusoma ezikoma mu .estudy. Omuntu bw'aba akuweerezza, musabe addemu akuweereze fayiro y'okusoma.",
   "studyloader_bundle_installing": "Okuteeka: {count} emisomo...",
   "studyloader_bundle_success": "Okunoonyereza okuteekebwawo: {count} ✓",
   "studyloader_bundle_partial": "Kiteekeddwa: {installed} · Kiremereddwa: {failed}",

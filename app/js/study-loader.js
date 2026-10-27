@@ -1021,6 +1021,19 @@ async function _readZipEntry(entry, type) {
 // whether the file is a bundle zip (containing .estudy files), a single zip
 // .estudy, or a plain-JSON .estudy, and routes accordingly.
 
+// Looks at the first bytes of a file that is not a zip. A plain-JSON study or
+// pathway file is a JSON object, so it starts with "{" (after any BOM or
+// whitespace). Returns the locale key of the message to show when the file is
+// something else, or null when it may be JSON. The Android wrapper names every
+// incoming file "incoming.estudy", so the name says nothing about the contents.
+function _notStudyFileMessageKey(arrayBuffer) {
+  const head = new TextDecoder()
+    .decode(new Uint8Array(arrayBuffer, 0, Math.min(arrayBuffer.byteLength, 1024)))
+    .trimStart();
+  if (head.startsWith('%PDF')) return 'studyloader_error_pdf';
+  return head.startsWith('{') ? null : 'studyloader_error_not_study';
+}
+
 async function loadAnyFile(file) {
   try {
     const arrayBuffer = await file.arrayBuffer();
@@ -1056,6 +1069,13 @@ async function loadAnyFile(file) {
       }
     } else {
       // ── Plain JSON: a .epathway pathway file or a legacy .estudy ─────────────
+      // Anything that isn't a JSON object (a PDF someone sent by mistake, a
+      // photo, an empty file) gets a plain explanation, not a JSON syntax error.
+      const notStudyKey = _notStudyFileMessageKey(arrayBuffer);
+      if (notStudyKey) {
+        showPickerError(t(notStudyKey));
+        return;
+      }
       // Pathway files are detected first so they aren't misrouted to the study
       // loader (which would report a missing studyId).
       const text = new TextDecoder().decode(arrayBuffer);

@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"Ìkùnà láti gbé fáìlì ìkẹ́kọ̀ọ́ wọlé: {error}",
   "studyloader_error_no_study_json"                     :"{filename} jẹ́ zip ṣùgbọ́n kò ní fáìlì kankan tí ó parí pẹ̀lú study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json kò ní studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"Fáìlì yìí jẹ́ PDF, kì í ṣe ẹ̀kọ́ Bíbélì. Ìṣàfilọ́lẹ̀ náà ń ṣí àwọn fáìlì ẹ̀kọ́ tí ó parí pẹ̀lú .estudy. Bí ẹnìkan bá fi PDF yìí ránṣẹ́ sí ọ, bèèrè fáìlì ẹ̀kọ́ lọ́wọ́ rẹ̀.",
+  "studyloader_error_not_study"                         :"Fáìlì yìí kì í ṣe ẹ̀kọ́ tí ìṣàfilọ́lẹ̀ náà lè ṣí. Ìṣàfilọ́lẹ̀ náà ń ṣí àwọn fáìlì ẹ̀kọ́ tí ó parí pẹ̀lú .estudy. Bí ẹnìkan bá fi ránṣẹ́ sí ọ, bẹ̀ ẹ́ kó tún fi fáìlì ẹ̀kọ́ náà ránṣẹ́.",
   "studyloader_bundle_installing"                       :"Ń gbé wọn wọlé: Àwọn ìkẹ́kọ̀ọ́ {count}…",
   "studyloader_bundle_success"                          :"A ti gbé àwọn ìkẹ́kọ̀ọ́ wọlé: {count} ✓",
   "studyloader_bundle_partial"                          :"Èyí tí a gbé wọlé: {installed} · Èyí tí ó kùnà: {failed}",

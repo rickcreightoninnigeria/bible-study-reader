@@ -611,6 +611,8 @@
   "studyloader_error_load_json"                         :"Gagal memuat turun fail kajian: {error}",
   "studyloader_error_no_study_json"                     :"{filename} adalah fail zip tetapi tidak mengandungi fail yang berakhir dengan study.json.",
   "studyloader_error_no_study_id"                       :"{filename}: study.json kehilangan studyMetadata.studyId.",
+  "studyloader_error_pdf"                               :"Fail ini ialah PDF, bukan kajian Bible. Aplikasi ini membuka fail kajian yang berakhir dengan .estudy. Jika seseorang menghantar PDF ini kepada anda, minta fail kajian daripadanya.",
+  "studyloader_error_not_study"                         :"Fail ini bukan kajian yang boleh dibuka oleh aplikasi. Aplikasi ini membuka fail kajian yang berakhir dengan .estudy. Jika seseorang menghantarnya kepada anda, minta dia menghantar semula fail kajian.",
   "studyloader_bundle_installing"                       :"Memasang: {count} kajian…",
   "studyloader_bundle_success"                          :"Kajian dipasang: {count} ✓",
   "studyloader_bundle_partial"                          :"Dipasang: {installed} · Gagal: {failed}",
