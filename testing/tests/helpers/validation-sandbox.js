@@ -44,7 +44,10 @@ export function makeValidationSandbox(extra = {}) {
         // _stripHtml only needs innerHTML in → textContent out.
         const el = { _html: '' };
         Object.defineProperty(el, 'innerHTML', { set(v) { el._html = v; }, get() { return el._html; } });
-        Object.defineProperty(el, 'textContent', { get() { return el._html.replace(/<[^>]*>/g, ''); } });
+        Object.defineProperty(el, 'textContent', {
+          // Tags out, then the entities a browser would decode.
+          get() { return el._html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '\u00a0').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&'); },
+        });
         return el;
       },
     },

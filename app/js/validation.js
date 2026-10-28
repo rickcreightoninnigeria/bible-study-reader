@@ -334,16 +334,34 @@ function _lvFeedbackFor(card, answer) {
   return d === null ? null : d.message;
 }
 
-// Plain-text versions of the linked passage in every translation, for the
-// "repeats the passage" check. Inline verse numbers glued to a word ("21For")
-// are removed.
+// Plain text of one passage translation, for the "repeats the passage" check.
+//   • [[sc:Text]] (the small-capitals divine name) becomes Text, so
+//     "[[sc:Lord]]’s" reads as "Lord’s", the way an answer will write it;
+//   • a verse number in <sup> is dropped;
+//   • every other tag becomes a space, so poetry lines ("livestock<br>and")
+//     stay two words instead of gluing into "livestockand";
+//   • entities are decoded, a verse number stuck to a word ("21For") is
+//     removed, and runs of spaces collapse.
+function _lvPlainPassage(raw) {
+  const spaced = String(raw)
+    .replace(/\[\[sc:(.*?)\]\]/g, '$1')
+    .replace(/<sup\b[^>]*>\s*\d+[a-z]?\s*<\/sup>/gi, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/</g, '&lt;');            // a stray "<" is text, never markup, when _stripHtml parses it
+  return _stripHtml(spaced)
+    .replace(/\b\d+(?=[a-zA-Z])/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Plain-text versions of the linked passage in every translation.
 function _lvPassageTexts(card) {
   const refEl      = card && card.querySelector('.question-ref span[data-ref]');
   const passageRef = refEl ? refEl.dataset.ref : null;
   const entry      = passageRef && typeof verseData !== 'undefined' && verseData[passageRef];
   const translations = entry && Array.isArray(entry.translations) ? entry.translations : [];
   return translations
-    .map(tr => _stripHtml((tr && tr.text) || '').replace(/\b\d+(?=[a-zA-Z])/g, ''))
+    .map(tr => _lvPlainPassage((tr && tr.text) || ''))
     .filter(s => s.length > 20);
 }
 
