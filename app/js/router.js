@@ -330,8 +330,8 @@ const Router = (() => {
 
     // Closing a modal or the search overlay on Back undoes the navigation with
     // history.forward() — which fires a popstate of its own. Without this flag
-    // that second event was treated as a fresh Back and sent the user to the
-    // Library, so Back on any open popup closed it *and* left the page.
+    // that second event was treated as a fresh Back and stepped the user back
+    // a page, so Back on any open popup closed it *and* left the page.
     // The flag also self-clears after a second, in case the forward() is
     // ever a no-op and no event arrives.
     let _ignoreNextPop = false;
@@ -377,41 +377,20 @@ const Router = (() => {
         return;
       }
 
-      // ── Flattened Back behaviour ────────────────────────────────────────────
-      // Previously Back replayed the real navigation history step by step
-      // (Library → Chapter → Settings → Library → Chapter → Back would land
-      // on Settings, then Library, then Chapter, ...). Instead, Back should
-      // always return straight to the Library from anywhere, and only exit
-      // the app once the user is already there — regardless of how deep the
-      // real history stack actually is.
-      //
-      // We deliberately do NOT try to keep the underlying browser/WebView
-      // history stack "tidy" to match this (e.g. by truncating or undoing
-      // entries) — mixing history.back()/forward() with history.pushState()
-      // to correct position is fragile and can race across browsers. Instead
-      // we simply don't act on e.state's page here at all; _lastPage (this
-      // module's own record of what's actually on screen) tells us
-      // everything we need:
-      //   • already on Library  → treat Back as the user trying to leave
-      //     the app.
-      //   • anywhere else       → render Library, letting the real stack
-      //     accumulate underneath unseen. It's never relied on for
-      //     anything except detecting the rare case it's fully exhausted
-      //     (handled above), so its growth is harmless.
-      if (_lastPage === 'library') {
-        _handleExitIntent();
-        return;
-      }
-
-      await navigate({ page: 'library' });
-      return;
+      // Back replays the real navigation history one step at a time, so the
+      // ✕ on Settings, Library, Progress or How to Use returns the reader to
+      // the page they were on before they opened it (the chapter, or the title
+      // page of their study) instead of throwing them into the Library.
+      // _shadowPop() keeps the debug stack in step with the real one.
+      _shadowPop(e.state);
+      await _applyNavigation(e.state, /* isPop = */ true);
     });
 
   // ── Escape-key shortcut (desktop testing convenience) ───────────────────────
   // Makes the Escape key behave exactly like the hardware/gesture Back button
   // by triggering a real history.back() — routing through the exact same
-  // popstate logic above (close modal/search overlay first, then flatten to
-  // Library, then exit intent) rather than duplicating any of that here.
+  // popstate logic above (close modal/search overlay first, then step back
+  // through the history, then exit intent) rather than duplicating any of that here.
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
 
