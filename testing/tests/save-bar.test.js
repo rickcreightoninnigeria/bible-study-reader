@@ -1,5 +1,5 @@
 /**
- * The button bar at the foot of a chapter: Print, Share and Recommend (no Save
+ * The button bar at the foot of a chapter: Recommend, Print and Share (no Save
  * button — answers save themselves). Covers the markup, the rule that drops the
  * icons when a label wraps, the heart icon in every icon set, and the strings
  * in every locale.
@@ -38,18 +38,24 @@ describe('buildSaveBar', () => {
   const html = loadBar().buildSaveBar({});
   const buttons = html.match(/<button[\s\S]*?<\/button>/g);
 
-  it('has Print, Share and Recommend, in that order, and no Save button', () => {
+  it('has Recommend, Print and Share, in that order (Recommend where Save was), and no Save button', () => {
     expect(buttons).toHaveLength(3);
-    expect(buttons[0]).toContain('printChapter()');
-    expect(buttons[1]).toContain('shareAnswers()');
-    expect(buttons[2]).toContain('shareAppLink()');
+    expect(buttons[0]).toContain('shareAppLink()');
+    expect(buttons[1]).toContain('printChapter()');
+    expect(buttons[2]).toContain('shareAnswers()');
     expect(html).not.toContain('saveAnswers');
   });
 
   it('puts each icon and each label in its own span', () => {
-    expect(buttons[0]).toContain('<span class="save-btn-icon"><i-print/></span><span class="save-btn-label">renderchapter_print_btn</span>');
-    expect(buttons[1]).toContain('<span class="save-btn-icon"><i-share/></span><span class="save-btn-label">renderchapter_share_btn</span>');
-    expect(buttons[2]).toContain('<span class="save-btn-icon"><i-heart/></span><span class="save-btn-label">renderchapter_recommend_btn</span>');
+    expect(buttons[0]).toContain('<span class="save-btn-icon"><i-heart/></span><span class="save-btn-label">renderchapter_recommend_btn</span>');
+    expect(buttons[1]).toContain('<span class="save-btn-icon"><i-print/></span><span class="save-btn-label">renderchapter_print_btn</span>');
+    expect(buttons[2]).toContain('<span class="save-btn-icon"><i-share/></span><span class="save-btn-label">renderchapter_share_btn</span>');
+  });
+
+  it('keeps the colours: Recommend takes Save\'s old dark default, Print grey, Share green', () => {
+    expect(buttons[0]).not.toContain('style=');
+    expect(buttons[1]).toContain('var(--text-secondary)');
+    expect(buttons[2]).toContain('var(--success)');
   });
 });
 

@@ -1,5 +1,5 @@
 // ── RENDER CHAPTER UI ─────────────────────────────────────────────────────────
-// Chrome elements that surround the chapter content: the print/share/recommend bar,
+// Chrome elements that surround the chapter content: the recommend/print/share bar,
 // the notes free-text field, the prev/next navigation buttons, and the
 // sticky language switcher bar.
 //
@@ -121,10 +121,11 @@ async function setStudyLang(code) {
 }
 
 
-// ── PRINT / SHARE / RECOMMEND BAR ─────────────────────────────────────────────
+// ── RECOMMEND / PRINT / SHARE BAR ─────────────────────────────────────────────
 // Answers save themselves when the reader leaves a field, so the bar carries
-// no Save button. Share sends this chapter's answers; Recommend sends a link
-// to the app (the same message as the button on the How to Use page).
+// no Save button. Recommend (left, where Save used to be) sends a link to the
+// app, the same message as the button on the How to Use page; Print and Share
+// keep their old places in the middle and on the right.
 //
 // Each button is an icon plus a word. In a language whose words are long, a
 // label can wrap onto two lines at a narrow width, which makes all three
@@ -138,9 +139,9 @@ function buildSaveBar(ch) {
       </button>`;
   return `
     <div class="save-bar">${
+      btn('', 'shareAppLink()', ICONS.recommend, t('renderchapter_recommend_btn'))}${
       btn('background:var(--text-secondary)', 'printChapter()', ICONS.print, t('renderchapter_print_btn'))}${
-      btn('background:var(--success)', 'shareAnswers()', ICONS.share, t('renderchapter_share_btn'))}${
-      btn('', 'shareAppLink()', ICONS.recommend, t('renderchapter_recommend_btn'))}
+      btn('background:var(--success)', 'shareAnswers()', ICONS.share, t('renderchapter_share_btn'))}
     </div>`;
 }
 
