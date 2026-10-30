@@ -161,7 +161,7 @@ const Router = (() => {
   //            'progress' | 'leaders' | 'about' | 'notes' | '_exit_guard'
   //   idx:     number          (chapter only)
   //   tabId:   string | null   (settings / howto / leaders / about)
-  //   scrollY: number
+  //   scrollY: number          (where the page was scrolled to when it was left)
   //   studyId: string | null   (the active study when this entry was pushed,
   //                             restored before rendering on popstate so Back
   //                             always returns to the correct study's content)
@@ -175,6 +175,24 @@ const Router = (() => {
       scrollY: destination.scrollY ?? 0,
       studyId: destination.studyId ?? window.activeStudyId ?? null,
     };
+  }
+
+  // ── Remember where the reader was ───────────────────────────────────────────
+  // Called just before leaving a page for another. Records the scroll position
+  // in the history entry of the page being left, so that Back (or the ✕ on
+  // Settings, Library, Progress and How to Use) can return to the exact spot,
+  // not just to the top of the chapter. Only done when the entry matches what is
+  // on screen (_lastPage); a page drawn by a direct render call, with no history
+  // entry of its own, would otherwise have its scroll written into another page's entry.
+  function _rememberScroll() {
+    const cur = history.state;
+    if (!cur || typeof cur !== 'object' || !cur.page || cur.page === '_exit_guard') return;
+    if (cur.page !== _lastPage) return;
+    const y = Math.round(window.scrollY || 0);
+    if (cur.scrollY === y) return;
+    const state = { ...cur, scrollY: y };
+    history.replaceState(state, '');
+    _shadowReplace(state);
   }
 
   // ── Core: apply a navigation state to the DOM ───────────────────────────────
@@ -282,6 +300,13 @@ const Router = (() => {
 
         default:
           console.warn('[Router] Unknown page:', page);
+      }
+
+      // A chapter takes its scroll position as an argument (above). The other
+      // pages are drawn from the top, so on Back put them where the reader was.
+      // The Library is left out: it fills in after this function returns.
+      if (isPop && page !== 'chapter' && page !== 'library' && scrollY > 0) {
+        window.scrollTo({ top: scrollY, behavior: 'instant' });
       }
 
       _lastPage = page;
@@ -422,6 +447,7 @@ const Router = (() => {
    *   { page: 'notes' }
    */
   async function navigate(destination) {
+    _rememberScroll();
     const state = _makeState(destination);
     history.pushState(state, '');
     _shadowPush(state);
@@ -480,6 +506,7 @@ const Router = (() => {
    * _navigating guard is never touched — so no spurious popstate re-renders.
    */
   function pushWithoutRender(destination) {
+    _rememberScroll();
     const state = _makeState(destination);
     history.pushState(state, '');
     _shadowPush(state);

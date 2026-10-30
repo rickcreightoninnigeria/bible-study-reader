@@ -92,7 +92,8 @@ History API only (no hash). State shape: `{ page, idx, tabId, scrollY, studyId }
 
 - **Pages:** `title`, `chapter` (`idx` = array index), `library`, `progress`, `howto`, `settings`, `leaders`, `about`, `notes`, `godeeper`, `_exit_guard`. Tabbed pages use `tabId` (Go Deeper uses `ch_<n>`/`intro`).
 - **API:** `Router.navigate(dest)` (push + render), `back()` (`history.back()`), `boot`, `replaceState` (tab switches), `pushWithoutRender`.
-- **Back is deliberately flattened:** from any page Back renders the Library; from the Library it shows an exit-confirm Swal then calls the native exit. Close (✕) buttons use `Router.back()`, so they also go to the Library.
+- **Back steps through the history:** Back (hardware, gesture, Escape) and the close (✕) buttons, which call `Router.back()`, return to the previous page, e.g. the chapter or title page the reader was on before opening Settings, Library, Progress or How to Use. When the history is used up Back shows an exit-confirm Swal, then calls the native exit. (`bca88b6` once made Back always go to the Library; that was undone.)
+- **Scroll position:** before leaving a page, `navigate`/`pushWithoutRender` store `window.scrollY` in that page's history entry (`_rememberScroll`, only when the entry is what `_lastPage` says is on screen). On Back a chapter gets it as the `renderChapter` scroll argument; other pages except the Library are scrolled to it after rendering. A new visit starts at the top.
 - Popstate first closes an open search overlay or modal (`_closeAnyOpenModal` list, including the gallery viewer), then undoes the navigation with `history.forward()` and ignores the follow-up event.
 - `_navigating` makes overlapping navigations silently drop.
 - Page renderers set `activeTabPage`/`isNonChapterPage`. The title page sets `isNonChapterPage` but no `activeTabPage`.
