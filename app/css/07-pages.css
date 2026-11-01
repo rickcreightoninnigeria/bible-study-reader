@@ -4363,6 +4363,28 @@ body.dark-mode .chapter-jump-label,
 body.dark-mode .chapter-jump-icon { color: var(--accent-light); }
 body.dark-mode .chapter-jump-title { color: var(--dm-text-mid); }
 
+/* Compact "Back to study" above a Go Deeper chapter's heading: one line, no
+   card, so it is findable on arrival without pushing the reading down. */
+.back-to-study-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 6px 12px;
+  background: none;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  font-family: var(--font-stack-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: start;
+  cursor: pointer;
+}
+.back-to-study-top:hover { background: var(--surface-mid); }
+body.dark-mode .back-to-study-top { color: var(--accent-light); border-color: var(--accent-light); }
+body.dark-mode .back-to-study-top .chapter-jump-icon { color: var(--accent-light); }
+
 /* ── Image gallery (gallery.js) ───────────────────────────────────────────────
    Thumbnail grid: 2 columns on phones, more as space allows. */
 .gallery-grid {

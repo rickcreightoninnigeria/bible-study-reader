@@ -2032,19 +2032,21 @@ async function renderAbout(tabId) {
 const GODEEPER_TABS = []; // populated dynamically — see renderGoDeeper
 
 // ── BACK TO STUDY (appendix → study chapter) ─────────────────────────────────
-// Optional button at the bottom of a Go Deeper chapter, opted into per
-// chapter with "backToStudy":
+// Optional button at the bottom of a Go Deeper chapter — and a compact one-line
+// copy above its heading, so a reader who changes their mind needs no scrolling
+// — opted into per chapter with "backToStudy":
 //   true                          → the study chapter with the same chapterNumber
 //   { "chapter": N, "label": "…" } → another study chapter and/or a custom label
 // Label: chapter's backToStudy.label → goDeeperData.backToStudyLabel (both
 // accept numbered language slots) → the UI string. The second line is the
-// study chapter's title. No button if the target chapter doesn't exist.
+// study chapter's title (the compact top button shows the label only). No
+// button if the target chapter doesn't exist.
 //
 // The markup carries only the chapter's array index (data-back-to-study). If
 // the reader came here via that chapter's "Read more" button, they return to
 // where they were in it (window._readMoreReturn, set in render-chapter-ui.js);
 // otherwise they land at the top of the chapter.
-function _buildBackToStudyButton(ch, d, activeLang, langMap) {
+function _buildBackToStudyButton(ch, d, activeLang, langMap, compact) {
   const opt = ch.backToStudy;
   const obj = opt && typeof opt === 'object' && !Array.isArray(opt) ? opt : null;
   if (opt !== true && !obj) return '';
@@ -2054,6 +2056,13 @@ function _buildBackToStudyButton(ch, d, activeLang, langMap) {
   const label = (obj && resolveTextWithFallback(obj, activeLang, 'label', langMap))
     || resolveTextWithFallback(d, activeLang, 'backToStudyLabel', langMap)
     || t('renderpages_back_to_study');
+  if (compact) {
+    return `
+    <button type="button" class="back-to-study-top" data-back-to-study="${idx}">
+      <span class="chapter-jump-icon" aria-hidden="true">${ICONS.arrowUp}</span>
+      <span>${escapeHtml(label)}</span>
+    </button>`;
+  }
   const title = resolveTextWithFallback(window.chapters[idx], activeLang, 'chapterTitle', langMap);
   return `
     <button type="button" class="chapter-jump-btn back-to-study-btn" data-back-to-study="${idx}">
@@ -2266,9 +2275,11 @@ async function renderGoDeeper(tabId) {
       await prefetchGalleryImages(ch, activeLang, langMap);
       const blocksHtml = _buildContentBlocksHtml(ch, activeLang, langMap, SKIP, 'go-deeper', 'go-deeper-highlight', format, footnotes);
       const backHtml   = _buildBackToStudyButton(ch, d, activeLang, langMap);
+      const backTopHtml = _buildBackToStudyButton(ch, d, activeLang, langMap, true);
 
       tabContent = `
         <div class="go-deeper-chapter" style="margin-top: 16px;">
+          ${backTopHtml}
           <div class="leaders-chapter-header">
             <span class="leaders-chapter-number">${t('renderpages_leaders_chapter_label', { number: ch.chapterNumber })}</span>
             <span class="leaders-chapter-title">${chapterTitle}</span>
