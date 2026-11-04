@@ -272,6 +272,65 @@ def check_element_shapes(where, el):
                 warn(f'{where}: scaleNumber {sn!r} is not between 1 and 10; the app uses its default or clamps it')
 
 
+# keyTerms is NOT a regular expression (answer-match.js parseKeyTerms): only "|",
+# a trailing "$" and a leading "*" mean anything, and every other punctuation
+# mark becomes a space. So "moses.*not able" is the phrase "moses not able".
+KT_REGEX_RE = re.compile(r'\.[*+?]|\\[A-Za-z]|[\[\]{}^()]|[*+]|\$(?=.)')
+
+
+def check_key_terms(where, kt):
+    for term in kt:
+        alts = term.split('|')
+        if len(alts) > 10:
+            warn(f'{where}: keyTerms entry {term[:40]!r}... has {len(alts)} alternatives; only the first 10 are used')
+        for alt in alts:
+            core = alt.strip()
+            if core.startswith('*'):
+                core = core[1:]
+            elif core.endswith('$'):
+                core = core[:-1]
+            if len(core) > 60:
+                warn(f'{where}: keyTerms alternative {alt[:40]!r}... is over 60 characters and is cut short')
+            if KT_REGEX_RE.search(core):
+                plain = re.sub(r'\s+', ' ', re.sub(r'[^\w\s]', ' ', re.sub(r"['\u2019\u02bc]", '', core))).strip().lower()
+                warn(f'{where}: keyTerms alternative {alt!r} looks like a regular expression; the app is not one and '
+                     f'turns punctuation into spaces, so this only matches the phrase {plain!r} '
+                     '(only "|", a trailing "$" and a leading "*" are special)')
+
+
+def check_translations(study):
+    """bibleTranslation1 switches every passage to the numbered fields only."""
+    meta = study.get('studyMetadata') or {}
+    if not meta.get('bibleTranslation1'):
+        return
+    for ch in study.get('chapters') or []:
+        for el in ch.get('elements') or []:
+            if el.get('type') == 'biblePassage' and el.get('passageText') and not el.get('passageText1'):
+                err(f'chapter {ch.get("chapterNumber")}, {el.get("elementId")}: studyMetadata.bibleTranslation1 is set, '
+                    'so this unnumbered passageText is never read and the passage has no pop-up '
+                    '(remove bibleTranslation1 in a single-translation study)')
+
+
+def check_leaders(study, multilingual):
+    ln = study.get('leadersNotesData') or {}
+    reserved = {'chapterNumber', 'format', 'title', 'chapterTitle'}
+    for c in ln.get('chapters') or []:
+        n = c.get('chapterNumber')
+        if not isinstance(n, int) or isinstance(n, bool):
+            err(f"Leaders' Notes chapterNumber {n!r} must be an integer (otherwise the chapter gets no tab and is never shown)")
+        fmt = str(c.get('format', ln.get('format', ''))).lower()
+        for k, v in c.items():
+            if k in reserved or re.match(r'(title|chapterTitle)\d+$', k):
+                continue
+            if re.search(r'\d$', k):
+                (err if multilingual else warn)(
+                    f"Leaders' Notes {n}: block key {k!r} ends in a digit"
+                    + (' (a language slot in a multilingual study)' if multilingual else ''))
+            for path, s in strings(v):
+                if '<table' in s and fmt == 'markdown':
+                    err(f"Leaders' Notes {n}: table in a markdown-format chapter is stripped; use format \"HTML\"")
+
+
 def keys_anywhere(o, names, path='', out=None):
     out = [] if out is None else out
     if isinstance(o, dict):
@@ -346,6 +405,9 @@ def main(path):
                 if m not in names:
                     warn(f'{path_}: [[icon:{m}]] is not an app icon and will be removed')
 
+    check_translations(study)
+    check_leaders(study, multilingual)
+
     seen_ids, nums = {}, set()
     for ch in chapters:
         n = ch.get('chapterNumber')
@@ -389,6 +451,8 @@ def main(path):
                     err(f'{where}: keyTerms must be an array of non-empty strings')
                 elif len(kt) > 12:
                     warn(f'{where}: keyTerms has {len(kt)} entries; only 12 are used')
+                else:
+                    check_key_terms(where, kt)
             mp = el.get('mainPoint')
             if isinstance(mp, str) and len(mp) > 2000:
                 warn(f'{where}: mainPoint is over 2,000 characters')
