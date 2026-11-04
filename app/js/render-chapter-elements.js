@@ -48,6 +48,7 @@
 //   renderLikertScale                – modals.js
 //   localValidateAutoTrigger,
 //   openLocalValidateForCard,
+//   openHintForCard,
 //   localValidateEligible            – validation.js
 //   startVoiceInput                  – voice.js
 //   autoResize                       – utils.js
@@ -491,7 +492,7 @@ function renderQuestion(ctx) {
     resolveText(el, activeLang, 'answerPlaceholder', langMap) ||
     (isReflection ? t('renderchapter_placeholder_reflection') : t('renderchapter_placeholder_thoughts'));
 
-  // sampleAnswer, questionHint, keyTerms, shortAnswerThreshold and
+  // sampleAnswer, questionHint, questionHintFirst, keyTerms, shortAnswerThreshold and
   // skipBibleVerseCheck are NOT written to the page. Local validate reads them
   // from the question element itself (looked up by this card's id), so model
   // answers stay out of the markup and no study text becomes an attribute.
@@ -500,6 +501,10 @@ function renderQuestion(ctx) {
   // only need to know whether the question has one for the active language.
   const mainPointText = resolveText(el, activeLang, 'mainPoint', langMap);
   const hasMainPoint  = typeof mainPointText === 'string' && mainPointText.trim() !== '';
+  // The Hint button shows for a question with a questionHint or a
+  // questionHintFirst (validation.js picks which one to show).
+  const _hasText = f => { const v = resolveText(el, activeLang, f, langMap); return typeof v === 'string' && v.trim() !== ''; };
+  const hasHint = _hasText('questionHint') || _hasText('questionHintFirst');
 
   const deeperLabel = el.deeper
     ? (resolveText(el.deeper, activeLang, 'label', langMap) || t('renderchapter_go_deeper'))
@@ -512,8 +517,9 @@ function renderQuestion(ctx) {
     <div class="answer-action-row">
       <button class="answer-info-btn" title="${t('renderchapter_answer_info_btn_title')}" aria-label="${t('renderchapter_answer_info_btn_title')}"
           onclick="openInfoModal('answer-action-row-info', window._answerRowInfoHtml, this)">${ICONS.triggerInfo}</button>
-      <button class="local-validate-btn" title="${t('renderchapter_check_my_answer')}" aria-label="${t('renderchapter_check_my_answer')}" onclick="openLocalValidateForCard(this)" ${val ? '' : 'disabled'}>${ICONS.localValidate}</button>
-      ${hasMainPoint ? `<button class="main-point-btn" data-main-point-id="${escapeHtml(el.elementId)}" title="${t('mainpoint_btn_title')}" aria-label="${t('mainpoint_btn_title')}" ${val ? '' : 'disabled'}>${ICONS.mainPoint}</button>` : ''}
+      <button class="local-validate-btn" title="${t('renderchapter_check_my_answer')}" aria-label="${t('renderchapter_check_my_answer')}" onclick="openLocalValidateForCard(this)"${val ? '' : ' aria-disabled="true"'}>${ICONS.localValidate}</button>
+      ${hasHint ? `<button class="hint-btn" title="${t('renderchapter_answer_tools_hint_label')}" aria-label="${t('renderchapter_answer_tools_hint_label')}" onclick="openHintForCard(this)">${ICONS.hint}</button>` : ''}
+      ${hasMainPoint ? `<button class="main-point-btn" data-main-point-id="${escapeHtml(el.elementId)}" title="${t('mainpoint_btn_title')}" aria-label="${t('mainpoint_btn_title')}"${val ? '' : ' aria-disabled="true"'}>${ICONS.mainPoint}</button>` : ''}
       ${voiceInputAvailable() ? `<button class="mic-btn" onclick="startVoiceInput(this)" aria-label="${t('renderchapter_answer_tools_mic_label')}" title="${t('renderchapter_answer_tools_mic_label')}">${ICONS.mic}</button>` : ''}
     </div>`;
 

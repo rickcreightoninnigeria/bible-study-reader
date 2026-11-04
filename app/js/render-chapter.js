@@ -200,13 +200,21 @@ async function renderChapter(idx, scrollY = 0) {
       const mp = resolveText(e, activeLang, 'mainPoint', langMap);
       return typeof mp === 'string' && mp.trim() !== '';
     });
+    const chapterHasHint = (ch.elements || []).some(e => {
+      if (!e || e.type !== 'question') return false;
+      return ['questionHint', 'questionHintFirst'].some(f => {
+        const v = resolveText(e, activeLang, f, langMap);
+        return typeof v === 'string' && v.trim() !== '';
+      });
+    });
     const answerRowInfoHtml = {
       title: t('renderchapter_answer_tools_title'),
       body:
         `<p><b>${ICONS.mic} ${t('renderchapter_answer_tools_mic_label')}</b> — ${t('renderchapter_answer_tools_mic_desc')}</p><br>` +
         `<p><b>${ICONS.localValidate} ${t('renderchapter_answer_tools_localvalidate_label')}</b> — ${t('renderchapter_answer_tools_localvalidate_desc')}</p>` +
-        // The Main point entry only appears in chapters that have one, so the
-        // popup never describes a button the reader can't see.
+        // The Hint and Main point entries only appear in chapters that have
+        // one, so the popup never describes a button the reader can't see.
+        (chapterHasHint ? `<br><p><b>${ICONS.hint} ${t('renderchapter_answer_tools_hint_label')}</b> — ${t('renderchapter_answer_tools_hint_desc')}</p>` : '') +
         (chapterHasMainPoint ? `<br><p><b>${ICONS.mainPoint} ${t('renderchapter_answer_tools_mainpoint_label')}</b> — ${t('renderchapter_answer_tools_mainpoint_desc')}</p>` : ''),
     };
     window._answerRowInfoHtml = answerRowInfoHtml;

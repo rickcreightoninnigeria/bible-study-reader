@@ -23,7 +23,9 @@
 // Per-question study fields, all optional and read from the question ELEMENT
 // (looked up by the card's id), not from data-* attributes — so model answers
 // no longer sit in the page markup, and study text never becomes an attribute:
-//   sampleAnswer, questionHint   numbered in multilingual studies
+//   sampleAnswer, questionHint, questionHintFirst   numbered in multilingual studies
+//                                (the Hint button shows questionHintFirst while the answer is empty,
+//                                 questionHint once something is written; see _lvPickHint)
 //   keyTerms                     array of "alt|alt|prefix$" strings (see answer-match.js)
 //   mainPoint, mainPointFormat   shown on demand by the Main point button (modals.js)
 //   shortAnswerThreshold         minimum words; 0 turns the check off
@@ -94,7 +96,7 @@ function localValidateEligible(card) {
 // unrelated auto-validate.
 const _LV_STILL_WORKING_SELECTOR =
   '.question-ref [data-ref], .deeper-btn, .answer-info-btn, .mic-btn, ' +
-  '.local-validate-btn, .main-point-btn, .verse-trans-btn, .star-btn';
+  '.local-validate-btn, .hint-btn, .main-point-btn, .verse-trans-btn, .star-btn';
 
 // PRIMARY FIX: a browser only blurs the currently focused field, on either
 // desktop or mobile, as the *default action* of the mousedown/tap that
@@ -181,8 +183,8 @@ function openLocalValidateForCard(buttonEl) {
   const textarea = card.querySelector('.answer-field');
   const answer   = textarea ? textarea.value.trim() : '';
 
-  // Guard: icon should be disabled when empty, but double-check here
-  if (!answer) return;
+  // Nothing written yet: say how to start instead of staying silent.
+  if (!answer) { _localValidateShowFeedback(card, _lvEmptyDetail(card, 'check')); return; }
 
   const detail = _lvDetailFor(card, answer);
   if (detail === null) return;
@@ -191,6 +193,55 @@ function openLocalValidateForCard(buttonEl) {
   // confirmation). Scroll card to centre first so the toast never covers the
   // answer field, then display.
   _localValidateShowFeedback(card, detail);
+}
+
+// How to start, shown when the Answer check or Main point button is tapped
+// before anything is written. kind: 'check' | 'compare'. Steps: read the passage
+// (only when the question has one), write an answer (with a nod to voice entry
+// where the device has it), then what the button will do. A closing line points
+// to the Hint button when the question has a hint.
+function _lvEmptyDetail(card, kind) {
+  const hasPassage = !!(card.dataset && String(card.dataset.linkedPassage || '').trim());
+  const voice = typeof voiceInputAvailable === 'function' && voiceInputAvailable()
+    ? ' ' + t('validation_lv_empty_voice') : '';
+  const steps = [];
+  if (hasPassage) steps.push(t('validation_lv_empty_step_read'));
+  steps.push(t(hasPassage ? 'validation_lv_empty_step_write_passage' : 'validation_lv_empty_step_write_own') + voice);
+  steps.push(t(kind === 'compare' ? 'validation_lv_empty_step_compare' : 'validation_lv_empty_step_feedback'));
+  const text = t(kind === 'compare' ? 'validation_lv_empty_compare_lead' : 'validation_lv_empty_check_lead');
+  const note = _lvPickHint(_lvQuestionConfig(card), true) ? t('validation_lv_empty_hint_note') : '';
+  const message = [text, ...steps.map((s, i) => `${i + 1}. ${s}`), note].filter(Boolean).join('\n');
+  return { code: 'empty', text, steps, note, hintItems: [], message };
+}
+
+function showEmptyAnswerHelp(card, kind) {
+  _localValidateShowFeedback(card, _lvEmptyDetail(card, kind));
+}
+
+// The Hint button. Before the reader has written anything it shows the
+// questionHintFirst (a gentler nudge) when the question has one; once they have
+// written something, the questionHint. Either one stands in for the other when
+// only one is given. Shown as a toast, like the feedback; it works with an
+// empty answer and nothing is checked or saved.
+function openHintForCard(buttonEl) {
+  const card = buttonEl && buttonEl.closest('.question-card');
+  if (!card) return;
+  const textarea = card.querySelector('.answer-field');
+  const empty = !(textarea && textarea.value.trim());
+  const hint = _lvPickHint(_lvQuestionConfig(card), empty);
+  if (!hint) return;
+  const text = t('validation_lv_hint_lead');
+  const hintItems = _lvHintItems(hint);
+  _localValidateShowFeedback(card, { code: 'hint', text, steps: [], hintItems, message: text + ' ' + hint });
+}
+
+// Which hint to show: the first (gentler) one for an empty answer, the fuller one
+// once something is written; each falls back to the other. A hint with nothing
+// readable in it counts as absent. Returns the hint string or null.
+function _lvPickHint(cfg, answerEmpty) {
+  const first = _lvHintItems(cfg.questionHintFirst).length ? cfg.questionHintFirst : null;
+  const full  = _lvHintItems(cfg.questionHint).length ? cfg.questionHint : null;
+  return (answerEmpty ? (first || full) : (full || first)) || null;
 }
 
 // Called from the textarea's blur handler (onblur attribute in
@@ -293,7 +344,7 @@ function _lvStringField(el, field) {
 // Everything the check needs for one card. Never throws: a missing element or
 // a hostile field just yields empty values.
 function _lvQuestionConfig(card) {
-  const cfg = { questionText: '', sampleAnswer: null, questionHint: null, keyTerms: null,
+  const cfg = { questionText: '', sampleAnswer: null, questionHint: null, questionHintFirst: null, keyTerms: null,
                 hasMainPoint: false, shortAnswerThreshold: null, skipBibleVerseCheck: false, lang: 'en' };
   try {
     cfg.questionText = _getQuestionText(card);
@@ -302,6 +353,7 @@ function _lvQuestionConfig(card) {
     if (!el) return cfg;
     cfg.sampleAnswer  = _lvStringField(el, 'sampleAnswer');
     cfg.questionHint  = _lvStringField(el, 'questionHint');
+    cfg.questionHintFirst = _lvStringField(el, 'questionHintFirst');
     const kt = studyText(el, 'keyTerms');
     cfg.keyTerms      = Array.isArray(kt) ? kt : null;
     cfg.hasMainPoint  = _lvStringField(el, 'mainPoint') !== null;
@@ -319,7 +371,7 @@ function _lvQuestionConfig(card) {
 function _lvDetailFor(card, answer) {
   try {
     const c = _lvQuestionConfig(card);
-    return _localValidateDetail(answer, c.questionText, card, c.sampleAnswer, c.questionHint,
+    return _localValidateDetail(answer, c.questionText, card, c.sampleAnswer, _lvPickHint(c, false),
       c.shortAnswerThreshold, c.skipBibleVerseCheck,
       { keyTerms: c.keyTerms, hasMainPoint: c.hasMainPoint, lang: c.lang });
   } catch (e) {
@@ -449,7 +501,8 @@ function _lvDetailForCode(code, hint, hasMainPoint) {
     case 'offTopic':        text = withHint('validation_lv_off_topic_hint', 'validation_lv_off_topic_no_hint'); break;
     case 'partial':
       text = t('validation_lv_partial');
-      steps = [t('validation_lv_partial_step1'), t('validation_lv_partial_step2')];
+      // With a hint, the second step also points to the Hint button.
+      steps = [t('validation_lv_partial_step1'), t(hint ? 'validation_lv_partial_step2_hint' : 'validation_lv_partial_step2')];
       if (hasMainPoint) steps.push(t('validation_lv_partial_step3'));
       break;
     case 'strong':          text = t('validation_lv_strong') + pointer; break;
@@ -473,41 +526,52 @@ function _lvHintItems(hint) {
 }
 
 // The toast's HTML. Everything from the study (the hint) is escaped; the face
-// and the numbered list are built here. [[icon:mainPoint]] in a message is drawn
-// as the Main point button's lightbulb, or as 💡 if that icon is not available.
+// and the numbered list are built here. [[icon:mainPoint]], [[icon:hint]] and
+// [[icon:mic]] in a message are drawn as that button's icon, or as an emoji if
+// the icon is not available.
+const _LV_ICON_FALLBACK = { mainPoint: '💡', hint: '🔑', mic: '🎤' };
 function _lvToastHtml(detail) {
-  const icon = (typeof ICONS !== 'undefined' && ICONS && ICONS.mainPoint) ? '[[icon:mainPoint]]' : '💡';
-  const fix = s => escapeHtml(s).replace(/\[\[icon:mainPoint\]\]/g, icon);
+  const fix = s => escapeHtml(s).replace(/\[\[icon:(mainPoint|hint|mic)\]\]/g, (m, name) =>
+    (typeof ICONS !== 'undefined' && ICONS && ICONS[name]) ? m : _LV_ICON_FALLBACK[name]);
   const steps = detail.steps && detail.steps.length
     ? `<ol class="lv-steps">${detail.steps.map(s => `<li>${fix(s)}</li>`).join('')}</ol>` : '';
   const hints = detail.hintItems && detail.hintItems.length
     ? `<ul class="lv-hints">${detail.hintItems.map(s => `<li>${fix(s)}</li>`).join('')}</ul>` : '';
   const face = _lvLevelFor(detail.code).face;
   const faceHtml = face ? `<span class="lv-face" aria-hidden="true">${face}</span>` : '';
-  const body = `<div class="lv-text">${fix(detail.text)}${hints}${steps}</div>`;
-  const html = faceHtml ? `<div class="lv-toast">${faceHtml}${body}</div>` : body;
+  const note = detail.note ? `<p class="lv-note">${fix(detail.note)}</p>` : '';
+  const body = `<div class="lv-text">${fix(detail.text)}${hints}${steps}${note}</div>`;
+  // Left-aligned wrapper for anything with a face or a list (steps, hints, note);
+  // a one-line message with neither stays centred as before.
+  const html = faceHtml || steps || hints || note ? `<div class="lv-toast">${faceHtml}${body}</div>` : body;
   return typeof expandInlineMarkers === 'function' ? expandInlineMarkers(html) : html;
 }
 
 // Wires the local-validate and Main point buttons after a chapter renders:
-// removes them from cards that are not eligible, and enables or disables them as
-// the answer field fills or empties.
+// removes them (and the Hint button) from cards that are not eligible, and dims or
+// undims them as the answer field empties or fills.
 function wireLocalValidateCards(container) {
   container.querySelectorAll('.question-card').forEach(card => {
     const lvBtn = card.querySelector('.local-validate-btn');
     const mpBtn = card.querySelector('.main-point-btn');
-    if (!lvBtn) { if (mpBtn) mpBtn.remove(); return; }
+    const hintBtn = card.querySelector('.hint-btn');
+    const removeExtras = () => { if (mpBtn) mpBtn.remove(); if (hintBtn) hintBtn.remove(); };
+    if (!lvBtn) { removeExtras(); return; }
     if (!localValidateEligible(card)) {
       lvBtn.remove();
-      if (mpBtn) mpBtn.remove();
+      removeExtras();
       return;
     }
     const textarea = card.querySelector('.answer-field');
     if (textarea) {
+      // Dimmed (aria-disabled) rather than disabled, so a tap still gets an answer:
+      // the how-to-start toast. The Hint button is never dimmed.
       textarea.addEventListener('input', () => {
         const empty = !textarea.value.trim();
-        lvBtn.disabled = empty;
-        if (mpBtn) mpBtn.disabled = empty;
+        for (const b of [lvBtn, mpBtn]) {
+          if (!b) continue;
+          if (empty) b.setAttribute('aria-disabled', 'true'); else b.removeAttribute('aria-disabled');
+        }
       });
     }
   });

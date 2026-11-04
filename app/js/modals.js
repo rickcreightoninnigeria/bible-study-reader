@@ -557,8 +557,9 @@ function openFootnoteModal(title, bodyHtml) {
 // ── MAIN POINT MODAL ──────────────────────────────────────────────────────────
 // Shows a question's optional mainPoint (a short statement of the key idea) in
 // the shared info modal. It is opened by the Main point button on the answer
-// row, which is only enabled once the reader has written something, so they
-// commit to an answer before seeing the author's. It is never part of the
+// row, which only opens once the reader has written something (before that it
+// is dimmed and shows how to start, validation.js), so they commit to an answer
+// before seeing the author's. It is never part of the
 // feedback toast.
 //
 // The text is read from the question element when the button is tapped (not
@@ -592,6 +593,13 @@ function openMainPointModal(elementId) {
 document.addEventListener('click', e => {
   const btn = e.target && e.target.closest && e.target.closest('.main-point-btn');
   if (!btn || btn.disabled) return;
+  // Nothing written yet: say how to start (the button is dimmed, not disabled).
+  const card = btn.closest('.question-card');
+  const field = card && card.querySelector('.answer-field');
+  if (card && field && !field.value.trim()) {
+    if (typeof showEmptyAnswerHelp === 'function') showEmptyAnswerHelp(card, 'compare');
+    return;
+  }
   openMainPointModal(btn.dataset.mainPointId);
 });
 

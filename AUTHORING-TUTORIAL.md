@@ -45,8 +45,9 @@ The reader can tap a check button on a `standard` question. It runs offline and 
 
 - `keyTerms`: the ideas a good answer should contain, one string per idea, alternatives separated by `|` (`"justif|declared righteous"`; `"sin$"` means the whole word). Without `keyTerms` the check can only say "Looks good".
 - `mainPoint`: a short statement of the key idea, shown when the reader taps **Main point** after answering.
+- `questionHint` and `questionHintFirst`: a hint the reader can open with the **Hint** (key) button at any time. If you give a `questionHintFirst` (a gentle nudge), it is shown while the answer is still empty and `questionHint` (the fuller one) once they have written something. With only one of them, that one is always shown.
 
-Both are visible to anyone who opens the study file, so don't put anything secret in them.
+All of these are visible to anyone who opens the study file, so don't put anything secret in them.
 
 ## 5. A book alongside the study (Go Deeper)
 

@@ -94,9 +94,10 @@ describe('renderQuestion: Main point button', () => {
     expect(html).not.toContain('declared righteous');            // the text itself is not in the page
   });
 
-  it('is disabled until there is an answer, like the validate button', () => {
-    expect(render({ mainPoint: 'P' })).toMatch(/class="main-point-btn"[^>]*\sdisabled/);
-    expect(render({ mainPoint: 'P' }, { answer: 'My answer' })).not.toMatch(/class="main-point-btn"[^>]*\sdisabled/);
+  it('is dimmed (aria-disabled, not disabled) until there is an answer, like the validate button, so a tap can show how to start', () => {
+    expect(render({ mainPoint: 'P' })).toMatch(/class="main-point-btn"[^>]*\saria-disabled="true"/);
+    expect(render({ mainPoint: 'P' })).not.toMatch(/class="main-point-btn"[^>]*\sdisabled(?!=)[ >]/);
+    expect(render({ mainPoint: 'P' }, { answer: 'My answer' })).not.toMatch(/class="main-point-btn"[^>]*aria-disabled/);
   });
 
   it('escapes the element id in its own attribute', () => {
@@ -241,16 +242,25 @@ describe('the whole feedback path', () => {
 });
 
 // ── 3. Button wiring ──────────────────────────────────────────────────────────
-function fakeCard({ subtype = 'standard', linked = '', withMainPoint = true } = {}) {
+function fakeCard({ subtype = 'standard', linked = '', withMainPoint = true, withHint = false } = {}) {
   const textarea = { value: '', _fn: null, addEventListener(type, fn) { if (type === 'input') this._fn = fn; } };
-  const lv = { disabled: true, removed: false, remove() { this.removed = true; } };
-  const mp = withMainPoint ? { disabled: true, removed: false, remove() { this.removed = true; } } : null;
+  // A button that starts dimmed (aria-disabled); `disabled` reads the attribute.
+  const button = () => ({
+    attrs: { 'aria-disabled': 'true' }, removed: false, remove() { this.removed = true; },
+    get disabled() { return this.attrs['aria-disabled'] === 'true'; },
+    setAttribute(k, v) { this.attrs[k] = v; },
+    removeAttribute(k) { delete this.attrs[k]; },
+  });
+  const lv = button();
+  const mp = withMainPoint ? button() : null;
+  const hint = withHint ? button() : null;
   return {
     dataset: { questionSubtype: subtype, linkedPassage: linked },
-    textarea, lv, mp,
+    textarea, lv, mp, hint,
     querySelector(sel) {
       if (sel === '.local-validate-btn') return lv;
       if (sel === '.main-point-btn') return mp;
+      if (sel === '.hint-btn') return hint;
       if (sel === '.answer-field') return textarea;
       return null;
     },
@@ -284,6 +294,19 @@ describe('wireLocalValidateCards', () => {
     c.textarea.value = '   ';
     c.textarea._fn();
     expect([c.lv.disabled, c.mp.disabled]).toEqual([true, true]);
+  });
+
+  it('removes the Hint button from ineligible cards, and never dims it', () => {
+    const off = fakeCard({ subtype: 'reflection', withHint: true });
+    wire([off]);
+    expect(off.hint.removed).toBe(true);
+    const on = fakeCard({ withHint: true });
+    wire([on]);
+    expect(on.hint.removed).toBe(false);
+    on.hint.attrs = {};
+    on.textarea.value = 'x'; on.textarea._fn();
+    on.textarea.value = '';  on.textarea._fn();
+    expect(on.hint.attrs).toEqual({});
   });
 
   it('works on a card with no Main point button', () => {
@@ -371,12 +394,28 @@ describe('openMainPointModal', () => {
 
 describe('the delegated click listener', () => {
   const click = (sb, target) => sb.__listeners.find(l => l.type === 'click').fn({ target });
-  const buttonTarget = (id, disabled = false) => ({ closest: sel => (sel === '.main-point-btn' ? { disabled, dataset: { mainPointId: id } } : null) });
+  const buttonTarget = (id, disabled = false, card = null) => ({ closest: sel => (sel === '.main-point-btn' ? { disabled, dataset: { mainPointId: id }, closest: () => card } : null) });
+  const cardWith = value => ({ querySelector: sel => (sel === '.answer-field' ? { value } : null) });
 
   it('opens the modal for an enabled button', () => {
     const sb = modalSandbox([{ elementId: 'q1', mainPoint: 'P' }]);
     click(sb, buttonTarget('q1'));
     expect(sb.__calls.footnote).toHaveLength(1);
+  });
+
+  it('opens the modal when the card\u2019s answer has text', () => {
+    const sb = modalSandbox([{ elementId: 'q1', mainPoint: 'P' }]);
+    click(sb, buttonTarget('q1', false, cardWith('My answer')));
+    expect(sb.__calls.footnote).toHaveLength(1);
+  });
+
+  it('with nothing written, shows how to start instead of opening the modal', () => {
+    const sb = modalSandbox([{ elementId: 'q1', mainPoint: 'P' }]);
+    const shown = [];
+    sb.showEmptyAnswerHelp = (card, kind) => shown.push(kind);
+    for (const blank of ['', '   \n']) click(sb, buttonTarget('q1', false, cardWith(blank)));
+    expect(sb.__calls.footnote).toEqual([]);
+    expect(shown).toEqual(['compare', 'compare']);
   });
 
   it('ignores a disabled button, and clicks elsewhere', () => {

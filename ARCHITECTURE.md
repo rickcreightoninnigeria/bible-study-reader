@@ -53,7 +53,7 @@ Rules that matter:
 - Files may only *call* later-loaded functions at runtime; load-time dependencies are few. `format-text.js` needs `DOMPurify` and `markdownit` at load. `render-progress.js` calls `debounce` (from `search.js`) at load. `save.js` runs `debounce(updateProgress, 200)` at load, so `search.js` and `render-progress.js` must load before it.
 - Top-level `const`/`let` are global lexical bindings (not on `window`).
 - `testing/tests/index-html.test.js` checks that every script/stylesheet exists, every `app/js/*.js` file has exactly one tag, the load-time dependencies above are ordered correctly, and the root `index.html` equals `app/index.html`.
-- `answer-match.js` has no load-time dependencies and must load before `validation.js`. The Main point modal lives in `modals.js`.
+- `answer-match.js` has no load-time dependencies and must load before `validation.js`. The Main point modal lives in `modals.js`. The Answer check and Main point buttons are dimmed (`aria-disabled`), not disabled, while the answer is empty: a tap shows the how-to-start toast (`showEmptyAnswerHelp`). The Hint button (`openHintForCard`) shows `questionHintFirst` for an empty answer and `questionHint` otherwise (`_lvPickHint`).
 - Other unit tests load source files into `vm` sandboxes in this order; changing load-time dependencies can break them.
 
 ## 3. Globals and owners

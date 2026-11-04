@@ -473,6 +473,7 @@
 
 /* Validate + main point + mic: no margins, sit flush at the inline-end edge */
 .local-validate-btn,
+.hint-btn,
 .main-point-btn {
   background: none;
   border: none;
@@ -486,14 +487,23 @@
   justify-content: center;
 }
 .local-validate-btn,
+.hint-btn,
 .main-point-btn {
   color: var(--validate);
 }
 
-/* Gap between local-validate, main point and mic */
+/* Gap between local-validate, hint, main point and mic */
 .local-validate-btn,
+.hint-btn,
 .main-point-btn {
   margin-inline-end: 4px;                        /* was margin-right: 4px */
+}
+
+/* Answer check and Main point before anything is written: dimmed but still
+   tappable, so a tap shows how to start. */
+.local-validate-btn[aria-disabled="true"],
+.main-point-btn[aria-disabled="true"] {
+  opacity: 0.4;
 }
 .answer-action-row .mic-btn {
   order: 99;
@@ -502,6 +512,8 @@
 
 .local-validate-btn:hover,
 .local-validate-btn:focus,
+.hint-btn:hover,
+.hint-btn:focus,
 .main-point-btn:hover,
 .main-point-btn:focus {
   opacity: 1;

@@ -988,7 +988,7 @@ function getReviewableFields(el) {
       if (el[`text${n}`] !== undefined) fields.push({ key: `text${n}`, label: 'Text', html: el.format === 'HTML' });
       break;
     case 'question':
-      ['header','question','answerPlaceholder','sampleAnswer','questionHint'].forEach(f => {
+      ['header','question','answerPlaceholder','sampleAnswer','questionHint','questionHintFirst'].forEach(f => {
         if (el[`${f}${n}`] !== undefined) fields.push({ key: `${f}${n}`, label: f });
       });
       break;
@@ -1479,6 +1479,7 @@ function makeQuestionCard(el, chIdx, oN, tN) {
     { base: 'answerPlaceholder', label: 'Placeholder' },
     { base: 'sampleAnswer',      label: 'Sample Answer' },
     { base: 'questionHint',      label: 'Hint' },
+    { base: 'questionHintFirst', label: 'First hint' },
   ];
 
   fieldDefs.forEach(({ base, label }) => {
