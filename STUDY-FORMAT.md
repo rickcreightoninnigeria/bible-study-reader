@@ -40,7 +40,7 @@ Legend: **✔** used · **✖** ignored (no code reads it) · **⛔** unsafe or 
 | Allowed tags/attributes after formatting | `b i em strong u s p br ul ol li blockquote h1–h4 a span sup sub hr`; attributes `href target rel class` only. **Tables, `div`, `cite`, `mark`, images and `id` are stripped** (text kept). Links with `target` get `rel="noopener noreferrer"`. |
 | **Unformatted fields** (question text, headings, callout eyebrow/term/question, Likert text, onboarding body, How-to body, Go Deeper/Leaders non-markdown bodies, About paragraphs) | Inserted as authored HTML after the load-time cleaning (tables, `div`, `cite` survive; scripts/handlers do not). Plain text with `\n` is **not** converted to paragraphs. |
 
-Footnotes (`[[fn:N]]` markers with a chapter `footnotes: [{id, body}]` array) work **only in Go Deeper chapters**. Study chapters never pass footnotes, so markers there show as literal text.
+Footnotes (`[[fn:N]]` markers with a chapter `footnotes: [{id, body}]` array) work **only in Go Deeper chapters**. Study chapters never pass footnotes, so markers there show as literal text. A footnote number is drawn as a small superscript in the study's `emphasis` theme colour, semi-bold, with a larger invisible tap area; tapping it opens the note.
 
 **Inline markers.** Two markers are swapped for app-made markup *after* the text has been cleaned, so they need nothing the cleaning step removes. Apps older than this feature show either marker as literal text.
 
