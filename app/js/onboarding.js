@@ -60,18 +60,35 @@ function getUpgradeOnboardingSlides() {
   // showUpgradeOnboardingIfNeeded() will silently skip, and
   // showUpgradeOnboarding() will show a "nothing to see" toast instead.
   //    body:    '<ul><li><b>??:</b> ??</li><li><b>??:</b> ??</li></ul>',
-  // Written for readers, not authors: say what they will notice. Rewrite this
-  // for each release (the text is English only, like the eyebrow and heading).
+  //
+  // POLICY: keep this slide in step with the app.
+  //  • Every change a reader will notice gets one bullet here, added in the
+  //    same commit as the change. Say what they will notice, in one plain
+  //    sentence with a bold lead-in. Leave out validator, test, documentation
+  //    and author-only changes.
+  //  • Small update: append to this list. People who have already dismissed the
+  //    slide for this version will not see it again (the "seen" flag is per
+  //    version), but it stays under How-to → What's New.
+  //  • Big update (something a reader would be surprised by, or the list has
+  //    passed 8 bullets): bump appVersion in appAboutData_untranslated.json,
+  //    delete the old bullets and start a new list. The new version shows the
+  //    slide again.
+  //  • English only, like the eyebrow and heading: no locale keys, so nothing to
+  //    translate. testing/tests/upgrade-slide.test.js enforces the 8-bullet cap.
   return [
     {
       icon:    '✨',
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
       body:    '<ul>' +
-        '<li><b>Clearer problems:</b> if a study will not open or install, the app now says what went wrong and lets you copy the details.</li>' +
-        '<li><b>Settings → Diagnostics:</b> check your device and studies, and send a problem report by email.</li>' +
-        '<li><b>Updating a study:</b> if you open a file for a study you already have, the app asks whether to keep your copy or replace it.</li>' +
-        '<li><b>Easier reading:</b> lists in Go Deeper, Leaders’ Notes and pop-ups are now properly indented.</li>' +
+        '<li><b>Recommend button:</b> it replaces Save; Print and Share stay where they were. Your answers still save themselves.</li>' +
+        '<li><b>Hint button:</b> the key icon gives a hint on questions that have one, even before you start writing. If you tap Answer check or Main point before writing, the app now tells you how to start.</li>' +
+        '<li><b>Clearer answer check:</b> the feedback shows a face, partial answers get a short list of steps, and hints appear as bullets.</li>' +
+        '<li><b>Back and ✕:</b> they step back one page at a time and return you to the exact place you were reading.</li>' +
+        '<li><b>Go Deeper:</b> a “Back to the study” button now also sits at the top of each chapter.</li>' +
+        '<li><b>Footnotes:</b> the numbers are smaller and easier to tap.</li>' +
+        '<li><b>Other files:</b> if you open a file that isn’t a study, such as a PDF, the app now says so.</li>' +
+        '<li><b>Library:</b> a new Overview section with Biblical Theology appears in both testaments.</li>' +
         '</ul>',
     },
   ];

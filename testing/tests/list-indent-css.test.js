@@ -113,6 +113,6 @@ describe('the upgrade slide', () => {
   const src = readFileSync(join(__dirname, '../../app/js/onboarding.js'), 'utf8');
   it('no longer describes the old storage change', () => {
     expect(src).not.toContain('moving to database storage');
-    expect(src).toContain('Settings → Diagnostics');
+    // (What the slide does say is checked in upgrade-slide.test.js; it is rewritten with each version.)
   });
 });
