@@ -3,6 +3,10 @@
 .apk_hash.txt
 *registration.properties
 *.zip
+# The starter studies the app installs on first run (and the web build ships). All nine
+# are already public in estudy_en (v3)/. Keep it in step with the Android copy:
+# ~/AndroidStudioProjects/bsr/app/src/main/assets/estudy/firstEstudies.zip
+!app/estudy/firstEstudies.zip
 *~
 *_original.json
 *_original(*).json
