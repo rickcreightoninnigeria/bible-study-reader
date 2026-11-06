@@ -65,6 +65,10 @@ async function toggleStar(chapterNum, elementId) {
     return;
   }
 
+  // Search reads star flags from its answer cache; drop it so the next search
+  // sees this toggle.
+  if (typeof storageCache !== 'undefined') storageCache.clear();
+
   // Update the DOM immediately after the write succeeds.
   const cardId = elementId;
   const btnId  = `star_${elementId}`;

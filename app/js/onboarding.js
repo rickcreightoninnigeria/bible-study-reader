@@ -81,14 +81,9 @@ function getUpgradeOnboardingSlides() {
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
       body:    '<ul>' +
-        '<li><b>Recommend button:</b> it replaces Save; Print and Share stay where they were. Your answers still save themselves.</li>' +
-        '<li><b>Hint button:</b> the key icon gives a hint on questions that have one, even before you start writing. If you tap Answer check or Main point before writing, the app now tells you how to start.</li>' +
-        '<li><b>Clearer answer check:</b> the feedback shows a face, partial answers get a short list of steps, and hints appear as bullets.</li>' +
-        '<li><b>Back and ✕:</b> they step back one page at a time and return you to the exact place you were reading.</li>' +
-        '<li><b>Go Deeper:</b> a “Back to the study” button now also sits at the top of each chapter.</li>' +
-        '<li><b>Footnotes:</b> the numbers are smaller and easier to tap.</li>' +
-        '<li><b>Other files:</b> if you open a file that isn’t a study, such as a PDF, the app now says so.</li>' +
-        '<li><b>Library:</b> a new Overview section with Biblical Theology appears in both testaments.</li>' +
+        '<li><b>Stars in Share and Print:</b> a starred question now carries a ⭐ in shared text and a gold star on printed pages. Starred questions you haven’t answered are included in Share all and Print all.</li>' +
+        '<li><b>Starred only:</b> if you have starred questions, Share and Print offer “Starred questions only”. Share all and Print all also open with a list of them.</li>' +
+        '<li><b>Search:</b> a new Starred button lists your starred questions, or limits your search results to them.</li>' +
         '</ul>',
     },
   ];

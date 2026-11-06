@@ -11,8 +11,9 @@
 //   appSettings                    – settings.js
 //   chapters, currentChapter       – state.js
 //   answerFieldKey, likertFieldKey – state.js
-//   isStarredFromCache             – starred.js
-//   starFieldKey                   – state.js
+//   isStarredFromCache,
+//   getStarredQuestions            – starred.js
+//   ICONS                          – icons.js
 //   studyText                      – render-chapter-elements.js (runtime call only)
 //   StudyIDB                       – idb.js
 //   window.activeStudyId           – state.js
@@ -78,16 +79,99 @@ const _printStar = (record, elementId) => isStarredFromCache(record, elementId)
   ? `<span class="q-star" role="img" aria-label="${escapeHtml(t('renderchapter_star_btn_starred'))}">${_PRINT_STAR}</span>`
   : '';
 
-async function shareAnswers() {
+// ── STARRED-ONLY CHOICE AND SUMMARY ──────────────────────────────────────────
+// Share and Print each take an optional `scope`: 'all', 'starred', or nothing.
+// With nothing, the reader is asked only when something is starred; with no
+// stars the buttons work as they always did.
+
+// Resolves to 'all', 'starred', or null when the reader cancels.
+function _askStarScope(count, actionLabel) {
+  return new Promise(resolve => {
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.innerHTML = `
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="starScopeTitle">
+        <div class="modal-title" id="starScopeTitle">${t('shareprint_scope_title')}</div>
+        <div class="star-scope-options">
+          <label class="star-scope-option">
+            <input type="radio" name="starScope" value="all" checked>
+            <span>${t('shareprint_scope_all')}</span>
+          </label>
+          <label class="star-scope-option">
+            <input type="radio" name="starScope" value="starred">
+            <span>${ICONS.starFilled} ${t('shareprint_scope_starred', { count })}</span>
+          </label>
+        </div>
+        <div class="modal-btn-row">
+          <button type="button" class="modal-btn-cancel" data-act="cancel">${t('shareprint_scope_cancel')}</button>
+          <button type="button" class="modal-btn-confirm" data-act="ok">${actionLabel}</button>
+        </div>
+      </div>`;
+    const onKey = e => { if (e.key === 'Escape') done(null); };
+    const done  = value => {
+      document.removeEventListener('keydown', onKey);
+      overlay.remove();
+      resolve(value);
+    };
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) return done(null);
+      const act = e.target.closest('[data-act]');
+      if (!act) return;
+      done(act.dataset.act === 'ok' ? overlay.querySelector('input[name="starScope"]:checked').value : null);
+    });
+    document.addEventListener('keydown', onKey);
+    document.body.appendChild(overlay);
+    overlay.querySelector('input:checked').focus();
+  });
+}
+
+async function _resolveStarScope(scope, starCount, actionLabel) {
+  if (scope === 'all' || scope === 'starred') return scope;
+  return starCount > 0 ? _askStarScope(starCount, actionLabel) : 'all';
+}
+
+// Starred questions for every chapter, aligned with chapters[]. `records` is
+// the array from _loadAllChapterRecords(). The same function drives the
+// starred panel, so stale star flags for questions that no longer exist are
+// not counted.
+const _loadStarredByChapter = records =>
+  Promise.all(chapters.map((ch, i) => getStarredQuestions(ch, records[i] || {})));
+
+// "Starred questions" list that opens Share all and Print all, grouped by
+// chapter. Each returns '' when nothing is starred.
+function _shareStarSummary(starredByChapter, bold) {
+  let text = '';
+  chapters.forEach((ch, i) => {
+    const items = starredByChapter[i] || [];
+    if (!items.length) return;
+    text += bold(t('shareprint_chapter_heading', { number: ch.chapterNumber, title: ch.chapterTitle })) + '\n';
+    items.forEach(({ q }) => { text += `• ${q.ref} — ${q.text}\n`; });
+    text += '\n';
+  });
+  return text ? `${_SHARE_STAR}${bold(t('shareprint_starred_summary_heading'))}\n${text}` : '';
+}
+
+function _printStarSummary(starredByChapter) {
+  let rows = '';
+  chapters.forEach((ch, i) => {
+    const items = starredByChapter[i] || [];
+    if (!items.length) return;
+    rows += `<div class="star-summary-chapter">${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: escapeHtml(ch.chapterTitle) })}</div>`;
+    items.forEach(({ q }) => { rows += `<div class="star-summary-item"><span class="star-summary-ref">${q.ref}</span> ${q.text}</div>`; });
+  });
+  return rows
+    ? `<h2><span class="h-star">${_PRINT_STAR}</span> ${t('shareprint_starred_summary_heading')}</h2><div class="star-summary">${rows}</div>`
+    : '';
+}
+
+// scope: 'all' | 'starred' | undefined (ask, when anything is starred).
+// Starred only leaves out the notes and Likert rows: it is a list of questions.
+async function shareAnswers(scope) {
   const ch      = chapters[currentChapter];
   const studyId = window.activeStudyId;
   const meta    = window.titlePageData || {};
   const fmt     = appSettings.shareFormat === 'plain';
   const bold    = (s) => fmt ? s : `*${s}*`;
-
-  let report = bold(`${meta.title || t('shareprint_default_study_title')}`) + '\n';
-  report += bold(t('shareprint_answers_header', { title: ch.chapterTitle, number: ch.chapterNumber })) + '\n';
-  report += `------------------------------------------\n\n`;
 
   // Read once: star flags are needed by the questions, notes and Likert rows
   // by the end. A failed read still shares the answers, just without stars,
@@ -99,6 +183,16 @@ async function shareAnswers() {
     console.warn('[shareAnswers] IDB read failed; sharing without stars, notes or Likert rows.', e);
   }
 
+  scope = await _resolveStarScope(scope, (await getStarredQuestions(ch, record)).length, t('renderchapter_share_btn'));
+  if (!scope) return;
+  const starredOnly = scope === 'starred';
+  const wanted = id => !starredOnly || isStarredFromCache(record, id);
+
+  let report = bold(`${meta.title || t('shareprint_default_study_title')}`) + '\n';
+  report += bold(t('shareprint_answers_header', { title: ch.chapterTitle, number: ch.chapterNumber })) + '\n';
+  if (starredOnly) report += `${_SHARE_STAR}${bold(t('shareprint_starred_summary_heading'))}\n`;
+  report += `------------------------------------------\n\n`;
+
   // Look up each field by its elementId (data-index) rather than by position
   // in the NodeList — a question whose repeatElement reference doesn't
   // resolve is skipped by the chapter renderer (render-chapter.js's element
@@ -108,6 +202,7 @@ async function shareAnswers() {
   // field actually rendered.
   ch.sections.forEach(section => {
     section.questions.forEach(q => {
+      if (!wanted(q.elementId)) return;
       const field  = document.querySelector(`.answer-field[data-type="q"][data-index="${CSS.escape(q.elementId)}"]`);
       const answer = (field && field.value.trim()) ? field.value.trim() : t('shareprint_no_answer');
       report += `${_starPrefix(record, q.elementId)}${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
@@ -117,32 +212,38 @@ async function shareAnswers() {
   });
 
   if (ch.reflection && ch.reflection.length > 0) {
-    report += bold(t('shareprint_reflection_heading')) + '\n';
-    report += `------------------------------------------\n`;
     // ch.reflection is an array of question-text strings built positionally
     // from the same filtered element list starred.js's getStarredQuestions()
     // uses — reconstruct that list here to resolve each entry's elementId.
     const reflEls = (ch.elements || []).filter(
       e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement
     );
-    ch.reflection.forEach((qText, rIdx) => {
-      const eid    = reflEls[rIdx] ? reflEls[rIdx].elementId : null;
-      const field  = eid ? document.querySelector(`.answer-field[data-type="r"][data-index="${CSS.escape(eid)}"]`) : null;
-      const answer = (field && field.value.trim()) ? field.value.trim() : t('shareprint_no_answer');
-      report += `${_starPrefix(record, eid)}${bold(t('shareprint_label_q'))} ${qText}\n`;
-      report += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
-    });
+    const items = ch.reflection
+      .map((qText, rIdx) => ({ qText, eid: reflEls[rIdx] ? reflEls[rIdx].elementId : null }))
+      .filter(({ eid }) => !starredOnly || (eid && wanted(eid)));
+    if (items.length) {
+      report += bold(t('shareprint_reflection_heading')) + '\n';
+      report += `------------------------------------------\n`;
+      items.forEach(({ qText, eid }) => {
+        const field  = eid ? document.querySelector(`.answer-field[data-type="r"][data-index="${CSS.escape(eid)}"]`) : null;
+        const answer = (field && field.value.trim()) ? field.value.trim() : t('shareprint_no_answer');
+        report += `${_starPrefix(record, eid)}${bold(t('shareprint_label_q'))} ${qText}\n`;
+        report += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
+      });
+    }
   }
 
   // Notes — read from the IDB record since the notes field is not a standard
   // answer-field in the DOM for share purposes (it may not be visible at share time).
-  const notesVal = (record[answerFieldKey('notes', 0)] || '').trim();
-  if (notesVal) {
-    report += bold(t('shareprint_notes_heading')) + '\n';
-    report += `------------------------------------------\n`;
-    report += notesVal + '\n\n';
+  if (!starredOnly) {
+    const notesVal = (record[answerFieldKey('notes', 0)] || '').trim();
+    if (notesVal) {
+      report += bold(t('shareprint_notes_heading')) + '\n';
+      report += `------------------------------------------\n`;
+      report += notesVal + '\n\n';
+    }
+    report += _likertShareText(ch, record, bold);
   }
-  report += _likertShareText(ch, record, bold);
 
   if (window.Android && window.Android.share) {
     window.Android.share(report);
@@ -160,7 +261,10 @@ async function shareAnswers() {
 // single export document and shares/copies it. Chapters with no answers are
 // silently skipped. Pre-loads all chapter answer records from IDB in parallel
 // before building the report.
-async function exportStudyAnswers() {
+// scope: 'all' | 'starred' | undefined (ask, when anything is starred).
+// 'all' lists answered questions plus any starred ones, and opens with a list
+// of the starred questions; 'starred' lists only the starred ones.
+async function exportStudyAnswers(scope) {
   const studyId = window.activeStudyId;
   const meta    = window.titlePageData || {};
   const fmt     = appSettings.shareFormat === 'plain';
@@ -168,6 +272,11 @@ async function exportStudyAnswers() {
 
   // Pre-load all chapter records in parallel.
   const records = await _loadAllChapterRecords(studyId);
+  const starredByChapter = await _loadStarredByChapter(records);
+  const starTotal = starredByChapter.reduce((n, list) => n + list.length, 0);
+  scope = await _resolveStarScope(scope, starTotal, t('renderchapter_share_btn'));
+  if (!scope) return;
+  const starredOnly = scope === 'starred';
 
   // Also load global notes.
   let globalNotes = '';
@@ -178,6 +287,7 @@ async function exportStudyAnswers() {
   let report = bold(`${meta.title || t('shareprint_default_study_title')}`) + '\n';
   report += bold(t('shareprint_complete_answers_heading')) + '\n';
   report += `==========================================\n\n`;
+  if (!starredOnly) report += _shareStarSummary(starredByChapter, bold);
 
   let hasAnyAnswers = false;
 
@@ -195,7 +305,7 @@ async function exportStudyAnswers() {
         const answer  = (record[answerFieldKey('q', q.elementId)] || '').trim();
         const starred = isStarredFromCache(record, q.elementId);
         // A starred question is listed even when blank: the reader marked it.
-        if (answer || starred) {
+        if (starredOnly ? starred : (answer || starred)) {
           chapterHasAnswers = true;
           chapterReport += `${_starPrefix(record, q.elementId)}${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
           chapterReport += `${bold(t('shareprint_label_q'))} ${q.text}\n`;
@@ -212,7 +322,8 @@ async function exportStudyAnswers() {
         .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
         .forEach(el => {
           const answer = (record[answerFieldKey('r', el.elementId)] || '').trim();
-          if (answer || isStarredFromCache(record, el.elementId)) {
+          const starred = isStarredFromCache(record, el.elementId);
+          if (starredOnly ? starred : (answer || starred)) {
             hasReflections    = true;
             chapterHasAnswers = true;
             const qText = studyText(el, 'question');
@@ -227,7 +338,7 @@ async function exportStudyAnswers() {
     }
 
     // Notes
-    const notesAnswer = (record[answerFieldKey('notes', 0)] || '').trim();
+    const notesAnswer = starredOnly ? '' : (record[answerFieldKey('notes', 0)] || '').trim();
     if (notesAnswer) {
       chapterHasAnswers = true;
       chapterReport += bold(t('shareprint_notes_heading')) + '\n';
@@ -235,7 +346,7 @@ async function exportStudyAnswers() {
     }
 
     // Likert scale responses (standard and bipolar)
-    const likertText = _likertShareText(ch, record, bold);
+    const likertText = starredOnly ? '' : _likertShareText(ch, record, bold);
     if (likertText) {
       chapterHasAnswers = true;
       chapterReport += likertText;
@@ -328,6 +439,13 @@ function buildPrintHead(title) {
   .closing { font-style: italic; color: #4a3f30; margin: 16pt 0; padding: 8pt 12pt; border-left: 2pt solid #c8bca8; }
   .question-block { border: 0.5pt solid #ddd; margin: 8pt 0; page-break-inside: avoid; }
   .question-ref { background: #2c2416; color: #d4a843; padding: 4pt 8pt; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .scope-note { font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase; color: #8c6420; margin: 0 0 12pt 0; }
+  .h-star { color: #d4a843; margin-right: 2pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .h-star svg { vertical-align: -1pt; }
+  .star-summary { margin: 0 0 16pt 0; }
+  .star-summary-chapter { font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 10pt 0 4pt 0; }
+  .star-summary-item { font-size: 10pt; margin: 0 0 3pt 0; }
+  .star-summary-ref { font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; color: #8c6420; margin-right: 4pt; }
   .q-star { float: right; line-height: 1; }
   .q-star svg { display: block; }
   .question-text { padding: 6pt 8pt 3pt; font-size: 10pt; }
@@ -366,22 +484,26 @@ async function _loadAllChapterRecords(studyId) {
 // Returns the inner body HTML for a single chapter: intro, sections (bridge +
 // questions with saved answers), closing passage, reflection questions, and notes.
 // record – the pre-loaded IDB answer object for this chapter (from _loadAllChapterRecords).
+// starredOnly – true keeps only the starred questions (no intro, bridges,
+//   closing, Likert rows or notes).
 // Does NOT include a chapter header — callers add their own wrapper.
-function buildChapterBody(ch, record) {
+function buildChapterBody(ch, record, starredOnly) {
   record = record || {};
   let body = '';
+  const wanted = id => !starredOnly || isStarredFromCache(record, id);
 
   // Intro
-  if (ch.intro) {
+  if (ch.intro && !starredOnly) {
     body += `<div class="intro"><p>${_printMarkers(ch.intro.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'))}</p></div>`;
   }
 
   // Sections: bridge text then questions with saved answers
   ch.sections.forEach(sec => {
-    if (sec.bridge) {
+    if (sec.bridge && !starredOnly) {
       body += `<div class="bridge">${_printMarkers(sec.bridge.replace(/<b>/g, '<strong>').replace(/<\/b>/g, '</strong>'))}</div>`;
     }
     sec.questions.forEach(q => {
+      if (!wanted(q.elementId)) return;
       const answer = (record[answerFieldKey('q', q.elementId)] || '').trim();
       body += `<div class="question-block">
         <div class="question-ref">${q.ref}${_printStar(record, q.elementId)}</div>
@@ -392,13 +514,13 @@ function buildChapterBody(ch, record) {
   });
 
   // Closing passage
-  if (ch.closing) {
+  if (ch.closing && !starredOnly) {
     body += `<div class="closing"><p>${_printMarkers(ch.closing.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>'))}</p></div>`;
   }
 
   // Likert scale responses
   (ch.elements || [])
-    .filter(e => e.type === 'likertScale' && !e.repeatElement)
+    .filter(e => e.type === 'likertScale' && !e.repeatElement && !starredOnly)
     .forEach(el => {
       const rows = _likertShareRows(el, record);
       if (!rows.length) return;
@@ -415,11 +537,12 @@ function buildChapterBody(ch, record) {
     });
 
   // Reflection questions with saved answers
-  if (ch.reflection && ch.reflection.length > 0) {
+  const reflEls = (ch.elements || []).filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement);
+  if (ch.reflection && ch.reflection.length > 0 && reflEls.some(el => wanted(el.elementId))) {
     body += `<div class="reflection-heading">${t('shareprint_print_reflection_heading')}</div>`;
-    (ch.elements || [])
-      .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
+    reflEls
       .forEach((el, ri) => {
+        if (!wanted(el.elementId)) return;
         const answer = (record[answerFieldKey('r', el.elementId)] || '').trim();
         const qText  = studyText(el, 'question');
         body += `<div class="question-block">
@@ -431,7 +554,7 @@ function buildChapterBody(ch, record) {
   }
 
   // Notes — only included if non-empty
-  const notesVal = (record[answerFieldKey('notes', 0)] || '').trim();
+  const notesVal = starredOnly ? '' : (record[answerFieldKey('notes', 0)] || '').trim();
   if (notesVal) {
     body += `<div class="notes-heading">${t('shareprint_print_notes_heading')}</div>
       <div class="answer">${escapeHtml(notesVal)}</div>`;
@@ -452,7 +575,8 @@ function dispatchPrint(html, fallbackMsg) {
 
 // Prints the current chapter. Async because it must load the chapter record
 // from IDB before calling buildChapterBody().
-async function printChapter() {
+// scope: 'all' | 'starred' | undefined (ask, when anything is starred).
+async function printChapter(scope) {
   const ch      = chapters[currentChapter];
   const studyId = window.activeStudyId;
   const meta    = window.titlePageData || {};
@@ -464,9 +588,14 @@ async function printChapter() {
     console.warn('[printChapter] IDB read failed; printing with empty answers.', e);
   }
 
+  scope = await _resolveStarScope(scope, (await getStarredQuestions(ch, record)).length, t('renderchapter_print_btn'));
+  if (!scope) return;
+  const starredOnly = scope === 'starred';
+
   const chapterHeader = `<div class="chapter-header">
   <div class="chapter-eyebrow">${t('shareprint_print_chapter_eyebrow', { number: ch.chapterNumber, total: chapters.length, studyTitle: escapeHtml(meta.title) })}</div>
   <h1>${escapeHtml(ch.chapterTitle)}</h1>
+  ${starredOnly ? `<div class="scope-note">${t('shareprint_starred_summary_heading')}</div>` : ''}
 </div>`;
 
   const docTitle = t('shareprint_print_doc_title_chapter', { studyTitle: escapeHtml(meta.title), number: ch.chapterNumber, chapterTitle: escapeHtml(ch.chapterTitle) });
@@ -476,7 +605,7 @@ async function printChapter() {
 ${buildPrintHead(docTitle)}
 <body>
 ${chapterHeader}
-${buildChapterBody(ch, record)}
+${buildChapterBody(ch, record, starredOnly)}
 </body></html>`;
 
   dispatchPrint(html, t('shareprint_print_fallback_chapter', { studyTitle: escapeHtml(meta.title), number: ch.chapterNumber, chapterTitle: escapeHtml(ch.chapterTitle) }));
@@ -484,7 +613,9 @@ ${buildChapterBody(ch, record)}
 
 // Prints all chapters as a single document. Pre-loads all chapter records and
 // global notes from IDB before building HTML.
-async function printAllChapters() {
+// scope: 'all' | 'starred' | undefined (ask, when anything is starred).
+// 'all' opens with a list of the starred questions; 'starred' prints only them.
+async function printAllChapters(scope) {
   const studyId     = window.activeStudyId;
   const meta        = window.titlePageData || {};
   const datePrinted = new Date().toLocaleDateString(resolveLanguage(), {
@@ -496,6 +627,11 @@ async function printAllChapters() {
     _loadAllChapterRecords(studyId),
     StudyIDB.getAnswerRaw(globalNotesIDBKey(studyId)).catch(() => ''),
   ]);
+  const starredByChapter = await _loadStarredByChapter(records);
+  const starTotal = starredByChapter.reduce((n, list) => n + list.length, 0);
+  scope = await _resolveStarScope(scope, starTotal, t('renderchapter_print_btn'));
+  if (!scope) return;
+  const starredOnly = scope === 'starred';
 
   const cover = `<div class="cover">
   <div class="eyebrow">${t('shareprint_print_cover_eyebrow')}</div>
@@ -503,24 +639,25 @@ async function printAllChapters() {
   <div style="font-size:9pt; color:#666; margin-top:6pt;">${t('shareprint_print_cover_date', { date: datePrinted })}</div>
 </div>`;
 
-  let chaptersHTML = '';
+  let chaptersHTML = starredOnly
+    ? `<div class="scope-note">${t('shareprint_starred_summary_heading')}</div>`
+    : _printStarSummary(starredByChapter);
   chapters.forEach((ch, i) => {
     const record = records[i] || {};
 
     // Skip chapters that have no saved content. A starred question counts,
     // answered or not.
-    const hasContent = Object.entries(record).some(([field, val]) =>
-      ((field.startsWith('q_') || field.startsWith('r_') || field === answerFieldKey('notes', 0)) && (val || '').trim()) ||
-      (field.startsWith(starFieldKey('')) && val === '1')
-    );
+    const hasContent = starredByChapter[i].length > 0 || (!starredOnly && Object.entries(record).some(([field, val]) =>
+      (field.startsWith('q_') || field.startsWith('r_') || field === answerFieldKey('notes', 0)) && (val || '').trim()
+    ));
     if (!hasContent) return;
 
     chaptersHTML += `<h2>${t('shareprint_print_chapter_h2', { number: ch.chapterNumber, title: escapeHtml(ch.chapterTitle) })}</h2>
-${buildChapterBody(ch, record)}`;
+${buildChapterBody(ch, record, starredOnly)}`;
   });
 
   // Notes & Comments page
-  if (appSettings.showPageNotes && globalNotes && globalNotes.trim()) {
+  if (!starredOnly && appSettings.showPageNotes && globalNotes && globalNotes.trim()) {
     chaptersHTML += `
 <h2>${t('shareprint_print_notes_page_heading')}</h2>
 <div class="answer" style="min-height:0;">${escapeHtml(globalNotes.trim())}</div>`;

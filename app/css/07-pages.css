@@ -2865,6 +2865,23 @@ body.dark-mode .footnote-btn { color: var(--accent-light); }
   margin-bottom: 20px;
 }
 .modal-btn-row { display: flex; gap: 10px; }
+/* "All questions / Starred only" choice before Share and Print */
+.star-scope-options { display: flex; flex-direction: column; gap: 4px; margin-bottom: 20px; }
+.star-scope-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--main-font-family);
+  font-size: 0.9375rem;
+  color: var(--text);
+  cursor: pointer;
+}
+.star-scope-option:has(input:checked) { border-color: var(--emphasis); }
+.star-scope-option input { accent-color: var(--emphasis); }
+.star-scope-option svg { color: var(--emphasis); vertical-align: -2px; }
 .modal-btn-cancel {
   flex: 1;
   padding: 12px;

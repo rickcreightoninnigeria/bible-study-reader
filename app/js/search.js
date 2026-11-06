@@ -11,10 +11,32 @@
 //   StudyIDB                      – idb.js
 //   goToChapter                   – navigation.js
 //   closeMenu, saveLastPosition   – navigation.js / utils.js (called at runtime only)
+//   isStarredFromCache            – starred.js
 //   isNonChapterPage              – state.js
 //   window._titleBeforeSearch     – state.js
 //   window.activeTabPage          – state.js
 //   window.activeStudyId          – state.js
+
+// ── STARRED FILTER ────────────────────────────────────────────────────────────
+// The "Starred" chip limits results to starred questions. With the chip on and
+// nothing typed, the results are every starred question in the study. Off each
+// time the search opens, so an old filter never hides results unexpectedly.
+
+let searchStarOnly = false;
+
+function _syncSearchStarChip() {
+  const chip = document.getElementById('searchStarFilter');
+  if (!chip) return;
+  chip.innerHTML = `${ICONS.starFilled} ${escapeHtml(t('starred_panel_title'))}`;
+  chip.classList.toggle('active', searchStarOnly);
+  chip.setAttribute('aria-pressed', searchStarOnly ? 'true' : 'false');
+}
+
+function toggleSearchStarFilter() {
+  searchStarOnly = !searchStarOnly;
+  _syncSearchStarChip();
+  runSearchCore(document.getElementById('searchInput').value);
+}
 
 // ── OPEN / CLOSE ──────────────────────────────────────────────────────────────
 
@@ -25,6 +47,8 @@ function openSearch() {
   // which has no activeTabPage) so closeSearch() can restore it exactly.
   window._nonChapterBeforeSearch = isNonChapterPage;
   isNonChapterPage = true;
+  searchStarOnly = false;
+  _syncSearchStarChip();
   document.getElementById('searchOverlay').classList.add('open');
   const searchBtn = document.getElementById('navSearchBtn');
   if (searchBtn) { searchBtn.innerHTML = ICONS.close; searchBtn.onclick = () => closeSearch(); }
@@ -285,8 +309,10 @@ function scoreResult({ text, ref, type, answer }, queries, originalQuery) {
 async function runSearchCore(query) {
   const resultsEl = document.getElementById('searchResults');
   const originalQuery = query.trim();
+  // Starred filter on with nothing (useful) typed: list every starred question.
+  const browse = searchStarOnly && originalQuery.length < 2;
 
-  if (originalQuery.length < 2) {
+  if (originalQuery.length < 2 && !browse) {
     resultsEl.innerHTML =
       `<div class="search-empty">${t('search_empty_prompt')}</div>`;
     return;
@@ -296,13 +322,14 @@ async function runSearchCore(query) {
   // This is the single async step — everything after is synchronous.
   await _loadAnswerCache();
 
-  const queries = expandQuery(originalQuery);
+  const queries = browse ? [] : expandQuery(originalQuery);
+  const matches = text => browse || queries.some(q => text.includes(q));
   const results = [];
 
   chapters.forEach((ch, chIdx) => {
     (ch.sections || []).forEach((sec, sIdx) => {
       // 1. Search bridge text
-      if (sec.bridge) {
+      if (sec.bridge && !searchStarOnly) {
         const plain = stripHtml(sec.bridge);
         const norm = normalize(plain);
         if (queries.some(q => norm.includes(q))) {
@@ -321,14 +348,16 @@ async function runSearchCore(query) {
         const qText = stripHtml(question.text);
         const ref   = question.ref;
         const eid   = question.elementId || `${sIdx}_${qIdx}`;
+        const starred = isStarredFromCache(storageCache.get(ch.chapterNumber), eid);
+        if (searchStarOnly && !starred) return;
         const savedAnswer = _getCachedAnswer(ch.chapterNumber, answerFieldKey('q', eid));
 
         const combined     = qText + ' ' + ref + ' ' + savedAnswer;
         const normCombined = normalize(combined);
 
-        if (queries.some(q => normCombined.includes(q))) {
+        if (matches(normCombined)) {
           results.push({
-            chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle, ref,
+            chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle, ref, starred,
             text: qText,
             answer: savedAnswer,
             type: 'question',
@@ -337,11 +366,11 @@ async function runSearchCore(query) {
           });
         }
 
-        if (savedAnswer) {
+        if (savedAnswer && !browse) {
           const normAns = normalize(savedAnswer);
           if (queries.some(q => normAns.includes(q))) {
             results.push({
-              chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle, ref,
+              chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle, ref, starred,
               questionText: qText,
               answer: savedAnswer,
               type: 'answer',
@@ -357,13 +386,17 @@ async function runSearchCore(query) {
     (ch.elements || [])
       .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
       .forEach((el, rIdx) => {
-        const savedAnswer = _getCachedAnswer(ch.chapterNumber, answerFieldKey('r', el.elementId));
-        if (savedAnswer) {
-          const norm = normalize(savedAnswer);
-          if (queries.some(q => norm.includes(q))) {
-            const questionText = stripHtml(studyText(el, 'question'));
+        const starred = isStarredFromCache(storageCache.get(ch.chapterNumber), el.elementId);
+        if (searchStarOnly && !starred) return;
+        const savedAnswer  = _getCachedAnswer(ch.chapterNumber, answerFieldKey('r', el.elementId));
+        const questionText = stripHtml(studyText(el, 'question'));
+        // Reflections normally match on the answer only; a starred reflection
+        // also matches on its question, and is listed when browsing starred.
+        if (savedAnswer || searchStarOnly) {
+          const norm = normalize(savedAnswer + (searchStarOnly ? ' ' + questionText : ''));
+          if (matches(norm)) {
             results.push({
-              chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle,
+              chIdx, chNum: ch.chapterNumber, chTitle: ch.chapterTitle, starred,
               ref: t('search_reflection_ref', { num: rIdx + 1 }),
               questionText,
               answer: savedAnswer,
@@ -377,12 +410,18 @@ async function runSearchCore(query) {
   });
 
   // Fuzzy fallback
-  if (results.length === 0 && originalQuery.length <= 10) {
+  if (results.length === 0 && !browse && originalQuery.length <= 10) {
     const suggestion = getSuggestion(originalQuery);
     if (suggestion && suggestion !== originalQuery) return runSearchCore(suggestion);
   }
 
-  results.sort((a, b) => b.score - a.score);
+  // Browsing starred questions keeps the study's own order.
+  if (!browse) results.sort((a, b) => b.score - a.score);
+
+  if (results.length === 0 && browse) {
+    resultsEl.innerHTML = `<div class="search-empty">${t('search_starred_none')}</div>`;
+    return;
+  }
 
   if (results.length === 0) {
     const suggestion   = getSuggestion(originalQuery);
@@ -397,24 +436,24 @@ async function runSearchCore(query) {
   }
 
   let html = '';
-  const suggestion = getSuggestion(originalQuery);
+  const suggestion = browse ? '' : getSuggestion(originalQuery);
   if (suggestion && suggestion !== normalize(originalQuery)) {
     html += `<div class="search-section-label">${t('search_did_you_mean_label', { suggestion: escapeHtml(suggestion) })}</div>`;
   }
 
-  results.slice(0, 50).forEach(r => {
+  (browse ? results : results.slice(0, 50)).forEach(r => {
     const cardAttr = r.cardId ? ` data-card-id="${escapeHtml(r.cardId)}"` : '';
     html += `
       <div class="search-result-item" data-ch-idx="${r.chIdx}"${cardAttr}>
         <div class="search-result-meta">
-          ${t('search_result_meta', { chNum: r.chNum, chTitle: escapeHtml(r.chTitle) })}${r.ref ? ' · ' + escapeHtml(r.ref) : ''}
+          ${r.starred ? `<span class="search-result-star">${ICONS.starFilled}</span>` : ''}${t('search_result_meta', { chNum: r.chNum, chTitle: escapeHtml(r.chTitle) })}${r.ref ? ' · ' + escapeHtml(r.ref) : ''}
         </div>
         <div class="search-result-text">
-          ${highlightMatch(r.text || r.questionText, originalQuery)}
+          ${highlightMatch(r.text || r.questionText, browse ? '' : originalQuery)}
         </div>
         ${r.answer ? `
           <div class="search-result-answer">
-            "${highlightMatch(r.answer.substring(0, 120), originalQuery)}"
+            "${highlightMatch(r.answer.substring(0, 120), browse ? '' : originalQuery)}"
           </div>` : ''}
       </div>`;
   });
