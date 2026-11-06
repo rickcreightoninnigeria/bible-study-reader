@@ -13,7 +13,7 @@
 //                 build. Files unchanged since the previous build are copied
 //                 from the old cache, not downloaded again. If a required file
 //                 cannot be fetched the install fails and the old version
-//                 keeps running; "optional" files (fonts, starter studies,
+//                 keeps running; "optional" files (fonts,
 //                 icons) may fail without blocking it.
 //   • no skipWaiting – a new build waits until every window of the app has
 //                 closed, then takes over. Old and new files are never mixed

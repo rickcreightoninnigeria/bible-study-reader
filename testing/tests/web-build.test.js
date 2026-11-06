@@ -93,15 +93,14 @@ describe('the build', () => {
     expect(byUrl['js/app.js'].optional).toBeUndefined();
     expect(byUrl['fonts/Inter-Regular.ttf'].optional).toBe(true);
     expect(byUrl['images/favicon.svg'].optional).toBe(true);
-    expect(urls).not.toContain('estudy/firstEstudies.zip');       // not in this fixture: skipped, not an error
   });
 
-  it('includes the starter studies as an optional file when present', () => {
+  it('ships the starter studies but does not precache them (the first run fetches them once)', () => {
     const f = fixture();
     writeFileSync(join(f.app, 'estudy', 'firstEstudies.zip'), 'zip');
     run(f.script, ['--out', f.out]);
-    const e = precacheOf(join(f.out, 'sw.js')).list.find(x => x.url === 'estudy/firstEstudies.zip');
-    expect(e && e.optional).toBe(true);
+    expect(existsSync(join(f.out, 'estudy', 'firstEstudies.zip'))).toBe(true);
+    expect(precacheOf(join(f.out, 'sw.js')).list.some(x => x.url === 'estudy/firstEstudies.zip')).toBe(false);
   });
 
   it('gives the same id for the same files, and a new id (and new sw.js) when a cached file changes', () => {
@@ -189,7 +188,7 @@ describe('the real app', () => {
     expect(existsSync(join(out, 'estudy-editor.html'))).toBe(false);
     expect(existsSync(join(out, 'sw.js'))).toBe(true);
     expect(existsSync(join(out, 'estudy', 'firstEstudies.zip'))).toBe(true);
-    expect(precacheOf(join(out, 'sw.js')).list.some(e => e.url === 'estudy/firstEstudies.zip')).toBe(true);
+    expect(precacheOf(join(out, 'sw.js')).list.some(e => e.url === 'estudy/firstEstudies.zip')).toBe(false);
   });
 
   it('keeps the precache modest (so a first visit on mobile data stays small)', () => {

@@ -39,11 +39,13 @@ ALWAYS_REQUIRED = ["manifest.webmanifest", "js/appAboutData_untranslated.json"]
 EN_STRINGS_DIR = "js/locales/en"
 
 # Cached up front but allowed to fail: they make the app nicer offline, not usable.
+# estudy/firstEstudies.zip is deliberately not here: the page fetches it once on
+# the first run to install the starter studies, and is never needed again, so
+# caching it as well would download it twice.
 OPTIONAL = [
     "images/favicon.svg",
     "images/pwa-icon-192.png",
     "images/pwa-icon-512.png",
-    "estudy/firstEstudies.zip",
 ]
 # Latin faces the app and the print page use; the Noto script fonts and the
 # rest are cached the first time a language needs them.
