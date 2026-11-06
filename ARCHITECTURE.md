@@ -19,15 +19,15 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 - `settings.js` — `SETTINGS_DEFAULTS`, `appSettings`, save/reset, clear answers.
 - `tts.js`, `voice.js` — read-aloud and voice input (Android bridge, Web Speech fallback).
 - `modals.js` — verse/QA/deeper/Likert/info/footnote modals, `renderLikertScale`, `safeSetHtml`, `_safeUrl`.
-- `starred.js` — starring questions, starred panels.
-- `search.js` — search overlay, scoring, synonyms, `debounce`, `storageCache`.
+- `starred.js` — starring questions, starred panels. `getStarredQuestions(ch, record)` is the one list of a chapter's starred questions (panel, Progress page, Share/Print counts); it ignores flags for questions that no longer exist. `toggleStar` clears `storageCache` so Search sees the change.
+- `search.js` — search overlay, scoring, synonyms, `debounce`, `storageCache` (every chapter's answer record, including star flags). The Starred chip (`toggleSearchStarFilter`, state `searchStarOnly`, reset when the overlay opens) limits results to starred questions; with it on and fewer than two characters typed, `runSearchCore` lists every starred question in study order instead of showing the prompt. Results for starred questions carry a star in every mode.
 - `onboarding.js` — app/study/upgrade onboarding slides, first-use info triggers, `updateNavButtons`.
 - `router.js` — `Router`, History API, popstate, modal/overlay back-handling.
 - `utils.js` — Swal dark-mode patch, last-position save/restore, toasts, `escapeHtml`, `jsArg`, long-press copy, `getPlatform`.
 - `answer-match.js` — pure, DOM-free text matching for the answer check (Unicode-aware normalising, `keyTerms`, result codes). `validation.js` — the answer-check UI: gathers inputs from the question *element* (looked up by the card id, not from `data-*` attributes), maps result codes to translated messages, wires the buttons. Local (offline) answer checks only. It does **not** validate study files. (It once also held an AI tutor; that was removed and `studyAiData` in study files is ignored.)
 - `gestures.js` — swipe nav, scroll/visibility saves.
 - `navigation.js` — `goToChapter`, menu drawer, non-chapter page reset.
-- `share-print.js` — share/export/print answers.
+- `share-print.js` — share/export/print answers. `shareAnswers`, `exportStudyAnswers`, `printChapter` and `printAllChapters` take an optional `scope` (`'all'`, `'starred'`, or none). With none, `_resolveStarScope` shows the "All questions / Starred questions only" card (`_askStarScope`) only when something is starred, and the function stops if the reader cancels. `'starred'` keeps just the starred questions (no intro, bridge text, closing, Likert rows or notes); `'all'` in Share all and Print all opens with a starred list (`_shareStarSummary`, `_printStarSummary`). Starred questions are always included in the all-chapters outputs, answered or not. A starred question has `⭐ ` at the start of its first line in shared text and a vector star (`.q-star`) in the print reference bar. Stars are read from the chapter record with `isStarredFromCache`.
 - `pathways-import.js` — imported pathways, merged pathway reader, active-pathway keys.
 - `render-progress.js` — progress page, notes page, pathway progress.
 - `render-library.js` — library tabs (All, Recent, Shelves, Paths, Load), pins, delete.
@@ -153,7 +153,7 @@ SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev onl
 ## 12. Not verified
 
 - **No device or WebView testing.** Everything was run in desktop Chromium via Playwright; Android WebView, iOS, and the Kotlin wrapper (not in this repo) were not examined.
-- **Not read in full:** `onboarding.js`, `validation.js` (local validation internals), `tts.js`/`voice.js` beyond the bridge calls, `render-library.js` shelves logic, `share-print.js` print HTML, the CSS files, the four editor HTML tools, the `py/` scripts, `render-pages.js` Settings/How-to/About internals, `migrate.js` internals.
+- **Not read in full:** `onboarding.js`, `validation.js` (local validation internals), `tts.js`/`voice.js` beyond the bridge calls, `render-library.js` shelves logic, the CSS files, the four editor HTML tools, the `py/` scripts, `render-pages.js` Settings/How-to/About internals, `migrate.js` internals.
 - **Rendering of `howToUseData`, `studyAboutData`, `copyrightData`** was traced in `render-pages.js` for the fields `STUDY-FORMAT.md` lists; other fields are spot-checked.
 - **The Android-to-JS call names** are taken from JS definitions; the native side's actual invocations were not seen.
 - **Which `index.html` is deployed** (root copy or `app/`), and how the web build is hosted, is unknown; both are kept identical.
