@@ -1119,12 +1119,9 @@ async function renderSettings(tabId) {
                   ${ICONS.download}&nbsp;${t('renderpages_settings_appupdates_btn_android')}
                 </button>`;
       }
-      if (platform === 'ios') {
-        return `<button class="howto-share-btn" style="margin:0 0 4px; opacity:0.45; cursor:default;" disabled>
-                  ${ICONS.download}&nbsp;${t('renderpages_settings_appupdates_btn_ios')}
-                </button>`;
-      }
-      // 'web' — no store button; the app is Android/iOS only
+      // 'ios' and 'web' — no store button. There is no native iPhone app yet, so
+      // an iPhone browser is running the web version like any other browser
+      // (the old "Coming soon on the App Store" button was for a native wrapper).
       return '';
     })();
 
@@ -1147,7 +1144,7 @@ async function renderSettings(tabId) {
           <div class="settings-row">
             <div class="settings-row-text">
               <div class="settings-row-label">${t('renderpages_settings_appupdates_label')}</div>
-              <div class="settings-row-desc">${t('renderpages_settings_appupdates_body_' + platform)}</div>
+              <div class="settings-row-desc">${t('renderpages_settings_appupdates_body_' + (platform === 'android' ? 'android' : 'webapp'))}</div>
             </div>
           </div>
           ${appStoreButton ? `

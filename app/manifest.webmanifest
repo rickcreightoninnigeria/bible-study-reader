@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Bible Study Reader",
+  "short_name": "BSR",
+  "description": "Work through Bible studies with passages, questions and your own answers, on your phone, offline.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0ece4",
+  "theme_color": "#1c1710",
+  "icons": [
+    { "src": "images/pwa-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "images/pwa-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "images/pwa-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

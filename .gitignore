@@ -35,3 +35,6 @@ estudy_en (v3)/Belief/Love and Wisdom.estudy
 # Files already committed in such folders stay tracked until removed with git rm --cached.
 old/
 old */
+
+# Output of py/build_web.py
+dist/

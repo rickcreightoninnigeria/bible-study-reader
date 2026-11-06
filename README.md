@@ -21,8 +21,9 @@ Licensed **CC BY-SA 4.0** — Rick Creighton, 2026.
 9. [Android / WebView integration](#android--webview-integration)
 10. [Third-party dependencies](#third-party-dependencies)
 11. [Running locally](#running-locally)
-12. [Contributing](#contributing)
-13. [Licence](#licence)
+12. [Web version](#web-version)
+13. [Contributing](#contributing)
+14. [Licence](#licence)
 
 ---
 
@@ -64,6 +65,8 @@ Licensed **CC BY-SA 4.0** — Rick Creighton, 2026.
 
 ```
 index.html                  Main app shell (HTML skeleton only — no inline JS or CSS)
+manifest.webmanifest        Web app manifest (name, icons, standalone display) for Home Screen install
+sw.js                       Service-worker template; py/build_web.py writes the deployed copy
 
 css/
   01-fonts.css              @font-face declarations; per-script :lang() overrides
@@ -112,6 +115,8 @@ js/
   study-loader.js           .estudy version check, applyStudyData(), file loading router, Android entry points
   migrate.js                One-time localStorage → IndexedDB answer-data migration (safe to remove
                              once no users remain on a pre-migration version)
+  web-app.js                Web build only (inert in the Android app): service-worker registration,
+                             durable-storage request, Add to Home Screen hint
   app-init.js               DOMContentLoaded startup sequence (startApp()); locale loader;
                              reloadLocaleAndRerender()
   gallery.js                Image-gallery blocks (thumbnail grid + full-screen viewer) for Go Deeper / Leaders' Notes
@@ -183,6 +188,7 @@ See `ARCHITECTURE.md` for a fuller overview of the codebase.
 | 25 | `render-library.js` | `renderLibrary()`, `recordStudyOpened()`, `recordStudyInstalled()`, library history helpers | `idb.js`, `icons.js`, `settings.js`, `utils.js` |
 | 26 | `study-loader.js` | `applyStudyData()`, `loadAnyFile()`, `loadStudyFromJson()`, `loadStudyFromBase64()`, `activateStudy()`, `deleteStudy()`, `openLibrary()` | Most of the above |
 | 27 | `migrate.js` | `migrateAnswersToIDB()` | `idb.js`, `state.js` |
+| 27a | `web-app.js` | `registerServiceWorker()`, `scheduleAddToHomeScreenHint()` | `utils.js` (runtime only) |
 | 28 | `app-init.js` | `startApp()`, `reloadLocaleAndRerender()` | Everything above |
 | 29 | `gallery.js` | `buildGalleryHtml()`, `prefetchGalleryImages()`, `storeGalleryImages()`, `openGalleryViewer()` | `render-chapter.js` (`_imageBlobCache`, runtime), `idb.js` |
 | 30 | `render-pages.js` | `renderHowToUse()`, `renderSettings()` (augments settings.js), `renderLeadersNotes()`, `renderGoDeeper()`, `renderAbout()`, `renderTitlePage()`, `navigateTab()` | `icons.js`, `settings.js`, `onboarding.js`, `navigation.js` |
@@ -516,6 +522,19 @@ No other external scripts, no CDN calls at runtime.
 4. **Load a study.** Use the Library → Load button to open a `.estudy` file
    from your local machine. See [AUTHORING-TUTORIAL.md](AUTHORING-TUTORIAL.md) for how
    to create one.
+
+---
+
+## Web version
+
+The same app runs in a browser and can be added to the Home Screen on iPhone and Android.
+
+- **Build:** `python3 py/build_web.py --out dist/web` (standard library only). It copies `app/` without the author tools and writes a service worker that caches the app for offline use.
+- **Publish:** the `Deploy web build` workflow (`.github/workflows/pages.yml`) runs the tests and publishes to GitHub Pages on every push to `main` that touches `app/`. Set it up once under Settings → Pages → Source: GitHub Actions. The site is served from a sub-folder, `https://<owner>.github.io/bible-study-reader/`, so the app uses relative paths throughout.
+- **Updates are silent.** A new version installs in the background and takes over the next time every window of the app has been closed.
+- **Developing:** the service worker is off on `localhost`, so a dev server never serves cached scripts. To try it, run `localStorage.setItem('bsr_dev_sw', '1')` in the console and reload, then remove the key and unregister the worker (DevTools → Application) when finished.
+- **Starter studies:** `app/estudy/firstEstudies.zip` is tracked in git and shipped with the build. Keep it identical to the Android project's `assets/estudy` copy.
+- **Details:** ARCHITECTURE.md section 9a.
 
 ---
 

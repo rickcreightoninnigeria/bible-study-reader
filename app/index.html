@@ -64,6 +64,18 @@
   <!-- ───── FAVICON ───────────────────────────────────────────────── -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="alternate icon" href="images/favicon.svg">
+
+  <!-- ───── WEB APP / HOME SCREEN ─────────────────────────────────── -->
+  <!-- Used by the web build only; the Android WebView ignores all of it.
+       The nav bar is #1c1710 and pads itself by env(safe-area-inset-top), so a
+       translucent status bar lets it run up under the clock on iPhone. -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta name="theme-color" content="#1c1710">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BSR">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 
@@ -233,6 +245,7 @@
 <script src="js/render-library.js"></script>
 <script src="js/study-loader.js"></script>
 <script src="js/migrate.js"></script>
+<script src="js/web-app.js"></script>
 <script src="js/app-init.js"></script>
 <script src="js/gallery.js"></script>
 <script src="js/render-pages.js"></script>

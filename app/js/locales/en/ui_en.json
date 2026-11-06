@@ -701,6 +701,10 @@
   "renderpages_settings_appupdates_body_web"        : "This app is available for Android, with iOS coming soon.",
   "renderpages_settings_appupdates_btn_android"     : "Open in Google Play",
   "renderpages_settings_appupdates_btn_ios"         : "Coming soon on the App Store",
+  "renderpages_settings_appupdates_body_webapp"     : "You are using the web version. It updates itself: close the app completely, then open it again to get the latest version.",
+  "a2hs_title"                                      : "Add to Home Screen",
+  "a2hs_body"                                       : "Add this app to your Home Screen to use it full-screen and offline. In Safari, tap the Share button, then choose “Add to Home Screen”.",
+  "a2hs_ok"                                         : "Got it",
 
   "renderpages_shareapp_download_title": "Get the app",
   "renderpages_shareapp_download_body":  "The app is free to download on Google Play.",
