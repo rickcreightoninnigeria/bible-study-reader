@@ -11,6 +11,8 @@
 //   appSettings                    – settings.js
 //   chapters, currentChapter       – state.js
 //   answerFieldKey, likertFieldKey – state.js
+//   isStarredFromCache             – starred.js
+//   starFieldKey                   – state.js
 //   studyText                      – render-chapter-elements.js (runtime call only)
 //   StudyIDB                       – idb.js
 //   window.activeStudyId           – state.js
@@ -63,6 +65,19 @@ function _likertShareText(ch, record, bold) {
   return text;
 }
 
+// A starred question carries a star in the shared text (at the start of its
+// first line) and in the printed reference bar, so a reader can pick out what
+// they marked. `record` is the chapter's answer record from IDB.
+const _SHARE_STAR = '⭐ ';
+const _starPrefix  = (record, elementId) => isStarredFromCache(record, elementId) ? _SHARE_STAR : '';
+
+// Inline vector star for the print window, which has no icon sizing and may
+// lack an emoji font. It takes its colour from the reference bar around it.
+const _PRINT_STAR = `<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l2.65 5.86 6.35.93-4.6 4.5 1.09 6.34L12 16.77l-5.49 2.86 1.09-6.34L3 8.79l6.35-.93L12 2z"/></svg>`;
+const _printStar = (record, elementId) => isStarredFromCache(record, elementId)
+  ? `<span class="q-star" role="img" aria-label="${escapeHtml(t('renderchapter_star_btn_starred'))}">${_PRINT_STAR}</span>`
+  : '';
+
 async function shareAnswers() {
   const ch      = chapters[currentChapter];
   const studyId = window.activeStudyId;
@@ -73,6 +88,16 @@ async function shareAnswers() {
   let report = bold(`${meta.title || t('shareprint_default_study_title')}`) + '\n';
   report += bold(t('shareprint_answers_header', { title: ch.chapterTitle, number: ch.chapterNumber })) + '\n';
   report += `------------------------------------------\n\n`;
+
+  // Read once: star flags are needed by the questions, notes and Likert rows
+  // by the end. A failed read still shares the answers, just without stars,
+  // notes and Likert rows.
+  let record = {};
+  try {
+    record = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
+  } catch (e) {
+    console.warn('[shareAnswers] IDB read failed; sharing without stars, notes or Likert rows.', e);
+  }
 
   // Look up each field by its elementId (data-index) rather than by position
   // in the NodeList — a question whose repeatElement reference doesn't
@@ -85,7 +110,7 @@ async function shareAnswers() {
     section.questions.forEach(q => {
       const field  = document.querySelector(`.answer-field[data-type="q"][data-index="${CSS.escape(q.elementId)}"]`);
       const answer = (field && field.value.trim()) ? field.value.trim() : t('shareprint_no_answer');
-      report += `${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
+      report += `${_starPrefix(record, q.elementId)}${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
       report += `${bold(t('shareprint_label_q'))} ${q.text}\n`;
       report += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
     });
@@ -104,25 +129,20 @@ async function shareAnswers() {
       const eid    = reflEls[rIdx] ? reflEls[rIdx].elementId : null;
       const field  = eid ? document.querySelector(`.answer-field[data-type="r"][data-index="${CSS.escape(eid)}"]`) : null;
       const answer = (field && field.value.trim()) ? field.value.trim() : t('shareprint_no_answer');
-      report += `${bold(t('shareprint_label_q'))} ${qText}\n`;
+      report += `${_starPrefix(record, eid)}${bold(t('shareprint_label_q'))} ${qText}\n`;
       report += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
     });
   }
 
-  // Notes — read from IDB since the notes field is not a standard answer-field
-  // in the DOM for share purposes (it may not be visible at share time).
-  try {
-    const record  = await StudyIDB.getChapterAnswers(studyId, ch.chapterNumber);
-    const notesVal = (record[answerFieldKey('notes', 0)] || '').trim();
-    if (notesVal) {
-      report += bold(t('shareprint_notes_heading')) + '\n';
-      report += `------------------------------------------\n`;
-      report += notesVal + '\n\n';
-    }
-    report += _likertShareText(ch, record, bold);
-  } catch (e) {
-    console.warn('[shareAnswers] IDB read failed for notes.', e);
+  // Notes — read from the IDB record since the notes field is not a standard
+  // answer-field in the DOM for share purposes (it may not be visible at share time).
+  const notesVal = (record[answerFieldKey('notes', 0)] || '').trim();
+  if (notesVal) {
+    report += bold(t('shareprint_notes_heading')) + '\n';
+    report += `------------------------------------------\n`;
+    report += notesVal + '\n\n';
   }
+  report += _likertShareText(ch, record, bold);
 
   if (window.Android && window.Android.share) {
     window.Android.share(report);
@@ -172,12 +192,14 @@ async function exportStudyAnswers() {
     // Question answers
     ch.sections.forEach(section => {
       section.questions.forEach(q => {
-        const answer = (record[answerFieldKey('q', q.elementId)] || '').trim();
-        if (answer) {
+        const answer  = (record[answerFieldKey('q', q.elementId)] || '').trim();
+        const starred = isStarredFromCache(record, q.elementId);
+        // A starred question is listed even when blank: the reader marked it.
+        if (answer || starred) {
           chapterHasAnswers = true;
-          chapterReport += `${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
+          chapterReport += `${_starPrefix(record, q.elementId)}${bold(t('shareprint_label_ref'))} ${q.ref}\n`;
           chapterReport += `${bold(t('shareprint_label_q'))} ${q.text}\n`;
-          chapterReport += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
+          chapterReport += `${bold(t('shareprint_label_a'))} ${answer || t('shareprint_no_answer')}\n\n`;
         }
       });
     });
@@ -190,12 +212,12 @@ async function exportStudyAnswers() {
         .filter(e => e.type === 'question' && e.subtype === 'reflection' && !e.repeatElement)
         .forEach(el => {
           const answer = (record[answerFieldKey('r', el.elementId)] || '').trim();
-          if (answer) {
+          if (answer || isStarredFromCache(record, el.elementId)) {
             hasReflections    = true;
             chapterHasAnswers = true;
             const qText = studyText(el, 'question');
-            reflectionReport += `${bold(t('shareprint_label_q'))} ${qText}\n`;
-            reflectionReport += `${bold(t('shareprint_label_a'))} ${answer}\n\n`;
+            reflectionReport += `${_starPrefix(record, el.elementId)}${bold(t('shareprint_label_q'))} ${qText}\n`;
+            reflectionReport += `${bold(t('shareprint_label_a'))} ${answer || t('shareprint_no_answer')}\n\n`;
           }
         });
       if (hasReflections) {
@@ -306,6 +328,8 @@ function buildPrintHead(title) {
   .closing { font-style: italic; color: #4a3f30; margin: 16pt 0; padding: 8pt 12pt; border-left: 2pt solid #c8bca8; }
   .question-block { border: 0.5pt solid #ddd; margin: 8pt 0; page-break-inside: avoid; }
   .question-ref { background: #2c2416; color: #d4a843; padding: 4pt 8pt; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .q-star { float: right; line-height: 1; }
+  .q-star svg { display: block; }
   .question-text { padding: 6pt 8pt 3pt; font-size: 10pt; }
   .answer { padding: 6pt 8pt; font-size: 10pt; border-top: 0.5pt solid #ddd; background: #f9f9f9; min-height: 32pt; white-space: pre-wrap; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .no-answer { color: #aaa; font-style: italic; }
@@ -360,7 +384,7 @@ function buildChapterBody(ch, record) {
     sec.questions.forEach(q => {
       const answer = (record[answerFieldKey('q', q.elementId)] || '').trim();
       body += `<div class="question-block">
-        <div class="question-ref">${q.ref}</div>
+        <div class="question-ref">${q.ref}${_printStar(record, q.elementId)}</div>
         <div class="question-text">${q.text}</div>
         <div class="answer ${answer ? '' : 'no-answer'}">${answer ? escapeHtml(answer) : t('shareprint_print_no_answer')}</div>
       </div>`;
@@ -399,7 +423,7 @@ function buildChapterBody(ch, record) {
         const answer = (record[answerFieldKey('r', el.elementId)] || '').trim();
         const qText  = studyText(el, 'question');
         body += `<div class="question-block">
-          <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}</div>
+          <div class="question-ref">${t('shareprint_print_reflection_label', { number: ri + 1 })}${_printStar(record, el.elementId)}</div>
           <div class="question-text">${qText}</div>
           <div class="answer ${answer ? '' : 'no-answer'}">${answer ? escapeHtml(answer) : t('shareprint_print_no_answer')}</div>
         </div>`;
@@ -483,10 +507,11 @@ async function printAllChapters() {
   chapters.forEach((ch, i) => {
     const record = records[i] || {};
 
-    // Skip chapters that have no saved content.
+    // Skip chapters that have no saved content. A starred question counts,
+    // answered or not.
     const hasContent = Object.entries(record).some(([field, val]) =>
-      (field.startsWith('q_') || field.startsWith('r_') || field === answerFieldKey('notes', 0)) &&
-      (val || '').trim()
+      ((field.startsWith('q_') || field.startsWith('r_') || field === answerFieldKey('notes', 0)) && (val || '').trim()) ||
+      (field.startsWith(starFieldKey('')) && val === '1')
     );
     if (!hasContent) return;
 
