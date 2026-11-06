@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 """Check a Bible Study Reader study against STUDY-FORMAT.md section 13.
 
-Usage:  python3 validate_study.py study.json      (or a .estudy zip)
+Usage:  python3 validate_study.py [--explain] study.json      (or a .estudy zip)
+
+--explain also prints, for every sample answer and main point, how it fared in the
+answer check: the result, how many keyTerms matched (and which did not), how much of
+it repeats the passage, and its length. Use it when rewording an answer.
 
 The app does no validation of its own, so these are the mistakes that fail
 silently. Errors mean something will not work; warnings mean a field is
 ignored or a habit is risky. Exit status is 1 if there are any errors.
-Standard library only.
+Standard library only. The answer-check test also needs Node.js and the app's own
+answer-match.js (in ../app/js/, next to this script, or at the path in the
+ANSWER_MATCH_JS environment variable). If either is missing, that is an error: the
+test cannot run, and a study is not checked until it can.
 """
-import difflib, json, os, re, sys, unicodedata, zipfile
+import difflib, html, json, os, re, shutil, subprocess, sys, unicodedata, zipfile
 
 ID_RE = re.compile(r'^[A-Za-z0-9_.-]+$')
 GD_RESERVED = {'chapterNumber', 'backToStudy', 'format', 'title', 'footnotes',
@@ -17,6 +24,9 @@ IGNORED_IN_ELEMENTS = ['answerType', 'required', 'commentHint']
 IGNORED_IN_METADATA = ['tags', 'createdAt', 'updatedAt', 'shareMessage', 'publishedBy',
                        'year', 'ctaLabel']
 errors, warnings = [], []
+explained = []
+EXPLAIN = False
+ANSWER_CHECK_NOTE = ''
 err = lambda m: errors.append(m)
 warn = lambda m: warnings.append(m)
 
@@ -37,19 +47,22 @@ def strings(o, path='', out=None):
 
 def icon_names():
     """Keys of ICONS_ROUNDED in app/js/icons.js, or None if that file is not found."""
-    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'app', 'js', 'icons.js')
+    here = os.path.dirname(os.path.abspath(__file__))
+    p = next((q for q in (os.path.join(here, '..', 'app', 'js', 'icons.js'), os.path.join(here, 'icons.js'))
+              if os.path.isfile(q)), None)
     try:
         src = open(p, encoding='utf-8').read()
         a = src.index('const ICONS_ROUNDED = {')
         return set(re.findall(r'^\s{2}([A-Za-z0-9]+):\s*`', src[a:src.index('\n};', a)], re.M))
-    except (OSError, ValueError):
+    except (OSError, ValueError, TypeError):
         return None
 
 
 def shelf_structure():
     """{shelf: {section: [subsection, ...]}} from the English libraryShelvesStructure file, or None if not found."""
-    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'app', 'js', 'locales', 'en',
-                     'libraryShelvesStructure_en.json')
+    here = os.path.dirname(os.path.abspath(__file__))
+    p = next((q for q in (os.path.join(here, '..', 'app', 'js', 'locales', 'en', 'libraryShelvesStructure_en.json'),
+                          os.path.join(here, 'libraryShelvesStructure_en.json')) if os.path.isfile(q)), '')
     try:
         data = json.load(open(p, encoding='utf-8'))
         return {sh['shelf']: {sec['section']: [x['name'] if isinstance(x, dict) else x
@@ -356,6 +369,168 @@ def table_widths(html):
         yield widths
 
 
+# ---------------------------------------------------------------------------
+# Answer-check test: run each question's sampleAnswer and mainPoint through the
+# app's real matcher (answer-match.js), exactly as the app would for a reader who
+# typed that text. Both should reach "strong" (or "pass" where there are no
+# keyTerms). Otherwise a reader who copies the sample answer or the main point
+# can still be told "partial", "off topic" or "repeats the passage".
+# Node.js and answer-match.js are used so the result is the app's own, not an
+# approximation. Findings are warnings.
+AM_RUNNER = r"""
+const fs = require('fs'), vm = require('vm');
+const src = fs.readFileSync(process.argv[1], 'utf8') +
+  '\n;globalThis.__api = { evaluateAnswer, normaliseText, tokenise, _isContent, parseKeyTerms, matchKeyTerms,' +
+  ' countWords, AM_LIMITS, STOPWORDS_BY_LANG };';
+const ctx = { console }; vm.createContext(ctx); vm.runInContext(src, ctx);
+const A = ctx.__api;
+const jobs = JSON.parse(fs.readFileSync(0, 'utf8'));
+function detail(j) {
+  const lang = String(j.lang || 'en').toLowerCase().split(/[-_]/)[0] || 'en';
+  const limit = A.STOPWORDS_BY_LANG[lang] ? A.AM_LIMITS.RATIO_WITH_STOPWORDS : A.AM_LIMITS.RATIO_NO_STOPWORDS;
+  const toks = A.tokenise(A.normaliseText(j.answer), lang).filter(t => A._isContent(t, lang, 2));
+  const pw = new Set();
+  for (const p of (j.passageTexts || [])) for (const t of A.tokenise(A.normaliseText(p), lang)) if (A._isContent(t, lang, 2)) pw.add(t);
+  const fresh = toks.filter(t => !pw.has(t));
+  const raw = Array.isArray(j.keyTerms) ? j.keyTerms.filter(x => typeof x === 'string' && x !== '') : [];
+  const terms = A.parseKeyTerms(j.keyTerms);
+  const missed = [];
+  terms.forEach((t, i) => { if (A.matchKeyTerms(j.answer, [t], lang).matched === 0) missed.push(raw[i]); });
+  let minWords = 6;
+  const th = j.shortAnswerThreshold;
+  const ov = (typeof th === 'number' || (typeof th === 'string' && th !== '')) ? parseInt(th, 10) : NaN;
+  if (Number.isFinite(ov)) minWords = ov;
+  else if (j.sampleAnswer) minWords = Math.min(6, Math.round(A.countWords(j.sampleAnswer, lang) * 0.35));
+  return { overlap: toks.length ? 1 - fresh.length / toks.length : 0, limit, hasPassage: pw.size > 0,
+           fresh: Array.from(new Set(fresh)).slice(0, 12), missed, total: terms.length,
+           words: A.countWords(j.answer, lang), minWords };
+}
+process.stdout.write(JSON.stringify(jobs.map(j => ({ r: A.evaluateAnswer(j), x: detail(j) }))));
+"""
+
+
+def find_answer_match():
+    here = os.path.dirname(os.path.abspath(__file__))
+    for p in (os.environ.get('ANSWER_MATCH_JS'),
+              os.path.join(here, '..', 'app', 'js', 'answer-match.js'),
+              os.path.join(here, 'answer-match.js')):
+        if p and os.path.isfile(p):
+            return p
+    return None
+
+
+def _plain(s):
+    """Text a reader would type or see, for a question, sample answer or main point:
+    [[sc:Text]] becomes Text, [[icon:name]] goes, tags become spaces, markdown emphasis and
+    links lose their marks, entities are decoded."""
+    s = re.sub(r'\[\[sc:(.*?)\]\]', r'\1', str(s))
+    s = re.sub(r'\[\[icon:[A-Za-z0-9]*\]\]', '', s)
+    s = re.sub(r'<[^>]+>', ' ', s)
+    s = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', s)
+    s = re.sub(r'[*_`]{1,3}', '', s)
+    return re.sub(r'\s+', ' ', html.unescape(s)).strip()
+
+
+def _plain_passage(raw):
+    """A passage as the app compares it (_lvPlainPassage in validation.js): [[sc:Text]] becomes
+    Text, a <sup> verse number is dropped, every other tag becomes a space, entities are decoded,
+    and a verse number stuck to a word ("21For") is removed."""
+    s = re.sub(r'\[\[sc:(.*?)\]\]', r'\1', str(raw))
+    s = re.sub(r'<sup\b[^>]*>\s*\d+[a-z]?\s*</sup>', ' ', s, flags=re.I)
+    s = re.sub(r'<[^>]*>', ' ', s)
+    s = html.unescape(s)
+    s = re.sub(r'\b\d+(?=[a-zA-Z])', '', s)
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+def check_answers(study, multilingual, explain=False):
+    meta = study.get('studyMetadata') or {}
+    global ANSWER_CHECK_NOTE
+    lang = str(meta.get('language1' if multilingual else 'language') or 'en')
+    slot = '1' if multilingual else ''
+    if multilingual:
+        ANSWER_CHECK_NOTE = ' (first language only)'
+    jobs, labels = [], []
+    for ch in study.get('chapters') or []:
+        passages = {}
+        for el in ch.get('elements') or []:
+            if el.get('type') == 'biblePassage':
+                for k, v in el.items():
+                    m = re.fullmatch(r'bibleRef(\d*)', k)
+                    if m and v:
+                        txt = el.get('passageText' + m.group(1))
+                        if isinstance(txt, str):
+                            passages.setdefault(v, []).append(_plain_passage(txt))
+                continue
+            if el.get('type') != 'question' or el.get('subtype') == 'reflection' and not el.get('linkedPassage'):
+                continue
+            if el.get('type') == 'question' and el.get('subtype') in ('header',):
+                continue
+            kt = el.get('keyTerms' + slot)
+            sample = el.get('sampleAnswer' + slot)
+            main = el.get('mainPoint' + slot)
+            if not kt and not sample:
+                continue
+            base = {'questionText': _plain(el.get('question' + slot, '')),
+                    'passageTexts': passages.get(el.get('linkedPassage'), []),
+                    'sampleAnswer': sample if isinstance(sample, str) else '',
+                    'keyTerms': kt, 'lang': lang,
+                    'shortAnswerThreshold': el.get('shortAnswerThreshold' + slot, el.get('shortAnswerThreshold')),
+                    'skipBibleVerseCheck': bool(el.get('skipBibleVerseCheck'))}
+            where = f'chapter {ch.get("chapterNumber")}, {el.get("elementId")}'
+            for field, text in (('sampleAnswer', sample), ('mainPoint', main)):
+                if isinstance(text, str) and text.strip():
+                    jobs.append(dict(base, answer=_plain(text)))
+                    labels.append((where, field))
+    if not jobs:
+        return
+    path = find_answer_match()
+    if not path:
+        err('answer-check test cannot run: answer-match.js not found (put the app\'s answer-match.js next to this '
+            'script, or in ../app/js/, or set ANSWER_MATCH_JS)')
+        return
+    if not shutil.which('node'):
+        err('answer-check test cannot run: Node.js not found')
+        return
+    try:
+        out = subprocess.run(['node', '-e', AM_RUNNER, path], input=json.dumps(jobs), capture_output=True,
+                             text=True, timeout=60)
+        results = json.loads(out.stdout)
+    except Exception as e:  # noqa: BLE001
+        err(f'answer-check test could not run: {e}')
+        return
+    why = {'partial': 'matches too few of its keyTerms, so a reader who copies it is told "partial"',
+           'offTopic': 'matches none of its keyTerms',
+           'repeatsPassage': 'is flagged as repeating the passage (over 70% of its content words appear in it); '
+                             'put it in your own words and give the keyTerms plain-English alternatives',
+           'repeatsQuestion': 'is flagged as repeating the question',
+           'tooShort': 'is too short for the answer check', 'stuck': 'is treated as a filler answer'}
+    for (where, field), item in zip(labels, results):
+        r, x = item['r'], item['x']
+        code = r.get('code')
+        if explain:
+            tot = x['total']
+            need = max(-(-tot // 2), min(2, tot)) if tot else 0
+            bits = [f'{field}: {code}']
+            if tot:
+                bits.append(f'keyTerms {tot - len(x["missed"])} of {tot} (needs {need})')
+            if x['hasPassage']:
+                bits.append(f'repeats the passage {round(x["overlap"] * 100)}% (limit {round(x["limit"] * 100)}%)')
+            bits.append(f'{x["words"]} words (minimum {x["minWords"]})')
+            line = f'{where}: ' + '; '.join(bits)
+            if x['missed']:
+                line += '; missed: ' + ', '.join(f'"{m}"' for m in x['missed'])
+            if code == 'repeatsPassage' and x['fresh']:
+                line += '; words not in the passage: ' + ', '.join(x['fresh'])
+            elif code == 'repeatsPassage':
+                line += '; no words of its own'
+            explained.append(line)
+        if code in ('strong', 'pass', 'passNoSample'):
+            continue
+        extra = f' ({r.get("matched")} of {r.get("total")} keyTerms)' if code in ('partial', 'offTopic') else ''
+        warn(f'{where}: {field} {why.get(code, "does not pass the answer check: " + str(code))}{extra}')
+
+
 def load(path):
     zf = None
     if zipfile.is_zipfile(path):
@@ -407,6 +582,7 @@ def main(path):
 
     check_translations(study)
     check_leaders(study, multilingual)
+    check_answers(study, multilingual, EXPLAIN)
 
     seen_ids, nums = {}, set()
     for ch in chapters:
@@ -453,6 +629,11 @@ def main(path):
                     warn(f'{where}: keyTerms has {len(kt)} entries; only 12 are used')
                 else:
                     check_key_terms(where, kt)
+            hf = el.get('questionHintFirst')
+            if hf is not None and not isinstance(hf, str):
+                warn(f'{where}: questionHintFirst must be a string; anything else is ignored, so there is no first hint')
+            elif isinstance(hf, str) and hf.strip() and hf.strip() == str(el.get('questionHint', '')).strip():
+                warn(f'{where}: questionHintFirst is identical to questionHint; the first hint should only nudge')
             mp = el.get('mainPoint')
             if isinstance(mp, str) and len(mp) > 2000:
                 warn(f'{where}: mainPoint is over 2,000 characters')
@@ -547,9 +728,16 @@ def main(path):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if a != '--explain']
+    EXPLAIN = '--explain' in sys.argv[1:]
+    if len(args) != 1 or len(sys.argv[1:]) - len(args) > 1:
         sys.exit(__doc__)
-    main(sys.argv[1])
+    main(args[0])
+    if EXPLAIN and explained:
+        print('Answer-check detail (sampleAnswer and mainPoint, as the app would judge them)' + ANSWER_CHECK_NOTE + ':')
+        for m in explained:
+            print('  ', m)
+        print()
     for m in errors:
         print('ERROR  ', m)
     for m in warnings:
