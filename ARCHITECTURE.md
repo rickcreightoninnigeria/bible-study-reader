@@ -134,7 +134,7 @@ Downloads are never fetched in-app: links go to `Android.openUrl`/`window.open`,
 
 ## 10. Third-party libraries (vendored in `app/js/`)
 
-SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev only: vitest 2, fake-indexeddb. All fonts are bundled in `app/fonts/` and declared in `css/01-fonts.css` (29 faces, all load locally; the app makes no font requests). Only the print window (`share-print.js`) and the four editor tools still link Google Fonts. The app itself makes no JavaScript-initiated request to an external host (the locale and library loaders use relative XHR; downloads are handed to the browser).
+SweetAlert2 11.26.24, JSZip 3.10.1, DOMPurify 3.4.3, markdown-it 14.1.1. Dev only: vitest 2, fake-indexeddb. All fonts are bundled in `app/fonts/` and declared in `css/01-fonts.css` (29 faces, all load locally; the app makes no font requests). Only the four editor tools still link Google Fonts; the print document declares its own bundled faces. The app itself makes no JavaScript-initiated request to an external host (the locale and library loaders use relative XHR; downloads are handed to the browser).
 
 ## 11. Fragile or surprising
 

@@ -137,3 +137,45 @@ describe('in a browser (no Android bridge)', () => {
     expect(frame.removed).toBe(true);
   });
 });
+
+// ── The print document's fonts ────────────────────────────────────────────────
+// The print document must not reach out to a font host (the only request the
+// app would otherwise make just by printing), so every face it uses has to be a
+// local @font-face pointing at a file that is really in app/fonts/.
+
+import { existsSync } from 'fs';
+
+describe('print document fonts', () => {
+  const sandbox = {
+    console, window: {}, document: { documentElement: {} },
+    appSettings: { useSansSerif: false },
+    getComputedStyle: () => ({ getPropertyValue: () => '' }),
+  };
+  vm.createContext(sandbox);
+  vm.runInContext(src, sandbox, { filename: 'share-print.js' });
+  const head = sandbox.buildPrintHead('Title');
+
+  it('links to no external host', () => {
+    expect(head).not.toMatch(/https?:\/\//);
+    expect(head).not.toContain('<link');
+  });
+
+  it('declares every face from a file that exists in app/fonts/', () => {
+    const files = [...head.matchAll(/url\('fonts\/([^']+)'\)/g)].map(m => m[1]);
+    expect(files.length).toBeGreaterThanOrEqual(8);
+    for (const f of files) {
+      expect(existsSync(join(__dirname, '../../app/fonts', f)), f).toBe(true);
+    }
+  });
+
+  it('declares no two faces with the same family, weight and style (the later one would replace the earlier)', () => {
+    const faces = [...head.matchAll(/@font-face \{([^}]*)\}/g)].map(m => m[1]);
+    const key = f => ['font-family', 'font-weight', 'font-style'].map(p => (f.match(new RegExp(p + ':\\s*([^;]+);')) || [])[1]).join('|');
+    const keys = faces.map(key);
+    expect(new Set(keys).size).toBe(keys.length);
+  });
+
+  it('declares Inter italic as italic', () => {
+    expect(head).toMatch(/Inter-Italic\.ttf'\) format\('truetype'\); font-weight: 400; font-style: italic;/);
+  });
+});

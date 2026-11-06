@@ -410,6 +410,8 @@ function buildPrintHead(title) {
   const divineNameTracking = getComputedStyle(document.documentElement)
     .getPropertyValue('--divine-name-tracking').trim() || _DIVINE_NAME_TRACKING_FALLBACK;
 
+  // Every face the document uses is bundled and declared here, so printing makes
+  // no request to any font host. Keep this list in step with fonts/.
   const fontFaceCSS = `
     @font-face { font-family: 'Playfair Display'; src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
     @font-face { font-family: 'Playfair Display'; src: url('fonts/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: block; }
@@ -417,13 +419,12 @@ function buildPrintHead(title) {
     @font-face { font-family: 'Source Serif 4'; src: url('fonts/SourceSerif4-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
     @font-face { font-family: 'Source Serif 4'; src: url('fonts/SourceSerif4-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: block; }
     @font-face { font-family: 'Inter'; src: url('fonts/Inter-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
-    @font-face { font-family: 'Inter'; src: url('fonts/Inter-Italic.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
+    @font-face { font-family: 'Inter'; src: url('fonts/Inter-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: block; }
     @font-face { font-family: 'Inter'; src: url('fonts/Inter-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: block; }`;
 
   return `<head>
 <meta charset="UTF-8">
 <title>${title}</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   ${fontFaceCSS}
 
