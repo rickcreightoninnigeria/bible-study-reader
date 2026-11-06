@@ -103,7 +103,7 @@ js/
   gestures.js               Swipe gesture navigation between chapters/tabs; scroll and
                              visibilitychange listeners (backgrounding save, last position)
   navigation.js             goToChapter(), menu open/close, tab reset
-  share-print.js            Answer export/share/print report generation; Android share/print bridge
+  share-print.js            Answer export/share/print report generation; Android share/print bridge, browser print via a hidden iframe
   pathways-import.js        User-importable learning pathways (.epathway / pathways.json): validation, storage,
                              merged built-in + imported pathway reader, active-pathway keys, download hand-off
   render-progress.js        Progress Overview page, Notes page, pathway helpers, renderMenu(),

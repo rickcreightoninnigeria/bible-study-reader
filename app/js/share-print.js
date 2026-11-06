@@ -563,12 +563,50 @@ function buildChapterBody(ch, record, starredOnly) {
   return body;
 }
 
+// Prints `html` through the Android bridge, or with the browser's own print
+// dialog when there is no bridge (the web build). Android without a print
+// bridge shares fallbackMsg instead.
 function dispatchPrint(html, fallbackMsg) {
   if (window.Android && window.Android.printContent) {
     window.Android.printContent(html);
   } else if (window.Android && window.Android.share) {
     window.Android.share(fallbackMsg);
+  } else {
+    _printInFrame(html);
   }
+}
+
+// Browser print from a hidden iframe. A new window would be caught by popup
+// blockers (printing starts after an async read and sometimes a chooser card),
+// and printing the app's own page would print the app. The frame is sandboxed
+// without scripts, so nothing in the document can run; allow-modals is what
+// lets print() open the dialog and allow-same-origin lets us call it. Printing
+// waits for fonts (the document uses font-display: block, so it would print
+// blank text otherwise) but not for long. The frame is removed after printing,
+// or after a minute where `afterprint` never fires.
+const _PRINT_FONT_WAIT_MS  = 3000;
+const _PRINT_FRAME_TTL_MS  = 60000;
+
+function _printInFrame(html) {
+  const frame = document.createElement('iframe');
+  frame.setAttribute('sandbox', 'allow-modals allow-same-origin');
+  frame.setAttribute('aria-hidden', 'true');
+  frame.tabIndex = -1;
+  frame.style.cssText = 'position:fixed; right:0; bottom:0; width:0; height:0; border:0; visibility:hidden;';
+  const cleanup = () => frame.remove();
+  frame.addEventListener('load', () => {
+    const win = frame.contentWindow;
+    if (!win) return cleanup();
+    win.addEventListener('afterprint', cleanup);
+    const fontsReady = (win.document.fonts && win.document.fonts.ready) || Promise.resolve();
+    Promise.race([fontsReady, new Promise(r => setTimeout(r, _PRINT_FONT_WAIT_MS))]).then(() => {
+      win.focus();
+      win.print();
+      setTimeout(cleanup, _PRINT_FRAME_TTL_MS);
+    });
+  });
+  frame.srcdoc = html;
+  document.body.appendChild(frame);
 }
 
 // ── PRINT FUNCTIONS ───────────────────────────────────────────────────────────
