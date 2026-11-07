@@ -1,0 +1,23 @@
+# Studies bundled into app/estudy/firstEstudies.zip (installed on a reader's first run).
+#
+# One path per line, relative to "estudy_en (v3)/". Lines starting with # are notes.
+# Build the zip with:  python3 py/build_first_estudies.py
+# It uses the .estudy files named here as they stand now, so when a study listed
+# here is revised, rebuild; when a new study is ready, add it here and rebuild.
+# The script also copies the zip to the Android project's assets/estudy/ (the two
+# copies must stay identical).
+
+NT/(41) Introducing Mark.estudy
+OT/(01) Introducing Genesis.estudy
+OT/(32) Travelling with Jonah.estudy
+NT/(62) 1 John for Today.estudy
+Life/Conversion.estudy
+Life/Find Rest for your Soul.estudy
+Life/Grow in Christ (1).estudy
+Belief/Truth Unlocked (1).estudy
+Belief/Truth Unlocked (2).estudy
+NT/(44) Introducing Acts.estudy
+NT/(48) Introducing Ephesians.estudy
+NT/(00) Bible Overview (NT).estudy
+OT/(00) Bible Overview (OT).estudy
+Life/Grow in Christ (2)/grow_in_christ_volume_2.estudy

@@ -533,7 +533,7 @@ The same app runs in a browser and can be added to the Home Screen on iPhone and
 - **Publish:** the `Deploy web build` workflow (`.github/workflows/pages.yml`) runs the tests and publishes to GitHub Pages on every push to `main` that touches `app/`. Set it up once under Settings → Pages → Source: GitHub Actions. The site is served from a sub-folder, `https://<owner>.github.io/bible-study-reader/`, so the app uses relative paths throughout.
 - **Updates are silent.** A new version installs in the background and takes over the next time every window of the app has been closed.
 - **Developing:** the service worker is off on `localhost`, so a dev server never serves cached scripts. To try it, run `localStorage.setItem('bsr_dev_sw', '1')` in the console and reload, then remove the key and unregister the worker (DevTools → Application) when finished.
-- **Starter studies:** `app/estudy/firstEstudies.zip` is tracked in git and shipped with the build. Keep it identical to the Android project's `assets/estudy` copy.
+- **Starter studies:** `app/estudy/firstEstudies.zip` is tracked in git and shipped with the build. Keep it identical to the Android project's `assets/estudy` copy. The studies in it are listed in `py/firstEstudies.list`; run `python3 py/build_first_estudies.py` to rebuild the zip (it validates each study and copies the zip to the Android assets).
 - **Details:** ARCHITECTURE.md section 9a.
 
 ---
