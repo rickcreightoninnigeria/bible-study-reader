@@ -433,7 +433,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el33",
+          "elementId"        :"ch01-el34",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -454,11 +454,11 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el34",
+          "elementId"    :"ch01-el35",
           "repeatElement":"ch01-el32"
         },
         {
-          "elementId"        :"ch01-el35",
+          "elementId"        :"ch01-el36",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -479,7 +479,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el36",
+          "elementId"    :"ch01-el37",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -488,7 +488,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el37",
+          "elementId"    :"ch01-el38",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:1-3",
@@ -498,7 +498,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el38",
+          "elementId"        :"ch01-el39",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -519,7 +519,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el39",
+          "elementId"    :"ch01-el40",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:4-6",
@@ -529,7 +529,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el40",
+          "elementId"        :"ch01-el41",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -550,7 +550,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch01-el41",
+          "elementId"    :"ch01-el42",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:15-17",
@@ -560,7 +560,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el42",
+          "elementId"        :"ch01-el43",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -1720,7 +1720,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch04-el18",
+          "elementId"        :"ch04-el19",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -1741,7 +1741,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el19",
+          "elementId"    :"ch04-el20",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 4:9-11",
@@ -1751,7 +1751,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch04-el20",
+          "elementId"        :"ch04-el21",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -1772,7 +1772,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el21",
+          "elementId"    :"ch04-el22",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -1782,7 +1782,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el22",
+          "elementId"    :"ch04-el23",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -1801,7 +1801,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch04-el23",
+          "elementId"        :"ch04-el25",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -1822,7 +1822,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el24",
+          "elementId"    :"ch04-el26",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -1832,7 +1832,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el25",
+          "elementId"    :"ch04-el27",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -1842,7 +1842,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el26",
+          "elementId"    :"ch04-el28",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -1851,7 +1851,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el27",
+          "elementId"    :"ch04-el29",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 4:2",
@@ -1861,7 +1861,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch04-el28",
+          "elementId"        :"ch04-el30",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -1882,7 +1882,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el29",
+          "elementId"    :"ch04-el31",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 4:9-11",
@@ -1892,7 +1892,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch04-el30",
+          "elementId"        :"ch04-el32",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -1913,7 +1913,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch04-el31",
+          "elementId"    :"ch04-el33",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 4:3-4",
@@ -1923,7 +1923,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch04-el32",
+          "elementId"        :"ch04-el34",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -2208,7 +2208,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch05-el23",
+          "elementId"        :"ch05-el24",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -2229,7 +2229,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el24",
+          "elementId"    :"ch05-el25",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -2239,7 +2239,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el25",
+          "elementId"    :"ch05-el26",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -2249,7 +2249,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"        :"ch05-el26",
+          "elementId"        :"ch05-el27",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -2270,7 +2270,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el27",
+          "elementId"    :"ch05-el28",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -2279,7 +2279,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el28",
+          "elementId"    :"ch05-el29",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 3:10",
@@ -2289,7 +2289,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch05-el29",
+          "elementId"        :"ch05-el30",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -2310,7 +2310,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el30",
+          "elementId"    :"ch05-el31",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -2320,7 +2320,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el31",
+          "elementId"    :"ch05-el32",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -2329,7 +2329,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el32",
+          "elementId"    :"ch05-el33",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 3:5",
@@ -2339,7 +2339,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch05-el33",
+          "elementId"        :"ch05-el34",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -2360,7 +2360,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el34",
+          "elementId"    :"ch05-el35",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 3:10",
@@ -2370,7 +2370,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch05-el35",
+          "elementId"        :"ch05-el36",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -2391,7 +2391,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch05-el36",
+          "elementId"    :"ch05-el37",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 3:1-3",
@@ -2401,7 +2401,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch05-el37",
+          "elementId"        :"ch05-el38",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -3211,7 +3211,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch07-el25",
+          "elementId"        :"ch07-el26",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -3232,7 +3232,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch07-el26",
+          "elementId"    :"ch07-el27",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -3242,7 +3242,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch07-el27",
+          "elementId"    :"ch07-el28",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -3251,7 +3251,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"        :"ch07-el28",
+          "elementId"        :"ch07-el29",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -3272,7 +3272,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch07-el29",
+          "elementId"    :"ch07-el30",
           "type"         :"heading",
           "subtype"      :"section",
           "level"        :"2",
@@ -3281,7 +3281,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch07-el30",
+          "elementId"    :"ch07-el31",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:9",
@@ -3291,7 +3291,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch07-el31",
+          "elementId"        :"ch07-el32",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -3312,7 +3312,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch07-el32",
+          "elementId"    :"ch07-el33",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:15-16",
@@ -3322,7 +3322,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch07-el33",
+          "elementId"        :"ch07-el34",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -3343,7 +3343,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch07-el34",
+          "elementId"    :"ch07-el35",
           "type"         :"callout",
           "subtype"      :"highlighted",
           "format"       :"HTML",
@@ -3353,7 +3353,7 @@
           "bottomPadding":"normal"
         },
         {
-          "elementId"    :"ch07-el35",
+          "elementId"    :"ch07-el36",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Jonah 1:1-3",
@@ -3363,7 +3363,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch07-el36",
+          "elementId"        :"ch07-el37",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -3839,24 +3839,24 @@
           "images" :[
             {
               "elementId":"ch01-el03",
-              "alt"    :"Map of the ancient Near East showing Israel and Nineveh",
-              "caption":"Image 1: Jonah’s world — Israel sits left of centre; Nineveh lies far to the north-east"
+              "alt"      :"Map of the ancient Near East showing Israel and Nineveh",
+              "caption"  :"Image 1: Jonah’s world — Israel sits left of centre; Nineveh lies far to the north-east"
             },
             {
               "elementId":"ch01-el05",
-              "alt"    :"Map showing the extent of the Assyrian Empire at its peak",
-              "caption":"Image 2: The Assyrian Empire at its biggest — Israel and Judah are swallowed within it"
+              "alt"      :"Map showing the extent of the Assyrian Empire at its peak",
+              "caption"  :"Image 2: The Assyrian Empire at its biggest — Israel and Judah are swallowed within it"
             },
             {
-              "elementId":"ch01-el12",
-              "alt"    :"Detail from the Balawat gates showing Assyrian war crimes",
-              "caption":"Image 3: Assyrian war crimes — a detail from the Balawat gates, British Museum",
+              "elementId" :"ch01-el12",
+              "alt"       :"Detail from the Balawat gates showing Assyrian war crimes",
+              "caption"   :"Image 3: Assyrian war crimes — a detail from the Balawat gates, British Museum",
               "provenance":"Balawat gates of Shalmaneser III, British Museum, accession no. ANE 121651. © The Trustees of the British Museum."
             },
             {
               "elementId":"ch01-el15",
-              "alt"    :"Map showing Jonah’s route away from Nineveh towards Tarshish",
-              "caption":"Image 4: Jonah runs — God calls him north-east; he heads south-west"
+              "alt"      :"Map showing Jonah’s route away from Nineveh towards Tarshish",
+              "caption"  :"Image 4: Jonah runs — God calls him north-east; he heads south-west"
             }
           ]
         }
@@ -4400,9 +4400,9 @@
           "header" :"Images",
           "images" :[
             {
-              "src"    :"images/ch05-vulture-relief.webp",
-              "alt"    :"Assyrian relief showing a vulture carrying off intestines",
-              "caption":"Image 6: A vulture carries off intestines. Intestines represented compassion, so the message is: ‘All who resist Assyria will be treated without mercy.’ British Museum, Accession no. WA 118907.",
+              "src"       :"images/ch05-vulture-relief.webp",
+              "alt"       :"Assyrian relief showing a vulture carrying off intestines",
+              "caption"   :"Image 6: A vulture carries off intestines. Intestines represented compassion, so the message is: ‘All who resist Assyria will be treated without mercy.’ British Museum, Accession no. WA 118907.",
               "provenance":"British Museum, accession no. WA 118907."
             }
           ]
