@@ -10,11 +10,14 @@ whenever any app file changes, the browser sees a different sw.js and fetches
 the new version; unchanged files are not downloaded again (see sw.js).
 
 Nothing here needs a network, and only the standard library is used.
-Deploy DIR as the root of the site (the GitHub Pages workflow does).
+It also renders PRIVACY_POLICY.md as DIR/privacy.html, the address given to
+Google Play as the privacy policy URL (the file is optional; no page is written
+without it). Deploy DIR as the root of the site (the GitHub Pages workflow does).
 """
 
 import argparse
 import hashlib
+import html
 import json
 import re
 import shutil
@@ -77,6 +80,77 @@ def latin_fonts():
             yield "fonts/" + name
 
 
+PRIVACY_CSS = """
+:root{--bg:#e4ddd2;--card:#fff;--text:#1c1710;--muted:#4a3f30;--accent:#8c6420;--border:#c8bca8}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1510;--card:#2a2218;--text:#e8e0d0;--muted:#c8bfaf;--accent:#b8882e;--border:#3a3028}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:42rem;margin:0 auto;padding:1.5rem 1rem 3rem}
+article{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.5rem 1.25rem}
+h1{font-size:1.6rem;line-height:1.25;margin:0 0 .25rem;text-wrap:balance}
+h2{font-size:1.15rem;margin:2rem 0 .5rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--accent)}
+h3{font-size:1rem;margin:1.25rem 0 .25rem}
+p,li{color:var(--muted)}
+.updated{color:var(--muted);font-style:italic;margin:0 0 1.25rem}
+ul{padding-left:1.25rem}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:30rem){article{padding:1.25rem 1rem}}
+"""
+
+
+def privacy_page(md: str) -> str:
+    """HTML for PRIVACY_POLICY.md. The file is plain text: a title, a 'Last
+    updated' line, sections that open with a rule of '─' characters and a
+    numbered capitals heading ('4. MICROPHONE'), lettered sub-headings ('3a. Title')
+    on a line of their own, '•' bullets and blank-line-separated paragraphs."""
+    esc = lambda t: re.sub(r"([\w.+-]+@[\w-]+(?:\.[\w-]+)+)", r'<a href="mailto:\1">\1</a>', html.escape(t, quote=False))
+    lines = md.strip().split("\n")
+    title = lines[0].strip().title()
+    body, bullets, para = [], [], []
+
+    def flush():
+        nonlocal bullets, para
+        if bullets:
+            body.append("<ul>" + "".join(f"<li>{esc(b)}</li>" for b in bullets) + "</ul>")
+        if para:
+            body.append("<p>" + "<br>".join(esc(x) for x in para) + "</p>")
+        bullets, para = [], []
+
+    for raw in lines[1:]:
+        line = raw.strip()
+        if not line:
+            flush()
+        elif set(line) == {"\u2500"}:
+            flush()
+        elif re.match(r"^\d+\.\s+[A-Z][A-Z ,()&'/-]+$", line):
+            flush()
+            num, rest = line.split(" ", 1)
+            body.append(f"<h2>{esc(num)} {esc(rest.capitalize())}</h2>")
+        elif re.match(r"^\d+[a-z]\.\s", line):
+            flush()
+            body.append(f"<h3>{esc(line)}</h3>")
+        elif line.startswith("\u2022"):
+            if para:
+                flush()
+            bullets.append(line.lstrip("\u2022 ").strip())
+        elif line.startswith("Last updated:"):
+            flush()
+            body.append(f'<p class="updated">{esc(line)}</p>')
+        else:
+            if bullets:
+                flush()
+            para.append(line)
+    flush()
+    return (
+        '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f"<title>{html.escape(title)}</title>\n<style>{PRIVACY_CSS}</style>\n</head>\n"
+        f"<body>\n<main>\n<article>\n<h1>{html.escape(title)}</h1>\n"
+        + "\n".join(body) + "\n</article>\n</main>\n</body>\n</html>\n"
+    )
+
+
 def precache_list(out: Path):
     """[{url, hash, optional?}] for everything cached at install."""
     required = []
@@ -114,6 +188,10 @@ def build(out: Path):
         APP, out,
         ignore=lambda d, names: [n for n in names if n in EXCLUDE or n in EXCLUDE_NAMES],
     )
+
+    policy = REPO / "PRIVACY_POLICY.md"
+    if policy.is_file():
+        (out / "privacy.html").write_text(privacy_page(policy.read_text(encoding="utf-8")), encoding="utf-8")
 
     entries = precache_list(out)
     build_id = hashlib.sha256(

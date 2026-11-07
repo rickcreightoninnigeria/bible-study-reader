@@ -103,6 +103,31 @@ describe('the build', () => {
     expect(precacheOf(join(f.out, 'sw.js')).list.some(x => x.url === 'estudy/firstEstudies.zip')).toBe(false);
   });
 
+  it('renders PRIVACY_POLICY.md as privacy.html (Google Play\'s privacy policy URL), not precached', () => {
+    const f = fixture();
+    writeFileSync(join(f.root, 'PRIVACY_POLICY.md'), [
+      'PRIVACY POLICY — TEST APP', '', 'Last updated: 1 January 2026', '', 'Intro <b>text</b>.', '',
+      '────────', '1. SUMMARY', '', 'Mail a@b.org please.', '', '• one', '• two', '',
+      '────────', '2. TEXT-TO-SPEECH (READ ALOUD)', '', '2a. A sub-heading', 'Body.', ''].join('\n'));
+    run(f.script, ['--out', f.out]);
+    const page = readFileSync(join(f.out, 'privacy.html'), 'utf8');
+    expect(page).toContain('<title>Privacy Policy — Test App</title>');
+    expect(page).toContain('<p class="updated">Last updated: 1 January 2026</p>');
+    expect(page).toContain('<h2>1. Summary</h2>');
+    expect(page).toContain('<h2>2. Text-to-speech (read aloud)</h2>');
+    expect(page).toContain('<h3>2a. A sub-heading</h3>');
+    expect(page).toContain('<ul><li>one</li><li>two</li></ul>');
+    expect(page).toContain('Intro &lt;b&gt;text&lt;/b&gt;.');
+    expect(page).toContain('<a href="mailto:a@b.org">a@b.org</a>');
+    expect(precacheOf(join(f.out, 'sw.js')).list.some(x => x.url === 'privacy.html')).toBe(false);
+  });
+
+  it('writes no privacy.html when there is no PRIVACY_POLICY.md', () => {
+    const f = fixture();
+    run(f.script, ['--out', f.out]);
+    expect(existsSync(join(f.out, 'privacy.html'))).toBe(false);
+  });
+
   it('gives the same id for the same files, and a new id (and new sw.js) when a cached file changes', () => {
     const f = fixture();
     run(f.script, ['--out', f.out]);

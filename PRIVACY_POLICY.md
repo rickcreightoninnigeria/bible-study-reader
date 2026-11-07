@@ -99,4 +99,4 @@ If this policy changes materially, the updated version will be made available on
 If you have questions about this privacy policy, please contact:
 
 Rick Creighton
-[your contact email address]
+bible.study.reader@gmail.com

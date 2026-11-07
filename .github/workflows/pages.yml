@@ -11,6 +11,7 @@ on:
     paths:
       - 'app/**'
       - 'py/build_web.py'
+      - 'PRIVACY_POLICY.md'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
