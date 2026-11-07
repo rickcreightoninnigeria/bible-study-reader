@@ -6,6 +6,9 @@
  * is the display order: Bible books must run in Bible order. Every translation
  * must have the same shape as the English file.
  *
+ * Names are matched as text, so the apostrophes are the typographic ones (’), in
+ * every language file: "Paul’s Letters", "Discerning God’s Will".
+ *
  * Paths are relative to testing/tests/ — locale files are in ../../app/js/locales/
  */
 
@@ -43,7 +46,7 @@ describe('display order in the English shelf list', () => {
 
   it('lists the New Testament books in Bible order', () => {
     expect(books('New Testament')).toEqual(NT_BOOKS);
-    expect(shelf('New Testament').sections.map(s => s.section)).toEqual(['Overview', 'Gospels & Acts', "Paul's Letters", 'General Letters & Revelation']);
+    expect(shelf('New Testament').sections.map(s => s.section)).toEqual(['Overview', 'Gospels & Acts', "Paul’s Letters", 'General Letters & Revelation']);
   });
 
   it('puts Overview first in both testaments, holding Biblical Theology', () => {
@@ -55,7 +58,7 @@ describe('display order in the English shelf list', () => {
   });
 
   it('puts the Pastoral Epistles group just before 1 Timothy', () => {
-    const paul = shelf('New Testament').sections.find(s => s.section === "Paul's Letters");
+    const paul = shelf('New Testament').sections.find(s => s.section === "Paul’s Letters");
     const n = names(paul);
     expect(n.indexOf('Pastoral Epistles')).toBe(n.indexOf('1 Timothy') - 1);
   });
@@ -96,6 +99,16 @@ describe('translated shelf lists', () => {
   }
 });
 
+describe('typographic quotes in every shelf list', () => {
+  const texts = o => typeof o === 'string' ? [o] : Object.values(o).flatMap(texts);
+  for (const lang of langs) {
+    it(`${lang}: no straight ' or " in any name or description`, () => {
+      const straight = texts(load(lang)).filter(t => /['"]/.test(t));
+      expect(straight).toEqual([]);
+    });
+  }
+});
+
 const hasPython = spawnSync('python3', ['--version']).status === 0;
 function validate(libraryShelves) {
   const dir = mkdtempSync(join(tmpdir(), 'bsr-shelves-'));
@@ -117,9 +130,16 @@ describe.skipIf(!hasPython)('validate_study.py libraryShelves check', () => {
       { Shelf: 'Old Testament', Section: 'Overview', Subsection: 'Biblical Theology' },
       { Shelf: 'Beliefs', Section: 'Salvation', Subsection: 'Sanctification' },
     ])).toContain('0 error(s), 0 warning(s)');
-    expect(validate({ Shelf: 'New Testament', Section: "Paul's Letters", Subsection: 'Pastoral Epistles' }))
+    expect(validate({ Shelf: 'New Testament', Section: "Paul’s Letters", Subsection: 'Pastoral Epistles' }))
       .toContain('0 error(s), 0 warning(s)');
     expect(validate({ Shelf: 'Other' })).toContain('0 warning(s)');
+  });
+
+  it('does not mind a straight apostrophe where the list has a typographic one (the app does not either)', () => {
+    expect(validate({ Shelf: 'New Testament', Section: "Paul's Letters", Subsection: 'Pastoral Epistles' }))
+      .toContain('0 error(s), 0 warning(s)');
+    expect(validate({ Shelf: 'Life', Section: 'Suffering & Guidance', Subsection: "Discerning God's Will" }))
+      .toContain('0 error(s), 0 warning(s)');
   });
 
   it('is silent when the study has no libraryShelves', () => {

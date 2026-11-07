@@ -80,6 +80,9 @@ def check_shelves(meta):
     if ls is None or structure is None:
         return
     placements = ls if isinstance(ls, list) else [ls]
+    # the app ignores the difference between straight and typographic apostrophes
+    nz = lambda s: re.sub('[\u2018\u2019\u02bc]', "'", str(s))
+    has = lambda name, options: nz(name) in {nz(o) for o in options}
 
     def near(name, options):
         close = difflib.get_close_matches(str(name), list(options), n=1, cutoff=0.6)
@@ -91,17 +94,19 @@ def check_shelves(meta):
             warn(f'{where}: no Shelf, so this placement is ignored')
             continue
         shelf, sec, sub = p.get('Shelf'), p.get('Section'), p.get('Subsection')
-        if shelf not in structure:
+        if not has(shelf, structure):
             warn(f'{where}: Shelf {shelf!r} is not in libraryShelvesStructure_en.json, so it shows as an extra '
                  f'shelf with no description{near(shelf, structure)}')
             continue
         if sub and not sec:
             warn(f'{where}: Subsection {sub!r} has no Section, so it is not shown (the study sits loose under {shelf!r})')
-        if sec and sec not in structure[shelf]:
+        shelf = next(k for k in structure if nz(k) == nz(shelf))
+        if sec and not has(sec, structure[shelf]):
             warn(f'{where}: Section {sec!r} is not in the {shelf!r} shelf, so it shows after the standard '
                  f'sections with no description{near(sec, structure[shelf])}')
             continue
-        if sec and sub and sub not in structure[shelf][sec]:
+        sec = next((k for k in structure[shelf] if nz(k) == nz(sec)), sec)
+        if sec and sub and not has(sub, structure[shelf][sec]):
             warn(f'{where}: Subsection {sub!r} is not in {shelf!r} > {sec!r}, so it shows after the standard '
                  f'subsections with no description{near(sub, structure[shelf][sec])}')
 

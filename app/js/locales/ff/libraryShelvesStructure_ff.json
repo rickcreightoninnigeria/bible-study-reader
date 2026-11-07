@@ -1,7 +1,7 @@
 [
   {
     "shelf": "Alkawal Kiiɗɗo",
-    "description": "Janndeeji limtooji defte binndaaɗe ko adii gartol Almasiihu — diga Tawreeta e Annabo'en haa Binndi. Alkawal Kesal ɗon holla habaru alkawal Allah bee Isra’iila nden ɗon holla Almasiihu.",
+    "description": "Janndeeji limtooji defte binndaaɗe ko adii gartol Almasiihu — diga Tawreeta e Annabo’en haa Binndi. Alkawal Kesal ɗon holla habaru alkawal Allah bee Isra’iila nden ɗon holla Almasiihu.",
     "sections": [
       {
         "section": "Yiyngo",
@@ -43,7 +43,7 @@
       },
       {
         "section": "Tariya",
-        "description": "Defte taariiha ɗon tokka habaru Isra'iila diga jaalorgal Kanaana haa laamu, eggugo, e wartugo — ɗon holla gooŋgaaku Allah e gooŋgaaku yimɓe maako ɗon ƴama gooŋgaaku.",
+        "description": "Defte taariiha ɗon tokka habaru Isra’iila diga jaalorgal Kanaana haa laamu, eggugo, e wartugo — ɗon holla gooŋgaaku Allah e gooŋgaaku yimɓe maako ɗon ƴama gooŋgaaku.",
         "allowsSubsections": true,
         "subsections": [
           {
@@ -76,7 +76,7 @@
           },
           {
             "name": "1 Taariiha",
-            "description": "Taariiha Isra'iila diga Aadama haa Daawuda, ɗon yewta dow dewal e suudu dewal."
+            "description": "Taariiha Isra’iila diga Aadama haa Daawuda, ɗon yewta dow dewal e suudu dewal."
           },
           {
             "name": "2 Taariiha",
@@ -125,7 +125,7 @@
       },
       {
         "section": "Annabaaɓe",
-        "description": "Defte annabaaku ɗon nodda Isra'iila'en ngam tuubugo, ɗon jeertina dow kiita, ɗon holla yeeso dow rimɗinki Allah haa timmi. Ɗe ngoni ko e faamde no Alkawal Kesal timminirta ɗeen fodoore.",
+        "description": "Defte annabaaku ɗon nodda Isra’iila’en ngam tuubugo, ɗon jeertina dow kiita, ɗon holla yeeso dow rimɗinki Allah haa timmi. Ɗe ngoni ko e faamde no Alkawal Kesal timminirta ɗeen fodoore.",
         "allowsSubsections": true,
         "subsections": [
           {
@@ -217,7 +217,7 @@
       },
       {
         "section": "Linjiila & Kuuɗe Nelaaɓe",
-        "description": "Haalaaji nayi dow ngeedam Yeesu, maayde maako, e ummitineeki maako, e habaru yaajnugo ekklessiya arandeere nder duuniyaaru Roma'en fuu.",
+        "description": "Haalaaji nayi dow ngeedam Yeesu, maayde maako, e ummitineeki maako, e habaru yaajnugo ekklessiya arandeere nder duuniyaaru Roma’en fuu.",
         "allowsSubsections": true,
         "subsections": [
           {
@@ -252,7 +252,7 @@
             "description": "Facciro Pol ɓurngo laaɓtude e Linjiila: bakkaat, gooŋɗinal, senngo, e yaakaare."
           },
           {
-            "name": "1 Korintu'en",
+            "name": "1 Korintu’en",
             "description": "Hawrude e cereeli e jiiɓru nder Korintu, bee janngirde dow yidde, dokke, e ummitineeki."
           },
           {
@@ -260,11 +260,11 @@
             "description": "Faandaare Pol dow kuugal maako e paradox semmbe bee tampere."
           },
           {
-            "name": "Galaatiya'en",
+            "name": "Galaatiya’en",
             "description": "Defaare cemmbiɗnde ngam gooŋɗinal e goonɗinal tan e dow ɓeydooɓe sariya."
           },
           {
-            "name": "Efesu'en",
+            "name": "Efesu’en",
             "description": "Jawdi goonɗinɗo nder Almasiihu, e ekklessiya bana neɗɗaaku kesum Allah."
           },
           {
@@ -276,11 +276,11 @@
             "description": "Almasiihu bana mawɗo dow kuuje fuu, e ko ɗum ɗon mari haaje nder ngeedam nyalde fuu."
           },
           {
-            "name": "1 Tesalonika'en",
+            "name": "1 Tesalonika’en",
             "description": "Hirjinde ngam ekklessiya sukaaɓe, bee janngirde dow wartugo Almasiihu."
           },
           {
-            "name": "2 Tesalonika'en",
+            "name": "2 Tesalonika’en",
             "description": "Feewnitde luural ko fayti e jamaanu timmuɗo, e noddaango golle gooŋɗinɗe."
           },
           {
@@ -312,7 +312,7 @@
         "subsections": [
           {
             "name": "Ibraniyankooɓe",
-            "description": "Yeesu bana timminorde fuu liman'en, sadaka, e alkawal Alkawal Kesal — ɓurdungal dow kala laawol fuu."
+            "description": "Yeesu bana timminorde fuu liman’en, sadaka, e alkawal Alkawal Kesal — ɓurdungal dow kala laawol fuu."
           },
           {
             "name": "Yaakubu",

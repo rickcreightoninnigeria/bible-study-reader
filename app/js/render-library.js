@@ -452,20 +452,26 @@ function _buildStudyCard(id, entry, listIds, isPinned, moveFn, toggleFn) {
 // one (a test checks this), so an English name is swapped for the translated
 // name at the same position. A name that is not in the English list is kept as
 // written: it may already be translated, or be an extra shelf the study made up.
+// Names are compared as text. The shelf list uses typographic apostrophes
+// ("Paul’s Letters"); a study that was typed with a straight one still matches.
+function _shelfKey(s) {
+  return String(s).replace(/[\u2018\u2019\u02bc]/g, "'").trim();
+}
+
 function localiseShelfPlacement(p, structure, structureEn) {
   const out = { Shelf: p.Shelf, Section: p.Section || '', Subsection: p.Subsection || '' };
   const nameOf = x => (typeof x === 'string' ? x : x && x.name);
-  const i = structureEn.findIndex(s => s.shelf.trim() === String(p.Shelf).trim());
+  const i = structureEn.findIndex(s => _shelfKey(s.shelf) === _shelfKey(p.Shelf));
   if (i < 0 || !structure[i]) return out;
   out.Shelf = structure[i].shelf;
   const secsEn = structureEn[i].sections || [];
   const secs   = structure[i].sections || [];
-  const j = secsEn.findIndex(s => s.section.trim() === out.Section.trim());
+  const j = secsEn.findIndex(s => _shelfKey(s.section) === _shelfKey(out.Section));
   if (j < 0 || !secs[j]) return out;
   out.Section = secs[j].section;
   const subsEn = secsEn[j].subsections || [];
   const subs   = secs[j].subsections || [];
-  const k = subsEn.findIndex(x => String(nameOf(x)).trim() === out.Subsection.trim());
+  const k = subsEn.findIndex(x => _shelfKey(nameOf(x)) === _shelfKey(out.Subsection));
   if (k >= 0 && subs[k]) out.Subsection = nameOf(subs[k]);
   return out;
 }

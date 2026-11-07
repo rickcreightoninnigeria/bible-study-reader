@@ -31,6 +31,14 @@ const clone = o => JSON.parse(JSON.stringify(o));   // helpers run in another re
 describe('localiseShelfPlacement', () => {
   const ha = load('ha');
 
+  it('matches a name typed with a straight apostrophe to the typographic one in the list', () => {
+    const p = clone(localiseShelfPlacement({ Shelf: 'New Testament', Section: "Paul's Letters", Subsection: 'Ephesians' }, ha, en));
+    const pauls = ha[1].sections.find(sec => sec.section !== ha[1].sections[0].section && sec.subsections.some(x => x.name === p.Subsection));
+    expect(p.Section).toBe(pauls.section);
+    expect(p.Section).not.toBe("Paul's Letters");
+    expect(p.Subsection).not.toBe('Ephesians');
+  });
+
   it('swaps English names for the translated ones at the same position', () => {
     const p = clone(localiseShelfPlacement({ Shelf: 'Old Testament', Section: 'Law', Subsection: 'Genesis' }, ha, en));
     expect(p.Shelf).toBe(ha[0].shelf);

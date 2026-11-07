@@ -115,7 +115,7 @@
           },
           {
             "name": " Eclesiastes",
-            "description": " Isang masusing pagsusuri sa kahulugan, gawain, at mortalidad 'sa ilalim ng araw'."
+            "description": " Isang masusing pagsusuri sa kahulugan, gawain, at mortalidad ‘sa ilalim ng araw’."
           },
           {
             "name": " Awit ng mga Awit",
@@ -640,7 +640,7 @@
           },
           {
             "name": " Komunidad",
-            "description": " Ang ibig sabihin ng mamuhay bilang katawan ni Cristo — magpasan ng mga pasanin ng isa't isa."
+            "description": " Ang ibig sabihin ng mamuhay bilang katawan ni Cristo — magpasan ng mga pasanin ng isa’t isa."
           }
         ]
       },
@@ -801,7 +801,7 @@
       },
       {
         "section": " Ebanghelismo at mga Misyon",
-        "description": " Mga pag-aaral sa pagdadala ng ebanghelyo sa mga hindi pa nakarinig nito — personal, lokal, at sa iba't ibang kultura.",
+        "description": " Mga pag-aaral sa pagdadala ng ebanghelyo sa mga hindi pa nakarinig nito — personal, lokal, at sa iba’t ibang kultura.",
         "allowsSubsections": true,
         "subsections": [
           {
@@ -813,7 +813,7 @@
             "description": "Pagsagot sa mga tanong na pumipigil sa mga tao na seryosohin ang Kristiyanismo."
           },
           {
-            "name": " Ministeryo sa Iba't Ibang Kultura",
+            "name": " Ministeryo sa Iba’t Ibang Kultura",
             "description": " Naglilingkod at nagbabahagi nang lampas sa mga hangganan ng kultura nang may sensitibidad at paggalang."
           },
           {
