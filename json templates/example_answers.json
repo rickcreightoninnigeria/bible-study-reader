@@ -1,0 +1,194 @@
+{
+ "meta": {
+  "studyId": "1_john_for_today_v001",
+  "studyVersion": 1.04,
+  "protocol": "example",
+  "author": "Claude",
+  "date": "2026-11-08",
+  "note": "worked example for two questions; written by the assistant that also saw the key terms, so it illustrates the file format and the report, not a real blind run"
+ },
+ "questions": {
+  "ch04-el20": {
+   "strong": [
+    {
+     "id": "S1",
+     "style": "model",
+     "text": "Because his readers have been unsettled by teachers who left and claimed to speak for God, John tells them to test every spiritual claim rather than accept it. The reason he gives is that many false prophets have gone out into the world."
+    },
+    {
+     "id": "S2",
+     "style": "formal",
+     "text": "In light of the secession described earlier, the readers were vulnerable to persuasive teachers who claimed prophetic or spiritual authority. John therefore commands discernment: such claims must be examined rather than uncritically accepted. His stated rationale is the proliferation of false prophets in the world."
+    },
+    {
+     "id": "S3",
+     "style": "casual",
+     "text": "I think he's worried because there were loads of people going round claiming God was speaking through them, and some of them were leading folks astray. So he says don't just swallow it, check it out. The reason he gives is simply that there are many false prophets out there."
+    },
+    {
+     "id": "S4",
+     "style": "textspeak",
+     "text": "cos theres loads of false prophets about & ppl who left the church were claiming to speak 4 God so dont just trust every spirit, test them"
+    },
+    {
+     "id": "S5",
+     "style": "concise",
+     "text": "Many false prophets are out in the world, so every spiritual claim has to be tested."
+    },
+    {
+     "id": "S6",
+     "style": "long",
+     "text": "Reading this, I picture a church that has just been through a painful split. Some of the people who left are still talking about God and the Spirit very confidently, and it would be easy for the ones left behind to think 'well, they sound so sure, maybe they're right'. John steps in and says no, don't believe every spirit; examine them to see if they're really from God. The one reason he gives is that many false prophets have gone out into the world, so we should expect counterfeits and be careful."
+    },
+    {
+     "id": "S7",
+     "style": "simpleEnglish",
+     "text": "John say do not believe every spirit. Maybe some people talk about God but they are not true. John gives the reason: there are many false prophets in the world. So the people must test the spirits and see if they come from God."
+    },
+    {
+     "id": "S8",
+     "style": "synonyms",
+     "text": "He is cautioning his readers not to take at face value every voice that claims inspiration. Counterfeit teachers, a great number of them, have set out among people, so each message has to be checked to see whether God is truly behind it."
+    },
+    {
+     "id": "S9",
+     "style": "otherAngle",
+     "text": "John's reasoning is about protection. After people left their group and tried to win over those remaining, the believers needed a safeguard, and John gives them a habit: put every spiritual claim to the test, because false prophets are numerous in the world."
+    },
+    {
+     "id": "S10",
+     "style": "notes",
+     "text": "- readers shaken by people who left\n- those people claim to speak for God / the Spirit\n- so: don't believe every spirit, test them\n- reason: many false prophets have gone out into the world"
+    },
+    {
+     "id": "S11",
+     "style": "quoteComment",
+     "text": "John says \"do not believe every spirit, but test the spirits to determine if they are from God\". He is worried because teachers who left were still claiming to speak for God, and \"many false prophets have gone out into the world\"."
+    },
+    {
+     "id": "S12",
+     "style": "hugging",
+     "text": "He tells them to be testing every spirit because false prophets are everywhere."
+    },
+    {
+     "id": "S13",
+     "style": "typos",
+     "text": "John wants them to tset every spirt becuase there are many fals prophats in the wrold, and some of them left the church."
+    }
+   ],
+   "weak": [
+    {
+     "id": "W1",
+     "kind": "passageReword",
+     "text": "My friends, you must not believe every single spirit; instead put the spirits to the test to find out whether they come from God, since many false prophets have gone out into the world."
+    },
+    {
+     "id": "W2",
+     "kind": "offTopic",
+     "text": "I think John is mostly writing about the importance of Sunday worship and giving. Our church had a harvest thanksgiving last month and the choir sang wonderfully, and I believe regular attendance is the best way to stay close to God."
+    },
+    {
+     "id": "W3",
+     "kind": "halfRight",
+     "text": "He is warning them because some people had left their fellowship and were still claiming to speak for God."
+    },
+    {
+     "id": "W4",
+     "kind": "misguided",
+     "text": "John is telling Christians to avoid all spiritual experiences and never to listen to anything the Holy Spirit says, because spirits are always dangerous and the Spirit can't be trusted."
+    }
+   ]
+  },
+  "ch06-el09": {
+   "strong": [
+    {
+     "id": "S1",
+     "style": "model",
+     "text": "John gives the testimony of three witnesses, the Spirit, the water and the blood, who all agree, and he argues that if we accept what people tell us, God's own testimony about his Son is even greater. They are good reasons because the witnesses agree with each other and because the ultimate witness is God himself, who can't be wrong."
+    },
+    {
+     "id": "S2",
+     "style": "formal",
+     "text": "John offers a threefold testimony in agreement, namely the Spirit, the water and the blood, and then reasons from the lesser to the greater: if human testimony is customarily accepted, divine testimony carries far more weight. These grounds are compelling because the witnesses are consistent and because the highest possible authority, God himself, stands behind them."
+    },
+    {
+     "id": "S3",
+     "style": "casual",
+     "text": "Basically three witnesses that all say the same thing - the Spirit, the water and the blood - and then he says, look, we trust people's word all the time, so God's word has to count for even more. Good reasons because they all agree and because it's God doing the testifying!"
+    },
+    {
+     "id": "S4",
+     "style": "textspeak",
+     "text": "3 witnesses - spirit, water & blood - all agree. and if we believe humans then Gods word is bigger. good reasons cos gods the best witness n they all say the same"
+    },
+    {
+     "id": "S5",
+     "style": "concise",
+     "text": "Three agreeing witnesses, and God's testimony is greater than any human's, so it can be trusted."
+    },
+    {
+     "id": "S6",
+     "style": "long",
+     "text": "The way I read it, John doesn't just say 'believe me'. He lines up witnesses: the Spirit, the water and the blood, and they don't contradict one another. Then he uses an everyday argument: we accept what people tell us in court and in ordinary life, so how much more should we accept what God himself says about his Son. For me these are good reasons because there's more than one witness, they're unanimous, and the person vouching for Jesus is God, who is the most reliable witness there could ever be."
+    },
+    {
+     "id": "S7",
+     "style": "simpleEnglish",
+     "text": "John say there are three witnesses: the Spirit, the water and the blood. They all agree together. Also, we believe what people say, so we must believe what God says more, because God is greater. This is a good reason because God never lies and three witnesses are saying the same."
+    },
+    {
+     "id": "S8",
+     "style": "synonyms",
+     "text": "He cites a trio of corroborating voices (the Spirit, baptism and the cross, as most take it) who tell one consistent story, and he adds that since we routinely trust a person's word, the declaration of the Almighty should outweigh it. That is persuasive: consistent evidence, backed by the ultimate authority."
+    },
+    {
+     "id": "S9",
+     "style": "otherAngle",
+     "text": "I'd focus on the legal idea behind it: in the Old Testament you needed two or three witnesses to prove something, and John supplies three. His second reason is the step from human witnesses to God's own: if people's testimony is accepted, God's is better. The reasons are good because they meet the legal standard and rest on God's own character as truthful."
+    },
+    {
+     "id": "S10",
+     "style": "notes",
+     "text": "1. three witnesses (Spirit, water, blood) - in agreement\n2. human testimony accepted -> God's testimony greater\nwhy good: agreement + God is the highest authority, trustworthy"
+    },
+    {
+     "id": "S11",
+     "style": "quoteComment",
+     "text": "John says \"there are three that testify, the Spirit and the water and the blood\" and that \"these three are in agreement\". Then he adds that God's own testimony is greater than any human testimony, so these are good reasons."
+    },
+    {
+     "id": "S12",
+     "style": "hugging",
+     "text": "Three witnesses agree, and if we accept the testimony of men, God's testimony is greater."
+    },
+    {
+     "id": "S13",
+     "style": "typos",
+     "text": "John gives three wittnesses, the Spirt, the water and the blood, who all agre. We beleive what people tell us, so Gods testamony is much greater."
+    }
+   ],
+   "weak": [
+    {
+     "id": "W1",
+     "kind": "passageReword",
+     "text": "There are three witnesses that bear testimony, the Spirit, the water and the blood, and all three are in agreement. If we receive the testimony of men, then God's testimony is greater, because it is the testimony that God has given about his Son."
+    },
+    {
+     "id": "W2",
+     "kind": "offTopic",
+     "text": "Jesus is the Son of God because of the wonderful miracles he did, like feeding the five thousand and walking on the water, and because of the way he taught people about forgiveness in the Sermon on the Mount."
+    },
+    {
+     "id": "W3",
+     "kind": "halfRight",
+     "text": "He says there are three witnesses, the Spirit, the water and the blood."
+    },
+    {
+     "id": "W4",
+     "kind": "misguided",
+     "text": "John says we shouldn't trust any testimony at all, human or spiritual, and that real belief in Jesus comes only from our own feelings and personal experience rather than from witnesses."
+    }
+   ]
+  }
+ }
+}
