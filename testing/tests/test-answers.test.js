@@ -175,6 +175,74 @@ describe.skipIf(!hasTools)('test_answers.py --run', () => {
     expect(r.status).toBe(1);
   });
 
+  it('checks labels against the real passage even when skipBibleVerseCheck switches the copy check off', () => {
+    const s = study([question({ skipBibleVerseCheck: true })]);
+    const r = run(RUN, { study: s, ans: answers() });
+    expect(r.status, r.report).toBe(0);
+    expect(r.report).not.toContain('PROBLEMS WITH THE ANSWERS FILE');
+    // and a real copy mislabelled as a reword is still caught on such a question
+    const a = answers(); a.questions.q1.weak[0] = { id: 'W1', kind: 'passageReword', text: 'Something quite different about worship songs and harvest suppers.' };
+    expect(run(RUN, { study: s, ans: a }).report).toContain('labelled a passage reword but only 0%');
+  });
+
+  it('does not report a passage-overlap fragile pass for a question whose copy check is skipped', () => {
+    const r = run(RUN, { study: study([question({ skipBibleVerseCheck: true })]), ans: answers() });
+    expect(r.report).not.toMatch(/words are in the passage \(limit/);
+  });
+
+  it('rejects a half-right, misguided or off-topic answer that is really a copy of the passage (exit 2)', () => {
+    for (const [idx, kind] of [[2, 'halfRight'], [3, 'misguided'], [1, 'offTopic']]) {
+      const a = answers(); a.questions.q1.weak[idx].text = 'In the beginning God created the heavens and the earth.';
+      const r = run(RUN, { ans: a });
+      expect(r.status, kind).toBe(2);
+      expect(r.report, kind).toContain(`labelled ${kind} but`);
+      expect(r.report, kind).toContain("above the app's 70% limit");
+    }
+  });
+
+  describe('accepted exceptions (meta.accepted)', () => {
+    const failing = meta => {
+      const a = answers({}, meta);
+      a.questions.q1.strong[0].text = 'God did something at the very start of everything that we read about here.';   // a core answer that falls short
+      return a;
+    };
+    const accept = (id, reason = 'notes style sits at the 70% limit; recorded, not a study defect') => ({ accepted: [{ question: 'q1', id, reason }] });
+
+    it('without an acceptance the question fails; with one it passes and the report keeps the reason on record', () => {
+      expect(run(RUN, { ans: failing({}) }).status).toBe(1);
+      const r = run(RUN, { ans: failing(accept('S1')) });
+      expect(r.status, r.report).toBe(0);
+      expect(r.report).toContain('(1 accepted)');
+      expect(r.report).toContain('## Accepted exceptions');
+      expect(r.report).toContain('notes style sits at the 70% limit');
+      expect(r.json.summary[0].accepted[0][0]).toBe('S1');
+    });
+
+    it('needs a reason, and only a written strong answer can be accepted (exit 2)', () => {
+      expect(run(RUN, { ans: failing(accept('S1', '  ')) }).report).toContain('a reason is required');
+      expect(run(RUN, { ans: failing(accept('S1', '  ')) }).status).toBe(2);
+      for (const id of ['S99', 'W1']) {
+        const r = run(RUN, { ans: failing(accept(id)) });
+        expect(r.status, id).toBe(2);
+        expect(r.report, id).toContain('only a written strong answer');
+      }
+    });
+
+    it('does not let an acceptance hide a different failure', () => {
+      const a = failing(accept('S1'));
+      a.questions.q1.strong[2].text = 'Something was going on at the start, I suppose, though I cannot say much about it.';   // S3, a different core answer
+      const r = run(RUN, { ans: a });
+      expect(r.status).toBe(1);
+      expect(r.report).toContain('Core answers not rated "strong"');
+    });
+
+    it('warns when an accepted answer no longer falls short', () => {
+      const r = run(RUN, { ans: answers({}, accept('S2')) });
+      expect(r.status).toBe(0);
+      expect(r.report).toContain('that answer no longer falls short');
+    });
+  });
+
   it('flags a strong answer that passes with the bare minimum of key terms as fragile', () => {
     const r = run(RUN, { ans: answers() });
     expect(r.report).toContain('Fragile passes');

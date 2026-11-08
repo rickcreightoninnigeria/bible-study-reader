@@ -49,8 +49,8 @@ STRONG_ROLE = {s: r for _, s, r, _ in STRONG_STYLES}
 WRITTEN_WEAK = [
     ('W1', 'passageReword', 'the passage with a few words swapped or reordered, adding nothing'),
     ('W2', 'offTopic', 'sensible, fluent, but about something else (another book, another topic, or a personal ramble)'),
-    ('W3', 'halfRight', 'right about ONE idea only, silent on the others; fewer than half of the ideas'),
-    ('W4', 'misguided', 'confident and wrong: contradicts the passage or draws the opposite lesson, using on-topic vocabulary'),
+    ('W3', 'halfRight', 'right about ONE idea only, silent on the others; fewer than half of the ideas. In your own words: an answer that copies or nearly copies the verse is a copy, not a half-right answer'),
+    ('W4', 'misguided', 'confident and wrong: contradicts the passage or draws the opposite lesson, using on-topic vocabulary, in your own words rather than the verse\'s'),
 ]
 # tier A: hard criteria. expect = allowed result codes ('NOT_STRONG' = anything except strong).
 # tier B: advisory probes of the limits of the check; reported as rates, never fail a question on their own.
@@ -144,7 +144,8 @@ const out = jobs.map(j => {
   const toks = A.tokenise(norm, lang);
   const ratio = (list, set) => list.length ? list.filter(t => set.has(t)).length / list.length : 0;
   const pw = new Set();
-  for (const p of (j.passageTexts || [])) for (const t of A.tokenise(A.normaliseText(p), lang)) if (A._isContent(t, lang, 2)) pw.add(t);
+  // measured against the real passage even when the author has skipped the copy check (j.passageTexts is then empty)
+  for (const p of (j.measurePassageTexts || j.passageTexts || [])) for (const t of A.tokenise(A.normaliseText(p), lang)) if (A._isContent(t, lang, 2)) pw.add(t);
   const qw = new Set(A.tokenise(A.normaliseText(j.questionText || ''), lang).filter(t => A._isContent(t, lang, 2)));
   const total = parsed.length;
   return { code: r.code, matched: r.matched, total: r.total, hits, terms, limit,
@@ -248,7 +249,7 @@ def questions(study, slot=''):
 
 def job_base(q):
     # sampleAnswer goes in raw, as the app passes it (it does not strip markup before counting words)
-    return {'questionText': q['question'], 'passageTexts': [] if q['skip'] else q['passages'], 'sampleAnswer': q['sample'],
+    return {'questionText': q['question'], 'passageTexts': [] if q['skip'] else q['passages'], 'measurePassageTexts': q['passages'], 'sampleAnswer': q['sample'],
             'keyTerms': q['keyTerms'], 'lang': q['lang'], 'shortAnswerThreshold': q['thr'], 'skipBibleVerseCheck': q['skip']}
 
 
@@ -423,6 +424,14 @@ def check_answers_file(answers, study_meta, qs_all, allow_incomplete, ignore_met
     if am.get('protocol') not in ('blind', 'semi-blind', 'example'):
         warnings.append(f"meta.protocol is {am.get('protocol')!r}: say whether the run was 'blind' or 'semi-blind'")
     byid = {q['id'] for q in qs_all}
+    acc = am.get('accepted', [])
+    if not isinstance(acc, list): problems.append('meta.accepted must be a list of {"question", "id", "reason"}'); acc = []
+    for a in acc:
+        if not isinstance(a, dict) or not a.get('question') or not a.get('id'):
+            problems.append(f'meta.accepted: {a!r} needs "question" and "id"'); continue
+        if not str(a.get('reason', '')).strip(): problems.append(f"meta.accepted {a['question']} {a['id']}: a reason is required (it is the record of the decision)")
+        ids = {x.get('id') for x in ((answers.get('questions') or {}).get(a['question']) or {}).get('strong', [])}
+        if a['id'] not in ids: problems.append(f"meta.accepted {a['question']} {a['id']}: only a written strong answer in the answers file can be accepted")
     need_strong = {s for _, s, _, _ in STRONG_STYLES}; need_weak = {k for _, k, _ in WRITTEN_WEAK}
     for qid, sets in (answers.get('questions') or {}).items():
         if qid not in byid: problems.append(f'{qid} is not a question with key terms that gets the answer check in this study'); continue
@@ -453,6 +462,9 @@ def label_problems(per, byid):
             elif k == 'echoQuestion' and r['qOverlap'] < 0.7: why = f"labelled a question echo but only {round(r['qOverlap'] * 100)}% of its words are in the question"
             elif k == 'filler' and r['words'] > 6: why = f"labelled filler but has {r['words']} words"
             elif k == 'fragment' and r['words'] > 4: why = f"labelled a fragment but has {r['words']} words"
+            elif k in ('halfRight', 'misguided', 'offTopic') and r['passOverlap'] > r['limit']:
+                why = (f"labelled {k} but {round(r['passOverlap'] * 100)}% of its words are in the passage, above the app's {round(r['limit'] * 100)}% limit: "
+                       f"it is a copy of the passage, not a {k} answer (write it in your own words)")
             elif k == 'passageReword' and r['passOverlap'] < 0.4: why = f"labelled a passage reword but only {round(r['passOverlap'] * 100)}% of its words are in the passage (it is something else)"
             if why: out.append(f"{qid} {x['id']}: {why}")
     return out
@@ -491,15 +503,20 @@ def brief(qs, outdir, meta, with_reference):
 def pct(n, d): return f'{round(100 * n / d)}%' if d else '-'
 
 
-def summarise(q, rows, incomplete):
+def summarise(q, rows, incomplete, accepted=None):
     strong = [x for x in rows if x['group'] == 'strong']; weak = [x for x in rows if x['group'] == 'weak']
     role = lambda x: STRONG_ROLE.get(x['label'])
     ns = len(strong)
     core = [x for x in strong if role(x) == 'core']; stress = [x for x in strong if role(x) == 'stress']; diag = [x for x in strong if role(x) == 'diagnostic']
-    hard = [x for x in core + stress if x['r']['code'] in HARD_CODES_FOR_STRONG]
+    acc = accepted or {}          # {answer id: reason}: shortfalls the author has accepted, kept on record
+    hard_all = [x for x in core + stress if x['r']['code'] in HARD_CODES_FOR_STRONG]
+    core_short_all = [x for x in core if x['r']['code'] != 'strong']
+    stress_short_all = [x for x in stress if x['r']['code'] != 'strong']
+    taken = {x['id']: x for x in hard_all + core_short_all + stress_short_all if x['id'] in acc}
+    hard = [x for x in hard_all if x['id'] not in acc]
+    core_short = [x for x in core_short_all if x['id'] not in acc]
+    stress_short = [x for x in stress_short_all if x['id'] not in acc]
     diag_hard = [x for x in diag if x['r']['code'] in HARD_CODES_FOR_STRONG]
-    core_short = [x for x in core if x['r']['code'] != 'strong']
-    stress_short = [x for x in stress if x['r']['code'] != 'strong']
     strong_ok = ns > 0 and not core_short and not hard and len(stress_short) <= 1
     wa_bad, wb_flag = [], []
     for x in weak:
@@ -519,11 +536,12 @@ def summarise(q, rows, incomplete):
         if r['code'] != 'strong': continue
         why = []
         if r['matched'] == r['needed']: why.append(f"only {r['matched']} of {r['total']} key terms (the minimum)")
-        if r['passOverlap'] > r['limit'] - FRAGILE_OVERLAP_MARGIN: why.append(f"{round(r['passOverlap'] * 100)}% of its words are in the passage (limit {round(r['limit'] * 100)}%)")
+        if not q['skip'] and r['passOverlap'] > r['limit'] - FRAGILE_OVERLAP_MARGIN: why.append(f"{round(r['passOverlap'] * 100)}% of its words are in the passage (limit {round(r['limit'] * 100)}%)")
         if r['minWords'] > 0 and r['words'] <= r['minWords'] + 1: why.append(f"{r['words']} words (minimum {r['minWords']})")
         if why: fragile.append((x, why))
     verdict = 'INCOMPLETE' if incomplete else ('PASS' if (strong_ok and not wa_bad) else 'FAIL')
     return {'id': q['id'], 'chapter': q['chapter'], 'verdict': verdict, 'missing': incomplete or [],
+            'accepted': [(x, acc[i]) for i, x in taken.items()], 'acceptedUnused': [i for i in acc if i not in taken],
             'strongN': ns, 'strongOK': sum(1 for x in strong if x['r']['code'] == 'strong'),
             'hard': hard, 'diagHard': diag_hard, 'coreShort': core_short, 'stressShort': stress_short, 'weakA': wa_bad, 'weakB': wb_flag,
             'dead': dead, 'generic': generic, 'fragile': fragile,
@@ -548,7 +566,12 @@ def run_answers(qs_all, qs, answers, study_meta, report, jsonout, compare, allow
     if allow_incomplete and incomplete:
         warnings.append('--allow-incomplete: these questions lack some required answers: ' + ', '.join(sorted(incomplete)))
         incomplete = {}
-    summary = [summarise(q, per[q['id']], incomplete.get(q['id'])) for q in tested]
+    accepted = defaultdict(dict)
+    for a in (answers.get('meta') or {}).get('accepted') or []:
+        if isinstance(a, dict) and a.get('question') and a.get('id') and str(a.get('reason', '')).strip(): accepted[a['question']][a['id']] = str(a['reason']).strip()
+    summary = [summarise(q, per[q['id']], incomplete.get(q['id']), accepted.get(q['id'])) for q in tested]
+    for s_ in summary:
+        for i in s_['acceptedUnused']: warnings.append(f"meta.accepted {s_['id']} {i}: that answer no longer falls short, so the exception is not needed")
     untested = [q['id'] for q in qs if q['id'] not in written]
     return finish(qs, summary, per, untested, problems, warnings, report, jsonout, compare, study_meta, answers.get('meta') or {}, True)
 
@@ -582,7 +605,7 @@ def finish(qs, summary, per, untested, problems, warnings, report, jsonout, comp
     L += [f"- Tier A (generated and written) weak answers handled as expected: **{sum(1 for s in summary if not s['weakA'])}/{len(summary)} questions clean**", '']
     L += ['| Question | Session | Verdict | Strong | Core short | Hard fails | Tier A misses | Tier B outside | Fragile | Review |', '|---|---|---|---|---|---|---|---|---|---|']
     for s in summary:
-        L.append(f"| {s['id']} | {s['chapter']} | **{s['verdict']}** | {s['strongOK']}/{s['strongN']} | {len(s['coreShort'])} | {len(s['hard'])} | {len(s['weakA'])} | {len(s['weakB'])} | {len(s['fragile'])} | {'yes' if s['review'] else ''} |")
+        L.append(f"| {s['id']} | {s['chapter']} | **{s['verdict']}**{' (' + str(len(s['accepted'])) + ' accepted)' if s['accepted'] else ''} | {s['strongOK']}/{s['strongN']} | {len(s['coreShort'])} | {len(s['hard'])} | {len(s['weakA'])} | {len(s['weakB'])} | {len(s['fragile'])} | {'yes' if s['review'] else ''} |")
     # by style
     if written_mode:
         L += ['', '## Strong answers by style (all questions tested)', '', '| Style | Role | n | strong | partial | hard failure |', '|---|---|---|---|---|---|']
@@ -616,11 +639,15 @@ def finish(qs, summary, per, untested, problems, warnings, report, jsonout, comp
         L += ['', f'## Compared with {os.path.basename(compare)}', '', f'Answers that behave **worse** than before: **{len(regress)}**; better: {len(improved)}']
         L += [f"- {r['question']} {r['id']} ({r['label']}): {old} → **{r['code']}**" for r, old in regress]
         L += [f"- {r['question']} {r['id']} ({r['label']}): {old} → {r['code']} (better)" for r, old in improved]
+    acc_rows = [(s['id'], x, why) for s in summary for x, why in s['accepted']]
+    if acc_rows:
+        L += ['', '## Accepted exceptions (decided by the author; recorded in meta.accepted of the answers file)', '']
+        L += [f"- {qid} `{x['id']}` {x['label']} → **{x['r']['code']}** (passage {round(x['r']['passOverlap'] * 100)}%): {why}" for qid, x, why in acc_rows]
     if untested: L += ['', '## Untested questions', '', ', '.join(untested)]
     L += ['', '## Adjudication log', '', '(Record here, for every failure, REVIEW and Tier B item outside expectation: what kind of finding it is (see ANSWER-CHECK-TESTING.md section 7), what was decided, and what changed. Do not edit the answers.)', '']
     text = '\n'.join(L) + '\n'
     if report: open(report, 'w', encoding='utf-8').write(text)
-    if jsonout: json.dump({'meta': ameta, 'studyVersion': study_meta.get('studyVersion'), 'summary': [{k: v for k, v in s.items() if k in ('id', 'chapter', 'verdict', 'strongN', 'strongOK', 'dead', 'generic')} for s in summary], 'answers': allrows}, open(jsonout, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    if jsonout: json.dump({'meta': ameta, 'studyVersion': study_meta.get('studyVersion'), 'summary': [dict({k: v for k, v in s.items() if k in ('id', 'chapter', 'verdict', 'strongN', 'strongOK', 'dead', 'generic')}, accepted=[[x['id'], why] for x, why in s['accepted']]) for s in summary], 'answers': allrows}, open(jsonout, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('\n'.join(L[:L.index('| Question | Session | Verdict | Strong | Core short | Hard fails | Tier A misses | Tier B outside | Fragile | Review |')]).rstrip())
     for s in summary:
         print(f"  {s['id']:<10} {s['verdict']:<10} strong {s['strongOK']}/{s['strongN']}  core-short {len(s['coreShort'])}  hard {len(s['hard'])}  tierA-miss {len(s['weakA'])}  tierB-outside {len(s['weakB'])}  fragile {len(s['fragile'])}" + ('  REVIEW' if s['review'] else ''))
