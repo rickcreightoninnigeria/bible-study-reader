@@ -39,9 +39,9 @@
             },
 
             {
-              "titleLevel3":"Servant Leadership",
-              "description":"The biblical model for influence and care.",
-              "studyId"    :"servant_leadership_v001"
+              "titleLevel3":"Formation for Faithful Service",
+              "description":"Character, Conviction & Competence for Christian Ministry",
+              "studyId"    :"formation_for_faithful_service_v001"
             }
           ]
         },
@@ -55,13 +55,13 @@
             {
               "titleLevel3":"Bible Overview (1)",
               "description":"Tracing the story of the Old Testament.",
-              "studyId"    :"bible_overview_(1)_v001"
+              "studyId"    :"bible_overview_ot_v001"
             },
 
             {
               "titleLevel3":"Bible Overview (2)",
               "description":"Tracing the story of the New Testament.",
-              "studyId"    :"bible_overview_(2)_v001"
+              "studyId"    :"bible_overview_nt_v001"
             },
 
             {
@@ -107,7 +107,7 @@
             {
               "titleLevel3":"Who am I?",
               "description":"Understanding our identity in Christ.",
-              "studyId"    :"who_am_i_v001"
+              "studyId"    :"who_am_i_volume_1_v001"
             },
 
             {
@@ -131,9 +131,9 @@
           "downloadLocation":"",
           "studyTitles"     :[
             {
-              "titleLevel3":"Introducing Jonah",
+              "titleLevel3":"Travelling with Jonah",
               "description":"God's compassion for the nations and our resistance.",
-              "studyId"    :"introducing_jonah_v001"
+              "studyId"    :"travelling_with_jonah_v001"
             },
 
             {
@@ -149,9 +149,9 @@
             },
 
             {
-              "titleLevel3":"Sharing Jesus",
-              "description":"Advanced personal evangelism strategies.",
-              "studyId"    :"sharing_jesus_v001"
+              "titleLevel3":"Sharing Jesus Course",
+              "description":"<b>Sharing Jesus Course</b><br><br>Eight studies that will equip you to share Jesus with others.",
+              "studyId"    :"sharing_jesus_course_v001"
             }
           ]
         },
@@ -163,15 +163,15 @@
           "downloadLocation":"",
           "studyTitles"     :[
             {
-              "titleLevel3":"[A]",
-              "description":"Description for item A.",
-              "studyId"    :"placeholder_[a]_v001"
+              "titleLevel3":"Nehemiah for Today",
+              "description":"A study of Nehemiah and what his story means for us today.",
+              "studyId"    :"nehemiah_for_today_v001"
             },
 
             {
-              "titleLevel3":"[B]",
-              "description":"Description for item B.",
-              "studyId"    :"placeholder_[b]_v001"
+              "titleLevel3":"2 Timothy for Today",
+              "description":"A study of 2 Timothy and what it means for us today.",
+              "studyId"    :"2_timothy_for_today_v001"
             },
 
             {
@@ -187,9 +187,9 @@
             },
 
             {
-              "titleLevel3":"[E]",
-              "description":"Description for item E.",
-              "studyId"    :"placeholder_[e]_v001"
+              "titleLevel3":"Servant Leadership",
+              "description":"The biblical model for influence and care.",
+              "studyId"    :"servant_leadership_v001"
             }
           ]
         }
@@ -221,14 +221,14 @@
             {
               "titleLevel3":"Who am I?",
               "description":"Identity-based warfare against sin.",
-              "studyId"    :"who_am_i_v001"
+              "studyId"    :"who_am_i_volume_1_v001"
             },
 
             {
               "titleLevel3"     :"Find Rest for your Soul",
               "description"     :"<b>Find Rest for your Soul: Escaping addictive behaviour by finding a better joy</b><br><br>A ten-session Bible study exploring the heart behind addiction — and how the Gospel offers more than any false promise can deliver. Working through Scripture, each session combines close reading with personal reflection.",
               "downloadLocation":"https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
-              "studyId"         :"find_rest_for_your_soul_v001"
+              "studyId"         :"find_rest_v001"
             },
 
             {
@@ -344,7 +344,7 @@
             {
               "titleLevel3":"Who am I?",
               "description":"Helping others find their identity in Christ.",
-              "studyId"    :"who_am_i_v001"
+              "studyId"    :"who_am_i_volume_1_v001"
             },
 
             {
@@ -392,9 +392,9 @@
             },
 
             {
-              "titleLevel3":"Sharing Jesus",
+              "titleLevel3":"Sharing Jesus Course",
               "description":"Moving from conversation to invitation.",
-              "studyId"    :"sharing_jesus_v001"
+              "studyId"    :"sharing_jesus_course_v001"
             }
           ]
         },
@@ -476,7 +476,7 @@
             {
               "titleLevel3":"Make Many Deep Disciples",
               "description":"<b>Make Many Deep Disciples: Berean Bible Church membership course</b><br><br>A five-session Bible study examining the church's core values.",
-              "studyId"    :"make_many_deep_disciples_v001"
+              "studyId"    :"make_many_v001"
             }
           ]
         },
