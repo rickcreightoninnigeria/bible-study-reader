@@ -21,7 +21,7 @@ Three kinds of finding, because they have three different owners: a **study defe
 | **Targeted** | only the questions whose key terms, sample answer, passage, `shortAnswerThreshold` or `skipBibleVerseCheck` changed, with a **fresh** batch | yes | Before releasing an update |
 | **Full** | every question with key terms (1 John: 74 questions = 1,258 written answers) | yes | Before the first release, and when a large share of key terms changes |
 
-Write in batches of one session at a time. Running the answers takes seconds; writing them is the work, which is why lint and auto exist: they find most key-term defects without a writer.
+Section 11 has the prompts to give the assistant at each step. Write in batches of one session at a time. Running the answers takes seconds; writing them is the work, which is why lint and auto exist: they find most key-term defects without a writer.
 
 ## 3. The recipes
 
@@ -166,3 +166,47 @@ Reproduced in the revision: the pilot report is identical when run again, and th
 - **Not tested:** how the messages read (note: the strong message, now "Nice work — your answer includes the main ideas", was reworded on 8 November 2026 from "Well done — your answer covers the main ideas", which claimed more than a word match can know); the UI; devices; the check on questions with no key terms (they get only the loose sample-answer check).
 - **Small samples.** Thirteen answers per question give rough hit rates; rates by kind across a whole study (74 questions) are more trustworthy than any one question.
 - **Rights.** Answers are written fresh; the passage copy and reword answers contain Bible text and must stay out of the app repository.
+
+## 11. Prompts for the user, and when the assistant hands them over
+
+In a Claude Project the user drives the test with a few prompts, in two kinds of chat: a **controller** chat (it holds the study and runs the script) and a **blind writer** chat (it holds only the briefing, so it cannot see the key terms). The assistant gives the user the right prompt at each hand-over point below, in a code block, with the square brackets filled in, and says which chat it goes in and which files to attach.
+
+| Hand-over point | Prompt | Chat | Attach |
+|---|---|---|---|
+| Phase 2 is done and the validator, lint and auto results have been reported | 2 (a written run) | controller | `study.json` or the `.estudy` |
+| The briefing has just been generated | 3 now; 4 for when the user returns | new blind writer chat | `brief.md`, `answers_skeleton.json` |
+| The report has just been given | 5 | controller | the approved plan, `results.json` |
+
+A study finished somewhere else starts at prompt 1. If the test cannot run (no Node, or status 2), the assistant says so and gives no further prompt.
+
+**Prompt 1: quick checks on a finished draft** (controller; attach the study)
+
+```text
+Phase 3, step 1 only. Run test_answers.py --lint and --auto on the attached study and report the findings. Tell me if either exits with status 2.
+```
+
+**Prompt 2: start a written run** (controller; attach the study)
+
+```text
+Phase 3, [Smoke run (one question per session, seed recorded) | Targeted run for these questions: ID, ID | Full run for session N]. Generate the briefing with --brief. Give me brief.md and answers_skeleton.json to download. Do not write any answers, and do not show me reference.md.
+```
+
+**Prompt 3: write the answers** (a NEW chat in the same project; attach only `brief.md` and `answers_skeleton.json`)
+
+```text
+Write the test answers. Fill every empty text field in answers_skeleton.json from brief.md alone: 13 strong and 4 weak answers per question, in the styles and kinds the briefing lists. Every strong answer must be correct; no weak answer may be a correct, complete answer. Do not ask for the study file or anything else. Return the finished file as answers.json.
+```
+
+**Prompt 4: run the answers** (back in the controller chat; attach `answers.json`)
+
+```text
+Run the answers: test_answers.py --run study.json answers.json --report report.md --json results.json. Give me the report. For every failure, REVIEW flag, fragile pass and Tier B item outside expectation, classify it using the table in section 7 of ANSWER-CHECK-TESTING.md and propose the fix as a change to the plan. Do not change the study file.
+```
+
+**Prompt 5: after the fixes** (controller; attach the plan and `results.json`)
+
+```text
+Apply the approved plan changes, rebuild, validate, raise studyVersion. Then produce a briefing for the changed questions only, so I can get a fresh batch. When I bring it back, run it, and also re-run the old answers.json with --compare results.json: it must score no worse.
+```
+
+For a Full run, repeat prompts 2 to 4 for one session at a time. A conversation that starts with only `brief.md` and `answers_skeleton.json` attached is a blind writer: it writes the answers from the briefing alone and offers no hand-over prompts.
