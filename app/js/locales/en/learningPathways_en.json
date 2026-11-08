@@ -39,9 +39,9 @@
             },
 
             {
-              "titleLevel3":"Formation for Faithful Service",
-              "description":"Character, Conviction & Competence for Christian Ministry",
-              "studyId"    :"formation_for_faithful_service_v001"
+              "titleLevel3":"Saved to Serve",
+              "description":"Every Christian is called to serve. Discovering how God's grace makes us servants, how he equips each of us for the good of others, and what it means to belong to God's family.",
+              "studyId"    :"saved_to_serve_v001"
             }
           ]
         },
@@ -79,9 +79,9 @@
             },
 
             {
-              "titleLevel3":"Sharing Jesus Course",
-              "description":"<b>Sharing Jesus Course</b><br><br>Eight studies that will equip you to share Jesus with others.",
-              "studyId"    :"sharing_jesus_course_v001"
+              "titleLevel3":"Reading the Bible with Someone",
+              "description":"Learning how to read a passage together with another believer – one-to-one or in a small group – so that you both grow in understanding, faith and obedience.",
+              "studyId"    :"reading_the_bible_with_someone_v001"
             }
           ]
         },
@@ -144,8 +144,14 @@
 
             {
               "titleLevel3":"Introducing Jesus",
-              "description":"Preparing to introduce others to the person of Christ.",
+              "description":"<b>Introducing Jesus: Who he is, what he did, and why it matters</b><br><br>An overview of Jesus' person, life, ministry and work – who he is, what he came to do, and what it means for us.",
               "studyId"    :"introducing_jesus_v001"
+            },
+
+            {
+              "titleLevel3":"What Rules My Heart?",
+              "description":"<b>What Rules My Heart? A Course on Idolatry</b><br><br>A fifteen-session course exploring what the Bible teaches about idolatry – what really drives us, and how Christ frees our hearts to put God first.",
+              "studyId"    :"what_rules_my_heart_v001"
             },
 
             {
@@ -175,15 +181,15 @@
             },
 
             {
-              "titleLevel3":"[C]",
-              "description":"Description for item C.",
-              "studyId"    :"placeholder_[c]_v001"
+              "titleLevel3":"Life Together",
+              "description":"What the Bible teaches about Christian community – and how leaders shape a fellowship marked by truth, love and mutual care.",
+              "studyId"    :"life_together_v001"
             },
 
             {
-              "titleLevel3":"[D]",
-              "description":"Description for item D.",
-              "studyId"    :"placeholder_[d]_v001"
+              "titleLevel3":"Formation for Faithful Service",
+              "description":"Character, Conviction & Competence for Christian Ministry",
+              "studyId"    :"formation_for_faithful_service_v001"
             },
 
             {
@@ -381,7 +387,7 @@
 
             {
               "titleLevel3":"Introducing Jesus",
-              "description":"Using the Gospels to introduce seekers to Christ.",
+              "description":"<b>Introducing Jesus: Who he is, what he did, and why it matters</b><br><br>An overview of Jesus' person, life, ministry and work – who he is, what he came to do, and what it means for us.",
               "studyId"    :"introducing_jesus_v001"
             },
 
