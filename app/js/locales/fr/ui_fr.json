@@ -748,7 +748,7 @@
   "validation_lv_partial_step1"                         :"Relisez le passage et voyez s’il manque quelque chose dans votre réponse.",
   "validation_lv_partial_step2"                         :"Essayez de noter un peu plus.",
   "validation_lv_partial_step3"                         :"Appuyez ensuite sur le bouton « idée principale » ([[icon:mainPoint]]) pour comparer votre réponse avec elle.",
-  "validation_lv_strong"                                :"Bravo — votre réponse couvre les idées principales.",
+  "validation_lv_strong"                                :"Beau travail — votre réponse inclut les idées principales.",
   "validation_lv_see_main_point"                        :"Appuyez sur le bouton « idée principale » ([[icon:mainPoint]]) pour comparer votre réponse avec elle.",
   "validation_lv_empty_check_lead"                      :"Rien à vérifier pour l’instant. Voici comment commencer :",
   "validation_lv_empty_compare_lead"                    :"Rien à comparer pour l’instant. Voici comment commencer :",

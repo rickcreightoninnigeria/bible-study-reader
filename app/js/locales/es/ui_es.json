@@ -748,7 +748,7 @@
   "validation_lv_partial_step1"                         :"Vuelve a mirar el pasaje y comprueba si falta algo en tu respuesta.",
   "validation_lv_partial_step2"                         :"Intenta anotar un poco más.",
   "validation_lv_partial_step3"                         :"Después toca el botón de idea principal ([[icon:mainPoint]]) para comparar tu respuesta con ella.",
-  "validation_lv_strong"                                :"¡Bien hecho! Tu respuesta recoge las ideas principales.",
+  "validation_lv_strong"                                :"¡Buen trabajo! Tu respuesta incluye las ideas principales.",
   "validation_lv_see_main_point"                        :"Toca el botón de idea principal ([[icon:mainPoint]]) para comparar tu respuesta con ella.",
   "validation_lv_empty_check_lead"                      :"Todavía no hay nada que comprobar. Así puedes empezar:",
   "validation_lv_empty_compare_lead"                    :"Todavía no hay nada que comparar. Así puedes empezar:",

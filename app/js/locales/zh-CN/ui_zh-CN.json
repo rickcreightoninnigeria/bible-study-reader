@@ -569,7 +569,7 @@
   "validation_lv_partial_step1": "请再看看这段经文，想想你的答案是否还缺少什么。",
   "validation_lv_partial_step2": "试着多写一点。",
   "validation_lv_partial_step3": "然后点按“要点”按钮（[[icon:mainPoint]]），把你的答案与它对照。",
-  "validation_lv_strong": "做得好——你的答案涵盖了主要思想。",
+  "validation_lv_strong": "做得不错——你的答案包含了主要思想。",
   "validation_lv_see_main_point": "点按“要点”按钮（[[icon:mainPoint]]），把你的答案与它对照。",
   "validation_lv_empty_check_lead": "目前还没有可检查的内容。这样开始：",
   "validation_lv_empty_compare_lead": "目前还没有可对照的内容。这样开始：",

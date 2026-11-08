@@ -85,6 +85,7 @@ function getUpgradeOnboardingSlides() {
         '<li><b>Starred only:</b> if you have starred questions, Share and Print offer “Starred questions only”. Share all and Print all also open with a list of them.</li>' +
         '<li><b>Search:</b> a new Starred button lists your starred questions, or limits your search results to them.</li>' +
         '<li><b>Print in the browser:</b> on the web version the Print buttons now open your browser’s print dialog, where you can also save a PDF.</li>' +
+        '<li><b>Answer check wording:</b> a good answer now gets “Nice work — your answer includes the main ideas”, because the check compares words and cannot judge meaning. Tap Main point to compare with the author’s.</li>' +
         '</ul>',
     },
   ];

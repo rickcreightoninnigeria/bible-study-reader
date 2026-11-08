@@ -748,7 +748,7 @@
   "validation_lv_partial_step1"                         :"أعد النظر في المقطع وانظر هل ينقص إجابتك شيء آخر.",
   "validation_lv_partial_step2"                         :"حاول أن تكتب قليلًا أكثر.",
   "validation_lv_partial_step3"                         :"ثم اضغط على زر الفكرة الرئيسية ([[icon:mainPoint]]) لتقارن إجابتك بها.",
-  "validation_lv_strong"                                :"أحسنت — إجابتك تغطي الأفكار الرئيسية.",
+  "validation_lv_strong"                                :"عمل جيد — إجابتك تتضمن الأفكار الرئيسية.",
   "validation_lv_see_main_point"                        :"اضغط على زر الفكرة الرئيسية ([[icon:mainPoint]]) لتقارن إجابتك بها.",
   "validation_lv_empty_check_lead"                      :"لا يوجد شيء للتحقق منه بعد. إليك كيفية البدء:",
   "validation_lv_empty_compare_lead"                    :"لا يوجد شيء للمقارنة بعد. إليك كيفية البدء:",

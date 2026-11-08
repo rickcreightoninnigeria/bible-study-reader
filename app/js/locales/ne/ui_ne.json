@@ -748,7 +748,7 @@
   "validation_lv_partial_step1"                         :"खण्डलाई फेरि हेर्नुहोस् र तपाईंको उत्तरमा अरू केही पर्नुपर्छ कि भनेर जाँच्नुहोस्।",
   "validation_lv_partial_step2"                         :"अलि बढी लेख्ने प्रयास गर्नुहोस्।",
   "validation_lv_partial_step3"                         :"त्यसपछि मुख्य कुरा बटन ([[icon:mainPoint]]) थिचेर आफ्नो उत्तरलाई तुलना गर्नुहोस्।",
-  "validation_lv_strong"                                :"धेरै राम्रो — तपाईंको उत्तरले मुख्य विचारहरू समेटेको छ।",
+  "validation_lv_strong"                                :"राम्रो काम — तपाईंको उत्तरमा मुख्य विचारहरू समावेश छन्।",
   "validation_lv_see_main_point"                        :"आफ्नो उत्तरलाई तुलना गर्न मुख्य कुरा बटन ([[icon:mainPoint]]) थिच्नुहोस्।",
   "validation_lv_empty_check_lead"                      :"जाँच्न अहिले केही छैन। यसरी सुरु गर्नुहोस्:",
   "validation_lv_empty_compare_lead"                    :"तुलना गर्न अहिले केही छैन। यसरी सुरु गर्नुहोस्:",

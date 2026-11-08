@@ -443,6 +443,7 @@ describe('new strings', () => {
 
   it('the tier messages are neutral except "strong"', () => {
     expect(en.validation_lv_partial).not.toMatch(/well done|great|excellent|perfect/i);
-    expect(en.validation_lv_strong).toMatch(/well done/i);
+    expect(en.validation_lv_strong).toMatch(/nice work/i);
+    expect(en.validation_lv_strong).not.toMatch(/covers|well done/i);   // a word match cannot judge meaning, so it says "includes", not "covers"
   });
 });

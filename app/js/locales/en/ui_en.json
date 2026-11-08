@@ -652,7 +652,7 @@
   "validation_lv_partial_step1"                        :"Take another look at the passage and see whether anything else belongs in your answer.",
   "validation_lv_partial_step2"                        :"Try to jot down a little bit more.",
   "validation_lv_partial_step3"                        :"Then tap the main point button ([[icon:mainPoint]]) to compare your answer with it.",
-  "validation_lv_strong"                                :"Well done — your answer covers the main ideas.",
+  "validation_lv_strong"                                :"Nice work — your answer includes the main ideas.",
   "validation_lv_see_main_point"                       :"Tap the main point button ([[icon:mainPoint]]) to compare your answer with it.",
   "validation_lv_empty_check_lead"                     :"Nothing to check yet. Here's how to start:",
   "validation_lv_empty_compare_lead"                   :"Nothing to compare yet. Here's how to start:",
