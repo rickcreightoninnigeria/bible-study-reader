@@ -713,6 +713,141 @@ ${chaptersHTML}
   dispatchPrint(html, t('shareprint_print_fallback_all'));
 }
 
+// ── PRINT A GO DEEPER / LEADERS' NOTES PAGE ───────────────────────────────────
+// Prints the tab now on screen on the Go Deeper or Leaders' Notes page. These
+// pages have no answers to collect, so the print is built from the rendered tab
+// itself: what the reader sees is what prints, in the language they are viewing.
+// From the copy, footnote buttons become plain numbers with the notes listed at
+// the end, gallery thumbnails become figures, and every other button (Previous,
+// Next, Back to study) is removed. A page with a table of four or more columns
+// prints landscape, so a chart (e.g. a Bible story map) keeps its shape; the
+// reader can still change the orientation in the print dialog.
+const _CONTENT_PRINT_LANDSCAPE_COLUMNS = 4;
+
+const _CONTENT_PRINT_CSS = `
+  .content-print .chapter-eyebrow { margin-bottom: 4pt; }
+  .block { margin: 0 0 12pt 0; }
+  .block-label { font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #8c6420; margin: 14pt 0 4pt 0; page-break-after: avoid; }
+  .block p { margin: 0 0 6pt 0; }
+  .highlight { border-left: 2pt solid #c8bca8; background: #f7f3ea; padding: 6pt 10pt; margin: 6pt 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.35; margin: 8pt 0; }
+  th, td { border: 0.5pt solid #b8ad98; padding: 4pt 6pt; text-align: start; vertical-align: top; }
+  thead th, tbody th { background: #efe9dc; font-weight: 600; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  tr { page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  figure { margin: 8pt 0; page-break-inside: avoid; }
+  figure img { max-width: 100%; max-height: 18cm; display: block; }
+  figcaption { font-size: 9pt; color: #4a3f30; margin-top: 3pt; }
+  .footnotes { border-top: 0.5pt solid #c8bca8; margin-top: 18pt; padding-top: 6pt; font-size: 9pt; }
+  .footnotes p { margin: 0 0 4pt 0; }
+  .confidential { margin-top: 18pt; font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #888; text-align: center; }`;
+
+// Images on these pages are blob: URLs, which exist only in the app's own
+// document; the Android print bridge renders the HTML elsewhere. Inline them
+// as data: URLs, and drop any that cannot be read.
+async function _inlinePrintImages(root) {
+  await Promise.all([...root.querySelectorAll('img')].map(async img => {
+    const src = img.getAttribute('src') || '';
+    if (!src.startsWith('blob:')) return;
+    try {
+      const blob = await (await fetch(src)).blob();
+      img.setAttribute('src', await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload  = () => resolve(reader.result);
+        reader.onerror = () => reject(reader.error);
+        reader.readAsDataURL(blob);
+      }));
+    } catch (e) {
+      console.warn('[printContentPage] image could not be read; left out.', e);
+      img.remove();
+    }
+  }));
+}
+
+async function printContentPage() {
+  const isLeaders = window.activeTabPage === 'leaders';
+  const source    = document.getElementById(isLeaders ? 'leadersTabContent' : 'goDeeperTabContent');
+  if (!source) return;
+  const body = source.cloneNode(true);
+
+  // Heading: the chapter's title, or the page title on an intro tab.
+  const pageTitle    = (document.querySelector('.howto-title')?.textContent || '').trim();
+  const chapterLabel = (body.querySelector('.leaders-chapter-number')?.textContent || '').trim();
+  const chapterTitle = (body.querySelector('.leaders-chapter-title')?.textContent || '').trim();
+  body.querySelectorAll('.leaders-chapter-header').forEach(el => el.remove());
+
+  // Footnotes: keep the number in the text, list the notes at the end.
+  const notes = [];
+  body.querySelectorAll('.footnote-btn[data-fn-key]').forEach(btn => {
+    const fn = _footnoteBodies.get(btn.dataset.fnKey);
+    if (fn) notes.push({ num: btn.textContent.trim(), body: fn.body });
+    btn.replaceWith(document.createTextNode(btn.textContent));
+  });
+
+  // Gallery thumbnails: image and caption, without the button around them.
+  body.querySelectorAll('.gallery-thumb').forEach(thumb => {
+    const fig = document.createElement('figure');
+    const img = thumb.querySelector('img');
+    const cap = thumb.querySelector('.gallery-thumb-caption');
+    if (img) { img.removeAttribute('loading'); img.removeAttribute('class'); fig.appendChild(img); }
+    if (cap) { const fc = document.createElement('figcaption'); fc.textContent = cap.textContent; fig.appendChild(fc); }
+    thumb.replaceWith(fig);
+  });
+
+  // Navigation and other controls, and inline icons (the sentence around an
+  // icon names its button, as in buildChapterBody's _printMarkers).
+  body.querySelectorAll('button, .chapter-nav, .inline-icon').forEach(el => el.remove());
+
+  // Plain class names the print stylesheet knows; inline margins from the
+  // screen layout are dropped.
+  body.querySelectorAll('.leaders-block, .go-deeper-block').forEach(el => { el.className = 'block'; });
+  body.querySelectorAll('.leaders-block-label, .go-deeper-block-label').forEach(el => { el.className = 'block-label'; });
+  body.querySelectorAll('.leaders-watch, .go-deeper-highlight').forEach(el => { el.className = 'highlight'; });
+  body.querySelectorAll('[style]').forEach(el => el.removeAttribute('style'));
+
+  await _inlinePrintImages(body);
+
+  const wide = [...body.querySelectorAll('table')].some(table =>
+    [...table.rows].some(row => row.cells.length >= _CONTENT_PRINT_LANDSCAPE_COLUMNS));
+
+  const notesHtml = notes.length
+    ? `<div class="footnotes">${notes.map(n => `<p><sup>${escapeHtml(n.num)}</sup> ${n.body}</p>`).join('')}</div>`
+    : '';
+  const confidential = isLeaders
+    ? `<div class="confidential">${escapeHtml((document.querySelector('.leaders-confidential')?.textContent || '').trim())}</div>`
+    : '';
+
+  const studyTitle = (window.titlePageData || {}).title || '';
+  const eyebrow    = [studyTitle, pageTitle, chapterLabel].filter(Boolean).map(escapeHtml).join(' · ');
+  const heading    = chapterTitle || pageTitle;
+  const plainTitle = [studyTitle, pageTitle, chapterTitle].filter(Boolean).join(' — ');
+  const docTitle   = escapeHtml(plainTitle);
+
+  const html = `<!DOCTYPE html>
+<html lang="${escapeHtml(document.documentElement.lang || 'en')}" dir="${escapeHtml(document.documentElement.dir || 'ltr')}">
+${buildPrintHead(docTitle).replace('</style>', `${_CONTENT_PRINT_CSS}${wide ? '\n  @page { size: landscape; }' : ''}\n</style>`)}
+<body class="content-print">
+<div class="chapter-header">
+  <div class="chapter-eyebrow">${eyebrow}</div>
+  <h1>${escapeHtml(heading)}</h1>
+</div>
+${body.innerHTML}
+${notesHtml}
+${confidential}
+</body></html>`;
+
+  dispatchPrint(html, `${plainTitle}\n\n${_contentPrintFallbackText(body)}`);
+}
+
+// Plain text of the printed tab, for Android without a print bridge: table
+// cells separated by " | ", one line per row, paragraph, block or note.
+function _contentPrintFallbackText(body) {
+  const copy = body.cloneNode(true);
+  copy.querySelectorAll('td, th').forEach(cell => { if (cell.nextElementSibling) cell.append(' | '); });
+  copy.querySelectorAll('tr, p, li, .block-label, .block, .highlight, figure').forEach(el => el.append('\n'));
+  return copy.textContent.replace(/[ \t]+\n/g, '\n').replace(/\n[ \t]+/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 // ── BLANK STUDY PRINT ─────────────────────────────────────────────────────────
 // No answer reads needed — these functions are unchanged.
 
