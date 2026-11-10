@@ -1,7 +1,7 @@
 /**
  * The button bar at the foot of a chapter: Recommend, Print and Share (no Save
  * button — answers save themselves). Covers the markup, the rule that drops the
- * icons when a label wraps, the heart icon in every icon set, and the strings
+ * icons when a label wraps or a button drops to a second row, the heart icon in every icon set, and the strings
  * in every locale.
  *
  * Paths are relative to testing/tests/ — sources are in ../../app/js/
@@ -60,13 +60,16 @@ describe('buildSaveBar', () => {
 });
 
 describe('fitSaveBar', () => {
-  // A bar whose labels report the given line tops (one number = one line).
-  function setup(labelLines) {
+  // A bar whose labels report the given line tops (one number = one line),
+  // and whose buttons sit at the given tops (all equal = one row).
+  function setup(labelLines, buttonTops = [50, 50, 50]) {
     const classes = new Set();
     const labels = labelLines.map(lines => ({ lines }));
+    const buttons = buttonTops.map(top => ({ top, getBoundingClientRect() { return { top: this.top }; } }));
     const bar = {
       classList: { add: c => classes.add(c), remove: c => classes.delete(c), contains: c => classes.has(c) },
       querySelectorAll: sel => (sel === '.save-btn-label' ? labels : []),
+      children: buttons,
     };
     const document = {
       querySelector: sel => (sel === '.save-bar' ? bar : null),
@@ -76,7 +79,7 @@ describe('fitSaveBar', () => {
       },
     };
     const ctx = loadBar({ document });
-    return { ctx, classes, labels, document };
+    return { ctx, classes, labels, buttons, document };
   }
 
   it('keeps the icons when every label fits on one line', () => {
@@ -102,6 +105,15 @@ describe('fitSaveBar', () => {
     ctx.fitSaveBar();
     expect(classes.has('no-icons')).toBe(true);
     labels[2].lines = [10];
+    ctx.fitSaveBar();
+    expect(classes.has('no-icons')).toBe(false);
+  });
+
+  it('hides the icons when a button has dropped to a second row (a large phone font size)', () => {
+    const { ctx, classes, buttons } = setup([[10], [10], [10]], [50, 50, 96]);
+    ctx.fitSaveBar();
+    expect(classes.has('no-icons')).toBe(true);
+    buttons[2].top = 50;
     ctx.fitSaveBar();
     expect(classes.has('no-icons')).toBe(false);
   });

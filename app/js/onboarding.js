@@ -86,6 +86,7 @@ function getUpgradeOnboardingSlides() {
         '<li><b>Reminder:</b> if you have not made a backup for 30 days, the app offers to make one.</li>' +
         '<li><b>Automatic backup on Android:</b> if Google backup is turned on for your phone, your answers are now included in it, and a new phone offers to restore them.</li>' +
         '<li><b>Downloading studies:</b> the Download button and the download links in Learning Paths now use a simple download page instead of Google Drive, so there are no extra Drive screens.</li>' +
+        '<li><b>Large text:</b> with a large phone font size, tabs and the buttons at the foot of each chapter now move onto another row instead of running off the screen, and long words such as email addresses wrap.</li>' +
         '</ul>',
     },
   ];

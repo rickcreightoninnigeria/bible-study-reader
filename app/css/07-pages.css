@@ -379,14 +379,11 @@
   background: var(--text);
   border-bottom: 1px solid rgba(245,240,232,0.10);
   display: flex;
+  flex-wrap: wrap;         /* large phone fonts: tabs drop to a second row instead of hiding off-screen */
   align-items: center;
   gap: 0;
   padding: 0 4px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;   /* Firefox */
 }
-.howto-tab-bar::-webkit-scrollbar { display: none; }
 
 .howto-tab-label {
   font-family: var(--font-stack-mono);
@@ -1401,15 +1398,12 @@ body.dark-mode .backup-include-studies { color: var(--dm-text); }
   background: var(--text);
   border-bottom: 1px solid rgba(245,240,232,0.10);
   display: flex;
+  flex-wrap: wrap;         /* large phone fonts: tabs drop to a second row instead of hiding off-screen */
   align-items: center;
   gap: 0;
   padding: 0 4px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
 
-.progress-tab-bar::-webkit-scrollbar { display: none; }
 .progress-tab {
   background: none;
   border: none;

@@ -168,6 +168,7 @@
   padding-bottom: calc(env(safe-area-inset-bottom) + 5px);
   background: linear-gradient(to top, var(--surface-mid) 70%, transparent);
   display: flex;
+  flex-wrap: wrap;         /* large phone fonts: a button drops to a second row instead of running off the screen (fitSaveBar) */
   gap: 8px;
   max-width: 340px;
   margin: 0 auto;

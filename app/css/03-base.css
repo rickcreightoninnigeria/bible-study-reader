@@ -47,6 +47,7 @@ body {
   color: var(--text);
   font-size: 1rem;       /* rem — scales with html font-size set in variables.css */
   line-height: 1.7;
+  overflow-wrap: break-word;   /* a word longer than its box (an email address, at a large phone font size) breaks instead of spilling out */
   min-height: 100vh;
   background-image:
     /* Subtle paper-grain texture rendered as an inline SVG data URI.

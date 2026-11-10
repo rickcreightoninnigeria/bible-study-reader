@@ -153,15 +153,23 @@ function _saveBarLabelWraps(label) {
   return tops.size > 1;
 }
 
-// Hides the icons (class "no-icons" on the bar) when any label wraps with the
-// icons showing; shows them again when everything fits. Safe to call at any
-// time: it does nothing when there is no bar on screen.
+// True when the buttons no longer fit on one row and the bar (flex-wrap) has
+// moved one onto a second row: a single long word cannot wrap, so with a large
+// phone font size this happens instead of a label wrapping.
+function _saveBarButtonsWrap(bar) {
+  return new Set(Array.from(bar.children, b => Math.round(b.getBoundingClientRect().top))).size > 1;
+}
+
+// Hides the icons (class "no-icons" on the bar) when any label wraps, or the
+// buttons spill onto a second row, with the icons showing; shows them again
+// when everything fits. Safe to call at any time: it does nothing when there
+// is no bar on screen.
 function fitSaveBar() {
   const bar = document.querySelector('.save-bar');
   if (!bar) return;
   bar.classList.remove('no-icons');
   const labels = Array.from(bar.querySelectorAll('.save-btn-label'));
-  if (labels.some(_saveBarLabelWraps)) bar.classList.add('no-icons');
+  if (labels.some(_saveBarLabelWraps) || _saveBarButtonsWrap(bar)) bar.classList.add('no-icons');
 }
 
 // The bar's width changes with the window (rotating the phone, split screen),
