@@ -1046,6 +1046,11 @@ async function loadAnyFile(file) {
 
     if (zip) {
       _checkZipLimits(zip);
+      // ── A backup made in Settings (backup.js) ────────────────────────────
+      if (isBackupZip(zip)) {
+        await restoreBackupFromZip(zip);
+        return;
+      }
       // A bundle zip contains multiple study files — either .estudy or .zip entries.
       // A single-study zip contains study.json directly (no inner study files).
       // Either kind of bundle may also carry pathways.json at its root (see

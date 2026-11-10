@@ -34,6 +34,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 - `study-loader.js` — install/activate studies, `applyStudyData`, `sanitizeStudyData`, zip limits, themes.
 - `migrate.js` — one-time localStorage→IDB answer migration.
 - `web-app.js` — web build only (inert in the Android app): service-worker registration, durable-storage request, Add to Home Screen hint. See 9a.
+- `backup.js` — Settings → Backup: `backUpNow` builds a `.bsrbackup` zip (`bsr-backup.json` with every answers-store record and the carried localStorage keys; with "Include studies", each installed study re-packed as `studies/<id>.estudy`) and shares it (`Android.shareFile`) or downloads it. `restoreBackupFromZip` merges, never replaces: `mergeChapterRecord` keeps the newer copy of each field by `record._t`, global notes by `<id>_global_notes_t`, flags and positions only where missing, lists joined, `appSettings` overlaid; studies go through `_installStudyFileQuietly`. Reached from Settings → Restore (`handleRestorePick`), from any opened file (`loadAnyFile` checks `isBackupZip` first) and, on Android, from the automatic-backup copy (`offerAutoBackupRestore`, offered when the device has no answers). Also the 30-day reminder (`backupReminderDue`) and `scheduleAutoBackup` (rewrites the Android copy 5 s after a save, or when the app is hidden). See 4 and 9.
 - `app-init.js` — `startApp`, `loadLocale`, `initApp`.
 - `gallery.js` — image gallery blocks and full-screen viewer.
 - `render-pages.js` — title, How-to, Settings, Leaders' Notes, About, Go Deeper pages.
@@ -48,7 +49,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 
 ## 2. Script load order (`app/index.html`)
 
-sweetalert2 → jszip → purify → markdown-it → `format-text` → `state` → `i18n` → `idb` → `icons` → `settings` → `tts` → `voice` → `modals` → `starred` → `search` → `onboarding` → `router` → `utils` → `answer-match` → `validation` → `gestures` → `navigation` → `share-print` → `pathways-import` → `render-progress` → `render-library` → `study-loader` → `migrate` → `web-app` → `app-init` → `gallery` → `render-pages` → `render-chapter-elements` → `render-chapter-ui` → `render-chapter` → `save`.
+sweetalert2 → jszip → purify → markdown-it → `format-text` → `state` → `i18n` → `idb` → `icons` → `settings` → `tts` → `voice` → `modals` → `starred` → `search` → `onboarding` → `router` → `utils` → `answer-match` → `validation` → `gestures` → `navigation` → `share-print` → `pathways-import` → `render-progress` → `render-library` → `study-loader` → `migrate` → `web-app` → `backup` → `app-init` → `gallery` → `render-pages` → `render-chapter-elements` → `render-chapter-ui` → `render-chapter` → `save`.
 
 Rules that matter:
 - Files may only *call* later-loaded functions at runtime; load-time dependencies are few. `format-text.js` needs `DOMPurify` and `markdownit` at load. `render-progress.js` calls `debounce` (from `search.js`) at load. `save.js` runs `debounce(updateProgress, 200)` at load, so `search.js` and `render-progress.js` must load before it.
@@ -74,6 +75,7 @@ Rules that matter:
 - `lib_recent_installed`, `lib_recent_opened`, `lib_pinned`, `lib_pinned_all`.
 - `bsr_activePathwayId` — `builtin:<pathwayId>` or `imp:<groupId>:<pathwayId>` (legacy positional values `1_2` / `builtin:1_2` auto-convert via a frozen table).
 - `bsr_importedPathways` — `{ groups: [...] }`.
+- `bsr_backup_last_at`, `bsr_backup_reminded_at` — last "Back up now" and when the 30-day reminder clock last started (backup.js).
 - `localStorage.clear()` = "Reset all data".
 
 **IndexedDB** `BibleStudyReader`, version **3**, three stores with out-of-line keys:
@@ -82,9 +84,9 @@ Rules that matter:
 - `answers`:
   - `<studyId>_ch<N>` → object with fields `q_<elementId>`, `r_<elementId>`, `notes_0`, `likert_<elementId>_<i>`, `star_<elementId>`;
   - `<studyId>_celebrated_ch<N>` → `'1'`;
-  - `<studyId>_global_notes`;
+  - `<studyId>_global_notes`; `<studyId>_global_notes_t` → ms of its last change;
   - `<studyId>_lastPosition` → JSON string `{chapterIdx, scrollY}`.
-- `N` is `chapterNumber`, **not** the array index. Per-chapter read-modify-write goes through `StudyIDB.updateChapterAnswers` (serialised per key).
+- `N` is `chapterNumber`, **not** the array index. Per-chapter read-modify-write goes through `StudyIDB.updateChapterAnswers` (serialised per key), which also records in the chapter object's `_t` (field → ms) when each field last changed, removals included (`stampChangedFields`), so restoring a backup can keep the newer copy. Fields saved before 0.6.7 have no time and count as oldest. `_t` starts with `_`, so the `q_`/`r_`/`star_` scans ignore it.
 - `deleteStudyAnswers`/`removeImagesByPrefix` delete by `<studyId>_` prefix; callers pass `siblingPrefixes(id, registry)` as an exclusion list so a study id that prefixes another (`a` vs `a_b`) does not delete the other's data.
 
 ## 5. Routing (`router.js`)
@@ -129,7 +131,7 @@ New UI strings go in `ui_en.json`; other locales fall back to English per key. T
 
 ## 9. Android bridge (`window.Android`, plain WebView)
 
-**JS → native:** `exitApp()`, `openUrl(url)`, `share(text)`, `printContent(html)`, `speak(text)`, `stopSpeaking()`, `isSpeaking()`, `startVoiceInput()`. Each is feature-detected; web fallbacks exist (`window.open`, `navigator.share`/clipboard, Web Speech; for `printContent`, `dispatchPrint` in `share-print.js` prints from a hidden iframe sandboxed with `allow-modals allow-same-origin` only, so no script in the document can run, waiting up to 3 s for fonts, and removing the frame on `afterprint` or after a minute). `getPlatform()` treats `window.Android` as "android". Router also tries Capacitor/Cordova exit.
+**JS → native:** `exitApp()`, `openUrl(url)` (http, https, mailto and market links only, opened outside the app; `market:` falls back to the Play Store web page when there is no store app; this method was missing from the wrapper until 0.6.7, so those links used the web fallbacks), `share(text)`, `shareFile(base64, fileName, mimeType)` (cache/shared/ through a FileProvider), `saveAutoBackup(base64)` / `readAutoBackup()` (files/autobackup/, the only path Google's automatic backup copies: `res/xml/backup_rules.xml` and `data_extraction_rules.xml`; device-to-device transfer still copies everything), `printContent(html)` (the print job takes the document's `<title>`, else the app name), `speak(text)`, `stopSpeaking()`, `isSpeaking()`, `startVoiceInput()`. Each is feature-detected; web fallbacks exist (`window.open`, `navigator.share`/clipboard, Web Speech; for `printContent`, `dispatchPrint` in `share-print.js` prints from a hidden iframe sandboxed with `allow-modals allow-same-origin` only, so no script in the document can run, waiting up to 3 s for fonts, and removing the frame on `afterprint` or after a minute). `getPlatform()` treats `window.Android` as "android". Router also tries Capacitor/Cordova exit.
 **Native → JS globals:** `loadStudyFromBase64(b64)`, `loadStudyFromJson(text)`, `receiveVoiceTranscript(text)`.
 Downloads are never fetched in-app: links go to `Android.openUrl`/`window.open`, and the user then opens the file in the app.
 

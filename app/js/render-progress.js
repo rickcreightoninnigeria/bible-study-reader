@@ -711,6 +711,8 @@ async function renderNotesPage() {
 // directly in the oninput attribute and updates instantly on every keystroke.
 const _saveGlobalNotes = debounce((value, studyId) => {
   StudyIDB.setAnswerRaw(globalNotesIDBKey(studyId), value)
+    .then(() => StudyIDB.setAnswerRaw(globalNotesTimeIDBKey(studyId), Date.now()))
+    .then(() => { if (typeof scheduleAutoBackup === 'function') scheduleAutoBackup(); })
     .catch(e => console.warn('[_saveGlobalNotes] IDB write failed.', e));
 }, 400);
 

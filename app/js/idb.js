@@ -267,6 +267,23 @@ const StudyIDB = (() => {
   // through this instead.
   const _chapterUpdateQueues = new Map();
 
+  // Records when each field last changed, in record._t (field → ms since
+  // 1970), so restoring a backup can keep the newer copy of each answer
+  // (backup.js). A field that was removed keeps its time, so a removal (an
+  // unstarred question) also wins over an older copy. Fields saved before
+  // this existed have no time and count as oldest.
+  function stampChangedFields(before, record) {
+    const now = Date.now();
+    const times = { ...(before._t || {}) };
+    let changed = false;
+    for (const k of new Set([...Object.keys(before), ...Object.keys(record)])) {
+      if (k === '_t' || before[k] === record[k]) continue;
+      times[k] = now;
+      changed = true;
+    }
+    if (changed) record._t = times;
+  }
+
   // mutate(record) is called synchronously with the current record (or a
   // fresh {} if none exists yet, or the read failed) and should modify it in
   // place. Resolves with the updated record on success; rejects if the write
@@ -283,8 +300,12 @@ const StudyIDB = (() => {
         console.warn(`[${tag}] IDB read failed; falling back to empty object.`, e);
         record = {};
       }
+      const before = { ...record };
       mutate(record);
+      stampChangedFields(before, record);
       await setChapterAnswers(studyId, chapterNum, record);
+      // Android: refresh the copy that Google's automatic backup keeps (backup.js).
+      if (typeof scheduleAutoBackup === 'function') scheduleAutoBackup();
       return record;
     });
     _chapterUpdateQueues.set(key, run);

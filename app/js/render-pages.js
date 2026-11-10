@@ -1311,6 +1311,33 @@ async function renderSettings(tabId) {
         </div>
       </div>
 
+      <!-- BACKUP (backup.js) -->
+      <div class="settings-section">
+        <div class="settings-section-heading">${t('backup_heading')}</div>
+
+        <div class="settings-block" style="margin-bottom:10px;">
+          <div class="settings-row-label" style="margin-bottom:4px;">${t('backup_label')}</div>
+          <div class="settings-row-desc">${t('backup_desc')}</div>
+          <div class="settings-row-desc backup-last-line" id="backupLastLine">${escapeHtml(backupLastText())}</div>
+          <label class="backup-include-studies">
+            <input type="checkbox" id="backupIncludeStudies" onchange="onBackupIncludeStudiesChange(this)">
+            <span>${t('backup_include_studies')}</span>
+          </label>
+          <button class="howto-share-btn settings-export-btn" onclick="backUpNow()">
+            &#128190; ${t('backup_btn')}
+          </button>
+        </div>
+
+        <div class="settings-block" style="margin-bottom:10px;">
+          <div class="settings-row-label" style="margin-bottom:4px;">${t('backup_restore_label')}</div>
+          <div class="settings-row-desc">${t('backup_restore_desc')}</div>
+          <input type="file" id="backupRestorePicker" accept="*/*" style="display:none" onchange="handleRestorePick(event)">
+          <button class="howto-share-btn settings-export-btn" onclick="document.getElementById('backupRestorePicker').click()">
+            &#128229; ${t('backup_restore_btn')}
+          </button>
+        </div>
+      </div>
+
       ${adv ? `
       <!-- RESET -->
       <div class="settings-section">

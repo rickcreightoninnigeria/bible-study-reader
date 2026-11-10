@@ -81,14 +81,10 @@ function getUpgradeOnboardingSlides() {
       eyebrow: `v${window.appAboutData?.appVersion ?? '—'} · WHAT’S NEW`,
       heading: 'Main Changes in this Update',
       body:    '<ul>' +
-        '<li><b>Stars in Share and Print:</b> a starred question now carries a ⭐ in shared text and a gold star on printed pages. Starred questions you haven’t answered are included in Share all and Print all.</li>' +
-        '<li><b>Starred only:</b> if you have starred questions, Share and Print offer “Starred questions only”. Share all and Print all also open with a list of them.</li>' +
-        '<li><b>Search:</b> a new Starred button lists your starred questions, or limits your search results to them.</li>' +
-        '<li><b>Print in the browser:</b> on the web version the Print buttons now open your browser’s print dialog, where you can also save a PDF.</li>' +
-        '<li><b>Answer check wording:</b> a good answer now gets “Nice work — your answer includes the main ideas”, because the check compares words and cannot judge meaning. Tap Main point to compare with the author’s.</li>' +
-        '<li><b>Learning Paths:</b> the English paths now suggest five studies each — an Old Testament book, a New Testament book, a belief study, a life study and a ministry study — and they tick off the studies you have finished.</li>' +
-        '<li><b>Print Go Deeper and Leaders’ Notes:</b> these pages now have a Print button. Wide tables print in landscape.</li>' +
-        '<li><b>Large text:</b> with a large phone font size, the Library tabs now move onto a second row instead of overlapping.</li>' +
+        '<li><b>Back up your answers:</b> Settings → Study → Backup makes a backup file of your answers, notes, stars and settings. Save it to Google Drive or send it to yourself, and you can restore it if your phone is lost or replaced. Tick “Include studies” to put the studies in it too.</li>' +
+        '<li><b>Restore:</b> open a backup file in the app, or use Settings → Study → Restore. Nothing on your phone is lost: where an answer is in both, the newer one is kept.</li>' +
+        '<li><b>Reminder:</b> if you have not made a backup for 30 days, the app offers to make one.</li>' +
+        '<li><b>Automatic backup on Android:</b> if Google backup is turned on for your phone, your answers are now included in it, and a new phone offers to restore them.</li>' +
         '</ul>',
     },
   ];

@@ -1106,6 +1106,28 @@ body.dark-mode .footnote-btn { color: var(--accent-light); }
   color: var(--surface);
 }
 
+/* Settings → Backup (backup.js) */
+.backup-last-line {
+  font-style: italic;
+}
+.backup-include-studies {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: var(--main-font-family);
+  font-size: 0.875rem;
+  color: var(--text);
+  cursor: pointer;
+}
+.backup-include-studies input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+body.dark-mode .backup-include-studies { color: var(--dm-text); }
+
 /* ── Language picker buttons (Settings → Language tab) ── */
 /* Full-width stacked rows: flag · name · active checkmark.
    Each button is self-contained — no parent .settings-seg wrapper needed. */

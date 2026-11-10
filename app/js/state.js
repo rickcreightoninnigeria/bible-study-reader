@@ -110,6 +110,12 @@ function globalNotesIDBKey(studyId) {
   return `${studyId}_global_notes`;
 }
 
+// Returns the IDB answers-store key for when the global notes last changed
+// (ms since 1970), used when merging a backup (backup.js).
+function globalNotesTimeIDBKey(studyId) {
+  return `${studyId}_global_notes_t`;
+}
+
 // Returns the IDB answers-store key for a study's last reading position.
 function lastPositionIDBKey(studyId) {
   return `${studyId}_lastPosition`;
