@@ -86,6 +86,9 @@ function getUpgradeOnboardingSlides() {
         '<li><b>Search:</b> a new Starred button lists your starred questions, or limits your search results to them.</li>' +
         '<li><b>Print in the browser:</b> on the web version the Print buttons now open your browser’s print dialog, where you can also save a PDF.</li>' +
         '<li><b>Answer check wording:</b> a good answer now gets “Nice work — your answer includes the main ideas”, because the check compares words and cannot judge meaning. Tap Main point to compare with the author’s.</li>' +
+        '<li><b>Learning Paths:</b> the English paths now suggest five studies each — an Old Testament book, a New Testament book, a belief study, a life study and a ministry study — and they tick off the studies you have finished.</li>' +
+        '<li><b>Print Go Deeper and Leaders’ Notes:</b> these pages now have a Print button. Wide tables print in landscape.</li>' +
+        '<li><b>Large text:</b> with a large phone font size, the Library tabs now move onto a second row instead of overlapping.</li>' +
         '</ul>',
     },
   ];
