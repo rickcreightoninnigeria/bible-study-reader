@@ -8,30 +8,30 @@
           "pathwayId": "foundations",
           "titleLevel2": " ၁။ အုတ်မြစ်များ",
           "description": " သမ္မာကျမ်းစာ၏ အဓိကသတင်းစကားနှင့် ကျွန်ုပ်တို့၏တုံ့ပြန်မှုကို နားလည်ရန် မရှိမဖြစ်လိုအပ်သော အစပြုရာနေရာ။",
-          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-foundations.zip",
           "studyTitles": [
             {
               "titleLevel3": " Genesis မိတ်ဆက်ခြင်း",
               "description": " လူသားနှင့် ဘုရားသခင် ဆက်ဆံရေး၏ မူလအစကို စူးစမ်းလေ့လာခြင်း။",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_genesis_v001.estudy",
               "studyId": "introducing_genesis_v001"
             },
             {
               "titleLevel3": " မာ့ခ်ကို မိတ်ဆက်ပေးခြင်း",
               "description": " ယေရှု၏ ဘဝနှင့် ဓမ္မအမှုတော်ကို လျင်မြန်စွာ လေ့လာကြည့်ရှုခြင်း။",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_mark_v001.estudy",
               "studyId": "introducing_mark_v001"
             },
             {
               "titleLevel3": " အမှန်တရားကို ဖွင့်လှစ်နိုင်ခဲ့သည် (၁)",
               "description": " <b>အမှန်တရားဖွင့်ဆိုခြင်း၊ အတွဲ ၁: ခရစ်ယာန်ယုံကြည်ချက်</b><br><br>သမ္မာကျမ်းစာတွင် ဘုရားသခင်ဖော်ပြသော မရှိမဖြစ်အမှန်တရားများကို နားလည်ရန် လေ့လာမှုရှစ်ခု။ သမ္မာကျမ်းစာအမှန်တရားကို ကျွန်ုပ်တို့နားမလည်ဘဲ ကျွန်ုပ်တို့၏ဘဝအတွက် အခြေခံအဖြစ် မကျင့်သုံးပါက ဘုရားရေးရာဘဝများကို ကျွန်ုပ်တို့ မနေထိုင်နိုင်ပါ။ <i>အမှန်တရားဖွင့်ဆိုခြင်း</i> သည် ခရစ်ယာန်ဘာသာဝင်တစ်ဦးဖြစ်ပြီး ၎င်းတို့၏ယုံကြည်ခြင်း၏ အခြေခံများကို ပြန်လည်သုံးသပ်လိုသူများအတွက်လည်း အထောက်အကူဖြစ်စေသော ပြန်လည်ဆန်းစစ်ချက်တစ်ခုဖြစ်သည်။ သင်သင်ယူခဲ့ရာများကို သင်အံ့အားသင့်သွားနိုင်သည်။",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/truth_unlocked_volume_1_v001.estudy",
               "studyId": "truth_unlocked_volume_1_v001"
             },
             {
               "titleLevel3": " ပြောင်းလဲခြင်း",
               "description": " <b>ပြောင်းလဲခြင်း- အသစ်အဆန်း (ကောင်းရုံ) မဟုတ်ဘဲ</b><br><br>စစ်မှန်သောပြောင်းလဲခြင်းဆိုသည်မှာ အဘယ်အရာကိုဆိုလိုသည် - နှင့် အဘယ်ကြောင့်အရေးကြီးသည်ကို လေ့လာသည့် ကိုးကြိမ်ကြာ သမ္မာကျမ်းစာလေ့လာမှု။",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/conversion_v001.estudy",
               "studyId": "conversion_v001"
             },
             {
@@ -45,28 +45,30 @@
           "pathwayId": "growing-roots",
           "titleLevel2": " ၂။ အမြစ်များ ကြီးထွားလာခြင်း",
           "description": " သမ္မာကျမ်းစာ၏ဖွဲ့စည်းပုံနှင့် ကိုယ်ပိုင်ဝိညာဉ်ရေးရာအလေ့အထများထဲသို့ ပိုမိုနက်ရှိုင်းစွာ ဝင်ရောက်လေ့လာခြင်း။",
-          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-growing-roots.zip",
           "studyTitles": [
             {
               "titleLevel3": " သမ္မာကျမ်းစာခြုံငုံသုံးသပ်ချက် (၁)",
               "description": " ဓမ္မဟောင်းကျမ်း၏ ဇာတ်လမ်းကို ခြေရာခံခြင်း။",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/bible_overview_ot_v001.estudy",
               "studyId": "bible_overview_(1)_v001"
             },
             {
               "titleLevel3": " သမ္မာကျမ်းစာခြုံငုံသုံးသပ်ချက် (၂)",
               "description": " ဓမ္မသစ်ကျမ်း၏ ဇာတ်လမ်းကို ခြေရာခံခြင်း။",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/bible_overview_nt_v001.estudy",
               "studyId": "bible_overview_(2)_v001"
             },
             {
               "titleLevel3": " အမှန်တရား ဖွင့်လှစ်ခြင်း (၂)",
               "description": "<b>အမှန်တရားဖွင့်ဆိုခြင်း၊ အတွဲ ၂: ခရစ်ယာန်ဘဝ</b><br><br>သမ္မာကျမ်းစာတွင် ဘုရားသခင်ဖော်ပြသော မရှိမဖြစ်အမှန်တရားများကို နားလည်ရန် လေ့လာမှုရှစ်ခု။ သမ္မာကျမ်းစာအမှန်တရားကို ကျွန်ုပ်တို့နားမလည်ဘဲ ကျွန်ုပ်တို့၏ဘဝအတွက် အခြေခံအဖြစ် မကျင့်သုံးပါက ဘုရားရေးရာဘဝများကို ကျွန်ုပ်တို့ မနေထိုင်နိုင်ပါ။ <i>အမှန်တရားဖွင့်ဆိုခြင်း</i> သည် ခရစ်ယာန်ဘာသာဝင်တစ်ဦးဖြစ်ပြီး ၎င်းတို့၏ယုံကြည်ခြင်း၏ အခြေခံများကို ပြန်လည်သုံးသပ်လိုသူများအတွက်လည်း အထောက်အကူဖြစ်စေသော ပြန်လည်ဆန်းစစ်ချက်တစ်ခုဖြစ်သည်။ သင်သင်ယူခဲ့ရာများကို သင်အံ့အားသင့်သွားနိုင်သည်။",
-              "downloadLocation": "",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/truth_unlocked_volume_2_v001.estudy",
               "studyId": "truth_unlocked_volume_2_v001"
             },
             {
               "titleLevel3": " ခရစ်တော်၌ ကြီးထွားခြင်း (၁)",
               "description": "<b>ခရစ်တော်၌ ကြီးထွားလော့ (တပည့်ဖြစ်ခြင်းသင်တန်း)</b><br><br>ခရစ်တော်၌ ကြီးထွားနေပါသလား။ ဘုရားသခင်သည် သူ၏သားသမီးအားလုံး ယေရှု၌ ကြီးထွားစေလိုပါသည်။ သင်ကြီးထွားမှုမရှိပါက ဤလေ့လာမှုများသည် သင့်အား မှားယွင်းသောအရာနှင့် ၎င်းကို မည်သို့ပြုပြင်ရမည်ကို ကူညီပေးပါလိမ့်မည်။ သင်ကြီးထွားနေပါက ၎င်းတို့သည် သင့်အား ပိုမိုကြီးထွားစေရန် ကူညီပေးပါလိမ့်မည်။ ကျမ်းစာကို လေ့လာခြင်းဖြင့် အစည်းအဝေးတစ်ခုစီတွင် အနီးကပ်ဖတ်ရှုခြင်းနှင့် ကိုယ်ပိုင်ဆင်ခြင်တွေးတောခြင်းတို့ကို ပေါင်းစပ်ထားသည်။ (ဤသင်တန်းကို အတွဲများစွာခွဲထားပါသည်။ အတွဲ ၁ ကို ဦးစွာလုပ်ဆောင်ပါ - သို့သော် သင်လုပ်ဆောင်ပြီးပါက နောက်အတွဲကို ဆက်လက်လုပ်ဆောင်ပါ။)",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_1_v001.estudy",
               "studyId": "grow_in_christ_volume_1_v001"
             },
             {
@@ -100,6 +102,7 @@
             {
               "titleLevel3": " ခရစ်တော်၌ ကြီးထွားခြင်း (၂)",
               "description": "<b>ခရစ်တော်၌ ကြီးထွားလော့ (တပည့်ဖြစ်ခြင်းသင်တန်း)</b><br><br>ခရစ်တော်၌ ကြီးထွားနေပါသလား။ ဘုရားသခင်သည် သူ၏သားသမီးအားလုံး ယေရှု၌ ကြီးထွားစေလိုပါသည်။ သင်ကြီးထွားမှုမရှိပါက ဤလေ့လာမှုများသည် သင့်အား မှားယွင်းသောအရာနှင့် မည်သို့ပြုပြင်ရမည်ကို ဖော်ထုတ်ရန် ကူညီပေးပါလိမ့်မည်။ သင်ကြီးထွားနေပါက ၎င်းတို့သည် သင့်အား ပိုမိုကြီးထွားစေရန် ကူညီပေးပါလိမ့်မည်။ ကျမ်းစာကို လေ့လာခြင်းဖြင့် အစည်းအဝေးတစ်ခုစီတွင် အနီးကပ်ဖတ်ရှုခြင်းနှင့် ကိုယ်ပိုင်ဆင်ခြင်တွေးတောခြင်းတို့ကို ပေါင်းစပ်ထားသည်။ (ဤသင်တန်းကို အတွဲများစွာခွဲထားပါသည်။ အတွဲ ၂ ကို ဤနေရာတွင် သင်လုပ်ဆောင်မည်ဟု ကျွန်ုပ်တို့ယူဆပါသည် - သို့သော် သင်လုပ်ဆောင်ပြီးပါက နောက်အတွဲကို ဆက်လက်လုပ်ဆောင်ပါ။)",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_2_v001.estudy",
               "studyId": "grow_in_christ_volume_2_v001"
             },
             {
@@ -113,16 +116,18 @@
           "pathwayId": "live-on-mission",
           "titleLevel2": " ၄။ မစ်ရှင်တစ်ခုတွင် နေထိုင်ပါ",
           "description": " လောကအတွက် ဘုရားသခင်၏ နှလုံးသားဆီသို့ ကျွန်ုပ်တို့၏ အာရုံကို လှည့်ခြင်း။",
-          "downloadLocation": "",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-live-on-mission.zip",
           "studyTitles": [
             {
               "titleLevel3": "ယောနကို မိတ်ဆက်ပေးခြင်း",
               "description": " လူမျိုးများနှင့် ကျွန်ုပ်တို့၏ ခုခံမှုအပေါ် ဘုရားသခင်၏ ကရုဏာတော်။",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/travelling_with_jonah_v001.estudy",
               "studyId": "introducing_jonah_v001"
             },
             {
               "titleLevel3": " အက်ဥပဒေများ မိတ်ဆက်ခြင်း",
               "description": " အသင်းတော် မွေးဖွားခြင်းနှင့် နှုတ်ကပတ်တော် ပျံ့နှံ့ခြင်း။",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_acts_v001.estudy",
               "studyId": "introducing_acts_v001"
             },
             {
@@ -180,7 +185,7 @@
           "pathwayId": "fighting-sin",
           "titleLevel2": " အပြစ်ကို တိုက်ဖျက်ခြင်း",
           "description": " သွေးဆောင်မှုနှင့် မနာခံမှုပုံစံများကို ကိုင်တွယ်ဖြေရှင်းရန်အတွက် လက်တွေ့ကျပြီး ဓမ္မပညာဆိုင်ရာ အကူအညီ။",
-          "downloadLocation": "",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-fighting-sin.zip",
           "studyTitles": [
             {
               "titleLevel3": " ဒေသနာကျမ်းကို မိတ်ဆက်ခြင်း",
@@ -190,6 +195,7 @@
             {
               "titleLevel3": " ဧဖက်ဩဝါဒစာ မိတ်ဆက်ခြင်း",
               "description": " ဘုရားသခင်၏ လက်နက်စုံနှင့် ကောင်းကင်ဘုံ၌ ကျွန်ုပ်တို့၏ ရာထူး။",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_ephesians_v001.estudy",
               "studyId": "introducing_ephesians_v001"
             },
             {
@@ -200,13 +206,13 @@
             {
               "titleLevel3": " သင့်ဝိညာဉ်အတွက် အနားယူခြင်းကို ရှာဖွေပါ",
               "description": "<b>သင့်ဝိညာဉ်အတွက် အနားယူခြင်းကို ရှာဖွေပါ- ပိုမိုကောင်းမွန်သော ပျော်ရွှင်မှုကို ရှာဖွေခြင်းဖြင့် စွဲလမ်းစေသော အပြုအမူမှ လွတ်မြောက်ခြင်း</b><br><br>စွဲလမ်းမှု၏နောက်ကွယ်ရှိ နှလုံးသားနှင့် မည်သည့်မှားယွင်းသောကတိထက်မဆို ဧဝံဂေလိတရားက မည်သို့ပိုမိုပေးစွမ်းနိုင်သည်ကို စူးစမ်းလေ့လာသည့် ဆယ်ကြိမ်ကြာ သမ္မာကျမ်းစာလေ့လာမှု။ ကျမ်းစာကို လေ့လာခြင်းဖြင့် အစည်းအဝေးတစ်ခုစီတွင် အနီးကပ်ဖတ်ရှုခြင်းနှင့် ကိုယ်ရေးကိုယ်တာ ဆင်ခြင်တွေးတောခြင်းတို့ကို ပေါင်းစပ်ထားသည်။",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/find_rest_v001.estudy",
               "studyId": "find_rest_for_your_soul_v001"
             },
             {
               "titleLevel3": " ခရစ်တော်၌ ကြီးထွားခြင်း (၁)",
               "description": "<b>ခရစ်တော်၌ ကြီးထွားလော့ (တပည့်ဖြစ်ခြင်းသင်တန်း)</b><br><br>ခရစ်တော်၌ ကြီးထွားနေပါသလား။ ဘုရားသခင်သည် သူ၏သားသမီးအားလုံး ယေရှု၌ ကြီးထွားစေလိုပါသည်။ သင်ကြီးထွားမှုမရှိပါက ဤလေ့လာမှုများသည် သင့်အား မှားယွင်းသောအရာနှင့် ၎င်းကို မည်သို့ပြုပြင်ရမည်ကို ကူညီပေးပါလိမ့်မည်။ သင်ကြီးထွားနေပါက ၎င်းတို့သည် သင့်အား ပိုမိုကြီးထွားစေရန် ကူညီပေးပါလိမ့်မည်။ ကျမ်းစာကို လေ့လာခြင်းဖြင့် အစည်းအဝေးတစ်ခုစီတွင် အနီးကပ်ဖတ်ရှုခြင်းနှင့် ကိုယ်ပိုင်ဆင်ခြင်တွေးတောခြင်းတို့ကို ပေါင်းစပ်ထားသည်။<br><br>(ဤသင်တန်းကို အတွဲများစွာခွဲထားပါသည်။ အတွဲ ၁ ကို ဦးစွာလုပ်ဆောင်ပါ - သို့သော် သင်လုပ်ဆောင်ပြီးပါက နောက်အတွဲကို ဆက်လက်လုပ်ဆောင်ပါ။)",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_1_v001.estudy",
               "studyId": "grow_in_christ_volume_1_v001"
             }
           ]
@@ -235,7 +241,7 @@
             {
               "titleLevel3": " ကောင်းကျိုးအတွက် လုပ်ဆောင်ခြင်း",
               "description": "<b>ကောင်းမှုအတွက် လုပ်ဆောင်ခြင်း- ကျွန်ုပ်တို့၏ နေ့စဉ်လုပ်ငန်းဆောင်တာတွင် ယုံကြည်ခြင်း၊ မေတ္တာနှင့် ဝတ်ပြုကိုးကွယ်ခြင်း</b><br><br>ခရစ်ယာန်တစ်ဦးအနေဖြင့် သစ္စာရှိရှိလုပ်ဆောင်ခြင်း၏ အဓိပ္ပာယ်ကို လေ့လာသည့် ရှစ်ကြိမ်ကြာ သမ္မာကျမ်းစာလေ့လာမှု။ ကမ္ဘာဦးကျမ်းမှ ဗျာဒိတ်ကျမ်းအထိ အပိုင်းများကို အသုံးပြု၍ အစည်းအဝေးတစ်ခုစီသည် အလုပ်၏ မတူညီသော ရှုထောင့်တစ်ခုကို ကိုင်တွယ်ဖြေရှင်းသည်- ဘုရားသခင်ပေးသော ကောင်းမြတ်ခြင်း၊ အပြစ်ကြောင့် ၎င်း၏ပုံပျက်ခြင်းနှင့် ခရစ်တော်၌ ၎င်း၏ရွေးနှုတ်ခြင်းတို့ကို ဖြစ်သည်။ သင်၏အလုပ်သည် အဓိပ္ပာယ်မရှိဟု ခံစားရသည်ဖြစ်စေ၊ သင်၏ယုံကြည်ခြင်းနှင့် အဆက်ပြတ်သွားသည်ဟု ခံစားရသည်ဖြစ်စေ၊ သို့မဟုတ် ပင်ပန်းနွမ်းနယ်သည်ဟု ခံစားရသည်ဖြစ်စေ၊ ဤလေ့လာမှုသည် သင်၏နေ့စဉ်လုပ်ငန်းဆောင်တာကို မေတ္တာ၏လုပ်ရပ်တစ်ခု၊ ဝတ်ပြုကိုးကွယ်မှုပုံစံတစ်ခုနှင့် ကမ္ဘာကြီးအတွက် ဘုရားသခင်၏ ပိုမိုကြီးမားသော ရည်ရွယ်ချက်များ၏ အစိတ်အပိုင်းတစ်ခုအဖြစ် မြင်ရန် သင့်အား ဖိတ်ခေါ်ပါသည်။",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/working_for_the_good_v001.estudy",
               "studyId": "working_for_the_good_v001"
             },
             {
@@ -308,6 +314,7 @@
             {
               "titleLevel3": " ခရစ်တော်၌ ကြီးထွားခြင်း (၁)",
               "description": "<b>ခရစ်တော်၌ ကြီးထွားလော့ (တပည့်ဖြစ်ခြင်းသင်တန်း)</b><br><br>ခရစ်တော်၌ ကြီးထွားနေပါသလား။ ဘုရားသခင်သည် သူ၏သားသမီးအားလုံး ယေရှု၌ ကြီးထွားစေလိုပါသည်။ သင်ကြီးထွားမှုမရှိပါက ဤလေ့လာမှုများသည် သင့်အား မှားယွင်းသောအရာနှင့် ၎င်းကို မည်သို့ပြုပြင်ရမည်ကို ကူညီပေးပါလိမ့်မည်။ သင်ကြီးထွားနေပါက ၎င်းတို့သည် သင့်အား ပိုမိုကြီးထွားစေရန် ကူညီပေးပါလိမ့်မည်။ ကျမ်းစာကို လေ့လာခြင်းဖြင့် အစည်းအဝေးတစ်ခုစီတွင် အနီးကပ်ဖတ်ရှုခြင်းနှင့် ကိုယ်ပိုင်ဆင်ခြင်တွေးတောခြင်းတို့ကို ပေါင်းစပ်ထားသည်။ (ဤသင်တန်းကို အတွဲများစွာခွဲထားပါသည်။ အတွဲ ၁ ကို ဦးစွာလုပ်ဆောင်ပါ - သို့သော် သင်လုပ်ဆောင်ပြီးပါက နောက်အတွဲကို ဆက်လက်လုပ်ဆောင်ပါ။)",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_1_v001.estudy",
               "studyId": "grow_in_christ_volume_1_v001"
             },
             {

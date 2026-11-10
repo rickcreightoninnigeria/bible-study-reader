@@ -11,7 +11,7 @@
 //   window.appAboutData, window._libActiveTab, window._libShowPaths,
 //   window._libTabs, window.activeTabId – state.js
 //   activateStudy, deleteStudy,
-//   handleFileSelect, openDriveStudyFolder,
+//   handleFileSelect, openStudiesSite,
 //   showVersionWarning    – study-loader.js (runtime calls only)
 
 // ── LIBRARY HISTORY HELPERS ──────────────────────────────────────────────────
@@ -669,7 +669,7 @@ async function renderLibrary() {
       ${riHtml}
       <div class="library-eyebrow">${t('renderlib_add_study')}</div>
       <input type="file" id="studyPicker" accept=".estudy,.epathway,.zip,application/zip,application/json,application/octet-stream,*/*" multiple style="display:none" onchange="handleFileSelect(event)">
-      <button class="import-btn" onclick="openDriveStudyFolder()">
+      <button class="import-btn" onclick="openStudiesSite()">
         ${ICONS.download}&nbsp;${t('renderlib_download_estudy')}
       </button>
       <button class="import-btn import-btn-secondary" onclick="document.getElementById('studyPicker').click()">
@@ -1551,12 +1551,10 @@ async function renderLibrary() {
 
 }
 
-// Opens the highlighted estudy direct download link.
-// Uses an old, hardcoded version of a "Conversion" study download as a fallback 
-// (in case of appAboutData loading problems)
+// Opens the highlighted sample study's download link on the studies site
+// (falls back to Conversion if appAboutData has not loaded).
 function libDownloadTryThis() {
-  const id = window.appAboutData?.sampleDownloadId || '12GWu_cCP8XEyehOY0por--FYaBWloevT';
-  const url = `https://drive.google.com/uc?export=download&id=${id}`;
+  const url = studiesSiteUrl() + (window.appAboutData?.sampleStudyFile || 'studies/conversion_v001.estudy');
   if (window.Android && typeof window.Android.openUrl === 'function') {
     window.Android.openUrl(url);
   } else {

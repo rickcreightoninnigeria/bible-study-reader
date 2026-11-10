@@ -81,7 +81,7 @@
       {
         "section"          :"Overview",
         "description"      :"Introductory studies surveying the whole of Christian teaching — the gospel, the core doctrines, and the historic confessions of the church.",
-        "downloadLocation" :"https://drive.google.com/uc?export=download&id=1miFzxE_PTLRucf3Bc2WyzNqDbStrFa5H",
+        "downloadLocation" :"https://rickcreightoninnigeria.github.io/bsr-studies/bundles/shelf-beliefs-overview.zip",
         "allowsSubsections":true,
         "subsections"      :[{ "name": "Foundations", "description": "The essential building blocks of Christian belief — what every believer needs to know." }, { "name": "The Gospel", "description": "Studies focused on the heart of the Christian message: sin, grace, and salvation through Christ." }, { "name": "Creeds & Confessions", "description": "The historic statements of faith that have defined orthodox Christianity across the centuries." }]
       },

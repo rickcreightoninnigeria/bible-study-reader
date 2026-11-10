@@ -85,6 +85,7 @@ function getUpgradeOnboardingSlides() {
         '<li><b>Restore:</b> open a backup file in the app, or use Settings → Study → Restore. Nothing on your phone is lost: where an answer is in both, the newer one is kept.</li>' +
         '<li><b>Reminder:</b> if you have not made a backup for 30 days, the app offers to make one.</li>' +
         '<li><b>Automatic backup on Android:</b> if Google backup is turned on for your phone, your answers are now included in it, and a new phone offers to restore them.</li>' +
+        '<li><b>Downloading studies:</b> the Download button and the download links in Learning Paths now use a simple download page instead of Google Drive, so there are no extra Drive screens.</li>' +
         '</ul>',
     },
   ];

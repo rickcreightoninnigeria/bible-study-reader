@@ -204,12 +204,24 @@ function openLibrary() {
   renderLibrary();
 }
 
-// Opens the shared Google Drive folder where .estudy files are hosted.
-// On Android WebView, window.open with _blank may be blocked; using
-// _system or a direct location change as fallback ensures it opens in
-// the device's default browser rather than inside the WebView.
-function openDriveStudyFolder() {
-  const url = 'https://drive.google.com/drive/folders/1Twi4CoBcUtq9ISEhfK6IPD8x1Mx_Uglr?usp=sharing';
+// The download site for published studies (the bsr-studies repository on
+// GitHub Pages, built by py/build_studies_site.py). Used if
+// appAboutData_untranslated.json has not loaded.
+const STUDIES_SITE_URL = 'https://rickcreightoninnigeria.github.io/bsr-studies/';
+
+function studiesSiteUrl() {
+  return window.appAboutData?.studiesSiteUrl || STUDIES_SITE_URL;
+}
+
+// Opens the studies download page in the device's browser: Android.openUrl
+// in the app; in a browser, a new tab, or a direct location change if
+// window.open is blocked.
+function openStudiesSite() {
+  const url = studiesSiteUrl();
+  if (window.Android && typeof window.Android.openUrl === 'function') {
+    window.Android.openUrl(url);
+    return;
+  }
   const newWin = window.open(url, '_blank');
   if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
     // WebView blocked window.open — navigate directly

@@ -8,30 +8,30 @@
           "pathwayId": "foundations",
           "titleLevel2": " 1. Fundamentos",
           "description": " El punto de partida esencial para comprender el mensaje central de la Biblia y nuestra respuesta.",
-          "downloadLocation": "https://drive.google.com/uc?export=download&id=1pyHPgwxMBCzfNr4iJpdiWyHJYMJGtuAn",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-foundations.zip",
           "studyTitles": [
             {
               "titleLevel3": " Presentando Génesis",
               "description": " Explorando los orígenes de la relación de Dios con la humanidad.",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1z5LkVCQ_v2gadR1e-Pz_HPC2N15laZq5",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_genesis_v001.estudy",
               "studyId": "introducing_genesis_v001"
             },
             {
               "titleLevel3": " Presentando a Mark",
               "description": " Un recorrido dinámico por la vida y el ministerio de Jesús.",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1c303TEeBlNC8RdewMFuNX9BIwAbldGnx",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_mark_v001.estudy",
               "studyId": "introducing_mark_v001"
             },
             {
               "titleLevel3": " La verdad al descubierto (1)",
               "description": " <b>La Verdad Revelada, Volumen 1: La Creencia Cristiana</b><br><br>Ocho estudios para ayudarte a comprender las verdades esenciales reveladas por Dios en la Biblia. No podemos vivir una vida piadosa a menos que comprendamos la verdad bíblica y la apliquemos como fundamento de nuestra vida. <i>La Verdad Revelada</i> también es un útil repaso para quienes llevan tiempo siendo cristianos y desean repasar los fundamentos de su fe. ¡Te sorprenderá lo que aprendas!",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1g8qqFwfMZpMKjbSK5p0gV3j3WZMzLPXx",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/truth_unlocked_volume_1_v001.estudy",
               "studyId": "truth_unlocked_volume_1_v001"
             },
             {
               "titleLevel3": " Conversión",
               "description": " <b>Conversión: Nueva, no (solo) agradable</b><br><br>Un estudio bíblico de nueve sesiones que explora qué significa la conversión genuina y por qué es importante.",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=12GWu_cCP8XEyehOY0por--FYaBWloevT",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/conversion_v001.estudy",
               "studyId": "conversion_v001"
             },
             {
@@ -45,28 +45,30 @@
           "pathwayId": "growing-roots",
           "titleLevel2": " 2. Echando raíces",
           "description": " Profundizando en la estructura de la Biblia y en los hábitos espirituales personales.",
-          "downloadLocation": "https://drive.google.com/uc?export=download&id=1IYXx9cr2fP02C5WRXmhLkFZoHg1jHj8C",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-growing-roots.zip",
           "studyTitles": [
             {
               "titleLevel3": " Resumen bíblico (1)",
               "description": " Recorriendo la historia del Antiguo Testamento.",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/bible_overview_ot_v001.estudy",
               "studyId": "bible_overview_(1)_v001"
             },
             {
               "titleLevel3": " Resumen bíblico (2)",
               "description": " Recorriendo la historia del Nuevo Testamento.",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/bible_overview_nt_v001.estudy",
               "studyId": "bible_overview_(2)_v001"
             },
             {
               "titleLevel3": " La verdad al descubierto (2)",
               "description": "<b>La Verdad Revelada, Volumen 2: Vida Cristiana</b><br><br>Ocho estudios para ayudarte a comprender las verdades esenciales reveladas por Dios en la Biblia. No podemos vivir una vida piadosa a menos que comprendamos la verdad bíblica y la apliquemos como fundamento de nuestra vida. <i>La Verdad Revelada</i> también es un útil repaso para quienes llevan tiempo siendo cristianos y desean repasar los fundamentos de su fe. ¡Te sorprenderá lo que aprendas!",
-              "downloadLocation": "",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/truth_unlocked_volume_2_v001.estudy",
               "studyId": "truth_unlocked_volume_2_v001"
             },
             {
               "titleLevel3": " Crecer en Cristo (1)",
               "description": "<b>Crecer en Cristo (Curso de Discipulado)</b><br><br>¿Estás creciendo en Cristo? Dios quiere que todos sus hijos crezcan en Jesús. Si no estás creciendo, este estudio te ayudará a descubrir qué está mal y cómo corregirlo. Si estás creciendo, te ayudará a crecer aún más. Trabajando con las Escrituras, cada sesión combina la lectura atenta con la reflexión personal. (Hemos dividido este curso en varios volúmenes. Comienza con el volumen 1; si ya lo has hecho, continúa con el siguiente).",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_1_v001.estudy",
               "studyId": "grow_in_christ_volume_1_v001"
             },
             {
@@ -100,6 +102,7 @@
             {
               "titleLevel3": " Crecer en Cristo (2)",
               "description": "<b>Crecer en Cristo (Curso de Discipulado)</b><br><br>¿Estás creciendo en Cristo? Dios quiere que todos sus hijos crezcan en Jesús. Si no estás creciendo, este estudio te ayudará a descubrir qué está mal y cómo corregirlo. Si estás creciendo, te ayudará a crecer aún más. Trabajando con las Escrituras, cada sesión combina la lectura atenta con la reflexión personal. (Hemos dividido este curso en varios volúmenes. Suponemos que harás el volumen 2 aquí; pero si ya lo has hecho, continúa con el siguiente volumen).",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_2_v001.estudy",
               "studyId": "grow_in_christ_volume_2_v001"
             },
             {
@@ -113,16 +116,18 @@
           "pathwayId": "live-on-mission",
           "titleLevel2": " 4. Vivir con una misión",
           "description": " Dirigir nuestra atención hacia afuera, al corazón de Dios para con el mundo.",
-          "downloadLocation": "",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-live-on-mission.zip",
           "studyTitles": [
             {
               "titleLevel3": "Presentando a Jonás",
               "description": " La compasión de Dios por las naciones y nuestra resistencia.",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/travelling_with_jonah_v001.estudy",
               "studyId": "introducing_jonah_v001"
             },
             {
               "titleLevel3": " Presentación de actos",
               "description": " El nacimiento de la iglesia y la difusión de la Palabra.",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_acts_v001.estudy",
               "studyId": "introducing_acts_v001"
             },
             {
@@ -180,7 +185,7 @@
           "pathwayId": "fighting-sin",
           "titleLevel2": " Luchando contra el pecado",
           "description": " Ayuda práctica y teológica para afrontar la tentación y los patrones de desobediencia.",
-          "downloadLocation": "",
+          "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/bundles/path-fighting-sin.zip",
           "studyTitles": [
             {
               "titleLevel3": " Presentando el Eclesiastés",
@@ -190,6 +195,7 @@
             {
               "titleLevel3": " Introducción a Efesios",
               "description": " La armadura de Dios y nuestra posición en los reinos celestiales.",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/introducing_ephesians_v001.estudy",
               "studyId": "introducing_ephesians_v001"
             },
             {
@@ -200,13 +206,13 @@
             {
               "titleLevel3": " Encuentra descanso para tu alma.",
               "description": "<b>Encuentra descanso para tu alma: Escapa de la conducta adictiva encontrando una alegría superior</b><br><br>Un estudio bíblico de diez sesiones que explora la raíz de la adicción y cómo el Evangelio ofrece más que cualquier falsa promesa. Trabajando con las Escrituras, cada sesión combina la lectura atenta con la reflexión personal.",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1wSTBBwyVfc6KsJsGFV3v4GcR7UwDX8EP",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/find_rest_v001.estudy",
               "studyId": "find_rest_for_your_soul_v001"
             },
             {
               "titleLevel3": " Crecer en Cristo (1)",
               "description": "<b>Crecer en Cristo (Curso de Discipulado)</b><br><br>¿Estás creciendo en Cristo? Dios quiere que todos sus hijos crezcan en Jesús. Si no estás creciendo, estos estudios te ayudarán a descubrir qué está mal y cómo corregirlo. Si estás creciendo, te ayudarán a crecer aún más. Trabajando con las Escrituras, cada sesión combina la lectura atenta con la reflexión personal.<br><br>(Hemos dividido este curso en varios volúmenes. Comienza con el volumen 1; pero si ya lo has hecho, continúa con el siguiente.)",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Dnidfn2VN3gjkAoCJr5RAJbMxvSi3GqS",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_1_v001.estudy",
               "studyId": "grow_in_christ_volume_1_v001"
             }
           ]
@@ -235,7 +241,7 @@
             {
               "titleLevel3": " Trabajando por el bien común",
               "description": "<b>Trabajando para el bien: Fe, amor y adoración en nuestro trabajo diario</b><br><br>Un estudio bíblico de ocho sesiones que explora lo que significa trabajar fielmente como cristiano. Basándose en pasajes desde Génesis hasta Apocalipsis, cada sesión aborda una dimensión diferente del trabajo: su bondad dada por Dios, su distorsión por el pecado y su redención en Cristo. Ya sea que sientas que tu trabajo carece de sentido, está desconectado de tu fe o simplemente es agotador, este estudio te invita a ver tu trabajo diario como un acto de amor, una forma de adoración y parte de los propósitos más amplios de Dios para el mundo.",
-              "downloadLocation": "https://drive.google.com/uc?export=download&id=1Y_ICxLFhMst5WvWykjy7OMJbgAETUI9f",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/working_for_the_good_v001.estudy",
               "studyId": "working_for_the_good_v001"
             },
             {
@@ -308,6 +314,7 @@
             {
               "titleLevel3": " Crecer en Cristo (1)",
               "description": "<b>Crecer en Cristo (Curso de Discipulado)</b><br><br>¿Estás creciendo en Cristo? Dios quiere que todos sus hijos crezcan en Jesús. Si no estás creciendo, este estudio te ayudará a descubrir qué está mal y cómo corregirlo. Si estás creciendo, te ayudará a crecer aún más. Trabajando con las Escrituras, cada sesión combina la lectura atenta con la reflexión personal. (Hemos dividido este curso en varios volúmenes. Comienza con el volumen 1; si ya lo has hecho, continúa con el siguiente).",
+              "downloadLocation": "https://rickcreightoninnigeria.github.io/bsr-studies/studies/grow_in_christ_volume_1_v001.estudy",
               "studyId": "grow_in_christ_volume_1_v001"
             },
             {

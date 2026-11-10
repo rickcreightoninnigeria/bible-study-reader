@@ -1,0 +1,25 @@
+# Studies published for download on the bsr-studies GitHub Pages site
+# (https://rickcreightoninnigeria.github.io/bsr-studies/).
+#
+# One path per line, relative to "estudy_en (v3)/". Lines starting with # are notes.
+# Build the site and update the app's download links with:
+#   python3 py/build_studies_site.py
+# then commit and push the bsr-studies folder (and this repo's changed locale files).
+# Everything listed here becomes public, so add only finished studies whose
+# copyright allows them to be shared freely.
+
+NT/(41) Introducing Mark.estudy
+OT/(01) Introducing Genesis.estudy
+OT/(32) Travelling with Jonah.estudy
+NT/(62) 1 John for Today.estudy
+Life/Conversion.estudy
+Life/Find Rest for your Soul.estudy
+Life/Grow in Christ (1).estudy
+Belief/Truth Unlocked (1).estudy
+Belief/Truth Unlocked (2).estudy
+NT/(44) Introducing Acts.estudy
+NT/(48) Introducing Ephesians.estudy
+NT/(00) Bible Overview (NT).estudy
+OT/(00) Bible Overview (OT).estudy
+Life/Grow in Christ (2)/grow_in_christ_volume_2.estudy
+Life/Working for the Good.estudy
