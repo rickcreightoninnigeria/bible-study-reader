@@ -250,7 +250,7 @@ describe('StudyIDB — connection caching', () => {
     // First open StudyIDB's db on the separate factory to get a handle,
     // then manually invoke onversionchange on the cached connection
     // by triggering it directly — fake-indexeddb exposes the db object via onsuccess
-    const req = fakeIDB.open('BibleStudyReader', 3);
+    const req = fakeIDB.open('BibleStudyReader', 4);   // the current DB_VER (idb.js)
     const cachedDb = await new Promise(resolve => { req.onsuccess = e => resolve(e.target.result); });
     cachedDb.onversionchange && cachedDb.onversionchange();
 

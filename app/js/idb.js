@@ -18,16 +18,23 @@
 //                    Stored separately (not in the chapter object) so it is
 //                    never overwritten by saveAnswers() read-modify-write cycles.
 //
+//   'groups'   – study groups this reader leads (groups.js), keyed by groupId:
+//                { groupId, groupName, leaderName, studyId, studyTitle,
+//                  createdAt, members: { memberId: report } }. Holds other
+//                people's progress and answers, so it is kept apart from the
+//                reader's own data and never included in a backup (backup.js).
+//
 // Values are stored as parsed objects (no JSON.stringify/parse needed)
 // except for lastPosition, which is stored as a JSON string to match the
 // existing saveLastPosition / loadLastPosition contract.
 
 const StudyIDB = (() => {
   const DB_NAME    = 'BibleStudyReader';
-  const DB_VER     = 3;                  // bumped 2 → 3 to add answers store
+  const DB_VER     = 4;                  // 2 → 3 added answers; 3 → 4 added groups
   const STORE      = 'studies';
   const IMG_STORE  = 'images';
   const ANS_STORE  = 'answers';
+  const GRP_STORE  = 'groups';
 
   // Set to a DOMException-like object if IDB is unavailable (e.g. Firefox private
   // browsing, restricted Android WebViews). All public methods check this first
@@ -75,6 +82,7 @@ const StudyIDB = (() => {
         if (!db.objectStoreNames.contains(STORE))     db.createObjectStore(STORE);
         if (!db.objectStoreNames.contains(IMG_STORE)) db.createObjectStore(IMG_STORE);
         if (!db.objectStoreNames.contains(ANS_STORE)) db.createObjectStore(ANS_STORE);
+        if (!db.objectStoreNames.contains(GRP_STORE)) db.createObjectStore(GRP_STORE);
       };
       req.onsuccess = e => {
         const db = e.target.result;
@@ -397,14 +405,53 @@ const StudyIDB = (() => {
     });
   }
 
-  // Wipes all records from all three object stores. Used by resetAllData().
+  // ── groups store (study groups this reader leads) ──────────────────────────
+
+  async function getGroup(groupId) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const req = db.transaction(GRP_STORE, 'readonly').objectStore(GRP_STORE).get(groupId);
+      req.onsuccess = e => resolve(e.target.result ?? null);
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  async function setGroup(group) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const req = db.transaction(GRP_STORE, 'readwrite').objectStore(GRP_STORE).put(group, group.groupId);
+      req.onsuccess = () => resolve();
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  async function removeGroup(groupId) {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const req = db.transaction(GRP_STORE, 'readwrite').objectStore(GRP_STORE).delete(groupId);
+      req.onsuccess = () => resolve();
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  async function getAllGroups() {
+    const db = await open();
+    return new Promise((resolve, reject) => {
+      const req = db.transaction(GRP_STORE, 'readonly').objectStore(GRP_STORE).getAll();
+      req.onsuccess = e => resolve(e.target.result || []);
+      req.onerror   = e => reject(e.target.error);
+    });
+  }
+
+  // Wipes all records from every object store. Used by resetAllData().
   async function clearAll() {
     const db = await open();
     return new Promise((resolve, reject) => {
-      const tx = db.transaction([STORE, IMG_STORE, ANS_STORE], 'readwrite');
+      const tx = db.transaction([STORE, IMG_STORE, ANS_STORE, GRP_STORE], 'readwrite');
       tx.objectStore(STORE).clear();
       tx.objectStore(IMG_STORE).clear();
       tx.objectStore(ANS_STORE).clear();
+      tx.objectStore(GRP_STORE).clear();
       tx.oncomplete = () => resolve();
       tx.onerror    = e => reject(e.target.error);
     });
@@ -419,6 +466,8 @@ const StudyIDB = (() => {
     getChapterAnswers, setChapterAnswers, updateChapterAnswers,
     getAnswerRaw, setAnswerRaw, deleteAnswerRaw,
     deleteStudyAnswers, getAllStudyAnswerKeys, getAllAnswerEntries,
+    // groups store
+    getGroup, setGroup, removeGroup, getAllGroups,
     // global
     clearAll,
   };

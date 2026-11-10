@@ -32,6 +32,8 @@ function makeLoader() {
     JSZip: { loadAsync: async () => { throw new Error('not a zip'); } },   // none of these files is a zip
     showPickerError: m => calls.pickerErrors.push(m),
     looksLikePathwayFile: text => text.includes('"estudyPathwayFileVersion"'),
+    looksLikeGroupFile: text => text.includes('"bsr-progress"') || text.includes('"bsr-group-invite"'),
+    openGroupFiles: async () => {},
     importPathwaysFromText: async text => calls.pathwayImports.push(text),
     loadStudyFromFile: async f => calls.studyLoads.push(f),
     _reportLoadError: (e, name, ctx) => calls.reported.push([e.message, name, ctx]),

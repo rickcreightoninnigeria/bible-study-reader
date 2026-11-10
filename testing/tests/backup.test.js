@@ -168,6 +168,20 @@ describe('mergeLocalStorageEntries', () => {
   });
 });
 
+describe('study-group memberships in a backup', () => {
+  const { sb } = sandbox();
+
+  it('adds groups the phone is not in yet, keeping the phone\'s own entries', () => {
+    const local = { bsr_groups_joined: JSON.stringify([{ groupId: 'g1', memberName: 'Ada (here)' }]) };
+    const w = sb.mergeLocalStorageEntries(k => (k in local ? local[k] : null), {
+      bsr_groups_joined: JSON.stringify([{ groupId: 'g1', memberName: 'Ada (backup)' }, { groupId: 'g2', memberName: 'Ada' }]),
+      bsr_member_name: 'Ada',
+    });
+    expect(JSON.parse(w.bsr_groups_joined).map(g => [g.groupId, g.memberName])).toEqual([['g1', 'Ada (here)'], ['g2', 'Ada']]);
+    expect(w.bsr_member_name).toBe('Ada');
+  });
+});
+
 describe('validateBackupManifest', () => {
   const { sb } = sandbox();
   const ok = { format: 'bsr-backup', formatVersion: 1, createdAt: 5, answers: {}, localStorage: {}, studies: [] };

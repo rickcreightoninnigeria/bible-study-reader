@@ -249,11 +249,13 @@ async function handleFileSelect(event) {
 async function _installMultipleFiles(files) {
     const results = [];
     const pathwayTexts = [];
+    const groupTexts = [];
     showToast({ message: t('studyloader_bundle_installing', { count: files.length }), isManual: true });
     for (const file of files) {
         try {
-            const text = await _readPathwayFileText(file);
-            if (text !== null) { pathwayTexts.push(text); continue; }
+            const text = await _readPlainJsonFileText(file);
+            if (text !== null && looksLikeGroupFile(text)) { groupTexts.push(text); continue; }
+            if (text !== null && looksLikePathwayFile(text)) { pathwayTexts.push(text); continue; }
             results.push(await _installStudyFileQuietly(file));
         } catch (err) {
             console.error(`Failed to install ${file.name}:`, err);
@@ -264,20 +266,22 @@ async function _installMultipleFiles(files) {
     await Router.navigate({ page: 'library' });
     switchLibTab('all');
     for (const text of pathwayTexts) await importPathwaysFromText(text);
+    if (groupTexts.length) await openGroupFiles(groupTexts);
     const { installed, allGood } = _summariseInstall(results);
     if (allGood) {
         showToast({ message: t('studyloader_bundle_success', { count: installed }), isManual: true });
     }
 }
 
-// Returns the text of a picked file if it is a plain-JSON pathway file, or
-// null otherwise (zips and studies). Only the first bytes are read for zips.
-async function _readPathwayFileText(file) {
+// Returns the text of a picked file if it is a plain-JSON pathway file or a
+// study-group file (groups.js), or null otherwise (zips and studies). Only the
+// first bytes are read for zips.
+async function _readPlainJsonFileText(file) {
     const head = new Uint8Array(await file.slice(0, 2).arrayBuffer());
     if (head[0] === 0x50 && head[1] === 0x4B) return null;          // "PK" — a zip
-    if (file.size > 4 * PATHWAY_FILE_MAX_BYTES) return null;         // far too big to be a pathway file
+    if (file.size > Math.max(4 * PATHWAY_FILE_MAX_BYTES, GROUP_FILE_MAX_BYTES)) return null;   // far too big
     const text = await file.text();
-    return looksLikePathwayFile(text) ? text : null;
+    return looksLikePathwayFile(text) || looksLikeGroupFile(text) ? text : null;
 }
 
 async function deleteStudy(id, title) {
@@ -1096,7 +1100,10 @@ async function loadAnyFile(file) {
       // Pathway files are detected first so they aren't misrouted to the study
       // loader (which would report a missing studyId).
       const text = new TextDecoder().decode(arrayBuffer);
-      if (looksLikePathwayFile(text)) {
+      if (looksLikeGroupFile(text)) {
+        // A study-group invite or progress report (groups.js)
+        await openGroupFiles([text]);
+      } else if (looksLikePathwayFile(text)) {
         await importPathwaysFromText(text);
       } else {
         await loadStudyFromFile(file);

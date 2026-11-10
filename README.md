@@ -119,6 +119,7 @@ js/
                              durable-storage request, Add to Home Screen hint
   backup.js                 Settings → Backup: backup file (share/download), merge-restore, 30-day
                              reminder, Android automatic-backup copy
+  groups.js                 Study groups: invites, members' progress reports, the leader's group page
   app-init.js               DOMContentLoaded startup sequence (startApp()); locale loader;
                              reloadLocaleAndRerender()
   gallery.js                Image-gallery blocks (thumbnail grid + full-screen viewer) for Go Deeper / Leaders' Notes
@@ -191,6 +192,7 @@ See `ARCHITECTURE.md` for a fuller overview of the codebase.
 | 26 | `study-loader.js` | `applyStudyData()`, `loadAnyFile()`, `loadStudyFromJson()`, `loadStudyFromBase64()`, `activateStudy()`, `deleteStudy()`, `openLibrary()` | Most of the above |
 | 27 | `migrate.js` | `migrateAnswersToIDB()` | `idb.js`, `state.js` |
 | 27a | `web-app.js` | `registerServiceWorker()`, `scheduleAddToHomeScreenHint()` | `utils.js` (runtime only) |
+| 27c | `groups.js` | `renderGroupPage()`, `sendGroupProgress()`, `openGroupFiles()` | `idb.js`, `backup.js`, `study-loader.js`, `render-progress.js` (runtime only) |
 | 27b | `backup.js` | `backUpNow()`, `restoreBackupFromZip()`, `scheduleAutoBackup()` | `idb.js`, `study-loader.js`, `web-app.js` (runtime only) |
 | 28 | `app-init.js` | `startApp()`, `reloadLocaleAndRerender()` | Everything above |
 | 29 | `gallery.js` | `buildGalleryHtml()`, `prefetchGalleryImages()`, `storeGalleryImages()`, `openGalleryViewer()` | `render-chapter.js` (`_imageBlobCache`, runtime), `idb.js` |

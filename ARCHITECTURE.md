@@ -34,6 +34,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 - `study-loader.js` — install/activate studies, `applyStudyData`, `sanitizeStudyData`, zip limits, themes.
 - `migrate.js` — one-time localStorage→IDB answer migration.
 - `web-app.js` — web build only (inert in the Android app): service-worker registration, durable-storage request, Add to Home Screen hint. See 9a.
+- `groups.js` — study groups without a server (groups of about 30; larger classes split into groups led by assistants). A leader creates a group (`createGroup`) and shares a `.bsrgroup` invite; a member opens it (`joinGroupFromInvite`, membership in localStorage `bsr_groups_joined`, carried in backups) and sends a `.bsrprogress` report (`sendGroupProgress` → `buildProgressReport`), choosing each time: progress only (answered/total per session, when last studied from `record._t`, starred question ids), plus the starred answers, or plus all answers; notes never. Both files are plain JSON; a report has a `members[]` list, so one file can carry several members. `loadAnyFile` and `_installMultipleFiles` route them (`looksLikeGroupFile` → `openGroupFiles`); reports are checked (`validateProgressReport`) and merged into the leader's group by memberId, an older report never replacing a newer one (`mergeReportIntoGroup`). Leaders' groups live in the IDB `groups` store (DB version 4), never in a backup. Router page `group` (menu: Study group), study-scoped: the active study's groups; with a groupId, the leader's page (members × sessions grid, most starred questions, answers by question, member sheet with Remove, Delete group).
 - `backup.js` — Settings → Backup: `backUpNow` builds a `.bsrbackup` zip (`bsr-backup.json` with every answers-store record and the carried localStorage keys; with "Include studies", each installed study re-packed as `studies/<id>.estudy`) and shares it (`Android.shareFile`) or downloads it. `restoreBackupFromZip` merges, never replaces: `mergeChapterRecord` keeps the newer copy of each field by `record._t`, global notes by `<id>_global_notes_t`, flags and positions only where missing, lists joined, `appSettings` overlaid; studies go through `_installStudyFileQuietly`. Reached from Settings → Restore (`handleRestorePick`), from any opened file (`loadAnyFile` checks `isBackupZip` first) and, on Android, from the automatic-backup copy (`offerAutoBackupRestore`, offered when the device has no answers). Also the 30-day reminder (`backupReminderDue`) and `scheduleAutoBackup` (rewrites the Android copy 5 s after a save, or when the app is hidden). See 4 and 9.
 - `app-init.js` — `startApp`, `loadLocale`, `initApp`.
 - `gallery.js` — image gallery blocks and full-screen viewer.
@@ -49,7 +50,7 @@ Written for a planning assistant who cannot see the repo. Describes `main` as of
 
 ## 2. Script load order (`app/index.html`)
 
-sweetalert2 → jszip → purify → markdown-it → `format-text` → `state` → `i18n` → `idb` → `icons` → `settings` → `tts` → `voice` → `modals` → `starred` → `search` → `onboarding` → `router` → `utils` → `answer-match` → `validation` → `gestures` → `navigation` → `share-print` → `pathways-import` → `render-progress` → `render-library` → `study-loader` → `migrate` → `web-app` → `backup` → `app-init` → `gallery` → `render-pages` → `render-chapter-elements` → `render-chapter-ui` → `render-chapter` → `save`.
+sweetalert2 → jszip → purify → markdown-it → `format-text` → `state` → `i18n` → `idb` → `icons` → `settings` → `tts` → `voice` → `modals` → `starred` → `search` → `onboarding` → `router` → `utils` → `answer-match` → `validation` → `gestures` → `navigation` → `share-print` → `pathways-import` → `render-progress` → `render-library` → `study-loader` → `migrate` → `web-app` → `backup` → `groups` → `app-init` → `gallery` → `render-pages` → `render-chapter-elements` → `render-chapter-ui` → `render-chapter` → `save`.
 
 Rules that matter:
 - Files may only *call* later-loaded functions at runtime; load-time dependencies are few. `format-text.js` needs `DOMPurify` and `markdownit` at load. `render-progress.js` calls `debounce` (from `search.js`) at load. `save.js` runs `debounce(updateProgress, 200)` at load, so `search.js` and `render-progress.js` must load before it.
@@ -78,7 +79,7 @@ Rules that matter:
 - `bsr_backup_last_at`, `bsr_backup_reminded_at` — last "Back up now" and when the 30-day reminder clock last started (backup.js).
 - `localStorage.clear()` = "Reset all data".
 
-**IndexedDB** `BibleStudyReader`, version **3**, three stores with out-of-line keys:
+**IndexedDB** `BibleStudyReader`, version **4**, four stores with out-of-line keys:
 - `studies`: `study_content_<studyId>` → parsed study JSON.
 - `images`: Blobs under `<studyId>_cover|publisher|author`, `<studyId>_<elementId>` (inline images), `<studyId>_gallery_<file>` (gallery files).
 - `answers`:
@@ -86,6 +87,7 @@ Rules that matter:
   - `<studyId>_celebrated_ch<N>` → `'1'`;
   - `<studyId>_global_notes`; `<studyId>_global_notes_t` → ms of its last change;
   - `<studyId>_lastPosition` → JSON string `{chapterIdx, scrollY}`.
+- `groups`: `<groupId>` → a study group the reader leads (groups.js), with every member's latest report. Other people's data: kept out of backups.
 - `N` is `chapterNumber`, **not** the array index. Per-chapter read-modify-write goes through `StudyIDB.updateChapterAnswers` (serialised per key), which also records in the chapter object's `_t` (field → ms) when each field last changed, removals included (`stampChangedFields`), so restoring a backup can keep the newer copy. Fields saved before 0.6.7 have no time and count as oldest. `_t` starts with `_`, so the `q_`/`r_`/`star_` scans ignore it.
 - `deleteStudyAnswers`/`removeImagesByPrefix` delete by `<studyId>_` prefix; callers pass `siblingPrefixes(id, registry)` as an exclusion list so a study id that prefixes another (`a` vs `a_b`) does not delete the other's data.
 

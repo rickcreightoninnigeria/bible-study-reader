@@ -823,6 +823,12 @@ async function renderMenu() {
     </div>`;
   }
 
+  html += `
+    <div class="chapter-item" onclick="Router.navigate({ page: 'group' })">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">${t('main_menu_study_group')}</span>
+    </div>`;
+
   if (appSettings.showPageLeaders) {
     html += `
     <div class="chapter-item" onclick="Router.navigate({ page: 'leaders' })">

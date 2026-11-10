@@ -31,11 +31,14 @@ const BACKUP_SCREEN_MAX_POLLS = 200;                      // ten minutes: the fi
 
 // localStorage keys carried in a backup. Version records, install flags, the
 // error log and the backup's own keys stay with the device; so does the
-// interface language, which the reader has just chosen on a new phone.
+// interface language, which the reader has just chosen on a new phone. Groups
+// the reader leads (other people's reports, IDB 'groups' store) are never
+// backed up; groups the reader belongs to are.
 const _BACKUP_LS_KEYS = [
   'appSettings', 'app_onboarding_complete', 'intermediateDefaultsApplied',
   'lib_recent_installed', 'lib_recent_opened', 'lib_pinned', 'lib_pinned_all',
   'bsr_activePathwayId', 'bsr_importedPathways',
+  'bsr_groups_joined', 'bsr_member_name',          // study groups the reader belongs to (groups.js)
 ];
 const _BACKUP_LS_PREFIXES = ['onboardingComplete_', 'featureSeen_', 'bsr_infoSeen_'];
 const _BACKUP_LS_LISTS    = ['lib_recent_installed', 'lib_recent_opened', 'lib_pinned', 'lib_pinned_all'];
@@ -144,8 +147,17 @@ function mergeLocalStorageEntries(getLocal, incoming) {
         else if (Number(g.version) > Number(groups[idx].version)) { groups[idx] = g; changed = true; }
       }
       if (changed) writes[key] = JSON.stringify({ groups });   // re-validated on read (pathways-import.js)
+    } else if (key === 'bsr_groups_joined') {
+      let mine = [], theirs;
+      try { mine = JSON.parse(current || '[]'); } catch (_) { /* keep [] */ }
+      try { theirs = JSON.parse(value); } catch (_) { continue; }
+      if (!Array.isArray(theirs)) continue;
+      const list = Array.isArray(mine) ? mine.filter(_isPlainObj) : [];
+      const ids = new Set(list.map(g => g.groupId));
+      const added = theirs.filter(g => _isPlainObj(g) && typeof g.groupId === 'string' && !ids.has(g.groupId));
+      if (added.length) writes[key] = JSON.stringify([...list, ...added]);
     } else if (current === null) {
-      writes[key] = value;                                      // flags, the chosen path
+      writes[key] = value;                                      // flags, the chosen path, the member name
     }
   }
   return writes;
@@ -304,9 +316,9 @@ function _blobToBase64(blob) {
   });
 }
 
-// Android: the share sheet (save to Drive, send to yourself, …).
-// Browsers: an ordinary download.
-async function _deliverBackupFile(blob, fileName) {
+// Hands a file to the reader. Android: the share sheet (save to Drive, send
+// to yourself, …). Browsers: an ordinary download. Also used by groups.js.
+async function deliverFile(blob, fileName) {
   if (window.Android && typeof window.Android.shareFile === 'function') {
     window.Android.shareFile(await _blobToBase64(blob), fileName, 'application/octet-stream');
     return;
@@ -334,7 +346,7 @@ async function backUpNow() {
     const blob = await buildBackupBlob({ includeStudies });
     const d = new Date();
     const stamp = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-    await _deliverBackupFile(blob, `BSR backup ${stamp}.bsrbackup`);
+    await deliverFile(blob, `BSR backup ${stamp}.bsrbackup`);
     safeSetItem(BACKUP_LAST_KEY, String(Date.now()));
     const line = document.getElementById('backupLastLine');
     if (line) line.textContent = backupLastText();
