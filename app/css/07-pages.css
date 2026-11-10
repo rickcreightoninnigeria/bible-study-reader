@@ -2031,18 +2031,15 @@ body.dark-mode .footnote-btn { color: var(--accent-light); }
   flex-shrink: 0;
   background: var(--text);
   display: flex;
+  flex-wrap: wrap;         /* large system fonts: tabs drop to a second row instead of overlapping */
   align-items: center;
   gap: 0;
   padding: 0 4px;
   border-bottom: 1px solid rgba(245,240,232,0.10);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
-.lib-tab-bar::-webkit-scrollbar { display: none; }
 
 .lib-tab {
-  flex: 1;
+  flex: 1 0 auto;          /* never shrink below the label's width */
   min-width: 60px;
   background: none;
   border: none;
