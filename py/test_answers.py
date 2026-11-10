@@ -77,8 +77,8 @@ VERBS_E = {'love', 'hate', 'live', 'abide', 'atone', 'hope', 'share', 'judge', '
            'move', 'use', 'believe', 'receive', 'forgive', 'overcome', 'define', 'provide', 'promise', 'reside', 'practise',
            'practice', 'deceive', 'guide', 'lose', 'leave', 'remove', 'assure', 'secure', 'serve', 'shine', 'rejoice', 'rebuke',
            'invite', 'refuse', 'pursue', 'continue', 'cease', 'decide', 'describe', 'desire', 'ignore', 'imitate', 'create',
-           'declare', 'prepare', 'compare', 'agree', 'oppose', 'confuse', 'choose', 'arise', 'rise', 'write', 'drive',
-           'sacrifice', 'proclaim', 'persuade', 'excuse', 'bless', 'cleanse', 'dedicate', 'baptise', 'baptize'}
+           'declare', 'prepare', 'compare', 'oppose', 'confuse', 'choose', 'arise', 'rise', 'write', 'drive',
+           'sacrifice', 'persuade', 'excuse', 'cleanse', 'dedicate', 'baptise', 'baptize'}
 VERBS_Y = {'testify', 'justify', 'glorify', 'sanctify', 'satisfy', 'deny', 'apply', 'reply', 'crucify', 'magnify', 'purify',
            'multiply', 'bury', 'carry', 'marry', 'worry', 'cry', 'try', 'notify', 'identify', 'signify', 'edify', 'unify'}
 IRREGULAR = {'teach': ['taught'], 'keep': ['kept'], 'give': ['gave', 'given'], 'know': ['knew'], 'leave': ['left'],
@@ -257,7 +257,9 @@ def job_base(q):
 def candidate_forms(w):
     """Word forms a reader may use that a plain prefix of `w` would not match."""
     forms = set()
-    if w in VERBS_E: forms.add(w[:-1] + 'ing')
+    # Only a silent e is dropped (love → loving); "agree" → "agreeing" and
+    # "bless" → "blessing" start with the word itself, so need no extra form.
+    if w in VERBS_E and w.endswith('e') and not w.endswith('ee'): forms.add(w[:-1] + 'ing')
     if w in VERBS_Y: forms |= {w[:-1] + 'ied', w[:-1] + 'ies'}
     forms |= set(IRREGULAR.get(w, [])) | set(DERIVED.get(w, []))
     return forms

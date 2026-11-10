@@ -334,3 +334,18 @@ describe.skipIf(!hasTools)('test_answers.py --brief', () => {
     expect(JSON.parse(r.read('out/answers_skeleton.json')).meta.protocol).toBe('semi-blind');
   });
 });
+
+describe.skipIf(!PYTHON)('test_answers.py lint word forms', () => {
+  const forms = words => JSON.parse(spawnSync(PYTHON, ['-c',
+    'import sys, json; sys.path.insert(0, sys.argv[1]); import test_answers as t; ' +
+    'print(json.dumps({w: sorted(t.candidate_forms(w)) for w in sys.argv[2:]}))',
+    dirname(SCRIPT), ...words], { encoding: 'utf8' }).stdout);
+
+  it('drops only a silent e before -ing', () => {
+    const f = forms(['love', 'proclaim', 'bless', 'agree']);
+    expect(f.love).toContain('loving');
+    expect(f.proclaim).not.toContain('proclaiing');
+    expect(f.bless).not.toContain('blesing');
+    expect(f.agree).not.toContain('agreing');
+  });
+});
