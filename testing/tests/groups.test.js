@@ -170,3 +170,25 @@ describe('groups store in idb.js', () => {
     expect(await sb.StudyIDB.getAllGroups()).toEqual([]);
   });
 });
+
+describe('help for study groups', () => {
+  const en = JSON.parse(readFileSync(join(__dirname, '../../app/js/locales/en/ui_en.json'), 'utf8'));
+  const src = ['onboarding.js', 'groups.js', 'render-pages.js'].map(JS).join('\n');
+
+  it('has a five-slide tutorial whose strings all exist', () => {
+    const block = JS('onboarding.js').match(/'study-groups': \{[\s\S]*?\n  \},/)[0];
+    expect(block.match(/heading: t\(/g)).toHaveLength(5);
+    const keys = [...block.matchAll(/t\('([a-z0-9_]+)'\)/g)].map(m => m[1]);
+    expect(keys.filter(k => !(k in en))).toEqual([]);
+  });
+
+  it('every How-to, Leaders\' Notes and button string exists in English', () => {
+    const keys = [...src.matchAll(/t\('((?:renderpages_groups|leaders_group|groups_tour)_[a-z_]+)'\)/g)].map(m => m[1]);
+    expect(keys.length).toBeGreaterThanOrEqual(10);
+    expect(keys.filter(k => !(k in en))).toEqual([]);
+  });
+
+  it("is left out when Leaders' Notes are printed", () => {
+    expect(JS('share-print.js')).toContain('.leaders-group-tip');
+  });
+});

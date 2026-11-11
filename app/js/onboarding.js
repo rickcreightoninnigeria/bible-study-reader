@@ -367,6 +367,17 @@ function getFeatureTutorials() {
     ],
   },
 
+  'study-groups': {
+    markSeen: true,
+    slides: [
+      { icon: '👥', eyebrow: t('onboarding_eyebrow_feature'), heading: t('onboarding_groups_slide1_heading'), body: t('onboarding_groups_slide1_body') },
+      { icon: '📨', eyebrow: t('onboarding_eyebrow_feature'), heading: t('onboarding_groups_slide2_heading'), body: t('onboarding_groups_slide2_body') },
+      { icon: '🔒', eyebrow: t('onboarding_eyebrow_feature'), heading: t('onboarding_groups_slide3_heading'), body: t('onboarding_groups_slide3_body') },
+      { icon: '📊', eyebrow: t('onboarding_eyebrow_feature'), heading: t('onboarding_groups_slide4_heading'), body: t('onboarding_groups_slide4_body') },
+      { icon: '🤝', eyebrow: t('onboarding_eyebrow_feature'), heading: t('onboarding_groups_slide5_heading'), body: t('onboarding_groups_slide5_body') },
+    ],
+  },
+
   'leaders-notes': {
     markSeen: true,
     slides: [

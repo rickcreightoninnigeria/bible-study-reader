@@ -676,6 +676,25 @@ async function renderHowToUse(tabId) {
       </div>
 
       <div class="howto-section">
+        <div class="howto-section-heading">${t('renderpages_groups_heading')}</div>
+        <div style="margin-bottom:16px;">
+          ${groupTutorialButton("() => { Router.replaceState({ page: 'howto', tabId: 'sharing' }); renderHowToUse('sharing'); }")}
+        </div>
+        <div class="howto-block">
+          <div class="howto-block-title">${t('renderpages_groups_leaders_title')}</div>
+          <p>${t('renderpages_groups_leaders_body')}</p>
+        </div>
+        <div class="howto-block">
+          <div class="howto-block-title">${t('renderpages_groups_members_title')}</div>
+          <p>${t('renderpages_groups_members_body')}</p>
+        </div>
+        <div class="howto-block">
+          <div class="howto-block-title">${t('renderpages_groups_privacy_title')}</div>
+          <p>${t('renderpages_groups_privacy_body')}</p>
+        </div>
+      </div>
+
+      <div class="howto-section">
         <div class="howto-section-heading">${t('renderpages_shareapp_heading')}</div>
         <div class="howto-block">
           <div class="howto-block-title">${t('renderpages_shareapp_know_title')}</div>
@@ -1810,6 +1829,16 @@ async function renderLeadersNotes(tabId) {
         >${t.label}</button>`).join('')}
     </div>`;
 
+  // A short app-provided note on the first tab pointing leaders to Study
+  // groups (groups.js). Removed when the page is printed (share-print.js).
+  const groupTip = activeTab === (LEADERS_TABS[0] && LEADERS_TABS[0].id) ? `
+      <div class="leaders-group-tip">
+        <div class="leaders-group-tip-title">👥 ${t('leaders_group_tip_title')}</div>
+        <p>${t('leaders_group_tip_body')}</p>
+        <button class="howto-share-btn" onclick="Router.navigate({ page: 'group' })">${t('main_menu_study_group')}</button>
+        ${groupTutorialButton("() => { Router.replaceState({ page: 'leaders', tabId: window.activeTabId }); renderLeadersNotes(window.activeTabId); }")}
+      </div>` : '';
+
   let tabContent = '';
   if (activeTab === 'intro' && hasIntro) {
     const introHtml = typeof rawIntro === 'string'
@@ -1850,6 +1879,7 @@ async function renderLeadersNotes(tabId) {
         </div>`;
     }
   }
+  tabContent += groupTip;
 
   // Resolve the page subtitle for the active language.
   // Multilingual: subtitle1/subtitle2/… — mono-lingual: subtitle (unchanged).

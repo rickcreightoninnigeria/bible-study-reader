@@ -606,6 +606,18 @@ function _groupDangerHtml(group) {
     </div>`;
 }
 
+// The "How study groups work" button (the 'study-groups' tutorial,
+// onboarding.js), coming back to the same page afterwards. Also used on the
+// How-to page and in Leaders' Notes, with their own return.
+function groupTutorialButton(returnTo) {
+  return `
+    <button class="howto-tutorial-btn group-tutorial-btn" data-tutorial-id="study-groups"
+            onclick="showFeatureTutorial('study-groups', ${returnTo})">
+      <span class="tutorial-trigger-icon">${tutorialIcon('study-groups')}</span>
+      ${t('groups_tour_btn')}
+    </button>`;
+}
+
 // Router page 'group'. tabId: a groupId the reader leads (the group's page),
 // or none (the list of this study's groups).
 async function renderGroupPage(groupId) {
@@ -636,6 +648,7 @@ async function renderGroupPage(groupId) {
       </div>
       <div class="settings-page group-page">
         ${group ? '' : `<p class="settings-row-desc group-intro">${t('group_intro')}</p>`}
+        ${groupTutorialButton(`() => { Router.replaceState({ page: 'group', tabId: ${group ? `'${group.groupId}'` : 'null'} }); renderGroupPage(${group ? `'${group.groupId}'` : ''}); }`)}
         ${body}
       </div>
       <div class="page-close-bar">

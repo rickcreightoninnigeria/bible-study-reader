@@ -4698,3 +4698,20 @@ body.dark-mode .diag-label          { color: var(--dm-text-mid); }
 body.dark-mode .diag-pre            { background: var(--dm-sunken); }
 body.dark-mode .diag-ok             { color: var(--dm-text); }
 body.dark-mode .diag-note           { color: var(--dm-text-mid); }
+
+/* Leaders' Notes: the app's pointer to Study groups (render-pages.js) */
+.leaders-group-tip {
+  margin: 20px 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-inline-start: 4px solid var(--accent);
+  border-radius: 10px;
+  background: var(--surface);
+  font-family: var(--main-font-family);
+  font-size: 0.9rem;
+}
+.leaders-group-tip-title { font-weight: bold; margin-bottom: 4px; }
+.leaders-group-tip p { margin: 0 0 10px; }
+.leaders-group-tip .howto-tutorial-btn,
+.group-tutorial-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 14px; color: var(--accent); }
+body.dark-mode .leaders-group-tip { background: var(--dm-surface); color: var(--dm-text); }

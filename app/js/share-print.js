@@ -796,7 +796,7 @@ async function printContentPage() {
 
   // Navigation and other controls, and inline icons (the sentence around an
   // icon names its button, as in buildChapterBody's _printMarkers).
-  body.querySelectorAll('button, .chapter-nav, .inline-icon').forEach(el => el.remove());
+  body.querySelectorAll('button, .chapter-nav, .inline-icon, .leaders-group-tip').forEach(el => el.remove());
 
   // Plain class names the print stylesheet knows; inline margins from the
   // screen layout are dropped.
