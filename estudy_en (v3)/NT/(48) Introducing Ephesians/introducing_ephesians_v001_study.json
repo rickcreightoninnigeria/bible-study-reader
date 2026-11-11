@@ -2,7 +2,7 @@
   "studyMetadata":{
     "studyId"          :"introducing_ephesians_v001",
     "estudyFileVersion":3,
-    "studyVersion"     :1.0,
+    "studyVersion"     :1.01,
     "title"            :"Introducing Ephesians",
     "shortTitle"       :"Ephesians",
     "subtitle"         :"Seven sessions in Paul’s letter",
@@ -38,7 +38,18 @@
           "text"     :"<p>Welcome to this study of Paul’s letter to the Ephesians. Each session is designed to take about 45–60 minutes, whether you work alone or prepare for a group. Tap the Bible reference on a question to read the passage. When you have written an answer, tap Check [[icon:localValidate]] to see how it compares with the main ideas of the passage. It never grades you, and you can keep working on your answer afterwards.</p><p>In this first session we read the opening of the letter. Paul moves almost at once into praise, and what he praises God for sets the tone for everything that follows.</p>"
         },
         {
-          "elementId"        :"ch01-el02",
+          "elementId"  :"ch01-el02",
+          "type"       :"video",
+          "title"      :"Overview: Ephesians",
+          "source"     :"BibleProject",
+          "url"        :"https://www.youtube.com/watch?v=Y71r-T98E2Q",
+          "minutes"    :9,
+          "note"       :"An animated overview of the whole letter: how the good news makes one new family from every people, and how that family lives in love. Watch before you start, on Wi-Fi if you can.",
+          "fileName"   :"ephesians.mp4",
+          "downloadUrl":"https://stream.mux.com/fBwEIh2ZQL901mFJZAw7f02aRqFRHNdinm8w1T01m023I02M/high.mp4?download=ephesians.mp4"
+        },
+        {
+          "elementId"        :"ch01-el03",
           "type"             :"question",
           "subtype"          :"header",
           "header"           :"As we get started…",
@@ -47,13 +58,13 @@
           "answerPlaceholder":"Your thoughts…"
         },
         {
-          "elementId":"ch01-el03",
+          "elementId":"ch01-el04",
           "type"     :"heading",
           "subtype"  :"section",
           "text"     :"Who is writing, and what has God done?"
         },
         {
-          "elementId"    :"ch01-el04",
+          "elementId"    :"ch01-el05",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Ephesians 1:1–6",
@@ -63,7 +74,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el05",
+          "elementId"        :"ch01-el06",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -82,7 +93,7 @@
           ]
         },
         {
-          "elementId"        :"ch01-el06",
+          "elementId"        :"ch01-el07",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -99,7 +110,7 @@
           ]
         },
         {
-          "elementId"        :"ch01-el07",
+          "elementId"        :"ch01-el08",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -117,7 +128,7 @@
           ]
         },
         {
-          "elementId"    :"ch01-el08",
+          "elementId"    :"ch01-el09",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Ephesians 1:7–10",
@@ -127,7 +138,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el09",
+          "elementId"        :"ch01-el10",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -144,7 +155,7 @@
           ]
         },
         {
-          "elementId"        :"ch01-el10",
+          "elementId"        :"ch01-el11",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -161,7 +172,7 @@
           ]
         },
         {
-          "elementId"    :"ch01-el11",
+          "elementId"    :"ch01-el12",
           "type"         :"biblePassage",
           "format"       :"HTML",
           "bibleRef"     :"Ephesians 1:11–14",
@@ -171,7 +182,7 @@
           "bottomPadding":"none"
         },
         {
-          "elementId"        :"ch01-el12",
+          "elementId"        :"ch01-el13",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -190,7 +201,7 @@
           ]
         },
         {
-          "elementId"        :"ch01-el13",
+          "elementId"        :"ch01-el14",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -208,7 +219,7 @@
           ]
         },
         {
-          "elementId"        :"ch01-el14",
+          "elementId"        :"ch01-el15",
           "type"             :"question",
           "subtype"          :"standard",
           "format"           :"plainText",
@@ -225,13 +236,13 @@
           ]
         },
         {
-          "elementId":"ch01-el15",
+          "elementId":"ch01-el16",
           "type"     :"heading",
           "subtype"  :"reflection",
           "text"     :"Reflect"
         },
         {
-          "elementId"        :"ch01-el16",
+          "elementId"        :"ch01-el17",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -239,7 +250,7 @@
           "answerPlaceholder":"Your thoughts…"
         },
         {
-          "elementId"        :"ch01-el17",
+          "elementId"        :"ch01-el18",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -247,7 +258,7 @@
           "answerPlaceholder":"Your thoughts…"
         },
         {
-          "elementId"        :"ch01-el18",
+          "elementId"        :"ch01-el19",
           "type"             :"question",
           "subtype"          :"reflection",
           "format"           :"plainText",
@@ -255,7 +266,7 @@
           "answerPlaceholder":"Your thoughts…"
         },
         {
-          "elementId":"ch01-el19",
+          "elementId":"ch01-el20",
           "type"     :"text",
           "subtype"  :"closing",
           "format"   :"HTML",
@@ -1861,7 +1872,18 @@
           "answerPlaceholder":"Your thoughts…"
         },
         {
-          "elementId":"ch07-el21",
+          "elementId"  :"ch07-el21",
+          "type"       :"video",
+          "title"      :"Overview: Ephesians",
+          "source"     :"BibleProject",
+          "url"        :"https://www.youtube.com/watch?v=Y71r-T98E2Q",
+          "minutes"    :9,
+          "note"       :"Watch the overview again, to see how the whole letter fits together.",
+          "fileName"   :"ephesians.mp4",
+          "downloadUrl":"https://stream.mux.com/fBwEIh2ZQL901mFJZAw7f02aRqFRHNdinm8w1T01m023I02M/high.mp4?download=ephesians.mp4"
+        },
+        {
+          "elementId":"ch07-el22",
           "type"     :"text",
           "subtype"  :"closing",
           "format"   :"HTML",
@@ -1936,7 +1958,8 @@
       "No warranties are given. The licence may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.",
       "In preparing this edition, the author made use of Claude, an AI assistant, to draft the questions, notes and Go Deeper text from the Bible passages, and to prepare the study file. All content decisions, theological judgements, and final wording are the author’s responsibility.",
       "In preparing this study the following works were consulted: John Stott, The Message of Ephesians; N. T. Wright, Paul for Everyone: The Prison Letters; Richard Coekin, Ephesians For You; Klyne Snodgrass, Ephesians (The NIV Application Commentary); Peter T. O’Brien, The Letter to the Ephesians. The questions and notes are original.",
-      "<p>Scripture quoted by permission. Quotations designated (<a href=\"http://netbible.org\">NET</a>) are from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. http://netbible.com All rights reserved.</p>"
+      "<p>Scripture quoted by permission. Quotations designated (<a href=\"http://netbible.org\">NET</a>) are from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. http://netbible.com All rights reserved.</p>",
+      "The Ephesians overview video (Sessions 1 and 7) is © BibleProject (bibleproject.com). It is linked from this study, not included in it."
     ]
   }
 }
