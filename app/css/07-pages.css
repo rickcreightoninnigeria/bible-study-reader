@@ -411,6 +411,30 @@
   transition: color 0.15s, border-color 0.15s;
   line-height: 1;
 }
+/* Narrow phones: a little less padding and letter-spacing, so more tabs fit on
+   one row before any label has to be shortened. */
+@media (max-width: 420px) {
+  .howto-tab {
+    padding-inline: 8px;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* A tab with a short label holds both; fitTabBar() (render-pages.js) puts
+   "tabs-short" / "tabs-shorter" on the bar when the full labels do not fit.
+   The full label is hidden visually only, so a screen reader still reads it. */
+.howto-tab .tab-short { display: none; }
+.howto-tab-bar.tabs-short .howto-tab:not(.active) .tab-short,
+.howto-tab-bar.tabs-shorter .howto-tab .tab-short { display: inline; }
+.howto-tab-bar.tabs-short .howto-tab:not(.active) .tab-full,
+.howto-tab-bar.tabs-shorter .howto-tab .tab-full {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 .howto-tab:hover  { color: rgba(245,240,232,0.8); }
 .howto-tab.active {
   color: var(--accent-light);

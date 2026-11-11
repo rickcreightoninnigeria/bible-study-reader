@@ -38,12 +38,63 @@ function getSettingsTabs() {
   const tabs = [
     { id: 'app',      label: () => t('renderpages_tab_app')            },
     { id: 'study',    label: () => t('renderpages_tab_study_settings') },
-    { id: 'language', label: () => `${currentLangFlag()} ${t('renderpages_tab_language')}` },
+    { id: 'language', label: () => `${currentLangFlag()} ${t('renderpages_tab_language')}`,
+                       short: () => `${currentLangFlag()} ${t('renderpages_tab_language_short')}` },
   ];
-  if (mode === 'intermediate' || mode === 'advanced') tabs.push({ id: 'library', label: () => t('renderpages_tab_library') });
+  if (mode === 'intermediate' || mode === 'advanced') tabs.push({ id: 'library', label: () => t('renderpages_tab_library'), short: () => t('renderpages_tab_library_short') });
   // Always last, and in every mode: it is for the moment something does not work.
-  tabs.push({ id: 'diagnostics', label: () => t('renderpages_tab_diagnostics') });
+  tabs.push({ id: 'diagnostics', label: () => t('renderpages_tab_diagnostics'), short: () => t('renderpages_tab_diagnostics_short') });
   return tabs;
+}
+
+// ── TAB BAR LABELS THAT SHORTEN TO FIT ───────────────────────────────────────
+// A tab may carry a short label (Library → Lib). tabLabelHtml() renders both
+// inside the button; fitTabBar() then picks, with classes on the bar:
+//   (none)         every tab shows its full label
+//   tabs-short     the tabs that are not selected show their short label
+//   tabs-shorter   every tab shows its short label (the selected one too)
+// It takes the first of those that keeps the bar on one row; if none does, the
+// bar's flex-wrap puts a tab on a second row. The full label stays in the page
+// (visually hidden) so a screen reader always reads the full word.
+function tabLabelHtml(tab) {
+  const full  = typeof tab.label === 'function' ? tab.label() : tab.label;
+  const short = typeof tab.short === 'function' ? tab.short() : tab.short;
+  if (!short || short === full) return full;
+  return `<span class="tab-full">${full}</span><span class="tab-short" aria-hidden="true">${short}</span>`;
+}
+
+// True when the tabs no longer fit on one row. Compared by vertical centre, so
+// it works left-to-right and right-to-left, and a taller tab (the language
+// badge) does not count as a second row.
+function _tabBarWraps(bar) {
+  const centre = el => { const r = el.getBoundingClientRect(); return r.top + r.height / 2; };
+  const first = centre(bar.firstElementChild);
+  return Array.from(bar.children).some(b => Math.abs(centre(b) - first) > 4);
+}
+
+// Safe to call at any time: it does nothing when there is no such bar on screen.
+// When no stage gets the tabs onto one row, it keeps the stage with the fewest
+// rows (the least shortened one, on a tie): no point shortening labels for nothing.
+function fitTabBar(bar) {
+  if (!bar || !bar.firstElementChild || !bar.querySelector('.tab-short')) return;
+  const stages = [[], ['tabs-short'], ['tabs-short', 'tabs-shorter']];
+  const apply = i => { bar.classList.remove('tabs-short', 'tabs-shorter'); bar.classList.add(...stages[i]); };
+  let best = 0, bestHeight = Infinity;
+  for (let i = 0; i < stages.length; i++) {
+    apply(i);
+    if (!_tabBarWraps(bar)) return;
+    if (bar.offsetHeight < bestHeight) { bestHeight = bar.offsetHeight; best = i; }
+  }
+  apply(best);
+}
+
+// The bar's width changes with the window (rotating the phone, split screen),
+// and a web font arriving late changes the label widths, so fit again then.
+function fitSettingsTabs() { fitTabBar(document.getElementById('settingsTabBar')); }
+window.addEventListener('resize', debounce(fitSettingsTabs, 150));
+if (document.fonts) {
+  document.fonts.ready.then(fitSettingsTabs);
+  document.fonts.addEventListener('loadingdone', fitSettingsTabs);
 }
 
 // ── PAGE-LEVEL STUDY LANGUAGE SWITCHER ────────────────────────────────────────
@@ -1607,7 +1658,7 @@ async function renderSettings(tabId) {
         <button
           class="howto-tab${t.id === activeTab ? ' active' : ''}"
           onclick="Router.replaceState({ page: 'settings', tabId: '${t.id}' }); renderSettings('${t.id}')"
-        >${typeof t.label === 'function' ? t.label() : t.label}</button>`).join('')}
+        >${tabLabelHtml(t)}</button>`).join('')}
     </div>`;
 
   const tabContent = (tabContentFns[activeTab] || tabApp)();
@@ -1636,6 +1687,7 @@ async function renderSettings(tabId) {
   `;
 
   window.scrollTo(0, 0);
+  fitSettingsTabs();   // shorten the tab labels if the full ones would wrap
   updateSettingsControls();
   if (activeTab === 'diagnostics') renderDiagnosticsInto('diagnosticsBody');
   if (activeTab === 'app') {
