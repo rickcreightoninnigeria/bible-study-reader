@@ -1754,6 +1754,7 @@ const LEADERS_TABS = []; // populated dynamically — see renderLeadersNotes
 //
 // Subtype 'image-gallery' blocks are rendered by buildGalleryHtml()
 // (gallery.js); a gallery with no displayable image renders nothing at all.
+// Subtype 'video' blocks are rendered by buildVideoCardHtml() (video.js).
 function _buildContentBlocksHtml(ch, activeLang, langMap, skipFields, classPrefix, highlightClass, format = '', footnotes = null) {
   const isMultilang = !!langMap && Object.keys(langMap).length > 0;
   const isMarkdown  = String(format || '').toLowerCase() === 'markdown';
@@ -1785,6 +1786,16 @@ function _buildContentBlocksHtml(ch, activeLang, langMap, skipFields, classPrefi
           <div class="${classPrefix}-block">
             ${headerHtml}
             ${galleryHtml}
+          </div>`;
+    }
+
+    if (subtype === 'video') {
+      const card = buildVideoCardHtml(resolved);   // video.js
+      if (!card) return '';
+      return `
+          <div class="${classPrefix}-block">
+            ${headerHtml}
+            ${card}
           </div>`;
     }
 

@@ -120,6 +120,7 @@ js/
   backup.js                 Settings → Backup: backup file (share/download), merge-restore, 30-day
                              reminder, Android automatic-backup copy
   groups.js                 Study groups: invites, members' progress reports, the leader's group page
+  video.js                  Video cards: watch online (data cost shown), play a copy on the phone, download on Wi-Fi
   app-init.js               DOMContentLoaded startup sequence (startApp()); locale loader;
                              reloadLocaleAndRerender()
   gallery.js                Image-gallery blocks (thumbnail grid + full-screen viewer) for Go Deeper / Leaders' Notes

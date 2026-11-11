@@ -66,17 +66,32 @@ All of these are visible to anyone who opens the study file, so don't put anythi
 - Never end a block key in a digit.
 - Keep the intro tab's `header` short ("About"); many tabs scroll sideways.
 
-## 6. Things you must not do
+## 6. Videos
+
+A `video` element (in a session) or a `video` block (in Go Deeper or Leaders' Notes) links to a video such as a BibleProject overview:
+
+```json
+{ "type": "video", "elementId": "ch01-el02", "title": "Overview: Genesis 1–11", "source": "BibleProject",
+  "url": "https://www.youtube.com/watch?v=…", "minutes": 7,
+  "fileName": "Genesis-1-11.mp4", "downloadUrl": "https://…/Genesis-1-11.mp4" }
+```
+
+- Mobile data is expensive for many readers. The card shows the length and the data cost, and offers to play a copy already on the phone (for example one a leader downloaded on Wi-Fi and shared with Xender). Give `fileName` and, where the publisher allows downloads, `downloadUrl`, so leaders can do that.
+- Use **the same `url` for the same video in every study**: a reader who links their copy once can then play it in all of them.
+- Place a video where it helps: an overview before the first passage, or in Go Deeper as optional viewing. One or two per session is plenty.
+- Check the publisher's terms before suggesting that a video be downloaded and shared.
+
+## 7. Things you must not do
 
 - No `<script>`, no `style=` attributes (use a class), no curly quotes around attribute values.
 - No `apiKey` or `studyAiData`: the AI tutor was removed.
 - No fields the app ignores (`answerType`, `required`, `tags`, `shareMessage`, `publishedBy`, `year`, `ctaLabel`). `STUDY-FORMAT.md` section 11 lists them.
 - Don't type Bible text from memory. Use text from a source you hold the right to use.
 
-## 7. Check, test, release
+## 8. Check, test, release
 
 1. `python3 validate_study.py --explain study.json` until it reports no errors. It also runs every `sampleAnswer` and `mainPoint` through the app's own answer check (it needs Node.js and `answer-match.js`), and `--explain` shows how each one fared.
 2. Zip with `images/` if you have pictures, rename to `.estudy`.
-3. Open it in the app: a passage pop-up, a hint, a footnote, a table at phone width, Read more and Back to study.
+3. Open it in the app: a passage pop-up, a hint, a footnote, a table at phone width, Read more and Back to study, and each video card's links.
 4. **To update a study, raise `studyVersion`** (1.0 → 1.01). A newer version installs over the old one. If a student opens a file with the same or a lower version than the one they already have, the app asks whether to keep what they have or install the file anyway. Number versions with two decimal places: 1.01, 1.02 … 1.09, 1.10 (1.1 is the same as 1.10).
 5. The copyright page prints the app's CC BY-SA text unless you add `copyrightData.licenceText` (a string or an array of paragraphs). If your study is not CC BY-SA, for example "All rights reserved", you must add it; the validator warns if you forget. Older apps (before 0.6.4) ignore it and still show the CC BY-SA text.

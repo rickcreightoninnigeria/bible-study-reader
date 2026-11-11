@@ -118,14 +118,14 @@ describe.skipIf(!hasPython)('validate_study.py render-shape checks', () => {
 
   it('warns about unknown types and subtypes that draw nothing, but not about repeatElement pointers', () => {
     const { out } = validate(base([
-      { elementId: 'a', type: 'video' },
+      { elementId: 'a', type: 'audio' },
       { elementId: 'b' },
       { elementId: 'c', type: 'heading', subtype: 'big', text: 'x' },
       { elementId: 'd', type: 'callout', subtype: 'fancy' },
       { elementId: 'q', type: 'question', question: 'q' },
       { repeatElement: 'q' },
     ]));
-    expect(out).toContain("a: unknown type 'video'");
+    expect(out).toContain("a: unknown type 'audio'");
     expect(out).toContain('b: no type');
     expect(out).toContain("c: heading subtype 'big' renders nothing");
     expect(out).toContain("d: callout subtype 'fancy' renders nothing");

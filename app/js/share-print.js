@@ -726,6 +726,11 @@ const _CONTENT_PRINT_LANDSCAPE_COLUMNS = 4;
 
 const _CONTENT_PRINT_CSS = `
   .content-print .chapter-eyebrow { margin-bottom: 4pt; }
+  .video-card { border: 1pt solid #c8bca8; border-left: 3pt solid #8c6420; padding: 6pt 8pt; margin: 8pt 0; page-break-inside: avoid; }
+  .video-card-icon, .video-card-hint, .video-card-actions { display: none; }
+  .video-card-eyebrow { font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #8c6420; }
+  .video-card-title { font-weight: bold; }
+  .video-card-meta, .video-card-print { font-size: 9pt; color: #555; word-break: break-all; }
   .block { margin: 0 0 12pt 0; }
   .block-label { font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #8c6420; margin: 14pt 0 4pt 0; page-break-after: avoid; }
   .block p { margin: 0 0 6pt 0; }

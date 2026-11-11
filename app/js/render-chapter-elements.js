@@ -734,6 +734,27 @@ function renderCallout(ctx) {
 }
 
 
+// ── VIDEO ─────────────────────────────────────────────────────────────────────
+// A link to a video (video.js draws the card). title, url, note, fileName and
+// downloadUrl are numbered in multilingual studies, so each language can point
+// to its own translated video; minutes, sizeMB and source are plain.
+
+function renderVideo(ctx) {
+  const { el, noPad, activeLang, langMap } = ctx;
+  const field = f => resolveText(el, activeLang, f, langMap);
+  return buildVideoCardHtml({
+    title:       field('title'),
+    url:         field('url'),
+    note:        field('note'),
+    fileName:    field('fileName'),
+    downloadUrl: field('downloadUrl'),
+    minutes:     el.minutes,
+    sizeMB:      el.sizeMB,
+    source:      el.source,
+  }, noPad);
+}
+
+
 // ── LIKERT SCALE ──────────────────────────────────────────────────────────────
 // Thin ctx-signature wrapper around renderLikertScale() from modals.js,
 // for consistency with the other element renderers.

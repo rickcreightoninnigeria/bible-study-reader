@@ -87,6 +87,7 @@ function getUpgradeOnboardingSlides() {
         '<li><b>Automatic backup on Android:</b> if Google backup is turned on for your phone, your answers are now included in it, and a new phone offers to restore them.</li>' +
         '<li><b>Downloading studies:</b> the Download button and the download links in Learning Paths now use a simple download page instead of Google Drive, so there are no extra Drive screens.</li>' +
         '<li><b>Study groups:</b> choose Study group from a study’s menu. A leader creates a group and shares an invite; members send their progress to the leader, choosing each time whether to include their answers. The leader sees who is keeping up, the most starred questions and the shared answers.</li>' +
+        '<li><b>Videos:</b> studies can now link to videos, such as BibleProject overviews. The card shows how much data watching online uses, and can play a copy already on your phone (for example one shared with Xender), free and without internet.</li>' +
         '<li><b>Large text:</b> with a large phone font size, tabs and the buttons at the foot of each chapter now move onto another row instead of running off the screen, and long words such as email addresses wrap. In Settings, the names of the Language, Library and Diagnostics tabs shorten (Lang, Lib, Diag) when they would not fit on one row; the tab you are on shows its full name.</li>' +
         '</ul>',
     },

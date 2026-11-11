@@ -164,7 +164,7 @@ def check_markers(study):
                     md_warn(f'{name} {label} {path}')
 
 
-ELEMENT_TYPES = {'heading', 'text', 'biblePassage', 'question', 'image', 'callout', 'likertScale'}
+ELEMENT_TYPES = {'heading', 'text', 'biblePassage', 'question', 'image', 'callout', 'likertScale', 'video'}
 HEADING_SUBTYPES = {'section', 'subsection', 'reflection'}
 CALLOUT_SUBTYPES = {'general', 'misunderstanding', 'highlighted', 'activity'}
 
@@ -262,6 +262,8 @@ def check_element_shapes(where, el):
             warn(f'{where}: callout subtype {sub!r} renders nothing (use general, misunderstanding, highlighted or activity)')
         if sub == 'highlighted':
             need_string('body')
+    if typ == 'video':
+        check_video(where, el)
     if typ == 'likertScale':
         bipolar = sub == 'bipolar'
         rows_key = 'statementPairs' if bipolar else 'statements'
@@ -288,6 +290,59 @@ def check_element_shapes(where, el):
                 ok = False
             if not ok:
                 warn(f'{where}: scaleNumber {sn!r} is not between 1 and 10; the app uses its default or clamps it')
+
+
+# Sites a video link is expected to point to; any other site gets a warning
+# (not an error), in case it is a typing slip.
+VIDEO_HOSTS = ('youtube.com', 'youtu.be', 'bibleproject.com', 'vimeo.com')
+
+
+def check_video(where, v):
+    """A `video` element or a Go Deeper / Leaders' Notes block with subtype
+    `video` (video.js). title, url, note, fileName and downloadUrl may be numbered."""
+    from urllib.parse import urlparse
+
+    def https_ok(k, val):
+        if not isinstance(val, str) or not val.strip():
+            return False
+        u = urlparse(val.strip())
+        if u.scheme != 'https' or not u.netloc:
+            err(f'{where}: {k} must be an https:// address (this one is ignored)')
+            return False
+        return True
+
+    titles = [(k, val) for k, val in numbered(v, 'title')]
+    if not any(isinstance(val, str) and val.strip() for _, val in titles):
+        warn(f'{where}: video has no title, so the card just says "Video"')
+    for k, val in titles:
+        if val is not None and not isinstance(val, str):
+            err(f'{where}: {k} must be a string')
+    urls = numbered(v, 'url')
+    downloads = numbered(v, 'downloadUrl')
+    files = numbered(v, 'fileName')
+    if not urls and not downloads and not files:
+        err(f'{where}: video needs a url (or a downloadUrl or fileName), so the card is not shown')
+    for k, val in urls:
+        if https_ok(k, val):
+            host = urlparse(val.strip()).netloc.lower()
+            if not any(host == h or host.endswith('.' + h) for h in VIDEO_HOSTS):
+                warn(f'{where}: {k} is on {host}, not a usual video site; check it is right')
+    for k, val in downloads:
+        https_ok(k, val)
+    for k, val in files:
+        if not isinstance(val, str) or '/' in val or '\\' in val:
+            warn(f'{where}: {k} should be a plain file name such as Genesis-1-11.mp4 (no folders)')
+    m = v.get('minutes')
+    if m is None:
+        warn(f'{where}: video has no minutes, so the card cannot show its length or data cost')
+    elif isinstance(m, bool) or not isinstance(m, (int, float)) or not 0 < m <= 300:
+        err(f'{where}: minutes must be a number between 1 and 300')
+    mb = v.get('sizeMB')
+    if mb is not None and (isinstance(mb, bool) or not isinstance(mb, (int, float)) or mb <= 0):
+        err(f'{where}: sizeMB must be a positive number (megabytes to watch online)')
+    for k in ('source',):
+        if k in v and not isinstance(v[k], str):
+            err(f'{where}: {k} must be a string')
 
 
 # keyTerms is NOT a regular expression (answer-match.js parseKeyTerms): only "|",
@@ -649,6 +704,12 @@ def main(path):
             r = el.get('repeatElement')
             if r and r not in ids_in_ch:
                 err(f'chapter {n}: repeatElement {r!r} not found in the same chapter')
+
+    for name, label in (('goDeeperData', 'Go Deeper'), ('leadersNotesData', "Leaders' Notes")):
+        for ch in (study.get(name) or {}).get('chapters', []):
+            for key, block in ch.items():
+                if isinstance(block, dict) and block.get('subtype') == 'video':
+                    check_video(f'{label} chapter {ch.get("chapterNumber")}, {key}', block)
 
     gd = study.get('goDeeperData') or {}
     top_format = str(gd.get('format', '')).lower()

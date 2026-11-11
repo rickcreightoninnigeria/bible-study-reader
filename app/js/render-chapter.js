@@ -301,6 +301,10 @@ async function renderChapter(idx, scrollY = 0) {
             contentHtml += renderLikertScaleElement(ctx);
             break;
 
+          case 'video':
+            contentHtml += renderVideo(ctx);
+            break;
+
           default:
             break;
         }
