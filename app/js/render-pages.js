@@ -27,8 +27,22 @@ const HOWTO_TABS = [
   { id: 'study',    label: () => t('renderpages_tab_study')    },
   { id: 'topbar',   label: () => t('renderpages_tab_topbar')   },
   { id: 'chapters', label: () => t('renderpages_tab_chapters') },
-  { id: 'library',  label: () => t('renderpages_tab_library')  },
+  { id: 'library',  label: () => t('renderpages_tab_library'), short: () => t('renderpages_tab_library_short') },
   { id: 'sharing',  label: () => t('renderpages_tab_sharing')  },
+  { id: 'faq',      label: () => t('renderpages_tab_faq')      },
+];
+
+// How to Use → FAQ: question ids in groups. Each id has faq_<id>_q and
+// faq_<id>_a in ui_*.json (the answer may hold HTML; a blank line starts a new
+// paragraph); each group has faq_group_<id>. A feature change that makes an
+// answer wrong must change it in the same piece of work (see ARCHITECTURE.md).
+const FAQ_GROUPS = [
+  { id: 'start',   items: ['free', 'internet', 'getstudy'] },
+  { id: 'answers', items: ['saved', 'check', 'repeats'] },
+  { id: 'backup',  items: ['newphone', 'delete'] },
+  { id: 'sharing', items: ['share', 'groups'] },
+  { id: 'privacy', items: ['privacy'] },
+  { id: 'trouble', items: ['wontopen'] },
 ];
 
 // SETTINGS_TABS is computed dynamically so the Library tab is hidden in Basic
@@ -91,10 +105,12 @@ function fitTabBar(bar) {
 // The bar's width changes with the window (rotating the phone, split screen),
 // and a web font arriving late changes the label widths, so fit again then.
 function fitSettingsTabs() { fitTabBar(document.getElementById('settingsTabBar')); }
-window.addEventListener('resize', debounce(fitSettingsTabs, 150));
+function fitHowtoTabs()    { fitTabBar(document.getElementById('howtoTabBar')); }
+function _fitTabBars()     { fitSettingsTabs(); fitHowtoTabs(); }
+window.addEventListener('resize', debounce(_fitTabBars, 150));
 if (document.fonts) {
-  document.fonts.ready.then(fitSettingsTabs);
-  document.fonts.addEventListener('loadingdone', fitSettingsTabs);
+  document.fonts.ready.then(_fitTabBars);
+  document.fonts.addEventListener('loadingdone', _fitTabBars);
 }
 
 // ── PAGE-LEVEL STUDY LANGUAGE SWITCHER ────────────────────────────────────────
@@ -770,6 +786,33 @@ async function renderHowToUse(tabId) {
         </div>`;
   }
 
+  function tabFaq() {
+    const paragraphs = text => text.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    return `
+      <div class="howto-section">
+        <div class="howto-section-heading">${t('renderpages_faq_heading')}</div>
+        <p class="faq-intro">${t('faq_intro')}</p>
+      </div>
+      ${FAQ_GROUPS.map(g => `
+      <div class="howto-section">
+        <div class="howto-section-heading">${t('faq_group_' + g.id)}</div>
+        ${g.items.map(id => `
+        <details class="howto-block faq-item">
+          <summary class="howto-block-title">${t('faq_' + id + '_q')}</summary>
+          ${paragraphs(t('faq_' + id + '_a'))}
+        </details>`).join('')}
+      </div>`).join('')}
+      <div class="howto-section">
+        <div class="howto-block">
+          <div class="howto-block-title">${t('faq_stuck_title')}</div>
+          <p>${t('faq_stuck_body')}</p>
+          <button class="howto-share-btn" onclick="Router.navigate({ page: 'settings', tabId: 'diagnostics' })">
+            ${t('faq_stuck_btn')}
+          </button>
+        </div>
+      </div>`;
+  }
+
   // Tab content dispatch
   const tabContentFns = {
     study:    tabStudy,
@@ -777,6 +820,7 @@ async function renderHowToUse(tabId) {
     chapters: tabChapters,
     library:  tabLibrary,
     sharing:  tabSharing,
+    faq:      tabFaq,
   };
 
   // Build tab bar HTML
@@ -786,7 +830,7 @@ async function renderHowToUse(tabId) {
         <button
           class="howto-tab${t.id === activeTab ? ' active' : ''}"
           onclick="Router.replaceState({ page: 'howto', tabId: '${t.id}' }); renderHowToUse('${t.id}')"
-        >${typeof t.label === 'function' ? t.label() : t.label}</button>`).join('')}
+        >${tabLabelHtml(t)}</button>`).join('')}
     </div>`;
 
   const tabContent = (tabContentFns[activeTab] || tabStudy)();
@@ -812,6 +856,7 @@ async function renderHowToUse(tabId) {
     </div>
   `;
   window.scrollTo(0, 0);
+  fitHowtoTabs();   // shorten the tab labels if the full ones would wrap
 }
 
 
@@ -1638,7 +1683,8 @@ async function renderSettings(tabId) {
     return `
       <div class="settings-section">
         <div class="settings-section-heading">${t('renderpages_tab_diagnostics')}</div>
-        <div class="settings-row-desc" style="margin-bottom:16px;">${t('diag_intro')}</div>
+        <div class="settings-row-desc" style="margin-bottom:8px;">${t('diag_intro')}</div>
+        <button class="faq-link" onclick="Router.navigate({ page: 'howto', tabId: 'faq' })">${t('faq_diag_link')}</button>
         <div id="diagnosticsBody" class="diag-body">${t('diag_loading')}</div>
       </div>`;
   }

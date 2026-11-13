@@ -1,6 +1,6 @@
 PRIVACY POLICY — BIBLE STUDY READER
 
-Last updated: 23 October 2026
+Last updated: 13 November 2026
 
 This Privacy Policy explains what data the Bible Study Reader app collects, how it is used, and under what circumstances it leaves your device.
 
@@ -31,13 +31,16 @@ This data is stored using your device's browser storage (localStorage) and Index
 The app uses the internet only in the following specific circumstances:
 
 3a. Downloading study files
-When you download a study from the in-app library, the app fetches the study file from a third-party file host (currently Google Drive). This is a standard file download; no personal information is sent. The study file is then stored on your device (see Section 2).
+When you tap a Download button in the library or in a learning path, the app opens your phone's web browser at the study download site (currently https://rickcreightoninnigeria.github.io/bsr-studies/, hosted by GitHub Pages). Your browser downloads the file, and you then open it with this app. The app sends no personal information. Learning paths imported from other publishers may link to other websites; the app shows you the address and warns you before opening it. The study file is stored on your device (see Section 2).
 
-3b. App updates (Android only)
-The app may check for available updates by fetching version information from a file hosted on Google Drive. This is a standard file request; no personal information is sent.
+3b. App updates
+The Android app does not check for updates itself: updates come through Google Play. The "App updates" button in Settings opens the app's Google Play page. The web version of the app updates itself from the website it is loaded from.
 
 3c. Reporting a problem (optional)
 Settings → Diagnostics has a "Report a problem" button. It opens your own email app with a message addressed to bible.study.reader@gmail.com and a diagnostic report already filled in: the app version, basic details of your device and browser (such as screen size and language), the titles and versions of the studies you have installed, and recent error messages. It never includes your answers or notes. Nothing is sent unless you review the message and press Send yourself, and you may delete any part of it first.
+
+3d. Backups and sharing (your choice)
+The Backup feature (Settings → Study) makes a file of your answers, notes, stars and settings, and you choose where to keep it (for example Google Drive, or a message to yourself). Share, Print and Study Group files also go only where you send them. If Google backup is turned on for your Android phone, Android may include the app's backup file in your own Google account backup, under Google's privacy policy; the app developer does not receive it.
 
 The app itself does not transmit your answers, notes or any other text you type to any server. Earlier versions of the app offered an optional AI Tutor that sent text to the Google Gemini API; that feature has been removed. Some older study files may still contain unused AI Tutor settings, which the app ignores. Any AI Tutor conversation you saved in an answer before the feature was removed remains on your device only.
 
@@ -75,7 +78,9 @@ The app is not directed at children under the age of 13 and does not knowingly c
 
 The app interacts with the following third-party services under the circumstances described above:
 
-• Google Drive — for downloading study files and app updates
+• GitHub Pages (GitHub, Inc.) — hosts the study download site and the web version of the app
+• Google Play — app installation and updates
+• Other websites or file hosts (for example Google Drive), only if a learning path from another publisher links to one; the app shows the address and warns you first
 
 The app contains no advertising networks, analytics SDKs, social media integrations, or crash-reporting services.
 
@@ -84,8 +89,8 @@ The app contains no advertising networks, analytics SDKs, social media integrati
 
 All data stored by the app can be deleted at any time:
 
-• To clear your answers for a study: Settings → Answers → Clear all answers for this study.
-• To delete an installed study and all its data: Library → press and hold the study → Delete.
+• To clear your answers for a study: open the study, then Settings → Study → Clear all saved answers.
+• To delete an installed study and all its data: Library → tap the bin icon on the study's card.
 • To reset all app data: uninstall the app, or use your device's Settings → Apps → Bible Study Reader → Clear Data.
 
 ────────────────────────────────────────
