@@ -124,6 +124,13 @@ describe('privacy policy (the FAQ points readers to it)', () => {
     expect(policy).not.toMatch(/version information from a file hosted on Google Drive/);
   });
 
+  it('says the Android app requests no permissions (its manifest declares none) and describes voice input as the phone\'s own speech screen', () => {
+    expect(policy).toContain('does not request any Android permissions');
+    expect(policy).not.toMatch(/^• (INTERNET|RECORD_AUDIO|READ_EXTERNAL_STORAGE)/m);
+    expect(policy).toContain('speech-recognition screen');
+    expect(policy).toContain('does not record audio');
+  });
+
   it('describes deletion the way the app does it (bin icon; Settings → Study → Clear all saved answers)', () => {
     expect(policy).toContain('tap the bin icon');
     expect(policy).toContain('Settings → Study → Clear all saved answers');

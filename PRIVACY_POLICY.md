@@ -28,7 +28,7 @@ This data is stored using your device's browser storage (localStorage) and Index
 ────────────────────────────────────────
 3. DATA TRANSMITTED OVER THE INTERNET
 
-The app uses the internet only in the following specific circumstances:
+The Android app does not connect to the internet by itself (it has no internet permission). Your phone's browser, email app or Google Play connect only in the following specific circumstances, when you ask for them:
 
 3a. Downloading study files
 When you tap a Download button in the library or in a learning path, the app opens your phone's web browser at the study download site (currently https://rickcreightoninnigeria.github.io/bsr-studies/, hosted by GitHub Pages). Your browser downloads the file, and you then open it with this app. The app sends no personal information. Learning paths imported from other publishers may link to other websites; the app shows you the address and warns you before opening it. The study file is stored on your device (see Section 2).
@@ -47,12 +47,12 @@ The app itself does not transmit your answers, notes or any other text you type 
 ────────────────────────────────────────
 4. MICROPHONE (VOICE INPUT)
 
-If you choose to use the voice input feature, your device's microphone is activated while you are speaking. On Android, speech recognition is handled either by:
+Voice input is optional, and the microphone is used only when you tap the microphone button next to an answer.
 
-• Your device's built-in speech recognition system (processed by your device or by your device manufacturer's servers, subject to their own privacy policies), or
-• The Android WebView's Web Speech API.
+• On Android, the app opens your phone's own speech-recognition screen (Android's speech recognition service, usually provided by Google or your phone's manufacturer) and receives only the text it returns. The app itself does not record audio and does not have microphone permission. The speech service may process your speech on your device or on its provider's servers, under that provider's own privacy policy.
+• In the web version, if your browser offers speech recognition, your browser asks your permission and handles the audio under its own privacy policy.
 
-The app developer does not receive or store any audio recordings. Voice input is entirely optional; the microphone is only activated when you deliberately tap the microphone button.
+The app developer does not receive or store any audio recordings.
 
 ────────────────────────────────────────
 5. TEXT-TO-SPEECH (READ ALOUD)
@@ -62,11 +62,11 @@ The read-aloud feature uses your device's built-in text-to-speech engine to read
 ────────────────────────────────────────
 6. PERMISSIONS
 
-The app requests the following Android permissions:
+The Android app does not request any Android permissions. In particular:
 
-• INTERNET — required to download study files and to check for app updates.
-• RECORD_AUDIO — required only for the optional voice input feature. This permission is requested only when you first attempt to use voice input.
-• READ_EXTERNAL_STORAGE / file access — required to allow you to load .estudy files from your device's storage.
+• It has no internet permission: downloads, videos and "Report a problem" are opened in your browser, video app or email app (see Section 3).
+• It has no microphone permission: voice input uses your phone's own speech-recognition screen (see Section 4).
+• It has no storage permission: you load .estudy files through Android's file picker or by opening the file with the app, and Print uses Android's own print service.
 
 ────────────────────────────────────────
 7. CHILDREN'S PRIVACY
