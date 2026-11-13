@@ -335,9 +335,9 @@ async function createGroup() {
   const { value, isConfirmed } = await Swal.fire({
     title: t('group_create_title'),
     html: `<label class="group-field-label" for="groupNameInput">${escapeHtml(t('group_create_name_label'))}</label>
-           <input id="groupNameInput" class="swal2-input" maxlength="${GROUP_NAME_MAX}" value="${escapeHtml(t('group_create_name_default', { study: studyTitle }))}">
+           <input id="groupNameInput" class="swal2-input group-field-input" maxlength="${GROUP_NAME_MAX}" value="${escapeHtml(t('group_create_name_default', { study: studyTitle }))}">
            <label class="group-field-label" for="groupLeaderInput">${escapeHtml(t('group_create_leader_label'))}</label>
-           <input id="groupLeaderInput" class="swal2-input" maxlength="${GROUP_NAME_MAX}" value="${escapeHtml(localStorage.getItem(GROUP_MEMBER_NAME_KEY) || '')}">
+           <input id="groupLeaderInput" class="swal2-input group-field-input" maxlength="${GROUP_NAME_MAX}" value="${escapeHtml(localStorage.getItem(GROUP_MEMBER_NAME_KEY) || '')}">
            <p class="group-scope-note">${escapeHtml(t('group_create_note'))}</p>`,
     showCancelButton: true,
     confirmButtonText: t('group_create_btn'),

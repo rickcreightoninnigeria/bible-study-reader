@@ -1218,7 +1218,19 @@ body.dark-mode .backup-include-studies { color: var(--dm-text); }
 .group-scope-option { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-size: 0.9rem; line-height: 1.4; }
 .group-scope-option input { margin-top: 3px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--accent); }
 .group-scope-note { font-size: 0.85rem; opacity: 0.8; }
-.group-field-label { display: block; text-align: start; margin: 12px 0 -6px; font-size: 0.9rem; font-weight: bold; }
+.group-field-label { display: block; text-align: start; margin: 14px 0 4px; font-size: 0.9rem; font-weight: bold; }
+/* The Create group dialog's text boxes: full width of the dialog. SweetAlert's
+   own input style adds 2em side margins to a full-width box, which pushed a long
+   default group name off the right edge. */
+.swal2-container .swal2-html-container input.group-field-input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 4px;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+}
 .group-member-sheet { text-align: start; max-height: 55vh; overflow-y: auto; }
 .group-member-session { margin: 0 0 14px; }
 body.dark-mode .group-answer-q { color: var(--dm-text); }
