@@ -235,6 +235,7 @@
   "___subsection: tab labels"                           :"── Tab bar labels ────────────────────────────────────────────",
   "renderpages_tab_study"                               :"ጥናት",
   "renderpages_tab_topbar"                              :"የላይኛው ባር",
+  "renderpages_tab_topbar_short"                        :"ላይኛው",
   "renderpages_tab_chapters"                            :"ምዕራፎች",
   "renderpages_tab_library"                             :"ቤተ-መጽሐፍት",
   "renderpages_tab_library_short"                       :"ቤተ-መጽሐፍት",

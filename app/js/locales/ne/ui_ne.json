@@ -235,6 +235,7 @@
   "___subsection: tab labels"                           :"── Tab bar labels ────────────────────────────────────────────",
   "renderpages_tab_study"                               :"अध्ययन",
   "renderpages_tab_topbar"                              :"माथिल्लो पट्टी",
+  "renderpages_tab_topbar_short"                        :"माथि",
   "renderpages_tab_chapters"                            :"अध्यायहरू",
   "renderpages_tab_library"                             :"पुस्तकालय",
   "renderpages_tab_library_short"                       :"पुस्तकालय",

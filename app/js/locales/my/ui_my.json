@@ -235,6 +235,7 @@
   "___subsection: tab labels"                           :"── Tab bar labels ────────────────────────────────────────────",
   "renderpages_tab_study"                               :"လေ့လာမှု",
   "renderpages_tab_topbar"                              :"အပေါ်ဘား",
+  "renderpages_tab_topbar_short"                        :"အပေါ်",
   "renderpages_tab_chapters"                            :"အခန်းများ",
   "renderpages_tab_library"                             :"စာကြည့်တိုက်",
   "renderpages_tab_library_short"                       :"စာကြည့်",

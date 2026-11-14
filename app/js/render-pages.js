@@ -25,7 +25,7 @@
 
 const HOWTO_TABS = [
   { id: 'study',    label: () => t('renderpages_tab_study')    },
-  { id: 'topbar',   label: () => t('renderpages_tab_topbar')   },
+  { id: 'topbar',   label: () => t('renderpages_tab_topbar'), short: () => t('renderpages_tab_topbar_short') },
   { id: 'chapters', label: () => t('renderpages_tab_chapters') },
   { id: 'library',  label: () => t('renderpages_tab_library'), short: () => t('renderpages_tab_library_short') },
   { id: 'sharing',  label: () => t('renderpages_tab_sharing')  },

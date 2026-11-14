@@ -241,6 +241,7 @@
   "___subsection: tab labels"                           :"── Tab bar labels ────────────────────────────────────────────",
   "renderpages_tab_study"                               :"Study",
   "renderpages_tab_topbar"                              :"Top Bar",
+  "renderpages_tab_topbar_short"                        :"Top",
   "renderpages_tab_chapters"                            :"Chs",
   "renderpages_tab_library"                             :"Library",
   "renderpages_tab_library_short"                       :"Lib",

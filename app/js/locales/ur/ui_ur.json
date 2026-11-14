@@ -235,6 +235,7 @@
   "___subsection: tab labels"                           :"── Tab bar labels ────────────────────────────────────────────",
   "renderpages_tab_study"                               :"مطالعہ",
   "renderpages_tab_topbar"                              :"ٹاپ بار",
+  "renderpages_tab_topbar_short"                        :"ٹاپ",
   "renderpages_tab_chapters"                            :"ابواب",
   "renderpages_tab_library"                             :"لائبریری",
   "renderpages_tab_library_short"                       :"لائبریری",

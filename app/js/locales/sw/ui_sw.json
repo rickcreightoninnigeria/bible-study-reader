@@ -235,6 +235,7 @@
   "___subsection: tab labels"                           :"── Tab bar labels ────────────────────────────────────────────",
   "renderpages_tab_study"                               :"Funzo",
   "renderpages_tab_topbar"                              :"Upau wa Juu",
+  "renderpages_tab_topbar_short"                        :"Juu",
   "renderpages_tab_chapters"                            :"Sura",
   "renderpages_tab_library"                             :"Maktaba",
   "renderpages_tab_library_short"                       :"Maktaba",

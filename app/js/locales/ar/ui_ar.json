@@ -235,6 +235,7 @@
   "___subsection: tab labels"                           :"── Tab bar labels ────────────────────────────────────────────",
   "renderpages_tab_study"                               :"دراسة",
   "renderpages_tab_topbar"                              :"الشريط العلوي",
+  "renderpages_tab_topbar_short"                        :"العلوي",
   "renderpages_tab_chapters"                            :"الفصول",
   "renderpages_tab_library"                             :"المكتبة",
   "renderpages_tab_library_short"                       :"مكتبة",
