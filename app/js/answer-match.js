@@ -40,6 +40,7 @@ const AM_LIMITS = {
   RATIO_NO_STOPWORDS:   0.85,
   MIN_LETTERS_LATIN:       3,  // content-token length where there is no stopword list
   STEM_LENGTH:             5,
+  FUZZY_MIN_LETTERS:       5,  // shortest keyTerms word that forgives a spelling slip
   MIN_CHARS_FOR_QUESTION_CHECK: 20,
 };
 
@@ -257,7 +258,8 @@ function stem(token) {
 // Turns the raw study value into [{ alternatives: [{ text, exact, inside, … }] }].
 // Grammar, per entry string: alternatives separated by "|"; a trailing "$"
 // means the whole word exactly; a single word otherwise matches at the start of
-// a word; an alternative containing a space is a phrase matched at a word start;
+// a word (give or take one spelling slip in a word of five or more letters; see
+// _fuzzyAltMatches); an alternative containing a space is a phrase matched at a word start;
 // in scripts without spaces an alternative is matched as a substring. A leading
 // "*" matches the text anywhere inside a word (for languages that attach prefixes
 // to words, such as Arabic "bil-iman"); "$" is ignored with it. Anything
@@ -297,6 +299,59 @@ function parseKeyTerms(raw) {
   return entries;
 }
 
+// ── Spelling slips ────────────────────────────────────────────────────────────
+// A keyTerms word of FUZZY_MIN_LETTERS or more letters also matches a word that
+// is one slip away (a letter wrong, missing, extra, or two swapped), provided
+// the first letters agree: "forgivnes" meets forgiv. Only a-z words, only the
+// non-$, non-* forms, and one slip however long the word: two slips let
+// "religion" through for "religious". Tried only after the exact match fails.
+const _AM_PLAIN_WORD_RE = /^[a-z]+$/;
+
+// Is `a` within one slip of `b`? (Damerau–Levenshtein distance ≤ 1.)
+function _withinOneSlip(a, b) {
+  const la = a.length, lb = b.length;
+  if (Math.abs(la - lb) > 1) return false;
+  let i = 0;
+  while (i < la && i < lb && a[i] === b[i]) i++;
+  if (i === la && i === lb) return true;
+  if (la === lb) {
+    if (a.slice(i + 1) === b.slice(i + 1)) return true;                                   // one letter wrong
+    return i + 1 < la && a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2);   // two swapped
+  }
+  return la > lb ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);         // one letter extra / missing
+}
+
+// Does `tok` start with `word`, give or take one slip? Tried at the three
+// lengths a slip can leave the start of the word at.
+function _fuzzyStartsWith(word, tok) {
+  if (tok[0] !== word[0] || !_AM_PLAIN_WORD_RE.test(tok)) return false;
+  for (let n = word.length - 1; n <= word.length + 1; n++) {
+    if (n <= tok.length && _withinOneSlip(word, tok.slice(0, n))) return true;
+  }
+  return false;
+}
+
+function _fuzzyAltMatches(alt, ctx) {
+  if (alt.spaceless || alt.inside || alt.exact) return false;
+  const words = alt.text.split(' ');
+  const forgiving = w => w.length >= AM_LIMITS.FUZZY_MIN_LETTERS && _AM_PLAIN_WORD_RE.test(w);
+  if (!words.some(forgiving)) return false;
+  const tokens = ctx.tokens;
+  for (let i = 0; i + words.length <= tokens.length; i++) {
+    let ok = true;
+    for (let k = 0; k < words.length && ok; k++) {
+      const w = words[k], tok = tokens[i + k];
+      if (k < words.length - 1) {            // earlier words of a phrase are whole words
+        ok = tok === w || (forgiving(w) && tok[0] === w[0] && _AM_PLAIN_WORD_RE.test(tok) && _withinOneSlip(w, tok));
+      } else {                               // the last word (or a lone word) is a word start
+        ok = tok.startsWith(w) || (forgiving(w) && _fuzzyStartsWith(w, tok));
+      }
+    }
+    if (ok) return true;
+  }
+  return false;
+}
+
 function _altMatches(alt, ctx) {
   if (alt.spaceless) return ctx.compact.indexOf(alt.compact) !== -1;
   if (alt.inside) return ctx.text.indexOf(alt.text) !== -1;
@@ -312,15 +367,19 @@ function _altMatches(alt, ctx) {
 
 // How many keyTerms entries does the answer contain? An entry matches if ANY of
 // its alternatives does. `parsedTerms` is the output of parseKeyTerms().
-function matchKeyTerms(answer, parsedTerms, lang) {
+// `opts.exactOnly` turns the spelling tolerance off.
+function matchKeyTerms(answer, parsedTerms, lang, opts) {
   const total = Array.isArray(parsedTerms) ? parsedTerms.length : 0;
   if (total === 0) return { matched: 0, total: 0 };
   const text = normaliseText(String(typeof answer === 'string' ? answer : '').slice(0, AM_LIMITS.MAX_ANSWER_CHARS));
   const tokens = tokenise(text, _langKey(lang));
   const ctx = { text, padded: ' ' + text + ' ', compact: text.replace(/ /g, ''), tokens, tokenSet: new Set(tokens) };
+  const exactOnly = !!(opts && opts.exactOnly);   // authors' lint: spelling slips would hide a missing word form
   let matched = 0;
   for (const entry of parsedTerms) {
-    if (entry && Array.isArray(entry.alternatives) && entry.alternatives.some(alt => _altMatches(alt, ctx))) matched++;
+    if (!entry || !Array.isArray(entry.alternatives)) continue;
+    if (entry.alternatives.some(alt => _altMatches(alt, ctx)) ||
+        (!exactOnly && entry.alternatives.some(alt => _fuzzyAltMatches(alt, ctx)))) matched++;
   }
   return { matched, total };
 }

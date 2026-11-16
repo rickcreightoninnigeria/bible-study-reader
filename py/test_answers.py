@@ -99,6 +99,7 @@ const src = fs.readFileSync(process.argv[1], 'utf8') +
   '\n;globalThis.__a = { evaluateAnswer, normaliseText, tokenise, _isContent, parseKeyTerms, matchKeyTerms, countWords, contentTokens, AM_LIMITS, STOPWORDS_BY_LANG };';
 const ctx = { console }; vm.createContext(ctx); vm.runInContext(src, ctx);
 const A = ctx.__a;
+const EXACT = { exactOnly: true };   // the lint asks about the plain word match, not the spelling tolerance
 const lk = l => (String(l || 'en').toLowerCase().split(/[-_]/)[0] || 'en');
 const jobs = JSON.parse(fs.readFileSync(0, 'utf8'));
 // The key-term strings exactly as parseKeyTerms keeps them (same order, same cut-off), so index i of the
@@ -126,14 +127,14 @@ const out = jobs.map(j => {
   if (j.mode === 'lint') {
     const terms = aligned(j.keyTerms);
     const text = (j.passage || '') + ' ' + (j.question || '');
-    return { terms, anchored: terms.map(t => A.matchKeyTerms(text, A.parseKeyTerms([t]), lang).matched > 0),
+    return { terms, anchored: terms.map(t => A.matchKeyTerms(text, A.parseKeyTerms([t]), lang, EXACT).matched > 0),
              contentWords: A.contentTokens(j.passage || '', lang).length,
              stop: stop ? Array.from(stop) : [],
-             forms: (j.forms || []).map(([i, f]) => A.matchKeyTerms(f, A.parseKeyTerms([terms[i]]), lang).matched > 0) };
+             forms: (j.forms || []).map(([i, f]) => A.matchKeyTerms(f, A.parseKeyTerms([terms[i]]), lang, EXACT).matched > 0) };
   }
   if (j.mode === 'corpus') {          // share of the texts that each alternative matches
     const parsed = j.alts.map(a => A.parseKeyTerms([a]));
-    return { rates: parsed.map(p => j.texts.length ? j.texts.filter(t => A.matchKeyTerms(t, p, lang).matched > 0).length / j.texts.length : 0) };
+    return { rates: parsed.map(p => j.texts.length ? j.texts.filter(t => A.matchKeyTerms(t, p, lang, EXACT).matched > 0).length / j.texts.length : 0) };
   }
   const r = A.evaluateAnswer(j);
   const terms = aligned(j.keyTerms);

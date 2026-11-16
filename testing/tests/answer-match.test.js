@@ -261,6 +261,78 @@ describe('matchKeyTerms', () => {
   });
 });
 
+describe('matchKeyTerms: spelling slips', () => {
+  const run = (answer, terms, opts) => am.matchKeyTerms(answer, am.parseKeyTerms(terms), 'en', opts);
+
+  it('forgives one wrong, missing, extra or swapped letter in a word of five or more letters', () => {
+    expect(run('he fogivnes us', ['forgiv']).matched).toBe(1);         // missing
+    expect(run('he forgaves us', ['forgiv']).matched).toBe(1);         // wrong
+    expect(run('he forgiive us', ['forgiv']).matched).toBe(1);         // extra
+    expect(run('religous people', ['religious']).matched).toBe(1);     // missing
+    expect(run('he is the creatro', ['creator']).matched).toBe(1);     // swapped
+    expect(run('the alter to an unkown god', ['altar', 'unknown']).matched).toBe(2);
+  });
+
+  it('keeps matching a word start: a slip in the part that is typed, not only in the whole word', () => {
+    expect(run('beleiving in him', ['believ']).matched).toBe(1);
+  });
+
+  it('needs the first letter to agree', () => {
+    expect(run('he forgave', ['gorgiv']).matched).toBe(0);
+  });
+
+  it('cannot tell two real words one letter apart (a known limit, kept short by the length and one-slip rules)', () => {
+    expect(run('a grave matter', ['grace']).matched).toBe(1);
+    expect(run('a grave matter', ['grace$']).matched).toBe(0);          // $ is the way to rule it out
+  });
+
+  it('leaves short words alone', () => {
+    expect(run('his son', ['sinn']).matched).toBe(0);
+    expect(run('the sun', ['sin']).matched).toBe(0);
+    expect(run('a grace', ['gract']).matched).toBe(1);                 // five letters: one slip is forgiven
+    expect(run('a gray', ['gract']).matched).toBe(0);                  // two slips are not
+  });
+
+  it('forgives only one slip, however long the word', () => {
+    expect(run('no religion at all', ['religious']).matched).toBe(0);
+    expect(run('a different word altogether', ['righteousness']).matched).toBe(0);
+  });
+
+  it('forgives slips inside phrases, in every word of five or more letters', () => {
+    expect(run('he was declard righteus', ['declared righteous']).matched).toBe(1);
+    expect(run('the livng watar', ['living water']).matched).toBe(1);
+    expect(run('the lvng wter', ['living water']).matched).toBe(0);    // "lvng" is two slips from "living"
+    expect(run('the livng wtr', ['living water']).matched).toBe(0);    // "wtr" is two slips from "water"
+  });
+
+  it('does not touch $ (whole word), * (inside) or scripts without spaces', () => {
+    expect(run('forgivnes', ['forgiven$']).matched).toBe(0);
+    expect(run('forgivn', ['*forgiven']).matched).toBe(0);
+    expect(run('我们称义', ['称仪']).matched).toBe(0);
+  });
+
+  it('tries an exact match first and can be switched off', () => {
+    expect(run('he fogivnes us', ['forgiv'], { exactOnly: true }).matched).toBe(0);
+    expect(run('he fogivnes us', ['forgiv']).matched).toBe(1);
+    expect(run('he forgives us', ['forgiv'], { exactOnly: true }).matched).toBe(1);
+  });
+
+  it('only applies to a-z words (accents are folded first)', () => {
+    expect(run('une relijion', ['religion']).matched).toBe(1);
+    expect(am.matchKeyTerms('la présentation', am.parseKeyTerms(['presentacion']), 'fr').matched).toBe(1);
+    expect(run('he was ɗalla', ['ɗallah']).matched).toBe(0);
+  });
+
+  it('stays fast on a long answer with many long terms', () => {
+    const answer = 'termitesxxxxxxx '.repeat(300);            // same first letter and length as the terms, so every pair is compared
+    const letter = n => String.fromCharCode(97 + n);
+    const terms = Array.from({ length: 12 }, (_, i) => Array.from({ length: 10 }, (_, j) => `termination${letter(i)}${letter(j)}`).join('|'));
+    const started = Date.now();
+    expect(run(answer, terms).matched).toBe(0);
+    expect(Date.now() - started).toBeLessThan(500);
+  });
+});
+
 describe('tierFor', () => {
   // [total, matched] → tier
   const table = {
