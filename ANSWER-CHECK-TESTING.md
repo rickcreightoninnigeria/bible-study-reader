@@ -130,7 +130,7 @@ For every failure, REVIEW and Tier B item outside expectation, decide which of t
 | **Stem or form gap** | `love` misses "loving"; `teach` misses "taught"; `believe` misses "belief"; `lov` is safe but a 3-letter stem is broad | Add the form, or a stem of four or more letters. `--lint` finds these from the real matcher |
 | **Key terms miss part of the question** | A two-part question (the situation *and* the reason); an answer to one part scores `offTopic` or 1 term | Add a key term for the other part, or split the question |
 | **Misaligned key terms** | A term is missed by nearly every good answer and matches nothing in the passage or question | Rewrite from the passage on screen |
-| **Restatement trap** | A correct short answer that stays close to the verse is flagged `repeatsPassage`; the quote-and-comment or hugging answer is near 70% | Prefer reducing the passage words the key terms depend on. `skipBibleVerseCheck: true` fixes it but **also switches off copy detection** for that question (a pasted passage then reaches "strong" through the key terms); use it only for a question that asks what the verse says, and record why |
+| **Restatement trap** | A correct short answer that stays close to the verse is flagged `repeatsPassage` only if it is above 85% passage words, or 70-85% and made of copied runs of five or more words (or a list of words, not sentences); a verbatim hugging answer is still a copy | Prefer reducing the passage words the key terms depend on. `skipBibleVerseCheck: true` fixes it but **also switches off copy detection** for that question (a pasted passage then reaches "strong" through the key terms); use it only for a question that asks what the verse says, and record why |
 | **Loose or broad alternative** | A lone broad word (`spirit`, `human`, `people`, `love`, `god`) lets an unrelated or wrong answer in | Make it a phrase, add `$`, or drop it. `--lint` reports `broad` and `generic` ones |
 | **Dead or generic term** | From the term diagnostics | Replace it with a term that real answers use |
 | **Typos** | A correct answer with misspelt key words scores `partial` | The app forgives one slip (a letter wrong, missing, extra or two swapped, first letter right) in a key-term word of five or more letters, so a miss means two slips, a short word, a wrong first letter, or a `$` or `*` term. Prefer short stems, and write terms of five or more letters (not `sin`, `God`); record the rate |
@@ -146,7 +146,7 @@ All changes are content changes: **edit the plan first**, rebuild with the build
 - **generic:** an alternative that is a stopword or two letters or fewer;
 - **shortStem:** a 3-letter alternative without `$` (it matches every longer word that starts the same way);
 - **broad:** an alternative found in 30% or more of this study's own model answers (needs at least 10 questions);
-- **nearLimit:** a `sampleAnswer` or `mainPoint` with 50% or more of its words in the passage (the limit is 70%), so a reader copying it, or a faithful short answer, is close to being called a copy;
+- **nearLimit:** a `sampleAnswer` or `mainPoint` with 50% or more of its words in the passage (the check calls it a copy above 85%, or above 70% with copied runs), so a reader copying it, or a faithful short answer, is close to being called a copy;
 - **tightPassage:** a passage of 12 content words or fewer;
 - fewer than three key terms; no `mainPoint`; no `questionHintFirst`.
 

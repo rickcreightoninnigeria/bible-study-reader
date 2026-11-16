@@ -561,7 +561,7 @@ def check_answers(study, multilingual, explain=False):
         return
     why = {'partial': 'matches too few of its keyTerms, so a reader who copies it is told "partial"',
            'offTopic': 'matches none of its keyTerms',
-           'repeatsPassage': 'is flagged as repeating the passage (over 70% of its content words appear in it); '
+           'repeatsPassage': 'is flagged as repeating the passage (nearly all of its content words appear in it, or most do and it copies runs of the passage); '
                              'put it in your own words and give the keyTerms plain-English alternatives',
            'repeatsQuestion': 'is flagged as repeating the question',
            'tooShort': 'is too short for the answer check', 'stuck': 'is treated as a filler answer'}

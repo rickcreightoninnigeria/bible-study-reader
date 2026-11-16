@@ -333,6 +333,56 @@ describe('matchKeyTerms: spelling slips', () => {
   });
 });
 
+describe('evaluateAnswer: repeating the passage (runs of copied words)', () => {
+  const passage = 'But in your hearts revere Christ as Lord. Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have. But do this with gentleness and respect, keeping a clear conscience.';
+  const base = {
+    questionText: 'What does Peter ask of believers when they explain their hope to others?',
+    passageTexts: [passage], keyTerms: ['revere|Lord', 'gentle', 'respect', 'conscience'], lang: 'en',
+  };
+  const code = (answer, extra = {}) => am.evaluateAnswer({ ...base, answer, ...extra }).code;
+
+  it('flags the passage itself, and an answer that is nothing but the passage\'s words', () => {
+    expect(code(passage)).toBe('repeatsPassage');
+    expect(code('revere Christ Lord hearts always prepared answer everyone asks reason hope gentleness respect keeping clear conscience')).toBe('repeatsPassage');
+  });
+
+  it('lets a correct answer reuse the passage\'s vocabulary when it copies no run of it', () => {
+    // 80% of its content words are in the passage: the old limit (70%) called this a repeat.
+    const own = 'We should revere Christ in our hearts and always be ready to explain the hope that we have, with gentleness, respect and a clear conscience.';
+    expect(code(own)).toBe('strong');
+  });
+
+  it('flags an answer that copies long runs of the passage, even with a few words of its own', () => {
+    expect(code('Peter says always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have, humbly.')).toBe('repeatsPassage');
+  });
+
+  it('counts runs against every translation given, not only the first', () => {
+    const copy = 'Peter says always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have, humbly.';
+    expect(code(copy, { passageTexts: ['Sanctify the Lord God in your hearts and be ready always to give a defence to every man that asks you a reason of the hope that is in you', passage] })).toBe('repeatsPassage');
+  });
+
+  it('still flags an answer that is nearly all passage words, copied or not', () => {
+    expect(code('Keep a clear conscience, revere Christ as Lord in your hearts, and give everyone who asks a reason for your hope with gentleness and respect.')).toBe('repeatsPassage');
+  });
+
+  it('still flags a list of passage words that is not written as sentences', () => {
+    expect(code('revere Christ, hearts, ready answer, reason hope, gentleness respect, clear conscience, Peter')).toBe('repeatsPassage');
+  });
+
+  it('keeps a short quotation with the reader\'s own comment out of the repeat check', () => {
+    expect(code('Peter says to "revere Christ as Lord" in our hearts, and I think that means we stay humble.')).not.toBe('repeatsPassage');
+  });
+
+  it('uses the plain limit where there is no stopword list (other languages)', () => {
+    const fr = { questionText: 'Que demande Pierre aux croyants?', lang: 'fr', passageTexts: ['Honorez dans vos coeurs Christ le Seigneur et soyez toujours prets a vous defendre avec douceur et respect'] };
+    expect(am.evaluateAnswer({ ...fr, answer: fr.passageTexts[0], keyTerms: ['douceur'] }).code).toBe('repeatsPassage');
+  });
+
+  it('skipBibleVerseCheck still switches the whole check off', () => {
+    expect(code(passage, { skipBibleVerseCheck: true })).not.toBe('repeatsPassage');
+  });
+});
+
 describe('tierFor', () => {
   // [total, matched] → tier
   const table = {

@@ -319,7 +319,7 @@ def lint(qs):
         if r['contentWords'] <= TIGHT_PASSAGE_WORDS and not q['skip'] and q['passages']:
             f.append(('tightPassage', f'the linked passage has only {r["contentWords"]} content words, so a short correct answer can pass the 70% limit and be called a copy; write a `hugging` answer for it in the test. skipBibleVerseCheck would fix this but also stops copies of the passage being caught'))
         if q['id'] in near:
-            f.append(('nearLimit', f"{', '.join(near[q['id']])} of the words are in the passage (the check calls it a copy above 70%): a reader who copies it, or a faithful short answer, may be told it repeats the passage"))
+            f.append(('nearLimit', f"{', '.join(near[q['id']])} of the words are in the passage (the check calls it a copy above 85%, or above 70% when it copies runs of the passage): a reader who copies it, or a faithful short answer, may be told it repeats the passage"))
         if not q['mainPoint']: f.append(('missing', 'no mainPoint'))
         if not q['hintFirst']: f.append(('missing', 'no questionHintFirst'))
         findings.append((q, f))

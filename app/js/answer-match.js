@@ -42,6 +42,14 @@ const AM_LIMITS = {
   STEM_LENGTH:             5,
   FUZZY_MIN_LETTERS:       5,  // shortest keyTerms word that forgives a spelling slip
   MIN_CHARS_FOR_QUESTION_CHECK: 20,
+  // "Repeats the passage" (English only): between RATIO_WITH_STOPWORDS and this,
+  // an answer repeats the passage only if runs of COPY_RUN_WORDS or more words
+  // taken straight from it make up COPY_RUN_SHARE of the answer, or the answer
+  // does not read like sentences (under MIN_STOPWORD_SHARE little words).
+  RATIO_COPY_CERTAIN:   0.85,
+  COPY_RUN_WORDS:          5,
+  COPY_RUN_SHARE:        0.5,
+  MIN_STOPWORD_SHARE:   0.15,
 };
 
 // ── Stopwords ─────────────────────────────────────────────────────────────────
@@ -398,6 +406,24 @@ function tierFor(result) {
 // English-only filler list (kept for every language, as before).
 const _AM_LOW_ENGAGEMENT = /^(i\s+don'?t\s+know|not\s+sure|not\s+really\s+sure|not\s+sure\s+about\s+this|no\s+idea|no\s+idea\s+at\s+all|no\s+clue|idk|idc|n\/a|yes|no|maybe|yeah|yep|nope|nah|ok|okay|sure|fine|true|false|dunno|duno|don'?t\s+know|tbh|tbd|tbc|t\.b\.c\.|todo|to\s+do|later|will\s+do|come\s+back\s+to\s+this|revisit|unsure|pass|skip|test|testing|asdf|qwerty|aaa+|xxx+|123+|--|[-?]|\?|\.{2,})\.?$/i;
 
+// Share of `tokens` that sit inside a run of COPY_RUN_WORDS or more consecutive
+// words found, in that order, in one of the passages. Stopwords count, so the
+// run is the words as the reader would see them copied.
+function _copiedShare(tokens, passages, lang) {
+  const n = AM_LIMITS.COPY_RUN_WORDS;
+  if (tokens.length < n) return 0;
+  const grams = new Set();
+  for (const p of passages) {
+    const pt = tokenise(p, lang);
+    for (let i = 0; i + n <= pt.length; i++) grams.add(pt.slice(i, i + n).join(' '));
+  }
+  const copied = new Array(tokens.length).fill(false);
+  for (let i = 0; i + n <= tokens.length; i++) {
+    if (grams.has(tokens.slice(i, i + n).join(' '))) for (let j = i; j < i + n; j++) copied[j] = true;
+  }
+  return copied.filter(Boolean).length / tokens.length;
+}
+
 function _clip(value, max) {
   return typeof value === 'string' ? value.slice(0, max) : '';
 }
@@ -467,7 +493,17 @@ function _evaluateAnswer(input) {
       const overlap = aList.filter(tok => pWords.has(tok)).length;
       const ratioAnswer = aList.length > 0 ? overlap / aList.length : 0;
       const hasOriginalWords = aList.some(tok => !pWords.has(tok));
-      if (ratioAnswer > ratio || !hasOriginalWords) return result('repeatsPassage');
+      if (!hasOriginalWords) return result('repeatsPassage');
+      if (ratioAnswer > ratio) {
+        // Where there is a stopword list, an answer that merely shares the passage's
+        // vocabulary (a correct answer on the same topic) is not a copy: it repeats
+        // the passage only if it is nearly all passage words, copies runs of it, or
+        // is a list of words rather than sentences.
+        const stop = STOPWORDS_BY_LANG[lang];
+        if (!stop || ratioAnswer > AM_LIMITS.RATIO_COPY_CERTAIN) return result('repeatsPassage');
+        const sentenceLike = answerTokens.filter(tok => stop.has(tok)).length / answerTokens.length >= AM_LIMITS.MIN_STOPWORD_SHARE;
+        if (!sentenceLike || _copiedShare(answerTokens, passages, lang) >= AM_LIMITS.COPY_RUN_SHARE) return result('repeatsPassage');
+      }
     }
   }
 
