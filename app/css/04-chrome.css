@@ -255,6 +255,24 @@
   background: var(--surface-mid);
   color: var(--text);
 }
+/* Print button on Go Deeper and Leaders' Notes pages: the same filled grey
+   button as Print in a chapter's save bar, so it is easy to see. */
+.page-print-btn {
+  background: var(--text-secondary);
+  color: var(--surface);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-family: var(--main-font-family);
+  font-size: 12px;         /* UI chrome — stays px */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.page-print-btn:active { transform: scale(0.98); }
+.page-print-btn span { display: inline-flex; }
 
 
 /* ── 06. CLOSE BUTTON ANIMATIONS ────────────────────────────────────────── */

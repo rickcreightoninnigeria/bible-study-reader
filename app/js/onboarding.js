@@ -83,6 +83,7 @@ function getUpgradeOnboardingSlides() {
       body:    '<ul>' +
         '<li><b>FAQ:</b> How to Use now has an FAQ tab with short answers to common questions: backing up, a new phone, the answer check, sharing and privacy.</li>' +
         '<li><b>Answer check:</b> it now forgives a small spelling slip, such as “forgivnes” for “forgiveness”, so a correct answer is not marked down for a typing mistake. It also no longer says your answer “repeats the passage” just because you used the passage’s own words in a sentence of your own.</li>' +
+        '<li><b>Print Go Deeper:</b> the Print button at the bottom of a Go Deeper page is now easier to see. It prints or saves the tab you are reading as a PDF.</li>' +
         '</ul>',
     },
   ];

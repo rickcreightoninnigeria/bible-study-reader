@@ -2011,7 +2011,7 @@ async function renderLeadersNotes(tabId) {
 
       <div class="leaders-confidential">${t('renderpages_leaders_confidential')}</div>
       <div class="page-close-bar">
-        ${tabContent ? `<button class="page-close-btn" onclick="printContentPage()"><span>${ICONS.print}</span> ${t('renderchapter_print_btn')}</button>` : ''}
+        ${tabContent ? `<button class="page-print-btn" onclick="printContentPage()"><span>${ICONS.print}</span> ${t('renderchapter_print_btn')}</button>` : ''}
         <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
       </div>
       <div style="height: 40px;"></div>
@@ -2474,7 +2474,7 @@ async function renderGoDeeper(tabId) {
       </div>
 
       <div class="page-close-bar">
-        ${tabContent ? `<button class="page-close-btn" onclick="printContentPage()"><span>${ICONS.print}</span> ${t('renderchapter_print_btn')}</button>` : ''}
+        ${tabContent ? `<button class="page-print-btn" onclick="printContentPage()"><span>${ICONS.print}</span> ${t('renderchapter_print_btn')}</button>` : ''}
         <button class="page-close-btn" onclick="Router.back()"><span>${ICONS.close}</span> ${t('renderpages_close_btn')}</button>
       </div>
       <div style="height: 40px;"></div>

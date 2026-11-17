@@ -63,7 +63,7 @@ Open the new file in the app, the same way as the first one. If it is newer, it 
 ## Sharing and groups
 
 ### How do I share or print my answers? [core]
-At the bottom of a chapter, tap **Share** to send that chapter's answers by WhatsApp, email or any other app, or tap the print icon to print or save a PDF. To do every chapter at once, go to **Settings → Study** and use the share or print-all options. Your notes are included in Share and Export.
+At the bottom of a chapter, tap **Share** to send that chapter's answers by WhatsApp, email or any other app, or tap the print icon to print or save a PDF. To do every chapter at once, go to **Settings → Study** and use the share or print-all options. The Go Deeper and Leaders’ Notes pages have their own **Print** button at the bottom, which prints or saves the tab you are reading as a PDF. Your notes are included in Share and Export.
 
 ### What is a study group? What can my leader see? [core]
 A leader creates a group in a study and shares an invite in the group's chat; members open it and type their name. Members send their progress to the leader whenever they choose, and each time they decide what to include: progress only, progress with answers to starred questions, or all their answers. Notes are never sent. There are no accounts and no server: the files travel by WhatsApp or similar, so send yours to the leader in a private message, not in the group chat.
