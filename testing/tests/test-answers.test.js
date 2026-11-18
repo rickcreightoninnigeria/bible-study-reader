@@ -310,6 +310,25 @@ describe.skipIf(!hasTools)('test_answers.py --lint', () => {
     expect(out).toMatch(/\[generic\] alternative `god`/);
     expect(out).not.toMatch(/\[(shortStem|generic)\][^\n]*dark\$/);
   });
+
+  it('flags one word listed in two key terms', () => {
+    const out = lintOf(['created|death', 'shape|form', 'dark|death', 'empty']);
+    expect(out).toMatch(/\[duplicate\] `death` is an alternative in key terms 1 and 3/);
+  });
+
+  it('flags a contraction stem without $, but not with it', () => {
+    expect(lintOf(['does|made', 'shape|form', 'dark', 'empty'])).toMatch(/\[contraction\] `does`/);
+    expect(lintOf(['does$|made', 'shape|form', 'dark', 'empty'])).not.toMatch(/\[contraction\]/);
+  });
+
+  it('flags a key-term word that the question\'s own text could be mistaken for, and notTypos silences it', () => {
+    const q = { sampleAnswer: 'God made the shaped world, and he shared it in a phrase of praise that fits every living thing.',
+                keyTerms: ['phase|made', 'shape|form', 'dark|gloom', 'empty|void'] };
+    const out = run(['--lint'], { study: study([question(q)]) }).out;
+    expect(out).toMatch(/\[lookalike\] `phase`[^\n]*“phrase”/);
+    const quiet = run(['--lint'], { study: study([question({ ...q, notTypos: ['phrase'] })]) }).out;
+    expect(quiet).not.toMatch(/\[lookalike\] `phase`/);
+  });
 });
 
 describe.skipIf(!hasTools)('test_answers.py --brief', () => {

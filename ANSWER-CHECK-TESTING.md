@@ -148,6 +148,9 @@ All changes are content changes: **edit the plan first**, rebuild with the build
 - **broad:** an alternative found in 30% or more of this study's own model answers (needs at least 10 questions);
 - **nearLimit:** a `sampleAnswer` or `mainPoint` with 50% or more of its words in the passage (the check calls it a copy above 85%, or above 70% with copied runs), so a reader copying it, or a faithful short answer, is close to being called a copy;
 - **tightPassage:** a passage of 12 content words or fewer;
+- **duplicate:** the same alternative in two key terms of one question, so one word counts as two ideas;
+- **contraction:** `does`, `did`, `could`, `would`, `should`, `have`, `was` and the like without `$`: apostrophes are deleted, so they also match "doesn't", "couldn't" and so on;
+- **lookalike:** a key-term word of five or more letters that the spelling tolerance could take for a different word that the question's own text uses (passage, question, sample answer, main point, hint), and that is not on the language's real-word list. Put the other word in the question's `notTypos`, or add `$`. A neighbour that is only an ending away (believ / belief) or that the key terms list themselves (honor / honour) is not reported;
 - fewer than three key terms; no `mainPoint`; no `questionHintFirst`.
 
 Lint findings are prompts for a human, not verdicts. A passage longer than 12 content words can still be tight: the `hugging` answer in the written test is what shows it.

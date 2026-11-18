@@ -96,7 +96,7 @@ DERIVED = {'believe': ['belief'], 'live': ['life'], 'die': ['death'], 'obey': ['
 RUNNER = r"""
 const fs = require('fs'), vm = require('vm');
 const src = fs.readFileSync(process.argv[1], 'utf8') +
-  '\n;globalThis.__a = { evaluateAnswer, normaliseText, tokenise, _isContent, parseKeyTerms, matchKeyTerms, countWords, contentTokens, AM_LIMITS, STOPWORDS_BY_LANG };';
+  '\n;globalThis.__a = { evaluateAnswer, normaliseText, tokenise, _isContent, parseKeyTerms, matchKeyTerms, countWords, contentTokens, AM_LIMITS, STOPWORDS_BY_LANG, REAL_WORDS_BY_LANG };';
 const ctx = { console }; vm.createContext(ctx); vm.runInContext(src, ctx);
 const A = ctx.__a;
 const EXACT = { exactOnly: true };   // the lint asks about the plain word match, not the spelling tolerance
@@ -130,6 +130,7 @@ const out = jobs.map(j => {
     return { terms, anchored: terms.map(t => A.matchKeyTerms(text, A.parseKeyTerms([t]), lang, EXACT).matched > 0),
              contentWords: A.contentTokens(j.passage || '', lang).length,
              stop: stop ? Array.from(stop) : [],
+             real: Array.from(A.REAL_WORDS_BY_LANG[lang] || []),
              forms: (j.forms || []).map(([i, f]) => A.matchKeyTerms(f, A.parseKeyTerms([terms[i]]), lang, EXACT).matched > 0) };
   }
   if (j.mode === 'corpus') {          // share of the texts that each alternative matches
@@ -267,6 +268,39 @@ def candidate_forms(w):
     return forms
 
 
+# Words that, with the apostrophe deleted, begin a contraction ("doesn't" -> "doesnt"), so a key term
+# that is one of them without $ also matches the negative.
+CONTRACTION_STEMS = {'does', 'did', 'do', 'is', 'was', 'are', 'were', 'has', 'have', 'had', 'could', 'would', 'should',
+                     'can', 'won', 'aren', 'isn', 'wasn', 'weren', 'hasn', 'haven', 'hadn', 'doesn', 'didn',
+                     'couldn', 'wouldn', 'shouldn'}
+
+
+def _within_one_slip(a, b):
+    la, lb = len(a), len(b)
+    if abs(la - lb) > 1: return False
+    i = 0
+    while i < la and i < lb and a[i] == b[i]: i += 1
+    if i == la and i == lb: return True
+    if la == lb:
+        return a[i + 1:] == b[i + 1:] or (i + 1 < la and a[i] == b[i + 1] and a[i + 1] == b[i] and a[i + 2:] == b[i + 2:])
+    return a[i + 1:] == b[i:] if la > lb else a[i:] == b[i + 1:]
+
+
+def lookalikes(word, vocab):
+    """Words of `vocab` that the spelling tolerance would take for the key-term word `word`, other than a
+    longer form of it: the first difference lies inside the word, not in its last letter (believ / belief is a
+    form of the same word; thank / think and phase / phrase are different words)."""
+    out = []
+    if len(word) < 5: return out
+    for d in vocab:
+        if d[0] != word[0] or d.startswith(word) or abs(len(d) - len(word)) > 1 and len(d) < len(word) - 1: continue
+        if not _within_one_slip(word, d): continue
+        i = 0
+        while i < len(word) and i < len(d) and word[i] == d[i]: i += 1
+        if i < len(word) - 1: out.append(d)
+    return out
+
+
 def lint(qs):
     texts = [t for q in qs for t in (plain(q['sample']), plain(q['mainPoint'] or '')) if t]
     base = [{'mode': 'lint', 'passage': ' '.join(q['passages']), 'question': q['question'], 'keyTerms': q['keyTerms'], 'lang': q['lang']} for q in qs]
@@ -292,9 +326,25 @@ def lint(qs):
         rr = run_node([dict(job_base(q), answer=plain(get(q)), shortAnswerThreshold=0) for q in qs])
         for q, x in zip(qs, rr):
             if plain(get(q)) and x['passOverlap'] >= NEAR_LIMIT and not q['skip']: near.setdefault(q['id'], []).append(f"{label} {round(x['passOverlap'] * 100)}%")
+    real = set(first[0]['real']) if first else set()
+    def local_vocab(q):                # the words this question's own text uses: its passage, question, sample answer, main point and hint
+        v = set()
+        for txt in (*q['passages'], q['question'], plain(q['sample']), plain(q['mainPoint'] or ''), q['hint'] if isinstance(q['hint'], str) else ''):
+            v.update(re.findall(r'[a-z]{4,}', re.sub(r"['\u2019]", '', txt.lower())))
+        return v
     findings = []
     for q, r, p, r2 in zip(qs, first, pairs, res):
         f = []; terms = r['terms']
+        # the same alternative in two key terms makes one word count as two ideas
+        seen = {}
+        for i, term in enumerate(terms):
+            for a in {x.strip().lower().lstrip('*').rstrip('$') for x in term.split('|')}:
+                if a: seen.setdefault(a, []).append(i)
+        for a, idx in seen.items():
+            if len(idx) > 1:
+                f.append(('duplicate', f'`{a}` is an alternative in key terms {" and ".join(str(i + 1) for i in idx)}: one word then counts as two ideas'))
+        not_typos = {x.lower() for x in (q.get('notTypos') or []) if isinstance(x, str)}
+        own_words = {w for t in terms for x in t.split('|') for w in re.findall(r'[a-z]+', x.lower())}   # a neighbour the author already lists is meant
         un = [t for t, ok in zip(terms, r['anchored']) if not ok]
         if len(un) >= 2:   # one synonym-only term is normal; two or more suggests the terms came from outside the passage on screen
             f.append(('unanchored', 'key terms that match nothing in the linked passage or the question (a reader answering from the passage on screen may never meet them): ' + '; '.join(f'`{t}`' for t in un)))
@@ -309,6 +359,12 @@ def lint(qs):
                 if (w in stop or len(w) <= 2) and not exact:
                     f.append(('generic', f'alternative `{a}` in `{term}` is a stopword or very short, so it will match almost any answer'))
                     continue
+                if w in CONTRACTION_STEMS and not exact and not inside:
+                    f.append(('contraction', f'`{a}` in `{term}` also matches "{w}n\'t" (apostrophes are deleted, so it reads "{w}nt"): add `$` to match the word only'))
+                if re.fullmatch(r'[a-z]{5,}', w) and not exact and not inside:
+                    near_words = sorted(d for d in lookalikes(w, local_vocab(q)) if d not in real and d not in not_typos and d not in own_words)
+                    if near_words:
+                        f.append(('lookalike', f'`{a}` in `{term}` could be taken for {", ".join(chr(8220) + d + chr(8221) for d in near_words[:4])}, which this question\'s own text uses: if that is a different word, list it in `notTypos` for this question (or add `$`)'))
                 if len(w) == 3 and re.fullmatch(r'[a-z]+', w) and not exact and not inside:
                     f.append(('shortStem', f'`{a}` in `{term}` is a 3-letter prefix: it also matches longer words that begin the same way (add `$` for the whole word, or use a longer stem)'))
                 if a in rates and rates[a] >= BROAD_RATE and not exact and ' ' not in a:
