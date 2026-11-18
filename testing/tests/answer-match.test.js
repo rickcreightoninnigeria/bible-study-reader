@@ -281,16 +281,35 @@ describe('matchKeyTerms: spelling slips', () => {
     expect(run('he forgave', ['gorgiv']).matched).toBe(0);
   });
 
-  it('cannot tell two real words one letter apart (a known limit, kept short by the length and one-slip rules)', () => {
-    expect(run('a grave matter', ['grace']).matched).toBe(1);
-    expect(run('a grave matter', ['grace$']).matched).toBe(0);          // $ is the way to rule it out
+  it('does not forgive a real English word that sits one slip away (think/thank, grace/grave)', () => {
+    expect(run('I think so', ['thank']).matched).toBe(0);
+    expect(run('he thinks so', ['thanks']).matched).toBe(0);
+    expect(run('thinking about it', ['thank']).matched).toBe(0);
+    expect(run('a grave matter', ['grace']).matched).toBe(0);
+    expect(run('the truth is', ['trust']).matched).toBe(0);
+  });
+
+  it('still forgives a slip that is not a real word, and still matches the real word itself', () => {
+    expect(run('thnak you', ['thank']).matched).toBe(1);
+    expect(run('thakn you', ['thank']).matched).toBe(1);
+    expect(run('we thank him', ['thank']).matched).toBe(1);
+    expect(run('a grave matter', ['grave']).matched).toBe(1);
+  });
+
+  it('guards English only: another language keeps the plain rule', () => {
+    expect(am.matchKeyTerms('I think so', am.parseKeyTerms(['thank']), 'es').matched).toBe(1);
+  });
+
+  it('cannot tell two real words one letter apart when neither is on the guard list (a known limit)', () => {
+    expect(run('a phrase', ['phrasal']).matched).toBe(0);                 // two slips: not forgiven
+    expect(run('the sinner', ['sinnor']).matched).toBe(1);                // a typo of a word, forgiven
   });
 
   it('leaves short words alone', () => {
     expect(run('his son', ['sinn']).matched).toBe(0);
     expect(run('the sun', ['sin']).matched).toBe(0);
-    expect(run('a grace', ['gract']).matched).toBe(1);                 // five letters: one slip is forgiven
-    expect(run('a gray', ['gract']).matched).toBe(0);                  // two slips are not
+    expect(run('a tabel', ['table']).matched).toBe(1);                 // five letters: one slip is forgiven
+    expect(run('a tabby', ['table']).matched).toBe(0);                 // two slips are not
   });
 
   it('forgives only one slip, however long the word', () => {

@@ -315,6 +315,20 @@ function parseKeyTerms(raw) {
 // "religion" through for "religious". Tried only after the exact match fails.
 const _AM_PLAIN_WORD_RE = /^[a-z]+$/;
 
+// Real English words that are one slip from a word an author is likely to use
+// (think/thank, grace/grave, truth/trust, there/three). A reader who typed one
+// of these meant it, so it is never forgiven as a slip; it still counts when
+// the key term itself begins with it. English only. Picked from the words that
+// the studies use most and that sit one wrong letter or swap from a key-term
+// word. A word that is only an ending away (believed/believes) is not here.
+const _AM_REAL_WORDS = new Set((
+  'think thinks thinking thick thing things there these three those their where were whole white while whose ' +
+  'would world word words works worth wound being bring begin bridge father faith heard hearing heart hearts ' +
+  'grace grave graves truth trust truths same shame still place peace divine divide change chance chain ' +
+  'sins signs shows shoes saying saving alone atone woman women among lives loves share shape better bitter ' +
+  'brought bought present prevent honest homes means meals cross crops often four flour whether wheat what'
+).split(' '));
+
 // Is `a` within one slip of `b`? (Damerau–Levenshtein distance ≤ 1.)
 function _withinOneSlip(a, b) {
   const la = a.length, lb = b.length;
@@ -343,6 +357,7 @@ function _fuzzyAltMatches(alt, ctx) {
   if (alt.spaceless || alt.inside || alt.exact) return false;
   const words = alt.text.split(' ');
   const forgiving = w => w.length >= AM_LIMITS.FUZZY_MIN_LETTERS && _AM_PLAIN_WORD_RE.test(w);
+  const real = tok => !!ctx.realWords && ctx.realWords.has(tok);
   if (!words.some(forgiving)) return false;
   const tokens = ctx.tokens;
   for (let i = 0; i + words.length <= tokens.length; i++) {
@@ -350,9 +365,9 @@ function _fuzzyAltMatches(alt, ctx) {
     for (let k = 0; k < words.length && ok; k++) {
       const w = words[k], tok = tokens[i + k];
       if (k < words.length - 1) {            // earlier words of a phrase are whole words
-        ok = tok === w || (forgiving(w) && tok[0] === w[0] && _AM_PLAIN_WORD_RE.test(tok) && _withinOneSlip(w, tok));
+        ok = tok === w || (forgiving(w) && !real(tok) && tok[0] === w[0] && _AM_PLAIN_WORD_RE.test(tok) && _withinOneSlip(w, tok));
       } else {                               // the last word (or a lone word) is a word start
-        ok = tok.startsWith(w) || (forgiving(w) && _fuzzyStartsWith(w, tok));
+        ok = tok.startsWith(w) || (forgiving(w) && !real(tok) && _fuzzyStartsWith(w, tok));
       }
     }
     if (ok) return true;
@@ -381,7 +396,7 @@ function matchKeyTerms(answer, parsedTerms, lang, opts) {
   if (total === 0) return { matched: 0, total: 0 };
   const text = normaliseText(String(typeof answer === 'string' ? answer : '').slice(0, AM_LIMITS.MAX_ANSWER_CHARS));
   const tokens = tokenise(text, _langKey(lang));
-  const ctx = { text, padded: ' ' + text + ' ', compact: text.replace(/ /g, ''), tokens, tokenSet: new Set(tokens) };
+  const ctx = { text, padded: ' ' + text + ' ', compact: text.replace(/ /g, ''), tokens, tokenSet: new Set(tokens), realWords: _langKey(lang) === 'en' ? _AM_REAL_WORDS : null };
   const exactOnly = !!(opts && opts.exactOnly);   // authors' lint: spelling slips would hide a missing word form
   let matched = 0;
   for (const entry of parsedTerms) {
