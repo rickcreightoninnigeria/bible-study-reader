@@ -351,6 +351,44 @@ def check_video(where, v):
 KT_REGEX_RE = re.compile(r'\.[*+?]|\\[A-Za-z]|[\[\]{}^()]|[*+]|\$(?=.)')
 
 
+def _within_one_slip(a, b):
+    """Damerau-Levenshtein distance <= 1, as answer-match.js _withinOneSlip."""
+    la, lb = len(a), len(b)
+    if abs(la - lb) > 1:
+        return False
+    i = 0
+    while i < la and i < lb and a[i] == b[i]:
+        i += 1
+    if i == la and i == lb:
+        return True
+    if la == lb:
+        return a[i + 1:] == b[i + 1:] or (i + 1 < la and a[i] == b[i + 1] and a[i + 1] == b[i] and a[i + 2:] == b[i + 2:])
+    return a[i + 1:] == b[i:] if la > lb else a[i:] == b[i + 1:]
+
+
+def _could_be_slip_of(word, key_word):
+    """Could the spelling tolerance take `word` for `key_word` (a key-term word of 5+ letters)?"""
+    if len(key_word) < 5 or word[:1] != key_word[:1] or word == key_word:
+        return False
+    return any(n <= len(word) and _within_one_slip(key_word, word[:n]) for n in (len(key_word) - 1, len(key_word), len(key_word) + 1))
+
+
+def check_not_typos(where, nt, kt):
+    key_words = set()
+    for term in kt:
+        if isinstance(term, str):
+            for alt in term.split('|'):
+                core = alt.strip().lstrip('*').rstrip('$')
+                key_words.update(re.findall(r'[a-z]+', core.lower()))
+    for w in nt:
+        word = re.sub(r"['\u2019\u02bc]", '', w.strip().lower())
+        if ' ' in word:
+            warn(f'{where}: notTypos entry {w!r} has a space; list single words')
+            continue
+        if key_words and not any(_could_be_slip_of(word, k) for k in key_words):
+            warn(f'{where}: notTypos entry {w!r} is not one slip from any word of this question\'s keyTerms, so it changes nothing')
+
+
 def check_key_terms(where, kt):
     for term in kt:
         alts = term.split('|')
@@ -441,11 +479,12 @@ AM_RUNNER = r"""
 const fs = require('fs'), vm = require('vm');
 const src = fs.readFileSync(process.argv[1], 'utf8') +
   '\n;globalThis.__api = { evaluateAnswer, normaliseText, tokenise, _isContent, parseKeyTerms, matchKeyTerms,' +
-  ' countWords, AM_LIMITS, STOPWORDS_BY_LANG };';
+  ' countWords, AM_LIMITS, STOPWORDS_BY_LANG, REAL_WORDS_BY_LANG };';
 const ctx = { console }; vm.createContext(ctx); vm.runInContext(src, ctx);
 const A = ctx.__api;
 const jobs = JSON.parse(fs.readFileSync(0, 'utf8'));
 function detail(j) {
+  if (j.mode === 'realwords') { const l = String(j.lang || 'en').toLowerCase().split(/[-_]/)[0] || 'en'; return { words: Array.from(A.REAL_WORDS_BY_LANG[l] || []) }; }
   const lang = String(j.lang || 'en').toLowerCase().split(/[-_]/)[0] || 'en';
   const limit = A.STOPWORDS_BY_LANG[lang] ? A.AM_LIMITS.RATIO_WITH_STOPWORDS : A.AM_LIMITS.RATIO_NO_STOPWORDS;
   const toks = A.tokenise(A.normaliseText(j.answer), lang).filter(t => A._isContent(t, lang, 2));
@@ -455,7 +494,7 @@ function detail(j) {
   const raw = Array.isArray(j.keyTerms) ? j.keyTerms.filter(x => typeof x === 'string' && x !== '') : [];
   const terms = A.parseKeyTerms(j.keyTerms);
   const missed = [];
-  terms.forEach((t, i) => { if (A.matchKeyTerms(j.answer, [t], lang).matched === 0) missed.push(raw[i]); });
+  terms.forEach((t, i) => { if (A.matchKeyTerms(j.answer, [t], lang, { notTypos: j.notTypos }).matched === 0) missed.push(raw[i]); });
   let minWords = 6;
   const th = j.shortAnswerThreshold;
   const ov = (typeof th === 'number' || (typeof th === 'string' && th !== '')) ? parseInt(th, 10) : NaN;
@@ -465,7 +504,7 @@ function detail(j) {
            fresh: Array.from(new Set(fresh)).slice(0, 12), missed, total: terms.length,
            words: A.countWords(j.answer, lang), minWords };
 }
-process.stdout.write(JSON.stringify(jobs.map(j => ({ r: A.evaluateAnswer(j), x: detail(j) }))));
+process.stdout.write(JSON.stringify(jobs.map(j => j.mode === 'realwords' ? detail(j) : ({ r: A.evaluateAnswer(j), x: detail(j) }))));
 """
 
 
@@ -534,7 +573,7 @@ def check_answers(study, multilingual, explain=False):
             base = {'questionText': _plain(el.get('question' + slot, '')),
                     'passageTexts': passages.get(el.get('linkedPassage'), []),
                     'sampleAnswer': sample if isinstance(sample, str) else '',
-                    'keyTerms': kt, 'lang': lang,
+                    'keyTerms': kt, 'notTypos': el.get('notTypos' + slot, el.get('notTypos')), 'lang': lang,
                     'shortAnswerThreshold': el.get('shortAnswerThreshold' + slot, el.get('shortAnswerThreshold')),
                     'skipBibleVerseCheck': bool(el.get('skipBibleVerseCheck'))}
             where = f'chapter {ch.get("chapterNumber")}, {el.get("elementId")}'
@@ -544,6 +583,8 @@ def check_answers(study, multilingual, explain=False):
                     labels.append((where, field))
     if not jobs:
         return
+    nt_items = [(w, j['notTypos'], j['lang']) for (w, f), j in zip(labels, jobs)
+                if f == 'sampleAnswer' and isinstance(j.get('notTypos'), list) and j['notTypos']]
     path = find_answer_match()
     if not path:
         err('answer-check test cannot run: answer-match.js not found (put the app\'s answer-match.js next to this '
@@ -559,6 +600,19 @@ def check_answers(study, multilingual, explain=False):
     except Exception as e:  # noqa: BLE001
         err(f'answer-check test could not run: {e}')
         return
+    if nt_items:
+        try:
+            lists = {}
+            for lg in {x[2] for x in nt_items}:
+                o = subprocess.run(['node', '-e', AM_RUNNER, path], input=json.dumps([{'mode': 'realwords', 'lang': lg}]),
+                                   capture_output=True, text=True, timeout=30)
+                lists[lg] = set(json.loads(o.stdout)[0]['words'])
+            for where, nt, lg in nt_items:
+                for w in nt:
+                    if isinstance(w, str) and w.strip().lower() in lists.get(lg, set()):
+                        warn(f'{where}: notTypos entry {w!r} is already on the {lg} list in answer-match.js; remove it')
+        except Exception:  # noqa: BLE001
+            pass
     why = {'partial': 'matches too few of its keyTerms, so a reader who copies it is told "partial"',
            'offTopic': 'matches none of its keyTerms',
            'repeatsPassage': 'is flagged as repeating the passage (nearly all of its content words appear in it, or most do and it copies runs of the passage); '
@@ -689,6 +743,14 @@ def main(path):
                     warn(f'{where}: keyTerms has {len(kt)} entries; only 12 are used')
                 else:
                     check_key_terms(where, kt)
+            nt = el.get('notTypos')
+            if nt is not None:
+                if not (isinstance(nt, list) and all(isinstance(x, str) and x.strip() for x in nt)):
+                    err(f'{where}: notTypos must be an array of non-empty strings (real words that must never be forgiven as a spelling slip)')
+                else:
+                    if len(nt) > 30:
+                        warn(f'{where}: notTypos has {len(nt)} entries; only 30 are used')
+                    check_not_typos(where, nt, kt if isinstance(kt, list) else [])
             hf = el.get('questionHintFirst')
             if hf is not None and not isinstance(hf, str):
                 warn(f'{where}: questionHintFirst must be a string; anything else is ignored, so there is no first hint')

@@ -139,7 +139,7 @@ const out = jobs.map(j => {
   const r = A.evaluateAnswer(j);
   const terms = aligned(j.keyTerms);
   const parsed = A.parseKeyTerms(j.keyTerms);
-  const hits = parsed.map(t => A.matchKeyTerms(j.answer, [t], lang).matched > 0);
+  const hits = parsed.map(t => A.matchKeyTerms(j.answer, [t], lang, { notTypos: j.notTypos }).matched > 0);
   const limit = stop ? A.AM_LIMITS.RATIO_WITH_STOPWORDS : A.AM_LIMITS.RATIO_NO_STOPWORDS;
   const norm = A.normaliseText(j.answer);
   const toks = A.tokenise(norm, lang);
@@ -243,6 +243,7 @@ def questions(study, slot=''):
                             'question': plain(field(e, 'question', slot) or ''), 'passages': passages.get(lp, []) if lp else [],
                             'hintFirst': plain(field(e, 'questionHintFirst', slot) or ''), 'hint': field(e, 'questionHint', slot) or '',
                             'sample': field(e, 'sampleAnswer', slot) or '', 'keyTerms': kt,
+                            'notTypos': field(e, 'notTypos', slot),
                             'mainPoint': field(e, 'mainPoint', slot), 'thr': thr,
                             'skip': e.get('skipBibleVerseCheck') is True or e.get('skipBibleVerseCheck') == 'true', 'lang': lang})
     return out
@@ -251,7 +252,7 @@ def questions(study, slot=''):
 def job_base(q):
     # sampleAnswer goes in raw, as the app passes it (it does not strip markup before counting words)
     return {'questionText': q['question'], 'passageTexts': [] if q['skip'] else q['passages'], 'measurePassageTexts': q['passages'], 'sampleAnswer': q['sample'],
-            'keyTerms': q['keyTerms'], 'lang': q['lang'], 'shortAnswerThreshold': q['thr'], 'skipBibleVerseCheck': q['skip']}
+            'keyTerms': q['keyTerms'], 'notTypos': q.get('notTypos'), 'lang': q['lang'], 'shortAnswerThreshold': q['thr'], 'skipBibleVerseCheck': q['skip']}
 
 
 # --------------------------------------------------------------------------- lint

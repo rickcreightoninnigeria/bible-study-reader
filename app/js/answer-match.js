@@ -40,6 +40,7 @@ const AM_LIMITS = {
   RATIO_NO_STOPWORDS:   0.85,
   MIN_LETTERS_LATIN:       3,  // content-token length where there is no stopword list
   STEM_LENGTH:             5,
+  MAX_NOT_TYPOS:          30,  // most words an author may list in notTypos for one question
   FUZZY_MIN_LETTERS:       5,  // shortest keyTerms word that forgives a spelling slip
   MIN_CHARS_FOR_QUESTION_CHECK: 20,
   // "Repeats the passage" (English only): between RATIO_WITH_STOPWORDS and this,
@@ -315,7 +316,7 @@ function parseKeyTerms(raw) {
 // "religion" through for "religious". Tried only after the exact match fails.
 const _AM_PLAIN_WORD_RE = /^[a-z]+$/;
 
-// Real English words that are one slip from a word an author is likely to use
+// Real words that are one slip from a word an author is likely to use
 // (think/thank, grace/grave, truth/trust, there/three). A reader who typed one
 // of these meant it, so it is never forgiven as a slip; it still counts when
 // the key term itself begins with it. English only. Picked from the words that
@@ -328,6 +329,24 @@ const _AM_REAL_WORDS = new Set((
   'sins signs shows shoes saying saving alone atone woman women among lives loves share shape better bitter ' +
   'brought bought present prevent honest homes means meals cross crops often four flour whether wheat what'
 ).split(' '));
+
+// Common real words per language, beside STOPWORDS_BY_LANG. A language without
+// an entry has no general list yet: its authors guard single questions with
+// notTypos (below), and a word that keeps turning up can be promoted here.
+const REAL_WORDS_BY_LANG = { en: _AM_REAL_WORDS };
+
+// The words never forgiven as a slip for one question: the language's list plus
+// the author's own notTypos (an array of words, normalised like an answer).
+function _realWordsFor(langKey, notTypos) {
+  const base = REAL_WORDS_BY_LANG[langKey] || null;
+  if (!Array.isArray(notTypos) || notTypos.length === 0) return base;
+  const set = new Set(base || []);
+  for (const w of notTypos.slice(0, AM_LIMITS.MAX_NOT_TYPOS)) {
+    if (typeof w !== 'string') continue;
+    for (const tok of tokenise(normaliseText(w.slice(0, 60)), langKey)) set.add(tok);
+  }
+  return set;
+}
 
 // Is `a` within one slip of `b`? (Damerau–Levenshtein distance ≤ 1.)
 function _withinOneSlip(a, b) {
@@ -390,13 +409,14 @@ function _altMatches(alt, ctx) {
 
 // How many keyTerms entries does the answer contain? An entry matches if ANY of
 // its alternatives does. `parsedTerms` is the output of parseKeyTerms().
-// `opts.exactOnly` turns the spelling tolerance off.
+// `opts.exactOnly` turns the spelling tolerance off; `opts.notTypos` adds words
+// the question's author has marked as never a slip.
 function matchKeyTerms(answer, parsedTerms, lang, opts) {
   const total = Array.isArray(parsedTerms) ? parsedTerms.length : 0;
   if (total === 0) return { matched: 0, total: 0 };
   const text = normaliseText(String(typeof answer === 'string' ? answer : '').slice(0, AM_LIMITS.MAX_ANSWER_CHARS));
   const tokens = tokenise(text, _langKey(lang));
-  const ctx = { text, padded: ' ' + text + ' ', compact: text.replace(/ /g, ''), tokens, tokenSet: new Set(tokens), realWords: _langKey(lang) === 'en' ? _AM_REAL_WORDS : null };
+  const ctx = { text, padded: ' ' + text + ' ', compact: text.replace(/ /g, ''), tokens, tokenSet: new Set(tokens), realWords: _realWordsFor(_langKey(lang), opts && opts.notTypos) };
   const exactOnly = !!(opts && opts.exactOnly);   // authors' lint: spelling slips would hide a missing word form
   let matched = 0;
   for (const entry of parsedTerms) {
@@ -446,7 +466,8 @@ function _clip(value, max) {
 // Inputs (all optional except answer):
 //   answer, questionText, passageTexts (array of plain strings), sampleAnswer,
 //   keyTerms (raw study value), shortAnswerThreshold (number, numeric string or
-//   null = default), skipBibleVerseCheck (boolean), lang
+//   null = default), skipBibleVerseCheck (boolean), lang,
+//   notTypos (array of words that are never forgiven as spelling slips)
 // Returns { code, matched, total }; code is one of
 //   stuck | tooShort | repeatsQuestion | repeatsPassage | offTopic |
 //   partial | strong | pass | passNoSample
@@ -525,7 +546,7 @@ function _evaluateAnswer(input) {
   // 5. Does the answer contain what the author asked for?
   const terms = parseKeyTerms(o.keyTerms);
   if (terms.length > 0) {
-    const m = matchKeyTerms(answer, terms, lang);
+    const m = matchKeyTerms(answer, terms, lang, { notTypos: o.notTypos });
     const tier = tierFor(m);
     if (tier === 'strong')  return result('strong',  m.matched, m.total);
     if (tier === 'partial') return result('partial', m.matched, m.total);

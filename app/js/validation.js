@@ -27,6 +27,7 @@
 //                                (the Hint button shows questionHintFirst while the answer is empty,
 //                                 questionHint once something is written; see _lvPickHint)
 //   keyTerms                     array of "alt|alt|prefix$" strings (see answer-match.js)
+//   notTypos                     array of real words never forgiven as spelling slips
 //   mainPoint, mainPointFormat   shown on demand by the Main point button (modals.js)
 //   shortAnswerThreshold         minimum words; 0 turns the check off
 //   skipBibleVerseCheck          true skips the "repeats the passage" check
@@ -344,7 +345,7 @@ function _lvStringField(el, field) {
 // Everything the check needs for one card. Never throws: a missing element or
 // a hostile field just yields empty values.
 function _lvQuestionConfig(card) {
-  const cfg = { questionText: '', sampleAnswer: null, questionHint: null, questionHintFirst: null, keyTerms: null,
+  const cfg = { questionText: '', sampleAnswer: null, questionHint: null, questionHintFirst: null, keyTerms: null, notTypos: null,
                 hasMainPoint: false, shortAnswerThreshold: null, skipBibleVerseCheck: false, lang: 'en' };
   try {
     cfg.questionText = _getQuestionText(card);
@@ -356,6 +357,8 @@ function _lvQuestionConfig(card) {
     cfg.questionHintFirst = _lvStringField(el, 'questionHintFirst');
     const kt = studyText(el, 'keyTerms');
     cfg.keyTerms      = Array.isArray(kt) ? kt : null;
+    const nt = studyText(el, 'notTypos');
+    cfg.notTypos      = Array.isArray(nt) ? nt : null;
     cfg.hasMainPoint  = _lvStringField(el, 'mainPoint') !== null;
     cfg.shortAnswerThreshold = _lvNumberField(el, 'shortAnswerThreshold');
     cfg.skipBibleVerseCheck  = el.skipBibleVerseCheck === true || el.skipBibleVerseCheck === 'true';
@@ -373,7 +376,7 @@ function _lvDetailFor(card, answer) {
     const c = _lvQuestionConfig(card);
     return _localValidateDetail(answer, c.questionText, card, c.sampleAnswer, _lvPickHint(c, false),
       c.shortAnswerThreshold, c.skipBibleVerseCheck,
-      { keyTerms: c.keyTerms, hasMainPoint: c.hasMainPoint, lang: c.lang });
+      { keyTerms: c.keyTerms, notTypos: c.notTypos, hasMainPoint: c.hasMainPoint, lang: c.lang });
   } catch (e) {
     console.warn('[localValidate] check failed', e);
     return null;
@@ -434,7 +437,7 @@ function _lvPassageTexts(card) {
 //   shortAnswerThreshold — optional minimum word count (number or numeric
 //                          string; 0 disables the check; null = built-in default)
 //   skipBibleVerseCheck  — true skips the "repeats the passage" check
-//   extra                — optional { keyTerms, hasMainPoint, lang }
+//   extra                — optional { keyTerms, notTypos, hasMainPoint, lang }
 function _localValidate(...args) {
   return _localValidateDetail(...args).message;
 }
@@ -447,6 +450,7 @@ function _localValidateDetail(userAnswer, questionText, card, sampleAnswer, ques
     passageTexts: skipBibleVerseCheck ? [] : _lvPassageTexts(card),
     sampleAnswer,
     keyTerms: opts.keyTerms,
+    notTypos: opts.notTypos,
     shortAnswerThreshold,
     skipBibleVerseCheck,
     lang: opts.lang,

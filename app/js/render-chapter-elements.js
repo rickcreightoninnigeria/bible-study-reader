@@ -492,7 +492,7 @@ function renderQuestion(ctx) {
     resolveText(el, activeLang, 'answerPlaceholder', langMap) ||
     (isReflection ? t('renderchapter_placeholder_reflection') : t('renderchapter_placeholder_thoughts'));
 
-  // sampleAnswer, questionHint, questionHintFirst, keyTerms, shortAnswerThreshold and
+  // sampleAnswer, questionHint, questionHintFirst, keyTerms, notTypos, shortAnswerThreshold and
   // skipBibleVerseCheck are NOT written to the page. Local validate reads them
   // from the question element itself (looked up by this card's id), so model
   // answers stay out of the markup and no study text becomes an attribute.

@@ -18,7 +18,7 @@ Three kinds of finding, because they have three different owners: a **study defe
 | **Lint** | `--lint` | no | Every build. Seconds. |
 | **Auto** | `--auto`: weak answers generated from the study's own text (filler, fragment, question echo, passage copy, two key-term salads) for **every** question | no | Every build. Seconds. |
 | **Smoke** | one question per session, written answers, seed recorded | yes | After a build, as a quick look |
-| **Targeted** | only the questions whose key terms, sample answer, passage, `shortAnswerThreshold` or `skipBibleVerseCheck` changed, with a **fresh** batch | yes | Before releasing an update |
+| **Targeted** | only the questions whose key terms, sample answer, passage, `shortAnswerThreshold`, `notTypos` or `skipBibleVerseCheck` changed, with a **fresh** batch | yes | Before releasing an update |
 | **Full** | every question with key terms (1 John: 74 questions = 1,258 written answers) | yes | Before the first release, and when a large share of key terms changes |
 
 Section 11 has the prompts to give the assistant at each step. Write in batches of one session at a time. Running the answers takes seconds; writing them is the work, which is why lint and auto exist: they find most key-term defects without a writer.

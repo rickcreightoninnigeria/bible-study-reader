@@ -296,6 +296,25 @@ describe('matchKeyTerms: spelling slips', () => {
     expect(run('a grave matter', ['grave']).matched).toBe(1);
   });
 
+  it('notTypos adds a question\'s own words to the never-forgive list', () => {
+    expect(run('a phrase of praise', ['phase']).matched).toBe(1);
+    expect(run('a phrase of praise', ['phase'], { notTypos: ['phrase'] }).matched).toBe(0);
+    expect(run('a Phrase of praise', ['phase'], { notTypos: ['PHRASE'] }).matched).toBe(0);
+    expect(run('he phasd out', ['phase'], { notTypos: ['phrase'] }).matched).toBe(1);   // other slips still forgiven
+    expect(run('a phrase', ['phase'], { notTypos: 'phrase' }).matched).toBe(1);          // not an array: ignored
+  });
+
+  it('notTypos works in a language with no general list', () => {
+    expect(am.matchKeyTerms('unas casas', am.parseKeyTerms(['cosas']), 'es').matched).toBe(1);
+    expect(am.matchKeyTerms('unas casas', am.parseKeyTerms(['cosas']), 'es', { notTypos: ['casas'] }).matched).toBe(0);
+  });
+
+  it('evaluateAnswer passes notTypos through', () => {
+    const base = { answer: 'This phrase shows his great kindness to everyone who listens to him.', keyTerms: ['phase', 'kindness'], questionText: 'Why?', sampleAnswer: 'A phase of his kindness.' };
+    expect(am.evaluateAnswer(base).matched).toBe(2);
+    expect(am.evaluateAnswer({ ...base, notTypos: ['phrase'] }).matched).toBe(1);
+  });
+
   it('guards English only: another language keeps the plain rule', () => {
     expect(am.matchKeyTerms('I think so', am.parseKeyTerms(['thank']), 'es').matched).toBe(1);
   });
