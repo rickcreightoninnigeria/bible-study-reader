@@ -148,7 +148,7 @@ const Router = (() => {
   // slide in from the left (back). Non-chapter pages are treated as "deeper"
   // than the title page but shallower than chapters.
   const PAGE_ORDER = ['title', 'library', 'progress', 'howto', 'settings',
-                      'leaders', 'about', 'notes', 'godeeper', 'group', 'chapter'];
+                      'leaders', 'about', 'notes', 'godeeper', 'group', 'review', 'chapter'];
 
   function _pageDepth(page) {
     const i = PAGE_ORDER.indexOf(page);
@@ -158,7 +158,7 @@ const Router = (() => {
   // ── history state shape ─────────────────────────────────────────────────────
   // {
   //   page:    'chapter' | 'title' | 'library' | 'settings' | 'howto' |
-  //            'progress' | 'leaders' | 'about' | 'notes' | 'group' | '_exit_guard'
+  //            'progress' | 'leaders' | 'about' | 'notes' | 'group' | 'review' | '_exit_guard'
   //   idx:     number          (chapter only)
   //   tabId:   string | null   (settings / howto / leaders / about; group: a groupId)
   //   scrollY: number          (where the page was scrolled to when it was left)
@@ -296,6 +296,10 @@ const Router = (() => {
 
         case 'group':
           await renderGroupPage(tabId ?? undefined);
+          break;
+
+        case 'review':
+          await renderReview();
           break;
 
         case '_exit_guard':

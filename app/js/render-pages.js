@@ -1139,6 +1139,15 @@ async function renderSettings(tabId) {
             ${tog('showPageLeaders')}
           </div>
 
+          <div class="settings-divider"></div>
+          <div class="settings-row">
+            <div class="settings-row-text">
+              <div class="settings-row-label">${t('renderpages_settings_review_label')}</div>
+              <div class="settings-row-desc">${t('renderpages_settings_review_desc')}</div>
+            </div>
+            ${tog('showPageReview')}
+          </div>
+
           ${adv ? `
           <div class="settings-divider"></div>
           <div class="settings-row">

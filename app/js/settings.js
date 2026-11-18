@@ -23,6 +23,7 @@ const SETTINGS_DEFAULTS = {
   showPageHowToUse   :true,
   showPageLeaders    :false,
   showPageNotes      :false,
+  showPageReview     :true,
   showPageProgress   :true,
   showProgressBar    :true,
   swipeSensitivity   :'low',

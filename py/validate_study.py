@@ -222,6 +222,10 @@ def check_structure(study):
                 if fns is not None and not (isinstance(fns, list) and all(isinstance(f, dict) for f in fns)):
                     err(f'{name} chapter {c.get("chapterNumber")}: footnotes must be an array of {{id, body}} objects')
                     c['footnotes'] = []
+    rd = study.get('reviewData')
+    if rd is not None and not isinstance(rd, dict):
+        err('reviewData must be an object')
+        study['reviewData'] = {}
     return True
 
 
@@ -440,6 +444,169 @@ def check_leaders(study, multilingual):
             for path, s in strings(v):
                 if '<table' in s and fmt == 'markdown':
                     err(f"Leaders' Notes {n}: table in a markdown-format chapter is stripped; use format \"HTML\"")
+
+
+# --------------------------------------------------------------------------- Review (reviewData)
+REVIEW_MIN_WRONG, REVIEW_GOOD_WRONG, REVIEW_MAX_QUESTIONS = 4, 6, 200
+REVIEW_AUTO_MIN_CHAPTERS = 4
+
+
+def _rv_norm(s):
+    return re.sub(r'\s+', ' ', str(s).strip().lower())
+
+
+def _rv_words(s):
+    return set(re.findall(r'\w+', _rv_norm(s)))
+
+
+def check_review(study, multilingual):
+    """Shape and quality of reviewData (see REVIEW-QUIZ-SPEC.md). The app never throws on a bad block, it
+    just leaves questions out, so every omission is reported here. It cannot tell when a wrong answer is
+    accidentally true: a person must read every one."""
+    rd = study.get('reviewData')
+    meta = study.get('studyMetadata') or {}
+    chapters = [c for c in (study.get('chapters') or []) if isinstance(c, dict)]
+    nums = {c.get('chapterNumber') for c in chapters}
+    nlang = 0
+    while meta.get(f'language{nlang + 1}'):
+        nlang += 1
+    slots = [str(i) for i in range(1, nlang + 1)] if multilingual and nlang else ['']
+
+    auto = rd.get('auto') if isinstance(rd, dict) else None
+    if isinstance(rd, dict):
+        if auto is not None and not isinstance(auto, dict):
+            err('reviewData.auto must be an object such as {"aboutChapter": true, "whichChapter": true}')
+            auto = None
+        elif isinstance(auto, dict):
+            for k, v in auto.items():
+                if k not in ('aboutChapter', 'whichChapter'):
+                    warn(f'reviewData.auto.{k} is not a known automatic question type (aboutChapter, whichChapter)')
+                elif not isinstance(v, bool):
+                    err(f'reviewData.auto.{k} must be true or false')
+        qs = rd.get('questions')
+        if qs is None:
+            qs = []
+        elif not isinstance(qs, list):
+            err('reviewData.questions must be an array')
+            qs = []
+        if len(qs) > REVIEW_MAX_QUESTIONS:
+            warn(f'reviewData has {len(qs)} questions; more than {REVIEW_MAX_QUESTIONS} is a very long pool')
+        if not qs and not (isinstance(auto, dict) and any(auto.get(k) is True for k in ('aboutChapter', 'whichChapter'))):
+            warn('reviewData has no questions and no automatic question types, so the Review item is never shown')
+        ids, corrects = set(), {}
+        for i, q in enumerate(qs):
+            if not isinstance(q, dict):
+                err(f'reviewData.questions[{i}] is not an object')
+                continue
+            qid = q.get('id')
+            where = f'review question {qid if qid else i + 1}'
+            if not isinstance(qid, str) or not qid.strip():
+                err(f'reviewData.questions[{i}]: id is required (a unique string)')
+            elif qid in ids:
+                err(f'{where}: duplicate id')
+            else:
+                ids.add(qid)
+            ch = q.get('chapter')
+            if ch is not None and ch not in nums:
+                err(f'{where}: chapter {ch!r} is not a chapter of this study')
+            for slot in slots:
+                w = where + (f' (language {slot})' if slot else '')
+                question, correct, wrong = q.get('question' + slot), q.get('correct' + slot), q.get('wrong' + slot)
+                if not isinstance(question, str) or not question.strip():
+                    (warn if slot and slot != '1' else err)(f'{w}: question{slot} is missing' + (' (the app falls back to language 1)' if slot and slot != '1' else ' (the question is left out)'))
+                    if not slot or slot == '1':
+                        continue
+                if not isinstance(correct, str) or not correct.strip():
+                    (warn if slot and slot != '1' else err)(f'{w}: correct{slot} is missing' + (' (the app falls back to language 1)' if slot and slot != '1' else ' (the question is left out)'))
+                    continue
+                if not (isinstance(wrong, list) and all(isinstance(x, str) and x.strip() for x in wrong)):
+                    (warn if slot and slot != '1' else err)(f'{w}: wrong{slot} must be an array of non-empty strings')
+                    continue
+                keyc = _rv_norm(correct)
+                if slot in ('', '1'):
+                    corrects.setdefault(keyc, qid)
+                distinct = []
+                for x in wrong:
+                    kx = _rv_norm(x)
+                    if kx == keyc:
+                        err(f'{w}: the right answer {x!r} is also listed as a wrong answer')
+                    elif kx in distinct:
+                        warn(f'{w}: wrong answer {x!r} is listed twice')
+                    else:
+                        distinct.append(kx)
+                if len(distinct) < REVIEW_MIN_WRONG:
+                    err(f'{w}: only {len(distinct)} distinct wrong answers; at least {REVIEW_MIN_WRONG} are needed')
+                elif len(distinct) < REVIEW_GOOD_WRONG:
+                    warn(f'{w}: {len(distinct)} wrong answers; {REVIEW_GOOD_WRONG} or more gives more variety')
+                # near-duplicate wrong answers (or one that is almost the right answer)
+                allw = [(keyc, 'the right answer')] + [(k, repr(k)) for k in distinct]
+                for a in range(len(allw)):
+                    for b in range(a + 1, len(allw)):
+                        wa, wb = _rv_words(allw[a][0]), _rv_words(allw[b][0])
+                        if len(wa | wb) >= 3 and len(wa & wb) / len(wa | wb) >= 0.8:
+                            warn(f'{w}: {allw[a][1]} and {allw[b][1]} are almost the same words; one may be accidentally right too')
+                # the giveaway: the right answer much longer, or much shorter, than every wrong one
+                lens = [len(x.strip()) for x in wrong if _rv_norm(x) != keyc]
+                lc = len(correct.strip())
+                if lens and lc >= 25 and lc > 1.6 * max(lens):
+                    warn(f'{w}: the right answer is much longer than every wrong answer, which gives it away')
+                elif lens and min(lens) >= 25 and min(lens) > 1.6 * lc:
+                    warn(f'{w}: the right answer is much shorter than every wrong answer, which gives it away')
+                ex = q.get('explain' + slot)
+                if isinstance(ex, str) and len(ex) > 400:
+                    warn(f'{w}: explain is over 400 characters; keep it to a sentence or two')
+        # a wrong answer that is another question's right answer may also be true here
+        for q in qs:
+            if not isinstance(q, dict):
+                continue
+            for slot in ([slots[0]] if slots else ['']):
+                wrong = q.get('wrong' + slot)
+                if isinstance(wrong, list):
+                    for x in wrong:
+                        if isinstance(x, str) and corrects.get(_rv_norm(x)) not in (None, q.get('id')):
+                            warn(f'review question {q.get("id")}: wrong answer {x!r} is the right answer to question {corrects[_rv_norm(x)]}; check it is not also true here')
+
+    # chapter fields used by the automatic question types
+    want_about = isinstance(auto, dict) and auto.get('aboutChapter') is True
+    want_which = isinstance(auto, dict) and auto.get('whichChapter') is True
+    n_sum = n_verse = 0
+    for c in chapters:
+        n = c.get('chapterNumber')
+        for slot in slots:
+            s = c.get('reviewSummary' + slot)
+            if s is not None and not isinstance(s, str):
+                err(f'chapter {n}: reviewSummary{slot} must be a string')
+            vs = c.get('reviewVerses' + slot)
+            if vs is not None:
+                if not (isinstance(vs, list) and all(isinstance(x, str) and x.strip() for x in vs)):
+                    err(f'chapter {n}: reviewVerses{slot} must be an array of non-empty strings')
+                else:
+                    if len(vs) > 3:
+                        warn(f'chapter {n}: reviewVerses{slot} has {len(vs)} verses; only the first 3 are used')
+                    for x in vs:
+                        if len(x) > 400:
+                            warn(f'chapter {n}: a reviewVerses{slot} entry is over 400 characters; pick one or two distinctive lines')
+        first = slots[0] if slots else ''
+        if isinstance(c.get('reviewSummary' + first), str) and c.get('reviewSummary' + first).strip():
+            n_sum += 1
+        if isinstance(c.get('reviewVerses' + first), list) and c.get('reviewVerses' + first):
+            n_verse += 1
+        nw = c.get('reviewNotWith')
+        if nw is not None:
+            if not (isinstance(nw, list) and all(isinstance(x, int) and not isinstance(x, bool) for x in nw)):
+                err(f'chapter {n}: reviewNotWith must be an array of chapter numbers')
+            else:
+                for x in nw:
+                    if x not in nums:
+                        err(f'chapter {n}: reviewNotWith lists chapter {x}, which does not exist')
+    if (want_about or want_which) and len(chapters) < REVIEW_AUTO_MIN_CHAPTERS:
+        warn(f'reviewData.auto is on but the study has only {len(chapters)} chapters; the automatic questions need at least {REVIEW_AUTO_MIN_CHAPTERS}')
+    if want_about and n_sum < REVIEW_AUTO_MIN_CHAPTERS:
+        warn(f'reviewData.auto.aboutChapter is on but only {n_sum} chapters have a reviewSummary (at least {REVIEW_AUTO_MIN_CHAPTERS} are needed)')
+    if want_which and n_verse == 0:
+        warn('reviewData.auto.whichChapter is on but no chapter has reviewVerses')
+    if (n_sum or n_verse) and not (want_about or want_which) and isinstance(rd, dict):
+        warn('chapters carry reviewSummary or reviewVerses but reviewData.auto does not switch the automatic questions on')
 
 
 def keys_anywhere(o, names, path='', out=None):
@@ -696,6 +863,7 @@ def main(path):
 
     check_translations(study)
     check_leaders(study, multilingual)
+    check_review(study, multilingual)
     check_answers(study, multilingual, EXPLAIN)
 
     seen_ids, nums = {}, set()

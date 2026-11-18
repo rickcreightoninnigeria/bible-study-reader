@@ -70,6 +70,7 @@ Rules for both:
 | `howToUseData` | no | How-to → "Study" tab |
 | `leadersNotesData` | no | Leaders' Notes page (only if the user enables `showPageLeaders`, default off) |
 | `goDeeperData` | no | Go Deeper page (Contents menu entry appears automatically) |
+| `reviewData` | no | Review: a multiple-choice recap (section 10a); Contents entry for Intermediate and Advanced readers, unless they switch it off |
 | `studyAboutData`, `copyrightData` | no (see below) | About page |
 | `qaCallouts` | no | legacy v1 only; ignore |
 
@@ -159,6 +160,33 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 - **`video` block:** `{ "subtype": "video", "header": "Watch", "title": …, "url": …, "minutes": … }` with the same fields as the `video` element (section 7). Works in Leaders' Notes too. In a multilingual study the whole block is numbered (`watch1`, `watch2`…), like other blocks. Printed Go Deeper pages show the title, length and address instead of the buttons.
 - **`image-gallery` block:** `images[]` of `{elementId}` (reuses an inline image; `alt`/`caption`/`provenance` you omit are inherited from it) or `{src: "images/x.webp", alt, caption, provenance}`; `elementId` wins. Invalid or missing images are skipped; a gallery with none disappears entirely, header included. Provenance appears only in the viewer and thumbnail label, as plain text.
 
+## 10a. `reviewData` (Review: a multiple-choice recap)
+
+An optional recap for the end of a study. The Contents menu shows **Review your learning** (or `reviewData.title`) between Study group and Leaders' Notes, for readers in **Intermediate** or **Advanced** mode whose Settings → Optional pages → Review switch is on (it is on by default). Nothing is recorded except the reader's best score for each question count, on the device only; a leader never sees results.
+
+How a question is served: the reader taps **Show answers**, then taps one of four options: the right answer plus **three wrong answers drawn at random from the question's pool, shuffled afresh each time**. So write a pool of wrong answers, not three. The reader chooses how many questions (default 10) and random or set order, then taps Start; a round ends with a gentle summary, a retry of the ones missed, and a prompt to beat their best.
+
+```json
+"reviewData": {
+  "title": "Review your learning",
+  "intro": "Check what you remember. Nothing is recorded except your best score.",
+  "auto": { "aboutChapter": true, "whichChapter": true },
+  "questions": [
+    { "id": "r01", "question": "What does John say God is?", "correct": "Light, with no darkness in him",
+      "wrong": ["Distant", "A judge only", "Hidden from us", "Silent toward us", "Too holy to approach", "Angry with the world"],
+      "explain": "1 John 1:5.", "chapter": 1 }
+  ]
+}
+```
+
+- **`questions[]`**: `id` (unique string), `question`, `correct`, `wrong[]` (**at least 4 distinct**, 6 or more recommended; the app also copes with fewer), optional `explain` (a sentence shown after the answer) and `chapter` (a `chapterNumber`; shows "See chapter N" when there is no `explain`). Plain text; `[[sc:Name]]` and `[[icon:name]]` markers work.
+- **Multilingual studies** number the text fields like any other (`question1`, `correct1`, `wrong1`, `explain1`, `title1`, `intro1`); a missing slot falls back to slot 1. `id`, `chapter` and `auto` are single values.
+- **Automatic questions for a Bible-book study** (`auto`), made from chapter fields, so authors write no wrong answers for them. They need **4 or more chapters**, and come after the written questions in set order (all the "about" ones, then the verse ones, in chapter order):
+  - `aboutChapter` asks "What is chapter N about?" and needs `reviewSummary` on at least 4 chapters (one plain line each, numbered in multilingual studies); the wrong answers are the other chapters' summaries. Chapter field `reviewNotWith: [3, 4]` keeps chapters whose summaries are too alike out of each other's wrong answers.
+  - `whichChapter` asks "Which chapter is this verse from?" and uses chapter field `reviewVerses` (1 to 3 distinctive verses you pick, as plain strings; numbered in multilingual studies); the right answer is "Chapter N: title" and the wrong ones are the other chapters.
+- **Every wrong answer must be checked by a person.** `validate_study.py` checks the shape, ids, chapters, wrong-answer count, duplicates and near-duplicates, and warns when the right answer is much longer **or much shorter** than every wrong one (the giveaway). It cannot tell when a wrong answer is accidentally true, and a flawed one only shows in some draws, so the fault is intermittent.
+- Best scores are stored in the IDB answers store under `<studyId>_review_best`, so Backup and Restore carry them and deleting a study removes them.
+
 ## 11. Quick lists
 
 **Ignored:** `createdAt`, `updatedAt`, `tags`, `shareMessage`, `imageData.*.provenance`, inline `image.provenance` (except gallery credit), `answerType`, `required`, `commentHint`, `note`, heading `level`, slide `format`, `copyrightData.licence`, `studyMetadata.publishedBy` / `year` / `ctaLabel` (documented in older notes, but nothing reads them), Leaders `bookOverview`, theme keys outside the 22; unnumbered `bibleTranslation`.
@@ -191,4 +219,5 @@ Shared block system: each chapter object's keys (except `chapterNumber`, `format
 11. Declared images exist: `images/<elementId>.webp` for every `image` without `src`; gallery `src` files are in the zip.
 12. Every `sampleAnswer` and `mainPoint` reaches "strong" when run through the answer check (section 7 explains how to write them so they do). `validate_study.py` finds `answer-match.js` in `../app/js/`, next to the script, or at the path in the `ANSWER_MATCH_JS` environment variable (not in the current folder), warns about anything that is not "strong", and reports an **error** if `answer-match.js` or Node.js is missing, because the study has then not been checked. In a Claude Project, upload the app's `answer-match.js` (and `libraryShelvesStructure_en.json`, which the shelf-name check reads) next to the script. `--explain` prints, for each text, the result, how many key terms matched (and which were missed), the passage-repeat percentage against the limit, and the word count against the minimum.
 13. Before release open it in the app: a passage pop-up, a hint, a footnote, a table at phone width, Read more and Back to study, and the copyright page (section 9: it prints CC BY-SA unless you supply `copyrightData.licenceText`).
-14. Test the answer check on realistic answers (`ANSWER-CHECK-TESTING.md`): on every build run `python3 test_answers.py --lint study.json` and `--auto study.json` (seconds, no answers needed; `--auto` runs generated weak answers through every question and exits 1 if any is not caught); before a first release add a Full written run, and for an update a Targeted one with a fresh batch. Exit status 2 means the test could not run, which is not a pass.
+14. If the study has `reviewData`: `validate_study.py` reports no errors, every wrong answer has been read by a person (none is accidentally true), and the right answer is not the longest or the shortest in its pool.
+15. Test the answer check on realistic answers (`ANSWER-CHECK-TESTING.md`): on every build run `python3 test_answers.py --lint study.json` and `--auto study.json` (seconds, no answers needed; `--auto` runs generated weak answers through every question and exits 1 if any is not caught); before a first release add a Full written run, and for an update a Targeted one with a fresh batch. Exit status 2 means the test could not run, which is not a pass.

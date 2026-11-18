@@ -829,6 +829,17 @@ async function renderMenu() {
       <span class="chapter-name">${t('main_menu_study_group')}</span>
     </div>`;
 
+  if (reviewVisibleInMenu()) {
+    const reviewDone = await reviewIsDone();
+    const reviewLabel = studyText(window.reviewData, 'title') || t('main_menu_review');
+    html += `
+    <div class="chapter-item" id="menuItemReview" onclick="Router.navigate({ page: 'review' })">
+      <span class="chapter-num">✦</span>
+      <span class="chapter-name">${escapeHtml(reviewLabel)}</span>
+      ${reviewDone ? '<span class="chapter-check">✓</span>' : ''}
+    </div>`;
+  }
+
   if (appSettings.showPageLeaders) {
     html += `
     <div class="chapter-item" onclick="Router.navigate({ page: 'leaders' })">

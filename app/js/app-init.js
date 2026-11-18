@@ -224,6 +224,7 @@ function rerenderCurrentView() {
     case 'notes':    renderNotesPage();                      break;
     case 'godeeper': renderGoDeeper(window.activeTabId);     break;
     case 'group':    renderGroupPage(window.activeTabId);    break;
+    case 'review':   renderReview();                         break;
     default:
       // Fallback — shouldn't happen, but safe
       openLibrary();
